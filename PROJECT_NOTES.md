@@ -62,17 +62,21 @@ W((0 1)) = W((1 2)) = −21,772,800, W((0 2)) = −476,884,800,
 W(3-cycle) = +301,870,800 — 8 of these were blind predictions that hit
 exactly; signs = sgn(σ₆)sgn(σ₇) throughout.
 
-**⚠ IMMEDIATE OPEN ITEM — interpretation.** The conductor paper (§5) states:
-predicted c((2,2,2), 2) = 2, i.e. k=1 closure multiplicity 0, "falsifiable by
-the banked 36-subproblem computation." That computation now says the pairing
-value is NONZERO (1,152,144,000). Before claiming c((2,2,2),2) = 1 (predicted
-falsified: a k=1 copy exists on the closure) or the opposite, re-derive the
-precise contract of the f1C pairing from the week-3 session-10 setup: what
-does nonzero mean for mult_{(2,2,2)} C[Ω̄] at k = 1 — matrix element of which
-map, at which point, with which normalization. Pin this FIRST next session;
-it decides whether §5's prediction stands or falls, and both outcomes are
-publishable content (P₂'s formula-dependence biting would be the interesting
-case).
+**VERDICT (pinned by the log's session-10 criterion): c((2,2,2), 2) = 1 —
+the first conductor of a determinant.** Session 10 corrected session 9's
+prediction (2 → 1: the divisorial transport says one Φ₁₈-step clears both
+components, ⌈2/6⌉ = ⌈2/9⌉ = 1; c ≥ 2 would require divisorial extension to
+FAIL, i.e. non-normality arithmetically active at the first deficit weight)
+and stated the criterion verbatim: "Zero means the wild component's pathology
+is arithmetically active from the very first class; nonzero means the
+divisorial calculus rules and c = 1." The grind returned NONZERO
+(1,152,144,000), so: the k=1 slot is filled, divisorial transport rules on
+its first test on a determinant, and non-normality does not bite at (2,2,2).
+The k=1 evaluation is the λ' = (8,8,8,6⁶), δ = 20 HWV at the balanced-
+substitution orbit point C (session 8's counting lemma forces evaluation off
+det₃ itself onto such points). Both documents updated with the verdict on
+2026-08-24. Follow-ups: independent second-point confirmation (another
+balanced substitution point), and the k = 2 rung of the ray.
 
 ## Computational assets (repo layout)
 
@@ -137,11 +141,15 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
 
 ## Roadmap (refreshed 2026-08-24)
 
-R1. **Pin the f1C interpretation** (see open item above) → conclude
-    c((2,2,2),2) ∈ {1,2}; propagate through conductor §5 and the log.
-R2. **Run/interpret the banked h-series** (h1A–D, h2A–D, h3A in evalin/):
-    the next evaluations of the same factored-HWV machinery; enumerate their
-    contracts from wk3_s8_gen*.py, budget ~45 min each on the grind engine.
+R1. **Harden the c((2,2,2),2) = 1 verdict**: independent second evaluation
+    point (another balanced substitution pair), then the k = 2 rung of the
+    Φ₁₈-ray (does the deficit stay cleared — conductor exactly 1 confirmed
+    ray-wise). The h-series inputs (h1A–D, h2A–D, h3A in evalin/) are the
+    banked evaluation family — enumerate their exact contracts from
+    wk3_s8_gen*.py; budget ~45 min each on the grind engine.
+R2. **Publishable statement**: "the first conductor of a determinant is 1"
+    with the divisorial-transport mechanism and the nonzero certificate;
+    fold into conductor §5 (done 2026-08-24) and the paper narrative.
 R3. **Which boundary component(s)**: evaluate Φ₁₈ at Hüttenhain's
     representatives (traceless determinant, universal quadric) — §7(3).
 R4. **World B level-2 law**: increments as unipotent invariants of the

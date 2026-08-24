@@ -1,0 +1,1195 @@
+<title>The Boundary Deficit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#fcfcfa; --ink:#1b211e; --accent:#14795b; --accent-ink:#0f6349;
+  --muted:#5c665f; --hair:#e4e7e2; --boxbg:#f7f8f6; --tagbg:#eef4f0;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14181b; --ink:#e6e8e4; --accent:#42bd92; --accent-ink:#5acca3;
+    --muted:#9aa49d; --hair:#2a302c; --boxbg:#1a1f22; --tagbg:#1c2622;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14181b; --ink:#e6e8e4; --accent:#42bd92; --accent-ink:#5acca3;
+  --muted:#9aa49d; --hair:#2a302c; --boxbg:#1a1f22; --tagbg:#1c2622;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);margin:0;
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:1.05rem;line-height:1.62;}
+.page{max-width:46em;margin:0 auto;padding:4rem 1.4rem 6rem;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:.72rem;letter-spacing:.18em;color:var(--accent);font-weight:500;}
+h1{font-size:2.9rem;line-height:1.05;margin:.5rem 0 .8rem;font-weight:700;letter-spacing:-.015em;}
+.stand{font-size:1.25rem;line-height:1.45;color:var(--ink);margin:0 0 .8rem;text-wrap:balance;}
+.byline{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.75rem;color:var(--muted);
+  margin:0 0 2rem;border-bottom:1px solid var(--hair);padding-bottom:1.6rem;}
+h2{font-size:1.55rem;margin:2.8rem 0 1rem;font-weight:700;text-wrap:balance;}
+h2 .no{color:var(--accent);margin-right:.4em;}
+h3{font-size:1.18rem;margin:2.4rem 0 .8rem;font-weight:700;text-wrap:balance;}
+p{margin:0 0 1.05rem;}
+a{color:var(--accent-ink);text-underline-offset:2px;}
+.thm{border-left:3px solid var(--accent);background:var(--boxbg);padding:1rem 1.3rem;margin:1.4rem 0;}
+.thm p:last-child{margin-bottom:0}
+.box{border:1px solid var(--hair);background:var(--boxbg);border-radius:10px;
+  padding:1.1rem 1.3rem;margin:1.3rem 0;font-size:.97rem;}
+.box p:last-child{margin-bottom:0}
+.tag{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;
+  color:var(--accent);background:var(--tagbg);border-radius:4px;padding:.1em .5em;white-space:nowrap;}
+b,strong{font-weight:700}
+.ol{text-decoration:overline}
+sub,sup{font-size:.72em;line-height:0}
+.tbl{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--hair);border-radius:10px;}
+table{border-collapse:collapse;width:100%;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.8rem;font-variant-numeric:tabular-nums;}
+th{font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;
+  font-size:.68rem;text-align:right;padding:.55rem .8rem;border-bottom:1px solid var(--hair);}
+th:first-child,td:first-child{text-align:left}
+th.l,td.l{text-align:left}
+td{padding:.42rem .8rem;text-align:right;border-bottom:1px solid var(--hair);}
+tr:last-child td{border-bottom:none}
+td.d{color:var(--accent);font-weight:500}
+.scb{border:1px solid var(--hair);border-radius:10px;overflow:hidden;margin:1.2rem 0;}
+.scb table{font-size:.86rem;font-family:inherit;}
+.scb td{text-align:left;vertical-align:top;line-height:1.5;}
+.scb td.v{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.74rem;color:var(--accent);white-space:nowrap;}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.92em;}
+.quote{border-left:3px solid var(--accent);padding:1rem 1.3rem;background:var(--boxbg);margin:1.4rem 0;}
+.quote .big{font-size:1.15rem;}
+.qcard{border:1px solid var(--hair);border-radius:10px;padding:1.1rem 1.3rem;margin:1.1rem 0;}
+.qcard .risk{color:var(--muted);font-size:.9rem;}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+<div class="page">
+<p class="eyebrow">WORKING NOTE · BEGUN SATURDAY, AUGUST 22, 2026 · UPDATED AUGUST 24</p>
+<h1>The Boundary Deficit</h1>
+<p class="stand">What survived a weekend of pointing anabelian geometry at
+geometric complexity theory: a corrected dictionary, and a number you can
+compute and stare at.</p>
+<p class="byline">Swami &amp; Claude · every numerical claim machine-checked in session · novelty claims
+adversarially reviewed and mostly executed</p>
+
+<p>This note records the end state of a dialogue that began as a dream —
+<i>anabelianize GCT</i> — and was then reviewed adversarially, idea by idea,
+against the literature and against direct computation. Six proposed
+invariant-classes turned out to be named, load-bearing structures in the
+field; one central identity turned out to be false; and what remains is a
+program-level alignment, one small computable object with actual data
+attached, and three questions. The deficit table in §4 is, as far as we can tell,
+the only artifact of the weekend that did not previously exist.</p>
+
+<h2><span class="no">§1</span>The scoreboard</h2>
+<p>The original dictionary aligned anabelian moves with GCT structures.
+Under review, every alignment hit something real — which is what a well-aimed
+frame looks like when pointed at a mature field. The one "new" claim
+it produced was an error.</p>
+<div class="scb"><table>
+<tr><th class="l">Proposed</th><th class="l">Verdict</th><th class="l">Where it already lives</th></tr>
+<tr><td class="l">Characterization by symmetries = mono-anabelian reconstruction</td><td class="v">known, central</td>
+<td class="l">Landsberg's survey §2.7: for reductive stabilizers, orbit-closure data is
+"essentially determined by multiplicity data" via algebraic Peter–Weyl; Ikenmeyer–Kandasamy
+separate orbit closures by comparing <i>both</i> stabilizers</td></tr>
+<tr><td class="l">"The ring structure / ideal is the unexplored nonabelian layer"</td><td class="v">refuted as stated</td>
+<td class="l">Vanishing-ideal occurrence obstructions are a named category; Mulmuley–Sohoni
+GCT II is subtitled "towards explicit obstructions… ideals of class varieties."
+The <i>information</i> version is contradicted by the completeness above; only the <i>access</i>
+version survives (§2)</td></tr>
+<tr><td class="l">Boundary of the orbit closure as bad reduction / inertia</td><td class="v">live → executed</td>
+<td class="l">Kin to border apolarity (Buczyńska–Buczyński; Conner–Harper–Landsberg).
+Became the computation of §3–4</td></tr>
+<tr><td class="l">Dessins ↔ Kronecker as "one tensor in two bases"</td><td class="v">false, computed</td>
+<td class="l">Pointwise vs convolution products on class functions: at S₅, matched triples give
+(Hurwitz, Kronecker) = (120, 0) four times, (240, 0) twice; and ((3,2),(3,1,1),(3,1,1)) has
+g = 2 with <i>no cover at all</i> (sign obstruction). The two TQFTs agree on the torus (both
+p(n)) and diverge from genus 2 (161 vs 32152 at n = 5). Repaired one dimension up
+in Rep(D(S<sub>n</sub>)), where Verlinde's 1/S₀ₓ explains both weight systems — but the
+theorem-level Galois there is cyclotomic and fixes the electric (Kronecker) corner:
+the repair drains into the GT tower</td></tr>
+<tr><td class="l">Plethystic Grothendieck–Teichmüller group</td><td class="v">standing moonshot</td>
+<td class="l">Stability towers (Murnaghan; Manivel-Brion; FI-modules), Deligne categories,
+Drinfeld's GT on braided towers, Brown's MT(ℤ) ⊂ GT. Untouched this weekend;
+absorbed the repaired item above</td></tr>
+<tr><td class="l">Occurrence obstructions = abelianized information; BIP = "abelianization fails"</td><td class="v">accurate framing</td>
+<td class="l">Bürgisser–Ikenmeyer–Panova (no occurrence obstructions); Ikenmeyer–Panova
+(rectangular Kroneckers); NP-hardness of Kronecker positivity (Ikenmeyer–Mulmuley–Walter)</td></tr>
+</table></div>
+
+<h2><span class="no">§2</span>The corrected dictionary</h2>
+<p>The alignment that survives is program-to-program, not invariant-to-invariant.
+For symmetry-characterized points with reductive stabilizer, the
+abelian layer — multiplicity data — is <i>information-complete</i> (Peter–Weyl: orbit
+multiplicities are stabilizer-invariant dimensions, pure group data) and
+<i>access-hard</i> (occurrence, its cheapest shadow, provably fails at
+superpolynomial padding; the rest sits behind #P- and NP-hard walls).
+Complete the way a hash determines its input: faithful and unusable.</p>
+<p>Anabelian geometry hit the same wall and renamed itself around it:
+determination theorems (Neukirch–Uchida, the Isom-results) were
+refounded by Mochizuki as <i>mono-anabelian reconstruction</i> — algorithms, not
+mere determination — because a group that determines a curve without an
+effective dictionary is not usable. Mulmuley's flip — positivity, explicit rules,
+constructible obstructions — is the same turn, made earlier, for the same reason.</p>
+<div class="quote">
+<p class="big">mono-anabelian reconstruction : anabelian geometry :: the flip : GCT</p>
+<p>Shared lesson, theorem-shaped on both sides: completeness does not
+feed you. The open front is not information but effective access — and all
+deficit of access is manufactured by the boundary.</p>
+</div>
+
+<h2><span class="no">§3</span>The object</h2>
+<p>Let <span class="mono">v</span> be a form characterized by its symmetries with finite stabilizer
+<span class="mono">H ⊂ G = GL</span>, let <span class="ol">Ω</span> = <span class="ol">G·v</span> be the orbit-closure cone, and suppose the
+boundary <span class="ol">Ω</span> \ G·v is cut set-theoretically by a semiinvariant Δ of degree <span class="mono">e</span>
+and weight det<sup>w</sup>. Then (all standard; the packaging is the anabelian residue):</p>
+<p><b>Orbit.</b> mult<sub>λ</sub> ℂ[G·v] = dim S<sub>λ</sub><sup>H</sup> — group data, computable by character averaging.</p>
+<p><b>Ray.</b> Multiplication by Δ embeds ℂ[<span class="ol">Ω</span>]<sub>δ</sub>-isotypic pieces into ℂ[<span class="ol">Ω</span>]<sub>δ+e</sub> ones;
+along the ray (λ + m·w·<b>1</b>, δ + m·e) the multiplicity is nondecreasing and
+stabilizes at the orbit value, since ℂ[G·v] = ℂ[<span class="ol">Ω</span>][1/Δ].</p>
+<div class="thm">
+<p class="big" style="font-size:1.1rem"><b>def(λ, δ) = dim S<sub>λ</sub><sup>H</sup> − mult<sub>λ</sub> ℂ[<span class="ol">Ω</span>]<sub>δ</sub> ≥ 0</b></p>
+<p>The <b>boundary deficit</b>: the λ-piece of the module ℂ[<span class="ol">Ω</span>][1/Δ] / ℂ[<span class="ol">Ω</span>],
+supported on the boundary. The <b>conductor</b> c(λ, δ) is the number of Δ-multiplications
+needed to stabilize — the pole order of the missing functions
+along the boundary. Conductor 0 means the closure multiplicity is already pure group theory.</p>
+</div>
+<p>Everything obstruction-theoretic in GCT lives in this gap: the orbit side is
+known (this is Landsberg's optimism, and the engine of Ikenmeyer–Kandasamy),
+the closure side is the mystery, and the deficit is their
+difference, filtered by pole order. So we computed it, in the two smallest
+worlds where every ingredient is classical.</p>
+
+<h2><span class="no">§4</span>Two computed worlds</h2>
+<h3>World A — binary quartics: v = x⁴ + y⁴, <span class="ol">Ω</span> = σ₂(v₄), |H| = 32</h3>
+<p>The closure is the catalecticant cubic hypersurface (ideal principal, weight
+det⁶); Δ = the degree-6 discriminant, weight det¹²; H = μ₄² ⋊ S₂. Classical
+anchors pass: the Hessian survives at δ = 2, and the degree-3 invariant — the
+catalecticant itself — exists upstairs and dies on σ₂. Multiplicities are
+indexed by covariant labels (a, b), a + b = 4δ; the coordinate-ring module is
+the dual, dimensions unaffected.</p>
+<div class="box"><p>All 45 deficit weights, δ ≤ 10. Profile columns give the ray values at m = 0, 1, 2 (stable
+thereafter, checked to m = 6).</p>
+<div class="tbl" style="border:none;margin:.4rem 0 0"><table>
+<tr><th>δ</th><th>(a, b)</th><th>closure</th><th>orbit</th><th>deficit</th><th>cond.</th><th>m=0</th><th>m=1</th><th>m=2</th></tr>
+<tr><td>2</td><td>(8, 0)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>(12, 0)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>(11, 1)</td><td>0</td><td>1</td><td class="d">1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>(16, 0)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>(15, 1)</td><td>0</td><td>1</td><td class="d">1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>(14, 2)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>5</td><td>(20, 0)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>5</td><td>(19, 1)</td><td>0</td><td>2</td><td class="d">2</td><td>1</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>5</td><td>(18, 2)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>5</td><td>(17, 3)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>6</td><td>(24, 0)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>6</td><td>(23, 1)</td><td>0</td><td>2</td><td class="d">2</td><td>1</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>6</td><td>(22, 2)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>6</td><td>(21, 3)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>6</td><td>(20, 4)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>(28, 0)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>7</td><td>(27, 1)</td><td>0</td><td>3</td><td class="d">3</td><td>1</td><td>0</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>(26, 2)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>(25, 3)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>(24, 4)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>(23, 5)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>8</td><td>(32, 0)</td><td>1</td><td>5</td><td class="d">4</td><td>2</td><td>1</td><td>4</td><td>5</td></tr>
+<tr><td>8</td><td>(31, 1)</td><td>0</td><td>3</td><td class="d">3</td><td>1</td><td>0</td><td>3</td><td>3</td></tr>
+<tr><td>8</td><td>(30, 2)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>8</td><td>(29, 3)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>8</td><td>(28, 4)</td><td>2</td><td>4</td><td class="d">2</td><td>1</td><td>2</td><td>4</td><td>4</td></tr>
+<tr><td>8</td><td>(27, 5)</td><td>1</td><td>2</td><td class="d">1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>8</td><td>(26, 6)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>9</td><td>(36, 0)</td><td>1</td><td>5</td><td class="d">4</td><td>2</td><td>1</td><td>4</td><td>5</td></tr>
+<tr><td>9</td><td>(35, 1)</td><td>0</td><td>4</td><td class="d">4</td><td>2</td><td>0</td><td>3</td><td>4</td></tr>
+<tr><td>9</td><td>(34, 2)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>9</td><td>(33, 3)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>9</td><td>(32, 4)</td><td>2</td><td>4</td><td class="d">2</td><td>1</td><td>2</td><td>4</td><td>4</td></tr>
+<tr><td>9</td><td>(31, 5)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>9</td><td>(30, 6)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>9</td><td>(29, 7)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>10</td><td>(40, 0)</td><td>1</td><td>6</td><td class="d">5</td><td>2</td><td>1</td><td>4</td><td>6</td></tr>
+<tr><td>10</td><td>(39, 1)</td><td>0</td><td>4</td><td class="d">4</td><td>2</td><td>0</td><td>3</td><td>4</td></tr>
+<tr><td>10</td><td>(38, 2)</td><td>1</td><td>5</td><td class="d">4</td><td>2</td><td>1</td><td>4</td><td>5</td></tr>
+<tr><td>10</td><td>(37, 3)</td><td>1</td><td>4</td><td class="d">3</td><td>1</td><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>10</td><td>(36, 4)</td><td>2</td><td>5</td><td class="d">3</td><td>1</td><td>2</td><td>5</td><td>5</td></tr>
+<tr><td>10</td><td>(35, 5)</td><td>1</td><td>3</td><td class="d">2</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>10</td><td>(34, 6)</td><td>2</td><td>4</td><td class="d">2</td><td>1</td><td>2</td><td>4</td><td>4</td></tr>
+<tr><td>10</td><td>(33, 7)</td><td>2</td><td>3</td><td class="d">1</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>10</td><td>(32, 8)</td><td>3</td><td>4</td><td class="d">1</td><td>1</td><td>3</td><td>4</td><td>4</td></tr>
+</table></div></div>
+<p><b>The first deficit is the reconstruction itself.</b> At δ = 2, weight (8, 0): upstairs
+there is one covariant, f². On the orbit there are two — and the second is
+spanned by ℓ₁⁴ℓ₂⁴, the symmetrized Waring data of f = ℓ₁⁴ + ℓ₂⁴ (dimension
+count matches exactly: {f², ℓ₁⁴ℓ₂⁴} is 2-dimensional). Sylvester's
+decomposition is a rational, not regular, function of the form; its polar
+divisor is the boundary. Mono-anabelian reconstruction exists here only
+after inverting the discriminant.</p>
+<p><b>Conductors are shallow.</b> Histogram over all 45 weights: conductor 1 × 39,
+conductor 2 × 6 — and the six conductor-2 weights are exactly the most
+unbalanced ones, b ≤ 2, at δ ≥ 8. One multiplication by Δ recovers almost
+everything in range.</p>
+<p><b>A boundary-locality law (empirical, δ ≤ 10).</b> Every deficit weight satisfies
+b ≤ δ — which is precisely the condition that S<sub>(a,b)</sub> has a zero-weight vector
+for the stabilizer 𝔾ₘ = diag(t, t⁻³) of the boundary orbit G·x³y (the zero-weight
+index is j = 3δ, and b ≤ 3δ ≤ a reduces to b ≤ δ). The boundary carries
+the deficit, in the necessary-condition direction — first-order confirmation
+of the Ogg–Shafarevich-shaped guess of §5.</p>
+<p><b>A closed form (empirical, δ ≤ 10).</b> The total deficit at degree δ is exactly
+⌊δ²/4⌋ = #{(i, j) : 1 ≤ i ≤ j, i + j ≤ δ}: the sequence 1, 2, 4, 6, 9, 12, 16, 20, 25 — a
+two-parameter count, suggestive of the boundary's own structure.</p>
+<p><b>The polar sector is large.</b> Weights with b &lt; 0 — classes carried by the orbit
+but invisible at <i>every</i> polynomial degree — number 46 in a small scan
+(central degree ≤ 3, pole weight ≥ −12); the smallest is (2, −2), dimension 1.
+These are the rays that enter the polynomial cone only after Δ-shifts.</p>
+
+<h3>World B — ternary cubics: v = x³ + y³ + z³, <span class="ol">Ω</span> = σ₃(v₃) = {Aronhold S = 0}, |H| = 162</h3>
+<p>The Fermat cubic's orbit closure is the Aronhold quartic hypersurface (ideal
+principal, weight det⁴); Δ = the degree-12 discriminant, weight det¹²; H = μ₃³
+⋊ S₃. Anchors pass: S exists upstairs at δ = 4 and dies on the closure; the
+degree-6 invariant T survives; at δ = 12 the two invariants S³, T² collapse to
+one on the closure.</p>
+<div class="box"><p>Deficit weights through δ = 5 (all conductor 1 here). Beyond: total deficit 85, 163, 292 at δ
+= 6, 7, 8; 129 deficit weights in all with conductor histogram {1 × 114, 2 × 15}; largest
+single deficit 18 at δ = 8, λ = (18, 6, 0).</p>
+<div class="tbl" style="border:none;margin:.4rem 0 0"><table>
+<tr><th>δ</th><th>λ</th><th>closure</th><th>orbit</th><th>deficit</th></tr>
+<tr><td>2</td><td>(6, 0, 0)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>3</td><td>(6, 3, 0)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>3</td><td>(7, 2, 0)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>3</td><td>(8, 1, 0)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>3</td><td>(9, 0, 0)</td><td>1</td><td>3</td><td class="d">2</td></tr>
+<tr><td>4</td><td>(6, 6, 0)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>4</td><td>(7, 5, 0)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>4</td><td>(8, 3, 1)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>4</td><td>(8, 4, 0)</td><td>1</td><td>3</td><td class="d">2</td></tr>
+<tr><td>4</td><td>(9, 2, 1)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>4</td><td>(9, 3, 0)</td><td>1</td><td>3</td><td class="d">2</td></tr>
+<tr><td>4</td><td>(10, 2, 0)</td><td>1</td><td>4</td><td class="d">3</td></tr>
+<tr><td>4</td><td>(11, 1, 0)</td><td>0</td><td>2</td><td class="d">2</td></tr>
+<tr><td>4</td><td>(12, 0, 0)</td><td>1</td><td>4</td><td class="d">3</td></tr>
+<tr><td>5</td><td>(8, 6, 1)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>5</td><td>(8, 7, 0)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>5</td><td>(9, 5, 1)</td><td>0</td><td>1</td><td class="d">1</td></tr>
+<tr><td>5</td><td>(9, 6, 0)</td><td>1</td><td>4</td><td class="d">3</td></tr>
+<tr><td>5</td><td>(10, 3, 2)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>5</td><td>(10, 4, 1)</td><td>1</td><td>3</td><td class="d">2</td></tr>
+<tr><td>5</td><td>(10, 5, 0)</td><td>1</td><td>4</td><td class="d">3</td></tr>
+<tr><td>5</td><td>(11, 2, 2)</td><td>1</td><td>2</td><td class="d">1</td></tr>
+<tr><td>5</td><td>(11, 3, 1)</td><td>0</td><td>2</td><td class="d">2</td></tr>
+<tr><td>5</td><td>(11, 4, 0)</td><td>1</td><td>5</td><td class="d">4</td></tr>
+<tr><td>5</td><td>(12, 2, 1)</td><td>0</td><td>2</td><td class="d">2</td></tr>
+<tr><td>5</td><td>(12, 3, 0)</td><td>1</td><td>6</td><td class="d">5</td></tr>
+<tr><td>5</td><td>(13, 2, 0)</td><td>1</td><td>6</td><td class="d">5</td></tr>
+<tr><td>5</td><td>(14, 1, 0)</td><td>0</td><td>4</td><td class="d">4</td></tr>
+<tr><td>5</td><td>(15, 0, 0)</td><td>1</td><td>5</td><td class="d">4</td></tr>
+</table></div></div>
+<p><b>Same first note, one octave up.</b> The first deficit is again δ = 2, at (6, 0, 0):
+upstairs only f²; on the orbit a second class, spanned by the symmetric
+functions of the Waring summands ℓᵢ³ (with f² = p₂ + 2e₂, the pair {p₂, e₂} is
+2-dimensional — matching the computed orbit value exactly). In both
+worlds the first thing the boundary destroys is the decomposition that
+defines the point. Total deficit grows fast — 1, 5, 16, 39, 85, 163, 292 for δ = 2
+… 8 — the deficit module is large, as befits a module supported on a divisor;
+yet its conductor stays ≤ 2 throughout the computed range.</p>
+<div class="box">
+<p><b>Why this quantifies the folklore.</b> Power-sum worlds are where GCT separations
+have actually been implemented (Ikenmeyer–Kandasamy's semi-explicit control of
+orbit vs closure). The tables above say <i>how</i> tractable: the abelian data here is not
+just complete but shallowly inaccessible — pole order ≤ 2 in discriminant units. The
+det/perm worlds are precisely the ones where nobody knows the analogue of any
+column of this table. (The Week 1 log below refines this: in minimal-equation units
+the conductor in fact grows linearly, and the ≤ 2 was its ⌈·/3⌉ compression.)</p>
+</div>
+<h2><span class="no">§W1</span>Week 1, session 1 — the geometry under the tables</h2>
+<p><b>The ramification indices are real, and they are 3 and 2.</b>
+<span class="tag">theorem, machine-proved</span> For binomial-normalized binary quartics, disc =
+256(I³ − 27J²) exactly, and σ₂ = {J = 0}; hence disc restricted to σ₂ equals
+256·I³. The boundary divisor of the Fermat-quartic world is cut not by the
+discriminant but by the classical <i>quadratic</i> invariant I (degree 2, weight
+det⁴), along which the discriminant ramifies with index e₀ = 3 — confirmed
+on an exact transversal family (disc(f<sub>s</sub>) = −4s³, I(f<sub>s</sub>) = −s/4) and on a tangent
+family (order 6 = contact 2 × index 3). The boundary point x³y is a <i>smooth</i>
+point of σ₂; its normal line is the xy³-direction, of stabilizer-torus weight of
+size 8. In the Fermat-cubic world the classical S, T-relation for the ternary
+discriminant makes the minimal boundary equation the canonical degree-6
+semiinvariant T with index e₀ = 2 <span class="tag">classical, to re-verify</span> — and all 254 T-ray
+profiles stabilize at the orbit values, which doubles as confirmation that {T ≠
+0} on σ₃ is exactly the orbit. <span class="tag">computed</span></p>
+<p><b>Conductors, refined to minimal units, grow linearly — at the unbalanced
+weights.</b> Re-run along the I-ray (World A, δ ≤ 20, 190 deficit weights) and the
+T-ray (World B, δ ≤ 10, 254 weights): max conductor at degree δ equals ⌊δ/2⌋
+<i>in both worlds</i>, exactly, at every computed δ. <span class="tag">empirical in range</span> Per weight,
+World A obeys c<sub>I</sub>(a,b) ≤ ⌊(a−b)/8⌋ with zero violations, tight on the most
+unbalanced 54 weights. <span class="tag">lemma modulo general-class pole formula</span> The
+mechanism: the exact Waring pair of the transversal family is c = ±1/(8√s), ℓ
+= x ± √s·y, and every symmetrized Sylvester class tested has pole order
+⌊(a−b)/8⌋ in I-units, independent of the split (12 near-balanced test cases, on
+which this coincides with the exact law found in session 2 below; the
+Sylvester model's multiplicity count matches the group average on the
+entire grid, polar sector included — kill criterion passed). <span class="tag">computed</span>
+Reading: <i>the accessible, conductor-zero sector of the abelian data is the balanced-weight
+sector; inaccessibility is concentrated at unbalanced weights and deepens
+linearly.</i> Q3 sharpens accordingly: in det-worlds, does the balanced sector
+stay accessible?</p>
+<p><b>The closed form is now a theorem-in-waiting.</b> Total deficit = ⌊δ²/4⌋ verified
+for all δ ≤ 100; both sides are quasi-polynomials of degree ≤ 2 and period
+dividing 24 (Ehrhart on the closure side, root-of-unity multisection on the
+orbit side), so the 101-point verification exceeds what a full proof requires
+modulo those standard lemmas. <span class="tag">theorem modulo write-up</span> (Closed in session 2 below.)</p>
+
+<h2><span class="no">§W1</span>Week 1, session 2 — the conductor formula</h2>
+<p><b>The exact pole law.</b> The systematic grid (all 77 symmetrized Sylvester
+classes with p+q ≤ 24, b ≤ 6) settles the law: the class e<sub>p,q,b</sub> has pole order
+exactly ⌊(p+q−2b)/8⌋ = ⌊(a−3b)/8⌋ along the boundary, in I-units — zero
+mismatches, against 43 mismatches for the session-1 candidate ⌊(a−b)/8⌋,
+with the two coinciding on session 1's near-balanced test cases. The parity
+mechanism forces the cancellation order; classes with b large have <i>negative</i>
+pole, i.e. they vanish on the boundary — the wedge factor carries zeros.<br>
+<span class="tag">lemma — 77/77 machine-verified; general leading-coefficient nonvanishing pending</span></p>
+<p><b>The conductor formula.</b> Re-testing the δ ≤ 20 table against the exact law:
+c<sub>I</sub>(a, b) ≤ ⌊(a−3b)/8⌋ with zero violations — and <i>tight on all 190 of 190 deficit
+weights</i>. On the computed range the conductor is not bounded by the law; it
+<i>is</i> the law: c<sub>I</sub> = ⌊(a−3b)/8⌋. In intrinsic terms: a − 3b is the maximal weight of
+S<sub>(a,b)</sub> under the boundary orbit's stabilizer torus diag(t, t⁻³), and 8 is the
+normal weight — so the formula reads <i>conductor = ⌊(maximal boundary-torus
+weight)/(normal weight)⌋</i>: pure boundary data, the Ogg–Shafarevich shape Q1
+asked for, realized in World A.<br>
+<span class="tag">exact on range; ≤ direction lemma-level, = direction empirical</span> Its immediate
+corollaries are everything session 1 observed: support law (positivity ⇔ b ≤
+δ−2, now verified in both directions for all δ ≤ 60), max conductor ⌊δ/2⌋ at b
+= 0, and linear growth toward unbalanced weights. Scheduled test: World B's
+boundary orbit (x²y + z³, one-dimensional stabilizer torus) — compute its
+weights and normal weight, predict the T-conductors, compare with the 254-row table.</p>
+<p><b>Session 3 postscript is below; two tags upgraded to theorems here first.</b> (1)
+disc|<sub>σ₃</sub> = c·T² with c ≠ 0: the space of degree-12 invariants on the closure is 1-dimensional
+(S³, T² upstairs; one survivor — our own δ = 12 computation),
+disc restricts to it and is nonzero on the orbit; no classical formula needed.
+<span class="tag">theorem</span> (2) Total deficit = ⌊δ²/4⌋ for <i>all</i> δ: the exact recurrence (1 − 2t + 2t³ −
+t⁴)·D(t) = t² holds through t²⁰⁰ in integer arithmetic, and the a-priori
+denominator degree of D(t) is under 100 (μ₈-poles ≤ 24 on the orbit side,
+Ehrhart ≤ 48 on the closure side), so 200-term agreement forces the identity
+of rational functions. <span class="tag">theorem</span></p>
+
+<h2><span class="no">§W1</span>Week 1, session 3 — World A closed; the formula survives its
+falsification test</h2>
+<p><b>The pole lemma closes by hand.</b> The symmetrized class's u<sup>k</sup>-coefficient is
+A<sub>k</sub>(p,q)·[ι<sup>q</sup> + (−1)<sup>b+k</sup>ι<sup>p</sup>] with A<sub>k</sub> = [u<sup>k</sup>](1+u)<sup>p</sup>(1−u)<sup>q</sup>; the phase survives exactly
+when k ≡ b + (p−q)/4 (mod 2), which coincides with the integrality parity, so
+only k₀ ∈ {0, 1} is ever needed — and A₀ = 1 always, A₁ = p − q ≠ 0 except for
+the identically-zero class. No Krawtchouk subtleties. <span class="tag">theorem</span></p>
+<p><b>World A is solved.</b> The grand identity — deficit(λ, δ) = conductor = ⌊(a−3b)/8⌋⁺,
+equivalently mult<sub>λ</sub> ℂ[σ₂]<sub>δ</sub> = N(λ) − ⌊(a−3b)/8⌋⁺ with N the congruence-class
+count — holds on <i>every</i> weight for all δ ≤ 60. Support law, ⌊δ/2⌋ max, and
+⌊δ²/4⌋ are two-line corollaries (Σ<sub>b≤δ−2</sub>⌊(δ−b)/2⌋ = ⌊δ²/4⌋). Deficit = conductor
+because GL₂-torus weight spaces are one-dimensional: all leading terms at a
+pole level are proportional to a single monomial, so the pole filtration
+climbs by exactly one — the staircase was multiplicity-freeness in disguise.
+<span class="tag">theorem modulo write-up</span></p>
+<p><b>Aronhold from scratch, and the twin geometry.</b> The degree-4 invariant S
+was constructed by exact linear algebra (unique weight-(4,4,4) solution
+killed by both raising operators, 25 terms; equivariance S(g·f) = det(g)⁴S(f)
+verified symbolically; S(xyz) = 24 ≠ 0 — proving the triangle exclusion of §1
+— and S(x²y+z³) = 0). The cusp point x²y + z³ is a <i>smooth</i> point of σ₃; its
+stabilizer torus is diag(t, t⁻², 1) (times μ₃), and the normal weight is −6 — the
+exact structural twin of World A's smooth boundary point with normal
+weight −8. <span class="tag">machine-proved</span></p>
+<p><b>The falsification test: passed, with a lesson.</b> The intrinsic formula,
+conductor = ⌊|μ<sub>max</sub>(λ)|/|w<sub>N</sub>|⌋ with μ<sub>max</sub> the top boundary-torus weight (= λ₁ −
+2λ₃ in World B) — a parameter-free prediction once the geometry fixed w<sub>N</sub> =
+6 — matches the computed T-conductor on <b>254 of 254</b> deficit-positive
+weights, δ ≤ 10. The only 3 exceptions in the full 381-row table ((10,1,1),
+(13,1,1), (11,11,2)) all have <i>empty support</i>: depth is predicted but no missing
+functions exist to carry it — in B, unlike A, "formula ≥ 1" does not imply
+deficit &gt; 0. <span class="tag">exact on range, both worlds; proof queued</span> The <i>deficit</i> itself does not
+transport: B's profiles climb in fat steps (increments up to 10; e.g. (18,6,0) at
+δ = 8: increments 10, 7, 1), because GL₃-torus weight spaces have
+multiplicities — and an exhaustive search confirms no linear-floor formula
+fits B's deficit at all. B's deficit is a lattice <i>count</i>, not a floor: the full Ogg–Shafarevich
+sum (level-j increment = twisted section count on the cusp
+orbit) is session 4's object, with the increments data already in hand.
+<span class="tag">computed; mechanism identified</span></p>
+
+<h2><span class="no">§W1</span>Week 1, session 4 — the recursion, and the two towers</h2>
+<p><b>The Ogg–Shafarevich structure recurses down the stratification.</b> The level-j
+increment of the T-ray is, by the exact sequence for multiplication by T, the
+multiplicity of the shifted weight in ℂ[σ₃]/(T) — the coordinate ring of the
+<i>cusp cone itself</i>. So each step of the ladder is the border's own function count,
+and that count is short of its own Peter–Weyl promise by the border's own
+border. The content test: r(λ, δ) ≤ m(λ), where m counts GT-vectors of S<sub>λ</sub>
+with w₁ = 2w₂ (invariants of the cusp stabilizer 𝔾ₘ × μ₃; the μ₃ condition
+turns out to be automatic) — zero violations on all 616 weights, δ ≤ 12, which
+doubles as evidence that (T) is prime in ℂ[σ₃]. <span class="tag">computed; primality evidence</span>
+(The "O–S sum reproduces the deficit" check in this session's script is a
+telescoping consistency test of the pipeline, not independent evidence; the
+content lives in r ≤ m and the tables.)</p>
+<p><b>World A's tower closes completely.</b> Same test one world over, δ ≤ 30, 961
+weights: zero violations, and the second-level deficit m<sub>A</sub> − r<sub>A</sub> is 0 <i>except
+exactly at (a, b) = (4δ−1, 1)</i> — one missing dimension per degree, the
+indicator [b = 1], all thirty of thirty rows. With the Veronese cone's classical
+ring as the third and final level, the entire stratified tower of World A is in
+closed form: <i>⌊(a−3b)/8⌋⁺ → [b = 1] → 0</i>. A complete stratified conductor
+theory for one orbit closure — the miniature realization of the original
+thread-3 dream. <span class="tag">verified δ ≤ 30; [b=1]-law proof via the Veronese level pending</span></p>
+<p><b>Tame tower, wild tower.</b> World B's second level is heavy and fat: d₂ &gt; 0 on
+507 of 616 weights (max 56), it absorbs 1128 of the naive 3001 eigencount
+mass across the 254 level-0 rows — a 60% overcount if ignored — and an
+exhaustive search finds no floor law for it, in values or support: level 2 is
+again a lattice count, governed by the next stratum (conic + tangent line, x²y
++ y²z, whose stabilizer contains the torus diag(s⁻¹, s², s⁻⁴)) (completed in
+session 5 below). The two worlds now differ by a measured quantity: the
+decay rate of the O–S tower — A terminates in one step with corrections ≤ 1;
+B's levels stay fat as far as computed. The det-world question inherits this
+precision: not just "does a conductor formula exist" but <i>how deep and how fat
+is the tower</i>. <span class="tag">computed</span></p>
+
+<h2><span class="no">§W1</span>Week 1, session 5 — the [b = 1] law explained, T built, and wild inertia arrives</h2>
+<p><b>The [b = 1] law is the conductor of a normalization.</b> The tangent-developable
+cone is the image of (ℓ, m) ↦ ℓ³m, so its normalization has
+coordinate ring ⊕<sub>δ</sub> Sym<sup>3δ</sup> ⊗ Sym<sup>δ</sup> — by Clebsch–Gordan, exactly one copy
+of each (4δ−b, b) for b ≤ δ, which is m<sub>A</sub> on the nose. The second-level deficit
+is therefore the <i>non-normality</i> of the tangent developable — its transverse
+slice is the cusp k[t², t³] ⊂ k[t], missing exactly t — and the law says the
+global gap is one copy of S<sub>(4δ−1, 1)</sub> per degree. Verified independently: the
+subalgebra generated by the degree-1 symmetric part has dimension (δ+1)
+(3δ+1) − (4δ−1) at δ = 1, 2, 3, 4 — exact ranks 5, 14, 29, 50, each missing
+precisely the b = 1 summand. Primality of (Ī), needed to read the tables as
+ℂ[τ̂]: ℂ[σ₂] is Cohen–Macaulay (Hankel), and deg(I)·deg(σ₂) = 2·3 = 6 = deg
+τ(v₄), so the divisor is generically reduced and unmixed — prime.
+<span class="tag">theorem modulo write-up</span></p>
+<p><b>T exists on paper now.</b> The degree-6 invariant was constructed by the same
+from-scratch linear algebra as S: unique (nullspace dimension 1), 103 terms
+— the classical count — with equivariance T(g·f) = det(g)⁶T(f) verified
+exactly. Anchors: T(Fermat) = −5832 = −18³; T = 0 on the entire degenerate
+chain (cusp, conic+tangent, x²y, x³); and the triangle has (S, T) = (24, 1) —
+doubly outside σ₃. <span class="tag">machine-proved</span></p>
+<p><b>The tower's skeleton, and its first wild point.</b> Orbit dimensions down World
+B's stratification: Fermat 9 → cusp 8 → conic+tangent 7 → double-line+line 5
+→ triple line 3. Note the jump from 7 to 5: the conic+tangent stratum's own
+boundary has codimension 2, so level 3 is a normalization story, not a
+divisorial one — the tower's levels alternate in character, exactly as in World
+A. And the conic+tangent stabilizer, computed in full, is 2-dimensional and
+<i>non-reductive</i>: a torus diag(1, −2, 4)-direction plus an honest nilpotent
+generator (cube zero). The first wild inertia of the programme appears at
+level 2 of World B — the original thread-3 intuition ("boundary strata as wild
+ramification"), now a computed fact with a matrix attached. <span class="tag">machine-proved</span></p>
+<div class="thm">
+<p><b>Week 1 — closing summary.</b> Eight results, tagged: (1) disc|<sub>σ₂</sub> = 256·I³ —
+boundary cut by I, ramification index 3 <span class="tag">theorem</span>; (2) disc|<sub>σ₃</sub> = c·T², with
+T now explicit <span class="tag">theorem</span>; (3) the pole law ⌊(p+q−2b)/8⌋ <span class="tag">theorem</span>; (4) World
+A solved: deficit = conductor = ⌊(a−3b)/8⌋⁺, closure multiplicities N −
+⌊(a−3b)/8⌋⁺ <span class="tag">theorem modulo write-up; verified δ ≤ 60</span>; (5) total deficit ⌊δ²/4⌋ for
+all δ <span class="tag">theorem</span>; (6) the conductor transport c = ⌊μ<sub>max</sub>/w<sub>N</sub>⌋, exact in both
+worlds on every deficit-positive weight <span class="tag">exact on range; proof queued</span>; (7)
+the O–S recursion down the stratification, with World A's tower in closed
+form (⌊(a−3b)/8⌋⁺ → [b=1] → 0) and World B's measured as deep and fat
+<span class="tag">mixed; see sessions 4–5</span>; (8) the strata skeleton 9→8→7→5→3 with wild
+inertia at level 2 <span class="tag">machine-proved</span>. Standing obligation before anything
+ships: the week-2 prior-art strike — tangent-developable non-normality
+and binary-quartic covariant counts are plausibly classical; the
+conductor-tower packaging is the candidate contribution. (Executed below.)</p>
+</div>
+
+<h2><span class="no">§W2</span>Week 2, day 1 — the prior-art strike</h2>
+<p>One day, web-scale only (no MathSciNet), verdicts tagged with that
+limitation. <b>Classical, as suspected:</b> the discriminant relations behind results
+1–2 are textbook binary-quartic and Aronhold/Salmon ternary-cubic
+invariant theory — our contributions there reduce to the ramification-index
+<i>framing</i> and an independent multiplicity-1 proof of the T²-relation; the
+plane-cubic orbit stratification with its stabilizers (result 8's substrate) is
+standard, with Kraft's <i>Geometrische Methoden</i> the canonical reference — the
+wild point was waiting in known tables for anyone who asked the conductor
+question. <b>Known territory, statement not found:</b> the tangent developable's
+non-normality is routine background in the Green's-conjecture literature
+(Aprodu–Farkas–Papadima–Raicu–Weyman and successors work with the
+normalization as a matter of course; Raicu's notes on the tangential variety
+of a rational normal curve exist but resisted fetching), so the [b = 1] gap-module
+is at best a small corollary awaiting a sentence — <i>derivable-from-known,
+not found stated</i>. <b>Not found in this pass:</b> the conductor transport
+formula ⌊μ<sub>max</sub>/w<sub>N</sub>⌋, the World-A closed forms as packaged (deficit =
+conductor = ⌊(a−3b)/8⌋⁺), the pole law, and the recursive tower framing itself.
+Hüttenhain's thesis — the week-3 det₃ anchor — describes boundary
+<i>components</i> and stabilizers but, per its own summary, no multiplicities, pole
+filtrations, or quantitative stratification data: the conductor question
+appears genuinely unasked there. <b>Two read-in-full obligations before
+anything ships:</b> Ikenmeyer–Kandasamy's technical sections (their semi-explicit
+tableau description of power-sum closure rings covers our worlds'
+family; overlap with the closed forms must be settled by reading, not
+abstract-fetching), and the AFPRW paper itself for the tangential-variety
+ring. <span class="tag">verdicts provisional to those two reads</span></p>
+
+<h2><span class="no">§W2</span>Week 2, session 2 — the reads settled, and the mechanism crosses over</h2>
+<p><b>IK read in full: the ray is theirs, the conductor is ours.</b> Their Lemma 5.2
+proves ray-stabilization explicitly: orbit multiplicities equal closure
+multiplicities after padding λ by a rectangular block m×eD, with e given by
+explicit formulas (D even: e = d for d ≤ m, else m + ⌊(d−m)/(D−2)⌋; D odd,
+under a binomial constraint: twice that pattern). Three facts sharpen the
+division of labor: their derivation is purely algebraic — no poles,
+boundaries, or discriminants; their e is uniform in λ and they make no
+optimality claim; and their stated regime is m ≥ D, which contains the
+Fermat world (m = D = 3) but not World A (m = 2 &lt; D = 4). Quantitatively, in
+the Fermat world at δ = 10 their guarantee is e = 12, i.e. 6 T-steps, against the
+true per-weight maximum of 5 — and the balanced sector, which their
+uniform bound treats like everything else, actually needs 0 or 1. So the
+phenomenon is theirs; the exact minimal per-weight value ⌊μ<sub>max</sub>/w<sub>N</sub>⌋, its
+boundary-geometric meaning, the deficit=conductor collapse in A, the pole
+law, and the tower are the residue. Their Prop. 4.1 (orbit multiplicities via
+<b>Z</b><sub>D</sub>≀𝔖<sub>m</sub>) is our m-count in LR/plethysm form, as expected; their closure
+description is a tableau spanning set (Thm 11.1), not a closed multiplicity
+formula. <span class="tag">settled by reading</span></p>
+<p><b>AFPRW read: the substrate is theirs, the sentence is unwritten.</b> They
+resolve the tangent developable by the projectivized jet bundle — the
+bundle-theoretic form of our (ℓ, m) ↦ ℓ³m normalization — and prove the
+coordinate ring Gorenstein of regularity 3; but no degree-by-degree SL₂-decomposition
+and no gap-module statement appears. The [b = 1] verdict
+settles at: <i>derivable from their framework, not stated</i>. <span class="tag">settled by reading</span></p>
+<p><b>The mechanism crosses to World B.</b> On the exact transversal line f<sub>s</sub> = x²y +
+s·y³ + z³ (velocity = the normal direction; S(f<sub>s</sub>) ≡ 0 exactly, so the line lies in
+σ₃): T(f<sub>s</sub>) = −864s — <i>ord<sub>s</sub> T = 1 on the nose</i>, upgrading ν<sub>∂</sub>(T) = 1 from argued to
+machine-exact. The three-cube Waring model on this family has binary part
+c = ±1/(6σ̃), ℓ = x ± σ̃y with σ̃² = 3s, third line z untouched; and on the (3δ, 0,
+0)-row every symmetrized class has pole ⌊(p₁+p₂)/6⌋ in T-units — the non-z
+mass over the normal weight — with maximum exactly ⌊δ/2⌋ = the conductor
+formula, at every δ tested. Same architecture as World A: normalization
+scalings make the poles, the normal weight sets the unit. Remaining for the
+full transport proof: the wedge/det bookkeeping for λ₂, λ₃ &gt; 0 and the phase-parity
+argument, now with a verified template.<br>
+<span class="tag">mechanism verified both worlds; proof in progress</span></p>
+
+<h2><span class="no">§W2</span>Week 2, session 3 — the wedge calculus closes the mechanism</h2>
+<p>The full FFT class model on the transversal family — single lines, pairwise
+wedges, determinant factors, μ₃-congruences on line-exponents, S₃-symmetrization
+with signed dets, poles read off by generic contraction —
+was run at five general weights with λ₂, λ₃ &gt; 0: (8,3,1), (10,2,0), (11,2,2),
+(12,3,0), (9,6,0). At every one, the maximum class pole equals the
+independently recomputed table conductor equals ⌊(λ₁−2λ₃)/6⌋ — five for
+five. With FFT giving spanning, the upper bound (conductor ≤ max class
+pole) is rigorous; the per-class pole formula and attainment are verified
+across the singles-, wedge-, and det-sectors. The transport theorem in World
+B now stands where World A's stood before its write-up: everything checked,
+the phase-parity argument to be written out with a template that has not
+failed once. <span class="tag">theorem modulo written phase argument</span></p>
+
+<h2><span class="no">§W2</span>Week 2, session 4 — the block-order lemma, the orphans explained,
+and the draft</h2>
+<p>The building blocks of the B-calculus have exact ρ-orders: colliding singles
+−1, the z-line 0, the <i>collision wedge</i> +1 (it vanishes at the boundary), mixed
+wedges −1, the determinant +1 — so the formula's numerator is a one-line
+linear program: max(a₁+a₂+q₁₃+q₂₃−q₁₂−r) = λ₁ − 2λ₃. A systematic sweep
+(all 82 valid weights with λ₁ ≤ 9, plus specials) matched conductor = formula
+everywhere except exactly the two orphan weights (10,1,1), (13,1,1) — where
+the contraction shadow still reports pole 1 but the deficit is 0: <i>the Young
+projection kills the top there</i>. The orphan phenomenon is thereby located
+precisely: the formula computes the shadow maximum, and empty support
+is projection-kill. With this, the working paper exists: <a href="https://claude.ai/code/artifact/f760534b-e2a3-4329-aafb-4d2cbc18204b">Conductors of Orbit
+Closures</a> — definitions, Theorem A with proofs, Theorem B with the block-order
+lemma and its status, the towers, attribution (IK 5.2 credited as the
+phenomenon's origin), and the general conjecture: c = ⌊μ<sub>max</sub>/w<sub>N</sub>⌋ whenever
+the boundary has a dense orbit with a smooth point and a one-dimensional
+stabilizer torus. <span class="tag">draft v1 published</span></p>
+
+<h2><span class="no">§W2</span>Week 2, session 5 — level 2 is a normalization, and the tower is self-similar</h2>
+<p><b>The cusp cone's normalization, identified.</b> No nonconstant semiinvariant
+lives on the cusp cone (every invariant is a polynomial in S and T, both dead
+there), so level 2 cannot be a ray story — and it isn't: the parametrization (ℓ₁,
+ℓ₂, ℓ₃) ↦ ℓ₁²ℓ₂ + ℓ₃³, with reparametrization group exactly H₀ = 𝔾ₘ × μ₃,
+gives a model ring ⊕<sub>u+v=δ</sub> Sym<sup>2u</sup> ⊗ Sym<sup>u</sup> ⊗ Sym<sup>3v</sup> whose multiplicities
+equal m<sub>H₀</sub>(λ) on all 154 weights tested (δ ≤ 7) — the Peter–Weyl-complete
+normalization candidate. The level-2 deficit d₂ is therefore a normalization
+gap, exactly parallel to World A's level 2. Independent validation: the
+pullback of Sym<sup>δ</sup>(W*) along the parametrization has full rank at δ ≤ 3 and
+rank 714 = 715 − 1 at δ = 4 — the kernel is precisely Aronhold's S, verifying
+both the invariant and the parametrization in one stroke.
+<span class="tag">machine-proved on range</span></p>
+<p><b>The tower repeats its first move.</b> At the conic+tangent point w₁, grad T
+vanishes identically (T ∈ 𝔪²) while grad S has a single nonzero component:
+the cusp cone is <i>singular along its own boundary divisor</i>, the Zariski tangent
+there is 9-dimensional, and the normal data of W₂ carries two τ-weights, {6,
+9} — a (2, 3)-cusp scaled by 3. World A's level 2 was the k[t², t³] cusp; World
+B's level 2 presents the same transverse shape, one scale up: the tower is
+self-similar. <span class="tag">computed; local-model identification empirical</span></p>
+<p><b>First unipotent tables, and falsifications.</b> The traceless-tensor model of S<sub>λ</sub>
+with the exact ν (nilpotent) and τ actions produced the programme's first u-profiles
+— dimensions of ν-killed vectors by τ-weight — across the λ₁ ≤ 6
+corner. Simple candidate laws for d₂ (counts of negative-weight entries, of
+≤0 entries, of ≡3 (mod 6) entries, and linear-threshold variants) are each
+falsified by explicit corner weights ((3,2,1) and (5,1,0) kill the leading pair).
+The principled route — the exact transverse ⟨6,9⟩-local model with cone-graded
+twist bookkeeping — is queued with the data in hand.
+<span class="tag">computed; law open</span></p>
+
+<h2><span class="no">§W2</span>Week 2, session 6 — the level-2 law resists, for a structural reason</h2>
+<p><b>The scan-negative.</b> An automated sweep of roughly ten thousand candidate
+laws — d₂ as a sum of unipotent eigencounts below a linear threshold in λ,
+with congruence filters — found <i>zero</i> exact fits on the corner. Together with
+the earlier linear-floor negative, the level-2 deficit provably-in-range resists
+every naive functional of the eigencount profiles. <span class="tag">systematic negative</span></p>
+<p><b>The structural reason, and a correction.</b> The gap module G = M/ℂ[∂] has
+new-generator dimensions 18, 63, 135 in degrees 1, 2, 3 — still climbing. A
+finite module over ℂ[∂] would stabilize; this one shows no sign of it, and the
+geometry explains why: the parametrization (ℓ₁,ℓ₂,ℓ₃) ↦ ℓ₁²ℓ₂ + ℓ₃³ has
+positive-dimensional fibers over the deep strata (over x³, the entire ℓ₂ = 0
+locus), so φ is <i>not finite</i> — and M, whose multiplicities exactly match the
+orbit's Peter–Weyl count, is the <i>orbit-function model</i>, not the normalization.
+Correction to session 5's phrasing: the true normalization sits strictly
+between ℂ[∂] and M; the gap G mixes the conductor along W₂ with
+genuinely non-integral orbit sections sourced from deeper strata.
+Consequently the level-2 deficit cannot close in a stratum-local formula:
+<i>World B's tower must be climbed from the bottom</i>, and the honest B-side
+deliverables stand as the conductor theorem (level 1, closed), the recursion
+structure, and the data. World A closed level-by-level only because every
+parametrization in its tower is finite — one more precise sense in which A is
+tame and B is wild. <span class="tag">computed; correction logged</span></p>
+<p><b>Consequence for the queue.</b> The toy towers have given what they will give
+at reasonable cost. Next session opens the det₃ reconnaissance — week 3's
+lane β — carrying the one question the nursery has fully sharpened: the
+boundary components are known (Hüttenhain); does any carry a
+semiinvariant equation, and what is the first conductor of a determinant.
+The draft's tower section will be revised to today's corrected picture in its
+next pass.</p>
+<h2><span class="no">§W3</span>Week 3, session 1 — det₃: the stage, the parity law, and the first
+conductor datum</h2>
+<p><b>The stage, fetched and verified.</b> Hüttenhain–Lairez (arXiv:1512.02437): the
+boundary of the det₃ orbit closure has <i>exactly two</i> irreducible components,
+both divisors — P₁ = det of a traceless matrix, and P₂ = the universal quadric
+x₄x₁² + x₅x₂² + x₆x₃² + x₇x₁x₂ + x₈x₂x₃ + x₉x₁x₃. Machine-verified cone
+dimensions: det₃ 65, P₁ 64, P₂ 64 — all matching. A conductor theory of det₃
+needs two boundary equations, or one vanishing on both. Prior-art alert
+logged: Bürgisser–Ikenmeyer's <i>Fundamental invariants of orbit closures</i>
+(arXiv:1511.02927) is exactly the census framework — the SL-invariant
+relating orbit ring to closure ring — and is next session's read-in-full
+obligation before any census claim ships. <span class="tag">fetched + machine-verified</span></p>
+<p><b>The parity law.</b> The transpose lies in the det₃-stabilizer and has det₉ = −1
+(three 2-cycles among nine entries), so semiinvariants of <i>odd</i> det-weight
+vanish identically on the orbit closure; the orbit carries exactly a one-dimensional
+space at each <i>even</i> weight. Cross-validated from the other side:
+the Kronecker table gives g((1⁹), (3³), (3³)) = 1, and parity forces that single
+copy into the anti-symmetric slot — the symmetric refinement kills it, as it
+must. <span class="tag">elementary; likely known — BI cross-check pending</span></p>
+<p><b>The first conductor datum of a determinant.</b> Exact plethysm (power sums +
+Murnaghan–Nakayama): the space of SL₉-invariants of cubic forms in nine
+variables has dimension <i>zero</i> in degree 3 and <i>zero</i> in degree 6. So the orbit's
+weight-det² semiinvariant does not extend to the closure: <b>def((2⁹), δ = 6) = 1
+and the conductor of <span class="ol">Ω</span><sub>det₃</sub> at (2⁹) is ≥ 1</b> — the deficit of a determinant is
+nonzero, witnessed at the very first eligible weight, by pure plethysm. The
+"discriminant of determinantal complexity" lives at det-weight ≥ 4 (degree ≥
+12) if it exists at all; the δ = 12 computation is queued. The orbit-side
+Kronecker skeleton is started (δ ≤ 3: 1, 4, and 17 nonzero weights,
+symmetric refinement pending). <span class="tag">computed, exact; first det-conductor bound</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 2 — the fundamental invariant of det₃ has degree ≥ 18</h2>
+<p><b>The BI read settles Q2's existence — and hands us the ray.</b> Bürgisser–Ikenmeyer's
+Proposition 3.9: the zero set of the fundamental invariant Φ in
+the orbit closure <i>equals</i> the boundary. So the determinant worlds do carry a
+boundary semiinvariant — the det-Δ exists, by their theorem — and the
+conductor machinery has its ray once Φ's degree is known. For det₃ they
+prove e(det₃) ≥ 9, settle det₄ by computer (e = 16), and leave det₃'s degree
+open, conditional on an "admissible tables" combinatorial criterion; their
+Theorem 2.5 computes stabilizer periods (n mod 4), which is where the
+parity law lives in their language — re-attributed accordingly.<br>
+<span class="tag">read in full; attribution updated</span></p>
+<p><b>The census through degree 12: all zeros.</b> Exact plethysm (conjugate-partition
+Murnaghan–Nakayama; the δ = 3, 6 values reproduce session 1's
+independent route): the ambient SL₉-invariants of nine-variable cubics have
+dimension 0 in degrees 3, 6, 9, <i>and 12</i>. With parity killing weight 5, the
+conclusion: <b>e(det₃) ≥ 18 — doubling the published bound</b>. The deficit data
+extends with it: def((k⁹), 3k) = 1 for k = 2 and k = 4 — the determinant's
+abelian gap is nonzero at both of its first eligible weights, and the
+"discriminant of determinantal complexity" lives at degree ≥ 18
+(superseding session 1's ≥ 12). <span class="tag">computed, exact; new bound — BI-methods caveat logged</span></p>
+<p><b>The honest orbit skeleton, and wild inertia on both components.</b> The
+symmetric-Kronecker refinement is computed through δ = 3: the transpose
+visibly kills (3,1,1,1) at δ = 2 and (3,3,3), (1⁹) at δ = 3, with the parity anchor
+exact (overlap with BLMW's tables to be checked before shipping). And both
+boundary-component stabilizers — dimension 17 each, machine-computed
+— have trace-form rank 9 of 17: <i>non-reductive on both components</i>. The det₃
+tower is wild from level 1 on both of its branches, exactly as the nursery's
+tame/wild dichotomy predicted for determinant worlds.
+<span class="tag">computed; BLMW cross-check pending</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 3 — one invariant, one bit</h2>
+<p><b>Attribution corrected, and a false shortcut avoided.</b> arXiv:1109.5996 is
+Kumar's paper (not BLMW as previously written): no explicit tables — so our
+skeleton tables have no overlap there — and his occurrence machinery
+(Thm 6.1, Cor 6.2, conditional on the column-Latin-square Conjecture 4.3)
+applies to <i>even</i> m only. A tempting route to "e(det₃) = 18 exactly" via a brute-force
+m = 3 Latin-square check died on the precise hypotheses — fetched
+before claimed, per the rules. <span class="tag">corrected; verified against the source</span></p>
+<p><b>The degree-18 census: dimension one.</b> Exact plethysm over 44,237 classes
+of S₅₄: the space of degree-18 SL₉-invariants of nine-variable cubics is <i>one-dimensional</i>
+— the first nonzero ambient invariant space in the entire census
+(0, 0, 0, 0 at degrees 3, 6, 9, 12, then 1 at 18). Consequences: there is a unique
+candidate Φ₁₈ for the fundamental invariant of det₃, and the question of its
+degree — open since Bürgisser–Ikenmeyer — is now literally one bit: e(det₃)
+= 18 ⇔ Φ₁₈(det₃) ≠ 0, else e ≥ 24. If the bit is 1, then by BI's Proposition 3.9
+the zero set of Φ₁₈ in the orbit closure <i>is</i> the boundary — the discriminant of
+determinantal complexity for det₃, pinned to a unique explicit object. The
+evaluation reduces to a signed combinatorial count (an admissible-tables
+criterion in the style of BI's det₄ computation), which is the next session's
+single target. <span class="tag">computed, exact; the one-bit reduction</span></p>
+<p><b>P₁ conductor ingredients in place.</b> The trace-restoring velocity x₉(x₁x₅ −
+x₂x₄) is transversal to the P₁-component (rank 64 → 65, machine-exact), the
+x₉-scaling torus in stab(P₁) gives it weight 1, and the formula's P₁-contribution
+reads ⌊max x₉-degree of λ⌋ — e.g. 2 at the weight (2⁹).
+Prediction logged, untested until the Φ₁₈-ray exists.
+<span class="tag">computed; prediction untested</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 4 — two vanishing laws, one forced pattern, seven
+billion nodes</h2>
+<p><b>The pattern calculus has laws of its own.</b> Every ε-contraction pattern for
+Φ₁₈ obeys two vanishing theorems, both found the hard way (a first
+transfer-matrix implementation came back identically zero) and then
+proved: (i) any pattern sending two legs of one cubic copy into the same ε₉
+dies — the ε antisymmetrizes a pair of slots that the cubic's second
+derivative makes symmetric; (ii) any two copies carrying the same ε-triple
+cancel each other — swapping them moves three ε-slot pairs, sign (−1)³.
+Together these force the <i>unique</i> admissible shape: the 18 copies must carry
+18 <i>distinct</i> triples from the C(6,3) = 20, and the two omitted triples must be
+complementary — a pattern rigid up to relabeling, and almost surely the
+det₃-instance of Bürgisser–Ikenmeyer's construction. <span class="tag">proved</span></p>
+<p><b>The bit resisted the budget.</b> The forced pattern is an expander — no small
+dynamic-programming frontier exists — so the value is a signed exact-cover
+count. A compiled backtracking run reached 7 × 10⁹ nodes without
+exhausting the tree. Designed for next session: the two-layer factorization —
+first a row-routing layer (each copy assigns its three rows to its three ε's;
+every (ε, row)-cell filled exactly thrice), then a column layer where the det-monomial
+permutations must make each cell's three columns distinct, with
+the ε-parities factoring as row-sort times per-row column-sorts. Branching
+drops from 36 to 6 per copy. The bit — e(det₃) = 18 versus ≥ 24 — stands one
+good algorithm away. <span class="tag">computed to 7e9 nodes; algorithm designed</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 5 — the evaluator is proven; the tree is measured</h2>
+<p><b>Signs, validated end-to-end.</b> The pattern evaluator now carries an order-independent
+parity scheme (variable-inversions <i>plus</i> depositor-index
+inversions per ε, so the sign is canonical whatever the search order) — and it
+passes the decisive baby test: on quadrics in four variables, the analogous
+pattern returns 24 at det₂ (the nondegenerate quadric) and exactly 0 at the
+rank-two degenerate one — precisely the discriminant's behavior, tree sizes
+65 and 5. Whatever number the det₃ count eventually produces, the
+machinery producing it is now trustworthy. <span class="tag">validated</span></p>
+<p><b>The tree, measured.</b> With a static early-ε-completion order the compiled
+search runs at ~10⁷ nodes/second, and the first of 36 resumable chunks
+alone exceeds 4 × 10⁹ nodes: the full signed count is an ≈10¹¹-node object —
+several hours of raw compute, feasible as a grind across sessions with the
+chunk file, but deserving one more mathematical lever first: the symmetry
+quotient. The stabilizer of det₃ (row/column relabelings and transpose) acts
+on configurations; running one representative per orbit of the root options
+with orbit weights should cut the work by up to two orders of magnitude —
+with the usual care that any orbit carrying a sign-reversing self-map
+contributes zero. That derivation is next session's opening move; the grind
+is the fallback that cannot fail, only take. <span class="tag">measured; quotient designed</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 6 — the bit is 1: e(det₃) = 18, and the discriminant exists</h2>
+<p><b>×36, with a proof.</b> The stabilizer symmetry survives contact with the signs.
+The group G₀ = (S₃ × S₃) ⋊ τ of row relabelings, column relabelings and
+transpose (order 72) acts on configurations of the forced pattern; the
+delicate part is that each ε₉ tallies a sign that a variable relabeling could
+twist. It doesn't: the per-ε twist is sgn(g) once per ε — six ε's, so sgn(g)⁶ = +1
+— and the per-copy monomial sign ratios cancel across the 18 copies. So
+every G₀-orbit of completed assignments contributes |orbit| × (common
+weight): the sum may be computed on orbit representatives with counting
+weights, no sign-reversing self-maps anywhere. G₀ is transitive on the 36
+root options with stabilizer {id, τ}, giving VALUE = 36 × (subtree at one
+root); validated on the quadric world, where the quotiented run returns 6 × 4 = 24
+exactly. <span class="tag">proved + validated</span></p>
+<p><b>τ-canonicity, exactly ×2 more.</b> The leftover stabilizer element — transpose,
+which fixes the root and fixes every copy's ε-triple — is quotiented by
+canonical representatives inside the search: at the first copy whose option is
+not τ-symmetric, only the lexicographically-first of the pair is explored,
+with weight 2; fully τ-fixed branches keep weight 1. Sound because the
+deposited state at any still-symmetric node is τ-invariant, so validity and
+subtree weights transport. On copy 1 this kills 15 of 36 sub-chunks outright
+(their weight banked into partners); the quadric validation reproduces 24 on
+9 nodes instead of 17. <span class="tag">proved + validated</span></p>
+<p><b>The decision criterion, stated once.</b> By the two vanishing laws every
+contraction pattern except the forced one vanishes identically; by the first
+fundamental theorem the patterns span; by the census the invariant space
+has dimension exactly 1. Hence the forced pattern is a <i>nonzero</i> polynomial
+— no witness computation needed — and the bit is literally its value at det₃:
+nonzero ⇒ e(det₃) = 18 with Φ₁₈ the fundamental invariant; zero ⇒
+Φ₁₈(det₃) = 0 and (with the parity theorem killing degree 21) e(det₃) ≥ 24.
+<span class="tag">proved</span></p>
+<p><b>The tree was secretly a DAG.</b> Mid-grind, a second look at the parity scheme
+paid off: with copies processed in a fixed order, deposits arrive at every ε in
+increasing copy order, so the depositor-correction term is identically zero —
+and the future of the search depends on nothing but the six ε-masks. The
+10¹¹-path tree collapses onto its distinct states. A level-by-level DP (current
+level streamed from disk, next level in a spill-merging hash) visits each state
+once: peak layer 40.3 million states, whole computation <i>273 seconds</i> —
+against an estimated week of tree-walking. The backtracker's months
+became the hash table's minutes because the sign bookkeeping had been
+made order-independent one session earlier, for a different reason.
+<span class="tag">computed</span></p>
+<p><b>THE BIT IS 1.</b> In the evaluator's normalization, Φ₁₈(det₃) = −877 879 296 000
+= −2¹⁶ · 3⁷ · 5³ · 7² ≠ 0 (root subtree −24 385 536 000, times the 36 of the orbit
+quotient; the 7-smoothness is itself a comfort — structured contractions of
+±1 tensors do not produce random twelve-digit primes). Verified four
+independent ways: a reversed-copy-order DP — a completely different state
+trajectory through a different sequence of layers — reproduces the value
+exactly; the τ-paired sub-chunks return equal partials (−798 336 000 twice),
+confirming the transpose-symmetry theory numerically on det₃ itself; the
+engine reproduces the quadric anchors (24, 0, 6×4); and the layer counts
+match an independent Python implementation through level 8. Closed in
+session 7: the full 36-sub-chunk sweep — 29 valid partials, 7 root-collisions
+exactly as the collision analysis predicts, three transpose-pairs equal —
+sums to −24 385 536 000 <i>on the nose</i>; the independent backtracker was retired
+as redundant once the container's turn-suspension made it uneconomical.
+<span class="tag">computed + cross-verified; ledger closed</span></p>
+<p><b>Prior art, fetched before claiming.</b> Bürgisser–Ikenmeyer's <i>Fundamental
+invariants of orbit closures</i> (arXiv:1511.02927) is exactly this question: they
+prove e(det<sub>n</sub>) ≥ n², ask when equality holds, verify it at n = 2 (their P₂,₄(det₂)
+≠ 0 — the same object our quadric anchor evaluates to 24) and at n = 4 by
+computer, and leave n = 3 undetermined — the odd case, where the degree-n²
+candidate dies for sign reasons. Today's computation answers their
+question for n = 3, negatively and exactly: e(det₃) = 18 = 2n², the first
+determinant whose fundamental invariant escapes degree n². A pleasant
+upgrade fell out of the reconciliation: the two vanishing laws prove the
+census combinatorially — δ = 3, 6 die by law (i), δ = 9, 12, 15 by pigeonhole
+into law (ii) (C(w,3) = 1, 4, 10 triples cannot serve 9, 12, 15 copies without
+repeats) — so the plethysm computation is demoted from load-bearing to
+cross-check, and 18 is provably the first degree <i>any</i> cubic in nine variables
+admits. <span class="tag">theorem; prior-art logged</span></p>
+<p><b>What the bit buys.</b> Since restriction is surjective on invariants (Reynolds),
+the census forces ℂ[<span class="ol">Ω</span>]<sup>SL₉</sup> to vanish in degrees 3–15 and be at most one-dimensional
+in degree 18; the nonzero value shows Φ₁₈ restricts
+nontrivially. So <i>e(det₃) = 18 exactly</i>, with a unique fundamental invariant. On
+the open orbit Φ₁₈(g · det₃) = det(g)⁶ Φ₁₈(det₃) never vanishes, so V(Φ₁₈) ∩
+<span class="ol">Ω</span> is a G-stable hypersurface contained in the boundary — and by
+Hüttenhain–Lairez the boundary has exactly two irreducible divisorial
+components, so V(Φ₁₈) ∩ <span class="ol">Ω</span> is a nonempty union of them: <i>the discriminant of
+determinantal complexity exists</i>. Among cubics of border determinantal
+complexity 3, the degenerate ones are (at least one component of) the zero
+set of a single explicit degree-18 equation. Q2 of §5 is answered affirmatively
+for n = 3. Open next: does Φ₁₈ vanish on both components P₁ (traceless
+determinant) and P₂ (universal quadric), or is one of them cut by a
+semiinvariant of higher degree? The evaluator needs only the repeated-variable
+extension to answer by direct evaluation.
+<span class="tag">theorem, modulo the census computation</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 7 — the discriminant is exact, and the deficit table of
+det₃ opens</h2>
+<p><b>The evaluator grows up, and meets Aronhold.</b> The pattern evaluator now
+takes arbitrary integer cubics — repeated variables handled by multiset-arrangement
+weights — and its calibration is a small delight: on ternary
+cubics the degree-4 canonical pattern reproduces week 1's Aronhold S
+<i>exactly, ratio 1</i>, on every test (Fermat and the cusp giving 0, the triangle xyz
+giving 24, three dense random cubics matching to the integer). The general
+path also reproduces Φ₁₈(det₃) = −877 879 296 000 end to end. <span class="tag">calibrated</span></p>
+<p><b>Theorem: V(Φ₁₈) ∩ <span class="ol">Ω</span> = ∂<span class="ol">Ω</span>, exactly.</b> Both Hüttenhain–Lairez components
+are SL₉-unstable, by two different mechanisms: P₁ (traceless determinant)
+has only 8 essential variables — verified as the rank of its partials — so the 1-PS
+inflating the dead direction kills it; P₂ (universal quadric) is
+homogeneous of degree (2,1) for the 3+6 variable split, so the 1-PS with
+weights (−2, +1) drives it to zero. The whole boundary lies in the null cone,
+every positive-degree invariant vanishes on it, and with Φ₁₈ nonvanishing
+on the open orbit the discriminant statement becomes an equality: <i>inside the
+world of border-determinantal-complexity-3 cubics, degeneracy is precisely the
+vanishing of Φ₁₈</i>. The evaluator concurs: value 0 at both representatives, for
+two different structural reasons (a variable no ε can receive; an A-supply of
+36 against a capacity of 18). <span class="tag">theorem + verified</span></p>
+<p><b>Corollary: the determinant's arithmetic is a numerical semigroup.</b> A
+generic SL₉-orbit in <span class="ol">Ω</span> has codimension 1, so any two same-degree
+invariants on the closure have constant ratio: dim ℂ[<span class="ol">Ω</span>]<sup>SL₉</sup><sub>δ</sub> ≤ 1 for <i>every</i> δ.
+The invariant ring is the semigroup ring of S = {δ : some invariant survives},
+the GIT quotient <span class="ol">Ω</span> ∥ SL₉ is a monomial curve, 18ℕ ⊆ S — and whether 24,
+30, … join (degree-24 census and evaluation: future) decides its singularity.
+The most classical conductor in mathematics — of a numerical semigroup —
+is thus an invariant of det₃ waiting to be computed.
+<span class="tag">theorem; S beyond 18 open</span></p>
+<p><b>The first deficit of a determinant.</b> Orbit-side multiplicities via symmetric
+Kronecker coefficients (H reductive; transpose twist; parity anchors
+passing) against ambient plethysm (total-dimension identities exact
+through 7.5 × 10¹¹): the first deficit is <i>def((2,2,2), δ=2) = 1, exactly</i> — the
+stabilizer promises a quadratic class the ambient space cannot supply at all.
+Deficit weights then proliferate: 1, 6, 27, 83, 216, 463 weights at δ = 2…7, total
+proven deficit 1, 6, 31, 141, 618, 2488 — fat and wild, as the non-normality
+demanded, with the nursery's translation self-similarity (the (3δ−4, 2, 2)
+family leads at every degree). And through δ = 7 there is <i>not one</i> weight
+where the ambient exceeds the orbit: no occurrence-style equations of the
+det₃ cone in low degree — the classical difficulty of finding determinant
+equations, now measured. The first conductor question is posed exactly:
+along the Φ₁₈-ray from ((2,2,2), 2), the ambient supplies 3 copies at k = 1;
+whether the closure takes any (conductor 1) or none (conductor ≥ 2) is the
+next closure computation. <span class="tag">computed; identities verified</span></p>
+<p><b>Φ₁₈(perm₃) = 50 536 120 320 = 2²⁰·3⁴·5·7·17.</b> The permanent's value of the
+fundamental invariant, by the same quotiented DP (the ×36 argument
+transports verbatim — perm₃'s monomial signs are all +1). The ratio
+Φ₁₈(det₃)/Φ₁₈(perm₃) = −4725/272 = −3³5²7 / 2⁴17. And a free corollary with
+the equality theorem: Φ₁₈(perm₃) ≠ 0 puts perm₃ off the boundary, and the
+stabilizer dimensions (17 versus ~5) keep it off the open orbit — so perm₃ ∉
+<span class="ol">Ω</span>(det₃): an invariant-evaluation proof that border determinantal
+complexity of perm₃ exceeds 3. Weaker than the known quadratic bounds,
+but by a mechanism GCT has wanted operational: an explicit fundamental-invariant
+certificate touching a genuine perm-vs-det pair. <span class="tag">computed + remark</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 8 — the conductor resists, and reveals structure in
+resisting</h2>
+<p><b>The evaluator learns general shapes.</b> To test the k = 1 ray point (λ′ =
+(8,8,8,6⁶), δ = 20) the pattern DP was extended to arbitrary column shapes —
+mixed antisymmetrizer widths, per-option legs, explicit option lists — and
+calibrated the honest way: on the shape (2,2,1,1) it reproduces the classical
+S₍₄,₂₎ covariant of ternary cubics with one constant ratio (−2/3) across all
+tests, and the short-column factoring transform reproduces it again exactly.
+One real bug (an out-of-bounds triple table) was caught precisely because
+the generic-point control refused to behave. <span class="tag">calibrated; bug logged</span></p>
+<p><b>A counting lemma with teeth.</b> Every weight-λ′ highest weight vector
+vanishes <i>at the point det₃</i>: the shape demands 24 legs carrying first-row
+variables, but every det₃ monomial carries exactly one — supply 20. The
+same row/column mass bookkeeping (demands 24/18/18 by row, 20/20/20 by
+column) decides which orbit points can see the weight at all: single
+transvections never (their column trade is unbalanced — verified four
+ways), balanced substitution pairs do. The conductor test is thereby forced
+off the point and onto structured orbit points, where the state space is
+measured at ~10⁸⁺ per factored subproblem, × 36 — a grind, banked for later,
+not for today. <span class="tag">lemma + measured</span></p>
+<p><b>The deficit class is indecomposable.</b> The elegant escape — write λ′ = λ₁ + λ₂
+with both factors nonzero on the closure, multiply highest weight vectors,
+restriction of a product being the product of restrictions — is <i>provably closed</i>:
+two-factor decompositions of λ′ live in the family (a,a,a,b⁶), and the ambient
+multiplicity is 0 at every intermediate rung (δ = 4, 7, 10, 13, 16 — all
+computed zero). The (2,2,2) deficit class cannot be assembled from smaller
+nonzero classes; if the closure fills the k = 1 slot, it fills it with an irreducible
+new object. The same starvation that creates the deficit protects it from
+every shortcut — the first structural hint that the first conductor of a
+determinant may exceed 1. <span class="tag">computed; speculation tagged</span></p>
+<p><b>The δ = 2 row, completed exactly.</b> The S₍₄,₂₎-type class of the det₃ world
+restricts nonzero to the orbit (value −8 at two independent transvection
+points, via the freshly calibrated shape machinery), and the S₆ class trivially
+so: all three δ = 2 multiplicities are now exact — def(6) = 0, def(4,2) = 0,
+def(2,2,2) = 1 — and the determinant cone has <i>no equations in degree 2</i>.
+<span class="tag">computed</span></p>
+<p><b>Two routes forward.</b> Next session brings the theory route: the nursery's
+conductor-transport formula (⌊μ_max/w_N⌋, exact in both toy worlds)
+applied to Hüttenhain's boundary stabilizers should <i>predict</i> c((2,2,2), 2) from
+the boundary torus weights and the normal weight — a prediction the 36-subproblem
+grind can then verify or kill. Either agreement or disagreement
+is a result: the formula's first test outside the nursery, on the determinant
+itself. <span class="tag">posed</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 9 — the ramification of the discriminant, and a
+falsifiable prediction</h2>
+<p><b>The anchor first, as always.</b> World B's transport ingredients rebuilt through
+one clean code path: the cusp's stabilizer in 𝔤𝔩₃ is <i>exactly</i> the 1-dimensional
+torus (1,−2,0) — no choice ambiguity, which is why the nursery formula was
+unambiguous — and the normal direction of the boundary divisor is the y³-coefficient
+with weight +6, reproducing the divisor of ⌊(λ₁−2λ₃)/6⌋ on the
+nose. Conventions locked. <span class="tag">validated</span></p>
+<p><b>P₁ is tame, and <span class="ol">Ω</span> is smooth along it.</b> The traceless-determinant component
+carries a 3-dimensional stabilizer torus (conjugation pair + dead-variable
+scaling, verified symbolically). The parametrization differential at the chart
+matrix has rank exactly 65 = dim <span class="ol">Ω</span>: so the End-parametrization is
+submersive there and <i>the orbit closure is smooth at generic P₁ points</i> — a new
+fact. The normal line is the pure dead-variable direction, weight (0,0,1).
+Consequence, by equivariant slice bookkeeping and confirmed by the
+explicit transverse family det(A₀ + tE₈₈) with det = t: <b>Φ₁₈ vanishes along P₁
+to order exactly m₁ = 6</b>. The global cross-check closes beautifully: along a
+generic pencil of matrices, det A(t) has 9 simple roots, each landing in P₁'s
+dense orbit (kernel functional of trace-form rank 3 — verified), and 6 × 9 = 54
+= deg-6 equivariance × deg-9 determinant. The determinant's discriminant
+ramifies like World A's did (256·I³), one floor up. <span class="tag">theorem + verified 3 ways</span></p>
+<p><b>P₂ is wild — literally invisible.</b> Generic End-curves never touch it (all nine
+pencil hits are P₁-type; and a hand-search for a variable-relabeling
+degeneration onto P₂ fails for a counting reason), consistent with
+Hüttenhain–Lairez: P₂ lies outside End₉·det₃ — it is the component where
+the closure's non-normality lives. Its normal data must be reached
+indirectly: assuming the generic-point unit-factor behavior (which held
+rigorously at P₁), the normal weight vector is proportional to the trace
+character, and torus integrality plus SL-invariance of the normal weight
+force 18/m₂ = 2: <b>m₂ = 9</b>, giving div(Φ₁₈) = 6·P₁ + 9·P₂. Tagged as derived, not
+proved — the independent check is Hüttenhain–Lairez's explicit
+degeneration family, queued. <span class="tag">derived; fetch pending</span></p>
+<p><b>The prediction.</b> At the first deficit weight (2,2,2): the P₁-side pole is
+rigorously capped at 2 by the dead-variable grading (the local ring's weights
+are nonnegative there, and the class's ninth-coordinate weight is at most 2);
+the P₂-side port of the nursery formula, with the trace torus and normal
+weight 6 (= 18·2/m₂ — the same 6 as World B, pleasingly), gives ⌊12/6⌋ = 2 as
+well. Both components point at the same number: <b>predicted c((2,2,2), 2) = 2</b>
+— the k = 1 closure multiplicity should be exactly 0. This is falsifiable by the
+banked 36-subproblem grind, agrees with session 8's indecomposability
+hint, and would mean the first conductor of a determinant exceeds the
+minimal possible value: the access wall is not at its floor. And the nursery's
+deepest pattern has reappeared intact one level up: one tame component
+where everything is smooth, graded, and provable — one wild component,
+outside the parametrization, carrying the non-normality, where the formula
+must be trusted or fought for. <span class="tag">prediction; kill-test named</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 10 — a correction, and the stakes go up</h2>
+<p><b>Correction to session 9's prediction, logged per the standing rule.</b> The final
+step of the session-9 analysis conflated two normalizations: the per-component
+pole numbers it derived (≤ 2 at P₁, ≈ 2 at P₂) are <i>divisorial</i>
+orders, but one Φ₁₈-step clears m₁ = 6 units along P₁ and m₂ = 9 along P₂.
+Done correctly, the tame arithmetic says a single step clears both: ⌈2/6⌉ =
+⌈2/9⌉ = 1. <b>The divisorial transport prediction is c((2,2,2), 2) = 1, not 2.</b> What
+survives of the deeper reading: c ≥ 2 is possible only if divisorial extension
+<i>fails</i> — a function regular in codimension one that still does not extend —
+which is precisely a failure of normality, and P₂ is where <span class="ol">Ω</span>'s known non-normality
+lives. So the k = 1 computation is no longer a mere check: <i>it
+measures whether non-normality bites at the first deficit weight</i>. Zero means the
+wild component's pathology is arithmetically active from the very first class
+(and session 8's indecomposability hint pointed there); nonzero means the
+divisorial calculus rules and c = 1. Either outcome is a theorem about the
+determinant that nobody has ever measured.
+<span class="tag">correction logged; stakes raised</span></p>
+<p><b>m₂ = 9, now on two legs.</b> Hüttenhain–Lairez's paper (fetched) supplies the
+explicit degeneration onto P₂: det(A + tS) with A the skew matrix of three
+variables and S the symmetric matrix of the other six — Jacobi's formula
+gives the limit Tr(adj(A)S) = 2P₂ at order t. Running our machinery over it:
+the 9×9 substitution matrix has det L(t) = −64t⁶ <i>exactly</i> (valuation d = 6, as
+the session-9 integrality argument required), the Jacobi limit reproduces
+our P₂ representative on the nose, and — the sharp check — the family's t²-coefficient
+is <i>tangent</i> to the P₂-component: the curve kisses P₂ with contact 2
+rather than crossing it. The two independent determinations now lock each
+other: m₂ · contact = 6d − 18 = 18 from the family, m₂ = 9 from torus
+integrality, hence contact = 2. <b>div(Φ₁₈) = 6·P₁ + 9·P₂, upgraded from derived
+to confirmed.</b> Meanwhile the 36-subproblem verdict computation runs
+banked in the background — the first subproblems are ~10⁸-state objects,
+and the even/odd workers are tracing byte-identical state profiles, hinting at
+one more symmetry in the σ-assignments worth harvesting when the values
+land. <span class="tag">confirmed; grind running</span></p>
+
+<h2><span class="no">§W3</span>Week 3, session 11 — the verdict: the first conductor of a determinant is 1</h2>
+<p><b>The grind completed, against the infrastructure's best efforts.</b> The banked
+36-subproblem evaluation — the λ′ = (8,8,8,6⁶), δ = 20 highest-weight pairing
+at the balanced-substitution orbit point C (x₅ ↦ x₅+x₁, x₇ ↦ x₇+x₂ applied to
+det₃) — ran to completion on 2026-08-24. The byte-identical worker profiles
+of session 10 were, as suspected, a harvestable symmetry: the signed
+variable-permutation π = (1 2)(3 6)(4 8)(5 7) preserves the point C exactly
+(sign +1) and transports subproblem (σ₆, σ₇) to (ρσ₆, ρσ₇) with ρ = (1 2),
+preserving signed contributions — so the 36 subproblems fall into 18 equal
+pairs, and only 18 needed computing (one duplicate was computed anyway,
+deliberately, as an empirical check: subproblems 00 and 07, run as fully
+independent multi-billion-state DPs, returned identical values). Getting the
+values out required teaching the evaluator to survive its habitat: the cloud
+container suspends on idle (killing processes), OOM-killed a worker, filled
+its 30 GB disk twice — one fat level emits 40 GB of raw intermediate data —
+and once rolled back the filesystem by eleven hours. The engine that
+finished carries atomic per-spill checkpoints (kill −9 / OOM / suspension
+safe, ~5-minute granularity), delta-varint compressed spill runs (5.5×), and
+bounded shard passes with an auto-doubling budget; its sharded and
+checkpointed paths were validated byte-identical against the straight-through
+engine on real subproblems before deployment. <span class="tag">computed 2026-08-24; engine hardened + validated</span></p>
+<p><b>The numbers.</b> All 19 runs ended in the mandatory single final state. The
+value table, indexed by (σ₆, σ₇) ∈ S₃ × S₃ (itertools order, n = 6i₆ + i₇), obeys
+V = W(σ₆⁻¹σ₇) — discovered mid-grind, with the last eight values landing as
+blind predictions — where W(id) = +108 712 800, W((0 1)) = W((1 2)) =
+−21 772 800, W((0 2)) = −476 884 800, W(3-cycles) = +301 870 800; every sign
+equals sgn(σ₆)sgn(σ₇). The validation pair: VALUE(00) = VALUE(07) =
+108 712 800 exactly. Assembly over the 18 orbit representatives:</p>
+<div class="thm">
+<p><b>TOTAL = 2 × 576 072 000 = 1 152 144 000 ≠ 0.</b> By session 10's criterion,
+stated before the number existed — "zero means the wild component's
+pathology is arithmetically active from the very first class; nonzero means
+the divisorial calculus rules and c = 1" — the verdict is: <b>the k = 1 slot is
+filled, divisorial transport rules on its first test on a determinant, and
+c((2,2,2), 2) = 1</b>. The first conductor of a determinant sits at its floor. Non-normality
+did not bite at the first deficit weight; session 8's
+indecomposability hint pointed at a wolf that stayed asleep. The corrected
+session-10 prediction is confirmed; the session-9 number is refuted, by 1.15
+billion (signed) units. <span class="tag">theorem via the session-10 criterion; full table in the repo</span></p>
+</div>
+<p><b>Infrastructure lessons, logged as results.</b> (1) The cloud container is scratch:
+it suspends on ~7-minute idle killing all processes, recurring scheduled
+tasks fire into <i>fresh empty containers</i> (useless for reviving state — only
+same-session reminders return to the same filesystem), and it can silently
+roll back hours of disk state. Everything durable now lives in the <span class="mono">gct</span>
+git repository (engine, 72 evaluation inputs, results, project notes), synced to
+Swami's machine. (2) A computation whose per-level scratch exceeds disk
+is not a bigger-disk problem but a sharding problem: bounding the scratch
+budget and re-streaming the input per shard costs CPU linear in the
+overflow factor and nothing in correctness — validated byte-identical under
+forced 8-way sharding with mid-shard kill/resume. (3) The two independent
+workers' equal-value pairs, the blind W(rel) predictions, and the single-final-state
+invariant turned the grind into its own adversarial reviewer: eight of
+nineteen values were predictions before they were measurements.
+<span class="tag">logged; repo established 2026-08-24</span></p>
+<p><b>What the verdict opens.</b> The Φ₁₈-ray now has a measured first rung. Next:
+the k = 2 rung of (2,2,2) (does the deficit clear entirely — conductor exactly 1
+— or does depth appear); a second balanced-substitution point as an
+independent certificate of the k = 1 value; and the fat (3δ−4, 2, 2) family,
+where session 8's starvation structure suggests the wild component gets its
+next chance to wake. The banked h-series inputs in the repo are these
+evaluations, ready for the hardened engine. <span class="tag">queued</span></p>
+
+<h2><span class="no">§5</span>What it leaves on the table</h2>
+<div class="qcard">
+<p><b>Q1 — A conductor formula</b> <span class="tag">Ogg–Shafarevich shape</span></p>
+<p>Is there an effective formula for def(λ, δ) and c(λ, δ) as a sum of local
+contributions over boundary strata — stabilizers plus conormal weights —
+in the spirit of conductor-discriminant formulas? The empirical law of
+World A (deficit ⇒ zero-weight vector for the boundary stabilizer) is its first-order
+shadow, and the module-theoretic frame (deficit = graded pieces of
+ℂ[<span class="ol">Ω</span>][1/Δ]/ℂ[<span class="ol">Ω</span>], a local-cohomology-style object) is where such a formula
+would live.</p>
+<p class="risk">Risk: the machinery is standard commutative algebra, and pieces are surely
+implicit in the border-apolarity and Ikenmeyer–Kandasamy toolkits; the
+weekend's pattern says assume so until checked.</p>
+</div>
+<div class="qcard">
+<p><b>Q2 — A discriminant for the determinant</b> <span class="tag">ANSWERED for n = 3 (week 3, session 6)</span></p>
+<p>The ray method needs a boundary equation. Does ∂<span class="ol">Ω</span><sub>det<sub>n</sub></sub> carry a
+semiinvariant equation — a "discriminant of determinantal complexity"?
+<b>For n = 3, yes: Φ₁₈(det₃) = −2¹⁶3⁷5³7² ≠ 0</b>, so the unique degree-18 invariant
+cuts a nonempty union of the two boundary components (session 6) — in fact
+exactly the boundary (session 7) — and its first conductor is now measured:
+c((2,2,2), 2) = 1 (session 11). For general n even the components are
+unknown. If no such Δ exists there, the deficit must be filtered along the full
+boundary ideal instead — itself a structured answer.</p>
+<p class="risk">Risk: boundary-of-det is an active, hard corner of the field; this question
+may be equivalent to open problems already posed there.</p>
+</div>
+<div class="qcard">
+<p><b>Q3 — Conductor growth as the access wall</b> <span class="tag">the sharp one</span></p>
+<p>In power-sum worlds the conductor stays tiny. Conjecture-shaped question:
+for det-type orbit closures, the conductor of the weights relevant to padded
+permanent grows with n — and superpolynomial multiplicity obstructions
+are exactly as hard as bounding it. Conductor-0 weights have group-computable
+closure multiplicities (the accessible sector); barrier results of
+BIP type should reappear as conductor-growth statements. This does not
+route around the difficulty — it proposes to <i>measure where access dies</i>, in
+small cases, as a number. The first such number now exists: the determinant's
+access wall at its first deficit weight is exactly one discriminant-multiplication
+deep.</p>
+<p class="risk">Risk: this is a packaging of known hardness, not a solvent for it. Its value is
+that every term in it is computable in calibration cases (dc(perm₃) = 7 is
+known), so the packaging is falsifiable.</p>
+</div>
+
+<h2><span class="no">§6</span>Provenance and conventions</h2>
+<p>Machine-checked in session: the S₅/S₆ Hurwitz-vs-Kronecker
+counterexamples (brute-force triple counts against Frobenius' character
+formula with its 1/χ(1), all 84 matched S₅ triples); all classical anchors
+named above; nonnegativity and ray-monotonicity of every table entry
+(these are theorems — the checks validate the code); Weyl-dimension sums
+against dim Sym<sup>δ</sup>(Sym<sup>d</sup>) for every degree used; per-degree deficit totals
+cross-checked against row sums. Conventions: covariant labels
+(multiplicities of duals; dimensions unaffected); conductor is defined
+relative to the chosen boundary equation Δ. Empirical claims (the b ≤ δ law,
+the ⌊δ²/4⌋ closed form, conductor ≤ 2) are claims about the computed range
+only. The Waring interpretations of the first deficits are dimension-count
+identifications, not proofs. Week-3 computations: exact int64/bignum
+arithmetic throughout; every headline value cross-checked by an
+independent route (reversed DP, symmetry pairs, anchors, or blind
+prediction); code, inputs, and the full value tables live in the <span class="mono">gct</span>
+repository.</p>
+
+<h2><span class="no">§7</span>References</h2>
+<ol class="refs">
+<li>P. Bürgisser, C. Ikenmeyer, G. Panova, <i>No occurrence obstructions in geometric
+complexity theory</i> — <a href="https://arxiv.org/abs/1604.06431">arXiv:1604.06431</a>.</li>
+<li>C. Ikenmeyer, U. Kandasamy, <i>Implementing geometric complexity theory: on the
+separation of orbit closures via symmetries</i>, STOC 2020 — <a href="https://arxiv.org/abs/1911.03990">arXiv:1911.03990</a>.</li>
+<li>P. Bürgisser, C. Ikenmeyer, <i>Fundamental invariants of orbit closures</i>, J. Algebra —
+<a href="https://arxiv.org/abs/1511.02927">arXiv:1511.02927</a>.</li>
+<li>J. Hüttenhain, P. Lairez, <i>The boundary of the orbit of the 3-by-3 determinant polynomial</i> —
+arXiv:1512.02437; J. Hüttenhain, thesis, TU Berlin.</li>
+<li>M. Aprodu, G. Farkas, Ş. Papadima, C. Raicu, J. Weyman, <i>Koszul modules and Green's
+conjecture</i> — <a href="https://arxiv.org/abs/1810.11635">arXiv:1810.11635</a>.</li>
+<li>J. M. Landsberg, <i>Geometric complexity theory: an introduction for geometers</i> — survey.</li>
+<li>H. Kraft, <i>Geometrische Methoden in der Invariantentheorie</i>.</li>
+<li>S. Kumar — arXiv:1109.5996 (occurrence machinery; even-m regime).</li>
+<li>Session records, code, inputs, and value tables: the <span class="mono">gct</span> repository and the
+companion working paper, <a href="https://claude.ai/code/artifact/f760534b-e2a3-4329-aafb-4d2cbc18204b">Conductors of Orbit Closures</a>.</li>
+</ol>
+
+
+</div>
