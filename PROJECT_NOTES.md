@@ -78,6 +78,53 @@ det₃ itself onto such points). Both documents updated with the verdict on
 2026-08-24. Follow-ups: independent second-point confirmation (another
 balanced substitution point), and the k = 2 rung of the ray.
 
+**Session 12 (2026-08-25, R1 hardening) — grind in flight.**
+Regression: full suite exact on the fresh container, including a COMPLETE
+f1C_00 rerun → VALUE +108,712,800, final states 1, 61 min (new per-
+subproblem time baseline; old estimate was 45).
+h-series contracts enumerated (wk3_s8_gen2.py): h{s}{P} = scheme s ∈ {1,2,3},
+evalfile2 format (8 cols, widths 9⁶3², 60-bit state), at unipotent translates
+A: x₅+=x₁; B: x₇+=x₂; C: both (the grind point); D: x₃+=x₀ & x₈+=x₁.
+h1gen = a 28-monomial dense translate, generator NOT in repo (provenance
+gap; Φ₁₈ SL₉-invariance check queued — expect −877,879,296,000 if orbit).
+**Weight-support feasibility (wk3_s8_feas DFS, demand (8,8,8,6⁶)): A, B, D,
+E, F are INFEASIBLE — h1A/h1B/h1D are lemma-forced ZEROS (negative
+controls, NOT certificate points). Feasible: C, G, h1gen-point.** Full sweep
+of all 81 balanced two-transvection points (x_{3+j}+=x_a, x_{6+k}+=x_b):
+exactly 15 feasible, including three 10-monomial column-uniform points
+(x₃+=x₀,x₆+=x₀), (x₄+=x₁,x₇+=x₁), (x₅+=x₂,x₈+=x₂).
+Unfactored h-runs measured at ~14× a factored subproblem (short columns
+stay open to L19–20; ~6B-state peaks, ~42 GB concurrent disk) — killed at
+L7; see Infrastructure rule 7. Factored route instead: wk3_s12_genD.py
+generates 36-subproblem evalopts sets from a raw monomial list
+(VALIDATED: regenerates the banked f1C set byte-identically 0/36; af
+anchors −8/−24 exact). Profiles vs f1C_00: f1gen 56× (dead), f1G 2.4×
+(~44h — rejected), **f1P 1.7–1.9× (chosen)**.
+**Second certificate point P = (x₃+=x₀, x₆+=x₀)** — column-0-uniform,
+disjoint from C's transvections, 10 monomials. Signed symmetries fixing
+{x₀,x₁,x₂} setwise form a Klein 4-group: row-swap (3 6)(4 7)(5 8) (s=−1,
+ρ=id), col-swap (1 2)(4 5)(7 8) (s=−1, ρ=(1 2)), and their product
+(1 2)(3 6)(4 8)(5 7) (s=+1, ρ=(1 2)) — the SAME permutation as point C's π.
+Derived sign calculus (to be validated by the duplicate pair): for ANY
+signed point-symmetry here, V(ρσ₆, ρσ₇) = +V(σ₆,σ₇), since s²⁰ = +1
+(even copies), sgn(π)⁶ = +1 (even wide-column count), sgn(ρ)² = +1 (two
+short columns). ⟹ 18 orbit pairs, no fixed points, TOTAL_P = 2·Σ(18 reps).
+Grind: 19 runs (reps 00–05, 12–23 + duplicate 07; pairs (0,7),(1,6),(2,10),
+(3,11),(4,8),(5,9),(12,25),(13,24),(14,28),(15,29),(16,26),(17,27),(18,31),
+(19,30),(20,34),(21,35),(22,32),(23,33)); wP1/wP2 workers; ~100–110
+min/run; ~17–19h wall. Gate: VALUE(00) = VALUE(07) exactly, else stop.
+Assembly: scripts/assembleP.py. Tail add-ons: f1D_00 engine zero (resumes
+banked checkpoint); Φ₁₈(h1gen) provenance. NOTE: f1G_*/f1gen_* input sets
+are NOT banked (dead routes; regenerate via wk3_s12_genD.py in one command).
+k=2 scoping (this session, verdict due before any k=2 grind): λ₂ =
+(14,14,14,12⁶), δ=38, λ₂ᵗ = (9¹², 3²) ⟹ 12 wide + 2 short columns = 114-bit
+state (108 factored) — EXCEEDS the u64 engine (NE ≤ 8 hard limit): direct
+evaluation needs a two-word-key engine rewrite. Cheap alternative under
+scoping: Φ₁₈·h₁ is a λ₂-HWV of degree 38 with F(C-point) =
+Φ₁₈(det₃)·h₁(C-point) ≠ 0 free of charge (SL₉-invariance + C[Ω̄] domain), so
+the computational content of the k=2 rung shifts to the multiplicity side
+(dim S_{λ₂}^H vs 1) — analysis in progress.
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
@@ -125,8 +172,24 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
    ck2 checkpoints. Never run extra compute beside two workers (RAM budget).
 4. **pkill -f self-match footgun**: a `-f` pattern matching your own shell's
    command line kills the shell. Use `pkill -x` exact names, or bracket-trick
-   patterns (`f1C_0[3]`).
+   patterns (`f1C_0[3]`) — and remember the pattern can match OTHER text in
+   your own compound command (a later pgrep string bit us on 2026-08-25).
+   Killing by explicit PID is the only fully safe form.
 5. Shell cwd can reset mid-command in this environment: use absolute paths.
+6. **Permission-gate rule (added 2026-08-25).** The client prompts for
+   approval (Alt+Enter) the first time a session issues a new command shape;
+   an unattended session waiting on that prompt does nothing, idles, and the
+   container suspends mid-turn (7.4h frozen on 2026-08-25 — dead-man's switch
+   recovered it). Before any unattended stretch, exercise every command shape
+   the babysit loop will need — one sleep cycle, one worker (re)launch, one
+   status check, one commit + bundle write-back — while a human is still at
+   the keyboard. Never introduce a new command shape into the loop right
+   before walking away.
+7. **evalfile/evalfile2 modes are NOT checkpointed** (no ck2): only evalopts
+   is grind-safe. Unfactored h-series runs measured ~14× a factored
+   subproblem in states (short columns stay open to L19–20; ~6B-state peak
+   levels, ~42 GB concurrent disk vs ~30 available) — unfactored λ'-evals are
+   disk-infeasible on this container. Factor first.
 
 ## Conventions
 
