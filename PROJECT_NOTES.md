@@ -109,21 +109,99 @@ Derived sign calculus (to be validated by the duplicate pair): for ANY
 signed point-symmetry here, V(ρσ₆, ρσ₇) = +V(σ₆,σ₇), since s²⁰ = +1
 (even copies), sgn(π)⁶ = +1 (even wide-column count), sgn(ρ)² = +1 (two
 short columns). ⟹ 18 orbit pairs, no fixed points, TOTAL_P = 2·Σ(18 reps).
-Grind: 19 runs (reps 00–05, 12–23 + duplicate 07; pairs (0,7),(1,6),(2,10),
-(3,11),(4,8),(5,9),(12,25),(13,24),(14,28),(15,29),(16,26),(17,27),(18,31),
-(19,30),(20,34),(21,35),(22,32),(23,33)); wP1/wP2 workers; ~100–110
-min/run; ~17–19h wall. Gate: VALUE(00) = VALUE(07) exactly, else stop.
-Assembly: scripts/assembleP.py. Tail add-ons: f1D_00 engine zero (resumes
+**LEMMA (derived 2026-08-25 mid-grind; retroactive mechanism of session
+11's observed law).** Scheme 1's automorphism group is a Klein 4-group:
+θ_b = (1 2)(3 4)·[6↔7] (subproblem action: swap (σ₆,σ₇) ↦ (σ₇,σ₆), i.e.
+rel ↦ rel⁻¹) and θ_d = reversal (0 5)(1 4)(2 3) (action: post-composition
+by ω = (0 2), rel ↦ ωrelω); with the pre-ρ point symmetry these generate
+an order-8 action on the 36 subproblems with 8 orbits (sizes 4,4,8,4,8,4,
+2,2), and V is constant on each orbit with sign +1 throughout (validated
+36/36 against the banked C table — the W-class structure W(rel)=W(rel⁻¹),
+W((0 1)) = W((1 2)) ≠ W((0 2)) is exactly ⟨swap, post-ω⟩-invariance).
+The REMAINING cross-orbit equalities (the rel-only refinement: V const on
+{orb0,orb6}, {orb1,orb2}, {orb3,orb4}, {orb5,orb7}) stay UNPROVEN — logged
+as blind predictions for P below. Referee-shape: proven part vs predicted
+part. (Hindsight accounting: the 19-run C grind was ~2.4× the orbit
+minimum; the surplus bought the empirical law that became this lemma.)
+Grind (TRIMMED to the extended-orbit design): 11 runs = 8 orbit reps
+{00,01,02,03,04,05,14,16} + per-relation duplicates {07 = pre(00),
+06 = swap(01), 34 = post(02)} — each relation type empirically confirmed
+on P before its orbit weight is trusted; the weighted total uses ONLY
+orbit-constancy, never the unproven rel-law.
+    TOTAL_P = 4·V00 + 4·V01 + 8·V02 + 4·V03 + 8·V04 + 4·V05 + 2·V14 + 2·V16
+Blind predictions, logged BEFORE any P value exists: (i) V00 = V14,
+(ii) V05 = V16, (iii) V01 = V02, (iv) V03 = V04 [the rel-only law at P].
+**OUTCOME (P grind, 4 runs completed then stopped): V(00) = V(07) =
+V(01) = V(02) = 0 — every one by EXACT TERMINAL CANCELLATION at level 19**
+(L18 still carries ~10⁹-scale weights in 100+ states; the final short-
+column-7 closure emits 56–76 transitions and every accumulated state
+weight cancels to exactly 0; zero-weight states are dropped, hence "final
+states 0"). NOT structural absence: the SAT screen (analysis/
+wk3_s12_satfeas.py, validated vs C) shows completing paths exist at every
+checked P-assignment. Pair gate 00 = 07 matched (at zero) — pre-relation
+validated. Orbits 0, 1, 2 (16/36 subproblems) dead; grind stopped, 03/04
+checkpoints preserved in gct-run/p1,p2 for optional later resume.
+**Mechanism hypothesis (logged as conjecture): P is RANK-1** — both
+transvections source the same variable x₀ (u = I + (e₃₀+e₆₀), rank-1
+nilpotent). Content forces every completing path to use exactly 4
+substituted legs, so h₁(u_t·det₃) = t⁴·(single coefficient): a pure 4th
+directional derivative along a rank-1 direction, which evidently vanishes.
+The sweep's three column-uniform points are exactly its rank-1 points —
+conjecture: h₁ vanishes identically on all three; certificates need
+rank 2 (C was rank 2). None of the (π,θ)-symmetry relations can force
+these zeros (their signs are point-independent and C's values are
+nonzero) — this is a NEW vanishing mechanism, worth a lemma if proved
+(candidate route: sign-pairing on the 4 substituted legs' column choices).
+**Certificate grind relaunched at Q = (x₄+=x₀, x₆+=x₁)** — rank-2,
+sources {x₀,x₁}, targets (r1,c1),(r2,c0), 11 monomials (C-sized,
+~61 min/run), SAT-live, point symmetry ρ = (0 1), 8 orbits with weights
+{00:4, 01:8, 02:4, 03:8, 04:4, 05:4, 07:2, 09:2}, duplicates 14 = pre(00),
+06 = swap(01), 34 = post(02).
+    TOTAL_Q = 4·V00 + 8·V01 + 4·V02 + 8·V03 + 4·V04 + 4·V05 + 2·V07 + 2·V09
+Gates: three duplicate matches + (states 1 or exact-zero (0,0)) per run.
+Assembly: scripts/assembleQ.py (computes orbits itself, no hardcoding).
+Launched 16:45Z 2026-08-25; ~23:30Z ETA with negD + phi tails. Tail add-ons: f1D_00 engine zero (resumes
 banked checkpoint); Φ₁₈(h1gen) provenance. NOTE: f1G_*/f1gen_* input sets
 are NOT banked (dead routes; regenerate via wk3_s12_genD.py in one command).
-k=2 scoping (this session, verdict due before any k=2 grind): λ₂ =
-(14,14,14,12⁶), δ=38, λ₂ᵗ = (9¹², 3²) ⟹ 12 wide + 2 short columns = 114-bit
-state (108 factored) — EXCEEDS the u64 engine (NE ≤ 8 hard limit): direct
-evaluation needs a two-word-key engine rewrite. Cheap alternative under
-scoping: Φ₁₈·h₁ is a λ₂-HWV of degree 38 with F(C-point) =
-Φ₁₈(det₃)·h₁(C-point) ≠ 0 free of charge (SL₉-invariance + C[Ω̄] domain), so
-the computational content of the k=2 rung shifts to the multiplicity side
-(dim S_{λ₂}^H vs 1) — analysis in progress.
+**k=2 rung: CLOSED ALGEBRAICALLY (2026-08-25) — no grind, and the whole
+ray with it.** Two halves:
+(i) Floor (mult ≥ 1): F = Φ₁₈·h₁ is a HWV of weight λ₂ = λ₁+(6⁹), degree 38
+(multiplication by the boundary equation IS the ray step); F(C-point) =
+Φ₁₈(det₃)·h₁(C-point) = (−877,879,296,000)·(1,152,144,000) =
+**−1,011,443,363,610,624,000,000 = −2²³·3¹¹·5⁶·7³·127 ≠ 0**, using
+Φ₁₈(u·det₃) = Φ₁₈(det₃) (SL₉-invariance, u unipotent). Banked integers only.
+(ii) Ceiling (dim S^H = 1 transports): S_{λ+6·1⁹} ≅ S_λ ⊗ det₉⁶ exactly, and
+det₉|_H is trivial on H⁰ (det₉(u,v) = (det u · det v)³ = 1) and −1 on the
+transpose coset (τ: 3 off-diagonal 2-cycles ⟹ det₉(τ) = (−1)³ = −1); the
+ray twist det₉⁶ is an EVEN power ⟹ trivial on ALL of H ⟹
+dim S_{λ_k}^H = dim S_{(2,2,2)}^H = 1 for EVERY k ≥ 0. Verified explicitly
+this session (the parity of the transpose was the one place a surprise
+could hide). Combined with def ≥ 0: def(λ_k, 2+18k) = 0 for all k ≥ 1
+(inductively, Φ₁₈^{k−1}·h₁ ≠ 0 in the domain C[Ω̄]).
+**Corollary (log next to the certificate): the full ray profile of the
+first deficit weight of det₃ is exact — def = 1 at k=0, def = 0 for all
+k ≥ 1: the first fully-resolved ray of a determinant, c((2,2,2),2) = 1
+ray-complete.** (The (2,2,2) rung escaped session-8 indecomposability only
+because one factor is the invariant itself — the "trivial" decomposition
+that is the ray; the δ=3 nontrivial weights do not.)
+**δ=3-row engine scope (week-4 target, where the engine investment
+belongs).** Ray points
+λ+6·1⁹ at δ′=21 for λ ⊢ 9: raw state is ALWAYS 63 bits (54+9) with
+NE = 6+λ₁ up to 15; after factoring out height-≤3 extra columns
+(S_h-assignment subproblems, h! each): 24/30 shapes fit the CURRENT engine
+(NEf ≤ 8, ≤ 60 bits; subproblem counts 1–216, worst (3,3,3) at 216);
+the 6 breaches — (3,2,2,2) 62b, (3,1⁶) 61b, (2,2,2,2,1) 63b, (2,2,1⁵) 61b,
+(2,1⁷) 62b, (1⁹) 63b — exceed ONLY the `off > 60` guard, never NE=8, and
+the spill codec is general LEB128 varint: the next-engine spec is a
+one-line guard relaxation 60 → 63 plus full-regression revalidation (verify
+no hidden tag bits in key high bits; ADD AN EXPLICIT ASSERT that no
+deposited state has an all-zero mask — key = 0 is the hash table's
+empty-slot sentinel, an invariant that today holds by accident of every
+level-≥1 state carrying a bit and must be made explicit at 63 bits;
+mix() is full-width, shard_of top-10-bit extraction fine for KB ≤ 63,
+int64 value headroom ample at 21 copies), NOT a two-word rewrite. k=2-style
+direct eval (12 wide columns, 108 factored bits) stays out of reach and
+stays unnecessary.
 
 ## Computational assets (repo layout)
 
