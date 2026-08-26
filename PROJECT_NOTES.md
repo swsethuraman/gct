@@ -78,6 +78,25 @@ det₃ itself onto such points). Both documents updated with the verdict on
 2026-08-24. Follow-ups: independent second-point confirmation (another
 balanced substitution point), and the k = 2 rung of the ray.
 
+**SESSION-12 VERDICT (2026-08-26 03:20Z): R1 COMPLETE ON BOTH LEGS.**
+(1) **Second-point certificate: TOTAL_R = 1,152,144,000 ≠ 0** at
+R = (x₃+=x₀, x₇+=x₁), PROVEN H-inequivalent to C (intersection-algebra
+double-coset invariant: 𝔰(u_C) non-abelian vs 𝔰(u_R) abelian, exact).
+11 runs, all final-states valid, all three relation gates matched, every
+pre-logged prediction hit. Full record: results/results_R.md.
+(2) **k=2 closed ray-complete** (product certificate + even-parity
+transport; see below): def(λ_k, 2+18k) = 0 ∀k ≥ 1 — the first fully
+resolved ray of a determinant. **c((2,2,2),2) = 1 stands, hardened.**
+(3) **Universality discovered (11/11 + 36 + 2 empirical)**: the W-table
+{+108,712,800; −21,772,800; +301,870,800; −476,884,800} and hence the
+total 1,152,144,000 are point-independent across BOTH live H-classes of
+balanced points — the certificate value is an invariant of the ray class,
+not of C. Rigidity theorem = next-session target (formulation logged
+below; amb(λ′,20) = 3 caveat).
+(4) Companions: P-point exact vanishing (rank-1, results_P.md); Q = C
+conjugate (validation); f1D_00 engine zero; taxonomy of the 15 feasible
+balanced points into rank-1/cyclic/diagonal.
+
 **Session 12 (2026-08-25, R1 hardening) — grind in flight.**
 Regression: full suite exact on the fresh container, including a COMPLETE
 f1C_00 rerun → VALUE +108,712,800, final states 1, 61 min (new per-
@@ -152,15 +171,86 @@ rank 2 (C was rank 2). None of the (π,θ)-symmetry relations can force
 these zeros (their signs are point-independent and C's values are
 nonzero) — this is a NEW vanishing mechanism, worth a lemma if proved
 (candidate route: sign-pairing on the 4 substituted legs' column choices).
-**Certificate grind relaunched at Q = (x₄+=x₀, x₆+=x₁)** — rank-2,
-sources {x₀,x₁}, targets (r1,c1),(r2,c0), 11 monomials (C-sized,
-~61 min/run), SAT-live, point symmetry ρ = (0 1), 8 orbits with weights
-{00:4, 01:8, 02:4, 03:8, 04:4, 05:4, 07:2, 09:2}, duplicates 14 = pre(00),
-06 = swap(01), 34 = post(02).
-    TOTAL_Q = 4·V00 + 8·V01 + 4·V02 + 8·V03 + 4·V04 + 4·V05 + 2·V07 + 2·V09
+**Q-episode (17:00–18:10Z): Q = (x₄+=x₀, x₆+=x₁) is C IN DISGUISE.**
+Its first two runs returned V(00) = +108,712,800 and V(01) = −21,772,800 —
+EXACTLY C's W-values. Proved: p_Q = colperm(0 2 1)·p_C with the column
+3-cycle ∈ stab(det₃) (sympy-exact), and the Levi character on h₁ is +1,
+so all Q-values must equal C's. Grind stopped; the two runs are banked as
+the strongest pipeline validation yet (banked W-values reproduced through
+entirely different input files at a conjugate point).
+**THE INDEPENDENCE INVARIANT (lesson + classification).** A balanced
+two-transvection point is N = E₁₀⊗F + E₂₀⊗F′; its H-orbit is classified
+by the pencil span{F,F′} ⊂ gl₃ up to conjugation (+ a-side GL₂ rebasing,
+transpose). The 15 feasible points fall into exactly THREE classes:
+rank-1 (span{F} 1-dim; the 3 column-uniform points; VANISHING — engine
+evidence + conjecture), CYCLIC (non-commuting pencil, e.g. {F₂₁,F₁₂};
+6 points, ALL H-conjugate to C), and DIAGONAL/DD (commuting pencil
+{F_ii,F_jj}, i≠j; 6 points, all mutually conjugate, provably NOT conjugate
+to C — pencil commutativity is conjugation-invariant; finite signed-
+stabilizer search also empty). ⟹ exactly TWO live H-classes; the genuine
+second point is any DD representative.
+Banked reading (Swami, mid-grind): Q's two runs are a genuine independent
+RECOMPUTATION of h₁(C) ≠ 0 (different input files, option tables,
+σ-indexings) — the weaker independence bar (recomputation) is now cleared
+twice over (original grind + Q's H-translate; plus today's f1C_00 rerun);
+R chases the stronger bar (nonvanishing at an H-inequivalent point).
+For R, logged BEFORE values land: predictable — orbit-constancy under the
+point-independent scheme automorphisms (dups 14/06/34 test it) and, IF the
+scheme-intrinsic reading of C's structure is right, the 6/12/12/6
+class-weight profile echo. OPEN QUESTION (not a prediction): whether R's
+four W-values relate to C's four at all — DD substitutions preserve column
+mass individually (same-column trades), a different feasibility arithmetic
+from C's cross-column trades.
+Endgame tree: R nonzero → certificate complete at a provably inequivalent
+point + first DD data. R zero by cancellation → h₁ vanishes on every
+balanced point outside C's own H-class (a remarkable structural fact — the
+k=1 class as a near-delta function on balanced points) and the certificate
+routes through G (three-transvection, 2.4×) next.
+**Certificate grind: R = (x₃+=x₀, x₇+=x₁), DD-class, launched 18:10Z.**
+11 monomials, SAT-live, point symmetry π = (1,0,2,7,6,8,4,3,5) sign +1,
+ρ = (0 1) → 8 orbits, weights {00:4, 01:8, 02:4, 03:8, 04:4, 05:4, 07:2,
+09:2}, duplicates 14 = pre(00), 06 = swap(01), 34 = post(02).
+    TOTAL_R = 4·V00 + 8·V01 + 4·V02 + 8·V03 + 4·V04 + 4·V05 + 2·V07 + 2·V09
 Gates: three duplicate matches + (states 1 or exact-zero (0,0)) per run.
-Assembly: scripts/assembleQ.py (computes orbits itself, no hardcoding).
-Launched 16:45Z 2026-08-25; ~23:30Z ETA with negD + phi tails. Tail add-ons: f1D_00 engine zero (resumes
+Assembly: scripts/assembleR.py (computes orbits itself). R's W-values are
+the first genuinely new data since C. ETA ~01:30Z with negD + phi tails.
+**R vs C: INEQUIVALENCE PROVEN (exact).** The intersection algebra
+𝔰(u) = 𝔥 ∩ Ad(u)𝔥 transports by Ad(h₁) along double cosets H·u·H, so its
+Lie type is a point-equivalence invariant. Exact rational computation:
+𝔰(u_C) = 4-dim NON-abelian (bracket span 2); 𝔰(u_R) = 4-dim ABELIAN;
+(𝔰(u_P) = 8-dim). ⟹ p_R ∉ H·p_C. [Correction to rule 8's first draft:
+pencil-conjugacy is also not the right invariant — point-equivalence is
+the DOUBLE COSET; 𝔰(u)'s Lie type is the clean computable obstruction.]
+**UNIVERSALITY (upgraded from curiosity to primary hypothesis, per Swami:
+the per-subproblem functional N ↦ V_{σ₆,σ₇}((I+N)·det₃) as a degree-4
+H-covariant on the direction space plausibly spans a 1-dim covariant
+space: value = universal W(σ₆,σ₇) × Ψ(N), Ψ an H-invariant ~ function of
+Λ²N — vanishing iff rank 1 (P's death), constant on live classes (Q, R
+echoes), rel-only law = property of W alone).** Engine record at R so far
+(6 runs, all final-states 1): V(00) = +108,712,800 [id], V(01) =
+−21,772,800 [(1 2)], V(02) = −21,772,800 [(0 1)], V(03) = V(04) =
++301,870,800 [3-cycles], V(05) = −476,884,800 [(0 2)] — ALL FOUR
+W-classes equal C's exactly, including both designated hard discriminators.
+**Predictions logged 23:20Z 2026-08-25, BEFORE the last five runs land
+(testing universality + orbit-constancy):** V(07) = +108,712,800;
+V(09) = −476,884,800; gates V(14) = V(00), V(06) = V(01), V(34) = V(02);
+TOTAL_R = 6·W_id + 12·W_small + 12·W_3cyc + 6·W_(02) = 1,152,144,000
+= TOTAL_C exactly (the 6/12/12/6 profile echo).
+**Rigidity formulation (next-session theorem target; subtlety found).**
+Ψ_σ(N) = V_σ((I+N)·det₃) is degree-4 in N ∈ W = C²⊗gl₃ (content forces
+exactly 4 substituted legs) but is a MATRIX ELEMENT, not a naive covariant:
+Ψ_σ(N) = ⟨h₁-functional, Φ₄(N)⟩ with Φ₄: Sym⁴W → (λ′-isotypic of
+Sym²⁰Sym³C⁹) equivariant along the W-preserving parabolic P_H ⊂ H.
+Computed tonight (wk3_s7_ray, 627 outer partitions / 94,167 power-sum
+classes): **amb(λ′,20) = 3** — the ambient λ′-HWV space is 3-dimensional
+(schemes 1/2/3 = hwv1-3 are the natural candidate basis; independence
+unverified). So rigidity = a statement about the rank of the composite
+on balanced directions, not multiplicity-1 for free; the theorem needs
+either the P_H-branching computation dim Hom_{P_H}(Sym⁴W, Res 3·S_λ′)
+or an empirical rank probe (scheme-2/3 evaluations at C and R — banked
+h2C/h3C contracts, factorable the same way). NOTE: amb = 3 is the ambient
+ceiling; closure mult = 1 = dim S^H_{λ₁} stands (session-10 verdict
+unaffected). Tail add-ons: f1D_00 engine zero (resumes
 banked checkpoint); Φ₁₈(h1gen) provenance. NOTE: f1G_*/f1gen_* input sets
 are NOT banked (dead routes; regenerate via wk3_s12_genD.py in one command).
 **k=2 rung: CLOSED ALGEBRAICALLY (2026-08-25) — no grind, and the whole
@@ -268,6 +358,12 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
    subproblem in states (short columns stay open to L19–20; ~6B-state peak
    levels, ~42 GB concurrent disk vs ~30 available) — unfactored λ'-evals are
    disk-infeasible on this container. Factor first.
+8. **Independence is H-conjugacy, not novelty of slots/sources** (2026-08-25,
+   the Q lesson): a "different-looking" substitution can be a stabilizer
+   translate — vet a candidate second point by the H-orbit invariant (here:
+   the nilpotent pencil span{F,F′} up to conjugation; commutativity, rank,
+   cycle structure), never by surface features. Screens don't see conjugacy,
+   the way they don't see signs (P) or cancellation (SAT).
 
 ## Conventions
 
