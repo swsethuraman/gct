@@ -96,6 +96,14 @@ below; amb(λ′,20) = 3 caveat).
 (4) Companions: P-point exact vanishing (rank-1, results_P.md); Q = C
 conjugate (validation); f1D_00 engine zero; taxonomy of the 15 feasible
 balanced points into rank-1/cyclic/diagonal.
+(5) **Φ₁₈(h1gen) provenance: PARKED.** The plain evalfile path hit a
+deterministic "RUN OVERFLOW" crash loop at L6 (NEW ENGINE LIMIT for the
+notes: the non-ck2 do_level has a fixed spill-run cap; h1gen's density
+gives 699,485,585 states at level 5 of 18 — an evalopts-scale problem).
+If ever wanted: build a det3cal-style FACTORED/evalopts input for
+Φ₁₈ at h1gen's monomials (checkpointed, sharded) — est. several hours.
+h1gen remains provenance-open and computationally irrelevant (dead as an
+evaluation point either way).
 
 **Session 12 (2026-08-25, R1 hardening) — grind in flight.**
 Regression: full suite exact on the fresh container, including a COMPLETE
