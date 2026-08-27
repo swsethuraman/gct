@@ -301,6 +301,30 @@ int64 value headroom ample at 21 copies), NOT a two-word rewrite. k=2-style
 direct eval (12 wide columns, 108 factored bits) stays out of reach and
 stays unnecessary.
 
+**SESSION 13 (2026-08-27): the rigidity slot is 3-dimensional — P explained,
+universality sharpened to a measurable rank statement.** After resync to
+4999fb0 (stale-snapshot incident resolved; rules 9–10 below), the n=3
+covariant-space count is COMPLETE (docs/rigidity_formulation.md,
+analysis/wk3_s13_covcount.py; validation-first: 7 exact brute-force
+branching cross-checks, Sym⁴W dimension audit 5985, transpose-side
+double-computation of the key multiplicity):
+    m = 3 = [mult 3 of (ρ=(2,2), triv-GL₃ᵇ) in Sym⁴W] ×
+            [mult 1 of S_(24,18,18)⊗S_(20,20,20) in S_λ′(C³⊗C³)];
+    all other α-blocks (24,19,17), (24,20,16) pair to ZERO.
+So: every scheme/subproblem functional is a det²_{GL₂}⊗triv_{GL₃} pencil
+covariant in span{u₁, u₂, D} (basis in the doc; the naive third generator
+(trAtrB−trAB)² is NOT in the slot — machine check caught it); rank-1
+vanishing is now a LEMMA (P's zeros = representation theory, not accident);
+substituted legs are forced balanced t=(2,2); universality is NOT free
+(m > 1) — it is the statement that all (h,σ) select one line, confined by
+the C=R data to span{u₁−2u₂, D}. Free prediction logged: TOTAL_G =
+1,152,144,000 (implied, not discriminating). The discriminating probe is
+the feasible 11-monomial four-transvection point T4 = {x₃+=x₀, x₄+=x₁,
+x₇+=x₁, x₈+=x₂} with (v,D) = (3,5) vs C's (1,1): its total, plus
+scheme-2/3 runs at C, measure the actual line — next engine session.
+n=4: framework in the doc; the numeric count is gated on e(det₄) and
+det₄'s first deficit weight (both open).
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
