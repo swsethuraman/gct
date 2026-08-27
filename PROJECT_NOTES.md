@@ -372,6 +372,26 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
    the nilpotent pencil span{F,F′} up to conjugation; commutativity, rank,
    cycle structure), never by surface features. Screens don't see conjugacy,
    the way they don't see signs (P) or cancellation (SAT).
+9. **Exactly one session owns Projects\gct at a time** (added 2026-08-27
+   after the stale-snapshot incident: a rolled-back container re-derived
+   already-certified work and nearly overwrote the true bundle). Ownership
+   is granted by Swami explicitly; a session that has not been told it is
+   the owner reads but never writes the folder. On any clock jump,
+   container restart, or restore, assume rollback: reconcile against the
+   folder's bundle and the project docs BEFORE trusting the local tree —
+   and treat "rediscovering" a result as a rollback alarm, not a finding.
+10. **HEAD verification before write-back** (same incident). At session
+   start, record the staged bundle's HEAD here as the sync baseline. Before
+   ANY write-back, re-stage Projects\gct\gct.bundle and verify its HEAD
+   still equals that baseline (`git bundle list-heads`); on mismatch STOP
+   and ask — someone else has written. After writing back, the new HEAD
+   becomes the next session's expected baseline. Record the baseline at
+   every sync.
+
+## Sync state
+
+Sync baseline (bundle HEAD this session cloned from): 4999fb0
+Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (granted 2026-08-27)
 
 ## Conventions
 
