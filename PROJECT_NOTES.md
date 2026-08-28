@@ -344,6 +344,28 @@ now an exact target: composite Sym⁴W → ambient* has rank 1 with image
 span{2v−D} on the balanced cone. Next: prove it (P_H-analysis of Φ₄), and
 the scaling falsifier stays available as a cheap check.
 
+**SESSION 15 (2026-08-28, math only): the rank-1 theorem PROVED on the
+measured classes; two lemmas; the decisive off-locus runs designed.**
+docs/rigidity_theorem.md is the deliverable. (1) Proof by interpolation:
+slot theorem (s13) + invertible evaluation matrix at C/R/T4 (det 2) ⟹
+V^h_σ = W^h(σ)·Ψ with Ψ = 2v−D EXACTLY, proven in full for (h₁, id) and
+(h₁, (0 2)); other classes confined to explicit planes ∋ Ψ, each closed by
+ONE pre-registered run: f1T4_01 = −21,772,800, f1T4_03 = +301,870,800,
+f2R_00 = +78,850,800, f3R_00 = +17,388,000. (2) The suggested a-priori cut
+provably cannot work: proportional AND rank-1-locus vanishing annihilate
+the whole slot (symbolic). (3) NEW displacement-cancellation lemma:
+content feasibility ⟺ ∃ 2+2 conversions with Σ(e_tgt − e_src) = 0
+(proof via forced t=(2,2) + integral Birkhoff for 3×3); derives the 15/81
+sweep and D/A/B/E/F structurally. (4) Ψ-locus: dichotomy FALSE — 48 values
+in [−40,53] over the {0,1} cone; mod-4 lemma PROVED (Ψ ≡ 2s−s², s =
+trAtrB−trAB). (5) DECISIVE pre-registered runs, verified feasible+SAT-live,
+inputs banked f1X4_*/f1Xm3_*: X4 = {x₃+=x₀,x₇+=x₂,x₈+=x₁}, Ψ = 4,
+TOTAL = 4,608,576,000, V_00 = +434,851,200; Xm3 = {x₃+=x₂,x₄+=x₁,x₇+=x₁,
+x₈+=x₀}, Ψ = −3, SIGN-FLIPPED table, TOTAL = −3,456,432,000, V_00 =
+−326,138,400. Next engine session: the 4 completing runs + X4 + Xm3
+(~6 runs ≈ one overnight, closes the theorem and tests the quartic law
+off the unit locus).
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
