@@ -36,6 +36,37 @@ hard discriminator; orbit {5,30}); SAT screen: point and all planned σ
 SAT-live. Scheme-2/3 generator path validated against banked h2C/h3C tri
 orders. Standing implied prediction (NOT run): TOTAL_G = 1,152,144,000.
 
+## SESSION-14 RESULTS ROUND 1 + AMENDED PRE-REGISTRATION (2026-08-28)
+
+Engine (all final states 1): V(T4,00) = V(T4,35) = +108,712,800 (gate
+PASSED); V(T4,05) = −476,884,800. Ratios = 1 for both tested W-classes ⟹
+**O3 with ρ = 1: scheme-1's universal line is Ψ ∝ 2v − D** (c_D/c_v = −1/2;
+Ψ(C) = Ψ(R) = Ψ(T4) = 1 across three distinct pencil classes, Ψ(P) = 0).
+Scheme probes: V^{h₂}₀₀(C) = +78,850,800 (κ₂ = 1043/1438);
+V^{h₃}₀₀(C) = +17,388,000 (κ₃ = 115/719).
+
+FINDING (integrality theorem, no further runs needed): if the scheme-2
+σ-table were proportional to W₁, then V^{h₂}₀₅(C) = κ₂·W((0 2)) =
+−248695423200/719 ∉ ℤ — impossible. Same for scheme 3 (115·476884800 ≢ 0
+mod 719). Hence the THREE ambient functionals have pairwise-nonproportional
+σ-tables vs scheme 1 — h₂, h₃ are genuinely independent of h₁ as
+functionals (the amb = 3 basis candidates do not collapse on C-orbit data).
+
+AMENDMENT (logged before the deciding runs): the original S1/S2 tested
+σ-table proportionality — that is NOT the line-sharing question. Rigidity
+(claim (a)) says every (h, σ) functional lies on ONE covariant line with
+(h,σ)-dependent scalars; scheme-2/3 scalars being a different function of
+σ is expected and consistent. Line-sharing is tested ACROSS POINTS:
+under it, V^{h}_σ(T4)/V^{h}_σ(C) = Ψ(T4)/Ψ(C) = 1 for every h, σ. Deciding
+runs (pre-registered): **LS1**: f2T4_00 = +78,850,800 and f3T4_00 =
++17,388,000 exactly → all three ambient HWVs evaluate through the SAME
+covariant 2v−D → rigidity's strong shape holds for the full multiplicity
+space. **LS2**: a deviation in either → that scheme's functional carries a
+second covariant direction; its ratio r = V(T4)/V(C) yields the scheme's
+line by the same Möbius inversion c_D'/c_v' = (r−3)/(5−r). Future
+falsifier (any time, no grind): coefficient-2 scaling covariance —
+pencil (A, 2B) must scale every value by 2² = 4.
+
 Status: FORMULATION + the n=3 covariant-space count (this session). The
 theorem's empirical content (universality of the W-table across live
 H-classes, 11/11 + 36 + 2) is banked in results_R.md; this document fixes
