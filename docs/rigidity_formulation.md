@@ -1,4 +1,40 @@
-# The rigidity theorem: formulation (session 13)
+# The rigidity theorem: formulation (session 13) + determination (session 14)
+
+## SESSION-14 PRE-REGISTRATION (logged 2026-08-28, BEFORE any engine value)
+
+Plane values re-verified: (v, D) = (1, 1) at C's pencil, (3, 5) at T4's.
+Under the confinement Ψ_σ = c_v(σ)·v + c_D(σ)·D with c_v + c_D = W(σ):
+ratio_σ := V_σ(T4)/W(σ) = (3·c_v(σ) + 5·c_D(σ))/W(σ).
+
+Outcome map (the engine's numbers must select among these):
+  O1  all ratio_σ = 3            → universal line v = u₁−2u₂;
+                                    TOTAL_T4 = 3·TC = 3,456,432,000
+  O2  all ratio_σ = 5            → universal line D;
+                                    TOTAL_T4 = 5·TC = 5,760,720,000
+  O3  all ratio_σ = ρ (common)   → universal mixed line, c_D/c_v =
+                                    (ρ−3)/(5−ρ); includes the ρ = 0 branch
+                                    (line 5v−3D: all T4 subvalues zero)
+  O4  ratio_σ differs by σ       → UNIVERSALITY FALSIFIED; per-σ line map
+                                    (c_v : c_D)_σ = ((5W−V)/2 : (V−3W)/2);
+                                    stop and reassess before more grinds
+Gates (theorems; failure = inputs bug, full stop): V(00) = V(35) at T4
+(pre-ρ and post-ω partners coincide for σ = id — one pair gates both the
+point symmetry ρ = (0 2) and the scheme automorphisms); final states 1 or
+exact (0,0).
+
+Scheme probe at C (worker 2), pre-registered:
+  S1  V^{h₂}_00(C) = κ₂·W(id) and V^{h₃}_00(C) = κ₃·W(id) define scheme
+      ratios; extended σ's (if run) must repeat the SAME κ — then the three
+      ambient functionals share one covariant line (rank 1); κ = 0 = the
+      degenerate-scheme branch (identically-vanishing functional), also S1.
+  S2  κ varies with σ for some scheme → rank ≥ 2 across the ambient
+      multiplicity space; universality is scheme-1-specific.
+
+Design: T4 extended orbits (pre-ρ=(0 2), swap, post-ω): 8 orbits, sizes
+(2,8,8,2,4,4,4,4); planned runs 00, 35 (gate pair, rel id), 05 (rel (0 2)
+hard discriminator; orbit {5,30}); SAT screen: point and all planned σ
+SAT-live. Scheme-2/3 generator path validated against banked h2C/h3C tri
+orders. Standing implied prediction (NOT run): TOTAL_G = 1,152,144,000.
 
 Status: FORMULATION + the n=3 covariant-space count (this session). The
 theorem's empirical content (universality of the W-table across live
