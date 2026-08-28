@@ -411,11 +411,17 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
    and ask — someone else has written. After writing back, the new HEAD
    becomes the next session's expected baseline. Record the baseline at
    every sync.
+11. **The laptop's work/ clone is canonical; bundles are transport**
+   (added session 14). Projects\gct\work is the durable repository;
+   gct.bundle/gct.zip are the transport artifacts sessions read and write.
+   Updates land in work/ by `git -C work pull ..\gct.bundle main` as
+   --ff-only merges ONLY — a bundle whose head does not fast-forward
+   work/ means divergence: stop and reconcile, never force.
 
 ## Sync state
 
-Sync baseline (bundle HEAD this session cloned from): 4999fb0
-Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (granted 2026-08-27)
+Sync baseline (bundle HEAD this session cloned from): 921bb60
+Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (session 14, 2026-08-28)
 
 ## Conventions
 
