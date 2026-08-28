@@ -325,6 +325,25 @@ scheme-2/3 runs at C, measure the actual line — next engine session.
 n=4: framework in the doc; the numeric count is gated on e(det₄) and
 det₄'s first deficit weight (both open).
 
+**SESSION 14 (2026-08-28): RIGIDITY DETERMINED — rank 1, line 2v−D, whole
+ambient space.** Full record: results/results_T4.md; pre-registrations
+committed BEFORE every value (8e9f51e, 7af9d09); 5/5 predictions exact.
+(1) Scheme-1 line measured at T4 = {x₃+=x₀,x₄+=x₁,x₇+=x₁,x₈+=x₂} (third
+pencil class, invertible-containing): ratio = 1 uniform ⟹ Ψ ∝ 2v−D;
+gate V(00)=V(35) exact. (2) LS runs: f2T4_00 and f3T4_00 hit the shared-
+line predictions exactly ⟹ schemes 2,3 evaluate through the SAME
+covariant — the full 3-dim ambient multiplicity space has rank 1 on
+balanced pencils: V^h_σ(N) = W^h(σ)·(2v−D)(N). (3) Integrality theorem:
+κ₂ = 1043/1438, κ₃ = 115/719 make σ-table proportionality non-integral ⟹
+the three ambient HWVs are pairwise-independent functionals (amb = 3 basis
+honest). (4) Ψ = 2v−D explains all banked structure: Ψ(C)=Ψ(R)=Ψ(T4)=1,
+Ψ(rank-1)=0 (P), TOTAL_G = TC standing (un-run). Curiosity for the record:
+T4's and R's scheme-1 DP L8 profiles coincide exactly (states/emitted/
+sum|w|) — mask-reachability coincidence across distinct points. Theorem
+now an exact target: composite Sym⁴W → ambient* has rank 1 with image
+span{2v−D} on the balanced cone. Next: prove it (P_H-analysis of Φ₄), and
+the scaling falsifier stays available as a cheap check.
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
