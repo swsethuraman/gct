@@ -366,6 +366,42 @@ x₈+=x₀}, Ψ = −3, SIGN-FLIPPED table, TOTAL = −3,456,432,000, V_00 =
 (~6 runs ≈ one overnight, closes the theorem and tests the quartic law
 off the unit locus).
 
+**SESSION 16 (2026-08-29): the rigidity theorem is RETRACTED — two
+receiving-space hypotheses falsified by their own pre-registered tests.**
+Full record: results/results_T4.md (session-16 addendum) and the RETRACTION
+NOTICE atop docs/rigidity_theorem.md.
+(1) Completing runs 4/4 HIT (f1T4_01, f1T4_03, f2R_00, f3R_00) — the
+interpolation identity through C/R/T4 is confirmed for every measured class.
+(2) **f1X4_00 = −308,145,600, gate-confirmed by f1X4_35** — vs the
+pre-registered +434,851,200. The session-13 det²-slot is refuted: individual
+matrix elements V^h_σ do not inherit GL₂-covariance (h is a GL₉-Borel HWV;
+the scheme/σ choice breaks it). Input integrity was verified two independent
+ways before concluding.
+(3) f1Xm3_00 = +893,138,400 (vs −326,138,400): second refutation.
+(4) Recovery fit over the 10-dim bidegree-(2,2) conjugation-invariant space
+reached rank 9 (max on the feasible cone) and predicted, parameter-free,
+f1Y4_00 = +69,854,400. **Engine returned 0** ⟹ that space is refuted too;
+the full system is rank 9 / aug-rank 10, and the violated relation spreads
+over nearly every point (residual −628,689,600), so it is not an outlier.
+V^h_σ is NOT a simultaneous-conjugation invariant. (The relation C = Q is
+satisfied exactly — the machinery is sound.)
+(5) UNTOUCHED: c((2,2,2),2) = 1, TOTAL_R = 1,152,144,000 at an
+H-inequivalent point, k=2 ray-closure — no covariance assumption was ever
+used there. SURVIVING: the displacement-cancellation lemma; the integrality
+theorem (factorization V_σ = W(σ)Ψ impossible at X4, via the prime 719 in
+W(id)); the empirical universality itself (identical W-tables at C, R, Q, T4)
+— now an unexplained regularity.
+(6) **WITHDRAWN: TOTAL_G = 1,152,144,000** — it rested on the refuted fits.
+G has never been run; its value is open.
+(7) Leads for the next attempt: A ∝ I or B ∝ I ⟹ 0 (Y1/Y2/Y3); rank-1 ⟹ 0
+(P, now needing an independent proof); Y4's complementary-projection zero
+(AB = 0, A+B = I) — a third mechanism; and the arithmetic that every value
+is 151,200 × an integer with cofactors 719 / −2038 / 5907.
+Engine note: V^h_σ is a bidegree-(2,2) polynomial in the 18 direction
+coordinates (forced by the counting lemma's t = (2,2)) in a space of
+dimension up to 2025 — sampling at ~2h/point cannot pin it; a structural
+route is required.
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
