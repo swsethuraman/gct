@@ -134,3 +134,36 @@ independent refutation test):
 
 Inputs banked (f1Y2/f1Y3/f1Y4_00..35). f1Xm3_05 deprioritized in favour of
 these.
+
+## Session-16 round 2: the refit closes to one free parameter
+
+Engine (all σ = 00, scheme 1):
+
+    f1X4_35  = −308,145,600   GATE PASSED (= f1X4_00; X4 value is real)
+    f1Xm3_00 = +893,138,400   (old-theory prediction −326,138,400: MISSED —
+                               second independent refutation)
+    f1Y2_00  = 0  (final states 0)
+    f1Y3_00  = 0  (final states 0)
+
+Refit constraints now: C, R, T4, Q, P, X4, Xm3, Y2, Y3 (engine) + the free
+stabilizer zero at (I, I) → **rank 9 of 10, consistent, ONE free parameter**,
+and rank 9 is the maximum attainable on the feasible {0,1} cone (one
+invariant direction is invisible there). Hence the σ=00 functional is now
+DETERMINED on the whole feasible cone; the residual parameter τ₀ moves only
+the invisible direction and changes no prediction there.
+
+Striking arithmetic: every measured value is 151,200 × an integer, with
+W(id) = 151200·719, V(X4) = 151200·(−2038), V(Xm3) = 151200·5907 — the
+prime 719 organizes the whole table.
+
+### PRE-REGISTERED (logged before the value landed)
+
+  **f1Y4_00 = +69,854,400  = 151200 · 462**  — parameter-free consequence of
+  the refit, and the validation test of the recovery. A hit confirms the
+  enlarged-space fit and hands us the true functional on the feasible cone;
+  a miss means even the bidegree-(2,2) conjugation-invariance assumption
+  fails, and the receiving space is larger still.
+
+  **G remains parameter-free at +108,712,800** in the refit, so
+  TOTAL_G = 1,152,144,000 continues to stand — it has now survived the
+  collapse of the theory that first predicted it.
