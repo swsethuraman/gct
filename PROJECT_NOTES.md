@@ -423,6 +423,44 @@ coordinates (forced by the counting lemma's t = (2,2)) in a space of
 dimension up to 2025 — sampling at ~2h/point cannot pin it; a structural
 route is required.
 
+**SESSION 17 (2026-08-29, math only): the evaluation's TRUE symmetry —
+double cosets Q·u·H. Deliverable: docs/evaluation_symmetry.md.**
+Conventions verified from scratch (Q = Levi GL3xGL6, 3-space = first row,
+agreeing with the counting lemma's 24 = 3*8), with ONE refinement: Q is the
+parabolic in which the weight-8 block RECEIVES from the weight-6 block
+(binary-form check; the opposite orientation puts every u_N inside Q and
+predicts V == 0, refuted instantly). THEOREM: V is constant on Q·u·H up to
+chi; since Q = Stab(W), the double coset of u_N is the H-orbit of
+Gamma_N = u_N^{-1}(W), i.e. of the 3-dim annihilator NET in M_3 under
+X -> aXb (+transpose) — whose classical invariant is its determinantal plane
+cubic. Convention pinned by HOMOGENEITY (V(2N) = 16 V(N) forces
+V(N') = chi(q)V(N), chi = det(q|quotient)^8 det(q|W)^6 — returns exactly 16).
+KEY CORRECTION made in-session: the theorem constrains TOTALS, not per-sigma
+values (the sigma-decomposition is scheme bookkeeping, not Q- or H-stable);
+testing it per-sigma produces a spurious contradiction.
+CONFIRMED RETRODICTIONS: R and T4 are in the SAME coset with chi = 1 —
+first structural explanation of any part of the universality; Q_pt = C
+(H-conjugate, chi = 1); homogeneity.
+HONEST NEGATIVE: **C and R are in DIFFERENT cosets** (vertex-rank invariant
+[1,2,2] vs [1,1,1], transpose-stable) yet have equal totals — so the symmetry
+does NOT explain the universality of the two certificate points. The group is
+smaller than the phenomenon. Also died: the determinantal cubic's projective
+type as the invariant (too coarse — C, R, T4, X4 are all triangles).
+NEW EMPIRICAL CRITERION (independent of the symmetry, 5/5): **compression
+=> 0** — every non-infeasible banked zero has a net of generic rank <= 2 with
+a common left kernel; every nonzero point has generic rank 3. This UNIFIES
+the three open vanishing leads from session 16 (rank-1 P; A or B ∝ I at
+Y2/Y3; complementary projections at Y4) plus the base point N = 0.
+**PRE-REGISTERED (banked, NOT run): TOTAL_X4 = 4 x 1,152,144,000 =
+4,608,576,000.** R and X4 share a double coset with chi = 4 (explicit
+connecting element, det(a)det(b) = -4). Risky: both known X4 sigma-values are
+negative while the predicted total is positive; the six unmeasured orbit
+values must contribute +8,485,344,000. Cost 6 runs (~1 overnight) — the
+decisive next-session engine test. NOTE the convergence: the retracted
+Psi = 2v-D theory predicted the SAME total; the theories disagree per-sigma
+(which killed Psi) but agree on the total, so the test discriminates
+"both wrong" from "both right about totals".
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
