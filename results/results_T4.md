@@ -195,3 +195,30 @@ completing runs); the f1X4_35 gate; the X4 factorization-refutation.
 Pre-registered and MISSED (3): f1X4_00, f1Xm3_00 (old theory), f1Y4_00
 (recovery fit). Both misses were the tests those theories nominated in
 advance, and both were gate- or relation-validated before being believed.
+
+## Session-18 X4 total: running ledger and the forced constraint
+
+Engine (scheme 1, point X4), all values = 151,200 × integer:
+
+| σ | weight | VALUE | cofactor |
+|---|--------|-------|----------|
+| 00 | 4 | −308,145,600 | −2038 |
+| 01 | 4 | +655,905,600 | +4338 |
+| 02 | 8 | +581,061,600 | +3843 |
+| 04 | 8 | +539,330,400 | +3567 |
+| 05 | 4 | −661,046,400 | −4372 |
+| 14 | 2 | −784,425,600 | −5188 |
+| 03 | 4 | *running* | |
+| 16 | 2 | *running* | |
+
+PRE-REGISTERED (logged with 03 and 16 both still running, neither value seen):
+the predicted TOTAL_X4 = +4,608,576,000 = 151,200 × 30,480 forces
+
+    **4·c₀₃ + 2·c₁₆ = −10,136**,  equivalently  2·c₀₃ + c₁₆ = −5,068,
+    i.e. 4·V₀₃ + 2·V₁₆ = −1,532,563,200.
+
+Note the shape of the bet: six of the eight values are now known and they
+over-shoot the target (weighted cofactor sum 40,616 against a target of
+30,480), so the prediction REQUIRES the final two to be strongly negative.
+If either lands positive, or their weighted sum misses −1,532,563,200, the
+totals-level law fails at the first point where it was ever tested at Ψ ≠ 1.
