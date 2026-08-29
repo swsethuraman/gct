@@ -566,9 +566,14 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
 
 ## Sync state
 
-Sync baseline for session 17 (verified at start, `git bundle list-heads`):
-**aa3d0ff** — this is the exact Projects\gct bundle tip session 17 cloned
-from. Any other tip = another writer; STOP and ask, per rule 10.
+Sync baseline: the Projects\gct bundle tip advances with each write-back,
+so the check is FAST-FORWARD, not string equality: stage the bundle,
+`git bundle list-heads`, and verify the tip is an ANCESTOR of local HEAD
+(`git merge-base --is-ancestor <tip> HEAD`). A tip that is an ancestor is a
+previous write-back of ours; a tip that is NOT an ancestor means another
+writer — STOP and ask, per rule 10. Session-17 start: aa3d0ff.
+Session-18 mid-session write-back: from tip 67db6e8 (our own session-17
+write-back) forward.
 Session-17 write-back will advance the tip; the next session must verify
 whatever this block then names.
 Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-17, through 2026-08-29)
