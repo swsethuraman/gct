@@ -167,3 +167,31 @@ prime 719 organizes the whole table.
   **G remains parameter-free at +108,712,800** in the refit, so
   TOTAL_G = 1,152,144,000 continues to stand — it has now survived the
   collapse of the theory that first predicted it.
+
+## Session-16 round 3: the last pre-registration, confirmed
+
+    f1Y4_00  = 0              (refit predicted +69,854,400 — MISS; see the
+                               RETRACTION NOTICE in docs/rigidity_theorem.md)
+    f1X4_05  = −661,046,400   = 151200 · (−4372)
+
+**The integrality pre-registration is CONFIRMED.** Strict factorization
+V_σ = W(σ)·Ψ would have required 971,891,222,400/719 ∉ ℤ; the engine
+returned an integer, and the measured ratio is
+
+    V_(0 2)(X4) / V_id(X4) = +2186/1019   vs   W((0 2))/W(id) = −3154/719
+
+— different in magnitude AND in sign: at X4 both σ-values are negative,
+whereas the universal table has W(id) > 0 > W((0 2)). The σ-structure does
+not merely rescale off the universal locus; it reorganizes.
+
+Arithmetic of the full σ=00 record (all values = 151,200 × integer):
+    C, R, Q, T4:  +719      X4:  −2·1019      Xm3:  +5907
+    X4 at σ=(0 2): −4·1093   (1019, 1093 new primes, one per exotic point)
+
+## Session-16 ledger
+
+Pre-registered and HIT (6): f1T4_01, f1T4_03, f2R_00, f3R_00 (theorem
+completing runs); the f1X4_35 gate; the X4 factorization-refutation.
+Pre-registered and MISSED (3): f1X4_00, f1Xm3_00 (old theory), f1Y4_00
+(recovery fit). Both misses were the tests those theories nominated in
+advance, and both were gate- or relation-validated before being believed.
