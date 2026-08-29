@@ -497,8 +497,11 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
 
 ## Sync state
 
-Sync baseline (bundle HEAD this session cloned from): 921bb60
-Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (session 14, 2026-08-28)
+Sync baseline (bundle HEAD this session cloned from): 832cf3d
+Session-16 write-back: the Projects\gct bundle tip is the commit whose
+message begins "Session 16 close" — session 17 must verify that exact tip
+(any other tip = another writer; STOP and ask, per rule 10).
+Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-16, through 2026-08-29)
 
 ## Conventions
 
