@@ -55,3 +55,82 @@ selected O3 = 1 from within the pre-written inversion formula.
 The theorem left to prove (math, no engine): the composite
 Sym⁴W → (3-dim ambient)* has rank 1 on the balanced cone with image
 span{2v − D} — all measured structure is now an exact target.
+
+---
+
+# SESSION 16 ADDENDUM: the theorem meets its off-locus probe and FAILS
+
+Date 2026-08-29. All values engine-exact, all predictions pre-registered at
+commit 832cf3d before any run.
+
+## Completing runs — 4/4 HIT (the theorem's measured classes close)
+
+| run     | VALUE        | predicted    | verdict |
+|---------|--------------|--------------|---------|
+| f1T4_01 |  −21,772,800 |  −21,772,800 | HIT |
+| f1T4_03 | +301,870,800 | +301,870,800 | HIT |
+| f2R_00  |  +78,850,800 |  +78,850,800 | HIT |
+| f3R_00  |  +17,388,000 |  +17,388,000 | HIT |
+
+With these, scheme 1 is measured at three independent pencils in every
+W-class, and schemes 2/3 at the id class: V = W(σ)·Ψ holds **as an
+interpolation identity through C, R, T4**.
+
+## X4 — the off-locus test: PREDICTION MISSED (theorem falsified off the unit locus)
+
+    f1X4_00 = −308,145,600     (predicted +434,851,200 = 4·W(id))
+    f1X4_35 = −308,145,600     GATE PASSED (point symmetry + scheme
+                                automorphism partner: identical)
+
+Input integrity verified independently before drawing conclusions: the
+f1X4 input file canonically matches a fresh regeneration, and its monomial
+list matches a separate sympy derivation of det₃∘(I+N).
+
+Ratio V₀₀(X4)/W(id) = −2038/719, not 4 — and not any value achievable by
+an element of span{u₁,u₂,D} that also takes the measured values at C, R,
+T4 (those three pin the slot element uniquely to Ψ, and Ψ(X4) = 4).
+**Therefore the receiving space is strictly larger than the session-13
+3-dimensional slot.**
+
+## Diagnosis
+
+The slot argument assumed every individual V^h_σ is a det²-GL₂-covariant
+of the pencil. But h is a highest-weight vector for the AMBIENT GL₉ Borel;
+neither H nor the choice of scheme/σ preserves that covariance. (The
+formulation doc flagged exactly this — "a MATRIX ELEMENT, not a naive
+covariant" — and the risk was realized.) The branching arithmetic of
+session 13 is not thereby refuted; its APPLICATION to individual matrix
+elements is.
+
+## Integrality theorem (proved, no runs): factorization fails at X4
+
+W(id) = 2⁵·3³·5²·7·**719**, and 719 divides no other entry's cofactor.
+If V_σ(X4) = W(σ)·Ψ_true(X4) with Ψ_true(X4) = −2038/719, then
+V_(0 2)(X4) = 971,891,222,400/719 ∉ ℤ. The engine returns integers, so
+**V_σ(N) = W(σ)·Ψ(N) cannot hold at X4**: σ-structure and N-dependence
+entangle there. (Pre-registered before f1X4_05 landed.)
+
+## Recovery: the true functional, and what survives
+
+Refit over the full 10-dim space of bidegree-(2,2) pencil invariants
+(analysis/wk3_s16_fit.py). Constraints: six engine points (C, R, T4, Q, P,
+X4) → rank 5; plus one FREE structural constraint — A = B = I is a
+stabilizer direction (I+N ∈ H ⟹ substituted form is det₃ itself ⟹ 0 by the
+counting lemma) → rank 6, four free parameters. Displacement-infeasible
+pencils add nothing: every one of the 5,958 has all ten invariants zero
+(a corollary of the session-15 lemma worth recording).
+
+SURVIVING PREDICTION: **G is parameter-free at +108,712,800**, so
+TOTAL_G = 1,152,144,000 stands — now forced by the enlarged space rather
+than by Ψ. The maximum attainable rank on the feasible {0,1} cone is 9
+(one invariant direction is invisible there), so four more measurements
+determine the functional completely on that cone: Xm3_00 (running) plus
+three designed cheap points, each Ψ_old = 0 (so each is also an
+independent refutation test):
+
+    Y2 = {x₃+=x₀, x₆+=x₀, x₇+=x₁, x₈+=x₂}      8 monomials
+    Y3 = {x₃+=x₀, x₄+=x₁, x₅+=x₂, x₆+=x₀}      8 monomials
+    Y4 = {x₃+=x₀, x₄+=x₁, x₈+=x₂}             10 monomials
+
+Inputs banked (f1Y2/f1Y3/f1Y4_00..35). f1Xm3_05 deprioritized in favour of
+these.
