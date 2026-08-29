@@ -1,3 +1,66 @@
+# RETRACTION NOTICE (session 16, 2026-08-29) — read before the body below
+
+**The rigidity theorem stated in this document is RETRACTED.** Two
+successive receiving-space hypotheses were falsified by pre-registered
+engine tests:
+
+1. **The det²-covariant slot (session 13, m = 3).** Falsified by
+   f1X4_00 = −308,145,600 (gate-confirmed by f1X4_35). The three measured
+   pencils C, R, T4 pin any slot element uniquely to Ψ = 2v − D, which
+   predicts +434,851,200 at X4. The slot argument assumed each individual
+   matrix element V^h_σ inherits det²-GL₂-covariance; h is a highest-weight
+   vector for the ambient GL₉ Borel and neither H nor the scheme/σ choice
+   preserves that covariance. This document's own caveat ("a MATRIX
+   ELEMENT, not a naive covariant") named the risk that was realized.
+
+2. **The 10-dim space of bidegree-(2,2) simultaneous-conjugation invariants
+   (session 16 recovery fit).** Falsified by its own parameter-free
+   prediction: the fit through C, R, T4, Q, P, X4, Xm3, Y2, Y3 plus the
+   stabilizer zero required f1Y4_00 = +69,854,400; the engine returned
+   **0**. The full system has rank 9 with augmented rank 10 — inconsistent.
+   The violated relation is spread across nearly every point
+   (6C + 30R − 18T4 + 12P − 9X4 + 2Y1 − 6Xm3 + 3Y2 + 3Y3 + 9Y4, residual
+   −628,689,600 = 151200·(−4158)), so this is not an outlier artifact:
+   **V^h_σ is not a simultaneous-conjugation invariant of the pencil.**
+   (Sanity check passed inside the same computation: the relation C = Q is
+   satisfied exactly, as it must be for H-conjugate points.)
+
+**What this does NOT touch.** Every engine measurement stands, and so does
+the programme's core: c((2,2,2),2) = 1, the second-point certificate
+TOTAL_R = 1,152,144,000 at an H-inequivalent point, and the k = 2
+ray-closure. None of those used a covariance assumption — they are direct
+evaluations plus the Φ₁₈ product/parity algebra.
+
+**What survives from the rigidity work.**
+- The session-15 displacement-cancellation lemma (proved combinatorially,
+  independent of any covariance claim), and its corollary that every
+  displacement-infeasible pencil has all ten (2,2) invariants zero.
+- The integrality theorem: V_σ(N) = W(σ)·Ψ(N) is impossible at X4, since
+  W(id) = 2⁵·3³·5²·7·719 carries the prime 719 alone.
+- The empirical universality itself, now WITHOUT an explanation: the full
+  W-table is identical at C, R, Q (three balanced two-transvection points,
+  two H-classes) and at T4 — four points, every W-class — while X4, Xm3
+  give genuinely different values and Y2, Y3, Y4 give exact zeros.
+
+**What is now OPEN (previously claimed).**
+- TOTAL_G = 1,152,144,000: this prediction rested on the refuted fits and
+  is **withdrawn**. G has never been run; its value is unknown.
+- Any cone-wide law for V^h_σ. The functional is a bidegree-(2,2)
+  polynomial in the 18 direction coordinates (this much is forced by the
+  counting lemma's t = (2,2)), living in a space of dimension up to 2025 —
+  not determinable by ~2h-per-point sampling. A different route is needed.
+
+**Leads for the next attempt** (patterns in the measured zeros, unexplained):
+  - A ∝ I or B ∝ I (a row-wise stabilizer direction) ⟹ 0 (Y1, Y2, Y3).
+  - Rank-1 pencils ⟹ 0 (P) — previously derived from the slot, now needing
+    an independent proof.
+  - Y4 = (diag(1,1,0), diag(0,0,1)): complementary projections, AB = 0,
+    A + B = I ⟹ 0. A third, unexplained vanishing mechanism.
+  - Arithmetic: every measured value is 151,200 × an integer, cofactors
+    719 (C/R/T4/Q), −2038 (X4), 5907 (Xm3).
+
+---
+
 # The rigidity theorem (session 15 — math only, no engine runs)
 
 Companion to docs/rigidity_formulation.md (the framework and the session-14
