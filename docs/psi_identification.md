@@ -82,3 +82,29 @@ to (I, A, B), extract the bidegree-(2,2) part, and compare with
 fitted quartic and becomes a formula evaluable at any direction, forever,
 with no engine — and the compression criterion, the χ law and the totals
 prediction all become corollaries of classical invariant theory.
+
+## Addendum: two vanishing theorems, and why they don't pin Ψ
+
+Working inside the session-13 slot (Ψ ∈ span{u₁, u₂, D}, coordinates
+(c_{u₁}, c_{u₂}, c_D); Ψ = (2, −4, −1)):
+
+**THEOREM 1 (compression ⟹ Ψ = 0, now an identity not a tally).** All 2059
+feasible compression directions in the {0,1} cone have the SAME slot
+coordinates, (u₁,u₂,D) = (2,0,4) (or (0,0,0)). So "vanish on every
+compression direction" is the single linear condition 2c_{u₁} + 4c_D = 0.
+Ψ satisfies it: 2·2 + 4·(−1) = 0. The session-17 compression criterion
+therefore holds for Ψ **by identity**, upgrading it from a 5/5 empirical
+pattern to a proved implication at the Ψ level.
+
+**THEOREM 2 (infeasible ⟹ Ψ = 0, trivially).** All 5958 displacement-
+infeasible directions have slot coordinates (0,0,0) — every slot element
+vanishes there. This re-derives, from a second direction, the session-16
+observation that infeasible pencils carry no (2,2)-invariant information.
+
+**But the zeros do not characterise Ψ.** The two classes together impose
+rank 1 on a 3-dimensional slot, leaving a 2-parameter family
+span{(0,1,0), (−2,0,1)} that contains Ψ but does not single it out. So Ψ
+cannot be defined as "the slot element vanishing where the evaluation
+vanishes" — its identity is fixed by the interpolation through C, R, T4 and
+nothing structural yet replaces that. **The identification remains open**,
+with the degree-6 tensor invariant of (I, A, B) the live candidate.
