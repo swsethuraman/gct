@@ -133,3 +133,55 @@ if a single subproblem settles it in < 2 h), it is **banked, not run**.
 - "The determinantal cubic's projective type is the invariant" — too coarse:
   C, R, T4 and X4 all give triangles, but X4's σ-values differ. The finer
   net-orbit (vertex ranks) is the correct invariant.
+
+---
+
+## 8. Session-18 audit and two checks (2026-08-29 afternoon)
+
+**AUDIT — which totals are actually MEASURED?** (This corrects an
+overstatement in §4 above.)
+
+| point | σ's run | orbit reps needed | total status |
+|-------|---------|-------------------|--------------|
+| C   | full 19-run grind        | all      | **MEASURED** |
+| R   | 11 (8 reps + 3 dups)     | all      | **MEASURED** |
+| T4  | 00, 01, 03, 05 (+35 gate)| 8 reps   | INFERRED (4/8; never 07,08,09,10) |
+| X4  | 00, 05 (+35 gate)        | 8 reps   | not measured (2/8) |
+| Xm3 | 00 (+05)                 | ?        | not measured |
+| Q   | 00, 01                   | ?        | not measured |
+
+Ψ = 1 at C, R, T4 and Q. Therefore **every measured total in the bank sits
+at Ψ = 1: the totals-level law has never been tested at a point where it
+predicts a different number.** Consequently §4's "CONFIRMED RETRODICTION"
+for R = T4 must be downgraded: T4's total is inferred from per-σ table
+agreement across the four W-classes, not summed over a complete orbit set.
+The retrodiction is suggestive, not established. X4 is therefore not a
+further confirmation of anything — it is the FIRST real test of the
+totals-level law.
+
+**CHECK 1 — Ψ at the compression points.** Ψ(P) = Ψ(Y1) = Ψ(Y2) = Ψ(Y3) =
+Ψ(Y4) = 0, so compression ⟹ Ψ = 0 in 5/5 cases: consistent, no refutation.
+(Noted for honesty: the Y-points were already logged as Ψ = 0 in session 15,
+so this check could not have killed anything — it is a consistency record,
+and the 5/5 pattern is itself worth a proof attempt.)
+
+**CHECK 2 — is there a pair where χ and Ψ disagree?** Swept 120 points
+sharing R's double coset, comparing χ(R→N) against Ψ(N) (Ψ(R) = 1):
+**χ = Ψ in 120/120, no disagreements.** Two consequences:
+ - There is **no cheaper discriminator than X4**; any same-coset pair tests
+   the two theories jointly, never against each other.
+ - **χ is subsumed by Ψ.** Ψ additionally relates points in DIFFERENT cosets
+   (C and R) where χ is silent, so at the totals level the double-coset
+   theorem is a corollary of the Ψ law rather than a rival to it. Conjecture
+   worth proving: for any same-coset pair, Ψ(N′)/Ψ(N) = χ(q) identically.
+
+**CHECK 3 — a χ-prediction for Xm3's total?** There is none: Xm3's net is a
+line plus a smooth conic, not a triangle, so Xm3 lies in a different coset
+from R and χ says nothing about it. Only Ψ predicts there
+(TOTAL_Xm3 = −3,456,432,000). Since χ ⊂ Ψ, X4 already tests what Xm3 would,
+at ~8 fewer runs; Xm3 is not queued.
+
+**Standing test (launched 16:20Z, six runs 01/02/03/04/14/16):**
+TOTAL_X4 = 4·V₀₀+4·V₀₁+8·V₀₂+4·V₀₃+8·V₀₄+4·V₀₅+2·V₁₄+2·V₁₆, predicted
+**+4,608,576,000**, with the two known values contributing −3,876,768,000 —
+so the six unmeasured orbit values must contribute +8,485,344,000.
