@@ -108,3 +108,57 @@ cannot be defined as "the slot element vanishing where the evaluation
 vanishes" — its identity is fixed by the interpolation through C, R, T4 and
 nothing structural yet replaces that. **The identification remains open**,
 with the degree-6 tensor invariant of (I, A, B) the live candidate.
+
+## Addendum 2: the slab structure, and how far it pins Ψ
+
+**The apparent contradiction, resolved — WRITE THIS DOWN, a future reader
+will otherwise think we are resurrecting a refuted space.** Fixing slab₀ = I
+collapses the two matrix-side SL₃'s to their diagonal: g·I·hᵀ = I forces
+h = g⁻ᵀ (verified symbolically), so the surviving action is
+A ↦ gAg⁻¹, B ↦ gBg⁻¹. Hence **any SL₃³ tensor invariant restricted to
+(I, A, B) is a simultaneous-conjugation invariant of the pencil** — i.e. it
+lands in exactly the 10-dimensional bidegree-(2,2) space that session 16
+fitted and refuted. That is NOT a contradiction: session 16 refuted that
+space as a home for the **per-σ subproblem values**, and per-σ values are not
+invariant objects at all (the σ-decomposition is scheme bookkeeping, stable
+under neither Q nor H). Ψ governs **totals**. The space is fine; what was
+wrong was the object put in it.
+
+**Ψ IS shift-invariant — an exact identity.** Ψ(A + tI, B + sI) = Ψ(A, B)
+identically in (A, B, t, s), verified symbolically on the general pencil.
+This is the sharp structural test the slab picture demands (adding multiples
+of slab₀ = I to the other slabs is a unipotent slab change, carrying no
+character), and Ψ passes it outright rather than sitting in a chain. It is a
+real constraint, not a vacuous one: u₁ alone is NOT shift-invariant, and
+shift-invariance cuts the 10-dimensional (2,2) space down to **4 dimensions**,
+with Ψ inside. Strong support for the tensor-invariant hypothesis.
+
+**The pencil cubic is ALSO insufficient.** The coefficients of
+det(x₀I + x₁A + x₂B) are the elementary conjugation invariants
+(1, trA, trB, e₂A, e₂B, trA trB − trAB, det A, det B, and the two mixed
+determinants), all of total degree ≤ 3. Their bidegree-(2,2) products span at
+most 8 dimensions, and **Ψ is not among them** (rank 8 vs augmented rank 9).
+The obstruction is concrete: Ψ needs u₂ = tr(A²B²) − tr((AB)²), a length-4
+trace word that a cubic cannot see. So both cubics — the v-cubic and the
+pencil cubic — lose exactly what Ψ keeps. Only the tensor retains it.
+
+**How far the structure pins Ψ, and where it stops.** Intersecting the
+4-dimensional shift-invariant space with the 3-dimensional det²-covariant
+slot gives **2 dimensions, span{u₂, 2u₁ − D}**, containing
+Ψ = (2u₁ − D) − 4u₂. Both generators vanish at the compression coordinates
+(u₁,u₂,D) = (2,0,4) — which is *why* Theorem 1 above is automatic — so the
+compression condition adds nothing new here. Ψ is therefore pinned by the
+parabolic-invariance constraints only up to a 2-parameter family; the
+coefficient −4 on u₂ is not yet explained by any structural principle.
+
+**Honest state.** Every structural test Ψ could have failed, it passed
+(shift-invariance, conjugation-invariance, compression vanishing, the χ
+agreement). But nothing so far *derives* Ψ; it is still defined by the
+interpolation through C, R, T4. Closing this needs I₆ constructed explicitly
+and restricted to (I, A, B), with its bidegree-(2,2) component compared
+against Ψ. On the folklore flag: the degrees 6, 9, 12 are attributed to
+Vinberg's θ-group analysis of the ℤ/3-grading of E₆ (with C³⊗C³⊗C³ the
+degree-1 piece and the Hessian group as Weyl group) — a real theorem, but it
+must be confirmed from a source before entering the paper. The S/T
+identification is where folklore crept in, and the two cubic results above
+now make it doubtful.
