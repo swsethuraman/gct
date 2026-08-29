@@ -1,5 +1,26 @@
 # gct — project notes
 
+## STATUS AT A GLANCE (2026-08-29 — read before anything below)
+ESTABLISHED (no covariance assumption was ever used in any of these):
+  World A solved; World B conductor transport (254/254).
+  e(det3) = 18 = 2n^2; Phi18(det3) = -877,879,296,000; V(Phi18) ∩ closure
+  = boundary exactly; div(Phi18) = 6P1 + 9P2; perm3 ∉ closure(det3).
+  def((2,2,2),2) = 1; c((2,2,2),2) = 1, RAY-COMPLETE (def = 0 for all k>=1).
+  TOTAL = 1,152,144,000 at C and at R (H-inequivalent, proven).
+LEMMAS / METHODS that survive: displacement-cancellation lemma; integrality
+  theorem (719); scheme-automorphism Klein lemma; taxonomy of the 15 balanced
+  points; intersection-algebra double-coset invariant.
+  The session-13 count m = 3 REMAINS VALID as a computation of that Hom-space;
+  what is refuted is the premise that V^h_sigma lives in it.
+RETRACTED 2026-08-29 (sessions 13-15 headers below are superseded):
+  the rigidity theorem; V^h_sigma as a det^2-covariant; V^h_sigma as a
+  simultaneous-conjugation invariant; TOTAL_G = 1,152,144,000 (G never run,
+  value OPEN).
+OPEN PHENOMENON (data, no mechanism): identical W-tables at C, R, Q, T4 —
+  four points, three inequivalent pencil classes. Every value is
+  151,200 x integer (cofactors 719 / -2038 / 5907 / -4372).
+
+
 Programme: **conductors and deficits of orbit closures** (the anabelian↔GCT
 dictionary, made computational). Swami & Claude. This file is the standing
 context for the project: state of results, assets, infrastructure protocol,
@@ -494,14 +515,25 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
    Updates land in work/ by `git -C work pull ..\gct.bundle main` as
    --ff-only merges ONLY — a bundle whose head does not fast-forward
    work/ means divergence: stop and reconcile, never force.
+12. **Launch each worker wrapper exactly ONCE, and verify the scratch
+   directory is unowned before starting an engine** (session-16 incident: a
+   duplicate `setsid ... wS16c.sh` put two engines on the same directory,
+   both writing the same lev*.dat/ck.txt — caught within a minute, both
+   killed by PID, state wiped, run restarted clean; no corrupted value
+   entered the record). Before launching: `ps -o pid,ppid,cmd` and confirm no
+   dp2g already owns that dir. After launching: confirm exactly one wrapper
+   and one engine per dir. Count wrappers by PPID — a bare `pgrep -f wS16`
+   also matches your own shell's command line (the read-only cousin of
+   rule 4's footgun).
 
 ## Sync state
 
-Sync baseline (bundle HEAD this session cloned from): 832cf3d
-Session-16 write-back: the Projects\gct bundle tip is the commit whose
-message begins "Session 16 close" — session 17 must verify that exact tip
-(any other tip = another writer; STOP and ask, per rule 10).
-Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-16, through 2026-08-29)
+Sync baseline for session 17 (verified at start, `git bundle list-heads`):
+**aa3d0ff** — this is the exact Projects\gct bundle tip session 17 cloned
+from. Any other tip = another writer; STOP and ask, per rule 10.
+Session-17 write-back will advance the tip; the next session must verify
+whatever this block then names.
+Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-17, through 2026-08-29)
 
 ## Conventions
 
@@ -516,7 +548,11 @@ Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-16, 
 
 ## Roadmap (refreshed 2026-08-24)
 
-R1. **Harden the c((2,2,2),2) = 1 verdict**: independent second evaluation
+R1. **[COMPLETE — sessions 12-16.** Second-point certificate at R
+    (H-inequivalent, TOTAL_R = 1,152,144,000) and the k=2 rung closed
+    ray-complete; the rigidity follow-on was attempted and RETRACTED, see
+    the status header. Nothing here remains open.]
+    Harden the c((2,2,2),2) = 1 verdict: independent second evaluation
     point (another balanced substitution pair), then the k = 2 rung of the
     Φ₁₈-ray (does the deficit stay cleared — conductor exactly 1 confirmed
     ray-wise). The h-series inputs (h1A–D, h2A–D, h3A in evalin/) are the
