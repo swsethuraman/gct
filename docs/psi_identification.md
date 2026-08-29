@@ -162,3 +162,76 @@ degree-1 piece and the Hessian group as Weyl group) — a real theorem, but it
 must be confirmed from a source before entering the paper. The S/T
 identification is where folklore crept in, and the two cubic results above
 now make it doubtful.
+
+---
+
+# THE IDENTIFICATION CLOSES: Ψ is derived, not fitted (session 18, late)
+
+The remaining freedom — the coefficient −4 on u₂ — is now **forced by
+equivariance**, with no tensor generator constructed and no interpolation.
+
+## The missing group element
+
+Shift-invariance uses only the unipotent part of the slab group fixing
+slab₀. The rest of the slab SL₃ mixes slab₀ into the others: the element
+sending slab₀ ↦ slab₀ + t·slab₁ produces (I + tA, A, B), which renormalises
+to standard form by left-multiplying every slab by (I + tA)⁻¹:
+
+    A ↦ (I + tA)⁻¹A ,   B ↦ (I + tA)⁻¹B ,   with a det(I + tA) character.
+
+Infinitesimally, the derivation δA = −A², δB = −AB plus a character term
+k·tr(A)·f; and symmetrically δA = −BA, δB = −B² with k·tr(B)·f.
+
+## The result (all machine-verified)
+
+**Ψ satisfies the FULL functional equation with k = 2, exactly:**
+
+    Ψ( (I+tA)⁻¹A , (I+tA)⁻¹B ) · det(I + tA)² = Ψ(A, B)
+
+verified at four independent random (A, B, t) with the exponent coming out
+exactly 2 each time, and the infinitesimal form
+**D_A Ψ + 2·tr(A)·Ψ = 0 holds identically** (and likewise for D_B).
+
+**Neither generator of the 2-dimensional space span{u₂, 2u₁ − D} satisfies
+it**: u₂ forces k = 4953/2488 and 2u₁ − D forces k = 68/87, neither of which
+is an identity. So within that space only the combination with coefficient
+−4 is equivariant.
+
+**Uniqueness, stated minimally.** Imposing both derivation conditions with
+k = 2 on the FULL 10-dimensional bidegree-(2,2) conjugation-invariant space
+leaves a **2-dimensional** solution space, one generator of which is exactly
+Ψ = (−4, 4, 0, 0, 3, −3, −1, −1, 2, 0) in the trace-word basis. Intersecting
+with the det²-covariant slot cuts it to **dimension 1**:
+
+    equivariance ∩ det²-slot  =  span{ u₁ − 2u₂ − ½D }  =  span{ Ψ } .
+
+(For the record, intersecting equivariance with shift-invariance instead
+leaves dimension 2 — the slot is the condition that does the cutting, and
+shift-invariance is implied rather than independent.)
+
+## THEOREM (Ψ characterised)
+
+> Ψ is the unique — up to scale — bidegree-(2,2) simultaneous-conjugation
+> invariant of the pencil (A, B) that lies in the det²-covariant slot and is
+> equivariant for the slab group with character det², i.e. satisfies
+> D_A f + 2 tr(A) f = D_B f + 2 tr(B) f = 0.
+> Normalising Ψ(C-pencil) = 1 fixes the scale and gives Ψ = 2u₁ − 4u₂ − D.
+
+**The coefficient −4 is therefore derived.** Ψ is no longer defined by
+interpolation through C, R, T4; those three points now serve only to fix a
+normalisation constant. Every structural property recorded earlier —
+shift-invariance, compression ⟹ Ψ = 0, the χ = Ψ agreement on 120/120
+same-coset pairs — becomes a corollary of this characterisation, and Ψ is
+computable at any direction, forever, with no engine.
+
+**What this does NOT settle.** Whether the *evaluation totals* obey
+TOTAL(N) = Ψ(N)·1,152,144,000 remains an empirical question — that is
+exactly what the X4 grind is testing tonight. This theorem identifies Ψ as a
+canonical object; it does not prove the evaluation follows it. The two
+questions are now cleanly separated, which they were not before.
+
+**Consequence for the I₆ programme.** Constructing the degree-6 tensor
+invariant is no longer needed to pin Ψ. It remains interesting for a
+different reason: it would explain *why* the evaluation should be governed by
+this particular equivariant object, rather than merely confirming which
+object it is.
