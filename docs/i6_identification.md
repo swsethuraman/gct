@@ -160,3 +160,159 @@ identification of *which canonical object* Ψ is. It would leave entirely open
 connects the λ′-highest-weight-vector evaluation h₁ to I₆'s (2,2) part. That
 remaining step is the actual content of open problem (2).
 
+---
+
+# PART II — RESULT (computed after the pre-registration was committed, c06ba3f)
+
+## Verdict: **O1**, and in a stronger form than O1 was stated
+
+> **THEOREM (exact symbolic identity, machine-verified on the generic pencil in
+> all 18 indeterminates).**
+>
+>     I₆( I , A , B )  =  −6 · Ψ(A, B)
+>
+> where I₆ is the complete ε-contraction of T^{⊗6} with pattern
+> P₁ = ((0,1,2),(3,4,5)), P₂ = ((0,1,3),(2,4,5)), P₃ = ((0,2,4),(1,3,5)),
+> and Ψ = 2u₁ − 4u₂ − D.
+
+Not "the bidegree-(2,2) component of the restriction is a multiple of Ψ" — the
+**whole restriction is**, because the restriction has no other component:
+
+> **LEMMA (bidegree rigidity of the restriction; proved, not observed).** Each
+> of the two slot-1 ε₃'s absorbs the slab indices of three copies and vanishes
+> unless those three indices are **distinct**. Hence in every surviving term
+> each of the two 3-blocks uses slab₀, slab₁, slab₂ exactly once, so the slab
+> multidegree is forced to (2,2,2): I₆|₍I,A,B₎ is **purely bidegree (2,2)** in
+> (A,B). Machine check: the only bidegree occurring in the expanded restriction
+> is (2,2).
+
+This also retires the pre-registered support test as vacuous-but-passed: the
+predicted support was ⊆ {(6,0),(5,1),(2,2),(1,5),(0,6),(3,3)}; the observed
+support is exactly {(2,2)}. No component appeared in a bidegree whose a-priori
+equivariant dimension is 0 — no alarm.
+
+## Normalisation: the coefficient is 1, not −6
+
+The contraction's 1152 monomials have coefficients ±{6, 12, 24, 48, 60} with
+**content exactly 6**. So the primitive integral form is I₆^prim = I₆/6, and
+
+    **Ψ  =  − I₆^prim( I , A , B )** ,   coefficient 1.
+
+Ψ *is* the Aronhold degree-6 invariant of the net's tensor, in normal form, up
+to sign. The −4 that session 18 had to derive from equivariance is simply what
+the Aronhold invariant does.
+
+## Validation record
+
+| check | result |
+|---|---|
+| 2×2×2 anchor: Ref A (Cayley 12-term) ≡ Ref B (disc of the slab pencil) | exact, symbolic |
+| 2×2×2: rank of the 27-pattern span | **1** |
+| 2×2×2: symbolic identity contraction = −2·Det_Cayley on 8 indeterminates | **exact** |
+| 2×2×2 anchors: rank-1 (×2), W-state (rank 3, tangent), 0 | all **0** |
+| 2×2×2 anchors: GHZ | **1** |
+| 2×2×2 anchor: generic rank-2 = (det(u,u′)det(v,v′)det(w,w′))² = 3094² | **9,572,836 exact** |
+| 3×3×3: fast 2-stage evaluator vs naive 18-index contraction, 5 patterns | **exact** |
+| 3×3×3: rank of the 100-pattern span over 60 random tensors | **1** |
+| 3×3×3: transposition lemma predicts 64 zeros | **exactly the 64 observed** |
+| 3×3×3: SL₃ invariance in each of the three slots (random unipotents) | **holds** |
+| 3×3×3: character on scaling a slot by 2 | **64 = det(2I)²**, all three slots |
+| I₆ monomial count on the generic tensor | **1152** — matches Bremner–Hu's Aronhold I₆ |
+| symbolic route vs fast evaluator at a random tensor | **exact** |
+| **I₆(I,A,B) + 6Ψ ≡ 0 in 18 indeterminates** | **exact** |
+| c₂₂/Ψ over 40 random integer pencils | **−6, single value** |
+
+## Step 6 — banked cross-check (nothing outranked the identification)
+
+| net | Ψ | I₆(I,A,B) | I₆/(−6) | banked TOTAL | Ψ · TOTAL_C |
+|---|---|---|---|---|---|
+| C (cyclic pencil) | 1 | −6 | 1 | 1,152,144,000 | 1,152,144,000 |
+| R (DD pencil, H-inequivalent to C) | 1 | −6 | 1 | 1,152,144,000 | 1,152,144,000 |
+| T4 (invertible-containing) | 1 | −6 | 1 | not run | 1,152,144,000 |
+| Q (H-translate of C) | 1 | −6 | 1 | not run | 1,152,144,000 |
+| X4 | 4 | −24 | 4 | **4,608,576,000** | 4,608,576,000 |
+| Xm3 | −3 | 18 | −3 | not run | −3,456,432,000 |
+| P (rank-1, compression) | 0 | 0 | 0 | 0 | 0 |
+| Y2 (B = I, compression) | 0 | 0 | 0 | 0 | 0 |
+| Y4 (AB = 0, A+B = I) | 0 | 0 | 0 | 0 | 0 |
+| N = 0 | 0 | 0 | 0 | 0 | 0 |
+
+Every banked engine value is consistent. Nothing was adjusted to fit.
+
+## Three consequences, and one correction to the record
+
+1. **Compression ⟹ 0 becomes classical.** A compression net (generic rank ≤ 2,
+   common left kernel) has a degenerate tensor, and its Aronhold invariant
+   vanishes. Session 17's 5/5 empirical criterion and session 18's slot-coordinate
+   identity are now one classical fact.
+2. **χ = Ψ on 120/120 same-coset pairs is now a corollary, not a coincidence.**
+   Ψ = −I₆^prim is a tensor semi-invariant with character det² in each factor, so
+   it *must* transform multiplicatively along double cosets. The empirical
+   agreement was the character it was bound to have.
+3. **Ψ is engine-free and basis-free forever.** It is a classical invariant of a
+   3-dimensional net of 3×3 matrices, computable from the net alone.
+4. **CORRECTION to session 18 (independent of I₆, and it strengthens the
+   theorem).** The bidegree-(2,2) simultaneous-conjugation space is
+   **9-dimensional, not 10** — the ten trace words satisfy one relation (the
+   polarised Cayley–Hamilton identity for 3×3). Session 18's "equivariance
+   leaves 2 dimensions, and the det²-slot cuts it to 1" was a coefficient-space
+   artefact: the second nullspace vector *is* the relation. In function space
+   **equivariance alone leaves exactly 1 dimension, spanned by Ψ.** The
+   det²-slot was never needed for the characterisation.
+
+## THE BOUNDARY — what this does NOT establish
+
+**This does not prove the totals law.** It identifies *which* canonical object Ψ
+is: the Aronhold invariant of the net's tensor, restricted to slab normal form.
+It says nothing about why the λ′-highest-weight-vector **evaluation** h₁ — a
+GL₉-Borel object living in Sym²⁰Sym³C⁹, with no tensor in sight — should have
+totals proportional to that invariant. TOTAL(N) = Ψ(N)·1,152,144,000 remains an
+**empirical law**, tested at Ψ = 1 (C, R), Ψ = 4 (X4) and Ψ = 0 (P and four
+compression points). Open problem (2) is *reframed*, not solved.
+
+It is also worth saying what did **not** get easier: the per-σ values. Session
+16's refutation stands untouched — at X4 the σ-table reorganises rather than
+rescaling, and nothing here bears on it. Ψ governs totals only.
+
+## What the remaining step now looks like (DESIGN, not a result)
+
+The identification does sharpen the target, and the sharpened target is worth
+recording precisely, with its gaps named:
+
+* (i) TOTAL is a bidegree-(2,2) polynomial on W = C²⊗gl₃ — session 15's counting
+  lemma (t = (2,2)). **Proved, prior session.**
+* (ii) TOTAL is constant on the double cosets Q·u·H up to χ, and the double coset
+  of u_N is the H-orbit of the annihilator net *as a subspace* of M₃ — session
+  17's theorem. **Proved, prior session; not re-derived here.**
+* (iii) Because only the **subspace** matters, the net's basis change (the third
+  tensor slot) acts trivially, and the two M₃-side actions are the other two
+  slots. So TOTAL, written in the standard parametrisation (I, A, B), would be a
+  simultaneous-conjugation invariant satisfying a slab equivariance with
+  character χ. **NOT verified this session** — in particular the transpose coset
+  and the exact slot dictionary need checking.
+* (iv) IF that character is det², then Part I's uniqueness (equivariance alone
+  pins the bidegree-(2,2) space to ⟨Ψ⟩) forces TOTAL = c·Ψ, and evaluating at C
+  gives c = 1,152,144,000 — the totals law, proved. **The single unproved link
+  is χ ↔ det².** Session 17 verified χ = Ψ on 120/120 same-coset pairs
+  numerically; that is evidence for exactly this identification, not a proof of
+  it.
+
+So the honest state is: the totals law now has a *candidate proof* with one
+named gap, where before it had none. That is progress on open problem (2), and
+it is not a solution to it. Nothing in this document should be written up as
+more.
+
+## Files
+
+    analysis/wk4_s19_eps.py        general n x n x n epsilon-contraction machinery
+    analysis/wk4_s19_anchor222.py  the 2x2x2 Cayley anchor (step 2)
+    analysis/wk4_s19_fast.py       fast exact degree-6 evaluator + S6 reduction
+    analysis/wk4_s19_deg6.py       pattern enumeration (slow route)
+    analysis/wk4_s19_rank6.py      rank-1 verification, ratio audit
+    analysis/wk4_s19_vanish.py     the re-derived transposition vanishing lemma
+    analysis/wk4_s19_prereg.py     a-priori equivariant space (pre-registration)
+    analysis/wk4_s19_slotdim.py    equivariant dimension by bidegree (function space)
+    analysis/wk4_s19_slotdim2.py   focused cells (2,2), (2,3), (3,3), (2,4)
+    analysis/wk4_s19_restrict.py   the restriction, bidegree extraction, comparison
+    analysis/wk4_s19_symbolic.py   1152-term count + the exact symbolic identity
+    analysis/wk4_s19_bank.py       step-6 banked cross-check, invariance checks
