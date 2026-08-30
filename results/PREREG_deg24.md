@@ -158,3 +158,33 @@ in the sense that `V(det_3) . 35/246` must be an integer.
 **Prediction, logged now:** the odd-only run at `S'` will return
 `-203,212,800`, equal to its even-only value, by the same `K_a = K_{8-a}`
 symmetry.
+
+---
+
+# OUTCOME OF THE PRE-REGISTRATION
+
+    V(det_3, S)  =  -24,745,222,656,000  =  -2^12 3^7 5^3 7^2 . 11 . 41   != 0
+
+**The prediction HITS: `24 in E(det_3)`.**  Landed 2026-08-31, run `d24_det`,
+6255 s, peak 258,319,584 states at level 14.
+
+Consequences that follow immediately:
+- `def((8^9), 24) = 0`; `mult_{(8^9)} C[Omega-bar]_24 = 1`;
+- `E(det_3) contains <18, 24>`, so `E/6 contains <3,4> = {0,3,4,6,7,8,...}`,
+  and in particular `gcd E = 6` is realised, as B-I theory demands;
+- `Phi_24` is the second generator of the invariant semigroup ring.
+
+Derived (not independently predicted — it follows from the 35/246 ratio logged
+at `b0401a8` together with the value above): the second bracket structure must
+return
+
+    V(det_3, S')  =  (35/246) . (-24,745,222,656,000)  =  -3,520,661,760,000 .
+
+That run is in flight at the time of this line.
+
+Normalisation-free consequence, worth recording because it does not depend on
+which bracket monomial is used (both sides scale by `c_S`):
+
+    Phi_24(det_3) / K_8  =  17325  =  3^2 . 5^2 . 7 . 11 ,
+
+confirmed identically at `S` and (predicted) at `S'`.
