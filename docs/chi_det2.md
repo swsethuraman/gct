@@ -138,3 +138,230 @@ the *theorem*, not of a fit: a miss refutes one of steps (i)–(iv) and localise
 which. It is not run in this session.
 
 ---
+
+# PART II — RESULT (computed after the pre-registration was committed, 2545f1e)
+
+## Verdict: **the gap closes. The totals law is a theorem.**
+
+> **THEOREM (totals law).** For every balanced direction N = e₁⊗A + e₂⊗B,
+>
+>     TOTAL(N)  =  Ψ(N) · 1,152,144,000 ,     Ψ = 2u₁ − 4u₂ − D = −I₆^prim(I,A,B).
+>
+> Proof: steps (i), (ii) as before; step (iii) below; step (iv) as before, with
+> the uniqueness input re-verified independently here.
+
+The predictions P1–P5 all landed, and none of the falsifiers F1–F5 fired. The
+two named pieces of step (iii) behave as follows.
+
+## 1. The character is a square, and the transpose coset cannot contribute
+
+Write u_{N′} = q·u_N·s with s = t⁻¹ ∈ H, so that q = u_{N′}·t·u_N⁻¹ and
+Γ_{N′} = t·Γ_N. Then, purely from λ′ = (8,8,8,6⁶) and 8 = 6 + 2,
+
+    χ(q) = det(q|_{V/W})⁸ · det(q|_W)⁶ = det(q)⁶ · det(q|_{V/W})² .
+
+Both u's are unipotent, so det(q) = det(t); and det(t) = ±1 on H, since
+X ↦ aXb has determinant (det a·det b)³ = 1 and the transpose has determinant
+(−1)³ = −1 on M₃. Hence **det(q)⁶ = 1 on both cosets** and
+
+> **χ(q) = det(q|_{V/W})²  —  a perfect square, with the transpose coset
+> contributing nothing.**
+
+This is the same parity that closed the k = 2 ray (det₉ is −1 on the transpose
+coset, and the exponent there was even too). Verified 58/58 in the sweep, on
+both cosets, including non-unimodular elements. **P1 confirmed, F1 not fired.**
+
+## 2. The slot dictionary: which 3-space is V/W?
+
+Reconstructed from scratch (`analysis/wk4_s22_dict.py`), with the session-17
+orientation: u_N is the unipotent in which **row 0 receives**,
+(u_N X)_{0j} = X_{0j} + Σ_l A_{lj}X_{1l} + Σ_l B_{lj}X_{2l}, and
+W = {row 0 = 0} = span{x₃…x₈}. Then Γ_N = u_N⁻¹(W) = ker(first three rows of
+u_N), so
+
+    Γ_N^⊥ = rowspan(first three rows of u_N),
+
+and the *j*-th row of u_N, read as a 3×3 matrix, is exactly the net element
+with rows (e_jᵀ, (Ae_j)ᵀ, (Be_j)ᵀ). Two consequences, and they are the whole
+dictionary:
+
+* the tensor slabs are (I, A, B) — session 18's closed form, re-derived here as
+  a triviality of the construction rather than a computation;
+* **the canonical parameter v is the u_N-transported basis of W^⊥.** The three
+  tensor slots are: slot 1 = the row index of the net matrix, slot 3 = its
+  column index, slot 2 = the parameter v. H acts on slots 1 and 3 only
+  (X ↦ aXb acts on rows and columns); it does **not** act on slot 2.
+
+Because (V/Γ_N)* = Γ_N^⊥ and the transported bases are the v-bases,
+
+    det(q|_{V/W}) = det(G)⁻¹ ,
+
+where G is the change of parameter induced by t — i.e. **the slot-2 basis
+change**. Explicitly, with α = a^{-T}, β = b^{-T},
+
+    S′_k = Σ_{k′} α_{kk′} βᵀ S_{k′},   P = Gᵀ = βᵀ(α₀₀I + α₀₁A + α₀₂B),
+    A′ = S′₁P⁻¹,   B′ = S′₂P⁻¹.
+
+Verified 58/58. **P2 confirmed, F2 not fired.** Combining with §1:
+
+> **χ = det(G)⁻² : the character is det² in the net's parameter slot — the
+> third tensor slot, the one H does not act on.** This is the χ ↔ det²
+> identification, and it is an identity, not a numerical agreement.
+
+The sign of the exponent is pinned independently by homogeneity, exactly as
+session 17 pinned the convention: for the one-parameter subgroup realising
+N ↦ sN one gets det G = s^{−4/3}·… , concretely χ = d¹² = s⁴ with s = d³,
+which is V(sN) = s⁴V(N). **F3 not fired.**
+
+## 3. What the group does to (A, B), and what it therefore does to TOTAL
+
+Two one-parameter subgroups, computed symbolically in all 18 indeterminates
+(`analysis/wk4_s22_oneparam.py`):
+
+| element of H | induced action on (A,B) | χ |
+|---|---|---|
+| β unipotent, α = I | (A,B) ↦ (βᵀAβ^{-T}, βᵀBβ^{-T}) — **conjugation** | **1** |
+| α: slab₀ ↦ slab₀+t·slab₁, β = I | (A,B) ↦ (A(I+tA)⁻¹, B(I+tA)⁻¹) | **det(I+tA)⁻²** |
+| α: slab₀ ↦ slab₀+t·slab₂, β = I | (A,B) ↦ (A(I+tB)⁻¹, B(I+tB)⁻¹) | **det(I+tB)⁻²** |
+
+Both are realised inside H (α, β ∈ SL₃, so det a·det b = 1), so the
+double-coset theorem applies to them. Hence, for TOTAL:
+
+    TOTAL(gAg⁻¹, gBg⁻¹) = TOTAL(A,B),
+    D_A TOTAL + 2 tr(A)·TOTAL = 0,     D_B TOTAL + 2 tr(B)·TOTAL = 0,
+
+with the derivations δA = −A², δB = −BA (and the mirror δA = −AB, δB = −B²).
+
+**A correction to the session-18/19 record, and it changes nothing.** Those
+documents write the slab renormalisation as *left* multiplication,
+((I+tA)⁻¹A, (I+tA)⁻¹B); the dictionary gives *right* multiplication,
+(A(I+tA)⁻¹, B(I+tA)⁻¹). The two differ by conjugation by (I+tA) — verified
+symbolically — so on conjugation-invariant functions they impose the same
+condition, and the recorded characterisation of Ψ stands verbatim. The
+derivations above are the ones actually derived from the dictionary.
+
+## 4. Ψ obeys the same law — including on the transpose coset
+
+Ψ = −I₆^prim(I,A,B) is a semi-invariant with character det² in each slot. Under
+t ∈ H, slots 1 and 3 receive α and βᵀ with (det α·det β)² = (det a·det b)⁻² = 1,
+and the renormalisation is a slot-2 action by G⁻¹. So
+
+    **Ψ(A′,B′) = det(G)⁻²·Ψ(A,B) = χ·Ψ(A,B)** — verified 58/58, exactly.
+
+The transpose acts on the net by Y ↦ Yᵀ, i.e. it **swaps slots 1 and 3**. Since
+the degree-6 invariant space is one-dimensional, S₃ acts on it by a character,
+and the sign character was the live danger (F4): it would have made Ψ
+anti-invariant where TOTAL is invariant and refuted the law outright. It is
+**trivial**, confirmed two independent ways:
+
+1. all transpose-coset cases in the sweep satisfy the Ψ law with a **+** sign
+   (16 in the first pass, 29 in the consolidated sweep, no exceptions);
+2. directly: on the 9-parameter family of tensors fixed by the slot-1↔3 swap
+   (row 0 of A = e₁ᵀ, row 0 of B = e₂ᵀ, row 2 of A = row 1 of B), Ψ takes the
+   values 2532, 480, 3712, −1259, 4096, 1992 at random members — it does not
+   vanish identically, which it would have to if the character were the sign.
+
+**P4 confirmed, F4 not fired.** Note that the transpose is harmless *twice
+over*, and for independent reasons: it cannot enter χ (det(t)⁶ = 1) and it
+cannot enter Ψ (trivial swap character).
+
+## 5. The uniqueness input, re-verified from scratch (F5)
+
+Not taken from the session-19 record (`analysis/wk4_s22_unique.py`):
+
+* **dim of the bidegree-(2,2) simultaneous-conjugation invariants = 9**, by an
+  SL₃ character computation independent of any trace-word basis: the
+  multiplicity of the trivial representation in Sym²(gl₃) ⊗ Sym²(gl₃) is 9
+  (with dim Sym²(gl₃) = 45 and dim of the tensor square = 2025 as sanity
+  checks). The ten trace words have rank 9 as functions — the one relation is
+  the polarised Cayley–Hamilton identity, as recorded.
+* Imposing the two equivariances **derived in this session** leaves a
+  2-dimensional coefficient space, hence **exactly 1 dimension in function
+  space**, and both nullspace vectors are constant multiples of Ψ (ratios 1/2
+  and 2 over the whole sample). **F5 not fired.**
+
+## 6. The proof
+
+1. TOTAL is a bidegree-(2,2) polynomial on the 18-dimensional balanced cone
+   (counting lemma, session 15).
+2. For t ∈ H, q := u_{N′}·t·u_N⁻¹ preserves W and TOTAL(N′) = χ(q)·TOTAL(N)
+   (session 17).
+3. χ(q) = det(q)⁶·det(q|_{V/W})² = det(q|_{V/W})², since det(q) = det(t) = ±1
+   and 6 is even. **[§1]**
+4. det(q|_{V/W}) = det(G)⁻¹ with G the induced change of the net's parameter —
+   the third tensor slot. So χ = det(G)⁻². **[§2]**
+5. Specialising t: TOTAL is a simultaneous-conjugation invariant and satisfies
+   D_A TOTAL + 2 tr(A)TOTAL = D_B TOTAL + 2 tr(B)TOTAL = 0. **[§3]**
+6. That space is one-dimensional and is spanned by Ψ. **[§5]**
+7. So TOTAL = c·Ψ; TOTAL(C) = 1,152,144,000 and Ψ(C) = 1 give
+   c = 1,152,144,000. ∎
+
+## 7. Three consequences
+
+**(a) Session 17's honest negative is resolved.** C and R are in *different*
+double cosets and have equal totals; session 17 concluded "the group is smaller
+than the phenomenon" and left the coincidence standing. It is now explained:
+the group is indeed too small to connect C to R, but the space of functions it
+constrains is **one-dimensional**, so the law extends across cosets even though
+the group does not. Equality of the two certificate totals is forced.
+
+**(b) Session 18's χ = Ψ on 120/120 same-coset pairs was not a coincidence and
+not merely a character argument** — it is the identity χ = det(G)⁻² together
+with Ψ's slot-2 character, which is what §2 and §4 prove.
+
+**(c) The character is det² for an arithmetic reason, and the reason
+generalises.** For a deficit weight λ′ = (p,p,p,q⁶) the same computation gives
+
+    χ = det(t)^q · det(q|_{V/W})^{p−q} ,
+
+so the character in the net's parameter slot is **det^{p−q}**, and the transpose
+coset is harmless **iff q is even**. For our weight p − q = 8 − 6 = 2, which is
+why the relevant classical object is the degree-6 Aronhold invariant (character
+det² per slot on 3×3×3 tensors). Two predictions follow for other weights, and
+they are cheap to state and expensive to test:
+
+* if p − q = 3 the governing object would be the **degree-9** Vinberg generator;
+  if p − q = 4, the degree-12 one. The totals law is not special to Ψ — it is
+  the p = q + 2 case of a family.
+* if q is odd, χ picks up −1 on the transpose coset while any det^{even}
+  semi-invariant does not, forcing TOTAL to **vanish** on every direction whose
+  net is H-equivalent to its own transpose. That is a testable vanishing law at
+  the first odd-q deficit weight.
+
+## 8. What this does NOT settle
+
+* **Per-σ values.** Untouched. Session 16's refutation stands: the σ-table is
+  scheme bookkeeping, stable under neither Q nor H, and at X4 it reorganises
+  rather than rescaling. The theorem is about totals and says nothing here.
+* **The hypotheses are inherited.** The proof consumes step (i) (the counting
+  lemma) and step (ii) (the double-coset theorem) as given; both were proved in
+  earlier sessions and were not re-derived here beyond rebuilding the
+  conventions they rest on. A failure of the standing engine prediction below
+  would most likely indict one of those, not §§1–5.
+* **Other weights.** Everything above is for λ′ = (8,8,8,6⁶). §7(c) says what
+  the generalisation should look like; nothing here proves it.
+
+## 9. The standing engine prediction is now a theorem's prediction
+
+The handoff logged in Part I is unchanged in content and changed in status. At
+X₋₃ = {x₃+=x₂, x₄+=x₁, x₇+=x₁, x₈+=x₀}, where Ψ = −3:
+
+    **TOTAL_{X₋₃} = −3,456,432,000**, with the whole σ-table sign-flipped.
+
+This is now the prediction of a proved law rather than of a fit, and the first
+test of the law at a negative value of Ψ. Inputs are banked
+(`inputs/evalin/f1Xm3_*`; the one measured value there is V₀₀ = +893,138,400);
+cost is the eight orbit representatives, about one overnight on two workers.
+**Not run in this session** — it is handed to the engine track. A miss would
+refute step (i) or step (ii), since §§1–5 are now identities.
+
+## Files
+
+    analysis/wk4_s22_dict.py      conventions rebuilt from scratch; u_N, W, the
+                                  net, the slot dictionary, chi from the 9x9
+                                  definition, Psi
+    analysis/wk4_s22_chi.py       chi vs det(G)^-2 vs the Psi ratio, both cosets
+    analysis/wk4_s22_oneparam.py  the one-parameter slab subgroups, symbolically
+    analysis/wk4_s22_unique.py    the character count (dim = 9) and the
+                                  equivariant subspace (dim = 1)
+    analysis/wk4_s22_sweep.py     the consolidated 58-case sweep, seven checks
