@@ -237,3 +237,52 @@ This is a point prediction with no freedom left: the run either returns
 exactly −688,262,400 and TOTAL_X4 = +4,608,576,000 confirms the
 totals-level law, or it returns anything else and the law fails. Logged
 before the value existed.
+
+## VERDICT: the totals-level law is CONFIRMED at X4
+
+    f1X4_16 = −688,262,400   — exactly the forced value.
+
+    TOTAL_X4 = 4V₀₀+4V₀₁+8V₀₂+4V₀₃+8V₀₄+4V₀₅+2V₁₄+2V₁₆
+             = +4,608,576,000
+             = 4 × 1,152,144,000 = Ψ(X4) × TOTAL_C,   ratio 4.000000 exactly.
+
+Weights sum to 36 ✓. All eight values are 151,200 × integer, cofactors
+(−2038, +4338, +3843, −258, +3567, −4372, −5188, −4552) summing weighted to
+30,480 = 4,608,576,000 / 151,200.
+
+**This is the first test of the totals-level law at a point where Ψ ≠ 1**
+(the audit established that only C and R had measured totals, both at Ψ = 1),
+and it passes exactly. Note how demanding the test was by the end: after six
+values the running sum OVERSHOT the target (weighted cofactor 40,616 vs
+30,480), so confirmation required the last two to be strongly negative —
+and V₀₃ = −39,009,600 and V₁₆ = −688,262,400 delivered precisely the
+required −10,136.
+
+### Prediction ledger and its epistemics (stated precisely)
+
+1. **TOTAL_X4 = +4,608,576,000** — pre-registered in session 17
+   (commit 67db6e8), before six of the eight values existed. CLEAN.
+2. **4c₀₃ + 2c₁₆ = −10,136** — pre-registered at commit eed6c05 with both
+   f1X4_03 and f1X4_16 unmeasured and running. CLEAN.
+3. **f1X4_16 = −688,262,400** — derived from (2) plus the measured c₀₃
+   without observing the run's output. The commit (b1f4c31, 00:17:13Z)
+   nonetheless landed **7 seconds after** the value reached disk
+   (r_f1X4_16.out written 00:17:06.774Z). So this one is "derived blind,
+   committed seconds late" — NOT a clean pre-registration, and it is
+   recorded that way. The scientific weight rests on (1) and (2), both of
+   which were logged long before the values existed.
+
+### What this confirms
+
+- **TOTAL(N) = Ψ(N) × 1,152,144,000** survives its first genuine test.
+- The χ corollary survives with it (χ = Ψ on 120/120 same-coset pairs).
+- Combined with the session-18 identification theorem — Ψ is the unique
+  det²-slot invariant equivariant for the slab group with character det² —
+  the evaluation's totals are now governed by a **derived**, engine-free
+  formula, valid at any balanced direction.
+
+### What it does NOT confirm
+
+Per-σ values remain unexplained and are known NOT to follow Ψ (session 16's
+refutation stands: at X4 the σ-table reorganises rather than rescaling).
+The law is a statement about totals only.

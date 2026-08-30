@@ -461,6 +461,36 @@ Psi = 2v-D theory predicted the SAME total; the theories disagree per-sigma
 (which killed Psi) but agree on the total, so the test discriminates
 "both wrong" from "both right about totals".
 
+**SESSION 18 (2026-08-29/30): the totals-level law CONFIRMED, and Psi DERIVED.**
+Two results, both first-of-kind for the programme.
+(1) **TOTAL_X4 = +4,608,576,000 = 4 x 1,152,144,000 exactly** (ratio
+4.000000 = Psi(X4)), from a complete 8-value orbit assembly. This is the
+FIRST test of TOTAL(N) = Psi(N) x 1,152,144,000 at a point with Psi != 1 —
+the audit showed only C and R had measured totals and both sat at Psi = 1.
+Pre-registered in session 17 (67db6e8) before six of the eight values
+existed; the intermediate constraint 4c03 + 2c16 = -10,136 was pre-registered
+at eed6c05 with both runs live. Demanding by the end: after six values the
+sum OVERSHOT (40,616 vs 30,480 cofactor units), so confirmation required the
+last two to be strongly negative, which they were. Full ledger with honest
+epistemics (the final forced value was committed 7s after it hit disk —
+derived blind but not a clean pre-registration) in results/results_T4.md.
+(2) **Psi is DERIVED, not fitted** (docs/psi_identification.md): the net has
+closed form Gamma^perp = {[v; Av; Bv]}, whose 3x3x3 tensor slabs are exactly
+(I, A, B); fixing slab0 = I collapses SL3xSL3 to conjugation; and Psi is the
+UNIQUE (up to scale) bidegree-(2,2) conjugation invariant in the det^2-slot
+that is slab-equivariant with character det^2 (D_A f + 2 tr(A) f = 0, likewise
+D_B). The -4 coefficient is forced. Interpolation through C/R/T4 now only
+fixes a normalisation. Corollaries: shift-invariance, compression => Psi = 0
+(also proved as an identity: all compression points share slot coords
+(2,0,4)), and chi = Psi on 120/120 same-coset pairs. Both plane-cubic routes
+are dead (degree count: no degree-2 invariants of ternary cubics; plus three
+triangles with Psi = 0, 1, 4), and the pencil cubic is insufficient too
+(Psi needs the length-4 word u2). I6 is no longer needed to pin Psi.
+STILL OPEN: per-sigma values (session 16's refutation stands — at X4 the
+sigma-table reorganises, it does not rescale); why the evaluation should
+follow this equivariant object at all (the I6 question, now well-posed);
+and TOTAL_G, still un-run and un-predicted.
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
