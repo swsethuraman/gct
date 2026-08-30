@@ -78,7 +78,15 @@ already excludes every smaller degree.  We show $V(\Phi_{18})\cap\cO=\partial\cO
 degeneracy of a cubic of border determinantal complexity at most $3$ is
 precisely the vanishing of one explicit degree-$18$ equation; we deduce that
 the invariant ring of $\cO$ is a numerical semigroup ring, and we give an
-invariant-evaluation proof that $\per_3\notin\cO$.  Finally we compute the
+invariant-evaluation proof that $\per_3\notin\cO$.  We then exhibit the second
+generator of that semigroup ring.  The degree period forces an invariant in a
+degree divisible by $6$ but not by $18$; the ambient space of degree-$24$
+invariants turns out to be one-dimensional, which makes vanishing as cheap to
+decide as nonvanishing, and
+$\Phi_{24}(\det_3)=-2^{12}3^{7}5^{3}7^{2}\cdot11\cdot41\neq0$.  Hence
+$\mathcal E(\det_3)\supseteq\langle 18,24\rangle$, its complement in $6\bN$ is
+contained in $\{6,12,30\}$, and degree $30$ is the only value left
+undetermined.  Finally we compute the
 first conductor of a determinant: $c\big((2,2,2),2\big)=1$, certified at two
 provably inequivalent orbit points and complete along the entire
 $\Phi_{18}$-ray.  The computation rests on an evaluation functional whose
@@ -459,19 +467,107 @@ Restriction to the dense orbit is injective on $\bC[\cO]^{\SL_9}$ and
 $\dim\bC[\cO]^{\SL_9}_\delta\le1$ for every $\delta$, so
 $\bC[\cO]^{\SL_9}$ is the semigroup ring of the numerical semigroup
 $S=\mathcal E(\det_3)$.  Combining Theorem \ref{thm:census} with the degree
-period: $S\subseteq6\bN$, $\min S=18$, and $\gcd S=6$.  Consequently
+period, $S\subseteq6\bN$, $\min S=18$ and $\gcd S=6$; hence $S\neq18\bN$.  By
+Theorem \ref{thm:deg24}, $24\in S$, and therefore
 \[
-  S\neq 18\bN .
+  S\;\supseteq\;\langle 18,24\rangle\;=\;6\cdot\langle3,4\rangle
+  \;=\;\{0,18,24,36,42,48,54,\dots\} .
 \]
+Equivalently $\tfrac16S$ contains every nonnegative integer except possibly
+$1,2,5$, and $1,2\notin\tfrac16S$.  The only undetermined degree is $30$:
+either $S=\langle18,24\rangle$, or $S=6\cdot\langle3,4,5\rangle
+=\{0,18,24,30,36,\dots\}$.
 \end{corollary}
 
-The last line deserves emphasis, because it is a nonexistence statement turned
-into an existence one.  Were $S=18\bN$, its greatest common divisor would be
-$18$; the degree period forces $6$.  So $\cO$ carries an invariant in some
-degree that is a multiple of $6$ but not of $18$, and the smallest candidate is
-$24$.  We have not computed degree $24$.  It is the cheapest open question in
-this paper, and unlike the totals law of Section \ref{sec:functional} it is
-decided by a computation of a kind we have already done.
+In the first version of this paper the last line of Corollary
+\ref{cor:semigroup} was a pure existence statement: were $S=18\bN$ its greatest
+common divisor would be $18$, while the degree period forces $6$, so $\cO$ had
+to carry an invariant in some degree that is a multiple of $6$ but not of $18$,
+and $24$ was the smallest candidate.  That invariant now exists explicitly.
+
+\begin{theorem}\label{thm:deg24}
+$\dim_\bC\bC[\Sym^3\bC^9]^{\SL_9}_{24}=1$; write $\Phi_{24}$ for a generator.
+Its value on the determinant is nonzero:
+\begin{equation}\label{eq:value24}
+  \Phi_{24}(\det_3)\;=\;-24\,745\,222\,656\,000
+  \;=\;-2^{12}\,3^{7}\,5^{3}\,7^{2}\cdot11\cdot41\;\neq\;0 ,
+\end{equation}
+in the normalisation fixed by the explicit bracket monomial recorded in
+\texttt{results/results\_deg24.md}.  Consequently
+\[
+  24\in\mathcal E(\det_3),\qquad \dfc\big((8^{9}),24\big)=0,\qquad
+  \mult_{(8^{9})}\bC[\cO]_{24}=1 ,
+\]
+and $\Phi_{24}$ is the second generator of $\bC[\cO]^{\SL_9}$ --- a new
+generator, not a product, since there is no invariant of degree $6$ on $\cO$ to
+multiply $\Phi_{18}$ by.
+\end{theorem}
+
+The one-dimensionality in Theorem \ref{thm:deg24} is what makes the statement
+cheap, and it is worth isolating why.  For a general degree the vanishing
+direction is the expensive one: it needs the multiplicity of the rectangular
+weight in $\bC[\cO]_\delta$, a computation strictly larger than the
+$\delta=18$ census.  Here it is free.  Since
+$\bC[\cO]^{\SL_9}_{24}$ is the image of $\bC[\Sym^3\bC^9]^{\SL_9}_{24}$ under
+restriction --- surjective on invariants because $\SL_9$ is reductive --- and
+that ambient space is a single line, $24\in\mathcal E(\det_3)$ holds
+\emph{if and only if} $\Phi_{24}(\det_3)\neq0$.  One integer decides both
+directions.  The ambient Hilbert function, computed exactly, is
+\[
+  \dim\bC[\Sym^3\bC^9]^{\SL_9}_\delta \;=\;
+  0,0,0,0,0,\;\mathbf 1,\;0,\;\mathbf 1,\;1,\;4
+  \qquad(\delta=3,6,\dots,30).
+\]
+Two features deserve comment.  The bracket census of Proposition
+\ref{prop:census} permits $\delta=21$ --- $21\le\binom73=35$ --- yet the
+multiplicity there is $0$, so the exact count is strictly sharper than the
+pigeonhole bound.  And at $\delta=30$ the ambient space is four-dimensional, so
+the same collapse does not occur: degree $30$ is not decided by a single number,
+and Corollary \ref{cor:semigroup} leaves it open for that reason.
+
+\begin{remark}[A normalisation-free form of \eqref{eq:value24}]\label{rem:norm24}
+The scale of $\Phi_{24}$ is a convention, so \eqref{eq:value24} should be read
+alongside a ratio that is not.  Restrict $\Phi_\delta$ to the six-dimensional
+space $U$ of cubics $\sum_{\sigma\in S_3}u_\sigma
+x_{1\sigma1}x_{2\sigma2}x_{3\sigma3}$, which contains both $\det_3$ and
+$\per_3$.  The diagonal torus of $\GL_9$ preserves $U$ and the weight condition
+$\sum_\sigma e_\sigma M_\sigma=8J$ has exactly the nine solutions
+$e=(a,a,a,8-a,8-a,8-a)$, so
+$\Phi_{24}|_U=\sum_{a=0}^{8}K_aP^{a}Q^{8-a}$ with $P=u_{\mathrm{id}}u_cu_{c^2}$
+and $Q=u_{t_1}u_{t_2}u_{t_3}$; a row/column permutation of odd total sign
+exchanges $P$ and $Q$ and acts trivially on $\det^{8}$, so $K_a=K_{8-a}$.  Then
+$\Phi_{24}(\det_3)=\sum_a(-1)^aK_a$ and $K_8$ is the value of the run in which
+only even permutations are allowed, and
+\[
+  \Phi_{24}(\det_3)/K_8\;=\;17325\;=\;3^{2}\,5^{2}\,7\cdot11 ,
+\]
+independently of the bracket monomial used.  The same construction at
+$\delta=18$ gives $\Phi_{18}(\det_3)/K'_6=4725=3^{3}5^{2}7$ and
+$\Phi_{18}(\per_3)/K'_6=-272=-2^{4}\cdot17$, whose quotient is the ratio
+$-4725/272$ of \eqref{eq:value} and \eqref{eq:perm}.  Note also that
+$K_a=K_{8-a}$ pairs indices of \emph{equal} parity, so it does not annihilate
+the alternating sum: no symmetry of $U$ forces \eqref{eq:value24} to vanish.
+This was recorded as a pre-registered prediction before the value was computed.
+\end{remark}
+
+\begin{remark}[Why the divisor does not decide it]\label{rem:notdivisor}
+It is tempting to settle degree $24$ from Proposition \ref{prop:divisor} without
+any computation.  On the orbit there is an invariant $\varphi$ of degree $6$
+with $\varphi(g\cdot\det_3)=\det(g)^{2}$, well defined because $\det(h)=\pm1$
+for $h\in H$, and $\Phi_{18}|_{G\cdot\det_3}=\Phi_{18}(\det_3)\varphi^{3}$; so
+$\operatorname{div}(\varphi)=2P_1+3P_2$, and $\varphi^{4}$ has effective
+divisor.  The inference ``effective divisor, hence regular'' is Serre's
+criterion and needs $\cO$ normal, which it is not; applied to $\varphi$ itself
+the same inference would give $6\in\mathcal E(\det_3)$, which is false.  What
+the computation does prove is the positive part: $\varphi$ is regular on the
+normalisation $\cO^{\nu}$, so $\bC[\cO^{\nu}]^{\SL_9}=\bC[\varphi]$ has degree
+monoid exactly $6\bN$, and $\bC[\cO]^{\SL_9}$ is the semigroup ring of
+$S\subseteq6\bN$ inside it.  The gaps of $\tfrac16S$ --- now known to be
+$\{1,2\}$ or $\{1,2,5\}$ --- are precisely the degrees at which the
+non-normality of $\cO$ is arithmetically visible on invariants, and the
+conductor of that numerical semigroup is the conductor of $\bC[\cO]^{\SL_9}$ in
+its normalisation.
+\end{remark}
 
 \begin{corollary}\label{cor:perm}
 $\per_3\notin\cO$; that is, the border determinantal complexity of the
@@ -811,6 +907,22 @@ semiinvariant must satisfy; that is evidence, not proof.  We state the gap this
 narrowly because it is the whole of what remains, and because it is a statement
 about two characters on a $17$-dimensional group rather than about any
 computation.
+\end{question}
+
+\begin{question}[Degree $30$, and the shape of the semigroup]\label{q:deg30}
+Corollary \ref{cor:semigroup} leaves exactly one degree open: is
+$30\in\mathcal E(\det_3)$?  Equivalently, is $S=\langle18,24\rangle$ or
+$S=\langle18,24,30\rangle$?  Unlike degree $24$ this is not decided by one
+number: the ambient space $\bC[\Sym^3\bC^9]^{\SL_9}_{30}$ is
+four-dimensional, so nonvanishing is still witnessed by a single evaluation but
+vanishing would require all four.  Two remarks on what to expect.  Every
+numerical semigroup with two generators is symmetric, so
+$S=\langle18,24\rangle$ holds if and only if $\bC[\cO]^{\SL_9}$ is Gorenstein,
+whereas $\langle3,4,5\rangle$ is not symmetric; we know no reason for
+Gorensteinness here and offer this only as the shape of the dichotomy.  And by
+Remark \ref{rem:notdivisor} the answer names the last gap of $\tfrac16S$, hence
+the exact conductor of $\bC[\cO]^{\SL_9}$ in its normalisation $\bC[\varphi]$:
+either $36$ or $24$.
 \end{question}
 
 \begin{question}[The next conductor row]\label{q:delta3}
