@@ -1110,6 +1110,295 @@ where session 8's starvation structure suggests the wild component gets its
 next chance to wake. The banked h-series inputs in the repo are these
 evaluations, ready for the hardened engine. <span class="tag">queued</span></p>
 
+<h2><span class="no">§W4</span>Week 4, session 12 — a second certificate, at a provably different point</h2>
+<p><b>The certificate is no longer about C.</b> The k = 1 value was re-measured at
+R = (x₃ ↦ x₃+x₀, x₇ ↦ x₇+x₁), a balanced point in the other live H-class:
+11 runs, all final-states valid, all three relation gates matched, every
+pre-logged prediction hit. <b>TOTAL_R = 1 152 144 000</b> — equal to TOTAL_C on the
+nose. The two points are <i>proven</i> inequivalent, not merely apparently so: the
+intersection algebra 𝔰(u) = 𝔥 ∩ Ad(u)𝔥 is a double-coset invariant, and it is
+four-dimensional at both points but non-abelian at C and abelian at R. No
+symmetry of the setup carries one to the other, so the shared value says
+something about the functional and not about the frame.
+<span class="tag">computed 2026-08-26; results_R.md</span></p>
+<p><b>The ray closed.</b> A product certificate plus even-parity transport gives
+def(λ_k, 2+18k) = 0 for every k ≥ 1 — the first fully resolved conductor ray of a
+determinant. <b>c((2,2,2), 2) = 1 stands, hardened.</b> Companions: exact vanishing
+at the rank-1 point P, Q = C by conjugacy as a validation, f1D_00 zero, and the
+15 feasible balanced points sorted into rank-1 / cyclic / diagonal.</p>
+<p><b>An unexpected regularity, and a parked question.</b> The whole W-table —
+not just the total — is identical at C and at R, across both live H-classes.
+That is far more than the certificate needed, and it became the next target:
+if the value is an invariant of the ray class rather than of the point, some
+covariant is doing the work. Separately, Φ₁₈(h1gen) hit a deterministic
+overflow at level 6 (the non-checkpointed path has a fixed spill-run cap and
+h1gen's density gives 699 485 585 states at level 5 of 18). Parked, and
+computationally irrelevant either way. <span class="tag">universality: 11/11 + 36 + 2</span></p>
+
+<h2><span class="no">§W4</span>Week 4, session 13 — the slot is three-dimensional, and P stops being a coincidence</h2>
+<p><b>Counting before measuring.</b> A branching count in Sym⁴W — validated first,
+with seven exact brute-force cross-checks, a dimension audit at 5985, and a
+transpose-side double computation of the key multiplicity — gives m = 3. Every
+scheme/subproblem functional is a det²<sub>GL₂</sub> ⊗ triv<sub>GL₃</sub> pencil covariant
+lying in the three-dimensional span{u₁, u₂, D}, with
+u₁ = tr(A²)tr(B²) − tr(AB)², u₂ = tr(A²B²) − tr((AB)²), and D the discriminant
+completion. The obvious third generator (trA trB − tr(AB))² is <i>not</i> in the
+slot — it fails to vanish on proportional pencils. Hand algebra had it wrong;
+the machine check caught it. <span class="tag">docs/rigidity_formulation.md</span></p>
+<p><b>What that buys immediately.</b> Every det²-covariant vanishes identically on
+proportional pencils, since (A, cA) is a degenerate GL₂-transform of (A, 0). So
+the exact engine zeros at the rank-1 point P are representation theory, not
+accident — session 12's rank-1 conjecture is proved at the covariant level, and
+the engine data becomes attainment confirmation rather than evidence. The
+substituted legs are forced balanced, t = (2,2). Universality, however, is
+<i>not</i> free: m = 3 &gt; 1 means it is a genuine rank statement, and the C = R data
+confine every actual functional to the plane span{u₁−2u₂, D}.</p>
+
+<h2><span class="no">§W4</span>Week 4, session 14 — rank one, and the line is 2v − D</h2>
+<p><b>The third point decides it.</b> T4 = {x₃+=x₀, x₄+=x₁, x₇+=x₁, x₈+=x₂}, the
+feasible eleven-monomial four-transvection point in the third pencil class,
+was measured with pre-registrations committed before every value. Five of five
+predictions exact. The ratio came out uniform at 1, so Ψ ∝ 2v − D with
+v = u₁ − 2u₂; the gate V(00) = V(35) held exactly. Schemes 2 and 3, run at T4
+and at R, hit the shared-line predictions — so all three schemes evaluate
+through the <i>same</i> covariant, and the three-dimensional ambient multiplicity
+space has rank 1 on balanced pencils. <span class="tag">pre-registered 8e9f51e, 7af9d09</span></p>
+<p><b>Honesty about the basis.</b> κ₂ = 1043/1438 and κ₃ = 115/719 make the
+σ-table proportionality non-integral, which proves the three ambient
+highest-weight vectors are pairwise-independent functionals — the basis is
+honest, not an artefact. On the slot coordinates the sampled points read
+C = (−1,−1,1), R = (1,0,1), T4 = (3,0,5), P = (0,0,0), giving Ψ = 1, 1, 1, 0.
+One curiosity for the record: T4's and R's scheme-1 DP profiles at level 8
+coincide exactly in states, emitted and Σ|w| — a mask-reachability coincidence
+across genuinely distinct points.</p>
+
+<h2><span class="no">§W4</span>Week 4, session 15 — the theorem proved, and a lemma worth more than it</h2>
+<p><b>Proof by interpolation.</b> The slot theorem plus an invertible evaluation
+matrix at C, R and T4 (determinant 2) give V<sup>h</sup><sub>σ</sub> = W<sup>h</sup>(σ)·Ψ with
+Ψ = 2v − D exactly, in full for two classes and confined to explicit planes
+containing Ψ for the rest — each closed by one pre-registered run:
+f1T4_01 = −21 772 800, f1T4_03 = +301 870 800, f2R_00 = +78 850 800,
+f3R_00 = +17 388 000. The suggested a-priori shortcut was shown symbolically
+to be impossible: proportionality and rank-1-locus vanishing together
+annihilate the whole slot.</p>
+<p><b>The displacement-cancellation lemma.</b> Content feasibility holds if and
+only if there exist 2+2 conversions with Σ(e<sub>tgt</sub> − e<sub>src</sub>) = 0 — proved via the
+forced t = (2,2) distribution and an integral Birkhoff decomposition for 3×3
+doubly stochastic matrices. It derives the 15-of-81 sweep structurally instead
+of by enumeration. This lemma outlived everything else in the session.
+Meanwhile the Ψ-locus dichotomy was tested and came back <b>false</b>: 48 distinct
+values in [−40, 53] over the {0,1} cone. The mod-4 lemma survived.
+<span class="tag">docs/rigidity_theorem.md</span></p>
+
+<h2><span class="no">§W4</span>Week 4, session 16 — the retraction</h2>
+<p><b>Two hypotheses died on their own tests.</b> This is the session the method
+was built for, and it is the least comfortable one to write up. The completing
+runs hit 4/4, confirming the interpolation identity on every measured class.
+Then the decisive off-locus point returned <b>f1X4_00 = −308 145 600</b>, against
+a pre-registered +434 851 200, gate-confirmed by an independent run and with
+input integrity verified two separate ways before any conclusion was drawn.
+The session-13 det²-slot is refuted at the level of individual matrix
+elements: V<sup>h</sup><sub>σ</sub> does not inherit GL₂-covariance, because h is a
+GL₉-Borel highest-weight vector and the scheme/σ choice breaks it.
+A second point, f1Xm3_00 = +893 138 400 against a pre-registered −326 138 400,
+confirmed it. <span class="tag">RETRACTION NOTICE atop docs/rigidity_theorem.md</span></p>
+<p><b>And the recovery attempt died too.</b> A fit over the full ten-dimensional
+bidegree-(2,2) conjugation-invariant space reached rank 9 — the maximum on the
+feasible cone — and predicted, parameter-free, f1Y4_00 = +69 854 400. The
+engine returned <b>0</b>. The system is rank 9 with augmented rank 10 and the
+violated relation spreads over nearly every point (residual −628 689 600), so
+it is not an outlier: the per-σ values are not simultaneous-conjugation
+invariants either. The relation C = Q held exactly throughout, which is how we
+know the machinery was sound while the hypothesis was not.</p>
+<div class="thm">
+<p><b>What survived, stated precisely.</b> Untouched: c((2,2,2),2) = 1,
+TOTAL_R = 1 152 144 000 at an H-inequivalent point, and the k = 2 ray closure —
+no covariance assumption was ever used in any of them. Surviving as results:
+the displacement-cancellation lemma; the integrality theorem (the
+factorisation V_σ = W(σ)Ψ is impossible at X4, via the prime 719 in W(id)); and
+the empirical universality itself — identical W-tables at C, R, Q and T4 — now
+demoted from theorem to unexplained regularity. <b>Withdrawn:</b> TOTAL_G =
+1 152 144 000, which rested on the refuted fits. G has never been run.</p>
+</div>
+
+<h2><span class="no">§W4</span>Week 4, session 17 — the symmetry is a double coset, and it is too small</h2>
+<p><b>The real invariance.</b> Conventions rebuilt from scratch, with one
+refinement that mattered: Q is the parabolic in which the weight-8 block
+receives from the weight-6 block. The opposite orientation puts every u_N
+inside Q and predicts V ≡ 0 — refuted instantly, which is the cheapest kind of
+check to run and the easiest to skip. <b>Theorem: V is constant on the double
+coset Q·u·H up to a character χ.</b> Since Q is the stabiliser of W, the double
+coset of u_N is the H-orbit of the three-dimensional annihilator net in M₃
+under X ↦ aXb and transpose. Homogeneity pins the convention: V(2N) = 16 V(N)
+forces χ = det(q|quotient)⁸det(q|W)⁶, which returns exactly 16.
+<span class="tag">docs/evaluation_symmetry.md</span></p>
+<p><b>A correction made in-session</b>, worth recording because it would have
+produced a spurious contradiction: the theorem constrains <i>totals</i>, not
+per-σ values. The σ-decomposition is scheme bookkeeping and is stable under
+neither Q nor H. Retrodictions confirmed: R and T4 share a coset with χ = 1 —
+the first structural explanation of any part of the universality — and Q_pt = C
+by conjugacy.</p>
+<p><b>The honest negative.</b> C and R lie in <i>different</i> cosets (vertex-rank
+invariant [1,2,2] against [1,1,1], transpose-stable) and yet have equal totals.
+The symmetry does not explain the universality of the two certificate points:
+<b>the group is smaller than the phenomenon.</b> Also dead: the determinantal
+cubic's projective type as the invariant — too coarse, since C, R, T4 and X4
+are all triangles. One new empirical criterion, 5/5 and independent of the
+symmetry: <b>compression ⟹ 0</b>, unifying three separate open vanishing leads
+from session 16 plus the base point.</p>
+<p><b>Pre-registered, not run: TOTAL_X4 = 4 × 1 152 144 000 = 4 608 576 000.</b>
+R and X4 share a coset with χ = 4, by an explicit connecting element with
+det(a)det(b) = −4. The prediction is risky in a useful way: both known X4
+σ-values are negative while the predicted total is positive, so the six
+unmeasured orbit values must contribute +8 485 344 000. Note the convergence —
+the retracted Ψ = 2v − D theory predicts the same total. The two theories
+disagree per-σ, which is what killed Ψ, but agree on the total, so the test
+discriminates "both wrong" from "both right about totals".</p>
+
+<h2><span class="no">§W4</span>Week 4, session 18 — the totals-level law confirmed, and Ψ derived rather than fitted</h2>
+<p><b>The prediction landed.</b> <b>TOTAL_X4 = 4 608 576 000</b>, exactly 4 × TOTAL_C,
+from a complete eight-value orbit assembly — the first test of the law at a
+point where Ψ ≠ 1, since the audit showed C and R were both sitting at Ψ = 1.
+It was demanding by the end: after six values the running sum had <i>overshot</i>
+(40 616 against 30 480 cofactor units), so confirmation required the last two
+to be strongly negative, and they were. The intermediate constraint
+4c03 + 2c16 = −10 136 was pre-registered with both runs live. The ledger keeps
+the epistemics honest: the final forced value was committed seven seconds
+after it hit disk — derived blind, but not a clean pre-registration, and it is
+recorded that way. <span class="tag">results_T4.md, session-18 addendum</span></p>
+<p><b>Ψ stops being a fit.</b> The net has closed form Γ<sup>⊥</sup> = {[v; Av; Bv]},
+whose 3×3×3 tensor slabs are exactly (I, A, B); fixing the first slab to the
+identity collapses SL₃×SL₃ to conjugation; and Ψ is the <i>unique</i> up to scale
+bidegree-(2,2) conjugation invariant that is slab-equivariant with character
+det², i.e. 𝒟_A f + 2 tr(A) f = 0 and likewise in B. The −4 coefficient on u₂ is
+forced. Interpolation through C, R and T4 now only fixes a normalisation.
+Corollaries: shift-invariance; compression ⟹ Ψ = 0, proved as an identity
+(every compression point shares slot coordinates (2,0,4)); and χ = Ψ on 120 of
+120 same-coset pairs. Both plane-cubic routes are dead on a degree count, and
+the pencil cubic is insufficient since Ψ needs the length-four word u₂.
+<span class="tag">docs/psi_identification.md</span></p>
+
+<h2><span class="no">§W4</span>Week 4, session 19 — Ψ is Aronhold's invariant</h2>
+<p><b>Anchor before verdict.</b> The 2×2×2 evaluator was pinned against Cayley's
+hyperdeterminant first: 0 at the two rank-one points, 0 at the W-state, 1 at
+GHZ, and 9 572 836 = 3094² = (det(u,u′)det(v,v′)det(w,w′))² at a generic
+rank-two point — exactly, before anything else was allowed to run.</p>
+<div class="thm">
+<p><b>I₆(I, A, B) = −6·Ψ(A, B)</b>, an exact symbolic identity in all eighteen
+pencil indeterminates. Not "Ψ is the (2,2) component of the tensor generator" —
+the restriction <i>has</i> no other component. Proved lemma: each slot-1 epsilon
+needs three distinct slab indices, so every three-block uses I, A and B once
+each and the slab multidegree is forced to (2,2,2). The content of I₆ is 6, so
+in the primitive integral normalisation Ψ = −I₆<sup>prim</sup>(I,A,B) with coefficient 1.
+The −4 that session 18 derived from equivariance is simply what the Aronhold
+invariant does.</p>
+</div>
+<p><b>Identification cross-checked, and a correction that strengthens the
+theorem.</b> The fast two-stage evaluator agrees with the naive eighteen-index
+contraction on five patterns; the rank of the hundred-pattern degree-6 span is
+1; SL₃-invariance holds in all three slots; the character det² is confirmed by
+scaling a slot by 2 and getting 64; and I₆ has exactly 1152 monomials on the
+generic 3×3×3 tensor, matching Bremner–Hu's Aronhold I₆ — an independent
+identification of the object. The correction: the bidegree-(2,2)
+simultaneous-conjugation space is <i>nine</i>-dimensional, not ten. The ten trace
+words satisfy one relation — polarised Cayley–Hamilton in rank 3 — and session
+18's "second nullspace vector" <i>is</i> that relation. In function space,
+slab-equivariance alone leaves exactly one dimension, spanned by Ψ; the
+det²-slot was never needed for the characterisation. The vanishing rule was
+re-derived independently as a transposition lemma, predicting exactly the 64
+observed zeros of 100. <span class="tag">docs/i6_identification.md</span></p>
+<div class="thm">
+<p><b>The boundary, stated plainly: this does not prove the totals law.</b> It says
+which canonical object Ψ is. It says nothing about why the evaluation — a
+GL₉-Borel highest-weight vector in Sym²⁰Sym³ℂ⁹, with no tensor in sight —
+should follow it. TOTAL(N) = Ψ(N) × 1 152 144 000 remains empirical, tested at
+Ψ = 1, 4 and 0 and at no other value. What changed is that there is now a proof
+route with one named gap: TOTAL is bidegree (2,2) [proved]; TOTAL is constant
+on Q·u·H up to χ, and that coset is the H-orbit of the net as a subspace
+[proved]; subspace-only dependence would make the third-slot basis change act
+trivially [<i>not verified</i>]; and if χ = det², session 19's uniqueness forces
+TOTAL = c·Ψ. The single unproved link is <b>χ ↔ det²</b>. Session 17's 120/120 is
+evidence, not proof. Before: no proof route. Now: a route with one gap.</p>
+</div>
+
+<h2><span class="no">§W4</span>Week 4, session 20 — the paper goes public, and the literature answers back</h2>
+<p><b>Housekeeping first, and it mattered.</b> The arXiv source was rebuilt after
+a container reset destroyed it, the repository was made public with its full
+pre-registration history intact, and a sweep for private data before the push
+caught three files in <span class="mono">docs/</span> still carrying live artifact URLs. Then a
+defect in the rebuild: the reconstructed §5 asserted that every per-σ
+functional is a det²-covariant — <i>the exact claim session 16 retracted.</i> It was
+rebuilt from a summary that carried the claim forward without its refutation.
+Caught by re-reading the record before submission, not after. The section now
+states the covariance as refuted and confines the phenomenon to the totals
+level, which is where it belongs. <span class="tag">the log exists for entries like this one</span></p>
+<div class="thm">
+<p><b>e(det₃) = 18 is not in print.</b> A prior-art pass over Bürgisser–Ikenmeyer,
+Kumar, Kumar–Landsberg, Hüttenhain–Lairez and the follow-on literature found no
+published value of e(det₃) and no degree-18 invariant on that orbit closure.
+Every result in the area carries an explicit <i>n even</i> hypothesis. The odd case
+is untouched, and the reason is structural: for odd n the degree-n² invariant on
+the ambient space vanishes for parity reasons, so the Alon–Tarsi-type criterion
+that decides n = 2 and n = 4 has no analogue to state.</p>
+</div>
+<p><b>What the literature gave back.</b> Three corrections and one gift.
+The paper had claimed to answer negatively the n = 3 case of Bürgisser and
+Ikenmeyer's question — but their own Theorem 3.15 makes the inequality strict
+for odd form-degree, so e(det₃) &gt; 9 was already theirs. Ours is the exact value,
+not the failure of equality. The two-component structure of ∂Ω̄ is
+Hüttenhain–Lairez's Theorem 1, with purity from their Lemma 3, and
+V(Φ₁₈) ∩ Ω̄ = ∂Ω̄ is Bürgisser–Ikenmeyer's Proposition 3.9 for any polystable
+form; both are now cited rather than claimed.</p>
+<p><b>The gift is the degree period.</b> det₃ is polystable, so the degree monoid
+generates b·ℤ with b = (m/D)·a; the stabiliser period is a = 2 because
+3 ≡ 3 (mod 4); hence <b>b(det₃) = 6</b> and ℰ(det₃) ⊆ 6ℤ with gcd exactly 6. Two
+consequences. First, the census collapses: δ = 3, 9, 15 carry no invariant for
+reasons of period alone and δ = 6 falls to Howe, so of the five computed zeros
+only <b>δ = 12</b> was ever in doubt, and e(det₃) = 18 rests on two computations
+rather than five. The other four now serve as an independent check of the
+engine against published theory — an anchor we did not know we had. Second,
+and better: if ℰ were 18ℕ its gcd would be 18, not 6. So <b>ℰ(det₃) ≠ 18ℕ</b> —
+the orbit closure must carry an invariant in a degree that is a multiple of 6
+but not of 18. The smallest candidate is 24, it has never been computed, and it
+is now the cheapest open question in the programme.
+<span class="tag">forced by published theory plus our own value</span></p>
+
+<p><b>And then the lower bound stopped needing a computation at all.</b> Swami
+asked whether the combinatorial census — two vanishing laws plus pigeonhole —
+could kill δ = 12 by hand, now that it was the sole load-bearing run. It can,
+and it kills far more than that. By the first fundamental theorem an
+SL₉-invariant of degree δ on Sym³ℂ⁹ is spanned by products of k = δ/3 nine-fold
+brackets in δ symbolic letters, each letter occupying exactly 3 of the k
+brackets. Record that as a 0/1 matrix with row sums 3. If two letters have
+<i>equal rows</i>, the transposition exchanging them fixes every bracket setwise
+and swaps two arguments in each of the three brackets containing both,
+multiplying the monomial by (−1)³ = −1 — while the invariant it evaluates to is
+unchanged, because letters are interchangeable placeholders for the same form.
+So that invariant is its own negative. The rows are 3-subsets of [k], of which
+there are C(k,3), so as soon as δ &gt; C(δ/3, 3) every spanning monomial dies.</p>
+<div class="thm">
+<p><b>δ ≤ C(δ/3, 3) first holds at δ = 18.</b> The table reads
+C(1,3), …, C(6,3) = 0, 0, 1, 4, 10, 20 against δ = 3, 6, 9, 12, 15, 18. So
+<b>e(det₃) ≥ 18 with no computation whatsoever</b>, and the engine's contribution
+to the value collapses to the single nonzero number at δ = 18. Two independent
+checks against classical answers: for ternary cubics the bound admits degree 4
+and excludes everything below — Aronhold's S; for cubic surfaces it admits
+degree 8 and excludes 4, and the classical invariant ring of the cubic surface
+begins in degree 8. Both were confirmed here by direct plethysm computation
+(0,0,0,1,0,1 for ternary cubics in degrees 1–6; 0 at δ=4 and 1 at δ=8 for cubic
+surfaces). The bound also recovers both of Howe's vanishing statements as
+special cases.</p>
+</div>
+<p><b>What that leaves.</b> Five multiplicity computations became superfluous in
+a single afternoon, and they are being kept anyway — a computation that agrees
+with a proof it did not use is calibration, and this one exercises the whole
+pipeline at exactly the weights that matter. The census admits δ = 21, 24, 27,
+30 freely, so it says nothing about the degree-24 question; that one still
+belongs to the engine. Two arguments, arriving within an hour of each other,
+have between them removed the entire lower-bound computation and identified the
+only remaining one. <span class="tag">the suggestion was Swami's</span></p>
+
+
 <h2><span class="no">§5</span>What it leaves on the table</h2>
 <div class="qcard">
 <p><b>Q1 — A conductor formula</b> <span class="tag">Ogg–Shafarevich shape</span></p>

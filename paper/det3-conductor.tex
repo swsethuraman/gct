@@ -70,7 +70,11 @@ degree-period theorem confines $e(\det_3)$ to the multiples of $6$ that are at
 least $12$; equality $e(\det_n)=n^{2}$ is known only at $n=2$ and $n=4$, in
 each case by an Alon--Tarsi-type nonvanishing that has no odd analogue.  Ours
 is therefore the third determinant for which the fundamental invariant is
-determined, and the first whose degree exceeds $n^{2}$.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
+determined, and the first whose degree exceeds $n^{2}$.  The lower bound
+$e(\det_3)\ge18$ turns out to need no computation: an elementary parity count
+on bracket monomials, which recovers Howe's vanishing theorems and reproduces
+the classical first-invariant degrees for ternary cubics and cubic surfaces,
+already excludes every smaller degree.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
 degeneracy of a cubic of border determinantal complexity at most $3$ is
 precisely the vanishing of one explicit degree-$18$ equation; we deduce that
 the invariant ring of $\cO$ is a numerical semigroup ring, and we give an
@@ -95,7 +99,14 @@ cone.  Algebraic Peter--Weyl gives the multiplicities on the orbit,
 \]
 a purely group-theoretic quantity.  The multiplicities of the \emph{closure}
 are the hard side, and they are the side that carries the obstruction theory
-of geometric complexity theory \cite{MS,Lands,BIP,IK}.
+of geometric complexity theory \cite{MS,BIP,IK}.  Landsberg's book
+\cite{Lands} is the standard account of the geometry involved, and the
+programme it describes --- separating $\overline{\GL\cdot\per_m}$ from
+$\overline{\GL\cdot\det_n}$ by representation-theoretic data --- is what makes
+the closure multiplicities worth the trouble; the occurrence obstructions
+originally proposed for the task are now known not to suffice \cite{BIP}, which
+sharpens rather than removes the interest in computing the closure side
+exactly.
 
 Suppose the boundary $\cO\setminus G\cdot v$ is cut set-theoretically by a
 semiinvariant $\Delta$ of degree $e$ and weight $\det^{w}$.  Multiplication by
@@ -285,25 +296,94 @@ therefore
   \gcd\mathcal E(\det_3)=6 .
 \]
 So the candidate degrees are $12,18,24,\dots$, and the weights $\delta=3,9,15$
-carry no invariant for reasons of period alone.  Two questions remain, and both
-are computations.
+carry no invariant for reasons of period alone.
+
+A second, entirely elementary constraint removes the rest of the range.  It is
+a parity count on bracket monomials, and it extends the argument by which Howe
+disposes of $\delta=m$ when $D$ is odd; we state it in general because the
+statement costs nothing extra and because it is what does the work here.
+
+\begin{proposition}[Bracket census]\label{prop:census}
+Let $D$ be odd and let $\delta,m$ satisfy $m\mid \delta D$.  Put $k=\delta D/m$.
+If
+\[
+  \delta \;>\; \binom{k}{D},
+\]
+then $\bC[\Sym^{D}\bC^{m}]^{\SL_m}_{\delta}=0$; consequently
+$\bC[\overline{G\cdot v}]^{\SL_m}_{\delta}=0$ for every $v$.
+\end{proposition}
+
+\begin{proof}
+By the first fundamental theorem for $\SL_m$ \cite{Weyl}, the space of
+invariants of degree $\delta$ is spanned by products of $m\times m$ brackets in
+$\delta$ symbolic letters, each letter occurring exactly $D$ times.  A bracket
+is a determinant, so its $m$ letters are distinct; counting incidences,
+$\delta D=km$ and each letter occupies exactly $D$ of the $k$ brackets.  Record
+this as a $0/1$ matrix with rows indexed by letters, row sums $D$ and column
+sums $m$.
+
+Suppose two letters $i\ne j$ have equal rows, so that they occur together in
+the same $D$ brackets and in no others.  The transposition exchanging them
+fixes every bracket of the monomial setwise and swaps two arguments in each of
+the $D$ brackets containing both, multiplying the monomial by $(-1)^{D}=-1$.
+But letters are interchangeable placeholders for one and the same form, so the
+transposed monomial evaluates to the \emph{same} invariant.  That invariant is
+therefore its own negative, hence zero.
+
+The rows are $D$-subsets of $[k]$, of which there are $\binom{k}{D}$.  If
+$\delta>\binom{k}{D}$ two rows coincide for every monomial, so every spanning
+monomial evaluates to zero.  The statement for an orbit closure follows because
+$\SL_m$ is reductive, so restriction
+$\bC[\Sym^{D}\bC^{m}]^{\SL_m}_\delta\to\bC[\overline{G\cdot v}]^{\SL_m}_\delta$
+is surjective.
+\end{proof}
+
+Two checks, both against classical answers.  For ternary cubics ($m=D=3$) the
+bound admits $\delta=4$ and excludes $\delta\le3$: the first invariant is
+Aronhold's $S$, in degree $4$.  For cubic surfaces ($m=4$, $D=3$) it admits
+$\delta=8$ and excludes $\delta=4$: the invariant ring of the cubic surface is
+generated in degrees $8,16,24,32,40,100$.  The bound also recovers Howe's two
+statements --- for $\delta<m$ no bracket monomial exists at all, and for
+$\delta=m$ with $D$ odd every letter lies in all $k=D$ brackets, so all rows
+coincide.
+
+For $\det_3$ we have $m=9$, $D=3$, $k=\delta/3$, and the condition
+$\delta\le\binom{\delta/3}{3}$ first holds at $\delta=18$:
+\[
+\begin{array}{c|cccccc}
+ \delta & 3 & 6 & 9 & 12 & 15 & 18\\ \hline
+ k=\delta/3 & 1 & 2 & 3 & 4 & 5 & 6\\
+ \binom{k}{3} & 0 & 0 & 1 & 4 & 10 & 20\\
+ \delta\le\binom{k}{3} & \text{no} & \text{no} & \text{no} & \text{no} &
+   \text{no} & \text{yes}
+\end{array}
+\]
+
+\begin{corollary}\label{cor:lower}
+$e(\det_3)\ge 18$, with no computation.
+\end{corollary}
+
+Only the upper bound is left, and for that one number suffices.
 
 \begin{theorem}\label{thm:census}
-For $v=\det_3$,
+$\dim_\bC\bC[\cO]^{\SL_9}_{18}=1$, and therefore
 \[
-  \bC[\cO]^{\SL_9}_{12}=0,
-  \qquad
-  \dim_\bC\bC[\cO]^{\SL_9}_{18}=1 .
+  e(\det_3)=18=2n^{2},
 \]
-Hence $e(\det_3)=18=2n^{2}$, and the fundamental invariant is unique up to
-scale.  We write $\Phi_{18}$ for a generator, normalised as in
-\eqref{eq:value} below.
+the fundamental invariant being unique up to scale.  We write $\Phi_{18}$ for a
+generator, normalised as in \eqref{eq:value} below.
 \end{theorem}
 
-Our census in fact runs over $\delta=3,6,9,12,15$ and returns zero at each,
-which agrees with the period constraint everywhere it applies; we record that
-agreement as a check on the machinery rather than as a result, since only
-$\delta=12$ is not already settled by \cite{BI}.  The vanishing statements are
+The lower bound is Corollary \ref{cor:lower}; the upper bound is the single
+nonzero value \eqref{eq:value}, and one-dimensionality is
+\cite[Lem.~3.2]{BI}.  We note what this does \emph{not} require.  An earlier
+form of this argument established the vanishing at
+$\delta=3,6,9,12,15$ by direct multiplicity computation, and those runs were in
+fact carried out; the bracket census makes all five superfluous.  We have kept
+them, and report that they return zero at every one of the five, because a
+computation that agrees with a proof it did not use is the cheapest calibration
+available and this one exercises the whole pipeline at the exact weights that
+matter.  The vanishing statements are
 exact multiplicity computations in
 $\bC[\cO]_\delta$ at the rectangular weights, run in the streamed level
 algorithm of Section \ref{sec:method}; the nonvanishing at $\delta=18$ is
@@ -337,9 +417,9 @@ of the computation and every change of evaluation point.
 \subsection*{Boundary geometry}
 
 Two facts about this boundary are already known, and we use both.
-H\"uttenhain and Lairez \cite{HL} determine the boundary of the orbit of
-$\det_3$ completely: it is \emph{pure} of codimension one with exactly two
-irreducible components, the orbit closures of the determinant of the generic
+H\"uttenhain and Lairez \cite{HL}, answering a question of Landsberg,
+determine the boundary of the orbit of $\det_3$ completely: it is \emph{pure}
+of codimension one with exactly two irreducible components, the orbit closures of the determinant of the generic
 traceless matrix and of the universal quadric
 $x_4x_1^{2}+x_5x_2^{2}+x_6x_3^{2}+x_7x_1x_2+x_8x_2x_3+x_9x_1x_3$.  We write
 $P_1$ and $P_2$ for these two components (in \cite{HL} the same symbols denote
@@ -841,6 +921,11 @@ K.~D.~Mulmuley, M.~Sohoni,
 \emph{Geometric complexity theory I: an approach to the P vs. NP and related
 problems},
 SIAM J. Comput. \textbf{31} (2001), 496--526.
+
+\bibitem{Weyl}
+H.~Weyl,
+\emph{The Classical Groups: Their Invariants and Representations},
+Princeton Univ. Press, 1939.
 
 \bibitem{Nur}
 A.~G.~Nurmiev,
