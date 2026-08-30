@@ -65,8 +65,8 @@ without that hypothesis.  We then compute it for the $3\times 3$ determinant.
 Our main results concern $\det_3$.  We prove that the minimal degree of a
 nonzero $\SL_9$-invariant on $\cO=\overline{\GL_9\cdot\det_3}$ is
 $e(\det_3)=18=2n^{2}$, with a one-dimensional space of such invariants, and we
-evaluate the invariant exactly:
-$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}\neq 0$.  B\"urgisser and Ikenmeyer
+evaluate the invariant exactly: it is nonzero at $\det_3$, with value
+$-2^{16}3^{7}5^{3}7^{2}$ in a fixed integral normalisation.  B\"urgisser and Ikenmeyer
 prove $e(\det_n)\ge n^{2}$ for every $n$, strictly when $n$ is odd, and their
 degree-period theorem confines $e(\det_3)$ to the multiples of $6$ that are at
 least $12$; equality $e(\det_n)=n^{2}$ is known only at $n=2$ and $n=4$, in
@@ -424,10 +424,30 @@ arithmetic throughout and is independent of everything in Sections
 \end{proof}
 
 \begin{definition}\label{def:phi18}
-$\Phi_{18}$ is the nonzero element of $\bC[\Sym^{3}\bC^{9}]^{\SL_9}_{18}$,
-unique up to scale by Theorem \ref{thm:ambient}, normalised by
-\eqref{eq:value} below.
+$\Phi_{18}$ denotes a nonzero element of $\bC[\Sym^{3}\bC^{9}]^{\SL_9}_{18}$.
+By Theorem \ref{thm:ambient} it is determined up to a scalar, and every
+statement we make about it below --- non-vanishing, the divisor, the semigroup,
+and all ratios of values --- is independent of that scalar.  Where a bare
+numerical value appears, the normalisation in force is stated with it.
 \end{definition}
+
+Three objects in this circle of ideas carry the letter $\Phi$ or $\phi$, and it
+is worth separating them.  B\"urgisser and Ikenmeyer write $\Phi_w$ for the
+fundamental invariant of a polystable form $w$, of degree $e(w)$ and normalised
+by $\Phi_w(w)=1$; their subscript names the \emph{form}, ours names the
+\emph{degree}, and the two agree up to scale,
+$\Phi_{18}=\Phi_{18}(\det_3)\cdot\Phi_{\det_3}$.  They also write $\phi_w$ for
+the invariant of degree $b(w)$ defined on the \emph{orbit} alone by
+$g\cdot w\mapsto\det(g)^{a(w)}$ \cite[Lem.~3.2]{BI}; here $b=6$, and since
+$\bC[\cO]^{\SL_9}_{18}$ is one-dimensional,
+\[
+  \Phi_{18}\big|_{G\cdot\det_3}\;=\;c\,\phi^{3}
+  \qquad\text{for some }c\in\bC^{\times}.
+\]
+The degree monoid of Corollary \ref{cor:semigroup} is exactly
+$\{6k:\phi^{k}\text{ extends regularly to }\cO\}$, so a question about which
+degrees carry invariants is a question about which powers of $\phi$ extend
+across the boundary.
 
 This is what makes $\Phi_{18}$ an object rather than an output.  It is defined
 by a dimension count, not by the algorithm that evaluates it, and its
@@ -479,14 +499,34 @@ witnessed by the value \eqref{eq:value}, which is a single exact integer and
 therefore settles the question on its own.
 
 \begin{theorem}\label{thm:value}
-Fix the normalisation of $\Phi_{18}$ in which the evaluation functional of
-Section \ref{sec:functional} is taken with unit weight on the standard slab
-basis.  Then
+$\Phi_{18}(\det_3)\neq0$.  In the integral normalisation $\mathcal N$ --- the
+evaluation functional of Section \ref{sec:functional} taken with unit weight on
+the standard slab basis ---
 \begin{equation}\label{eq:value}
-  \Phi_{18}(\det_3)\;=\;-877\,879\,296\,000\;=\;-2^{16}\,3^{7}\,5^{3}\,7^{2}
-  \;\neq\;0 .
+  \Phi_{18}(\det_3)\;=\;-877\,879\,296\,000\;=\;-2^{16}\,3^{7}\,5^{3}\,7^{2} .
 \end{equation}
 \end{theorem}
+
+\begin{remark}[What depends on the scale, and what does not]\label{rem:norm}
+Only the non-vanishing is used in the proof of Theorem \ref{thm:census}; the
+integer itself is a statement about $\mathcal N$.  Under B\"urgisser and
+Ikenmeyer's convention $\Phi_{\det_3}(\det_3)=1$ holds by fiat and carries no
+information, so the scale-invariant content of the two values computed here is
+their ratio
+\[
+  \frac{\Phi_{18}(\per_3)}{\Phi_{18}(\det_3)}\;=\;-\frac{272}{4725},
+\]
+which is independent of every choice.  The canonical integral choice would be
+the primitive generator of the rank-one lattice of integral invariants in this
+degree, unique up to sign --- the same convention under which
+$\Psi=-I_6^{\mathrm{prim}}$ in Section \ref{sec:functional}.  We have not
+determined whether $\mathcal N$ is primitive.  The content divides the gcd of
+the two values, namely $2^{16}3^{4}\cdot5\cdot7$, which is a weak bound; if
+$\mathcal N$ is a proper multiple of the primitive generator then
+\eqref{eq:value} must be divided by that multiple and the factorisation
+restated.  We flag this because the factorisation, rather than the
+non-vanishing, is the part a reader is likely to quote.
+\end{remark}
 
 \subsection*{Boundary geometry}
 
