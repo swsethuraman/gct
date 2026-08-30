@@ -16,6 +16,14 @@ RETRACTED 2026-08-29 (sessions 13-15 headers below are superseded):
   the rigidity theorem; V^h_sigma as a det^2-covariant; V^h_sigma as a
   simultaneous-conjugation invariant; TOTAL_G = 1,152,144,000 (G never run,
   value OPEN).
+SESSION 21 (2026-08-30/31): 24 IS IN E. Phi_24(det_3) = -24,745,222,656,000
+  = -2^12 3^7 5^3 7^2 . 11 . 41 != 0, so def((8^9),24) = 0,
+  mult_{(8^9)} C[closure]_24 = 1, and E(det_3) contains <18,24> = 6.<3,4>.
+  The ambient census (new, exact, cheap) is what collapsed it:
+  dim C[Sym^3 C^9]^{SL_9}_delta = 0,0,0,0,0,1,0,1,1,4 for delta = 3..30 step 3,
+  so the degree-24 ambient space is a LINE and a zero would have been as
+  decisive as a nonzero. E/6 now omits at most {1,2,5} and contains 1,2 as
+  gaps: EXACTLY ONE DEGREE UNDETERMINED, namely 30.
 SESSION 19: Psi = -I_6^prim(I,A,B) EXACTLY — Psi is the Aronhold degree-6
   invariant of the net's tensor in slab normal form (symbolic identity, 18
   indeterminates). The totals law TOTAL = Psi x 1,152,144,000 is STILL
@@ -567,6 +575,113 @@ C. The single unproved link is **chi <-> det^2** (s17's 120/120 is evidence,
 not proof). Before: no proof route. Now: a route with one gap.
 
 
+**SESSION 21 (2026-08-30/31): the degree-24 question is answered. 24 IS in E.**
+Full record: results/results_deg24.md; pre-registration results/PREREG_deg24.md
+(commit f9b4485, logged before any value existed); route-(i) analysis
+docs/degree24_extension.md. Branch s21-degree24 (theory track was working main
+in parallel; nothing here touches main).
+(1) **THE VALUE.** Phi_24(det_3) = -24,745,222,656,000 = -2^12 3^7 5^3 7^2 .
+11 . 41 != 0. Hence 24 in E(det_3), def((8^9),24) = 0,
+mult_{(8^9)} C[closure]_24 = 1, and E contains <18,24>. Phi_24 is the SECOND
+GENERATOR of the invariant semigroup ring - a new generator, not a product,
+since there is no degree-6 invariant on the closure to multiply Phi_18 by. This
+is the invariant whose existence Corollary 4.7 forces (gcd E = 6, min E = 18,
+so E != 18N) and which had never been exhibited.
+(2) **THE REDUCTION, which is the transferable part.** Restriction
+C[Sym^3 C^9] -> C[closure] is surjective on SL_9-invariants (reductivity), so
+C[closure]^{SL_9}_delta is the image of the AMBIENT invariant space. New tool
+analysis/wk4_s21_census.py computes dim C[Sym^3 C^m]^{SL_m}_delta =
+<h_delta[h_3], s_{((3delta/m)^m)}> by applying the adjoint power-sum operators
+p_r^perp (rim-hook removal) to s_lambda, using
+  sum_delta t^delta h_delta[h_3] = exp(sum_r (p_r^3+3p_r p_2r+2p_3r) t^r/(6r)).
+Every intermediate partition is a subdiagram of lambda, so the ENTIRE state
+space is the partitions inside the m x (3delta/m) box - 24310 for (8^9). Exact
+rationals, seconds. Result for m = 9, delta = 3,6,...,30:
+    0, 0, 0, 0, 0, 1, 0, 1, 1, 4.
+Validated against ternary cubics (0,0,0,1,0,1,0,1,0,1,0,2,0,1 in degrees 1-14 =
+Hilbert function of C[S,T], deg 4 and 6), cubic surfaces (1 at 8, 0 at 12, 2 at
+16), and the banked delta=18 census. TWO SHARPENINGS FOR THE NOTES: delta = 21
+is PERMITTED by the pigeonhole census (21 <= C(7,3) = 35) but the exact
+multiplicity is 0 - the exact count is strictly sharper than the bound; and
+delta = 30 is FOUR-dimensional, so the one-number collapse does not repeat
+there.
+(3) **ROUTE (i) IS DEAD, PROVABLY.** div(Phi_18) = 6P_1+9P_2 with
+Phi_18|orbit = Phi_18(det_3).phi^3 gives ord_{P_1}(phi) = 2, ord_{P_2}(phi) = 3,
+so div(phi) >= 0 and the divisorial argument would conclude 6 in E - FALSE.
+"Effective divisor hence regular" is Serre's criterion and needs normality; the
+closure is not normal and P_2 is where that sits. No divisor computation on the
+closure can decide degree 24. **What survives is new and useful:** phi IS
+regular on the normalisation, so C[closure^nu]^{SL_9} = C[phi] is a polynomial
+ring with degree monoid exactly 6N, and C[closure]^{SL_9} is the semigroup ring
+of S = E/6 inside it. The gaps of S are exactly the degrees at which the
+non-normality is arithmetically visible on invariants, and the semigroup
+conductor IS the conductor of the invariant ring in its normalisation.
+(4) **NEW ENGINE: engine/br2.c** (do not confuse with dp.c). Bracket-monomial
+evaluator for cubics supported on the six 3x3 permutation monomials. A
+degree-24 bracket monomial is a 24-subset S of the 56 triples of [8] with every
+bracket in exactly 9; B(S) = c_S . Phi_24. State = the 9-bit used-cell masks of
+the PARTIALLY FILLED brackets only (empty -> 0, full -> 511 implicit), packed 9
+bits each into a u64 - at most 7 partial in the orders used, so 63 bits, which
+is why 8 epsilons fit at all (a naive state is 72 bits). Exact __int128
+(|V| <= 36^24 = 2.2e37 < 2^127). Per level, P sharded passes over the previous
+level file with P doubling on table overflow, so nothing depends on the shard
+count. Peak 258,319,584 states at level 14; 6255 s at 2^27 slots (3.2 GB) and
+~10 GB scratch. NOTE FOR THE NEXT SESSION: the letter ORDER is chosen to keep
+the partial-bracket front <= 7 (analysis/wk4_s21_spec.py has the refined
+state-count proxy - it uses the fact that every letter deposits exactly one
+cell in each ROW and each COLUMN, so the per-bracket masks carry global margins;
+that proxy is ~100x tighter than prod C(9,d) and is what made the run
+plannable).
+(5) **THE CHEAP CERTIFICATION TRICK, reusable.** On the 6-dim space U of cubics
+sum_sigma u_sigma x_{1 sigma1}x_{2 sigma2}x_{3 sigma3} (which contains det_3 at
+u = sgn and per_3 at u = 1), the torus weight condition
+sum_sigma e_sigma M_sigma = 8J has exactly nine solutions
+e = (a,a,a,8-a,8-a,8-a), so Phi_24|_U = sum_a K_a P^a Q^{8-a} is a BINARY OCTIC
+in P = u_id u_c u_{c^2}, Q = u_t1 u_t2 u_t3. A row/column permutation of odd
+total sign swaps P and Q and acts trivially on det^8, so K_a = K_{8-a}.
+Restricting u to the even permutations returns K_8; to the odd, K_0. Those runs
+cost 114 s against the main run's 6255 s (3 permutations per letter, tighter
+masks) and they do two jobs: nonzero certifies c_S != 0 - which is exactly what
+makes a ZERO in the main run decisive - and K_0 = K_8 is a symmetry gate.
+Both landed at -1,428,295,680 at structure S, and at -203,212,800 at a second
+structure S'.
+(6) **PREDICTION LEDGER: 5 pre-registered, 5 hit.** (i) 24 in E, alternatives
+ranked 30 then 42 [f9b4485]; (ii) K_a = K_{8-a}, so even-only = odd-only
+[f9b4485]; (iii) that same symmetry pairs indices of EQUAL parity and therefore
+cannot annihilate sum (-1)^a K_a, i.e. nothing forces vanishing [f9b4485];
+(iv) c_S'/c_S = 35/246, logged at b0401a8 BEFORE either expensive run finished,
+forcing V(det_3,S') = (35/246) V(det_3,S); (v) odd-only at S' = even-only at S'.
+S' was chosen with a different pair-degree profile ((1,1),(2,14),(3,5),(4,7))
+from S's ((1,4),(2,10),(3,10),(4,2),(5,2)), so the two are provably not related
+by any relabelling of the eight brackets.
+(7) **REGRESSION, exact.** br2.c at delta = 18 (6 brackets, 18 letters, S_18 =
+C(6,3) minus a complementary pair) reproduced BOTH banked integers to the last
+digit from independent code on an independent bracket structure:
+u = sgn -> -877,879,296,000; u = 1 -> +50,536,120,320; ratio -4725/272.
+Peak 138,241,908 states at level 8, 1678 s.
+(8) **NORMALISATION-FREE NUMBERS** (c_S cancels): Phi_24(det_3)/K_8 = 17325 =
+3^2 5^2 7 . 11, identical at S and S'. At delta = 18 the same construction gives
+Phi_18(det_3)/K'_6 = 4725 = 3^3 5^2 7 and Phi_18(per_3)/K'_6 = -272 = -2^4 . 17,
+whose quotient IS the banked -4725/272 - so the two banked values are the
+numerator and denominator of a single K'_6-normalised pair. Also:
+Phi_24(det_3) = 151,200 x (-163,658,880) - the arithmetic signature survives
+into a different degree on a different engine, still unproved. And
+Phi_18 = -2^16 3^7 5^3 7^2, Phi_24 = -2^12 3^7 5^3 7^2 . 11 . 41 share the odd
+part 3^7 5^3 7^2 exactly; ratio 451/16. No explanation.
+(9) **WHERE THE SEMIGROUP STANDS. Exactly one degree is undetermined: 30.**
+S = E/6 has multiplicity 3, contains 3 and 4, so contains <3,4> = N \ {1,2,5};
+1 and 2 are known gaps. Either E = <18,24> or E = <18,24,30>. Every
+two-generated numerical semigroup is symmetric, so the first holds iff
+C[closure]^{SL_9} is Gorenstein - offered as the shape of the dichotomy, not as
+evidence. Either way the answer names the last gap and hence the exact
+conductor of the invariant ring in its normalisation: 36 or 24. Degree 30 is
+NOT a one-number question (ambient dim 4): nonvanishing is still one
+evaluation, but vanishing needs all four. The delta = 30 bracket problem is 10
+brackets / 30 letters and exceeds br2.c's 63-bit packing and this container's
+disk - it needs either a wider state or a factoring, and should be scoped
+before it is launched.
+
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
@@ -687,6 +802,12 @@ session must ancestor-test against THAT.
 Owner session: sessions 14-17, through 2026-08-29 (session id withheld)
 Owner session (sessions 18-19, 2026-08-29/30): this session, SINGLE OWNER of
 the durable repo per rule 9.
+Session-21 (2026-08-30/31): worked entirely on branch s21-degree24 in the cloud
+container, cloned fresh from the public GitHub repo (tip a5d461a at clone). It
+did NOT own the durable folder and wrote nothing to it; the theory track was on
+main in parallel. Push to origin was BLOCKED by the session's git proxy
+(swsethuraman/gct not in the authorised repository set), so the branch was
+delivered as a git bundle. Swami merges.
 
 ## Conventions
 
@@ -711,6 +832,9 @@ R1. **[COMPLETE — sessions 12-16.** Second-point certificate at R
     ray-wise). The h-series inputs (h1A–D, h2A–D, h3A in evalin/) are the
     banked evaluation family — enumerate their exact contracts from
     wk3_s8_gen*.py; budget ~45 min each on the grind engine.
+R1b. **[COMPLETE - session 21.** Degree 24: Phi_24(det_3) != 0, the second
+    generator of the invariant semigroup ring exhibited. Successor: **degree
+    30**, the single undetermined element of E, ambient dimension 4.]
 R2. **Publishable statement**: "the first conductor of a determinant is 1"
     with the divisorial-transport mechanism and the nonzero certificate;
     fold into conductor §5 (done 2026-08-24) and the paper narrative.

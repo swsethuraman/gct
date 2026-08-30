@@ -1399,6 +1399,127 @@ have between them removed the entire lower-bound computation and identified the
 only remaining one. <span class="tag">the suggestion was Swami's</span></p>
 
 
+<h2><span class="no">§W4</span>Week 4, session 21 — degree 24 exists, and the semigroup has a second generator</h2>
+<p><b>The question, and why it was forced.</b> Session 20 ended with a
+nonexistence statement turned into an existence one: ℰ(det₃) ⊆ 6ℤ with gcd
+exactly 6, while min ℰ = 18, so ℰ ≠ 18ℕ and the orbit closure must carry an
+invariant in a degree that is a multiple of 6 and not of 18. The smallest
+candidate was 24, and the bracket census — which had just made the entire
+lower bound free — said nothing about it: at δ = 24 we have k = 8 and
+C(8,3) = 56 ≥ 24, so the pigeonhole permits it. This session computed it.</p>
+
+<div class="thm">
+<p><b>Φ₂₄(det₃) = −24,745,222,656,000 = −2¹²·3⁷·5³·7²·11·41 ≠ 0.</b>
+So <b>24 ∈ ℰ(det₃)</b>, def((8⁹), 24) = 0, mult<sub>(8⁹)</sub> ℂ[Ω̄]₂₄ = 1, and
+ℰ ⊇ ⟨18, 24⟩. The invariant whose existence Corollary 4.7 forced is now
+exhibited. It is a new generator, not a product: there is no degree-6 invariant
+on Ω̄ to multiply Φ₁₈ by.</p>
+</div>
+
+<p><b>Route (i) died first, and provably.</b> The brief suggested trying the
+extension question by hand: on the orbit there is φ of degree 6 with
+φ(g·det₃) = det(g)², and Φ₁₈|<sub>orbit</sub> = Φ₁₈(det₃)·φ³, so
+div(Φ₁₈) = 6P₁ + 9P₂ gives ord<sub>P₁</sub>(φ) = 2 and ord<sub>P₂</sub>(φ) = 3.
+Then div(φ⁴) = 8P₁ + 12P₂ ≥ 0 and one would conclude that φ⁴ extends. But the
+identical argument applied to φ itself gives div(φ) = 2P₁ + 3P₂ ≥ 0 and would
+conclude <i>6 ∈ ℰ</i>, which is false. "Effective divisor, hence regular" is
+Serre's criterion and it needs normality; Ω̄ is not normal, and P₂ is exactly
+where that sits. No divisor computation on Ω̄ can decide degree 24, because
+divisors only see the normalisation.
+<span class="tag">a clean negative, worth as much as the positive</span></p>
+
+<p>What survives is the positive half of the same computation, and it is new:
+φ <i>is</i> regular on the normalisation, so ℂ[Ω̄<sup>ν</sup>]<sup>SL₉</sup> = ℂ[φ]
+is a polynomial ring with degree monoid exactly 6ℕ, and ℂ[Ω̄]<sup>SL₉</sup> is
+the semigroup ring of S = ℰ/6 sitting inside it. <b>The gaps of S are exactly
+the degrees at which the non-normality of Ω̄ is arithmetically visible on
+invariants, and the conductor of that numerical semigroup is literally the
+conductor of the invariant ring in its normalisation.</b> The programme's own
+notion, applied to the invariant ring rather than to a Peter–Weyl weight.</p>
+
+<p><b>What made the computation cheap: the ambient census collapsed it.</b>
+The expensive direction was supposed to be vanishing — the multiplicity of
+(8⁹) in ℂ[Ω̄]₂₄, strictly larger than the δ = 18 run. It never had to be done.
+Restriction ℂ[Sym³ℂ⁹] → ℂ[Ω̄] is surjective on SL₉-invariants because SL₉ is
+reductive, so ℂ[Ω̄]<sup>SL₉</sup><sub>24</sub> is the image of the <i>ambient</i>
+invariant space, and that space is <b>one-dimensional</b>. Hence
+24 ∈ ℰ ⟺ Φ₂₄(det₃) ≠ 0, with a zero as decisive as a nonzero: one integer, both
+directions.</p>
+
+<div class="thm">
+<p><b>The ambient Hilbert function of cubics in 9 variables</b>, exact, computed
+by an adjoint rim-hook DP (apply p<sub>r</sub><sup>⊥</sup> to s<sub>λ</sub>;
+every intermediate partition is a subdiagram of λ, so the whole state space is
+the 24310 partitions inside the 9×8 box):</p>
+<p class="mono">δ = 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 → 0, 0, 0, 0, 0, <b>1</b>, 0, <b>1</b>, 1, 4</p>
+<p>Anchors: ternary cubics give 0,0,0,1,0,1,0,1,0,1,0,2,0,1 in degrees 1–14 —
+the Hilbert function of ℂ[S,T] with deg S = 4, deg T = 6; cubic surfaces give 1
+at δ = 8, 0 at 12, 2 at 16. Two things are worth saying. δ = 21 is
+<i>permitted</i> by the pigeonhole census (21 ≤ C(7,3) = 35) yet carries no
+invariant at all — the exact multiplicity is strictly sharper there. And δ = 30
+is <b>four-dimensional</b>, so the collapse that made 24 cheap does not repeat:
+degree 30 is not one number.</p>
+</div>
+
+<p><b>The evaluator, and the trick that made the certification cheap.</b> A
+degree-24 bracket monomial is a 24-subset S of the 56 triples of [8] with every
+bracket in exactly 9 of them; B(S) = c<sub>S</sub>·Φ₂₄. Evaluated on the
+6-dimensional space U of cubics Σ u<sub>σ</sub> x<sub>1σ1</sub>x<sub>2σ2</sub>x<sub>3σ3</sub>
+— which contains det₃ (u = sgn) and per₃ (u = 1) — each letter picks a
+permutation and a bijection of its three cells to its three brackets, and the DP
+state is the 9-bit used-cell masks of the <i>partially filled</i> brackets only,
+at most seven of them, so 63 bits in a u64. Exact __int128 throughout.</p>
+
+<p>The torus weight condition Σ<sub>σ</sub> e<sub>σ</sub>M<sub>σ</sub> = 8J has
+exactly nine solutions e = (a,a,a,8−a,8−a,8−a), so
+Φ₂₄|<sub>U</sub> = Σ K<sub>a</sub>P<sup>a</sup>Q<sup>8−a</sup> is a binary octic
+in P = u<sub>id</sub>u<sub>c</sub>u<sub>c²</sub>, Q = u<sub>t₁</sub>u<sub>t₂</sub>u<sub>t₃</sub>,
+and a row/column permutation of odd total sign swaps P and Q while acting
+trivially on det⁸ — so <b>K<sub>a</sub> = K<sub>8−a</sub></b>. Restricting u to
+the even permutations returns K₈; to the odd ones, K₀. Those runs cost 114
+seconds against the main run's 6255, and they do two jobs: a nonzero value
+certifies c<sub>S</sub> ≠ 0, which is what makes a zero in the main run decisive,
+and K₀ = K₈ is a symmetry gate. Both landed at −1,428,295,680.
+<span class="tag">pre-registered before any run</span></p>
+
+<p><b>The ledger.</b> Five predictions, all committed to git before their
+values existed, all hit. (1) 24 ∈ ℰ, with the ranked alternatives 30 then 42.
+(2) K<sub>a</sub> = K<sub>8−a</sub>, so even-only and odd-only must agree — they
+did, twice, at each of two bracket structures. (3) The same symmetry pairs
+indices of <i>equal</i> parity, so it cannot annihilate Σ(−1)<sup>a</sup>K<sub>a</sub>:
+there is no representation-theoretic reason for Φ₂₄(det₃) to vanish. (4) With
+c<sub>S′</sub>/c<sub>S</sub> = 35/246 measured from the cheap runs and logged
+before either expensive run finished, the second bracket structure — chosen with
+a different pair-degree profile, so provably not an S₈ relabelling of the first
+— must return exactly (35/246)·V. (5) Odd-only at S′ equals even-only at S′.</p>
+
+<p><b>Regression.</b> The new evaluator is independent code on an independent
+formulation, and it was run at δ = 18 before anything else: u = sgn returned
+−877,879,296,000 and u = 1 returned +50,536,120,320 — both banked values, to the
+last digit, from an engine and a bracket structure that share nothing with it.
+Ratio −4725/272 exact.</p>
+
+<p><b>Two numbers that do not depend on the normalisation.</b> The scale of Φ₂₄
+is a convention; the ratio to K₈ is not. At δ = 24, Φ₂₄(det₃)/K₈ = 17325 =
+3²·5²·7·11, identical at both bracket structures. At δ = 18 the same
+construction gives Φ₁₈(det₃)/K′₆ = 4725 = 3³·5²·7 and Φ₁₈(per₃)/K′₆ = −272 =
+−2⁴·17 — whose quotient is the banked −4725/272. And the value itself is
+151,200 × (−163,658,880): the programme's arithmetic signature, observed on
+every subvalue of the δ = 20 functional and never imposed anywhere in the code,
+survives into a different degree computed by a different engine. Still no
+proof of it.</p>
+
+<p><b>Where it leaves the semigroup.</b> S = ℰ/6 is a numerical semigroup of
+multiplicity 3 containing 3 and 4, hence ⟨3,4⟩ = every nonnegative integer
+except 1, 2, 5 — and 1, 2 are known gaps. <b>Exactly one degree is
+undetermined: 30.</b> Either ℰ = ⟨18,24⟩, or ℰ = ⟨18,24,30⟩. Every
+two-generated numerical semigroup is symmetric, so the first holds iff
+ℂ[Ω̄]<sup>SL₉</sup> is Gorenstein; we know no reason for that and offer it only
+as the shape of the dichotomy. Either way the answer names the last gap, hence
+the exact conductor of the invariant ring in its normalisation: 36 or 24.
+<span class="tag">one number left in the whole semigroup</span></p>
+
+
 <h2><span class="no">§5</span>What it leaves on the table</h2>
 <div class="qcard">
 <p><b>Q1 — A conductor formula</b> <span class="tag">Ogg–Shafarevich shape</span></p>
