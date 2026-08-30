@@ -16,6 +16,10 @@ RETRACTED 2026-08-29 (sessions 13-15 headers below are superseded):
   the rigidity theorem; V^h_sigma as a det^2-covariant; V^h_sigma as a
   simultaneous-conjugation invariant; TOTAL_G = 1,152,144,000 (G never run,
   value OPEN).
+SESSION 19: Psi = -I_6^prim(I,A,B) EXACTLY — Psi is the Aronhold degree-6
+  invariant of the net's tensor in slab normal form (symbolic identity, 18
+  indeterminates). The totals law TOTAL = Psi x 1,152,144,000 is STILL
+  EMPIRICAL; open problem (2) is reframed, not solved.
 OPEN PHENOMENON (data, no mechanism): identical W-tables at C, R, Q, T4 —
   four points, three inequivalent pencil classes. Every value is
   151,200 x integer (cofactors 719 / -2038 / 5907 / -4372).
@@ -491,6 +495,77 @@ sigma-table reorganises, it does not rescale); why the evaluation should
 follow this equivariant object at all (the I6 question, now well-posed);
 and TOTAL_G, still un-run and un-predicted.
 
+**SESSION 19 (2026-08-30, math only): Psi IS the Aronhold invariant. Open
+problem (2) is REFRAMED, not solved. Deliverable: docs/i6_identification.md.**
+ANCHOR FIRST (step 2, exact before anything else): the complete-epsilon-
+contraction machinery was validated on 2x2x2, where the answer is known.
+Reference cross-validated two ways (12-term Cayley polynomial == discriminant
+of det(x S0 + y S1), symbolic); then rank of the 27-pattern span = 1;
+SYMBOLIC IDENTITY contraction = -2 x Det_Cayley on the generic 8-variable
+tensor; anchors rank-1 => 0 (x2), W-state (rank 3, tangent) => 0, GHZ => 1,
+generic rank-2 => 9,572,836 = (det(u,u')det(v,v')det(w,w'))^2 = 3094^2 exact.
+VERDICT (O1, in a stronger form than O1 was stated):
+    **I_6( I , A , B )  =  -6 * Psi(A,B)**, an EXACT symbolic identity in all
+18 pencil indeterminates. Not "Psi is the (2,2) component of the tensor
+generator" -- the restriction HAS no other component. Proved lemma: each
+slot-1 epsilon needs three DISTINCT slab indices, so each 3-block uses I, A, B
+once each and the slab multidegree is forced to (2,2,2). Content of I_6 is 6,
+so with the primitive integral normalisation **Psi = -I_6^prim(I,A,B),
+coefficient 1** -- the -4 on u2 that session 18 derived from equivariance is
+simply what the Aronhold invariant does.
+Machinery/identity audit: fast 2-stage evaluator == naive 18-index contraction
+(5 patterns); rank of the 100-pattern degree-6 span = 1; SL3 invariance in all
+three slots; character det^2 confirmed (scaling a slot by 2 gives 64);
+**I_6 has exactly 1152 monomials on the generic 3x3x3 tensor, matching
+Bremner-Hu's Aronhold I_6** -- an independent identification of the object.
+STEP 3 HONOURED: no census law was transported. The vanishing rule was
+RE-DERIVED as a transposition lemma (identical copies + epsilon antisymmetry:
+if two copies share a block in all three slots the pattern is fixed by that
+transposition with sign -1). Proved; predicts exactly the 64 observed zeros of
+100 (the converse is observed at 20 random points, not proved).
+STEP 4 CITATION: Vinberg (1976), theta-group analysis of the Z/3-grading of
+E6: the SL3^3 invariant algebra of 3x3x3 arrays is FREELY generated in degrees
+6, 9, 12 -- hence dim(degree 6) = 1 exactly. Confirmed from Bremner, Hu &
+Oeding, Math. Comput. Sci. 8 (2014) 147-156 (arXiv:1310.3257), which credits
+Vinberg for precisely this and Nurmiev (2000) for the normal forms; explicit
+generators in Bremner-Hu, Math. Comp. 82 (2013). Our rank-1 computation is an
+independent confirmation.
+STEP 5 was PRE-REGISTERED at c06ba3f before any comparison was computed, and
+the pre-registration was strong: the character argument (I_6 is a GL3
+semi-invariant with character det^2 in each factor; the induced condition
+D_A f + 2 tr(A) f = 0 is bidegree-preserving) makes **O2 A-PRIORI IMPOSSIBLE**,
+leaving only O1 (c != 0) and O3' (c = 0). Logged prediction: O1. It landed.
+STEP 6: every banked value consistent, nothing adjusted --
+Psi/I_6-over-(-6) = 1,1,1,1,4,-3,0,0,0,0 at C, R, T4, Q, X4, Xm3, P, Y2, Y4,
+N=0; measured TOTALs 1,152,144,000 (C), 1,152,144,000 (R), 4,608,576,000 (X4),
+0 (P + four compression points) all match Psi x TOTAL_C.
+COROLLARIES: compression => 0 is now the classical degeneracy of the Aronhold
+invariant; session 17's chi = Psi on 120/120 same-coset pairs is forced (a
+tensor semi-invariant must transform by its character), not a coincidence.
+**CORRECTION to session 18 (found while pre-registering; it STRENGTHENS the
+theorem).** The bidegree-(2,2) simultaneous-conjugation space is 9-dimensional,
+not 10: the ten trace words satisfy one relation (polarised Cayley-Hamilton for
+3x3), and session 18's "second nullspace vector" IS that relation. In FUNCTION
+space, **slab-equivariance alone leaves exactly 1 dimension, spanned by Psi** --
+the det^2-slot was never needed for the characterisation.
+**BOUNDARY, stated plainly (and in the deliverable): this does NOT prove the
+totals law.** It says which canonical object Psi is; it says nothing about why
+the h1 evaluation -- a GL9-Borel HWV in Sym^20 Sym^3 C^9, with no tensor in
+sight -- should follow it. TOTAL(N) = Psi(N) x 1,152,144,000 remains EMPIRICAL
+(tested at Psi = 1, 4, 0). Per-sigma values are untouched; session 16's
+refutation stands.
+**NEXT-STEP DESIGN (not a result).** The remaining step now has a candidate
+proof with ONE named gap: (i) TOTAL is bidegree (2,2) [s15 counting lemma,
+proved]; (ii) TOTAL is constant on Q.u.H up to chi and the coset is the H-orbit
+of the net AS A SUBSPACE [s17, proved]; (iii) subspace-only dependence would
+make the net's basis change (third tensor slot) act trivially, so TOTAL would be
+a conjugation invariant with a slab equivariance of character chi [NOT verified
+-- the transpose coset and the slot dictionary need checking]; (iv) IF chi is
+det^2, session 19's uniqueness forces TOTAL = c.Psi with c = 1,152,144,000 from
+C. The single unproved link is **chi <-> det^2** (s17's 120/120 is evidence,
+not proof). Before: no proof route. Now: a route with one gap.
+
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
@@ -604,9 +679,13 @@ previous write-back of ours; a tip that is NOT an ancestor means another
 writer — STOP and ask, per rule 10. Session-17 start: aa3d0ff.
 Session-18 mid-session write-back: from tip 67db6e8 (our own session-17
 write-back) forward.
-Session-17 write-back will advance the tip; the next session must verify
-whatever this block then names.
+Session-19 start (2026-08-30): staged tip 97d26ec, ancestor test PASSED
+(equal to local HEAD after clone; no divergence, no stale-writer alarm).
+Session-19 write-back advances the tip to the commit recorded below; the next
+session must ancestor-test against THAT.
 Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-17, through 2026-08-29)
+Owner session (sessions 18-19, 2026-08-29/30): this session, SINGLE OWNER of
+Projects\gct per rule 9.
 
 ## Conventions
 
