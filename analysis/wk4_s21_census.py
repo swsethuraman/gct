@@ -91,6 +91,11 @@ def census_all(m, delta_max):
 if __name__ == "__main__":
     m = int(sys.argv[1]) if len(sys.argv) > 1 else 9
     dmax = int(sys.argv[2]) if len(sys.argv) > 2 else 24
-    r = census_all(m, dmax)
+    r = {}
+    for d in range(3, dmax+1, 3):
+        if (3*d) % m: continue
+        v = census_all(m, d)[d]
+        print(f"m={m}  delta={d:3d}   dim = {v}", flush=True)
+        r[d]=v
     for d in sorted(r):
         print(f"m={m}  delta={d:3d}   dim C[Sym^3 C^{m}]^SL_{m}_{d} = {r[d]}", flush=True)
