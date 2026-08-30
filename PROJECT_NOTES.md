@@ -32,12 +32,13 @@ and roadmap. Update it at the end of every working session.
 
 ## Living documents
 
-- **Conductors of Orbit Closures** (working paper):
-  https://claude.ai/code/artifact/f760534b-e2a3-4329-aafb-4d2cbc18204b
-- **The Boundary Deficit** (companion log, all tables + session records):
-  https://claude.ai/code/artifact/261ce77d-09ef-42a0-90f7-853bbbb9d842
-- Repo: `C:\Users\swami\Projects\gct` (canonical durable copy; the cloud
-  container is scratch — see Infrastructure below).
+- **Conductors of Orbit Closures** (working paper) — private artifact; the
+  committed snapshot is `docs/conductor.html`.
+- **The Boundary Deficit** (companion log, all tables + session records) —
+  private artifact; the committed snapshot is `docs/boundary_deficit.html`.
+- Repo: the canonical durable copy lives on the owner's machine; the cloud
+  container is scratch — see Infrastructure below.  Artifact URLs and local
+  paths are deliberately not recorded here, since this file is public.
 
 ## Mathematical state (results bank — all machine-verified, exact arithmetic)
 
@@ -601,7 +602,7 @@ f1C_00 profile L7 54685987/100774838/141001840, L8 128027708/422952740/
 1. **The cloud container is scratch.** It suspends on ~7–10 min idle (killing
    all processes), can silently ROLL BACK hours of filesystem state (it ate
    the grind outputs once), and is reclaimed between sessions. The repo at
-   C:\Users\swami\Projects\gct is the only durable copy. Sync at session
+   The durable copy on the owner's machine is the only one. Sync at session
    start (stage repo in), commit + write back at every milestone.
 2. **Keepalive**: long-running compute survives only while the session is
    active — run `sleep 540`-then-status bash cycles in-turn. Recurring
@@ -683,9 +684,9 @@ Session-19 start (2026-08-30): staged tip 97d26ec, ancestor test PASSED
 (equal to local HEAD after clone; no divergence, no stale-writer alarm).
 Session-19 write-back advances the tip to the commit recorded below; the next
 session must ancestor-test against THAT.
-Owner session: claude.ai/code/session_01LZn1KGnc3bAMqWUPoSkuRn (sessions 14-17, through 2026-08-29)
+Owner session: sessions 14-17, through 2026-08-29 (session id withheld)
 Owner session (sessions 18-19, 2026-08-29/30): this session, SINGLE OWNER of
-Projects\gct per rule 9.
+the durable repo per rule 9.
 
 ## Conventions
 

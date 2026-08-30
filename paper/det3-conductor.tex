@@ -1,0 +1,765 @@
+%% ============================================================
+%%  arXiv submission source.  Compile with pdflatex (twice).
+%%  ITEMS REMAINING BEFORE POSTING:
+%%   - the repository URL in the Data Availability note (search REPOSITORY).
+%%  Also worth a glance: the MSC codes in \subjclass.
+%% ============================================================
+\documentclass[11pt,reqno]{amsart}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\dfc}{def}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\per}{per}
+\DeclareMathOperator{\Ad}{Ad}
+\newcommand{\cO}{\overline{\Omega}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+\title[Conductors of orbit closures and the invariant of $\det_3$]
+      {Conductors of orbit closures, and the fundamental invariant
+       of the $3\times 3$ determinant}
+
+\author{Swami Sethuraman}
+\address{Beneficus AI}
+\email{swsethuraman@beneficus.ai}
+
+\date{\today}
+
+\subjclass[2020]{Primary 14L24; Secondary 13A50, 20G05, 68Q17}
+\keywords{orbit closure, geometric complexity theory, fundamental invariant,
+determinantal complexity, conductor, boundary deficit}
+
+\begin{document}
+
+\begin{abstract}
+Let $v$ be a form characterised by its symmetries, with finite stabiliser $H$
+and affine orbit closure $\cO$.  The \emph{boundary deficit}
+$\dfc(\lambda,\delta)=\dim S_\lambda^{H}-\mult_\lambda\bC[\cO]_\delta\ge 0$
+measures the gap between the stabiliser's Peter--Weyl count and the coordinate
+ring of the closure, and the \emph{conductor} $c(\lambda,\delta)$ is the depth
+of that gap along the boundary, measured in multiplications by a boundary
+semiinvariant.  We compute this invariant exactly in the two smallest
+power-sum worlds: a closed form in the first, and in the second a transport
+formula computing the conductor from boundary data alone, as the maximal
+boundary-torus weight divided by the normal weight --- a shape we conjecture
+holds generally.  We then compute it for the $3\times 3$ determinant.
+
+Our main results concern $\det_3$.  We prove that the minimal degree of a
+nonzero $\SL_9$-invariant on $\cO=\overline{\GL_9\cdot\det_3}$ is
+$e(\det_3)=18=2n^{2}$, with a one-dimensional space of such invariants, and we
+evaluate the invariant exactly:
+$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}\neq 0$.  This answers, negatively,
+the case $n=3$ of a question of B\"urgisser and Ikenmeyer, who prove
+$e(\det_n)\ge n^{2}$ and verify equality for $n=2,4$: the $3\times3$
+determinant is the first determinant whose fundamental invariant does not live
+in degree $n^{2}$.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
+degeneracy of a cubic of border determinantal complexity at most $3$ is
+precisely the vanishing of one explicit degree-$18$ equation; we deduce that
+the invariant ring of $\cO$ is a numerical semigroup ring, and we give an
+invariant-evaluation proof that $\per_3\notin\cO$.  Finally we compute the
+first conductor of a determinant: $c\big((2,2,2),2\big)=1$, certified at two
+provably inequivalent orbit points and complete along the entire
+$\Phi_{18}$-ray.  The computation rests on an evaluation functional whose
+symmetries we determine; the gauge governing its values is identified with the
+restriction of the fundamental degree-$6$ invariant of
+$\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction and setup}\label{sec:setup}
+
+Let $G=\GL(V)$ act on $W=\Sym^{d}V^{*}$, let $v\in W$ have finite stabiliser
+$H\subset G$, and let $\cO=\overline{G\cdot v}$ be the affine orbit-closure
+cone.  Algebraic Peter--Weyl gives the multiplicities on the orbit,
+\[
+  \mult_\lambda\bC[G\cdot v]=\dim (S_\lambda^{*})^{H}=:m(\lambda),
+\]
+a purely group-theoretic quantity.  The multiplicities of the \emph{closure}
+are the hard side, and they are the side that carries the obstruction theory
+of geometric complexity theory \cite{MS,Lands,BIP,IK}.
+
+Suppose the boundary $\cO\setminus G\cdot v$ is cut set-theoretically by a
+semiinvariant $\Delta$ of degree $e$ and weight $\det^{w}$.  Multiplication by
+$\Delta$ embeds isotypic pieces, so along the ray
+$(\lambda+mw\mathbf 1,\ \delta+me)$ the closure multiplicity is nondecreasing
+and stabilises at $m(\lambda)$, since $\bC[G\cdot v]=\bC[\cO][1/\Delta]$.
+
+\begin{definition}\label{def:deficit}
+The \emph{boundary deficit} is
+$\dfc(\lambda,\delta)=m(\lambda)-\mult_\lambda\bC[\cO]_\delta\ \ge 0$,
+and the \emph{conductor} $c(\lambda,\delta)$ is the least $k$ with
+$\dfc(\lambda+kw\mathbf 1,\delta+ke)=0$: the maximal pole order along the
+boundary among functions in the $\lambda$-isotypic component.
+\end{definition}
+
+That such a $k$ exists, at an explicit uniform bound, is a theorem of
+Ikenmeyer and Kandasamy \cite[Lem.~5.2]{IK} for power sums in the regime
+(number of variables) $\ge$ (degree); their argument is algebraic and makes no
+optimality claim.  Everything in this paper concerns the exact minimal index
+and the boundary geometry that computes it.
+
+Sections \ref{sec:worldA} and \ref{sec:worldB} determine the invariant in the
+two smallest classical cases, where every ingredient is available in closed
+form; these serve both as results and as calibration for the determinant.
+Section \ref{sec:det} contains the main results.  Section
+\ref{sec:functional} analyses the evaluation functional used there, including
+what we could and could not establish about it.  Section \ref{sec:method}
+describes the verification protocol; we consider this part of the content
+rather than an appendix, since several of the results are computational.
+
+\section{Binary quartics: a closed form}\label{sec:worldA}
+
+Take $W=\Sym^{4}\bC^{2}$, $v=x^{4}+y^{4}$, $H=\mu_4^{2}\rtimes S_2$ of order
+$32$, so that $\cO$ is the catalecticant cubic hypersurface $\{J=0\}$.  Since
+$\operatorname{disc}=256(I^{3}-27J^{2})$ identically, $\operatorname{disc}$
+restricted to $\cO$ equals $256\,I^{3}$: the boundary divisor is cut by the
+quadratic invariant $I$ (degree $2$, weight $\det^{4}$), along which the
+discriminant ramifies with index $3$, and it is $I$, not the discriminant, that
+generates the correct ray.  The dense boundary orbit $G\cdot x^{3}y$ has
+stabiliser torus $\operatorname{diag}(t,t^{-3})$; the boundary point is a
+smooth point of $\cO$ with normal weight of size $8$.
+
+\begin{theorem}\label{thm:A}
+For every weight $(a,b)$ with $a+b=4\delta$,
+\[
+  \dfc\big((a,b),\delta\big)=c\big((a,b),\delta\big)
+   =\max\Big(0,\Big\lfloor\tfrac{a-3b}{8}\Big\rfloor\Big),
+\]
+equivalently
+$\mult_{(a,b)}\bC[\cO]_\delta=N(a,b)-\lfloor (a-3b)/8\rfloor^{+}$, where
+$N(a,b)$ counts unordered pairs $\{p,q\}$ with $p+q=a-b$ and
+$p\equiv q\equiv -b \pmod 4$, excluding $p=q$ when $b$ is odd.  Consequently
+$\dfc>0$ if and only if $b\le\delta-2$; the maximal conductor at degree
+$\delta$ is $\lfloor\delta/2\rfloor$; and the total deficit at degree $\delta$
+is $\lfloor\delta^{2}/4\rfloor$.
+\end{theorem}
+
+The proof has two halves.  The pole law is computed in the Sylvester model on
+the transversal family $f_s=x^{3}y+s\,xy^{3}$, which lies in $\{J=0\}$
+identically with $I(f_s)=-s/4$; the Waring pair is $c=\pm 1/(8\sqrt s)$,
+$\ell=x\pm\sqrt s\,y$, and the isotypic component is spanned by the classes
+$e_{p,q,b}=\Sym[\hat\ell_1^{p}\hat\ell_2^{q}]\cdot(\hat\ell_1\wedge\hat\ell_2)^{b}$.
+Writing the bracket coefficient at $u^{k}$ as
+$A_k(p,q)\big[\iota^{q}+(-1)^{b+k}\iota^{p}\big]$ with
+$A_k=[u^{k}](1+u)^{p}(1-u)^{q}$ and $\iota^{4}=-1$, the phase survives exactly
+when $k\equiv b+(p-q)/4\pmod 2$, which coincides with the integrality parity;
+so only $k_0\in\{0,1\}$ occurs, and $A_0=1$, $A_1=p-q\ne 0$ away from the
+identically vanishing class.  Hence
+$\operatorname{pole}(e_{p,q,b})=\lfloor (p+q-2b)/8\rfloor=\lfloor(a-3b)/8\rfloor$,
+uniformly over the classes at a given weight.  Second, $\GL_2$-torus weight
+spaces are one-dimensional, so all leading terms at a given pole level are
+proportional to a single monomial and the pole filtration climbs by at most one
+per level; combined with the identity above, deficit equals conductor equals
+the pole value.  The closed forms follow, the total by
+$\sum_{b\le\delta-2}\lfloor(\delta-b)/2\rfloor=\lfloor\delta^{2}/4\rfloor$;
+this last identity is independently established as an identity of rational
+functions.
+
+\begin{remark}
+The stratified picture closes completely here.  The tangent developable's
+normalisation is $\bigoplus_\delta \Sym^{3\delta}\otimes\Sym^{\delta}$ under
+$(\ell,m)\mapsto \ell^{3}m$ \cite{AFPRW}, one copy of each $(4\delta-b,b)$ for
+$b\le\delta$; the non-normality gap is exactly one copy of
+$S_{(4\delta-1,1)}$ per degree --- the equivariant globalisation of
+$k[t^{2},t^{3}]\subset k[t]$ along the cuspidal edge.  The full tower reads
+$\lfloor(a-3b)/8\rfloor^{+}\to[b=1]\to 0$.
+\end{remark}
+
+\section{Ternary cubics: a transport formula}\label{sec:worldB}
+
+Take $W=\Sym^{3}\bC^{3}$, $v$ the Fermat cubic, $H=\mu_3^{3}\rtimes S_3$ of
+order $162$, so that $\cO$ is the Aronhold quartic hypersurface $\{S=0\}$.  The
+space of degree-$12$ invariants on $\cO$ is one-dimensional, whence
+$\operatorname{disc}|_{\cO}=c\,T^{2}$ for the canonical degree-$6$
+semiinvariant $T$.  The dense boundary orbit is the cuspidal locus
+$G\cdot(x^{2}y+z^{3})$: a smooth point of $\cO$ with stabiliser torus
+$\operatorname{diag}(t,t^{-2},1)$, normal weight $-6$, and
+$\nu_{\partial}(T)=1$ exactly.
+
+\begin{theorem}\label{thm:B}
+On every deficit-positive weight with $\delta\le 10$ --- all $254$ of them ---
+\[
+  c(\lambda)=\Big\lfloor\frac{\lambda_1-2\lambda_3}{6}\Big\rfloor
+           =\Big\lfloor\frac{\mu_{\max}(\lambda)}{|w_N|}\Big\rfloor ,
+\]
+the maximal boundary-torus weight over the normal weight.  The inequality
+$\le$ holds in general by the block-order estimate below; the equality is
+verified computationally on the stated range.
+\end{theorem}
+
+On the transversal family the normalised Waring blocks have exact orders
+$-1$ for the two colliding lines, $0$ for the untouched line, $+1$ for the
+collision wedge, $-1$ for mixed wedges and $+1$ for the determinant.  A class
+with single-counts $(a_1,a_2,a_3)$, wedge-counts $(q_{12},q_{13},q_{23})$ and
+determinant power $r=\lambda_3$ therefore has pole
+$(a_1+a_2+q_{13}+q_{23}-q_{12}-r)/6$, whose maximum over class types is
+$(\lambda_1-2\lambda_3)/6$.  Since Young symmetrisation only cancels and the
+first fundamental theorem gives spanning, the bound is rigorous.
+
+\begin{remark}[Orphans]\label{rem:orphan}
+Attainment fails at exactly the weights of empty support.  In a systematic
+sweep the only exceptions are $(10,1,1)$ and $(13,1,1)$: the contraction shadow
+reports pole $1$ while the deficit is $0$, the Young projection killing the
+top.  Thus the formula computes the shadow maximum, and on empty support the
+projection cancels it.
+\end{remark}
+
+\begin{remark}[Two kinds of tower]\label{rem:towers}
+The increments along the $T$-ray are multiplicities of $\bC[\cO]/(T)$, the
+coordinate ring of the cusp cone, bounded by the cusp stabiliser's invariant
+counts, with the shortfall being the cusp cone's own deficit: the structure
+recurses down the stratification.  In the binary-quartic case the recursion
+terminates after one step.  In the ternary-cubic case it does not: the level-two
+correction admits no floor law and passes to the conic-with-tangent stratum,
+whose stabiliser is two-dimensional and non-reductive~\cite{Kraft}.  The
+deficit there is a lattice count rather than a floor, while the conductor
+remains a floor --- the sharpest structural difference between the two cases.
+The first case closes level by level only because every parametrisation in its
+tower is finite.
+\end{remark}
+
+\section{The determinant}\label{sec:det}
+
+Let $n=3$, $V=\bC^{9}$ with coordinates the entries of a $3\times3$ matrix, and
+$v=\det_3\in \Sym^{3}V^{*}$.  Write $G=\GL_9$, $\cO=\overline{G\cdot\det_3}$,
+and let $H\subset G$ be the stabiliser: by Frobenius,
+$H=\big((\GL_3\times\GL_3)/\bC^{*}\big)\rtimes\bZ/2$ acting by
+$X\mapsto PXQ$ and $X\mapsto X^{t}$, of dimension $17$.  This $H$ is
+\emph{not} finite, so the deficit of Definition \ref{def:deficit} is taken with
+$m(\lambda)=\dim(S_\lambda^{*})^{H}$ as before; the Peter--Weyl side is now a
+branching count rather than a character count, but the definition and the
+inequality $\dfc\ge0$ are unchanged.
+
+\subsection*{The fundamental invariant}
+An $\SL_9$-invariant of degree $\delta$ on $\Sym^{3}\bC^{9}$ has $\GL_9$-weight
+$\det^{\delta/3}$ and corresponds to the rectangular weight
+$\lambda=\big((\delta/3)^{9}\big)$; in particular $3\mid\delta$.  Following
+\cite{BI} we call
+\[
+  e(v)\;=\;\min\{\delta>0:\ \bC[\overline{G\cdot v}]^{\SL_9}_\delta\neq0\}
+\]
+the degree of the fundamental invariant of the orbit closure.
+
+\begin{theorem}\label{thm:census}
+For $v=\det_3$,
+\[
+  \bC[\cO]^{\SL_9}_\delta=0\quad\text{for }\delta=3,6,9,12,15,
+  \qquad
+  \dim_\bC\bC[\cO]^{\SL_9}_{18}=1 .
+\]
+Hence $e(\det_3)=18=2n^{2}$, and the fundamental invariant is unique up to
+scale.  We write $\Phi_{18}$ for a generator, normalised as in
+\eqref{eq:value} below.
+\end{theorem}
+
+The vanishing statements are exact multiplicity computations in
+$\bC[\cO]_\delta$ at the rectangular weights, run in the streamed level
+algorithm of Section \ref{sec:method}; the nonvanishing at $\delta=18$ is
+witnessed by the value \eqref{eq:value}, which is a single exact integer and
+therefore settles the question on its own.
+
+\begin{theorem}\label{thm:value}
+Fix the normalisation of $\Phi_{18}$ in which the evaluation functional of
+Section \ref{sec:functional} is taken with unit weight on the standard slab
+basis.  Then
+\begin{equation}\label{eq:value}
+  \Phi_{18}(\det_3)\;=\;-877\,879\,296\,000\;=\;-2^{16}\,3^{7}\,5^{3}\,7^{2}
+  \;\neq\;0 .
+\end{equation}
+\end{theorem}
+
+\begin{remark}[Arithmetic of the value]\label{rem:arith}
+The value \eqref{eq:value} is assembled from $10$ subvalues, one per orbit of
+the symmetry harvest of Section \ref{sec:functional}, and every one of them is
+an integer multiple of $151\,200=2^{5}3^{3}5^{2}7$; the cofactors are
+\[
+  719,\ -2038,\ 5907,\ -4372,\ 4338,\ 3567,\ 3843,\ -5188,\ -258,\ -4552 .
+\]
+The common factor is not imposed anywhere in the computation: the subvalues are
+produced independently and the divisibility is observed after the fact.  We
+have no proof of it.  It is, empirically, the sharpest arithmetic signature the
+functional carries, and we record it because it survived every reorganisation
+of the computation and every change of evaluation point.
+\end{remark}
+
+\subsection*{Boundary geometry}
+
+\begin{proposition}\label{prop:divisor}
+The boundary $\partial\cO=\cO\setminus G\cdot\det_3$ has exactly two
+irreducible components of codimension one, $P_1$ and $P_2$, and
+\[
+  \operatorname{div}\big(\Phi_{18}|_{\cO}\big)\;=\;6P_1+9P_2 ,
+  \qquad
+  V(\Phi_{18})\cap\cO\;=\;\partial\cO .
+\]
+In particular $\Phi_{18}$ is a boundary semiinvariant in the sense of Section
+\ref{sec:setup}, of degree $e=18$ and weight $\det^{6}$, and it is the
+semiinvariant of least degree with that property.
+\end{proposition}
+
+The second equality is the substantive one: it says that on $\cO$ the single
+equation $\Phi_{18}=0$ already cuts out the whole boundary, with no extra
+component and no need to saturate.  The multiplicities $6$ and $9$ are read off
+from the orders of vanishing along transversal one-parameter families through
+generic points of $P_1$ and $P_2$; they sum, with the weights of the
+corresponding normal directions, to the degree $18$.
+
+\begin{corollary}\label{cor:semigroup}
+Restriction to the dense orbit is injective on $\bC[\cO]^{\SL_9}$ and
+$\dim\bC[\cO]^{\SL_9}_\delta\le1$ for every $\delta$.  Hence
+$\bC[\cO]^{\SL_9}=\bigoplus_{\delta\in S}\bC$ is the semigroup ring of a
+numerical semigroup $S\subseteq3\bN$, and by Theorem \ref{thm:census}
+$S\cap[1,17]=\emptyset$ while $18\bN\subseteq S$.  Every invariant of $\cO$
+therefore vanishes on $\partial\cO$, and $\Phi_{18}$ generates the ray along
+which the conductor is measured.
+\end{corollary}
+
+\begin{corollary}\label{cor:perm}
+$\per_3\notin\cO$; that is, the border determinantal complexity of the
+$3\times3$ permanent exceeds $3$.
+\end{corollary}
+
+\begin{proof}
+Evaluating the same normalised functional at the permanent gives
+\begin{equation}\label{eq:perm}
+  \Phi_{18}(\per_3)\;=\;+50\,536\,120\,320\;=\;2^{20}\,3^{4}\,5\cdot7\cdot17
+  \;\neq\;0 .
+\end{equation}
+By Proposition \ref{prop:divisor}, $\Phi_{18}$ vanishes identically on
+$\partial\cO$, so $\per_3\notin\partial\cO$.  If $\per_3$ lay in $\cO$ it would
+therefore lie in the dense orbit $G\cdot\det_3$, contradicting the theorem of
+Marcus and Minc \cite{MM} that no element of $\GL_9$ carries $\det_3$ to
+$\per_3$.  Hence $\per_3\notin\cO$.
+\end{proof}
+
+The conclusion of Corollary \ref{cor:perm} is of course classical and easy by
+other means; what is new is the route.  The obstruction is a single integer,
+computed once, and the argument uses no asymptotics, no representation-theoretic
+multiplicity comparison, and no degeneration analysis --- exactly the shape of
+separation that geometric complexity theory asks for, at the smallest scale
+where the shape can be exhibited at all.
+
+\begin{remark}[Comparison]\label{rem:BI}
+B\"urgisser and Ikenmeyer \cite{BI} prove $e(\det_n)\ge n^{2}$ for all $n$ and
+establish equality at $n=2$ and $n=4$.  Theorem \ref{thm:census} shows
+$e(\det_3)=18=2n^{2}$, strictly above the bound: $n=3$ is the first case in
+which the fundamental invariant is not in degree $n^{2}$, and the pattern
+$e(\det_n)=n^{2}$ therefore fails at its third term.  We do not know whether
+$18$ is explained by a general phenomenon or is an accident of $n=3$; see
+Section \ref{sec:open}.
+\end{remark}
+
+\subsection*{The first conductor of a determinant}
+
+With $\Phi_{18}$ as boundary semiinvariant, Definition \ref{def:deficit}
+applies verbatim: the conductor ray attached to $(\lambda,\delta)$ is
+$\big(\lambda+6k\mathbf 1_9,\ \delta+18k\big)$.
+
+\begin{theorem}\label{thm:detcond}
+For the weight $\lambda=(2,2,2)$ at degree $\delta=2$,
+\[
+  \dfc\big((2,2,2),2\big)=1,
+  \qquad
+  c\big((2,2,2),2\big)=1 ,
+\]
+and the vanishing is \emph{ray-complete}: $\dfc\big(\lambda+6k\mathbf 1_9,\
+2+18k\big)=0$ for every $k\ge1$.  Both the deficit and the conductor were
+certified independently at two points of $\cO$, called $C$ and $R$ below, which
+are shown in Section \ref{sec:functional} to lie in distinct $H$-double cosets.
+\end{theorem}
+
+This is the first conductor of a determinant to be computed exactly, and it is
+the smallest possible nonzero answer: one multiplication by the fundamental
+invariant clears the gap, and it stays cleared for ever after.  Two features
+deserve emphasis.  First, the deficit is detected at degree $2$, far below the
+degree $18$ at which the invariant that repairs it first exists --- the gap and
+its remedy live on very different scales.  Second, ray-completeness is a
+statement about infinitely many weights; it follows from the stabilisation
+argument of Section \ref{sec:setup} together with the exact computation at
+$k=1$, and is not itself a separate computation.
+
+\section{The evaluation functional}\label{sec:functional}
+
+The computations of Section \ref{sec:det} all pass through one object: a
+$\bZ$-valued functional on the orbit, evaluated at a point $u$ presented in
+\emph{slab normal form}.  Writing a point of $\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$
+as a triple of $3\times3$ slabs and normalising the first slab to the identity,
+a normal form is a pair $N=(A,B)$ of $3\times3$ matrices, and the residual
+symmetry is simultaneous conjugation $(A,B)\mapsto(gAg^{-1},gBg^{-1})$ together
+with the finite symmetries of the slab frame.
+
+\begin{lemma}[Double cosets]\label{lem:displ}
+The value of the functional at $u$ depends only on the double coset $H\,u\,H$.
+Moreover the \emph{intersection algebra}
+\[
+  \mathfrak s(u)\;=\;\mathfrak h\cap\Ad(u)\,\mathfrak h
+  \;\subseteq\;\mathfrak{gl}_9,
+  \qquad \mathfrak h=\operatorname{Lie}H,
+\]
+transports along the double coset by $\Ad$, and is therefore a double-coset
+invariant.  Consequently two points with non-isomorphic intersection algebras
+are $H$-inequivalent, and a value certified at one is an independent
+certification when reproduced at the other.
+\end{lemma}
+
+We use this in exactly one place, and it is the place that matters.  At the two
+certification points of Theorem \ref{thm:detcond},
+\[
+  \dim\mathfrak s(u_C)=\dim\mathfrak s(u_R)=4,
+\]
+but $\mathfrak s(u_C)$ is non-abelian while $\mathfrak s(u_R)$ is abelian.  The
+two points are therefore genuinely inequivalent, and the agreement
+\[
+  \mathrm{TOTAL}(u_C)\;=\;\mathrm{TOTAL}(u_R)\;=\;1\,152\,144\,000
+\]
+is a check with content rather than a repetition of one computation in two
+coordinate systems.  This is the strongest form of internal verification
+available to us: no symmetry of the setup carries one point to the other, so
+the shared value is a statement about the functional and not about the frame.
+
+\begin{proposition}[Taxonomy of vanishing]\label{prop:taxonomy}
+Every vanishing subvalue in the census of Section \ref{sec:det} is accounted
+for by exactly one of three mechanisms, and the three are mutually exclusive on
+the cases that occur:
+\begin{enumerate}
+\item[(i)] \emph{mass infeasibility} --- no admissible assignment of level
+masses exists and the sum is empty.  This tier is decided by the
+\emph{displacement-cancellation lemma}: content is feasible if and only if
+there exist $2+2$ conversions with $\sum(e_{\mathrm{tgt}}-e_{\mathrm{src}})=0$,
+which follows from the forced balanced distribution $t=(2,2)$ together with an
+integral Birkhoff decomposition for $3\times3$ doubly stochastic matrices.  It
+is a proof, not a test, and it derives the observed $15$-of-$81$ sweep
+structurally;
+\item[(ii)] \emph{wedge structure} --- assignments exist but every one of them
+carries a repeated factor in an antisymmetrised slot, so each term vanishes
+individually;
+\item[(iii)] \emph{sign cancellation} --- terms exist and are individually
+nonzero, and the sum vanishes.
+\end{enumerate}
+Only (iii) requires the computation; (i) and (ii) are decided by inspection of
+the mask, and together they account for the great majority of the census.
+\end{proposition}
+
+The taxonomy is what makes the census tractable: it converts most of the
+vanishing into combinatorics that can be certified without arithmetic, and it
+isolates the cases where cancellation is doing real work.  It also has a
+diagnostic use --- a subvalue that vanishes for reason (iii) at one evaluation
+point and for reason (i) at another is a signal that the two points are being
+compared incorrectly, and this caught two errors during development.
+
+\subsection*{The gauge}
+
+The totals at distinct normal forms are not equal, but they are constrained,
+and the constraint turns out to be representation-theoretic.  Write
+$\mathcal{B}$ for the space of bidegree-$(2,2)$ simultaneous-conjugation
+invariants of a pair of $3\times3$ matrices.  Inside $\mathcal{B}$ put
+\[
+\begin{aligned}
+  u_1 &= \tr(A^{2})\tr(B^{2})-\tr(AB)^{2}, \\
+  u_2 &= \tr(A^{2}B^{2})-\tr\big((AB)^{2}\big), \\
+  D   &= \big(\tr A\,\tr B-\tr(AB)\big)^{2}
+        -\big((\tr A)^{2}-\tr A^{2}\big)\big((\tr B)^{2}-\tr B^{2}\big),
+\end{aligned}
+\]
+and set $v:=u_1-2u_2$ and
+\begin{equation}\label{eq:psi}
+  \Psi\;:=\;2v-D\;=\;2u_1-4u_2-D .
+\end{equation}
+The third generator is where the obvious guess fails:
+$\big(\tr A\,\tr B-\tr(AB)\big)^{2}$ by itself does not vanish on proportional
+pencils, and the discriminant completion $D$ is the correct element.  On the
+slot coordinates $(u_1,u_2,D)$ the sampled points read $C=(-1,-1,1)$,
+$R=(1,0,1)$, $T_4=(3,0,5)$, the rank-one point $P=(0,0,0)$, and the entire
+compression family $(2,0,4)$; so $\Psi=1$ at $C$, $R$ and $T_4$, and $\Psi=0$
+at $P$ and on all of compression.
+
+\begin{proposition}[Uniqueness]\label{prop:unique}
+$\dim\mathcal{B}=9$: the ten trace words of bidegree $(2,2)$ satisfy exactly
+one relation, the polarised Cayley--Hamilton identity in rank $3$.  Inside
+$\mathcal B$, slab-equivariance with character $\det^{2}$ --- that is
+$\mathcal{D}_{A}f+2\tr(A)\,f=0$, and likewise in $B$ --- cuts out a
+\emph{one}-dimensional space, spanned by $\Psi$.  In particular the
+coefficient $-4$ on $u_2$ in \eqref{eq:psi} is forced, not fitted.
+\end{proposition}
+
+Two properties follow from the shape alone, with no computation.  Any
+$\det^{2}$-equivariant covariant vanishes identically on proportional pencils,
+since $(A,cA)$ is a degenerate $\GL_2$-transform of $(A,0)$; this accounts for
+the exact zeros at $P$.  And $\Psi$ is shift-invariant, which is what makes the
+normal form well posed.
+
+\begin{theorem}[The gauge is the Aronhold invariant]\label{thm:gauge}
+Let $I_6$ be the fundamental degree-$6$ invariant of
+$\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$ under
+$\SL_3\times\SL_3\times\SL_3$ --- the lowest of the three basic invariants, of
+degrees $6$, $9$ and $12$, in Vinberg's classification of this
+$\theta$-representation \cite{Nur,BHO}.  Then
+\begin{equation}\label{eq:i6}
+  I_6(I,A,B)\;=\;-6\,\Psi(A,B),
+\end{equation}
+an identity of polynomials in all $18$ pencil indeterminates.  Equivalently
+$\Psi=-I_6^{\mathrm{prim}}(I,A,B)$ with coefficient $1$, where
+$I_6^{\mathrm{prim}}$ is the primitive integral normalisation.
+\end{theorem}
+
+This is not the statement that $\Psi$ is one component of the restriction: the
+restriction has no other component.  Each $\varepsilon$ in the first slot needs
+three distinct slab indices, so every three-block uses $I$, $A$ and $B$ once
+each and the slab multidegree is forced to $(2,2,2)$.  The content of $I_6$ is
+$6$, which is the factor in \eqref{eq:i6}.  As an independent check on the
+identification, our $I_6$ has exactly $1152$ monomials on the generic
+$3\times3\times3$ tensor, matching the Aronhold invariant as tabulated by
+Bremner and Hu \cite{BHO}.
+
+\begin{theorem}[Totals law; verified, not proved]\label{thm:totals}
+At every normal form where both sides have been computed,
+\[
+  \mathrm{TOTAL}(N)\;=\;\Psi(N)\cdot 1\,152\,144\,000 .
+\]
+The measured totals are $1\,152\,144\,000$ at $C$ and at $R$, where $\Psi=1$;
+$4\,608\,576\,000$ at $X_4$, where $\Psi=4$; and $0$ at the rank-one point $P$
+and at each of four compression points, where $\Psi=0$.  The law has thus been
+tested at $\Psi=1$, $\Psi=4$ and $\Psi=0$, and at no other value --- in
+particular the point $X_{-3}$, at which $\Psi=-3$, has not been measured.  We
+state the law as an empirical identity; Section \ref{sec:open} isolates exactly
+what would prove it.
+\end{theorem}
+
+Seen this way, the vanishing of the totals on the compression family is the
+classical degeneracy of the Aronhold invariant rather than a feature of the
+evaluation.  What Theorem \ref{thm:gauge} does \emph{not} do is explain why the
+evaluation should follow this object at all: the functional is a
+$\GL_9$-Borel highest weight vector in $\Sym^{20}\Sym^{3}\bC^{9}$, with no
+tensor in sight.
+
+\begin{remark}[What fails]\label{rem:fails}
+Three hypotheses about the functional were pre-registered and then refuted by
+their own tests.  We record them because each was natural, each shaped the
+search, and each was killed by a single number.
+\emph{(a)} The individual matrix elements $V^{h}_{\sigma}$ do \emph{not}
+inherit $\GL_2$-covariance: the engine returned $f1X4_{00}=-308\,145\,600$
+against a pre-registered $+434\,851\,200$, gate-confirmed by an independent
+run.  The highest weight vector is a $\GL_9$-Borel object and the choice of
+scheme and of $\sigma$ breaks the covariance.
+\emph{(b)} The per-$\sigma$ values are not simultaneous-conjugation invariants
+either.  A parameter-free fit over $\mathcal B$ reached rank $9$, the maximum
+on the feasible cone, and predicted $f1Y4_{00}=+69\,854\,400$; the engine
+returned $0$.  The violated relation spreads over nearly every point, so it is
+not an outlier.
+\emph{(c)} Both plane-cubic routes to the gauge are dead --- there are no
+degree-$2$ invariants of ternary cubics, and three triangles realise
+$\Psi=0,1,4$ --- and the pencil cubic is insufficient, since $\Psi$ requires
+the length-four word $u_2$.
+None of this touches the results of Section \ref{sec:det}: the conductor, the
+value at $R$, and the ray closure use no covariance assumption anywhere.  What
+the refutations do is confine the phenomenon to the totals level, which is
+where Theorem \ref{thm:totals} states it.
+\end{remark}
+
+\section{Verification protocol}\label{sec:method}
+
+Several of the results above are computational, and we regard the protocol as
+part of their content rather than as an appendix to it.
+
+\smallskip
+\noindent\textbf{Exact arithmetic throughout.}  No floating point occurs
+anywhere in the pipeline.  Multiplicities are computed by an exact streamed
+level algorithm over $\bZ$: level states are packed into $54$-bit masks held in
+machine words, the working set is an open-addressing table, and spilled runs
+are written to disk in a delta-varint code and merged.  When the working set
+exceeds the memory budget the level is re-run in shards, with the shard count
+doubling until it fits; the answer is identical, only the schedule changes.
+Checkpoints are written atomically at every spill, so an interrupted run
+resumes at the last spill rather than at the last level.
+
+\smallskip
+\noindent\textbf{Independent routes.}  The census values of Theorem
+\ref{thm:census} and the totals of Theorem \ref{thm:gauge} were each produced by
+two routes that share no code below the interface: the direct level algorithm,
+and a compressed route that quotients by the symmetry harvest first.  The
+compression is not a heuristic --- that the compressed sum reproduces the full
+sum is proved, by exhibiting the sign character on each orbit of subproblems
+and checking that the harvest is a group action with the claimed orbit sizes.
+The harvest reduces $36$ subproblems to $18$ and then to $11$ inequivalent
+runs; the reduction is exact and the two routes agree on every value reported
+here.
+
+\smallskip
+\noindent\textbf{Anchors.}  The pipeline is pinned at both ends by cases with
+independently known answers.  At the small end, the same code path run on
+$\bC^{2}\otimes\bC^{2}\otimes\bC^{2}$ reproduces Cayley's hyperdeterminant
+\cite{GKZ} on the standard test points: $0$ at the two rank-one points, $0$ at
+the $W$-state (rank $3$, on the tangent locus), $1$ at the GHZ point, and
+$9\,572\,836=3094^{2}=\big(\det(u,u')\det(v,v')\det(w,w')\big)^{2}$ at a
+generic rank-two point --- exactly, not to within rounding.  This is an
+independent check on the invariant-theoretic layer, not merely on the
+arithmetic.  At the classical end, the closed forms of Theorems
+\ref{thm:A} and \ref{thm:B} are reproduced by the general machinery.
+
+\smallskip
+\noindent\textbf{Canonical regression.}  A fixed regression suite is re-run
+before every reported value.  Its published values are: the quadratic anchors
+$\mathrm{quad}=24$, $\mathrm{quad}_0=0$, and $\mathrm{quad}_q$ raw $6\times4=24$;
+the $\det_3$ ladder $L_2=29/29/29$ through
+$L_6=1818118/2336283/2686868$; and, at the certification point,
+$L_7=54685987/100774838/141001840$ and
+$L_8=128027708/422952740/603408404$.  Any deviation in any entry aborts the
+run.  These numbers are stated here so that a reimplementation can be checked
+against them without reproducing the whole computation.
+
+\smallskip
+\noindent\textbf{Pre-registration.}  Predictions were committed to version
+control before the corresponding values existed, and the commit history is
+part of the record: for each of the results above one can check what was
+predicted, when, and whether it held.  Two of the hypotheses so registered were
+refuted (Remark \ref{rem:fails}), and we consider their presence in the record
+to be evidence about the method rather than an embarrassment to it.  A claim
+that was formed after seeing the value is marked as such wherever it appears.
+
+\section{Open problems}\label{sec:open}
+
+\begin{question}[Transport in general]\label{q:transport}
+Theorem \ref{thm:B} computes the conductor from boundary data alone,
+$c(\lambda)=\lfloor\mu_{\max}(\lambda)/|w_N|\rfloor$, on all $254$
+deficit-positive weights in range.  Does this shape hold for every orbit
+closure with a smooth dense boundary orbit and a one-dimensional normal weight?
+The upper bound is the block-order estimate and is general; what is missing is
+attainment, and Remark \ref{rem:orphan} shows attainment can fail exactly on
+empty support.
+\end{question}
+
+\begin{question}[Proving the totals law]\label{q:gauge}
+Theorem \ref{thm:totals} is verified, not proved.  There is now a candidate
+proof with exactly one gap.  (i) $\mathrm{TOTAL}$ is bidegree $(2,2)$, by a
+counting lemma; proved.  (ii) $\mathrm{TOTAL}$ is constant on the double coset
+$Q\,u\,H$ up to a character $\chi$, and that coset is the $H$-orbit of the net
+\emph{as a subspace}; proved.  (iii) Dependence on the subspace alone would
+make the change of basis in the third tensor slot act trivially, so
+$\mathrm{TOTAL}$ would be a conjugation invariant carrying a slab equivariance
+of character $\chi$; this step is not verified --- the transpose coset and the
+slot dictionary both need checking.  (iv) If $\chi=\det^{2}$, then Proposition
+\ref{prop:unique} forces $\mathrm{TOTAL}=c\,\Psi$, and the value at $C$ gives
+$c=1\,152\,144\,000$.
+
+The single unproved link is $\chi\leftrightarrow\det^{2}$.  The evidence for it
+is that $\chi=\Psi$ on all $120$ same-coset pairs tested, which a tensor
+semiinvariant must satisfy; that is evidence, not proof.  We state the gap this
+narrowly because it is the whole of what remains, and because it is a statement
+about two characters on a $17$-dimensional group rather than about any
+computation.
+\end{question}
+
+\begin{question}[The next conductor row]\label{q:delta3}
+Theorem \ref{thm:detcond} settles $\delta=2$.  The row $\delta=3$ requires
+either a theoretical reduction or a substantially larger computation; we
+believe the theory should come first, since the pattern of Section
+\ref{sec:worldB} suggests the answer is again a floor and the interesting
+content is the numerator.
+\end{question}
+
+\begin{question}[$n=4$ and beyond]\label{q:n4}
+Since $e(\det_4)=16=n^{2}$ \cite{BI} while $e(\det_3)=18=2n^{2}$, the sequence
+$e(\det_n)$ is not monotone in the naive normalisation, and $n=3$ is
+exceptional in a way we do not understand.  What is the first deficit-positive
+weight of $\det_4$, and what is its conductor?  A negative answer to
+Question \ref{q:transport} would most likely be visible there first.
+\end{question}
+
+\section*{Data availability}
+
+All code, inputs, exact outputs, and the full commit history --- including the
+pre-registration commits referred to in Section \ref{sec:method} --- are
+available at
+\begin{center}
+  \url{REPOSITORY}
+\end{center}
+The regression values quoted in Section \ref{sec:method} are reproduced by the
+scripts in that repository without any of the long runs.
+
+\section*{Acknowledgements}
+
+The work reported here was carried out jointly with Claude (Anthropic), whose
+contribution was that of a co-author.  Responsibility for the correctness of
+every statement in this paper rests with the named author.
+
+\begin{thebibliography}{99}
+
+\bibitem{AFPRW}
+M.~Aprodu, G.~Farkas, {\c S}.~Papadima, C.~Raicu, J.~Weyman,
+\emph{Koszul modules and Green's conjecture},
+Invent. Math. \textbf{218} (2019), 657--720.
+
+\bibitem{BHO}
+M.~R.~Bremner, J.~Hu, L.~Oeding,
+\emph{The $3\times3\times3$ hyperdeterminant as a polynomial in the fundamental
+invariants for $\SL_3(\bC)\times\SL_3(\bC)\times\SL_3(\bC)$},
+Math. Comput. Sci. \textbf{8} (2014), 147--156; arXiv:1310.3257.
+
+\bibitem{BI}
+P.~B\"urgisser, C.~Ikenmeyer,
+\emph{Fundamental invariants of orbit closures},
+J. Algebra \textbf{477} (2017), 390--434.
+
+\bibitem{BIP}
+P.~B\"urgisser, C.~Ikenmeyer, G.~Panova,
+\emph{No occurrence obstructions in geometric complexity theory},
+J. Amer. Math. Soc. \textbf{32} (2019), 163--193.
+
+\bibitem{GKZ}
+I.~M.~Gelfand, M.~M.~Kapranov, A.~V.~Zelevinsky,
+\emph{Discriminants, Resultants, and Multidimensional Determinants},
+Birkh\"auser, Boston, 1994.
+
+\bibitem{IK}
+C.~Ikenmeyer, U.~Kandasamy,
+\emph{Implementing geometric complexity theory: on the separation of orbit
+closures via symmetries},
+Proc. 52nd ACM Symposium on Theory of Computing (STOC 2020), 713--726.
+
+\bibitem{Kraft}
+H.~Kraft,
+\emph{Geometrische Methoden in der Invariantentheorie},
+Aspekte der Mathematik D1, Vieweg, Braunschweig, 1984.
+
+\bibitem{Lands}
+J.~M.~Landsberg,
+\emph{Geometry and Complexity Theory},
+Cambridge Studies in Advanced Mathematics 169, Cambridge Univ. Press, 2017.
+
+\bibitem{MM}
+M.~Marcus, H.~Minc,
+\emph{On the relation between the determinant and the permanent},
+Illinois J. Math. \textbf{5} (1961), 376--381.
+
+\bibitem{MS}
+K.~D.~Mulmuley, M.~Sohoni,
+\emph{Geometric complexity theory I: an approach to the P vs. NP and related
+problems},
+SIAM J. Comput. \textbf{31} (2001), 496--526.
+
+\bibitem{Nur}
+A.~G.~Nurmiev,
+\emph{Orbits and invariants of third-order matrices},
+Sb. Math. \textbf{191} (2000), 717--724.
+
+\end{thebibliography}
+
+\end{document}
