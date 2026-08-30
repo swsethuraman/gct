@@ -122,3 +122,39 @@ reported:
 - two different bracket structures `S`, `S'` must give `R_S/R_{S'}` constant in
   `t` (forced by `dim = 1`), and must agree on whether `R(-1) = 0`;
 - exact arithmetic only.
+
+---
+
+# ADDENDUM — pre-registered proportionality prediction (logged before either
+# degree-24 `sgn` value exists)
+
+2026-08-30, ~21:35Z.  The two cheap certification runs have landed; the two
+expensive `u = sgn` runs have not.
+
+Bracket structure `S` (in `/tmp/d24_det.spec`, recorded in
+`results/results_deg24.md`) and a second structure `S'` with a **different
+pair-degree profile** — `((1,1),(2,14),(3,5),(4,7))` against `S`'s
+`((1,4),(2,10),(3,10),(4,2),(5,2))`, so the two are not related by any
+relabelling of the 8 brackets:
+
+    even-only run at S :   c_S  . K_8  =  -1,428,295,680  =  -2^12 3^5 5 . 7 . 41
+    odd-only  run at S :   c_S  . K_0  =  -1,428,295,680     (gate K_0 = K_8: HIT)
+    even-only run at S':   c_S' . K_8  =    -203,212,800  =  -2^11 3^4 5^2 7^2
+
+Both are nonzero, so **`c_S != 0`, `c_S' != 0`, and `Phi_24|_U` is not
+identically zero**.  Consequently the `u = sgn` run at `S` decides the question
+outright, in either direction, and
+
+    c_S' / c_S  =  35/246 .
+
+**Prediction, logged now:** when both `u = sgn` runs finish they will satisfy
+
+    V'(det_3)  =  (35/246) . V(det_3)   exactly,
+
+and in particular they will agree on whether the value is zero.  If
+`V(det_3) != 0` then `246 | 35^{-1}`-scaled arithmetic forces `246 | V(det_3)`
+in the sense that `V(det_3) . 35/246` must be an integer.
+
+**Prediction, logged now:** the odd-only run at `S'` will return
+`-203,212,800`, equal to its even-only value, by the same `K_a = K_{8-a}`
+symmetry.
