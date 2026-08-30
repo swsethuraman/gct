@@ -222,3 +222,18 @@ over-shoot the target (weighted cofactor sum 40,616 against a target of
 30,480), so the prediction REQUIRES the final two to be strongly negative.
 If either lands positive, or their weighted sum misses −1,532,563,200, the
 totals-level law fails at the first point where it was ever tested at Ψ ≠ 1.
+
+### THE FORCED VALUE — pre-registered while f1X4_16 was still running
+
+f1X4_03 = **−39,009,600** (c₀₃ = −258), negative as the constraint demanded.
+With three of the final four in, the constraint 4·c₀₃ + 2·c₁₆ = −10,136
+determines the last value uniquely:
+
+    4(−258) + 2·c₁₆ = −10,136  ⟹  c₁₆ = −4,552
+
+    **f1X4_16 = 151,200 × (−4,552) = −688,262,400**
+
+This is a point prediction with no freedom left: the run either returns
+exactly −688,262,400 and TOTAL_X4 = +4,608,576,000 confirms the
+totals-level law, or it returns anything else and the law fails. Logged
+before the value existed.
