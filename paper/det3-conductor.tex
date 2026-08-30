@@ -64,11 +64,13 @@ Our main results concern $\det_3$.  We prove that the minimal degree of a
 nonzero $\SL_9$-invariant on $\cO=\overline{\GL_9\cdot\det_3}$ is
 $e(\det_3)=18=2n^{2}$, with a one-dimensional space of such invariants, and we
 evaluate the invariant exactly:
-$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}\neq 0$.  This answers, negatively,
-the case $n=3$ of a question of B\"urgisser and Ikenmeyer, who prove
-$e(\det_n)\ge n^{2}$ and verify equality for $n=2,4$: the $3\times3$
-determinant is the first determinant whose fundamental invariant does not live
-in degree $n^{2}$.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
+$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}\neq 0$.  B\"urgisser and Ikenmeyer
+prove $e(\det_n)\ge n^{2}$ for every $n$, strictly when $n$ is odd, and their
+degree-period theorem confines $e(\det_3)$ to the multiples of $6$ that are at
+least $12$; equality $e(\det_n)=n^{2}$ is known only at $n=2$ and $n=4$, in
+each case by an Alon--Tarsi-type nonvanishing that has no odd analogue.  Ours
+is therefore the third determinant for which the fundamental invariant is
+determined, and the first whose degree exceeds $n^{2}$.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
 degeneracy of a cubic of border determinantal complexity at most $3$ is
 precisely the vanishing of one explicit degree-$18$ equation; we deduce that
 the invariant ring of $\cO$ is a numerical semigroup ring, and we give an
@@ -100,6 +102,14 @@ semiinvariant $\Delta$ of degree $e$ and weight $\det^{w}$.  Multiplication by
 $\Delta$ embeds isotypic pieces, so along the ray
 $(\lambda+mw\mathbf 1,\ \delta+me)$ the closure multiplicity is nondecreasing
 and stabilises at $m(\lambda)$, since $\bC[G\cdot v]=\bC[\cO][1/\Delta]$.
+
+That the deficit is generally nonzero is not a technicality but the central
+difficulty of the subject: the orbit closures of $\det_n$ and $\per_n$ fail to
+be normal for every $n>2$ \cite{KumarCMH}, and it is precisely this failure
+that obstructs the Mulmuley--Sohoni programme's passage from the orbit, where
+multiplicities are group theory, to the closure, where they are not.  The
+deficit and the conductor are an attempt to measure that failure rather than
+work around it.
 
 \begin{definition}\label{def:deficit}
 The \emph{boundary deficit} is
@@ -255,12 +265,33 @@ $\lambda=\big((\delta/3)^{9}\big)$; in particular $3\mid\delta$.  Following
 \[
   e(v)\;=\;\min\{\delta>0:\ \bC[\overline{G\cdot v}]^{\SL_9}_\delta\neq0\}
 \]
-the degree of the fundamental invariant of the orbit closure.
+the degree of the fundamental invariant of the orbit closure, and we write
+$\mathcal E(v)$ for the degree monoid $\{\delta:\ \bC[\overline{G\cdot
+v}]^{\SL_9}_\delta\neq0\}$.
+
+Three published facts narrow the search before any computation.  Howe's theorem
+\cite[Thm.~3.14]{BI} gives $\bC[\Sym^{3}\bC^{9}]^{\SL_9}_\delta=0$ for
+$\delta<9$, and gives $0$ again at $\delta=9$ because the form degree $3$ is
+odd; hence $e(\det_3)>9$ \cite[Thm.~3.15]{BI}.  Next, $\det_3$ is polystable
+\cite[Cor.~2.9]{BI}, so the degree monoid generates $b\,\bZ$ for the degree
+period $b=(m/D)\,a$ \cite[Thm.~3.4]{BI}, where $a$ is the stabiliser period;
+since $3\equiv3\pmod 4$ we have $a(\det_3)=2$ \cite[Thm.~2.5]{BI} and
+therefore
+\[
+  b(\det_3)=\tfrac{9}{3}\cdot 2=6,
+  \qquad
+  \mathcal E(\det_3)\subseteq 6\bZ,
+  \qquad
+  \gcd\mathcal E(\det_3)=6 .
+\]
+So the candidate degrees are $12,18,24,\dots$, and the weights $\delta=3,9,15$
+carry no invariant for reasons of period alone.  Two questions remain, and both
+are computations.
 
 \begin{theorem}\label{thm:census}
 For $v=\det_3$,
 \[
-  \bC[\cO]^{\SL_9}_\delta=0\quad\text{for }\delta=3,6,9,12,15,
+  \bC[\cO]^{\SL_9}_{12}=0,
   \qquad
   \dim_\bC\bC[\cO]^{\SL_9}_{18}=1 .
 \]
@@ -269,7 +300,11 @@ scale.  We write $\Phi_{18}$ for a generator, normalised as in
 \eqref{eq:value} below.
 \end{theorem}
 
-The vanishing statements are exact multiplicity computations in
+Our census in fact runs over $\delta=3,6,9,12,15$ and returns zero at each,
+which agrees with the period constraint everywhere it applies; we record that
+agreement as a check on the machinery rather than as a result, since only
+$\delta=12$ is not already settled by \cite{BI}.  The vanishing statements are
+exact multiplicity computations in
 $\bC[\cO]_\delta$ at the rectangular weights, run in the streamed level
 algorithm of Section \ref{sec:method}; the nonvanishing at $\delta=18$ is
 witnessed by the value \eqref{eq:value}, which is a single exact integer and
@@ -301,35 +336,62 @@ of the computation and every change of evaluation point.
 
 \subsection*{Boundary geometry}
 
+Two facts about this boundary are already known, and we use both.
+H\"uttenhain and Lairez \cite{HL} determine the boundary of the orbit of
+$\det_3$ completely: it is \emph{pure} of codimension one with exactly two
+irreducible components, the orbit closures of the determinant of the generic
+traceless matrix and of the universal quadric
+$x_4x_1^{2}+x_5x_2^{2}+x_6x_3^{2}+x_7x_1x_2+x_8x_2x_3+x_9x_1x_3$.  We write
+$P_1$ and $P_2$ for these two components (in \cite{HL} the same symbols denote
+the two forms).  Independently, B\"urgisser and Ikenmeyer show for any
+polystable $w$ that the zero set of the fundamental invariant in the orbit
+closure is exactly the boundary, and that $\bC[G\cdot w]$ is the localisation
+of $\bC[\overline{G\cdot w}]$ at it \cite[Prop.~3.9]{BI}.  Applied to
+$\Phi_{18}$ this gives $V(\Phi_{18})\cap\cO=\partial\cO$ and puts
+$\Phi_{18}$ in the role of the semiinvariant $\Delta$ of Section
+\ref{sec:setup}, of degree $e=18$ and weight $\det^{6}$.  We verified the
+vanishing directly at both of H\"uttenhain and Lairez's representatives, which
+is a check on our normalisation rather than a new result.
+
+What is left to compute is how $\Phi_{18}$ vanishes, and that is not formal.
+
 \begin{proposition}\label{prop:divisor}
-The boundary $\partial\cO=\cO\setminus G\cdot\det_3$ has exactly two
-irreducible components of codimension one, $P_1$ and $P_2$, and
+As a divisor on $\cO$,
 \[
-  \operatorname{div}\big(\Phi_{18}|_{\cO}\big)\;=\;6P_1+9P_2 ,
-  \qquad
-  V(\Phi_{18})\cap\cO\;=\;\partial\cO .
+  \operatorname{div}\big(\Phi_{18}|_{\cO}\big)\;=\;6P_1+9P_2 .
 \]
-In particular $\Phi_{18}$ is a boundary semiinvariant in the sense of Section
-\ref{sec:setup}, of degree $e=18$ and weight $\det^{6}$, and it is the
-semiinvariant of least degree with that property.
 \end{proposition}
 
-The second equality is the substantive one: it says that on $\cO$ the single
-equation $\Phi_{18}=0$ already cuts out the whole boundary, with no extra
-component and no need to saturate.  The multiplicities $6$ and $9$ are read off
-from the orders of vanishing along transversal one-parameter families through
-generic points of $P_1$ and $P_2$; they sum, with the weights of the
-corresponding normal directions, to the degree $18$.
+The two multiplicities arise differently, and the asymmetry is the point.  Along
+$P_1$ the orbit closure is smooth at a generic point, a transversal
+one-parameter family meets the divisor transversally, and the order is read off
+from the weight: an $\SL_9$-invariant of degree $18$ satisfies
+$\Phi_{18}(g\cdot v)=\det(g)^{6}\Phi_{18}(v)$, giving ramification $6$.
+Along $P_2$ that argument is unavailable --- the orbit closure of $\det_n$ is
+not normal for $n>2$ \cite{KumarCMH}, and $P_2$ is where the non-normality
+sits --- and the multiplicity $9$ is fixed instead by integrality of the torus
+weights on the component.  In particular the multiplicities are not both
+determined by the character, and a reader who expects $6$ on both components
+should note that this is exactly what fails.
 
 \begin{corollary}\label{cor:semigroup}
 Restriction to the dense orbit is injective on $\bC[\cO]^{\SL_9}$ and
-$\dim\bC[\cO]^{\SL_9}_\delta\le1$ for every $\delta$.  Hence
-$\bC[\cO]^{\SL_9}=\bigoplus_{\delta\in S}\bC$ is the semigroup ring of a
-numerical semigroup $S\subseteq3\bN$, and by Theorem \ref{thm:census}
-$S\cap[1,17]=\emptyset$ while $18\bN\subseteq S$.  Every invariant of $\cO$
-therefore vanishes on $\partial\cO$, and $\Phi_{18}$ generates the ray along
-which the conductor is measured.
+$\dim\bC[\cO]^{\SL_9}_\delta\le1$ for every $\delta$, so
+$\bC[\cO]^{\SL_9}$ is the semigroup ring of the numerical semigroup
+$S=\mathcal E(\det_3)$.  Combining Theorem \ref{thm:census} with the degree
+period: $S\subseteq6\bN$, $\min S=18$, and $\gcd S=6$.  Consequently
+\[
+  S\neq 18\bN .
+\]
 \end{corollary}
+
+The last line deserves emphasis, because it is a nonexistence statement turned
+into an existence one.  Were $S=18\bN$, its greatest common divisor would be
+$18$; the degree period forces $6$.  So $\cO$ carries an invariant in some
+degree that is a multiple of $6$ but not of $18$, and the smallest candidate is
+$24$.  We have not computed degree $24$.  It is the cheapest open question in
+this paper, and unlike the totals law of Section \ref{sec:functional} it is
+decided by a computation of a kind we have already done.
 
 \begin{corollary}\label{cor:perm}
 $\per_3\notin\cO$; that is, the border determinantal complexity of the
@@ -357,13 +419,18 @@ separation that geometric complexity theory asks for, at the smallest scale
 where the shape can be exhibited at all.
 
 \begin{remark}[Comparison]\label{rem:BI}
-B\"urgisser and Ikenmeyer \cite{BI} prove $e(\det_n)\ge n^{2}$ for all $n$ and
-establish equality at $n=2$ and $n=4$.  Theorem \ref{thm:census} shows
-$e(\det_3)=18=2n^{2}$, strictly above the bound: $n=3$ is the first case in
-which the fundamental invariant is not in degree $n^{2}$, and the pattern
-$e(\det_n)=n^{2}$ therefore fails at its third term.  We do not know whether
-$18$ is explained by a general phenomenon or is an accident of $n=3$; see
-Section \ref{sec:open}.
+The determinant is the case where the general theory stops short.  For even
+$n$, $e(\det_n)=n^{2}$ holds if and only if a signed count of admissible
+$n$-tables is nonzero \cite[Prop.~3.28]{BI}, an Alon--Tarsi-type criterion
+verified at $n=2$ and, by computer, at $n=4$; the analogous statement for the
+product of variables is Kumar's \cite{KumarCMH,KL}.  For \emph{odd} $n$ the
+criterion has no analogue --- the degree-$n^{2}$ invariant on the ambient space
+vanishes identically for parity reasons --- so nothing in the literature
+predicts a value, and $e(\det_n)$ was known for no odd $n$.  Theorem
+\ref{thm:census} supplies the first one.  Whether $18=2n^{2}$ reflects a
+pattern or is an accident of $n=3$ we do not know; the only other exact values
+are $e(\det_2)=4$ and $e(\det_4)=16$, both equal to $n^{2}$, and three points
+are not a sequence.  See Section \ref{sec:open}.
 \end{remark}
 
 \subsection*{The first conductor of a determinant}
@@ -675,11 +742,16 @@ content is the numerator.
 \end{question}
 
 \begin{question}[$n=4$ and beyond]\label{q:n4}
-Since $e(\det_4)=16=n^{2}$ \cite{BI} while $e(\det_3)=18=2n^{2}$, the sequence
-$e(\det_n)$ is not monotone in the naive normalisation, and $n=3$ is
-exceptional in a way we do not understand.  What is the first deficit-positive
-weight of $\det_4$, and what is its conductor?  A negative answer to
-Question \ref{q:transport} would most likely be visible there first.
+The three known values are $e(\det_2)=4$, $e(\det_3)=18$ and $e(\det_4)=16$.
+The even ones sit at $n^{2}$ and the odd one does not, which suggests the
+parity split that runs through \cite{BI} is the real division rather than any
+growth pattern in $n$.  The first test is $n=5$: is $e(\det_5)>25$, and is it
+again $2n^{2}$?  We expect the degree period to do as much work there as it did
+here --- $5\equiv1\pmod4$ gives $a=1$ and $b=5$, a coarser constraint than we
+enjoyed at $n=3$, so the computation would be correspondingly harder.  Closer
+to hand: what is the first deficit-positive weight of $\det_4$, and what is its
+conductor?  A negative answer to Question \ref{q:transport} would most likely
+be visible there first.
 \end{question}
 
 \section*{Data availability}
@@ -727,11 +799,27 @@ I.~M.~Gelfand, M.~M.~Kapranov, A.~V.~Zelevinsky,
 \emph{Discriminants, Resultants, and Multidimensional Determinants},
 Birkh\"auser, Boston, 1994.
 
+\bibitem{HL}
+J.~H\"uttenhain, P.~Lairez,
+\emph{The boundary of the orbit of the $3\times3$ determinant polynomial},
+C. R. Math. Acad. Sci. Paris \textbf{354} (2016), 931--935; arXiv:1512.02437.
+
 \bibitem{IK}
 C.~Ikenmeyer, U.~Kandasamy,
 \emph{Implementing geometric complexity theory: on the separation of orbit
 closures via symmetries},
 Proc. 52nd ACM Symposium on Theory of Computing (STOC 2020), 713--726.
+
+\bibitem{KumarCMH}
+S.~Kumar,
+\emph{Geometry of orbits of permanents and determinants},
+Comment. Math. Helv. \textbf{88} (2013), 759--788.
+
+\bibitem{KL}
+S.~Kumar, J.~M.~Landsberg,
+\emph{Connections between conjectures of Alon--Tarsi, Hadamard--Howe, and
+integrals over the special unitary group},
+Discrete Math. \textbf{338} (2015), 1232--1238.
 
 \bibitem{Kraft}
 H.~Kraft,
