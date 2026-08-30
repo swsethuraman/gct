@@ -1,7 +1,15 @@
-# Living documents (Claude artifacts, updated in place)
-- Conductors of Orbit Closures (working paper):
-  https://claude.ai/code/artifact/f760534b-e2a3-4329-aafb-4d2cbc18204b
-- The Boundary Deficit (companion log):
-  https://claude.ai/code/artifact/261ce77d-09ef-42a0-90f7-853bbbb9d842
-PDF snapshots of both live in the project uploads; the artifacts are the
-sources of truth and keep version history across updates.
+# Living documents
+
+Two documents are maintained live and updated in place:
+
+- **Conductors of Orbit Closures** — the working paper.
+  Committed snapshot: `docs/conductor.html`
+- **The Boundary Deficit** — the companion log, carrying all tables and the
+  per-session records.
+  Committed snapshot: `docs/boundary_deficit.html`
+
+The live versions are private and their URLs are deliberately not recorded
+here, since this repository is public. The committed snapshots are what a
+reader should use; they are refreshed whenever the live documents change.
+
+The arXiv version of the paper is `paper/det3-conductor.tex`.
