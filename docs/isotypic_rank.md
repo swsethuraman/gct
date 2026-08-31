@@ -202,6 +202,34 @@ it was pre-registered as the sharpest falsifier of Theorem 6. It holds on all
 172 weights of length `<= 4` with `a > 0` and `delta <= 7`, and is **tight
 (`a = m_det`) at 59 of them** — including both two-row cells of this session.
 
+**Theorem 6' (general `n`, measured the same way).** The reduction is not
+special to `n = 3`: for `f = det_n` or `per_n`, a weight of length `r` sees only
+`f(s_1 A_1 + ... + s_r A_r)`, an `r`-ary form of degree `n`, and the crossover is
+again where `n^2 r − dim Stab(f)` falls below `C(r+n-1, n)`. Exact Jacobian
+ranks (`analysis/wk6_s26_density.py::crossover_table`, whose `n = 3` row
+reproduces the table above from independent general-`n` code):
+
+| `n` | `det_n` dense up to | `per_n` dense up to | first deficient rank (det) | target |
+|---|---|---|---|---|
+| 2 | `r = 4` | `r = 4` | 14 at `r = 5` | 15 |
+| 3 | `r = 4` | **`r = 5`** | 29 at `r = 5` | 35 |
+| 4 | **`r = 3`** | **`r = 5`** | 34 at `r = 4` | 35 |
+
+Every deficient rank is exactly `n^2 r − dim Stab(f)`: `14 = 20 − 6`,
+`29 = 45 − 16`, `34 = 64 − 30`, and on the permanent side `50 = 54 − 4`,
+`90 = 96 − 6`. (At `n = 2`, `per_2` is linearly equivalent to `det_2`, so its
+stabiliser is the 6-dimensional one and the two columns must agree — they do,
+which is a free consistency check on the general-`n` code.) The `n = 4`,
+`r = 4` entry is the classical fact that a *general* quartic surface is **not**
+determinantal, recovered here as a rank deficiency of exactly 1.
+
+So the picture inverts with `n`: at `n = 3` the determinant covers lengths
+`<= 4` and the permanent `<= 5`; at `n = 4` the determinant covers only
+`<= 3` while the permanent still covers `<= 5`. **At `n = 4`, lengths 4 and 5
+are weights where the determinant's ideal is live and the permanent's is
+provably empty** — the first weights where the two closure rings can differ for
+a structural reason rather than an arithmetic one.
+
 **Corollary 8 (the reason the determinant fills so much).** The determinant
 fills the ambient at short weights not because its ring is large but because
 its stabiliser is: 16 dimensions of symmetry are 16 dimensions the map
