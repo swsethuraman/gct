@@ -151,3 +151,36 @@ Two further gates remain live and independent of this: `V03 = V04` and
 `V07 = V14`, plus `V09 = V16` once `09` is known.  If a *gate* fails instead,
 the point-symmetry derivation is wrong and the constraint above is void — but
 the twelve-run assembly still stands, because it never used the symmetry.
+
+---
+
+# ADDENDUM 2 — THE FORCED VALUE, logged while `05` is at level 8 of 20
+
+2026-08-31, ~21:10Z.  `f1Xm3_09` has landed:
+
+    f1Xm3_09 = +184,161,600 = 75,600 x 2,436 = 151,200 x 1,218   (final states 1)
+
+The constraint pre-registered at `7c04e2b` — `V05 + 2 V09 = +579,700,800`, logged
+when neither value existed — now has exactly one unknown left:
+
+    **f1Xm3_05  =  579,700,800 - 2 x 184,161,600  =  +211,377,600
+                =  75,600 x 2,796  =  151,200 x 1,398 .**
+
+`f1Xm3_05` is running on worker 1 and is at level 8 of 20 at the time of this
+commit; its value does not exist and cannot be inferred from the partial DP
+output, which reports only state counts.  This is a point prediction with no
+freedom remaining: the run either returns exactly `+211,377,600` and the totals
+law is confirmed at `Psi = -3`, or it returns anything else and Theorem 5.5
+fails at the first negative gauge value it has been tested at.
+
+The two remaining runs after `05` are the gate `V16 = V09` and the re-run of
+`00`; neither can change the arithmetic above, since the assembly weights are
+fixed and `V16` enters only through the symmetry that `V01 = V02` and
+`V03 = V04` have already confirmed twice.  If `V16 != V09` the symmetry
+derivation is wrong, the forced value above is void, and the twelve-run
+assembly — which uses no symmetry — decides instead.
+
+Also worth recording before the fact: `V09` is a multiple of 151,200, as are
+`07` and `10`, while `03`, `04` and `08` are odd multiples of 75,600.  The
+forced `V05 = +211,377,600` is likewise a multiple of 151,200.  Nothing in the
+totals law predicts which; the mixture is what refutes the 151,200 claim.
