@@ -1,6 +1,6 @@
 # gct — project notes
 
-## STATUS AT A GLANCE (2026-08-29 — read before anything below)
+## STATUS AT A GLANCE (2026-08-30 — read before anything below)
 ESTABLISHED (no covariance assumption was ever used in any of these):
   World A solved; World B conductor transport (254/254).
   e(det3) = 18 = 2n^2; Phi18(det3) = -877,879,296,000; V(Phi18) ∩ closure
@@ -26,8 +26,15 @@ SESSION 21 (2026-08-30/31): 24 IS IN E. Phi_24(det_3) = -24,745,222,656,000
   gaps: EXACTLY ONE DEGREE UNDETERMINED, namely 30.
 SESSION 19: Psi = -I_6^prim(I,A,B) EXACTLY — Psi is the Aronhold degree-6
   invariant of the net's tensor in slab normal form (symbolic identity, 18
-  indeterminates). The totals law TOTAL = Psi x 1,152,144,000 is STILL
-  EMPIRICAL; open problem (2) is reframed, not solved.
+  indeterminates).
+SESSION 22: **the totals law TOTAL(N) = Psi(N) x 1,152,144,000 is a THEOREM.**
+  The chi <-> det^2 gap closed: chi = det(q)^6 det(q|V/W)^2 = det(q|V/W)^2
+  (8 = 6+2, det(t) = +-1 on BOTH cosets of H, 6 even), and
+  det(q|V/W) = det(G)^{-1} with G the net's parameter change = the third tensor
+  slot — so chi is det^2 in exactly the slot where Psi carries det^2. 58/58
+  exact checks; the transpose coset is harmless twice over. Open problem (2) is
+  SOLVED at the totals level. Per-sigma values remain refuted/unexplained.
+  Untested prediction of the theorem: TOTAL_{X-3} = -3,456,432,000.
 OPEN PHENOMENON (data, no mechanism): identical W-tables at C, R, Q, T4 —
   four points, three inequivalent pencil classes. Every value is
   151,200 x integer (cofactors 719 / -2038 / 5907 / -4372).
@@ -680,6 +687,83 @@ evaluation, but vanishing needs all four. The delta = 30 bracket problem is 10
 brackets / 30 letters and exceeds br2.c's 63-bit packing and this container's
 disk - it needs either a wider state or a factoring, and should be scoped
 before it is launched.
+
+**SESSION 22 (2026-08-30, math only, branch `s22-chi`): STEP (iii) CLOSES —
+TOTAL(N) = Psi(N) x 1,152,144,000 IS A THEOREM.** Deliverable:
+docs/chi_det2.md (pre-registration 2545f1e, result b2569f1). No engine run.
+PRE-REGISTERED FIRST: predictions P1-P5 with five named falsifiers (F1-F5);
+none fired. THE TWO NAMED GAPS:
+(1) **The character is a square, and the transpose coset cannot contribute.**
+Since lambda' = (8,8,8,6^6) and 8 = 6+2,
+    chi(q) = det(q|V/W)^8 det(q|W)^6 = det(q)^6 det(q|V/W)^2,
+and q = u_{N'} t u_N^{-1} with both u's unipotent gives det(q) = det(t) = +-1
+on H (det(aXb) = (det a det b)^3 = 1; transpose = -1 on M_3). Six is even, so
+**chi = det(q|V/W)^2** on BOTH cosets. Same parity that closed the k=2 ray.
+(2) **The slot dictionary.** Rebuilt from scratch (banked pencils and Psi values
+reproduced 6/6 before anything else): Gamma_N = ker(first three rows of u_N), so
+Gamma_N^perp = rowspan(those rows) and the j-th row IS the net element with rows
+(e_j, A e_j, B e_j). Hence the canonical parameter v is the u_N-transported basis
+of W^perp, (V/Gamma_N)* = Gamma_N^perp, and **det(q|V/W) = det(G)^{-1}** where G
+is the induced change of the net's parameter — the THIRD TENSOR SLOT, the one H
+does not act on. So **chi = det(G)^{-2}: the character is det^2 in the parameter
+slot.** H acts only on slots 1 and 3 (rows and columns of the net matrix), with
+(det a det b)^{-2} = 1, so Psi = -I_6^prim transforms by exactly the same factor.
+VERIFIED 58/58 exact cases (seven checks each: q in Q; det q = det t; the 8=6+2
+identity; the dictionary; chi; the Psi law; and the non-unimodular accounting
+chi = m^18 det(G)^{-2} with evaluation factor m^{-20}chi = m^{-2}det(G)^{-2}),
+across both cosets, banked and random pencils; plus the pure-scaling consistency
+check (g = mu I_9 gives factor exactly 1) and the homogeneity calibration
+(chi = s^4 for N -> sN, which is what pins the exponent's sign).
+**THE TRANSPOSE IS HARMLESS TWICE OVER** — it cannot enter chi (det(t)^6 = 1),
+and the slot-1<->3 swap acts on the 1-dim degree-6 invariant space by the
+TRIVIAL character (two routes: all 29 transpose-coset cases satisfy the Psi law
+with a + sign; and Psi does not vanish on the 9-parameter family of tensors
+fixed by that swap, which it would have to under the sign character). This was
+the single most dangerous check in the session (falsifier F4).
+UNIQUENESS RE-VERIFIED INDEPENDENTLY (F5): dim of bidegree-(2,2) simultaneous-
+conjugation invariants = **9** by an SL_3 character computation (multiplicity of
+the trivial in Sym^2(gl_3) (x) Sym^2(gl_3); dim 45 and 2025 as sanity checks),
+independent of the trace-word basis; imposing the two equivariances DERIVED HERE
+leaves 2 dimensions of coefficients = **1 dimension in function space**, both
+nullspace vectors constant multiples of Psi.
+**CORRECTION to sessions 18/19 (changes nothing).** The slab renormalisation is
+RIGHT multiplication, (A,B) -> (A(I+tA)^{-1}, B(I+tA)^{-1}), not the recorded
+left version; the two differ by conjugation by (I+tA), so on conjugation-
+invariant functions they impose the same condition and the recorded
+characterisation of Psi stands verbatim.
+**RESOLVED: session 17's honest negative.** C and R are in different double
+cosets yet have equal totals — recorded since session 17 as an unexplained
+coincidence ("the group is smaller than the phenomenon"). It is now forced: the
+group is too small to connect the points, but the space of functions it
+constrains is ONE-dimensional, so the law crosses cosets even though the group
+does not. Session 18's chi = Psi on 120/120 same-coset pairs is likewise an
+identity now, not agreement.
+**WHY det^2, AND THE GENERALISATION (new, untested).** For a deficit weight
+lambda' = (p,p,p,q^6) the same computation gives
+chi = det(t)^q det(q|V/W)^{p-q}: the parameter-slot character is det^{p-q}, so
+the governing object should be the SL_3^3 invariant of degree 3(p-q) — Aronhold's
+I_6 here (p-q = 2), the degree-9 Vinberg generator at p-q = 3, degree-12 at 4.
+And when q is ODD, chi acquires -1 on the transpose coset while any det^even
+semi-invariant does not, FORCING TOTAL = 0 on every direction whose net is
+H-equivalent to its own transpose. One evaluation would test that.
+**STILL OPEN, unchanged:** per-sigma values (session 16's refutation stands
+untouched; the sigma-table is scheme bookkeeping, stable under neither Q nor H);
+TOTAL_G un-run; and the two consumed inputs — the counting lemma and the
+double-coset theorem — were used as given, not re-derived.
+**STANDING ENGINE HANDOFF (pre-registered, NOT run — for the engine track):**
+X_{-3} = {x3+=x2, x4+=x1, x7+=x1, x8+=x0}, Psi = -3:
+    **TOTAL_{X-3} = -3,456,432,000**, whole sigma-table sign-flipped.
+Inputs banked (inputs/evalin/f1Xm3_*; measured V00 = +893,138,400). Eight orbit
+reps, about one overnight on two workers. This is now a THEOREM's prediction and
+the first test at a negative Psi; a miss would indict the counting lemma or the
+double-coset theorem, since the chi identification is now an identity.
+PAPER: revised on this branch — Theorem 5.5 is a theorem with a proof (two new
+lemmas: the character is a square; the slot dictionary), inputs stated as a
+lemma, abstract updated, Question 7.2 replaced by the other-weights question,
+and the C = R remark now explains rather than marvels. Compiles clean, no
+undefined references.
+BRANCH DISCIPLINE: all work on `s22-chi`, pushed to `s22-chi` only; main
+untouched, no write-back to any durable copy on the owner's machine.
 
 
 ## Computational assets (repo layout)
