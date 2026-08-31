@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Assemble TOTAL(X_-3) from the 12-run point-independent grind.
 
+NOTE: the arithmetic signature is 75,600, not 151,200 -- see results_Xm3.md;
+f1Xm3_03 and f1Xm3_08 are both odd multiples of 75,600.
+
 X_-3 = (x3+=x2, x4+=x1, x7+=x1, x8+=x0);  A = E(0,2)+E(1,1), B = E(1,1)+E(2,0);
 Psi = -3, so the totals law predicts TOTAL = -3 x 1,152,144,000 = -3,456,432,000.
 
@@ -62,9 +65,9 @@ print("weights:", [WEIGHTS[x] for x in need], "sum", sum(WEIGHTS.values()))
 for x in need:
     if x in vals:
         v, ns = vals[x]
-        c = v/151200
+        c = v/75600
         print(f"  {x}: {v:+15d}  weight {WEIGHTS[x]}  states {ns}"
-              f"  cofactor {int(c) if v % 151200 == 0 else 'NOT 151200 x int: %s' % c}")
+              f"  cofactor(75600) {int(c) if v % 75600 == 0 else 'NOT 75600 x int: %s' % c}")
     else:
         print(f"  {x}: (pending)")
 if missing:
@@ -88,9 +91,9 @@ if not missing and not bad:
     print(f"predicted   = {pred:+d}   (Psi = -3 times TOTAL_C = 1,152,144,000)")
     print("ratio to TOTAL_C =", total/1152144000)
     print("VERDICT:", "CONFIRMED" if total == pred else "*** MISS -- REFUTATION, do not adjust anything ***")
-    if total % 151200 == 0:
-        print("cofactor units:", total//151200, "(predicted -22860)")
+    if total % 75600 == 0:
+        print("cofactor units (75600):", total//75600, "(predicted -45720)")
 else:
     known = sum(WEIGHTS[x]*vals[x][0] for x in need if x in vals)
     print(f"\npartial weighted sum so far: {known:+d}"
-          f"   ({known/151200:+.0f} cofactor units of a predicted -22860)")
+          f"   ({known/75600:+.0f} units of 75600, of a predicted -45720)")
