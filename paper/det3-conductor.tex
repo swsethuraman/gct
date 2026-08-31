@@ -49,61 +49,31 @@ determinantal complexity, conductor, boundary deficit}
 \begin{document}
 
 \begin{abstract}
-Let $v$ be a form characterised by its symmetries, with finite stabiliser $H$
-and affine orbit closure $\cO$.  The \emph{boundary deficit}
+Let $v$ be a form with finite stabiliser $H$ and affine orbit closure $\cO$.
+The \emph{boundary deficit}
 $\dfc(\lambda,\delta)=\dim S_\lambda^{H}-\mult_\lambda\bC[\cO]_\delta\ge 0$
 measures the gap between the stabiliser's Peter--Weyl count and the coordinate
 ring of the closure, and the \emph{conductor} $c(\lambda,\delta)$ is the depth
 of that gap along the boundary, measured in multiplications by a boundary
-semiinvariant.  We compute this invariant exactly in the two smallest
-power-sum worlds: a closed form in the first, and in the second a transport
-formula computing the conductor from boundary data alone, on every weight of
-non-empty support and with no degree bound: the maximal boundary-torus weight
-divided by the normal weight, corrected by a parity defect supported on one
-congruence family.  The bare floor is not the answer --- it first overshoots at
-$\lambda=(17,17,2)$ --- and the defect is exactly the obstruction to matching
-the parity of Young symmetrisation against the residue of the boundary weight.
-We then compute the conductor for the $3\times 3$ determinant.
+semiinvariant.  We determine both invariants in closed form for binary
+quartics, and for ternary cubics we prove a transport formula computing the
+conductor from boundary data alone, on every weight of non-empty support and
+with no degree bound.
 
-Our main results concern $\det_3$.  We prove that the minimal degree of a
-nonzero $\SL_9$-invariant on $\cO=\overline{\GL_9\cdot\det_3}$ is
-$e(\det_3)=18=2n^{2}$, with a one-dimensional space of such invariants, and we
-evaluate the invariant exactly: it is nonzero at $\det_3$, with value
-$-2^{16}3^{7}5^{3}7^{2}$ in a fixed integral normalisation.  B\"urgisser and Ikenmeyer
-prove $e(\det_n)\ge n^{2}$ for every $n$, strictly when $n$ is odd, and their
-degree-period theorem confines $e(\det_3)$ to the multiples of $6$ that are at
-least $12$; equality $e(\det_n)=n^{2}$ is known only at $n=2$ and $n=4$, in
-each case by an Alon--Tarsi-type nonvanishing that has no odd analogue.  Ours
-is therefore the third determinant for which the fundamental invariant is
-determined, and the first whose degree exceeds $n^{2}$; in particular
-$e(\det_3)=18>16=e(\det_4)$, so the invariant degree is not monotone in $n$.  The lower bound
-$e(\det_3)\ge18$ turns out to need no computation: an elementary parity count
-on bracket monomials, which recovers Howe's vanishing theorems and reproduces
-the classical first-invariant degrees for ternary cubics and cubic surfaces,
-already excludes every smaller degree.  We show $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so that
-degeneracy of a cubic of border determinantal complexity at most $3$ is
-precisely the vanishing of one explicit degree-$18$ equation; we deduce that
-the invariant ring of $\cO$ is a numerical semigroup ring, and, as a
-demonstration of the method rather than a new result, we recover
-$\per_3\notin\cO$ by evaluating a single integer.  We then exhibit the second
-generator of that semigroup ring: the degree period forces an invariant in a
-degree divisible by $6$ but not by $18$, the ambient space of degree-$24$
-invariants is one-dimensional --- which makes vanishing as cheap to decide as
-nonvanishing --- and
-$\Phi_{24}(\det_3)=-2^{12}3^{7}5^{3}7^{2}\cdot11\cdot41\neq0$.  Hence
-$\mathcal E(\det_3)\supseteq\langle 18,24\rangle$, its complement in $6\bN$ is
-contained in $\{6,12,30\}$, and degree $30$ is the only value left
-undetermined.  Finally we compute the
-first conductor of a determinant: $c\big((2,2,2),2\big)=1$, certified at two
-provably inequivalent orbit points and complete along the entire
-$\Phi_{18}$-ray.  The conductor computation rests on an evaluation functional
-several of whose natural symmetries we rule out, but whose totals we then
-determine exactly: they are governed by a gauge $\Psi$, the restriction of the
-fundamental degree-$6$ invariant of $\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$ to
-slab normal form.  The parabolic character controlling the functional is
-$\det^{2}$ in the net's parameter slot, for the arithmetic reason that the two
-parts of the relevant weight differ by $2$, and a one-dimensional uniqueness
-statement then forces $\mathrm{TOTAL}=\Psi\cdot 1\,152\,144\,000$.
+Our main results concern the $3\times3$ determinant.  We prove that the
+minimal degree of a nonzero $\SL_9$-invariant on
+$\cO=\overline{\GL_9\cdot\det_3}$ is $e(\det_3)=18=2n^{2}$, that the space of
+such invariants is one-dimensional, and that the invariant is nonzero at
+$\det_3$, with value $-2^{16}3^{7}5^{3}7^{2}$ in a fixed integral
+normalisation.  This is the third determinant for which the fundamental
+invariant is determined, and the first whose degree exceeds $n^{2}$; in
+particular $e(\det_3)=18>16=e(\det_4)$, so the invariant degree is not
+monotone in $n$.  We show that $V(\Phi_{18})\cap\cO=\partial\cO$ exactly, so
+that degeneracy of a cubic of border determinantal complexity at most $3$ is
+precisely the vanishing of one explicit degree-$18$ equation; we exhibit a
+second invariant, in degree $24$, after which degree $30$ is the only degree
+whose status is left undetermined; and we compute the first conductor of a
+determinant, $c\big((2,2,2),2\big)=1$.
 \end{abstract}
 
 \maketitle
@@ -173,12 +143,54 @@ Ikenmeyer and Kandasamy \cite[Lem.~5.2]{IK} for power sums in the regime
 optimality claim.  Everything in this paper concerns the exact minimal index
 and the boundary geometry that computes it.
 
+\subsection*{Results}
+
 Sections \ref{sec:worldA} and \ref{sec:worldB} determine the invariant in the
 two smallest classical cases, where every ingredient is available in closed
-form; these serve both as results and as calibration for the determinant.
-Section \ref{sec:det} contains the main results.  Section
-\ref{sec:functional} analyses the evaluation functional used there, including
-what we could and could not establish about it.  Section \ref{sec:method}
+form; these serve both as results and as calibration for the determinant.  For
+binary quartics the deficit and the conductor coincide and are a single floor
+(Theorem \ref{thm:A}).  For ternary cubics the conductor is transported from
+the boundary (Theorem \ref{thm:B}): it is the maximal boundary-torus weight
+divided by the normal weight, corrected by a parity defect supported on one
+congruence family.  The bare floor is not the answer --- it first overshoots
+at $\lambda=(17,17,2)$ --- and the defect is exactly the obstruction to
+matching the parity of Young symmetrisation against the residue of the
+boundary weight.
+
+Section \ref{sec:det} contains the main results.  The lower bound
+$e(\det_3)\ge18$ turns out to need no computation: an elementary parity count
+on bracket monomials (Proposition \ref{prop:census}), which recovers Howe's
+vanishing theorems and reproduces the classical first-invariant degrees for
+ternary cubics and cubic surfaces, already excludes every smaller degree.
+B\"urgisser and Ikenmeyer prove $e(\det_n)\ge n^{2}$ for every $n$, strictly
+when $n$ is odd, and their degree-period theorem confines $e(\det_3)$ to the
+multiples of $6$ that are at least $12$; equality $e(\det_n)=n^{2}$ is known
+only at $n=2$ and $n=4$, in each case by an Alon--Tarsi-type nonvanishing that
+has no odd analogue (Remark \ref{rem:BI}).  From
+$V(\Phi_{18})\cap\cO=\partial\cO$ we deduce that the invariant ring of $\cO$
+is a numerical semigroup ring (Corollary \ref{cor:semigroup}), and, as a
+demonstration of the method rather than a new result, we recover
+$\per_3\notin\cO$ by evaluating a single integer (Corollary \ref{cor:perm}).
+Theorem \ref{thm:deg24} exhibits the second generator of that semigroup ring:
+the degree period forces an invariant in a degree divisible by $6$ but not by
+$18$, the ambient space of degree-$24$ invariants is one-dimensional --- which
+makes vanishing as cheap to decide as nonvanishing --- and
+$\Phi_{24}(\det_3)=-2^{12}3^{7}5^{3}7^{2}\cdot11\cdot41\neq0$.  Hence
+$\mathcal E(\det_3)\supseteq\langle 18,24\rangle$, and its complement in
+$6\bN$ is contained in $\{6,12,30\}$.  The conductor
+$c\big((2,2,2),2\big)=1$ (Theorem \ref{thm:detcond}) is certified at two
+provably inequivalent orbit points and complete along the entire
+$\Phi_{18}$-ray.
+
+Section \ref{sec:functional} analyses the evaluation functional on which that
+computation rests.  Several of its natural symmetries we rule out; its totals
+we then determine exactly (Theorem \ref{thm:totals}).  They are governed by a
+gauge $\Psi$, the restriction to slab normal form of the fundamental degree-$6$
+invariant of $\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$ (Theorem \ref{thm:gauge});
+the parabolic character controlling the functional is $\det^{2}$ in the net's
+parameter slot, for the arithmetic reason that the two parts of the relevant
+weight differ by $2$, and a one-dimensional uniqueness statement then forces
+$\mathrm{TOTAL}=\Psi\cdot 1\,152\,144\,000$.  Section \ref{sec:method}
 describes the verification protocol; we consider this part of the content
 rather than an appendix, since several of the results are computational.
 
