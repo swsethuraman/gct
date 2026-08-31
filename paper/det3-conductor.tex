@@ -94,10 +94,13 @@ undetermined.  Finally we compute the
 first conductor of a determinant: $c\big((2,2,2),2\big)=1$, certified at two
 provably inequivalent orbit points and complete along the entire
 $\Phi_{18}$-ray.  The conductor computation rests on an evaluation functional
-whose symmetries we determine only partially, and several of whose natural
-symmetries we rule out; the gauge governing its values is identified with the
-restriction of the fundamental degree-$6$ invariant of
-$\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$.
+several of whose natural symmetries we rule out, but whose totals we then
+determine exactly: they are governed by a gauge $\Psi$, the restriction of the
+fundamental degree-$6$ invariant of $\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$ to
+slab normal form.  The parabolic character controlling the functional is
+$\det^{2}$ in the net's parameter slot, for the arithmetic reason that the two
+parts of the relevant weight differ by $2$, and a one-dimensional uniqueness
+statement then forces $\mathrm{TOTAL}=\Psi\cdot 1\,152\,144\,000$.
 \end{abstract}
 
 \maketitle
@@ -827,6 +830,10 @@ is a check with content rather than a repetition of one computation in two
 coordinate systems.  This is the strongest form of internal verification
 available to us: no symmetry of the setup carries one point to the other, so
 the shared value is a statement about the functional and not about the frame.
+Theorem \ref{thm:totals} now explains the agreement --- the two points have the
+same value of the gauge --- but it does not weaken the check, since the
+theorem's normalisation is fixed at $C$ and the value at $R$ was measured
+before any of it existed.
 
 \begin{proposition}[Taxonomy of vanishing]\label{prop:taxonomy}
 Every vanishing subvalue in the census of Section \ref{sec:det} is accounted
@@ -930,28 +937,137 @@ identification, our $I_6$ has exactly $1152$ monomials on the generic
 $3\times3\times3$ tensor, matching the Aronhold invariant as tabulated by
 Bremner and Hu \cite{BHO}.
 
-\begin{conjecture}[Totals law]\label{thm:totals}
-At every normal form where both sides have been computed,
+\begin{theorem}[Totals law]\label{thm:totals}
+For every balanced direction $N=e_1\otimes A+e_2\otimes B$,
 \[
   \mathrm{TOTAL}(N)\;=\;\Psi(N)\cdot 1\,152\,144\,000 .
 \]
+\end{theorem}
+
 The measured totals are $1\,152\,144\,000$ at $C$ and at $R$, where $\Psi=1$;
 $4\,608\,576\,000$ at $X_4$, where $\Psi=4$; and $0$ at the rank-one point $P$
-and at each of four compression points, where $\Psi=0$.  The law has thus been
-tested at $\Psi=1$, $\Psi=4$ and $\Psi=0$, and at no other value --- in
-particular the point $X_{-3}$, at which $\Psi=-3$, has not been measured.  We
-state it as a conjecture with the evidence exactly as given; Section
-\ref{sec:open} isolates precisely what would prove it.
-\end{conjecture}
+and at each of four compression points, where $\Psi=0$.  The law was stated as
+an empirical identity in an earlier version of this paper, tested at
+$\Psi=1,4,0$ and at no other value; the proof below closes it.  The one value it
+predicts that has never been measured is at $X_{-3}$, where $\Psi=-3$, and we
+record the prediction $\mathrm{TOTAL}(X_{-3})=-3\,456\,432\,000$ as a standing
+test of the two inputs the proof consumes.
 
-Seen this way, the vanishing of the totals on the compression family is the
-classical degeneracy of the Aronhold invariant rather than a feature of the
-evaluation.  What Theorem \ref{thm:gauge} does \emph{not} do is explain why the
-evaluation should follow this object at all.  The functional is a
-$\GL_9$-Borel highest weight vector in $\Sym^{20}\Sym^{3}\bC^{9}$ --- degree
-$20$, not $18$, because it lives at the $k=1$ rung $\delta=2+18$ of the
-conductor ray of Theorem \ref{thm:detcond}, not in the degree of the invariant
---- and it has no tensor anywhere in sight.
+For orientation: the functional is a $\GL_9$-Borel highest weight vector in
+$\Sym^{20}\Sym^{3}\bC^{9}$ --- degree $20$, not $18$, because it lives at the
+$k=1$ rung $\delta=2+18$ of the conductor ray of Theorem \ref{thm:detcond}, not
+in the degree of the invariant.
+
+\subsection*{Proof of the totals law}
+
+Three facts go in, and the third is Proposition \ref{prop:unique}.  The first
+two are recorded here.
+
+\begin{lemma}[Inputs]\label{lem:inputs}
+\emph{(a)}  Content forces exactly four substituted legs, distributed as
+$t=(2,2)$, so $\mathrm{TOTAL}$ is a polynomial of bidegree $(2,2)$ on the
+$18$-dimensional space of balanced directions
+$N=e_1\otimes A+e_2\otimes B$.
+\emph{(b)}  Let $Q\subset\GL_9$ be the stabiliser of the highest-weight line of
+$h$, a parabolic with Levi $\GL_3\times\GL_6$ and $Q=\mathrm{Stab}(W)$ for the
+$6$-dimensional coordinate subspace $W$, and let $\chi$ be its character on that
+line, $\chi(q)=\det(q|_{V/W})^{8}\det(q|_{W})^{6}$.  If $u_{N'}=q\,u_N\,s$ with
+$q\in Q$ and $s\in H$ then $\mathrm{TOTAL}(N')=\chi(q)\,\mathrm{TOTAL}(N)$.
+Moreover $\Gamma_N:=u_N^{-1}(W)$ satisfies $\Gamma_{N'}=s^{-1}\Gamma_N$, so the
+double coset of $u_N$ is exactly the $H$-orbit of the net $\Gamma_N^{\perp}$
+\emph{as a subspace} of $M_3$; in the normal form of this section
+$\Gamma_N^{\perp}=\{[v;Av;Bv]:v\in\bC^{3}\}$, whose tensor slabs are $(I,A,B)$.
+\end{lemma}
+
+What was missing was the identification of $\chi$, and it has two halves.
+
+\begin{lemma}[The character is a square]\label{lem:sq}
+Write $s=t^{-1}$, so that $q=u_{N'}\,t\,u_N^{-1}$ and $\Gamma_{N'}=t\,\Gamma_N$.
+Then
+\[
+  \chi(q)=\det(q|_{V/W})^{8}\det(q|_{W})^{6}
+        =\det(q)^{6}\,\det(q|_{V/W})^{2}
+        =\det(q|_{V/W})^{2}.
+\]
+\end{lemma}
+
+\begin{proof}
+The first equality is $8=6+2$ and $\det q=\det(q|_{V/W})\det(q|_{W})$.  For the
+second, $u_N$ and $u_{N'}$ are unipotent, so $\det q=\det t$; and $\det t=\pm1$
+on $H$, since $X\mapsto aXb$ has determinant $(\det a\det b)^{3}=1$ and the
+transpose has determinant $(-1)^{3}=-1$ on $M_3$.  Hence $\det(q)^{6}=1$ on
+both cosets of $H$.
+\end{proof}
+
+The transpose coset therefore cannot contribute to $\chi$ --- the same parity
+that closes the ray in Theorem \ref{thm:detcond}, where $\det{}_9$ is $-1$ on
+the transpose coset and the exponent is again even.
+
+\begin{lemma}[Slot dictionary]\label{lem:slot}
+$(V/\Gamma_N)^{*}=\Gamma_N^{\perp}$, and the basis of $\Gamma_N^{\perp}$
+transported from $W^{\perp}$ by $u_N$ is exactly the canonical parameter $v$ of
+the normal form $\Gamma_N^{\perp}=\{[v;Av;Bv]\}$.  Consequently
+$\det(q|_{V/W})=\det(G)^{-1}$, where $G$ is the change of parameter induced by
+$t$ --- that is, the basis change in the \emph{third tensor slot}, the one on
+which $H$ does not act.  Explicitly, with $\alpha=a^{-T}$ and $\beta=b^{-T}$,
+\[
+  G^{T}=\beta^{T}(\alpha_{00}I+\alpha_{01}A+\alpha_{02}B),\qquad
+  A'=\bigl(\beta^{T}(\alpha_{10}I+\alpha_{11}A+\alpha_{12}B)\bigr)(G^{T})^{-1},
+\]
+and likewise for $B'$.  Hence $\chi=\det(G)^{-2}$.
+\end{lemma}
+
+The two lemmas together are the identification $\chi\leftrightarrow\det^{2}$:
+the character is $\det^{2}$ in the net's parameter slot.  Since $I_6$ is a
+semi-invariant of character $\det^{2}$ in each slot and the two $M_3$-side
+factors contribute $(\det a\det b)^{-2}=1$, the gauge obeys the same law,
+\[
+  \Psi(A',B')=\det(G)^{-2}\Psi(A,B)=\chi\cdot\Psi(A,B),
+\]
+on both cosets of $H$ --- on the transpose coset because the transpose acts on
+the net by $Y\mapsto Y^{T}$, which swaps the first and third tensor slots, and
+$S_3$ acts on the one-dimensional degree-$6$ invariant space through the
+\emph{trivial} character.  (Had it been the sign character, $\Psi$ would be
+anti-invariant where $\mathrm{TOTAL}$ is invariant and the law would be false.
+It is not: $\Psi$ does not vanish on the nine-parameter family of tensors fixed
+by that swap.)
+
+\begin{proof}[Proof of Theorem \ref{thm:totals}]
+Specialise $t$.  Taking $\alpha=I$ and $\beta\in\SL_3$ gives $G=\beta^{T}$ with
+$\det G=1$, so $\chi=1$ and $\mathrm{TOTAL}$ is a simultaneous-conjugation
+invariant.  Taking $\beta=I$ and $\alpha$ the unipotent sending
+$\mathrm{slab}_0\mapsto\mathrm{slab}_0+t\,\mathrm{slab}_1$ gives
+$(A,B)\mapsto\bigl(A(I+tA)^{-1},B(I+tA)^{-1}\bigr)$ with
+$\chi=\det(I+tA)^{-2}$, whose infinitesimal form is
+$\mathcal D_A\mathrm{TOTAL}+2\tr(A)\mathrm{TOTAL}=0$; the $\mathrm{slab}_2$
+mirror gives the same in $B$.  Both elements lie in $H$, since $\alpha$ and
+$\beta$ are unimodular.  So $\mathrm{TOTAL}$ lies in $\mathcal B$ and is
+slab-equivariant with character $\det^{2}$; by Proposition \ref{prop:unique}
+that space is one-dimensional and spanned by $\Psi$, whence
+$\mathrm{TOTAL}=c\,\Psi$.  Evaluating at $C$, where $\Psi=1$ and the measured
+total is $1\,152\,144\,000$, gives $c$.
+\end{proof}
+
+Two remarks on what the proof explains.  First, $C$ and $R$ lie in
+\emph{different} double cosets, so no symmetry of the setup carries one to the
+other; their equal totals looked like a coincidence and are now forced, because
+the group is too small to connect the points but the space of functions it
+constrains is one-dimensional.  Second, the vanishing of the totals on the
+compression family is the classical degeneracy of the Aronhold invariant rather
+than a feature of the evaluation.
+
+\begin{remark}[Why $\det^{2}$, and what happens at other weights]\label{rem:pq}
+Nothing above is special to $\Psi$.  For a deficit weight
+$\lambda'=(p,p,p,q^{6})$ the same computation gives
+$\chi=\det(t)^{q}\det(q|_{V/W})^{p-q}$, so the character in the parameter slot
+is $\det^{p-q}$ and the transpose coset is harmless precisely when $q$ is even.
+Here $p-q=8-6=2$, which is why the governing object is the degree-$6$ Aronhold
+invariant; at a weight with $p-q=3$ it would be the degree-$9$ Vinberg
+generator, and at $p-q=4$ the degree-$12$ one.  When $q$ is odd, $\chi$ acquires
+$-1$ on the transpose coset while any $\det^{\mathrm{even}}$ semi-invariant does
+not, which forces $\mathrm{TOTAL}$ to vanish on every direction whose net is
+$H$-equivalent to its own transpose.  We have tested none of this.
+\end{remark}
 
 \begin{remark}[An arithmetic signature]\label{rem:arith}
 Every value the functional has returned, at every point and every $\sigma$, is
@@ -1076,25 +1192,18 @@ attainment, and Remark \ref{rem:orphan} shows attainment can fail exactly on
 empty support.
 \end{question}
 
-\begin{question}[Proving the totals law]\label{q:gauge}
-Conjecture \ref{thm:totals} is verified, not proved.  There is now a candidate
-proof with exactly one gap.  (i) $\mathrm{TOTAL}$ is bidegree $(2,2)$, by a
-counting lemma; proved.  (ii) $\mathrm{TOTAL}$ is constant on the double coset
-$Q\,u\,H$ up to a character $\chi$, and that coset is the $H$-orbit of the net
-\emph{as a subspace}; proved.  (iii) Dependence on the subspace alone would
-make the change of basis in the third tensor slot act trivially, so
-$\mathrm{TOTAL}$ would be a conjugation invariant carrying a slab equivariance
-of character $\chi$; this step is not verified --- the transpose coset and the
-slot dictionary both need checking.  (iv) If $\chi=\det^{2}$, then Proposition
-\ref{prop:unique} forces $\mathrm{TOTAL}=c\,\Psi$, and the value at $C$ gives
-$c=1\,152\,144\,000$.
-
-The single unproved link is $\chi\leftrightarrow\det^{2}$.  The evidence for it
-is that $\chi=\Psi$ on all $120$ same-coset pairs tested, which a tensor
-semiinvariant must satisfy; that is evidence, not proof.  We state the gap this
-narrowly because it is the whole of what remains, and because it is a statement
-about two characters on a $17$-dimensional group rather than about any
-computation.
+\begin{question}[The totals law at other weights]\label{q:gauge}
+Theorem \ref{thm:totals} is now proved, and Remark \ref{rem:pq} says why the
+character is $\det^{2}$: for a deficit weight $\lambda'=(p,p,p,q^{6})$ one gets
+$\chi=\det(t)^{q}\det(q|_{V/W})^{p-q}$, so the governing object should be the
+$\SL_3^{3}$-invariant of degree $3(p-q)$ --- Aronhold's $I_6$ here, and the
+degree-$9$ and degree-$12$ Vinberg generators when $p-q=3$ and $4$.  Is that so?
+The question has two parts, and only the second needs a computation.  Does the
+counting lemma still force a balanced bidegree at those weights, so that the
+uniqueness step has a one-dimensional space to land in?  And when $q$ is odd,
+does $\mathrm{TOTAL}$ really vanish on every direction whose net is
+$H$-equivalent to its own transpose, as the parity in Lemma \ref{lem:sq}
+demands?  A single evaluation at such a direction would settle the second.
 \end{question}
 
 \begin{question}[Degree $30$, and the shape of the semigroup]\label{q:deg30}
