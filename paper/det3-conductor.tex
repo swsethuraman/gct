@@ -57,10 +57,13 @@ ring of the closure, and the \emph{conductor} $c(\lambda,\delta)$ is the depth
 of that gap along the boundary, measured in multiplications by a boundary
 semiinvariant.  We compute this invariant exactly in the two smallest
 power-sum worlds: a closed form in the first, and in the second a transport
-formula computing the conductor from boundary data alone, as the maximal
-boundary-torus weight divided by the normal weight --- a shape we conjecture
-holds generally on weights of non-empty support, and which we show can fail
-without that hypothesis.  We then compute it for the $3\times 3$ determinant.
+formula computing the conductor from boundary data alone, on every weight of
+non-empty support and with no degree bound: the maximal boundary-torus weight
+divided by the normal weight, corrected by a parity defect supported on one
+congruence family.  The bare floor is not the answer --- it first overshoots at
+$\lambda=(17,17,2)$ --- and the defect is exactly the obstruction to matching
+the parity of Young symmetrisation against the residue of the boundary weight.
+We then compute the conductor for the $3\times 3$ determinant.
 
 Our main results concern $\det_3$.  We prove that the minimal degree of a
 nonzero $\SL_9$-invariant on $\cO=\overline{\GL_9\cdot\det_3}$ is
@@ -249,51 +252,122 @@ $\operatorname{diag}(t,t^{-2},1)$, normal weight $-6$, and
 $\nu_{\partial}(T)=1$ exactly.
 
 \begin{theorem}\label{thm:B}
-On every weight with $m(\lambda)>0$ and $\delta\le 10$ --- all $254$ of them ---
+Write $\mu_{\max}(\lambda)=\lambda_1-2\lambda_3$.  On every weight with
+$m(\lambda)>0$ --- with no bound on the degree ---
 \[
-  c(\lambda)=\Big\lfloor\frac{\lambda_1-2\lambda_3}{6}\Big\rfloor
-           =\Big\lfloor\frac{\mu_{\max}(\lambda)}{|w_N|}\Big\rfloor ,
+  c(\lambda)=\Big\lfloor\frac{\mu_{\max}(\lambda)}{|w_N|}\Big\rfloor-\pi(\lambda),
+  \qquad
+  \pi(\lambda)=
+  \begin{cases}
+    1,&\lambda_1=\lambda_2\ \text{ and }\ \mu_{\max}(\lambda)\equiv1\ (\mathrm{mod}\ 6),\\
+    0,&\text{otherwise,}
+  \end{cases}
 \]
-the maximal boundary-torus weight over the normal weight.  The inequality
-$\le$ holds in general by the block-order estimate below; the equality is
-verified computationally on the stated range.  The hypothesis is stated as
+the maximal boundary-torus weight over the normal weight, corrected by a parity
+defect.  The inequality
+$c(\lambda)\le\lfloor\mu_{\max}/|w_N|\rfloor$ holds in general by the
+block-order estimate below.  The hypothesis is stated as
 $m(\lambda)>0$ rather than as positivity of the deficit because $m(\lambda)$ is
 a stabiliser character count --- cheap, and computable without any knowledge of
 $\cO$ --- so the theorem can be applied where one does not already know the
 answer.  Remark \ref{rem:orphan} shows the hypothesis cannot simply be dropped.
 \end{theorem}
 
-On the transversal family the normalised Waring blocks have exact orders
+The defect $\pi$ is invisible below $\delta=12$: the smallest weight carrying it
+with $m(\lambda)>0$ is $(17,17,2)$, where $\mu_{\max}=13$ and $c=1$, not $2$.
+On the $254$ weights with $m(\lambda)>0$ and $\delta\le10$, $\pi$ vanishes
+identically, which is why the uncorrected floor fitted that range exactly.
+
+The proof replaces the pole calculus by a torus computation.  The Waring lines
+of the transversal family $f_s=x^{2}y+sy^{3}+z^{3}$ are
+$\hat\ell_1=\kappa\rho^{-1}(x+\rho^{3}y)$,
+$\hat\ell_2=-\kappa\rho^{-1}(x-\rho^{3}y)$, $\hat\ell_3=z$ with
+$\kappa=6^{-1/3}$ and $s=\rho^{6}/3$, so the matrix of Waring lines factors as
+$A\cdot\operatorname{diag}(\rho^{-1},\rho^{2},1)$ with $A$ \emph{constant}:
+the family is a single $\tau$-orbit of one fixed point $B\cdot v$ of the open
+orbit.  Consequently, for a matrix coefficient
+$F(g)=\langle\varphi,\pi_\lambda(g)w\rangle$ with $w$ in the multiplicity space
+$S_\lambda^{H}$,
+\[
+  F(f_s)=\sum_{\nu}\rho^{\nu}\,\langle\varphi,\ \mathrm{pr}_{\nu}(Bw)\rangle,
+  \qquad
+  c(\lambda)=\tfrac16\max\{\nu:\ \mathrm{pr}_{\nu}(B\cdot S_\lambda^{H})\neq0\},
+\]
+$\mathrm{pr}_\nu$ the projection onto the $\tau$-weight-$\nu$ subspace.  Since
+the largest $\tau$-weight of $S_\lambda$ is $\mu_{\max}$, this recovers the
+upper bound; the content is the identification of the top nonvanishing weight.
+Realising $S_\lambda^{H}$ as the span of the $S_3$-symmetrised bracket shapes
+$(a,Q,r)$ subject to $a_i+\sum_j q_{ij}+r\equiv0\ (3)$, the slot $k$ left on the
+untouched line contributes at $\tau$-weights $N_k-3T$ with
+$N_k=\mu_{\max}-a_k-2q_{\bar k}$, and two facts close the argument.  First,
+$N_k\equiv0\pmod 3$ for every admissible shape, forced by the $\mu_3^{3}$
+conditions.  Second, symmetrisation is a pure parity filter: the two
+permutations of the $k$-pair contribute
+$F(X,Y)+(-1)^{\lambda_1-a_k}F(-X,-Y)$, so only the drops
+$T\equiv\lambda_1-a_k\pmod2$ survive.  Together these force every achievable
+$\nu$ to be divisible by $6$ --- the single-valuedness of $F(f_s)$ in $s$,
+recovered combinatorially --- and reaching $6\lfloor\mu_{\max}/6\rfloor$
+requires $a_k+2q_{\bar k}\in\{\varepsilon,\varepsilon-3\}$ with
+$\varepsilon=\mu_{\max}\bmod6$.  If $\lambda_1=\lambda_2$ then every $a_k=0$ and
+$a_k+2q_{\bar k}$ is even, so for $\varepsilon=1$ neither value is available and
+the top is unreachable: this is $\pi(\lambda)$, and it costs exactly one step of
+the ray.  Attainment in every other case is by an explicit shape whose two
+remaining slots are pushed out of range, so that a single slot contributes and
+its coefficient is a nonzero multiple of a straightened monomial; the
+construction needs $\lambda_2-\lambda_3$ or $\lambda_1-\lambda_2$ bounded below
+by an absolute constant, and the finitely many remaining cases are verified
+directly.  That verification is genuinely finite because $m(\lambda)$ and the
+defect depend only on
+$(\lambda_1-\lambda_2,\ \lambda_2-\lambda_3,\ \lambda_3\bmod 6)$: $\det|_H$ has
+order exactly $6$.
+
+For the upper bound alone one can argue directly on the family: the normalised
+Waring blocks have exact orders
 $-1$ for the two colliding lines, $0$ for the untouched line, $+1$ for the
 collision wedge, $-1$ for mixed wedges and $+1$ for the determinant.  A class
 with single-counts $(a_1,a_2,a_3)$, wedge-counts $(q_{12},q_{13},q_{23})$ and
 determinant power $r=\lambda_3$ therefore has pole
 $(a_1+a_2+q_{13}+q_{23}-q_{12}-r)/6$, whose maximum over class types is
 $(\lambda_1-2\lambda_3)/6$.  Since Young symmetrisation only cancels and the
-first fundamental theorem gives spanning, the bound is rigorous.
+first fundamental theorem gives spanning, the bound is rigorous.  What that
+argument cannot see is which cancellations Young symmetrisation actually
+performs, and the defect $\pi$ lives exactly there.
 
-\begin{remark}[Orphans]\label{rem:orphan}
-Attainment fails exactly on weights of empty support, where the contraction
-shadow reports a positive pole while the deficit is $0$: the Young projection
-kills the top.  In the sweep over all $\lambda$ with $\delta\le10$ and
-$\lambda_1\le20$ the weights with $m(\lambda)=0$ and shadow pole $\ge1$ are
+\begin{remark}[Orphans and the failure locus]\label{rem:orphan}
+Attainment of the shadow maximum fails on exactly two kinds of weight: the
+family $\lambda_1=\lambda_2$, $\mu_{\max}\equiv1\pmod6$ of Theorem \ref{thm:B},
+where the parity defect $\pi$ applies; and weights of empty support, where the
+$\lambda$-isotypic component is zero and there is nothing to attain.  The two
+overlap.  The weights with $m(\lambda)=0$ and shadow pole $\ge1$ are
+\emph{finitely many} --- exactly four, at every degree:
 \[
-  (10,1,1)\ \ [\delta=4],\qquad (13,1,1)\ \ [\delta=5],\qquad
-  (11,11,2)\ \ [\delta=8],
+  (10,1,1)\ [\delta=4],\quad (13,1,1)\ [\delta=5],\quad
+  (11,11,2)\ [\delta=8],\quad (17,17,5)\ [\delta=13].
 \]
-and extending to $\delta\le16$ adds $(17,17,5)$ at $\delta=13$.  They are not
-independent: for $\GL_3$,
+Finiteness holds because $162\,m(\lambda)=\sum_{h\in H}\chi_\lambda(h)$, the
+three scalars of $H$ contribute $3\dim S_\lambda$ (as $3\mid|\lambda|$), the
+elements with distinct eigenvalues contribute $O(1)$ each by the bialternant,
+and those with a repeated eigenvalue contribute $O(\lambda_1)$, against a
+$\dim S_\lambda$ that is cubic in $\lambda_1-\lambda_2$ and $\lambda_2-\lambda_3$.
+The last two orphans are the members of the parity family with $m=0$; the first
+two fail instead by cancellation between the three slot classes.  They are
+related: since $\det|_H$ has order exactly $6$,
+$m(\lambda^{*}\otimes\det^{k})=m(\lambda)$ \emph{if and only if} $6\mid k$, and
+that twist exchanges $\lambda_1-\lambda_2$ with $\lambda_2-\lambda_3$, so the two
+$\lambda_1-\lambda_2=0$ orphans are the minimal such twists of the two
+$\lambda_2-\lambda_3=0$ ones:
 \[
   V_{(10,1,1)}^{*}\otimes\det^{12}=V_{(11,11,2)},
   \qquad
   V_{(13,1,1)}^{*}\otimes\det^{18}=V_{(17,17,5)},
 \]
-with Weyl dimensions $55,55$ and $91,91$ respectively.  \emph{The orphans come
-in dual pairs.}  We do not know whether the orphan locus is stable under
-$\lambda\mapsto\lambda^{*}\otimes\det^{k}$ in general; if it is, it is a
-statement about where attainment fails, and bears directly on Question
-\ref{q:transport}.  Thus the formula computes the shadow maximum, and on empty
-support the projection cancels it.
+with Weyl dimensions $55,55$ and $91,91$ respectively.  \emph{The orphan locus
+is stable under $\lambda\mapsto\lambda^{*}\otimes\det^{k}$ with stabiliser
+exactly $6\bZ$.}  Finally, empty support is not the same thing as a shadow that
+is announced but not delivered: $(23,23,8)$, $(29,29,11)$ and $(35,35,14)$ all
+have $m(\lambda)>0$, shadow pole $1$, and deficit $0$ --- they are the members of
+the parity family whose shadow is $1$, sent by Theorem \ref{thm:B} to
+$c(\lambda)=0$.
 \end{remark}
 
 \begin{remark}[Two kinds of tower]\label{rem:towers}
@@ -1158,7 +1232,14 @@ $9\,572\,836=3094^{2}=\big(\det(u,u')\det(v,v')\det(w,w')\big)^{2}$ at a
 generic rank-two point --- exactly, not to within rounding.  This is an
 independent check on the invariant-theoretic layer, not merely on the
 arithmetic.  At the classical end, the closed forms of Theorems
-\ref{thm:A} and \ref{thm:B} are reproduced by the general machinery.
+\ref{thm:A} and \ref{thm:B} are reproduced by the general machinery.  For
+Theorem \ref{thm:B} specifically, the torus criterion used in its proof and the
+multiplicity tables share no code: they agree on all $380$ weights with
+$\delta\le10$ and on all $2361$ weights with $m(\lambda)>0$ and $\delta\le20$,
+on every member of the parity family up to $\delta=28$, and on a $600$-weight
+random sample at $\delta=21,\dots,28$.  The corrected law was pre-registered,
+with named falsifiers, after the counterexample $(17,17,2)$ and before any of
+those checks were run.
 
 \smallskip
 \noindent\textbf{Canonical regression.}  A fixed regression suite is re-run
@@ -1183,13 +1264,24 @@ that was formed after seeing the value is marked as such wherever it appears.
 \section{Open problems}\label{sec:open}
 
 \begin{question}[Transport in general]\label{q:transport}
-Theorem \ref{thm:B} computes the conductor from boundary data alone,
-$c(\lambda)=\lfloor\mu_{\max}(\lambda)/|w_N|\rfloor$, on all $254$
-deficit-positive weights in range.  Does this shape hold for every orbit
-closure with a smooth dense boundary orbit and a one-dimensional normal weight?
-The upper bound is the block-order estimate and is general; what is missing is
-attainment, and Remark \ref{rem:orphan} shows attainment can fail exactly on
-empty support.
+Theorem \ref{thm:B} computes the conductor from boundary data alone, at every
+weight with $m(\lambda)>0$ and with no degree bound, but not as the bare floor:
+$c=\lfloor\mu_{\max}/|w_N|\rfloor-\pi$ with $\pi$ a parity defect supported on
+one congruence family.  World A has $\pi\equiv0$; World B does not.  The natural
+general conjecture is therefore not that the floor is exact but that the
+correction is arithmetic in the same way: for an orbit closure with a smooth
+dense boundary orbit and a one-dimensional normal weight, is
+$c(\lambda)=\lfloor\mu_{\max}/|w_N|\rfloor-\pi(\lambda)$ with $\pi$ determined by
+the order of the stabiliser character on the degenerating slot?  In World B that
+order is $2$ --- symmetrisation over the $S_3$ in $H$ acts as the pure parity
+filter $F(X,Y)+(-1)^{\lambda_1-a_k}F(-X,-Y)$ --- and $\pi$ is exactly the
+obstruction to matching that parity against the residue
+$\mu_{\max}\bmod|w_N|$.  Two concrete tests: does the same shape hold for
+$\sigma_r(v_d(\mathbb{P}^{n}))$ with a larger symmetric stabiliser, where the filter
+would be a character of order $>2$ and $\pi$ could exceed $1$; and does the
+first deficit-positive weight of $\det_4$ (Question \ref{q:n4}) carry a defect?
+The upper bound remains the block-order estimate and is general; what is not
+general is the assumption that Young symmetrisation always spares the top.
 \end{question}
 
 \begin{question}[The totals law at other weights]\label{q:gauge}
