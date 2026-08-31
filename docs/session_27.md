@@ -29,7 +29,9 @@ session's own work moves the tip without disturbing the check.)
   `delta = 6` gate.
 * **The open region is `ell >= 5`**, where the containment argument provably
   breaks (5-ary cubics are not all `3x3`-determinantal: rank 29 of 35).  There
-  are **71** such cells at `delta = 6`.  The four cheapest measure `D = 0`.
+  are **71** such cells at `delta = 6`.  **Nine were measured — every one with a
+  weight space under 2800 — and all nine give `D = 0` with `mult = a` on both
+  sides**, three of them at `a = 3`.
 * **Calibration passed**: my independent implementation reproduces session 26's
   five cells (including `mult_per`), `mult = a` at all 20 weights with `a > 0`
   and `delta <= 4` by three routes, and the raising-operator kernel dimension
@@ -91,11 +93,13 @@ place its hypothesis breaks.
 * `e >= 6` is a lower bound only.  I did not determine the degree of the
   determinantal hypersurface; `delta = 6` at `lam = (6,6,6,6)` has a weight
   space of about 12,000 and was not run.
-* The `ell >= 5` region is sampled, not swept: 4 of the 71 cells at `delta = 6`
-  were measured, chosen as the cheapest by weight-space dimension.  Cheapest is
-  a cost criterion, not a mathematical one, and a cell that is expensive is not
-  thereby more likely to be interesting — but nor is it less likely.  The
-  remaining 67 are pure compute.
+* The `ell >= 5` region is sampled, not swept: 9 of the 71 cells at
+  `delta = 6` were measured, chosen as the cheapest by weight-space dimension.
+  Cheapest is a cost criterion, not a mathematical one, and an expensive cell is
+  neither more nor less likely to be interesting.  The remaining 62 are pure
+  compute — the run was cut by its own wall-clock limit, not by any difficulty.
+  Nine of nine agreeing is suggestive but is not a sweep, and I have not proved
+  anything about length 5.
 * Nothing here bears on `n = 3`.  Session 26's Corollary 9 is untouched, and
   the five cells it rests on are reproduced rather than revised.
 
@@ -121,6 +125,9 @@ Pure Python, exact integers and `Fraction`, no engine, no checkpoints.
    cells at `delta = 6` are already closed by §1 of `n4_gate.md`.  The brief
    for the next session should name the 71.
 2. **Ask whether the containment survives at length 5 by another route.**  The
+   nine measured cells all show `mult_det = mult_pad = a`, which is what
+   containment would predict — so the evidence points at a theorem rather than
+   at an accident.  The
    block construction fails, but that is a failure of one argument, not a proof
    of non-containment.  `dim D_5^pad = 39 < 50 = dim D_5^{det_4}`, so
    containment is dimensionally possible.  Deciding it would close or open the

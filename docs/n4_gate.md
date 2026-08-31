@@ -180,14 +180,26 @@ Kill criterion 3 fires — `mult_det = a` at all nineteen — but the gate does
 * **71 have `ell >= 5`** and are genuinely open: the containment argument fails
   there because 5-ary cubics are not all `3x3`-determinantal.
 
-The three cheapest of the 71, measured:
+**Nine of the 71 measured** — every cell whose weight space is under 2800,
+taken in order of cost:
 
 | `lam` | `ell` | `a` | dim | `mult_det` | `mult_pad` | `D` |
 |---|---|---|---|---|---|---|
 | (14,5,2,2,1) | 5 | 2 | 1337 | 2 | 2 | 0 |
 | (13,5,4,1,1) | 5 | 2 | 1824 | 2 | 2 | 0 |
 | (12,7,3,1,1) | 5 | 3 | 1884 | 3 | 3 | 0 |
+| (13,6,2,2,1) | 5 | 3 | 1910 | 3 | 3 | 0 |
+| (11,8,3,1,1) | 5 | 2 | 2224 | 2 | 2 | 0 |
+| (14,4,2,2,2) | 5 | 2 | 2337 | 2 | 2 | 0 |
+| (12,7,2,2,1) | 5 | 3 | 2467 | 3 | 3 | 0 |
+| (12,6,4,1,1) | 5 | 2 | 2553 | 2 | 2 | 0 |
+| (12,5,5,1,1) | 5 | 2 | 2795 | 2 | 2 | 0 |
 
-Both sides still fill the room at length 5.  The next session should be given
+**Both sides still fill the room at length 5**, in all nine — including three
+cells with `a = 3`.  So the pattern that closed length 4 survives the failure
+of the argument that explained it: at length 5 there is no containment theorem
+to appeal to, and the multiplicities coincide anyway.  Whether that is a second
+theorem waiting to be found, or the first 9 of 71 being unrepresentative, is
+the open question this session hands on.  The next session should be given
 the **`ell >= 5` gate**, not `delta = 6` wholesale — the length axis is the one
 that carries the mathematics, and 65 of the 136 cells are already decided.
