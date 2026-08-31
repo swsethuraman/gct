@@ -408,8 +408,11 @@ tower is finite.
 Let $n=3$, $V=\bC^{9}$ with coordinates the entries of a $3\times3$ matrix, and
 $v=\det_3\in \Sym^{3}V^{*}$.  Write $G=\GL_9$, $\cO=\overline{G\cdot\det_3}$,
 and let $H\subset G$ be the stabiliser: by Frobenius,
-$H=\big((\GL_3\times\GL_3)/\bC^{*}\big)\rtimes\bZ/2$ acting by
-$X\mapsto PXQ$ and $X\mapsto X^{t}$, of dimension $17$.  This $H$ is
+$H=\big(\{(P,Q):\det P\det Q=1\}/\bC^{*}\big)\rtimes\bZ/2$ acting by
+$X\mapsto PXQ$ and $X\mapsto X^{t}$, of dimension $2n^{2}-2=16$.  The
+determinant condition matters: without it one gets the stabiliser of the
+\emph{point} $[\det_3]$, of dimension $17$, whereas the Peter--Weyl identity
+and every multiplicity below require the stabiliser of the \emph{vector}.  This $H$ is
 \emph{not} finite, so the deficit of Definition \ref{def:deficit} is taken with
 $m(\lambda)=\dim(S_\lambda^{*})^{H}$ as before; the Peter--Weyl side is now a
 branching count rather than a character count, but the definition and the
@@ -718,6 +721,14 @@ generator, not a product, since there is no invariant of degree $6$ on $\cO$ to
 multiply $\Phi_{18}$ by.
 \end{theorem}
 
+The value was certified at two bracket structures with different pair-degree
+profiles, so the second is not an $S_8$ relabelling of the first.  The ratio
+between the two normalisations, $35/246$, was committed to version control
+before either value existed; the second run returned the forced number
+$-3\,520\,661\,760\,000$ to all thirteen digits, and the normalisation-free
+quotient $\Phi_{24}(\det_3)/K_8=17\,325=3^{2}5^{2}\cdot7\cdot11$ agrees at
+both.
+
 The one-dimensionality in Theorem \ref{thm:deg24} is what makes the statement
 cheap, and it is worth isolating why.  For a general degree the vanishing
 direction is the expensive one: it needs the multiplicity of the rectangular
@@ -857,7 +868,16 @@ Hence $m(\lambda)=1$.
 \end{proof}
 
 No orbit point, no evaluation functional, and no computation beyond a Kronecker
-coefficient enters that proof.  The conductor is a different matter.
+coefficient enters that proof.  The same argument applies verbatim to any orbit
+closure in this ambient space, since the plethysm obstruction does not depend on
+the closure; for the permanent it gives
+\[
+  \dfc_{\per_3}\big((2,2,2),2\big)=m_{\per_3}\big((2,2,2)\big)=4 ,
+\]
+four times the determinant's.  The Peter--Weyl difference at that weight is
+therefore $+3$ and the deficit difference is also $+3$, so the two cancel
+exactly --- the first instance in this programme of a saturation that turns out
+to be systematic (Section \ref{sec:open}).  The conductor is a different matter.
 
 \begin{theorem}[The conductor]\label{thm:detcond}
 $c\big((2,2,2),2\big)=1$, and the vanishing is \emph{ray-complete}:
@@ -1160,8 +1180,19 @@ invariant.  Section \ref{sec:pq} works out what the whole family looks like.
 
 \begin{remark}[An arithmetic signature]\label{rem:arith}
 Every value the functional has returned, at every point and every $\sigma$, is
-an integer multiple of $151\,200=2^{5}3^{3}5^{2}7$.  The reader can check this
-on the one table we give in full.  At $X_4$ the eight orbit representatives
+an integer multiple of
+\[
+  75\,600=2^{4}3^{3}5^{2}7,
+\]
+and $75\,600$ is exactly the greatest common divisor of the seventeen subvalues
+now on record.  An earlier version of this paper asserted the constant
+$151\,200=2\cdot75\,600$, which is false: $W(\text{3-cycle})=301\,870\,800
+=75\,600\cdot3993$ is not a multiple of it, and neither is
+$f1X_{-3}^{03}=-237\,459\,600=75\,600\cdot(-3141)$.  The first of those two was
+in the record before the claim was made.  We record the error because the claim
+was checkable in one line against values already banked, and was not checked.
+
+A sub-family does carry the larger constant, and it is the one we tabulate.  At $X_4$ the eight orbit representatives
 carry weights $(4,4,8,4,8,4,2,2)$, summing to the $36$ subproblems, and
 cofactors
 \[
@@ -1175,14 +1206,19 @@ a proportionality $V_\sigma=W(\sigma)\Psi$ would force a non-integer where the
 engine returns an integer.
 
 The common factor is not imposed anywhere in the computation, and we have no
-proof of it.  Two further coincidences we flag without explaining:
+proof of it; in units of $75\,600$ the totals read
+$\mathrm{TOTAL}(C)=15\,240$, $\mathrm{TOTAL}(X_4)=60\,960$, and the
+pre-registered $\mathrm{TOTAL}(X_{-3})=-45\,720$.  Two further coincidences we
+flag without explaining:
 $\mathrm{TOTAL}(C)=2^{7}3^{4}5^{3}\cdot7\cdot127$ and
 $\mathrm{TOTAL}(X_4)=2^{9}3^{4}5^{3}\cdot7\cdot127$, so the prime $127$ sits in
 the totals constant and nowhere else in the paper; and
-$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}$ is $151\,200$ times
-$-5\,806\,080$, but it is a value in degree $18$ and belongs to a different
-computation from the degree-$20$ table above, so we draw no inference from the
-shared factor.
+$\Phi_{18}(\det_3)$ and $\Phi_{24}(\det_3)$ are also multiples of $75\,600$,
+but they are values in degrees $18$ and $24$ and belong to different
+computations from the degree-$20$ table above, so we draw no inference from the
+shared factor.  It is not a property of degree-$18$ values in general:
+$\Phi_{18}(\per_3)=2^{20}3^{4}\cdot5\cdot7\cdot17$ carries only one factor of
+$5$ and is not a multiple of $75\,600$ either.
 \end{remark}
 
 \begin{remark}[What fails]\label{rem:fails}
