@@ -660,9 +660,13 @@ cannot annihilate sum (-1)^a K_a, i.e. nothing forces vanishing [f9b4485];
 forcing V(det_3,S') = (35/246) V(det_3,S) - **HIT, -3,520,661,760,000, all
 thirteen digits**, peak 535,918,500 states at level 16, 8888 s; (v) odd-only at
 S' = even-only at S'. So Phi_24(det_3) != 0 is certified at TWO bracket
-structures with Phi_24(det_3)/K_8 = 17325 at both. Bonus banked:
-**Phi_24(per_3) = -4,016,526,151,680 = -2^14 3^5 5 . 7 . 11 . 41 . 61**, ratio
-Phi_24(det_3)/Phi_24(per_3) = 2025/328, and Phi_24(per_3)/K_8 = 2812.
+structures with Phi_24(det_3)/K_8 = 17325 at both. Bonus, SINGLE ROUTE
+ONLY, flagged provisional (not reproduced by a second structure):
+**Phi_24(per_3) = -4,016,526,151,680 = -2^12 3^3 5 . 7 . 41 . 25309** (25309
+prime), ratio Phi_24(det_3)/Phi_24(per_3) = 155925/25309, Phi_24(per_3)/K_8 =
+25309/9. NOTE it is NOT a multiple of 151,200 - and neither is Phi_18(per_3);
+the arithmetic signature is about det_3 evaluations only. Do not quote the
+permanent value as confirmed until a second bracket structure reproduces it.
 S' was chosen with a different pair-degree profile ((1,1),(2,14),(3,5),(4,7))
 from S's ((1,4),(2,10),(3,10),(4,2),(5,2)), so the two are provably not related
 by any relabelling of the eight brackets.
