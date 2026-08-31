@@ -37,13 +37,26 @@ for `per^pad` against `det`, and the permanent's deficit at `n = m = 3`.
 
 Came back, in one line each:
 
-* **The screen fails everywhere.**  Exhaustively over six `(n,m,delta)` cases,
-  every *live* weight (one where an obstruction is possible at all) has
+* **The screen fails everywhere.**  Exhaustively over `(4,3,1)`, `(4,3,2)`,
+  `(4,3,3)`, `(5,3,2)`, `(6,3,2)` under the full three-condition screen — and
+  over strictly larger weight sets under a cruder screen at `(4,3,1..3)`,
+  `(5,3,1..2)`, `(6,3,1..2)`, `(7,3,2)` — every *live* weight has
   `m_{per^pad} > m_det`, i.e. `P > 0`.  No obstruction in range can be
-  deficit-driven.  **The line is closed in accessible range.**
-* **The one formal pass is vacuous**: `lam = (n)` at `delta = 1`, where both
-  closures span the irreducible ambient, `mult = 1` and `def = 0` on both
-  sides, and `D = 0` identically.
+  deficit-driven, and the margin *widens* with `delta` (2…8 at `delta = 2`,
+  4…140 at `delta = 3`).  **The line is closed in accessible range.**
+* **Exactly two weights ever passed, and both close without appeal to anything
+  unproved.**  `lam = (n)` at `delta = 1`: both closures span the irreducible
+  ambient, so `mult = 1`, `def = 0` on both sides and `D = 0` identically.
+  `lam = (3,2,2,1^5)` at `(4,3,3)`, which the first (weaker) screen surfaced as
+  a genuine candidate with `m_det = m_{per^pad} = 1`: the ambient plethysm
+  coefficient of that `S_lam` in `Sym^3(Sym^4 C^16)` is **0**, so every orbit
+  closure in the ambient has multiplicity 0 there and `D = 0`.  That kill is
+  self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova and so does
+  not depend on whether their hypotheses reach `(n,m) = (4,3)`.
+* **Both passing weights have `m_{per^pad} = m_det = 1`**, where `mult_B <= 1`
+  and an obstruction would have to be an *occurrence* obstruction — the
+  sub-case already closed.  So even where the Peter–Weyl side goes neutral,
+  the arithmetic leaves room only for the mechanism already known to fail.
 * **The first permanent deficit is 4**: `def_{per_3}((2,2,2),2) = 4` against
   the determinant's 1, computed two ways.  The deficit difference there
   exactly cancels the Peter–Weyl difference (`Def = P = 3`, `D = 0`) — the
@@ -72,6 +85,14 @@ Came back, in one line each:
 | E5 | `m_{per^pad}(lam) = 0` for `ell(lam) > m^2+1` | **CONFIRMED**, and upgraded from assumption to a proved lemma |
 | E6 | calibrations (a) `m_det_3` on `lam ⊢ 6`, (b) `def=1`, (c) `SL_9` census | **ALL CONFIRMED**; plus the `delta = 3,4` totals 6 and 31 |
 | E7 | verdict: "live, for an uncomfortable reason" | **REFUTED** — the verdict is the opposite: closed, and session 24's recommendation is strengthened |
+
+A methodological note on E3's refutation: the *first* screen I wrote tested
+only `m_{per^pad} <= m_det` and produced one candidate weight.  Adding the
+ambient-plethysm condition — which is a necessary condition for *any* closure
+in the ambient to have a nonzero multiplicity, and which I should have imposed
+from the start — removed it at zero cost.  The candidate is reported in
+`docs/screen_results.md` rather than dropped, because it is the only moment in
+the session when the line looked open.
 
 Three clean refutations (E1's point value, E3/E4, E7), all kept.  E7 is the one
 that matters: I pre-registered that I expected to have to reverse session 24's
@@ -131,11 +152,14 @@ screen was run to avoid.
 
 ## 6. What a successor should do next
 
-1. **Push the crossover probe.**  The only route by which the line reopens is
-   `m_det` overtaking `m_{per^pad}` at larger `delta`.  The probe at the
-   determinant-favourable weights (nearest the rectangle `(delta^n)`) shows the
-   margin growing, not shrinking, through the range reached.  Extending it is
-   cheap per weight and is the single highest-value follow-up.
+1. **Finish `(4,3,4)` and `(5,3,3)`.**  Both were launched and did not
+   complete; `m_{per^pad}` at `N = 15,16` in ten variables is the bottleneck.
+   Pure compute, no new mathematics.  Then push the crossover probe: the only
+   route by which the line reopens is `m_det` overtaking `m_{per^pad}` at
+   larger `delta`, and the probe at the determinant-favourable weights nearest
+   the rectangle `(delta^n)` shows the margin growing, not shrinking, through
+   the range reached (at `delta = 3`, `lam = (3,3,3,3)`: `m_det = 0`,
+   `m_{per^pad} = 3`).
 2. **Correct `2n^2 − 1` to `2n^2 − 2`** in §4 of the paper and anywhere the
    brief's `17 → 31` is quoted.
 3. **Record `def_{per_3}((2,2,2),2) = 4`** beside the determinant's 1.  It is

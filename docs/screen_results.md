@@ -90,50 +90,82 @@ column sums are all `delta`.
 
 ## 3. STEP 1 — the screen, exhaustive over the stated range
 
-`m_det` is cheap (Kronecker); `m_{per^pad}` is the bottleneck.  Since a live
-weight needs `m_{per^pad} > 0`, and a passing weight needs `m_det >= m_{per^pad} >= 1`,
-it suffices to evaluate `m_{per^pad}` on the support of `m_det` intersected
-with `ell(lam) <= m^2+1`; every weight outside that support has
-`m_det = 0 < m_{per^pad}` and fails the screen automatically.  Both the
-brute-force enumeration (all `lam`) and this optimised form were run, and agree.
+An obstruction at `lam` needs `mult_lam C[B] > mult_lam C[A] >= 0`, and for
+*every* orbit closure `X` in this ambient
 
-| `(n,m,delta)` | `lam ⊢ N` | scanned | live weights | `P > 0` (screen fails) | **screen passes** |
-|---|---|---|---|---|---|
-| (4,3,1) | 4  | 5   | 2  | 1  | 1 — `lam=(4)`, vacuous |
-| (5,3,1) | 5  | 7   | 1  | 0  | 1 — `lam=(5)`, vacuous |
-| (6,3,1) | 6  | 11  | 1  | 0  | 1 — `lam=(6)`, vacuous |
-| (4,3,2) | 8  | 22  | 19 | 19 | **0** |
-| (5,3,2) | 10 | 42  | 24 | 24 | **0** |
-| (6,3,2) | 12 | 77  | 7  | 7  | **0** |
+    mult_lam C[X]_delta  <=  min( m_X(lam) , amb_delta(lam) ),
 
-Exhaustive, not sampled, over every `lam ⊢ n·delta` with `ell(lam) <= n^2`.
-(At (6,3,2) two further weights, `(4,4,4)` and `(4,4,2,2)`, have `m_det = 1`
-and `m_{per^pad} = 0`: they satisfy the inequality numerically but are dead —
-`mult_B = 0`, so `D <= 0` regardless.)
+where `amb_delta(lam)` is the multiplicity of `S_lam` in the plethysm
+`Sym^delta(Sym^n C^{n^2})`.  So a weight can carry an obstruction only if
 
-**The one formal pass is vacuous.**  At `delta = 1` the only weight with
-`m_det >= 1` is `lam = (n)`, where `m_det = m_{per^pad} = 1` and `P = 0`.  But
-`W = Sym^n C^{n^2}` is an irreducible `GL_{n^2}`-module, so every nonzero orbit
-spans it and restriction `W^* → C[X]_1` is injective for **both** closures:
+  1. `amb_delta(lam) > 0` — otherwise *every* closure has multiplicity 0 there;
+  2. `m_{per^pad}(lam) > 0` — otherwise `mult_B = 0`;
+  3. `ell(lam) <= m^2 + 1` — the row bound (and 3 ⟹ 2 fails otherwise);
+
+and it can carry a **deficit-driven** one only if additionally
+
+  4. `P(lam) = m_{per^pad}(lam) − m_det(lam) <= 0`.
+
+Condition 1 is by far the cheapest and by far the most restrictive: the
+plethysm `Sym^delta(Sym^n)` has very few constituents.  Call a weight
+satisfying 1–3 **live**.
+
+| `(n,m,delta)` | `lam ⊢ N` | ambient constituents | live | `P > 0` | **screen passes** | margin range |
+|---|---|---|---|---|---|---|
+| (4,3,1) | 4  | 1 | 1 | 0 | 1 — `lam=(4)`, vacuous | 0 |
+| (4,3,2) | 8  | 3 | 3 | 3 | **0** | 2 … 8 |
+| (4,3,3) | 12 | 9 | 9 | 9 | **0** | 4 … 140 |
+| (5,3,2) | 10 | 3 | 3 | 3 | **0** | 2 … 8 |
+| (6,3,2) | 12 | 4 | 4 | 4 | **0** | 2 … 8 |
+
+Exhaustive over *all* `lam ⊢ n·delta`, not sampled.  At `(4,3,3)` the nine live
+weights and their margins are
+
+    lam         amb  m_det  m_perpad    P        lam        amb m_det m_perpad   P
+    (4,4,4)      1     2      18       16        (8,4)       1    1     50      49
+    (6,4,2)      1     2     142      140        (9,3)       1    1     43      42
+    (6,6)        1     1      18       17        (10,2)      1    1     25      24
+    (7,4,1)      1     1     111      110        (12)        1    1      5       4
+    (8,2,2)      1     2      64       62
+
+**The margin grows sharply with `delta`** — 2…8 at `delta = 2`, 4…140 at
+`delta = 3`.  It is not approaching zero.  Increasing `n` at fixed `delta`
+does not help either: at `delta = 2` the margins are 2…8 for `n = 4, 5, 6`
+alike.  The independent, cruder screen of conditions 2–4 only (no ambient
+test) was also run exhaustively at `(4,3,1)`, `(4,3,2)`, `(4,3,3)`,
+`(5,3,1)`, `(5,3,2)`, `(6,3,1)`, `(6,3,2)` and `(7,3,2)` — a strictly larger
+weight set, since it does not require `amb > 0` — and returned nothing beyond
+the two weights discussed below.
+
+**A candidate appeared, and died for free.**  A first pass of the screen used
+only conditions 2–4 and found exactly one non-trivial passing weight, at
+`(n,m,delta) = (4,3,3)`:
+
+    lam = (3,2,2,1,1,1,1,1) :  m_det_4 = 1,  m_{per^pad} = 1,  P = 0.
+
+Condition 1 kills it: the ambient plethysm multiplicity of that `S_lam` in
+`Sym^3(Sym^4 C^16)` is **0**, so `mult_lam C[X]_3 = 0` for *every* orbit
+closure in the ambient, both closures included, and `D = 0`.  Note that this
+kill is self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova, and
+does not depend on whether their hypotheses cover `(n,m) = (4,3)`.  It is
+recorded here rather than quietly dropped because it is the only moment in the
+session when a candidate existed.
+
+**The one surviving formal pass is vacuous.**  At `delta = 1` the ambient is
+the single constituent `lam = (n)`, where `m_det = m_{per^pad} = 1` and
+`P = 0`.  But `W = Sym^n C^{n^2}` is an irreducible `GL_{n^2}`-module, so every
+nonzero orbit spans it and `W^* → C[X]_1` is injective for **both** closures:
 `mult = 1` and `def = 0` on both sides, hence `D = 0` identically.  It is a
 weight where nothing can happen, not a candidate.
 
-**Sample of the margin** — `(n,m,delta) = (4,3,2)`, all 19 live weights:
-
-    lam            m_det  m_perpad   P          lam            m_det  m_perpad  P
-    (8)              1       3       2          (4,3,1)          0       7      7
-    (7,1)            0       4       4          (4,2,2)          1      11     10
-    (6,2)            1       9       8          (4,2,1,1)        0       3      3
-    (6,1,1)          0       1       1          (4,1^4)          0       2      2
-    (5,3)            0       6       6          (3,3,2)          0       2      2
-    (5,2,1)          0       8       8          (3,3,1,1)        0       3      3
-    (5,1,1,1)        0       1       1          (3,2,2,1)        0       6      6
-    (4,4)            1       5       4          (3,2,1,1,1)      0       2      2
-                                                (3,1^5)          0       1      1
-                                                (2,2,2,2)        1       4      3
-                                                (2,2,1^4)        0       1      1
-
-The minimum margin over live weights is 1, and it does not approach 0.
+**A general remark on what a pass would even buy.**  At every weight the screen
+passed — the vacuous one and the killed one alike — `m_{per^pad} = m_det = 1`.
+There `mult_B <= 1`, so an obstruction requires `mult_A = 0 < mult_B = 1`: an
+**occurrence** obstruction, and simultaneously `def_A(lam) = m_A(lam)`, a *full*
+determinant deficit.  Occurrence obstructions are exactly the sub-case
+Bürgisser–Ikenmeyer–Panova close.  So even where the Peter–Weyl side goes
+neutral, the only obstruction the arithmetic leaves room for is the one already
+known to be unavailable.
 
 ## 4. Why the screen fails — and why I predicted the opposite
 
@@ -232,30 +264,44 @@ strongest argument for running screens of this shape before any engineering.
 
 ## 7. Verdict
 
-**The line is closed in accessible range.**  Across every `(n,m,delta)` listed
-in §3 — exhaustively, not by sampling — there is no weight at which a
-deficit-driven obstruction to `closure(per_m^pad) ⊆ closure(det_n)` could
-exist: every live weight has `m_{per^pad} > m_det`, so `P > 0` and any
-obstruction there is one the classical Peter–Weyl side already sees, with the
-deficit entering only as the subtraction that can destroy it; the single
-formal pass, `lam = (n)` at `delta = 1`, is the weight where both closures span
-the ambient and `D = 0` identically.  The unpadded `n = m = 3` model fails the
-screen harder still, with the ratio of Peter–Weyl totals widening 1 : 5.7 :
-28.9 : 131 through `delta = 4`.  For the line to reopen, one of three things
-would have to change, and each is now a sharp and testable statement rather
-than a hope: (i) the symmetric rectangular Kronecker coefficient `m_det` would
+**The line is closed in accessible range, and it closes twice over.**
+Exhaustively — not by sampling — over `(n,m,delta) = (4,3,1)`, `(4,3,2)`,
+`(4,3,3)`, `(5,3,2)`, `(6,3,2)` under the full three-condition screen, and over
+the strictly larger weight sets of the cruder screen at `(4,3,1..3)`,
+`(5,3,1..2)`, `(6,3,1..2)`, `(7,3,2)`, there is no weight at which a
+deficit-driven obstruction to `closure(per_3^pad) ⊆ closure(det_n)` could
+exist.  Every live weight has `m_{per^pad} > m_det`, so `P > 0` and any
+obstruction there is one the Peter–Weyl side already sees, with the deficit
+entering only as the subtraction that can destroy it; and the margin is not
+tightening but widening — 2…8 at `delta = 2`, 4…140 at `delta = 3`, with `n = 4,
+5, 6` behaving alike.  Exactly two weights ever passed, and both are closed
+without appeal to anything unproved: `lam = (n)` at `delta = 1`, where both
+closures span the irreducible ambient so `mult = 1`, `def = 0` and `D = 0`
+identically; and `lam = (3,2,2,1^5)` at `(4,3,3)`, where the ambient plethysm
+coefficient is zero, so *every* orbit closure in `Sym^4 C^16` has multiplicity
+zero there and `D = 0` — a self-contained kill that does not invoke
+Bürgisser–Ikenmeyer–Panova and so does not depend on whether their hypotheses
+reach `(n,m) = (4,3)`.  Both passing weights, moreover, have
+`m_{per^pad} = m_det = 1`, where the only obstruction the arithmetic leaves
+room for is an occurrence obstruction — the sub-case already closed.  For the
+line to reopen, the symmetric rectangular Kronecker coefficient `m_det` would
 have to overtake the ten-variable monomial count `m_{per^pad}` at some larger
-`delta` — the probe at the determinant-favourable weights nearest the rectangle
-`(delta^n)` shows the margin *growing*, not shrinking, and at `delta = 3`,
-`lam = (3,3,3,3)` the determinant's count is still 0 while the permanent's is
-3; (ii) the row bound `ell(lam) <= m^2 + 1` would have to be evaded, which it
-cannot be, since it is a theorem and not an artefact; or (iii) the relevant
-weights would have to lie outside every range reachable by this method, in
-which case the honest statement is that the question is undecidable by cheap
-means and remains so — but that is not a reason to spend the `n = 4` budget,
-because the `n = 4` deficit computes `def_det` alone and the separating
-quantity is a *difference* of deficits whose permanent half would still be
-missing.  On this evidence the deficit should be published as what session 24
-concluded it is — an exact measure of non-normality, with closed forms in two
-worlds, a first determinant value, and now a first permanent value
-`def_{per_3}((2,2,2),2) = 4` — and not as a separation tool.
+`delta`, and the measured trend runs hard the other way; the unpadded `n = m =
+3` model, which is the `m → n` limit of the same question, fails the screen
+harder still, with the ratio of Peter–Weyl totals widening 1 : 5.7 : 28.9 : 131
+through `delta = 4`.  Neither is a proof, and the honest residue is that the
+question is undecided outside the range reached — but that is not a reason to
+spend the `n = 4` budget, because an `n = 4` grind computes `def_det` alone
+while the separating quantity is a *difference* of deficits whose permanent
+half would still be missing.  **The deficit should therefore be described in the
+paper as what it demonstrably is — an exact measure of non-normality, with
+closed forms in two worlds, a first determinant value, and now a first
+permanent value `def_{per_3}((2,2,2),2) = 4` — and not as a separation tool.**
+
+## 8. Range not reached
+
+`(4,3,4)` and `(5,3,3)` were launched and had not completed when the session
+ended; `m_{per^pad}` at `N = 15,16` in ten variables is the bottleneck (tens of
+minutes per weight).  Neither is needed for the verdict above, which is stated
+only over the range listed in §3, but both are the obvious next increments and
+are pure compute — no new mathematics, no engine, no certificates.
