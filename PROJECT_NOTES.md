@@ -657,7 +657,12 @@ ranked 30 then 42 [f9b4485]; (ii) K_a = K_{8-a}, so even-only = odd-only
 [f9b4485]; (iii) that same symmetry pairs indices of EQUAL parity and therefore
 cannot annihilate sum (-1)^a K_a, i.e. nothing forces vanishing [f9b4485];
 (iv) c_S'/c_S = 35/246, logged at b0401a8 BEFORE either expensive run finished,
-forcing V(det_3,S') = (35/246) V(det_3,S); (v) odd-only at S' = even-only at S'.
+forcing V(det_3,S') = (35/246) V(det_3,S) - **HIT, -3,520,661,760,000, all
+thirteen digits**, peak 535,918,500 states at level 16, 8888 s; (v) odd-only at
+S' = even-only at S'. So Phi_24(det_3) != 0 is certified at TWO bracket
+structures with Phi_24(det_3)/K_8 = 17325 at both. Bonus banked:
+**Phi_24(per_3) = -4,016,526,151,680 = -2^14 3^5 5 . 7 . 11 . 41 . 61**, ratio
+Phi_24(det_3)/Phi_24(per_3) = 2025/328, and Phi_24(per_3)/K_8 = 2812.
 S' was chosen with a different pair-degree profile ((1,1),(2,14),(3,5),(4,7))
 from S's ((1,4),(2,10),(3,10),(4,2),(5,2)), so the two are provably not related
 by any relabelling of the eight brackets.
@@ -683,10 +688,8 @@ C[closure]^{SL_9} is Gorenstein - offered as the shape of the dichotomy, not as
 evidence. Either way the answer names the last gap and hence the exact
 conductor of the invariant ring in its normalisation: 36 or 24. Degree 30 is
 NOT a one-number question (ambient dim 4): nonvanishing is still one
-evaluation, but vanishing needs all four. The delta = 30 bracket problem is 10
-brackets / 30 letters and exceeds br2.c's 63-bit packing and this container's
-disk - it needs either a wider state or a factoring, and should be scoped
-before it is launched.
+evaluation, but vanishing needs all four. **delta = 30 IS NOW SCOPED - see docs/degree30_scoping.md,
+do not launch it blind.**
 
 **SESSION 22 (2026-08-30, math only, branch `s22-chi`): STEP (iii) CLOSES —
 TOTAL(N) = Psi(N) x 1,152,144,000 IS A THEOREM.** Deliverable:
