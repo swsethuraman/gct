@@ -1493,6 +1493,29 @@ before either expensive run finished, the second bracket structure — chosen wi
 a different pair-degree profile, so provably not an S₈ relabelling of the first
 — must return exactly (35/246)·V. (5) Odd-only at S′ equals even-only at S′.</p>
 
+<div class="thm">
+<p><b>Prediction 4 landed on the nose: −3,520,661,760,000.</b> The ratio was
+fixed by two 150-second runs and committed while both multi-hour runs were still
+unfinished; the second structure returned all thirteen digits. So
+Φ₂₄(det₃) ≠ 0 is certified at two bracket structures that no relabelling of the
+eight brackets connects, and Φ₂₄(det₃)/K₈ = 17325 at both. Peak 535,918,500
+states at level 16, 8888 s — against a predicted 5.3649×10⁸ from the refined
+state-count proxy, which uses the fact that every letter deposits exactly one
+cell in each row <i>and</i> each column, so the per-bracket masks carry global
+margins. That proxy is ~100× tighter than ∏ C(9,d) and, empirically, essentially
+exact; it is what made these runs plannable rather than discovered.</p>
+</div>
+
+<p><b>And Φ₂₄ at the permanent — one route only, flagged as such.</b> The same
+evaluator with u ≡ 1 gives Φ₂₄(per₃) = −4,016,526,151,680 =
+−2¹²·3³·5·7·41·25309 (25309 prime), so Φ₂₄(det₃)/Φ₂₄(per₃) = 155925/25309 and
+Φ₂₄(per₃)/K₈ = 25309/9. Unlike every other number in this entry it has
+<i>not</i> been reproduced by a second route, and it is banked as provisional.
+Note it is <i>not</i> a multiple of 151,200 — nor is Φ₁₈(per₃); the arithmetic
+signature is a statement about evaluations at det₃, and the permanent values
+sit outside it. Both degree-24 values are nonzero and, as at δ = 18, of
+opposite sign to each other.</p>
+
 <p><b>Regression.</b> The new evaluator is independent code on an independent
 formulation, and it was run at δ = 18 before anything else: u = sgn returned
 −877,879,296,000 and u = 1 returned +50,536,120,320 — both banked values, to the
@@ -1518,6 +1541,18 @@ two-generated numerical semigroup is symmetric, so the first holds iff
 as the shape of the dichotomy. Either way the answer names the last gap, hence
 the exact conductor of the invariant ring in its normalisation: 36 or 24.
 <span class="tag">one number left in the whole semigroup</span></p>
+
+<p><b>And degree 30 is scoped, not attempted.</b> It is not a one-number
+question — the ambient space is four-dimensional, so nonvanishing is still one
+evaluation but vanishing needs all four. Worse, the evaluation itself is out of
+reach here: 30 letters over 10 brackets puts at least 8 brackets partially
+filled at once in every ordering tried, so the state exceeds br2.c's 63-bit
+packing, and the refined proxy puts the peak at ~1.6×10¹¹ states — about 300×
+the δ = 24 peak, some 3.8 TB per level file at 24 bytes a state. A wider state
+word is a small change; the state count is not. Degree 30 needs either a
+factoring in the style of the δ = 20 grind or a structural argument, and it
+should be scoped before it is launched, not after.
+<span class="tag">docs/degree30_scoping.md</span></p>
 
 <h2><span class="no">§W4</span>Week 4, session 22 — the last gap closes: χ is det² in the slot nobody acts on</h2>
 <p><b>Pre-registered first, as the record requires.</b> Five predictions and five
