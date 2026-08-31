@@ -176,6 +176,13 @@ right things to quote:
 
     delta = 24:   Phi_24(det_3) / K_8   =  17325 =  3^2 . 5^2 . 7 . 11
                   — identical at S and at S'.
+                  Phi_24(per_3) / K_8   =   2812 =  2^2 . 19 . 37
+                  Phi_24(det_3)/Phi_24(per_3)  =  2025/328
+
+`Phi_24(per_3) = -4,016,526,151,680 = -2^14 3^5 5 . 7 . 11 . 41 . 61` is banked
+here as a companion to `Phi_18(per_3)`; like the degree-18 pair the two
+degree-24 values are nonzero and of opposite sign, and both are multiples of
+151,200.
 
 ## Arithmetic signature
 
