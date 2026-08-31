@@ -1,0 +1,51 @@
+=== n=4 m=3 delta=1 : lam |- 4, ell(lam) <= 16 ; EXHAUSTIVE
+    partitions scanned                          : 5
+    with m_det >= 1 and ell <= 10 (screen candidates): 1   [0s]
+    of those, m_perpad >  m_det (screen fails)   : 0
+    of those, 0 < m_perpad <= m_det (SCREEN PASSES): 1   [0s]
+    smallest margin m_perpad - m_det over candidates: 0
+    lam                          m_det   m_perpad   P
+    (4,)                             1         1     0
+    *** CANDIDATE WEIGHTS: [((4,), 1, 1)]
+
+=== n=5 m=3 delta=1 : lam |- 5, ell(lam) <= 25 ; EXHAUSTIVE
+    partitions scanned                          : 7
+    with m_det >= 1 and ell <= 10 (screen candidates): 1   [0s]
+    of those, m_perpad >  m_det (screen fails)   : 0
+    of those, 0 < m_perpad <= m_det (SCREEN PASSES): 1   [0s]
+    smallest margin m_perpad - m_det over candidates: 0
+    lam                          m_det   m_perpad   P
+    (5,)                             1         1     0
+    *** CANDIDATE WEIGHTS: [((5,), 1, 1)]
+
+=== n=6 m=3 delta=1 : lam |- 6, ell(lam) <= 36 ; EXHAUSTIVE
+    partitions scanned                          : 11
+    with m_det >= 1 and ell <= 10 (screen candidates): 1   [0s]
+    of those, m_perpad >  m_det (screen fails)   : 0
+    of those, 0 < m_perpad <= m_det (SCREEN PASSES): 1   [0s]
+    smallest margin m_perpad - m_det over candidates: 0
+    lam                          m_det   m_perpad   P
+    (6,)                             1         1     0
+    *** CANDIDATE WEIGHTS: [((6,), 1, 1)]
+
+=== n=4 m=3 delta=3 : lam |- 12, ell(lam) <= 16 ; EXHAUSTIVE
+    partitions scanned                          : 77
+    with m_det >= 1 and ell <= 10 (screen candidates): 34   [0s]
+    of those, m_perpad >  m_det (screen fails)   : 32
+    of those, 0 < m_perpad <= m_det (SCREEN PASSES): 1   [1938s]
+    smallest margin m_perpad - m_det over candidates: -1
+    lam                          m_det   m_perpad   P
+    (2, 2, 2, 2, 2, 2)               1         0    -1
+    (3, 2, 2, 1, 1, 1, 1, 1)         1         1     0
+    (12,)                            1         5     4
+    (4, 2, 2, 1, 1, 1, 1)            1         7     6
+    (3, 3, 2, 2, 1, 1)               1         7     6
+    (4, 3, 1, 1, 1, 1, 1)            1        10     9
+    (5, 2, 1, 1, 1, 1, 1)            1        11    10
+    (3, 3, 3, 1, 1, 1)               1        11    10
+    (7, 1, 1, 1, 1, 1)               1        12    11
+    (4, 2, 2, 2, 2)                  2        13    11
+    (4, 4, 4)                        2        18    16
+    (4, 4, 1, 1, 1, 1)               1        17    16
+    *** CANDIDATE WEIGHTS: [((3, 2, 2, 1, 1, 1, 1, 1), 1, 1)]
+
