@@ -1056,17 +1056,13 @@ constrains is one-dimensional.  Second, the vanishing of the totals on the
 compression family is the classical degeneracy of the Aronhold invariant rather
 than a feature of the evaluation.
 
-\begin{remark}[Why $\det^{2}$, and what happens at other weights]\label{rem:pq}
+\begin{remark}[Why $\det^{2}$]\label{rem:pq}
 Nothing above is special to $\Psi$.  For a deficit weight
 $\lambda'=(p,p,p,q^{6})$ the same computation gives
 $\chi=\det(t)^{q}\det(q|_{V/W})^{p-q}$, so the character in the parameter slot
 is $\det^{p-q}$ and the transpose coset is harmless precisely when $q$ is even.
 Here $p-q=8-6=2$, which is why the governing object is the degree-$6$ Aronhold
-invariant; at a weight with $p-q=3$ it would be the degree-$9$ Vinberg
-generator, and at $p-q=4$ the degree-$12$ one.  When $q$ is odd, $\chi$ acquires
-$-1$ on the transpose coset while any $\det^{\mathrm{even}}$ semi-invariant does
-not, which forces $\mathrm{TOTAL}$ to vanish on every direction whose net is
-$H$-equivalent to its own transpose.  We have tested none of this.
+invariant.  Section \ref{sec:pq} works out what the whole family looks like.
 \end{remark}
 
 \begin{remark}[An arithmetic signature]\label{rem:arith}
@@ -1119,6 +1115,133 @@ value at $R$, and the ray closure use no covariance assumption anywhere.  What
 the refutations do is confine the phenomenon to the totals level, which is
 where Conjecture \ref{thm:totals} states it.
 \end{remark}
+
+\section{Other weights}\label{sec:pq}
+
+The proof of Theorem \ref{thm:totals} used the weight $\lambda'=(8,8,8,6^{6})$
+only twice: in the counting lemma, and through the exponents $8$ and $6$ in
+$\chi$.  Both generalise, and the generalisation is not uniform --- which is the
+interesting part.  Throughout, $\lambda'=(p,p,p,q^{6})$ and $m:=p-q$.
+
+\begin{lemma}[Counting at a general weight]\label{lem:countpq}
+$|\lambda'|=3p+6q$, so $\delta=p+2q$.  Each copy of $\det_3$ contributes one leg
+from each matrix row, so the content before substitution is $(\delta,\delta,
+\delta)$ across the three row blocks, against demands $3p,3q,3q$.  Hence exactly
+$t_1=t_2=\delta-3q=m$ legs are substituted out of each of rows $1$ and $2$, and
+$\mathrm{TOTAL}$ is a polynomial of bidegree $(m,m)$ on the balanced cone.
+\end{lemma}
+
+Write $\mathcal E_m$ for the space of bidegree-$(m,m)$ simultaneous-conjugation
+invariants of a pencil that are slab-equivariant with character $\det^{m}$, i.e.
+$\mathcal D_Af+m\tr(A)f=\mathcal D_Bf+m\tr(B)f=0$; this is the space in which
+Lemma \ref{lem:slot} places $\mathrm{TOTAL}$, and $\mathcal E_2=\langle\Psi
+\rangle$ is Proposition \ref{prop:unique}.  Let $R=\bC[I_6,I_9,I_{12}]$ be
+Vinberg's invariant ring of $\bC^3\otimes\bC^3\otimes\bC^3$.
+
+\begin{theorem}[Restriction is an isomorphism]\label{thm:restr}
+$I\mapsto I(I,A,B)$ is a linear isomorphism $R_{3m}\to\mathcal E_m$.  Hence
+\[
+  \dim\mathcal E_m=\#\{(a,b,c)\in\bZ_{\ge0}^{3}\ :\ 2a+3b+4c=m\},
+\]
+which is $0,1,1,2,1,3,2$ for $m=1,\dots,7$.
+\end{theorem}
+
+\begin{proof}
+Each $\varepsilon$ in the slab slot needs three distinct slab indices, so an
+invariant of degree $3m$ restricts in slab multidegree $(m,m,m)$: the map lands
+in $\mathcal E_m$.  It is injective: if $I(I,A,B)\equiv0$ then for any tensor
+with $S_0$ invertible the slot-$2$ action by $S_0^{-1}$ gives
+$I(T)=\det(S_0)^{m}I(I,S_1S_0^{-1},S_2S_0^{-1})=0$, and such $T$ are dense.  For
+surjectivity, given $f\in\mathcal E_m$ set
+$F(S_0,S_1,S_2)=\det(S_0)^{m}f(S_1S_0^{-1},S_2S_0^{-1})$.  Left multiplication
+of all slabs by $g$ conjugates the normal form and contributes $\det(g)^{m}$;
+right multiplication by $h$ fixes the normal form and contributes
+$\det(h)^{m}$; and a slab mixing $\alpha$ sends $S_0\mapsto\tilde PS_0$ with
+$\tilde P=\alpha_{00}I+\alpha_{01}A+\alpha_{02}B$, so $F$ is unchanged exactly
+because $f$ is equivariant.  So $F$ is a semiinvariant of character $\det^{m}$
+in each slot once it is polynomial.  It is: $F$ is regular off
+$\{\det S_0=0\}$, so its polar divisor lies there; that divisor is invariant,
+and the slab group moves $\{\det S_0=0\}$ to $\{\det(\sum c_kS_k)=0\}$ for every
+$c$, so it lies in the locus where the slab pencil is identically singular,
+which has codimension at least $2$.  A divisor cannot, so there is no pole.
+\end{proof}
+
+We verified the dimensions independently for $m\le7$: the ambient bidegree-%
+$(m,m)$ conjugation-invariant spaces have dimensions $2,9,25,66,149,329$ by an
+$\SL_3$ character count, reproduced exactly as the rank of the trace-monomial
+evaluation matrix; the equivariant subspace was then computed as an exact
+nullspace over $\mathbb{Q}$ for $m\le4$, in $\mathbb{F}_p$ for $m=5,6$, and as the span of
+products of the generators for $m=7$.
+
+\begin{corollary}[The uniqueness step, at every weight]\label{cor:pquniq}
+$\dim\mathcal E_m=1$ exactly for $m\in\{2,3,5\}$.  So the argument of Theorem
+\ref{thm:totals} determines $\mathrm{TOTAL}$ from a single measured total at
+$p-q=3$ --- where the governing object is the restriction of the degree-$9$
+generator --- and fails to determine it at $p-q=4$, where $\mathcal E_4$ is
+spanned by $\Psi^{2}$ and the restriction of $I_{12}$ and two measurements are
+needed.  At $p-q=1$, $\dim\mathcal E_1=0$: $\mathrm{TOTAL}$ vanishes identically
+on balanced directions, whatever $q$.
+\end{corollary}
+
+The degree-$9$ generator restricted to normal form, in primitive integral form,
+is a sum of thirteen trace monomials with coefficients $\pm1,\pm3,6$; call it
+$g_3$.  It vanishes on compression nets, as every tensor invariant does --- with
+compression correctly characterised as linear dependence of $\{I,A,B\}$ --- and,
+more to the point, it vanishes at $C$, $R$, $T_4$, $X_4$, $X_{-3}$ and $P$.
+Every point this programme has evaluated is therefore useless at
+$\lambda'=(9,9,9,6^{6})$, the $\delta=3$ row, if the law holds there.  Of the
+$262\,144$ balanced $\{0,1\}$ directions, $87\,660$ have $g_3\neq0$; the smallest
+weight-feasible ones use four transvections, and we record one for the next
+evaluation:
+\[
+  G_{3a}=\{x_3\!+\!=\!x_2,\ x_4\!+\!=\!x_0,\ x_6\!+\!=\!x_2,\ x_8\!+\!=\!x_1\},
+  \qquad g_3=3,\ \Psi=0 .
+\]
+
+\subsection*{Odd $q$, and a prediction that is a zero}
+
+When $q$ is odd, $\chi=(-1)^{q}\det(G)^{-m}$ picks up a sign on the transpose
+coset.  The transpose acts on the net by $Y\mapsto Y^{T}$, which swaps the first
+and third tensor slots; the nets fixed by that swap are, in normal form,
+\[
+  A=\begin{pmatrix}0&1&0\\ p&r&s\\ u&v&w\end{pmatrix},\qquad
+  B=\begin{pmatrix}0&0&1\\ u&v&w\\ y&z&c\end{pmatrix},
+\]
+a nine-parameter family on which the transposed slab-zero is the identity, so
+$\det G=1$ and $\chi=(-1)^{q}$.  At odd $q$ the double-coset theorem therefore
+forces $\mathrm{TOTAL}$ to vanish on the whole family --- and since
+$\mathrm{TOTAL}$ lies in $\mathcal E_m$, this is a statement about $\mathcal E_m$
+and not only about those directions.
+
+\begin{theorem}[Transpose vanishing]\label{thm:transvanish}
+$g_3$ vanishes identically on the self-transpose family; consequently a monomial
+$I_6^{a}I_9^{b}I_{12}^{c}$ restricts to zero there as soon as $b\ge1$, and the
+rank of $\mathcal E_m$ on the family is $0$ for $m$ odd and
+$\lfloor m/4\rfloor+1$ for $m$ even.  Hence, at $\lambda'=(p,p,p,q^{6})$ with $q$
+odd: if $m$ is odd the transpose imposes nothing; if $m\in\{2,4\}$ then
+$\mathrm{TOTAL}\equiv0$ on the entire balanced cone; and if $m\ge6$ is even then
+$\mathrm{TOTAL}$ is confined to the subspace of elements divisible by $I_9$ ---
+at $m=6$, the line $\langle g_3^{2}\rangle$.
+\end{theorem}
+
+Equivalently: the degree-$9$ generator is anti-invariant under odd permutations
+of the three tensor slots, while $I_6$ and $I_{12}$ are invariant.
+
+Testing this needs a weight that is not empty.  Most cheap odd-$q$ weights are:
+computing $\mathrm{amb}(\lambda',\delta)=\langle h_\delta[h_3],s_{\lambda'}
+\rangle$ gives $0$ at $(3,3,3,1^{6})$, $(5,5,5,1^{6})$, $(4,4,4,1^{6})$,
+$(6,6,6,1^{6})$, $(4,4,4,3^{6})$, $(5,5,5,3^{6})$, $(6,6,6,3^{6})$ and
+$(7,7,7,5^{6})$.  The cheapest odd-$q$ weight with $m$ even and a highest weight
+vector to evaluate is
+\[
+  \lambda'=(7,7,7,3^{6}),\qquad \delta=13,\qquad m=4,\qquad \mathrm{amb}=1 ,
+\]
+and there Theorem \ref{thm:transvanish} predicts $\mathrm{TOTAL}=0$ at
+\emph{every} balanced direction.  All five banked points $C$, $R$, $T_4$, $X_4$
+and $X_{-3}$ are weight-feasible at this weight, so the prediction is not vacuous
+by infeasibility.  We have not run it.  It is the cheapest available test of the
+character computation on which this section rests, and it is independent of the
+value predicted at $X_{-3}$.
 
 \section{Verification protocol}\label{sec:method}
 
@@ -1192,18 +1315,16 @@ attainment, and Remark \ref{rem:orphan} shows attainment can fail exactly on
 empty support.
 \end{question}
 
-\begin{question}[The totals law at other weights]\label{q:gauge}
-Theorem \ref{thm:totals} is now proved, and Remark \ref{rem:pq} says why the
-character is $\det^{2}$: for a deficit weight $\lambda'=(p,p,p,q^{6})$ one gets
-$\chi=\det(t)^{q}\det(q|_{V/W})^{p-q}$, so the governing object should be the
-$\SL_3^{3}$-invariant of degree $3(p-q)$ --- Aronhold's $I_6$ here, and the
-degree-$9$ and degree-$12$ Vinberg generators when $p-q=3$ and $4$.  Is that so?
-The question has two parts, and only the second needs a computation.  Does the
-counting lemma still force a balanced bidegree at those weights, so that the
-uniqueness step has a one-dimensional space to land in?  And when $q$ is odd,
-does $\mathrm{TOTAL}$ really vanish on every direction whose net is
-$H$-equivalent to its own transpose, as the parity in Lemma \ref{lem:sq}
-demands?  A single evaluation at such a direction would settle the second.
+\begin{question}[Determining the totals at $p-q\ge4$]\label{q:gauge}
+Corollary \ref{cor:pquniq} says the equivariance argument determines
+$\mathrm{TOTAL}$ only when $\dim\mathcal E_m=1$, i.e. at $p-q\in\{2,3,5\}$.  At
+$p-q=4$ it leaves the line through $\Psi^{2}$ and $I_{12}(I,A,B)$ undetermined,
+and two measured totals would fix it.  Is there a second structural constraint
+that picks out the combination, or is the extra measurement genuinely needed?
+The natural guess --- that the answer is a pure generator rather than a mixture,
+so that $\mathrm{TOTAL}\propto I_{12}(I,A,B)$ with no $\Psi^{2}$ term --- is
+testable with two evaluations at $\lambda'=(10,10,10,6^{6})$ and would say
+something about which invariant the highest weight vector actually sees.
 \end{question}
 
 \begin{question}[Degree $30$, and the shape of the semigroup]\label{q:deg30}
