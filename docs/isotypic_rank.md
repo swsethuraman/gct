@@ -234,9 +234,15 @@ totals forces `mult = a` at every single weight with `delta <= 7`:
 > paper's "the degree-`<= 4` part of the ideal is zero" by three degrees.
 
 Theorem 6 proves the length-`<= 4` part of this outright, with no appeal to the
-published totals; the length-`>= 5` weights were then measured directly by the
+published totals. The length-`>= 5` weights were then measured directly by the
 rank algorithm (§6), which confirms the same conclusion independently of the
-published sequence. See `docs/live_cells.md` for the degree-by-degree ledger.
+published sequence wherever it reaches: all of `delta <= 5`, 62 of the 79 units
+of ambient room at `delta = 6`, and 104 of 225 at `delta = 7`, with a further 1
+and 25 units covered by Theorem 6. The remainder — 16 units at `delta = 6` and
+96 at `delta = 7`, all at weights of length `>= 5` whose weight space exceeded
+the computational cap — is carried by the published sequence rather than
+re-derived, and is pure compute rather than new mathematics. Nothing measured
+or proved disagrees. See `docs/live_cells.md` for the degree-by-degree ledger.
 
 ## 6. The algorithm, and the two implementations
 
