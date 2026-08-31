@@ -176,13 +176,16 @@ right things to quote:
 
     delta = 24:   Phi_24(det_3) / K_8   =  17325 =  3^2 . 5^2 . 7 . 11
                   — identical at S and at S'.
-                  Phi_24(per_3) / K_8   =   2812 =  2^2 . 19 . 37
-                  Phi_24(det_3)/Phi_24(per_3)  =  2025/328
+                  Phi_24(per_3) / K_8   =   25309/9
+                  Phi_24(det_3)/Phi_24(per_3)  =  155925/25309
 
-`Phi_24(per_3) = -4,016,526,151,680 = -2^14 3^5 5 . 7 . 11 . 41 . 61` is banked
-here as a companion to `Phi_18(per_3)`; like the degree-18 pair the two
-degree-24 values are nonzero and of opposite sign, and both are multiples of
-151,200.
+`Phi_24(per_3) = -4,016,526,151,680 = -2^12 3^3 5 . 7 . 41 . 25309` (25309
+prime) is banked as a companion to `Phi_18(per_3)`, **on one route only** — it
+has not been reproduced by a second bracket structure, and it should not be
+quoted as confirmed until it is.  Note it is *not* a multiple of 151,200; nor is
+`Phi_18(per_3) = 50,536,120,320`.  The arithmetic signature is a statement about
+evaluations at `det_3`, and the permanent values sit outside it.  Like the
+degree-18 pair, the two degree-24 values have opposite signs.
 
 ## Arithmetic signature
 
