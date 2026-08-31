@@ -90,3 +90,82 @@ if __name__ == '__main__':
             rk, tgt = jacobian_rank(r, kind)
             print("  %-4d %-6s %-8d %-8d %-8d %s"
                   % (r, kind, 9 * r, rk, tgt, "YES" if rk == tgt else "no"))
+
+
+# ---------------------------------------------------------------------------
+# General n: where does the crossover sit for det_n / per_n?
+# W = Sym^n C^{n^2}; a weight of length r sees only f(s_1 A_1 + ... + s_r A_r),
+# an r-ary form of degree n.  Effective group dimension: 2n^2 - 2 for det,
+# 2n - 2 for per.  Target dimension C(r+n-1, n).
+# ---------------------------------------------------------------------------
+from math import comb
+
+
+def _dict_det(rows, cols, M, kind):
+    """det / per of the submatrix M[rows][cols], entries being poly dicts."""
+    k = len(rows)
+    if k == 0:
+        return {(): 1} if False else {tuple(): 1}
+    if k == 1:
+        return dict(M[rows[0]][cols[0]])
+    tot = {}
+    for j in range(k):
+        sub = _dict_det(rows[1:], cols[:j] + cols[j + 1:], M, kind)
+        if not sub or not M[rows[0]][cols[j]]:
+            continue
+        t = _mul(M[rows[0]][cols[j]], sub)
+        sgn = 1 if (kind == 'per' or j % 2 == 0) else -1
+        tot = _add(tot, t, sgn)
+    return tot
+
+
+def jacobian_rank_n(n, r, kind='det', seed=5, spread=5):
+    exps = []
+    from itertools import combinations_with_replacement as cwr
+    for c in cwr(range(r), n):
+        a = [0] * r
+        for i in c:
+            a[i] += 1
+        exps.append(tuple(a))
+    exps = sorted(set(exps), reverse=True)
+    rng = random.Random(seed)
+    As = [[[rng.randint(-spread, spread) for _ in range(n)] for _ in range(n)]
+          for _ in range(r)]
+
+    def lin(i, j):
+        return {(0,) * k + (1,) + (0,) * (r - 1 - k): As[k][i][j]
+                for k in range(r) if As[k][i][j]}
+
+    M = [[lin(i, j) for j in range(n)] for i in range(n)]
+    rows = []
+    for k in range(r):
+        sk = {(0,) * k + (1,) + (0,) * (r - 1 - k): 1}
+        for i in range(n):
+            for j in range(n):
+                rr = [x for x in range(n) if x != i]
+                cc = [x for x in range(n) if x != j]
+                cof = _dict_det(rr, cc, M, kind)
+                if kind == 'det' and (i + j) % 2:
+                    cof = {kk: -vv for kk, vv in cof.items()}
+                row = _mul(sk, cof)
+                rows.append([row.get(e, 0) for e in exps])
+    return rank_int(rows, mod=BIGP), len(exps)
+
+
+def crossover_table(nmax=5, rmax=7):
+    print("\ncrossover length by n:  the largest r with D_r^f = everything")
+    print("  %-3s %-6s %-4s %-8s %-8s %-8s %s"
+          % ("n", "kind", "r", "n^2 r", "rank", "target", "dense?"))
+    for n in range(2, nmax + 1):
+        for kind in ('det', 'per'):
+            last = None
+            for r in range(2, rmax + 1):
+                tgt = comb(r + n - 1, n)
+                if tgt > 4000:
+                    break
+                rk, t2 = jacobian_rank_n(n, r, kind)
+                dense = (rk == tgt)
+                print("  %-3d %-6s %-4d %-8d %-8d %-8d %s"
+                      % (n, kind, r, n * n * r, rk, tgt, "YES" if dense else "no"))
+                if not dense:
+                    break
