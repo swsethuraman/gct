@@ -407,3 +407,86 @@ def conductor_fast(lam, drop_max=8):
             if found: break
         if found: return nu // 6, found
     return None, None
+
+
+# ---------------------------------------------------------------------------
+# Fast exact m(lambda): group the 162 elements of H by their characteristic
+# polynomial (e1,e2,e3) -- the character only sees that -- and memoise the
+# complete homogeneous sequence once per class.
+# ---------------------------------------------------------------------------
+
+class MFast:
+    def __init__(self, top):
+        from collections import Counter
+        cnt = Counter(elementary_of(M) for M in H_elements())
+        self.classes = list(cnt.items())
+        self.top = top
+        self.H = []
+        for (e1, e2, e3), _ in self.classes:
+            h = [ZERO] * (top + 4)
+            h[0] = ONE
+            if top >= 1: h[1] = e1
+            if top >= 2: h[2] = zsub(zmul(e1, h[1]), e2)
+            for j in range(3, top + 1):
+                h[j] = zadd(zsub(zmul(e1, h[j - 1]), zmul(e2, h[j - 2])),
+                            zmul(e3, h[j - 3]))
+            self.H.append(h)
+
+    def m(self, lam):
+        tot = ZERO
+        for ((_, mult), h) in zip(self.classes, self.H):
+            def hh(k): return h[k] if 0 <= k <= self.top else ZERO
+            R = [[hh(lam[i] - i + j) for j in range(3)] for i in range(3)]
+            d = zsub(zmul(R[0][0], zsub(zmul(R[1][1], R[2][2]), zmul(R[1][2], R[2][1]))),
+                     zmul(R[0][1], zsub(zmul(R[1][0], R[2][2]), zmul(R[1][2], R[2][0]))))
+            d = zadd(d, zmul(R[0][2], zsub(zmul(R[1][0], R[2][1]), zmul(R[1][1], R[2][0]))))
+            tot = zadd(tot, (d[0] * mult, d[1] * mult))
+        assert tot[1] == 0 and tot[0] % 162 == 0, (lam, tot)
+        return tot[0] // 162
+
+
+# ---------------------------------------------------------------------------
+# The explicit attainment construction (the positive half of the theorem).
+#
+# Target nu* = 6(floor(mu/6) - [family]),  D = mu - nu*  (= eps, or 7 on the
+# family lambda_1 = lambda_2, mu = 1 mod 6).  We build a shape whose slot 3 has
+#     s_3 = a_3 + 2 q_12 = s  in {D, D-3},
+# and whose OTHER two slots are pushed strictly out of range,
+#     s_1 = a_1 + 2 q_23  and  s_2 = a_2 + 2 q_13   >=  s + 3   (s + 6 if T=1),
+# so that the class k = 3 alone contributes at nu*, with no interference; and,
+# when T = 1, with (a_1 - a_2, q_13 - q_23) != (0,0) so the T=1 coefficient
+# does not vanish.
+# ---------------------------------------------------------------------------
+
+def construct(lam):
+    """Explicit witness shape, or None.  Rules only -- no search over shapes."""
+    l1, l2, l3 = lam
+    p, q, r = l1 - l2, l2 - l3, l3
+    mu = l1 - 2 * l3
+    if mu < 0: return None
+    fam = (p == 0 and mu % 6 == 1)
+    D = 7 if fam else mu % 6
+    for s in (D, D - 3):
+        if s < 0: continue
+        T = 0 if (mu - s) % 2 == 0 else 1
+        sep = s + 3 + 3 * T            # required s_1, s_2
+        for beta in range(0, min(s // 2, q) + 1):
+            alpha = s - 2 * beta
+            if alpha > p: continue
+            A, Q = p - alpha, q - beta
+            if A < 0 or Q < 0: continue
+            c = (-beta - r) % 3
+            # candidate splits: push the wedges apart first, then the singles
+            cands = []
+            base = Q // 2
+            for d13 in range(0, 7):
+                for q13 in (base + d13, base - d13):
+                    if 0 <= q13 <= Q: cands.append((q13, Q - q13))
+            for (q13, q23) in cands:
+                for a1 in range(0, A + 1):
+                    a2 = A - a1
+                    if (a1 + q13) % 3 != c: continue
+                    if a1 + 2 * q23 < sep or a2 + 2 * q13 < sep: continue
+                    if T == 1 and a1 == a2 and q13 == q23: continue
+                    return ((a1, a2, alpha), (beta, q13, q23))
+    return None
