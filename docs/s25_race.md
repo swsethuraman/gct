@@ -12,14 +12,20 @@ geometry.** Expect hours, not days.
 - You do **not** own `Projects\gct` (rule 9). Read nothing from it, write
   nothing to it. Work in the container on a fresh clone of the public repo.
 - Record the tip at clone time and report it in your session record. `main`
-  **should** be at `c9240f3` ("Easy counts as a function of n"), which sits on
-  top of `ad9502f` (the abstract cut). If it is not, say so loudly at the top
-  of your record — that is a rollback alarm, not a detail — and branch from
+  **should** be at `a3df8ba` ("Add the ambient screen, its verification, and
+  the two session briefs"), which sits on top of `c9240f3` (the easy counts)
+  and `ad9502f` (the abstract cut). If it is not, say so loudly at the top of
+  your record — that is a rollback alarm, not a detail — and branch from
   whatever `origin/main` actually is.
 - Write **only new files** where you possibly can, so the merge is clean.
 - Do **not** append to `PROJECT_NOTES.md` or `docs/boundary_deficit.html`.
 - Push to `origin` will likely be refused by the session's git proxy
   (`swsethuraman/gct` not in the authorised set). If so, deliver a git bundle.
+- The ambient screen already lives at `scripts/ambient_screen.py` and passes
+  its own `--selftest` (eleven checks against the record). **Derive your own
+  routines first** — the programme's habit is independent rederivation — then
+  use the screen as a cross-check, never as an input. If your numbers disagree
+  with it, that is a finding: report it before proceeding.
 
 ---
 

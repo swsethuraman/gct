@@ -10,12 +10,19 @@ generalised and then used.
 ## 0. Standing orders
 
 - You do **not** own `Projects\gct` (rule 9). Fresh clone, container only.
-- Record the tip at clone time. `main` **should** be at `c9240f3`; if it is
-  not, say so at the top of your record and branch from what is actually there.
+- Record the tip at clone time. `main` **should** be at `a3df8ba` ("Add the
+  ambient screen, its verification, and the two session briefs"), on top of
+  `c9240f3` and `ad9502f`. If it is not, say so at the top of your record —
+  that is a rollback alarm — and branch from what is actually there.
 - Write **only new files** where you can. Do not append to `PROJECT_NOTES.md`
   or `docs/boundary_deficit.html`. If you touch `paper/det3-conductor.tex`,
   flag it loudly for the integrator, as session 23 correctly did.
 - Push will likely be refused by the git proxy; deliver a bundle.
+- The ambient screen already lives at `scripts/ambient_screen.py` and passes
+  its own `--selftest` (eleven checks against the record). **Derive your own
+  routines first** — the programme's habit is independent rederivation — then
+  use the screen as a cross-check, never as an input. If your numbers disagree
+  with it, that is a finding: report it before proceeding.
 
 ---
 
