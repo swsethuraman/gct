@@ -1,6 +1,6 @@
 # gct — project notes
 
-## STATUS AT A GLANCE (2026-08-30 — read before anything below)
+## STATUS AT A GLANCE (2026-08-31 — read before anything below)
 ESTABLISHED (no covariance assumption was ever used in any of these):
   World A solved; World B conductor transport (254/254).
   e(det3) = 18 = 2n^2; Phi18(det3) = -877,879,296,000; V(Phi18) ∩ closure
@@ -27,6 +27,14 @@ SESSION 21 (2026-08-30/31): 24 IS IN E. Phi_24(det_3) = -24,745,222,656,000
 SESSION 19: Psi = -I_6^prim(I,A,B) EXACTLY — Psi is the Aronhold degree-6
   invariant of the net's tensor in slab normal form (symbolic identity, 18
   indeterminates).
+SESSION 23: at a general weight (p,p,p,q^6), TOTAL is bidegree (m,m) with
+  m = p-q, and **restriction of Vinberg's invariant ring to slab normal form is
+  an ISOMORPHISM onto the equivariant functions**: dim E_m = #{2a+3b+4c=m}
+  = 0,1,1,2,1,3,2 for m=1..7. Uniqueness holds exactly at p-q in {2,3,5};
+  p-q = 1 forces TOTAL == 0. g3 (the degree-9 restriction) vanishes at EVERY
+  banked point — the delta=3 row needs a new point, G3a. At odd q with
+  p-q in {2,4}, TOTAL == 0 identically; test pre-registered at (7,7,7,3^6),
+  delta = 13.
 SESSION 22: **the totals law TOTAL(N) = Psi(N) x 1,152,144,000 is a THEOREM.**
   The chi <-> det^2 gap closed: chi = det(q)^6 det(q|V/W)^2 = det(q|V/W)^2
   (8 = 6+2, det(t) = +-1 on BOTH cosets of H, 6 even), and
@@ -771,6 +779,87 @@ and the C = R remark now explains rather than marvels. Compiles clean, no
 undefined references.
 BRANCH DISCIPLINE: all work on `s22-chi`, pushed to `s22-chi` only; main
 untouched, no write-back to any durable copy on the owner's machine.
+
+
+**SESSION 23 (2026-08-31, math only, branch `s22-pq`): THE TOTALS LAW AT OTHER
+WEIGHTS — a mixed verdict on (a), a stronger law on (b).** Deliverable:
+docs/pq_weights.md (pre-registration 9775d97, result ae85139). No engine run.
+Question 7.2 was written by session 22; this answers both halves.
+**(a) THE UNIQUENESS STEP: survives at p−q = 3, FAILS at p−q = 4.**
+(1) *Counting lemma at a general weight (P1).* λ' = (p,p,p,q^6) has δ = p+2q, and
+each copy of det3 gives one leg per row, so t1 = t2 = δ − 3q = p − q: TOTAL is
+bidegree (m,m) with **m = p − q**. Pure leg arithmetic; (8,8,8,6^6) is m = 2.
+(2) *THE STRUCTURAL THEOREM (new, and it is the real result).* Let E_m be the
+bidegree-(m,m) conjugation invariants that are slab-equivariant with character
+det^m. Then **restriction I ↦ I(I,A,B) is an ISOMORPHISM from the degree-3m part
+of Vinberg's ring C[I6,I9,I12] onto E_m.** Injective by density (tensors with
+invertible slab0 are dense, and the slot-2 action carries them to normal form);
+surjective by F(S) = det(S0)^m f(S1 S0^-1, S2 S0^-1), which is a semi-invariant
+by equivariance and is POLYNOMIAL by a moving-divisor argument (its polar divisor
+would have to lie in every {det(Σ c_k S_k) = 0}, i.e. in a codim-≥2 locus).
+Hence **dim E_m = #{(a,b,c) : 2a+3b+4c = m} = 0,1,1,2,1,3,2 for m = 1..7.**
+(3) *Verified independently.* Ambient dims (bidegree-(m,m) conjugation
+invariants) = 2, 9, 25, 66, 149, 329 by an SL3 character count, reproduced
+exactly as the rank of the trace-monomial evaluation matrix; the equivariant
+subspace by exact nullspace over Q (m ≤ 4), in GF(p) (m = 5, 6; safe direction
+plus product witnesses), and by the span of products (m = 7). Products
+Psi^a g3^b f4^c have exactly the predicted rank at every m ≤ 7 — the ring
+structure checked, not assumed.
+(4) *Verdict.* **dim E_m = 1 exactly for m ∈ {2,3,5}.** So: p−q = 3 (λ' =
+(9,9,9,6^6), δ = 21, the δ=3 row) keeps the uniqueness step and needs ONE
+measured total; p−q = 4 loses it (E_4 = <Psi^2, I12|>, dim 2) and needs TWO;
+**p−q = 1 gives dim 0, so TOTAL vanishes identically on balanced directions at
+any weight with p = q+1.**
+(5) *The degree-9 generator, explicitly* (13 trace monomials, coefficients
+±1, ±3, 6; in the doc). It vanishes on compression nets — with compression
+correctly characterised as **{I, A, B} linearly DEPENDENT** (an earlier draft of
+this check used "a zero row of A and B", which is not compression) — and it
+vanishes at **every banked point**: g3 = 0 at C, R, T4, X4, Xm3, P. So if the law
+holds at the δ=3 row, every point the programme has ever evaluated returns ZERO
+there. 87,660 of the 262,144 {0,1} balanced directions have g3 ≠ 0; the smallest
+feasible ones use four transvections with |g3| = 3. **Recommended δ=3 evaluation
+point: G3a = {x3+=x2, x4+=x0, x6+=x2, x8+=x1}** (A = E02+E10, B = E02+E21),
+g3 = 3, Psi = 0, weight-feasible at (9,9,9,6^6). Note Psi = 0 there: the δ=2 and
+δ=3 gauges have DIFFERENT zero loci, so the certificate points for one row are
+exactly the wrong points for the other.
+**(b) THE TRANSPOSE-VANISHING LAW: stronger than pre-registered, and scarcer.**
+(6) Self-transpose nets = the swap-symmetric family (row0 A = e1, row0 B = e2,
+row2 A = row1 B; 9 parameters), where the transposed slab0 is I, so det G = 1 and
+chi = (−1)^q.
+(7) **g3 vanishes IDENTICALLY on that family** ⟹ the degree-9 Vinberg generator is
+ANTI-invariant under odd permutations of the tensor slots (I6 and I12 are
+invariant). So a monomial I6^a I9^b I12^c dies on the family iff b ≥ 1, and the
+rank of E_m there is 0 (m odd) or ⌊m/4⌋+1 (m even).
+(8) **THEOREM.** At λ' = (p,p,p,q^6) with q ODD: m odd ⟹ the transpose imposes
+nothing; **m ∈ {2,4} ⟹ TOTAL ≡ 0 on the WHOLE balanced cone** (not just on
+self-transpose directions — the pre-registration under-predicted); m ≥ 6 even ⟹
+TOTAL confined to the I9-divisible subspace (at m = 6, the line <g3^2>).
+(9) *Honest negative (G6 fired for the cheap cases).* amb(λ',δ) = <h_δ[h3],s_λ'>
+(machinery from wk3_s7_ray.py, re-parametrised; validated on h1[h3] = s3,
+h2[h3] = s6+s42, and the recorded amb((2,2,2),2) = 0) is **ZERO** at (3,3,3,1^6),
+(5,5,5,1^6), (4,4,4,1^6), (6,6,6,1^6), (4,4,4,3^6), (5,5,5,3^6), (6,6,6,3^6),
+(7,7,7,5^6). Most cheap odd-q weights carry no HWV at all.
+**STANDING ENGINE HANDOFF #2 (pre-registered, NOT run):**
+    **λ' = (7,7,7,3^6), δ = 13, m = 4, q = 3 odd, amb = 1:  TOTAL = 0 at EVERY
+    balanced direction**, in particular at C, R, T4, X4 and Xm3 — all five
+    verified weight-feasible there, so the prediction is not vacuous by
+    infeasibility. δ = 13 is materially cheaper than the δ = 20 grind; inputs
+    generate the usual way (wk3_s12_genD.py). A nonzero total anywhere refutes
+    the chi computation or the double-coset theorem. This is INDEPENDENT of the
+    X_{-3} value test: it tests the character, not the constant.
+**WHAT SURVIVES IF THEOREM 5.5 IS RETRACTED** (full table in the doc): the
+restriction isomorphism, all the dimensions, g3 and its locus, G3a, and the
+multiplicity table are pure invariant theory and plethysm and survive whatever
+X_{-3} returns. The transpose-vanishing law and the (7,7,7,3^6) prediction share
+the fate of the chi computation and the double-coset theorem, and would fall with
+them; they do NOT depend on the uniqueness step or on Psi.
+PAPER: new Section 6 "Other weights" (Lemma: counting at a general weight;
+Theorem: restriction is an isomorphism, with proof; Corollary: uniqueness holds
+exactly at p−q ∈ {2,3,5}; Theorem: transpose vanishing; G3a; the (7,7,7,3^6)
+prediction). Remark rem:pq trimmed to point at it; Question 7.2 replaced by the
+p−q ≥ 4 determination question. Compiles clean.
+BRANCH: `s22-pq` off main 5cdc29c; pushed to that branch only (bundle if the
+proxy refuses); main untouched, no write-back to any durable copy.
 
 
 ## Computational assets (repo layout)

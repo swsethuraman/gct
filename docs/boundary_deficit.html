@@ -1626,6 +1626,80 @@ this session — it goes to the engine track as a pre-registered test of a proof
 rather than of a fit.</p>
 
 
+<h2><span class="no">§W4</span>Week 4, session 23 — the same argument at other weights: it works, then it stops working</h2>
+<p><b>The question was the previous session's own.</b> If the parabolic character
+at a weight (p,p,p,q⁶) is det<sup>p−q</sup>, then the object governing the totals
+should be the SL₃³ invariant of degree 3(p−q) — Aronhold's I₆ at p−q = 2, and
+Vinberg's degree-9 and degree-12 generators at 3 and 4. Two things needed
+checking: whether the uniqueness step still has a line to land in, and whether
+the parity at odd q really forces vanishing. Both were pre-registered with six
+named falsifiers before anything ran. <span class="tag">docs/pq_weights.md</span></p>
+<div class="thm">
+<p><b>Restriction is an isomorphism.</b> Write ℰ<sub>m</sub> for the
+bidegree-(m,m) conjugation invariants that carry the slab equivariance with
+character det<sup>m</sup>. Then I ↦ I(I, A, B) maps the degree-3m part of
+Vinberg's ring ℂ[I₆, I₉, I₁₂] <i>isomorphically</i> onto ℰ<sub>m</sub>. Injective
+because tensors with invertible first slab are dense and the parameter slot
+carries each to normal form; surjective because the obvious inverse
+F(S) = det(S₀)<sup>m</sup>f(S₁S₀<sup>−1</sup>, S₂S₀<sup>−1</sup>) is a
+semi-invariant by equivariance and is <i>polynomial</i> — its polar divisor would
+have to lie inside every {det(Σc<sub>k</sub>S<sub>k</sub>) = 0}, hence inside a
+locus of codimension two, which no divisor does. So
+dim ℰ<sub>m</sub> = #{2a + 3b + 4c = m}: 0, 1, 1, 2, 1, 3, 2 for m = 1…7.</p>
+</div>
+<p><b>And that settles the uniqueness step, in both directions.</b> The dimension
+is 1 exactly at m = 2, 3 and 5. At <b>p − q = 3</b> — the δ = 3 row, λ′ =
+(9,9,9,6⁶) — the argument survives intact and one measured total still fixes
+everything. At <b>p − q = 4</b> it fails: ℰ₄ is two-dimensional, spanned by Ψ²
+and the restriction of I₁₂, and two measurements are needed rather than one. At
+<b>p − q = 1</b> the space is zero, so the totals vanish identically on balanced
+directions whatever q is. Every dimension was checked twice — an SL₃ character
+count for the ambient spaces (2, 9, 25, 66, 149, 329), matched exactly by the
+rank of the trace-monomial matrix, then the equivariant subspace by exact
+nullspace over ℚ, in 𝔽<sub>p</sub> at m = 5, 6, and by products at m = 7.</p>
+<div class="thm">
+<p><b>The δ = 3 row cannot be certified at any point we own.</b> The degree-9
+generator restricted to normal form — thirteen trace monomials, coefficients
+±1, ±3, 6 — vanishes at <i>C, R, T₄, X₄, X₋₃ and P</i>. All of them. If the law
+holds at (9,9,9,6⁶), every direction this programme has ever evaluated returns
+zero there, and the next evaluation has to be chosen off that locus. Of the
+262 144 balanced {0,1} directions, 87 660 have g₃ ≠ 0; the smallest
+weight-feasible ones use four transvections. We record one:
+<b>G<sub>3a</sub> = {x₃+=x₂, x₄+=x₀, x₆+=x₂, x₈+=x₁}</b>, with g₃ = 3 and Ψ = 0.
+The two gauges have different zero loci — the points that certify δ = 2 are
+exactly the wrong points for δ = 3.</p>
+</div>
+<p><b>The transpose law came out stronger than predicted, and rarer.</b> The
+transpose swaps the first and third tensor slots, and the nets it fixes form a
+nine-parameter family on which the renormalisation is trivial, so χ = (−1)<sup>q</sup>.
+The pre-registration expected the totals to vanish on that family at odd q. They
+do — but g₃ vanishes on the family <i>identically</i>, which says the degree-9
+generator is anti-invariant under odd permutations of the slots, and the
+consequence is much larger: at odd q with p − q equal to 2 or 4, no nonzero
+element of ℰ<sub>m</sub> can vanish there, so <b>the totals vanish on the entire
+balanced cone</b>, not merely on the self-transpose part of it.</p>
+<p><b>Then the honest negative.</b> A weight can only be tested if it carries a
+highest weight vector at all, and most of the cheap odd-q weights do not:
+amb(λ′, δ) = 0 at (3,3,3,1⁶), (5,5,5,1⁶), (4,4,4,1⁶), (6,6,6,1⁶), (4,4,4,3⁶),
+(5,5,5,3⁶), (6,6,6,3⁶) and (7,7,7,5⁶). The plethysm was validated against two
+classical answers and against our own recorded zero at the first deficit weight
+before any of these were believed. One weight in reach survives:
+<b>λ′ = (7,7,7,3⁶) at δ = 13</b>, where the multiplicity is 1, p − q = 4, and all
+five banked points are weight-feasible — so the prediction <b>TOTAL = 0 at every
+balanced direction</b> is not vacuous. It is pre-registered and handed to the
+engine track unrun, and it is independent of the X₋₃ value test: that one tests
+the constant, this one tests the character.
+<span class="tag">a prediction that is a zero, at a weight nobody has looked at</span></p>
+<p><b>What survives if the totals law falls.</b> X₋₃ is still unmeasured, and the
+session was organised around that. The restriction isomorphism, every dimension,
+g₃ and its locus, G<sub>3a</sub>, and the multiplicity table are invariant theory
+and plethysm: they stand whatever the engine returns. The transpose-vanishing law
+and the (7,7,7,3⁶) prediction share the fate of the character computation and the
+double-coset theorem and would fall with them — but not with the uniqueness step,
+and not with Ψ. The two halves of this session fail independently, which was the
+point of splitting them that way.</p>
+
+
 <h2><span class="no">§5</span>What it leaves on the table</h2>
 <div class="qcard">
 <p><b>Q1 — A conductor formula</b> <span class="tag">Ogg–Shafarevich shape</span></p>
