@@ -103,7 +103,7 @@ with — though far short of certifying — the literature value **e = 320112**
 **The wall, stated exactly (K3).**  The next live rung is `delta = 10`
 (`a(9) = 0`): `n_chi = 146206`, so even the reduced echelon is
 `~8·146206^2 = 171 GB` against 6.5 usable — one to two orders of magnitude
-beyond this container, unreduced `N_S = 3.4e6` beyond it by four.  Rung 8 ran
+beyond this container, unreduced `N_S = 3.4e6` beyond it by ~1e5x.  Rung 8 ran
 at 2.89 GB peak / 7 min per prime via the compressed route; rung 10 is not a
 matter of patience but of a different machine or a different method.
 
