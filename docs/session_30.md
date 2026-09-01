@@ -62,7 +62,7 @@ Files added (all new; nothing existing was touched):
 | `results/PREREG_s30.md` | pre-registration, committed before any computation |
 | `results/sweep62_ledger.md` | per-cell record, banked as each cell completed |
 
-### Three mistakes, and what caught each
+### Five process failures, and what caught each
 
 **(a) Two drivers recomputing the same cells.**  I launched an interleaved
 driver and an ascending driver in parallel.  Their cheap ends coincide, so
@@ -90,9 +90,29 @@ released by the reconcile — but it cost about 40 minutes.  Fixed by a memory
 guard in the driver that predicts a cell's requirement and **waits** rather
 than skipping, so coverage is never silently reduced by a memory dip.
 
-None of the three touched a reported number.  All three were process failures,
-and (b) is the one worth remembering: a cleanup routine that does not know
-what is still running is more dangerous than no cleanup at all.
+**(d) `pgrep -f` matched my own shell — twice.**  Infrastructure rule 4 warns
+about this and session 29 was bitten by it; I walked into it again.  A chained
+launcher whose body waited on `pgrep -f "run62c.py asc"` never exited its loop,
+because the shell that *created* the script had the heredoc text — including
+that very string — in its own command line, so the pattern always matched
+something.  Eleven minutes lost.  Trying to clean up with
+`kill $(pgrep -f "...")` then killed the shell issuing the command, for exactly
+the same reason, and took the patch with it.  The rule that works: **kill by
+explicit PID, obtained and read back first**; never let a match pattern be
+constructed from text that appears in the killing command line.
+
+**(e) The memory gate sat in front of the claim check.**  The first version of
+the guard asked "does this cell fit?" before asking "has someone already done
+it?", so a worker spent twenty minutes waiting on memory for a cell that was
+already banked.  Caught immediately in the log.  Fixed with a cheap
+existence pre-check; the atomic `O_EXCL` claim remains the authority.
+
+None of the five touched a reported number.  They were all process failures,
+never measurement failures, and two are worth carrying forward: **(b)** a
+cleanup routine that does not know what is still running is more dangerous
+than no cleanup at all; and **(d)** the `pgrep`/`pkill` self-match is not a
+once-off — it has now cost two sessions, and the only reliable defence is to
+kill by explicit PID.
 
 ## 4. Coverage — the honest fraction
 
