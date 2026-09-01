@@ -1699,6 +1699,107 @@ double-coset theorem and would fall with them — but not with the uniqueness st
 and not with Ψ. The two halves of this session fail independently, which was the
 point of splitting them that way.</p>
 
+<p><i>Editorial note at the merge (2026-09-01): two sessions independently took
+the number 23.  The entry above is the other-weights session (branch s22-pq);
+the entry below is the X₋₃ grind (branch s21-xm3).  The collision is recorded
+rather than renumbered.</i></p>
+
+<h2><span class="no">§W4</span>Week 4, session 23 — the law holds at Ψ = −3, and two things in the record turn out to be wrong</h2>
+<p><b>The one test that could have killed it.</b> Session 22 proved the totals
+law and pre-registered TOTAL(X₋₃) = −3,456,432,000. The proof is a parity
+argument — χ(q) = det(q|<sub>V/W</sub>)⁸det(q|<sub>W</sub>)⁶ with 8 = 6+2, det t = ±1
+on H because the transpose of M₃ has determinant (−1)³, and 6 even so det(q)⁶
+drops on <i>both</i> cosets. Every total ever measured sat at Ψ ∈ {0, 1, 4}, all
+non-negative. <b>Ψ(X₋₃) = −3 is the only point in the banked set where a sign
+error in that argument could show up.</b></p>
+
+<div class="thm">
+<p><b>TOTAL(X₋₃) = −3,456,432,000 = −3 × 1,152,144,000, ratio −3.000000 exactly.</b>
+Twelve orbit representatives, all measured, weights summing to 36. The law
+survives its first test at a negative gauge value and its first independent test
+of the χ ↔ det² identification. No sign error.</p>
+</div>
+
+<p><b>The design deliberately used no unproven symmetry.</b> X₋₃'s point symmetry
+was derived here rather than assumed: a monomial symmetry of a balanced point
+N = E₁₀⊗A + E₂₀⊗B is a pair (α,β) ∈ S₃×S₃ acting on the 3×3 grid by
+(r,c) → (αr, βc) and preserving the <i>arrow set</i> of N, inducing precomposition
+by ρ = β on the subproblem index. Validated before use against three banked
+points — it reproduces C's and R's recorded π and ρ, and X₄'s recorded assembly
+weights {00:4, 01:4, 02:8, 03:4, 04:8, 05:4, 14:2, 16:2}. For X₋₃ it gives
+(α,β) = ((1 2),(0 2)), ρ = (0 2). But the assembly used the orbits of the
+<i>point-independent</i> scheme automorphisms alone — twelve representatives
+instead of eight — so the total rests on nothing unproven, and the symmetry
+falls out as four free blind gates. <b>All four hit exactly:</b> V01=V02,
+V03=V04, V07=V14, V09=V16. Twelve runs instead of eight-plus-duplicates, the
+same cost, one less assumption.
+<span class="tag">analysis/wk4_s23_xm3orbits.py</span></p>
+
+<p><b>How demanding it was.</b> The running sum reversed direction three times.
+After the banked 00 alone it stood at +1,786,276,800 and the rest had to go
+strongly negative; after 03 it had overshot to −3,986,236,800 and had to come
+back up; after 10 it overshot again to −4,499,712,000. With seven values in, the
+law forced <b>V05 + 2·V09 = +579,700,800</b> — logged at commit 7c04e2b with
+both unmeasured. When 09 landed at +184,161,600 the last value was pinned to
+<b>+211,377,600</b>, logged at 1eeb364 while 05 was at level 8 of 20 and the only
+visible output was per-level state counts. It returned +211,377,600.
+<span class="tag">six pre-registrations, five hit, one refuted</span></p>
+
+<div class="thm">
+<p><b>REFUTED: the arithmetic signature is 75,600, not 151,200.</b> Pre-registered
+prediction 4 said every value is 151,200 × an integer. f1Xm3_03 =
+−237,459,600 = 75,600 × (−3141), and −237,459,600/151,200 = −1570.5. Two more of
+the twelve are odd multiples of 75,600. Contamination was ruled out before
+reporting — <span class="mono">evalopts</span> keys its checkpoint to the input
+filename, so a stale ck.txt from the previous subproblem in the same directory is
+rejected and the run restarts clean.</p>
+<p>Then checking the claim against the whole record turned up a counterexample
+<i>already sitting in it</i>: <b>W(3-cycle) = +301,870,800 = 75,600 × 3993</b>, in
+results_f1C.md, results_R.md and the paper. The gcd of all twenty-one measured
+subvalues is exactly <b>75,600 = 2⁴·3³·5²·7</b>. The README's enumerated ten
+cofactors really are multiples of 151,200; the sentence generalising that to
+"every measured subvalue" was false, and had been for some time. Corrected in
+README, PROJECT_NOTES and Remark 5.x, with the correction stated rather than the
+number quietly changed.</p>
+</div>
+
+<p><b>And the headline value may be mostly normalisation.</b> Nobody had checked
+whether the engine's Φ₁₈ is the primitive generator of the rank-one lattice of
+integral degree-18 invariants. The brief's bound —
+gcd(Φ₁₈(det₃), Φ₁₈(per₃)) = 2¹⁶3⁴5·7 = 185,794,560 — turns out to be
+<i>exactly</i> |K′₆|, the even-only run's value, and K′₆ is itself a coefficient of
+the invariant. So the two bounds coincided because one coefficient dominated
+both: more evaluation <i>points</i> could not help, more <i>coefficients</i> could.
+Φ₁₈|<sub>U</sub> is a binary sextic with four unknowns and three evaluations already
+in hand, so one 28-minute run at t = 2 pinned all four:</p>
+<p class="mono">K′₀ = −185,794,560 &nbsp; K′₁ = +2,786,918,400 &nbsp;
+K′₂ = −206,649,999,360 &nbsp; K′₃ = +458,633,871,360</p>
+<p>All four integral from three equations in three unknowns — a check the run
+could not pass by accident — giving content(Φ₁₈) | 46,448,640 = 2¹⁴3⁴5·7, a
+factor of 4 better. Hence 18,900 ≤ |Φ₁₈<sup>prim</sup>(det₃)| ≤ 877,879,296,000,
+and at the lower end Φ₁₈<sup>prim</sup>(det₃) = −18,900 = −2²3³5²7 and
+Φ₁₈<sup>prim</sup>(per₃) = +1,088 = 2⁶·17, ratio −4725/272 as required. <b>Not
+claimed as the primitive values</b> — the gcd of four coefficients bounds the
+content from above only. But it is now live that −2¹⁶3⁷5³7² is mostly a choice
+of scale. <span class="tag">docs/primitivity.md</span></p>
+
+<p><b>Two smaller things.</b> Degree 30 is scoped and explicitly not launched:
+ambient dimension 4 there, so vanishing needs a basis rather than one number;
+every ordering tried leaves ≥ 8 brackets partially filled, breaking br2.c's
+63-bit packing; and the refined proxy — which predicted both degree-24 peaks to
+three figures — puts the peak at ~1.6×10¹¹ states, about 300× degree 24.
+And the identical states/emitted level profiles seen across distinct subproblems
+are expected rather than curious: mask reachability depends on the option
+structure, which the σ-choice only relabels. That retroactively explains
+session 14's recorded T₄/R coincidence.</p>
+
+<p><b>Infrastructure note, for the protocol.</b> The container suspended once
+mid-grind and killed both engines. The ck2 checkpoints and the retry-until-VALUE
+wrappers recovered it with only the current level lost, and a
+<span class="mono">send_later</span> dead-man's switch is what woke the session to
+do the reviving. Rules 2 and 3 earned their place again. Runs here cost 3–5
+hours each and peaked at ~1.9 billion states, roughly 3.6× the f1C peak.</p>
+
 
 <h2><span class="no">§5</span>What it leaves on the table</h2>
 <div class="qcard">
