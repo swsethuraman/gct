@@ -16,6 +16,15 @@ RETRACTED 2026-08-29 (sessions 13-15 headers below are superseded):
   the rigidity theorem; V^h_sigma as a det^2-covariant; V^h_sigma as a
   simultaneous-conjugation invariant; TOTAL_G = 1,152,144,000 (G never run,
   value OPEN).
+SESSION 23 (2026-08-31/09-01): TOTAL(X_-3) = -3,456,432,000 = -3 x 1,152,144,000
+  EXACTLY - the totals law (Thm 5.5) CONFIRMED at the first NEGATIVE gauge
+  value, and the first independent test of chi <-> det^2. All 12 orbit reps
+  measured; the assembly uses no point symmetry; all 4 point-symmetry gates hit.
+  REFUTED, and the record was already wrong: the arithmetic signature is
+  **75,600 = 2^4 3^3 5^2 7**, NOT 151,200 - W(3-cycle) = +301,870,800 =
+  75,600 x 3993 was a counterexample sitting in results_f1C.md all along.
+  OPEN AND NEWLY SHARP: Phi_18 may not be primitive - content | 46,448,640, so
+  |Phi_18^prim(det_3)| >= 18,900, and at that end the value is -2^2 3^3 5^2 7.
 SESSION 21 (2026-08-30/31): 24 IS IN E. Phi_24(det_3) = -24,745,222,656,000
   = -2^12 3^7 5^3 7^2 . 11 . 41 != 0, so def((8^9),24) = 0,
   mult_{(8^9)} C[closure]_24 = 1, and E(det_3) contains <18,24> = 6.<3,4>.
@@ -776,6 +785,93 @@ BRANCH DISCIPLINE: all work on `s22-chi`, pushed to `s22-chi` only; main
 untouched, no write-back to any durable copy on the owner's machine.
 
 
+**SESSION 23 (2026-08-31/2026-09-01): the totals law holds at Psi = -3; the
+arithmetic signature is refuted; Phi_18's primitivity is now the sharp question.**
+Full record: results/results_Xm3.md; pre-registrations results/PREREG_Xm3.md
+(b6ab472, 7c04e2b, 1eeb364). Branch s21-xm3 off main at 5cdc29c.
+(1) **TOTAL(X_-3) = -3,456,432,000 = -3 x 1,152,144,000, ratio -3.000000.**
+First test of TOTAL(N) = Psi(N) x 1,152,144,000 at a NEGATIVE gauge value (all
+previous totals sat at Psi in {0,1,4}), hence the only available check on the
+sign in session 22's parity argument. It holds. Twelve orbit representatives,
+all measured, ~3-5 h each, peaks ~1.9e9 states (3.6x f1C).
+(2) **DESIGN NOTE, reusable.** X_-3's point symmetry was DERIVED, not assumed:
+a monomial symmetry of a balanced point N = E10(x)A + E20(x)B is a pair
+(alpha,beta) in S3 x S3 acting by (r,c) -> (alpha r, beta c) preserving the
+ARROW SET of N, inducing precomposition by rho = beta. Validated before use
+against C (recovers its recorded pi and rho), R (same), and X4 (recovers its
+recorded assembly weights). For X_-3: (alpha,beta) = ((1 2),(0 2)), rho = (0 2).
+**But the assembly used only the point-INDEPENDENT scheme automorphisms** (swap,
+post-omega), giving 12 representatives with weights 2,4,4,4,4,2,2,4,2,4,2,2
+summing to 36 - so the total rests on nothing unproven and the symmetry falls
+out as four free blind gates. All four HIT exactly. Twelve runs instead of
+eight-plus-duplicates: same cost, one fewer assumption. Tool:
+analysis/wk4_s23_xm3orbits.py; assembler scripts/assembleXm3.py computes the
+orbits itself.
+(3) **LEDGER: six pre-registered, five hit, one refuted.** The two load-bearing
+ones are clean: V05 + 2 V09 = +579,700,800 (7c04e2b, both values unmeasured) and
+f1Xm3_05 = +211,377,600 (1eeb364, logged with 05 at level 8 of 20, when the only
+visible output was per-level state counts). The running sum reversed direction
+THREE times before landing.
+(4) **REFUTATION - THE ARITHMETIC SIGNATURE IS 75,600, NOT 151,200.**
+f1Xm3_03 = -237,459,600 = 75,600 x (-3141); -237,459,600/151,200 = -1570.5.
+Contamination ruled out first: evalopts keys its ck2 checkpoint to the INPUT
+FILENAME, so a stale ck.txt from the previous subproblem in the same directory
+is rejected and the run restarts clean (this validates the shared-directory
+worker pattern generally). Checking the claim against the record then found a
+counterexample ALREADY IN IT: **W(3-cycle) = +301,870,800 = 75,600 x 3993**, in
+results_f1C.md, results_R.md and the paper. gcd of all 21 measured subvalues =
+exactly 75,600 = 2^4 3^3 5^2 7. The README's ten ENUMERATED cofactors are
+genuinely multiples of 151,200; the generalisation to "every measured subvalue"
+was false. Corrected in README, paper rem:arith and here, with the correction
+stated rather than the number quietly changed. Phi_18(det_3) = 75,600 x
+(-11,612,160); Phi_24(det_3) = 75,600 x (-327,317,760); Phi_18(per_3) and
+Phi_24(per_3) are NOT multiples of 75,600 - the signature is about det_3
+evaluations only.
+(5) **PRIMITIVITY (Job 4) - the sharp open question now.** docs/primitivity.md.
+Separate content(F) (gcd of coefficients; what "primitive" means) from g(F) (gcd
+of values; only an upper bound, so no finite set of evaluations can PROVE
+primitivity - only refute it). Key observation: the standing bound
+gcd(Phi_18(det_3), Phi_18(per_3)) = 2^16 3^4 5 . 7 = 185,794,560 is EXACTLY
+|K'_6|, the even-only run's value, and K'_6 is itself a coefficient - so both
+bounds were dominated by one coefficient and more evaluation POINTS could not
+help. Phi_18|_U is a binary sextic (K'_a = K'_{6-a}), four unknowns, three
+evaluations in hand; ONE 28-min br2 run at t = 2 gave R(2) =
+-582,204,532,654,080 and pinned all four:
+    K'_0 = K'_6 = -185,794,560      K'_1 = K'_5 = +2,786,918,400
+    K'_2 = K'_4 = -206,649,999,360  K'_3       = +458,633,871,360
+All INTEGRAL from three equations in three unknowns (a check the run could not
+pass by accident). Hence **content(Phi_18) | 46,448,640 = 2^14 3^4 5 . 7**, a
+factor of 4 better, and
+    18,900 <= |Phi_18^prim(det_3)| <= 877,879,296,000,
+with the lower end giving Phi_18^prim(det_3) = -18,900 = -2^2 3^3 5^2 7 and
+Phi_18^prim(per_3) = +1,088 = 2^6 . 17 (ratio -4725/272, as forced). NOT claimed
+as the primitive values. **But it is now live that the paper's headline
+factorisation -2^16 3^7 5^3 7^2 is mostly normalisation.** Settle it by
+exhibiting an integral invariant F with V = 46,448,640 . F (constructive route),
+or by getting coefficients OUTSIDE U (needs a general-support evaluator; br2.c
+handles only the six permutation monomials). The same computation for Phi_24
+needs two runs (t = 2, 3) and was queued. NOTE the knock-on: the 75,600
+signature rescales with the content, so primitivity is a prerequisite for taking
+that signature seriously.
+(6) **DELTA = 30 SCOPED, NOT LAUNCHED** - docs/degree30_scoping.md. Ambient dim
+4 there, so vanishing needs a basis of a 4-dim space, not one number; every
+ordering tried leaves >= 8 brackets partially filled (>= 72 bits, breaking
+br2.c's 63-bit packing); refined proxy ~1.6e11 states, ~300x delta 24, ~3.8 TB
+per level file. Needs a 128-bit key (half a day) AND a factoring (the real
+work); cheapest first probe is the U-restriction even-only run.
+(7) **Two smaller corrections to the record.** Identical states/emitted level
+profiles across distinct subproblems are EXPECTED, not curious - mask
+reachability depends on the option structure, which the sigma-choice only
+relabels; only sum|w| differs. This retroactively explains session 14's logged
+T4/R L8 coincidence. And Phi_24(per_3) = -4,016,526,151,680 = -2^12 3^3 5 . 7 .
+41 . 25309 (25309 prime) is banked on ONE ROUTE ONLY and is flagged provisional.
+(8) **INFRASTRUCTURE.** The container suspended once mid-grind and killed both
+engines; ck2 checkpoints plus the retry-until-VALUE wrappers recovered it with
+only the current level lost, and a send_later dead-man's switch is what woke the
+session to do the reviving. Rules 2 and 3 confirmed again. A ~9.5-minute
+sleep-cycle keepalive per turn is what kept the container alive for ~30 h.
+
+
 ## Computational assets (repo layout)
 
     engine/dp.c        exact streamed level DP (the workhorse; see below)
@@ -926,6 +1022,9 @@ R1. **[COMPLETE — sessions 12-16.** Second-point certificate at R
     ray-wise). The h-series inputs (h1A–D, h2A–D, h3A in evalin/) are the
     banked evaluation family — enumerate their exact contracts from
     wk3_s8_gen*.py; budget ~45 min each on the grind engine.
+R1c. **[COMPLETE - session 23.** TOTAL(X_-3) confirms the totals law at
+    Psi = -3. Successors: **Phi_18 primitivity** (sharp, cheap-ish, and it
+    bears on every quoted factorisation) and **degree 30** (scoped, expensive).]
 R1b. **[COMPLETE - session 21.** Degree 24: Phi_24(det_3) != 0, the second
     generator of the invariant semigroup ring exhibited. Successor: **degree
     30**, the single undetermined element of E, ambient dimension 4.]
