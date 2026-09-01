@@ -31,7 +31,7 @@ symmetry.
 
 | rep | weight | VALUE | / 75,600 | / 151,200 | states |
 |---|---|---|---|---|---|
-| 00 | 2 | +893,138,400 | +11,814 | +5,907 | 1 (banked, session 16) |
+| 00 | 2 | +893,138,400 | +11,814 | +5,907 | 1 (banked session 16; **re-run here, identical**) |
 | 01 | 4 | −602,834,400 | −7,974 | −3,987 | 1 |
 | 02 | 4 | −602,834,400 | −7,974 | −3,987 | 1 |
 | 03 | 4 | −237,459,600 | −3,141 | **−1570.5** | 1 |
@@ -50,9 +50,10 @@ symmetry.
 
 **Every one of the twelve is measured** (`00` from session 16, the other
 eleven this session), and the assembly uses no symmetry: the twelve are the
-orbits of the point-*independent* scheme automorphisms alone.  `f1Xm3_00` is
-being re-run as a pipeline regression against the banked `+893,138,400`; its
-weight-2 contribution is already in the total from the banked value.
+orbits of the point-*independent* scheme automorphisms alone.  `f1Xm3_00` was re-run here as a pipeline regression and returned
+`+893,138,400`, identical to the session-16 value — so all twelve entries in
+the table are measurements made on this container, and the total is a complete
+re-derivation rather than a partial one.
 
 An interim commit (`6eb1810`) listed `V16` in this table as if measured when it
 was still running; it was the symmetry's prediction from `V09`.  That was
@@ -96,7 +97,7 @@ scheme automorphisms alone.
 |---|---|---|---|
 | 1 | `b6ab472` | `TOTAL(X_{-3}) = -3,456,432,000` | **HIT** |
 | 2 | `b6ab472` | the four point-symmetry gates | **HIT, 4/4 exact** |
-| 3 | `b6ab472` | re-run `f1Xm3_00 = +893,138,400` | see below |
+| 3 | `b6ab472` | re-run `f1Xm3_00 = +893,138,400` | **HIT** (exact) |
 | 4 | `b6ab472` | every value is `151,200 x` an integer | **MISS — refuted** |
 | 5 | `7c04e2b` | `V05 + 2 V09 = +579,700,800`, logged with both unmeasured | **HIT** |
 | 6 | `1eeb364` | `f1Xm3_05 = +211,377,600`, logged with `05` at level 8 of 20 | **HIT** |
