@@ -45,7 +45,7 @@ from wk8_s30_sweep import NINE, cells62, balance
 # A cell that does not fit is WAITED for, not skipped, so coverage is never
 # silently reduced by a transient memory dip.
 MEM_PER = 7.5e-8            # GB per N_S^2 -- see the fit below
-HEADROOM = 0.70             # do not plan to use the last 30% of free memory
+HEADROOM = 0.70             # overridden by argv[3]; 0.70 for two workers, 0.85 for one
 
 def predicted_gb(ns):
     return MEM_PER * ns * ns
@@ -75,6 +75,13 @@ def wait_for_memory(ns, tag, patience=40):
 CLAIMS = "/root/gct/results/claims"
 LEDGER = "/root/gct/results/sweep62_ledger.md"
 
+def taken(lam):
+    """Non-atomic existence check, used ONLY to avoid pointless waiting.
+    The first version of the memory gate sat in front of the claim check, so a
+    worker would block for twenty minutes on a cell another worker had already
+    finished.  claim() below is still the authority on who gets the cell."""
+    return os.path.exists(os.path.join(CLAIMS, "%s.claim" % "_".join(map(str, lam))))
+
 def claim(lam):
     """Atomic take.  True if this worker got the cell."""
     os.makedirs(CLAIMS, exist_ok=True)
@@ -93,8 +100,10 @@ def bank(line):
         fh.flush(); os.fsync(fh.fileno())
 
 if __name__ == '__main__':
-    WHO = sys.argv[1]                       # "bal" or "asc"
+    WHO = sys.argv[1]                       # "bal" = largest-a first, else ascending
     CAP = int(sys.argv[2])
+    if len(sys.argv) > 3:
+        HEADROOM = float(sys.argv[3])
     allc  = cells62()
     live  = [c for c in allc if c[0] not in set(NINE)]
     sizes = {lam: len(monomials(4, len(lam), 6, lam)) for lam, _ in live}
@@ -113,6 +122,8 @@ if __name__ == '__main__':
     for lam, av in pool:
         r  = len(lam)
         ns = sizes[lam]
+        if taken(lam):                 # cheap pre-check: never wait on memory
+            continue                   # for a cell someone else already holds
         if predicted_gb(ns) > HEADROOM * free_gb():
             if not wait_for_memory(ns, str(lam)):
                 deferred.append(lam); continue
