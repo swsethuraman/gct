@@ -25,6 +25,41 @@ from wk8_s30_core import measure, det_form, per_padded, monomials
 from wk8_s30_pleth import amb
 from wk8_s30_sweep import NINE, cells62, balance
 
+# ---- memory guard -------------------------------------------------------
+# Peak RSS of a cell is quadratic in N_S: the flint matrices are N_S columns
+# wide with more rows than columns.  Measured 2.4 GB at N_S = 6789, which
+# fixes the constant at 5.2e-8 GB per N_S^2.  Worker "bal" was OOM-killed at
+# N_S = 9224 (4.76 GB anon-rss) running alongside "asc", which is what this
+# guard exists to prevent: a cell that does not fit is WAITED for, not
+# skipped, so coverage is never silently reduced by a transient memory dip.
+MEM_PER = 5.2e-8            # GB per N_S^2
+HEADROOM = 0.85             # do not plan to use the last 15% of free memory
+
+def predicted_gb(ns):
+    return MEM_PER * ns * ns
+
+def free_gb():
+    for ln in open("/proc/meminfo"):
+        if ln.startswith("MemAvailable:"):
+            return int(ln.split()[1]) / 1048576.0
+    return 0.0
+
+def wait_for_memory(ns, tag, patience=40):
+    """Block until the cell plausibly fits.  Returns False to defer it."""
+    need = predicted_gb(ns)
+    for k in range(patience):
+        if need <= HEADROOM * free_gb():
+            return True
+        if k == 0:
+            print("   [mem] %s needs ~%.1f GB, %.1f GB free -- waiting"
+                  % (tag, need, free_gb()))
+            sys.stdout.flush()
+        time.sleep(30)
+    print("   [mem] %s still does not fit after %d min -- deferring"
+          % (tag, patience // 2))
+    sys.stdout.flush()
+    return False
+
 CLAIMS = "/root/gct/results/claims"
 LEDGER = "/root/gct/results/sweep62_ledger.md"
 
@@ -62,12 +97,15 @@ if __name__ == '__main__':
     sys.stdout.flush()
 
     d4, N4 = det_form(4); pd, Np = per_padded(3, 4)
-    done, hits = 0, []
+    done, hits, deferred = 0, [], []
     for lam, av in pool:
-        if not claim(lam):
-            continue
         r  = len(lam)
         ns = sizes[lam]
+        if predicted_gb(ns) > HEADROOM * free_gb():
+            if not wait_for_memory(ns, str(lam)):
+                deferred.append(lam); continue
+        if not claim(lam):
+            continue
         t0 = time.time()
         md = measure(d4, N4, 4, r, 6, lam, a_expect=av)
         mp = measure(pd, Np, 4, r, 6, lam, seed=29, a_expect=av)
@@ -94,4 +132,5 @@ if __name__ == '__main__':
         if hits:
             print("*** STOPPING: D > 0 ***"); break
     print()
-    print("worker %s done: %d cells ; D>0: %d" % (WHO, done, len(hits)))
+    print("worker %s done: %d cells ; D>0: %d ; deferred for memory: %s"
+          % (WHO, done, len(hits), deferred if deferred else "-"))
