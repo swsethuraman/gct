@@ -1,0 +1,68 @@
+length <= 3, delta <= 5 : 64 weights with a >= 1 (cap 2500)
+delta lam            dim   a | mult: det  m3  m2  m1 | Udim: det m3 m2 m1 | containments
+  2   (8,)               1   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (12,)              1   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (16,)              1   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (20,)              1   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  2   (6, 2)             2   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (10, 2)            2   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (14, 2)            2   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (18, 2)            2   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  2   (4, 4)             3   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (9, 3)             3   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (13, 3)            3   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (17, 3)            3   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (8, 4)             4   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (6, 6)             5   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (12, 4)            5   2 |    2   2   2   1 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (16, 4)            5   2 |    2   2   2   1 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (15, 5)            6   1 |    1   1   1   1 |        0  0  0  0 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (10, 6)            7   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (7, 4, 1)          8   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (8, 2, 2)          8   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (8, 8)             8   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (14, 6)            8   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (12, 2, 2)         9   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (13, 7)            9   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (16, 2, 2)         9   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (11, 4, 1)        10   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (12, 8)           11   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (15, 4, 1)        11   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (10, 10)          12   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (10, 5, 1)        13   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (11, 3, 2)        14   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (6, 4, 2)         15   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (14, 5, 1)        15   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (15, 3, 2)        15   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (9, 6, 1)         16   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (13, 6, 1)        20   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (10, 4, 2)        22   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  3   (4, 4, 4)         23   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (12, 7, 1)        24   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (14, 4, 2)        25   3 |    3   3   3   0 |        0  0  0  3 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (9, 5, 2)         27   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (11, 8, 1)        27   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (10, 9, 1)        29   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  4   (8, 6, 2)         33   2 |    2   2   1   0 |        0  0  1  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (13, 5, 2)        34   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (9, 4, 3)         35   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (13, 4, 3)        44   2 |    2   2   2   0 |        0  0  0  2 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (12, 6, 2)        46   4 |    4   4   3   0 |        0  0  1  4 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  4   (7, 6, 3)         49   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  4   (8, 4, 4)         51   2 |    2   2   1   0 |        0  0  1  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (11, 7, 2)        53   2 |    2   2   1   0 |        0  0  1  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (10, 8, 2)        61   3 |    3   3   1   0 |        0  0  2  3 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (12, 5, 3)        61   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  4   (6, 6, 4)         66   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (12, 4, 4)        72   3 |    3   3   2   0 |        0  0  1  3 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (11, 6, 3)        79   3 |    3   3   1   0 |        0  0  2  3 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (10, 7, 3)        93   2 |    2   2   0   0 |        0  0  2  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (11, 5, 4)        96   1 |    1   1   1   0 |        0  0  0  1 | det<m3:vac  m3<m2:vac  m2<m1:vac
+  5   (9, 8, 3)        101   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (10, 6, 4)       125   4 |    4   4   1   0 |        0  0  3  4 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (9, 7, 4)        140   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (8, 8, 4)        149   2 |    2   2   0   0 |        0  0  2  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (9, 6, 5)        162   1 |    1   1   0   0 |        0  0  1  1 | det<m3:vac  m3<m2:vac  m2<m1:OK
+  5   (8, 6, 6)        196   2 |    2   2   0   0 |        0  0  2  2 | det<m3:vac  m3<m2:vac  m2<m1:OK
+
+non-vacuous containment tests run: 18
