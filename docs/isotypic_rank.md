@@ -37,7 +37,7 @@ vectors of degree 3 and `c_alpha(F)` is the coefficient of `y^alpha` in `F`.
 Under the action above, `c_alpha` transforms exactly as `e^alpha in Sym^3 V`:
 
     weight(c_alpha) = alpha        (non-negative, |alpha| = 3)
-    E_ij . c_alpha  = alpha_j c_{alpha - eps_j + eps_i},   extended as a derivation.
+    E_ij . c_alpha  = (alpha_i + 1) c_{alpha - eps_j + eps_i},   extended as a derivation.
 
 `a(lam,delta)` denotes the multiplicity of `S_lam` in `C[W]_delta`, i.e. the
 plethysm coefficient of `h_delta[h_3]`.
@@ -341,3 +341,6 @@ lengths — the algorithm returns `mult = a`, which is what the paper's
 - Corollary 9 for lengths `>= 5` is a *measurement* (rank attaining `a`), not a
   structural theorem; it is certified in the strong sense of §2, but only at
   the degrees actually swept.
+
+
+**Correction (session 29, verified by the integrator three independent ways).** The action rule in section 1 originally read `E_ij . c_alpha = alpha_j c_{alpha - eps_j + eps_i}` -- the action on the monomials `e^alpha` of `Sym^3 V`, not on the coefficient functionals `c_alpha = e^alpha / alpha!`. The correct rule, now in the text, is `E_ij . c_alpha = (alpha_i + 1) c_{alpha - eps_j + eps_i}`. The two are conjugate by the diagonal `alpha!` rescaling, so every kernel DIMENSION (every `a`) is unaffected and only kernel VECTORS -- hence `mult` -- can differ; no `mult = a` calibration can detect the difference. Discriminating witness: the `{ell^3 m}` closure in binary quartics at `lam = (4,4)`, `delta = 2` -- correct `mult = 0` with kernel proportional to `c40.c04 - (1/4) c31.c13 + (1/12) c22^2`, the classical invariant. All previously published multiplicities were re-run under the corrected rule and reproduce (docs/session_29.md); they were right but uncertified until then.
