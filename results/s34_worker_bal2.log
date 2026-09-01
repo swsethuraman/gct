@@ -1,0 +1,14 @@
+worker bal (pid 2420): 46 cells within cap N_S <= 11269, headroom 0.70
+lam                     ell  a   N_S   mult_det  mult_pad   D
+      rank(R) mod 2147483647 = 9509  [418s]
+      rank(R) mod 2147483629 = 9509  [414s]
+      det mult mod 2147483647 = 15  [412s]
+      det mult mod 2147483629 = 15  [415s]
+      pad mult mod 2147483647 = 15  [425s]
+      pad mult mod 2147483629 = 15  [425s]
+(15, 6, 4, 2, 1)          5  15   9524    15 (=a)   15 (=a)   +0  [2511s, maxrss 2.79 GB]
+   [mem] (14, 8, 3, 2, 1) needs ~4.5 GB, 6.1 GB free -- waiting
+   [mem] (14, 8, 3, 2, 1) still does not fit after 20 min -- deferring
+   [mem] (13, 9, 3, 2, 1) needs ~6.4 GB, 6.1 GB free -- waiting
+   [mem] (13, 9, 3, 2, 1) still does not fit after 20 min -- deferring
+   [mem] (12, 9, 5, 1, 1) needs ~6.4 GB, 6.0 GB free -- waiting
