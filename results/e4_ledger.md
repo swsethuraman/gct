@@ -65,5 +65,27 @@ the invariant ring of quartic surfaces through degree 24 —
 
 ## Phase 2 — the rung record (banked as completed)
 
-*(appended per rung as runs complete; nothing below this line exists until the
-witness gate has passed)*
+**Gate and validation battery (K1, V1–V5), all passed before any rung:**
+
+| check | result |
+|---|---|
+| K1 witness: binary quartics, `closure{l^3 m}`, `lam=(4,4)`, `delta=2`, unreduced s30 pipeline | `a=1, mult=0`, kernel `= (12,-3,1)` at both primes; wrong-rule signature `(1,-4,3)` asserted absent ✓ |
+| V2: rung 4 by *both* pipelines | reduced == unreduced: `a=1, mult=1`, **same kernel vector** at both primes ✓ (re-certifies s29's `e != 4` under the corrected rule) |
+| V3: enumeration vs DP | `N_S`, `n_chi`, `N'` agree at every rung touched ✓ (asserted in-run) |
+| V4: rung 5 (odd/sign branch) | reduced kernel dimension `0 = a(5)`; odd-swap-fixed rows cancel identically (exact assert) ✓ |
+| V5: rung 6 at both primes | below ✓ |
+
+Per-rung discipline as pre-registered: `a` by reduced-kernel dimension must
+equal the plethysm (asserted); `rank = n_chi − a` asserted; evaluation at
+`npts = a + 8` random integer 4-tuples (entries `[−40, 40]`, s30
+`restrict`/`eval_row` verbatim); flint `nmod_mat` for every rank/nullspace;
+both house primes.  A rank attaining `a` is a certificate
+(`rank_p <= rank_Q <= a`).
+
+| rung `delta` | a | mult | verdict | cost |
+|---|---|---|---|---|
+| 4 | 1 | **1** | `e != 4` re-certified (both pipelines, both primes) | <1 s |
+| 5 | 0 | — | excluded free (`a = 0`), sign-branch check non-vacuous | <1 s |
+| 6 | 1 | **1** | **`e != 6` — the deciding rung: the integrator's standing `e = 6` is refuted; s29's `e >= 7` confirmed.**  The unique degree-6 invariant does not vanish on `D_4`.  Both primes, 5930 dedup rows × 661 cols, rank 660 = `n_chi − a` | 7 s |
+
+*(rungs 7 and 8 appended as they complete)*
