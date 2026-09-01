@@ -107,3 +107,80 @@ retracted and the paper would revert to the conjecture form.
               L5 197501/224542/235558, L6 1818118/2336283/2686868
     f1C_00 L7 = 54685987/100774838/141001840          (exact)
     f1C_00 L8 and its VALUE: running at the time of this commit
+
+---
+
+# ADDENDUM — the forced constraint, logged with `09` and `05` both unmeasured
+
+2026-08-31, ~16:00Z.  Seven of the twelve values are in; `f1Xm3_09` is running
+and `f1Xm3_05` has not started.  Neither value has been seen.
+
+Measured so far (all with `final states 1`):
+
+| rep | weight | VALUE | /75,600 |
+|---|---|---|---|
+| 00 | 2 | +893,138,400 | +11,814 | (banked, session 16; re-run queued)
+| 01 | 4 | −602,834,400 | −7,974 |
+| 02 | 4 | −602,834,400 | −7,974 |
+| 03 | 4 | −237,459,600 | −3,141 |
+| 07 | 2 | +416,858,400 | +5,514 |
+| 08 | 4 | +340,880,400 | +4,509 |
+| 10 | 4 | −677,678,400 | −8,964 |
+
+Weighted sum of those seven: **−4,499,712,000**, against a target of
+−3,456,432,000.  So the remaining five (`04, 05, 09, 14, 16`, weight 12) must
+supply **+1,043,280,000** — the running sum has overshot downward and the rest
+must come back up, exactly the shape the X4 test had.
+
+Imposing the point symmetry — `V04 = V03`, `V14 = V07`, `V16 = V09`, whose first
+instance `V01 = V02` has already been confirmed exactly — those contribute
+`4V03 + 2V07 = -116,121,600`, and the totals law then forces
+
+    **V05 + 2 * V09  =  +579,700,800  =  75,600 x 7,668 .**
+
+**This is a point constraint with no freedom left, logged before either value
+exists.**  It is the analogue of session 18's `4c03 + 2c16 = -10,136` at X4.
+
+Note what it demands.  Five of the seven measured values are negative and the
+weighted sum is 1.3x below the target; for the law to hold, `V05` and `V09`
+must between them be strongly *positive*.  If either lands negative enough that
+`V05 + 2V09 != 579,700,800`, the totals law fails at the first negative gauge
+value it has ever been tested at, and Theorem 5.5 is refuted.
+
+Two further gates remain live and independent of this: `V03 = V04` and
+`V07 = V14`, plus `V09 = V16` once `09` is known.  If a *gate* fails instead,
+the point-symmetry derivation is wrong and the constraint above is void — but
+the twelve-run assembly still stands, because it never used the symmetry.
+
+---
+
+# ADDENDUM 2 — THE FORCED VALUE, logged while `05` is at level 8 of 20
+
+2026-08-31, ~21:10Z.  `f1Xm3_09` has landed:
+
+    f1Xm3_09 = +184,161,600 = 75,600 x 2,436 = 151,200 x 1,218   (final states 1)
+
+The constraint pre-registered at `7c04e2b` — `V05 + 2 V09 = +579,700,800`, logged
+when neither value existed — now has exactly one unknown left:
+
+    **f1Xm3_05  =  579,700,800 - 2 x 184,161,600  =  +211,377,600
+                =  75,600 x 2,796  =  151,200 x 1,398 .**
+
+`f1Xm3_05` is running on worker 1 and is at level 8 of 20 at the time of this
+commit; its value does not exist and cannot be inferred from the partial DP
+output, which reports only state counts.  This is a point prediction with no
+freedom remaining: the run either returns exactly `+211,377,600` and the totals
+law is confirmed at `Psi = -3`, or it returns anything else and Theorem 5.5
+fails at the first negative gauge value it has been tested at.
+
+The two remaining runs after `05` are the gate `V16 = V09` and the re-run of
+`00`; neither can change the arithmetic above, since the assembly weights are
+fixed and `V16` enters only through the symmetry that `V01 = V02` and
+`V03 = V04` have already confirmed twice.  If `V16 != V09` the symmetry
+derivation is wrong, the forced value above is void, and the twelve-run
+assembly — which uses no symmetry — decides instead.
+
+Also worth recording before the fact: `V09` is a multiple of 151,200, as are
+`07` and `10`, while `03`, `04` and `08` are odd multiples of 75,600.  The
+forced `V05 = +211,377,600` is likewise a multiple of 151,200.  Nothing in the
+totals law predicts which; the mixture is what refutes the 151,200 claim.
