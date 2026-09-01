@@ -1,0 +1,8 @@
+1. witness (l^3 m, lam=(4,4), delta=2) : mult = 0 (want 0), kernel matches (want (12,-3,1))  PASS
+   (the WRONG rule gives mult = 1 and kernel (1,-4,3) -- this check discriminates)
+2. a re-derived by plethysm for all 34 banked cells : PASS
+3. re-measuring 2 banked cells from scratch, new seeds and point counts:
+   (13, 4, 4, 2, 1)         ledger (2,2)  rerun (2,2)  PASS
+   (12, 6, 4, 1, 1)         ledger (2,2)  rerun (2,2)  PASS
+
+VERIFICATION: ALL PASS
