@@ -216,11 +216,17 @@ def kernel_reduced_np(delta, vecs, tpos, fixed, prime, margin=64, pseed=101):
         for c, v in ents:
             Agg[:, c] += (v * Pcol) % prime
     Agg %= prime
+    del tri, byrow
     log(f"    assembled in {time.time()-t0:.0f}s")
-    ent = Agg.ravel().tolist()
+    # per-row setitem: no ravel().tolist() -- that 3 GB python-int spike is
+    # what OOM-killed the first delta=8 attempt (recorded in the ledger)
+    M = nmod_mat(rs, nchi, prime)
+    for i in range(rs):
+        rl = Agg[i].tolist()
+        for j, v in enumerate(rl):
+            if v: M[i, j] = v
     del Agg
-    M = nmod_mat(rs, nchi, ent, prime)
-    del ent
+    log(f"    flint matrix built  ({time.time()-t0:.0f}s)")
     X, nul = M.nullspace()
     rk = nchi - nul
     kern = [[int(X[i, j]) for i in range(nchi)] for j in range(nul)]
