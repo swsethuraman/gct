@@ -57,7 +57,55 @@ same coefficient — and it means the evaluation-gcd route has already saturated
 at the level of the two banked values.  Adding more *evaluation points* will
 not help much; adding more *coefficients* will.
 
-## The cheap route to a much tighter bound: two runs
+## RESULT (session 23): the bound tightens by a factor of 4
+
+The `t = 2` run described below was carried out.
+
+    R(2) = -582,204,532,654,080     (u = (1,1,1,2,2,2), delta = 18, final states 1)
+
+With `R(0) = -185,794,560`, `R(1) = +50,536,120,320`, `R(-1) = -877,879,296,000`
+already in hand, the four unknowns of the binary sextic are determined:
+
+    K'_0 = K'_6 =        -185,794,560
+    K'_1 = K'_5 =      +2,786,918,400
+    K'_2 = K'_4 =    -206,649,999,360
+    K'_3       =    +458,633,871,360
+
+**All four come out integral** from three equations in three unknowns — an
+arithmetic consistency check the run had no way to pass by accident — and all
+three defining equations verify exactly.  Hence
+
+    content(Phi_18)  |  gcd(K'_0, K'_1, K'_2, K'_3)  =  46,448,640 = 2^14 . 3^4 . 5 . 7 ,
+
+against the previous bound `185,794,560 = 2^16 3^4 5 . 7`.  A factor of 4.
+
+**What this says about the quoted value.**  Writing `Phi_18^prim` for the
+primitive generator,
+
+    18,900  <=  |Phi_18^prim(det_3)|  <=  877,879,296,000 ,
+
+with the lower end attained exactly when `content = 46,448,640`.  And at that
+end the numbers are striking:
+
+    Phi_18^prim(det_3) = -18,900 = -2^2 . 3^3 . 5^2 . 7
+    Phi_18^prim(per_3) =  +1,088 =  2^6 . 17
+
+whose ratio is `-4725/272`, as it must be.  **We do not claim these are the
+primitive values** — the bound is an upper bound on the content, computed from
+four of the coefficients, and the true content may be smaller.  But it is now a
+live possibility that the paper's headline factorisation
+`-2^16 3^7 5^3 7^2` is mostly normalisation, and that the invariant-theoretic
+content of the number is `-2^2 3^3 5^2 7`.  That possibility did not exist
+before this computation, and it should be settled before the value is quoted
+again.
+
+**What would settle it.**  Either (i) more coefficients — coefficients outside
+`U`, which need a general-support evaluator rather than `br2.c`; or (ii) an
+exhibited integral invariant `F` with `V = c . F` and `c = 46,448,640`, which
+would prove the content is exactly that.  Route (ii) is the constructive one and
+is where to look first.
+
+## The route to the bound: the runs (as designed, before they were run)
 
 `Phi_18|_U` is a binary sextic in `(P,Q)` with `K'_a = K'_{6-a}`, so it has four
 unknowns `K'_0 = K'_6`, `K'_1 = K'_5`, `K'_2 = K'_4`, `K'_3`.  Running `br2`
@@ -71,7 +119,7 @@ Three evaluations are already in hand:
     R(1)  = Phi_18(per_3)       = +50,536,120,320
     R(-1) = Phi_18(det_3)       = -877,879,296,000
 
-so **one further run at `t = 2` (about 28 minutes) determines all four `K'_a`**,
+so **one further run at `t = 2` (about 28 minutes) determines all four `K'_a`** — done, see above —
 and `gcd(K'_0, K'_1, K'_2, K'_3)` is then a bound that uses four independent
 coefficients rather than one.  For `Phi_24|_U` — a binary octic with five
 unknowns `K_0 = K_8`, `K_1 = K_7`, `K_2 = K_6`, `K_3 = K_5`, `K_4`, and
