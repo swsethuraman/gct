@@ -73,7 +73,11 @@ that degeneracy of a cubic of border determinantal complexity at most $3$ is
 precisely the vanishing of one explicit degree-$18$ equation; we exhibit a
 second invariant, in degree $24$, after which degree $30$ is the only degree
 whose status is left undetermined; and we compute the first conductor of a
-determinant, $c\big((2,2,2),2\big)=1$.
+determinant, $c\big((2,2,2),2\big)=1$.  A length theorem completes the picture:
+for weights of at most four rows the closure multiplicity attains the ambient
+plethysm bound in every degree, so the ideal of $\cO$ is invisible to short
+weights; this is sharp at five rows, witnessed by the discriminant of quinary
+cubics.
 \end{abstract}
 
 \maketitle
@@ -180,11 +184,20 @@ $\mathcal E(\det_3)\supseteq\langle 18,24\rangle$, and its complement in
 $6\bN$ is contained in $\{6,12,30\}$.  The conductor
 $c\big((2,2,2),2\big)=1$ (Theorem \ref{thm:detcond}) is certified at two
 provably inequivalent orbit points and complete along the entire
-$\Phi_{18}$-ray.
+$\Phi_{18}$-ray.  The section closes with a length theorem: at every weight of
+length at most four, in every degree, the closure multiplicity attains the
+ambient plethysm bound (Theorem \ref{thm:length}) --- every short-weight
+deficit of the determinant is ambient arithmetic, computable by plethysm and
+branching alone --- and the bound on the length is sharp: the ideal of $\cO$
+contains the discriminant of quinary cubics as a length-five highest weight
+vector in degree $80$ (Theorem \ref{thm:sharp}), while below degree $6$ it
+contains nothing at all.
 
 Section \ref{sec:functional} analyses the evaluation functional on which that
 computation rests.  Several of its natural symmetries we rule out; its totals
-we then determine exactly (Theorem \ref{thm:totals}).  They are governed by a
+we then determine exactly (Theorem \ref{thm:totals}), and the law's one
+out-of-sample prediction, at the negative-gauge point $X_{-3}$, has since been
+measured and holds exactly.  They are governed by a
 gauge $\Psi$, the restriction to slab normal form of the fundamental degree-$6$
 invariant of $\bC^{3}\otimes\bC^{3}\otimes\bC^{3}$ (Theorem \ref{thm:gauge});
 the parabolic character controlling the functional is $\det^{2}$ in the net's
@@ -639,12 +652,40 @@ which is independent of every choice.  The canonical integral choice would be
 the primitive generator of the rank-one lattice of integral invariants in this
 degree, unique up to sign --- the same convention under which
 $\Psi=-I_6^{\mathrm{prim}}$ in Section \ref{sec:functional}.  We have not
-determined whether $\mathcal N$ is primitive.  The content divides the gcd of
-the two values, namely $2^{16}3^{4}\cdot5\cdot7$, which is a weak bound; if
-$\mathcal N$ is a proper multiple of the primitive generator then
+determined whether $\mathcal N$ is primitive, but the question is now bounded.
+The content divides the gcd of any set of integer coefficients, and four
+coefficients are available: on the six-parameter family of Remark
+\ref{rem:norm24} the invariant restricts to a binary sextic
+$\sum_aK'_aP^{a}Q^{6-a}$ with $K'_a=K'_{6-a}$, each $K'_a$ literally a
+coefficient of $\Phi_{18}$ in the monomial basis, and evaluations at
+$u=(1,1,1,t,t,t)$ for $t=0,\pm1,2$ --- two of which are \eqref{eq:value} and
+\eqref{eq:perm} themselves --- determine
+\[
+  K'_0=-185\,794\,560,\qquad K'_1=+2\,786\,918\,400,
+\]
+\[
+  K'_2=-206\,649\,999\,360,\qquad K'_3=+458\,633\,871\,360,
+\]
+a linear system whose solution had no obligation to be integral, and is.
+Hence the content divides
+$\gcd_aK'_a=46\,448\,640=2^{14}3^{4}\cdot5\cdot7$, a factor of $4$ below the
+two-value bound $\gcd$ of \eqref{eq:value} and \eqref{eq:perm}, which is
+$2^{16}3^{4}\cdot5\cdot7=|K'_0|$ and is dominated by that single coefficient.
+If $\mathcal N$ is a proper multiple of the primitive generator then
 \eqref{eq:value} must be divided by that multiple and the factorisation
-restated.  We flag this because the factorisation, rather than the
-non-vanishing, is the part a reader is likely to quote.
+restated; at the extreme the bound allows, the primitive values would be
+\[
+  \Phi_{18}^{\mathrm{prim}}(\det_3)=-18\,900=-2^{2}3^{3}5^{2}7,
+  \qquad
+  \Phi_{18}^{\mathrm{prim}}(\per_3)=+1\,088=2^{6}\cdot17,
+\]
+whose ratio is $-4725/272$, as it must be.  We do not claim these are the
+primitive values --- a coefficient gcd bounds the content from above only ---
+but it is a live possibility that the headline factorisation is mostly
+normalisation, and settling the content is a prerequisite for reading
+arithmetic significance into \eqref{eq:value}, or into the signature of
+Remark \ref{rem:arith}.  We flag this because the factorisation, rather than
+the non-vanishing, is the part a reader is likely to quote.
 \end{remark}
 
 \subsection*{Boundary geometry}
@@ -786,6 +827,26 @@ $-4725/272$ of \eqref{eq:value} and \eqref{eq:perm}.  Note also that
 $K_a=K_{8-a}$ pairs indices of \emph{equal} parity, so it does not annihilate
 the alternating sum: no symmetry of $U$ forces \eqref{eq:value24} to vanish.
 This was recorded as a pre-registered prediction before the value was computed.
+
+The same evaluations $u=(1,1,1,t,t,t)$, now at $t=0,\pm1,2,3$, determine all
+five coefficients of the binary octic:
+\[
+  K_0=-1\,428\,295\,680,\quad K_1=+20\,313\,538\,560,\quad
+  K_2=-720\,218\,096\,640,
+\]
+\[
+  K_3=+5\,161\,860\,587\,520,\quad K_4=-12\,937\,581\,619\,200,
+\]
+again all integral, with two linear relations, derived in advance from the sum
+and difference of the values at $t=\pm1$, holding exactly.  The content of $\Phi_{24}$ therefore divides
+$\gcd_aK_a=39\,674\,880=2^{10}3^{3}\cdot5\cdot7\cdot41$ --- a factor of $36$
+below the one-coefficient bound $|K_8|$ --- so
+$|\Phi_{24}^{\mathrm{prim}}(\det_3)|\ge623\,700=2^{2}3^{4}5^{2}7\cdot11
+=33\times18\,900$, the degree-$24$ analogue of the bound in Remark
+\ref{rem:norm}.  (Not every run behind these coefficients has been certified at
+a second bracket structure the way \eqref{eq:value} and \eqref{eq:value24}
+were; the forced integrality of the solved systems, and the pre-derived
+relations, are the consistency checks in force.)
 \end{remark}
 
 \begin{remark}[Why the divisor does not decide it]\label{rem:notdivisor}
@@ -887,9 +948,13 @@ the closure; for the permanent it gives
   \dfc_{\per_3}\big((2,2,2),2\big)=m_{\per_3}\big((2,2,2)\big)=4 ,
 \]
 four times the determinant's.  The Peter--Weyl difference at that weight is
-therefore $+3$ and the deficit difference is also $+3$, so the two cancel
-exactly --- the first instance in this programme of a saturation that turns out
-to be systematic (Section \ref{sec:open}).  The conductor is a different matter.
+therefore $+3$ and the deficit difference is also $+3$, and the cancellation is
+identical arithmetic rather than coincidence: wherever two closures in the same
+ambient space both attain the ambient plethysm bound --- automatic here, where
+that bound is zero, and proved for every short weight of the determinant in
+Theorem \ref{thm:length} below --- the deficit difference reduces termwise to
+the Peter--Weyl difference, and carries no information about either closure.
+The conductor is a different matter.
 
 \begin{theorem}[The conductor]\label{thm:detcond}
 $c\big((2,2,2),2\big)=1$, and the vanishing is \emph{ray-complete}:
@@ -914,6 +979,198 @@ the smallest possible nonzero answer: one multiplication by the fundamental
 invariant clears the gap, and it stays cleared for ever after.  The scales are
 worth noting --- the deficit is detected at degree $2$, far below the degree
 $18$ at which the invariant that repairs it first exists.
+
+\subsection*{Short weights: the length theorem}
+
+The deficits computed so far sit at particular weights.  This subsection
+determines the closure multiplicity at \emph{every} weight of length at most
+four, in every degree, and shows that the bound on the length is sharp.  Write
+$W=\Sym^{3}\bC^{9}$ and
+\[
+  a(\lambda,\delta)\;:=\;\mult_\lambda\bC[W]_\delta
+  \;=\;\langle h_\delta[h_3],\,s_\lambda\rangle ,
+\]
+the ambient plethysm multiplicity.  Restriction
+$\bC[W]_\delta\to\bC[\cO]_\delta$ is surjective and $G$-equivariant, so
+$\mult_\lambda\bC[\cO]_\delta\le a(\lambda,\delta)$ always, with equality
+exactly when the ideal $I(\cO)_\delta$ contains no copy of $S_\lambda$.
+
+\begin{lemma}[Isotypic rank]\label{lem:isorank}
+Let $X\subseteq W$ be a $G$-stable closed cone, let $a=a(\lambda,\delta)$, and
+let $h_1,\dots,h_a$ be a basis of the highest-weight vectors of weight
+$\lambda$ in $\bC[W]_\delta$.  Then
+\[
+  \mult_\lambda\bC[X]_\delta\;=\;a-\dim\Big\{u\in\bC^{a}:\ \textstyle\sum_k
+  u_kh_k\ \text{vanishes on }X\Big\} ,
+\]
+and when $X$ has a dense orbit the vanishing may be tested on that orbit alone.
+\end{lemma}
+
+\begin{proof}
+The $\lambda$-isotypic component of $\bC[W]_\delta$ is $M_\lambda\cong
+S_\lambda\otimes\bC^{a}$ as a $G$-module, and $I(X)\cap M_\lambda$, being a
+$G$-submodule, has the form $S_\lambda\otimes U$; then
+$\mult_\lambda\bC[X]_\delta=a-\dim U$.  Under the identification the
+highest-weight vectors of $M_\lambda$ are the $v\otimes u$ with $v$ the
+highest-weight vector of $S_\lambda$, i.e.\ exactly the combinations
+$\sum_ku_kh_k$; and since $v$ generates $S_\lambda$ while $I(X)$ is a
+$G$-stable subspace, $v\otimes u\in I(X)$ iff $S_\lambda\otimes u\subseteq
+I(X)$ iff $\sum_ku_kh_k$ vanishes on $X$.  The last clause is density of the
+orbit in $X$.
+\end{proof}
+
+At $a=1$ this is the one-bit mechanism that decided Theorems \ref{thm:census}
+and \ref{thm:deg24}; at $a\ge2$ it is a rank, and it is what makes weights
+with ambient room computable.
+
+\begin{lemma}[Short weights see few variables]\label{lem:short}
+Let $h\in\bC[W]_\delta$ be a weight vector of weight $\lambda$ with
+$\ell(\lambda)=r$, and let $L=\langle e_1,\dots,e_r\rangle$.  Then $h(F)$
+depends only on $F|_L$; and for $F=g\cdot\det_3$,
+\[
+  F|_L(s_1,\dots,s_r)\;=\;\det\big(s_1A_1+\dots+s_rA_r\big),
+\]
+where $A_i\in M_3$ is the $i$-th column of $g^{-1}$ under the identification
+$\bC^{9}\cong M_3$, and $(A_1,\dots,A_r)$ ranges over a dense subset of
+$(M_3)^{r}$ as $g$ ranges over $G$.
+\end{lemma}
+
+\begin{proof}
+$\bC[W]_\delta$ is spanned by monomials in the coefficient functionals
+$c_\alpha$, $|\alpha|=3$, whose weight is the sum of the participating
+exponent vectors.  Exponent vectors are non-negative, so a monomial of weight
+$\lambda$ with $\lambda_j=0$ for $j>r$ involves no $c_\alpha$ with
+$\alpha_j>0$, and discarding those coordinates is restriction to $L$.  The
+displayed formula is the definition of the action, and density is the
+statement that the first $r$ columns of $g^{-1}$ form an arbitrary independent
+$r$-tuple.
+\end{proof}
+
+\begin{proposition}[Length reduction]\label{prop:lengthred}
+Let $D_r\subseteq\Sym^{3}\bC^{r}$ be the closure of the set of $r$-ary cubics
+admitting a $3\times3$ linear determinantal representation.  For
+$\ell(\lambda)=r$ and every $\delta$,
+\[
+  \mult_\lambda\bC[\cO]_\delta\;=\;\mult_{S_\lambda(\bC^{r})}\bC[D_r]_\delta .
+\]
+In particular, if $D_r=\Sym^{3}\bC^{r}$ then $I(\cO)$ has no length-$r$
+component in any degree.
+\end{proposition}
+
+\begin{proof}
+For $\ell(\lambda)\le r$, restriction to the first $r$ variables carries the
+highest-weight vectors of weight $\lambda$ in $\bC[W]_\delta$ isomorphically
+to those in $\bC[\Sym^{3}\bC^{r}]_\delta$, and by Lemma \ref{lem:short} it
+carries vanishing on $G\cdot\det_3$ to vanishing on the dense determinantal
+subset of $D_r$, hence on $D_r$; the inverse correspondence is immediate,
+since a pencil cubic is a restriction of some $g\cdot\det_3$.  Lemma
+\ref{lem:isorank}, applied to $\cO$ on one side and to $D_r$ on the other,
+converts the matched kernels into the equality of multiplicities.
+\end{proof}
+
+\begin{theorem}[The length theorem]\label{thm:length}
+For every $\delta$ and every $\lambda$ with $\ell(\lambda)\le4$,
+\[
+  \mult_\lambda\bC[\cO]_\delta=a(\lambda,\delta),
+  \qquad
+  \dfc(\lambda,\delta)=m(\lambda)-a(\lambda,\delta) .
+\]
+Every deficit of the determinant at a weight of at most four rows is ambient
+arithmetic --- a branching count minus a plethysm coefficient --- with the
+closure contributing nothing.
+\end{theorem}
+
+\begin{proof}
+By Proposition \ref{prop:lengthred} it suffices that $D_r=\Sym^{3}\bC^{r}$ for
+$r\le4$.  At $r=2$ every binary cubic splits into linear factors, so
+$\prod_{i\le3}(\alpha_is+\beta_it)=\det(sD_\alpha+tD_\beta)$ with
+$D_\alpha,D_\beta$ diagonal.  At $r=3$ and $r=4$ the statement is classical
+--- the generic plane cubic and the generic cubic surface admit $3\times3$
+linear determinantal representations --- and Beauville's theorem \cite{Beau}
+closes the range exactly there: the generic hypersurface of degree $d$ in
+$\mathbb{P}^{m}$ is linear determinantal precisely when $m=2$, or $m=3$ and $d\le3$.
+Since $D_r$ is closed and contains the generic form, it is everything.
+\end{proof}
+
+\begin{theorem}[Sharpness]\label{thm:sharp}
+The hypothesis $\ell(\lambda)\le4$ cannot be weakened: $I(\cO)$ contains a
+highest-weight vector of length $5$, of degree $80$ and weight
+$(48^{5},0^{4})$, namely the vector corresponding under Proposition
+\ref{prop:lengthred} to the discriminant of quinary cubics.
+\end{theorem}
+
+\begin{proof}
+The rank-$\le1$ locus of $M_3$ is the cone over the Segre
+$\mathbb{P}^{2}\times\mathbb{P}^{2}\subset\mathbb{P}^{8}$, of projective dimension $4$.  If
+$A_1,\dots,A_5$ are linearly dependent, the cubic $\det(\sum_is_iA_i)$ is a
+cone, hence singular; otherwise their span is a $\mathbb{P}^{4}\subset\mathbb{P}^{8}$, and
+$4+4\ge8$ forces it to meet the Segre.  At a point $s^{0}$ with
+$\operatorname{rank}M(s^{0})\le1$ every $2\times2$ minor vanishes, hence
+$\operatorname{adj}M(s^{0})=0$, hence by Jacobi's formula every partial
+$\partial F/\partial s_k=\tr\big(\operatorname{adj}M(s)\,A_k\big)$ vanishes at
+$s^{0}$.  So every member of $D_5$ is a singular quinary cubic, and the
+discriminant of quinary cubics --- irreducible, of degree $5\cdot2^{4}=80$, a
+$\GL_5$ semi-invariant of weight $(48^{5})$ --- lies in $I(D_5)$.
+\end{proof}
+
+\begin{remark}[Where the length breaks, and why]\label{rem:crossover}
+$D_5$ is the variety of quinary cubics with a $3\times3$ linear determinantal
+representation: of dimension $45-16=29$ and codimension $6$ in
+$\Sym^{3}\bC^{5}$, its generic member a cubic threefold with six nodes, at the
+six points where the pencil meets the rank-one locus.  The same intersection
+count explains the crossover: a generic $\mathbb{P}^{3}$ \emph{misses} a
+codimension-$4$ subvariety of $\mathbb{P}^{8}$, which is exactly why smooth
+determinantal cubic surfaces exist and smooth determinantal cubic threefolds
+do not.  Quantitatively, for $r\ge3$ the pencil map
+$(A_1,\dots,A_r)\mapsto\det(\sum_is_iA_i)$ has fibres of dimension at least
+$\dim\mathrm{Stab}(\det_3)=16$, so
+\[
+  \dim D_r\;\le\;\min\Big(\tbinom{r+2}{3},\ 9r-16\Big)\qquad(r\ge3),
+\]
+and the length at which Theorem \ref{thm:length} fails is where the two
+arguments of the minimum change places: at $r=4$ they tie at $20$, and at
+$r=5$ the map bound wins, $29<35$.  The hypothesis $r\ge3$ is needed --- a
+generic \emph{pair} of matrices has a positive-dimensional commutant, the
+fibre estimate fails, and indeed $D_2$ is everything while $9\cdot2-16<4$.
+The same count places the crossover of $\per_3$, whose vector stabiliser has
+dimension $4$, between $r=5$ and $r=6$, and that of $\det_4$, with stabiliser
+dimension $30$, between $r=3$ and $r=4$; we use neither here and record them
+as the shape of the general phenomenon.  Note also that Proposition
+\ref{prop:lengthred}, applied to $D_5$ in place of $\cO$, together with
+Theorem \ref{thm:length}, shows $I(D_5)$ is concentrated at weights of length
+exactly $5$.
+\end{remark}
+
+What the two theorems do not determine is the least degree $\delta_0$ at which
+a length-$5$ component actually appears in $I(\cO)$.  Direct computation
+certifies $\mult=a$ at every weight of every length for $\delta\le5$ --- each
+certificate a rank attaining $a$, with $\mult\le a$ the converse bound --- so
+$I(\cO)_\delta=0$ there: the orbit closure of $\det_3$ has \emph{no equations
+at all} below degree $6$.  Beyond that, the total-deficit identity
+\[
+  \sum_\lambda\dfc(\lambda,\delta)
+  \;=\;\sum_\lambda\big(m(\lambda)-a(\lambda,\delta)\big)
+  \;=\;1,\ 6,\ 31,\ 141,\ 618,\ 2488
+  \qquad(\delta=2,\dots,7),
+\]
+in which the left side is measured by the streamed algorithm of Section
+\ref{sec:method} and the right side is exact plethysm and branching
+arithmetic, forces $\mult=a$ at every weight through $\delta=7$, since the two
+sums agree while $\mult\le a$ holds term by term; direct certificates
+independently cover all but $3$ ambient units at $\delta=6$ and all but $80$
+at $\delta=7$.  Hence
+\[
+  6\;\le\;\delta_0\;\le\;80\ \ \text{unconditionally},
+  \qquad
+  8\;\le\;\delta_0\;\le\;80\ \ \text{given the measured totals},
+\]
+where $80$ is the one explicit equation of Theorem \ref{thm:sharp} and is
+surely far from tight.  The first pieces of $I(\cO)$ pinned exactly appear at
+$\delta=10$: the three weights $(13,3,2^{7})$, $(12,5,2^{6},1)$ and
+$(9,9,2^{6})$ have $a=1$ and $m=0$, so each isotypic component lies in the
+ideal outright --- at lengths $8$ and $9$, by the cheapest mechanism
+available, and carrying no deficit, since $\dfc=m-\mult=0-0$ there.  Question
+\ref{q:delta0} records what remains open.
 
 \section{The evaluation functional}\label{sec:functional}
 
@@ -1073,10 +1330,26 @@ The measured totals are $1\,152\,144\,000$ at $C$ and at $R$, where $\Psi=1$;
 $4\,608\,576\,000$ at $X_4$, where $\Psi=4$; and $0$ at the rank-one point $P$
 and at each of four compression points, where $\Psi=0$.  The law was stated as
 an empirical identity in an earlier version of this paper, tested at
-$\Psi=1,4,0$ and at no other value; the proof below closes it.  The one value it
-predicts that has never been measured is at $X_{-3}$, where $\Psi=-3$, and we
-record the prediction $\mathrm{TOTAL}(X_{-3})=-3\,456\,432\,000$ as a standing
-test of the two inputs the proof consumes.
+$\Psi=1,4,0$ and at no other value; the proof below closes it.  The prediction
+at the remaining banked point, $\mathrm{TOTAL}(X_{-3})=-3\,456\,432\,000$ at
+$\Psi=-3$, was recorded in that version as a standing test of the two inputs
+the proof consumes.  The test has since been carried out: the thirty-six
+subproblems at $X_{-3}$, assembled from twelve orbit representatives, all
+measured, return
+\[
+  \mathrm{TOTAL}(X_{-3})\;=\;-3\,456\,432\,000\;=\;-3\times1\,152\,144\,000
+\]
+exactly.  Every total previously measured sat at $\Psi\in\{0,1,4\}$, so this
+is the first test of the law at a negative gauge value --- the only point in
+the banked set that distinguishes $\mathrm{TOTAL}=c\,\Psi$ from
+$\mathrm{TOTAL}=c\,|\Psi|$, hence the only one at which a sign error in the
+parity computations the proof consumes could have surfaced.  The run predicted
+more than the total: four equalities among the twelve values, derived from a
+point symmetry the assembly does not use, were pre-registered blind and hit
+exactly, and a two-value constraint ($V_{05}+2V_{09}=+579\,700\,800$ in the
+repository's labelling) was logged while both values were still unmeasured,
+and held.  The same run refuted a pre-registered arithmetic claim, which
+Remark \ref{rem:arith} records.
 
 For orientation: the functional is a $\GL_9$-Borel highest weight vector in
 $\Sym^{20}\Sym^{3}\bC^{9}$ --- degree $20$, not $18$, because it lives at the
@@ -1259,7 +1532,7 @@ the length-four word $u_2$.
 None of this touches the results of Section \ref{sec:det}: the conductor, the
 value at $R$, and the ray closure use no covariance assumption anywhere.  What
 the refutations do is confine the phenomenon to the totals level, which is
-where Conjecture \ref{thm:totals} states it.
+where Theorem \ref{thm:totals} states it.
 \end{remark}
 
 \section{Other weights}\label{sec:pq}
@@ -1387,7 +1660,7 @@ and there Theorem \ref{thm:transvanish} predicts $\mathrm{TOTAL}=0$ at
 and $X_{-3}$ are weight-feasible at this weight, so the prediction is not vacuous
 by infeasibility.  We have not run it.  It is the cheapest available test of the
 character computation on which this section rests, and it is independent of the
-value predicted at $X_{-3}$.
+totals-law confirmation at $X_{-3}$.
 
 \section{Verification protocol}\label{sec:method}
 
@@ -1515,6 +1788,28 @@ believe the theory should come first, since the pattern of Section
 content is the numerator.
 \end{question}
 
+\begin{question}[The first equation of length five]\label{q:delta0}
+Theorems \ref{thm:length} and \ref{thm:sharp} bracket the least degree
+$\delta_0$ of a length-$5$ component of $I(\cO)$ between $6$ and $80$
+(between $8$ and $80$ given the measured totals), and the two ends have
+different characters: the lower end is where measurement stopped, the upper is
+one explicit equation that is surely not the lowest.  Six nodes are six
+conditions and the discriminant is the shadow of one of them; a
+$\GL_5$-covariant of degree well under $80$ vanishing on six-nodal quinary
+cubics would collapse the bracket at once.  Two subquestions.  Is $D_5$ a
+component of the closure of the six-nodal locus --- that is, is the generic
+six-nodal cubic threefold determinantal?  An affirmative answer would turn the
+hunt for $\delta_0$ into classical projective geometry.  And can $\delta_0$ be
+found by counting rather than by exhibiting an equation?  Here we can answer:
+no.  $\bC[D_5]$ is the subalgebra of the $\SL_3\times\SL_3$ semi-invariant
+ring of $(M_3)^{5}$ generated in bidegree $(1,1)$, and the dimension of that
+ring in bidegree $(\delta,\delta)$ (more precisely of its transpose-symmetric
+part), which bounds $\dim\bC[D_5]_\delta$ from above, stays above
+$\dim\Sym^{\delta}\Sym^{3}\bC^{5}$ until past degree $100$ --- so no equation
+is forced by dimension comparison in the entire bracket, and the route to
+$\delta_0$ must produce the equation itself.
+\end{question}
+
 \begin{question}[$n=4$ and beyond]\label{q:n4}
 The three known values are $e(\det_2)=4$, $e(\det_3)=18$ and $e(\det_4)=16$.
 The even ones sit at $n^{2}$ and the odd one does not, which suggests the
@@ -1551,6 +1846,11 @@ the named author.
 M.~Aprodu, G.~Farkas, {\c S}.~Papadima, C.~Raicu, J.~Weyman,
 \emph{Koszul modules and Green's conjecture},
 Invent. Math. \textbf{218} (2019), 657--720.
+
+\bibitem{Beau}
+A.~Beauville,
+\emph{Determinantal hypersurfaces},
+Michigan Math. J. \textbf{48} (2000), 39--64.
 
 \bibitem{BHO}
 M.~R.~Bremner, J.~Hu, L.~Oeding,
