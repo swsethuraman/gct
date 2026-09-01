@@ -162,13 +162,35 @@ representation (Dickson), and every smooth cubic surface has one (Grassmann;
 `(A_1..A_r) -> det(sum s_i A_i)` is invariant under
 `(P,Q).A_i = P A_i Q` with `det P det Q = 1`; that group has dimension 17 and
 its scalar subgroup `(mu I, mu^{-1} I)` acts trivially, so the **effective**
-group has dimension **16 = dim Stab(det_3)**. Generic fibres therefore have
-dimension at least 16 and
+group has dimension **16 = dim Stab(det_3)**.
 
-    dim D_r^det  <=  min( C(r+2,3),  9r − 16 ).
+> **Lemma 5b (the stabiliser of a generic tuple).** For `r >= 3` the stabiliser
+> of a generic `r`-tuple in the effective group is finite, so the orbit is
+> 16-dimensional and
+>
+>     dim D_r^det  <=  min( C(r+2,3),  9r − 16 )        (r >= 3).
+>
+> *Proof.* A generic tuple has `A_1` invertible; replacing each `A_i` by
+> `A_1^{-1} A_i` we may take `A_1 = I`. If `(P,Q)` stabilises the tuple then
+> `P A_1 Q = A_1` gives `Q = P^{-1}`, and `P A_i P^{-1} = A_i` for `i >= 2`, so
+> `P` lies in the commutant of `{A_2, ..., A_r}`. For `r >= 3` two generic
+> `3x3` matrices generate `M_3` as an algebra, so that commutant is the
+> scalars and the stabiliser is finite. ∎
+>
+> **The hypothesis `r >= 3` is necessary.** At `r = 2` the commutant of a
+> single generic matrix is 3-dimensional (2 dimensions modulo scalars), so the
+> orbit is 14-dimensional, not 16, and the correct bound is `18 − 14 = 4` —
+> which is the measured rank in the table below, and consistent with the
+> elementary proof just given that `D_2` is *everything*. Stating the bound
+> without the hypothesis would read `dim D_2 <= 2` and contradict this section
+> two paragraphs later. (Error found by the integrator, `docs/s26_review.md`
+> §2; recorded here rather than quietly patched. No conclusion changes: every
+> use of the bound is at `r >= 3`, and `r = 2` is proved directly.)
 
 For the permanent the effective group is the monomial one, of dimension
-`2n − 2 = 4`, giving `dim D_r^per <= min( C(r+2,3), 9r − 4 )`.
+`2n − 2 = 4`, giving `dim D_r^per <= min( C(r+2,3), 9r − 4 )` under the same
+`r >= 3` hypothesis (there the commutant argument is replaced by the diagonal
+one, but the exception at `r = 2` is the same in kind).
 
 **Measured (`analysis/wk6_s26_density.py`, exact integer rank of the
 differential at random points, two independent arithmetic routes):**
