@@ -23,8 +23,10 @@ SESSION 23 (2026-08-31/09-01): TOTAL(X_-3) = -3,456,432,000 = -3 x 1,152,144,000
   REFUTED, and the record was already wrong: the arithmetic signature is
   **75,600 = 2^4 3^3 5^2 7**, NOT 151,200 - W(3-cycle) = +301,870,800 =
   75,600 x 3993 was a counterexample sitting in results_f1C.md all along.
-  OPEN AND NEWLY SHARP: Phi_18 may not be primitive - content | 46,448,640, so
-  |Phi_18^prim(det_3)| >= 18,900, and at that end the value is -2^2 3^3 5^2 7.
+  OPEN AND NEWLY SHARP: NEITHER Phi_18 NOR Phi_24 is known to be primitive.
+  content(Phi_18) | 46,448,640 so |Phi_18^prim(det_3)| >= 18,900 = 2^2 3^3 5^2 7;
+  content(Phi_24) | 39,674,880 so |Phi_24^prim(det_3)| >= 623,700 = 2^2 3^4 5^2
+  7 . 11. The quoted factorisations cannot be taken at face value.
 SESSION 21 (2026-08-30/31): 24 IS IN E. Phi_24(det_3) = -24,745,222,656,000
   = -2^12 3^7 5^3 7^2 . 11 . 41 != 0, so def((8^9),24) = 0,
   mult_{(8^9)} C[closure]_24 = 1, and E(det_3) contains <18,24> = 6.<3,4>.
@@ -849,8 +851,17 @@ as the primitive values. **But it is now live that the paper's headline
 factorisation -2^16 3^7 5^3 7^2 is mostly normalisation.** Settle it by
 exhibiting an integral invariant F with V = 46,448,640 . F (constructive route),
 or by getting coefficients OUTSIDE U (needs a general-support evaluator; br2.c
-handles only the six permutation monomials). The same computation for Phi_24
-needs two runs (t = 2, 3) and was queued. NOTE the knock-on: the 75,600
+handles only the six permutation monomials). The same computation for Phi_24 was also completed:
+R(2) = -51,414,646,680,391,680 and R(3) = -402,640,773,292,783,226,880 pin the
+binary octic (K_0 = -1,428,295,680; K_1 = +20,313,538,560;
+K_2 = -720,218,096,640; K_3 = +5,161,860,587,520; K_4 = -12,937,581,619,200,
+all integral, all equations verifying), giving
+**content(Phi_24) | 39,674,880 = 2^10 3^3 5 . 7 . 41** - a factor of 36 better
+than the one-coefficient bound - hence
+623,700 <= |Phi_24^prim(det_3)| <= 24,745,222,656,000, with the lower end
+-623,700 = -2^2 3^4 5^2 7 . 11 (and Phi_24^prim(per_3) = -101,236). Note
+623,700 = 33 x 18,900. NEITHER degree is settled; both are upper bounds on the
+content. NOTE the knock-on: the 75,600
 signature rescales with the content, so primitivity is a prerequisite for taking
 that signature seriously.
 (6) **DELTA = 30 SCOPED, NOT LAUNCHED** - docs/degree30_scoping.md. Ambient dim
