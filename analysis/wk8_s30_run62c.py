@@ -27,13 +27,25 @@ from wk8_s30_sweep import NINE, cells62, balance
 
 # ---- memory guard -------------------------------------------------------
 # Peak RSS of a cell is quadratic in N_S: the flint matrices are N_S columns
-# wide with more rows than columns.  Measured 2.4 GB at N_S = 6789, which
-# fixes the constant at 5.2e-8 GB per N_S^2.  Worker "bal" was OOM-killed at
-# N_S = 9224 (4.76 GB anon-rss) running alongside "asc", which is what this
-# guard exists to prevent: a cell that does not fit is WAITED for, not
-# skipped, so coverage is never silently reduced by a transient memory dip.
-MEM_PER = 5.2e-8            # GB per N_S^2
-HEADROOM = 0.85             # do not plan to use the last 15% of free memory
+# wide with more rows than columns.  The constant is NOT stable across cells,
+# because the row count of R varies with the weight, so it was fitted to the
+# three observed OOM kills rather than to one measurement:
+#
+#     N_S = 6789  ->  2.40 GB  (5.2e-8)      survived
+#     N_S = 9224  ->  4.76 GB  (5.6e-8)      OOM-killed
+#     N_S = 7576  ->  3.79 GB  (6.6e-8)      OOM-killed
+#
+# The first version of this guard used 5.2e-8, fitted to the single surviving
+# point, and duly let through a cell that did not fit.  7.5e-8 is above every
+# observed point, and HEADROOM is 0.70 because MemAvailable is sampled when
+# the cell STARTS while the allocation peaks later.
+#
+# The usable cgroup budget is about 6.5 GB, so two workers cannot both hold a
+# large cell.  Above N_S ~ 6000 this sweep runs ONE worker at a time.
+# A cell that does not fit is WAITED for, not skipped, so coverage is never
+# silently reduced by a transient memory dip.
+MEM_PER = 7.5e-8            # GB per N_S^2 -- see the fit below
+HEADROOM = 0.70             # do not plan to use the last 30% of free memory
 
 def predicted_gb(ns):
     return MEM_PER * ns * ns
