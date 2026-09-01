@@ -59,6 +59,9 @@ Files added (all new; nothing existing was touched):
 | `analysis/wk8_s30_reconcile.py` | PID-aware claim release |
 | `analysis/wk8_s30_report.py` | ledger → coverage fractions and tables |
 | `analysis/wk8_s30_dims.py` | short-weight variety dimensions, exact derivatives |
+| `analysis/wk8_s30_verify.py` | end-of-session verification: witness, plethysm cross-check, resample |
+| `analysis/wk8_s30_finalise.py` | substitutes the ledger's numbers into the write-up |
+| `results/s30_verification.log` | the verification run, as delivered |
 | `results/PREREG_s30.md` | pre-registration, committed before any computation |
 | `results/sweep62_ledger.md` | per-cell record, banked as each cell completed |
 
@@ -127,9 +130,11 @@ kill by explicit PID.
 <!--/GEN:S30COV-->
 
 The binding constraint is **memory**, not time: peak RSS goes as `~7.5e-8 . N_S^2`
-GB against a usable budget near 6.5 GB, which caps the reachable weight-space
-dimension around `N_S ~ 11500` for a single worker.  The 62 run to
-`N_S = 97713`.  The pre-registration anticipated partial coverage and committed
+GB against a usable budget near 6.5 GB.  The ceiling was found empirically,
+not estimated: `(9,8,4,2,1)` at `N_S = 9224` completed in 61 minutes at a peak
+near 4.8 GB, and the next cell up at `N_S = 9882` is predicted at 7.3 GB
+against 6.9 GB free and would not start.  The 62 run to `N_S = 97713`, so most
+of them are out of reach of this container by construction.  The pre-registration anticipated partial coverage and committed
 to reporting it as a fraction; `docs/sweep62.md` §6 gives the per-axis breakdown
 and lists, by name and by the memory each would need, the six `balance <= 6`
 cells that were out of reach — the one genuinely untested corner.
