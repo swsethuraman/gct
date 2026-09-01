@@ -22,3 +22,6 @@ independently against the plethysm at every cell; `rank(R) = N_S - a` asserted.
 
 | lam | ell | a | N_S | mult_det | mult_pad | D |
 |---|---|---|---|---|---|---|
+| (13, 5, 3, 2, 1) | 5 | 3 | 2800 | 3 | 3 | +0 |
+| (11, 8, 2, 2, 1) | 5 | 3 | 2919 | 3 | 3 | +0 |
+| (10, 9, 2, 2, 1) | 5 | 2 | 3176 | 2 | 2 | +0 |
