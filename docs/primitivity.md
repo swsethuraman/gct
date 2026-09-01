@@ -99,11 +99,68 @@ content of the number is `-2^2 3^3 5^2 7`.  That possibility did not exist
 before this computation, and it should be settled before the value is quoted
 again.
 
+## The same, at degree 24
+
+Two further runs (`t = 2`, `t = 3`) were carried out:
+
+    R(2) = -51,414,646,680,391,680
+    R(3) = -402,640,773,292,783,226,880
+
+With `R(0) = K_8 = -1,428,295,680`, `R(1) = Phi_24(per_3)` and
+`R(-1) = Phi_24(det_3)` known, the binary octic `Phi_24|_U` is determined:
+
+    K_0 = K_8 =      -1,428,295,680
+    K_1 = K_7 =     +20,313,538,560
+    K_2 = K_6 =    -720,218,096,640
+    K_3 = K_5 =  +5,161,860,587,520
+    K_4       = -12,937,581,619,200
+
+All five integral, all four defining equations verify, and the two relations
+derived in advance from `R(1) +/- R(-1)` — `K_1 + K_3 = 5,182,174,126,080` and
+`2K_2 + K_4 = -14,378,017,812,480` — both hold.  Hence
+
+    content(Phi_24)  |  gcd(K_0, ..., K_4)  =  39,674,880 = 2^10 . 3^3 . 5 . 7 . 41 ,
+
+against the one-coefficient bound `|K_8| = 1,428,295,680 = 2^12 3^5 5 . 7 . 41`.
+A factor of **36**.  So
+
+    623,700  <=  |Phi_24^prim(det_3)|  <=  24,745,222,656,000 ,
+
+with the lower end giving
+
+    Phi_24^prim(det_3) = -623,700 = -2^2 . 3^4 . 5^2 . 7 . 11
+    Phi_24^prim(per_3) = -101,236 = -2^2 . 25309
+
+whose ratio is `155925/25309`, as it must be.  Note
+`623,700 = 33 x 18,900`: the two candidate primitive values at degrees 18 and
+24 differ by `3 . 11`, and `11` is exactly the prime that distinguishes
+`Phi_24(det_3)` from `Phi_18(det_3)` in the raw factorisations.  We record the
+coincidence and claim nothing from it.
+
+## Summary of what is now bounded
+
+| | reported value | content divides | so `|Phi^prim(det_3)|` is at least |
+|---|---|---|---|
+| `Phi_18` | `-877,879,296,000 = -2^16 3^7 5^3 7^2` | `46,448,640 = 2^14 3^4 5 . 7` | `18,900 = 2^2 3^3 5^2 7` |
+| `Phi_24` | `-24,745,222,656,000 = -2^12 3^7 5^3 7^2 . 11 . 41` | `39,674,880 = 2^10 3^3 5 . 7 . 41` | `623,700 = 2^2 3^4 5^2 7 . 11` |
+
+Both bounds come from four or five coefficients of the `U`-restriction, and both
+are upper bounds on the content, so neither settles primitivity.  What they do
+settle is that **the quoted factorisations cannot be taken at face value**: up to
+a factor of `2^14 3^4 5 . 7` at degree 18 and `2^10 3^3 5 . 7 . 41` at degree 24
+is potentially normalisation, and the invariant-theoretic content of the two
+headline numbers may be as small as `-2^2 3^3 5^2 7` and `-2^2 3^4 5^2 7 . 11`.
+
 **What would settle it.**  Either (i) more coefficients — coefficients outside
 `U`, which need a general-support evaluator rather than `br2.c`; or (ii) an
-exhibited integral invariant `F` with `V = c . F` and `c = 46,448,640`, which
+exhibited integral invariant `F` with `V = c . F` and `c` the bound above, which
 would prove the content is exactly that.  Route (ii) is the constructive one and
-is where to look first.
+is where to look first.  A third possibility worth checking cheaply: the bracket
+monomial `V = 6^18 B(S)` carries an explicit factor of `6^18`, and if the
+primitive generator is `B(S)` up to a small integer then most of the content is
+that factor and nothing deeper.  `6^18` is not divisible by `5` or `7`, so it
+cannot be the whole story at either degree — both bounds contain `5 . 7` — but
+it may be most of the power of 2 and 3.
 
 ## The route to the bound: the runs (as designed, before they were run)
 
