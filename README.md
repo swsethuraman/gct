@@ -150,16 +150,27 @@ binary quartics and ternary cubics independently derived in the paper.
 
 ## Arithmetic signature
 
-Every measured subvalue is an integer multiple of `151,200 = 2⁵·3³·5²·7`.
-The cofactors of the ten orbit subvalues are
+Every measured subvalue is an integer multiple of `75,600 = 2⁴·3³·5²·7`.
+Ten of them — the leading value at `C`, `R`, `Q`, `T₄`, the eight orbit values
+at `X₄`, and the leading value at `X₋₃` — are multiples of twice that,
+`151,200`, with cofactors
 
 ```
 719, −2038, 5907, −4372, 4338, 3567, 3843, −5188, −258, −4552
 ```
 
+but that is a property of those ten and not of the functional. **This entry
+previously claimed `151,200` for every subvalue and that was wrong.** The
+three-cycle class in the degree-20 table at `C` is
+`W(3-cycle) = +301,870,800 = 75,600 × 3993`, an *odd* multiple, and three of
+the twelve orbit values at `X₋₃` are too. The gcd of all twenty-one subvalues
+on record is exactly `75,600`. The correction is session 23's; see
+`results/results_Xm3.md`.
+
 The common factor is not imposed anywhere in the code. We have no proof of it.
 It survived every reorganisation of the computation and every change of
-evaluation point.
+evaluation point. Note it is a statement about evaluations at `det₃`:
+`Φ₁₈(per₃)` and `Φ₂₄(per₃)` are not multiples of `75,600`.
 
 ---
 

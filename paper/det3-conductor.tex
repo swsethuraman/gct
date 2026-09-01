@@ -1071,29 +1071,41 @@ $H$-equivalent to its own transpose.  We have tested none of this.
 
 \begin{remark}[An arithmetic signature]\label{rem:arith}
 Every value the functional has returned, at every point and every $\sigma$, is
-an integer multiple of $151\,200=2^{5}3^{3}5^{2}7$.  The reader can check this
-on the one table we give in full.  At $X_4$ the eight orbit representatives
-carry weights $(4,4,8,4,8,4,2,2)$, summing to the $36$ subproblems, and
-cofactors
+an integer multiple of $75\,600=2^{4}3^{3}5^{2}7$.  At $X_4$ the eight orbit
+representatives carry weights $(4,4,8,4,8,4,2,2)$, summing to the $36$
+subproblems, and cofactors, relative to $151\,200$,
 \[
   -2038,\ 4338,\ 3843,\ -258,\ 3567,\ -4372,\ -5188,\ -4552 ,
 \]
 whose weighted sum is $30\,480=\mathrm{TOTAL}(X_4)/151\,200$.  At $C$, $R$, $Q$
 and $T_4$ the corresponding leading cofactor is $719$, and at $X_{-3}$ it is
-$5907$.  The prime $719$ organises the whole table and is what makes the
+$5907$.  The prime $719$ organises this part of the table and is what makes the
 refutation in Remark \ref{rem:fails}(a) sharp: it divides no other cofactor, so
 a proportionality $V_\sigma=W(\sigma)\Psi$ would force a non-integer where the
 engine returns an integer.
+
+The modulus is $75\,600$ and not $151\,200$, and an earlier version of this
+remark asserted the larger value.  The counterexamples are not marginal.  In
+the degree-$20$ table at $C$ the three-cycle class already has
+$W(\text{3-cycle})=+301\,870\,800=75\,600\cdot3993$, an \emph{odd} multiple of
+$75\,600$; and of the twelve orbit values at $X_{-3}$, three more are
+--- $-237\,459\,600$, $-237\,459\,600$ and $+340\,880\,400$.  The greatest
+common divisor of all twenty-one subvalues on record is exactly $75\,600$.  The
+narrower statement that survives is the one the enumerated cofactors above make:
+those ten values, and only those, are multiples of $151\,200$.  We record the
+correction rather than the original because the generalisation was ours and it
+was false.
 
 The common factor is not imposed anywhere in the computation, and we have no
 proof of it.  Two further coincidences we flag without explaining:
 $\mathrm{TOTAL}(C)=2^{7}3^{4}5^{3}\cdot7\cdot127$ and
 $\mathrm{TOTAL}(X_4)=2^{9}3^{4}5^{3}\cdot7\cdot127$, so the prime $127$ sits in
 the totals constant and nowhere else in the paper; and
-$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}$ is $151\,200$ times
-$-5\,806\,080$, but it is a value in degree $18$ and belongs to a different
+$\Phi_{18}(\det_3)=-2^{16}3^{7}5^{3}7^{2}$ is $75\,600$ times
+$-11\,612\,160$, but it is a value in degree $18$ and belongs to a different
 computation from the degree-$20$ table above, so we draw no inference from the
-shared factor.
+shared factor.  We note also that $\Phi_{18}(\per_3)$ is \emph{not} a multiple
+of $75\,600$: the signature is a statement about evaluations at $\det_3$.
 \end{remark}
 
 \begin{remark}[What fails]\label{rem:fails}

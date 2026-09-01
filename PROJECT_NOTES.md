@@ -37,7 +37,9 @@ SESSION 22: **the totals law TOTAL(N) = Psi(N) x 1,152,144,000 is a THEOREM.**
   Untested prediction of the theorem: TOTAL_{X-3} = -3,456,432,000.
 OPEN PHENOMENON (data, no mechanism): identical W-tables at C, R, Q, T4 —
   four points, three inequivalent pencil classes. Every value is
-  151,200 x integer (cofactors 719 / -2038 / 5907 / -4372).
+  75,600 x integer (the 151,200 claim is REFUTED, session 23; the ten
+  enumerated cofactors 719 / -2038 / 5907 / -4372 ... are multiples of 151,200
+  but W(3-cycle) and three X_-3 values are odd multiples of 75,600).
 
 
 Programme: **conductors and deficits of orbit closures** (the anabelian↔GCT
@@ -437,7 +439,8 @@ G has never been run; its value is open.
 (7) Leads for the next attempt: A ∝ I or B ∝ I ⟹ 0 (Y1/Y2/Y3); rank-1 ⟹ 0
 (P, now needing an independent proof); Y4's complementary-projection zero
 (AB = 0, A+B = I) — a third mechanism; and the arithmetic that every value
-is 151,200 × an integer with cofactors 719 / −2038 / 5907.
+is 75,600 × an integer with cofactors (relative to 151,200) 719 / −2038 / 5907
+— see session 23: the 151,200 form of this claim is refuted.
 Engine note: V^h_σ is a bidegree-(2,2) polynomial in the 18 direction
 coordinates (forced by the counting lemma's t = (2,2)) in a space of
 dimension up to 2025 — sampling at ~2h/point cannot pin it; a structural
@@ -680,7 +683,7 @@ Peak 138,241,908 states at level 8, 1678 s.
 Phi_18(det_3)/K'_6 = 4725 = 3^3 5^2 7 and Phi_18(per_3)/K'_6 = -272 = -2^4 . 17,
 whose quotient IS the banked -4725/272 - so the two banked values are the
 numerator and denominator of a single K'_6-normalised pair. Also:
-Phi_24(det_3) = 151,200 x (-163,658,880) - the arithmetic signature survives
+Phi_24(det_3) = 75,600 x (-327,317,760) - the arithmetic signature survives
 into a different degree on a different engine, still unproved. And
 Phi_18 = -2^16 3^7 5^3 7^2, Phi_24 = -2^12 3^7 5^3 7^2 . 11 . 41 share the odd
 part 3^7 5^3 7^2 exactly; ratio 451/16. No explanation.
