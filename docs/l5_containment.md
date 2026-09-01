@@ -91,3 +91,7 @@ multiplicity method is failing, from data already in hand.
 ## 5. Files
 
     analysis/l5contain.py    the branch parametrisations and Jacobian ranks
+
+## Update (session 32): the soft joint is closed
+
+The caveat in section 4 -- 'provided every such space lies in a compression space' -- is FALSE as stated: E_1 = {diag(N(x), w)}, the 3x3 skew space padded by a scalar, lies in no compression space. Session 32 classified all 4-dimensional singular subspaces of M_4(C) completely (docs/singular_spaces.md, Theorem 4): up to transpose, four strata indexed by the rank of the kernel map; two are the compression branches measured above, and the exceptional strata measure 27 and 25 -- below the compression maximum of 31. The integrator independently rebuilt both exceptional ranks from Theorem 4's normal form (analysis/wk8_int_s32check.py): 27 and 25, matching. The maximum over the now-complete list is 31 of 35, so the non-containment and both consequences in section 4 hold UNCONDITIONALLY (Theorem 5).
