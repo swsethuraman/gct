@@ -90,4 +90,27 @@ both house primes.  A rank attaining `a` is a certificate
 
 | 7 | 1 | **1** | **`e != 7`.**  The unique degree-7 invariant does not vanish on `D_4`.  Both primes; 27131 dedup rows × 2310 cols (odd/sign branch, odd-fixed rows cancel exactly); rank 2309 = `n_chi − a` | 175 s |
 
-*(rung 8 appended when complete)*
+| 8 | 3 | **3** | **`e != 8`.**  All three degree-8 invariants (`I4^2` and two new) are independent on `D_4`.  Certified compressed route (V6-validated): `rank(Agg) = 10735 = n_chi − a` at **both primes**, which forces `rank_p = rank_Q` and makes the kernel exact; `npts = 11`; peak RSS 2.89 GB, 7 min per prime | 2 × 423 s |
+
+**Headline: `e >= 10`.**  Rungs 4, 6, 7, 8 all measured `mult = a` (each a
+rank-attaining certificate, so no probabilistic step survives in that
+direction); degrees 1, 2, 3, 5, 9 have `a = 0` and are excluded for free.
+The sceptical `mult < a` branch was never entered at any rung.  This refutes
+the integrator's standing `e = 6`, confirms s29's `e >= 7`, and is consistent
+with — though far short of certifying — the literature value **e = 320112**
+(P1/P2, Leal–Lozano Huerta–Vite 2024).
+
+**The wall, stated exactly (K3).**  The next live rung is `delta = 10`
+(`a(9) = 0`): `n_chi = 146206`, so even the reduced echelon is
+`~8·146206^2 = 171 GB` against 6.5 usable — one to two orders of magnitude
+beyond this container, unreduced `N_S = 3.4e6` beyond it by four.  Rung 8 ran
+at 2.89 GB peak / 7 min per prime via the compressed route; rung 10 is not a
+matter of patience but of a different machine or a different method.
+
+**Process record (failures, none touching a number).**  (i) The first rung-8
+attempt was OOM-killed at the numpy→flint conversion: `ravel().tolist()`
+materialises ~1.2e8 python ints (~3 GB) on top of the live arrays; the fix —
+per-row `tolist()` + setitem into a flint zero matrix — cut peak RSS to
+2.89 GB.  Banked here because the next session that touches `n_chi ~ 10^4`
+will hit the same edge.  (ii) `/usr/bin/time` does not exist in this
+container; a wrapper reading `ru_maxrss` in-process does the job.
