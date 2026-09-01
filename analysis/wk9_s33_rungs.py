@@ -187,6 +187,47 @@ def kernel_reduced(delta, vecs, tpos, fixed, prime, block=6000):
     kern = [[int(X[i, j]) for i in range(nchi)] for j in range(nul)]
     return a, rk, kern
 
+def kernel_reduced_np(delta, vecs, tpos, fixed, prime, margin=64, pseed=101):
+    """a and the invariant kernel over F_prime by certified random row
+    compression: Agg = P.M assembled in numpy int64 (P generated row-by-row,
+    never stored; every product reduced mod prime before accumulation, sums
+    bounded well inside int64), then ONE flint rref/nullspace on Agg.
+
+    Certificate: rank(Agg) <= rank_p(M) <= rank_Q(M) = n_chi - a(plethysm),
+    so the pre-registered assert `dim ker = a` forces equality throughout and
+    ker(Agg) = ker_p(M) = the reduction of the rational invariant kernel.
+    On an assert failure: fresh pseed once, then fall back to the exact
+    blocked-rref route (kernel_reduced).
+    """
+    import numpy as np
+    nchi = len(vecs)
+    tri = reduced_triples(delta, vecs, tpos, fixed)
+    nrows = len(tpos)
+    rs = nchi + margin
+    rng = np.random.default_rng(pseed * 1000003 + prime % 1000003 + delta)
+    byrow = {}
+    for r, c, v in tri: byrow.setdefault(r, []).append((c, v % prime))
+    log(f"  delta={delta} p={prime} [compressed]: {nrows} dedup rows x {nchi} "
+        f"cols, {len(tri)} nonzeros, Agg {rs} x {nchi}")
+    t0 = time.time()
+    Agg = np.zeros((rs, nchi), dtype=np.int64)
+    for r, ents in byrow.items():
+        Pcol = rng.integers(0, prime, rs, dtype=np.int64)
+        for c, v in ents:
+            Agg[:, c] += (v * Pcol) % prime
+    Agg %= prime
+    log(f"    assembled in {time.time()-t0:.0f}s")
+    ent = Agg.ravel().tolist()
+    del Agg
+    M = nmod_mat(rs, nchi, ent, prime)
+    del ent
+    X, nul = M.nullspace()
+    rk = nchi - nul
+    kern = [[int(X[i, j]) for i in range(nchi)] for j in range(nul)]
+    log(f"    flint nullspace: rank {rk}, kernel dim {nul}  "
+        f"({time.time()-t0:.0f}s)")
+    return nul, rk, kern
+
 def expand(vecs, kvec, prime):
     """chi-coordinates -> dict multiset -> value mod prime."""
     out = {}
@@ -212,14 +253,19 @@ def eval_invariant(full, coeffs, prime):
         tot = (tot + v) % prime
     return tot
 
-def rung(delta, primes=(P1, P2), seed=11, npts=None, bound=40):
+def rung(delta, primes=(P1, P2), seed=11, npts=None, bound=40,
+         compressed=False, pseed=101):
     t0 = time.time()
     basis, vecs = orbit_setup(delta)
     tpos, fixed = target_setup(delta)
     a_exp = A_LADDER[delta]
     out = {}
     for prime in primes:
-        a, rk, kern = kernel_reduced(delta, vecs, tpos, fixed, prime)
+        if compressed:
+            a, rk, kern = kernel_reduced_np(delta, vecs, tpos, fixed, prime,
+                                            pseed=pseed)
+        else:
+            a, rk, kern = kernel_reduced(delta, vecs, tpos, fixed, prime)
         assert a == a_exp, ("a mismatch vs plethysm", delta, prime, a, a_exp)
         assert rk == len(vecs) - a, ("rank(R) != n_chi - a", delta, prime)
         if a == 0:
@@ -267,15 +313,34 @@ def v45():
     print("V4 PASS: delta=5 reduced kernel dimension 0 = a(5) (odd/sign branch, "
           "odd-fixed rows cancelled exactly)")
 
+def xcheck():
+    """V6: the compressed route reproduces the exact route at rungs 6 and 7 —
+    same a, same mult, and identical kernel span mod p."""
+    for delta in (6, 7):
+        oe = rung(delta)
+        oc = rung(delta, compressed=True)
+        for p in (P1, P2):
+            assert oe[p]['a'] == oc[p]['a'] == 1
+            assert oe[p]['mult'] == oc[p]['mult']
+            both = oe[p]['kern'] + oc[p]['kern']
+            M = nmod_mat(len(both), len(both[0]),
+                         [v % p for rw in both for v in rw], p)
+            assert M.rank() == oe[p]['a'], ("V6 kernel span differs", delta, p)
+        print(f"V6 PASS at delta={delta}: compressed == exact "
+              f"(a, mult, kernel span; both primes)")
+
 if __name__ == '__main__':
     cmd = sys.argv[1]
     if cmd == 'gate': gate()
     elif cmd == 'v45': v45()
+    elif cmd == 'xcheck': xcheck()
     elif cmd == 'rung':
         delta = int(sys.argv[2])
         kw = {}
         if '--seed' in sys.argv: kw['seed'] = int(sys.argv[sys.argv.index('--seed') + 1])
         if '--npts' in sys.argv: kw['npts'] = int(sys.argv[sys.argv.index('--npts') + 1])
+        if '--pseed' in sys.argv: kw['pseed'] = int(sys.argv[sys.argv.index('--pseed') + 1])
         if '--p1-only' in sys.argv: kw['primes'] = (P1,)
         if '--p2-only' in sys.argv: kw['primes'] = (P2,)
+        if '--compressed' in sys.argv: kw['compressed'] = True
         rung(delta, **kw)
