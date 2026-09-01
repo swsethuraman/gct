@@ -76,7 +76,50 @@ standing.
 
 *(table generated from the ledger — see §7 for the coverage fraction)*
 
-TABLE_PLACEHOLDER
+<!--GEN:TABLE-->
+**Session 27's nine, re-certified under the corrected rule** (9 of 9, all unchanged):
+
+| lam | a | `N_S` | `mult_det` | `mult_pad` | `D` |
+|---|---|---|---|---|---|
+| `(14, 5, 2, 2, 1)` | 2 | 1337 | 2 | 2 | +0 |
+| `(13, 5, 4, 1, 1)` | 2 | 1824 | 2 | 2 | +0 |
+| `(12, 7, 3, 1, 1)` | 3 | 1884 | 3 | 3 | +0 |
+| `(13, 6, 2, 2, 1)` | 3 | 1910 | 3 | 3 | +0 |
+| `(11, 8, 3, 1, 1)` | 2 | 2224 | 2 | 2 | +0 |
+| `(14, 4, 2, 2, 2)` | 2 | 2337 | 2 | 2 | +0 |
+| `(12, 7, 2, 2, 1)` | 3 | 2467 | 3 | 3 | +0 |
+| `(12, 6, 4, 1, 1)` | 2 | 2553 | 2 | 2 | +0 |
+| `(12, 5, 5, 1, 1)` | 2 | 2795 | 2 | 2 | +0 |
+
+**The 62** — 22 measured, in ascending `N_S`:
+
+| lam | `a` | `N_S` | `mult_det` | `mult_pad` | `D` | balance |
+|---|---|---|---|---|---|---|
+| `(13, 5, 3, 2, 1)` | 3 | 2800 | 3 | 3 | +0 | 12 |
+| `(11, 8, 2, 2, 1)` | 3 | 2919 | 3 | 3 | +0 | 10 |
+| `(10, 9, 2, 2, 1)` | 2 | 3176 | 2 | 2 | +0 | 9 |
+| `(13, 4, 4, 2, 1)` | 2 | 3199 | 2 | 2 | +0 | 12 |
+| `(11, 7, 4, 1, 1)` | 4 | 3209 | 4 | 4 | +0 | 10 |
+| `(13, 5, 2, 2, 2)` | 2 | 3672 | 2 | 2 | +0 | 11 |
+| `(10, 8, 4, 1, 1)` | 2 | 3686 | 2 | 2 | +0 | 9 |
+| `(11, 6, 5, 1, 1)` | 2 | 3818 | 2 | 2 | +0 | 10 |
+| `(9, 9, 4, 1, 1)` | 2 | 3852 | 2 | 2 | +0 | 8 |
+| `(12, 6, 3, 2, 1)` | 4 | 3942 | 4 | 4 | +0 | 11 |
+| `(10, 7, 5, 1, 1)` | 4 | 4672 | 4 | 4 | +0 | 9 |
+| `(12, 5, 4, 2, 1)` | 5 | 4942 | 5 | 5 | +0 | 11 |
+| `(11, 7, 3, 2, 1)` | 5 | 4978 | 5 | 5 | +0 | 10 |
+| `(9, 8, 5, 1, 1)` | 2 | 5159 | 2 | 2 | +0 | 8 |
+| `(12, 6, 2, 2, 2)` | 4 | 5194 | 4 | 4 | +0 | 10 |
+| `(10, 8, 3, 2, 1)` | 4 | 5731 | 4 | 4 | +0 | 9 |
+| `(9, 7, 6, 1, 1)` | 2 | 5967 | 2 | 2 | +0 | 8 |
+| `(11, 7, 2, 2, 2)` | 2 | 6563 | 2 | 2 | +0 | 9 |
+| `(8, 7, 7, 1, 1)` | 2 | 6718 | 2 | 2 | +0 | 7 |
+| `(11, 6, 4, 2, 1)` | 7 | 6789 | 7 | 7 | +0 | 10 |
+| `(11, 5, 5, 2, 1)` | 2 | 7461 | 2 | 2 | +0 | 10 |
+| `(10, 7, 4, 2, 1)` | 7 | 8337 | 7 | 7 | +0 | 9 |
+
+Every row: `mult_det = mult_pad = a`, `D = 0`.  No cell fell below the ambient cap on either side, so the sceptical re-run branch was never entered.
+<!--/GEN:TABLE-->
 
 ---
 
@@ -156,3 +199,86 @@ programme has already made three times — carrying a pattern out of its regime.
 This was pre-registered as the expected verdict (`PREREG_s30.md` §2) and the
 measurements are consistent with it at every cell.
 
+---
+
+## 6. Coverage, and the boundary of what was reachable
+
+<!--GEN:COVERAGE-->
+**Coverage: 22 of the 62 cells, 35%** — and 72 of the 62's 189 units of ambient multiplicity, 38%.
+
+| axis | measured | across the 62 |
+|---|---|---|
+| `N_S` | 2800 – 8337 | 2800 – 97713 |
+| `a` | 2 – 7 | 2 – 7 |
+| balance | 7 – 12 | 4 – 12 |
+<!--/GEN:COVERAGE-->
+
+The limit is **memory, not patience**.  Peak RSS is quadratic in the
+weight-space dimension `N_S` — fitted across three observed OOM kills at
+roughly `7.5e-8 . N_S^2` GB — against a usable budget of about 6.5 GB.  That
+puts a hard ceiling near `N_S ~ 9000` with two workers and near `N_S ~ 11500`
+with one, while the 62 run from `N_S = 2800` to `N_S = 97713` with median
+12445.  Full coverage was never available in this session and the
+pre-registration said so in advance; what follows is which part of the space
+was actually reached.
+
+**What was reached.**  The cheap end exhaustively, and — deliberately, per the
+pre-registered order — the extreme of every axis that the budget permits:
+
+- **both `a = 7` cells**, `(11,6,4,2,1)` and `(10,7,4,2,1)`: the largest
+  ambient multiplicity anywhere in the 62;
+- `(8,7,7,1,1)`, **balance 7** — the most balanced cell in the 62 that fits in
+  memory at all;
+- every value of `a` from 2 to 7 that occurs among the reachable cells.
+
+**What was not reached, stated plainly.**  The genuinely balanced end.  The
+`balance <= 6` cells of the 62 are
+
+| lam | balance | a | `N_S` | GB needed |
+|---|---|---|---|---|
+| `(8,4,4,4,4)` | 4 | 2 | 94675 | ~670 |
+| `(8,8,4,2,2)` | 6 | 3 | 22475 | ~38 |
+| `(8,6,6,2,2)` | 6 | 3 | 31356 | ~74 |
+| `(8,7,4,3,2)` | 6 | 2 | 39362 | ~116 |
+| `(8,6,4,4,2)` | 6 | 4 | 54343 | ~222 |
+| `(7,7,4,4,1,1)` | 6 | 2 | 97713 | ~716 |
+
+Every one of them is one to two orders of magnitude beyond this container.
+**So the sweep probed the balanced end down to balance 7 and no further**, and
+the strongest honest statement about `balance <= 6` is that it is untested —
+not that it agrees.  Whether that matters is a fair question: §4's dimension
+count says the ideals are empty at `delta = 6` for structural reasons that have
+nothing to do with the weight's shape, which is a reason to expect agreement
+there — but it is an expectation, not a measurement, and it is recorded here
+as one.
+
+---
+
+## 7. Recommendation
+
+**Stop adding weights at `delta = 6`.  Move the degree.**
+
+The evidence that the remaining cells will not repay their cost is now
+structural rather than merely inductive.  §4 shows both ideals at `r = 5` are
+nonzero but that their onset degree is what is being probed, and every cell
+measured says `delta = 6` is before that onset.  Forty-two more cells at the
+same degree test the same thing again.
+
+Concretely, in priority order:
+
+1. **`delta = 7` at `ell = 5`, cheapest weights first.**  This is the only
+   axis the sweep leaves genuinely open, and the cheap cells at `delta = 7`
+   cost far less than the balanced cells at `delta = 6` that this session
+   could not reach.
+2. **Pin the onset degree at `r = 4` first, as a calibration.**  `D_4^det` is a
+   hypersurface (codim exactly 1, §4), so its ideal is principal of some degree
+   `e`; `e` is a single number and it bounds where to start looking at `r = 5`.
+   Session 29's task B was aimed at exactly this.
+3. **Only then return to the balanced `delta = 6` cells**, and only with more
+   memory than this container has — `(8,8,4,2,2)` at ~38 GB is the cheapest of
+   them and is the right single test if one is wanted.
+
+The `n = 4` engineering has now paid for itself in the sense session 24 asked
+about: it produced a structural statement (the codimension table) that no
+amount of `n = 3` work would have reached.  But the next marginal cell at
+`delta = 6` is worth very little, and the next degree is worth a lot.
