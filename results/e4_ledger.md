@@ -88,4 +88,6 @@ both house primes.  A rank attaining `a` is a certificate
 | 5 | 0 | — | excluded free (`a = 0`), sign-branch check non-vacuous | <1 s |
 | 6 | 1 | **1** | **`e != 6` — the deciding rung: the integrator's standing `e = 6` is refuted; s29's `e >= 7` confirmed.**  The unique degree-6 invariant does not vanish on `D_4`.  Both primes, 5930 dedup rows × 661 cols, rank 660 = `n_chi − a` | 7 s |
 
-*(rungs 7 and 8 appended as they complete)*
+| 7 | 1 | **1** | **`e != 7`.**  The unique degree-7 invariant does not vanish on `D_4`.  Both primes; 27131 dedup rows × 2310 cols (odd/sign branch, odd-fixed rows cancel exactly); rank 2309 = `n_chi − a` | 175 s |
+
+*(rung 8 appended when complete)*
