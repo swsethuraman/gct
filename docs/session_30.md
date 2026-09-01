@@ -94,3 +94,73 @@ None of the three touched a reported number.  All three were process failures,
 and (b) is the one worth remembering: a cleanup routine that does not know
 what is still running is more dangerous than no cleanup at all.
 
+## 4. Coverage — the honest fraction
+
+<!--GEN:S30COV-->
+**23 of the 62 cells measured — 37%.**  Weighted by ambient multiplicity (the quantity actually at stake) that is **75 of 189 units, 40%**.
+
+| axis | reached | across the 62 |
+|---|---|---|
+| `N_S` | 2800 – 8337 | 2800 – 97713 |
+| `a` | 2 – 7 | 2 – 7 |
+| balance | 7 – 12 | 4 – 12 |
+<!--/GEN:S30COV-->
+
+The binding constraint is **memory**, not time: peak RSS goes as `~7.5e-8 . N_S^2`
+GB against a usable budget near 6.5 GB, which caps the reachable weight-space
+dimension around `N_S ~ 11500` for a single worker.  The 62 run to
+`N_S = 97713`.  The pre-registration anticipated partial coverage and committed
+to reporting it as a fraction; `docs/sweep62.md` §6 gives the per-axis breakdown
+and lists, by name and by the memory each would need, the six `balance <= 6`
+cells that were out of reach — the one genuinely untested corner.
+
+I want to be plain about what that corner does and does not cost.  The sweep
+reached balance 7 and no lower.  The reason to expect `balance <= 6` to agree
+is structural (§4 of `docs/sweep62.md`: at `delta = 6` neither ideal has begun,
+for reasons independent of the weight's shape), and structural reasons are the
+kind this programme has been wrong about before.  So: expectation, not
+measurement, and labelled as such.
+
+## 5. What I would tell the next session
+
+**The question has moved.**  "Is `D = 0` a law over the weights at `delta = 6`?"
+is now the wrong question, because the codimension table answers it in the
+negative for free: `dim D_5^pad = 39` and `dim D_5^det = 50` are different, so
+the ideals differ, so some `(lam, delta)` separates them.  What the sweep
+establishes is that `delta = 6` is *before the onset* at `r = 5`.  The next
+gate is the degree.
+
+**The cheapest next measurement is not another cell of the 62.**  It is `e`,
+the degree of the principal ideal of the `r = 4` determinantal hypersurface
+(codim exactly 1 — established here, §4 of `docs/sweep62.md`).  `e` is one
+number, it is far cheaper than any remaining `delta = 6` cell, and it calibrates
+where to start looking at `r = 5`.  Session 29's task B was aimed at it.
+
+**Two warnings about the machinery.**
+
+1. The raising rule in `docs/isotypic_rank.md` §1 is **still wrong on `main`**
+   as of `13fb170` — session 29 has not landed.  Anyone starting from the
+   repository rather than from a brief will re-derive the same error.  The
+   correct rule and a two-line witness that discriminates are at the top of
+   `docs/sweep62.md` §1; that witness costs seconds and should be the first
+   thing any new session runs.
+2. `mult = a` calibrations cannot detect a wrong raising rule, because the two
+   rules differ by a diagonal rescaling that preserves kernel dimension.  A
+   calibration battery is only worth running if some part of it **fails** under
+   the hypothesis being guarded against; ours had 41 such cells out of 48, and
+   that ratio is the number to look at, not "48/48 passed".
+
+## 6. Honest boundary of this session
+
+- Coverage of the 62 is **partial**, and the untested corner is the balanced
+  end below balance 7.  Nothing here should be quoted as "the 62 agree".
+- `D = 0` on every cell measured is a statement about `delta = 6` at `r = 5`.
+  It is **not** evidence that `per_3^pad` sits inside `det_4` — it is the
+  absence of evidence against it, in a degree where §4 predicts no evidence
+  either way could appear.
+- The codimension table is the durable result of this session.  It was computed
+  by generic Jacobian rank at random points: that is a lower bound on dimension
+  which is sharp with probability 1, confirmed at three points over two primes,
+  but it is a probabilistic certificate and not a proof.
+- Nothing in `paper/`, `PROJECT_NOTES.md`, or `docs/boundary_deficit.html` was
+  touched.  All files added are new.
