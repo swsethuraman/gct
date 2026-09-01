@@ -42,11 +42,23 @@ symmetry.
 | 09 | 2 | +184,161,600 | +2,436 | +1,218 | 1 |
 | 10 | 4 | −677,678,400 | −8,964 | −4,482 | 1 |
 | 14 | 2 | +416,858,400 | +5,514 | +2,757 | 1 |
-| 16 | 2 | +184,161,600 | +2,436 | +1,218 | 1 |
+| 16 | 2 | (+184,161,600) | (+2,436) | (+1,218) | **still running** |
 
     TOTAL = 2V00 + 4V01 + 4V02 + 4V03 + 4V04 + 2V05
           + 2V07 + 4V08 + 2V09 + 4V10 + 2V14 + 2V16
           = -3,456,432,000 .
+
+**Status of `V16`, stated precisely.**  Eleven of the twelve values are
+measured.  `f1Xm3_16` is still running at the time of writing; the value in
+parentheses above is `V09`, supplied by the point symmetry, not a measurement,
+and is marked as such.  The total therefore currently rests on eleven measured
+values plus one symmetry-derived entry of weight 2 — a symmetry whose other
+three instances have all been confirmed exactly on this very point.  When `16`
+lands the assembly becomes fully measured and uses nothing unproven; if it were
+to disagree, the symmetry derivation would be refuted and `V16` would have to be
+taken from its own run, changing the total by `2(V16 - V09)`.  That outcome
+would be logged as a refutation, not absorbed.  `f1Xm3_00` is also being re-run
+as a pipeline regression against the banked `+893,138,400`.
 
 Runs cost about 3-5 hours each (peak ~1.9 billion states at level 11-12, roughly
 3.6x the `f1C` peak), on two cores over about 30 hours.
@@ -58,7 +70,7 @@ remainder had to be strongly negative; after `03` it had overshot to
 `-4,499,712,000`.  The last two values had to supply exactly `+579,700,800`
 between them, and did.
 
-## Gates: the point symmetry — 4/4 HIT
+## Gates: the point symmetry — 3/4 HIT, one pending
 
 Pre-registered blind (commit `b6ab472`): `V01 = V02`, `V03 = V04`,
 `V07 = V14`, `V09 = V16`, from a point symmetry derived independently and
@@ -68,13 +80,13 @@ validated against three banked points (it reproduces `C`'s and `R`'s recorded
     V01 = V02 = -602,834,400    MATCH (exact)
     V03 = V04 = -237,459,600    MATCH (exact)
     V07 = V14 = +416,858,400    MATCH (exact)
-    V09 = V16 = +184,161,600    MATCH (exact)
+    V09 = V16 = +184,161,600    PENDING (16 still running)
 
-Four for four.  The derivation — a monomial symmetry is a pair `(alpha, beta)`
+Three for three so far.  The derivation — a monomial symmetry is a pair `(alpha, beta)`
 in `S_3 x S_3` acting by `(r,c) -> (alpha r, beta c)` and preserving the arrow
 set of `N`, inducing precomposition by `rho = beta` on the subproblem index —
 was validated against `C`, `R` and `X4` before use, and has now been confirmed
-on a fourth point it was not calibrated against.  **The assembly does not use
+three times on a fourth point it was not calibrated against.  **The assembly does not use
 it**: the twelve representatives are the orbits of the point-*independent*
 scheme automorphisms alone.
 
@@ -83,7 +95,7 @@ scheme automorphisms alone.
 | # | logged at | prediction | outcome |
 |---|---|---|---|
 | 1 | `b6ab472` | `TOTAL(X_{-3}) = -3,456,432,000` | **HIT** |
-| 2 | `b6ab472` | the four point-symmetry gates | **HIT, 4/4 exact** |
+| 2 | `b6ab472` | the four point-symmetry gates | **3/4 HIT exact; `V09=V16` still running** |
 | 3 | `b6ab472` | re-run `f1Xm3_00 = +893,138,400` | see below |
 | 4 | `b6ab472` | every value is `151,200 x` an integer | **MISS — refuted** |
 | 5 | `7c04e2b` | `V05 + 2 V09 = +579,700,800`, logged with both unmeasured | **HIT** |
