@@ -117,11 +117,11 @@ kill by explicit PID.
 ## 4. Coverage — the honest fraction
 
 <!--GEN:S30COV-->
-**23 of the 62 cells measured — 37%.**  Weighted by ambient multiplicity (the quantity actually at stake) that is **75 of 189 units, 40%**.
+**25 of the 62 cells measured — 40%.**  Weighted by ambient multiplicity (the quantity actually at stake) that is **83 of 189 units, 44%**.
 
 | axis | reached | across the 62 |
 |---|---|---|
-| `N_S` | 2800 – 8337 | 2800 – 97713 |
+| `N_S` | 2800 – 9224 | 2800 – 97713 |
 | `a` | 2 – 7 | 2 – 7 |
 | balance | 7 – 12 | 4 – 12 |
 <!--/GEN:S30COV-->

@@ -4,7 +4,7 @@ Session 30, branch `s30-sweep62`.  Clone tip `13fb170`; ancestry verified.
 Pre-registration: `results/PREREG_s30.md`, written before any computation.
 Per-cell record: `results/sweep62_ledger.md`.
 
-**Verdict in one line.**  The pattern is neither a law nor an artifact of
+**Verdict in one line.**  Coverage is **25 of the 62, 40%** (44% by ambient multiplicity) — the rest are beyond this container's memory, and §6 says exactly which.  On every cell measured, the pattern is neither a law nor an artifact of
 session 27's sampling: it is a statement about the **degree**, not the weight.
 Every cell measured returns `mult_det = mult_pad = a` — both ideals are *empty*
 in these isotypic components — and an independent dimension count shows the two
@@ -74,7 +74,7 @@ standing.
 
 ## 3. The sweep
 
-*(table generated from the ledger — see §7 for the coverage fraction)*
+*(tables generated from the ledger, not typed — see §6 for the coverage fraction)*
 
 <!--GEN:TABLE-->
 **Session 27's nine, re-certified under the corrected rule** (9 of 9, all unchanged):
@@ -91,7 +91,7 @@ standing.
 | `(12, 6, 4, 1, 1)` | 2 | 2553 | 2 | 2 | +0 |
 | `(12, 5, 5, 1, 1)` | 2 | 2795 | 2 | 2 | +0 |
 
-**The 62** — 22 measured, in ascending `N_S`:
+**The 62** — 25 measured, in ascending `N_S`:
 
 | lam | `a` | `N_S` | `mult_det` | `mult_pad` | `D` | balance |
 |---|---|---|---|---|---|---|
@@ -116,7 +116,10 @@ standing.
 | `(8, 7, 7, 1, 1)` | 2 | 6718 | 2 | 2 | +0 | 7 |
 | `(11, 6, 4, 2, 1)` | 7 | 6789 | 7 | 7 | +0 | 10 |
 | `(11, 5, 5, 2, 1)` | 2 | 7461 | 2 | 2 | +0 | 10 |
+| `(10, 8, 2, 2, 2)` | 3 | 7576 | 3 | 3 | +0 | 8 |
 | `(10, 7, 4, 2, 1)` | 7 | 8337 | 7 | 7 | +0 | 9 |
+| `(12, 4, 4, 2, 2)` | 3 | 8803 | 3 | 3 | +0 | 10 |
+| `(9, 8, 4, 2, 1)` | 5 | 9224 | 5 | 5 | +0 | 8 |
 
 Every row: `mult_det = mult_pad = a`, `D = 0`.  No cell fell below the ambient cap on either side, so the sceptical re-run branch was never entered.
 <!--/GEN:TABLE-->
@@ -204,21 +207,23 @@ measurements are consistent with it at every cell.
 ## 6. Coverage, and the boundary of what was reachable
 
 <!--GEN:COVERAGE-->
-**Coverage: 22 of the 62 cells, 35%** — and 72 of the 62's 189 units of ambient multiplicity, 38%.
+**Coverage: 25 of the 62 cells, 40%** — and 83 of the 62's 189 units of ambient multiplicity, 44%.
 
 | axis | measured | across the 62 |
 |---|---|---|
-| `N_S` | 2800 – 8337 | 2800 – 97713 |
+| `N_S` | 2800 – 9224 | 2800 – 97713 |
 | `a` | 2 – 7 | 2 – 7 |
 | balance | 7 – 12 | 4 – 12 |
 <!--/GEN:COVERAGE-->
 
 The limit is **memory, not patience**.  Peak RSS is quadratic in the
 weight-space dimension `N_S` — fitted across three observed OOM kills at
-roughly `7.5e-8 . N_S^2` GB — against a usable budget of about 6.5 GB.  That
-puts a hard ceiling near `N_S ~ 9000` with two workers and near `N_S ~ 11500`
-with one, while the 62 run from `N_S = 2800` to `N_S = 97713` with median
-12445.  Full coverage was never available in this session and the
+roughly `7.5e-8 . N_S^2` GB — against a usable budget of about 6.5 GB.  The ceiling was then found empirically rather than estimated: the
+largest cell that completed is `(9,8,4,2,1)` at `N_S = 9224` (61 minutes, peak
+about 4.8 GB), and the next cell up, `N_S = 9882`, is predicted at 7.3 GB
+against 6.9 GB free and would not start.  The 62 run from `N_S = 2800` to
+`N_S = 97713` with median 12445, so **rather more than half of them are beyond
+this container by construction**.  Full coverage was never available in this session and the
 pre-registration said so in advance; what follows is which part of the space
 was actually reached.
 
