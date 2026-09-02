@@ -107,3 +107,25 @@ stratum in the programme.
 | A7 | `(15, 5, 4, 3, 1)` | 7 | 5 | 8 | 14189 | 1 | 14189 | 35887 | compressed | 8 | 8 | +0 | 1060 |
 | A7 | `(14, 6, 4, 2, 2)` | 7 | 5 | 17 | 28258 | 2 | 15358 | 58395 | compressed | 17 | 17 | +0 | 1330 |
 | A7 | `(10, 10, 4, 2, 2)` | 7 | 5 | 9 | 56427 | 4 | 15454 | 83783 | compressed | 9 | 9 | +0 | 1385 |
+
+## Summary (sweep closed 2026-09-02)
+
+91 cells, none with `D > 0`.  Five `D = −1` cells, all pad-side, each with the sceptical branch
+(`3a + 24` fresh points, seed 907, both primes), the vanishing HWV exhibited, an exact integer
+certificate, and a proof of vanishing on the reducible locus (`docs/stabiliser_reduction.md` §4.2):
+
+| stratum | lam | delta | a | mult_det | mult_pad | source |
+|---|---|---|---|---|---|---|
+| A  | `(8, 4, 4, 4, 4)` | 6 | 2 | 2 | 1 | `c_(4,0,0,0,0) · I_5` (exact) |
+| A7 | `(12, 4, 4, 4, 4)` | 7 | 4 | 4 | 3 | `c_(4,0,0,0,0)^2 · I_5` (exact) |
+| A7 | `(9, 9, 8, 1, 1)` | 7 | 2 | 2 | 1 | new degree-7 generator of `I(X_5)` |
+| A7 | `(8, 8, 8, 2, 2)` | 7 | 3 | 3 | 2 | new degree-7 generator of `I(X_5)` |
+| B  | `(10, 8, 7, 1, 1, 1)` | 7 | 3 | 3 | 2 | reducibility equation at `r = 6` (`mult_pad = mult_red`) |
+
+`I_5` = the unique degree-5 invariant of quinary quartics, `(4^5)`, `a = 1` (outside this ledger's
+`a >= 2` gate; `results/s36_onset5.md`): `mult_det = 1`, `mult_pad = 0`.  Likewise `I_6` at `r = 6`
+(`results/s36_aone.md`).  Point-free `mult_red` agrees with `mult_pad` at all 91 cells
+(`results/s36_red_table.md`).  Cells attempted and not banked: `(9, 7, 4, 3, 1)` at `delta = 6`
+(`n_chi = N_S = 16005`, OOM-killed inside flint `nullspace` — above the measured frontier `~15500`);
+`(10,10,5,2,1)`, `(14,6,5,2,1)`, `(14,6,3,3,2)` at `delta = 7` (`n_chi >= 15577`, not attempted).
+Coverage per stratum: `docs/stabiliser_reduction.md` §7.

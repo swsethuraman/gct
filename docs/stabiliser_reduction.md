@@ -12,12 +12,18 @@ left alone.
 
 **Verdict in one line.**  The reduction is proved, validated by tests the
 wrong lemma fails, and it moves the general-weight frontier from `N_S ~ 9900`
-to `n_chi ~ 16000` *after* division by `|Stab_W(lam)|` — which is what let the
-first cell of the sweep, `(8,4,4,4,4)` at `N_S = 94675`, run in 82 seconds and
-return the programme's **first pad-side bite at `ell = 5`**: `mult_pad = 1 <
-a = 2`, `D = −1`, a reducibility equation (§4).  Everything at `ell = 6` — the
-first cells that see the permanent — returned `mult_det = mult_pad = a`,
-`D = 0` (§5).  No obstruction.
+to `n_chi ~ 15500` *after* division by `|Stab_W(lam)|` — enough to measure
+91 cells this session (`N_S` up to 205616; `a` up to 21), the balanced corner
+s30 could not reach, and every `ell = 6` cell the budget admits.  **No
+`D > 0` anywhere.**  Five pad-side bites (`D = −1`), all proved to be
+equations of the *reducible* locus by a two-line Bruhat criterion (★), and
+all traced to their source: the pad ideal at `r = 5` begins at `delta = 5`
+with the unique degree-5 invariant `I_5` (and at `r = 6` at `delta = 6` with
+`I_6`), which the programme's `a >= 2` gate had hidden; two further
+generators appear at `delta = 7`.  At `ell = 6` — the first cells that see
+the permanent — `mult_det = a` everywhere and `mult_pad` equals the
+point-free reducibility multiplicity everywhere: **no permanent-specific
+equation through `delta = 7`** in any component reached.
 
 ---
 
@@ -118,17 +124,17 @@ Full detail in `results/stabred_validation.md`.  Run before any new cell.
 | 3 | the `l^3 m` witness through the reduced pipeline; `wk8_s30_calib.py` as-is | kernel `∝ (12, −3, 1)`, `mult = 0` (wrong rule: `(1,−4,3)`, `mult = 1`); **41 of 48** World A cells discriminating | pass, both primes; `CALIBRATION PASSED` |
 | 4 | `mult_det((10,10,10,6), 9)` at `r = 4` | `a = 10` by plethysm; `N_S = 659741`, `|Stab| = 6`, **`n_chi = 111508`** | **out of reach**: `8 n_chi^2 ~ 100 GB`, measured-constant model `~300 GB`, against 6.5.  Not measured.  The cell stands on `docs/s35_review.md` §2 (principality + s33's rectangular certificates) plus s35's T1w (`mult_det >= 1` exhibited).  Sized in the prereg before the part ran. |
 
-## 4. What the sweep found — Stratum A (`delta = 6`, `ell = 5`; not permanent-sensitive)
+## 4. What the sweep found — Stratum A (`delta = 6`, `ell = 5`; not permanent-sensitive), and what it turned out to mean
 
-*(see `results/s36_ledger.md` for every row; this section is filled from it)*
+*(rows: `results/s36_ledger.md`; per-cell files: `results/s36_cells/`)*
 
-### 4.1 The first pad-side bite at `ell = 5`: `(8,4,4,4,4)`, `delta = 6` — `D = −1`, and it is a theorem
+### 4.1 The first pad-side bite at `ell = 5`: `(8,4,4,4,4)`, `delta = 6` — `D = −1`
 
 The first cell of the pre-registered order — the balanced corner s30 could
 not reach (`N_S = 94675`, 670 GB unreduced; here `n_chi = 4562`, 82 seconds)
 — returned
 
-    a = 2,   mult_det = 2 = a,   mult_pad = 1,   D = −1     (both primes)
+    a = 2,   mult_det = 2 = a,   mult_pad = 1,   D = −1     (both primes).
 
 **Sceptical branch, as pre-registered.**  Re-run at `3a + 24 = 30` fresh pad
 points, seed 907, both primes: rank 1 again.  The vanishing HWV was
@@ -141,62 +147,117 @@ padded-permanent points, zero at 20 `l · (random cubic)` points, nonzero at 20
 generic quartics and 20 `det_4` pencils — both primes.
 
 **Exact certificate** (`wk9_s36_exact.py`).  CRT of the two mod-`p` exhibits
-and rational reconstruction give an integer vector with 19834 terms,
-coefficients up to 41472 (common denominator 41472 of the normalised
-vector).  Over `Z`, with no modular arithmetic: every simple raising operator
-kills it (`E_{i,i+1} v = 0` for all four `i`) — it is a highest-weight vector
-of weight `(8,4,4,4,4)` over `Q`; it is exactly zero at 12 integer true-pad
-and 12 integer `l · cubic` points and exactly nonzero at 12 generic and 12 det
-points.  `results/s36_cells/8_4_4_4_4_d6_pad_exactZ.txt`.
+and rational reconstruction give an integer vector with 19834 terms and
+coefficients up to 41472.  Over `Z`, with no modular arithmetic: every simple
+raising operator kills it — it is a highest-weight vector of weight
+`(8,4,4,4,4)` over `Q`; it is exactly zero at 12 integer true-pad and 12
+integer `l · cubic` points and exactly nonzero at 12 generic and 12 det points
+(`results/s36_cells/8_4_4_4_4_d6_pad_exactZ.txt`).
 
-**Proof that it vanishes on the whole reducible locus.**  Let `X_r =
-closure{l · c} ⊆ Sym^4 C^r` and `L_i = {F : x_i | F}`, the coordinate subspace
-`{c_alpha = 0 for all alpha with alpha_i = 0}`, stabilised by the maximal
-parabolic `P_i`.  Bruhat: `G = ∪_w B w P_i`, so `X_r = G · L_r = ∪_i B · L_i`.
-A highest-weight vector is a `B`-eigenvector, `v(b · y) = chi(b)^{-1} v(y)`, so
+### 4.2 The criterion (★): when a highest-weight vector vanishes on the reducible locus — *proved*
+
+Let `X_r = closure{l · c} ⊆ Sym^4 C^r` be the reducible-with-a-linear-factor
+locus and `L_i = {F : x_i | F}`, the coordinate subspace `{c_alpha = 0 for
+all alpha with alpha_i = 0}`, stabilised by the maximal parabolic `P_i`.
+Bruhat gives `G = ∪_w B w P_r`, so `X_r = G · L_r = ∪_i B · L_i`.  A
+highest-weight vector is a `B`-eigenvector, `v(b · y) = chi(b)^{-1} v(y)`, so
 `v` vanishes on `B · L_i` iff on `L_i`; and `I(L_i)` is the monomial ideal
-`(c_alpha : alpha_i = 0)`.  Hence
+`(c_alpha : alpha_i = 0)`.  Hence, for a HWV `v` of weight `lam` and degree
+`delta`,
 
     v ∈ I(X_r)   ⟺   every monomial of v has, for every i ∈ [r],
                      a factor c_alpha with alpha_i = 0.                 (★)
 
-For the exhibited vector (★) holds outright: not one of its 19834 monomials
-survives the restriction to any `L_i`.  So `v ∈ I(X_5)_6 = I(D_5^pad)_6`
-(`D_5^pad = X_5`: `per_3`-pencils are dense in quinary cubics, `dim 39 =
-5 + 35 − 1`), i.e. **`mult_pad((8,4,4,4,4), 6) <= 1` is proved**, and the
-rank-attaining pad evaluations give `>= 1`; `mult_det = 2` is a rank-attaining
-certificate.  `D((8,4,4,4,4), 6) = −1` exactly.
+Two consequences fall out at once.
 
-*What it means.*  The pad ideal at `r = 5` begins at `delta <= 6`, not in the
-window `[7, 9]` the record implied: s30's `delta = 6` sweep saw empty ideals
-because it stopped at balance 7, and the degree-6 component of `I(D_5^pad)`
-lives (so far only) in the most balanced weight.  s30's expectation for the
-untested balanced corner — recorded there as an expectation, not a
-measurement — is refuted on the pad side and confirmed on the det side.
-By `docs/s35_review.md` §1 it is a reducibility equation and cannot be
-permanent-specific; (★) says exactly that.  It is the second exhibited `D < 0`
-cell in the programme, the first at `ell = 5`, and the first with an exact
-integer certificate on both sides.
+*(a) The automatic case.*  A monomial of weight `lam` and degree `delta` has
+`delta` factors whose `i`-th exponents sum to `lam_i`; if `lam_i < delta`
+some factor has `alpha_i = 0`.  So **if `lam_1 < delta`, every HWV of weight
+`lam` lies in `I(X_r)`**, i.e. `mult_pad(lam, delta) = 0` for every `r` (as
+`D_r^pad ⊆ X_r`) and **no cell with `lam_1 < delta` can ever be an
+obstruction**.  This is the `n − m = 1` case of the Kadish–Landsberg padding
+constraint (`S_lam` occurs in the coordinate ring of a padded orbit closure
+`GL · l^{n−m} P` in degree `delta` only if `lam_1 >= (n − m) delta`; *Padded
+polynomials, their cousins, and GCT*, 2014 — cited from memory, to be
+checked against the paper), recovered here by a two-line argument.  It also
+explains the classical-looking fact below: an `SL_r`-invariant of degree
+`delta` of `r`-ary quartics has weight `(4 delta / r)^r`, and `4 delta / r <
+delta` iff `r > 4` — every invariant of quinary or senary quartics vanishes
+on the reducible locus (equivalently: `delta` copies of `l` distributed over
+`4 delta / r < delta` epsilon tensors force two into one epsilon).
 
-### 4.2 The point-free reducibility multiplicity *(post-hoc, derived after the first bite — labelled)*
+*(b) The exact case.*  Only the indices with `lam_i >= delta` can fail (★);
+with `M_red` the (`Stab`-invariant) set of weight-`lam` monomials satisfying
+(★), the **point-free reducibility multiplicity**
 
-(★) is a criterion on monomial support alone, so it turns the pad side at
-`r = 5` into a computation with **no evaluation points**: with `M_red` the
-(`Stab`-invariant) set of weight-`lam` monomials satisfying (★),
+    mult_red(lam, delta) := a − dim( HWV_lam ∩ span M_red )
 
-    mult_red(lam, delta) := a − dim( HWV_lam ∩ span M_red ),
-
-and `mult_pad = mult_red` exactly at `r = 5`, while at `r = 6` (`D_6^pad ⊊ X_6`,
-`55 < 61`) `mult_pad <= mult_red` with a strict gap **iff a permanent-specific
-equation exists** — the prereg's sharper falsifier in exact form.
-`wk9_s36_red.py` computes `mult_red` from the banked kernels;
+is computable from the HWV kernel alone, no evaluation points, no primes
+beyond the linear algebra.  `mult_pad = mult_red` **exactly at `r = 5`**
+(`D_5^pad = X_5`: `per_3`-pencils are dense in quinary cubics, `dim 39 = 5 +
+35 − 1`, s30's table), and at `r = 6` `mult_pad <= mult_red` with a strict gap
+**iff a permanent-specific equation exists** — the prereg's sharper falsifier
+in exact form.  `wk9_s36_red.py` computes it from the banked kernels;
 `results/s36_red_table.md` lists it against the point-based `mult_pad` at
-every banked cell: **they agree everywhere**, at both bites and at all 25
-`ell = 6` cells (so far).  This is an independent, point-free cross-check of
-the whole pad pipeline, and it is the exact statement behind "everything
-cheap is reducibility" at these degrees.
+every banked cell — **they agree at every one of them**, at every bite and at
+every `ell = 6` cell.  *(Post-hoc: (★) and `mult_red` were derived after the
+first bite, and are labelled so; nothing pre-registered was altered.)*
 
-### 4.3 The rest of Stratum A
+For the `(8,4,4,4,4)` vector, (★) holds outright — not one of its 19834
+monomials survives restriction to any `L_i` — so `mult_pad <= 1` is
+**proved**, the pad evaluations certify `>= 1`, and `mult_det = 2` is a
+rank-attaining certificate: `D((8,4,4,4,4), 6) = −1` exactly.
+
+### 4.3 What the equation is: the degree-5 invariant `I_5` — the pad ideal at `r = 5` begins at `delta = 5`
+
+The `a >= 2` ambient gate is right for multiplicity obstructions and blind to
+the pad ideal's onset.  Running every `ell = 5` weight with `a >= 1` at
+`delta <= 5` through the reduced pipeline (`wk9_s36_onset5.py`,
+`results/s36_onset5.md` — `ell = 5` weights first exist at `delta = 5`):
+
+    (4,4,4,4,4), delta = 5:   a = 1,   mult_det = 1,   mult_pad = 0,   D = −1,
+
+and every other `delta = 5` weight gives `mult_det = mult_pad = a = 1`.  The
+unique degree-5 `SL_5`-invariant `I_5` of quinary quartics vanishes on the
+reducible locus (automatic by (★)(a): `4 < 5`), does **not** vanish on
+`det_4` pencils in five variables (rank certificate, both primes), and its
+exact integer form (19834 terms, coefficients up to 41472 — the same numbers
+as the `(8,4,4,4,4)` vector, which is no coincidence) is in
+`results/s36_cells/4_4_4_4_4_d5_invariant_exactZ.txt`.  Multiplying out:
+
+    v_(8,4,4,4,4), delta 6   =   c_(4,0,0,0,0) · I_5          (exactly, over Z),
+    v_(12,4,4,4,4), delta 7  =   c_(4,0,0,0,0)^2 · I_5        (exactly, over Z),
+
+the latter being the fourth bite of the session (A7 stratum, `N_S = 205616`,
+`n_chi = 9738`, `a = 4`, `mult_pad = 3`), so the two balanced-corner bites
+are the ideal generated by `I_5` doing what ideals do.  **The onset of
+`I(D_5^pad)` is `delta = 5`, the lowest degree at which a length-5 weight
+exists**, and the standing window `[7, 9]` was an artefact of the `a >= 2`
+gate.  The third bite, `(9,9,8,1,1)` at `delta = 7` (`a = 2`, `mult_pad = 1`;
+battery, exact integer vector with 13128 terms, and (★) all as above), is
+**not** a multiple of `I_5` (`(9,9,8,1,1) − (4,4,4,4,4)` is not dominant) —
+a second generator of the reducibility ideal, of degree 7.
+
+The same at `r = 6` (post-hoc `a = 1` extension, `results/s36_aone.md`):
+the unique degree-6 invariant `I_6` of senary quartics — weight `(4^6)`,
+`N_S = 1,532,489`, `n_chi = 2804`, a cell no unreduced pipeline could touch —
+has `mult_pad = 0`, `mult_det = 1`: it vanishes on the reducible locus (again
+automatic, `4 < 6`; also confirmed monomial-by-monomial on its full support
+of 1.5 million terms after exact reconstruction, common denominator 1990656)
+and not on `det_4` pencils in six variables.  **`I(D_6^pad)` begins at `delta
+= 6`**, and `D <= 0` there too.  Every other `a = 1` cell run (32 of them at
+`r = 5, 6`, `delta = 6, 7`, `n_chi <= 3000`) has `mult_det = mult_pad = 1`.
+
+*What all this is not.*  None of it touches the permanent: `I_5`, `I_6` and
+the two generators are equations of the reducible locus, exactly as
+`docs/s35_review.md` §1 predicted every `ell = 5` finding must be.  The det
+side is untouched — `mult_det = a` at every one of these cells — so the
+onset of `I(D_5^det)` is still `>= 8` in every component measured, and the
+obstruction question is open in both directions.  What changed is the map:
+the pad ideal at `r = 5, 6` is not "late", it is present from the first
+degree, and its low-degree part is combinatorial.
+
+### 4.4 The rest of Stratum A
 
 Beyond the three named cells, the pre-registered order walked s30's 33
 unmeasured `ell = 5` cells ascending in `n_chi`, interleaved 3 : 1 with the
@@ -205,8 +266,8 @@ most-balanced / largest-`a` unmeasured cell.  Every one of them returned
 at each, `results/s36_red_table.md`) — including `(8,8,4,2,2)` and
 `(8,6,6,2,2)` at balance 6, `(10,6,4,2,2)` with `a = 6`, and the `|Stab| = 1`
 cells up to `n_chi = N_S = 14436`.  With s27/s30's 34, the `delta = 6`,
-`ell = 5` slab is now measured at **A_COUNT of 67 cells** (A_UNITS of 202
-ambient units); the only cells left are those with `n_chi > 15500` —
+`ell = 5` slab is now measured at **58 of 67 cells** (175 of 202
+ambient units, 87%); the only cells left are those with `n_chi > 15500` —
 `(9,7,4,3,1)` at `n_chi = N_S = 16005` was attempted and OOM-killed inside
 flint's `nullspace` (three `8 n_chi^2` copies: the matrix, its rref, and the
 `n x n` nullspace buffer — the true resident constant is `~2.4e-8`, not
@@ -216,7 +277,7 @@ ideal at `r = 5` is nonzero in exactly one measured component,
 `(8,4,4,4,4)`, and the det ideal in none.**
 
 The `delta = 7`, `ell = 5` cells outside session 34's domain (`N_S > 11269`,
-36 fit) were swept last, ascending, as "A7" in the ledger; A7_SUMMARY
+36 fit) were swept last, ascending, as "A7" in the ledger: **33 cells** (the three at `n_chi >= 15577` were left above the measured frontier), `a` from 2 to **21**, every det side `mult_det = a`, and three pad bites — `(9,9,8,1,1)`, `(12,4,4,4,4) = c^2 I_5`, `(8,8,8,2,2)` — each certified as in §4.1–4.3 (`results/s36_cells/`).  The `a = 21` cell `(14,7,4,2,1)` and the `a = 17` cell `(14,6,4,2,2)` are the largest ambient multiplicities ever measured in the programme; both return `mult_det = mult_pad = a`.
 
 ## 5. Stratum B (`ell = 6`) — the first cells that see the permanent
 
@@ -247,7 +308,7 @@ cubic)` points**, nonzero at 20 generic and 20 det points; exact integer
 certificate (16344 terms, coefficients up to 768; `E_{i,i+1} v = 0` over `Z`
 for all five `i`); and (★) holds for every monomial, so **`v ∈ I(X_6)`: a
 reducibility equation, proved.**  Correspondingly `mult_red = 2 = mult_pad`.
-Across all 33 `ell = 6` cells (`results/s36_red_table.md`),
+Across all 34 `ell = 6` cells (`results/s36_red_table.md`),
 `mult_pad = mult_red` — **no permanent-specific equation appears in any
 component reached, through `delta = 7`**, which is the prereg's sharper
 falsifier confirmed in exact form, and the det ideal is empty in every
@@ -311,3 +372,68 @@ obstruction; `D <= 0` at every cell of the session.
   Measured peaks: 0.84 GB at 6247, 3.1 GB at 13651, 4.0 GB at 15328 —
   `~1.7e-8 · n_chi^2` GB, a little under s33's constant; the frontier on this
   container is `n_chi ~ 19000`, and the census's `2.5e-8` line is conservative.
+
+## 7. Coverage per stratum, and the pre-registration scorecard
+
+Generated by `analysis/wk9_s36_report.py` from the ledger and the census
+(fractions of what *exists*, not of what fits):
+
+| stratum | cells | measured this session | ambient units | measured units | fit the budget | `D < 0` | `D > 0` |
+|---|---|---|---|---|---|---|---|
+| A — `delta 6, ell 5`, the 33 cells s30 left | 33 | 24 (73%) | 98 | 71 (72%) | 25 | 1 | 0 |
+| A — `delta 6, ell 5`, all 67 with s27/s30's 34 | 67 | 58 (87%) | 202 | 175 (87%) | 59 | 1 | 0 |
+| B6 — `delta 6, ell 6` | 4 | 3 (75%) | 8 | 6 (75%) | 3 | 0 | 0 |
+| B7 — `delta 7, ell 6` | 194 | 31 (16%) | 890 | 84 (9%) | 31 | 1 | 0 |
+| A7 — `delta 7, ell 5`, outside s34's domain | 164 | 33 (20%) | 1498 | 238 (16%) | 36 | 3 | 0 |
+
+Axes reached: A `n_chi` 2113–14436 (`N_S` to 94675), `a` 2–6, balance 4–10;
+B6 `n_chi` 6479–13969, balance 6–9; B7 `n_chi` 1844–15328 (`N_S` to 201554),
+`a` 2–4, balance 8–15; A7 `n_chi` 2600–15454 (`N_S` to 205616), `a` 2–21,
+balance 6–14.  Total measured compute ~10 h on two cores.  Plus, outside the
+census: 23 `delta = 5` cells (`results/s36_onset5.md`) and 33 `a = 1` cells
+(`results/s36_aone.md`), both post-hoc and labelled.
+
+**Scorecard against `results/PREREG_s36.md`.**
+
+- **P1 (battery passes, every odd-block sign test included): held.**  7 cells,
+  18 (cell, character) rows, all as predicted; P1.4 sized and declared out of
+  reach in the prereg before the part ran.
+- **P2 (Stratum B: `mult = a` both sides, `D = 0`): the "both ideals empty"
+  half failed at one cell, `(10,8,7,1,1,1)`; the half that mattered — the
+  named sharper falsifier, "no pad-side vector at `ell = 6` that fails to
+  vanish on `l · (random cubic)`" — held at every cell, now in the exact form
+  `mult_pad = mult_red`.**  The det side was empty everywhere, as predicted.
+- **P2a (Stratum A: `D = 0`): failed at the first cell**, `(8,4,4,4,4)`, and
+  the failure was the session's most useful result: it led to `I_5`, to (★),
+  and to the correction of the pad-onset window from `[7, 9]` to `5`.  s30's
+  recorded expectation for the balanced corner was wrong on the pad side and
+  right on the det side.
+- **P3 (if anything bites, pad first): held**, five times out of five; the det
+  side never bit.
+- **P4 (frontier and honesty): held with a correction** — the frontier is
+  `n_chi ~ 15500`, not 16000, because flint's `nullspace` holds three `8
+  n_chi^2` copies; the census's `2.5e-8` line is conservative and the ledger
+  states which cells sat above the line.
+
+**Failure class for the house ledger:** *gate blindness* — a screen that is
+correct for the question asked (`a >= 2` for multiplicity obstructions) can
+hide the structure that answers a neighbouring question (where an ideal
+begins).  The pad ideal's onset was sitting in the `a = 1` invariant the
+whole time.
+
+## 8. What next
+
+1. **Port (★) into the pad side of every sweep.**  At `r = 5` the pad
+   column is now exact and point-free; at `r = 6` the pair `(mult_pad,
+   mult_red)` is the permanent-sensitivity meter.  A `mult_pad < mult_red`
+   cell is the first thing worth an integrator's attention on the pad side.
+2. **Direction 1 (s35) has its object**: the reducibility ideal
+   `I(X_r)` — its degree-5/6/7 generators are now explicit integer vectors,
+   and the Kempf-collapsing / Pieri bound (`mult_red <= mult of V_lam in
+   Sym^delta V ⊗ Sym^delta(Sym^3 V)`) is the thing to compute against them.
+3. **The det side is the whole question.**  Through `delta = 7` at `r = 5, 6`
+   not one det-side rank fell below `a`, at `a` up to 21.  `delta = 8` at
+   `r = 5` (the s34-style census, now with `n_chi`) is the next probe, and
+   the a-priori cap from `docs/s33_review.md` §4 (`<= 405`) still stands.
+4. **Do not measure `mult_det((10,10,10,6), 9)` directly** on this container;
+   `n_chi = 111508`.  It stands on principality.
