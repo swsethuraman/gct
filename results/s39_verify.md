@@ -1,0 +1,56 @@
+# Session 39 — independent verification of the completed screen
+
+## C. Classification invariant (all 69967 cells with a>=1, exhaustive)
+
+- rows violating `a <= m_det` / not classified silent: **0**
+- one-bit or forced rows: **0**
+- verdict: **every a>=1 cell has a <= m_det; occurrence route silent** ✓
+
+## A. `a` — independent confirmation at δ=10,11,12
+
+### A1. C engine vs house per-weight plethysm `ambient_screen.a` (different chi and different plethysm code)
+
+| δ | sample cells | mismatches |
+|---|---|---|
+| 10 | 30 | 0 |
+| 11 | 30 | 0 |
+| 12 | 30 | 0 |
+
+### A2. C engine `a` vs `dim ker R` (flint raising operators, s30 pipeline) on the lowest-N_S cells
+
+| δ | λ | ℓ | N_S | a (C) | N_S − rank(R) | agree |
+|---|---|---|---|---|---|---|
+| 10 | (lowest N_S peaked cell exceeds the flint cap 6000) | — | 8269 | — | — | n/a |
+| 11 | (lowest N_S peaked cell exceeds the flint cap 6000) | — | 8269 | — | — | n/a |
+| 12 | (lowest N_S peaked cell exceeds the flint cap 6000) | — | 8269 | — | — | n/a |
+
+
+### A2b. Character-free `a` via the reduced raising kernel (dim ker on the chi-isotypic component)
+
+The unreduced N_S is out of flint reach at these lengths; the stabiliser reduction is not.  For the
+tightest cells (the peaked `a=1` family, the ones where a hidden `m_det=0` would matter most) the
+reduced kernel dimension confirms `a` with no characters and no plethysm.
+
+| δ | λ | N_S | |Stab| | n_χ | dim ker R (reduced) | a (plethysm) | agree |
+|---|---|---|---|---|---|---|---|
+| 10 | `(30, 2, 2, 2, 2, 2)` | 8269 | 120 | 200 | 1 | 1 | ✓ |
+| 11 | `(34, 2, 2, 2, 2, 2)` | 8269 | 120 | 200 | 1 | 1 | ✓ |
+| 12 | `(38, 2, 2, 2, 2, 2)` | 8269 | 120 | 200 | 1 | 1 | ✓ |
+
+## B. `m_det` — C engine vs house `ambient_screen.m_det` (independent MN)
+
+- δ=10, N=40: 15 random cells, C engine vs house m_det mismatches: **0** [100s]
+- δ=11, N=44: 20 random cells, C engine invariants (g≥0, |T|≤g, g+T even) re-hold and (g+T)/2 = banked m_det: mismatches **0** (house m_det beyond its memory wall at N=44 — s38)
+- δ=12, N=48: 20 random cells, C engine invariants (g≥0, |T|≤g, g+T even) re-hold and (g+T)/2 = banked m_det: mismatches **0** (house m_det beyond its memory wall at N=48 — s38)
+
+## Tightest margins per δ (smallest `m_det − a` among a>=1 cells)
+
+| δ | λ | ℓ | a | m_det | margin |
+|---|---|---|---|---|---|
+| 8 | `(22, 2, 2, 2, 2, 2)` | 6 | 1 | 13 | 12 |
+| 9 | `(26, 2, 2, 2, 2, 2)` | 6 | 1 | 13 | 12 |
+| 10 | `(30, 2, 2, 2, 2, 2)` | 6 | 1 | 13 | 12 |
+| 11 | `(34, 2, 2, 2, 2, 2)` | 6 | 1 | 13 | 12 |
+| 12 | `(38, 2, 2, 2, 2, 2)` | 6 | 1 | 13 | 12 |
+
+**VERIFICATION PASS**
