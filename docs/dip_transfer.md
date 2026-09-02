@@ -170,8 +170,8 @@ erases) this answers the brief's question:
   `mult_{P_r} < mult_{R_r}`, and at such a cell the DIP mechanism's
   hypothesis (`pad_units = 0`) fails.  The DIP method separates `R_r` from
   `D_r^det`; the permanent enters only to *lower* `D` at cells where
-  `I(D_r^{per_3})_delta != 0` — at `r = 6`, only at `delta >= 6`
-  (Prop. 8 there).
+  `I(D_r^{per_3})_delta != 0` — at `r = 6`, only at `delta >= 7`
+  (Prop. 8 there; `delta = 6` measured empty).
 - **At what cost could DIP's method produce an `(R_6, det)` obstruction at
   `ell = 6`?**  Two ingredients per cell: `m_det(lam, delta)` — a
   rectangular Kronecker coefficient `g(lam, (delta^4), (delta^4))`, cheap
@@ -234,13 +234,15 @@ remains one banked `delta = 6` cell (Direction 7's own first test).
    is the programme's first `D > 0`, an `(R_6, det)` occurrence
    obstruction, permanent-insensitive by Theorem 2 and outside [BIP]'s
    regime.
-2. **The first weight of `I(D_6^{per_3}) ⊂ C[Sym^3 C^6]`** (degree `>= 6`
-   by Pieri; the `delta = 6` scan `analysis/wk9_s37_onsets.py per6 6 6` is
-   the cheapest exact computation in the programme — 56 coefficients).
-   Reason: by Prop. 8 its Pieri transport `mu + (horizontal 6-strip)` is
-   the *complete list* of `delta = 6` cells where `P_6 != R_6` can be felt;
-   every other length-6 cell at `delta = 6` has `mult_pad = mult_{R_6}` and
-   can be computed against `{l·c}` (collapsing) without loss.
+2. **The first weight of `I(D_6^{per_3}) ⊂ C[Sym^3 C^6]`** — degree
+   `>= 7` now (`delta = 6` measured empty this session, all four `a > 0`
+   cells; the 27 length-6 weights at `delta = 7`, all `a = 1`, are the
+   next scan, `analysis/wk9_s37_onsets.py per6 7 7`, 56 coefficients).
+   Reason: by Prop. 8 its Pieri transport `mu + (horizontal delta-strip)`
+   is the *complete list* of cells where `P_6 != R_6` can be felt; every
+   length-6 cell at `delta <= 6` — candidate 1 included — has
+   `mult_pad = mult_{R_6}` and can be computed against `{l·c}`
+   (collapsing) without loss.
 3. **The `lam_5 = 1` sub-slab at `ell = 5`, `delta = 7, 8`, cheapest
    `N_S` first** (e.g. the `delta = 7` successors of `(14,5,2,2,1)`,
    `(13,5,4,1,1)`).  Reason: `docs/blindness_slab.md` §4 shows the
@@ -260,7 +262,7 @@ remains one banked `delta = 6` cell (Direction 7's own first test).
   §§3–5 of DIP; BIP Thm. 1.4 and Prop. 3.2; the LMR quadratic bound; the
   BI tableau-evaluation technique (read at the level of the technique;
   lemma numbers not verified).
-- **Measured:** the `delta = 6`, length-6 `(a, N_S)` list.
+- **Measured:** the `delta = 6`, length-6 `(a, N_S)` list; `I(D_6^{per_3})_6 = 0`.
 - **Expectation:** the cost estimates of §4 (both the Kronecker side and
   the BI-style pad evaluation); the guess `delta >= 8` for the first
   `a > m_det` cell at `ell = 6`.

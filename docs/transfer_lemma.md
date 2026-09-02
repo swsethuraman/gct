@@ -20,7 +20,8 @@ permanent variety), `D_r^det = D_r^{det_4}`.  Labels as pre-registered.
 > the caveat bites only on literature-style arguments about `{l·c}`
 > (catalecticant minors, Kempf collapsing of `{l·c}`), and for those the
 > permanent can make a difference only at degrees where
-> `I(D_r^{per_3}) ⊂ C[Sym^3 C^r]` is nonzero (Prop. 8).
+> `I(D_r^{per_3}) ⊂ C[Sym^3 C^r]` is nonzero (Prop. 8) — at `r = 6`, not
+> below `delta = 7` (Pieri through 5, measured at 6).
 
 ## 1. Containment and monotonicity
 
@@ -137,15 +138,18 @@ lemma: `D_5^{per_3}` is everything), and every constituent of
 `Sym^delta(Sym^3 C^6)` has at most `delta` rows (Pieri), so
 `I(D_6^{per_3})_delta = 0` for `delta <= 5` **for free**: the first degree
 at which `D_6^{per_3} ⊂ Sym^3 C^6` can have an equation at all is
-`delta = 6`, and the first weight a rectangular-ish `lam ⊢ 18` of length 6.
-(The scan `analysis/wk9_s37_onsets.py per6` confirms `sum a = 0` at
-`delta = 2..5`; its `delta = 6` leg — the first informative one — is
-recorded in `results/s37_onset_per6_d56.log` if it completed, see
-`docs/session_37.md`.)  With Prop. 8(1): **at `r = 6`,
-`mult_{P_6} = mult_{R_6}` in every weight through `delta = 5`**; the
-permanent cannot be felt anywhere below degree 6, and at degree `delta`
-only at weights `lam` admitting a length-6 `mu ⊆ lam` with `lam/mu` a
-horizontal `delta`-strip and `S_mu ⊂ I(D_6^{per_3})_delta`.
+`delta = 6`.  **Measured at `delta = 6`** (`analysis/wk9_s37_onsets.py
+per6 6 6`, `results/s37_onset_per6_d6.log`, both primes): the four
+length-6 weights of `Sym^6(Sym^3 C^6)` with `a > 0` — `(8,2,2,2,2,2)`,
+`(7,4,2,2,2,1)`, `(6,5,3,2,1,1)`, `(5,5,5,1,1,1)`, each `a = 1`,
+`N_S <= 4456` — all have `mult = a`: `I(D_6^{per_3})_6 = 0`.  So
+`I(D_6^{per_3})_delta = 0` for `delta <= 6`, and with Prop. 8(1): **at
+`r = 6`, `mult_{P_6} = mult_{R_6}` in every weight through `delta = 6`**
+— the permanent cannot be felt anywhere below degree 7, and at degree
+`delta >= 7` only at weights `lam` admitting a length-6 `mu ⊆ lam` with
+`lam/mu` a horizontal `delta`-strip and `S_mu ⊂ I(D_6^{per_3})_delta`.
+(At `delta = 7` there are 27 such `mu`, all with `a = 1`; measuring them
+is a cheap successor task in 56 coefficients.)
 
 ## 5. Corollary for Direction 1
 
@@ -171,9 +175,8 @@ Prop. 8.
 
 - **Proved:** Lemmas 1–2, Theorem 3, Proposition 8, Corollary 9.
 - **Measured:** `sum a = 0` over length-6 weights of `Sym^delta(Sym^3 C^6)`
-  for `delta <= 5` (consistent with the Pieri proof); the `delta = 6` leg
-  is the first informative measurement and is reported in
-  `docs/session_37.md`.
+  for `delta <= 5` (consistent with the Pieri proof); `I(D_6^{per_3})_6
+  = 0` at all four `a > 0` cells (both primes).
 - **Expectation:** nothing here is expectation; the collapsing itself
   (whether it runs) is Direction 1's business, not this document's.
 - **Not claimed:** that any `D_R > 0` cell exists; that the permanent ever

@@ -22,8 +22,10 @@ Labels: **proved** / **measured** / **adopted-from-literature** /
 > The first length at which any cell can be permanent-sensitive is
 > `ell = 6`, where `dim D_6^{per_3} = 50 < 56` exactly (Theorem 6), and
 > even there the permanent can enter only at degrees where the ideal of
-> `D_6^{per_3} ⊂ Sym^3 C^6` is nonzero — which it cannot be below
-> `delta = 6` (Prop. 8 of `docs/transfer_lemma.md`).
+> `D_6^{per_3} ⊂ Sym^3 C^6` is nonzero — which it is not through
+> `delta = 6` (Pieri through 5, measured at 6; Prop. 8 of
+> `docs/transfer_lemma.md`): **nothing below length 6 and degree 7 can see
+> the permanent.**
 
 The finite-generic-stabiliser page flagged in `docs/s30_review.md` §3 is
 written here (§4), once for `per_3` and once for `det_4`; with it the
@@ -251,8 +253,9 @@ carry them is Prop. 8 of `docs/transfer_lemma.md`: `mult_{P_6} <
 mult_{R_6}` at `(lam, delta)` requires `I(D_6^{per_3})_delta != 0` inside
 `C[Sym^3 C^6]`, and that ideal is zero through `delta = 5` for free (every constituent of
 `Sym^delta(Sym^3)` has at most `delta` rows, and `I(D_6^{per_3})` lives at
-length exactly 6), so **the permanent cannot be felt below degree 6 even at
-length 6**.
+length exactly 6) and zero at `delta = 6` by measurement (all four `a > 0`
+cells, both primes), so **the permanent cannot be felt below degree 7 even
+at length 6**.
 
 ## 6. Honest boundary
 
