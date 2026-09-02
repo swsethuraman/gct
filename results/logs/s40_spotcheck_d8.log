@@ -1,0 +1,18 @@
+(12, 6, 2, 2, 2) unreduced (seed 4242): a 4 N_S 3036 mult 4
+Traceback (most recent call last):
+  File "<string>", line 7, in <module>
+  File "/root/gct/analysis/wk8_s30_core.py", line 128, in measure
+    rkR = {p: rank_of(R, nb, p) for p in primes}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/gct/analysis/wk8_s30_core.py", line 128, in <dictcomp>
+    rkR = {p: rank_of(R, nb, p) for p in primes}
+              ^^^^^^^^^^^^^^^^^
+  File "/root/gct/analysis/wk8_s30_core.py", line 113, in rank_of
+    return _mat(rows, nc, p).rank()
+           ^^^^^^^^^^^^^^^^^
+  File "/root/gct/analysis/wk8_s30_core.py", line 103, in _mat
+    ent = [0] * (len(rows) * nc)
+          ~~~~^~~~~~~~~~~~~~~~~~
+MemoryError
+(9, 9, 2, 2, 2) unreduced (seed 4242): a 1 N_S 4471 mult 1
+(13, 5, 2, 2, 2) unreduced (seed 4242): a 3 N_S 2197 mult 3
