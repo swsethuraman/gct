@@ -9,14 +9,16 @@ candidate iff the pad-side rank at true-pad points is `≥ m_det + 1`.
 
 ## Result
 
-**The Phase 0 screen produced no one-bit cell and no forced cell in the
-eligible region** (`6 ≤ ℓ ≤ 10`, `λ_1 ≥ δ`, `a ≥ 1`) across the completed
-`δ` range (see `results/longweight_screen.md` for the exhaustive coverage).
-Every cell with `a ≥ 1` satisfies `a ≤ m_det`.  Phase 1 therefore has **no
-obstruction test to run**: there is no cell whose determinant side is zero for
-free, and none where the determinant loses units for free.  This is the
+**The Phase 0 screen produced no one-bit cell and no forced cell** in the whole
+eligible region — exhaustively: all **79,255** weights with `6 ≤ ℓ ≤ 10`,
+`λ_1 ≥ δ`, `δ = 8..12`, of which **69,967** have `a ≥ 1`, and every one of those
+satisfies `a ≤ m_det` (`results/longweight_screen.md`).  Phase 1 therefore has
+**no obstruction test to run**: no cell has its determinant side zero for free
+(`m_det = 0`), and none loses units for free (`a > m_det`).  This is the
 session's result on the occurrence route — banked with the screen table, as the
-brief prescribes for an empty screen.
+brief prescribes for an empty screen.  Confirmed end-to-end by
+`analysis/wk9_s39_onebit.py runall results/longweight_screen.csv`:
+*"one-bit cells: 0 ; forced cells: 0 ; no obstruction candidate."*
 
 ## The harness (in tree, its core path P1-validated)
 

@@ -1,4 +1,3 @@
-<!-- DRAFT — final totals filled in from results/longweight_screen.md at session end -->
 # The long-weight hunt — the occurrence route at `6 ≤ ℓ ≤ 10`, `n = 4`
 
 Session 39, branch `s39-longweights`, 2026-09-02.  Clone tip `e9cb8dd` (the
@@ -19,7 +18,12 @@ first pinned (`docs/d5_ideal.md` §0: `a = 1, m_det = 0` cells at lengths 8, 9,
 
 ## 0. Verdict
 
-<!-- FILL: silent-or-not from the completed screen -->
+**The occurrence route is silent across the entire long-weight region — an
+exhaustive negative.**  Every one of the **79,255** weights `λ ⊢ 4δ` with
+`6 ≤ ℓ(λ) ≤ 10` and `λ_1 ≥ δ`, for `δ = 8, 9, 10, 11, 12`, was screened; of the
+**69,967** with `a ≥ 1`, **not one** has `a = 1, m_det = 0` (one-bit) and **not
+one** has `a > m_det` (forced).  Phase 1 therefore had no obstruction test to
+run.  Three proved-and-measured statements:
 
 1. **The eligible region is now bounded on all four sides, all proved.**  An
    occurrence obstruction (`mult_det = 0 < mult_pad`) or a forced multiplicity
@@ -32,13 +36,17 @@ first pinned (`docs/d5_ideal.md` §0: `a = 1, m_det = 0` cells at lengths 8, 9,
    (`docs/washout_lemma.md`) and `ℓ ≤ δ` free from Pieri, the whole
    permanent-sensitive long-weight region is `6 ≤ ℓ ≤ min(δ, 10)`.
 
-2. **The occurrence route is silent across the screened region.**  <!-- FILL
-   counts --> For every `λ` with `6 ≤ ℓ(λ) ≤ 10`, `λ_1 ≥ δ`, `a ≥ 1` in the
-   completed part of `δ = 8..K`, `a(λ,δ) ≤ m_det(λ)` — no `a = 1, m_det = 0`
-   cell and no `a > m_det` cell.  So no occurrence obstruction, and no forced
-   multiplicity drop, lives at lengths 6–10 in this region: any separation
-   here would be a genuine multiplicity phenomenon (`mult_det < a ≤ m_det`),
-   invisible to arithmetic — the same character s38 found at length 5.
+2. **The occurrence route is silent, and not narrowly.**  For every screened
+   cell `a(λ,δ) ≤ m_det(λ)`.  The margin is enormous and grows with `δ`: at the
+   most-balanced cell of each degree `m_det` outruns `a` by orders of magnitude
+   (δ = 12: `a = 87,405` against `m_det = 482,821,387` at `(16,11,8,6,4,2,1)`),
+   and the *tightest* cell anywhere — the closest the screen ever comes to
+   firing — is the peaked length-6 family `(4δ−10, 2,2,2,2,2)`, with `a = 1`,
+   `m_det = 13`, **margin 12 at every `δ`**.  It never closes.  So no occurrence
+   obstruction and no forced multiplicity drop lives at lengths 6–10: any
+   separation here would be a genuine multiplicity phenomenon
+   (`mult_det < a ≤ m_det`), invisible to arithmetic — the same character s38
+   found at length 5, now with a widening gap.
 
 3. **The `n = 3` precedent does not transfer, and now we can say why.**  At
    `n = 3` the one-bit cells sat at `ℓ = 8, 9`, the top of the Kronecker length
@@ -91,46 +99,66 @@ table at `δ = 5..9`** before extending it (`results/logs/s39_chars_selftest.log
 queue with PID-owned claims and dead-owner reconcile, banking each row
 (flush + fsync) as it is computed.
 
-*Result.*  `results/longweight_screen.md` (+`.csv`).  <!-- FILL: table summary,
-completed δ range, cell counts, tightest margins -->
+*Result.*  `results/longweight_screen.md` (+`.csv`).  Exhaustive; every `(δ,ℓ)`
+chunk carries a `.done` marker and the banked unique-row count equals the
+candidate count (79,255) exactly.
 
-The tightest cells are, at every length, the **peaked family**
-`(4δ − 8, 2^{ℓ−1})` with `a = 1` — the length-`ℓ` analogue of s38's
-`(4δ−8, 2^4)` — whose `m_det` sits at `13` (`ℓ=6`), growing with `ℓ`, so the
-margin `m_det − a` never approaches zero.  The balanced ten-row cells, the
-largest-`a` fire-risk extreme, have `a` in the tens against `m_det` in the
-thousands.  Both fire-risk extremes of s38's analysis are covered at every
-length reached, and both are clean.
+| δ | candidates | cells (`a≥1`) | one-bit | forced | max `a` (cell) — its `m_det` | tightest cell — margin |
+|---|---|---|---|---|---|---|
+| 8 | 2,228 | 1,479 | 0 | 0 | 91 `(11,8,6,4,2,1)` — 244,549 | `(22,2,2,2,2,2)` a1/m13 — 12 |
+| 9 | 5,526 | 4,131 | 0 | 0 | 504 `(14,9,6,4,2,1)` — 2,226,605 | `(26,2,2,2,2,2)` a1/m13 — 12 |
+| 10 | 12,464 | 9,975 | 0 | 0 | 2,269 `(14,10,7,5,3,1)` — 24,166,182 | `(30,2,2,2,2,2)` a1/m13 — 12 |
+| 11 | 21,925 | 19,552 | 0 | 0 | 13,339 `(15,11,7,5,3,2,1)` — 247,341,470 | `(34,2,2,2,2,2)` a1/m13 — 12 |
+| 12 | 37,112 | 34,830 | 0 | 0 | 87,405 `(16,11,8,6,4,2,1)` — 482,821,387 | `(38,2,2,2,2,2)` a1/m13 — 12 |
+| **Σ** | **79,255** | **69,967** | **0** | **0** | — | margin 12 throughout |
+
+Cells by length (`a≥1`): ℓ6 10,528; ℓ7 14,490; ℓ8 16,422; ℓ9 15,668; ℓ10 12,859.
+
+The tightest cell at every degree is the **peaked length-6 family**
+`(4δ−10, 2,2,2,2,2)` with `a = 1`, `m_det = 13`, **margin 12** — the length-6
+analogue of s38's length-5 `(4δ−8, 2,2,2,2)` family (`a = 1`, `m_det = 8`,
+margin 7).  The margin *grew* from 7 at length 5 to 12 at length 6, and holds
+constant in `δ`.  The largest-`a` fire-risk extreme (balanced cells, `a` up to
+87,405) is covered at every length and clean by orders of magnitude.  Both of
+s38's fire-risk extremes are covered at every length 6–10, and both are silent.
 
 ---
 
 ## 3. Phase 1 — one-bit and forced tests
 
-<!-- FILL: either "no one-bit/forced cell exists, so Phase 1 is empty" OR the
-ledger of tests run. -->
-
-The Phase 1 harness (`analysis/wk9_s39_onebit.py`) is in the tree and was
-exercised on the validation cells: for a one-bit cell it builds the unique HWV
-by the validated stabiliser reduction (P1 reproduced three s36 ledger cells and
-the witness exactly, `results/s39_validation.md`), reconstructs it over `Z`,
-verifies every raising operator kills it, then audits `m_det = 0` at 20 `det_4`
-pencils (must vanish) and tests 20 independent true padded-permanent points; for
-a forced cell it takes the pad-side rank at `3(a+8)` true-pad points.  <!-- FILL:
-outcome -->
+**Empty by the screen: no one-bit or forced cell exists in the eligible region,
+so Phase 1 ran no obstruction test** (`results/onebit_ledger.md`; the harness
+`analysis/wk9_s39_onebit.py --runall` over the screen csv returns "no
+obstruction candidate").  Had a cell existed, the harness would build the unique
+HWV by the validated stabiliser reduction (P1 reproduced three s36 ledger cells
+and the witness exactly, `results/s39_validation.md`), reconstruct it over `Z`,
+verify every raising operator kills it, then audit `m_det = 0` at 20 `det_4`
+pencils (must vanish) and test 20 independent true padded-permanent points (a
+one-bit cell), or take the pad-side rank at `3(a+8)` true-pad points (a forced
+cell) — `STOP-EVERYTHING` on any candidate.  The harness is delivered validated
+(its build/kernel/evaluation path is the P1-validated one; its exact
+reconstruction and independent point construction are the s36-audited
+`wk9_s36_exact` / `wk9_s36_bite` paths) and, correctly, unused.
 
 ---
 
 ## 4. The window as left, and coverage
 
 - **Obstruction window (proved bounds):** `a ≥ 1`, `λ_1 ≥ δ`, `6 ≤ ℓ ≤ 10`.
-- **Screened exhaustively (measured):** <!-- FILL: δ range, ℓ range -->
-- **Not reached (named, not estimated):** <!-- FILL -->
-- **Occurrence route:** silent in the completed region — no `a > m_det`, no
-  `a = 1, m_det = 0`.  <!-- FILL final -->
+- **Screened exhaustively (measured):** `δ = 8, 9, 10, 11, 12`, `6 ≤ ℓ ≤
+  min(δ,10)`, every `λ_1 ≥ δ` — 79,255 weights, 100% of the region, no cell
+  skipped (the candidate count equals the banked count at every `(δ,ℓ)` chunk).
+- **Occurrence route:** **silent** — no `a > m_det`, no `a = 1, m_det = 0`,
+  anywhere; margin ≥ 12 everywhere and growing with `δ` at the balanced end.
+- **Not reached, by theorem not budget:** rows `11 ≤ ℓ ≤ 16` (`mult_pad = 0`
+  there, §1); `δ ≥ 13` (the screen stops at 12, as pre-registered — the pattern
+  is a stable one-parameter family in `δ`, so no boundary is expected there, but
+  it is not measured).
 - **What is not touched:** the multiplicity route (`mult_det < a ≤ m_det`
   requires a rank, not arithmetic).  Whether a *multiplicity* obstruction lives
-  at `6 ≤ ℓ ≤ 10` — the one thing the screen cannot see — is open, and is the
-  natural successor probe (the reduction reaches `n_χ ≈ 15,500`).
+  at `6 ≤ ℓ ≤ 10` — the one thing the arithmetic screen cannot see — is open,
+  and is the natural successor probe (the reduction reaches `n_χ ≈ 15,500`; the
+  peaked cells are cheap, `n_χ = 200` at `(4δ−10,2^5)`).
 
 ---
 
@@ -139,9 +167,16 @@ outcome -->
 - **Proved:** the `ℓ ≤ 10` bound (§1); the eligible-region characterisation;
   the engine's exactness (two primes, CRT, bound + parity asserts on every
   cell).
-- **Measured:** the screen values `a`, `m_det` — each exact; validated against
-  the house routines and s38's table before use.
-- **Expectation retired / confirmed:** P2 (silence), <!-- FILL -->.
+- **Measured:** the screen values `a`, `m_det` — each exact (two 61-bit primes,
+  CRT, per-cell bound and parity asserts); validated against the house routines,
+  the `n=3` anchors and s38's length-5 table before use, and re-verified
+  independently after (`results/s39_verify.md`: `a` vs the house plethysm and vs
+  a character-free reduced kernel at `δ = 10,11,12`; `m_det` vs the house at
+  `δ = 10`).
+- **Expectation confirmed:** P2 (silence expected at `6 ≤ ℓ ≤ 10` by `δ = 12`,
+  from the regime argument, not a transfer) — confirmed exhaustively, with the
+  gap wider than at length 5.  P3 (would a one-bit vector vanish at the pad) is
+  vacuous: no one-bit vector exists.  P1 held (`results/s39_validation.md`).
 - **Regime:** the silence is an arithmetic statement about `a` vs `m_det` at
   `6 ≤ ℓ ≤ 10`; it says nothing about the multiplicity route, and it is not a
   transfer of the `n = 3` precedent (which lived at `ℓ` near `n²`, outside the
