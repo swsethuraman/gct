@@ -69,22 +69,27 @@ Above `n_χ ≈ 8000` the container is a one-worker machine.
 |---|---|---|---|
 | `δ = 8`, all cells with `n_χ ≤ 5000` | 60 of 107 | 120 of 227 | `mult_det = a` at every cell, both primes |
 | `δ = 9`, all cells with `n_χ ≤ 2500` | 49 of 188 | 92 of 688 | `mult_det = a` at every cell, both primes |
-| `δ = 10`, the rectangular cell `(6,6,6,6,6)` — the unique degree-10 `SL_5`-invariant of cubic threefolds | 1 | 1 | see the ledger row (filled in when the run completed; the log is `s40_n3cells_inv10.log`) |
+| `δ = 10`, the rectangular cell `(6,6,6,6,6)` — the unique degree-10 `SL_5`-invariant of cubic threefolds (`N_S = 1350088`, `n_χ = 12321` exact, compressed route, 24 min) | 1 | 1 | **`mult_det = 1 = a`, both primes**: the invariant does not vanish on `D_5` |
+| `δ = 8`, further cells `5000 < n_χ ≤ 9100` (in flight at bundling time; whatever the ledger lists) | see ledger | | `mult_det = a` at every completed cell |
 
-So `I(D_5)_8` is empty on 60 of 107 cells, including every cell with
-balance `≥ 6` below `n_χ = 5000` and the balanced `(8,4,4,4,4)` (`n_χ =
-2838`); `I(D_5)_9` is empty on the 49 peaked cells.  The sceptical branch
-never fired; the STOP rule never triggered.  Nothing here moves the lower
-end of paper 1's bracket (which needs *every* cell of a degree), and
-nothing contradicts the conjecture.
+So `I(D_5)_8` is empty on at least 60 of 107 cells, including every cell
+with balance `≥ 6` below `n_χ = 5000` and the balanced `(8,4,4,4,4)` (`n_χ =
+2838`); `I(D_5)_9` is empty on the 49 peaked cells; and **no
+`SL_5`-invariant of cubic threefolds of degree below 15 vanishes on the
+determinantal ones** (degree 5: s28; degree 10: this session; `5 | δ` is
+forced for an invariant).  The sceptical branch never fired; the STOP rule
+never triggered.  Nothing here moves the lower end of paper 1's bracket
+(which needs *every* cell of a degree), and nothing contradicts the
+conjecture.
 
-Why the invariant cell matters more than its size: a bite there would be
-an `SL_5`-*invariant* of cubic threefolds vanishing on every determinantal
-cubic — the cheapest conceivable equation of `D_5`, in the smallest
-possible weight class — and it is the only invariant cell in the whole
-range (`5 | δ` is forced; `δ = 5` was measured empty by s28, `δ = 15` is out
-of reach).  Emptiness there says no invariant vanishes on `D_5` before
-degree 15.
+Why the invariant cell mattered more than its size: a bite there would
+have been an `SL_5`-*invariant* of cubic threefolds vanishing on every
+determinantal cubic — the cheapest conceivable equation of `D_5`, in the
+smallest possible weight class — and it is the only invariant cell in the
+whole range (`5 | δ` is forced; `δ = 5` was measured empty by s28, `δ = 15`
+is out of reach).  Its emptiness says no invariant vanishes on `D_5` before
+degree 15; the `n = 4` analogue, `(8^5)` at `δ = 10` (`|Stab| = 120`), is
+the corresponding single test there and is recommended.
 
 ## 4. The plan for a compute session (ordered; pre-register first)
 
