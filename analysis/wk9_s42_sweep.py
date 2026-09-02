@@ -40,7 +40,7 @@ def main():
     cells = json.load(open(opt['census']))
     if opt['deltas']: cells = [c for c in cells if c['delta'] in opt['deltas']]
     if opt['ells']: cells = [c for c in cells if c['ell'] in opt['ells']]
-    cells = [c for c in cells if c['nchi_lb'] <= opt['nchi_cap'] and c['N_S'] <= opt['ns_cap']]
+    cells = [c for c in cells if c.get('a') and c.get('nchi_lb') is not None and c['nchi_lb'] <= opt['nchi_cap'] and c['N_S'] <= opt['ns_cap']]
     cells.sort(key=lambda c: (c['nchi_lb'], c['N_S']))
     k, m = opt['split']
     cells = [c for j, c in enumerate(cells) if j % m == k]
