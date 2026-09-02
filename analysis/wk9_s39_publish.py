@@ -34,14 +34,17 @@ def load():
     for delta in range(DMIN, DMAX + 1):
         for ell in range(6, min(delta, 10) + 1):
             p = os.path.join(SDIR, 'd%d_l%d.csv' % (delta, ell))
-            rr = []
+            seen = {}
             if os.path.exists(p):
                 for ln in open(p):
                     if ln.startswith('delta') or not ln.strip(): continue
                     f = ln.strip().split(',')
                     lam = tuple(int(x) for x in f[1].split('|'))
-                    rr.append((lam, int(f[3]), int(f[4]), f[5], f[6]))
-            rows[(delta, ell)] = rr
+                    row = (lam, int(f[3]), int(f[4]), f[5], f[6])
+                    if lam in seen:
+                        assert seen[lam] == row, ('duplicate row disagrees', p, lam, seen[lam], row)
+                    seen[lam] = row
+            rows[(delta, ell)] = list(seen.values())
     return rows
 
 
