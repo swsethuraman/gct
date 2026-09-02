@@ -21,7 +21,7 @@ import sys, os, time, json
 from fractions import Fraction
 from math import gcd
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from wk9_s42_redengine import build
+from wk9_s42_redengine import build, csr_to_rows
 from wk9_s42_sparse import nullity_sparse, log
 from wk8_s30_pleth import a_of
 from wk9_s36_stabred import P1, P2
@@ -66,11 +66,11 @@ def lift(lam, delta, verbose=True):
     t0 = time.time()
     B = build(lam, delta, verbose=False)
     a = a_of(lam, delta, 4, len(lam))
-    n = B['n_red']; rows = B['rows_red']
+    n = B['n_red']; rows = csr_to_rows(B['E_red'])
     primes = [P1, P2]
     per = {}
     for p in primes:
-        k, kern = nullity_sparse(rows, n, p, want_kern=True, tag=f"lift{'_'.join(map(str, lam))}d{delta}", verbose=False)
+        k, kern = nullity_sparse(B['E_red'], n, p, want_kern=True, tag=f"lift{'_'.join(map(str, lam))}d{delta}", verbose=False)
         per[p] = rref_mod(kern, n, p) if k else ((), [])
         log(f"  p={p}: nullity {k}, pivots {per[p][0]}")
     k = len(per[P1][1])
@@ -98,7 +98,7 @@ def lift(lam, delta, verbose=True):
         if not extra:
             return dict(lam=list(lam), delta=delta, a=a, nullity=k, verdict=f'mult_red >= {a-k} proved; = {a-k} measured (rational reconstruction failed with {len(primes)} primes)')
         p = extra.pop(0)
-        kk, kern = nullity_sparse(rows, n, p, want_kern=True, tag=f"lift{'_'.join(map(str, lam))}d{delta}", verbose=False)
+        kk, kern = nullity_sparse(B['E_red'], n, p, want_kern=True, tag=f"lift{'_'.join(map(str, lam))}d{delta}", verbose=False)
         assert kk == k, ("extra prime disagrees on nullity", p, kk, k)
         per[p] = rref_mod(kern, n, p)
         assert per[p][0] == per[P1][0]
