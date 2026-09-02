@@ -1,4 +1,3 @@
-<!-- session record; coverage numbers finalized from the completed screen -->
 # Session 39 — the long-weight occurrence screen (`ℓ = 6..10`) and one-bit tests
 
 Branch `s39-longweights` off `e9cb8dd` (the s36 merge).  Ancestry gate
@@ -25,13 +24,19 @@ region where the `n = 3` ideal was first pinned (`docs/d5_ideal.md` §0).
    `ℓ ≤ 5` blind to the permanent (`docs/washout_lemma.md`) and `ℓ ≤ δ` from
    Pieri, the permanent-sensitive long-weight region is `6 ≤ ℓ ≤ min(δ, 10)`.
 
-2. **The occurrence route is silent.** <!-- FILL final: across δ=8..K, N cells,
-   0 one-bit, 0 forced --> For every screened cell `a ≤ m_det` — no
-   `a = 1, m_det = 0` and no `a > m_det`.  So no occurrence obstruction and no
-   forced multiplicity drop lives at lengths 6–10 in the region screened; any
-   separation there would be a genuine multiplicity phenomenon
-   (`mult_det < a ≤ m_det`), invisible to arithmetic — exactly s38's finding at
-   length 5, now extended to lengths 6–10.  Pre-registered **P2 confirmed**.
+2. **The occurrence route is silent — an exhaustive negative.**  All **79,255**
+   weights with `6 ≤ ℓ ≤ 10`, `λ_1 ≥ δ`, `δ = 8..12` were screened; of the
+   **69,967** with `a ≥ 1`, **0** are one-bit (`a=1, m_det=0`) and **0** are
+   forced (`a>m_det`).  Every cell has `a ≤ m_det`, not narrowly: the balanced
+   extreme has `m_det` outrunning `a` by orders of magnitude (δ=12:
+   `a=87,405` vs `m_det=4.8×10⁸`), and the tightest cell anywhere is the peaked
+   `(4δ−10, 2^5)` (ℓ=6, `a=1, m_det=13`, **margin 12 at every δ**, never
+   closing).  So no occurrence obstruction and no forced multiplicity drop lives
+   at lengths 6–10; any separation there would be a genuine multiplicity
+   phenomenon (`mult_det < a ≤ m_det`), invisible to arithmetic — exactly s38's
+   length-5 finding, now extended to 6–10 with the gap *wider* (margin grew from
+   7 at ℓ=5 to 12 at ℓ=6).  Pre-registered **P2 confirmed**; Phase 1 had no cell
+   to test.
 
 3. **The `n = 3` precedent is explained away, not transferred.**  Its one-bit
    cells sat at `ℓ = 8, 9 ≈ n² = 9`; at `n = 4` that edge is near `ℓ = 16`,
@@ -67,5 +72,14 @@ logs under `results/logs/`.  Per-cell CSVs under `results/s39_screen/`.
 - Obstruction window (proved bounds): `a ≥ 1`, `λ_1 ≥ δ`, `6 ≤ ℓ ≤ 10`.
 - Open, untouched by this session: the **multiplicity** route at `6 ≤ ℓ ≤ 10`
   (`mult_det < a ≤ m_det`), which needs a rank, not arithmetic — the natural
-  successor (the reduction reaches `n_χ ≈ 15,500`).
-- Coverage and what was not reached: <!-- FILL from the screen table -->.
+  successor (the reduction reaches `n_χ ≈ 15,500`; the peaked cells are cheap,
+  `n_χ = 200`).
+- Coverage: **exhaustive** — 100% of the eligible region (`δ=8..12`,
+  `6 ≤ ℓ ≤ min(δ,10)`, `λ_1 ≥ δ`), candidate count = banked count at every
+  chunk.  Not reached, by theorem not budget: `11 ≤ ℓ ≤ 16` (`mult_pad = 0`);
+  `δ ≥ 13` (pre-registered stop, a stable `δ`-family with no expected boundary).
+- Independent verification (`results/s39_verify.md`): the `m_det` engine's `a`
+  re-confirmed against the house plethysm and a character-free reduced kernel at
+  `δ=10,11,12`; `m_det` against the house at `δ=10` and by its exact invariants
+  at `δ=11,12`; the classification invariant `a ≤ m_det` holds on all 69,967
+  cells.  **VERIFICATION PASS.**
