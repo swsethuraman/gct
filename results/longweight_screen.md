@@ -67,11 +67,11 @@ A chunk is COMPLETE iff its `.done` marker exists; else PARTIAL (banked/candidat
 | 11 | 9 | 5116 | 5116 | 4486 | 0 | 0 | 20 (`(28, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 | 11 | 10 | 4882 | 4882 | 3701 | 0 | 0 | 17 (`(26, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 | 12 | 6 | 4337 | 4337 | 4248 | 0 | 0 | 12 (`(38, 2, 2, 2, 2, 2)`) | complete |
-| 12 | 7 | 6561 | 5569 | 5396 | 0 | 0 | 17 (`(36, 2, 2, 2, 2, 2, 2)`) | PARTIAL 5569/6561 |
-| 12 | 8 | 8235 | 620 | 384 | 0 | 0 | 20 (`(34, 2, 2, 2, 2, 2, 2, 2)`) | PARTIAL 620/8235 |
+| 12 | 7 | 6561 | 6561 | 6388 | 0 | 0 | 17 (`(36, 2, 2, 2, 2, 2, 2)`) | complete |
+| 12 | 8 | 8235 | 8235 | 7917 | 0 | 0 | 20 (`(34, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 | 12 | 9 | 9018 | 9018 | 8437 | 0 | 0 | 20 (`(32, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 | 12 | 10 | 8961 | 8961 | 7840 | 0 | 0 | 17 (`(30, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 
-Totals across banked rows: **61442 cells (a≥1), 0 one-bit, 0 forced.**
+Totals across banked rows: **69967 cells (a≥1), 0 one-bit, 0 forced.**
 
-_(generated 2026-09-02 19:19 UTC by `analysis/wk9_s39_publish.py`)_
+_(generated 2026-09-02 20:22 UTC by `analysis/wk9_s39_publish.py`)_
