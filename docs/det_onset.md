@@ -28,10 +28,10 @@ uncertified.
    multiplicity phenomenon** (`mult_det < a ≤ m_det`), invisible to arithmetic
    and requiring a rank to detect. Pre-registered P2 (silence expected) is
    **confirmed**.
-2. **δ=8 is empty on every reachable cell.** All 27 length-5 cells at δ=8 with
-   `N_S ≤ 5000` measure `mult_det = a` (`det_units = 0`), two primes, each a
-   rank-attains-`a` certificate. No bite. 16 further reachable cells
-   (`5000 < N_S ≤ 9000`) and 392 cells past the unreduced memory wall
+2. **δ=8 is empty on every reachable cell measured.** All 29 length-5 cells at
+   δ=8 with `N_S ≤ 5531` measure `mult_det = a` (`det_units = 0`), two primes,
+   each a rank-attains-`a` certificate. No bite. 14 further reachable cells
+   (`5531 < N_S ≤ 9000`) and 392 cells past the unreduced memory wall
    (`N_S > 9000`) were not measured (named in §3).
 3. **Validation battery passes** (P1): the K1 witness, the rectangular `D_4^det`
    ladder rungs 4–8 (both odd-block sign tests), and the nine banked δ=6 length-5
@@ -125,12 +125,12 @@ screen's silence is the honest, pre-registered finding.
 length-5 cells with `a≥1`; capped `N_S` counter (verified against `monomials()`).
 **43 are reachable unreduced** (`N_S ≤ 9000`, the `7.5e-8·N_S²` GB wall).
 
-**δ=8 measurements** (`results/onset_ledger.md`): the 27 reachable cells with
-`N_S ≤ 5000`, ascending in `N_S` — **every one `mult_det = a`, `det_units = 0`**,
+**δ=8 measurements** (`results/onset_ledger.md`): 29 reachable cells with
+`N_S ≤ 5531`, ascending in `N_S` — **every one `mult_det = a`, `det_units = 0`**,
 two primes, `a` matched to the plethysm, `rank(R)=N_S−a` asserted (each a
-certificate, not a sample). No bite. Spanning `a = 1..9`, `m_det = 8..181`.
+certificate, not a sample). No bite. Spanning `a = 1..9`, `m_det = 8..299`.
 
-Not measured: 16 reachable cells `5000 < N_S ≤ 9000` (unreduced `O(N_S²)` cost,
+Not measured: 14 reachable cells `5531 < N_S ≤ 9000` (unreduced `O(N_S²)` cost,
 banked as reachable-but-deferred), and 392 cells `N_S > 9000` past the wall (no
 certified length-5 reduction; see §0/§4).
 
