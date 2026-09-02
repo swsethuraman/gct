@@ -1,0 +1,78 @@
+# Validation battery — session 41
+
+Run before any new cell (`results/PREREG_s41.md` P1).  Both house primes at every rank.  Pad points everywhere are true padded-permanent restrictions `x_0 · per_3(x_1..x_9)` with random linear-form substitutions.  The in-place kernel route is `analysis/wk9_s41_kernel.py`.
+
+## Part A — the `l^3 m` witness (reduced and unreduced) and `wk8_s30_calib.py` as-is
+
+- reduced witness, p = 2147483647: a = 1, kernel ∝ `(12, -3, 1)`, mult = 0 — ok (wrong rule would give `(1,-4,3)`, mult 1)
+- reduced witness, p = 2147483629: a = 1, kernel ∝ `(12, -3, 1)`, mult = 0 — ok (wrong rule would give `(1,-4,3)`, mult 1)
+- unreduced witness (`wk8_s30_core.measure`): mult = 0 — ok
+- `analysis/wk8_s30_calib.py` as-is:
+
+```
+PASS witness {l^3 m} lam=(4,4) delta=2 : mult = 0
+PASS witness kernel == (12,-3,1)
+PASS discriminating battery: 48 World A cells, 41 with mult < a
+PASS session 26's five cells
+PASS mult_det = a at all 20 weights, n=3, delta<=4
+
+CALIBRATION PASSED
+```
+
+**Part A: PASS** — the discriminating ratio is the battery line above (World A cells with `mult < a` / cells).
+
+_(part A: 1s)_
+
+## Part B — in-place kernel route vs exact route, the six s36 validation cells (`δ = 6`, `ℓ = 5`)
+
+| lam | a | N_S | n_chi | route | a (kernel) | rank(R) | mult_det | mult_pad | ledger (det, pad) | span identical (p1, p2) | VmHWM GB | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `(13, 5, 2, 2, 2)` | 2 | 3672 | 825 | exact | 2 | 823 | 2 | 2 | (2, 2) | yes, yes | 0.21 | ok |
+| `(13, 5, 2, 2, 2)` | 2 | 3672 | 825 | inplace | 2 | 823 | 2 | 2 | (2, 2) | yes, yes | 0.21 | ok |
+| `(14, 4, 2, 2, 2)` | 2 | 2337 | 546 | exact | 2 | 544 | 2 | 2 | (2, 2) | yes, yes | 0.21 | ok |
+| `(14, 4, 2, 2, 2)` | 2 | 2337 | 546 | inplace | 2 | 544 | 2 | 2 | (2, 2) | yes, yes | 0.21 | ok |
+| `(12, 6, 2, 2, 2)` | 4 | 5194 | 1162 | exact | 4 | 1158 | 4 | 4 | (4, 4) | yes, yes | 0.36 | ok |
+| `(12, 6, 2, 2, 2)` | 4 | 5194 | 1162 | inplace | 4 | 1158 | 4 | 4 | (4, 4) | yes, yes | 0.36 | ok |
+| `(13, 5, 4, 1, 1)` | 2 | 1824 | 658 | exact | 2 | 656 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+| `(13, 5, 4, 1, 1)` | 2 | 1824 | 658 | inplace | 2 | 656 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+| `(12, 5, 5, 1, 1)` | 2 | 2795 | 524 | exact | 2 | 522 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+| `(12, 5, 5, 1, 1)` | 2 | 2795 | 524 | inplace | 2 | 522 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+| `(9, 8, 5, 1, 1)` | 2 | 5159 | 1947 | exact | 2 | 1945 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+| `(9, 8, 5, 1, 1)` | 2 | 5159 | 1947 | inplace | 2 | 1945 | 2 | 2 | (2, 2) | yes, yes | 0.36 | ok |
+
+**Part B: PASS** — failures: none.
+
+_(part B: 47s)_
+
+## Part C — three banked `ℓ = 6` cells of `results/s36_ledger.md`, by s36's route and by the in-place route
+
+Chosen by the prereg rule: the only `D ≠ 0` six-row row `(10,8,7,1,1,1)`, plus `(13,8,4,1,1,1)` and `(13,9,2,2,1,1)` drawn by `sha256("s41 2026-09-02")` from the 17 `D = 0` rows with `n_χ ≤ 8000`.
+
+| lam | delta | route | a | N_S | Stab | n_chi | rank(R) | mult_det | mult_pad | D | ledger (a, N_S, Stab, n_chi, det, pad) | span identical (p1, p2) | secs | VmHWM GB | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `(10, 8, 7, 1, 1, 1)` | 7 | compressed (s36) | 3 | 75689 | 6 | 5740 | 5737 | 3 | 2 | -1 | (3, 75689, 6, 5740, 3, 2) | yes, yes | 92 | 0.88 | ok |
+| `(10, 8, 7, 1, 1, 1)` | 7 | inplace | 3 | 75689 | 6 | 5740 | 5737 | 3 | 2 | -1 | (3, 75689, 6, 5740, 3, 2) | yes, yes | 83 | 0.88 | ok |
+| `(13, 8, 4, 1, 1, 1)` | 7 | exact (s36) | 2 | 27213 | 6 | 1844 | 1842 | 2 | 2 | +0 | (2, 27213, 6, 1844, 2, 2) | yes, yes | 16 | 0.88 | ok |
+| `(13, 8, 4, 1, 1, 1)` | 7 | inplace | 2 | 27213 | 6 | 1844 | 1842 | 2 | 2 | +0 | (2, 27213, 6, 1844, 2, 2) | yes, yes | 5 | 0.88 | ok |
+| `(13, 9, 2, 2, 1, 1)` | 7 | compressed (s36) | 2 | 23148 | 4 | 4747 | 4745 | 2 | 2 | +0 | (2, 23148, 4, 4747, 2, 2) | yes, yes | 54 | 0.88 | ok |
+| `(13, 9, 2, 2, 1, 1)` | 7 | inplace | 2 | 23148 | 4 | 4747 | 4745 | 2 | 2 | +0 | (2, 23148, 4, 4747, 2, 2) | yes, yes | 46 | 0.88 | ok |
+
+**Part C: PASS** — failures: none.  The `(10,8,7,1,1,1)` row is the discriminating one: `mult_pad = 2 < a = 3` must reproduce, not merely `mult = a`.
+
+_(part C: 296s)_
+
+## Part D — the `m_det` anchors
+
+```
+  [ok] m_det n=3 delta=2 (sum, support)               got (3, 3)
+  [ok] m_det n=3 delta=3 (sum, support)               got (11, 10)
+  [ok] m_det n=3 delta=4 (sum, support)               got (43, 34)
+ALL CHECKS PASSED
+```
+
+**Part D: PASS** — `Σ m_det = 3, 11, 43` at `n = 3`, `δ = 2, 3, 4`.
+
+_(part D: 0s)_
+
+---
+**BATTERY PASSED** (parts run: ['A', 'B', 'C', 'D'])
