@@ -1,0 +1,23 @@
+== delta=7: 27 length-6 weights with a>=1, sum a = 27
+   skip (9, 4, 3, 2, 2, 1) a=1 n_chi=6167 > cap
+   skip (8, 5, 3, 2, 2, 1) a=1 n_chi=8402 > cap
+   skip (7, 6, 3, 2, 2, 1) a=1 n_chi=9789 > cap
+   skip (7, 5, 4, 3, 1, 1) a=1 n_chi=6895 > cap
+   skip (7, 5, 4, 2, 2, 1) a=1 n_chi=12564 > cap
+   skip (6, 6, 4, 2, 2, 1) a=1 n_chi=6982 > cap
+   skip (6, 5, 4, 3, 2, 1) a=1 n_chi=39921 > cap
+
+**δ = 7: measured Σa = 0, ideal units = 0; no bites; 7 cells above the n_χ cap 6000 unmeasured: `(9, 4, 3, 2, 2, 1)` a=1 n_χ=6167, `(8, 5, 3, 2, 2, 1)` a=1 n_χ=8402, `(7, 6, 3, 2, 2, 1)` a=1 n_χ=9789, `(7, 5, 4, 3, 1, 1)` a=1 n_χ=6895, `(7, 5, 4, 2, 2, 1)` a=1 n_χ=12564, `(6, 6, 4, 2, 2, 1)` a=1 n_χ=6982, `(6, 5, 4, 3, 2, 1)` a=1 n_χ=39921.**
+
+== delta=8: 91 length-6 weights with a>=1, sum a = 139
+   skip (12, 4, 3, 2, 2, 1) a=1 n_chi=7200 > cap
+   skip (11, 5, 3, 2, 2, 1) a=2 n_chi=10929 > cap
+   skip (11, 4, 4, 2, 2, 1) a=2 n_chi=6512 > cap
+   skip (11, 4, 3, 2, 2, 2) a=1 n_chi=7749 > cap
+   skip (10, 6, 4, 2, 1, 1) a=2 n_chi=6542 > cap
+   skip (10, 6, 3, 2, 2, 1) a=3 n_chi=14640 > cap
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk9_s41_per6.py", line 122, in <module>
+    assert res is not None, ("cell process failed", lam, pr.returncode)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('cell process failed', (10, 6, 2, 2, 2, 2), -15)
