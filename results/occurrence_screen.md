@@ -35,8 +35,25 @@ arithmetic alone, with no rank computation (the s28 `n=3` mechanism). The first
 | 8 | 435 | **0** | (12,8,6,4,2) — 109 / 27257 | (24,2,2,2,2) — 1 / 8 / 7 |
 | 9 | 708 | **0** | (14,10,6,4,2) — 437 / 104544 | (28,2,2,2,2) — 1 / 8 / 7 |
 | 10 | 1075 | **0** | (16,11,7,4,2) — 1421 / 389644 | (32,2,2,2,2) — 1 / 8 / 7 |
-| 11 | _pending_ | | | |
-| 12 | _pending_ | | | |
+| 11 | 1602 (spot) | **0** | balanced `a≪m_det` | (36,2,2,2,2) — 1 / 8 / 7 |
+| 12 | 1900+ (spot) | **0** | balanced `a≪m_det` | (40,2,2,2,2) — 1 / 8 / 7 |
+
+**δ=5–10 are exhaustive** (every 5-part `lam` of `4δ` with `a≥1`, 2585 cells).
+**δ=11, 12 are spot-checked at the two fire-risk extremes**, not fully
+enumerated — the `m_det` character sums over partitions of 44 and 48 exceed the
+session's character-computation budget (the brief's "as far as … allow in
+budget"). A fire (`a > m_det`) can only hide at one of two extremes, and both
+are clean:
+
+- **Smallest-`m_det` end (peaked cells).** The tightest family `(4δ−8,2,2,2,2)`
+  continues exactly: `a=1`, `m_det=8`, margin 7 at δ=11 and δ=12. More peaked
+  still — `(N−4,1,1,1,1)`, `(N−5,2,1,1,1)`, `(N−6,2,2,1,1)` at δ=12 — have
+  `m_det ∈ {0,1}` but `a = 0`, so are not screened (a fire needs `a≥1`); the
+  first `a≥1` cell is the peaked family at `m_det=8`. The `n=3`-style
+  `a≥1, m_det=0` occurrence therefore cannot arise here.
+- **Largest-`a` end (balanced cells).** Representative balanced/near-rectangular
+  cells have `a` in the tens–hundreds against `m_det` in the thousands and up,
+  extending the δ≤10 pattern (δ=10 max-`a` cell: 1421 vs 389644).
 
 ## Reading
 

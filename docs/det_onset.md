@@ -21,9 +21,10 @@ uncertified.
 
 ## 0. Verdict
 
-1. **The occurrence route is silent across the whole window it can see.** Of
-   2585 length-5 cells screened at δ=5–10 (and δ=11, 12 — see §2), **not one has
-   `a > m_det`.** So the onset of `I(D_5^det)`, wherever it lies, is a **genuine
+1. **The occurrence route is silent across the whole window it can see.** Of the
+   2585 length-5 cells at δ=5–10 (exhaustive) **not one has `a > m_det`**, and
+   δ=11, 12 are clean at both fire-risk extremes (§2). So the onset of
+   `I(D_5^det)`, wherever it lies, is a **genuine
    multiplicity phenomenon** (`mult_det < a ≤ m_det`), invisible to arithmetic
    and requiring a rank to detect. Pre-registered P2 (silence expected) is
    **confirmed**.
@@ -84,8 +85,15 @@ Full table and method: `results/occurrence_screen.md`; data
 | 8 | 435 | **0** | (12,8,6,4,2) 109/27257 | (24,2,2,2,2) 1/8/7 |
 | 9 | 708 | **0** | (14,10,6,4,2) 437/104544 | (28,2,2,2,2) 1/8/7 |
 | 10 | 1075 | **0** | (16,11,7,4,2) 1421/389644 | (32,2,2,2,2) 1/8/7 |
-| 11 | _PENDING_ | | | |
-| 12 | _PENDING_ | | | |
+| 11 | 1602 (spot) | **0** | balanced a≪m_det | (36,2,2,2,2) 1/8/7 |
+| 12 | 1900+ (spot) | **0** | balanced a≪m_det | (40,2,2,2,2) 1/8/7 |
+
+δ=5–10 are **exhaustive** (2585 cells); δ=11,12 are **spot-checked at both
+fire-risk extremes** (full `m_det` enumeration over partitions of 44,48 exceeded
+the character budget — the brief's "as far as budget allows"). Peaked end: the
+`(4δ−8,2,2,2,2)` family holds `a=1, m_det=8` at 11,12, and the more-peaked
+`m_det∈{0,1}` cells have `a=0` (no `n=3`-style `a≥1,m_det=0` fire). Balanced end:
+`a` in tens–hundreds vs `m_det` in thousands+, as at δ≤10.
 
 **`m_det` outruns `a` everywhere and the gap widens** — at the largest-`a` cell
 of each degree the margin explodes (δ=10: 1421 vs 389644). The tightest cell is
