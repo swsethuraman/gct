@@ -67,17 +67,35 @@ def m_det_fast(lam, Ws):
     return int(s)
 
 
-def screen_delta(delta, ell=5, d=4, Ws=None):
+def screen_delta(delta, ell=5, d=4, Ws=None, clear_every=120, verbose=False):
+    """Occurrence screen at one delta.
+
+    The chi() memo (ambient_screen, lru_cache(maxsize=None)) otherwise grows
+    without bound across the huge partition sets of N=4*delta and OOMs the
+    container at delta>=10.  W(rho) has the rectangle characters baked in as
+    plain ints, so once it is built the cache can be cleared freely; we clear
+    it every `clear_every` weights to cap peak memory at one weight's worth of
+    Murnaghan-Nakayama intermediates.
+    """
     N = d * delta
     if Ws is None:
         Ws = mdet_weights(delta, d)
+    chi.cache_clear()                     # rect chars now baked into Ws
     rows = []
+    cnt = 0
     for lam in parts_len(N, ell):
         av = amb_a(lam, delta, d=d, nv=ell)
         if av < 1:
+            chi.cache_clear() if (cnt := cnt + 1) % clear_every == 0 else None
             continue
         md = m_det_fast(lam, Ws)
         rows.append((lam, av, md, av - md))
+        cnt += 1
+        if cnt % clear_every == 0:
+            chi.cache_clear()
+            if verbose:
+                print("    ...%d weights scanned, %d kept" % (cnt, len(rows)),
+                      file=sys.stderr); sys.stderr.flush()
     rows.sort(key=lambda r: (-(r[1] - r[2]), -r[1], r[0]))
     return rows
 
@@ -142,7 +160,7 @@ def main(argv):
         for delta in range(d_lo, d_hi + 1):
             t0 = time.time()
             Ws = mdet_weights(delta)
-            rows = screen_delta(delta, Ws=Ws)
+            rows = screen_delta(delta, Ws=Ws, verbose=True)
             allrows[delta] = rows
             validate_mdet(delta, rows)
             report(delta, rows)
