@@ -173,8 +173,17 @@ def census_weyl(deltas, ellmax, ellmin=6, n=4, box_cap=2_000_000, nchi_cap=400_0
             for x in lam[1:]: box *= (x + 1)
             so = stab_order(lam)
             rec = dict(lam=list(lam), delta=delta, ell=len(lam), stab=so, bal=lam[0] - lam[-1])
-            if box * (delta + 1) > box_cap:
-                rec.update(N_S=None, nchi_lb=None, a=None, h_pad=None, note='tail box > cap: N_S not computed (far beyond the frontier)')
+            # rigorous prefilter: weight multiplicities are monotone in dominance, so
+            # N_S(lam) >= N_S(mu) for the merged weight mu = (lam_1..lam_4, lam_5+...+lam_r) >= lam;
+            # a cell whose merged lower bound already exceeds nchi_cap * |Stab| is beyond the frontier.
+            mu = tuple(lam[:4]) + (sum(lam[4:]),)
+            ns_lb = N_S_tail_n(mu, delta, n)
+            if (ns_lb + so - 1) // so > nchi_cap:
+                rec.update(N_S=None, N_S_lb=ns_lb, nchi_lb=(ns_lb + so - 1) // so, a=None, h_pad=None,
+                           note='N_S lower bound (5-variable merged weight, dominance monotonicity) already above the cap')
+                nbox += 1
+            elif box * (delta + 1) > box_cap:
+                rec.update(N_S=None, N_S_lb=ns_lb, nchi_lb=(ns_lb + so - 1) // so, a=None, h_pad=None, note='tail box > cap: N_S not computed')
                 nbox += 1
             else:
                 ns = N_S_tail_n(lam, delta, n)
@@ -190,7 +199,7 @@ def census_weyl(deltas, ellmax, ellmin=6, n=4, box_cap=2_000_000, nchi_cap=400_0
             rows.append(rec)
         if verbose:
             print(f"delta {delta}: {len(lams)} lam_1>=delta partitions with {ellmin}<=ell<={ellmax}; "
-                  f"{nbox} beyond the tail-box cap; a computed at {na}; "
+                  f"{nbox} beyond the frontier by the prefilter/box cap; a computed at {na}; "
                   f"{sum(1 for x in rows if x['delta']==delta and x.get('a'))} cells with a>=1 sized ({time.time()-t0:.0f}s)", flush=True)
     return rows
 
