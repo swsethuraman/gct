@@ -17,3 +17,4 @@ bound (`mult_det ≤ m_det`).  Convention `D = mult_pad − mult_det`; only `D >
 | delta | lam | a | m_det | N_S | Stab | n_chi | rows | route | mult_det | mult_pad | mult_red | D | secs | HWM |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 7 | `(12, 10, 3, 1, 1, 1)` | 1 | 227 | 19488 | 6 | 1282 | 4357 | inplace | 1 | 1 | 1 | +0 | 3 | 0.09 |
+| 7 | `(14, 7, 4, 1, 1, 1)` | 1 | 501 | 21445 | 6 | 1414 | 4513 | inplace | 1 | 1 | 1 | +0 | 3 | 0.10 |
