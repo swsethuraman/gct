@@ -112,7 +112,7 @@ def commit(msg):
     if os.path.isdir(CELLS):
         subprocess.run(['git', '-C', ROOT, 'add', 'results/s41_cells'], capture_output=True)
     subprocess.run(['git', '-C', ROOT, '-c', 'user.name=s41', '-c', 'user.email=s41@gct', 'commit', '-q', '-m',
-                    msg + "\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\n"
+                    msg + "\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\n"
                     "Claude-Session: https://claude.ai/code/session_01H25jyjcL346hHpBdn8L7dT"], capture_output=True)
 
 def order(census, frontier):
