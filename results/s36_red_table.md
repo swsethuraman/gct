@@ -1,0 +1,35 @@
+| lam | delta | ell | a | mult_det | mult_pad (points) | mult_red (point-free) | red orbits / n_chi | reading |
+|---|---|---|---|---|---|---|---|---|
+| `(10, 10, 2, 2, 2, 2)` | 7 | 6 | 2 | 2 | 2 | 2 | 5645 / 6269 | pad = red: no permanent-specific equation |
+| `(10, 4, 4, 4, 2)` | 6 | 5 | 3 | 3 | 3 | 3 | 4655 / 5588 | pad = red, as the theorem requires |
+| `(10, 5, 5, 2, 1, 1)` | 6 | 6 | 2 | 2 | 2 | 2 | 5483 / 6479 | pad = red: no permanent-specific equation |
+| `(10, 7, 3, 2, 2)` | 6 | 5 | 2 | 2 | 2 | 2 | 5837 / 7102 | pad = red, as the theorem requires |
+| `(10, 7, 3, 3, 1)` | 6 | 5 | 2 | 2 | 2 | 2 | 3907 / 4702 | pad = red, as the theorem requires |
+| `(10, 8, 7, 1, 1, 1)` | 7 | 6 | 3 | 3 | 2 | 2 | 5515 / 5740 | pad = red: no permanent-specific equation |
+| `(10, 9, 6, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 4747 / 4987 | pad = red: no permanent-specific equation |
+| `(11, 4, 4, 4, 1)` | 6 | 5 | 2 | 2 | 2 | 2 | 1611 / 2113 | pad = red, as the theorem requires |
+| `(11, 6, 3, 2, 2)` | 6 | 5 | 3 | 3 | 3 | 3 | 4401 / 5785 | pad = red, as the theorem requires |
+| `(11, 7, 7, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 2326 / 2488 | pad = red: no permanent-specific equation |
+| `(11, 8, 6, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 4206 / 4503 | pad = red: no permanent-specific equation |
+| `(11, 9, 5, 1, 1, 1)` | 7 | 6 | 3 | 3 | 3 | 3 | 3315 / 3587 | pad = red: no permanent-specific equation |
+| `(12, 7, 6, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 3298 / 3672 | pad = red: no permanent-specific equation |
+| `(12, 8, 5, 1, 1, 1)` | 7 | 6 | 4 | 4 | 4 | 4 | 2777 / 3106 | pad = red: no permanent-specific equation |
+| `(12, 9, 4, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 1948 / 2199 | pad = red: no permanent-specific equation |
+| `(13, 7, 2, 2, 2, 2)` | 7 | 6 | 3 | 3 | 3 | 3 | 6633 / 8245 | pad = red: no permanent-specific equation |
+| `(13, 7, 5, 1, 1, 1)` | 7 | 6 | 3 | 3 | 3 | 3 | 2082 / 2455 | pad = red: no permanent-specific equation |
+| `(13, 8, 4, 1, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 1561 / 1844 | pad = red: no permanent-specific equation |
+| `(13, 9, 2, 2, 1, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 3854 / 4747 | pad = red: no permanent-specific equation |
+| `(14, 6, 2, 2, 2, 2)` | 7 | 6 | 4 | 4 | 4 | 4 | 4561 / 6148 | pad = red: no permanent-specific equation |
+| `(14, 7, 2, 2, 2, 1)` | 7 | 6 | 4 | 4 | 4 | 4 | 6926 / 9219 | pad = red: no permanent-specific equation |
+| `(15, 5, 2, 2, 2, 2)` | 7 | 6 | 2 | 2 | 2 | 2 | 2718 / 4086 | pad = red: no permanent-specific equation |
+| `(15, 6, 2, 2, 2, 1)` | 7 | 6 | 3 | 3 | 3 | 3 | 4549 / 6683 | pad = red: no permanent-specific equation |
+| `(16, 4, 2, 2, 2, 2)` | 7 | 6 | 2 | 2 | 2 | 2 | 1467 / 2493 | pad = red: no permanent-specific equation |
+| `(16, 5, 2, 2, 2, 1)` | 7 | 6 | 2 | 2 | 2 | 2 | 2652 / 4394 | pad = red: no permanent-specific equation |
+| `(7, 7, 4, 4, 1, 1)` | 6 | 6 | 2 | 2 | 2 | 2 | 9699 / 10091 | pad = red: no permanent-specific equation |
+| `(8, 4, 4, 4, 4)` | 6 | 5 | 2 | 2 | 1 | 1 | 4289 / 4562 | pad = red, as the theorem requires |
+| `(8, 6, 6, 2, 2)` | 6 | 5 | 3 | 3 | 3 | 3 | 8090 / 8687 | pad = red, as the theorem requires |
+| `(8, 8, 4, 2, 2)` | 6 | 5 | 3 | 3 | 3 | 3 | 5604 / 6247 | pad = red, as the theorem requires |
+| `(8, 8, 5, 2, 1)` | 6 | 5 | 2 | 2 | 2 | 2 | 5669 / 6294 | pad = red, as the theorem requires |
+| `(9, 6, 5, 2, 2)` | 6 | 5 | 3 | 3 | 3 | 3 | 12293 / 13733 | pad = red, as the theorem requires |
+| `(9, 6, 6, 2, 1)` | 6 | 5 | 2 | 2 | 2 | 2 | 5797 / 6501 | pad = red, as the theorem requires |
+| `(9, 8, 3, 2, 2)` | 6 | 5 | 2 | 2 | 2 | 2 | 6724 / 7860 | pad = red, as the theorem requires |
