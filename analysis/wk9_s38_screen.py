@@ -239,8 +239,9 @@ def main(argv):
         return 0
     delta = int(argv[0])
     t0 = time.time()
+    clr = int(argv[argv.index('--clear') + 1]) if '--clear' in argv else 120
     Ws = mdet_weights(delta)
-    rows = screen_delta(delta, Ws=Ws)
+    rows = screen_delta(delta, Ws=Ws, clear_every=clr, verbose=True)
     validate_mdet(delta, rows)
     report(delta, rows)
     print("  [%.0fs, |W-support|=%d]" % (time.time() - t0, len(Ws)))
