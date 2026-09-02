@@ -32,9 +32,12 @@ def det_certificate(lam, delta, primes=(P1, P2), seed=11, bound=40):
     out = dict(lam=list(lam), delta=delta, a=a, n_chi=B['n_chi'], K=K, primes={})
     for p in primes:
         ev = point_rows(DET4, N_DET, 4, len(lam), B['basis'], B['vecs'], K, seed, bound, p)
-        rows = list(B['rows']) + [{j: v for j, v in enumerate(e) if v} for e in ev]
+        from scipy import sparse
+        import numpy as np
+        Ev = sparse.csr_matrix(np.array(ev, dtype=np.int64))
+        F = sparse.vstack([B['E'], Ev]).tocsr()
         t1 = time.time()
-        k, _ = nullity_sparse(rows, B['n_chi'], p, tag=f"det{'_'.join(map(str, lam))}d{delta}", verbose=False)
+        k, _ = nullity_sparse(F, B['n_chi'], p, tag=f"det{'_'.join(map(str, lam))}d{delta}", verbose=False)
         out['primes'][str(p)] = dict(nullity=k, secs=round(time.time() - t1, 1))
         log(f"  {lam} d{delta} p={p}: nullity_p([E; Ev]) = {k} -> mult_det >= {a - k}" + (" = a PROVED" if k == 0 else "") + f" ({time.time()-t1:.0f}s)")
     ks = {v['nullity'] for v in out['primes'].values()}
