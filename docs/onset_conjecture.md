@@ -67,10 +67,12 @@ Labels: **proved** / **measured** / **adopted-from-literature** / **expectation*
 ⊆ Sym^n C^5`, the quinary `n`-ics with an `n×n` linear determinantal
 representation; `dim D_5^{det_n} = 5n² − (2n² − 2) = 3n² + 2` for `n ≥ 3`
 (generic finite stabiliser: paper 1 at `n = 3`, `docs/washout_lemma.md` §4
-at `n = 4`; the same count at every `n ≥ 3` — the stabiliser of `det_n` has
-dimension `2(n²−1)` and a generic 5-tuple has finite stabiliser inside it —
-is **adopted from the record** for `n = 3, 4` and **expectation** for
-`n ≥ 5`, where it enters only the anomaly discussion of §4, not Theorem 1).
+at `n = 4`).  For `n ≥ 5` the lower bound `dim D_5^{det_n} ≥ 3n² + 2` is
+**measured** this session (the rank of the differential of the
+parametrisation at a random pencil, `dim J_n = 77, 110` at `n = 5, 6`, §4(i))
+and the upper bound `≤ 3n² + 2` needs the generic 5-tuple to have finite
+stabiliser inside `Stab(det_n)` (dimension `2(n²−1)`) — **expectation**
+beyond `n = 4`, entering only the anomaly discussion of §4, not Theorem 1.
 
 `S = C[s_1..s_5]`, `S_k = Sym^k C^5`.  For `F ∈ Sym^n C^5`, `J_F = (∂_1F, ..,
 ∂_5F)`, `M(F) = S/J_F` its Milnor algebra, and `M_k(F)` the degree-`k`
@@ -101,11 +103,11 @@ closed forms verified symbolically as polynomial identities in `n`.
 
 ## 2. Theorem 1 — the cap
 
-**Theorem 1.**  Let `n ≥ 2`.  Every size-`cap(n)` minor of `M_{3n−5}(F)` is a
-nonzero polynomial of degree `cap(n)` in the coefficients of `F` and vanishes
-identically on `D_5^{det_n}`.  The span of these minors is a nonzero
-`GL_5`-submodule of `I(D_5^{det_n})_{cap(n)}`; hence `onset I(D_5^{det_n}) ≤
-cap(n)`.
+**Theorem 1.**  Let `n ≥ 2`.  The size-`cap(n)` minors of `M_{3n−5}(F)` are
+polynomials of degree `cap(n)` in the coefficients of `F`, not all zero, and
+every one of them vanishes identically on `D_5^{det_n}`.  Their span is a
+nonzero `GL_5`-submodule of `I(D_5^{det_n})_{cap(n)}`; hence
+`onset I(D_5^{det_n}) ≤ cap(n)`.
 
 The case `n = 2` is §2.6; assume `n ≥ 3`.  The proof is four steps; the
 labels are per step.
@@ -304,7 +306,7 @@ and they agree with (4.1) with `def_{2n−5} = 1` on the nose.
 
 | `n` | `3n−5` | `dim S_{3n−5}` | `μ` | `cap(n)` | `ν(n)` | `codim D_5` | corank on `D_5` (measured) | `def_{2n−5}` (meas.) | `def_n` (meas.) | `C(n−1,4)` | `deg disc` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | 1 | 5 | 0 | **5** | 1 | 1 | 1 (= `5 − rank Q`) | — | — | 0 | 5 |
+| 2 | 1 | 5 | 0 | **5** | 1 | 1 | 1 (trivial: `rank Q ≤ 4`) | — | — | 0 | 5 |
 | 3 | 4 | 70 | 5 | **65** | 6 | 6 | 6 | 1 | 0 | 0 | 80 |
 | 4 | 7 | 330 | 30 | **300** | 20 | 20 | 31 | 1 | 0 | 0 | 405 |
 | 5 | 10 | 1001 | 101 | **900** | 50 | 49 | 102 | 1 | 1 | 1 | 1280 |
@@ -393,7 +395,10 @@ this is `Σ_{ij} adj_{ji}(s) · (linear forms) = J_{n−1} · S_1 = J_n`.  By
 generic smoothness (char 0) the differential is onto `T_F D_5^{det_n}` at a
 generic `F`, so `dim J_n = dim D_5^{det_n}`; with GN, `dim J_n = 5n² −
 (2n²−2) = 3n² + 2`, which is the stabiliser count of §1 seen from the
-syzygies (measured: `dim J_n = 29, 50, 77, 110` at `n = 3..6`).  Hence
+syzygies (measured: `dim J_n = 29, 50, 77, 110` at `n = 3..6`; a rank at a
+point bounds the generic rank below, so these are proofs of `dim
+D_5^{det_n} ≥ 3n² + 2`, and the equality `codim = H_{S/J}(n)` below is exact
+given the finite-stabiliser count of §1).  Hence
 
     codim D_5^{det_n} = H_{S/J}(n),        ν(n) − codim D_5^{det_n} = ν(n) − H_{S/J}(n) = C(n−1, 4)
 
