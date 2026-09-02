@@ -73,10 +73,13 @@ if __name__ == '__main__':
     id1 = sp.simplify(H(2 * n - 5) - (nu_s - 1))
     id2 = sp.simplify(H(n) - (C4(n + 4) - 3 * n ** 2 - 2))
     id3 = sp.simplify(nu_s - H(n) - C4(n - 1))
+    id4 = sp.simplify(H(2 * n - 4) - nu_s)          # def_{2n-4}(N) = 0: the Milnor drop starts exactly at 3n-5
     cap_s = sp.expand(5 * C4(2 * n) - 10 * C4(n + 1) - sp.Rational(5, 12) * n * (n - 1) ** 2 * (7 * n - 8))
     print("\nsymbolic: H_J(2n-5) - (nu-1) =", id1, "| H_J(n) - codim =", id2,
-          "| nu - H_J(n) - C(n-1,4) =", id3, "| cap closed form residual =", cap_s)
-    assert id1 == 0 and id2 == 0 and id3 == 0 and cap_s == 0
+          "| nu - H_J(n) - C(n-1,4) =", id3, "| H_J(2n-4) - nu =", id4, "| cap closed form residual =", cap_s)
+    assert id1 == 0 and id2 == 0 and id3 == 0 and id4 == 0 and cap_s == 0
+    for n_ in range(3, 13):
+        assert H_J(2 * n_ - 4, n_) == nu_harris_tu(n_), n_
     # the term -n^2 C4(n-2) (j = n+1) is a polynomial vanishing at n = 2..5,
     # so the identities hold verbatim for n = 3, 4, 5 where that term is absent.
     print("all identities hold (symbolic, and numerically n = 2..12)")

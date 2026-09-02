@@ -61,6 +61,27 @@ for pt in pts:
     assert Mp.rank() == 1, ("not rank one", pt)
 print("six rank-one points on L, exact:")
 for pt in pts: print("   ", pt)
+# ---- (1b) L meets the Segre in a finite reduced scheme of length exactly 6:
+# Hilbert function of the ideal of the nine 2x2 minors on L (exact over Q)
+def hf(k):
+    from flint import fmpz_mat          # exact rank over Z (= over Q); the minors have integer coefficients
+    mons = [m for m in itertools.product(range(k + 1), repeat=5) if sum(m) == k]
+    idx = {m: i for i, m in enumerate(mons)}
+    rows = []
+    for q in minors:
+        pq = sp.Poly(q, *t)
+        qd = dict(zip([tuple(mm) for mm in pq.monoms()], [int(c) for c in pq.coeffs()]))
+        for m in itertools.product(range(k - 1), repeat=5):
+            if sum(m) != k - 2: continue
+            row = [0] * len(mons)
+            for mm, c in qd.items():
+                row[idx[tuple(a + b for a, b in zip(mm, m))]] += c
+            rows.append(row)
+    return len(mons) - fmpz_mat(rows).rank()
+HF = [hf(k) for k in range(1, 6)]
+print("Hilbert function of S/(2x2 minors on L), k = 1..5:", HF)
+assert HF == [5, 6, 6, 6, 6], HF
+print("L meets the Segre in a zero-dimensional scheme of length 6; the six points found exhaust it and it is reduced")
 # ---- (2) the frame test
 C = sp.Matrix(pts)          # 6 x 5
 dets = [C.extract(list(rows), list(range(5))).det() for rows in itertools.combinations(range(6), 5)]
