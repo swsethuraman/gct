@@ -39,9 +39,13 @@ Convention: `det_units = a − mult_det` = multiplicity of `I(D_5^det)` at (lam,
 | (18, 9, 3, 1, 1) | 5 | 7 | 200 | 4730 | 7 | +0 | =a |
 | (19, 8, 2, 2, 1) | 5 | 9 | 181 | 4803 | 9 | +0 | =a |
 
-**delta=8 reachable summary (N_S ≤ 5000).** 27 of the 43 reachable cells
-(N_S ≤ 9000) measured, all with `mult_det = a` ⇒ `det_units = 0` — every one
-empty, two primes, rank(R)=N_S−a asserted, `a` matched to plethysm. No bite.
-The remaining 16 reachable cells (5000 < N_S ≤ 9000) and the 392 cells with
-N_S > 9000 (the unreduced memory wall; no certified ell=5 reduction available,
-see PREREG §0) were not measured this session.
+**delta=8 reachable summary.** 29 of the 43 reachable cells (N_S ≤ 9000)
+measured — the 27 with N_S ≤ 5000 plus (19,7,4,1,1) N_S=5265 and (20,6,3,2,1)
+N_S=5531 — **all with `mult_det = a` ⇒ `det_units = 0`**: every one empty, two
+primes (P1,P2), `rank(R)=N_S−a` asserted, `a` matched to the plethysm. No bite,
+spanning `a = 1..9`, `m_det = 8..299`. The remaining 14 reachable cells
+(5531 < N_S ≤ 9000, each an unreduced `O(N_S²)` grind of ~10–30 min) and the
+392 cells with N_S > 9000 (the memory wall; no certified ell=5 reduction, see
+PREREG §0) were not measured this session — named, not estimated.
+| (19, 7, 4, 1, 1) | 5 | 9 | 256 | 5265 | 9 | +0 | =a |
+| (20, 6, 3, 2, 1) | 5 | 8 | 299 | 5531 | 8 | +0 | =a |
