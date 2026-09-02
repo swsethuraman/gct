@@ -18,7 +18,9 @@ mult < a (ideal nonzero) and the per-degree totals.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from wk8_s30_core import measure, per_form, per_padded
+from wk8_s30_core import measure, per_form, per_padded, monomials
+from wk8_s30_pleth import a_of
+NS_CAP = int(os.environ.get("NS_CAP", "7000"))   # memory wall of this container (~3.5 GB cgroup)
 
 def partitions(total, parts, maxpart=None):
     if maxpart is None: maxpart = total
@@ -30,21 +32,26 @@ def partitions(total, parts, maxpart=None):
             yield (first,) + rest
 
 def scan(label, f, N, n, r, deltas, length):
-    print(f"== {label}: n={n}, r={r}, weights of length exactly {length}")
+    print(f"== {label}: n={n}, r={r}, weights of length exactly {length}", flush=True)
     for delta in deltas:
-        tot_a = tot_units = 0; bites = []
+        tot_a = tot_units = 0; bites = []; skipped = []
         for lam in partitions(n * delta, length):
-            res = measure(f, N, n, r, delta, lam, seed=37 + delta, bound=10**5)
-            a = res['a']
+            a = a_of(lam, delta, n, r)          # plethysm route first: skip a = 0 cells
             if a == 0: continue
+            NS = len(monomials(n, r, delta, lam))
+            if NS > NS_CAP:
+                skipped.append((lam, a, NS)); continue
+            res = measure(f, N, n, r, delta, lam, seed=37 + delta, bound=10**5, a_expect=a)
             tot_a += a
             units = a - res['mult']
             tot_units += units
-            if units > 0: bites.append((lam, a, res['mult'], res['nbasis']))
-        print(f"  delta={delta}: sum a = {tot_a}, ideal units = {tot_units}")
+            print(f"     lam={lam}  a={a}  mult={res['mult']}  units={units}  N_S={NS}", flush=True)
+            if units > 0: bites.append((lam, a, res['mult'], NS))
+        print(f"  delta={delta}: measured sum a = {tot_a}, ideal units = {tot_units}; "
+              f"{len(skipped)} cells above N_S cap {NS_CAP} unmeasured: "
+              + ", ".join(f"{l} a={a} N_S={ns}" for l, a, ns in skipped), flush=True)
         for lam, a, m, nb in bites:
-            print(f"     lam={lam}  a={a}  mult={m}  units={a-m}  N_S={nb}")
-    sys.stdout.flush()
+            print(f"     BITE lam={lam}  a={a}  mult={m}  units={a-m}  N_S={nb}", flush=True)
 
 if __name__ == "__main__":
     which = sys.argv[1] if len(sys.argv) > 1 else "both"

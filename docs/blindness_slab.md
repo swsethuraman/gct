@@ -16,7 +16,8 @@ literature (§5).  Strict cells from `analysis/wk9_s37_onsets.py`
 > the degree of the generator of the principal ideal `I(D_4^{det_4})`:
 > `e >= 10` certified (s33), `e = 320112` adopted (LLV).  Strict cells
 > exist from `delta = 6` on: `D((8,8,8), 6) = −1` and `D((12,8,8), 7) = −1`
-> (both proved + measured), earlier than the s35 cell at `delta = 9`.
+> (both proved + measured), earlier than the s35 cell at `delta = 9`; the
+> pad onset is 5 or 6, with 5 possible only at two named unmeasured cells.
 >
 > The `lam_5 = 1` sub-slab does **not** close by restriction: the pad
 > first-order-jet variety has dimension 34, the jets of actual reducible
@@ -88,21 +89,27 @@ every weight of the stated length):**
 | `R_3` | **6** | 121 | **1** | `(8, 8, 8)`, `a = 2`, `mult = 1`, `N_S = 561` |
 | `R_3` | 7 | 283 | 1 | `(12, 8, 8)`, `a = 5`, `mult = 4`, `N_S = 1133` |
 | `R_4` (length exactly 4) | 2, 3, 4, 5 | 0, 0, 10, 61 | 0 | — |
-| `R_5` (length exactly 5) | 5 | see `results/s37_onset_R5_d5.log` | | |
+| `R_5` (length exactly 5) | 5 | 23 (all `a = 1`); 21 measured, `N_S <= 6869` | 0 on the 21 | two cells unmeasured (memory): `(6,4,4,4,2)` `N_S = 11640`, `(4,4,4,4,4)` `N_S = 19834` |
 
 `R_2 = Sym^4 C^2` has no ideal.  Hence:
 
 **Corollary B (proved + measured).**  `I(X_pad)_delta = 0` for
 `delta <= 4` (s35, all weights) and `I(X_pad)_6 != 0`: the length-3
 highest-weight vector of weight `(8,8,8)` vanishing on `R_3` vanishes on
-`X_pad` (restriction lemma).  The degree-5 slice is empty at lengths
-`<= 4` (table); if the length-5 scan at `delta = 5` is also empty (log
-above; `docs/session_37.md` reports the outcome), the onset of the
-padded-permanent ideal — in 10 variables, and in every `D_r^pad`, `r >= 3`
-— is **exactly 6**, sharpening s35's bracket `[5, 9]`.  The witness is a
-degree-6 *invariant of ternary quartics* (`a((8,8,8), 6) = 2`: the square
-of the degree-3 catalecticant invariant and the degree-6 generator; one
-combination vanishes on every quartic with a linear factor).
+`X_pad` (restriction lemma), hence on every `D_r^pad`, `r >= 3`.  So the
+onset of the padded-permanent ideal — in 10 variables, and in every
+`D_r^pad`, `r >= 3` — is **5 or 6**, sharpening s35's `[5, 9]`; and it is
+5 only if one of two named cells bites: `((6,4,4,4,2), 5)` or
+`((4,4,4,4,4), 5)`, the only weights at `delta = 5` not measured (all
+other `a > 0` weights of every length are measured empty: lengths `<= 2`
+trivially, length 3 and 4 in full, 21 of the 23 length-5 cells).  The
+`(4^5)` cell is the unique degree-5 `SL_5`-invariant of quinary quartics
+(`a = 1`) and is exactly the shape s33's isotypic reduction handles
+(`A_5` is 2-transitive), so a successor can close it at `n_chi ≈ N_S/120`.
+The degree-6 witness is an *invariant of ternary quartics*
+(`a((8,8,8), 6) = 2`: the square of the degree-3 catalecticant invariant
+and the degree-6 generator; one combination vanishes on every quartic with
+a linear factor).
 
 ## 3. Strict cells
 
@@ -286,7 +293,7 @@ What remains expectation is only s35's *sub*-300 hope.
 
 ## 6. Honest boundary
 
-- **Proved:** Theorem A; Corollary B modulo the length-5 `delta = 5` scan;
+- **Proved:** Theorem A; Corollary B;
   Lemma C; the pad/det jet-variety descriptions; the block-trick
   computation; Theorem D's bookkeeping; Corollary E's logic.
 - **Measured (exact):** the onset table of §2 and the strict cells'
@@ -304,7 +311,8 @@ What remains expectation is only s35's *sub*-300 hope.
   Dimca Thm. 3.1; Clemens–Werner–Cynk defect criterion; Kleiman
   transversality.
 - **Open (stated as such):** `Pi_1^pad ⊆ closure(Pi_1^det)`; the equation
-  of the universal jet hypersurface; the pad onset at length exactly 4
-  and 5 for `6 <= delta <= 8` (only lengths `<= 3` were scanned there).
+  of the universal jet hypersurface; the two `delta = 5` cells above; the
+  pad onset at length exactly 4 and 5 for `6 <= delta <= 8` (only lengths
+  `<= 3` were scanned there).
 - **Expectation:** none needed for Theorem A; the sub-300 hope is s35's,
   not this document's.
