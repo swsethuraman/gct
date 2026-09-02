@@ -195,37 +195,50 @@ def kernel_exact(rows, nchi, prime):
     rk = nchi - nul
     return nul, rk, [[int(X[i, j]) for i in range(nchi)] for j in range(nul)]
 
-def kernel_compressed(rows, nchi, prime, margin=64, pseed=101):
+def kernel_compressed(rows, nchi, prime, margin=64, pseed=101, chunk=256):
     """Certified random row compression (docs/e4_hunt.md section 4):
-    Agg = P.M, P random over F_prime, assembled in numpy int64 with every
-    product reduced mod prime before accumulation; one flint nullspace.
+    Agg = P.M with P random over F_prime (rs = n_chi + margin rows), assembled
+    in chunks of `chunk` Agg-rows as (M^T @ P_chunk)^T via scipy sparse int64
+    (products bounded well inside int64 -- asserted from the actual max |M|
+    entry and column fill), reduced mod prime, written straight into ONE
+    flint nmod_mat; one flint nullspace.  Peak resident ~ 8 n_chi^2 (flint)
+    + 8 nrows chunk (P chunk) + the sparse M.
     Certificate: rank(Agg) <= rank_p(M) <= rank_Q(M) = n_chi - a(plethysm),
     so the caller's assert dim ker(Agg) = a forces equality throughout and
-    ker(Agg) = ker_p(M)."""
+    ker(Agg) = ker_p(M).  Elimination happens only inside flint."""
     import numpy as np
-    rs = nchi + margin
-    rng = np.random.default_rng(pseed * 1000003 + prime % 1000003 + nchi)
+    from scipy import sparse
     t0 = time.time()
-    Agg = np.zeros((rs, nchi), dtype=np.int64)
-    for d in rows:
-        Pcol = rng.integers(0, prime, rs, dtype=np.int64)
-        cols = np.fromiter(d.keys(), dtype=np.int64, count=len(d))
-        vals = np.fromiter((v % prime for v in d.values()), dtype=np.int64, count=len(d))
-        # (rs x k) product, reduced before accumulation; Agg entries stay < 2^63
-        # entries < prime < 2^31 each, at most nrows additions per entry: no overflow
-        Agg[:, cols] += (np.outer(Pcol, vals) % prime)
-    Agg %= prime
-    log(f"    Agg {rs}x{nchi} assembled ({time.time()-t0:.0f}s)")
+    nrows = len(rows)
+    rs = nchi + margin
+    ri = np.fromiter((r for r, d in enumerate(rows) for _ in d), dtype=np.int64)
+    ci = np.fromiter((c for d in rows for c in d), dtype=np.int64)
+    vv = np.fromiter((v for d in rows for v in d.values()), dtype=np.int64)
+    maxabs = int(np.abs(vv).max())
+    MT = sparse.csr_matrix((vv, (ci, ri)), shape=(nchi, nrows), dtype=np.int64)
+    colfill = int(np.diff(MT.indptr).max())
+    assert maxabs * (prime - 1) * colfill < (1 << 62), ("int64 bound", maxabs, colfill)
+    del ri, ci, vv
+    rng = np.random.default_rng(pseed * 1000003 + prime % 1000003 + nchi)
     M = nmod_mat(rs, nchi, prime)
-    for i in range(rs):
-        rl = Agg[i].tolist()
-        for j, v in enumerate(rl):
-            if v: M[i, j] = v
-    del Agg
-    log(f"    flint matrix built ({time.time()-t0:.0f}s)")
+    for k0 in range(0, rs, chunk):
+        cs = min(chunk, rs - k0)
+        Pc = rng.integers(0, prime, (nrows, cs), dtype=np.int64)
+        C = (MT @ Pc) % prime                       # (nchi x cs) = Agg[k0:k0+cs].T
+        del Pc
+        CT = np.ascontiguousarray(C.T); del C
+        for k in range(cs):
+            rl = CT[k].tolist()
+            for j, v in enumerate(rl):
+                if v: M[k0 + k, j] = v
+        del CT
+    del MT
+    log(f"    Agg {rs}x{nchi} assembled into flint ({time.time()-t0:.0f}s; "
+        f"nrows {nrows}, max|M| {maxabs}, max column fill {colfill})")
     X, nul = M.nullspace()
     rk = nchi - nul
     kern = [[int(X[i, j]) for i in range(nchi)] for j in range(nul)]
+    del M, X
     log(f"    nullspace: rank {rk}, dim ker {nul} ({time.time()-t0:.0f}s)")
     return nul, rk, kern
 
