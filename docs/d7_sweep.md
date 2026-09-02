@@ -93,24 +93,93 @@ at this degree — was the 4th slot of the master order, and the `a = 14`,
 (`(11,11,4,1,1)`, balance 10) were all measured, not merely scheduled.
 
 <!--GEN:TABLE-->
+**The feasible 46, in banked order** (46 measured, 0 deferred; a DEFER row followed by a measured row means the cell was deferred, then completed when memory allowed):
+
+| lam | ell | a | `N_S` | `mult_det` | `mult_pad` | `D` | balance | flag |
+|---|---|---|---|---|---|---|---|---|
+| `(18, 5, 2, 2, 1)` | 5 | 2 | 1482 | 2 | 2 | +0 | 17 |  |
+| `(15, 9, 2, 1, 1)` | 5 | 2 | 1761 | 2 | 2 | +0 | 14 |  |
+| `(17, 5, 4, 1, 1)` | 5 | 2 | 2155 | 2 | 2 | +0 | 16 |  |
+| `(13, 11, 2, 1, 1)` | 5 | 2 | 2207 | 2 | 2 | +0 | 12 |  |
+| `(17, 6, 2, 2, 1)` | 5 | 4 | 2257 | 4 | 4 | +0 | 16 |  |
+| `(16, 7, 3, 1, 1)` | 5 | 4 | 2414 | 4 | 4 | +0 | 15 |  |
+| `(18, 4, 2, 2, 2)` | 5 | 3 | 2565 | 3 | 3 | +0 | 16 |  |
+| `(15, 7, 4, 1, 1)` | 5 | 8 | 4510 | 8 | 8 | +0 | 14 |  |
+| `(15, 8, 3, 1, 1)` | 5 | 4 | 3127 | 4 | 4 | +0 | 14 |  |
+| `(16, 7, 2, 2, 1)` | 5 | 5 | 3154 | 5 | 5 | +0 | 15 |  |
+| `(16, 6, 4, 1, 1)` | 5 | 3 | 3264 | 3 | 3 | +0 | 15 |  |
+| `(14, 9, 2, 2, 1)` | 5 | 7 | 4966 | 7 | 7 | +0 | 13 |  |
+| `(17, 5, 3, 2, 1)` | 5 | 4 | 3291 | 4 | 4 | +0 | 16 |  |
+| `(16, 5, 5, 1, 1)` | 5 | 3 | 3575 | 3 | 3 | +0 | 15 |  |
+| `(17, 4, 4, 2, 1)` | 5 | 3 | 3753 | 3 | 3 | +0 | 16 |  |
+| `(14, 9, 3, 1, 1)` | 5 | 5 | 3782 | 5 | 5 | +0 | 13 |  |
+| `(14, 8, 4, 1, 1)` | 5 | 7 | 5777 | 7 | 7 | +0 | 13 |  |
+| `(15, 8, 2, 2, 1)` | 5 | 7 | 4098 | 7 | 7 | +0 | 14 |  |
+| `(16, 6, 3, 2, 1)` | 5 | 7 | 5022 | 7 | 7 | +0 | 15 |  |
+| `(13, 10, 3, 1, 1)` | 5 | 4 | 4289 | 4 | 4 | +0 | 12 |  |
+| `(17, 5, 2, 2, 2)` | 5 | 3 | 4306 | 3 | 3 | +0 | 15 |  |
+| `(13, 10, 2, 2, 1)` | 5 | 6 | 5640 | 6 | 6 | +0 | 12 |  |
+| `(12, 11, 3, 1, 1)` | 5 | 3 | 4562 | 3 | 3 | +0 | 11 |  |
+| `(15, 6, 5, 1, 1)` | 5 | 4 | 5368 | 4 | 4 | +0 | 14 |  |
+| `(17, 4, 3, 2, 2)` | 5 | 2 | 5768 | 2 | 2 | +0 | 15 |  |
+| `(12, 11, 2, 2, 1)` | 5 | 3 | 6003 | 3 | 3 | +0 | 11 |  |
+| `(16, 5, 4, 2, 1)` | 5 | 8 | 6290 | 8 | 8 | +0 | 15 |  |
+| `(16, 6, 2, 2, 2)` | 5 | 7 | 6602 | 7 | 7 | +0 | 14 |  |
+| `(15, 6, 4, 2, 1)` | 5 | 15 | 9524 | 15 | 15 | +0 | 14 |  |
+| `(13, 9, 4, 1, 1)` | 5 | 10 | 6863 | 10 | 10 | +0 | 12 |  |
+| `(14, 8, 3, 2, 1)` | 5 | 14 | 8987 | — | — | — | 13 | DEFER-MEM |
+| `(15, 7, 3, 2, 1)` | 5 | 11 | 6983 | 11 | 11 | +0 | 14 |  |
+| `(13, 9, 3, 2, 1)` | 5 | 13 | 10712 | — | — | — | 12 | DEFER-MEM |
+| `(14, 7, 5, 1, 1)` | 5 | 10 | 7336 | 10 | 10 | +0 | 13 |  |
+| `(16, 5, 3, 3, 1)` | 5 | 2 | 7419 | 2 | 2 | +0 | 15 |  |
+| `(12, 10, 4, 1, 1)` | 5 | 5 | 7613 | 5 | 5 | +0 | 11 |  |
+| `(11, 11, 4, 1, 1)` | 5 | 4 | 7865 | 4 | 4 | +0 | 10 |  |
+| `(14, 8, 3, 2, 1)` | 5 | 14 | 8987 | 14 | 14 | +0 | 13 |  |
+| `(13, 9, 3, 2, 1)` | 5 | 13 | 10712 | — | — | — | 12 | DEFER-MEM |
+| `(13, 8, 5, 1, 1)` | 5 | 10 | 9228 | 10 | 10 | +0 | 12 |  |
+| `(15, 7, 2, 2, 2)` | 5 | 6 | 9196 | 6 | 6 | +0 | 13 |  |
+| `(16, 4, 4, 3, 1)` | 5 | 2 | 8475 | 2 | 2 | +0 | 15 |  |
+| `(16, 5, 3, 2, 2)` | 5 | 3 | 9750 | 3 | 3 | +0 | 14 |  |
+| `(16, 4, 4, 2, 2)` | 5 | 5 | 11158 | 5 | 5 | +0 | 14 |  |
+| `(15, 6, 3, 3, 1)` | 5 | 3 | 11269 | 3 | 3 | +0 | 14 |  |
+| `(15, 5, 5, 2, 1)` | 5 | 5 | 10472 | — | — | — | 14 | DEFER-MEM |
+| `(13, 7, 6, 1, 1)` | 5 | 8 | 10686 | — | — | — | 12 | DEFER-MEM |
+| `(12, 9, 5, 1, 1)` | 5 | 10 | 10724 | — | — | — | 11 | DEFER-MEM |
+| `(13, 9, 3, 2, 1)` | 5 | 13 | 10712 | 13 | 13 | +0 | 12 |  |
+| `(12, 9, 5, 1, 1)` | 5 | 10 | 10724 | 10 | 10 | +0 | 11 |  |
+| `(13, 7, 6, 1, 1)` | 5 | 8 | 10686 | 8 | 8 | +0 | 12 |  |
+| `(15, 5, 5, 2, 1)` | 5 | 5 | 10472 | 5 | 5 | +0 | 14 |  |
 <!--/GEN:TABLE-->
 
 ## 6. Coverage, and the boundary of what was reachable
 
 <!--GEN:COVERAGE-->
+**Coverage: 46 of the 46 feasible cells (100%), carrying 258 of their 258 ambient units (100%) — 258 of the census's 2708 units (9.5%).**
+
+| axis | measured | feasible 46 | full census (433) |
+|---|---|---|---|
+| `N_S` | 1482 – 11269 | 1482 – 11269 | 1482 – 10403760 |
+| `a` | 2 – 15 | 2 – 15 | 2 – 26 |
+| balance | 10 – 17 | 10 – 17 | 4 – 17 |
+| `ell` | 5 – 5 | 5 – 5 | 5 – 7 |
+
+Every banked row: prime-pair agreement, `a` = plethysm value, `rank(R) = N_S − a`, `N_S` = census DP value — all asserted in-run.  No cell fell below the ambient cap on either side, so the sceptical re-run branch was never entered.
 <!--/GEN:COVERAGE-->
 
 **The memory story, told plainly.**  The census frontier was drawn at s30's
 measured constant `5.6e-8 · N_S^2` GB.  The fast measurement path peaks lower
 — the largest completed cells fit `~3.2–3.4e-8` (e.g. 4.22 GB at
-`N_S = 11158`) — so the in-sweep guard (census constant, 0.85 headroom
-against `MemAvailable`, which tops at ~7.2 GB in this container) honestly
-**deferred** the five predicted-`>= 6.1` GB cells; each defer is banked as a
-`DEFER-MEM` row, never quoted as a measurement.  After the rest of the
-feasible set was exhausted, those cells were re-admitted under the observed
-constant (`3.5e-8`, PREREG §4's post-exhaustion rule) in fresh single-cell
-processes, and their completed rows follow their defer rows in the ledger.
-A `DEFER-MEM` row followed by a measured row is that sequence, in the open.
+`N_S = 11158`) — so the in-sweep guard (census constant, headroom 0.70
+two-worker / 0.85 solo against `MemAvailable`, which tops at ~7.2 GB in this
+container) honestly **deferred** five cells, banking six `DEFER-MEM` rows
+(`(14,8,3,2,1)` at the two-worker gate; `(13,9,3,2,1)` at both gates; the
+three other `>= 6.1` GB giants at the solo gate) — a defer is never quoted as
+a measurement.  After the rest of the feasible set was exhausted, those cells
+were re-admitted under the observed constant (`3.5e-8`, PREREG §4's
+post-exhaustion rule) in fresh single-cell processes, and their completed
+rows follow their defer rows in the ledger.  A `DEFER-MEM` row followed by a
+measured row is that sequence, in the open.  **Nothing stayed deferred: the
+feasible set closed at 46 of 46.**
 
 **What was not reached, stated plainly.**  Everything outside the 46: the
 whole `ell = 6, 7` strata (223 cells), every cell with balance `<= 9`, and
@@ -170,7 +239,7 @@ one, exactly as s30's balance-`<= 6` caveat was.
 
 *Engineering note for the record: the claim-queue + PID-read-back discipline
 inherited from s30 ran three worker generations and two finish passes with
-zero claim races and zero pattern-kills; the one scheduling intervention
-(retiring an idle worker whose 0.70-headroom gate could never admit the
-giants) was done by explicit PID after verifying it held no claim.  Full
+zero claim races and zero pattern-kills; the two scheduling interventions
+(retiring idle workers whose memory gates could never admit the giants) were
+each done by explicit PID after verifying the worker held no claim.  Full
 worker logs are in `results/s34_worker_*.log` and `results/s34_finish*.log`.*
