@@ -108,7 +108,9 @@ def nullity_sparse(rows, nc, p, want_kern=False, seed0=1, tag='cell', verbose=Tr
     build_bin()
     os.makedirs(WORK, exist_ok=True)
     path = os.path.join(WORK, f'{tag}_{p}_{os.getpid()}.csr')
-    E = rows_to_csr(rows, nc)
+    E = rows if not isinstance(rows, list) else rows_to_csr(rows, nc)
+    E = E.tocsr()
+    assert E.shape[1] == nc
     rng = np.random.default_rng(seed0 * 7919 + p % 1000 + nc)
     kern = []
     seed = seed0

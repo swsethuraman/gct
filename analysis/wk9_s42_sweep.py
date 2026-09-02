@@ -60,8 +60,8 @@ def main():
         assert a == a_of(lam, delta, 4, len(lam))
         B = build(lam, delta, verbose=False)
         rec = dict(lam=list(lam), delta=delta, ell=len(lam), a=a, h_pad=c['h_pad'], N_S=B['N_S'], stab=B['stab'],
-                   n_chi=B['n_chi'], n_red=B['n_red'], nrows_red=len(B['rows_red']),
-                   nnz_red=sum(len(d) for d in B['rows_red']), cons=B['cons'], build_secs=round(B['build_secs'], 1))
+                   n_chi=B['n_chi'], n_red=B['n_red'], nrows_red=int(B['E_red'].shape[0]),
+                   nnz_red=int(B['E_red'].nnz), cons=B['cons'], build_secs=round(B['build_secs'], 1))
         if B['n_red'] > opt['nred_cap']:
             rec.update(status='beyond', secs=round(time.time() - t0, 1))
             log(f"beyond: {lam} d{delta}: n_chi {B['n_chi']} n_red {B['n_red']} > cap")
@@ -70,7 +70,7 @@ def main():
             try:
                 for p in (P1, P2):
                     t1 = time.time()
-                    kk, kern = nullity_sparse(B['rows_red'], B['n_red'], p, want_kern=True,
+                    kk, kern = nullity_sparse(B['E_red'], B['n_red'], p, want_kern=True,
                                               tag=f"s{'_'.join(map(str, lam))}d{delta}", verbose=False)
                     nuls[str(p)] = dict(nullity=kk, secs=round(time.time() - t1, 1))
                     kerns[p] = kern

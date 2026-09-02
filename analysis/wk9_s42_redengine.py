@@ -131,27 +131,58 @@ def rank_compressed(rows, nc, p, margin=64, pseed=101):
     return rk
 
 # --------------------------------------------------------------- the cell
-def build(lam, delta, verbose=True):
-    """isotypic reduction + red split; returns dict of structures."""
+def csr_to_rows(E):
+    """scipy csr -> list of {col: val} (only for the dense/lift routes on small cells)."""
+    E = E.tocsr()
+    out = []
+    for i in range(E.shape[0]):
+        a, b = E.indptr[i], E.indptr[i + 1]
+        if b > a: out.append({int(c): int(v) for c, v in zip(E.indices[a:b], E.data[a:b])})
+    return out
+
+def build(lam, delta, verbose=True, fast=True, want_rows=False):
+    """isotypic reduction + red split.  fast=True: the vectorised orbit setup and
+    raising-operator rows of wk9_s42_orbits (validated against the s36 routines:
+    identical orbits up to sign, identical row spaces); the operators are
+    returned as scipy csr matrices E (all n_chi columns) and E_red (red columns).
+    rows / rows_red as {col: val} dicts are produced only on request (dense
+    routes, lifts) or with fast=False (the s36 code path)."""
     lam = tuple(lam); r = len(lam); n = 4
     assert sum(lam) == n * delta and all(lam[i] >= lam[i + 1] for i in range(r - 1)) and lam[-1] > 0
     t0 = time.time()
     A = exps(n, r)
-    basis, vecs, group = orbit_setup(n, r, delta, lam, verbose)
-    rows, nfx = reduced_rows(n, r, delta, lam, vecs, verbose)
-    cons, red, nonred = split_red(lam, delta, vecs, A)
-    rows_red = restrict_rows(rows, red)
+    if fast:
+        from wk9_s42_orbits import orbit_setup_fast, reduced_rows_fast
+        basis, vecs, group = orbit_setup_fast(n, r, delta, lam, verbose)
+        E, nfx = reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose)
+        cons, red, nonred = split_red(lam, delta, vecs, A)
+        E_red = E[:, red].tocsr() if len(red) else E[:, :0].tocsr()
+        E_red.eliminate_zeros()
+        nz = (E_red.indptr[1:] - E_red.indptr[:-1]) > 0
+        E_red = E_red[nz.nonzero()[0]]
+        rows = csr_to_rows(E) if want_rows else None
+        rows_red = csr_to_rows(E_red) if want_rows else None
+    else:
+        basis, vecs, group = orbit_setup(n, r, delta, lam, verbose)
+        rows, nfx = reduced_rows(n, r, delta, lam, vecs, verbose)
+        cons, red, nonred = split_red(lam, delta, vecs, A)
+        rows_red = restrict_rows(rows, red)
+        from wk9_s42_sparse import rows_to_csr
+        E = rows_to_csr(rows, len(vecs)); E_red = rows_to_csr(rows_red, len(red))
     if verbose:
         log(f"  built: N_S={len(basis)} |Stab|={len(group)} n_chi={len(vecs)} n_red={len(red)} "
-            f"n_nonred={len(nonred)} rows={len(rows)} rows_red={len(rows_red)} cons={cons} ({time.time()-t0:.0f}s)")
+            f"n_nonred={len(nonred)} rows={E.shape[0]} rows_red={E_red.shape[0]} nnz_red={E_red.nnz} cons={cons} ({time.time()-t0:.0f}s)")
     return dict(lam=lam, delta=delta, r=r, A=A, basis=basis, vecs=vecs, group=group, rows=rows,
-                rows_red=rows_red, cons=cons, red=red, nonred=nonred, N_S=len(basis),
+                rows_red=rows_red, E=E, E_red=E_red, cons=cons, red=red, nonred=nonred, N_S=len(basis),
                 stab=len(group), n_chi=len(vecs), n_red=len(red), build_secs=time.time() - t0)
 
 def nullity_route(rows, nc, p, route, want_kern=False, pseed=101):
-    """returns (nullity_p, kern or None, route_used)."""
+    """returns (nullity_p, kern or None, route_used).  `rows` may be a list of
+    {col: val} dicts or a scipy csr matrix."""
     if route == 'auto':
         route = 'exact' if (nc <= EXACT_CAP or want_kern) else 'compressed'
+    if route != 'sparse' and not isinstance(rows, list):
+        rows = csr_to_rows(rows)
     if route == 'exact':
         nul, kern = nullity_exact(rows, nc, p)
         return nul, kern, 'exact'
@@ -174,7 +205,7 @@ def measure_cell(lam, delta, route='auto', full_check=False, want_kern=False, pr
     a = a_of(lam, delta, 4, len(lam))
     out = dict(lam=list(B['lam']), delta=delta, ell=B['r'], a=a, N_S=B['N_S'], stab=B['stab'],
                n_chi=B['n_chi'], n_red=B['n_red'], n_nonred=len(B['nonred']), cons=B['cons'],
-               nrows=len(B['rows']), nrows_red=len(B['rows_red']), primes={}, kern=None)
+               nrows=int(B['E'].shape[0]), nrows_red=int(B['E_red'].shape[0]), nnz_red=int(B['E_red'].nnz), primes={}, kern=None)
     if a == 0:
         out.update(mult_red=0, status='a=0', secs=time.time() - t0)
         return out
@@ -182,10 +213,10 @@ def measure_cell(lam, delta, route='auto', full_check=False, want_kern=False, pr
     kerns = {}
     for p in primes:
         if full_check:
-            nulE, _, rt = nullity_route(B['rows'], B['n_chi'], p, route if route != 'exact' or B['n_chi'] <= 6000 else 'compressed')
+            nulE, _, rt = nullity_route(B['E'], B['n_chi'], p, route if route != 'exact' or B['n_chi'] <= 6000 else 'compressed')
             assert nulE == a, ("nullity_p(E) != a (plethysm)", lam, delta, p, nulE, a)
             if verbose: log(f"  p={p}: full-E nullity {nulE} = a  [{rt}]")
-        nul, kern, rt = nullity_route(B['rows_red'], B['n_red'], p, route, want_kern=want_kern)
+        nul, kern, rt = nullity_route(B['E_red'], B['n_red'], p, route, want_kern=want_kern)
         assert nul <= a, ("nullity_p(E_red) > a -- impossible over Q; unlucky prime or bug", lam, delta, p, nul, a)
         nuls[p] = nul; kerns[p] = kern
         out['primes'][str(p)] = dict(nullity=nul, route=rt)
