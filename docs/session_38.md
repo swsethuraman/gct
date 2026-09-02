@@ -72,4 +72,6 @@ pull forward). Memory-wall cells were reported as not-reached, never estimated.
 not occurrence). Next: build and validate a correct ℓ=5 stabiliser reduction to
 reach the balanced `N_S > 9000` δ=8 cells and δ=9, then continue the ascent.
 
-Bundle head: `93788413b80fbe4dc9a79ecc00dfc29147852931 (s38-onset tip at delivery; final bundle head is this commit's child)` (filled at delivery).
+Bundle: `onset.bundle`, single ref `refs/heads/s38-onset`; its head is the tip of
+that ref (`git bundle list-heads onset.bundle`). The exact delivery hash is
+reported in the session hand-off message.
