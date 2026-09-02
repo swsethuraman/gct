@@ -54,11 +54,12 @@ Labels: **proved** / **measured** / **adopted-from-literature** / **expectation*
 > position is determinantal — the affirmative answer to the first
 > sub-question of paper 1's Question 8.5.
 >
-> **Deliverable-4 runs (measured).**  At `n = 3`, `δ = 8`, every length-5
-> cell with `n_χ ≤ 5000` — see `results/n3_ledger.md` for the count — has
+> **Deliverable-4 runs (measured).**  At `n = 3`, `δ = 8`, all 60 length-5
+> cells with `n_χ ≤ 5000` (120 of the 227 ambient units of the slab) have
 > `mult_det = a`: the ideal is empty there.  The unique degree-10
 > `SL_5`-invariant of cubic threefolds (`(6^5)`, `a = 1`) is the single most
-> consequential cheap test and is recorded in the ledger.
+> consequential cheap test; its status, and the `δ = 9` cells run, are in
+> `results/n3_ledger.md` and `results/n3_length5_plan.md`.
 
 ## 1. Objects and the numbers
 
@@ -326,10 +327,11 @@ on the quinary `n`-ics with an `n×n` linear determinantal representation.
 - `n = 3`: the record is `I(D_5)_δ = 0` for `δ ≤ 7` (paper 1: certified
   through 5, forced by the measured deficit totals at 6 and 7), so the
   bracket is `[8, 65]`.  This session (Deliverable 4, `results/n3_ledger.md`)
-  measured every length-5 cell at `δ = 8` with `n_χ ≤ 5000` through the
-  validated reduction, det side, both primes: **every one has `mult_det =
-  a`**.  `δ = 8` is therefore empty on the measured corner; the balanced
-  cells above the cap are named in `results/n3_census.md`, not estimated.
+  measured every length-5 cell at `δ = 8` with `n_χ ≤ 5000` — 60 of the 107
+  cells, 120 of 227 units — through the validated reduction, det side, both
+  primes: **every one has `mult_det = a`**.  `δ = 8` is therefore empty on
+  the measured corner; the 47 balanced cells above `n_χ = 5000` (36 of them
+  below the frontier) are named in `results/n3_census.md`, not estimated.
 - `n = 4`: `[8, 300]` (s34/s36/s38: `δ ≤ 7` empty on every measured cell, `δ
   = 8` empty on 29 peaked cells; s37's cap with Step 3 now proved).
 
@@ -352,10 +354,15 @@ is in `results/n3_ledger.md`.
 3. s35's Fitting-degree observation, which is a theorem about this family:
    the equations produced by an `F`-linear matrix cost their rank.  Within
    the Jacobian family `t = 3n − 5` is the cheapest degree — at `n = 3` the
-   coranks `dim M(F)_t` on `D_5` are `10, 6, 6, 6` at `t = 3, 4, 5, 6` against
-   the smooth `10, 5, 1, 0`, so the vanishing minors have sizes `65, 121,
-   205` at `t = 4, 5, 6`; the drop first appears at `t = 2n − 5 + n = 3n−5`
-   and the matrices only grow after that.
+   coranks `dim M(F)_t` on `D_5` are `10, 6, 6, 6` at `t = 3, 4, 5, 6`
+   (by (4.1)'s general form `dim M(F)_t = μ_t + def_{5n−10−t}(N)` together
+   with Dimca's `τ`-stabilisation for `t ≥ 3n − 3`; measured `10, 6, 6, 6`
+   at fresh pencils, `s40_jacobian_n3t.log`) against the smooth `10, 5, 1,
+   0`, so the vanishing minors have sizes `65, 121, 205` at `t = 4, 5, 6`.
+   In general the drop first appears at `t = 3n − 5`: the correction at
+   degree `t` is `def_{5n−10−t}(N)`, and `def_{2n−4}(N) = 0` by one more GN
+   identity, `H_{S/J}(2n−4) = ν(n)` (verified symbolically); the matrix
+   sizes only grow after that.
 4. The discriminant route is more expensive at every `n`: `disc` vanishes to
    order `ν(n)` along `D_5^{det_n}`, so its derivatives of order `ν − 1` are
    covariants of degree `5(n−1)^4 − ν(n) + 1` in the ideal — `75` at `n = 3`,
@@ -466,17 +473,22 @@ and `W`, the closure of the image of the irreducible `PGL_5 × P^4`, is
 irreducible of dimension `≤ 24 + 4 = 28 = dim P(D_5^{det_3})`.  It remains to
 show `P(D_5^{det_3}) ⊆ W`, i.e. that the six nodes of the generic
 determinantal cubic form a frame; both sides being irreducible and closed
-of dimension 28, equality follows.  The frame condition is open on the
-Grassmannian of 5-planes `L ⊂ M_3` (nonvanishing of six `5×5` minors of the
-node matrix), so one exact witness suffices.  Take `L` spanned by five
-random integer rank-one matrices `u_i v_i^T`: the map from 5-tuples of
-Segre points to `Gr(5, 9)` is dominant (both sides have dimension 20 and
-the fibres are finite, a generic `L` containing six Segre points), so such
-`L` are generic, and five of the six nodes are the coordinate points of
-`P(L)`; the sixth is the remaining solution of the nine `2×2` minors, found
-by a lex Gröbner basis over `Q` and verified exactly to have rank one:
-`(−5160/37469, 3612/57731, 129/148, −129/226, 1)`, with all five coordinates
-nonzero — every five of the six nodes span `P^4`.  Finally, `D_5^{det_3}` is
+of dimension 28, equality follows.  On the open subset of the Grassmannian
+`Gr(5, M_3)` where `P(L)` meets the Segre in six reduced points, the frame
+condition fails on a closed subset (the image, under the proper incidence
+correspondence, of "five of the points lie in a hyperplane"), so the frame
+condition holds on a dense open subset of the irreducible `Gr(5, M_3)` as
+soon as it holds at one `L` — and one exact witness suffices.  Take `L`
+spanned by five random integer rank-one matrices `u_i v_i^T`, so that five
+of the six Segre points of `P(L)` are its coordinate points; the sixth is
+the remaining solution of the nine `2×2` minors, found by a lex Gröbner
+basis over `Q` and verified exactly to have rank one:
+`(−5160/37469, 3612/57731, 129/148, −129/226, 1)`.  The Hilbert function
+of the minor ideal on this `L` is `5, 6, 6, 6, 6` in degrees `1..5` (exact
+over `Z`), so `P(L) ∩ Segre` is a zero-dimensional scheme of length six,
+exhausted by the six points found, and reduced; and all five coordinates of
+the sixth point are nonzero, so every five of the six nodes span `P^4`
+(`s40_frame.log`).  Finally, `D_5^{det_3}` is
 a component of the six-nodal closure by §4(iii) at `n = 3` (`def_3(N) = 0`:
 the incidence variety is smooth at the determinantal point with tangent
 space of dimension 28).  ∎
