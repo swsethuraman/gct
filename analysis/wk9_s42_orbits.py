@@ -37,7 +37,7 @@ def _codes(M, L):
     assert comb(L + d - 1, d) < (1 << 63)
     return code
 
-def orbit_setup_fast(n, r, delta, lam, verbose=True):
+def orbit_setup_fast(n, r, delta, lam, verbose=True, want_vecs=True, arrays=False):
     lam = tuple(lam) + (0,) * (r - len(lam))
     t0 = time.time()
     basis = monomials(n, r, delta, lam)
@@ -89,15 +89,21 @@ def orbit_setup_fast(n, r, delta, lam, verbose=True):
     mem_idx = mem_idx[srt]; mem_orb = mem_orb[srt]
     bounds = np.searchsorted(mem_orb, np.array(vecs, dtype=np.int64))
     bounds = np.append(bounds, len(mem_idx))
-    out = []
+    # per-monomial column index (orbit number among kept orbits) and sign; members of dropped orbits: -1 / 0
+    col_of = np.full(N, -1, dtype=np.int64); sgn = np.zeros(N, dtype=np.int64)
+    out = [] if want_vecs else None
     for oi, rep in enumerate(vecs):
         ids = mem_idx[bounds[oi]:bounds[oi + 1]]
         st = G // len(ids)
         a = acc[ids]
         assert np.all(np.abs(a) == st), ("twisted coefficients not +-|Stab(m)|", lam, rep)
-        out.append({basis[j]: (1 if a[k] > 0 else -1) for k, j in enumerate(ids)})
+        col_of[ids] = oi; sgn[ids] = np.where(a > 0, 1, -1)
+        if want_vecs:
+            out.append({basis[j]: (1 if a[k] > 0 else -1) for k, j in enumerate(ids)})
     if verbose:
-        print(f"  lam={lam}: N_S={N} |Stab|={G} n_chi={len(out)} (orbits dropped: {dropped}) [fast, {time.time()-t0:.0f}s]", file=sys.stderr, flush=True)
+        print(f"  lam={lam}: N_S={N} |Stab|={G} n_chi={len(vecs)} (orbits dropped: {dropped}) [fast, {time.time()-t0:.0f}s]", file=sys.stderr, flush=True)
+    if arrays:
+        return basis, out, group, dict(M=M, col_of=col_of, sgn=sgn, n_chi=len(vecs))
     return basis, out, group
 
 def validate(cells, n=4):
@@ -131,7 +137,7 @@ if __name__ == '__main__':
     _main()
 
 # ------------------------------------------------ vectorised reduced rows
-def reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose=True):
+def reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose=True, arr=None):
     """The rows of every simple raising operator E_{i,i+1} restricted to V_chi,
     one canonical representative per H-orbit of target monomials
     (H = Stab(lam) ∩ Stab(lam')), chi-obstructed H-fixed targets asserted to
@@ -143,13 +149,18 @@ def reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose=True):
     lam = tuple(lam) + (0,) * (r - len(lam))
     t0 = time.time()
     A = exps(n, r); idx = {a: k for k, a in enumerate(A)}; L = len(A)
-    M = np.array(basis, dtype=np.int32); N = M.shape[0]; d = M.shape[1]
-    # column and sign of every monomial (members of dropped orbits: col -1)
-    col_of = np.full(N, -1, dtype=np.int64); sgn = np.zeros(N, dtype=np.int64)
-    pos = {m: k for k, m in enumerate(basis)}
-    for c, vec in enumerate(vecs):
-        for m, s in vec.items():
-            k = pos[m]; col_of[k] = c; sgn[k] = s
+    if arr is not None:
+        M = arr['M']; col_of = arr['col_of']; sgn = arr['sgn']; n_chi = arr['n_chi']
+        N = M.shape[0]; d = M.shape[1]
+    else:
+        M = np.array(basis, dtype=np.int32); N = M.shape[0]; d = M.shape[1]
+        # column and sign of every monomial (members of dropped orbits: col -1)
+        col_of = np.full(N, -1, dtype=np.int64); sgn = np.zeros(N, dtype=np.int64)
+        pos = {m: k for k, m in enumerate(basis)}
+        for c, vec in enumerate(vecs):
+            for m, s in vec.items():
+                k = pos[m]; col_of[k] = c; sgn[k] = s
+        n_chi = len(vecs)
     Aarr = np.array(A, dtype=np.int32)              # L x r
     blocks = []
     nfixed = 0
@@ -175,7 +186,7 @@ def reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose=True):
         ucodes, first, rowid = np.unique(codes_t, return_index=True, return_inverse=True)
         T = mons[first]                                  # one monomial per target
         nt = len(ucodes)
-        Ei = sparse.coo_matrix((vals, (rowid, cols)), shape=(nt, len(vecs)), dtype=np.int64).tocsr()
+        Ei = sparse.coo_matrix((vals, (rowid, cols)), shape=(nt, n_chi), dtype=np.int64).tocsr()
         Ei.sum_duplicates(); Ei.eliminate_zeros()
         # H-orbit dedup of the target rows
         H = stab_group(lam, fix=(i, j))
@@ -206,7 +217,7 @@ def reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose=True):
         blocks.append(Ek)
         if verbose:
             print(f"    E_{i}{j}: |H|={len(H)} targets {nt} canonical rows {Ek.shape[0]} nnz {Ek.nnz} (obstructed fixed targets cancelled: {int(obstructed.sum())}) [{time.time()-t0:.0f}s]", file=sys.stderr, flush=True)
-    E = sparse.vstack(blocks).tocsr() if blocks else sparse.csr_matrix((0, len(vecs)), dtype=np.int64)
+    E = sparse.vstack(blocks).tocsr() if blocks else sparse.csr_matrix((0, n_chi), dtype=np.int64)
     return E, nfixed
 
 def validate_rows(cells, n=4):

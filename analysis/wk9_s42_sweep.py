@@ -58,7 +58,7 @@ def main():
         t0 = time.time()
         a = c['a']
         assert a == a_of(lam, delta, 4, len(lam))
-        B = build(lam, delta, verbose=False)
+        B = build(lam, delta, verbose=False, want_vecs=False)
         rec = dict(lam=list(lam), delta=delta, ell=len(lam), a=a, h_pad=c['h_pad'], N_S=B['N_S'], stab=B['stab'],
                    n_chi=B['n_chi'], n_red=B['n_red'], nrows_red=int(B['E_red'].shape[0]),
                    nnz_red=int(B['E_red'].nnz), cons=B['cons'], build_secs=round(B['build_secs'], 1))
