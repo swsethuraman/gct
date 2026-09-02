@@ -40,7 +40,7 @@ def gen():
     T.append("**The feasible 46, in banked order** (%d measured, %d deferred%s):\n" %
              (len(meas), len([r for r in defer if r['lam'] not in completed_defer]),
               "; a DEFER row followed by a measured row means the cell was "
-              "deferred once, then completed when memory allowed" if completed_defer else ""))
+              "deferred, then completed when memory allowed" if completed_defer else ""))
     T.append("\n| lam | ell | a | `N_S` | `mult_det` | `mult_pad` | `D` | balance | flag |")
     T.append("\n|---|---|---|---|---|---|---|---|---|\n")
     for r in R:
