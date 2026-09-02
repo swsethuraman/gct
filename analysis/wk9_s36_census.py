@@ -20,12 +20,13 @@ usage: python3 wk9_s36_census.py [out.md]
 import sys, os, time, pickle
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from wk8_s30_pleth import amb
-from wk9_s36_stabred import n_chi_of, stab_group, exps
+from wk9_s36_stabred import n_chi_of, stab_group, exps, monomials
 from math import factorial
 
 MEM_PER = 2.5e-8
 BUDGET_GB = 6.5
 NS_ENUM_CAP = 400000
+NCHI_ENUM_CAP = 20000      # enumerate n_chi only where the lower bound N_S/|Stab| could fit
 S34_NS_CAP = 11269
 
 def N_S(n, r, delta, lam):
@@ -66,10 +67,11 @@ def census(delta, n=4):
         r = len(lam)
         ns = N_S(n, r, delta, lam)
         so = stab_order(lam)
-        if ns <= NS_ENUM_CAP:
+        if ns <= NS_ENUM_CAP and (ns + so - 1) // so <= NCHI_ENUM_CAP:
             ns2, nchi, so2 = n_chi_of(n, r, delta, lam)
             assert ns2 == ns and so2 == so, (lam, ns, ns2, so, so2)
             approx = ''
+            monomials.cache_clear()
         else:
             nchi = (ns + so - 1) // so; approx = '~'
         gb = MEM_PER * nchi * nchi
@@ -83,7 +85,7 @@ def render(rows6, rows7):
     L = []
     L.append("# Reduced census — `n = 4`, `ell >= 5`, `a >= 2`, memory by `n_chi`\n")
     L.append("Session 36.  `N_S` by generating-function DP; `n_chi` by orbit enumeration "
-             f"(cells with `N_S > {NS_ENUM_CAP}` carry the lower bound `N_S/|Stab|`, marked `~`); "
+             f"(cells whose lower bound `N_S/|Stab|` exceeds {NCHI_ENUM_CAP} — unreachable regardless — carry that bound, marked `~`); "
              f"predicted peak `{MEM_PER:.1e} · n_chi^2` GB (s33's measured compressed-route "
              f"constant) against a `{BUDGET_GB}` GB budget.  Strata: **A** = `delta = 6, ell = 5` "
              "(not permanent-sensitive); **B** = `ell = 6` (permanent-sensitive).  "
