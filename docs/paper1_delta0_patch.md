@@ -152,10 +152,14 @@ irreducible family of dimension $28$ whose closure is $D_5$ --- six such
 points are a projective frame, unique up to $\PGL_5$; the cubics singular
 at a fixed frame form a $\mathbb{P}^{4}$; $24+4=28=\dim\mathbb{P}(D_5)$; and the
 frame condition on the nodes is open and holds at an explicit pencil.  So
-$D_5$ is an irreducible component of the closure of the six-nodal locus,
 the generic six-nodal cubic threefold with nodes in general position is
-determinantal, and the hunt for $\delta_0$ is the hunt for the first
-covariant vanishing on the cubics singular at a fixed frame.  Second,
+determinantal; $D_5$ is moreover an irreducible component of the closure
+of the six-nodal locus, since six nodes in general position impose
+independent conditions on cubics and the first-order equisingular
+deformations of a generic member are therefore exactly the cubics through
+its nodes, of dimension $35-6=29=\dim D_5$; and the hunt for $\delta_0$ is
+the hunt for the first covariant vanishing on the cubics singular at a
+fixed frame.  Second,
 $\delta_0$ cannot be found by counting.  $\bC[D_5]$ is the subalgebra of the
 $\SL_3\times\SL_3$ semi-invariant ring of $(M_3)^{5}$ generated in bidegree
 $(1,1)$, and the dimension of that ring in bidegree $(\delta,\delta)$ (more

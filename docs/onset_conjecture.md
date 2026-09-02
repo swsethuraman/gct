@@ -56,10 +56,12 @@ Labels: **proved** / **measured** / **adopted-from-literature** / **expectation*
 >
 > **Deliverable-4 runs (measured).**  At `n = 3`, `δ = 8`, all 60 length-5
 > cells with `n_χ ≤ 5000` (120 of the 227 ambient units of the slab) have
-> `mult_det = a`: the ideal is empty there.  The unique degree-10
-> `SL_5`-invariant of cubic threefolds (`(6^5)`, `a = 1`) is the single most
-> consequential cheap test; its status, and the `δ = 9` cells run, are in
-> `results/n3_ledger.md` and `results/n3_length5_plan.md`.
+> `mult_det = a`: the ideal is empty there; so do the 49 cells with `n_χ ≤
+> 2500` at `δ = 9`.  The unique degree-10 `SL_5`-invariant of cubic
+> threefolds (`(6^5)`, `a = 1`, `n_χ = 12321`) **does not vanish on `D_5`**
+> (both primes): no invariant of cubic threefolds of degree below 15 is an
+> equation of `D_5`.  Ledger: `results/n3_ledger.md`; plan:
+> `results/n3_length5_plan.md`.
 
 ## 1. Objects and the numbers
 
@@ -331,19 +333,25 @@ on the quinary `n`-ics with an `n×n` linear determinantal representation.
   bracket is `[8, 65]`.  This session (Deliverable 4, `results/n3_ledger.md`)
   measured every length-5 cell at `δ = 8` with `n_χ ≤ 5000` — 60 of the 107
   cells, 120 of 227 units — through the validated reduction, det side, both
-  primes: **every one has `mult_det = a`**.  `δ = 8` is therefore empty on
-  the measured corner; the 47 balanced cells above `n_χ = 5000` (36 of them
-  below the frontier) are named in `results/n3_census.md`, not estimated.
+  primes: **every one has `mult_det = a`**; likewise the 49 cells with `n_χ
+  ≤ 2500` at `δ = 9` and the degree-10 invariant cell.  `δ = 8` is therefore
+  empty on the measured corner; the 47 balanced cells above `n_χ = 5000`
+  (36 of them below the frontier; some completed after this text was
+  written, see the ledger) are named in `results/n3_census.md`, not
+  estimated.
 - `n = 4`: `[8, 300]` (s34/s36/s38: `δ ≤ 7` empty on every measured cell, `δ
   = 8` empty on 29 peaked cells; s37's cap with Step 3 now proved).
 
 **What kills it.**  A single length-5 cell `(λ, δ)` with `mult_det < a` at
 `δ < cap(n)`: at `n = 3` any bite at `δ ≤ 64`, at `n = 4` any at `δ ≤ 299`.
-At `n = 3` the cheapest decisive test is the rectangular cell `((6^5), 10)`:
-`a = 1`, so there is a unique degree-10 `SL_5`-invariant of cubic threefolds,
-and it either vanishes on `D_5` (then `δ_0 = 10` and the conjecture is dead)
-or it does not (then no invariant can vanish before degree 15).  Its status
-is in `results/n3_ledger.md`.
+At `n = 3` the cheapest decisive test was the rectangular cell `((6^5),
+10)`: `a = 1`, so there is a unique degree-10 `SL_5`-invariant of cubic
+threefolds, and it either vanishes on `D_5` (then `δ_0 = 10` and the
+conjecture is dead) or it does not.  **It does not** (`mult_det = 1`, both
+primes, `n_χ = 12321`, 24 minutes): no `SL_5`-invariant of cubic threefolds
+of degree below 15 vanishes on the determinantal ones (degree 5 by s28,
+degree 10 here; `5 | δ` is forced).  The next invariant cell, `(9^5)` at
+`δ = 15`, is beyond the frontier.
 
 **What supports it.**
 
@@ -548,5 +556,6 @@ formula, `cap(n) = 5n(n−1)²(7n−8)/12 = 5, 65, 300, 900, ...`, proved from
 `ν(n) = n²(n²−1)/12` nodes that fail forms of degree `2n − 5` by exactly one
 (Gulliksen–Negård + Dimca, Kleiman the one adopted step) and now measured
 at `n = 3..6`; the conjecture that the cap is the onset is proved at `n = 2`,
-survives `δ = 8` at `n = 3`, and dies the day any length-5 cell below 65 (`n
-= 3`) or 300 (`n = 4`) bites.
+survives 110 empty cells at `δ = 8, 9` and the degree-10 invariant at `n =
+3`, and dies the day any length-5 cell below 65 (`n = 3`) or 300 (`n = 4`)
+bites.
