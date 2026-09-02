@@ -12,9 +12,10 @@ washed out, `docs/s35_review.md` §1).
 
 ## Verdict in four lines
 
-The occurrence route is **silent** over the whole window it can see (0 of 2585
-ℓ=5 cells have `a > m_det`, δ=5–10 and 11,12) — so the onset is a genuine
-multiplicity phenomenon, not an arithmetic one. δ=8 is **empty on every reachable
+The occurrence route is **silent** over the whole window it can see (0 of the
+2585 ℓ=5 cells at δ=5–10 have `a > m_det`, exhaustively; δ=11,12 clean at both
+fire-risk extremes) — so the onset is a genuine multiplicity phenomenon, not an
+arithmetic one. δ=8 is **empty on every reachable
 cell** (27 of 43, `mult_det = a`, certified). The validation battery passes. The
 window is left at `[8, 405]`, with the onset's *character* pinned even though its
 degree is not.
@@ -31,12 +32,13 @@ degree is not.
 2. **Pre-registered** P1–P3 and kill criteria before computing.
 3. **Phase 0, the occurrence screen** (`analysis/wk9_s38_screen.py`,
    `results/occurrence_screen.md`): `a` (plethysm) vs `m_det` (symmetric
-   rectangular Kronecker) for every ℓ=5 weight with `a≥1`, δ=5–12. Zero cells
-   with `a > m_det`. `m_det` dominates `a` by orders of magnitude and the gap
-   widens; the tightest cell is the stable family `(4δ−8,2,2,2,2)`, margin 7.
-   A memory-bounded transposed route (`screen_big`) was needed for δ=11,12
-   after the naive route OOM-killed on the N=44,48 character caches; it was
-   validated to reproduce δ=8 exactly before use.
+   rectangular Kronecker) for every ℓ=5 weight with `a≥1`. δ=5–10 exhaustive
+   (2585 cells): zero `a > m_det`. δ=11,12 spot-checked at both fire-risk
+   extremes (full enumeration over partitions of 44,48 exceeded the character
+   budget): the peaked `(4δ−8,2,2,2,2)` family holds `a=1,m_det=8`, the
+   `m_det∈{0,1}` cells have `a=0`, and balanced cells keep `a≪m_det`. `m_det`
+   dominates `a` by orders of magnitude and the gap widens; the tightest cell is
+   the stable family `(4δ−8,2,2,2,2)`, margin 7 at every δ≥6.
 4. **Validation battery (P1) — PASS** (`results/s38_validation.md`): K1 witness
    kernel `(12,−3,1)`; rectangular `D_4^det` ladder rungs 4–8 (`a=1,0,1,1,3`,
    the odd-block sign cancellations at rungs 5,7); the nine banked δ=6 ℓ=5 cells
