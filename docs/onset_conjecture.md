@@ -4,7 +4,7 @@ Session 40 (2026-09-02), branch `s40-onset` off `e9cb8dd`.  Pre-registration
 `results/PREREG_s40.md` (commit `d8a50f2`, before any computation).  Exact
 checks: `analysis/wk9_s40_cap.py` (`results/logs/s40_cap.log`),
 `analysis/wk9_s40_jacobian.py` (`results/logs/s40_jacobian_n34.log`,
-`s40_jacobian_n56.log`), `analysis/wk9_s40_frame.py` (`results/logs/s40_frame.log`);
+`s40_jacobian_n56.log`, `s40_jacobian_n7.log`), `analysis/wk9_s40_frame.py` (`results/logs/s40_frame.log`);
 the `n = 3` det-side runs of Deliverable 4 in `results/n3_ledger.md`.
 Labels: **proved** / **measured** / **adopted-from-literature** / **expectation**.
 
@@ -38,15 +38,15 @@ Labels: **proved** / **measured** / **adopted-from-literature** / **expectation*
 > non-factorial, since `2n − 5 = n` exactly at `n = 5`.  In general
 > `codim D_5^{det_n} = ν(n) − C(n−1, 4)`, `D_5^{det_n}` is an irreducible
 > component of the `ν(n)`-nodal locus at every `n` where the minor ideal is
-> saturated in degree `n` (measured at `n = 3..6`), superabundant by
+> saturated in degree `n` (measured at `n = 3..7`), superabundant by
 > `C(n−1,4)` for `n ≥ 5`, and the cap theorem is untouched: it needs only
 > `def_{2n−5} ≥ 1`, and more defect can only lower the cap.
 >
 > **Measured this session, both primes, fresh pencils:** corank of
-> `M_{3n−5}` on `D_5^{det_n}` is `6, 31, 102, 256` at `n = 3, 4, 5, 6` against
-> the smooth `5, 30, 101, 255`; the minor-ideal Hilbert functions equal the
-> Gulliksen–Negård prediction in every degree; `def_{2n−5} = 1` exactly and
-> `def_n = 0, 0, 1, 5 = C(n−1,4)` at `n = 3, 4, 5, 6`.
+> `M_{3n−5}` on `D_5^{det_n}` is `6, 31, 102, 256, 541` at `n = 3, 4, 5, 6, 7`
+> against the smooth `5, 30, 101, 255, 540`; the minor-ideal Hilbert
+> functions equal the Gulliksen–Negård prediction in every degree;
+> `def_{2n−5} = 1` exactly and `def_n = 0, 0, 1, 5, 15 = C(n−1,4)` at `n = 3..7`.
 >
 > **The `n = 3` twin, sharpened (proved; §5).**  `D_5^{det_3}` is the closure
 > of the cubic threefolds singular at six points in linearly general
@@ -54,8 +54,8 @@ Labels: **proved** / **measured** / **adopted-from-literature** / **expectation*
 > position is determinantal — the affirmative answer to the first
 > sub-question of paper 1's Question 8.5.
 >
-> **Deliverable-4 runs (measured).**  At `n = 3`, `δ = 8`, all 60 length-5
-> cells with `n_χ ≤ 5000` (120 of the 227 ambient units of the slab) have
+> **Deliverable-4 runs (measured).**  At `n = 3`, `δ = 8`, all 72 length-5
+> cells with `n_χ ≤ 6659` (161 of the 227 ambient units of the slab) have
 > `mult_det = a`: the ideal is empty there; so do the 49 cells with `n_χ ≤
 > 2500` at `δ = 9`.  The unique degree-10 `SL_5`-invariant of cubic
 > threefolds (`(6^5)`, `a = 1`, `n_χ = 12321`) **does not vanish on `D_5`**
@@ -71,7 +71,7 @@ representation; `dim D_5^{det_n} = 5n² − (2n² − 2) = 3n² + 2` for `n ≥ 
 (generic finite stabiliser: paper 1 at `n = 3`, `docs/washout_lemma.md` §4
 at `n = 4`).  For `n ≥ 5` the lower bound `dim D_5^{det_n} ≥ 3n² + 2` is
 **measured** this session (the rank of the differential of the
-parametrisation at a random pencil, `dim J_n = 77, 110` at `n = 5, 6`, §4(i))
+parametrisation at a random pencil, `dim J_n = 77, 110, 149` at `n = 5, 6, 7`, §4(i))
 and the upper bound `≤ 3n² + 2` needs the generic 5-tuple to have finite
 stabiliser inside `Stab(det_n)` (dimension `2(n²−1)`) — **expectation**
 beyond `n = 4`, entering only the anomaly discussion of §4, not Theorem 1.
@@ -219,11 +219,11 @@ dim D_5^{det_n}` (§4).
 
 *Measured (both primes, fresh pencils, `s40_jacobian_*.log`).*  `H_{S/J}(k)`
 equals the GN value in every degree `min(n−1, 2n−5) ≤ k ≤ 2n` at `n = 3, 4,
-5, 6`, stabilising at `ν = 6, 20, 50, 105` (the node counts, measured
+5, 6, 7`, stabilising at `ν = 6, 20, 50, 105, 196` (the node counts, measured
 independently of Giambelli); the saturated values `h^0(I_N(2n−5))`, computed
 as `(J_{2n−5+e} : m^e)_{2n−5}` with `e` chosen so that `J` and `I_N` agree in
-degree `2n − 5 + e`, are `0, 16, 77, 226`, i.e. **`def_{2n−5}(N) = 1`
-exactly** at `n = 3, 4, 5, 6`.  Direction: `h^0(I_N(k))` is upper
+degree `2n − 5 + e`, are `0, 16, 77, 226, 520`, i.e. **`def_{2n−5}(N) = 1`
+exactly** at `n = 3, 4, 5, 6, 7`.  Direction: `h^0(I_N(k))` is upper
 semicontinuous in the pencil, so a measured defect of 1 bounds the generic
 defect *above* by 1, and (c) bounds it below: equality is proved at these
 `n`.
@@ -302,9 +302,11 @@ integrator's three-pencil measurement is reproduced.  `H_{S/J}(1) = 5`
 
 Fresh at this session: `n = 5`, corank `M_{10} = 102 = 101 + 1` (two
 pencils); `n = 6`, corank `M_{13} = 256 = 255 + 1` (one pencil, 9 s per
-prime); both against the smooth values at random forms.  These are the cap
-mechanism operating at two values of `n` where nothing had been measured,
-and they agree with (4.1) with `def_{2n−5} = 1` on the nose.
+prime); `n = 7`, corank `M_{16} = 541 = 540 + 1` (one pencil, 108 s, run as
+the verification step, `s40_jacobian_n7.log`); all against the smooth
+values at random forms.  These are the cap mechanism operating at three
+values of `n` where nothing had been measured, and they agree with (4.1)
+with `def_{2n−5} = 1` on the nose.
 
 | `n` | `3n−5` | `dim S_{3n−5}` | `μ` | `cap(n)` | `ν(n)` | `codim D_5` | corank on `D_5` (measured) | `def_{2n−5}` (meas.) | `def_n` (meas.) | `C(n−1,4)` | `deg disc` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -313,7 +315,7 @@ and they agree with (4.1) with `def_{2n−5} = 1` on the nose.
 | 4 | 7 | 330 | 30 | **300** | 20 | 20 | 31 | 1 | 0 | 0 | 405 |
 | 5 | 10 | 1001 | 101 | **900** | 50 | 49 | 102 | 1 | 1 | 1 | 1280 |
 | 6 | 13 | 2380 | 255 | **2125** | 105 | 100 | 256 | 1 | 5 | 5 | 3125 |
-| 7 | 16 | 4845 | 540 | **4305** | 196 | 181 | (≥ 541, thm) | ≥ 1 (thm) | ≥ 15 (thm) | 15 | 6480 |
+| 7 | 16 | 4845 | 540 | **4305** | 196 | 181 | 541 | 1 | 15 | 15 | 6480 |
 | 8 | 19 | 8855 | 1015 | **7840** | 336 | 301 | (≥ 1016, thm) | ≥ 1 | ≥ 35 | 35 | 12005 |
 
 `cap(n) < 5(n−1)^4` for every `n ≥ 3`: the Jacobian family always beats the
@@ -331,13 +333,13 @@ on the quinary `n`-ics with an `n×n` linear determinantal representation.
 - `n = 3`: the record is `I(D_5)_δ = 0` for `δ ≤ 7` (paper 1: certified
   through 5, forced by the measured deficit totals at 6 and 7), so the
   bracket is `[8, 65]`.  This session (Deliverable 4, `results/n3_ledger.md`)
-  measured every length-5 cell at `δ = 8` with `n_χ ≤ 5000` — 60 of the 107
-  cells, 120 of 227 units — through the validated reduction, det side, both
-  primes: **every one has `mult_det = a`**; likewise the 49 cells with `n_χ
-  ≤ 2500` at `δ = 9` and the degree-10 invariant cell.  `δ = 8` is therefore
-  empty on the measured corner; the 47 balanced cells above `n_χ = 5000`
-  (36 of them below the frontier; some completed after this text was
-  written, see the ledger) are named in `results/n3_census.md`, not
+  measured every length-5 cell at `δ = 8` with `n_χ ≤ 6659` — 72 of the 107
+  cells, 161 of 227 units, `a` up to 7 — through the validated reduction,
+  det side, both primes: **every one has `mult_det = a`**; likewise the 49
+  cells with `n_χ ≤ 2500` at `δ = 9` and the degree-10 invariant cell.
+  `δ = 8` is therefore empty on the measured corner; the 35 balanced cells
+  above `n_χ = 6659`
+  (24 of them below the frontier) are named in `results/n3_census.md`, not
   estimated.
 - `n = 4`: `[8, 300]` (s34/s36/s38: `δ ≤ 7` empty on every measured cell, `δ
   = 8` empty on 29 peaked cells; s37's cap with Step 3 now proved).
@@ -403,7 +405,7 @@ this is `Σ_{ij} adj_{ji}(s) · (linear forms) = J_{n−1} · S_1 = J_n`.  By
 generic smoothness (char 0) the differential is onto `T_F D_5^{det_n}` at a
 generic `F`, so `dim J_n = dim D_5^{det_n}`; with GN, `dim J_n = 5n² −
 (2n²−2) = 3n² + 2`, which is the stabiliser count of §1 seen from the
-syzygies (measured: `dim J_n = 29, 50, 77, 110` at `n = 3..6`; a rank at a
+syzygies (measured: `dim J_n = 29, 50, 77, 110, 149` at `n = 3..7`; a rank at a
 point bounds the generic rank below, so these are proofs of `dim
 D_5^{det_n} ≥ 3n² + 2`, and the equality `codim = H_{S/J}(n)` below is exact
 given the finite-stabiliser count of §1).  Hence
@@ -416,7 +418,7 @@ at `n = 3..8`.
 **(ii) The nodes fail forms of degree `n` by `C(n−1,4)` (proved `≥`; measured
 `=` at `n ≤ 6`).**  By (3.1) with `k = n`, `def_n(N) ≥ ν(n) − H_{S/J}(n) =
 C(n−1,4)`, with equality iff `J` is saturated in degree `n` (`J_n = (I_N)_n`).
-Measured: `def_n = 0, 0, 1, 5` at `n = 3, 4, 5, 6`, i.e. saturated at each.
+Measured: `def_n = 0, 0, 1, 5, 15` at `n = 3, 4, 5, 6, 7`, i.e. saturated at each.
 So at `n = 3, 4` the nodes impose independent conditions on forms of the
 hypersurface's own degree — that is the "coincidence" — while from `n = 5`
 on they do not, and the amount they fail by is exactly the excess of the
@@ -427,7 +429,7 @@ in `k`).
 
 **(iii) `D_5^{det_n}` is an irreducible component of the `ν(n)`-nodal locus,
 superabundant by `C(n−1,4)` (proved given saturation in degree `n`; hence
-proved at `n = 3..6`, expectation beyond).**  Let `I_ν = {(F, p_1..p_ν) :
+proved at `n = 3..7`, expectation beyond).**  Let `I_ν = {(F, p_1..p_ν) :
 ∇F(p_i) = 0}` be the incidence variety over `P(Sym^n C^5) × (P^4)^ν`.  At a
 point `(F, N)` with `F` a generic determinantal form and `N` its nodes, the
 differential of the `5ν` defining equations sends `(G, q_1..q_ν)` to
@@ -459,7 +461,7 @@ equality `H^0(I_N(5)) = J_5 = T_F D_5^{det_5}`, both of dimension 77.
 `def_{2n−5}(N) ≥ 1`, which is proved at every `n ≥ 3` by route (c) with no
 saturation hypothesis.  A larger defect in degree `2n − 5` would only raise
 the corank in (4.1) and make *smaller* minors vanish — a stronger cap, never
-a weaker one.  At `n = 3..6` the measured coranks `6, 31, 102, 256` are
+a weaker one.  At `n = 3..7` the measured coranks `6, 31, 102, 256, 541` are
 exactly `μ + 1`, so `def_{2n−5} = 1` there and `cap(n)` is the exact rank of
 `M_{3n−5}` on `D_5^{det_n}`: the size-`(cap(n)−1)` minors do *not* all
 vanish, and the family enters the ideal precisely at degree `cap(n)`.
@@ -531,13 +533,13 @@ nodes in special position, is not decided here and is not needed.
   4` (used only in §4, where it is also what the measured `dim J_n`
   reports).
 - **Measured, both primes, seeds and boxes in the logs:** the coranks
-  `6/31/102/256`; the minor-ideal Hilbert functions (equal to GN in every
-  degree tested); `def_{2n−5} = 1` and `def_n = C(n−1,4)` at `n = 3..6`
+  `6/31/102/256/541`; the minor-ideal Hilbert functions (equal to GN in every
+  degree tested); `def_{2n−5} = 1` and `def_n = C(n−1,4)` at `n = 3..7`
   (upper bounds on the generic values, matched by the proved lower bounds);
   the `n = 3` controls; the `δ = 8` det-side cells of `results/n3_ledger.md`.
 - **Expectation, labelled:** Conjecture 2 at `n ≥ 3`; saturation of `J` in
-  degree `n` (and hence §4(iii)) for `n ≥ 7`; `def_{2n−5} = 1` exactly for
-  `n ≥ 7`.
+  degree `n` (and hence §4(iii)) for `n ≥ 8`; `def_{2n−5} = 1` exactly for
+  `n ≥ 8`.
 - **Not done:** no attempt to exhibit the extra syzygy in closed form
   (s35's adjugate candidate); no `n = 4` cells were run (out of scope);
   the `n = 3` census cells above `n_χ = 5000` at `δ = 8` and all of
@@ -555,7 +557,7 @@ The determinant's first five-row equation at every `n` is capped by one
 formula, `cap(n) = 5n(n−1)²(7n−8)/12 = 5, 65, 300, 900, ...`, proved from
 `ν(n) = n²(n²−1)/12` nodes that fail forms of degree `2n − 5` by exactly one
 (Gulliksen–Negård + Dimca, Kleiman the one adopted step) and now measured
-at `n = 3..6`; the conjecture that the cap is the onset is proved at `n = 2`,
-survives 110 empty cells at `δ = 8, 9` and the degree-10 invariant at `n =
+at `n = 3..7`; the conjecture that the cap is the onset is proved at `n = 2`,
+survives 121 empty cells at `δ = 8, 9` and the degree-10 invariant at `n =
 3`, and dies the day any length-5 cell below 65 (`n = 3`) or 300 (`n = 4`)
 bites.

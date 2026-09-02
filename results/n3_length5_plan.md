@@ -70,9 +70,9 @@ Above `n_χ ≈ 8000` the container is a one-worker machine.
 | `δ = 8`, all cells with `n_χ ≤ 5000` | 60 of 107 | 120 of 227 | `mult_det = a` at every cell, both primes |
 | `δ = 9`, all cells with `n_χ ≤ 2500` | 49 of 188 | 92 of 688 | `mult_det = a` at every cell, both primes |
 | `δ = 10`, the rectangular cell `(6,6,6,6,6)` — the unique degree-10 `SL_5`-invariant of cubic threefolds (`N_S = 1350088`, `n_χ = 12321` exact, compressed route, 24 min) | 1 | 1 | **`mult_det = 1 = a`, both primes**: the invariant does not vanish on `D_5` |
-| `δ = 8`, further cells `5000 < n_χ ≤ 9100` (in flight at bundling time; whatever the ledger lists) | see ledger | | `mult_det = a` at every completed cell |
+| `δ = 8`, further cells `5000 < n_χ ≤ 6659` (the tranche `≤ 9100` was stopped at bundling time; the ledger lists the 12 completed, including `(10,6,4,2,2)` with `a = 7`) | 12 more (72 of 107 in all) | 41 more (161 of 227) | `mult_det = a` at every cell |
 
-So `I(D_5)_8` is empty on at least 60 of 107 cells, including every cell
+So `I(D_5)_8` is empty on 72 of 107 cells (161 of 227 units), including every cell
 with balance `≥ 6` below `n_χ = 5000` and the balanced `(8,4,4,4,4)` (`n_χ =
 2838`); `I(D_5)_9` is empty on the 49 peaked cells; and **no
 `SL_5`-invariant of cubic threefolds of degree below 15 vanishes on the
@@ -100,14 +100,15 @@ not a formality); the STOP protocol below verbatim.  Bank every cell with a
 commit; insurance bundle every few hours; one worker above `n_χ ≈ 8000`;
 kill by explicit PID only.
 
-1. **Finish `δ = 8`** — the 47 cells above `n_χ = 5000`, of which 36 fit
-   (`5070 ≤ n_χ ≤ 15700`; ascending, ~3–4 h total).  Completing the fitting
+1. **Finish `δ = 8`** — the 35 cells above `n_χ = 6659`, of which 24 fit
+   (`6795 ≤ n_χ ≤ 15700`; ascending, ~3 h total; the 12 cells between 5000
+   and 6659 were done at the end of this session, 2–4 min each).  Completing the fitting
    part leaves 11 cells (`n_χ ≈ 16000–41600`, all balanced, 19 units) as
    the honest residue.  Priority cells: the most balanced —
    `(6,6,4,4,4)` (7523), `(6,6,6,4,2)` (7923), `(7,7,4,3,3)` (9863),
    `(7,6,6,4,1)` (10149), `(8,5,5,3,3)` (10190), `(7,7,5,3,2)` (14639),
-   `(9,5,4,3,3)` (14898) — and the largest-`a` ones `(10,6,4,2,2)` (`a = 7`,
-   5682), `(9,7,4,3,1)` (`a = 5`, 9067).  Interleave 3 : 1 ascending :
+   `(9,5,4,3,3)` (14898) — and the largest-`a` one left, `(9,7,4,3,1)`
+   (`a = 5`, 9067).  Interleave 3 : 1 ascending :
    balanced, as s36 did.
 2. **`δ = 9` beyond `n_χ = 2500`** — 71 fitting cells (~5–6 h).  Priority:
    `(9,9,3,3,3)` (`a = 1`, 3569), `(6,6,6,6,3)` (`a = 1`, `≈ 10588`),
