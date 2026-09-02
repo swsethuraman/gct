@@ -1,0 +1,15 @@
+seed 20260902, box +-1000000, primes 2147483647, 2147483629
+n=5 pencil 0: corank M_10(det) = 102 / 102   (smooth mu = 101; cap needs >= 102; cap(n) = 900)   [1.3s]
+        control random 5-ic: corank = 101 / 101   (expect 101)
+        H_{S/J}(k), k=4..10: measured [45, 49, 50, 50, 50, 50, 50]  GN [45, 49, 50, 50, 50, 50, 50]  nu=50  AGREE
+        h^0(I_Z(5)) [k=2n-5] = 77 via (J_6:m^1); nodes impose 49 of 50 conditions; def_5 = 1;  dim J_5 = 77
+        h^0(I_Z(5)) [k=n] = 77 via (J_6:m^1); nodes impose 49 of 50 conditions; def_5 = 1;  dim J_5 = 77
+n=5 pencil 1: corank M_10(det) = 102 / 102   (smooth mu = 101; cap needs >= 102; cap(n) = 900)   [1.0s]
+        H_{S/J}(k), k=4..10: measured [45, 49, 50, 50, 50, 50, 50]  GN [45, 49, 50, 50, 50, 50, 50]  nu=50  AGREE
+        h^0(I_Z(5)) [k=2n-5] = 77 via (J_6:m^1); nodes impose 49 of 50 conditions; def_5 = 1;  dim J_5 = 77
+        h^0(I_Z(5)) [k=n] = 77 via (J_6:m^1); nodes impose 49 of 50 conditions; def_5 = 1;  dim J_5 = 77
+n=6 pencil 0: corank M_13(det) = 256 / 256   (smooth mu = 255; cap needs >= 256; cap(n) = 2125)   [8.6s]
+        control random 6-ic: corank = 255 / 255   (expect 255)
+        H_{S/J}(k), k=5..12: measured [90, 100, 104, 105, 105, 105, 105, 105]  GN [90, 100, 104, 105, 105, 105, 105, 105]  nu=105  AGREE
+        h^0(I_Z(7)) [k=2n-5] = 226 via (J_8:m^1); nodes impose 104 of 105 conditions; def_7 = 1;  dim J_7 = 226
+        h^0(I_Z(6)) [k=n] = 110 via (J_8:m^2); nodes impose 100 of 105 conditions; def_6 = 5;  dim J_6 = 110
