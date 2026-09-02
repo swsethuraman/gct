@@ -21,6 +21,7 @@
 
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\mult}{mult}
 \DeclareMathOperator{\dfc}{def}
@@ -189,9 +190,10 @@ length at most four, in every degree, the closure multiplicity attains the
 ambient plethysm bound (Theorem \ref{thm:length}) --- every short-weight
 deficit of the determinant is ambient arithmetic, computable by plethysm and
 branching alone --- and the bound on the length is sharp: the ideal of $\cO$
-contains the discriminant of quinary cubics as a length-five highest weight
-vector in degree $80$ (Theorem \ref{thm:sharp}), while below degree $6$ it
-contains nothing at all.
+contains length-five highest weight vectors in degree $65$, the maximal minors
+of the Jacobian matrix of a six-nodal cubic threefold (Proposition
+\ref{prop:jaccap}), and the discriminant of quinary cubics in degree $80$
+(Theorem \ref{thm:sharp}), while below degree $6$ it contains nothing at all.
 
 Section \ref{sec:functional} analyses the evaluation functional on which that
 computation rests.  Several of its natural symmetries we rule out; its totals
@@ -1141,6 +1143,53 @@ Theorem \ref{thm:length}, shows $I(D_5)$ is concentrated at weights of length
 exactly $5$.
 \end{remark}
 
+\begin{proposition}[The Jacobian cap]\label{prop:jaccap}
+For $F\in\Sym^{3}\bC^{5}$ let $M_4(F)$ be the $75\times70$ matrix of the
+multiplication map $(\Sym^{2}\bC^{5})^{\oplus5}\to\Sym^{4}\bC^{5}$,
+$(m_i)_i\mapsto\sum_i m_i\,\partial F/\partial s_i$, whose entries are linear
+in the coefficients of $F$.  For smooth $F$ its rank is $65$; for $F\in D_5$
+it is at most $64$.  Consequently the $65\times65$ minors of $M_4(F)$ are
+nonzero polynomials of degree $65$ in the coefficients of $F$, they span a
+$\GL_5$-stable subspace of $I(D_5)_{65}$, and $I(\cO)$ contains a
+length-five component in degree $65$.
+\end{proposition}
+
+\begin{proof}
+Write $J_F=(\partial_1F,\dots,\partial_5F)$.  For smooth $F$ the partials
+form a regular sequence, so $\dim(\bC[s]/J_F)_4=[t^4](1+t)^5=5$ and the rank
+is $70-5=65$; since the entries of $M_4(F)$ are linear in $F$, a
+$65\times65$ minor is a polynomial of degree $65$, and at least one is
+nonzero.  Now let $F=\det(\sum_is_iA_i)$ for a generic pencil, and let
+$X\subset\mathbb{P}^{4}$ be the cubic threefold it defines.  By the proof of
+Theorem \ref{thm:sharp}, $F$ is singular at every point where the pencil
+meets the rank-one locus.  That these six points are the only singular
+points of $X$, that there are exactly six of them, and that each is an
+ordinary double point is the one step we take from the literature rather
+than prove: Kleiman's transversality theorem \cite{Kleiman} (characteristic
+zero), applied to the rank strata of $\mathbb{P}(M_3)$, gives that a generic
+$\mathbb{P}^{4}$ misses the origin stratum, meets the rank-one stratum
+transversally in $\deg(\mathbb{P}^{2}\times\mathbb{P}^{2})=6$ reduced points
+(the rank-one locus is the Segre variety), and meets the smooth locus of the
+determinant hypersurface transversally, so that $X$ is smooth elsewhere; and
+at a transverse rank-one point a Schur-complement expansion
+$\det M=\det P\cdot\det(S-RP^{-1}Q)$ exhibits $F$ as a rank-four quadric in
+the four entries of the $2\times2$ block $S$ plus higher-order terms, i.e.\ a
+node.  Six points impose at most five conditions on the five-dimensional
+space of linear forms, so the nodes fail to impose independent conditions on
+forms of degree $2\cdot3-5=1$ by at least one.  By Dimca's theorem on
+syzygies of Jacobian ideals \cite[Thm.~3.1]{Dimca13}, for a hypersurface of
+degree $d$ in $\mathbb{P}^{4}$ with isolated singularities the dimension of
+$(\bC[s]/J_F)_{3d-5}$ exceeds its smooth value by exactly the failure of the
+singular scheme to impose independent conditions on forms of degree $2d-5$;
+at $d=3$ this reads $\dim(\bC[s]/J_F)_4\ge5+1$, i.e.\ $\operatorname{rank}
+M_4(F)\le64$.  This holds on the dense subset of $D_5$ swept out by generic
+pencils, hence on $D_5$.  The span of the $65\times65$ minors is the ideal
+of maximal minors of a $\GL_5$-equivariant matrix of linear forms in $F$,
+hence $\GL_5$-stable; Proposition \ref{prop:lengthred} carries the
+corresponding highest-weight vectors, all of length five by Remark
+\ref{rem:crossover}, into $I(\cO)_{65}$.
+\end{proof}
+
 What the two theorems do not determine is the least degree $\delta_0$ at which
 a length-$5$ component actually appears in $I(\cO)$.  Direct computation
 certifies $\mult=a$ at every weight of every length for $\delta\le5$ --- each
@@ -1160,12 +1209,16 @@ sums agree while $\mult\le a$ holds term by term; direct certificates
 independently cover all but $3$ ambient units at $\delta=6$ and all but $80$
 at $\delta=7$.  Hence
 \[
-  6\;\le\;\delta_0\;\le\;80\ \ \text{unconditionally},
+  6\;\le\;\delta_0\;\le\;65\ \ \text{unconditionally},
   \qquad
-  8\;\le\;\delta_0\;\le\;80\ \ \text{given the measured totals},
+  8\;\le\;\delta_0\;\le\;65\ \ \text{given the measured totals},
 \]
-where $80$ is the one explicit equation of Theorem \ref{thm:sharp} and is
-surely far from tight.  The first pieces of $I(\cO)$ pinned exactly appear at
+where $65$ is the Jacobian cap of Proposition \ref{prop:jaccap}: the
+discriminant of Theorem \ref{thm:sharp} vanishes on $D_5$ because the generic
+member is singular, the cap vanishes because it is singular at six points that
+fail linear forms by one, and the second mechanism is the cheaper of the two.
+We conjecture that it is the cheapest of all, i.e.\ that $\delta_0=65$
+(Question \ref{q:delta0}).  The first pieces of $I(\cO)$ pinned exactly appear at
 $\delta=10$: the three weights $(13,3,2^{7})$, $(12,5,2^{6},1)$ and
 $(9,9,2^{6})$ have $a=1$ and $m=0$, so each isotypic component lies in the
 ideal outright --- at lengths $8$ and $9$, by the cheapest mechanism
@@ -1789,25 +1842,40 @@ content is the numerator.
 \end{question}
 
 \begin{question}[The first equation of length five]\label{q:delta0}
-Theorems \ref{thm:length} and \ref{thm:sharp} bracket the least degree
-$\delta_0$ of a length-$5$ component of $I(\cO)$ between $6$ and $80$
-(between $8$ and $80$ given the measured totals), and the two ends have
-different characters: the lower end is where measurement stopped, the upper is
-one explicit equation that is surely not the lowest.  Six nodes are six
-conditions and the discriminant is the shadow of one of them; a
-$\GL_5$-covariant of degree well under $80$ vanishing on six-nodal quinary
-cubics would collapse the bracket at once.  Two subquestions.  Is $D_5$ a
-component of the closure of the six-nodal locus --- that is, is the generic
-six-nodal cubic threefold determinantal?  An affirmative answer would turn the
-hunt for $\delta_0$ into classical projective geometry.  And can $\delta_0$ be
-found by counting rather than by exhibiting an equation?  Here we can answer:
-no.  $\bC[D_5]$ is the subalgebra of the $\SL_3\times\SL_3$ semi-invariant
-ring of $(M_3)^{5}$ generated in bidegree $(1,1)$, and the dimension of that
-ring in bidegree $(\delta,\delta)$ (more precisely of its transpose-symmetric
-part), which bounds $\dim\bC[D_5]_\delta$ from above, stays above
-$\dim\Sym^{\delta}\Sym^{3}\bC^{5}$ until past degree $100$ --- so no equation
-is forced by dimension comparison in the entire bracket, and the route to
-$\delta_0$ must produce the equation itself.
+Theorem \ref{thm:length}, Proposition \ref{prop:jaccap} and the computations
+of Section \ref{sec:det} bracket the least degree $\delta_0$ of a length-$5$
+component of $I(\cO)$ between $6$ and $65$ (between $8$ and $65$ given the
+measured totals).  The two ends have different characters: the lower end is
+where measurement stopped; the upper end is one specific mechanism --- the six
+nodes fail linear forms by one, and degree $4$ of the Milnor algebra sees it
+--- whose cost, $65$, is the rank of the matrix that detects it.  Every
+covariant we know how to write down that vanishes on $D_5$ is of this kind (a
+minor of a matrix linear in $F$, costing its size: the Jacobian matrices in
+degrees $5$ and $6$ cost $121$ and $205$, the discriminant $80$), and we
+conjecture that there is no other kind below the cap: $\delta_0=65$.  Two
+remarks bear on this.  First, $D_5$ is a classical object seen from its nodes:
+the six nodes of a generic determinantal cubic threefold are in linearly
+general position, and conversely the cubic threefolds singular at six points
+in linearly general position form an irreducible family of dimension $28$
+whose closure is $D_5$ --- six such points are a projective frame, unique up
+to $\PGL_5$; the cubics singular at a fixed frame form a $\mathbb{P}^{4}$;
+$24+4=28=\dim\mathbb{P}(D_5)$; and the frame condition on the nodes is open and
+holds at an explicit pencil.  So the generic six-nodal cubic threefold with
+nodes in general position is determinantal; $D_5$ is moreover an irreducible
+component of the closure of the six-nodal locus, since six nodes in general
+position impose independent conditions on cubics and the first-order
+equisingular deformations of a generic member are therefore exactly the cubics
+through its nodes, of dimension $35-6=29=\dim D_5$.  The hunt for $\delta_0$ is
+thus the hunt for the first covariant vanishing on the cubics singular at a
+fixed frame, and whether the closure of the six-nodal locus has components
+other than $D_5$, with nodes in special position, we leave open.  Second,
+$\delta_0$ cannot be found by counting.  $\bC[D_5]$ is the subalgebra of the
+$\SL_3\times\SL_3$ semi-invariant ring of $(M_3)^{5}$ generated in bidegree
+$(1,1)$, and the dimension of that ring in bidegree $(\delta,\delta)$ (more
+precisely of its transpose-symmetric part), which bounds $\dim\bC[D_5]_\delta$
+from above, stays above $\dim\Sym^{\delta}\Sym^{3}\bC^{5}$ until past degree
+$100$ --- so no equation is forced by dimension comparison anywhere in the
+bracket, and the route to $\delta_0$ must produce the equation itself.
 \end{question}
 
 \begin{question}[$n=4$ and beyond]\label{q:n4}
@@ -1868,10 +1936,21 @@ P.~B\"urgisser, C.~Ikenmeyer, G.~Panova,
 \emph{No occurrence obstructions in geometric complexity theory},
 J. Amer. Math. Soc. \textbf{32} (2019), 163--193.
 
+\bibitem{Dimca13}
+A.~Dimca,
+\emph{Syzygies of Jacobian ideals and defects of linear systems},
+Bull. Math. Soc. Sci. Math. Roumanie (N.S.) \textbf{56(104)} (2013), no.~2,
+191--203; arXiv:1210.1795.
+
 \bibitem{GKZ}
 I.~M.~Gelfand, M.~M.~Kapranov, A.~V.~Zelevinsky,
 \emph{Discriminants, Resultants, and Multidimensional Determinants},
 Birkh\"auser, Boston, 1994.
+
+\bibitem{Kleiman}
+S.~L.~Kleiman,
+\emph{The transversality of a general translate},
+Compositio Math. \textbf{28} (1974), 287--297.
 
 \bibitem{HL}
 J.~H\"uttenhain, P.~Lairez,
