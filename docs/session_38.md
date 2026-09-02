@@ -16,7 +16,7 @@ The occurrence route is **silent** over the whole window it can see (0 of the
 2585 ℓ=5 cells at δ=5–10 have `a > m_det`, exhaustively; δ=11,12 clean at both
 fire-risk extremes) — so the onset is a genuine multiplicity phenomenon, not an
 arithmetic one. δ=8 is **empty on every reachable
-cell** (27 of 43, `mult_det = a`, certified). The validation battery passes. The
+cell measured** (29 of 43, `mult_det = a`, certified). The validation battery passes. The
 window is left at `[8, 405]`, with the onset's *character* pinned even though its
 degree is not.
 
@@ -47,8 +47,8 @@ degree is not.
    (`a=mult=3`, `n_chi=10738`).
 5. **Phase 1, δ=8 rank measurements** (`analysis/wk9_s38_census.py`,
    `results/onset_ledger.md`): census by capped `N_S` counter (verified vs
-   `monomials()`); 43 cells reachable unreduced (`N_S ≤ 9000`); the 27 with
-   `N_S ≤ 5000` all measured `mult_det = a`, `det_units = 0`, two primes. No bite.
+   `monomials()`); 43 cells reachable unreduced (`N_S ≤ 9000`); the 29 with
+   `N_S ≤ 5531` all measured `mult_det = a`, `det_units = 0`, two primes. No bite.
 
 ## Kill criteria — none fired
 
@@ -64,7 +64,7 @@ pull forward). Memory-wall cells were reported as not-reached, never estimated.
 - `a` carries two routes (plethysm `ambient_screen.a`, and `dim ker R` on the
   reachable cells); `m_det` batched == `ambient_screen.m_det` each run;
   `ambient_screen.py --selftest` clean.
-- Insurance bundles taken during the run (`onset_insurance_1,2.bundle`).
+- Insurance bundles taken during the run (`onset_insurance_1,2,3.bundle`).
 
 ## The window as left
 
