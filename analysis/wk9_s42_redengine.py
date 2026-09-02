@@ -62,6 +62,26 @@ def split_red(lam, delta, vecs, A):
         (red if s0 else nonred).append(j)
     return cons, red, nonred
 
+def split_red_arr(lam, delta, arr, A):
+    """(★)-split from the arrays: an orbit is red iff its representative monomial
+    satisfies (★); homogeneity over the orbit is asserted on a sample."""
+    import numpy as np
+    r = len(lam)
+    cons = [i for i in range(r) if lam[i] >= delta]
+    M = arr['M']; col_of = arr['col_of']; n_chi = arr['n_chi']
+    Aarr = np.array(A, dtype=np.int32)
+    # star[m] = all_i in cons: any_k Aarr[M[m,k], i] == 0
+    star = np.ones(M.shape[0], dtype=bool)
+    for i in cons:
+        star &= (Aarr[M, i] == 0).any(axis=1)
+    kept = col_of >= 0
+    red_flag = np.zeros(n_chi, dtype=np.int64); cnt = np.zeros(n_chi, dtype=np.int64)
+    np.add.at(red_flag, col_of[kept], star[kept]); np.add.at(cnt, col_of[kept], 1)
+    assert np.all((red_flag == 0) | (red_flag == cnt)), ("orbit not homogeneous for (★)", lam)
+    red = [int(j) for j in np.nonzero(red_flag == cnt)[0]]
+    nonred = [int(j) for j in np.nonzero(red_flag == 0)[0]]
+    return cons, red, nonred
+
 def restrict_rows(rows, cols):
     """rows as {col: val} over the sub-columns `cols` (reindexed 0..len(cols)-1)."""
     pos = {c: k for k, c in enumerate(cols)}
@@ -140,7 +160,7 @@ def csr_to_rows(E):
         if b > a: out.append({int(c): int(v) for c, v in zip(E.indices[a:b], E.data[a:b])})
     return out
 
-def build(lam, delta, verbose=True, fast=True, want_rows=False):
+def build(lam, delta, verbose=True, fast=True, want_rows=False, want_vecs=True):
     """isotypic reduction + red split.  fast=True: the vectorised orbit setup and
     raising-operator rows of wk9_s42_orbits (validated against the s36 routines:
     identical orbits up to sign, identical row spaces); the operators are
@@ -153,9 +173,14 @@ def build(lam, delta, verbose=True, fast=True, want_rows=False):
     A = exps(n, r)
     if fast:
         from wk9_s42_orbits import orbit_setup_fast, reduced_rows_fast
-        basis, vecs, group = orbit_setup_fast(n, r, delta, lam, verbose)
-        E, nfx = reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose)
-        cons, red, nonred = split_red(lam, delta, vecs, A)
+        basis, vecs, group, arr = orbit_setup_fast(n, r, delta, lam, verbose, want_vecs=want_vecs, arrays=True)
+        N_S_val = len(basis)
+        E, nfx = reduced_rows_fast(n, r, delta, lam, basis, vecs, verbose, arr=arr)
+        cons, red, nonred = split_red_arr(lam, delta, arr, A)
+        n_chi = arr['n_chi']
+        if not want_vecs:
+            basis = None; monomials.cache_clear()
+        del arr
         E_red = E[:, red].tocsr() if len(red) else E[:, :0].tocsr()
         E_red.eliminate_zeros()
         nz = (E_red.indptr[1:] - E_red.indptr[:-1]) > 0
@@ -165,16 +190,18 @@ def build(lam, delta, verbose=True, fast=True, want_rows=False):
     else:
         basis, vecs, group = orbit_setup(n, r, delta, lam, verbose)
         rows, nfx = reduced_rows(n, r, delta, lam, vecs, verbose)
+        N_S_val = len(basis)
         cons, red, nonred = split_red(lam, delta, vecs, A)
         rows_red = restrict_rows(rows, red)
         from wk9_s42_sparse import rows_to_csr
         E = rows_to_csr(rows, len(vecs)); E_red = rows_to_csr(rows_red, len(red))
+        n_chi = len(vecs)
     if verbose:
-        log(f"  built: N_S={len(basis)} |Stab|={len(group)} n_chi={len(vecs)} n_red={len(red)} "
+        log(f"  built: |Stab|={len(group)} n_chi={n_chi} n_red={len(red)} "
             f"n_nonred={len(nonred)} rows={E.shape[0]} rows_red={E_red.shape[0]} nnz_red={E_red.nnz} cons={cons} ({time.time()-t0:.0f}s)")
     return dict(lam=lam, delta=delta, r=r, A=A, basis=basis, vecs=vecs, group=group, rows=rows,
-                rows_red=rows_red, E=E, E_red=E_red, cons=cons, red=red, nonred=nonred, N_S=len(basis),
-                stab=len(group), n_chi=len(vecs), n_red=len(red), build_secs=time.time() - t0)
+                rows_red=rows_red, E=E, E_red=E_red, cons=cons, red=red, nonred=nonred, N_S=N_S_val,
+                stab=len(group), n_chi=n_chi, n_red=len(red), build_secs=time.time() - t0)
 
 def nullity_route(rows, nc, p, route, want_kern=False, pseed=101):
     """returns (nullity_p, kern or None, route_used).  `rows` may be a list of
