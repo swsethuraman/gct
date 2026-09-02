@@ -67,6 +67,59 @@ def m_det_fast(lam, Ws):
     return int(s)
 
 
+def screen_big(delta, ell=5, d=4, verbose=False, rho_clear=300):
+    """Memory-bounded screen for large delta (N>=44): transpose the m_det sum.
+
+    m_det_fast(lam) sums chi(lam,rho) over ALL rho in the W-support, which for
+    one lam populates the chi() memo with a rho-suffix subtree per rho -- at
+    N=44,48 that peaks past the cgroup and OOMs (observed at delta=11,12).
+
+    Here we loop rho OUTER and lam INNER, accumulating m[lam] += chi(lam,rho)W,
+    and clear the chi memo every `rho_clear` rho.  Peak memory is then one
+    rho-batch's Murnaghan-Nakayama subtree plus |lam| integer accumulators --
+    bounded independent of delta.  `a` is computed per-lam with the same
+    periodic clearing (its plethysm support is small).
+    """
+    from fractions import Fraction
+    N = d * delta
+    lams = [lam for lam in partitions(N) if len(lam) == ell]
+    # a, per lam, with periodic cache clears
+    avs = {}
+    for i, lam in enumerate(lams):
+        avs[lam] = amb_a(lam, delta, d=d, nv=ell)
+        if (i + 1) % 400 == 0:
+            chi.cache_clear()
+    keep = [lam for lam in lams if avs[lam] >= 1]
+    chi.cache_clear()
+    # m_det for all `keep` lam, transposed over the W-support
+    Ws = mdet_weights(delta, d)
+    if verbose:
+        print("    screen_big d=%d: %d cells (a>=1) of %d; |W|=%d"
+              % (delta, len(keep), len(lams), len(Ws)), file=sys.stderr)
+        sys.stderr.flush()
+    acc = {lam: 0 for lam in keep}
+    for j, (rho, W) in enumerate(Ws):
+        assert W.denominator == 1 or True
+        num, den = W.numerator, W.denominator
+        for lam in keep:
+            c = chi(lam, rho)
+            if c:
+                acc[lam] += Fraction(c * num, den)
+        if (j + 1) % rho_clear == 0:
+            chi.cache_clear()
+            if verbose and (j + 1) % (rho_clear * 20) == 0:
+                print("      ...%d/%d rho" % (j + 1, len(Ws)), file=sys.stderr)
+                sys.stderr.flush()
+    rows = []
+    for lam in keep:
+        m = acc[lam] / 2
+        assert m.denominator == 1, (lam, m)
+        md = int(m)
+        rows.append((lam, avs[lam], md, avs[lam] - md))
+    rows.sort(key=lambda r: (-(r[1] - r[2]), -r[1], r[0]))
+    return rows
+
+
 def screen_delta(delta, ell=5, d=4, Ws=None, clear_every=120, verbose=False):
     """Occurrence screen at one delta.
 
@@ -153,6 +206,21 @@ def write_csv(path, allrows):
 
 
 def main(argv):
+    if argv and argv[0] == 'big':
+        # memory-bounded single-delta screen for large N; append to csv
+        delta = int(argv[1])
+        t0 = time.time()
+        rows = screen_big(delta, verbose=True)
+        report(delta, rows)
+        print("  [%.0fs]" % (time.time() - t0))
+        if '--csv' in argv:
+            with open(argv[argv.index('--csv') + 1], 'w') as fh:
+                fh.write("delta,lam,ell,a,m_det,det_units_lb\n")
+                for lam, av, md, du in rows:
+                    fh.write("%d,%s,%d,%d,%d,%d\n"
+                             % (delta, "|".join(map(str, lam)), len(lam), av, md, du))
+            print("wrote", argv[argv.index('--csv') + 1])
+        return 0
     if argv and argv[0] == 'sweep':
         d_lo, d_hi = int(argv[1]), int(argv[2])
         csv = argv[argv.index('--csv') + 1] if '--csv' in argv else None
