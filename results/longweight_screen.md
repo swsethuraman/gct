@@ -60,9 +60,9 @@ A chunk is COMPLETE iff its `.done` marker exists; else PARTIAL (banked/candidat
 | 10 | 7 | 2491 | 2491 | 2330 | 0 | 0 | 17 (`(28, 2, 2, 2, 2, 2, 2)`) | complete |
 | 10 | 8 | 2793 | 2793 | 2460 | 0 | 0 | 20 (`(26, 2, 2, 2, 2, 2, 2, 2)`) | complete |
 | 10 | 9 | 2773 | 2773 | 2074 | 0 | 0 | 20 (`(24, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
-| 10 | 10 | 2533 | 2027 | 1037 | 0 | 0 | 17 (`(22, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | PARTIAL 2027/2533 |
-| 11 | 6 | 2902 | 0 | 0 | 0 | 0 | — | PARTIAL 0/2902 |
-| 11 | 7 | 4123 | 0 | 0 | 0 | 0 | — | PARTIAL 0/4123 |
+| 10 | 10 | 2533 | 2533 | 1318 | 0 | 0 | 17 (`(22, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | complete |
+| 11 | 6 | 2902 | 2902 | 2817 | 0 | 0 | 12 (`(34, 2, 2, 2, 2, 2)`) | complete |
+| 11 | 7 | 4123 | 1649 | 1482 | 0 | 0 | 17 (`(32, 2, 2, 2, 2, 2, 2)`) | PARTIAL 1649/4123 |
 | 11 | 8 | 4902 | 0 | 0 | 0 | 0 | — | PARTIAL 0/4902 |
 | 11 | 9 | 5116 | 0 | 0 | 0 | 0 | — | PARTIAL 0/5116 |
 | 11 | 10 | 4882 | 0 | 0 | 0 | 0 | — | PARTIAL 0/4882 |
@@ -70,8 +70,8 @@ A chunk is COMPLETE iff its `.done` marker exists; else PARTIAL (banked/candidat
 | 12 | 7 | 6561 | 0 | 0 | 0 | 0 | — | PARTIAL 0/6561 |
 | 12 | 8 | 8235 | 0 | 0 | 0 | 0 | — | PARTIAL 0/8235 |
 | 12 | 9 | 9018 | 0 | 0 | 0 | 0 | — | PARTIAL 0/9018 |
-| 12 | 10 | 8961 | 2370 | 1582 | 0 | 0 | 17 (`(30, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | PARTIAL 2370/8961 |
+| 12 | 10 | 8961 | 3816 | 2939 | 0 | 0 | 17 (`(30, 2, 2, 2, 2, 2, 2, 2, 2, 2)`) | PARTIAL 3816/8961 |
 
-Totals across banked rows: **16886 cells (a≥1), 0 one-bit, 0 forced.**
+Totals across banked rows: **22823 cells (a≥1), 0 one-bit, 0 forced.**
 
-_(generated 2026-09-02 15:50 UTC by `analysis/wk9_s39_publish.py`)_
+_(generated 2026-09-02 16:11 UTC by `analysis/wk9_s39_publish.py`)_
