@@ -14,7 +14,9 @@ n_chi >= N_S/|Stab| (exact n_chi needs the orbit enumeration and is left to
 the sweep), h_pad (wk9_s42_hpad: the normalisation bound), and the h_pad < a
 flag (a pad-forced ideal, proved without any rank).
 
-usage: python3 wk9_s42_census.py [--deltas 7,8] [--ellmax 8] [--out results/s42_census.json]
+usage: python3 wk9_s42_census.py [--deltas 7,8] [--ellmax 10] [--out results/s42_census.json]
+       python3 wk9_s42_census.py --weyl --deltas 9,10,11,12 --ellmax 10 [--nchi-cap 400000] [--box-cap 2000000]
+         (the Weyl route: a and h_pad by Weyl alternation + tail DPs, only for cells whose n_chi lower bound is within the cap)
 """
 import sys, os, time, json
 from math import factorial
@@ -72,16 +74,140 @@ def census(deltas, ellmax, ellmin=6, n=4, verbose=True):
         if verbose: print(f"delta {delta}: {sum(1 for x in rows if x['delta'] == delta)} region cells ({time.time()-t0:.0f}s)", flush=True)
     return rows
 
+# ------------------------------------------------ the Weyl route (large delta)
+# a(lam, delta) = sum_{w in S_r} sgn(w) N_S(lam + rho - w rho)   (Weyl character formula
+# read backwards: the coefficient of x^{lam+rho} in a_rho . char);  N_S of a shifted
+# weight by the tail DP (any composition: the x_1 exponent is implied by the tail).
+# Used where the symmetric-function route (amb) is too slow (delta >= 9); the two
+# routes are asserted equal on every delta = 7, 8 cell they share (--check).
+
+def N_S_tail_n(mu, delta, n):
+    """tail DP for Sym^delta(Sym^n C^r) at an arbitrary composition mu (int64 numpy)."""
+    mu = tuple(mu); r = len(mu)
+    if any(x < 0 for x in mu) or sum(mu) != n * delta: return 0
+    tail = mu[1:]
+    shape = (delta + 1,) + tuple(t + 1 for t in tail)
+    F = np.zeros(shape, dtype=np.int64)
+    F[(0,) * len(shape)] = 1
+    for beta in tails(r, n):
+        if any(beta[i] > tail[i] for i in range(r - 1)): continue
+        src = tuple(slice(0, tail[i] + 1 - beta[i]) for i in range(r - 1))
+        dst = tuple(slice(beta[i], tail[i] + 1) for i in range(r - 1))
+        for d in range(1, delta + 1):
+            F[(d,) + dst] += F[(d - 1,) + src]
+    v = int(F[(delta,) + tail])
+    assert v < (1 << 62), "int64 headroom"
+    return v
+
+def perm_sign(p):
+    s = 1
+    for i in range(len(p)):
+        for j in range(i + 1, len(p)):
+            if p[i] > p[j]: s = -s
+    return s
+
+def a_weyl(lam, delta, n, cache=None):
+    """plethysm multiplicity by Weyl alternation with nonnegativity pruning."""
+    lam = tuple(lam); r = len(lam)
+    rho = tuple(range(r - 1, -1, -1))
+    lr = [lam[i] + rho[i] for i in range(r)]
+    tot = 0
+    # assign w(i) for i = r-1 down to 0 (tightest budgets first); w(i) = j means rho_j is subtracted at position i
+    order = sorted(range(r), key=lambda i: lr[i])
+    used = [False] * r
+    w = [0] * r
+    def rec(k):
+        nonlocal tot
+        if k == r:
+            mu = tuple(lr[i] - rho[w[i]] for i in range(r))
+            key = (mu, delta, n)
+            if cache is not None and key in cache: v = cache[key]
+            else:
+                v = N_S_tail_n(mu, delta, n)
+                if cache is not None: cache[key] = v
+            tot += perm_sign(w) * v
+            return
+        i = order[k]
+        for j in range(r):
+            if not used[j] and rho[j] <= lr[i]:
+                used[j] = True; w[i] = j
+                rec(k + 1)
+                used[j] = False
+    rec(0)
+    return tot
+
+def h_pad_weyl(lam, delta, cache=None):
+    from wk9_s42_hpad import pieri_strips
+    tot = 0
+    for nu in pieri_strips(lam, delta):
+        nu_t = tuple(nu)
+        # c_nu for Sym^delta(Sym^3 C^r); nu may end in zeros (fine: r variables)
+        tot += a_weyl(nu_t, delta, 3, cache)
+    return tot
+
+def partitions_region(delta, ellmin, ellmax, n=4):
+    """partitions of n*delta with ellmin <= length <= ellmax and lam_1 >= delta."""
+    N = n * delta
+    out = []
+    def rec(remaining, maxpart, cur):
+        if remaining == 0:
+            if ellmin <= len(cur) <= ellmax: out.append(tuple(cur))
+            return
+        if len(cur) >= ellmax: return
+        for k in range(min(remaining, maxpart), 0, -1):
+            if remaining - k > (ellmax - len(cur) - 1) * k: continue
+            rec(remaining - k, k, cur + [k])
+    for first in range(delta, N + 1):
+        rec(N - first, first, [first])
+    return out
+
+def census_weyl(deltas, ellmax, ellmin=6, n=4, box_cap=2_000_000, nchi_cap=400_000, verbose=True):
+    rows = []
+    for delta in deltas:
+        t0 = time.time()
+        lams = partitions_region(delta, ellmin, ellmax, n)
+        cache = {}
+        nbox = na = 0
+        for lam in lams:
+            box = 1
+            for x in lam[1:]: box *= (x + 1)
+            so = stab_order(lam)
+            rec = dict(lam=list(lam), delta=delta, ell=len(lam), stab=so, bal=lam[0] - lam[-1])
+            if box * (delta + 1) > box_cap:
+                rec.update(N_S=None, nchi_lb=None, a=None, h_pad=None, note='tail box > cap: N_S not computed (far beyond the frontier)')
+                nbox += 1
+            else:
+                ns = N_S_tail_n(lam, delta, n)
+                rec.update(N_S=ns, nchi_lb=(ns + so - 1) // so)
+                if rec['nchi_lb'] <= nchi_cap:
+                    a = a_weyl(lam, delta, n, cache)
+                    rec['a'] = a
+                    if a >= 1:
+                        rec['h_pad'] = h_pad_weyl(lam, delta, cache); rec['hpad_lt_a'] = rec['h_pad'] < a
+                    na += 1
+                else:
+                    rec.update(a=None, h_pad=None, note='n_chi lower bound > cap: a not computed')
+            rows.append(rec)
+        if verbose:
+            print(f"delta {delta}: {len(lams)} lam_1>=delta partitions with {ellmin}<=ell<={ellmax}; "
+                  f"{nbox} beyond the tail-box cap; a computed at {na}; "
+                  f"{sum(1 for x in rows if x['delta']==delta and x.get('a'))} cells with a>=1 sized ({time.time()-t0:.0f}s)", flush=True)
+    return rows
+
 if __name__ == '__main__':
     args = sys.argv[1:]
-    deltas = [7, 8]; ellmax = 8; out = os.path.join(HERE, '..', 'results', 's42_census.json')
+    deltas = [7, 8]; ellmax = 8; out = os.path.join(HERE, '..', 'results', 's42_census.json'); weyl = False
+    nchi_cap = 400_000; box_cap = 2_000_000
     i = 0
     while i < len(args):
         if args[i] == '--deltas': deltas = [int(x) for x in args[i + 1].split(',')]; i += 2
         elif args[i] == '--ellmax': ellmax = int(args[i + 1]); i += 2
         elif args[i] == '--out': out = args[i + 1]; i += 2
+        elif args[i] == '--weyl': weyl = True; i += 1
+        elif args[i] == '--nchi-cap': nchi_cap = int(args[i + 1]); i += 2
+        elif args[i] == '--box-cap': box_cap = int(args[i + 1]); i += 2
         else: i += 1
-    rows = census(deltas, ellmax)
+    rows = census_weyl(deltas, ellmax, nchi_cap=nchi_cap, box_cap=box_cap) if weyl else census(deltas, ellmax)
     prev = []
     if os.path.exists(out):
         prev = [x for x in json.load(open(out)) if x['delta'] not in deltas]
