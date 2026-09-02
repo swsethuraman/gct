@@ -1,0 +1,15 @@
+seed 20260902, box +-1000000
+per_3          r=2  rank=4,4  ambient=4  DENSE
+per_3          r=3  rank=10,10  ambient=10  DENSE
+per_3          r=4  rank=20,20  ambient=20  DENSE
+per_3          r=5  rank=35,35  ambient=35  DENSE
+per_3          r=6  rank=50,50  ambient=56  
+det_4          r=2  rank=5,5  ambient=5  DENSE
+det_4          r=3  rank=15,15  ambient=15  DENSE
+det_4          r=4  rank=34,34  ambient=35  
+det_4          r=5  rank=50,50  ambient=70  
+det_4          r=6  rank=66,66  ambient=126  
+pad x0.per_3   r=3  rank=12,12  ambient=15  
+pad x0.per_3   r=4  rank=23,23  ambient=35  
+pad x0.per_3   r=5  rank=39,39  ambient=70  
+pad x0.per_3   r=6  rank=55,55  ambient=126  
