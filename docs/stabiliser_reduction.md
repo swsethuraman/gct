@@ -198,12 +198,116 @@ cheap is reducibility" at these degrees.
 
 ### 4.3 The rest of Stratum A
 
-STRATUM_A_TABLE
+Beyond the three named cells, the pre-registered order walked s30's 33
+unmeasured `ell = 5` cells ascending in `n_chi`, interleaved 3 : 1 with the
+most-balanced / largest-`a` unmeasured cell.  Every one of them returned
+`mult_det = mult_pad = a`, `D = 0` (`results/s36_ledger.md`; `mult_red = a`
+at each, `results/s36_red_table.md`) — including `(8,8,4,2,2)` and
+`(8,6,6,2,2)` at balance 6, `(10,6,4,2,2)` with `a = 6`, and the `|Stab| = 1`
+cells up to `n_chi = N_S = 14436`.  With s27/s30's 34, the `delta = 6`,
+`ell = 5` slab is now measured at **A_COUNT of 67 cells** (A_UNITS of 202
+ambient units); the only cells left are those with `n_chi > 15500` —
+`(9,7,4,3,1)` at `n_chi = N_S = 16005` was attempted and OOM-killed inside
+flint's `nullspace` (three `8 n_chi^2` copies: the matrix, its rref, and the
+`n x n` nullspace buffer — the true resident constant is `~2.4e-8`, not
+`0.8e-8`, and the container's frontier is `n_chi ~ 15500`), and the remaining
+unmeasured cells sit above it.  **Across the whole slab, `delta = 6`'s pad
+ideal at `r = 5` is nonzero in exactly one measured component,
+`(8,4,4,4,4)`, and the det ideal in none.**
+
+The `delta = 7`, `ell = 5` cells outside session 34's domain (`N_S > 11269`,
+36 fit) were swept last, ascending, as "A7" in the ledger; A7_SUMMARY
 
 ## 5. Stratum B (`ell = 6`) — the first cells that see the permanent
 
-STRATUM_B_PLACEHOLDER
+Stratum B is the first place in the programme where the padded permanent is
+not `l · (arbitrary cubic)`: at `r = 6` the cubic factor is a `3x3` permanent
+of linear forms in six variables, a codimension-6 subvariety of the cubics
+(`dim D_6^{per_3} = 50 < 56`), so `D_6^pad ⊊ X_6` and a permanent-specific
+equation is *possible* for the first time.  Two questions, kept separate:
+does either ideal bite at all (`mult < a`), and if the pad side bites, is
+the equation permanent-specific (`mult_pad < mult_red`) or a reducibility
+equation (`mult_pad = mult_red`)?
+
+**`delta = 6` (4 cells in the census, 3 fit).**  `(7,7,4,4,1,1)` — the
+balanced cell s30 priced at 716 GB, here `n_chi = 10091`, 7 minutes — and
+`(10,5,5,2,1,1)`: `mult_det = mult_pad = a = 2`, `D = 0`, `mult_red = a`.
+`(9,7,4,2,1,1)` (`n_chi = 13969`, 16 minutes): the same, `mult_det = mult_pad = a = 2`, `D = 0`.  So 3 of the 4 `ell = 6` cells at `delta = 6` are measured, all `D = 0`, all `mult_red = a`.  `(9,6,4,2,2,1)` (`n_chi ~
+38583`, 37 GB) is out of reach.
+
+**`delta = 7` (194 cells in the census, 31 fit — all 31 measured).**
+`mult_det = a` at every cell.  `mult_pad = a` at 30 of 31; the exception is
+
+    (10, 8, 7, 1, 1, 1):   a = 3,  mult_det = 3,  mult_pad = 2,  D = −1,
+
+the first bite at `ell = 6`.  Sceptical branch: 33 fresh points, seed 907,
+both primes, rank 2; the vanishing HWV exhibited (support 16344 of 75689);
+zero at 20 independently built true-pad points **and at 20 `l · (random
+cubic)` points**, nonzero at 20 generic and 20 det points; exact integer
+certificate (16344 terms, coefficients up to 768; `E_{i,i+1} v = 0` over `Z`
+for all five `i`); and (★) holds for every monomial, so **`v ∈ I(X_6)`: a
+reducibility equation, proved.**  Correspondingly `mult_red = 2 = mult_pad`.
+Across all 33 `ell = 6` cells (`results/s36_red_table.md`),
+`mult_pad = mult_red` — **no permanent-specific equation appears in any
+component reached, through `delta = 7`**, which is the prereg's sharper
+falsifier confirmed in exact form, and the det ideal is empty in every
+component reached.
+
+Coverage (from `wk9_s36_report.py`): **31 of 194 cells (16%), 84 of 890 ambient units (9%)** — every cell the budget admits.  What was *not* reached at
+`ell = 6`, `delta = 7`: the 163 cells with `n_chi > 16000` — including every
+cell with `a >= 5` (the largest-`a` reachable cells have `a = 4`) and every
+cell with balance `< 8`.  The representativeness falsifier was exposed as far
+as the budget allows (largest-`a` and most-balanced reachable cells were
+interleaved 3:1 as pre-registered), not further.
+
+**Reading, without inflation.**  At `ell = 6`, `delta <= 7`, everything
+measured is consistent with: det ideal empty; pad ideal = reducibility ideal.
+The permanent has not yet left a trace.  That is the null hypothesis of P2
+holding in the part that matters (no permanent-specific structure), while the
+"both ideals empty" part of P2 failed exactly where the reducibility ideal
+reaches — as it already does at `ell = 5` (§4).  Nothing here is an
+obstruction; `D <= 0` at every cell of the session.
 
 ## 6. Honest boundary
 
-BOUNDARY_PLACEHOLDER
+- **Proved:** the lemma (§1, two proofs); the row-dedup proportionality and
+  the vanishing of `chi`-obstructed rows (asserted exactly on every cell, never
+  once violated); the compressed-route certificate chain; criterion (★) and
+  hence `v ∈ I(X_r)` for the three exhibited vectors; `mult_pad = mult_red` at
+  `r = 5` (density of `per_3`-pencils in quinary cubics, via s30's dimension
+  count) and `mult_pad <= mult_red` at `r = 6`.  The three `D = −1` cells are
+  exact: `mult_pad <= a − 1` by (★), `>= a − 1` and `mult_det = a` by
+  rank-attaining certificates over `F_p` (hence over `Q`).
+- **Measured, certified one-sidedly:** every `mult = a` in the ledger
+  (`rank_p <= rank_Q <= a`, so each is an independence certificate at explicit
+  integer points, both primes).  `mult_pad = mult_red` at `ell = 6` is
+  two-sided: `mult_pad <= mult_red` is a theorem and the points attain it.
+- **Measured, one-sided in the other direction:** nothing.  No cell came in
+  below `a` on the det side; the sceptical branch fired three times, all on
+  the pad side, and each time the exact certificate closed it.
+- **Not measured:** `mult_det((10,10,10,6), 9)` (§3, part 4 — `n_chi =
+  111508`); every census cell with `n_chi > 16000` (`results/s36_census.md`);
+  at `ell = 6, delta = 7` that is 163 of 194 cells and 806 of 890 ambient
+  units, all `a >= 5` cells among them.  Coverage fractions per stratum are
+  in §7 and are fractions of what exists, not of what fits.
+- **Regime:** the reducibility equations found here are equations of
+  `X_r = closure{l · c}` and say nothing about the permanent; that is exactly
+  `docs/s35_review.md` §1's point, now with three explicit low-degree
+  witnesses and an exact criterion.  A permanent-specific equation would show
+  up as `mult_pad < mult_red` at `ell >= 6`; through `delta = 7` in the
+  components reached, it does not.  Onset of `I(D_5^pad)` is now `<= 6`
+  (was `[7, 9]`); onset of `I(D_5^det)` remains `>= 8` in every component
+  reached at `delta <= 7` (`[8, 405]` for the components measured; the census
+  gap at `delta = 7` is large).
+- **Post-hoc, labelled:** `mult_red` and (★) were derived after the first
+  bite; the prereg named the `l · (random cubic)` comparison as the sharper
+  falsifier but not this exact form.  Nothing in the pre-registered order,
+  points, or primes was changed after the fact; the two extra workers on
+  disjoint strata ran the same pre-registered order under the claim queue.
+- **Engineering honesty:** one worker was OOM-killed when a second worker
+  was run concurrently at `n_chi ~ 8000` beside a `~ 15000` cell; its claim
+  was released by the PID-aware reconcile (`wk9_s36_reconcile.py`) and the
+  cell re-run.  Above `n_chi ~ 8000` this container is a one-worker machine.
+  Measured peaks: 0.84 GB at 6247, 3.1 GB at 13651, 4.0 GB at 15328 —
+  `~1.7e-8 · n_chi^2` GB, a little under s33's constant; the frontier on this
+  container is `n_chi ~ 19000`, and the census's `2.5e-8` line is conservative.
