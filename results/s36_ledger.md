@@ -17,3 +17,4 @@ stratum in the programme.
 | stratum | lam | delta | ell | a | N_S | Stab | n_chi | rows | route | mult_det | mult_pad | D | secs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | A | `(8, 4, 4, 4, 4)` | 6 | 5 | 2 | 94675 | 24 | 4562 | 136845 | compressed | 2 | 1 | -1 | 82 |
+| A | `(8, 8, 4, 2, 2)` | 6 | 5 | 3 | 22475 | 4 | 6247 | 34180 | compressed | 3 | 3 | +0 | 110 |
