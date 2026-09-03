@@ -27,3 +27,4 @@ frontier; its `[M;Ev]` (134,212 × 39,921, nnz 801,854) was certified NONSINGULA
 Berlekamp–Massey minimal polynomial of degree exactly `n_χ` with `f(0) ≠ 0`, in 482 s at a peak of 0.15 GB.**
 | 8 | `(7, 7, 6, 2, 1, 1)` | 1 | 31850 | 4 | 6297 | dense | 1 | 0 | 120 | 0.59 |
 | 8 | `(11, 4, 4, 2, 2, 1)` | 2 | 23324 | 4 | 6512 | dense | 2 | 0 | 131 | 0.62 |
+| 8 | `(10, 6, 4, 2, 1, 1)` | 2 | 16865 | 2 | 6542 | dense | 2 | 0 | 120 | 0.62 |
