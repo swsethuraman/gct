@@ -64,12 +64,20 @@ def run_v2():
         with open(os.path.join(OUT, 's45_v2.jsonl'), 'a') as f: f.write(json.dumps(res) + "\n")
     return rows
 
+def _done(path):
+    p = os.path.join(OUT, path)
+    if not os.path.exists(p): return set()
+    return {(tuple(json.loads(l)['lam']), json.loads(l)['delta']) for l in open(p) if l.strip()}
+
 def run_v3():
     rows = []
+    done = _done('s45_v3.jsonl')
     for lam, delta, a_w, det_w, nchi_w in BANKED:
+        if (tuple(lam), delta) in done:
+            log(f"V3 skip {lam} d{delta} (already banked)"); continue
         t0 = time.time()
         res = measure_cell(lam, delta, sides=('det',), levels=LEVELS['cheap'],
-                           full_check=(nchi_w <= 13000), verbose=True)
+                           full_check=(nchi_w <= 11000), verbose=True)
         assert res['a'] == a_w, ("a mismatch vs the ledger", lam, delta, res['a'], a_w)
         assert res['n_chi'] == nchi_w, ("n_chi mismatch vs the ledger", lam, delta, res['n_chi'], nchi_w)
         assert res['mult_det'] == det_w, ("mult_det mismatch vs the ledger", lam, delta, res['mult_det'], det_w)

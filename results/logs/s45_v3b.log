@@ -1,0 +1,79 @@
+V3 skip (22, 2, 2, 2, 2, 2) d8 (already banked)
+V3 skip (19, 5, 5, 1, 1, 1) d8 (already banked)
+V3 skip (12, 10, 3, 1, 1, 1) d7 (already banked)
+V3 skip (16, 10, 3, 1, 1, 1) d8 (already banked)
+V3 skip (20, 4, 2, 2, 2, 2) d8 (already banked)
+V3 skip (12, 12, 5, 1, 1, 1) d8 (already banked)
+V3 skip (15, 7, 7, 1, 1, 1) d8 (already banked)
+V3 skip (12, 10, 2, 2, 1, 1) d7 (already banked)
+V3 skip (14, 9, 6, 1, 1, 1) d8 (already banked)
+V3 skip (13, 10, 6, 1, 1, 1) d8 (already banked)
+V3 skip (11, 9, 2, 2, 2, 2) d7 (already banked)
+      level 1: 81 prefixes
+      level 2: 1593 prefixes
+      level 3: 12022 prefixes
+      level 4: 62856 prefixes
+      level 5: 198579 prefixes
+      level 6: 365089 prefixes
+      level 7: 424582 prefixes
+      level 8: 424582 prefixes
+  lam=(12, 12, 2, 2, 2, 2): N_S=424582 |Stab|=48 n_chi=12942 (orbits dropped: 0) [lean, 10s, HWM 0.17 GB]
+    E_01: |H|=24 targets 410354 canonical rows 24261 nnz 119033 (obstructed fixed targets cancelled: 0) [7s, HWM 0.19 GB]
+    E_12: |H|=6 targets 141304 canonical rows 28556 nnz 140341 (obstructed fixed targets cancelled: 0) [8s, HWM 0.19 GB]
+    E_23: |H|=4 targets 317028 canonical rows 84439 nnz 168520 (obstructed fixed targets cancelled: 0) [9s, HWM 0.19 GB]
+    E_34: |H|=4 targets 317028 canonical rows 84439 nnz 168520 (obstructed fixed targets cancelled: 0) [10s, HWM 0.19 GB]
+    E_45: |H|=4 targets 317028 canonical rows 84439 nnz 168520 (obstructed fixed targets cancelled: 0) [12s, HWM 0.20 GB]
+  built (12, 12, 2, 2, 2, 2) d8: N_S=424582 |Stab|=48 n_chi=12942 rows=306134 nnz=764934 (23s: mono 1s orbits 10s rows 12s; HWM 0.20 GB)
+    level 0 (3,2): 19458 rows, nnz 266002 (full: 306147 rows, nnz 933180)
+    level 0 (3,2): 19458 rows, nnz 265576 (full: 306147 rows, nnz 933180)
+    wied[c12_12_2_2_2_2d8_det p=2147483629 lvl=0 seed=1 k=0]: KERNEL SEQ n=12942 nrows=19458 nnz=265576 k=0 len=25884 secs=21.6 | BM deg=12858 f0=0 secs=23.7 | DONE secs=35.9 (36s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    wied[c12_12_2_2_2_2d8_det p=2147483647 lvl=0 seed=1 k=0]: KERNEL SEQ n=12942 nrows=19458 nnz=266002 k=0 len=25884 secs=21.5 | BM deg=12848 f0=0 secs=23.6 | DONE secs=36.0 (37s)
+    level 1 (12,2): 77697 rows, nnz 556720 (full: 306147 rows, nnz 933180)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 77697 rows, nnz 556519 (full: 306147 rows, nnz 933180)
+    wied[c12_12_2_2_2_2d8_det p=2147483629 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=12942 nrows=77697 nnz=556720 k=0 len=25884 secs=53.4 | BM deg=12942 f0=981278177 secs=55.5 (93s)
+    wied[c12_12_2_2_2_2d8_det p=2147483647 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=12942 nrows=77697 nnz=556519 k=0 len=25884 secs=57.2 | BM deg=12942 f0=975301454 secs=59.4 (97s)
+  (12, 12, 2, 2, 2, 2) d8 [det]: nullity = 0 -> mult_det = 5 = a PROVED  (173s)
+V3 PASS (12, 12, 2, 2, 2, 2) d8: n_chi=12942, a=5, mult_det=5 (nullity 0) in 173.1s
+      level 1: 64 prefixes
+      level 2: 1272 prefixes
+      level 3: 11117 prefixes
+      level 4: 44226 prefixes
+      level 5: 84008 prefixes
+      level 6: 94992 prefixes
+      level 7: 94992 prefixes
+  lam=(12, 8, 3, 3, 1, 1): N_S=94992 |Stab|=4 n_chi=18716 (orbits dropped: 10869) [lean, 0s, HWM 0.89 GB]
+    E_01: |H|=4 targets 76237 canonical rows 14923 nnz 74017 (obstructed fixed targets cancelled: 4218) [0s, HWM 0.89 GB]
+    E_12: |H|=2 targets 50462 canonical rows 19985 nnz 82156 (obstructed fixed targets cancelled: 1875) [0s, HWM 0.89 GB]
+    E_23: |H|=2 targets 79231 canonical rows 31363 nnz 76437 (obstructed fixed targets cancelled: 1195) [1s, HWM 0.89 GB]
+    E_34: |H|=1 targets 35794 canonical rows 35785 nnz 74328 (obstructed fixed targets cancelled: 0) [1s, HWM 0.89 GB]
+    E_45: |H|=2 targets 56858 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 268) [1s, HWM 0.89 GB]
+  built (12, 8, 3, 3, 1, 1) d7: N_S=94992 |Stab|=4 n_chi=18716 rows=102056 nnz=306938 (1s: mono 0s orbits 0s rows 1s; HWM 0.89 GB)
+    level 0 (3,2): 28119 rows, nnz 412233 (full: 102069 rows, nnz 550246)
+    level 0 (3,2): 28119 rows, nnz 412281 (full: 102069 rows, nnz 550246)
+    wied[c12_8_3_3_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=18716 nrows=28119 nnz=412281 k=0 len=37432 secs=46.8 | BM deg=18716 f0=1870576721 secs=51.2 (52s)
+    wied[c12_8_3_3_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=18716 nrows=28119 nnz=412233 k=0 len=37432 secs=48.1 | BM deg=18716 f0=1924986469 secs=52.4 (53s)
+  (12, 8, 3, 3, 1, 1) d7 [det]: nullity = 0 -> mult_det = 5 = a PROVED  (63s)
+V3 PASS (12, 8, 3, 3, 1, 1) d7: n_chi=18716, a=5, mult_det=5 (nullity 0) in 63.1s
+      level 1: 59 prefixes
+      level 2: 954 prefixes
+      level 3: 6916 prefixes
+      level 4: 24697 prefixes
+      level 5: 44938 prefixes
+      level 6: 50462 prefixes
+      level 7: 50462 prefixes
+  lam=(12, 9, 3, 2, 1, 1): N_S=50462 |Stab|=2 n_chi=19985 (orbits dropped: 10492) [lean, 0s, HWM 0.90 GB]
+    E_01: |H|=2 targets 43058 canonical rows 16980 nnz 83037 (obstructed fixed targets cancelled: 2219) [0s, HWM 0.90 GB]
+    E_12: |H|=2 targets 25795 canonical rows 10024 nnz 43599 (obstructed fixed targets cancelled: 1195) [0s, HWM 0.90 GB]
+    E_23: |H|=2 targets 31812 canonical rows 12510 nnz 33174 (obstructed fixed targets cancelled: 531) [0s, HWM 0.90 GB]
+    E_34: |H|=1 targets 22969 canonical rows 22462 nnz 39970 (obstructed fixed targets cancelled: 0) [0s, HWM 0.90 GB]
+    E_45: |H|=1 targets 30477 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.90 GB]
+  built (12, 9, 3, 2, 1, 1) d7: N_S=50462 |Stab|=2 n_chi=19985 rows=61976 nnz=199780 (1s: mono 0s orbits 0s rows 0s; HWM 0.90 GB)
+    level 0 (3,2): 30023 rows, nnz 453324 (full: 61989 rows, nnz 459585)
+    level 0 (3,2): 30023 rows, nnz 453283 (full: 61989 rows, nnz 459585)
+    wied[c12_9_3_2_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=19985 nrows=30023 nnz=453283 k=0 len=39970 secs=55.6 | BM deg=19985 f0=2078992428 secs=60.6 (61s)
+    wied[c12_9_3_2_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=19985 nrows=30023 nnz=453324 k=0 len=39970 secs=55.3 | BM deg=19985 f0=484793836 secs=60.3 (61s)
+  (12, 9, 3, 2, 1, 1) d7 [det]: nullity = 0 -> mult_det = 5 = a PROVED  (62s)
+V3 PASS (12, 9, 3, 2, 1, 1) d7: n_chi=19985, a=5, mult_det=5 (nullity 0) in 62.1s
+V2/V3 complete

@@ -31,8 +31,18 @@ PLAN = [((9, 9, 4, 4, 1, 1), 7), ((9, 9, 6, 2, 1, 1), 7), ((12, 12, 3, 3, 1, 1),
         ((8, 4, 4, 4, 4, 4), 7)]
 OUT = os.path.join(HERE, '..', 'results', 's45_cells.jsonl')
 
+def already(lam, delta, path=OUT):
+    if not os.path.exists(path): return False
+    for l in open(path):
+        if not l.strip(): continue
+        d = json.loads(l)
+        if tuple(d['lam']) == tuple(lam) and d['delta'] == delta: return True
+    return False
+
 def run(lam, delta, levels='cheap', full_check=False, build_only=False):
     t0 = time.time()
+    if not build_only and already(lam, delta):
+        log(f"  {lam} d{delta} already banked in {OUT}; skipping"); return None
     if build_only:
         B = build_cell(lam, delta, verbose=True)
         rec = dict(lam=list(lam), delta=delta, N_S=B['N_S'], stab=B['stab'], n_chi=B['n_chi'],
