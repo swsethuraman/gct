@@ -16,3 +16,12 @@ in-place rref of `analysis/wk9_s41_kernel.py`, `inject` for the `a = 1` sparse i
 | 7 | `(8, 5, 3, 2, 2, 1)` | 1 | 15611 | 2 | 8402 | dense | 1 | 0 | 236 | 0.96 |
 | 7 | `(7, 6, 3, 2, 2, 1)` | 1 | 18214 | 2 | 9789 | dense | 1 | 0 | 383 | 1.22 |
 | 7 | `(7, 5, 4, 2, 2, 1)` | 1 | 23438 | 2 | 12564 | dense | 1 | 0 | 717 | 1.96 |
+| 7 | `(6, 5, 4, 3, 2, 1)` | 1 | 39921 | 1 | 39921 | inject | 1 | 0 | 482 | 0.15 |
+
+**δ = 7 — CLOSED.  All 27 length-6 weights `μ ⊢ 21` with `a(μ,7) ≥ 1` are now measured (20 by session 41 at
+`n_χ ≤ 6000`, 6 here by the dense route, 1 here by the `a = 1` injectivity certificate), every one with
+`mult = a = 1`: `I(D_6^{per_3})_7 = 0` outright.  By Prop. 8(1) of `docs/transfer_lemma.md`,
+`I(P_6)_7 = I(R_6)_7` and `mult_pad = mult_red` at *every* weight of degree 7 — a theorem, with no points in
+it.  The last weight, `(6,5,4,3,2,1)`, has trivial stabiliser and `n_χ = N_S = 39,921`, about twice the dense
+frontier; its `[M;Ev]` (134,212 × 39,921, nnz 801,854) was certified NONSINGULAR at both primes by a
+Berlekamp–Massey minimal polynomial of degree exactly `n_χ` with `f(0) ≠ 0`, in 482 s at a peak of 0.15 GB.**
