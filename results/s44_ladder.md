@@ -225,3 +225,43 @@ why: the rank-`≤ n−2` locus has codimension 4 in `P(M_n)` while the pencil i
 (drop 6 at `n = 4, 5`) this gives `0, 1, 6 = C(4,5), C(5,5), C(6,5)` — the
 evidence for the `C(r,5)` guess of §6, and the only leg of it that was a
 prediction before it was run.
+
+## 10. The multimodular certificate (`results/logs/s44_certify_d7.log`)
+
+`analysis/wk9_s44_certify.py`, seed `20260903`, box `±10^12`, 62-bit primes.
+Every row of `M_7` is a permutation of the coefficient vector of some partial
+of `F`, so Hadamard bounds every `666×666` minor by `(max_i ‖∂_iF‖_2)^666`; if
+`rank_p M_7 < 666` for primes whose product exceeds twice that bound, every
+such minor is zero over `Z`.
+
+| pencil | `max ‖∂_iF‖_2` | `log_2 H` | primes needed | rank at every prime | time | verdict |
+|---|---|---|---|---|---|---|
+| 0 | `≈ 2^164.4` | 109,501 | 1797 | 660 | 7.7 min | `rank_Q M_7 < 666` |
+| 1 | `≈ 2^163.2` | 108,696 | 1783 | 660 | 7.6 min | `rank_Q M_7 < 666` |
+| 2 | `≈ 2^164.4` | 109,523 | 1797 | 660 | 7.6 min | `rank_Q M_7 < 666` |
+
+Schwartz–Zippel: a `666×666` minor is a polynomial of degree `4·666 = 2664` in
+the 96 pencil entries, so a uniform pencil from a box of side `2·10^12 + 1`
+kills a nonzero one with probability `≤ 1.332·10^{-9}`; three independent
+pencils give `≤ 2.363·10^{-27}`.
+
+What is pinned: `rank_Q M_7 ≤ 665` at three explicit pencils (certified) and
+`rank_Q M_7 ≥ 660` (from the mod-`p` rank).  The exact value 660 is measured,
+not certified; the cap needs only the drop.
+
+## 11. Structure probes on the extra syzygies (`results/logs/s44_probe.log`)
+
+A syzygy is a degree-4 vector field `δ = Σ_k G_k ∂/∂s_k` with `δ(F) = 0`.
+Two robust probes, meant to rule things out for the next session:
+
+- `W(s) = Σ_k G_k(s) A_k` has **rank 4** at every random point of `P^5`, for
+  every extra syzygy: they do not factor through a degenerate part of the pencil.
+- the natural family `W_i = F·A_i − ¼(∂_iF)·M(s)`, `i = 1..6` — which comes from
+  `𝒳 = adj(M)A_i − ¼tr(adj(M)A_i)I` and is the first thing one writes down —
+  spans exactly 6 dimensions and is **entirely inside the Koszul span** (by
+  Euler's identity it is `¼Σ_k s_k` times a Koszul syzygy).  The extra six are
+  independent of it.
+
+(The span dimensions of the coefficient forms `G_k` are also in the log, but
+they depend on the choice of representatives modulo Koszul and are not
+invariant; they are not used.)

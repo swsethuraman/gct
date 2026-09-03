@@ -28,11 +28,14 @@ Labels: **proved** / **measured** / **certified** / **adopted-from-literature**
 >
 >     onset I(D_6^{det_4}) ≤ 666 .
 >
-> The drop is exact over `Q` at three explicit integer pencils drawn uniformly
-> from `±10^12` (multimodular certificate, §4); if the generic determinantal
-> rank were 666 this would have probability at most `(2664/(2·10^12))^3 ≈
-> 2.4·10^{-27}`.  It is **not** a theorem: no argument here rules out a
-> measure-zero coincidence, and §4 says exactly what would be needed.
+> The drop — `rank_Q M_7 < 666` — is **exact over `Q`** at three explicit
+> integer pencils drawn uniformly from `±10^12`, by a multimodular certificate
+> over ~1790 primes of 62 bits each (§4); the value 660 itself is measured
+> modulo `p`.  If the generic determinantal rank were 666, three uniform pencils
+> from that box would all kill a nonzero degree-2664 polynomial with probability
+> at most `(2664/(2·10^12))^3 ≈ 2.4·10^{-27}`.  It is **not** a theorem: no
+> argument here rules out a measure-zero coincidence, and §4 says exactly what
+> would be needed.
 >
 > **`d = 7` is the floor of this mechanism (proved).**  There is **no** drop at
 > `d = 4, 5, 6`: a determinantal point attains `ρ_d` there, a rank at a point is
@@ -219,9 +222,17 @@ that bound, every `666×666` minor is divisible by that product while bounded by
 half of it, hence **zero**; so `rank_Q M_7 < 666` exactly, at that pencil.
 Run at three pencils drawn uniformly from `±10^12`, with 62-bit primes
 (`analysis/wk9_s44_certify.py`, `results/logs/s44_certify_d7.log`): the rank
-was 660 at every prime of every run, so the certificate closes and
-`rank_Q M_7 = 660 < 666` at three explicit integer pencils.  This is exact
-arithmetic, not a sample.
+was 660 at every prime of every run, so the certificate closes:
+
+    rank_Q M_7 < 666   at three explicit integer pencils,
+
+exact arithmetic, not a sample.  Each run needed about 1790 primes and 7.6
+minutes (`log_2 H ≈ 109,500`).  Note precisely what is and is not pinned: the
+certificate proves `rank_Q ≤ 665`, and `rank_p = 660` gives `rank_Q ≥ 660`, so
+`rank_Q ∈ [660, 665]` at those pencils.  The value **660** itself is measured
+modulo `p`, not certified; certifying it would need the same multimodular
+argument run at size 661, which is the same cost again and buys nothing — the
+cap only needs the drop.
 
 **Step 2 — Schwartz–Zippel (an explicit probability, not a proof).**  Each
 `666×666` minor is a polynomial of degree `4 · 666 = 2664` in the 96 pencil
@@ -231,6 +242,20 @@ minor would be a **nonzero** polynomial of degree 2664, and a pencil drawn
 uniformly from a box of side `2·10^12 + 1` would kill it with probability at
 most `2664/(2·10^12+1) ≈ 1.33·10^{-9}`.  Three independent pencils:
 `≈ 2.4·10^{-27}`.
+
+**The reformulation that a next session should use.**  A syzygy
+`Σ_k G_k ∂_kF = 0` is a vector field `δ = Σ_k G_k ∂/∂s_k` with `δ(F) = 0` — an
+element of the module of logarithmic derivations `Der(−log F)` with zero
+coefficient on `F`, in degree 4.  The Koszul syzygies are the trivial
+derivations `(∂_lF)∂_k − (∂_kF)∂_l`.  So **the drop of six says that `det` of a
+generic six-parameter `4×4` pencil carries six non-trivial degree-4 logarithmic
+derivations**, where a five-parameter pencil carries one and a four-parameter
+pencil carries none.  At the other end of the range this is a known picture:
+the full determinant (`r = n²`) is a *linear free divisor*, its logarithmic
+derivations generated in degree 1 by `gl_n ⊕ gl_n` — exactly the `2n² − 2` linear
+syzygies of the Gulliksen–Négård complex.  Cutting `L` down to six dimensions
+destroys the linear generators and pushes the first non-trivial derivations up
+to degree 4.  What is wanted is a closed form for those six.
 
 **The gap.**  Step 2 is not a proof.  A proof needs the six non-Koszul
 syzygies of §3 **in closed form** — six identities `Σ_k G_k ∂_kF = 0` with
@@ -419,6 +444,14 @@ Per claim, with what was actually found.
 - **`J(det M) ⊆ I_{n−1}(M)` as a cited statement**, and **the Hilbert function
   of the Milnor algebra of `det` of a linear pencil**.  Both immediate and both
   uncited as far as this check goes.
+- **The logarithmic derivations of a generic linear section of the determinant.**
+  The linear-free-divisor literature (Buchweitz–Mond; Granger–Mond–Nieto–Schulze;
+  Calderón-Moreno–Narváez-Macarro on the logarithmic comparison theorem) covers
+  the *full* determinant, where `Der(−log det)` is generated in degree 1 by
+  `gl_n ⊕ gl_n`.  Nothing was found on `Der(−log det M(s))` for a generic
+  `r`-dimensional pencil with `r < n²`, where the linear generators disappear and
+  the first non-trivial derivations move up in degree — which is exactly the
+  object §4 needs.  Searched; **NOT FOUND**.
 
 So: if Theorem A survives review it appears to be the first degree bound of any
 kind on the ideal of a locus of determinantal hypersurfaces, and
@@ -438,10 +471,15 @@ magnitude above the frontier and points at no cell anyone can reach.
 The three things a next session could do, in order of value:
 
 1. **Close the gap of §4** — find the six non-Koszul syzygies of `(4, 6, 7)` in
-   closed form and turn `≤ 666` into a theorem.  The search space is
-   `{ 𝒳M + M𝒴 : tr(𝒳 + 𝒴) = 0 } ∩ (L ⊗ S_4)` modulo Koszul, six-dimensional,
-   and the numerics are cheap and already written
-   (`analysis/wk9_s44_syzygy.py`).
+   closed form and turn `≤ 666` into a theorem.  Equivalently: the six degree-4
+   logarithmic derivations of `det M(s)` beyond the trivial ones.  The search
+   space is `{ 𝒳M + M𝒴 : tr(𝒳 + 𝒴) = 0 } ∩ (L ⊗ S_4)` modulo Koszul,
+   six-dimensional, and the numerics are cheap and already written
+   (`analysis/wk9_s44_syzygy.py`, `wk9_s44_probe.py`).  What the probes rule out
+   (`results/logs/s44_probe.log`): `W(s) = Σ_k G_k A_k` has full rank 4 at
+   generic `s`, so the syzygies do not factor through a degenerate part of the
+   pencil; and the natural family `W_i = F·A_i − ¼(∂_iF)·M(s)` spans exactly six
+   dimensions and is entirely Koszul, so the answer is not a variant of it.
 2. **Test `drop = C(r,5)`** at `(n, r) = (5, 7)` — the one case in the ladder
    that is neither ceiling-limited nor already measured — which needs a
    `12012 × 8008` rank, out of this session's budget but not out of reach.
