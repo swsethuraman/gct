@@ -42,8 +42,14 @@ ALL CHECKS PASSED
 
 Two rows of `results/s41_per6.md` re-measured by this session's Phase-B path
 (`analysis/wk9_s43_per6.py --one`, which calls `wk9_s41_per6.measure_per6`
-unchanged): `(8,5,4,2,1,1)` and `(8,4,4,2,2,1)` at `δ = 7`, `a = 1`, `mult = 1`
-at both primes — see Part D, which subsumes them.
+unchanged), both primes:
+
+| δ | μ | a | N_S | Stab | n_χ | rows | mult | s41_per6 row | verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| 7 | `(8, 5, 4, 2, 1, 1)` | 1 | 9649 | 2 | 3751 | 11921 | 1 | identical | **reproduces** |
+| 7 | `(8, 4, 4, 2, 2, 1)` | 1 | 18067 | 4 | 5029 | 35318 | 1 | identical | **reproduces** |
+
+**PASS.**
 
 ## Part D — the `a = 1` injectivity route (the gate of P3)
 
@@ -53,7 +59,7 @@ before it is used at `(6,5,4,3,2,1)`.
 
 | δ | μ | n_χ | rows of `[M;Ev]` | nnz | `mult` (injectivity) | `mult` (dense, s41) | secs | HWM |
 |---|---|---|---|---|---|---|---|---|
-| 7 | `(8, 4, 4, 2, 2, 1)` | 5029 | 35327 | 172470 | 1 | 1 | 12 | 0.10 |
+| 7 | `(8, 4, 4, 2, 2, 1)` | 5029 | 35327 | 150395 | 1 | 1 | 12 | 0.10 |
 | 7 | `(7, 6, 4, 2, 1, 1)` | 4383 | 14179 | 82028 | 1 | 1 | 6 | 0.10 |
 | 7 | `(6, 5, 5, 3, 1, 1)` | 4187 | 23562 | 116119 | 1 | 1 | 8 | 0.10 |
 
