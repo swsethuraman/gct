@@ -486,3 +486,37 @@ The three things a next session could do, in order of value:
 3. **The `r = 6` cap formula.**  If 1 and 2 land, `cap(n, 6) = dim Sym^{3n−5} C^6
    − h_{3n−5}(n, 6)` becomes the six-row analogue of `cap(n)`, with the same
    proof shape and a drop of `C(6,5) = 6` in place of Dimca's 1.
+
+## 11. The pre-registration, scored
+
+`results/PREREG_s44.md`, committed at `2e06e3f` before any matrix was built.
+
+| # | prediction | outcome |
+|---|---|---|
+| — | a drop at `d = 8` is forced a priori by the GN ceiling; `onset ≤ 1197` before any computation | **correct** — Theorem A |
+| P1 | smallest `d` with a strict drop is **7**, cap **666** (prior 0.45; alternatives 8/0.35, 6/0.17, ≤5/0.03) | **correct** |
+| P1′ | corank at `d = 7` is `127 = h_7 + 1`, drop of one by analogy with five rows | **wrong** — the corank is `132`, the drop is **6** |
+| P1″ | no drop at `d = 4, 5` because the only linear syzygies would need `XA_i + A_iY ∈ L`, 60 conditions on a 31-dimensional space | **correct**, and now proved (§3) |
+| P2 | padded permanents also drop, so the minors are not separators (prior 0.97) | **correct**, and the drop is far larger and starts two degrees earlier |
+| P3 | the singular locus is a curve of degree 20 and arithmetic genus 21, `H_{S/J(M)}(d) = 20d − 20` for `d ≥ 5` | **correct**, measured against GN at both primes |
+| P4 | the GN-forced degree is a *cap on the cap*, right at `(3,5)` and loose at `(4,5)` | **correct**, and loose at `(4,6)` too (forced 8, true 7) |
+
+The one miss is P1′, and it is the interesting one: the drop is six, not one, and
+`C(r,5)` — confirmed at `r = 4, 5, 6` — is a rule the session did not anticipate.
+
+## 12. Process
+
+- Pre-registration first, `2e06e3f`, before the first `nmod_mat`.
+- Ranks by `python-flint` at both house primes at every measurement; no result
+  in this document rests on a single prime or a single seed, and no number was
+  averaged or majority-voted.  The ladder was re-run at a fresh seed and two
+  different boxes in the verification pass and reproduced exactly.
+- Every long run was bounded by `timeout` and `ulimit -v`, with its pid in
+  `results/logs/<run>.pid`.  One run was ended early: `wk9_s44_exact.py`
+  (`results/logs/s44_exact_d7.pid`, pid 2143), the `fmpz_mat` fraction-free
+  exact rank, which was still running after ten minutes with no output and was
+  superseded by the multimodular certificate.  It was killed **by that recorded
+  pid**, not by a name pattern.  The script is left in the tree because its
+  docstring states the direction-of-inference problem that motivates §4, but its
+  route is the slow one; use `wk9_s44_certify.py`.
+- No file over 5 MB committed; no session link in any commit or script.
