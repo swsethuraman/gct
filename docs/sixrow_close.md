@@ -415,5 +415,8 @@ six-row record has been predictive.
   frontier, and that is the cheapest route to the balanced regime the programme
   has ever had.
 
-*Session 43 delivered by git bundle `sixrowclose.bundle`, single ref
-`s43-sixrow-close`.*
+*Session 43 is delivered by git bundle `sixrowclose.bundle`, single ref
+`s43-sixrow-close`, 187 commits on `0c229c1`.  The branch history was rewritten
+once, at the end, to keep the exhibited vanishing vectors out of the delivered
+pack in uncompressed form (`results/s43_bookkeeping_correction.md`, second
+note); the head hash is reported with the bundle.*
