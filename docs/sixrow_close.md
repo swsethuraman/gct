@@ -15,26 +15,39 @@ per `docs/brief_wording.md`.
 
 ## 0. Verdict
 
-> **The permanent has no equation of its own in degree 7 — that is now a
-> theorem with no points in it — and the determinant's six-row ideal is still
-> empty everywhere the programme can look.**  Phase B measured the seven
-> length-6 weights `μ ⊢ 21` that session 41 left above its cap, so
-> `I(D_6^{per_3})_7 = 0` holds at **all 27** weights with `a ≥ 1`, outright;
-> by Prop. 8(1) of `docs/transfer_lemma.md` this makes `I(P_6)_7 = I(R_6)_7`
-> and `mult_pad = mult_red` at **every** weight of degree 7, independent of any
-> pad point.  Phase A measured the eligible six-row cells inside session 41's
-> frontier that had never been measured, and `mult_det = a` at every one — no
-> obstruction is arithmetically possible where it holds, and none appeared.
-> Phase C opened `δ = 9`: its census (1,079 eligible cells) and its cheapest
-> cells, `mult_det = a` and `D = 0` throughout.
+> **The reachable six-row region is closed, the permanent has no equation of
+> its own in degree 7 — a theorem with no points in it — and the determinant's
+> six-row ideal is still empty everywhere the programme can look.**
+>
+> **Phase A finished its list: all 49 cells.**  With session 36's and session
+> 41's, **every one of the 123 obstruction-eligible six-row cells that fits at
+> `n_χ ≤ 20,000` is now measured — 123 of 123, 402 ambient units, `mult_det = a`
+> at every one.**  There is no cell left inside the frontier: at `δ = 7` and at
+> `δ = 8` the reachable set is exhausted, and what remains unmeasured is
+> unmeasured because it does not fit, not because time ran out.  Since `D > 0`
+> requires `mult_det < a`, no obstruction was possible at any of them, and none
+> appeared.
+>
+> **Phase B closed degree 7.**  The seven length-6 weights `μ ⊢ 21` session 41
+> left above its cap were measured, so `I(D_6^{per_3})_7 = 0` at **all 27**
+> weights with `a ≥ 1`, outright; by Prop. 8(1) of `docs/transfer_lemma.md`
+> this gives `I(P_6)_7 = I(R_6)_7` and `mult_pad = mult_red` at **every** weight
+> of degree 7, independent of any pad point.  The scan then carried to `δ = 8`,
+> where 81 of the 91 weights are now measured empty.
+>
+> **Phase C opened `δ = 9`:** a census of 1,079 eligible cells (86,363 units,
+> 52 reachable) and its cheapest 24 cells — `mult_det = a`, `mult_pad =
+> mult_red = a`, `D = 0` at every one.
 >
 > The new information on the pad side is quantitative.  Session 41 knew three
 > `D = −1` reducibility bites in the whole six-row record.  This session found
-> **seven more at `δ = 8` alone, three of them `D = −2`** — the first cells in
+> **eight more at `δ = 8` alone, four of them `D = −2`** — the first cells in
 > the programme where the reducibility ideal takes two units out of one weight.
 > Every one is `mult_pad = mult_red`, certified by (★) monomial by monomial, so
-> **still no permanent-specific equation anywhere**; and every one lies in the
-> single weight family `(λ_1, λ_2, λ_3, 1, 1, 1)`.
+> **still no permanent-specific equation anywhere**; and now that the reachable
+> `δ = 8` set is complete, one can say it exactly: **all nine `δ = 8` bites lie
+> in the single weight family `(λ_1, λ_2, λ_3, 1, 1, 1)`, and the 32 measured
+> `δ = 8` cells outside that family have no pad-side units at all.**
 
 Nothing here moves the obstruction question, and the reason is the one session
 41 already gave: `D > 0` needs `mult_det < a`, and the determinant's six-row
@@ -98,10 +111,17 @@ the independent re-check — `3a + 24` fresh points, seed 907, both primes — a
 the vanishing vectors exhibited and run through `analysis/wk9_s41_bite.py`,
 **before** the row was banked.
 
+**All 49 cells were measured** — 6 at `δ = 7` (16 units, `n_χ` to 18,801) and
+43 at `δ = 8` (210 units, `n_χ` to 19,892), 11.7 CPU-hours in all, largest peak
+4.70 GB at the last cell `(16,9,2,2,2,1)`, `n_χ = 19,892`.  With s36 and s41
+that closes the reachable set: **123 of 123 eligible cells at `n_χ ≤ 20,000`,
+402 ambient units**, and the six-row record is now **139 cells** across
+`δ = 6, 7, 8` (plus 24 at `δ = 9` from Phase C).
+
 **Det side: `mult_det = a` at every cell measured.**  No determinant rank fell
 below `a` anywhere, at `a` up to 11.  So `D ≤ 0` throughout and no obstruction
-was possible at any of them — P2 held, as pre-registered, and for the reason
-pre-registered: every one of these cells is peaked.
+was possible at any of them — P2 held exactly as pre-registered (0 of 49), and
+for the reason pre-registered: every one of these cells is peaked.
 
 **Pad side: seven new reducibility bites at `δ = 8`, three of them `D = −2`.**
 Each has `mult_pad = mult_red`, so each is a *reducibility* equation and not a
@@ -117,20 +137,47 @@ points, and is nonzero at 20 generic quartics and 20 determinant pencils.
 | 8 | `(14,8,7,1,1,1)` | 9 | 9 | 8 | 8 | −1 | all |
 | 8 | `(13,9,7,1,1,1)` | 11 | 11 | 10 | 10 | −1 | all |
 | 8 | `(11,9,9,1,1,1)` | 3 | 3 | **1** | 1 | **−2** | 85,746 + 73,278, all |
+| 8 | `(11,10,8,1,1,1)` | 4 | 4 | **2** | 2 | **−2** | all |
 | 8 | `(12,10,7,1,1,1)` | 9 | 9 | **7** | 7 | **−2** | all |
 | 8 | `(12,9,8,1,1,1)` | 6 | 6 | **4** | 4 | **−2** | all |
 
-**The family.**  Every pad-side unit ever found at `ℓ = 6`, `δ = 7, 8` — s36's
-`(10,8,7,1,1,1)`, s41's `(13,10,6,1,1,1)`, and all seven here — sits at a weight
-of the shape `(λ_1, λ_2, λ_3, 1, 1, 1)`.  Inside that family at `δ = 8`
-(`λ_1 + λ_2 + λ_3 = 29`) the ledger now has 32 measured cells, and the units
-concentrate at the balanced end: 2 units at `(11,9,9)`, `(12,9,8)`,
-`(12,10,7)`; 1 unit at `(13,8,8)`, `(13,9,7)`, `(13,10,6)`, `(14,8,7)`,
-`(13,12,4)`; 0 at the remaining 24, all of which have a longer first row on
-average.  No single statistic — spread `λ_1 − λ_3`, balance, or `a` — separates
-the two sets cleanly, so this is a **pattern, not a law**, and it is recorded
-here as one.  It is the sharpest thing the six-row record has said so far about
-*where* `I(R_6)` lives.
+**The family — and now a complete statement of it.**  Every pad-side unit ever
+found at `ℓ = 6`, `δ = 7, 8` — s36's `(10,8,7,1,1,1)`, s41's
+`(13,10,6,1,1,1)`, and all eight here — sits at a weight of the shape
+`(λ_1, λ_2, λ_3, 1, 1, 1)`.  Because the reachable `δ = 8` set is now complete,
+this is no longer a selection effect that a wider sweep might dissolve: **of the
+65 reachable eligible cells at `δ = 8`, 33 are in that family and 32 are not;
+all nine bites are in the family, and the 32 cells outside it have `mult_pad = a`
+without exception.**
+
+Inside the family (`λ_1 + λ_2 + λ_3 = 29`), sorted by the spread
+`λ_1 − λ_3`, the units concentrate hard at the balanced end:
+
+| λ | spread | a | mult_pad | units |
+|---|---|---|---|---|
+| `(11,9,9,1,1,1)` | 2 | 3 | 1 | **2** |
+| `(11,10,8,1,1,1)` | 3 | 4 | 2 | **2** |
+| `(11,11,7,1,1,1)` | 4 | 3 | 3 | 0 |
+| `(12,9,8,1,1,1)` | 4 | 6 | 4 | **2** |
+| `(12,10,7,1,1,1)` | 5 | 9 | 7 | **2** |
+| `(13,8,8,1,1,1)` | 5 | 3 | 2 | 1 |
+| `(12,11,6,1,1,1)` | 6 | 6 | 6 | 0 |
+| `(13,9,7,1,1,1)` | 6 | 11 | 10 | 1 |
+| `(12,12,5,1,1,1)` | 7 | 3 | 3 | 0 |
+| `(13,10,6,1,1,1)` | 7 | 9 | 8 | 1 |
+| `(14,8,7,1,1,1)` | 7 | 9 | 8 | 1 |
+| `(13,12,4,1,1,1)` | 9 | 3 | 2 | 1 |
+| the other 21, spread 8–15 | | | | 0 |
+
+Two units appear exactly at the four smallest spreads (2, 3, 4, 5), one unit at
+five cells of spread 5–9, none beyond.  But `(11,11,7)` at spread 4 and
+`(12,11,6)` at spread 6 are empty while `(12,9,8)` at spread 4 and
+`(13,9,7)` at spread 6 bite, and `(13,12,4)` bites at spread 9 — so no single
+statistic (spread, balance, `a`, or `λ_2 − λ_3`) separates the two sets.  This
+is a **pattern, not a law**, and it is recorded here as one.  It is the sharpest
+thing the six-row record has said so far about *where* `I(R_6)` lives, and it is
+the natural input to a Kempf-collapsing calculation of `mult_λ C[R_6]_8`, which
+would predict these numbers rather than measure them.
 
 ## 4. Phase B — `I(D_6^{per_3})_7 = 0`, and what it makes a theorem
 
@@ -175,7 +222,10 @@ record now has `mult_pad = mult_red` by theorem rather than by measurement, and
 the transport bookkeeping is no longer needed at that degree.
 
 **The `δ = 8` continuation.**  With degree 7 closed, the same scan was carried
-up to `δ = 8`, where session 41 had measured 28 of the 91 length-6 weights.  The
+up to `δ = 8`, where session 41 had measured 28 of the 91 length-6 weights; this
+session added 53 more (9 dense, 44 by the certificate), so **81 of 91 are
+measured, all empty**, and `I(D_6^{per_3})_8 = 0` is within a session's reach.
+The
 injectivity certificate turns out to prove `mult = a` at **every** `a`, not only
 at `a = 1` — the identity `dim ker[M;Ev] = a − mult` does not care about `a` —
 and it was validated on that reading against four banked `a = 2, 3` weights
@@ -203,11 +253,15 @@ ledger has always used per cell); `N_S` is by the generating-function DP alone.
 That is one cross-check fewer than at `δ = 7, 8`, and it is recorded in the
 boundary below rather than papered over.
 
-The cheapest cells were then measured on the same pipeline: `mult_det = a`,
-`mult_pad = mult_red = a`, `D = 0` at every one.  P4's expectation of a fourth
-`D = −1` rung at `δ = 9` is **not** contradicted — the cells that would carry it
-are the `(λ_1,λ_2,λ_3,1,1,1)` family of §3, which at `δ = 9` sits well above the
-cheap end of the list, and they were not reached.
+The cheapest cells were then measured on the same pipeline: **24 cells, 61
+units, `n_χ` to 5,292, `mult_det = a`, `mult_pad = mult_red = a`, `D = 0` at
+every one** — the first `δ = 9` six-row cells in the programme.  P4's
+expectation of a fourth `D = −1` rung at `δ = 9` is **not** contradicted: the
+cells that would carry it are the `(λ_1,λ_2,λ_3,1,1,1)` family of §3, whose
+`δ = 9` members (`λ_1 + λ_2 + λ_3 = 33`) sit well above the cheap end of the
+list, and they were not reached.  §3's family finding says exactly where the
+next session should look for the `δ = 9` rung, and the sparse route of §4 says
+how to get there.
 
 ## 6. Engineering
 
@@ -255,13 +309,14 @@ cheap end of the list, and they were not reached.
   `mult_red ≤ a − k` from measured into proved, and it was **not** run here for
   want of time.  The integrator should expect to run it before the word
   "generator" is used of any of them.
-- **Not measured:** every eligible cell with `n_χ > 20,000` — still the great
-  majority at both degrees, and *all* of the balanced corner (`balance ≤ 8` at
-  `δ = 7`, `≤ 9` at `δ = 8`), which is where s30/s36's dimension heuristic would
-  put a first det-side bite; every `λ_1 < δ` onset-only cell at all three
-  degrees; the remaining length-6 weights of `I(D_6^{per_3})_8`; and the great
-  majority of `δ = 9`.  Coverage fractions in `results/s43_coverage.md` are of
-  what *exists*, never of what fits.
+- **Not measured:** every eligible cell with `n_χ > 20,000` — 200 of 258 at
+  `δ = 7` and 526 of 591 at `δ = 8`, and *all* of the balanced corner
+  (`balance ≤ 8` at `δ = 7`, `≤ 9` at `δ = 8`), which is where s30/s36's
+  dimension heuristic would put a first det-side bite; every `λ_1 < δ`
+  onset-only cell at all three degrees; the 10 remaining length-6 weights of
+  `I(D_6^{per_3})_8`; and 28 of the 52 reachable `δ = 9` cells.  Inside the
+  frontier, by contrast, **nothing is left**: 123 of 123.  Coverage fractions in
+  `results/s43_coverage.md` are of what *exists*, never of what fits.
 - **Regime, and the limit of the reading.**  Everything measured this session is
   peaked — at `δ = 7` the new cells have balance 12–15, at `δ = 8` balance
   10–19, at `δ = 9` balance 15–24.  The det-side verdict therefore says what
@@ -273,6 +328,16 @@ cheap end of the list, and they were not reached.
   not in reach.
 - **One cross-check fewer at `δ = 9`:** the census-wide Kostant alternation on
   `a` (§5).  `a` is still two-route at every *measured* cell.
+- **One error found and corrected, in full:** the `δ = 8` Phase-B driver passed
+  the literal `1` where the weight's `a` belongs, so 21 `a ≥ 2` rows were banked
+  with a spurious `units = a − 1`.  It was caught by a status check on the
+  commit log, the 21 rows were removed rather than edited, the call site was
+  fixed, and all 21 weights were re-measured from scratch at the pre-registered
+  `a + 8` points (all `mult = a`).  `results/s43_bookkeeping_correction.md` sets
+  out what the original certificates did and did not prove — the verdict
+  `mult = a` was right at all 21, only the recorded number was wrong — and why
+  the thirteen-weight cross-check missed it (it called the routine directly, not
+  through the driver).  No Phase-A, `δ = 7`, or `a = 1` row was affected.
 - **Post-hoc, labelled.**  Two things were decided after the prereg and are
   flagged as such: (i) the `a ≥ 2` extension of the injectivity route — the
   prereg scoped it to `a = 1`; the identity `dim ker[M;Ev] = a − mult` makes it
@@ -284,14 +349,15 @@ cheap end of the list, and they were not reached.
 
 ## 8. What next
 
-1. **Lift the seven bites.**  Session 42's integer lift at each turns
+1. **Lift the eight new bites.**  Session 42's integer lift at each turns
    `mult_red ≤ a − k` from measured into proved, exactly as the integrator did
    for `(13,10,6,1,1,1)`.  Cheap, and it is what the `D = −2` cells need before
    anyone calls them two independent equations.
-2. **Close `I(D_6^{per_3})_8`.**  The injectivity route makes this a
-   finite, cheap job — the weights left are a few dozen, most of them minutes
-   each — and it would make `mult_pad = mult_red` a theorem at degree 8 too,
-   which is where every pad-side bite in the record actually lives.
+2. **Close `I(D_6^{per_3})_8`.**  81 of 91 weights are already empty; the ten
+   left are a couple of hours by the injectivity route, and they would make
+   `mult_pad = mult_red` a theorem at degree 8 too — which is where every
+   pad-side bite in the record actually lives.  This is the cheapest theorem
+   available to the next session.
 3. **Use the sparse route on the det side above the frontier.**  It answers "is
    `mult_det = a`?" at `n_χ` several times the dense frontier for a fifth of a
    gigabyte.  That does not by itself reach the balanced corner (the smallest
