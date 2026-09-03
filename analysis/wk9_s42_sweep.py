@@ -57,7 +57,11 @@ def main():
         if time.time() - t_start > opt['hours'] * 3600: log("time budget reached"); break
         t0 = time.time()
         a = c['a']
-        assert a == a_of(lam, delta, 4, len(lam))
+        if delta <= 8:
+            assert a == a_of(lam, delta, 4, len(lam))          # symmetric-function route (cheap at delta <= 8)
+        else:
+            from wk9_s42_census import a_weyl
+            assert a == a_weyl(lam, delta, 4)                  # Weyl route (the census's own route; amb is too heavy here)
         B = build(lam, delta, verbose=False, want_vecs=False)
         rec = dict(lam=list(lam), delta=delta, ell=len(lam), a=a, h_pad=c['h_pad'], N_S=B['N_S'], stab=B['stab'],
                    n_chi=B['n_chi'], n_red=B['n_red'], nrows_red=int(B['E_red'].shape[0]),
