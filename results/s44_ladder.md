@@ -206,3 +206,22 @@ adds.
    ceiling `1147 < 1197 = ρ_8`, and `1842 < 1952 = ρ_9`.
 
 **ALL CHECKS PASS.**
+
+## 9. The `r = 4` column (`results/logs/s44_r4.log`)
+
+`C(r,5) = 0` at `r = 4` predicts no drop at any degree, and the geometry says
+why: the rank-`≤ n−2` locus has codimension 4 in `P(M_n)` while the pencil is a
+`P^3`, so by Kleiman a generic four-parameter pencil misses it and
+`F = det M(s)` is **smooth**.  Three pencils, both primes, over the full range
+`d = n−1 .. 3n+1`:
+
+| `n` | degrees tested | determinantal rank | drop |
+|---|---|---|---|
+| 3 | `d = 2..9` (8 rows) | `= ρ_d` at every `d` | 0 |
+| 4 | `d = 3..12` (10 rows) | `= ρ_d` at every `d` | 0 |
+| 5 | `d = 4..15` (12 rows) | `= ρ_d` at every `d` | 0 |
+
+30 rows, no drop anywhere.  With `r = 5` (drop 1 at `n = 3, 4, 5`) and `r = 6`
+(drop 6 at `n = 4, 5`) this gives `0, 1, 6 = C(4,5), C(5,5), C(6,5)` — the
+evidence for the `C(r,5)` guess of §6, and the only leg of it that was a
+prediction before it was run.

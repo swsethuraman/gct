@@ -58,6 +58,12 @@ Labels: **proved** / **measured** / **certified** / **adopted-from-literature**
 > The size-666 minors vanish on the padded permanent too.  The cap bounds the
 > determinant ideal; it separates nothing.
 >
+> **The drop looks like `C(r,5)` (expectation).**  At `d = 3n−5`, where the
+> Gulliksen-Negard ceiling is not binding, the measured drop is `0, 1, 6` at
+> `r = 4, 5, 6` — across `n = 3, 4, 5` — and `C(r,5) = 0, 1, 6`.  The `r = 4`
+> leg is a genuine prediction of the guess and is confirmed: the generic
+> determinantal hypersurface in `P^3` is smooth and the rank never drops.
+>
 > **Also settled.**  The singular locus of a generic six-parameter `4×4`
 > determinantal quartic is a curve in `P^5` of **degree 20 and arithmetic genus
 > 21**; `H_{S/J(M)}(d) = 20d − 20` for `d ≥ 5`, measured against
@@ -309,21 +315,46 @@ Two readings:
   five-row cap theorem — and does not move when the fifth row becomes a sixth.
   It moves down only when `L` becomes large inside `M_n` (`r = 7, 8` at
   `n = 3`, where `dim M_3 = 9` and linear syzygies among the partials appear).
-- **At `d = 3n − 5` the size of the drop looks like a function of `r` alone**:
-  `1` at `r = 5` for `n = 3, 4, 5`; `6` at `r = 6` for `n = 4` and `n = 5`.
-  (`(3, 6)` reads 9, but there the GN ceiling is already binding at `d = 4` —
-  the measured rank 102 *is* the ceiling — so that row is ceiling-limited.)
-  `1 = C(5,5)`, `6 = C(6,5)` is the obvious guess and would make the drop
-  `C(r,5)`; every `r = 7` case in reach is ceiling-limited and the one clean
-  test, `(5, 7)`, exceeded the column budget.  **Recorded as a guess, not a
-  claim.**
+- **Where the GN ceiling is not binding at `d = 3n − 5`, the size of the drop
+  is a function of `r` alone, and it is `C(r, 5)`** *(measured at seven
+  `(n, r)`; an expectation, not a claim)*:
 
-The general cap this suggests, for `r ≤ 6` and `n ≥ 3`:
+  | `r` | `C(r,5)` | measured drop at `d = 3n−5` | at |
+  |---|---|---|---|
+  | 4 | **0** | 0 at every `d` — the hypersurface is smooth | `n = 3, 4, 5` |
+  | 5 | **1** | 1 | `n = 3, 4, 5` |
+  | 6 | **6** | 6 | `n = 4, 5` |
 
-    cap(n, r) = dim Sym^{3n−5} C^r − h_{3n−5}(n, r)
+  The `r = 4` leg (`analysis/wk9_s44_r4.py`, `results/logs/s44_r4.log`) is the
+  sharpest of the three and was run *because* `C(4,5) = 0` predicts it: for
+  `r = 4` the rank-`≤ n−2` locus has codimension 4 and `P^3` misses it, so the
+  generic determinantal hypersurface in `P^3` is **smooth** (classically: the
+  generic determinantal cubic and quartic surface are smooth) and the rank never
+  drops at any degree.  Measured at three pencils and both primes over the full
+  range `d = n−1 .. 3n+1` at `n = 3, 4, 5`: `drop = 0` in all 31 rows.
 
-which gives 65 and 300 at the two anchors, 111 at `(3,6)`, 666 at `(4,6)` and
-2457 at `(5,6)`.  Only the `r = 5` column is a theorem (`docs/onset_conjecture.md`).
+  The rule is stated with the ceiling caveat because the ceiling can force more:
+  at `(3, 6)` the GN ceiling already binds at `d = 4` (the measured rank 102 *is*
+  the ceiling) and the drop is 9, not 6; at `(4, 7)` and `(4, 8)` the ceiling
+  binds at `d = 7` and the drops are 44 and 168, matching neither `C(r,5)` nor
+  the ceiling alone.  The one clean `r = 7` test, `(n, r) = (5, 7)`, needs a
+  `12012 × 8008` rank and was out of budget.  So: `C(r,5)` is confirmed at
+  `r = 4, 5, 6` across seven `(n, r)` pairs and **untested at `r ≥ 7`**.
+
+The general cap this suggests, for `4 ≤ r ≤ 6` and `n ≥ 4`:
+
+    cap(n, r) = dim Sym^{3n−5} C^r − h_{3n−5}(n, r) ,   drop = C(r, 5)
+
+which gives 65 and 300 at the two anchors, 666 at `(4,6)` and 2457 at `(5,6)`,
+and no cap at all at `r = 4`.  Only the `r = 5` column is a theorem
+(`docs/onset_conjecture.md`).
+
+**A limitation worth stating.**  At `r = 4` the mechanism produces *no*
+equations, and that is not because there are none: `dim D_4^{det_4} = 4·16 −
+(2·16 − 2) = 33 < 35 = dim Sym^4 C^4`, so `D_4^{det_4}` is a proper subvariety
+of codimension 2 and has a nonempty ideal.  The Macaulay mechanism sees only the
+singularity that the pencil forces on its determinant; when the pencil forces
+none, it is blind.  Nothing here says the cap is close to the onset at any `r`.
 
 ## 9. Literature *(Phase 5)*
 
