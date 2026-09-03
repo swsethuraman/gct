@@ -1,0 +1,15 @@
+[s44 locus] n=4 r=6, seed 20260903, primes (2147483647, 2147483629)
+  sixteen 3x3 minors built; F has 126 monomials of degree 4
+
+  d  dimS_d   H_GN  H meas p1  H meas p2  dimJ(M)  rank M_d  rho_d  H_Q=J/J_F
+  3      56     40         40         40       16         6      6         10
+  4     126     60         60         60       66        36     36         30
+  5     252     80         80         80      172       126    126         46
+  6     462    100        100        100      362       321    321         41
+  7     792    120        120        120      672       660    666         12
+  8    1287    140        140        140     1147      1146   1197          1
+
+  H_GN(d) - H_GN(d-1) for d >= 5 gives the degree of the curve;
+  H_GN(d) = 20d - 20 => degree 20 = nu(4) = n^2(n^2-1)/12, arithmetic genus 21.
+  checked H_GN(d) = 20d - 20 for d = 5..11 (Gulliksen-Negard, exact)
+[s44 locus] done in 12.0s
