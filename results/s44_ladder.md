@@ -48,6 +48,13 @@ trial of a kind gave the same rank; the single number is that common value.
 | 6 | 336 | 462 | 141 | **321** | 362 | 321 | 321 | 0 | 141 | **271** | 50 |
 | 7 | 756 | 792 | 126 | **666** | 672 | 666 | **660** | **6** | **132** | **526** | 140 |
 | 8 | 1512 | 1287 | 90 | **1197** | 1147 | 1197 | **1146** | 51 | 141 | **917** | 280 |
+| 9 | 2772 | 2002 | 50 | **1952** | 1842 | 1952 | **1842** | 110 | 160 | **1497** | 455 |
+| 10 | 4752 | 3003 | 21 | **2982** | 2823 | 2982 | **2823** | 159 | 180 | **2332** | 650 |
+
+(`d = 9, 10` from `results/logs/s44_ladder_d9d10.log`, two trials per kind.)
+From `d = 9` the determinantal rank **equals** the Gulliksen-Negard ceiling:
+the six partials generate the whole ideal of the sixteen `3x3` minors there,
+and the corank `20d - 20` is the Hilbert polynomial of the singular curve.
 
 **The smallest `d` with a strict drop on `D_6^{det_4}` is `d = 7`, the corank
 is `132 = h_7 + 6`, and the cap is `ρ_7 = 666`.**  The pre-registered
@@ -93,6 +100,8 @@ partials inside the sixteen minors.
 | 6 | 462 | 100 | 100 | 100 | 362 | 321 | 321 | 41 |
 | 7 | 792 | 120 | 120 | 120 | 672 | 660 | 666 | 12 |
 | 8 | 1287 | 140 | 140 | 140 | 1147 | 1146 | 1197 | 1 |
+| 9 | 2002 | 160 | — | — | 1842 | 1842 | 1952 | **0** |
+| 10 | 3003 | 180 | — | — | 2823 | 2823 | 2982 | **0** |
 
 `H_GN(d) = 20d − 20` for `d ≥ 5` (checked symbolically for `d = 5..11`): the
 singular locus is a curve of **degree 20** — the Harris–Tu number
@@ -101,8 +110,12 @@ prediction P3 confirmed, and the measurement agrees with GN in every degree at
 both primes, so the grade-4 specialisation of the resolution is doing what it
 should at these pencils.
 
-`H_Q` is `10, 30, 46, 41, 12, 1`: the six partials fall short of the sixteen
-minors by twelve dimensions in degree 7 and by one in degree 8.
+`H_Q` is `10, 30, 46, 41, 12, 1, 0, 0`: the six partials fall short of the
+sixteen minors by twelve dimensions in degree 7, by one in degree 8, and by
+nothing from degree 9 on.  So `Q = J(M)/J_F` has **finite length 140**, and
+`J_F` and `J(M)` have the same saturation.  (The `d = 9, 10` rows of `dim J(M)_d`
+are the Gulliksen-Negard values, not re-measured: a `7392 x 2002` minor-ideal
+rank was outside this session's budget.  `rank M_d` is measured.)
 
 ## 5. Phase 3 — the syzygies behind the drop (`results/logs/s44_syzygy.log`)
 
@@ -170,3 +183,26 @@ measured.)  Two readings, both worth recording:
 See `docs/sixrow_cap.md` §4 for why the mod-`p` ranks above do not by
 themselves prove anything about the generic point, and what the certificate
 adds.
+
+## 8. Verification pass (`results/logs/s44_verify.log`)
+
+`analysis/wk9_s44_verify.py`, seed `44004400`, a separate code path:
+
+1. `h_d` and `H_GN(d)` recomputed by **sympy power-series expansion** of
+   `((1−t^{n−1})/(1−t))^r` and of the Gulliksen-Negard numerator over `(1−t)^r`,
+   instead of by binomial sums, at `(n,r) = (3,5) (4,5) (4,6) (5,6) (3,6) (5,5)`
+   over every degree used: **agree everywhere**.
+2. `ρ_d = rows − (alternating Koszul count)` at seven `(n,r)` over every degree:
+   **holds**.
+3. The claim `rank M_d(F) ≤ ρ_d` for **every** `F` (needed for the proved
+   no-drop at `d ≤ 6`) spot-checked at deliberately degenerate quartics —
+   a product of four linear forms (66, 161, 336, 630 at `d = 5..8`), a square of
+   a quadric (56, 126, 252, 462), a cone (105, 270, 570, 1050) — all far below
+   `ρ_d`, none above: **no violation**.
+4. The ladder re-measured at a **fresh seed and two different boxes**
+   (`±10^3` and `±10^8`): `36, 126, 321, 660, 1146` at `d = 4..8`, both primes.
+   The drop at 7 and the absence of a drop at `d ≤ 6` reproduce at every box.
+5. Theorem A's inequality recomputed from the resolution ranks directly:
+   ceiling `1147 < 1197 = ρ_8`, and `1842 < 1952 = ρ_9`.
+
+**ALL CHECKS PASS.**
