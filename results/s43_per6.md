@@ -25,3 +25,4 @@ in-place rref of `analysis/wk9_s41_kernel.py`, `inject` for the `a = 1` sparse i
 it.  The last weight, `(6,5,4,3,2,1)`, has trivial stabiliser and `n_χ = N_S = 39,921`, about twice the dense
 frontier; its `[M;Ev]` (134,212 × 39,921, nnz 801,854) was certified NONSINGULAR at both primes by a
 Berlekamp–Massey minimal polynomial of degree exactly `n_χ` with `f(0) ≠ 0`, in 482 s at a peak of 0.15 GB.**
+| 8 | `(7, 7, 6, 2, 1, 1)` | 1 | 31850 | 4 | 6297 | dense | 1 | 0 | 120 | 0.59 |
