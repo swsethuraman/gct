@@ -166,6 +166,18 @@ if hz or dc or lifts:
             secs = ', '.join(str(v['secs']) for v in c['primes'].values())
             L.append(f"| {lamstr(c['lam'])} | {c['delta']} | {c['a']} | {c['n_chi']} | {a_nul(c)} | **{c['mult_det']}** | {secs} |")
 
+# minimal-generator checks
+gc = load_jsonl(os.path.join(R, 's42_gencheck.jsonl'))
+if gc:
+    L.append("\n**Minimal generators of `I(R_6)` in degree 8** (`analysis/wk9_s42_gencheck.py`: every Pieri predecessor at degree 7 proved free of the ideal):\n")
+    L.append("| λ | δ | a | mult_red | predecessors checked | in the ideal | minimal generator |")
+    L.append("|---|---|---|---|---|---|---|")
+    for c in gc:
+        inid = [tuple(r['mu']) for r in c['predecessors'] if r.get('verdict') == 'IN THE IDEAL']
+        L.append(f"| {lamstr(c['lam'])} | {c['delta']} | {cells[key(c)]['a'] if key(c) in cells else ''} | {cells[key(c)]['mult_red'] if key(c) in cells else ''} | {len(c['predecessors'])} | {', '.join(lamstr(m) for m in inid) if inid else 'none'} | {'**yes**' if c['minimal_generator'] else 'no'} |")
+    # the first generator's check lives in s42_gen8_checks.jsonl + the sweep; state it
+    L.append("\n`(13,12,4,1,1,1)_8` was checked the same way before the script existed (15 predecessors: six with `a = 0`, nine with `nullity_p = 0` proved; `results/s42_gen8_checks.jsonl`): **yes**.\n")
+
 # validation summary
 if valid:
     L.append("\n## Validation against session 36 (P1)\n")
