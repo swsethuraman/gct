@@ -61,8 +61,17 @@ def check_kernel_modp(E, p, y):
 
 
 def inject_one(delta, mu, a_exp, K=None, seed=41, bound=40, primes=(P1, P2), verbose=True):
-    """mult of I(D_6^{per_3}) at (mu, delta) by the injectivity certificate; a must be 1."""
-    assert a_exp == 1, "the injectivity route is pre-registered for a = 1 only"
+    """Is mult = a at (mu, delta)?  ker[M; Ev] is exactly the space of weight-mu
+    highest-weight vectors vanishing at the K points, of dimension a - mult, so
+
+        [M; Ev] injective  <=>  mult = a,
+
+    for EVERY a, not only a = 1.  A NONSINGULAR certificate therefore proves the
+    empty verdict at any a; a KERNEL vector proves only mult < a and the exact
+    value is then taken by the dense route (this driver reports mult = None and
+    the caller falls back).  Validated against the dense route at nine a = 1 and
+    four a >= 2 weights (results/s43_inject_crosscheck.md)."""
+    assert a_exp >= 1
     n, r = 3, 6
     t0 = time.time()
     SP.build_bin()
@@ -96,12 +105,12 @@ def inject_one(delta, mu, a_exp, K=None, seed=41, bound=40, primes=(P1, P2), ver
         if verbose:
             log(f"   p={p}: {st} {' | '.join(diag[-2:])} ({time.time()-t0:.0f}s)")
         if st == 'NONSINGULAR':
-            out[p] = 1
+            out[p] = a_exp
         elif st == 'KERNEL':
             y = payload
             assert len(y) == nchi
             assert check_kernel_modp(E, p, y), "reported kernel vector fails E y = 0"
-            out[p] = 0
+            out[p] = None          # mult < a; the exact value needs the dense route
         else:
             raise RuntimeError(("injectivity route inconclusive", mu, delta, p, diag[-3:]))
         del E, Ed, ev, Mp
@@ -113,19 +122,23 @@ def inject_one(delta, mu, a_exp, K=None, seed=41, bound=40, primes=(P1, P2), ver
 
 
 VALIDATION = [(7, (8, 4, 4, 2, 2, 1)), (7, (7, 6, 4, 2, 1, 1)), (7, (6, 5, 5, 3, 1, 1))]
+# banked delta = 8 weights of results/s41_per6.md with a >= 2, all with mult = a:
+VALIDATION_A2 = [(8, (12, 4, 2, 2, 2, 2)), (8, (11, 6, 2, 2, 2, 1)),
+                 (8, (10, 6, 2, 2, 2, 2)), (8, (10, 5, 5, 2, 1, 1))]
 
 
 def validate():
     """the pre-registered gate: three already-measured a = 1 weights of the same
-    family, whose dense verdict is mult = 1 in results/s41_per6.md."""
+    family, whose dense verdict is mult = 1 in results/s41_per6.md; plus, for the
+    a >= 2 extension, four banked delta = 8 weights with a = 2, 3."""
     ok = True
-    for delta, mu in VALIDATION:
+    which = VALIDATION + (VALIDATION_A2 if '--a2' in sys.argv else [])
+    for delta, mu in which:
         a = a_of(mu, delta, 3, 6)
-        assert a == 1, (mu, a)
         res = inject_one(delta, mu, a)
-        good = res['mult'] == 1
+        good = res['mult'] == a
         ok = ok and good
-        log(f"VALIDATE {mu} d={delta}: injectivity route mult={res['mult']}, dense route (s41_per6) mult=1 "
+        log(f"VALIDATE {mu} d={delta} a={a}: injectivity route mult={res['mult']}, dense route mult={a} "
             f"-> {'agree' if good else 'DISAGREE'} ({res['secs']:.0f}s, HWM {res['hwm']:.2f} GB)")
         print("VALRESULT " + json.dumps(res), flush=True)
     log("injectivity validation: " + ("PASSED" if ok else "FAILED"))
