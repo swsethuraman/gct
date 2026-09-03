@@ -91,6 +91,7 @@ def timeout_for(n_chi):
 
 
 if __name__ == '__main__':
+    USE_INJECT = '--inject' in sys.argv
     if sys.argv[1] == '--one':
         from wk9_s41_per6 import measure_per6
         from wk9_s41_kernel import vm_hwm
@@ -135,8 +136,34 @@ if __name__ == '__main__':
         for nchi, m, a, NS, st in todo:
             if os.path.exists(STOP):
                 log("STOP_B present; exiting"); sys.exit(0)
-            if not (lo_nchi < nchi <= cap):
+            if USE_INJECT and a == 1 and nchi > lo_nchi:
+                pass
+            elif not (lo_nchi < nchi <= cap):
                 log(f"   skip {m} a={a} n_chi={nchi} (outside ({lo_nchi}, {cap}])"); continue
+            if USE_INJECT and a == 1:
+                # the a = 1 sparse injectivity certificate (results/PREREG_s43.md P3);
+                # validated against the dense route at nine weights of this same family
+                # (results/s43_validation.md part D and results/s43_inject_crosscheck.md)
+                from wk9_s43_inject import inject_one
+                tag = f"per6 d={delta} {m} a=1 n_chi={nchi} [inject]"
+                log(f"START {tag}")
+                try:
+                    res = inject_one(delta, m, 1, verbose=True)
+                except Exception as e:
+                    with open(os.path.join(LOGS, 's43_failed.txt'), 'a') as fh:
+                        fh.write(f"per6-inject {delta} ({','.join(map(str, m))}) {e!r} n_chi={nchi}\n")
+                    log(f"NOT REACHED {tag}: {e!r}")
+                    continue
+                line = (f"| {delta} | `{m}` | 1 | {res['N_S']} | {res['stab']} | {res['n_chi']} | inject | "
+                        f"{res['mult']} | {1 - res['mult']} | {res['secs']:.0f} | {res['hwm']:.2f} |")
+                bank(line)
+                commit(f"s43: per6 delta={delta} {m}: a=1 mult={res['mult']} units={1 - res['mult']} (injectivity route)")
+                log(line)
+                if res['mult'] < 1:
+                    open(STOP, 'w').write(f"permanent equation at {m} delta={delta}\n")
+                    log("*** mult < a on the permanent's own ideal — halt Phase B; certify and report ***")
+                    sys.exit(0)
+                continue
             gb = predicted_gb(nchi)
             tag = f"per6 d={delta} {m} a={a} n_chi={nchi}"
             with heavy_lock(gb, tag, log):

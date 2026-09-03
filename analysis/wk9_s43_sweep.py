@@ -186,6 +186,10 @@ def run_cell(x, who, headroom):
                 with open(bl, 'a') as bf:
                     subprocess.run([sys.executable, os.path.join(HERE, 'wk9_s41_bite.py'), pk, sd],
                                    stdout=bf, stderr=bf, text=True)
+                # wk9_s41_bite.py writes to a hard-coded results/s41_cells path; this
+                # session's artefacts belong in results/s43_cells (see wk9_s43_relocate.py)
+                subprocess.run([sys.executable, os.path.join(HERE, 'wk9_s43_relocate.py'), 'origin/main'],
+                               capture_output=True, text=True)
                 note += f' {sd}-bite'
     D = res['mult_pad'] - res['mult_det']
     line = (f"| {delta} | `{lam}` | {a} | {x['m_det']} | {res['N_S']} | {res['stab']} | {res['n_chi']} | "
