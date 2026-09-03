@@ -16,3 +16,20 @@
       250/1783 primes, ranks [660], 64s (0.25s/prime, eta 6.5min)
       500/1783 primes, ranks [660], 128s (0.26s/prime, eta 5.5min)
       750/1783 primes, ranks [660], 191s (0.25s/prime, eta 4.4min)
+      1000/1783 primes, ranks [660], 254s (0.25s/prime, eta 3.3min)
+      1250/1783 primes, ranks [660], 319s (0.26s/prime, eta 2.3min)
+      1500/1783 primes, ranks [660], 386s (0.26s/prime, eta 1.2min)
+      1750/1783 primes, ranks [660], 450s (0.26s/prime, eta 0.1min)
+    -> rank_Q M_7 < 666: ranks mod primes [660] over 1783 primes [7.6 min]  CERTIFIED DROP OVER Q
+  pencil 2 (seed offset 10300162):
+    Hadamard: max ||grad||_2 <= 31921180500411016246126617687565581491305046236261 (~2^164.4); log2 H <= 109523; need 1797 primes of 62 bits
+      250/1797 primes, ranks [660], 65s (0.26s/prime, eta 6.8min)
+      500/1797 primes, ranks [660], 129s (0.26s/prime, eta 5.6min)
+      750/1797 primes, ranks [660], 193s (0.26s/prime, eta 4.5min)
+      1000/1797 primes, ranks [660], 257s (0.26s/prime, eta 3.4min)
+      1250/1797 primes, ranks [660], 319s (0.26s/prime, eta 2.3min)
+      1500/1797 primes, ranks [660], 382s (0.25s/prime, eta 1.3min)
+      1750/1797 primes, ranks [660], 445s (0.25s/prime, eta 0.2min)
+    -> rank_Q M_7 < 666: ranks mod primes [660] over 1797 primes [7.6 min]  CERTIFIED DROP OVER Q
+
+  3/3 pencils certified over Q.  If the generic determinantal rank were 666, the probability of this is <= 2.363e-27.
