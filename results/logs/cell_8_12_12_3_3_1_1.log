@@ -1,0 +1,23 @@
+      level 1: 64 prefixes
+      level 2: 1061 prefixes
+      level 3: 7364 prefixes
+      level 4: 37010 prefixes
+      level 5: 113009 prefixes
+      level 6: 204271 prefixes
+      level 7: 237040 prefixes
+      level 8: 237040 prefixes
+  lam=(12, 12, 3, 3, 1, 1): N_S=237040 |Stab|=8 n_chi=23700 (orbits dropped: 13248) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=4 targets 229248 canonical rows 45465 nnz 231103 (obstructed fixed targets cancelled: 11948) [1s, HWM 0.16 GB]
+    E_12: |H|=2 targets 106035 canonical rows 42212 nnz 208066 (obstructed fixed targets cancelled: 5208) [2s, HWM 0.16 GB]
+    E_23: |H|=4 targets 197075 canonical rows 39297 nnz 97260 (obstructed fixed targets cancelled: 3160) [2s, HWM 0.16 GB]
+    E_34: |H|=2 targets 88268 canonical rows 44305 nnz 93658 (obstructed fixed targets cancelled: 0) [3s, HWM 0.16 GB]
+    E_45: |H|=4 targets 141134 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1092) [3s, HWM 0.16 GB]
+  built (12, 12, 3, 3, 1, 1) d8: N_S=237040 |Stab|=8 n_chi=23700 rows=171279 nnz=630087 (4s: mono 1s orbits 1s rows 3s; HWM 0.16 GB)
+    level 0 (3,2): 35582 rows, nnz 261215 (full: 171279 rows, nnz 630087)
+    level 0 (3,2): 35596 rows, nnz 593658 (full: 171293 rows, nnz 961887)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=0 seed=501 k=0]: KERNEL SEQ n=23700 nrows=35582 nnz=261215 k=0 len=47400 secs=49.4 | BM deg=23691 f0=0 secs=56.5 | DONE secs=86.7 (88s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 85640 rows, nnz 629944 (full: 171279 rows, nnz 630087)
+    wied[c12_12_3_3_1_1d8_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593658 k=0 len=47400 secs=86.5 | BM deg=23700 f0=909205197 secs=93.6 (95s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=502 k=0]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=0 len=47400 secs=113.4 | BM deg=23695 f0=0 secs=120.5 | DONE secs=181.0 (269s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=503 k=1]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=1 len=47400 secs=116.8 | BM deg=23696 f0=0 secs=123.9 | DONE secs=186.4 (456s)
