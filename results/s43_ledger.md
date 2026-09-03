@@ -15,3 +15,4 @@ process per cell.  Cells are taken in ascending `n_χ` from `results/s43_todo.md
 | delta | lam | a | m_det | N_S | Stab | n_chi | rows | route | mult_det | mult_pad | mult_red | D | secs | HWM |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 8 | `(14, 11, 4, 1, 1, 1)` | 4 | 953 | 62680 | 6 | 4403 | 13895 | inplace | 4 | 4 | 4 | +0 | 51 | 0.35 |
+| 8 | `(16, 8, 5, 1, 1, 1)` | 7 | 1564 | 63163 | 6 | 4457 | 13442 | inplace | 7 | 7 | 7 | +0 | 51 | 0.36 |
