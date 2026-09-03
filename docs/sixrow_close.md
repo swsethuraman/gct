@@ -61,6 +61,19 @@ move is the pad side's bookkeeping — degree 7 is now closed by a theorem
 instead of a cell-by-cell transport argument — and the map of where the
 *reducibility* ideal lives at `δ = 8`.
 
+### The pre-registered predictions, scored
+
+| | prediction (`results/PREREG_s43.md`) | outcome |
+|---|---|---|
+| P1 | the three banked s41 rows, the `m_det` anchors and the route gate all reproduce | **held** — every field identical, including the discriminating `D = −1` row |
+| P2 | **0 of 49** Phase-A cells show `mult_det < a` | **held** — 0 of 49 |
+| P3 | all seven remaining `δ = 7` permanent weights empty (`mult = a = 1`); chance of a bite put at ≈ 1 in 6 | **held** — all seven empty |
+| P4 | `mult_det = a` and `D ≤ 0` at every `δ = 9` cell reached, with `D = −1` at **zero or one** of them | **half held** — `mult_det = a` and `D ≤ 0` throughout, but **two** `D = −1` cells, not zero or one.  The prediction under-counted the rung; §3's family finding, made after it, is why |
+
+The one prediction that missed, missed in the informative direction: the
+`δ = 9` reducibility rung is *wider* than expected, and it sits exactly where
+the completed `δ = 8` sweep says it should.
+
 ---
 
 ## 1. What was to be done, and the list rebuilt from scratch
