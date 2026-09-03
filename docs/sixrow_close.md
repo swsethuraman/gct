@@ -35,9 +35,14 @@ per `docs/brief_wording.md`.
 > of degree 7, independent of any pad point.  The scan then carried to `δ = 8`,
 > where 81 of the 91 weights are now measured empty.
 >
-> **Phase C opened `δ = 9`:** a census of 1,079 eligible cells (86,363 units,
-> 52 reachable) and its cheapest 24 cells — `mult_det = a`, `mult_pad =
-> mult_red = a`, `D = 0` at every one.
+> **Phase C opened `δ = 9`** — a census of 1,079 eligible cells (86,363 units,
+> 52 reachable) and **40 of the 52**, `mult_det = a` at every one — and found
+> **the fourth rung of the reducibility ladder**: `(17,12,4,1,1,1)` and
+> `(16,13,4,1,1,1)`, both `D = −1`, both `mult_pad = mult_red`, both certified
+> by (★) on every monomial.  `I(R_6)` now has an element in a new weight at each
+> of `δ = 6, 7, 8, 9`, exactly as P4 predicted — and both `δ = 9` cells sit in
+> the `(λ_1,λ_2,λ_3,1,1,1)` family that §3 identifies, which is where §3 said to
+> look.
 >
 > The new information on the pad side is quantitative.  Session 41 knew three
 > `D = −1` reducibility bites in the whole six-row record.  This session found
@@ -253,15 +258,29 @@ ledger has always used per cell); `N_S` is by the generating-function DP alone.
 That is one cross-check fewer than at `δ = 7, 8`, and it is recorded in the
 boundary below rather than papered over.
 
-The cheapest cells were then measured on the same pipeline: **24 cells, 61
-units, `n_χ` to 5,292, `mult_det = a`, `mult_pad = mult_red = a`, `D = 0` at
-every one** — the first `δ = 9` six-row cells in the programme.  P4's
-expectation of a fourth `D = −1` rung at `δ = 9` is **not** contradicted: the
-cells that would carry it are the `(λ_1,λ_2,λ_3,1,1,1)` family of §3, whose
-`δ = 9` members (`λ_1 + λ_2 + λ_3 = 33`) sit well above the cheap end of the
-list, and they were not reached.  §3's family finding says exactly where the
-next session should look for the `δ = 9` rung, and the sparse route of §4 says
-how to get there.
+**40 of the 52 reachable cells were measured** (136 units, `n_χ` to 11,435, `a`
+to 12, peak 1.66 GB) — the first `δ = 9` six-row cells in the programme.
+`mult_det = a` at every one: the determinant's six-row ideal is empty at
+`δ = 9` too, on everything reached.
+
+**P4 confirmed: the fourth rung of the reducibility ladder.**  Two cells have
+`mult_pad < a`, and both are `mult_pad = mult_red`, so both are reducibility
+equations and not permanent ones:
+
+| δ | λ | a | mult_det | mult_pad | mult_red | D | (★) on |
+|---|---|---|---|---|---|---|---|
+| 9 | `(17,12,4,1,1,1)` | 8 | 8 | 7 | 7 | −1 | all |
+| 9 | `(16,13,4,1,1,1)` | 7 | 7 | 6 | 6 | −1 | 11,214 / 11,214 monomials |
+
+Each vanishing highest-weight vector was re-checked at `3a + 24` fresh points on
+seed 907 at both primes, exhibited, and run through the symbolic battery: zero
+at 20 true padded-permanent points and 20 `l·(random cubic)` points, nonzero at
+20 generic quartics and 20 determinant pencils.  So `I(R_6)` has an element in a
+new weight at **each** of `δ = 6, 7, 8, 9` — the ladder session 41 described now
+has a fourth rung — and both `δ = 9` rungs lie in the `(λ_1,λ_2,λ_3,1,1,1)`
+family of §3 (`λ_1 + λ_2 + λ_3 = 33` here).  The family finding predicted where
+they would be before they were measured, which is the first time anything in the
+six-row record has been predictive.
 
 ## 6. Engineering
 
@@ -293,7 +312,7 @@ how to get there.
 - **Proved:** the eligibility constraints (`docs/sixrow_frontier.md` §1); the
   in-place certificate chain and the mod-`p` highest-weight verification of
   every exhibited kernel; `v ∈ I(X_6)` by (★) on every monomial for each of the
-  seven new bites; `mult_pad = mult_red ⇒ D_P ≤ D_R` via transfer; and — the
+  ten new bites; `mult_pad = mult_red ⇒ D_P ≤ D_R` via transfer; and — the
   session's one new theorem — `mult_pad = mult_red` at **every** weight of
   degree 7, from `I(D_6^{per_3})_7 = 0` and Prop. 8(1).
 - **Measured, certified one-sidedly** (`rank_p ≤ rank_Q ≤ a`): every
@@ -301,7 +320,8 @@ how to get there.
   certificate at explicit integer points; every `mult = a` in
   `results/s43_per6.md`, whether by the dense route or by the injectivity
   certificate.  `a` by two routes at every cell.
-- **Measured, one-sided the other way:** the seven bites — `mult_pad ≤ a − k` by
+- **Measured, one-sided the other way:** the ten bites (eight at `δ = 8`, two
+  at `δ = 9`) — `mult_pad ≤ a − k` by
   (★) on the exhibited vectors, `mult_pad ≥ a − k` by rank-attaining
   certificates at `3a + 24` fresh points on a second seed and both primes.
   These are **mod-`p` vectors**; as at `(13,10,6,1,1,1)` in session 41, an exact
@@ -314,7 +334,7 @@ how to get there.
   (`balance ≤ 8` at `δ = 7`, `≤ 9` at `δ = 8`), which is where s30/s36's
   dimension heuristic would put a first det-side bite; every `λ_1 < δ`
   onset-only cell at all three degrees; the 10 remaining length-6 weights of
-  `I(D_6^{per_3})_8`; and 28 of the 52 reachable `δ = 9` cells.  Inside the
+  `I(D_6^{per_3})_8`; and 12 of the 52 reachable `δ = 9` cells.  Inside the
   frontier, by contrast, **nothing is left**: 123 of 123.  Coverage fractions in
   `results/s43_coverage.md` are of what *exists*, never of what fits.
 - **Regime, and the limit of the reading.**  Everything measured this session is
@@ -349,7 +369,7 @@ how to get there.
 
 ## 8. What next
 
-1. **Lift the eight new bites.**  Session 42's integer lift at each turns
+1. **Lift the ten new bites.**  Session 42's integer lift at each turns
    `mult_red ≤ a − k` from measured into proved, exactly as the integrator did
    for `(13,10,6,1,1,1)`.  Cheap, and it is what the `D = −2` cells need before
    anyone calls them two independent equations.
