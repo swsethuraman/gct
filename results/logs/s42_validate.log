@@ -1,0 +1,354 @@
+== (16, 4, 2, 2, 2, 2) d7: a=2 N_S=37448 n_chi=2493 n_red=1467 rows_red=31333 nnz_red=61741
+   p=2147483647: sparse nullity 0 (1s), full 2 (a=2) (21s), dense 0 [exact] (41.5s)
+   p=2147483629: sparse nullity 0 (1s), full 2 (a=2) (10s), dense 0 [exact] (43.0s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 8; 145.2s
+== (11, 4, 4, 4, 1) d6: a=2 N_S=11574 n_chi=2113 n_red=1611 rows_red=20650 nnz_red=60863
+   p=2147483647: sparse nullity 0 (2s), full 2 (a=2) (12s), dense 0 [exact] (45.7s)
+   p=2147483629: sparse nullity 0 (2s), full 2 (a=2) (12s), dense 0 [exact] (48.4s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 7; 125.5s
+== (14, 8, 2, 2, 2) d7: a=9 N_S=11875 n_chi=2600 n_red=1929 rows_red=17664 nnz_red=40215
+   p=2147483647: sparse nullity 0 (2s), full None (a=9) (0s), dense 0 [exact] (47.8s)
+   p=2147483629: sparse nullity 0 (1s), full None (a=9) (0s), dense 0 [exact] (25.9s)
+   -> mult_red 9 (banked 9) AGREE; h_pad 29; 82.9s
+== (4, 4, 4, 4, 4, 4) d6: a=1 N_S=1532489 n_chi=2804 n_red=2804 rows_red=296570 nnz_red=925060
+    Agg 2868x2804 assembled (22s; nrows 296570, max|M| 8, colfill 530)
+    rref: rank 2803, nullity 1 (28s)
+   p=2147483647: sparse nullity 1 (143s), full 1 (a=1) (113s), dense 1 [compressed] (28.0s)
+    Agg 2868x2804 assembled (34s; nrows 296570, max|M| 8, colfill 530)
+    rref: rank 2803, nullity 1 (43s)
+   p=2147483629: sparse nullity 1 (112s), full 1 (a=1) (111s), dense 1 [compressed] (43.0s)
+   -> mult_red 0 (banked 0) AGREE; h_pad 0; 1041.7s
+== (13, 9, 2, 2, 2) d7: a=6 N_S=14164 n_chi=3063 n_red=2411 rows_red=22272 nnz_red=51785
+== (13, 9, 2, 2, 2) d7: a=6 N_S=14164 n_chi=3063 n_red=2411 rows_red=22272 nnz_red=51785
+   p=2147483647: sparse nullity 0 (2s), full None (a=6) (0s), dense 0 [exact] (46.3s)
+   p=2147483629: sparse nullity 0 (1s), full None (a=6) (0s), dense 0 [exact] (46.4s)
+   -> mult_red 6 (banked 6) AGREE; h_pad 26; 108.7s
+== (12, 10, 2, 2, 2) d7: a=7 N_S=15771 n_chi=3414 n_red=2798 rows_red=25653 nnz_red=60528
+    Agg 2862x2798 assembled (3s; nrows 25653, max|M| 16, colfill 34)
+    rref: rank 2798, nullity 0 (8s)
+   p=2147483647: sparse nullity 0 (2s), full None (a=7) (0s), dense 0 [compressed] (8.0s)
+    Agg 2862x2798 assembled (3s; nrows 25653, max|M| 16, colfill 34)
+    rref: rank 2798, nullity 0 (8s)
+   p=2147483629: sparse nullity 0 (2s), full None (a=7) (0s), dense 0 [compressed] (7.8s)
+   -> mult_red 7 (banked 7) AGREE; h_pad 17; 20.0s
+== (15, 5, 2, 2, 2, 2) d7: a=2 N_S=64230 n_chi=4086 n_red=2718 rows_red=59849 nnz_red=122246
+    Agg 2782x2718 assembled (12s; nrows 59849, max|M| 20, colfill 75)
+    rref: rank 2718, nullity 0 (21s)
+   p=2147483647: sparse nullity 0 (2s), full 2 (a=2) (19s), dense 0 [compressed] (21.3s)
+    Agg 2782x2718 assembled (9s; nrows 59849, max|M| 20, colfill 75)
+    rref: rank 2718, nullity 0 (19s)
+   p=2147483629: sparse nullity 0 (3s), full 2 (a=2) (33s), dense 0 [compressed] (18.6s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 12; 114.3s
+== (15, 4, 4, 4, 1) d7: a=4 N_S=16239 n_chi=2966 n_red=2017 rows_red=25929 nnz_red=75819
+   p=2147483647: sparse nullity 0 (2s), full 4 (a=4) (39s), dense 0 [exact] (82.9s)
+   p=2147483629: sparse nullity 0 (2s), full 4 (a=4) (37s), dense 0 [exact] (77.0s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 13; 241.8s
+== (16, 5, 2, 2, 2, 1) d7: a=2 N_S=20850 n_chi=4394 n_red=2652 rows_red=28706 nnz_red=61240
+    Agg 2716x2652 assembled (6s; nrows 28706, max|M| 20, colfill 34)
+    rref: rank 2652, nullity 0 (14s)
+   p=2147483647: sparse nullity 0 (3s), full 2 (a=2) (34s), dense 0 [compressed] (14.2s)
+    Agg 2716x2652 assembled (6s; nrows 28706, max|M| 20, colfill 34)
+    rref: rank 2652, nullity 0 (14s)
+   p=2147483629: sparse nullity 0 (3s), full 2 (a=2) (34s), dense 0 [compressed] (14.0s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 10; 105.0s
+== (12, 7, 7, 1, 1) d7: a=7 N_S=14024 n_chi=2712 n_red=2389 rows_red=11795 nnz_red=42501
+   p=2147483647: sparse nullity 0 (2s), full None (a=7) (0s), dense 0 [exact] (41.6s)
+   p=2147483629: sparse nullity 0 (1s), full None (a=7) (0s), dense 0 [exact] (43.8s)
+   -> mult_red 7 (banked 7) AGREE; h_pad 10; 90.0s
+== (8, 4, 4, 4, 4) d6: a=2 N_S=94675 n_chi=4562 n_red=4289 rows_red=130152 nnz_red=403458
+    Agg 4353x4289 assembled (47s; nrows 130152, max|M| 12, colfill 141)
+    rref: rank 4288, nullity 1 (75s)
+   p=2147483647: sparse nullity 1 (74s), full 2 (a=2) (88s), dense 1 [compressed] (75.4s)
+    Agg 4353x4289 assembled (41s; nrows 130152, max|M| 12, colfill 141)
+    rref: rank 4288, nullity 1 (87s)
+   p=2147483629: sparse nullity 1 (83s), full 2 (a=2) (171s), dense 1 [compressed] (86.8s)
+   -> mult_red 1 (banked 1) AGREE; h_pad 1; 596.9s
+== (14, 6, 2, 2, 2, 2) d7: a=4 N_S=98298 n_chi=6148 n_red=4561 rows_red=100321 nnz_red=211302
+    Agg 4625x4561 assembled (40s; nrows 100321, max|M| 18, colfill 77)
+    rref: rank 4561, nullity 0 (77s)
+   p=2147483647: sparse nullity 0 (15s), full 4 (a=4) (217s), dense 0 [compressed] (77.3s)
+    Agg 4625x4561 assembled (54s; nrows 100321, max|M| 18, colfill 77)
+    rref: rank 4561, nullity 0 (134s)
+   p=2147483629: sparse nullity 0 (10s), full 4 (a=4) (223s), dense 0 [compressed] (134.1s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 17; 700.3s
+== (13, 8, 4, 1, 1, 1) d7: a=2 N_S=27213 n_chi=1844 n_red=1561 rows_red=5154 nnz_red=14001
+   p=2147483647: sparse nullity 0 (1s), full 2 (a=2) (7s), dense 0 [exact] (19.2s)
+   p=2147483629: sparse nullity 0 (1s), full 2 (a=2) (7s), dense 0 [exact] (14.7s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 5; 60.0s
+== (10, 7, 3, 3, 1) d6: a=2 N_S=9882 n_chi=4702 n_red=3907 rows_red=18652 nnz_red=54110
+    Agg 3971x3907 assembled (13s; nrows 18652, max|M| 12, colfill 19)
+    rref: rank 3907, nullity 0 (47s)
+   p=2147483647: sparse nullity 0 (6s), full 2 (a=2) (35s), dense 0 [compressed] (47.5s)
+    Agg 3971x3907 assembled (13s; nrows 18652, max|M| 12, colfill 19)
+    rref: rank 3907, nullity 0 (50s)
+   p=2147483629: sparse nullity 0 (6s), full 2 (a=2) (35s), dense 0 [compressed] (49.7s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 10; 180.4s
+== (9, 9, 8, 1, 1) d7: a=2 N_S=20299 n_chi=3969 n_red=3763 rows_red=16607 nnz_red=65838
+    Agg 3827x3763 assembled (14s; nrows 16607, max|M| 12, colfill 25)
+    rref: rank 3762, nullity 1 (49s)
+   p=2147483647: sparse nullity 1 (15s), full 2 (a=2) (27s), dense 1 [compressed] (49.1s)
+    Agg 3827x3763 assembled (9s; nrows 16607, max|M| 12, colfill 25)
+    rref: rank 3762, nullity 1 (32s)
+   p=2147483629: sparse nullity 1 (16s), full 2 (a=2) (22s), dense 1 [compressed] (32.1s)
+   -> mult_red 1 (banked 1) AGREE; h_pad 1; 165.5s
+== (10, 4, 4, 4, 2) d6: a=3 N_S=30870 n_chi=5588 n_red=4655 rows_red=61967 nnz_red=189822
+    Agg 4719x4655 assembled (25s; nrows 61967, max|M| 12, colfill 60)
+    rref: rank 4655, nullity 0 (67s)
+   p=2147483647: sparse nullity 0 (12s), full 3 (a=3) (114s), dense 0 [compressed] (66.8s)
+    Agg 4719x4655 assembled (23s; nrows 61967, max|M| 12, colfill 60)
+    rref: rank 4655, nullity 0 (62s)
+   p=2147483629: sparse nullity 0 (13s), full 3 (a=3) (110s), dense 0 [compressed] (62.4s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 6; 381.9s
+== (12, 9, 4, 1, 1, 1) d7: a=2 N_S=31812 n_chi=2199 n_red=1948 rows_red=6366 nnz_red=17970
+   p=2147483647: sparse nullity 0 (1s), full 2 (a=2) (4s), dense 0 [exact] (16.2s)
+   p=2147483629: sparse nullity 0 (1s), full 2 (a=2) (3s), dense 0 [exact] (16.1s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 4; 44.8s
+== (11, 6, 3, 2, 2) d6: a=3 N_S=10607 n_chi=5785 n_red=4401 rows_red=18348 nnz_red=48359
+    Agg 4465x4401 assembled (11s; nrows 18348, max|M| 12, colfill 16)
+    rref: rank 4401, nullity 0 (49s)
+   p=2147483647: sparse nullity 0 (5s), full 3 (a=3) (45s), dense 0 [compressed] (49.5s)
+    Agg 4465x4401 assembled (18s; nrows 18348, max|M| 12, colfill 16)
+    rref: rank 4401, nullity 0 (71s)
+   p=2147483629: sparse nullity 0 (6s), full 3 (a=3) (67s), dense 0 [compressed] (70.7s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 19; 244.4s
+== (15, 6, 2, 2, 2, 1) d7: a=3 N_S=32111 n_chi=6683 n_red=4549 rows_red=49000 nnz_red=109100
+    Agg 4613x4549 assembled (31s; nrows 49000, max|M| 20, colfill 35)
+    rref: rank 4549, nullity 0 (86s)
+   p=2147483647: sparse nullity 0 (13s), full 3 (a=3) (136s), dense 0 [compressed] (86.5s)
+== (15, 6, 2, 2, 2, 1) d7: a=3 N_S=32111 n_chi=6683 n_red=4549 rows_red=49000 nnz_red=109100
+    Agg 4613x4549 assembled (10s; nrows 49000, max|M| 20, colfill 35)
+    rref: rank 4549, nullity 0 (28s)
+   p=2147483647: sparse nullity 0 (5s), full 3 (a=3) (56s), dense 0 [compressed] (28.1s)
+    Agg 4613x4549 assembled (9s; nrows 49000, max|M| 20, colfill 35)
+    rref: rank 4549, nullity 0 (28s)
+   p=2147483629: sparse nullity 0 (4s), full 3 (a=3) (56s), dense 0 [compressed] (27.6s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 16; 198.7s
+== (11, 7, 7, 1, 1, 1) d7: a=2 N_S=65117 n_chi=2488 n_red=2326 rows_red=13767 nnz_red=45497
+   p=2147483647: sparse nullity 0 (1s), full 2 (a=2) (4s), dense 0 [exact] (25.3s)
+   p=2147483629: sparse nullity 0 (1s), full 2 (a=2) (4s), dense 0 [exact] (24.3s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 3; 63.5s
+== (8, 8, 4, 2, 2) d6: a=3 N_S=22475 n_chi=6247 n_red=5604 rows_red=31990 nnz_red=101313
+    Agg 5668x5604 assembled (11s; nrows 31990, max|M| 12, colfill 26)
+    rref: rank 5604, nullity 0 (43s)
+   p=2147483647: sparse nullity 0 (5s), full 3 (a=3) (34s), dense 0 [compressed] (42.9s)
+    Agg 5668x5604 assembled (12s; nrows 31990, max|M| 12, colfill 26)
+    rref: rank 5604, nullity 0 (44s)
+   p=2147483629: sparse nullity 0 (5s), full 3 (a=3) (34s), dense 0 [compressed] (43.8s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 8; 167.8s
+== (13, 7, 2, 2, 2, 2) d7: a=3 N_S=135160 n_chi=8245 n_red=6633 rows_red=148239 nnz_red=319328
+    Agg 6697x6633 assembled (33s; nrows 148239, max|M| 16, colfill 78)
+    rref: rank 6633, nullity 0 (89s)
+   p=2147483647: sparse nullity 0 (11s), full 3 (a=3) (102s), dense 0 [compressed] (89.1s)
+    Agg 6697x6633 assembled (31s; nrows 148239, max|M| 16, colfill 78)
+    rref: rank 6633, nullity 0 (86s)
+   p=2147483629: sparse nullity 0 (30s), full 3 (a=3) (98s), dense 0 [compressed] (85.9s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 19; 426.9s
+== (11, 10, 5, 1, 1) d7: a=6 N_S=11555 n_chi=4398 n_red=3886 rows_red=9863 nnz_red=35123
+    Agg 3950x3886 assembled (4s; nrows 9863, max|M| 15, colfill 13)
+    rref: rank 3886, nullity 0 (15s)
+   p=2147483647: sparse nullity 0 (1s), full None (a=6) (0s), dense 0 [compressed] (15.4s)
+    Agg 3950x3886 assembled (4s; nrows 9863, max|M| 15, colfill 13)
+    rref: rank 3886, nullity 0 (16s)
+   p=2147483629: sparse nullity 0 (1s), full None (a=6) (0s), dense 0 [compressed] (15.7s)
+   -> mult_red 6 (banked 6) AGREE; h_pad 14; 36.1s
+== (13, 9, 2, 2, 1, 1) d7: a=2 N_S=23148 n_chi=4747 n_red=3854 rows_red=20497 nnz_red=51772
+    Agg 3918x3854 assembled (5s; nrows 20497, max|M| 16, colfill 18)
+    rref: rank 3854, nullity 0 (15s)
+   p=2147483647: sparse nullity 0 (2s), full 2 (a=2) (12s), dense 0 [compressed] (15.2s)
+    Agg 3918x3854 assembled (7s; nrows 20497, max|M| 16, colfill 18)
+    rref: rank 3854, nullity 0 (24s)
+   p=2147483629: sparse nullity 0 (2s), full 2 (a=2) (17s), dense 0 [compressed] (23.8s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 5; 73.6s
+== (13, 7, 5, 1, 1, 1) d7: a=3 N_S=34984 n_chi=2455 n_red=2082 rows_red=6613 nnz_red=19022
+   p=2147483647: sparse nullity 0 (1s), full 3 (a=3) (5s), dense 0 [exact] (12.8s)
+   p=2147483629: sparse nullity 0 (1s), full 3 (a=3) (5s), dense 0 [exact] (13.0s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 8; 39.5s
+== (11, 11, 3, 2, 1) d7: a=4 N_S=12310 n_chi=6101 n_red=5141 rows_red=22400 nnz_red=80783
+    Agg 5205x5141 assembled (13s; nrows 22400, max|M| 15, colfill 21)
+    rref: rank 5141, nullity 0 (54s)
+   p=2147483647: sparse nullity 0 (5s), full 4 (a=4) (59s), dense 0 [compressed] (54.1s)
+    Agg 5205x5141 assembled (13s; nrows 22400, max|M| 15, colfill 21)
+    rref: rank 5141, nullity 0 (53s)
+   p=2147483629: sparse nullity 0 (5s), full 4 (a=4) (59s), dense 0 [compressed] (53.4s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 12; 237.2s
+== (8, 8, 5, 2, 1) d6: a=2 N_S=12445 n_chi=6294 n_red=5669 rows_red=25731 nnz_red=91101
+    Agg 5733x5669 assembled (16s; nrows 25731, max|M| 12, colfill 23)
+    rref: rank 5669, nullity 0 (66s)
+   p=2147483647: sparse nullity 0 (7s), full 2 (a=2) (32s), dense 0 [compressed] (66.3s)
+    Agg 5733x5669 assembled (17s; nrows 25731, max|M| 12, colfill 23)
+    rref: rank 5669, nullity 0 (66s)
+   p=2147483629: sparse nullity 0 (6s), full 2 (a=2) (34s), dense 0 [compressed] (66.1s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 8; 213.0s
+== (9, 6, 6, 2, 1) d6: a=2 N_S=12788 n_chi=6501 n_red=5797 rows_red=28601 nnz_red=99882
+    Agg 5861x5797 assembled (18s; nrows 28601, max|M| 12, colfill 25)
+    rref: rank 5797, nullity 0 (75s)
+   p=2147483647: sparse nullity 0 (7s), full 2 (a=2) (37s), dense 0 [compressed] (74.9s)
+    Agg 5861x5797 assembled (20s; nrows 28601, max|M| 12, colfill 25)
+    rref: rank 5797, nullity 0 (93s)
+   p=2147483629: sparse nullity 0 (9s), full 2 (a=2) (49s), dense 0 [compressed] (92.8s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 8; 271.3s
+== (10, 7, 3, 2, 2) d6: a=2 N_S=13065 n_chi=7102 n_red=5837 rows_red=24304 nnz_red=66461
+    Agg 5901x5837 assembled (21s; nrows 24304, max|M| 12, colfill 16)
+    rref: rank 5837, nullity 0 (97s)
+   p=2147483647: sparse nullity 0 (7s), full 2 (a=2) (49s), dense 0 [compressed] (97.0s)
+    Agg 5901x5837 assembled (20s; nrows 24304, max|M| 12, colfill 16)
+    rref: rank 5837, nullity 0 (94s)
+   p=2147483629: sparse nullity 0 (8s), full 2 (a=2) (50s), dense 0 [compressed] (94.0s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 17; 307.3s
+== (12, 8, 6, 1, 1) d7: a=7 N_S=13143 n_chi=5001 n_red=4387 rows_red=10930 nnz_red=39505
+    Agg 4451x4387 assembled (11s; nrows 10930, max|M| 16, colfill 13)
+    rref: rank 4387, nullity 0 (43s)
+   p=2147483647: sparse nullity 0 (3s), full None (a=7) (0s), dense 0 [compressed] (43.0s)
+    Agg 4451x4387 assembled (11s; nrows 10930, max|M| 16, colfill 13)
+    rref: rank 4387, nullity 0 (42s)
+   p=2147483629: sparse nullity 0 (3s), full None (a=7) (0s), dense 0 [compressed] (42.2s)
+   -> mult_red 7 (banked 7) AGREE; h_pad 21; 93.2s
+== (11, 5, 4, 2, 2) d6: a=3 N_S=13363 n_chi=7271 n_red=5560 rows_red=22825 nnz_red=61883
+    Agg 5624x5560 assembled (21s; nrows 22825, max|M| 12, colfill 16)
+    rref: rank 5560, nullity 0 (87s)
+   p=2147483647: sparse nullity 0 (7s), full 3 (a=3) (72s), dense 0 [compressed] (86.7s)
+    Agg 5624x5560 assembled (19s; nrows 22825, max|M| 12, colfill 16)
+    rref: rank 5560, nullity 0 (86s)
+   p=2147483629: sparse nullity 0 (7s), full 3 (a=3) (72s), dense 0 [compressed] (85.9s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 18; 331.4s
+== (12, 8, 2, 2, 2, 2) d7: a=4 N_S=169030 n_chi=10243 n_red=8774 rows_red=195455 nnz_red=428302
+    Agg 8838x8774 assembled (127s; nrows 195455, max|M| 16, colfill 79)
+    rref: rank 8774, nullity 0 (400s)
+   p=2147483647: sparse nullity 0 (113s), full None (a=4) (0s), dense 0 [compressed] (400.1s)
+    Agg 8838x8774 assembled (145s; nrows 195455, max|M| 16, colfill 79)
+    rref: rank 8774, nullity 0 (322s)
+   p=2147483629: sparse nullity 0 (50s), full None (a=4) (0s), dense 0 [compressed] (321.5s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 16; 914.2s
+== (12, 8, 5, 1, 1, 1) d7: a=4 N_S=43371 n_chi=3106 n_red=2777 rows_red=8713 nnz_red=26311
+    Agg 2841x2777 assembled (3s; nrows 8713, max|M| 16, colfill 13)
+    rref: rank 2777, nullity 0 (10s)
+   p=2147483647: sparse nullity 0 (1s), full 4 (a=4) (10s), dense 0 [compressed] (10.5s)
+    Agg 2841x2777 assembled (3s; nrows 8713, max|M| 16, colfill 13)
+    rref: rank 2777, nullity 0 (11s)
+   p=2147483629: sparse nullity 0 (1s), full 4 (a=4) (12s), dense 0 [compressed] (10.7s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 7; 49.8s
+== (9, 8, 3, 2, 2) d6: a=2 N_S=14477 n_chi=7860 n_red=6724 rows_red=28165 nnz_red=78424
+    Agg 6788x6724 assembled (23s; nrows 28165, max|M| 12, colfill 16)
+    rref: rank 6724, nullity 0 (105s)
+   p=2147483647: sparse nullity 0 (8s), full 2 (a=2) (47s), dense 0 [compressed] (105.5s)
+    Agg 6788x6724 assembled (22s; nrows 28165, max|M| 12, colfill 16)
+    rref: rank 6724, nullity 0 (104s)
+   p=2147483629: sparse nullity 0 (8s), full 2 (a=2) (46s), dense 0 [compressed] (104.1s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 11; 319.9s
+== (11, 9, 6, 1, 1) d7: a=9 N_S=14837 n_chi=5687 n_red=5146 rows_red=12812 nnz_red=47583
+    Agg 5210x5146 assembled (11s; nrows 12812, max|M| 12, colfill 13)
+    rref: rank 5146, nullity 0 (52s)
+   p=2147483647: sparse nullity 0 (3s), full None (a=9) (0s), dense 0 [compressed] (51.9s)
+    Agg 5210x5146 assembled (11s; nrows 12812, max|M| 12, colfill 13)
+    rref: rank 5146, nullity 0 (51s)
+   p=2147483629: sparse nullity 0 (4s), full None (a=9) (0s), dense 0 [compressed] (51.1s)
+   -> mult_red 9 (banked 9) AGREE; h_pad 16; 111.7s
+== (15, 6, 3, 2, 2) d7: a=8 N_S=14862 n_chi=8123 n_red=5566 rows_red=23173 nnz_red=60792
+    Agg 5630x5566 assembled (16s; nrows 23173, max|M| 20, colfill 16)
+    rref: rank 5566, nullity 0 (72s)
+   p=2147483647: sparse nullity 0 (5s), full None (a=8) (0s), dense 0 [compressed] (72.1s)
+    Agg 5630x5566 assembled (15s; nrows 23173, max|M| 20, colfill 16)
+    rref: rank 5566, nullity 0 (83s)
+   p=2147483629: sparse nullity 0 (5s), full None (a=8) (0s), dense 0 [compressed] (82.7s)
+   -> mult_red 8 (banked 8) AGREE; h_pad 36; 165.9s
+== (10, 5, 5, 3, 1) d6: a=2 N_S=14912 n_chi=7306 n_red=6184 rows_red=32332 nnz_red=106460
+    Agg 6248x6184 assembled (28s; nrows 32332, max|M| 12, colfill 25)
+    rref: rank 6184, nullity 0 (118s)
+   p=2147483647: sparse nullity 0 (11s), full 2 (a=2) (66s), dense 0 [compressed] (117.7s)
+    Agg 6248x6184 assembled (29s; nrows 32332, max|M| 12, colfill 25)
+    rref: rank 6184, nullity 0 (115s)
+   p=2147483629: sparse nullity 0 (11s), full 2 (a=2) (63s), dense 0 [compressed] (115.2s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 9; 385.8s
+== (14, 7, 2, 2, 2, 1) d7: a=4 N_S=44792 n_chi=9219 n_red=6926 rows_red=74381 nnz_red=171352
+    Agg 6990x6926 assembled (50s; nrows 74381, max|M| 18, colfill 36)
+    rref: rank 6926, nullity 0 (171s)
+   p=2147483647: sparse nullity 0 (22s), full 4 (a=4) (310s), dense 0 [compressed] (170.9s)
+    Agg 6990x6926 assembled (59s; nrows 74381, max|M| 18, colfill 36)
+    rref: rank 6926, nullity 0 (171s)
+   p=2147483629: sparse nullity 0 (22s), full 4 (a=4) (303s), dense 0 [compressed] (171.4s)
+   -> mult_red 4 (banked 4) AGREE; h_pad 19; 1005.5s
+== (14, 7, 3, 3, 1) d7: a=7 N_S=15542 n_chi=7398 n_red=5648 rows_red=26700 nnz_red=78046
+    Agg 5712x5648 assembled (15s; nrows 26700, max|M| 16, colfill 19)
+    rref: rank 5648, nullity 0 (61s)
+   p=2147483647: sparse nullity 0 (6s), full None (a=7) (0s), dense 0 [compressed] (61.3s)
+    Agg 5712x5648 assembled (16s; nrows 26700, max|M| 16, colfill 19)
+    rref: rank 5648, nullity 0 (54s)
+   p=2147483629: sparse nullity 0 (5s), full None (a=7) (0s), dense 0 [compressed] (53.9s)
+   -> mult_red 7 (banked 7) AGREE; h_pad 26; 127.4s
+== (14, 5, 5, 2, 2) d7: a=2 N_S=31165 n_chi=8151 n_red=6174 rows_red=42356 nnz_red=126966
+    Agg 6238x6174 assembled (13s; nrows 42356, max|M| 16, colfill 30)
+    rref: rank 6174, nullity 0 (55s)
+   p=2147483647: sparse nullity 0 (6s), full 2 (a=2) (47s), dense 0 [compressed] (55.3s)
+    Agg 6238x6174 assembled (13s; nrows 42356, max|M| 16, colfill 30)
+    rref: rank 6174, nullity 0 (83s)
+   p=2147483629: sparse nullity 0 (6s), full 2 (a=2) (47s), dense 0 [compressed] (83.0s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 20; 247.3s
+== (8, 6, 6, 2, 2) d6: a=3 N_S=31356 n_chi=8687 n_red=8090 rows_red=53080 nnz_red=175269
+    Agg 8154x8090 assembled (52s; nrows 53080, max|M| 12, colfill 32)
+    rref: rank 8090, nullity 0 (178s)
+   p=2147483647: sparse nullity 0 (26s), full 3 (a=3) (148s), dense 0 [compressed] (178.4s)
+    Agg 8154x8090 assembled (25s; nrows 53080, max|M| 12, colfill 32)
+    rref: rank 8090, nullity 0 (114s)
+   p=2147483629: sparse nullity 0 (11s), full 3 (a=3) (77s), dense 0 [compressed] (114.3s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 6; 559.1s
+== (14, 4, 4, 4, 2) d7: a=6 N_S=48844 n_chi=8812 n_red=6580 rows_red=87675 nnz_red=268349
+    Agg 6644x6580 assembled (20s; nrows 87675, max|M| 16, colfill 60)
+    rref: rank 6580, nullity 0 (74s)
+   p=2147483647: sparse nullity 0 (12s), full None (a=6) (0s), dense 0 [compressed] (73.9s)
+    Agg 6644x6580 assembled (20s; nrows 87675, max|M| 16, colfill 60)
+    rref: rank 6580, nullity 0 (74s)
+   p=2147483629: sparse nullity 0 (14s), full None (a=6) (0s), dense 0 [compressed] (74.2s)
+   -> mult_red 6 (banked 6) AGREE; h_pad 15; 177.1s
+== (10, 5, 5, 2, 1, 1) d6: a=2 N_S=32721 n_chi=6479 n_red=5483 rows_red=30041 nnz_red=93336
+    Agg 5547x5483 assembled (9s; nrows 30041, max|M| 12, colfill 24)
+    rref: rank 5483, nullity 0 (40s)
+   p=2147483647: sparse nullity 0 (4s), full 2 (a=2) (25s), dense 0 [compressed] (39.5s)
+    Agg 5547x5483 assembled (10s; nrows 30041, max|M| 12, colfill 24)
+    rref: rank 5483, nullity 0 (41s)
+   p=2147483629: sparse nullity 0 (4s), full 2 (a=2) (25s), dense 0 [compressed] (40.6s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 7; 141.4s
+== (11, 9, 5, 1, 1, 1) d7: a=3 N_S=49231 n_chi=3587 n_red=3315 rows_red=10377 nnz_red=32209
+    Agg 3379x3315 assembled (3s; nrows 10377, max|M| 12, colfill 13)
+    rref: rank 3315, nullity 0 (11s)
+   p=2147483647: sparse nullity 0 (1s), full 3 (a=3) (7s), dense 0 [compressed] (10.6s)
+    Agg 3379x3315 assembled (3s; nrows 10377, max|M| 12, colfill 13)
+    rref: rank 3315, nullity 0 (10s)
+   p=2147483629: sparse nullity 0 (1s), full 3 (a=3) (7s), dense 0 [compressed] (10.5s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 5; 40.2s
+== (11, 8, 7, 1, 1) d7: a=6 N_S=16757 n_chi=6452 n_red=5907 rows_red=14696 nnz_red=55313
+    Agg 5971x5907 assembled (9s; nrows 14696, max|M| 15, colfill 13)
+    rref: rank 5907, nullity 0 (47s)
+   p=2147483647: sparse nullity 0 (3s), full None (a=6) (0s), dense 0 [compressed] (47.1s)
+    Agg 5971x5907 assembled (9s; nrows 14696, max|M| 15, colfill 13)
+    rref: rank 5907, nullity 0 (47s)
+   p=2147483629: sparse nullity 0 (3s), full None (a=6) (0s), dense 0 [compressed] (47.3s)
+   -> mult_red 6 (banked 6) AGREE; h_pad 12; 101.3s
+== (12, 7, 6, 1, 1, 1) d7: a=2 N_S=50517 n_chi=3672 n_red=3298 rows_red=10151 nnz_red=31668
+    Agg 3362x3298 assembled (3s; nrows 10151, max|M| 16, colfill 14)
+    rref: rank 3298, nullity 0 (10s)
+   p=2147483647: sparse nullity 0 (1s), full 2 (a=2) (5s), dense 0 [compressed] (10.4s)
+    Agg 3362x3298 assembled (3s; nrows 10151, max|M| 16, colfill 14)
+    rref: rank 3298, nullity 0 (10s)
+   p=2147483629: sparse nullity 0 (1s), full 2 (a=2) (5s), dense 0 [compressed] (10.0s)
+   -> mult_red 2 (banked 2) AGREE; h_pad 4; 35.5s
+== (10, 5, 4, 4, 1) d6: a=3 N_S=17075 n_chi=8773 n_red=7382 rows_red=34924 nnz_red=110782
+    Agg 7446x7382 assembled (17s; nrows 34924, max|M| 12, colfill 21)
+    rref: rank 7382, nullity 0 (89s)
+   p=2147483647: sparse nullity 0 (7s), full 3 (a=3) (61s), dense 0 [compressed] (89.0s)
+    Agg 7446x7382 assembled (17s; nrows 34924, max|M| 12, colfill 21)
+    rref: rank 7382, nullity 0 (89s)
+   p=2147483629: sparse nullity 0 (7s), full 3 (a=3) (61s), dense 0 [compressed] (89.0s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 12; 315.0s
+== (12, 4, 4, 4, 4) d7: a=4 N_S=205616 n_chi=9738 n_red=8427 rows_red=257713 nnz_red=812687
+    Agg 8491x8427 assembled (139s; nrows 257713, max|M| 16, colfill 147)
+    rref: rank 8426, nullity 1 (306s)
+   p=2147483647: sparse nullity 1 (63s), full 4 (a=4) (905s), dense 1 [compressed] (305.6s)
+    Agg 8491x8427 assembled (115s; nrows 257713, max|M| 16, colfill 147)
+    rref: rank 8426, nullity 1 (278s)
+   p=2147483629: sparse nullity 1 (91s), full 4 (a=4) (348s), dense 1 [compressed] (277.8s)
+   -> mult_red 3 (banked 3) AGREE; h_pad 4; 2005.4s
+== (10, 6, 4, 2, 2) d6: a=6 N_S=17932 n_chi=9743 n_red=8118 rows_red=32960 nnz_red=93812
+    Agg 8182x8118 assembled (32s; nrows 32960, max|M| 12, colfill 17)
+    rref: rank 8118, nullity 0 (180s)
+   p=2147483647: sparse nullity 0 (11s), full None (a=6) (0s), dense 0 [compressed] (179.8s)
+    Agg 8182x8118 assembled (32s; nrows 32960, max|M| 12, colfill 17)
