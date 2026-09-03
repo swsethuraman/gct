@@ -1,1 +1,2 @@
 2026-09-03: the session's container was resumed at 04:53; every background worker was terminated by that resume. The claim queue's pid-aware reconcile released the one live claim (8_18_5_5_2_1_1) and the sweep resumed from the ledger with no cell lost.
+2026-09-03: the container was suspended at ~13:20 and resumed at 15:02 (about 1h40m of wall clock lost). Workers restarted by /root/s43/resume.sh; the claim queue's pid-aware reconcile released the live claim and the sweep resumed on the same cell, (11,10,8,1,1,1) delta=8, from the ledger. No cell lost.

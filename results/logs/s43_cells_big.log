@@ -441,3 +441,168 @@
   p=2147483629: a=11 rank(R)=14923 mult={'det': 11, 'pad': 11} npts=19 route=inplace (1566s, VmHWM 2.88 GB)
   lam=(16, 4, 3, 2, 2, 1): N_S=28341 |Stab|=2 n_chi=15318 (orbits dropped: 0)
     E_01: |H|=2 canonical rows 7827 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=2 canonical rows 11308 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=1 canonical rows 18099 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 21498 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 13176 (obstructed fixed targets cancelled: 0)
+    Agg 15382x15318 assembled into flint (85s; nrows 71908, max|M| 16, max column fill 17); rref in place ...
+    rref: rank 15317, dim ker 1 (721s); reading pivots ...
+    kernel: 1 vectors (721s)
+  p=2147483647: a=1 rank(R)=15317 mult={'det': 1, 'pad': 1} npts=9 route=inplace (725s, VmHWM 2.81 GB)
+    Agg 15382x15318 assembled into flint (88s; nrows 71908, max|M| 16, max column fill 17); rref in place ...
+    rref: rank 15317, dim ker 1 (729s); reading pivots ...
+    kernel: 1 vectors (729s)
+  p=2147483629: a=1 rank(R)=15317 mult={'det': 1, 'pad': 1} npts=9 route=inplace (1455s, VmHWM 2.83 GB)
+  lam=(17, 8, 2, 2, 2, 1): N_S=75739 |Stab|=6 n_chi=15557 (orbits dropped: 0)
+    E_01: |H|=6 canonical rows 11354 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=2 canonical rows 16678 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=1 canonical rows 57118 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 57118 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=2 canonical rows 18856 (obstructed fixed targets cancelled: 0)
+    Agg 15621x15557 assembled into flint (108s; nrows 161124, max|M| 20, max column fill 37); rref in place ...
+    rref: rank 15549, dim ker 8 (761s); reading pivots ...
+    kernel: 8 vectors (762s)
+  p=2147483647: a=8 rank(R)=15549 mult={'det': 8, 'pad': 8} npts=16 route=inplace (774s, VmHWM 2.94 GB)
+    Agg 15621x15557 assembled into flint (111s; nrows 161124, max|M| 20, max column fill 37); rref in place ...
+    rref: rank 15549, dim ker 8 (782s); reading pivots ...
+    kernel: 8 vectors (782s)
+  p=2147483629: a=8 rank(R)=15549 mult={'det': 8, 'pad': 8} npts=16 route=inplace (1562s, VmHWM 2.96 GB)
+  lam=(18, 7, 3, 2, 1, 1): N_S=41441 |Stab|=2 n_chi=16157 (orbits dropped: 9127)
+    E_01: |H|=2 canonical rows 10762 (obstructed fixed targets cancelled: 1918)
+    E_12: |H|=2 canonical rows 9136 (obstructed fixed targets cancelled: 912)
+    E_23: |H|=2 canonical rows 10213 (obstructed fixed targets cancelled: 453)
+    E_34: |H|=1 canonical rows 18675 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 16221x16157 assembled into flint (86s; nrows 48786, max|M| 24, max column fill 13); rref in place ...
+    rref: rank 16152, dim ker 5 (815s); reading pivots ...
+    kernel: 5 vectors (815s)
+  p=2147483647: a=5 rank(R)=16152 mult={'det': 5, 'pad': 5} npts=13 route=inplace (820s, VmHWM 3.11 GB)
+    Agg 16221x16157 assembled into flint (86s; nrows 48786, max|M| 24, max column fill 13); rref in place ...
+    rref: rank 16152, dim ker 5 (810s); reading pivots ...
+    kernel: 5 vectors (810s)
+  p=2147483629: a=5 rank(R)=16152 mult={'det': 5, 'pad': 5} npts=13 route=inplace (1633s, VmHWM 3.14 GB)
+  lam=(12, 9, 8, 1, 1, 1): N_S=210553 |Stab|=6 n_chi=16571 (orbits dropped: 39947)
+    E_01: |H|=6 canonical rows 13848 (obstructed fixed targets cancelled: 20556)
+    E_12: |H|=6 canonical rows 14713 (obstructed fixed targets cancelled: 17367)
+    E_23: |H|=2 canonical rows 19343 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 16635x16571 assembled into flint (90s; nrows 47904, max|M| 16, max column fill 16); rref in place ...
+    rref: rank 16565, dim ker 6 (885s); reading pivots ...
+    kernel: 6 vectors (885s)
+  p=2147483647: a=6 rank(R)=16565 mult={'det': 6, 'pad': 4} npts=14 route=inplace (910s, VmHWM 3.34 GB)
+    Agg 16635x16571 assembled into flint (110s; nrows 47904, max|M| 16, max column fill 16); rref in place ...
+    rref: rank 16565, dim ker 6 (904s); reading pivots ...
+    kernel: 6 vectors (905s)
+  p=2147483629: a=6 rank(R)=16565 mult={'det': 6, 'pad': 4} npts=14 route=inplace (1821s, VmHWM 3.34 GB)
+  lam=(12, 9, 8, 1, 1, 1): N_S=210553 |Stab|=6 n_chi=16571 (orbits dropped: 39947)
+    E_01: |H|=6 canonical rows 13848 (obstructed fixed targets cancelled: 20556)
+    E_12: |H|=6 canonical rows 14713 (obstructed fixed targets cancelled: 17367)
+    E_23: |H|=2 canonical rows 19343 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 16635x16571 assembled into flint (93s; nrows 47904, max|M| 16, max column fill 16); rref in place ...
+    rref: rank 16565, dim ker 6 (883s); reading pivots ...
+    kernel: 6 vectors (883s)
+  p=2147483647: a=6 rank(R)=16565 mult={'det': 6, 'pad': 4} npts=42 route=inplace (922s, VmHWM 3.34 GB)
+    Agg 16635x16571 assembled into flint (98s; nrows 47904, max|M| 16, max column fill 16); rref in place ...
+    rref: rank 16565, dim ker 6 (893s); reading pivots ...
+    kernel: 6 vectors (893s)
+  p=2147483629: a=6 rank(R)=16565 mult={'det': 6, 'pad': 4} npts=42 route=inplace (1834s, VmHWM 3.37 GB)
+  lam=(20, 4, 3, 2, 2, 1): N_S=30587 |Stab|=2 n_chi=16577 (orbits dropped: 0)
+    E_01: |H|=2 canonical rows 8160 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=2 canonical rows 12303 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=1 canonical rows 19624 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 23251 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 14301 (obstructed fixed targets cancelled: 0)
+    Agg 16641x16577 assembled into flint (101s; nrows 77639, max|M| 16, max column fill 17); rref in place ...
+    rref: rank 16576, dim ker 1 (864s); reading pivots ...
+    kernel: 1 vectors (865s)
+  p=2147483647: a=1 rank(R)=16576 mult={'det': 1, 'pad': 1} npts=9 route=inplace (869s, VmHWM 3.30 GB)
+    Agg 16641x16577 assembled into flint (99s; nrows 77639, max|M| 16, max column fill 17); rref in place ...
+    rref: rank 16576, dim ker 1 (866s); reading pivots ...
+    kernel: 1 vectors (866s)
+  p=2147483629: a=1 rank(R)=16576 mult={'det': 1, 'pad': 1} npts=9 route=inplace (1736s, VmHWM 3.31 GB)
+  lam=(13, 8, 3, 2, 1, 1): N_S=43058 |Stab|=2 n_chi=16980 (orbits dropped: 9098)
+    E_01: |H|=2 canonical rows 13250 (obstructed fixed targets cancelled: 1875)
+    E_12: |H|=2 canonical rows 8984 (obstructed fixed targets cancelled: 969)
+    E_23: |H|=2 canonical rows 10655 (obstructed fixed targets cancelled: 463)
+    E_34: |H|=1 canonical rows 19228 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 17044x16980 assembled into flint (97s; nrows 52117, max|M| 16, max column fill 14); rref in place ...
+    rref: rank 16975, dim ker 5 (945s); reading pivots ...
+    kernel: 5 vectors (945s)
+  p=2147483647: a=5 rank(R)=16975 mult={'det': 5, 'pad': 5} npts=13 route=inplace (950s, VmHWM 3.42 GB)
+    Agg 17044x16980 assembled into flint (98s; nrows 52117, max|M| 16, max column fill 14); rref in place ...
+    rref: rank 16975, dim ker 5 (951s); reading pivots ...
+    kernel: 5 vectors (951s)
+  p=2147483629: a=5 rank(R)=16975 mult={'det': 5, 'pad': 5} npts=13 route=inplace (1904s, VmHWM 3.42 GB)
+  lam=(19, 4, 4, 2, 2, 1): N_S=63085 |Stab|=4 n_chi=17472 (orbits dropped: 0)
+    E_01: |H|=2 canonical rows 16577 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=2 canonical rows 29705 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=1 canonical rows 35111 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=2 canonical rows 24404 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=2 canonical rows 14980 (obstructed fixed targets cancelled: 0)
+    Agg 17536x17472 assembled into flint (130s; nrows 120777, max|M| 16, max column fill 30); rref in place ...
+    rref: rank 17469, dim ker 3 (1027s); reading pivots ...
+    kernel: 3 vectors (1028s)
+  p=2147483647: a=3 rank(R)=17469 mult={'det': 3, 'pad': 3} npts=11 route=inplace (1037s, VmHWM 3.63 GB)
+    Agg 17536x17472 assembled into flint (121s; nrows 120777, max|M| 16, max column fill 30); rref in place ...
+    rref: rank 17469, dim ker 3 (1025s); reading pivots ...
+    kernel: 3 vectors (1025s)
+  p=2147483629: a=3 rank(R)=17469 mult={'det': 3, 'pad': 3} npts=11 route=inplace (2066s, VmHWM 3.63 GB)
+  lam=(14, 4, 4, 2, 2, 2): N_S=172137 |Stab|=12 n_chi=17858 (orbits dropped: 0)
+    E_01: |H|=6 canonical rows 17907 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=6 canonical rows 30037 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=2 canonical rows 50195 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=2 canonical rows 65778 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=2 canonical rows 65778 (obstructed fixed targets cancelled: 0)
+    Agg 17922x17858 assembled into flint (159s; nrows 229695, max|M| 18, max column fill 50); rref in place ...
+    rref: rank 17855, dim ker 3 (1106s); reading pivots ...
+    kernel: 3 vectors (1106s)
+  p=2147483647: a=3 rank(R)=17855 mult={'det': 3, 'pad': 3} npts=11 route=inplace (1130s, VmHWM 3.91 GB)
+    Agg 17922x17858 assembled into flint (162s; nrows 229695, max|M| 18, max column fill 50); rref in place ...
+    rref: rank 17855, dim ker 3 (1105s); reading pivots ...
+    kernel: 3 vectors (1105s)
+  p=2147483629: a=3 rank(R)=17855 mult={'det': 3, 'pad': 3} npts=11 route=inplace (2243s, VmHWM 3.91 GB)
+  lam=(15, 4, 3, 2, 2, 2): N_S=88011 |Stab|=6 n_chi=17907 (orbits dropped: 0)
+    E_01: |H|=6 canonical rows 9221 (obstructed fixed targets cancelled: 0)
+    E_12: |H|=6 canonical rows 13177 (obstructed fixed targets cancelled: 0)
+    E_23: |H|=2 canonical rows 29833 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 66335 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 66335 (obstructed fixed targets cancelled: 0)
+    Agg 17971x17907 assembled into flint (139s; nrows 184901, max|M| 18, max column fill 35); rref in place ...
+    rref: rank 17906, dim ker 1 (1134s); reading pivots ...
+    kernel: 1 vectors (1134s)
+  p=2147483647: a=1 rank(R)=17906 mult={'det': 1, 'pad': 1} npts=9 route=inplace (1145s, VmHWM 3.89 GB)
+    Agg 17971x17907 assembled into flint (141s; nrows 184901, max|M| 18, max column fill 35); rref in place ...
+    rref: rank 17906, dim ker 1 (1147s); reading pivots ...
+    kernel: 1 vectors (1147s)
+  p=2147483629: a=1 rank(R)=17906 mult={'det': 1, 'pad': 1} npts=9 route=inplace (2295s, VmHWM 3.89 GB)
+  lam=(11, 10, 8, 1, 1, 1): N_S=228475 |Stab|=6 n_chi=18103 (orbits dropped: 43045)
+    E_01: |H|=6 canonical rows 16571 (obstructed fixed targets cancelled: 22452)
+    E_12: |H|=6 canonical rows 15347 (obstructed fixed targets cancelled: 19551)
+    E_23: |H|=2 canonical rows 20969 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 18167x18103 assembled into flint (116s; nrows 52887, max|M| 15, max column fill 16); rref in place ...
+    rref: rank 18099, dim ker 4 (1135s); reading pivots ...
+    kernel: 4 vectors (1135s)
+  p=2147483647: a=4 rank(R)=18099 mult={'det': 4, 'pad': 2} npts=12 route=inplace (1160s, VmHWM 3.92 GB)
+    Agg 18167x18103 assembled into flint (112s; nrows 52887, max|M| 15, max column fill 16); rref in place ...
+    rref: rank 18099, dim ker 4 (1135s); reading pivots ...
+    kernel: 4 vectors (1135s)
+  p=2147483629: a=4 rank(R)=18099 mult={'det': 4, 'pad': 2} npts=12 route=inplace (2302s, VmHWM 3.92 GB)
+  lam=(11, 10, 8, 1, 1, 1): N_S=228475 |Stab|=6 n_chi=18103 (orbits dropped: 43045)
+    E_01: |H|=6 canonical rows 16571 (obstructed fixed targets cancelled: 22452)
+    E_12: |H|=6 canonical rows 15347 (obstructed fixed targets cancelled: 19551)
+    E_23: |H|=2 canonical rows 20969 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    Agg 18167x18103 assembled into flint (111s; nrows 52887, max|M| 15, max column fill 16); rref in place ...
+  lam=(11, 10, 8, 1, 1, 1): N_S=228475 |Stab|=6 n_chi=18103 (orbits dropped: 43045)
+    E_01: |H|=6 canonical rows 16571 (obstructed fixed targets cancelled: 22452)
+    E_12: |H|=6 canonical rows 15347 (obstructed fixed targets cancelled: 19551)
+    E_23: |H|=2 canonical rows 20969 (obstructed fixed targets cancelled: 0)
+    E_34: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
+    E_45: |H|=1 canonical rows 0 (obstructed fixed targets cancelled: 0)
