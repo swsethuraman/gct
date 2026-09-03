@@ -53,3 +53,18 @@ The `δ = 7` theorem of §4 rests only on `a = 1` weights.
 runs are correct).  The defect was in the *driver's* call, one level up, on a
 path the cross-check did not exercise.  The lesson for the next session is the
 narrow one: validate the driver, not only the routine it calls.
+
+## A second housekeeping note: the exhibited vectors are stored gzipped
+
+The `D = −2` cells exhibit two vanishing highest-weight vectors each, with
+supports up to 85,746 monomials, and `analysis/wk9_s41_bite.py` writes them as
+plain text: 222 MB in all, with eighteen individual files over the 5 MB limit
+the house imposes on committed files.  They are part of the record — the (★)
+certificate is a statement about *those* vectors — so they are kept, but
+**gzipped** (`.txt.gz`, 21× smaller, every file now well under 5 MB), and the
+battery reports' references were rewritten to match.  The branch history was
+then rewritten once, with `git filter-branch --index-filter`, so that the
+uncompressed blobs are not carried in the delivered bundle; the per-cell commits
+themselves — their order, messages and every other file — are unchanged, but
+their hashes are not the ones the intermediate checkpoint bundles carried.  The
+head hash quoted in `docs/sixrow_close.md` is the one after that rewrite.
