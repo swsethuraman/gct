@@ -1,0 +1,31 @@
+      level 1: 61 prefixes
+      level 2: 1330 prefixes
+      level 3: 11817 prefixes
+      level 4: 68452 prefixes
+      level 5: 212739 prefixes
+      level 6: 314143 prefixes
+      level 7: 314143 prefixes
+  lam=(9, 9, 4, 4, 1, 1): N_S=314143 |Stab|=8 n_chi=32631 (orbits dropped: 15101) [lean, 1s, HWM 0.16 GB]
+    E_01: |H|=4 targets 298573 canonical rows 61539 nnz 282655 (obstructed fixed targets cancelled: 10460) [1s, HWM 0.18 GB]
+    E_12: |H|=2 targets 187940 canonical rows 76407 nnz 350388 (obstructed fixed targets cancelled: 6420) [2s, HWM 0.18 GB]
+    E_23: |H|=4 targets 272954 canonical rows 55847 nnz 172793 (obstructed fixed targets cancelled: 4170) [3s, HWM 0.19 GB]
+    E_34: |H|=2 targets 100364 canonical rows 49666 nnz 127787 (obstructed fixed targets cancelled: 287) [3s, HWM 0.19 GB]
+    E_45: |H|=4 targets 185374 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 851) [4s, HWM 0.19 GB]
+  built (9, 9, 4, 4, 1, 1) d7: N_S=314143 |Stab|=8 n_chi=32631 rows=243459 nnz=933623 (5s: mono 0s orbits 1s rows 4s; HWM 0.19 GB)
+    level 0 (3,2): 48979 rows, nnz 375772 (full: 243459 rows, nnz 933623)
+    level 0 (3,2): 48991 rows, nnz 766648 (full: 243471 rows, nnz 1325195)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=0 seed=501 k=0]: KERNEL SEQ n=32631 nrows=48979 nnz=375772 k=0 len=65262 secs=96.9 | BM deg=32627 f0=0 secs=110.4 | DONE secs=170.0 (172s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 121730 rows, nnz 933502 (full: 243459 rows, nnz 933623)
+    wied[c9_9_4_4_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=32631 nrows=48991 nnz=766648 k=0 len=65262 secs=162.0 | BM deg=32631 f0=89853826 secs=175.3 (178s)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=1 seed=502 k=0]: KERNEL SEQ n=32631 nrows=121730 nnz=933502 k=0 len=65262 secs=244.5 | BM deg=32628 f0=0 secs=257.8 | DONE secs=395.1 (568s)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=1 seed=503 k=1]: KERNEL SEQ n=32631 nrows=121730 nnz=933502 k=1 len=65262 secs=260.9 | BM deg=32629 f0=0 secs=274.4 | DONE secs=411.4 (979s)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=1 seed=504 k=2]: KERNEL SEQ n=32631 nrows=121730 nnz=933502 k=2 len=65262 secs=265.6 | BM deg=32630 f0=0 secs=279.0 | DONE secs=423.0 (1402s)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=1 seed=505 k=3]: KERNEL SEQ n=32631 nrows=121730 nnz=933502 k=3 len=65262 secs=270.7 | BM deg=32631 f0=0 secs=284.3 | DONE secs=431.6 (1834s)
+    wied[c9_9_4_4_1_1d7_fullE p=2147483647 lvl=1 seed=506 k=4]: NONSINGULAR SEQ n=32631 nrows=121730 nnz=933502 k=4 len=65262 secs=289.9 | BM deg=32631 f0=1261171688 secs=303.7 (2138s)
+  p=2147483647: full-E nullity 4 = a (plethysm) [level 1]
+    level 0 (3,2): 48991 rows, nnz 767210 (full: 243471 rows, nnz 1325195)
+    wied[c9_9_4_4_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=32631 nrows=48991 nnz=767210 k=0 len=65262 secs=160.4 | BM deg=32631 f0=2047858563 secs=173.7 (174s)
+  (9, 9, 4, 4, 1, 1) d7 [det]: nullity = 0 -> mult_det = 4 = a PROVED  (2332s)
+{"lam": [9, 9, 4, 4, 1, 1], "delta": 7, "ell": 6, "a": 4, "K": 12, "N_S": 314143, "stab": 8, "n_chi": 32631, "nrows": 243459, "nnz": 933623, "nfixed": 22188, "build_secs": 5.4, "mono_secs": 0.3, "orbit_secs": 1.2, "rows_secs": 3.8, "build_hwm_gb": 0.19, "sides": {"det": {"nullity": 0, "mult": 4, "status": "proved (nullity 0 at 2147483647)", "per_prime": {"2147483647": {"full_E_nullity": 4, "ev_secs": 0.3, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=32631 nrows=48991 nnz=767210 k=0 len=65262 secs=160.4 | BM deg=32631 f0=2047858563 secs=173.7", "rows": 48991, "nnz": 767210}], "secs": 2311.8}, "2147483629": {"ev_secs": 0.4, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=32631 nrows=48991 nnz=766648 k=0 len=65262 secs=162.0 | BM deg=32631 f0=89853826 secs=175.3", "rows": 48991, "nnz": 766648}], "secs": 178.1}}}}, "mult_det": 4, "full_E_nullity": 4, "secs": 2331.7, "hwm_gb": 0.37, "verdict": "mult_det = a = 4 (PROVED, nullity 0)", "wall_secs": 2331.7}
+SWEEP (9, 9, 4, 4, 1, 1) d7: n_chi=32631 nnz=933623 -> mult_det = a = 4 (PROVED, nullity 0) (2331.7s, HWM 0.37 GB)
