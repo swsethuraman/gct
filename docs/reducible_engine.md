@@ -1,16 +1,17 @@
 # The reducible-locus multiplicity engine: `mult_λ C[R_r]_δ` by certificate, the normalisation bound, and where the frontier is
 
-Session 42 (2026-09-02 →), branch `s42-redengine`, clone tip `5aa564b`
+Session 42 (2026-09-02/03), branch `s42-redengine`, clone tip `5aa564b`
 (ancestry gate passes; `docs/reducible_ideal.md`, `analysis/wk9_s36_red.py`
 present).  Pre-registration `results/PREREG_s42.md` (commit `bb406e0`, before
 any measurement).  Table `results/mult_red_table.md`; frontier
-`results/s42_frontier.md`; census `results/s42_census.json` (+ `_weyl.json`);
-banked cells `results/s42_cells_*.jsonl`; validation
-`results/s42_validation.jsonl`; code `analysis/wk9_s42_*.py`,
-`analysis/wk9_s42_wied.c`.  Labels: **proved** / **measured** /
-**adopted-from-literature** / **expectation**.  Session 41 is not in this
-clone (flagged in the prereg): the det side cross-referenced below is
-session 36's.
+`results/s42_frontier.md`; census `results/s42_census.json` (`δ = 7, 8`) and
+`results/s42_census_weyl.json` (`δ = 9`); banked cells
+`results/s42_cells_{A,B,C}.jsonl`; validation `results/s42_validation.jsonl`;
+lifts `results/s42_lifts.jsonl` + `results/s42_certs/`; code
+`analysis/wk9_s42_*.py`, `analysis/wk9_s42_wied.c`.  Labels: **proved** /
+**measured** / **adopted-from-literature** / **expectation**.  Session 41 is
+not in this clone (flagged in the prereg): the det side cross-referenced
+below is session 36's.
 
 ## 0. Verdict
 
@@ -28,8 +29,10 @@ session 36's.
 > bite proved without any rank, and `h_pad = 0` proves `mult_red = 0`.  On
 > the `δ = 7, 8` census (1877 cells, `ℓ = 6, 7, 8`) that is **411 proved
 > bites, 140 of them `mult_red = 0`** — every one of the 140 a negative
-> instance of Kadish–Landsberg's Question 1.5 (§C), the first known.  At the
-> 91 session-36 cells `h_pad` detects **exactly four of the five bites**
+> instance of Kadish–Landsberg's Question 1.5 (§C), the first known; four of
+> them, up to `a = 2`, re-derived directly by the engine and two of them
+> lifted to explicit integer highest-weight vectors in `I(R_7)`.  At the 91
+> session-36 cells `h_pad` detects **exactly four of the five bites**
 > (`h_pad < a` at `(8,4,4,4,4)_6`, `(9,9,8,1,1)_7`, `(8,8,8,2,2)_7`,
 > `(10,8,7,1,1,1)_7`, with `h_pad = mult_red` at each) and misses only
 > `(12,4,4,4,4)_7 = c² I_5` (`h_pad = 4 = a`, `mult_red = 3`).
@@ -39,10 +42,20 @@ session 36's.
 > the (★)-red columns of the isotypic reduction), and `nullity_p(E_red) = 0`
 > at one prime *proves* `mult_red = a` over `Q`.  A sparse Wiedemann
 > certificate (§A3; C helper, Berlekamp–Massey, every verdict re-checkable by
-> sparse products) decides nullity in minutes at `n_red ~ 10^4` and in hours
-> at `n_red ~ 10^5`, where the dense frontier is `n ~ 2.7·10^4`.  Validated
-> against session 36 at N_VAL banked cells (all agree, both primes; dense =
-> sparse at every cell where both ran) and on 200 synthetic matrices.
+> sparse products) decides nullity in seconds to minutes at `n_red ~ 10^4`;
+> the dense frontier was `n ~ 1.5·10^4`.  Validated against session 36 at 49
+> banked cells (all agree, both primes; dense = sparse at every one; full-`E`
+> nullity `= a` at 37) and on 200 synthetic matrices; all five s36 bites are
+> now **proved two-sidedly** by exact integer certificates of this session.
+>
+> **New elements of the reducibility ideal.**  The sweep found a degree-8
+> bite invisible to the normalisation bound, `(13,12,4,1,1,1)_8` (`a = 3`,
+> `h_pad = 3`, `mult_red = 2`, integer certificate with coefficients `≤ 128`),
+> and all fifteen of its Pieri predecessors at degree 7 are proved free of
+> the ideal, so it is a **minimal generator of `I(R_6)` in degree 8** — the
+> first on record above degree 7 (§E).  A second degree-8 bite,
+> `(13,8,8,1,1,1)_8`, is consistent with the degree-7 generator
+> `(10,8,7,1,1,1)` (Pieri).
 >
 > **Route B (Kempf collapsing) computes the normalisation, not `C[R_r]`.**
 > `H^0(Tot S, O) = ⊕_δ Sym^δ V ⊗ Sym^δ Sym^3 V` is the Segre-product ring,
@@ -53,12 +66,16 @@ session 36's.
 > the 91 banked cells.  The obstacle is precise and terminal for the route as
 > proposed; what survives is `h_pad` as the free upper bound above.
 >
-> **The frontier, named.**  Reached: N_REACHED cells of the 1877 (`δ = 7`:
-> N_R7 of 398; `δ = 8`: N_R8 of 1479), every one `mult_red = a` except the
-> bites listed in the table; N_BEYOND cells sit beyond it, and the balanced
-> core at every `δ ≥ 7` (`n_χ` up to `4.8·10^6` at `δ = 7`, larger at `δ =
-> 8`) is beyond any rank computation on this or any laptop-class machine.
-> On every reached cell with a session-36 det side, `mult_red ≤ mult_det`:
+> **The frontier, named.**  Reached by the engine: SWEEP_TOTAL cells of the
+> 1877 at `δ = 7, 8` (SWEEP_D7 at `δ = 7`, SWEEP_D8 at `δ = 8`, up to
+> `n_red = SWEEP_MAXNRED`) plus SWEEP_D9 at `δ = 9`, every one `mult_red = a`
+> except the bites listed in the table (all of them either `h_pad`-predicted
+> or lifted).  The rest is beyond the session's build cap (`N_S ≤ 10^6`) or
+> its time, not beyond the method: the sparse route is `O(n · nnz)` and
+> memory-light, and cells up to `n_red ~ 10^5` are hours each.  The balanced
+> core at every `δ ≥ 7` (`n_χ` up to `4.8·10^6` at `δ = 7`, `> 10^7` at
+> `δ = 8`) is beyond any rank computation on a laptop-class machine.  On
+> every reached cell with a session-36 det side, `mult_red ≤ mult_det`:
 > blind, as `mult_det = a` there makes automatic.
 
 ## A. The engine (Route A)
@@ -99,9 +116,10 @@ both house primes gives `mult_red ≥ a − k` (proved) and `mult_red = a − k`
 rational kernel vectors of `E_red` (they are highest-weight vectors
 supported on `M_★`, hence in `I(R_r)` by (★)): `analysis/wk9_s42_lift.py`
 (canonical RREF bases mod several primes, CRT, rational reconstruction,
-exact verification `E_red v = 0` over `Z`).  `a` is never read off a kernel:
-it is the plethysm value (`wk8_s30_pleth`), asserted equal to
-`nullity_p(E)` on the full column set at every validation cell.
+exact verification `E_red v = 0` over `Z`, independence by a flint rank).
+`a` is never read off a kernel: it is the plethysm value
+(`wk8_s30_pleth`), asserted equal to `nullity_p(E)` on the full column set
+at 37 validation cells.
 
 ### A2. Three routes to `nullity_p(E_red)`
 
@@ -115,6 +133,16 @@ it is the plethysm value (`wk8_s30_pleth`), asserted equal to
   compressed nullity `0` is a proof; `k > 0` is re-run at a second `P` and
   the minimum taken.
 - **sparse** (§A3), the route used for the sweep.
+
+The isotypic basis and the operator rows are built by a vectorised
+re-implementation of the s36 routines (`analysis/wk9_s42_orbits.py`:
+monomials as an `N_S × δ` array, orbits by ranking the permuted rows with a
+multiset combinadic, the `H`-orbit row dedup and the `χ`-obstructed-row
+cancellation asserted as before), validated against `wk9_s36_stabred`
+on 16 cells (identical orbits up to the sign of each orbit sum, identical
+row counts, nnz and obstructed-row counts, identical row spaces where a
+dense rank could check it) — it removes the Python loop over
+`N_S × |Stab|` that made cells with `N_S ~ 10^6` cost an hour of build.
 
 ### A3. The sparse certificate route *(new tool; proved as stated, validated §A4)*
 
@@ -165,7 +193,8 @@ algorithm, and §A4 is its validation.
 Cost: `O(n · nnz)` field operations per sequence and `O(nnz + n)` memory,
 against `O(n³)` and `8n²` bytes for the dense route.  Measured on this
 container (C, one core): `n = 4289`, `nnz = 4.0·10^5`: 22 s per sequence;
-`n = 10 240`: 36 s; the crossover with flint is below `n = 3000`.
+`n = 10 240`: 36 s; `n ≈ 18 000–19 000`: about 3–5 minutes; the crossover
+with flint is below `n = 3000`.
 
 ### A4. Validation
 
@@ -173,15 +202,21 @@ container (C, one core): `n = 4289`, `nnz = 4.0·10^5`: 22 s per sequence;
   nullities 0–6, true nullities 0–55 by flint) — the sparse route returned
   the flint nullity at every one, both primes
   (`wk9_s42_sparse.py --selftest 200`).
-- **Session 36's banked cells (P1):** N_VAL cells of `results/s36_red_table.md`
-  (ascending `n_χ`, cap 16 000) plus the invariants `(4^5)_5`, `(4^6)_6`,
-  recomputed by the sparse route at both primes; where `n_red ≤ 9000` the
-  dense route as well, and where `a ≤ 4`, `n_χ ≤ 10 000` the full-`E`
-  nullity: **`mult_red` agrees with the banked value at every cell**
-  (`results/s42_validation.jsonl`), dense = sparse at every cell where both
-  ran, full-`E` nullity `= a` at every cell where it ran, including all five
-  bites and `(4^5)_5`, `(4^6)_6` (`mult_red = 0`).  Kill criterion 1 never
-  fired.
+- **Session 36's banked cells (P1):** 49 cells of `results/s36_red_table.md`
+  (ascending `n_χ`) plus the invariants `(4^5)_5`, `(4^6)_6`, recomputed by
+  the sparse route at both primes and by the dense flint route as well
+  (every one of the 49 had `n_red ≤ 9000`), the full-`E` nullity checked
+  at 37: **`mult_red` agrees with the banked value at every cell**
+  (`results/s42_validation.jsonl`), dense = sparse at every cell, full-`E`
+  nullity `= a` at every cell where it ran, including the bites
+  `(8,4,4,4,4)_6`, `(9,9,8,1,1)_7`, `(12,4,4,4,4)_7` and the invariants
+  (`mult_red = 0`).  Kill criterion 1 never fired.
+- **Two-sided exactness at the bites.**  The lift route produced integer
+  highest-weight vectors in `I(R_r)` at all five s36 bites —
+  `(8,4,4,4,4)_6` (max coefficient 41472, s36's number), `(9,9,8,1,1)_7`
+  (2880), `(10,8,7,1,1,1)_7` (768, s36's number), `(12,4,4,4,4)_7` (41472),
+  `(8,8,8,2,2)_7` (276480) — so `mult_red = a − 1` is **proved** at each,
+  by this session's own certificates (`results/s42_certs/`).
 
 ## B. Route B: the Kempf collapsing computes the normalisation — the precise obstacle
 
@@ -228,7 +263,8 @@ the normalisation.  `h_pad < a` proves a bite; `h_pad = 0` proves `mult_red
 = 0`.  Code: `analysis/wk9_s42_hpad.py` (cubic plethysm by the
 symmetric-function route of `wk8_s30_pleth`), cross-checked by a Weyl
 alternation with a tail DP (`wk9_s42_census.py`, agreement on every cell
-tried, `a` and `h_pad` alike).
+tried, `a` and `h_pad` alike, including the `c_ν = 0` values behind the
+`h_pad = 0` cells).
 
 **Where the brief's premise fails.**  `ξ = (W/S)^* = S^⊥ ⊂ Sym^4 V ⊗ O_P`
 sits in `0 → ξ → Sym^4 V ⊗ O → Sym^3 V ⊗ O(1) → 0` (contraction with the
@@ -254,13 +290,17 @@ form predicted); `h_pad` is what it leaves behind.
 `(8,8,8,2,2)_7`, `(10,8,7,1,1,1)_7` and the three "top" `ℓ = 6` cells
 `(10,10,3,3,1,1)_7`, `(10,9,6,1,1,1)_7`, `(7,7,4,4,1,1)_6`.  `h_pad < a` at
 exactly those four bites.  At `(12,4,4,4,4)_7 = c²·I_5`, `h_pad = 4 = a`
-against `mult_red = 3`: the bound misses ideal elements that are products,
-as one expects of a bound that only sees the normalisation.  The three s30
-`δ = 6` anchors the brief names for the Route-B test are among the 84:
-`h_pad ≠ mult_red` there (e.g. `(10,6,4,2,2)_6`: `h_pad = 24`, `mult_red =
-a = 6`).  The prereg's expectation for `h_pad < a` was "a minority, under
-25%": measured **22%** of the `δ = 7, 8` census (411 of 1877), rising with
-`ℓ` (6% at `(7, 6)`, 24% at `(8, 6)`, 29% at `(8, 7)`, 23% at `(8, 8)`).
+against `mult_red = 3`, and at the two new degree-8 bites `h_pad = a = 3`
+against `mult_red = 2`: the bound misses ideal elements that are products
+or otherwise invisible to the normalisation, as one expects of a bound that
+only sees `D`.  The three s30 `δ = 6` anchors the brief names for the
+Route-B test are among the 84: `h_pad ≠ mult_red` there (e.g.
+`(10,6,4,2,2)_6`: `h_pad = 24`, `mult_red = a = 6`).  The prereg's
+expectation for `h_pad < a` was "a minority, under 25%": measured **22%**
+of the `δ = 7, 8` census (411 of 1877), rising with `ℓ` (6% at `(7, 6)`,
+9% at `(7, 7)`, 25% at `(8, 6)`, 29% at `(8, 7)`, 23% at `(8, 8)`), and 16%
+of the 400 sized `δ = 9` cells (62; `h_pad = 0` at 22, up to `a = 5` at
+`(13,10,9,1,1,1,1)_9`).
 
 ## C. The literature (Route C): verdict *partly known*
 
@@ -288,11 +328,16 @@ a = 6`).  The prereg's expectation for `h_pad < a` was "a minority, under
   the coordinate ring `C[F_{n−m}(S^n W^*)]`?"  **Answered negatively here**
   for `(n, m) = (4, 3)`: every `h_pad = 0` cell of the region has `a ≥ 1`,
   `λ_1 ≥ δ = d(n−m)` and `mult_red = 0` (Corollary B2) — 140 cells at `δ =
-  7, 8`, the smallest `(7,4,4,4,4,4,1)_7` (`a = 1`), with `a = 2` at
-  `(8,4,4,4,4,4)_7`, `(7,7,4,4,4,1,1)_7`; one of them, `(8,8,8,1,1,1,1)_7`
-  (`a = 1`, `n_χ = 532`), verified directly by the engine
-  (`nullity_p(E_red) = 1 = a`, both primes).  KL's Theorem 1.3 leaves exactly
-  the window `d(n−m) ≤ p_1 < min(d(n−1), dn−m)` open; these cells sit in it.
+  7, 8` and 22 sized cells at `δ = 9`, the smallest `(7,4,4,4,4,4,1)_7`
+  (`a = 1`), with `a = 2` at `(8,4,4,4,4,4)_7`, `(7,7,4,4,4,1,1)_7`,
+  `(12,8,8,1,1,1,1)_8`, and `a = 5` at `(13,10,9,1,1,1,1)_9`.  Four of them
+  were re-derived directly by the engine (`nullity_p(E_red) = a` at both
+  primes): `(8,8,8,1,1,1,1)_7`, `(10,10,4,1,1,1,1)_7`, `(10,8,6,1,1,1,1)_7`
+  (`a = 1`) and `(12,8,8,1,1,1,1)_8` (`a = 2`), and the first and last were
+  lifted to explicit integer highest-weight vectors in `I(R_7)` (coefficients
+  `≤ 384` and `≤ 768`, `results/s42_certs/`).  KL's Theorem 1.3 leaves
+  exactly the window `d(n−m) ≤ p_1 < min(d(n−1), dn−m)` open; these cells
+  sit in it.
 - **Chipalkatti** (arXiv:math/0405236, Brill-type locus of two `e`-fold
   hyperplanes) and **Abdesselam–Chipalkatti** (arXiv:math/0411110,
   Brill–Gordan loci, transvectants): different loci (`l_1^e l_2^e`,
@@ -310,9 +355,10 @@ a = 6`).  The prereg's expectation for `h_pad < a` was "a minority, under
 (KL Prop. 1.8), the ideal as the kernel of `μ*` (KL Thm 1.7), the padding
 bound (KL Thm 1.3 / Cor. B).  Not found: the (★) "iff" and the point-free
 formula (`docs/reducible_ideal.md`, s36/s40), any multiplicity table, the
-normalisation bound used as a *screen* (`h_pad < a`, `h_pad = 0`), and any
-instance of KL's Question 1.5 in either direction.  If a reader knows a
-source for any of these, a citation replaces the claim.
+normalisation bound used as a *screen* (`h_pad < a`, `h_pad = 0`), any
+instance of KL's Question 1.5 in either direction, and any generator of
+`I(R_r)` beyond degree 7.  If a reader knows a source for any of these, a
+citation replaces the claim.
 
 ## D. The region, the sweep, and the frontier
 
@@ -322,28 +368,40 @@ determined by its tail, so the weight-space count is a DP on the box
 `(δ+1) × ∏_{i ≥ 2}(λ_i + 1)` — cross-checked against the s36 DP and the
 orbit counts; `|Stab_W(λ)|`; `h_pad`).  `δ = 7`: 398 cells (`ℓ = 6`: 258,
 `ℓ = 7`: 140; `ℓ(λ) ≤ δ` forbids more); `δ = 8`: 1479 cells (`ℓ = 6`: 591,
-`ℓ = 7`: 561, `ℓ = 8`: 327).  `δ ≥ 9`: the Weyl-route census (`a` and
+`ℓ = 7`: 561, `ℓ = 8`: 327).  `δ = 9`: the Weyl-route census (`a` and
 `h_pad` by Weyl alternation with tail DPs, agreeing with the
 symmetric-function route on every cell tried; a dominance-monotonicity
 prefilter — `N_S(λ) ≥ N_S(μ)` for `μ ⊵ λ` — discards cells whose 5-variable
-merged weight already has `N_S/|Stab|` above the cap): WEYL_SUMMARY.
+merged weight already has `N_S/|Stab|` above `4·10^5`): 6767 partitions with
+`λ_1 ≥ 9`, `6 ≤ ℓ ≤ 10`; 4072 placed beyond the cap by the prefilter or the
+full `N_S`; `a` computed at 1067, of which 400 have `a ≥ 1` (`ℓ = 6`: 232,
+`7`: 120, `8`: 42, `9`: 6).  `δ = 10, 11, 12`: not censused (the symmetric-
+function plethysm is out of this session's time at `|λ| ≥ 40`; the Weyl
+route ran 77 minutes for `δ = 9` and would need several hours per further
+`δ` — `wk9_s42_census.py --weyl --deltas 10` is the command).  Note that
+`N_S/|Stab|` is only a lower bound on `n_χ`: cells with odd-valued blocks
+lose many orbits to the sign character (`(12,8,8,1,1,1,1)_8`: bound 19324,
+actual `n_χ = 4159`), so the census under-states reachability.
 
 **Sweep** (`analysis/wk9_s42_sweep.py`, ascending `n_χ` lower bound, both
-primes, one JSON line per cell, `results/s42_cells_*.jsonl`).  SWEEP_SUMMARY.
+primes, one JSON line per cell, `results/s42_cells_{A,B,C}.jsonl`).
+SWEEP_SUMMARY
 
 **The frontier.**  Dense route: `n_red ≈ 27 000` (memory).  Sparse route:
-time — one sequence costs `~ 4 n · nnz` field operations, i.e. minutes at
-`n ~ 10^4`, an hour or more per prime at `n ~ 10^5`; the largest cell
-reached had `n_red = N_RED_MAX`.  Beyond: N_BEYOND cells, listed one by one
-with their sizes in `results/s42_frontier.md`; in `n_χ` they run to
-`4.8·10^6` at `(7, 6)` and beyond `10^7` at `δ = 8`.  The balanced core of
-every `δ ≥ 7` stratum — the cells with `a ≥ 5` and small balance, exactly
-the ones s36 could not reach either — is beyond both routes by two to three
-orders of magnitude, and no rank computation of this kind will reach it.
-What *does* reach it is `h_pad`: the bound is exact at every cell of the
-region, reachable or not.
+time and the build — one sequence costs `~ 4 n · nnz` field operations
+(seconds at `n ~ 10^3`, minutes at `10^4`, hours at `10^5`), and the build
+of the isotypic basis needs the `N_S` monomials in memory (the session's
+cap was `N_S ≤ 10^6` after two container resets and one OOM kill at
+`N_S ≈ 2.4·10^6`; the process group's memory limit is about 4 GB).  Beyond:
+every unreached cell is listed with its size in `results/s42_frontier.md`;
+in `n_χ` they run to `4.8·10^6` at `(7, 6)` and beyond `10^7` at `δ = 8`.
+The balanced core of every `δ ≥ 7` stratum — the cells with `a ≥ 5` and
+small balance, exactly the ones s36 could not reach either — is beyond both
+routes by two to three orders of magnitude, and no rank computation of this
+kind will reach it.  What *does* reach it is `h_pad`: the bound is exact at
+every cell of the region, reachable or not.
 
-## E. What the table proves about obstructions
+## E. What the table proves about obstructions, and the new ideal elements
 
 - **Blindness.**  At every reached cell with a session-36 det side,
   `mult_red ≤ mult_det`: `D ≤ 0`.  Since `mult_det = a` at every s36 cell,
@@ -357,44 +415,73 @@ region, reachable or not.
   when it comes (onset `≥ 8` in every component measured, `[8, 405]`), meets
   a pad side that is a lookup at every reachable cell and an upper bound
   `min(a, h_pad)` at every cell.
-- **What a det-side-only hunt now costs.**  The same nonsingularity
-  certificate proves `mult_det = a` from the sparse matrix `[E; ev_1..ev_K]`
-  (raising operators stacked with `K ≥ a` det-point evaluation rows
-  contracted to `χ`-coordinates): full column rank ⟺ no highest-weight
-  vector vanishes at the points ⟺ `mult_det = a`.  That is the missing half
-  of "det-side-only", at the sparse frontier rather than the dense one, and
-  it is the natural successor task.
+- **A minimal generator of `I(R_6)` in degree 8 (proved).**
+  `(13,12,4,1,1,1)_8`: `a = 3`, `nullity_p(E_red) = 1` at both primes, and an
+  integer highest-weight vector supported on `M_★` with `E v = 0` over `Z`
+  and coefficients `≤ 128` (`results/s42_certs/13_12_4_1_1_1_d8.txt`), so
+  `mult_red = 2` exactly and `S_λ ∩ I(R_6)_8 ≠ 0`.  By Pieri, `S_λ` occurs in
+  `I(R_6)_7 · C[W]_1` only through a constituent `S_μ ⊂ I(R_6)_7` with
+  `λ/μ` a horizontal 4-strip; the fifteen such `μ` are `(12,9,4,1,1,1)`,
+  `(12,10,3,1,1,1)`, `(12,10,4,1,1)`, `(12,11,2,1,1,1)`, `(12,11,3,1,1)`,
+  `(12,12,1,1,1,1)`, `(12,12,2,1,1)`, `(13,8,4,1,1,1)`, `(13,9,3,1,1,1)`,
+  `(13,9,4,1,1)`, `(13,10,2,1,1,1)`, `(13,10,3,1,1)`, `(13,11,1,1,1,1)`,
+  `(13,11,2,1,1)`, `(13,12,1,1,1)`; six have `a = 0`, and at the other nine
+  `nullity_p(E_red) = 0` (proved `mult_red = a`, the length-5 ones at `r = 5`
+  by Corollary D; `results/s42_gen8_checks.jsonl`, `s42_cells_A.jsonl`).
+  Since `I(R_6)_{≤7} · C[W]` in degree 8 is `I(R_6)_7 · C[W]_1`, `S_λ` is
+  not in the ideal generated below degree 8: a **new minimal generator**,
+  the first above degree 7, and invisible to `h_pad` (`= a = 3`).
+- **A second degree-8 bite**, `(13,8,8,1,1,1)_8` (`a = 3`, `mult_red = 2`,
+  integer certificate, coefficients `≤ 448`), has the degree-7 generator
+  `(10,8,7,1,1,1)` among its Pieri predecessors and is consistent with being
+  generated by it; not claimed as new.
+- **What a det-side-only hunt now costs — measured.**  The same
+  nonsingularity certificate proves `mult_det = a` from the sparse matrix
+  `[E; Ev]` (`Ev` = `a + 8` det-point evaluation rows contracted to
+  `χ`-coordinates, the house points): full column rank ⟺ no highest-weight
+  vector vanishes at the points ⟺ `mult_det = a`.  `analysis/wk9_s42_detcert.py`
+  reproduced session 36's `mult_det = a` at `(13,8,4,1,1,1)_7` (1 s per
+  prime), `(10,8,7,1,1,1)_7` (7 s), `(7,7,4,4,1,1)_6` (`n_χ = 10091`; 40–56 s
+  against s36's 7 minutes), `(14,7,4,2,1)_7` (`a = 21`, `n_χ = 13100`;
+  62–73 s) and `(15,4,4,2,2,1)_7` (`n_χ = 15328`; 85 s) — all proved.  That
+  is the missing half of "det-side-only", at the sparse frontier rather
+  than the dense one.
 
 ## F. Honest boundary
 
 - **Proved:** Lemmas A1–A4, Theorem B1, Corollary B2; every `mult_red = a`
   entry with status `proved` (nullity `0` at a prime); every `mult_red ≤
   h_pad < a` and `mult_red = 0` entry (Corollary B2 with the plethysm
-  values); the negative instances of KL Question 1.5.
-- **Measured:** every `mult_red = a − k` with `k > 0` (two primes; proved
-  only where the lift succeeded, marked); the `h_pad` comparison at the 91
-  cells; the validation agreement; the timings.
+  values); the negative instances of KL Question 1.5; the eight lifted
+  cells (five s36 bites, two `h_pad = 0` cells, `(13,12,4,1,1,1)_8`,
+  `(13,8,8,1,1,1)_8`); the minimal-generator statement.
+- **Measured:** every `mult_red = a − k` with `k > 0` not lifted (two primes);
+  the `h_pad` comparison at the 91 cells; the validation agreement; the
+  det-side certificates (mod-`p` full rank is a proof of `mult_det ≥ a`,
+  i.e. `= a`); the timings.
 - **Adopted from literature:** KL Prop. 1.8 (independently re-proved),
   Thm 1.3, Thm 1.7; Pieri; the Segre cone's normality (invariant theory).
-- **Expectation, scored:** P1 held (N_VAL of N_VAL); P1b held (200/200);
-  P2 held in the predicted form (Route B computes `h_pad`; 84 of 91
-  strict); P2b held (22%, under the 25% prior); P3 held as "partly known"
-  with KL the source; P4 (frontier ≈ 27k dense, `~10^5` sparse) held; P4b
-  held (no bite among reached cells beyond the `h_pad`-predicted ones —
-  see the table for the exact count).
+- **Expectation, scored:** P1 held (49 of 49); P1b held (200/200); P2 held
+  in the predicted form (Route B computes `h_pad`; 84 of 91 strict); P2b
+  held (22%, under the 25% prior); P3 held as "partly known" with KL the
+  source; P4 (frontier ≈ 27k dense, `~10^5` sparse) held for the method,
+  with the build memory the binding constraint in practice; P4b held — no
+  bite among reached cells beyond the `h_pad`-predicted ones except the two
+  degree-8 cells, both lifted.
 - **Not done:** the true-pad recheck protocol (session 41's, absent from
-  this clone); lifts at every measured bite (only where listed); `δ ≥ 9`
-  beyond the sized tail; the det-side certificate of §E (successor task).
-- **Engineering:** the container restarted once mid-session (all
-  background jobs lost); the per-cell JSON banking and commits meant no
-  result was lost.  At most two heavy processes were run concurrently
-  afterwards.  Kills by PID only.
+  this clone); `δ ≥ 10` census; the `δ = 7, 8` cells above `N_S = 10^6` or
+  outside the time budget (all listed in the frontier file); a memory-lean
+  monomial enumeration that would lift the build cap.
+- **Engineering:** the container reset twice and the OOM killer fired once
+  (memory cgroup ≈ 4 GB for the process group); the per-cell JSON banking
+  and frequent commits meant no banked result was lost.  Kills by PID only.
 
 ## G. The sentence to carry forward
 
-The reducible side is now a lookup on every reachable cell and a proved
-bound `min(a, h_pad)` on every cell of the region — including 140 cells at
-`δ = 7, 8` where it is `0` outright, answering Kadish–Landsberg's Question
-1.5 in the negative — so the obstruction hunt at `n = 4` is a det-side
-computation, and the sparse certificate that proves `mult_red = a` in
-minutes at `n_χ ~ 10^4` proves `mult_det = a` the same way.
+The reducible side is now a lookup on every reached cell and a proved
+bound `min(a, h_pad)` on every cell of the region — `0` outright at 162
+cells, answering Kadish–Landsberg's Question 1.5 in the negative — so the
+obstruction hunt at `n = 4` is a det-side computation, and the sparse
+certificate that proves `mult_red = a` in seconds at `n_χ ~ 10^4` proves
+`mult_det = a` the same way; the ideal itself has a new minimal generator
+in degree 8, `(13,12,4,1,1,1)`, that the normalisation bound cannot see.
