@@ -11,3 +11,4 @@ in-place rref of `analysis/wk9_s41_kernel.py`, `inject` for the `a = 1` sparse i
 | delta | mu | a | N_S | Stab | n_chi | route | mult | units | secs | HWM |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 7 | `(9, 4, 3, 2, 2, 1)` | 1 | 11412 | 2 | 6167 | dense | 1 | 0 | 110 | 0.56 |
+| 7 | `(7, 5, 4, 3, 1, 1)` | 1 | 17371 | 2 | 6895 | dense | 1 | 0 | 146 | 0.67 |
