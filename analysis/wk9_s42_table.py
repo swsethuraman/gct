@@ -45,6 +45,7 @@ for line in open(os.path.join(R, 's36_aone.md')):
 det[((4, 4, 4, 4, 4, 4), 6)] = (1, 0, 's36 I_6')
 
 def lamstr(lam): return '`(' + ', '.join(str(x) for x in lam) + ')`'
+def a_nul(c): return next(iter(c['primes'].values()))['nullity']
 
 # ---------------------------------------------------------------- the table
 L = []
@@ -139,6 +140,31 @@ if weyl:
         hz = [c for c in live if c.get('h_pad') == 0]
         if hz:
             L.append(f"`h_pad = 0` (`mult_red = 0` proved): " + ', '.join(f"{lamstr(c['lam'])} (a={c['a']})" for c in hz[:60]) + (" …" if len(hz) > 60 else "") + "\n")
+
+# engine demonstrations: direct h_pad = 0 checks and det-side certificates
+hz = load_jsonl(os.path.join(R, 's42_hz_checks.jsonl'))
+dc = load_jsonl(os.path.join(R, 's42_detcert.jsonl'))
+if hz or dc or lifts:
+    L.append("\n## Certificates beyond the sweep\n")
+    if lifts:
+        L.append("**Exact lifts** (`analysis/wk9_s42_lift.py`; integer highest-weight vectors supported on `M_★`, verified `E v = 0` over `Z`, in `results/s42_certs/`):\n")
+        L.append("| λ | δ | a | nullity | **mult_red** | max coefficient | verdict |")
+        L.append("|---|---|---|---|---|---|---|")
+        for k, c in sorted(lifts.items(), key=lambda kv: (kv[0][1], kv[0][0])):
+            L.append(f"| {lamstr(c['lam'])} | {c['delta']} | {c['a']} | {c['nullity']} | **{c['a'] - c['nullity']}** | {c.get('max_coeff', '—')} | {'proved' if 'PROVED' in c['verdict'] else c['verdict'][:60]} |")
+    if hz:
+        L.append("\n**Direct engine checks of `h_pad = 0` cells** (prediction `mult_red = 0`, i.e. `nullity = a`):\n")
+        L.append("| λ | δ | a | n_χ | n_red | nullity | **mult_red** |")
+        L.append("|---|---|---|---|---|---|---|")
+        for c in hz:
+            L.append(f"| {lamstr(c['lam'])} | {c['delta']} | {c['a']} | {c['n_chi']} | {c['n_red']} | {c['nullity']} | **{c['mult_red']}** |")
+    if dc:
+        L.append("\n**The det side by the same certificate** (`analysis/wk9_s42_detcert.py`: nonsingularity of `[E; Ev]` with `Ev` = `a + 8` det-point rows proves `mult_det = a`; session 36's values reproduced):\n")
+        L.append("| λ | δ | a | n_χ | nullity | **mult_det** | secs per prime |")
+        L.append("|---|---|---|---|---|---|---|")
+        for c in dc:
+            secs = ', '.join(str(v['secs']) for v in c['primes'].values())
+            L.append(f"| {lamstr(c['lam'])} | {c['delta']} | {c['a']} | {c['n_chi']} | {a_nul(c)} | **{c['mult_det']}** | {secs} |")
 
 # validation summary
 if valid:
