@@ -210,8 +210,9 @@ if __name__ == '__main__':
     who = sys.argv[1]
     split = int(sys.argv[sys.argv.index('--split') + 1]) if '--split' in sys.argv else 6300
     headroom = float(sys.argv[sys.argv.index('--headroom') + 1]) if '--headroom' in sys.argv else 0.85
-    todo = pickle.load(open(TODO, 'rb'))
-    seq = [x for d in (7, 8) for x in todo[d]]
+    tpath = sys.argv[sys.argv.index('--todo') + 1] if '--todo' in sys.argv else TODO
+    todo = pickle.load(open(tpath, 'rb'))
+    seq = [x for d in sorted(todo) for x in todo[d]]
     seq.sort(key=lambda x: (x['n_chi'], x['delta'], x['lam']))
     if '--dry' in sys.argv:
         for x in seq:
@@ -219,6 +220,8 @@ if __name__ == '__main__':
                   f"pred {predicted_gb(x['n_chi']):.2f} GB", 'timeout', timeout_for(x['n_chi']))
         print(len(seq), 'cells;', sum(x['a'] for x in seq), 'units')
         sys.exit(0)
+    cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 10 ** 9
+    seq = [x for x in seq if x['n_chi'] <= cap]
     mine = [x for x in seq if (x['n_chi'] <= split) == (who == 'small')]
     rest = [x for x in seq if x not in mine] if who == 'big' else []
     log(f"worker {who}: {len(mine)} cells in class ({len(rest)} to pick up after), split {split}")
