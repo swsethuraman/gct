@@ -92,6 +92,23 @@ def timeout_for(n_chi):
 
 if __name__ == '__main__':
     USE_INJECT = '--inject' in sys.argv
+    if sys.argv[1] == '--one-inject':
+        # one weight by the injectivity certificate, banked here (used by the
+        # re-measurement of the 21 rows of results/s43_bookkeeping_correction.md)
+        from wk9_s43_inject import inject_one
+        delta = int(sys.argv[2]); m = tuple(int(x) for x in sys.argv[3].split(',')); a = int(sys.argv[4])
+        res = inject_one(delta, m, a, verbose=True)
+        if res['mult'] is None:
+            open(STOP, 'w').write(f"mult < a at {m} delta={delta}\n")
+            log(f"*** {m} d={delta}: mult < a — halt Phase B; certify and report ***")
+            sys.exit(2)
+        line = (f"| {delta} | `{m}` | {a} | {res['N_S']} | {res['stab']} | {res['n_chi']} | inject | "
+                f"{res['mult']} | {a - res['mult']} | {res['secs']:.0f} | {res['hwm']:.2f} |")
+        bank(line)
+        commit(f"s43: per6 delta={delta} {m}: a={a} mult={res['mult']} units={a - res['mult']} "
+               f"(injectivity route, re-measured after the call-site correction)")
+        log(line)
+        sys.exit(0)
     if sys.argv[1] == '--one':
         from wk9_s41_per6 import measure_per6
         from wk9_s41_kernel import vm_hwm
@@ -149,7 +166,7 @@ if __name__ == '__main__':
                 tag = f"per6 d={delta} {m} a={a} n_chi={nchi} [inject]"
                 log(f"START {tag}")
                 try:
-                    res = inject_one(delta, m, 1, verbose=True)
+                    res = inject_one(delta, m, a, verbose=True)
                 except Exception as e:
                     with open(os.path.join(LOGS, 's43_failed.txt'), 'a') as fh:
                         fh.write(f"per6-inject {delta} ({','.join(map(str, m))}) {e!r} n_chi={nchi}\n")
