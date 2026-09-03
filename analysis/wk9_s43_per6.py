@@ -136,16 +136,17 @@ if __name__ == '__main__':
         for nchi, m, a, NS, st in todo:
             if os.path.exists(STOP):
                 log("STOP_B present; exiting"); sys.exit(0)
-            if USE_INJECT and a == 1 and nchi > lo_nchi:
+            if USE_INJECT and nchi > lo_nchi:
                 pass
             elif not (lo_nchi < nchi <= cap):
                 log(f"   skip {m} a={a} n_chi={nchi} (outside ({lo_nchi}, {cap}])"); continue
-            if USE_INJECT and a == 1:
-                # the a = 1 sparse injectivity certificate (results/PREREG_s43.md P3);
-                # validated against the dense route at nine weights of this same family
-                # (results/s43_validation.md part D and results/s43_inject_crosscheck.md)
+            if USE_INJECT:
+                # the sparse injectivity certificate: ker[M;Ev] has dimension a - mult,
+                # so NONSINGULAR proves mult = a at ANY a (results/PREREG_s43.md P3 and
+                # its a >= 2 extension); validated against the dense route at thirteen
+                # weights of this same family (results/s43_inject_crosscheck.md)
                 from wk9_s43_inject import inject_one
-                tag = f"per6 d={delta} {m} a=1 n_chi={nchi} [inject]"
+                tag = f"per6 d={delta} {m} a={a} n_chi={nchi} [inject]"
                 log(f"START {tag}")
                 try:
                     res = inject_one(delta, m, 1, verbose=True)
@@ -154,15 +155,18 @@ if __name__ == '__main__':
                         fh.write(f"per6-inject {delta} ({','.join(map(str, m))}) {e!r} n_chi={nchi}\n")
                     log(f"NOT REACHED {tag}: {e!r}")
                     continue
-                line = (f"| {delta} | `{m}` | 1 | {res['N_S']} | {res['stab']} | {res['n_chi']} | inject | "
-                        f"{res['mult']} | {1 - res['mult']} | {res['secs']:.0f} | {res['hwm']:.2f} |")
-                bank(line)
-                commit(f"s43: per6 delta={delta} {m}: a=1 mult={res['mult']} units={1 - res['mult']} (injectivity route)")
-                log(line)
-                if res['mult'] < 1:
-                    open(STOP, 'w').write(f"permanent equation at {m} delta={delta}\n")
-                    log("*** mult < a on the permanent's own ideal — halt Phase B; certify and report ***")
+                if res['mult'] is None:
+                    # a verified kernel vector: mult < a.  That is a candidate permanent
+                    # equation; halt Phase B and let the certification take over.
+                    open(STOP, 'w').write(f"mult < a at {m} delta={delta} (injectivity route returned a "
+                                          f"verified kernel vector)\n")
+                    log(f"*** {tag}: mult < a — halt Phase B; certify and report ***")
                     sys.exit(0)
+                line = (f"| {delta} | `{m}` | {a} | {res['N_S']} | {res['stab']} | {res['n_chi']} | inject | "
+                        f"{res['mult']} | {a - res['mult']} | {res['secs']:.0f} | {res['hwm']:.2f} |")
+                bank(line)
+                commit(f"s43: per6 delta={delta} {m}: a={a} mult={res['mult']} units={a - res['mult']} (injectivity route)")
+                log(line)
                 continue
             gb = predicted_gb(nchi)
             tag = f"per6 d={delta} {m} a={a} n_chi={nchi}"

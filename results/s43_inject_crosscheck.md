@@ -32,3 +32,23 @@ dense frontier, is reachable at all (482 s, 0.15 GB).
 On this record the route is used for the `a = 1` weights of the `δ = 8`
 Phase-B scan as well.  Every row it produces is marked `inject` in the `route`
 column of `results/s43_per6.md`; no `inject` row is merged into a dense one.
+
+## The `a ≥ 2` extension
+
+`ker[M ; Ev]` is the space of weight-`μ` highest-weight vectors vanishing at the
+`K` points, of dimension `a − mult`, so `[M;Ev]` injective ⟺ `mult = a` — **at
+every `a`, not only `a = 1`**.  A `NONSINGULAR` certificate therefore proves the
+empty verdict at any `a`; a verified `KERNEL` vector proves only `mult < a`, and
+the exact value would then be taken by the dense route.  Four banked `δ = 8`
+weights of `results/s41_per6.md` with `a ≥ 2` were re-measured by the route:
+
+| δ | μ | a | injectivity `mult` | dense `mult` (s41) | secs | HWM |
+|---|---|---|---|---|---|---|
+| 8 | `(12, 4, 2, 2, 2, 2)` | 2 | 2 | 2 | 5 | 0.15 |
+| 8 | `(11, 6, 2, 2, 2, 1)` | 2 | 2 | 2 | 9 | 0.15 |
+| 8 | `(10, 6, 2, 2, 2, 2)` | 3 | 3 | 3 | 14 | 0.16 |
+| 8 | `(10, 5, 5, 2, 1, 1)` | 2 | 2 | 2 | 10 | 0.16 |
+
+**13 of 13 agreements in all** (nine at `a = 1`, four at `a = 2, 3`), both primes
+at every weight.  On this record the route is used for the whole `δ = 8`
+Phase-B scan.
