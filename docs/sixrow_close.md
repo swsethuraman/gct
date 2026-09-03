@@ -388,3 +388,32 @@ six-row record has been predictive.
    is the natural Phase A of the next session.
 4. **A six-row cap theorem** remains the theory successor, unchanged from
    session 41's item 2, and needs no container.
+
+## 9. The frontier as left
+
+- **The reachable six-row region is exhausted.**  Every obstruction-eligible
+  cell with `ℓ(λ) = 6`, `a ≥ 1`, `λ_1 ≥ δ` and an exact `n_χ ≤ 20,000` is
+  measured: **123 of 123 at `δ = 7, 8`** (402 ambient units), plus 40 of the 52
+  at `δ = 9`.  The frontier is now a memory bound, not a queue.
+- **The determinant's six-row ideal has still not switched on** at any weight
+  the programme can reach, at `δ = 6, 7, 8, 9`; the balanced corner where it
+  plausibly first does is unreached and will stay so on this container by the
+  dense route.
+- **`I(D_6^{per_3})_7 = 0` outright**, so `mult_pad = mult_red` in every weight
+  of degree 7 is a theorem; at `δ = 8`, 81 of 91 weights are measured empty and
+  the same theorem is one short session away.
+- **`I(R_6)` has an element in a new weight at each of `δ = 6, 7, 8, 9`**, and
+  at `δ = 8` — where the reachable set is complete — every one of them lies in
+  the family `(λ_1, λ_2, λ_3, 1, 1, 1)`, with two units at the four most
+  balanced and none at all outside the family.
+- **The permanent has still left no trace:** `mult_pad = mult_red` at every cell
+  ever measured, now by theorem at degree 7 and by measurement elsewhere.
+- **New capability:** the sparse injectivity certificate answers "is
+  `mult = a`?" at `n_χ ≈ 40,000–77,000` in a fifth of a gigabyte, three to four
+  times past the dense frontier.  It cannot produce `mult_red`, so it does not
+  replace the ledger's route; it is the tool for the det-side question above the
+  frontier, and that is the cheapest route to the balanced regime the programme
+  has ever had.
+
+*Session 43 delivered by git bundle `sixrowclose.bundle`, single ref
+`s43-sixrow-close`.*
