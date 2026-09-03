@@ -1,0 +1,28 @@
+      level 1: 55 prefixes
+      level 2: 971 prefixes
+      level 3: 7571 prefixes
+      level 4: 40833 prefixes
+      level 5: 121701 prefixes
+      level 6: 177331 prefixes
+      level 7: 177331 prefixes
+  lam=(9, 9, 6, 2, 1, 1): N_S=177331 |Stab|=4 n_chi=36090 (orbits dropped: 16947) [lean, 0s, HWM 0.12 GB]
+    E_01: |H|=2 targets 168661 canonical rows 68403 nnz 311066 (obstructed fixed targets cancelled: 5995) [1s, HWM 0.14 GB]
+    E_12: |H|=2 targets 135950 canonical rows 54965 nnz 249992 (obstructed fixed targets cancelled: 4909) [1s, HWM 0.14 GB]
+    E_23: |H|=4 targets 79501 canonical rows 15987 nnz 60417 (obstructed fixed targets cancelled: 2250) [1s, HWM 0.14 GB]
+    E_34: |H|=2 targets 78804 canonical rows 38526 nnz 71768 (obstructed fixed targets cancelled: 148) [1s, HWM 0.14 GB]
+    E_45: |H|=2 targets 105271 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 264) [2s, HWM 0.14 GB]
+  built (9, 9, 6, 2, 1, 1) d7: N_S=177331 |Stab|=4 n_chi=36090 rows=177881 nnz=693243 (2s: mono 0s orbits 0s rows 2s; HWM 0.14 GB)
+    level 0 (3,2): 54167 rows, nnz 422231 (full: 177881 rows, nnz 693243)
+    level 0 (3,2): 54179 rows, nnz 855590 (full: 177893 rows, nnz 1126323)
+    wied[c9_9_6_2_1_1d7_fullE p=2147483647 lvl=0 seed=501 k=0]: KERNEL SEQ n=36090 nrows=54167 nnz=422231 k=0 len=72180 secs=120.5 | BM deg=36087 f0=0 secs=137.0 | DONE secs=210.9 (214s)
+    wied[c9_9_6_2_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=36090 nrows=54179 nnz=855590 k=0 len=72180 secs=195.4 | BM deg=36090 f0=1743104673 secs=211.8 (214s)
+    wied[c9_9_6_2_1_1d7_fullE p=2147483647 lvl=0 seed=502 k=1]: KERNEL SEQ n=36090 nrows=54167 nnz=422231 k=1 len=72180 secs=137.4 | BM deg=36088 f0=0 secs=153.9 | DONE secs=234.6 (448s)
+    wied[c9_9_6_2_1_1d7_fullE p=2147483647 lvl=0 seed=503 k=2]: KERNEL SEQ n=36090 nrows=54167 nnz=422231 k=2 len=72180 secs=151.4 | BM deg=36089 f0=0 secs=167.9 | DONE secs=256.5 (705s)
+    wied[c9_9_6_2_1_1d7_fullE p=2147483647 lvl=0 seed=504 k=3]: KERNEL SEQ n=36090 nrows=54167 nnz=422231 k=3 len=72180 secs=163.8 | BM deg=36090 f0=0 secs=180.3 | DONE secs=274.8 (980s)
+    wied[c9_9_6_2_1_1d7_fullE p=2147483647 lvl=0 seed=505 k=4]: NONSINGULAR SEQ n=36090 nrows=54167 nnz=422231 k=4 len=72180 secs=177.3 | BM deg=36090 f0=478456323 secs=193.6 (1174s)
+  p=2147483647: full-E nullity 4 = a (plethysm) [level 0]
+    level 0 (3,2): 54179 rows, nnz 854812 (full: 177893 rows, nnz 1126323)
+    wied[c9_9_6_2_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=36090 nrows=54179 nnz=854812 k=0 len=72180 secs=196.3 | BM deg=36090 f0=1547643017 secs=212.5 (213s)
+  (9, 9, 6, 2, 1, 1) d7 [det]: nullity = 0 -> mult_det = 4 = a PROVED  (1402s)
+{"lam": [9, 9, 6, 2, 1, 1], "delta": 7, "ell": 6, "a": 4, "K": 12, "N_S": 177331, "stab": 4, "n_chi": 36090, "nrows": 177881, "nnz": 693243, "nfixed": 13566, "build_secs": 2.2, "mono_secs": 0.2, "orbit_secs": 0.3, "rows_secs": 1.7, "build_hwm_gb": 0.14, "sides": {"det": {"nullity": 0, "mult": 4, "status": "proved (nullity 0 at 2147483647)", "per_prime": {"2147483647": {"full_E_nullity": 4, "ev_secs": 0.2, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=36090 nrows=54179 nnz=854812 k=0 len=72180 secs=196.3 | BM deg=36090 f0=1547643017 secs=212.5", "rows": 54179, "nnz": 854812}], "secs": 1386.4}, "2147483629": {"ev_secs": 0.2, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=36090 nrows=54179 nnz=855590 k=0 len=72180 secs=195.4 | BM deg=36090 f0=1743104673 secs=211.8", "rows": 54179, "nnz": 855590}], "secs": 214.7}}}}, "mult_det": 4, "full_E_nullity": 4, "secs": 1402.5, "hwm_gb": 0.34, "verdict": "mult_det = a = 4 (PROVED, nullity 0)", "wall_secs": 1402.5}
+SWEEP (9, 9, 6, 2, 1, 1) d7: n_chi=36090 nnz=693243 -> mult_det = a = 4 (PROVED, nullity 0) (1402.5s, HWM 0.34 GB)
