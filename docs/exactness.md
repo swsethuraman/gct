@@ -49,6 +49,15 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > is untouched by the refutation; only the claim that it is an equality is gone.
 > `results/s47_units.md` tabulates it at all 311 cells with `0 < h_pad < a`.
 >
+> **Two things the session closed on the way.**  `I(D_6^{per_3})_8 = 0` — all
+> nine outstanding permanent weights are empty — so by Prop. 8(1) of
+> `docs/transfer_lemma.md` **`mult_pad = mult_red` at every weight of degree 8**,
+> the degree where every pad-side bite in the record lives, and the permanent is
+> now proved invisible on the reducible side through degree 8 (§7).  And all six
+> outstanding lifts are done, including two independent integer vectors at each
+> of the two remaining `D = −2` cells, so **no bite in the six-row record rests
+> on a mod-`p` vector any longer** (§7).
+>
 > **A regularity proposed, tested, and withdrawn — in that order.**  Write
 > `d := min(a, h_pad) − mult_red` for the rank deficit of `μ_λ` and
 > `e := h_pad − a`.  Across the 268 cells of the record where all three numbers
@@ -304,7 +313,7 @@ bites in the record relative to what `h_pad` can see.
 | **P1c** | the conjecture survives at every `ℓ = 7, 8` cell measured | 0.80 | **untested**: the sweep stopped before reaching one, and the post-refutation batch had not reached the `ℓ = 7` cells |
 | **P1d** | "fires ⟺ two units" does not extend to `δ = 9` in-family | 0.55 | **right, at the first cell**: `(15,12,6,1,1,1)_9` fires and has three units |
 | **P2** | 30 ± 10 cells measured, `n_red` to ~`2·10^4` | — | **wrong by design**: stopping rule 2 fired at cell 1.  Six firing cells measured, `n_red` to `4.0·10^4` |
-| **P3** | all outstanding `δ = 8` permanent weights empty | 0.88 | see §7 |
+| **P3** | all outstanding `δ = 8` permanent weights empty | 0.88 | **right** — all nine empty, so `I(D_6^{per_3})_8 = 0` (§7) |
 
 The prior of 0.40 was set on the right ground — that the conjecture is the
 maximal-rank half of a statement whose companion is already false at eight
@@ -331,18 +340,28 @@ With session 43's degree 7 and session 37's `δ ≤ 6`, the permanent is now pro
 invisible on the reducible side **through degree 8**.  Table
 `results/s47_per6_d8.md`.
 
-**C1 — the outstanding lifts.**  The brief listed six.  This session lifted four
-different cells instead — the four counterexamples of §2 — because a
-counterexample that is only measured does not refute anything, and each of those
-lifts is the same tool (`analysis/wk9_s42_lift.py`) applied where it now buys
-more.  The six the brief named (`(12,9,8,1,1,1)_8`, `(12,10,7,1,1,1)_8`,
-`(14,8,7,1,1,1)_8`, `(13,9,7,1,1,1)_8`, `(17,12,4,1,1,1)_9`,
-`(16,13,4,1,1,1)_9`) remain outstanding, and are unaffected by the refutation:
-they are `mult_red` values already measured at both primes, awaiting integer
-vectors.  This is a deliberate substitution, not an omission, and it is the one
-place where the session did not do what the brief asked.
+**C1 — the outstanding lifts: all six done, plus four more.**  Every cell the
+brief listed now has its integer certificate, by `analysis/wk9_s42_lift.py`
+(CRT and rational reconstruction over both house primes, identical pivot
+columns, exact verification `E_red v = 0` over `Z`) and re-verified independently
+by `analysis/wk9_s47_starcheck.py`, which reads the certificate file back from
+disk and asserts (★) on every monomial of every support.
 
+| `λ` | `δ` | `a` | `mult_red` | integer HWVs | `(★)` checked on | max coeff |
+|---|---|---|---|---|---|---|
+| `(12,9,8,1,1,1)` | 8 | 6 | **4** | **2** | 147,906 monomials | 3,840 |
+| `(12,10,7,1,1,1)` | 8 | 9 | **7** | **2** | 102,036 monomials | 1,920 |
+| `(13,9,7,1,1,1)` | 8 | 11 | **10** | 1 | 29,586 monomials | 640 |
+| `(14,8,7,1,1,1)` | 8 | 9 | **8** | 1 | 16,344 monomials | 384 |
+| `(17,12,4,1,1,1)` | 9 | 8 | **7** | 1 | 6,804 monomials | 128 |
+| `(16,13,4,1,1,1)` | 9 | 7 | **6** | 1 | 11,214 monomials | 512 |
 
+The first two are the cells the brief put first, and they are the point of the
+exercise: each needed **two** independent integer vectors before anyone calls
+them two independent equations, and each has them.  So **every `D = −2` cell in
+the six-row record is now proved two-sidedly**, and no bite in the record rests
+on a mod-`p` vector any longer.  With the four counterexample lifts of §2 that is
+ten integer certificates this session, `results/s42_certs/`.
 
 ## 8. Honest boundary
 
