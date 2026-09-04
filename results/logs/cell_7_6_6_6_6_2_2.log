@@ -1,0 +1,36 @@
+      level 1: 60 prefixes
+      level 2: 2242 prefixes
+      level 3: 37571 prefixes
+      level 4: 340173 prefixes
+      level 5: 1829060 prefixes
+      level 6: 4408003 prefixes
+      level 7: 4408003 prefixes
+  lam=(6, 6, 6, 6, 2, 2): N_S=4408003 |Stab|=48 n_chi=99480 (orbits dropped: 0) [lean, 257s, HWM 0.59 GB]
+    E_01: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [45s, HWM 0.77 GB]
+    E_12: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [83s, HWM 0.92 GB]
+    E_23: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [125s, HWM 0.96 GB]
+    E_34: |H|=6 targets 1908870 canonical rows 322347 nnz 1289985 (obstructed fixed targets cancelled: 0) [144s, HWM 0.96 GB]
+    E_45: |H|=24 targets 3264690 canonical rows 139373 nnz 291194 (obstructed fixed targets cancelled: 0) [239s, HWM 0.96 GB]
+  built (6, 6, 6, 6, 2, 2) d7: N_S=4408003 |Stab|=48 n_chi=99480 rows=3628307 nnz=14273855 (501s: mono 4s orbits 257s rows 239s; HWM 0.96 GB)
+    level 0 (12,2): 596921 rows, nnz 5591125 (full: 3628316 rows, nnz 15169175)
+    level 0 (12,2): 596921 rows, nnz 5590752 (full: 3628316 rows, nnz 15169175)
+      level 1: 60 prefixes
+      level 2: 2242 prefixes
+      level 3: 37571 prefixes
+      level 4: 340173 prefixes
+      level 5: 1829060 prefixes
+      level 6: 4408003 prefixes
+      level 7: 4408003 prefixes
+  lam=(6, 6, 6, 6, 2, 2): N_S=4408003 |Stab|=48 n_chi=99480 (orbits dropped: 0) [lean, 361s, HWM 0.59 GB]
+    E_01: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [57s, HWM 0.77 GB]
+    E_12: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [108s, HWM 0.94 GB]
+    E_23: |H|=4 targets 4027352 canonical rows 1055529 nnz 4230892 (obstructed fixed targets cancelled: 0) [162s, HWM 1.00 GB]
+    E_34: |H|=6 targets 1908870 canonical rows 322347 nnz 1289985 (obstructed fixed targets cancelled: 0) [182s, HWM 1.00 GB]
+    E_45: |H|=24 targets 3264690 canonical rows 139373 nnz 291194 (obstructed fixed targets cancelled: 0) [293s, HWM 1.00 GB]
+  built (6, 6, 6, 6, 2, 2) d7: N_S=4408003 |Stab|=48 n_chi=99480 rows=3628307 nnz=14273855 (663s: mono 8s orbits 361s rows 294s; HWM 1.00 GB)
+  p=2147483647: prepared [compress(E,12,2); ev] 596921 rows, nnz 5591733 (full 3628316 rows, nnz 15169175)
+  p=2147483629: prepared [compress(E,12,2); ev] 596921 rows, nnz 5591733 (full 3628316 rows, nnz 15169175)
+  p=2147483647: NONSINGULAR | SEQ n=99480 nrows=596921 nnz=5591733 k=0 len=198960 secs=11080.7 | BM deg=99480 f0=953443344 secs=11323.5
+  p=2147483629: NONSINGULAR | SEQ n=99480 nrows=596921 nnz=5591733 k=0 len=198960 secs=11646.8 | BM deg=99480 f0=364480741 secs=11888.8
+{"lam": [6, 6, 6, 6, 2, 2], "delta": 7, "ell": 6, "a": 1, "K": 9, "N_S": 4408003, "stab": 48, "n_chi": 99480, "nrows": 3628307, "nnz": 14273855, "nfixed": 0, "build_secs": 663.4, "mono_secs": 8.0, "orbit_secs": 361.4, "rows_secs": 293.9, "build_hwm_gb": 1.0, "sample": 12, "group": 2, "comp": {"2147483647": {"rows": 596921, "nnz": 5591733}, "2147483629": {"rows": 596921, "nnz": 5591733}}, "sides": {"det": {"nullity": 0, "mult": 1, "status": "proved (nullity 0 at 2147483647)", "per_prime": {"2147483647": {"nullity": 0, "level": 0, "ev_secs": null, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=99480 nrows=596921 nnz=5591733 k=0 len=198960 secs=11080.7 | BM deg=99480 f0=953443344 secs=11323.5", "rows": 596921, "nnz": 5591733}]}, "2147483629": {"nullity": 0, "level": 0, "ev_secs": null, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=99480 nrows=596921 nnz=5591733 k=0 len=198960 secs=11646.8 | BM deg=99480 f0=364480741 secs=11888.8", "rows": 596921, "nnz": 5591733}]}}}}, "mult_det": 1, "secs": 12745.0, "wall_secs": 12745.0, "hwm_gb": 1.03, "verdict": "mult_det = a = 1 (PROVED, nullity 0)"}
+SWEEP (6, 6, 6, 6, 2, 2) d7: n_chi=99480 nnz=14273855 -> mult_det = a = 1 (PROVED, nullity 0) (12745.0s, build HWM 1.0 GB)

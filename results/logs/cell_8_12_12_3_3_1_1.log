@@ -1,0 +1,34 @@
+      level 1: 64 prefixes
+      level 2: 1061 prefixes
+      level 3: 7364 prefixes
+      level 4: 37010 prefixes
+      level 5: 113009 prefixes
+      level 6: 204271 prefixes
+      level 7: 237040 prefixes
+      level 8: 237040 prefixes
+  lam=(12, 12, 3, 3, 1, 1): N_S=237040 |Stab|=8 n_chi=23700 (orbits dropped: 13248) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=4 targets 229248 canonical rows 45465 nnz 231103 (obstructed fixed targets cancelled: 11948) [1s, HWM 0.16 GB]
+    E_12: |H|=2 targets 106035 canonical rows 42212 nnz 208066 (obstructed fixed targets cancelled: 5208) [2s, HWM 0.16 GB]
+    E_23: |H|=4 targets 197075 canonical rows 39297 nnz 97260 (obstructed fixed targets cancelled: 3160) [2s, HWM 0.16 GB]
+    E_34: |H|=2 targets 88268 canonical rows 44305 nnz 93658 (obstructed fixed targets cancelled: 0) [3s, HWM 0.16 GB]
+    E_45: |H|=4 targets 141134 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1092) [3s, HWM 0.16 GB]
+  built (12, 12, 3, 3, 1, 1) d8: N_S=237040 |Stab|=8 n_chi=23700 rows=171279 nnz=630087 (4s: mono 1s orbits 1s rows 3s; HWM 0.16 GB)
+    level 0 (3,2): 35582 rows, nnz 261215 (full: 171279 rows, nnz 630087)
+    level 0 (3,2): 35596 rows, nnz 593658 (full: 171293 rows, nnz 961887)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=0 seed=501 k=0]: KERNEL SEQ n=23700 nrows=35582 nnz=261215 k=0 len=47400 secs=49.4 | BM deg=23691 f0=0 secs=56.5 | DONE secs=86.7 (88s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 85640 rows, nnz 629944 (full: 171279 rows, nnz 630087)
+    wied[c12_12_3_3_1_1d8_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593658 k=0 len=47400 secs=86.5 | BM deg=23700 f0=909205197 secs=93.6 (95s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=502 k=0]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=0 len=47400 secs=113.4 | BM deg=23695 f0=0 secs=120.5 | DONE secs=181.0 (269s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=503 k=1]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=1 len=47400 secs=116.8 | BM deg=23696 f0=0 secs=123.9 | DONE secs=186.4 (456s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=504 k=2]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=2 len=47400 secs=124.0 | BM deg=23697 f0=0 secs=131.1 | DONE secs=199.2 (655s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=505 k=3]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=3 len=47400 secs=128.4 | BM deg=23698 f0=0 secs=135.5 | DONE secs=204.8 (860s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=506 k=4]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=4 len=47400 secs=134.8 | BM deg=23699 f0=0 secs=141.8 | DONE secs=214.2 (1074s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=507 k=5]: KERNEL SEQ n=23700 nrows=85640 nnz=629944 k=5 len=47400 secs=142.7 | BM deg=23700 f0=0 secs=149.8 | DONE secs=226.0 (1300s)
+    wied[c12_12_3_3_1_1d8_fullE p=2147483647 lvl=1 seed=508 k=6]: NONSINGULAR SEQ n=23700 nrows=85640 nnz=629944 k=6 len=47400 secs=147.0 | BM deg=23700 f0=145780153 secs=153.9 (1454s)
+  p=2147483647: full-E nullity 6 = a (plethysm) [level 1]
+    level 0 (3,2): 35596 rows, nnz 593996 (full: 171293 rows, nnz 961887)
+    wied[c12_12_3_3_1_1d8_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593996 k=0 len=47400 secs=87.6 | BM deg=23700 f0=496366942 secs=94.7 (95s)
+  (12, 12, 3, 3, 1, 1) d8 [det]: nullity = 0 -> mult_det = 6 = a PROVED  (1606s)
+{"lam": [12, 12, 3, 3, 1, 1], "delta": 8, "ell": 6, "a": 6, "K": 14, "N_S": 237040, "stab": 8, "n_chi": 23700, "nrows": 171279, "nnz": 630087, "nfixed": 21408, "build_secs": 4.4, "mono_secs": 0.6, "orbit_secs": 0.8, "rows_secs": 3.0, "build_hwm_gb": 0.16, "sides": {"det": {"nullity": 0, "mult": 6, "status": "proved (nullity 0 at 2147483647)", "per_prime": {"2147483647": {"full_E_nullity": 6, "ev_secs": 0.4, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=23700 nrows=35596 nnz=593996 k=0 len=47400 secs=87.6 | BM deg=23700 f0=496366942 secs=94.7", "rows": 35596, "nnz": 593996}], "secs": 1549.2}, "2147483629": {"ev_secs": 0.4, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=23700 nrows=35596 nnz=593658 k=0 len=47400 secs=86.5 | BM deg=23700 f0=909205197 secs=93.6", "rows": 35596, "nnz": 593658}], "secs": 95.5}}}}, "mult_det": 6, "full_E_nullity": 6, "secs": 1605.9, "hwm_gb": 0.89, "verdict": "mult_det = a = 6 (PROVED, nullity 0)", "wall_secs": 1605.9}
+SWEEP (12, 12, 3, 3, 1, 1) d8: n_chi=23700 nnz=630087 -> mult_det = a = 6 (PROVED, nullity 0) (1605.9s, HWM 0.89 GB)
