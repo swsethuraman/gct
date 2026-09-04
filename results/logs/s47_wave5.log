@@ -22,3 +22,8 @@
     wied[cell p=2147483629 seed=3 k=2]: KERNEL SEQ n=41699 nrows=58847 nnz=486304 k=2 len=83398 secs=197.2 | BM deg=41695 f0=0 secs=219.5 | DONE secs=334.6 (944s)
     wied[cell p=2147483629 seed=4 k=3]: KERNEL SEQ n=41699 nrows=58847 nnz=486304 k=3 len=83398 secs=213.9 | BM deg=41696 f0=0 secs=236.4 | DONE secs=361.6 (1307s)
     wied[cell p=2147483629 seed=5 k=4]: KERNEL SEQ n=41699 nrows=58847 nnz=486304 k=4 len=83398 secs=231.9 | BM deg=41697 f0=0 secs=254.3 | DONE secs=388.1 (1698s)
+    wied[cell p=2147483629 seed=6 k=5]: KERNEL SEQ n=41699 nrows=58847 nnz=486304 k=5 len=83398 secs=246.7 | BM deg=41698 f0=0 secs=268.7 | DONE secs=410.3 (2109s)
+    wied[cell p=2147483629 seed=7 k=6]: KERNEL SEQ n=41699 nrows=58847 nnz=486304 k=6 len=83398 secs=263.6 | BM deg=41699 f0=0 secs=285.8 | DONE secs=435.9 (2545s)
+    wied[cell p=2147483629 seed=8 k=7]: NONSINGULAR SEQ n=41699 nrows=58847 nnz=486304 k=7 len=83398 secs=281.8 | BM deg=41699 f0=1473619829 secs=304.1 (2849s)
+  p=2147483629: nullity_p(E_red) = 7  -> mult_red >= 8  [sparse] (5830s)
+{"lam": [14, 10, 9, 1, 1, 1], "delta": 9, "ell": 6, "a": 15, "h_pad": 8, "mult_red": 8, "deficit": 7, "verdict": "EXACT", "n_chi": 42886, "n_red": 41699, "nnz_red": 486358, "nullity": 7, "status": "measured (nullity 7, two primes); mult_red >= 8 proved", "wall": 5840.1}
