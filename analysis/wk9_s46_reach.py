@@ -35,7 +35,7 @@ usage: python3 wk9_s46_reach.py [--delta 7] [--out results/s46_reach.md]
 import sys, os, json, re, math
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 R = os.path.join(HERE, '..', 'results')
-from wk9_s46_census import census_cell
+from wk9_s46_census import census_cell, rows_cell
 
 def partitions(nn, k, mx):
     if k == 1:
@@ -125,11 +125,11 @@ def rows_for(delta, a_tab, ms, F, hpad=None, n=4):
         if a < 1: continue
         N_S, n_chi, stab, _a = census_cell(lam, delta)
         meas = ms.get(key)
-        nrows = meas['nrows'] if meas else c_row * N_S
+        nrows = meas['nrows'] if meas else rows_cell(lam, delta)
         nnz = meas['nnz'] if meas else rho * nrows
         K = a + 8
         # level policy: (12,2) when nrows/n_chi > 10, else (3,2)
-        s = 12 if nrows / n_chi > 10 else 3
+        s = 12 if nrows / n_chi > 9 else 3   # threshold sharpened by (9,9,3,3,2,2)_7
         nnz_c = min(nnz, s * n_chi * (nnz / nrows)) + K * n_chi
         ns_op = max(1.5, nsop[0] + nsop[1] * n_chi)
         seq = 4.0 * n_chi * nnz_c * ns_op * 1e-9

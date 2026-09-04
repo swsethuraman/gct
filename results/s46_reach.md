@@ -179,3 +179,92 @@ its absolute hours are not.
   `h_pad = 0`.  Measuring them still decides the *determinant-ideal onset*,
   which is the open question; it does not decide the obstruction, which is
   already closed there.
+
+---
+
+## 5. Correction, added after Phase 3 — `n_rows` is exact too
+
+**Written after the four Phase-3 cells were measured; the order above is the one
+that was pre-registered and swept, and it is left exactly as published.**  What
+follows corrects the *cost model*, not the order.
+
+`n_rows(E)` was the weakest input above: fitted as `0.88·N_S` from a measured
+range of 0.62–1.20.  `(9,8,5,2,2,2)_7`, the cell the sweep stopped at, has
+`n_rows/N_S = 2.05` — outside that range entirely, so the model put it at
+`n_rows/n_χ = 4.6` when the truth is **10.7**, and the sweep driver started it at
+the cheap `(3,2)` level when the level policy (§ `results/s46_ledger.md`) calls
+for `(12,2)` above 9.  That run was ended by its recorded process id and the
+cell relaunched at `(12,2)`.
+
+The fix is the same idea as `n_χ`.  The rows of `E_{i,i+1}` kept are the
+**non-dropped `H`-orbits** of the target basis of weight `λ + e_i − e_{i+1}`,
+`H = Stab_W(λ) ∩ Stab_W(λ')` — the same character count with `(H, χ|_H)`:
+
+    n_rows = Σ_i (1/|H_i|) Σ_{h ∈ H_i} χ(h)·Fix_{λ + e_i − e_{i+1}}(h),
+
+skipping every `i` with `λ_i = λ_{i+1} = 1`, because `E_{i,i+1}` vanishes
+identically on `V_χ` when `i, i+1` lie in a common block of value 1
+(`docs/stabiliser_reduction.md` §1, second proof of the lemma — spins are
+bounded by `j ≤ m`, so a value-1 block's sign-isotypic part is entirely spin 0).
+Without that skip the count is 17–30 % high at exactly the `(…,1,1)` weights;
+with it, measured against all **fourteen** cells that have now been built
+(session 45's nine and this session's five):
+
+| max error | cells within 0.1 % | cells exact |
+|---|---|---|
+| **0.37 %** | 9 of 14 | 6 of 14 |
+
+and it is exact to the row at `(9,8,5,2,2,2)_7` itself (1,946,993 predicted +
+11 pinned evaluation rows = 1,947,004 built).  The residual is the handful of
+rows that come out identically zero and are filtered in the build.
+`analysis/wk9_s46_census.py:rows_cell` computes it, enumeration-free.
+
+### The corrected band
+
+Refitted over all 14 measured cells (`nnz/n_rows = 3.81`,
+`ns/op = 1.186 + 1.594·10⁻⁵·n_χ`) with exact `n_χ` **and** exact `n_rows`:
+
+| λ | eligible | bal | `a` | `h_pad` | `N_S` | \|Stab\| | `n_χ` | `n_rows` (exact) | rows/`n_χ` | level | `nnz_c` | predicted h | status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `(8, 8, 5, 5, 1, 1)` | yes | 7 | 3 | 2 | 603787 | 8 | **62613** | **494685** | 7.9 | `(3,2)` | 1432078 | 0.2 | banked |
+| `(8, 8, 7, 3, 1, 1)` | yes | 7 | 3 | 3 | 387460 | 4 | **79865** | **404493** | 5.1 | `(3,2)` | 1838036 | 0.4 | banked |
+| `(7, 7, 6, 6, 1, 1)` | yes | 6 | 1 | 0 | 832523 | 8 | **87045** | **720637** | 8.3 | `(3,2)` | 1827806 | 0.5 | banked |
+| `(8, 8, 6, 4, 1, 1)` | yes | 7 | 1 | 4 | 542288 | 4 | **112088** | **555718** | 5.0 | `(3,2)` | 2381748 | 0.9 | **s46** |
+| `(8, 7, 7, 4, 1, 1)` | yes | 7 | 3 | 3 | 582738 | 4 | **120653** | **685541** | 5.7 | `(3,2)` | 2796810 | 1.2 | **s46** |
+| `(8, 4, 4, 4, 4, 4)` | yes | 4 | 2 | 0 | 10060304 | 120 | **92031** | **6212840** | 67.5 | `(12,2)` | 4596455 | 1.4 | **s46** |
+| `(8, 8, 7, 2, 2, 1)` | yes | 7 | 1 | 4 | 520021 | 4 | **137693** | **914710** | 6.6 | `(3,2)` | 2737401 | 1.4 | **s46** |
+| `(9, 9, 3, 3, 2, 2)` | yes | 7 | 1 | 2 | 823745 | 8 | **105536** | **993656** | 9.4 | `(12,2)` | 4294829 | 1.5 | **s46** |
+| `(6, 6, 6, 6, 2, 2)` | onset | 4 | 1 | 0 | 4408003 | 48 | **99480** | **3628307** | 36.5 | `(12,2)` | 5591603 | 1.8 | banked |
+| `(8, 8, 6, 2, 2, 2)` | yes | 6 | 3 | 4 | 1184921 | 12 | **114875** | **1418175** | 12.3 | `(12,2)` | 5268571 | 2.0 | banked |
+| `(9, 8, 5, 2, 2, 2)` | yes | 7 | 3 | 13 | 948050 | 6 | **182806** | **1946993** | 10.7 | `(12,2)` | 9423647 | 7.9 |  |
+| `(9, 7, 6, 2, 2, 2)` | yes | 7 | 2 | 12 | 1113896 | 6 | **214220** | **2275994** | 10.6 | `(12,2)` | 10807585 | 11.9 |  |
+| `(8, 7, 6, 5, 1, 1)` | yes | 7 | 2 | 2 | 708835 | 2 | **294494** | **949060** | 3.2 | `(3,2)` | 6308618 | 12.1 |  |
+| `(7, 7, 7, 4, 2, 1)` | yes | 6 | 1 | 1 | 1431463 | 6 | **236122** | **3360306** | 14.2 | `(12,2)` | 12912937 | 16.8 |  |
+| `(8, 8, 5, 3, 3, 1)` | yes | 7 | 2 | 3 | 1370202 | 4 | **336019** | **2367358** | 7.0 | `(3,2)` | 7198162 | 17.6 |  |
+| `(8, 8, 4, 4, 2, 2)` | yes | 6 | 4 | 4 | 2129605 | 8 | **284467** | **2677326** | 9.4 | `(12,2)` | 13606979 | 24.6 |  |
+| `(9, 4, 4, 4, 4, 3)` | yes | 6 | 1 | 0 | 6189167 | 24 | **272192** | **9479184** | 34.8 | `(12,2)` | 14885518 | 25.0 |  |
+| `(8, 8, 4, 4, 3, 1)` | yes | 7 | 1 | 4 | 1580839 | 4 | **400750** | **3133167** | 7.8 | `(3,2)` | 8184073 | 27.6 |  |
+| `(6, 6, 4, 4, 4, 4)` | onset | 2 | 1 | 0 | 14564331 | 48 | **320890** | **11875431** | 37.0 | `(12,2)` | 17548693 | 39.6 |  |
+| `(8, 8, 6, 3, 2, 1)` | yes | 7 | 4 | 8 | 880799 | 2 | **441728** | **2259240** | 5.1 | `(3,2)` | 10346105 | 41.8 |  |
+| `(8, 7, 7, 3, 2, 1)` | yes | 7 | 2 | 4 | 947062 | 2 | **471743** | **2724023** | 5.8 | `(3,2)` | 10105627 | 46.1 |  |
+| `(8, 8, 5, 3, 2, 2)` | yes | 6 | 1 | 5 | 1845112 | 4 | **484776** | **3168926** | 6.5 | `(3,2)` | 9900042 | 47.6 |  |
+| `(9, 6, 6, 3, 2, 2)` | yes | 7 | 3 | 7 | 1895864 | 4 | **499253** | **3538122** | 7.1 | `(3,2)` | 11194196 | 56.8 |  |
+| `(9, 7, 4, 4, 2, 2)` | yes | 7 | 3 | 12 | 2000881 | 4 | **530501** | **3857623** | 7.3 | `(3,2)` | 11894835 | 67.6 |  |
+
+Machine-readable: `results/s46_reach7b.json`.
+
+**What changes.**  The ordering of the first four unmeasured cells does not; what
+changes is which level they need and what they cost.  Three cells that the first
+table put at `(3,2)` are above the threshold on exact rows —
+`(9,8,5,2,2,2)_7` at 10.7, `(9,7,6,2,2,2)_7` at 10.6, `(8,8,4,4,2,2)_7` at 9.4 —
+and two of the balance-6 cells move sharply: `(7,7,7,4,2,1)_7` from 9.2 h to
+16.8 h, `(9,4,4,4,4,3)_7` from 37 h to 25 h.  The most balanced weight of the
+degree, `(6,6,4,4,4,4)_7` (balance 2), moves *in*, from 61 h to **40 h** —
+`n_rows = 11,875,431`, `n_χ = 320,890`, level `(12,2)`.
+
+**What does not change.**  This is still an expectation.  The ns-per-op
+residuals now run 1.5–5.2 ns across 25 certified sequences and the two at
+`n_χ = 99,480` (5.0 and 5.2) sit 2 ns above five clean session-46 sequences at
+larger `n_χ` (2.3–3.0) — the spread is machine contention, not `n_χ`, and the
+linear fit splits the difference.  Any single predicted cost here can be out by
+a factor of about 1.5 either way; the ordering is what the table is for.
