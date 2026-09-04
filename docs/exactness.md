@@ -268,9 +268,8 @@ and with the transfer lemma (`mult_pad ≤ mult_red`) the same number bounds the
 pad-side units below.  `h_pad = 0` still proves `mult_red = 0` outright, and
 those 162 census cells remain negative instances of Kadish–Landsberg's
 Question 1.5.  `results/s47_units.md` tabulates the bound at all **311** cells
-of the census with `0 < h_pad < a`; at the eight measured among them it is
-attained at seven and strictly exceeded at one, and this session's own cells
-raise that to attained at 9 of 14.
+of the census with `0 < h_pad < a`; **23** of them now have a measured
+`mult_red`, and the bound is attained at 19 and strictly exceeded at 4.
 
 **Gone:** the equality.  `h_pad` does **not** give the unit count at a firing
 cell, so the "predicted two-unit cells across the whole region" the brief asked
