@@ -74,12 +74,24 @@ def measured_cells():
     return out
 
 def fit(ms):
-    """(C_NNZ, C_ROW, ns_per_op coefficients, build coefficients, residuals)."""
+    """Fitted constants, with the residuals the caller prints.
+
+    The useful ratio is nnz/nrows, not nnz/N_S: across every measured cell it
+    sits in 2.9-4.6 (mean ~3.8) while nnz/N_S ranges 2.1-4.4 and nrows/N_S
+    0.62-1.20.  And nnz/nrows is exactly the quantity the compression needs,
+    because at level (s, 2) the sampled stack has
+
+        nnz_c = min(nnz, s * n_chi * (nnz/nrows)) + K * n_chi,   K = a + 8,
+
+    the second term being the K pinned dense evaluation rows.  Checked against
+    the four measured cells that sample (predicted 4.598 M / 5.587 M / 6.483 M /
+    5.275 M against measured 4.596 M / 5.592 M / 6.477 M / 5.269 M) and against
+    the cells that do not (1.432 M against 1.432 M at (8,8,5,5,1,1)_7).
+    """
     vals = list(ms.values())
-    c_nnz = sum(d['nnz'] / d['N_S'] for d in vals) / len(vals)
+    rho = sum(d['nnz'] / d['nrows'] for d in vals) / len(vals)
     c_row = sum(d['nrows'] / d['N_S'] for d in vals) / len(vals)
-    # ns per element-op, from the diagnostic of the run that carried the verdict:
-    # the C helper reports the sequence length and its own wall time.
+    c_nnz = sum(d['nnz'] / d['N_S'] for d in vals) / len(vals)
     pts = []
     for d in vals:
         for sd in d.get('sides', {}).values():
@@ -91,7 +103,7 @@ def fit(ms):
                         nc = int(m.group(1)); nz = int(m.group(2)); sec = float(m.group(3))
                         pts.append((nc, sec * 1e9 / (4.0 * nc * nz), nz))
     if len(pts) >= 2:
-        xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+        xs = [q[0] for q in pts]; ys = [q[1] for q in pts]
         mx = sum(xs) / len(xs); my = sum(ys) / len(ys)
         den = sum((x - mx) ** 2 for x in xs)
         b = (sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / den) if den else 0.0
@@ -100,31 +112,45 @@ def fit(ms):
         a0, b = 2.3, 0.0
     bt = [(d['N_S'], d['build_secs']) for d in vals if 'build_secs' in d]
     c_build = (sum(t for _, t in bt) / sum(n for n, _ in bt)) if bt else 3.0e-5
-    return c_nnz, c_row, (a0, b), c_build, pts
+    return dict(rho=rho, c_row=c_row, c_nnz=c_nnz, nsop=(a0, b), c_build=c_build,
+                pts=pts, n=len(vals))
 
-def rows_for(delta, a_tab, ms, C_NNZ, C_ROW, nsop, C_BUILD, n=4):
+def rows_for(delta, a_tab, ms, F, hpad=None, n=4):
+    rho = F['rho']; c_row = F['c_row']; nsop = F['nsop']; c_build = F['c_build']
     out = []
     for lam in partitions(n * delta, 6, n * delta):
         key = (lam, delta)
-        if key not in a_tab: continue           # a = 0 cells are not in the census
+        if key not in a_tab: continue
         a, m_det = a_tab[key]
         if a < 1: continue
         N_S, n_chi, stab, _a = census_cell(lam, delta)
         meas = ms.get(key)
-        nnz = meas['nnz'] if meas else C_NNZ * N_S
-        nrows = meas['nrows'] if meas else C_ROW * N_S
+        nrows = meas['nrows'] if meas else c_row * N_S
+        nnz = meas['nnz'] if meas else rho * nrows
         K = a + 8
-        ns = min(nrows, 12 * n_chi + 64)
-        nnz_c = (ns / nrows) * nnz + K * n_chi
+        # level policy: (12,2) when nrows/n_chi > 10, else (3,2)
+        s = 12 if nrows / n_chi > 10 else 3
+        nnz_c = min(nnz, s * n_chi * (nnz / nrows)) + K * n_chi
         ns_op = max(1.5, nsop[0] + nsop[1] * n_chi)
         seq = 4.0 * n_chi * nnz_c * ns_op * 1e-9
-        build = C_BUILD * N_S
+        build = c_build * N_S
         out.append(dict(lam=lam, delta=delta, a=a, m_det=m_det, N_S=N_S, stab=stab,
                         n_chi=n_chi, bal=lam[0] - lam[-1], elig=lam[0] >= delta,
-                        nnz=int(nnz), nrows=int(nrows), nnz_c=int(nnz_c),
-                        secs=seq + build, build_secs=build,
-                        measured=bool(meas), exact_nchi=True))
-    out.sort(key=lambda r: r['secs'])
+                        h_pad=(hpad or {}).get(key), nnz=int(nnz), nrows=int(nrows),
+                        nnz_c=int(nnz_c), level='(12,2)' if s == 12 else '(3,2)',
+                        rows_over_nchi=round(nrows / n_chi, 1),
+                        secs=seq + build, seq_secs=seq, build_secs=build,
+                        measured=bool(meas)))
+    out.sort(key=lambda r: (r['secs'], r['bal']))
+    return out
+
+def hpad_table():
+    out = {}
+    for fn in ('s46_census7_hpad.json', 's46_census8_hpad.json'):
+        p = os.path.join(R, fn)
+        if not os.path.exists(p): continue
+        for r in json.load(open(p)):
+            out[(tuple(r['lam']), r['delta'])] = r['h_pad']
     return out
 
 if __name__ == '__main__':
@@ -135,9 +161,10 @@ if __name__ == '__main__':
         if args[i] == '--delta': delta = int(args[i + 1]); i += 2
         elif args[i] == '--out': outp = args[i + 1]; i += 2
         else: i += 1
-    a_tab = census_a(); ms = measured_cells()
-    C_NNZ, C_ROW, nsop, C_BUILD, pts = fit(ms)
-    rows = rows_for(delta, a_tab, ms, C_NNZ, C_ROW, nsop, C_BUILD)
-    print(json.dumps(dict(delta=delta, C_NNZ=C_NNZ, C_ROW=C_ROW, ns_per_op=nsop,
-                          C_BUILD=C_BUILD, npts=len(pts), nfit=len(ms), rows=rows),
-                     default=str))
+    a_tab = census_a(); ms = measured_cells(); F = fit(ms)
+    rows = rows_for(delta, a_tab, ms, F, hpad_table())
+    res = dict(delta=delta, fit={k: v for k, v in F.items() if k != 'pts'},
+               residuals=F['pts'], rows=rows)
+    if outp:
+        json.dump(res, open(outp, 'w'), default=str)
+    print(json.dumps(res, default=str))
