@@ -70,14 +70,15 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > `(15,11,7,1,1,1)_9` (`e = −3`, odd) both fail, and the first of them fails by
 > `d = 3`, so "`d = 1` always" is gone too.  The pattern is recorded here because
 > it was proposed on the record and killed by this session's own measurements,
-> not because it survived.  What is left is weaker and confounded: the bound was
-> attained at every firing cell measured with `a ≤ 12` and missed at four of the
-> five with `a ≥ 13`, but **every** cell reachable with `a ≥ 9` lies in the single
-> stratum `ℓ = 6`, `δ = 9`, `(λ_1,λ_2,λ_3,1,1,1)`, and no cell that could
-> separate the two readings is within reach of the engine at all (§3).  So there
-> is still **no statistic known to separate the cells where `μ_λ` has maximal
-> rank from those where it does not** — the same conclusion session 43 reached
-> about *where* the bites are, one level up.
+> not because it survived.  What replaces it is an ordering by the **target**
+> dimension: exactness is surjectivity of `μ_λ` onto `C^{h_pad}`, and every one of
+> the twelve cells measured with `h_pad ≤ 8` is exact while four of the five with
+> `h_pad ≥ 9` are not (one crossing).  That has a mechanism behind it — onto a
+> small space is a weak demand — and it re-describes the old evidence: the seven
+> cells that supported the conjecture have `h_pad = 1, 1, 1, 2, 2, 4, 7`, **every
+> one in the easy regime.  The conjecture was never tested where it could fail.**
+> §3 gives this with its confounds, which are severe and not removable by any
+> reachable cell.
 
 ## 1. The conjecture, and what it really says
 
@@ -160,16 +161,11 @@ Stratified, the four failures look confined:
 | `ℓ = 6`, `δ = 7`, outside the family | 1 | 1 | 0 |
 
 **But that reading is confounded, and the confound cannot be removed.**  Sorted
-by `a` instead, the same sixteen cells separate almost perfectly:
-
-- exact at `a = 2, 2, 2, 2, 2, 3, 3, 4, 6, 9, 12, 14`;
-- missed at `a = 13, 21, 30, 30`.
-
-All four failures have `a ≥ 13`; of the twelve exact cells, eleven have `a ≤ 12`
-and one has `a = 14`.  And **every cell measured with `a ≥ 9` lies in the single
-stratum `ℓ = 6`, `δ = 9`, in-family** — so "the failures are in that stratum" and
-"the failures are at large `a`" are the *same statement* in this data, and this
-session cannot tell them apart.
+by `a` the same cells nearly separate too — missed at `a = 13, 21, 30, 30`, exact
+at `a ≤ 12` and at `a = 14, 15` — and **every cell measured with `a ≥ 9` lies in
+that one stratum**, so "the failures are in the `ℓ = 6`, `δ = 9` family" and "the
+failures are at large `a`" are the *same statement* in this data.  Neither is
+clean: `a = 14` and `a = 15` are exact and `a = 13` is not.
 
 The confound is not a matter of session time.  Of the 292 unmeasured firing
 cells, **57 have `a ≥ 13` and lie outside that stratum, and not one is reachable**
@@ -183,15 +179,37 @@ reduction coincide** — which is why every deep bite the programme has ever fou
 is in it, and why the confound is built into the reachable set rather than into
 this sweep.
 
-So the defensible statement is the weak one, and it is stated as a pattern:
+### The one ordering that is nearly clean, and has a mechanism behind it
 
-> **(Pattern, 16 cells.)**  The normalisation bound was attained at every firing
-> cell measured with `a ≤ 12`, and missed at four of the five with `a ≥ 13`.
-> Whether the discriminant is `a`, or the stratum the large-`a` cells all sit in,
-> is not decidable from anything reachable.
+Sort the seventeen cells by **`h_pad`** — the *target* dimension of
+`μ_λ : C^a → C^{h_pad}`, not the source:
 
-Given what happened to this session's earlier pattern (§0), that is recorded with
-no confidence attached.
+| `h_pad` | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 6 | 7 | 8 | **9** | 10 | **19** | **27** | **29** |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | **✗** | ✓ | **✗** | **✗** | **✗** |
+
+**Every one of the twelve cells with `h_pad ≤ 8` is exact; four of the five with
+`h_pad ≥ 9` are not.**  The single crossing is `(14,13,6,1,1,1)_9`, `h_pad = 10`,
+exact, against `(15,9,9,1,1,1)_9`, `h_pad = 9`, missed.
+
+Unlike the parity pattern of §0 this one has a reason attached, which is why it is
+worth writing down.  Exactness *is* surjectivity of `μ_λ` onto `C^{h_pad}`
+(§1), and surjectivity onto a small space is a weak demand: at `h_pad = 1` it
+says only that some copy of `S_λ` survives in `C[R_6]_δ` at all — which is
+Kadish–Landsberg's Question 1.5 in the affirmative, not a fine statement about
+multiplicities.  The demand gets harder as the target grows, and it starts
+failing at `h_pad ≈ 9`.
+
+That reading also re-describes the evidence the conjecture was built on.  The
+seven cells of §0 that genuinely supported it have
+`h_pad = 1, 1, 1, 2, 2, 4, 7` — **every one in the easy regime, none above 7.**
+The conjecture was never tested where it could fail.
+
+> **(Pattern, 17 cells, with a mechanism but only one crossing to constrain it.)**
+> The normalisation bound is attained when the target `h_pad` is small and starts
+> to fail around `h_pad ≈ 9`.  Given what happened to this session's earlier
+> pattern (§0), it is recorded with the mechanism, the crossing, and no
+> confidence attached.
 
 ## 4. Phase B — the proof attempt, and where it stands
 
