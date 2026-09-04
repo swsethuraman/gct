@@ -73,3 +73,36 @@
   built: |Stab|=12 n_chi=16333 n_red=15809 n_nonred=524 rows=74043 rows_red=72532 nnz_red=315180 cons=[0, 1] (23s)
     level 0: 36266 rows, nnz 315077 (E: 72532 rows, nnz 315180)
     wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=15809 nrows=36266 nnz=315077 k=0 len=31618 secs=29.8 | BM deg=15807 f0=0 secs=32.9 | DONE secs=48.5 (49s)
+    wied[cell p=2147483647 seed=2 k=1]: KERNEL SEQ n=15809 nrows=36266 nnz=315077 k=1 len=31618 secs=33.6 | BM deg=15808 f0=0 secs=36.6 | DONE secs=55.5 (106s)
+    wied[cell p=2147483647 seed=3 k=2]: KERNEL SEQ n=15809 nrows=36266 nnz=315077 k=2 len=31618 secs=36.0 | BM deg=15809 f0=0 secs=39.1 | DONE secs=59.4 (166s)
+    wied[cell p=2147483647 seed=4 k=3]: NONSINGULAR SEQ n=15809 nrows=36266 nnz=315077 k=3 len=31618 secs=36.8 | BM deg=15809 f0=1333336556 secs=39.9 (206s)
+  p=2147483647: nullity_p(E_red) = 3  -> mult_red >= 6  [sparse] (229s)
+    level 0: 36266 rows, nnz 315104 (E: 72532 rows, nnz 315180)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=15809 nrows=36266 nnz=315104 k=0 len=31618 secs=32.0 | BM deg=15807 f0=0 secs=35.0 | DONE secs=52.7 (53s)
+    wied[cell p=2147483629 seed=2 k=1]: KERNEL SEQ n=15809 nrows=36266 nnz=315104 k=1 len=31618 secs=35.0 | BM deg=15808 f0=0 secs=38.1 | DONE secs=57.5 (111s)
+    wied[cell p=2147483629 seed=3 k=2]: KERNEL SEQ n=15809 nrows=36266 nnz=315104 k=2 len=31618 secs=36.7 | BM deg=15809 f0=0 secs=39.9 | DONE secs=58.9 (170s)
+    wied[cell p=2147483629 seed=4 k=3]: NONSINGULAR SEQ n=15809 nrows=36266 nnz=315104 k=3 len=31618 secs=34.5 | BM deg=15809 f0=1172185487 secs=37.0 (207s)
+  p=2147483629: nullity_p(E_red) = 3  -> mult_red >= 6  [sparse] (436s)
+{"lam": [13, 13, 7, 1, 1, 1], "delta": 9, "ell": 6, "a": 9, "h_pad": 6, "mult_red": 6, "deficit": 3, "verdict": "EXACT", "n_chi": 16333, "n_red": 15809, "nnz_red": 315180, "nullity": 3, "status": "measured (nullity 3, two primes); mult_red >= 6 proved", "wall": 436.0}
+=== (15, 9, 9, 1, 1, 1) delta=9 ===
+  lam=(15, 9, 9, 1, 1, 1): N_S=445967 |Stab|=12 n_chi=17985 (orbits dropped: 41906) [fast, 22s]
+    E_01: |H|=6 targets 208518 canonical rows 27348 nnz 147391 (obstructed fixed targets cancelled: 44430) [1s]
+    E_12: |H|=6 targets 238902 canonical rows 33697 nnz 149408 (obstructed fixed targets cancelled: 36720) [1s]
+    E_23: |H|=2 targets 77806 canonical rows 38903 nnz 106980 (obstructed fixed targets cancelled: 0) [1s]
+    E_34: |H|=2 targets 106980 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 310) [1s]
+    E_45: |H|=2 targets 106980 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 310) [2s]
+  built: |Stab|=12 n_chi=17985 n_red=17211 n_nonred=774 rows=99948 rows_red=96507 nnz_red=387878 cons=[0, 1, 2] (23s)
+    level 0: 48254 rows, nnz 387790 (E: 96507 rows, nnz 387878)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=17211 nrows=48254 nnz=387790 k=0 len=34422 secs=43.5 | BM deg=17207 f0=0 secs=46.9 | DONE secs=70.5 (71s)
+    wied[cell p=2147483647 seed=2 k=1]: KERNEL SEQ n=17211 nrows=48254 nnz=387790 k=1 len=34422 secs=43.3 | BM deg=17208 f0=0 secs=46.4 | DONE secs=71.7 (143s)
+    wied[cell p=2147483647 seed=3 k=2]: KERNEL SEQ n=17211 nrows=48254 nnz=387790 k=2 len=34422 secs=47.9 | BM deg=17209 f0=0 secs=51.6 | DONE secs=78.6 (222s)
+    wied[cell p=2147483647 seed=4 k=3]: KERNEL SEQ n=17211 nrows=48254 nnz=387790 k=3 len=34422 secs=53.0 | BM deg=17210 f0=0 secs=56.4 | DONE secs=84.2 (307s)
+    wied[cell p=2147483647 seed=5 k=4]: KERNEL SEQ n=17211 nrows=48254 nnz=387790 k=4 len=34422 secs=49.7 | BM deg=17211 f0=0 secs=53.1 | DONE secs=80.1 (387s)
+    wied[cell p=2147483647 seed=6 k=5]: NONSINGULAR SEQ n=17211 nrows=48254 nnz=387790 k=5 len=34422 secs=57.0 | BM deg=17211 f0=1292618234 secs=60.5 (448s)
+  p=2147483647: nullity_p(E_red) = 5  -> mult_red >= 8  [sparse] (471s)
+    level 0: 48254 rows, nnz 387769 (E: 96507 rows, nnz 387878)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=17211 nrows=48254 nnz=387769 k=0 len=34422 secs=39.4 | BM deg=17207 f0=0 secs=42.9 | DONE secs=66.6 (67s)
+    wied[cell p=2147483629 seed=2 k=1]: KERNEL SEQ n=17211 nrows=48254 nnz=387769 k=1 len=34422 secs=41.1 | BM deg=17208 f0=0 secs=43.9 | DONE secs=68.1 (135s)
+    wied[cell p=2147483629 seed=3 k=2]: KERNEL SEQ n=17211 nrows=48254 nnz=387769 k=2 len=34422 secs=46.0 | BM deg=17209 f0=0 secs=49.4 | DONE secs=77.6 (213s)
+    wied[cell p=2147483629 seed=4 k=3]: KERNEL SEQ n=17211 nrows=48254 nnz=387769 k=3 len=34422 secs=50.5 | BM deg=17210 f0=0 secs=53.6 | DONE secs=80.8 (295s)
+    wied[cell p=2147483629 seed=5 k=4]: KERNEL SEQ n=17211 nrows=48254 nnz=387769 k=4 len=34422 secs=50.3 | BM deg=17211 f0=0 secs=53.8 | DONE secs=84.5 (380s)

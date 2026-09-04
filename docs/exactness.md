@@ -47,15 +47,21 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > is untouched by the refutation; only the claim that it is an equality is gone.
 > `results/s47_units.md` tabulates it at all 311 cells with `0 < h_pad < a`.
 >
-> **The regularity that replaces it (a pattern, not a law).**  Write
-> `d := min(a, h_pad) − mult_red` for the rank deficit and `e := h_pad − a`.
-> Across the 268 cells of the record where all three numbers are known, plus this
-> session's cells, `d > 0` at nine, `d = 1` at every one of them, and at **every
-> one `e` is even and `|e| ≤ 4`**.  The parity of `e` is a coin flip across the
-> census (1155 odd to 1122 even over 2277 cells) and is uncorrelated with `ℓ`,
-> `δ`, `λ_1` and six other invariants, and the `|e| ≤ 4` band splits 52 even to
-> 50 odd — so this is not a sampling artefact.  The counterexample sits at
-> `e = −2`, even, as the pattern requires.
+> **A regularity proposed, tested, and withdrawn — in that order.**  Write
+> `d := min(a, h_pad) − mult_red` for the rank deficit of `μ_λ` and
+> `e := h_pad − a`.  Across the 268 cells of the record where all three numbers
+> are known, `d > 0` at eight, `d = 1` at every one, and at every one `e` was
+> **even** with `|e| ≤ 4` — nine of nine including the counterexample, in a band
+> that splits 52 even to 50 odd, with the parity of `e` a coin flip across the
+> census (1155 odd to 1122 even over 2277 cells) and uncorrelated with `ℓ`, `δ`,
+> `λ_1` and six other invariants.  It looked like a real discriminant.  **It is
+> not.**  Two cells later `(16,10,7,1,1,1)_9` (`e = −1`, odd) and
+> `(15,11,7,1,1,1)_9` (`e = −3`, odd) both fail, and the first of them fails by
+> `d = 3`, so "`d = 1` always" is gone too.  The pattern is recorded here because
+> it was proposed on the record and killed by this session's own measurements,
+> not because it survived.  **There is no known statistic that separates the
+> cells where `μ_λ` has maximal rank from those where it does not** — the same
+> conclusion session 43 reached about *where* the bites are, one level up.
 
 ## 1. The conjecture, and what it really says
 
