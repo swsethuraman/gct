@@ -30,3 +30,6 @@ of `docs/transfer_lemma.md`, **`mult_pad = mult_red` at every weight of degree
 | `(6, 5, 5, 3, 3, 2)` | 1 | 427388 | 4 | 103510 | inject | 1 | 0 | 6159 |
 | `(7, 5, 4, 4, 3, 1)` | 1 | 209713 | 2 | 106508 | inject | 1 | 0 | 4508 |
 | `(7, 6, 5, 3, 2, 1)` | 2 | 114502 | 1 | 114502 | inject | 2 | 0 | 3759 |
+| `(7, 6, 4, 3, 2, 2)` | 1 | 219449 | 2 | 116083 | inject | 1 | 0 | 4564 |
+
+8 of 9 measured; empty at 8.
