@@ -1,9 +1,11 @@
 # s48 raw ranks -- target C, the washout Jacobians
 
-Session 48, `analysis/wk9_s48_washout.py` (m = 2..12) and
-`analysis/wk9_s48_washout_hi.py` (m = 13..18, r = 3, 4).  Full Jacobian rank
+Session 48, `analysis/wk9_s48_washout.py` (m = 2..12, r = 2..r*+1) and
+`analysis/wk9_s48_washout_hi.py` (m = 13..17, r = 3, 4).  Full Jacobian rank
 at ONE integer point PROVES density (Lemma 1, `docs/washout_lemma.md`).
 `sharp` = `m^2 r - orbit(m)`, `orbit` = 2m-2 for m >= 3 and 6 for m = 2.
+The decisive row is m = 17, r = 4: naive count predicts density (1156 >= 1140),
+sharp count predicts codimension 16, measured rank is 1124 = 1156 - 32.
 
 ```
 # s48 target C -- washout threshold.  Jacobian rank of Phi_{m,r}: (M_m)^r -> Sym^m C^r at a random point, both house primes.
@@ -68,4 +70,6 @@ at ONE integer point PROVES density (Lemma 1, `docs/washout_lemma.md`).
  15   4     900     28     872      816    True      816      816    True      0  117.1s
  16   3     768     30     738      153    True      153      153    True      0  144.0s
  16   4    1024     30     994      969    True      969      969    True      0  279.4s
+ 17   3     867     32     835      171    True      171      171    True      0  339.6s
+ 17   4    1156     32    1124     1140   False     1124     1124   False     16  687.7s
 ```

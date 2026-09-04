@@ -26,9 +26,10 @@ Labels: **proved** / **measured** / **adopted-from-literature** /
 >
 > **(ii) Density direction (proved at each `(m, r)` in the verified range).**
 > Write `r*(m)` for the largest `r` with `m^2 r − orbit(m) >= C(r+m−1, m)`.
-> Then for **every** `(m, r)` with `2 <= m <= 16` and `2 <= r <= r*(m)` the
-> Jacobian of `Phi_{m,r}` has full rank `C(r+m−1, m)` at an explicit integer
-> point modulo both house primes — which **proves** density (Lemma 1 of
+> Then the Jacobian of `Phi_{m,r}` has full rank `C(r+m−1, m)` at an explicit
+> integer point modulo both house primes at every `(m, r)` with
+> `2 <= m <= 12`, `2 <= r <= r*(m)` and at every `(m, r)` with
+> `13 <= m <= 17`, `r = 3, 4`, `r <= r*(m)` — which **proves** density (Lemma 1 of
 > `docs/washout_lemma.md`; a rank at a point is a *lower* bound on the generic
 > rank, the direction that closes).  Hence `D_r^{per_m} = Sym^m C^r` and
 > `P_r = R_r` there.  In every case tested the bound of (i) is **attained**:
@@ -37,7 +38,14 @@ Labels: **proved** / **measured** / **adopted-from-literature** /
 >
 > — the counting threshold is sharp, not merely necessary.
 >
-> **(iii) The threshold.**
+> **(iii) The threshold, and the decisive row.**  The sharp and naive counts
+> disagree at exactly two places, and both were measured.  At `m = 17`, `r = 4`
+> the naive count says `17^2 · 4 = 1156 >= 1140 = dim Sym^17 C^4`, so it
+> predicts density; the sharp count says `1156 − 32 = 1124 < 1140`, so it
+> predicts codimension 16.  **Measured: rank `dPhi_{17,4} = 1124` at both house
+> primes** — the sharp value on the nose.  Together with `m = 2` (§2) this
+> pins the correction from both sides.
+>
 >
 >     r*(m)  =  4   for  m = 2  and  5 <= m <= 16 ,
 >     r*(m)  =  5   for  m = 3, 4 ,
@@ -179,9 +187,11 @@ is such a product.  So `D_2^{per_m} = Sym^m C^2` for all `m`.  ∎
 
 ## 4. The Jacobian checks *(measured; `results/s48_washout.md`)*
 
-Every `(m, r)` with `2 <= m <= 16` and `r <= r*(m)`, at a random integer point
-(box `10^6`), modulo both house primes, with the first failing `r` also read so
-the threshold is bracketed on both sides.  In **every** row the measured rank
+46 rows at `2 <= m <= 12` covering `r = 2 .. r*(m)+1`, plus `r = 3, 4` at
+`13 <= m <= 17` — at a random integer point (box `10^6`), modulo both house
+primes.  The first *failing* `r` is read as well, so the threshold is bracketed
+on both sides at every `m <= 12`.  (`r = 2` at `m >= 13` is not computed; it is
+proved for every `m` in §3.)  The `m = 17`, `r = 4` row is the one that separates the sharp threshold from the naive one, and it comes out sharp.  In **every** row the measured rank
 equals `min(C(r+m−1,m), m^2 r − orbit(m))` at both primes — the two sides of
 the sandwich meet, so each is the exact dimension, not a bound:
 
@@ -200,9 +210,15 @@ the sandwich meet, so each is the exact dimension, not a bound:
 | 11 | 4 | 464 | 364 | **364** | yes |
 | 11 | 5 | 585 | 1365 | **585** | no (codim 780) |
 | 12 | 4 | 554 | 455 | **455** | yes |
+| 13 | 4 | 652 | 560 | **560** | yes |
+| 14 | 4 | 758 | 680 | **680** | yes |
+| 15 | 4 | 872 | 816 | **816** | yes |
 | 16 | 3 | 738 | 153 | **153** | yes |
+| 16 | 4 | 994 | 969 | **969** | yes |
+| 17 | 3 | 835 | 171 | **171** | yes |
+| **17** | **4** | **1124** | **1140** | **1124** | **no (codim 16) — the row that separates the sharp count from the naive one** |
 
-(the full 40-row table, including every `m` and every `r` from 2, is
+(the full 54-row table, including every `m` and every `r` from 2, is
 `results/s48_washout.md`.)
 
 Pre-registered prediction **C4** — full rank at every `(m, r)` with
@@ -210,9 +226,9 @@ Pre-registered prediction **C4** — full rank at every `(m, r)` with
 Prediction **C2**, the `orbit(m) = 2m − 2` correction, is confirmed at prior
 0.85 and is moreover *sharp*: the bound is attained at every measured `(m,r)`.
 
-**What is not proved.**  Density for `m >= 17` at `r = 3` (and for `m > 16` at
-`r <= r*`) is **not** verified: the sub-permanent DP costs `m^2 2^m` and was
-out of budget past `m = 16`.  The failure direction of Theorem C is
+**What is not proved.**  Density for `m >= 18` at `r = 3` is **not** verified
+computationally: the sub-permanent DP costs `m^2 2^m` and runs out of budget
+past `m = 17` (the `m = 17`, `r = 4` row alone took 688 s per prime).  The failure direction of Theorem C is
 unconditional in `m`; the density direction is a theorem at each `(m, r)`
 actually run, and an **expectation** beyond.  `r = 2` is proved for all `m`
 (§3).
