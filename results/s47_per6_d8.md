@@ -1,0 +1,25 @@
+# `I(D_6^{per_3})_8` — the last nine weights — session 47, Phase C2
+
+Session 41 measured 28 of the 91 length-6 weights `μ ⊢ 24` with `a(μ,8) ≥ 1` in
+`Sym^8(Sym^3 C^6)`; session 43 measured 54 more.  All 82 are **empty**
+(`mult = a`).  This table measures the **nine** that were left.
+
+*(The brief says "81 of the 91 ... the 10 remaining".  Re-enumerating the
+weights here and re-parsing `results/s41_per6.md` and `results/s43_per6.md`
+gives 91 total, **82** measured — 28 + 54, disjoint, every `a` agreeing with an
+independent plethysm recomputation — and **9** outstanding.  The count is off by
+one; the list below is the true remainder.)*
+
+Route: the sparse injectivity certificate `analysis/wk9_s43_inject.py`
+(`inject_one`), unchanged, both house primes, `a + 8` points
+`per_3(Σ s_i A_i)`.  `[M; Ev]` nonsingular at one prime proves `mult = a` at
+that prime; the two primes are asserted to agree.  A kernel vector would prove
+`mult < a` and would be the **first permanent-specific equation the programme
+has seen** — the run halts there.
+
+If all nine are empty then `I(D_6^{per_3})_8 = 0` outright, and by Prop. 8(1)
+of `docs/transfer_lemma.md`, **`mult_pad = mult_red` at every weight of degree
+8** — the degree at which every pad-side bite in the six-row record lives.
+
+| `μ` | `a` | `N_S` | Stab | `n_χ` | route | `mult` | units | secs |
+|---|---|---|---|---|---|---|---|---|
