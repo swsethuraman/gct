@@ -1,0 +1,20 @@
+      level 1: 64 prefixes
+      level 2: 1061 prefixes
+      level 3: 7364 prefixes
+      level 4: 37010 prefixes
+      level 5: 113009 prefixes
+      level 6: 204271 prefixes
+      level 7: 237040 prefixes
+      level 8: 237040 prefixes
+  lam=(12, 12, 3, 3, 1, 1): N_S=237040 |Stab|=8 ngen=3 rounds=2 n_chi=23700 (orbits dropped: 13248) [gen, 0s, HWM 0.15 GB]
+    E_01: |H|=4 gens=2 targets 229248 canonical rows 45465 nnz 231103 (obstructed fixed targets cancelled: 11948) [1s, HWM 0.16 GB]
+    E_12: |H|=2 gens=1 targets 106035 canonical rows 42212 nnz 208066 (obstructed fixed targets cancelled: 5208) [1s, HWM 0.16 GB]
+    E_23: |H|=4 gens=2 targets 197075 canonical rows 39297 nnz 97260 (obstructed fixed targets cancelled: 3160) [2s, HWM 0.16 GB]
+    E_34: |H|=2 gens=1 targets 88268 canonical rows 44305 nnz 93658 (obstructed fixed targets cancelled: 0) [2s, HWM 0.16 GB]
+    E_45: |H|=4 gens=2 targets 141134 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1092) [2s, HWM 0.16 GB]
+  built[gen] (12, 12, 3, 3, 1, 1) d8: N_S=237040 |Stab|=8 n_chi=23700 rows=171279 nnz=630087 (3s: mono 0s orbits 0s rows 2s; HWM 0.16 GB)
+    level 0 (3,2): 35596 rows, nnz 593658 (full: 171293 rows, nnz 961887)
+    level 0 (3,2): 35596 rows, nnz 593996 (full: 171293 rows, nnz 961887)
+    wied[c12_12_3_3_1_1d8_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593658 k=0 len=47400 secs=87.5 | BM deg=23700 f0=909205197 secs=96.4 (97s)
+    wied[c12_12_3_3_1_1d8_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593996 k=0 len=47400 secs=89.9 | BM deg=23700 f0=496366942 secs=98.8 (100s)
+  (12, 12, 3, 3, 1, 1) d8 [det]: nullity = 0 -> mult_det = 6 = a PROVED  (158s)
