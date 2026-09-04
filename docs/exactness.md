@@ -264,8 +264,8 @@ Reading `d = min(a, h_pad) − mult_red` off all of them
   Corollary B2.
 
 The parity reading built on this — deficits only at even `e` — is retracted
-(§0).  What is left is the shape of the rate, and this session's six firing
-cells put a number on the firing side of it for the first time:
+(§0).  What is left is the shape of the rate, and this session's seventeen
+firing cells put a number on the firing side of it for the first time:
 
 > **The bound is exact at 13 of the 17 firing cells measured**, and — the reading
 > that actually orders them — at **12 of the 12 with `h_pad ≤ 8`** against **1 of
@@ -273,10 +273,14 @@ cells put a number on the firing side of it for the first time:
 
 Set against session 43's `δ = 8` result — the bound fires at exactly the four
 two-unit cells of the complete in-family set and is exact at all four — the
-conclusion is that **exactness is a `δ = 8` phenomenon, not a general one.**  It
-held on a closed set at one degree and fails at the next degree in the same
-family, at the first opportunity.  That is the most useful thing this session
-can say about the finding it was sent to test.
+conclusion is that **the `δ = 8` result was a small-`h_pad` result.**  Those four
+cells have `h_pad = 1, 2, 4, 7`; the complete in-family set at `δ = 8` simply
+contains no firing cell with a large target.  At `δ = 9` in the same family the
+targets grow — `h_pad` runs to 29 — and the bound starts missing.  So exactness
+did not "hold at `δ = 8` and fail at `δ = 9`" for any reason to do with the
+degree; it held where the demand was weak and failed where it was not, and
+`δ = 8` is where the reachable demands happen to be weak.  That is the most
+useful thing this session can say about the finding it was sent to test.
 
 ### 4.4 The obstacle, stated precisely
 
@@ -426,11 +430,19 @@ ten integer certificates this session, `results/s42_certs/`.
    particular: four independent integer vectors would turn "four reducibility
    equations at that weight" from measured into proved, and it is the deepest
    bite relative to `h_pad` in the record.
-3. **Measure the firing set off `ℓ = 6`.**  Six of the ten firing cells measured
+3. **The decisive experiment is a firing cell with `h_pad ≥ 9` outside the
+   `ℓ = 6`, `δ = 9` family, and none is reachable.**  Of the 292 unmeasured
+   firing cells, 66 have `h_pad ≥ 9`; the three cheapest are in-family at `δ = 9`
+   (this session measured two of them), and every one outside has
+   `n_red ≥ 2·10^5`.  Until the engine reaches those, the `h_pad` ordering of §3
+   and the stratum reading cannot be told apart — so the next real step is a
+   cheaper route to `mult_red` at low-`|Stab|` weights, not more cells by this
+   one.
+4. **Measure the firing set off `ℓ = 6`.**  Six of the ten firing cells measured
    here are `ℓ = 6`, `δ = 9`, in-family; the two `ℓ = 7` cells measured are both
    `a = 2, h_pad = 1`, the smallest test the statement admits.  The failure rate
    away from the family is unmeasured.
-4. **`h_pad = 0` deserves its own line in the record.**  162 census cells prove
+5. **`h_pad = 0` deserves its own line in the record.**  162 census cells prove
    `mult_red = 0` for free, and they were being counted as evidence for a
    conjecture they say nothing about.  They are worth stating separately, as
    negative instances of Kadish–Landsberg Question 1.5, which is what they are.
