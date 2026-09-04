@@ -122,13 +122,56 @@ degree 9, where the normalisation bound could only prove two.  It is the largest
 unit count at any single cell in the record, and the first cell where a bite is
 strictly deeper than the normalisation can see.
 
-## 3. Phase A as left
+## 3. Phase A as left — sixteen firing cells, and one confound that cannot be removed
 
-The pre-registered sweep stopped at its first cell.  A **post-refutation** sweep
-was then run under `--continue` — a different question (the failure *rate*, not
-the binary), and labelled as such — over cells stratified by the parity of the
-gap `a − h_pad`, the discriminant the pattern of §4 proposes.  See
-`results/s47_ledger.md` for the full table.
+The pre-registered sweep stopped at cell 1.  A **post-refutation** sweep then ran
+under `--continue` (a different question — the failure *rate*, not the binary —
+and labelled as such in `results/s47_ledger.md`).  Sixteen firing cells in all:
+
+> **The bound is exact at 12 of the 16 and missed at 4.**
+
+Stratified, the four failures look confined:
+
+| stratum | cells | exact | missed |
+|---|---|---|---|
+| `ℓ = 6`, `δ = 9`, in the `(λ_1,λ_2,λ_3,1,1,1)` family | 8 | 4 | **4** |
+| `ℓ = 7`, `δ = 9` | 4 | 4 | 0 |
+| `ℓ = 7`, `δ = 8` | 3 | 3 | 0 |
+| `ℓ = 6`, `δ = 7`, outside the family | 1 | 1 | 0 |
+
+**But that reading is confounded, and the confound cannot be removed.**  Sorted
+by `a` instead, the same sixteen cells separate almost perfectly:
+
+- exact at `a = 2, 2, 2, 2, 2, 3, 3, 4, 6, 9, 12, 14`;
+- missed at `a = 13, 21, 30, 30`.
+
+All four failures have `a ≥ 13`; of the twelve exact cells, eleven have `a ≤ 12`
+and one has `a = 14`.  And **every cell measured with `a ≥ 9` lies in the single
+stratum `ℓ = 6`, `δ = 9`, in-family** — so "the failures are in that stratum" and
+"the failures are at large `a`" are the *same statement* in this data, and this
+session cannot tell them apart.
+
+The confound is not a matter of session time.  Of the 292 unmeasured firing
+cells, **57 have `a ≥ 13` and lie outside that stratum, and not one is reachable**
+— the cheapest has `n_red ≤ 2.1·10^5`, and the session abandoned
+`(11,9,8,2,1,1)_8` at `n_red = 249213` after the build (about eight hours per
+Wiedemann sequence).  The reason is structural: a large `a` needs a balanced `λ`,
+a balanced `λ` has small `|Stab|`, and a small stabiliser is exactly what makes
+the isotypic reduction huge.  **The `(λ_1,λ_2,λ_3,1,1,1)` family at `δ = 9` is
+the only place in the region where a large multiplicity space and a small
+reduction coincide** — which is why every deep bite the programme has ever found
+is in it, and why the confound is built into the reachable set rather than into
+this sweep.
+
+So the defensible statement is the weak one, and it is stated as a pattern:
+
+> **(Pattern, 16 cells.)**  The normalisation bound was attained at every firing
+> cell measured with `a ≤ 12`, and missed at four of the five with `a ≥ 13`.
+> Whether the discriminant is `a`, or the stratum the large-`a` cells all sit in,
+> is not decidable from anything reachable.
+
+Given what happened to this session's earlier pattern (§0), that is recorded with
+no confidence attached.
 
 ## 4. Phase B — the proof attempt, and where it stands
 
