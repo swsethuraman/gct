@@ -75,13 +75,17 @@ session's firing-cell measurement, the pre-registered first cell included.
 | 3 | `(16,10,7,1,1,1)` | 9 | 6 | 30 | 29 | 1 | 22720 | 248152 | 4 | **26** | 3 | 4 | **REFUTED** | 810 |
 | 4 | `(15,11,7,1,1,1)` | 9 | 6 | 30 | 27 | 3 | 27226 | 304026 | 4 | **26** | 1 | 4 | **REFUTED** | 1156 |
 | 5 | `(13,13,7,1,1,1)` | 9 | 6 | 9 | 6 | 3 | 15809 | 315180 | 3 | **6** | 0 | 3 | exact | 436 |
+| 6 | `(15,9,9,1,1,1)` | 9 | 6 | 13 | 9 | 4 | 17211 | 387878 | 5 | **8** | 1 | 5 | **REFUTED** | 915 |
+| 7 | `(13,12,8,1,1,1)` | 9 | 6 | 14 | 7 | 7 | 40421 | 475888 | 7 | **7** | 0 | 7 | exact | 5054 |
 
-**5 firing cells measured this session: the bound is exact at 2 and missed at 3.**
+**7 firing cells measured this session: the bound is exact at 3 and missed at 4.**
 
 | gap `a − h_pad` | parity | cells | missed |
 |---|---|---|---|
 | 1 | odd | 1 | 1 |
 | 2 | even | 2 | 1 |
 | 3 | odd | 2 | 1 |
+| 4 | even | 1 | 1 |
+| 7 | odd | 1 | 0 |
 
-Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 2, 1: 2, 3: 1}.
+Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 3, 1: 3, 3: 1}.

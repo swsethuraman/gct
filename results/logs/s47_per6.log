@@ -17,3 +17,17 @@ measured non-empty (mult < a): 0
 === per6 d=8 (8, 6, 4, 3, 2, 1) a=3 ===
   (8, 6, 4, 3, 2, 1) d=8: n_chi=87432 N_S=87432 stab=1 rows=286622
    p=2147483647: [M;Ev] 286633x87432, nnz 1964356; wiedemann ...
+   p=2147483647: NONSINGULAR SEQ n=87432 nrows=286633 nnz=1964356 k=0 len=174864 secs=913.9 | BM deg=87432 f0=920795287 secs=1008.6 (1026s)
+   p=2147483629: [M;Ev] 286633x87432, nnz 1964356; wiedemann ...
+   p=2147483629: NONSINGULAR SEQ n=87432 nrows=286633 nnz=1964356 k=0 len=174864 secs=926.6 | BM deg=87432 f0=726153626 secs=1026.5 (2062s)
+{"lam": [8, 6, 4, 3, 2, 1], "a": 3, "n_chi": 87432, "mult": 3, "units": 0, "secs": 2062.4841277599335}
+=== per6 d=8 (8, 5, 4, 3, 2, 2) a=1 ===
+  (8, 5, 4, 3, 2, 2) d=8: n_chi=98732 N_S=186426 stab=2 rows=467959
+   p=2147483647: [M;Ev] 467968x98732, nnz 2323794; wiedemann ...
+   p=2147483647: NONSINGULAR SEQ n=98732 nrows=467968 nnz=2323794 k=0 len=197464 secs=1261.6 | BM deg=98732 f0=1669319010 secs=1387.5 (1414s)
+   p=2147483629: [M;Ev] 467968x98732, nnz 2323794; wiedemann ...
+   p=2147483629: NONSINGULAR SEQ n=98732 nrows=467968 nnz=2323794 k=0 len=197464 secs=1283.0 | BM deg=98732 f0=1576019748 secs=1408.1 (2836s)
+{"lam": [8, 5, 4, 3, 2, 2], "a": 1, "n_chi": 98732, "mult": 1, "units": 0, "secs": 2836.4003808498383}
+=== per6 d=8 (6, 5, 5, 3, 3, 2) a=1 ===
+  (6, 5, 5, 3, 3, 2) d=8: n_chi=103510 N_S=427388 stab=4 rows=923408
+   p=2147483647: [M;Ev] 923417x103510, nnz 4106541; wiedemann ...
