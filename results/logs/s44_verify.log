@@ -1,0 +1,23 @@
+[s44 verify] 1. h_d, rho_d, H_GN by sympy series vs binomial sums
+   h_d and H_GN agree with the series expansion everywhere
+[s44 verify] 2. rho_d = rows - Koszul alternating count
+   identity holds at every (n, r, d) tested
+[s44 verify] 3. rank M_d(F) <= rho_d at deliberately degenerate quartics (n=4, r=6)
+   product of four linear forms  : ranks at d=5..8 [66, 161, 336, 630] (rho [126, 321, 666, 1197])
+   square of a quadric           : ranks at d=5..8 [56, 126, 252, 462] (rho [126, 321, 666, 1197])
+   cone (no s_6)                 : ranks at d=5..8 [105, 270, 570, 1050] (rho [126, 321, 666, 1197])
+   random quartic                : ranks at d=5..8 [126, 321, 666, 1197] (rho [126, 321, 666, 1197])
+[s44 verify] 4. the drop re-measured, fresh seed, different box
+   box +-1000: d=4: 36/36  d=5: 126/126  d=6: 321/321  d=7: 660/666  d=8: 1146/1197
+   box +-100000000: d=4: 36/36  d=5: 126/126  d=6: 321/321  d=7: 660/666  d=8: 1146/1197
+[s44 verify] 5. Theorem A arithmetic from the resolution ranks
+   d=3: dim S_d    56  H_GN   40  ceiling    16  rho     6  no forcing
+   d=4: dim S_d   126  H_GN   60  ceiling    66  rho    36  no forcing
+   d=5: dim S_d   252  H_GN   80  ceiling   172  rho   126  no forcing
+   d=6: dim S_d   462  H_GN  100  ceiling   362  rho   321  no forcing
+   d=7: dim S_d   792  H_GN  120  ceiling   672  rho   666  no forcing
+   d=8: dim S_d  1287  H_GN  140  ceiling  1147  rho  1197  FORCED DROP
+   d=9: dim S_d  2002  H_GN  160  ceiling  1842  rho  1952  FORCED DROP
+   d=8: ceiling 1147 < rho 1197 -- Theorem A's inequality confirmed
+
+[s44 verify] ALL CHECKS PASS
