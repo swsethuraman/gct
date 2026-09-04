@@ -17,8 +17,8 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > **The conjecture is false.**  At `λ = (15,12,6,1,1,1)`, `δ = 9`, `ℓ = 6`:
 > `a = 21`, `h_pad = 19` — so the bound fires — and `mult_red = 18`.  The
 > normalisation bound is **not** attained.  This is the first cell the session
-> measured.  Sixteen firing cells were measured in all: the bound is exact at
-> **12** and missed at **4**, and all four failures are proved over `Q`, not
+> measured.  Seventeen firing cells were measured in all: the bound is exact at
+> **13** and missed at **4**, and all four failures are proved over `Q`, not
 > measured (§2).
 >
 > **The certificate.**  `a = 21` by two independent routes and `h_pad = 19` by
@@ -143,19 +143,19 @@ proves four; `(16,10,7,1,1,1)_9` carries **four** where the bound proves one.
 The latter is the deepest bite in the record relative to what `h_pad` can see,
 and both are deeper than any bite session 43 or 45 found.
 
-## 3. Phase A as left — sixteen firing cells, and one confound that cannot be removed
+## 3. Phase A as left — seventeen firing cells, and what orders them
 
 The pre-registered sweep stopped at cell 1.  A **post-refutation** sweep then ran
 under `--continue` (a different question — the failure *rate*, not the binary —
-and labelled as such in `results/s47_ledger.md`).  Sixteen firing cells in all:
+and labelled as such in `results/s47_ledger.md`).  Seventeen firing cells in all:
 
-> **The bound is exact at 12 of the 16 and missed at 4.**
+> **The bound is exact at 13 of the 17 and missed at 4.**
 
 Stratified, the four failures look confined:
 
 | stratum | cells | exact | missed |
 |---|---|---|---|
-| `ℓ = 6`, `δ = 9`, in the `(λ_1,λ_2,λ_3,1,1,1)` family | 8 | 4 | **4** |
+| `ℓ = 6`, `δ = 9`, in the `(λ_1,λ_2,λ_3,1,1,1)` family | 9 | 5 | **4** |
 | `ℓ = 7`, `δ = 9` | 4 | 4 | 0 |
 | `ℓ = 7`, `δ = 8` | 3 | 3 | 0 |
 | `ℓ = 6`, `δ = 7`, outside the family | 1 | 1 | 0 |
@@ -267,9 +267,9 @@ The parity reading built on this — deficits only at even `e` — is retracted
 (§0).  What is left is the shape of the rate, and this session's six firing
 cells put a number on the firing side of it for the first time:
 
-> **The bound is exact at 2 of the 6 firing cells measured, all six at `δ = 9`,
-> `ℓ = 6`, in the `(λ_1,λ_2,λ_3,1,1,1)` family.**  Deficits seen: `0, 0, 1, 1,
-> 1, 3`.
+> **The bound is exact at 13 of the 17 firing cells measured**, and — the reading
+> that actually orders them — at **12 of the 12 with `h_pad ≤ 8`** against **1 of
+> the 5 with `h_pad ≥ 9`** (§3).
 
 Set against session 43's `δ = 8` result — the bound fires at exactly the four
 two-unit cells of the complete in-family set and is exact at all four — the
@@ -391,12 +391,13 @@ ten integer certificates this session, `results/s42_certs/`.
   the *unit counts* claimed at the other three it does: "four independent
   reducibility equations at `(16,10,7,1,1,1)_9`" is measured, not proved, until
   four integer vectors are exhibited.
-- All six firing cells measured are `ℓ = 6`, `δ = 9`, in the
-  `(λ_1,λ_2,λ_3,1,1,1)` family.  The failure rate is a rate **on that family at
-  that degree**, and nothing here measures the firing set at `ℓ = 7`, `ℓ = 8`,
-  or outside the family — the pre-registered composition target (P2) was not
-  met because stopping rule 2 fired at cell 1.  The 2-of-6 figure should not be
-  read as a rate over the region.
+- The seventeen cells are not a sample of the region.  Nine are `ℓ = 6`,
+  `δ = 9`, in-family; seven are `ℓ = 7`; one is `ℓ = 6`, `δ = 7`, outside the
+  family; **none is `ℓ = 8`**, and none is `ℓ = 6` at `δ = 8` outside what
+  session 43 already did.  Worse, every cell reachable with `a ≥ 9` or
+  `h_pad ≥ 9` is in the one stratum, so the `h_pad` ordering of §3 and the
+  stratum reading cannot be separated by anything this engine can reach.  The
+  13-of-17 figure should not be read as a rate over the region.
 - The rank-deficit reading of §4.3 is a reading of the *record*, and the record
   is not a random sample of the region: it is what was cheap, and it is heavily
   weighted towards `ℓ = 6` and towards the family.
