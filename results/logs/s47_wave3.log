@@ -77,3 +77,21 @@
     E_34: |H|=6 targets 170064 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1068) [3s]
     E_45: |H|=6 targets 170064 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1068) [3s]
   built: |Stab|=36 n_chi=9641 n_red=9538 n_nonred=103 rows=136173 rows_red=135361 nnz_red=612204 cons=[0, 1, 2] (47s)
+    level 0: 57260 rows, nnz 517778 (E: 135361 rows, nnz 612204)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=9538 nrows=57260 nnz=517778 k=0 len=19076 secs=31.0 | BM deg=9538 f0=0 secs=32.1 | DONE secs=48.0 (49s)
+    wied[cell p=2147483647 seed=2 k=1]: NONSINGULAR SEQ n=9538 nrows=57260 nnz=517778 k=1 len=19076 secs=32.7 | BM deg=9538 f0=478991383 secs=33.7 (82s)
+  p=2147483647: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (267s)
+    level 0: 57260 rows, nnz 517327 (E: 135361 rows, nnz 612204)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=9538 nrows=57260 nnz=517327 k=0 len=19076 secs=30.4 | BM deg=9538 f0=0 secs=31.5 | DONE secs=48.0 (48s)
+    wied[cell p=2147483629 seed=2 k=1]: NONSINGULAR SEQ n=9538 nrows=57260 nnz=517327 k=1 len=19076 secs=32.1 | BM deg=9538 f0=1613158851 secs=33.1 (82s)
+  p=2147483629: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (348s)
+{"lam": [11, 11, 11, 1, 1, 1], "delta": 9, "ell": 6, "a": 2, "h_pad": 1, "mult_red": 1, "deficit": 1, "verdict": "EXACT", "n_chi": 9641, "n_red": 9538, "nnz_red": 612204, "nullity": 1, "status": "measured (nullity 1, two primes); mult_red >= 1 proved", "wall": 356.2}
+=== (11, 9, 8, 2, 1, 1) delta=8 ===
+  lam=(11, 9, 8, 2, 1, 1): N_S=621062 |Stab|=2 n_chi=255540 (orbits dropped: 109982) [fast, 29s]
+    E_01: |H|=2 targets 466144 canonical rows 222535 nnz 1140242 (obstructed fixed targets cancelled: 21074) [2s]
+    E_12: |H|=2 targets 473975 canonical rows 227893 nnz 1072696 (obstructed fixed targets cancelled: 18189) [3s]
+    E_23: |H|=2 targets 203120 canonical rows 97647 nnz 432203 (obstructed fixed targets cancelled: 7826) [4s]
+    E_34: |H|=1 targets 268397 canonical rows 268397 nnz 511080 (obstructed fixed targets cancelled: 0) [4s]
+    E_45: |H|=1 targets 255540 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [4s]
+  built: |Stab|=2 n_chi=255540 n_red=249213 n_nonred=6327 rows=816472 rows_red=801471 nnz_red=3080353 cons=[0, 1, 2] (33s)
+    level 0: 400736 rows, nnz 3080311 (E: 801471 rows, nnz 3080353)
