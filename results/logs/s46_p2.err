@@ -5,3 +5,15 @@
       level 5: 5279997 prefixes
       level 6: 10060304 prefixes
       level 7: 10060304 prefixes
+  lam=(8, 4, 4, 4, 4, 4): N_S=10060304 |Stab|=120 ngen=4 rounds=5 n_chi=92031 (orbits dropped: 0) [gen, 45s, HWM 1.13 GB]
+    E_01: |H|=24 gens=3 targets 6189167 canonical rows 272192 nnz 1256830 (obstructed fixed targets cancelled: 0) [46s, HWM 1.15 GB]
+    E_12: |H|=6 gens=2 targets 8698905 canonical rows 1485162 nnz 4855994 (obstructed fixed targets cancelled: 0) [98s, HWM 1.42 GB]
+    E_23: |H|=6 gens=2 targets 8698905 canonical rows 1485162 nnz 4855994 (obstructed fixed targets cancelled: 0) [157s, HWM 1.53 GB]
+    E_34: |H|=6 gens=2 targets 8698905 canonical rows 1485162 nnz 4855994 (obstructed fixed targets cancelled: 0) [211s, HWM 1.63 GB]
+    E_45: |H|=6 gens=2 targets 8698905 canonical rows 1485162 nnz 4855994 (obstructed fixed targets cancelled: 0) [270s, HWM 1.69 GB]
+  built[gen] (8, 4, 4, 4, 4, 4) d7: N_S=10060304 |Stab|=120 n_chi=92031 rows=6212840 nnz=20680806 (331s: mono 15s orbits 45s rows 271s; HWM 1.69 GB)
+    level 0 (12,2): 552228 rows, nnz 4595811 (full: 6212850 rows, nnz 21601116)
+    level 0 (12,2): 552228 rows, nnz 4596782 (full: 6212850 rows, nnz 21601116)
+    wied[c8_4_4_4_4_4d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=92031 nrows=552228 nnz=4595811 k=0 len=184062 secs=5005.5 | BM deg=92031 f0=938616487 secs=5151.3 (5214s)
+    wied[c8_4_4_4_4_4d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=92031 nrows=552228 nnz=4596782 k=0 len=184062 secs=5023.2 | BM deg=92031 f0=2022985111 secs=5161.8 (5218s)
+  (8, 4, 4, 4, 4, 4) d7 [det]: nullity = 0 -> mult_det = 2 = a PROVED  (5585s)
