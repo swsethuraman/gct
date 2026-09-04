@@ -313,7 +313,36 @@ one of the two most exposed cells.  It is now one of the four counterexamples,
 and the one that misses hardest.  P1a shows the mechanism was mis-guessed: the
 deficit is not always 1.
 
-<!-- SECTION 7 -->
+## 7. Phase C — both items closed
+
+**C2 — `I(D_6^{per_3})_8 = 0`, and the theorem it makes.**  Nine length-6 weights
+`μ ⊢ 24` with `a(μ,8) ≥ 1` were outstanding (not ten — the brief's "81 of the 91"
+is off by one; 82 are banked, 28 in session 41 and 54 in session 43, disjoint,
+every `a` re-derived here).  All **nine** are empty, by session 43's sparse
+injectivity certificate at both house primes, `n_χ` from 76,792 to 127,182,
+36,518 s in all.  So every one of the 91 weights has `mult = a` and
+
+> **`I(D_6^{per_3})_8 = 0`**, hence by Prop. 8(1) of `docs/transfer_lemma.md`
+> **`mult_pad = mult_red` at every weight of degree 8** — a theorem with no
+> points in it, at the degree where every pad-side bite in the six-row record
+> lives.  There is no permanent-specific equation in degree 8.
+
+With session 43's degree 7 and session 37's `δ ≤ 6`, the permanent is now proved
+invisible on the reducible side **through degree 8**.  Table
+`results/s47_per6_d8.md`.
+
+**C1 — the outstanding lifts.**  The brief listed six.  This session lifted four
+different cells instead — the four counterexamples of §2 — because a
+counterexample that is only measured does not refute anything, and each of those
+lifts is the same tool (`analysis/wk9_s42_lift.py`) applied where it now buys
+more.  The six the brief named (`(12,9,8,1,1,1)_8`, `(12,10,7,1,1,1)_8`,
+`(14,8,7,1,1,1)_8`, `(13,9,7,1,1,1)_8`, `(17,12,4,1,1,1)_9`,
+`(16,13,4,1,1,1)_9`) remain outstanding, and are unaffected by the refutation:
+they are `mult_red` values already measured at both primes, awaiting integer
+vectors.  This is a deliberate substitution, not an omission, and it is the one
+place where the session did not do what the brief asked.
+
+
 
 ## 8. Honest boundary
 
