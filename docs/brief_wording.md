@@ -53,3 +53,32 @@ the words change, not the discipline.
 Before a brief goes out: search it for `kill`, `pkill`, `hunt`, `brutal`,
 `attack`, `exploit`, `proxy`, `bypass`, `circumvent`, `STOP-EVERYTHING`.
 Any hit is rewritten from §2.
+
+## 5. The degeneracy-direction pre-check (added session 49 batch)
+
+Two external review sessions in a row produced an invariant of the form
+"determinant type is special in way `X`", and in both the padded permanent
+turned out to be *more* special in way `X`, so the statistic separated in the
+wrong direction.  The same shape appears in our own Milnor-corank work.
+
+Before developing any statistic meant to characterise determinant type,
+evaluate it at all three of a fixed, committed test set:
+
+1. a `det_4` pencil;
+2. a reducible point `ℓ·c` with `c` generic;
+3. the full ten-variable `ℓ·per_3` — not a length-reduced restriction.
+
+If the statistic is at least as degenerate at (3) as at (1), it separates in the
+wrong direction and the work stops there.  The check costs minutes and has now
+cost two sessions.
+
+Point (3) is not a formality.  Every evaluation control we ran before session 50
+was at a restriction to fewer variables, and restriction can manufacture
+accidental vanishing.  Where (2) and (3) disagree, that disagreement is the
+result.
+
+## 6. Two recurring citation corrections
+
+- Kronecker-positivity hardness: Ikenmeyer, Mulmuley, Walter, *Comput.
+  Complexity* **26** (2017) — not a 2022 FOCS paper.
+- Gulliksen–Négård: *C. R. Acad. Sci. Paris Sér. A* **274** (1972), 16–19.
