@@ -1,0 +1,25 @@
+=== v1a : 7 8 8 5 5 1 1 --side det --levels cheap ===
+  exit 0 (pid 2277)
+    wied[c8_8_5_5_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=62613 nrows=93963 nnz=1432658 k=0 len=125226 secs=721.5 | BM deg=62613 f0=1428728852 secs=785.3 (861s)
+  (8, 8, 5, 5, 1, 1) d7 [det]: nullity = 0 -> mult_det = 3 = a PROVED  (886s)
+=== v1b : 7 9 9 6 2 1 1 --side det --levels cheap ===
+  exit 0 (pid 2373)
+    wied[c9_9_6_2_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=36090 nrows=54179 nnz=854812 k=0 len=72180 secs=209.3 | BM deg=36090 f0=1547643017 secs=229.9 (231s)
+  (9, 9, 6, 2, 1, 1) d7 [det]: nullity = 0 -> mult_det = 4 = a PROVED  (249s)
+=== v1c : 8 12 12 3 3 1 1 --side det --levels cheap ===
+  exit 0 (pid 2398)
+    wied[c12_12_3_3_1_1d8_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=23700 nrows=35596 nnz=593996 k=0 len=47400 secs=89.9 | BM deg=23700 f0=496366942 secs=98.8 (100s)
+  (12, 12, 3, 3, 1, 1) d8 [det]: nullity = 0 -> mult_det = 6 = a PROVED  (158s)
+=== v2 : 8 13 10 6 1 1 1 --side pad --levels cheap --kern ===
+  exit 0 (pid 2418)
+    wied[c13_10_6_1_1_1d8_pad p=2147483647 lvl=0 seed=2 k=1]: NONSINGULAR SEQ n=10682 nrows=15775 nnz=285532 k=1 len=21364 secs=18.4 | BM deg=10682 f0=1213666420 secs=20.2 (50s)
+  (13, 10, 6, 1, 1, 1) d8 [pad]: nullity = 1 -> mult_pad = 8  (108s)
+=== v3a : 7 12 9 3 2 1 1 --side det --levels cheap ===
+  exit 0 (pid 2441)
+    wied[c12_9_3_2_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=19985 nrows=30023 nnz=453324 k=0 len=39970 secs=56.2 | BM deg=19985 f0=484793836 secs=62.5 (63s)
+  (12, 9, 3, 2, 1, 1) d7 [det]: nullity = 0 -> mult_det = 5 = a PROVED  (79s)
+=== v3b : 7 12 9 3 2 1 1 --side det --levels s42 ===
+  exit 0 (pid 2459)
+    wied[c12_9_3_2_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=19985 nrows=31001 nnz=459547 k=0 len=39970 secs=57.2 | BM deg=19985 f0=2074937476 secs=63.4 (64s)
+  (12, 9, 3, 2, 1, 1) d7 [det]: nullity = 0 -> mult_det = 5 = a PROVED  (80s)
+PHASE 1 DONE
