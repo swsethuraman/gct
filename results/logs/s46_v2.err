@@ -1,0 +1,22 @@
+      level 1: 48 prefixes
+      level 2: 642 prefixes
+      level 3: 5736 prefixes
+      level 4: 27722 prefixes
+      level 5: 77511 prefixes
+      level 6: 126913 prefixes
+      level 7: 140749 prefixes
+      level 8: 140749 prefixes
+  lam=(13, 10, 6, 1, 1, 1): N_S=140749 |Stab|=6 ngen=2 rounds=3 n_chi=10682 (orbits dropped: 27663) [gen, 0s, HWM 0.11 GB]
+    E_01: |H|=6 gens=2 targets 122172 canonical rows 9159 nnz 45138 (obstructed fixed targets cancelled: 15054) [0s, HWM 0.11 GB]
+    E_12: |H|=6 gens=2 targets 103583 canonical rows 7671 nnz 34648 (obstructed fixed targets cancelled: 10842) [1s, HWM 0.11 GB]
+    E_23: |H|=2 gens=1 targets 38291 canonical rows 14685 nnz 32046 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_34: |H|=1 gens=0 targets 84206 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_45: |H|=1 gens=0 targets 84206 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+  built[gen] (13, 10, 6, 1, 1, 1) d8: N_S=140749 |Stab|=6 n_chi=10682 rows=31515 nnz=111832 (2s: mono 0s orbits 0s rows 1s; HWM 0.11 GB)
+    level 0 (3,2): 15775 rows, nnz 285532 (full: 31532 rows, nnz 285567)
+    level 0 (3,2): 15775 rows, nnz 285527 (full: 31532 rows, nnz 285567)
+    wied[c13_10_6_1_1_1d8_pad p=2147483647 lvl=0 seed=1 k=0]: KERNEL SEQ n=10682 nrows=15775 nnz=285532 k=0 len=21364 secs=17.3 | BM deg=10682 f0=0 secs=19.1 | DONE secs=29.1 (30s)
+    wied[c13_10_6_1_1_1d8_pad p=2147483629 lvl=0 seed=1 k=0]: KERNEL SEQ n=10682 nrows=15775 nnz=285527 k=0 len=21364 secs=17.2 | BM deg=10682 f0=0 secs=19.1 | DONE secs=29.1 (30s)
+    wied[c13_10_6_1_1_1d8_pad p=2147483629 lvl=0 seed=2 k=1]: NONSINGULAR SEQ n=10682 nrows=15775 nnz=285527 k=1 len=21364 secs=18.6 | BM deg=10682 f0=130903630 secs=20.4 (50s)
+    wied[c13_10_6_1_1_1d8_pad p=2147483647 lvl=0 seed=2 k=1]: NONSINGULAR SEQ n=10682 nrows=15775 nnz=285532 k=1 len=21364 secs=18.4 | BM deg=10682 f0=1213666420 secs=20.2 (50s)
+  (13, 10, 6, 1, 1, 1) d8 [pad]: nullity = 1 -> mult_pad = 8  (108s)
