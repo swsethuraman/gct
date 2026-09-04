@@ -94,33 +94,37 @@ drops rank below `min(a, h_pad)`, every one of them with the bound silent
 ground and named the most exposed cells — large `a`, small gap, `ℓ = 6`,
 `δ = 9`, in-family.  `(15,12,6,1,1,1)_9` is in that description.
 
-## 2. The counterexample
+## 2. The counterexamples — four, all proved over `Q`
 
-| | value | how |
-|---|---|---|
-| `λ`, `δ`, `ℓ` | `(15,12,6,1,1,1)`, 9, 6 | in the `(λ_1,λ_2,λ_3,1,1,1)` family of session 43 |
-| `a` | **21** | plethysm (`wk8_s30_pleth`) and Weyl alternation (`wk9_s42_census`) agree |
-| `h_pad` | **19** | three routes agree (§0); 39 Pieri strips |
-| `n_χ`, `n_red`, `nnz_red` | 21451, 20323, 222487 | `wk9_s42_redengine` build, 17 s |
-| `nullity_p(E_red)` | **3** at `p = 2147483647` and `p = 2147483629` | sparse Wiedemann certificates |
-| `mult_red` | **18** | `≥ 18` from the primes, `≤ 18` from three exhibited integer HWVs |
-| `d = min(a,h_pad) − mult_red` | **1** | the bound is missed by exactly one |
-| `e = h_pad − a` | **−2** | even, consistent with the pattern of §4 |
+| `λ` (all `δ = 9`, `ℓ = 6`) | `a` | `h_pad` | `mult_red` | deficit `d` | units `a − mult_red` | integer HWVs | `(★)` checked on | max coeff |
+|---|---|---|---|---|---|---|---|---|
+| `(15,12,6,1,1,1)` | 21 | 19 | **18** | 1 | 3 | 3 | 240,282 monomials | 15,360 |
+| `(16,10,7,1,1,1)` | 30 | 29 | **26** | 3 | 4 | 4 | 252,978 monomials | 24,576 |
+| `(15,11,7,1,1,1)` | 30 | 27 | **26** | 1 | 4 | 4 | 522,678 monomials | 46,080 |
+| `(15,9,9,1,1,1)` | 13 | 9 | **8** | 1 | 5 | 5 | 742,206 monomials | 235,008 |
 
-`mult_red = 18 ≤ 19 = h_pad`, so **Corollary B2 is not violated** and this is not
-the brief's stopping rule 1 (a bug); it is stopping rule 2, and the
-pre-registered sweep halted at once.
+Each row is **proved in both directions**: `mult_red ≥ a − nullity_p` from
+`nullity_p(E_red)` at both house primes, and `mult_red ≤ a − k` from `k`
+independent **integer** highest-weight vectors, obtained by CRT and rational
+reconstruction over both primes with identical pivot columns, verified
+`E_red v = 0` over `Z` against every uncompressed raising-operator row, and with
+the (★) criterion of `docs/reducible_ideal.md` asserted on every monomial of
+every support for every constrained index (`analysis/wk9_s47_starcheck.py`, which
+reads the certificate files back from disk and rebuilds nothing from the lift).
+Certificates in `results/s42_certs/`.  `a` and `h_pad` were recomputed at
+`(15,12,6,1,1,1)_9` by two and three independent routes respectively
+(`analysis/wk9_s47_hpadcheck.py`); the remaining rows use the two banked routes,
+which have never disagreed.
 
-The three vectors are in `results/s42_certs/15_12_6_1_1_1_d9.txt` in the
-χ-coordinates of the red orbits, with the orbit list in the header, so a reader
-can re-run the (★) test and the `E_red v = 0` test on them without rebuilding
-anything (`analysis/wk9_s47_starcheck.py` does exactly that, from the file).
+**`mult_red ≤ h_pad` holds at all four**, so Corollary B2 is not violated and
+none of these is the brief's stopping rule 1 (a bug).  The first of them is
+stopping rule 2, and the pre-registered sweep halted at it.
 
-**What it means for `I(R_6)`.**  `a − mult_red = 3`: the weight
-`(15,12,6,1,1,1)` carries **three** independent reducibility equations in
-degree 9, where the normalisation bound could only prove two.  It is the largest
-unit count at any single cell in the record, and the first cell where a bite is
-strictly deeper than the normalisation can see.
+**What they say about `I(R_6)`.**  `(15,9,9,1,1,1)_9` carries **five**
+independent reducibility equations in degree 9 where the normalisation bound
+proves four; `(16,10,7,1,1,1)_9` carries **four** where the bound proves one.
+The latter is the deepest bite in the record relative to what `h_pad` can see,
+and both are deeper than any bite session 43 or 45 found.
 
 ## 3. Phase A as left — sixteen firing cells, and one confound that cannot be removed
 
