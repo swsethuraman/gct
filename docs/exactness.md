@@ -260,6 +260,8 @@ one of the two most exposed cells.  It is now one of the four counterexamples,
 and the one that misses hardest.  P1a shows the mechanism was mis-guessed: the
 deficit is not always 1.
 
+<!-- SECTION 7 -->
+
 ## 8. Honest boundary
 
 - Four counterexamples, one of them **proved** over `Q` (exhibited integer
@@ -288,4 +290,28 @@ deficit is not always 1.
 - The brief's "81 of the 91" `δ = 8` permanent weights is off by one: 82 are
   banked (28 in session 41, 54 in session 43, disjoint, every `a` re-derived
   here) and **nine** were outstanding, not ten.  See `results/s47_per6_d8.md`.
+
+## 9. What next
+
+1. **The rank of `μ_λ` is the object, and it is not predicted by anything
+   known.**  `a` and `h_pad` are both free and both only bound it.  The
+   successor question is whether `rank μ_λ` has a combinatorial model at all —
+   the multiplicity-space matrix is `a × h_pad`, which is `30 × 29` at
+   `(16,10,7,1,1,1)_9` against `n_red = 22720` for the rank computation that
+   actually produced the number.  A model of that small matrix would give
+   `mult_red` at every cell of the region in milliseconds, reachable or not.
+   That is the prize the exactness conjecture was a cheap shortcut to, and the
+   shortcut is closed.
+2. **Lift the three measured counterexamples.**  `(16,10,7,1,1,1)_9` in
+   particular: four independent integer vectors would turn "four reducibility
+   equations at that weight" from measured into proved, and it is the deepest
+   bite relative to `h_pad` in the record.
+3. **Measure the firing set off `ℓ = 6`.**  Six of the ten firing cells measured
+   here are `ℓ = 6`, `δ = 9`, in-family; the two `ℓ = 7` cells measured are both
+   `a = 2, h_pad = 1`, the smallest test the statement admits.  The failure rate
+   away from the family is unmeasured.
+4. **`h_pad = 0` deserves its own line in the record.**  162 census cells prove
+   `mult_red = 0` for free, and they were being counted as evidence for a
+   conjecture they say nothing about.  They are worth stating separately, as
+   negative instances of Kadish–Landsberg Question 1.5, which is what they are.
 

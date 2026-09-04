@@ -1,1 +1,79 @@
 === (13, 9, 6, 1, 1, 1, 1) delta=8 ===
+  lam=(13, 9, 6, 1, 1, 1, 1): N_S=643887 |Stab|=24 n_chi=5373 (orbits dropped: 57535) [fast, 34s]
+    E_01: |H|=24 targets 161352 canonical rows 4235 nnz 20206 (obstructed fixed targets cancelled: 59712) [1s]
+    E_12: |H|=24 targets 136488 canonical rows 3881 nnz 16490 (obstructed fixed targets cancelled: 43344) [1s]
+    E_23: |H|=6 targets 74262 canonical rows 12377 nnz 21492 (obstructed fixed targets cancelled: 0) [1s]
+    E_34: |H|=2 targets 64476 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s]
+    E_45: |H|=2 targets 64476 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+    E_56: |H|=2 targets 64476 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+  built: |Stab|=24 n_chi=5373 n_red=5159 n_nonred=214 rows=20493 rows_red=19737 nnz_red=56035 cons=[0, 1] (36s)
+    level 0: 9869 rows, nnz 56005 (E: 19737 rows, nnz 56035)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=5159 nrows=9869 nnz=56005 k=0 len=10318 secs=2.0 | BM deg=5159 f0=0 secs=2.3 | DONE secs=3.6 (4s)
+    wied[cell p=2147483647 seed=2 k=1]: NONSINGULAR SEQ n=5159 nrows=9869 nnz=56005 k=1 len=10318 secs=2.3 | BM deg=5159 f0=1403624785 secs=2.6 (6s)
+  p=2147483647: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (116s)
+    level 0: 9869 rows, nnz 56004 (E: 19737 rows, nnz 56035)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=5159 nrows=9869 nnz=56004 k=0 len=10318 secs=2.0 | BM deg=5159 f0=0 secs=2.3 | DONE secs=3.6 (4s)
+    wied[cell p=2147483629 seed=2 k=1]: NONSINGULAR SEQ n=5159 nrows=9869 nnz=56004 k=1 len=10318 secs=2.3 | BM deg=5159 f0=306841519 secs=2.6 (6s)
+  p=2147483629: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (122s)
+{"lam": [13, 9, 6, 1, 1, 1, 1], "delta": 8, "ell": 7, "a": 2, "h_pad": 1, "mult_red": 1, "deficit": 1, "verdict": "EXACT", "n_chi": 5373, "n_red": 5159, "nnz_red": 56035, "nullity": 1, "status": "measured (nullity 1, two primes); mult_red >= 1 proved", "wall": 126.4}
+=== (13, 8, 7, 1, 1, 1, 1) delta=8 ===
+  lam=(13, 8, 7, 1, 1, 1, 1): N_S=735577 |Stab|=24 n_chi=6299 (orbits dropped: 65035) [fast, 34s]
+    E_01: |H|=24 targets 176124 canonical rows 4614 nnz 22355 (obstructed fixed targets cancelled: 65388) [1s]
+    E_12: |H|=24 targets 179676 canonical rows 5373 nnz 21570 (obstructed fixed targets cancelled: 50724) [1s]
+    E_23: |H|=6 targets 79146 canonical rows 13191 nnz 25196 (obstructed fixed targets cancelled: 0) [2s]
+    E_34: |H|=2 targets 75588 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+    E_45: |H|=2 targets 75588 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+    E_56: |H|=2 targets 75588 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+  built: |Stab|=24 n_chi=6299 n_red=6054 n_nonred=245 rows=23178 rows_red=22349 nnz_red=66615 cons=[0, 1] (36s)
+    level 0: 11175 rows, nnz 66588 (E: 22349 rows, nnz 66615)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=6054 nrows=11175 nnz=66588 k=0 len=12108 secs=2.8 | BM deg=6054 f0=0 secs=3.2 | DONE secs=4.9 (5s)
+    wied[cell p=2147483647 seed=2 k=1]: NONSINGULAR SEQ n=6054 nrows=11175 nnz=66588 k=1 len=12108 secs=3.0 | BM deg=6054 f0=1013175203 secs=3.4 (8s)
+  p=2147483647: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (44s)
+    level 0: 11175 rows, nnz 66583 (E: 22349 rows, nnz 66615)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=6054 nrows=11175 nnz=66583 k=0 len=12108 secs=2.7 | BM deg=6054 f0=0 secs=3.2 | DONE secs=4.9 (5s)
+    wied[cell p=2147483629 seed=2 k=1]: NONSINGULAR SEQ n=6054 nrows=11175 nnz=66583 k=1 len=12108 secs=3.0 | BM deg=6054 f0=698627749 secs=3.4 (8s)
+  p=2147483629: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (52s)
+{"lam": [13, 8, 7, 1, 1, 1, 1], "delta": 8, "ell": 7, "a": 2, "h_pad": 1, "mult_red": 1, "deficit": 1, "verdict": "EXACT", "n_chi": 6299, "n_red": 6054, "nnz_red": 66615, "nullity": 1, "status": "measured (nullity 1, two primes); mult_red >= 1 proved", "wall": 52.4}
+=== (8, 8, 5, 5, 1, 1) delta=7 ===
+  lam=(8, 8, 5, 5, 1, 1): N_S=603787 |Stab|=8 n_chi=62613 (orbits dropped: 27522) [fast, 27s]
+    E_01: |H|=4 targets 483710 canonical rows 117186 nnz 521269 (obstructed fixed targets cancelled: 16100) [2s]
+    E_12: |H|=2 targets 370719 canonical rows 179358 nnz 794699 (obstructed fixed targets cancelled: 12003) [2s]
+    E_23: |H|=4 targets 457894 canonical rows 112088 nnz 392661 (obstructed fixed targets cancelled: 10470) [3s]
+    E_34: |H|=2 targets 171178 canonical rows 86053 nnz 248988 (obstructed fixed targets cancelled: 0) [3s]
+    E_45: |H|=4 targets 248427 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1403) [4s]
+  built: |Stab|=8 n_chi=62613 n_red=61622 n_nonred=991 rows=494685 rows_red=489614 nnz_red=1926397 cons=[0, 1] (31s)
+    level 0: 244807 rows, nnz 1926278 (E: 489614 rows, nnz 1926397)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=61622 nrows=244807 nnz=1926278 k=0 len=123244 secs=1172.7 | BM deg=61622 f0=0 secs=1216.0 | DONE secs=1820.9 (1837s)
+    wied[cell p=2147483647 seed=2 k=1]: NONSINGULAR SEQ n=61622 nrows=244807 nnz=1926278 k=1 len=123244 secs=1242.7 | BM deg=61622 f0=2018372985 secs=1293.2 (3140s)
+  p=2147483647: nullity_p(E_red) = 1  -> mult_red >= 2  [sparse] (3179s)
+    level 0: 244807 rows, nnz 1926234 (E: 489614 rows, nnz 1926397)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=61622 nrows=244807 nnz=1926234 k=0 len=123244 secs=1330.1 | BM deg=61622 f0=0 secs=1379.6 | DONE secs=2074.5 (2089s)
+    wied[cell p=2147483629 seed=2 k=1]: NONSINGULAR SEQ n=61622 nrows=244807 nnz=1926234 k=1 len=123244 secs=1343.1 | BM deg=61622 f0=1766183939 secs=1392.6 (3495s)
+  p=2147483629: nullity_p(E_red) = 1  -> mult_red >= 2  [sparse] (6674s)
+{"lam": [8, 8, 5, 5, 1, 1], "delta": 7, "ell": 6, "a": 3, "h_pad": 2, "mult_red": 2, "deficit": 1, "verdict": "EXACT", "n_chi": 62613, "n_red": 61622, "nnz_red": 1926397, "nullity": 1, "status": "measured (nullity 1, two primes); mult_red >= 2 proved", "wall": 6674.7}
+=== (12, 9, 7, 1, 1, 1, 1) delta=8 ===
+  lam=(12, 9, 7, 1, 1, 1, 1): N_S=872301 |Stab|=24 n_chi=7726 (orbits dropped: 76017) [fast, 47s]
+    E_01: |H|=24 targets 231588 canonical rows 6299 nnz 29758 (obstructed fixed targets cancelled: 80412) [1s]
+    E_12: |H|=24 targets 212340 canonical rows 6198 nnz 26473 (obstructed fixed targets cancelled: 63588) [2s]
+    E_23: |H|=6 targets 95004 canonical rows 15834 nnz 30904 (obstructed fixed targets cancelled: 0) [2s]
+    E_34: |H|=2 targets 92712 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+    E_45: |H|=2 targets 92712 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s]
+    E_56: |H|=2 targets 92712 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [3s]
+  built: |Stab|=24 n_chi=7726 n_red=7558 n_nonred=168 rows=28331 rows_red=27749 nnz_red=85403 cons=[0, 1] (50s)
+    level 0: 13875 rows, nnz 85367 (E: 27749 rows, nnz 85403)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=7558 nrows=13875 nnz=85367 k=0 len=15116 secs=4.5 | BM deg=7558 f0=0 secs=5.2 | DONE secs=8.0 (8s)
+    wied[cell p=2147483647 seed=2 k=1]: NONSINGULAR SEQ n=7558 nrows=13875 nnz=85367 k=1 len=15116 secs=5.1 | BM deg=7558 f0=740646319 secs=5.7 (14s)
+  p=2147483647: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (64s)
+    level 0: 13875 rows, nnz 85370 (E: 27749 rows, nnz 85403)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=7558 nrows=13875 nnz=85370 k=0 len=15116 secs=4.3 | BM deg=7558 f0=0 secs=4.9 | DONE secs=7.7 (8s)
+    wied[cell p=2147483629 seed=2 k=1]: NONSINGULAR SEQ n=7558 nrows=13875 nnz=85370 k=1 len=15116 secs=4.8 | BM deg=7558 f0=1234640443 secs=5.4 (13s)
+  p=2147483629: nullity_p(E_red) = 1  -> mult_red >= 1  [sparse] (77s)
+{"lam": [12, 9, 7, 1, 1, 1, 1], "delta": 8, "ell": 7, "a": 2, "h_pad": 1, "mult_red": 1, "deficit": 1, "verdict": "EXACT", "n_chi": 7726, "n_red": 7558, "nnz_red": 85403, "nullity": 1, "status": "measured (nullity 1, two primes); mult_red >= 1 proved", "wall": 77.2}
+=== (11, 11, 11, 1, 1, 1) delta=9 ===
+  lam=(11, 11, 11, 1, 1, 1): N_S=686940 |Stab|=36 n_chi=9641 (orbits dropped: 20935) [fast, 43s]
+    E_01: |H|=6 targets 391248 canonical rows 54320 nnz 266535 (obstructed fixed targets cancelled: 65328) [1s]
+    E_12: |H|=6 targets 391248 canonical rows 54320 nnz 266535 (obstructed fixed targets cancelled: 65328) [2s]
+    E_23: |H|=4 targets 109644 canonical rows 27533 nnz 85127 (obstructed fixed targets cancelled: 122) [3s]
+    E_34: |H|=6 targets 170064 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1068) [3s]
+    E_45: |H|=6 targets 170064 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1068) [3s]
+  built: |Stab|=36 n_chi=9641 n_red=9538 n_nonred=103 rows=136173 rows_red=135361 nnz_red=612204 cons=[0, 1, 2] (47s)

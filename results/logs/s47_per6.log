@@ -31,3 +31,10 @@ measured non-empty (mult < a): 0
 === per6 d=8 (6, 5, 5, 3, 3, 2) a=1 ===
   (6, 5, 5, 3, 3, 2) d=8: n_chi=103510 N_S=427388 stab=4 rows=923408
    p=2147483647: [M;Ev] 923417x103510, nnz 4106541; wiedemann ...
+   p=2147483647: NONSINGULAR SEQ n=103510 nrows=923417 nnz=4106541 k=0 len=207020 secs=2650.4 | BM deg=103510 f0=592897636 secs=2794.3 (2855s)
+   p=2147483629: [M;Ev] 923417x103510, nnz 4106541; wiedemann ...
+   p=2147483629: NONSINGULAR SEQ n=103510 nrows=923417 nnz=4106541 k=0 len=207020 secs=3120.9 | BM deg=103510 f0=1494117841 secs=3268.8 (6159s)
+{"lam": [6, 5, 5, 3, 3, 2], "a": 1, "n_chi": 103510, "mult": 1, "units": 0, "secs": 6158.58287191391}
+=== per6 d=8 (7, 5, 4, 4, 3, 1) a=1 ===
+  (7, 5, 4, 4, 3, 1) d=8: n_chi=106508 N_S=209713 stab=2 rows=609876
+   p=2147483647: [M;Ev] 609885x106508, nnz 3101250; wiedemann ...
