@@ -1,0 +1,27 @@
+# s48 raw ranks -- target B, the ladder at (n, r) = (5, 7)
+
+Session 48, `analysis/wk9_s48_ladder57.py`; log `results/logs/s48_ladder57_d10.log`.
+Random-quintic control at every seed and prime before any determinantal rank
+(PREREG_s48 B2).  A rank mod `p` at a point is a LOWER bound on the generic
+rank, so the drop is certified, never proved, by this route.
+
+```
+# s48 target B -- (n,r,d) = (5,7,10)
+# dim S_10 = 8008   h_10 = 2128   rho_10 = 5880
+# GN ceiling dim J(M)_10 = 6173   slack over rho = 293   -> ceiling does not bind
+# rows = 7 * dim S_6 = 6468   cols = 8008
+# C(7,5) = 21 predicts rank 5859;  (r-4)(2r-9) = 15 predicts rank 5865
+control  seed=0 p=2147483647  6468x8008  rank=5880  rho=5880  OK  51.0s
+control  seed=0 p=2147483629  6468x8008  rank=5880  rho=5880  OK  51.7s
+control  seed=1 p=2147483647  6468x8008  rank=5880  rho=5880  OK  49.3s
+control  seed=1 p=2147483629  6468x8008  rank=5880  rho=5880  OK  50.9s
+control  seed=2 p=2147483647  6468x8008  rank=5880  rho=5880  OK  50.7s
+control  seed=2 p=2147483629  6468x8008  rank=5880  rho=5880  OK  68.0s
+# control passed at every seed and prime; reading determinantal ranks
+det      seed=0 p=2147483647  6468x8008  rank=5859  rho=5880  drop=21  57.9s
+det      seed=0 p=2147483629  6468x8008  rank=5859  rho=5880  drop=21  48.1s
+det      seed=1 p=2147483647  6468x8008  rank=5859  rho=5880  drop=21  49.0s
+det      seed=1 p=2147483629  6468x8008  rank=5859  rho=5880  drop=21  46.9s
+det      seed=2 p=2147483647  6468x8008  rank=5859  rho=5880  drop=21  49.9s
+det      seed=2 p=2147483629  6468x8008  rank=5859  rho=5880  drop=21  44.1s
+```
