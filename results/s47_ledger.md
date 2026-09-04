@@ -77,15 +77,28 @@ session's firing-cell measurement, the pre-registered first cell included.
 | 5 | `(13,13,7,1,1,1)` | 9 | 6 | 9 | 6 | 3 | 15809 | 315180 | 3 | **6** | 0 | 3 | exact | 436 |
 | 6 | `(15,9,9,1,1,1)` | 9 | 6 | 13 | 9 | 4 | 17211 | 387878 | 5 | **8** | 1 | 5 | **REFUTED** | 915 |
 | 7 | `(13,12,8,1,1,1)` | 9 | 6 | 14 | 7 | 7 | 40421 | 475888 | 7 | **7** | 0 | 7 | exact | 5054 |
+| 8 | `(13,9,6,1,1,1,1)` | 8 | 7 | 2 | 1 | 1 | 5159 | 56035 | 1 | **1** | 0 | 1 | exact | 126 |
+| 9 | `(13,8,7,1,1,1,1)` | 8 | 7 | 2 | 1 | 1 | 6054 | 66615 | 1 | **1** | 0 | 1 | exact | 52 |
+| 10 | `(8,8,5,5,1,1)` | 7 | 6 | 3 | 2 | 1 | 61622 | 1926397 | 1 | **2** | 0 | 1 | exact | 6675 |
+| 11 | `(12,9,7,1,1,1,1)` | 8 | 7 | 2 | 1 | 1 | 7558 | 85403 | 1 | **1** | 0 | 1 | exact | 77 |
 
-**7 firing cells measured this session: the bound is exact at 3 and missed at 4.**
+**11 firing cells measured this session: the bound is exact at 7 and missed at 4.**
 
 | gap `a − h_pad` | parity | cells | missed |
 |---|---|---|---|
-| 1 | odd | 1 | 1 |
+| 1 | odd | 5 | 1 |
 | 2 | even | 2 | 1 |
 | 3 | odd | 2 | 1 |
 | 4 | even | 1 | 1 |
 | 7 | odd | 1 | 0 |
 
-Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 3, 1: 3, 3: 1}.
+
+Stratified by where the cell sits:
+
+| stratum | cells | exact | missed |
+|---|---|---|---|
+| `ell = 6`, `delta = 7`, outside the family | 1 | 1 | 0 |
+| `ell = 6`, `delta = 9`, in family | 7 | 3 | 4 |
+| `ell = 7`, `delta = 8` | 3 | 3 | 0 |
+
+Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 7, 1: 3, 3: 1}.

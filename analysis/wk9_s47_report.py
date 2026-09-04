@@ -53,6 +53,24 @@ def summary(rs):
     for g in sorted(byg):
         L.append("| %d | %s | %d | %d |" % (g, 'odd' if g % 2 else 'even', byg[g][0], byg[g][1]))
     L.append("")
+    L.append("")
+    L.append("Stratified by where the cell sits:")
+    L.append("")
+    L.append("| stratum | cells | exact | missed |")
+    L.append("|---|---|---|---|")
+    def strat(r):
+        fam = r['ell'] == 6 and tuple(r['lam'])[3:] == (1, 1, 1)
+        if fam and r['delta'] == 9: return "`ell = 6`, `delta = 9`, in family"
+        if fam: return f"`ell = 6`, `delta = {r['delta']}`, in family"
+        if r['ell'] == 6: return f"`ell = 6`, `delta = {r['delta']}`, outside the family"
+        return f"`ell = {r['ell']}`, `delta = {r['delta']}`"
+    st = {}
+    for r in rs:
+        k = strat(r); st.setdefault(k, [0, 0])
+        st[k][0] += 1; st[k][1] += r['verdict'] == 'REFUTED'
+    for k in sorted(st):
+        L.append("| %s | %d | %d | %d |" % (k, st[k][0], st[k][0] - st[k][1], st[k][1]))
+    L.append("")
     ds = Counter(min(r['a'], r['h_pad']) - r['mult_red'] for r in rs)
     L.append(f"Rank deficits `d = min(a, h_pad) − mult_red` seen: {dict(sorted(ds.items()))}.")
     L.append("")
