@@ -1,0 +1,21 @@
+      level 1: 60 prefixes
+      level 2: 1298 prefixes
+      level 3: 14640 prefixes
+      level 4: 93834 prefixes
+      level 5: 355163 prefixes
+      level 6: 603787 prefixes
+      level 7: 603787 prefixes
+  lam=(8, 8, 5, 5, 1, 1): N_S=603787 |Stab|=8 n_chi=62613 (orbits dropped: 27522) [lean, 3s, HWM 0.18 GB]
+    E_01: |H|=4 targets 568070 canonical rows 117186 nnz 521269 (obstructed fixed targets cancelled: 16100) [3s, HWM 0.21 GB]
+    E_12: |H|=2 targets 435056 canonical rows 179358 nnz 794699 (obstructed fixed targets cancelled: 12003) [5s, HWM 0.21 GB]
+    E_23: |H|=4 targets 542288 canonical rows 112088 nnz 392661 (obstructed fixed targets cancelled: 10470) [7s, HWM 0.21 GB]
+    E_34: |H|=2 targets 171178 canonical rows 86053 nnz 248988 (obstructed fixed targets cancelled: 0) [8s, HWM 0.21 GB]
+    E_45: |H|=4 targets 353516 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1403) [9s, HWM 0.22 GB]
+  built (8, 8, 5, 5, 1, 1) d7: N_S=603787 |Stab|=8 n_chi=62613 rows=494685 nnz=1957617 (13s: mono 1s orbits 3s rows 9s; HWM 0.22 GB)
+    level 0 (3,2): 93963 rows, nnz 1432658 (full: 494696 rows, nnz 2646360)
+    level 0 (3,2): 93963 rows, nnz 1432234 (full: 494696 rows, nnz 2646360)
+    wied[c8_8_5_5_1_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=62613 nrows=93963 nnz=1432658 k=0 len=125226 secs=632.7 | BM deg=62613 f0=1428728852 secs=684.9 (692s)
+    wied[c8_8_5_5_1_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=62613 nrows=93963 nnz=1432234 k=0 len=125226 secs=632.5 | BM deg=62613 f0=547094044 secs=684.8 (694s)
+  (8, 8, 5, 5, 1, 1) d7 [det]: nullity = 0 -> mult_det = 3 = a PROVED  (722s)
+{"lam": [8, 8, 5, 5, 1, 1], "delta": 7, "ell": 6, "a": 3, "K": 11, "N_S": 603787, "stab": 8, "n_chi": 62613, "nrows": 494685, "nnz": 1957617, "nfixed": 39976, "build_secs": 12.6, "mono_secs": 0.6, "orbit_secs": 2.9, "rows_secs": 9.2, "build_hwm_gb": 0.22, "sides": {"det": {"nullity": 0, "mult": 3, "status": "proved (nullity 0 at 2147483647)", "per_prime": {"2147483647": {"ev_secs": 0.6, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=62613 nrows=93963 nnz=1432658 k=0 len=125226 secs=632.7 | BM deg=62613 f0=1428728852 secs=684.9", "rows": 93963, "nnz": 1432658}], "secs": 693.0}, "2147483629": {"ev_secs": 0.6, "nullity": 0, "level": 0, "diag": [{"level": 0, "seed": 1, "status": "NONSINGULAR", "note": "SEQ n=62613 nrows=93963 nnz=1432234 k=0 len=125226 secs=632.5 | BM deg=62613 f0=547094044 secs=684.8", "rows": 93963, "nnz": 1432234}], "secs": 694.8}}}}, "mult_det": 3, "secs": 721.9, "hwm_gb": 0.4, "verdict": "mult_det = a = 3 (PROVED, nullity 0)", "wall_secs": 721.9}
+SWEEP (8, 8, 5, 5, 1, 1) d7: n_chi=62613 nnz=1957617 -> mult_det = a = 3 (PROVED, nullity 0) (721.9s, HWM 0.4 GB)

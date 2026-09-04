@@ -1,0 +1,18 @@
+  selftest 0: n=381 planted k=1 true nullity 1 -> 1 OK
+  selftest 20: n=507 planted k=6 true nullity 18 -> 18 OK
+  selftest 40: n=434 planted k=0 true nullity 0 -> 0 OK
+  selftest 60: n=589 planted k=1 true nullity 28 -> 28 OK
+  selftest 80: n=391 planted k=1 true nullity 5 -> 5 OK
+  selftest 100: n=490 planted k=6 true nullity 6 -> 6 OK
+  selftest 120: n=567 planted k=4 true nullity 55 -> 55 OK
+  selftest 140: n=538 planted k=1 true nullity 1 -> 1 OK
+  selftest 160: n=457 planted k=3 true nullity 3 -> 3 OK
+  selftest 180: n=595 planted k=0 true nullity 2 -> 2 OK
+selftest: 200/200 passed
+  V4B 0: n=325 planted k=2 dense 11 true nullity 2 -> 2 (level 0) OK
+  V4B 20: n=481 planted k=5 dense 11 true nullity 5 -> 5 (level 0) OK
+  V4B 40: n=399 planted k=1 dense 9 true nullity 1 -> 1 (level 0) OK
+  V4B 60: n=64 planted k=2 dense 1 true nullity 2 -> 2 (level 0) OK
+  V4B 80: n=430 planted k=4 dense 2 true nullity 4 -> 4 (level 0) OK
+V4B: 100/100 passed (s45 'cheap' levels, pinned dense rows)
+{"battery_A": {"passed": 200, "total": 200, "levels": "s42 default ((12,2),(None,1))"}, "battery_B": {"passed": 100, "total": 100, "levels": "s45 'cheap' ((3,2),(12,2),(None,1)) + pinned dense rows"}, "secs": 202.8}
