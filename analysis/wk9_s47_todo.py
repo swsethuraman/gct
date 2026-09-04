@@ -58,6 +58,12 @@ def targets():
         x['gap'] = x['a'] - x['h_pad']
         x['fam'] = in_family(x)
         x['build_est'] = round(BUILD_RATE * x['N_S'])
+        # n_red <= number of Stab-orbits <= N_S/|Stab| is the only cost bound
+        # available before the build.  Measured ratios n_red/(N_S/stab) over this
+        # session's cells: 0.18 to 0.82.  Cells with N_S/stab above ~5e4 were out
+        # of reach in a session (the solve is O(n_red * nnz_red) per sequence).
+        x['nred_ub'] = x['N_S'] // x['stab']
+        x['reach'] = 'yes' if x['nred_ub'] <= 50000 else ('marginal' if x['nred_ub'] <= 120000 else 'no')
     t.sort(key=lambda z: z['N_S'])
     return t
 
@@ -98,14 +104,18 @@ def RENDER(t):
     L.append("Ordered by `N_S`, the monomial count, which is the honest cost key: the census")
     L.append("field `nchi_lb` is `N_S/stab` and overestimates the true `n_chi` badly")
     L.append("(20444 against a measured 3881 at `(13,10,5,1,1,1,1)_8`).  `build est` is")
-    L.append("`1.1·10⁻⁴ · N_S` seconds, the median build rate over session 42's 201 banked")
-    L.append("cells; the solve cost is `≈ 3.6·10⁻⁸ · n_red · nnz_red` per prime and is not")
-    L.append("known until the cell is built.\n")
+    L.append("`N_S/|Stab|`, an upper bound on `n_red` and the only cost bound available before")
+    L.append("the build; session 47 measured `n_red/(N_S/|Stab|)` between 0.18 and 0.82.")
+    L.append("The solve is `≈ 3.6·10⁻⁸ · n_red · nnz_red` seconds per Wiedemann sequence, and")
+    L.append("a cell needs `nullity + 1` of them per prime, so **`reachable` is the column")
+    L.append("that matters**: only 4 of these 292 cells have `N_S/|Stab| ≤ 5·10⁴`.  Session 47")
+    L.append("abandoned `(11,9,8,2,1,1)_8` (`n_red = 249213`) after the build for this reason.\n")
     L.append(f"**{len(t)} cells.**  The conjecture predicts `mult_red = h_pad` at every one.\n")
-    L.append("| # | `λ` | `δ` | `ℓ` | `a` | `h_pad` | gap | `N_S` | build est (s) | family |")
-    L.append("|---|---|---|---|---|---|---|---|---|---|")
+    L.append("| # | `λ` | `δ` | `ℓ` | `a` | `h_pad` | gap | `N_S` | Stab | `n_red ≤` | reachable | family |")
+    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
     for i, x in enumerate(t, 1):
-        L.append("| %d | `%s` | %d | %d | %d | %d | %d | %s | %d | %s |" % (
+        L.append("| %d | `%s` | %d | %d | %d | %d | %d | %s | %d | %s | %s | %s |" % (
             i, str(tuple(x['lam'])).replace(' ', ''), x['delta'], x['ell'], x['a'],
-            x['h_pad'], x['gap'], f"{x['N_S']:,}", x['build_est'], 'yes' if x['fam'] else '—'))
+            x['h_pad'], x['gap'], f"{x['N_S']:,}", x['stab'], f"{x['nred_ub']:,}",
+            x['reach'], 'yes' if x['fam'] else '—'))
     return "\n".join(L) + "\n"
