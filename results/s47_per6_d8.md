@@ -31,5 +31,16 @@ of `docs/transfer_lemma.md`, **`mult_pad = mult_red` at every weight of degree
 | `(7, 5, 4, 4, 3, 1)` | 1 | 209713 | 2 | 106508 | inject | 1 | 0 | 4508 |
 | `(7, 6, 5, 3, 2, 1)` | 2 | 114502 | 1 | 114502 | inject | 2 | 0 | 3759 |
 | `(7, 6, 4, 3, 2, 2)` | 1 | 219449 | 2 | 116083 | inject | 1 | 0 | 4564 |
+| `(6, 5, 5, 4, 3, 1)` | 1 | 256941 | 2 | 127182 | inject | 1 | 0 | 7884 |
 
-8 of 9 measured; empty at 8.
+**All 9 are empty.**  With session 41's 28 and session 43's 54 — 82 weights, all empty — every one of the 91 length-6 weights `μ ⊢ 24` with
+`a(μ, 8) ≥ 1` in `Sym^8(Sym^3 C^6)` has `mult = a`, so
+
+> **`I(D_6^{per_3})_8 = 0`** (proved: a nonsingularity certificate at one prime
+> proves `mult = a`, and both house primes agree at every weight), and by
+> Prop. 8(1) of `docs/transfer_lemma.md`, **`mult_pad = mult_red` at every
+> weight of degree 8** — the degree at which every pad-side bite in the six-row
+> record lives.  There is no permanent-specific equation in degree 8.
+
+With session 43's `I(D_6^{per_3})_7 = 0` and session 37's `δ ≤ 6`, the
+permanent is now proved invisible on the reducible side through degree 8.
