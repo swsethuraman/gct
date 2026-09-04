@@ -87,8 +87,10 @@ session's firing-cell measurement, the pre-registered first cell included.
 | 15 | `(14,13,5,1,1,1,1)` | 9 | 7 | 2 | 1 | 1 | 8208 | 92343 | 1 | **1** | 0 | 1 | exact | 99 |
 | 16 | `(16,10,6,1,1,1,1)` | 9 | 7 | 6 | 2 | 4 | 9598 | 106881 | 4 | **2** | 0 | 4 | exact | 221 |
 | 17 | `(14,10,9,1,1,1)` | 9 | 6 | 15 | 8 | 7 | 41699 | 486358 | 7 | **8** | 0 | 7 | exact | 5840 |
+| 18 | `(14,12,7,1,1,1)` | 9 | 6 | 23 | 16 | 7 | 30264 | 344544 | 7 | **16** | 0 | 7 | exact | 3118 |
+| 19 | `(15,10,8,1,1,1)` | 9 | 6 | 23 | 17 | 6 | 32244 | 364989 | 7 | **16** | 1 | 7 | **REFUTED** | 3503 |
 
-**17 firing cells measured this session: the bound is exact at 13 and missed at 4.**
+**19 firing cells measured this session: the bound is exact at 14 and missed at 5.**
 
 | gap `a − h_pad` | parity | cells | missed |
 |---|---|---|---|
@@ -96,7 +98,8 @@ session's firing-cell measurement, the pre-registered first cell included.
 | 2 | even | 2 | 1 |
 | 3 | odd | 3 | 1 |
 | 4 | even | 2 | 1 |
-| 7 | odd | 2 | 0 |
+| 6 | even | 1 | 1 |
+| 7 | odd | 3 | 0 |
 
 
 Stratified by where the cell sits:
@@ -104,7 +107,7 @@ Stratified by where the cell sits:
 | stratum | cells | exact | missed |
 |---|---|---|---|
 | `ell = 6`, `delta = 7`, outside the family | 1 | 1 | 0 |
-| `ell = 6`, `delta = 9`, in family | 9 | 5 | 4 |
+| `ell = 6`, `delta = 9`, in family | 11 | 6 | 5 |
 | `ell = 7`, `delta = 8` | 3 | 3 | 0 |
 | `ell = 7`, `delta = 9` | 4 | 4 | 0 |
 
@@ -120,10 +123,12 @@ Stratified by the **target** dimension `h_pad` — exactness is surjectivity of
 | 8 | 1 | 1 | 0 |
 | 9 | 1 | 0 | 1 |
 | 10 | 1 | 1 | 0 |
+| 16 | 1 | 1 | 0 |
+| 17 | 1 | 0 | 1 |
 | 19 | 1 | 0 | 1 |
 | 27 | 1 | 0 | 1 |
 | 29 | 1 | 0 | 1 |
 
-`h_pad <= 8`: 12 cells, 12 exact, 0 missed.  `h_pad >= 9`: 5 cells, 1 exact, 4 missed.
+`h_pad <= 8`: 12 cells, 12 exact, 0 missed.  `h_pad >= 9`: 7 cells, 2 exact, 5 missed.
 
-Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 13, 1: 3, 3: 1}.
+Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 14, 1: 4, 3: 1}.

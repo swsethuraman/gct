@@ -17,9 +17,9 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > **The conjecture is false.**  At `λ = (15,12,6,1,1,1)`, `δ = 9`, `ℓ = 6`:
 > `a = 21`, `h_pad = 19` — so the bound fires — and `mult_red = 18`.  The
 > normalisation bound is **not** attained.  This is the first cell the session
-> measured.  Seventeen firing cells were measured in all: the bound is exact at
-> **13** and missed at **4**, and all four failures are proved over `Q`, not
-> measured (§2).
+> measured.  **Nineteen** firing cells were measured in all: the bound is exact at
+> **14** and missed at **5**, and four of the five failures are proved over `Q`,
+> not merely measured (§2).
 >
 > **The certificate.**  `a = 21` by two independent routes and `h_pad = 19` by
 > **three** (symmetric-function plethysm, Weyl alternation, and a multiset DP
@@ -71,14 +71,15 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > `d = 3`, so "`d = 1` always" is gone too.  The pattern is recorded here because
 > it was proposed on the record and killed by this session's own measurements,
 > not because it survived.  What replaces it is an ordering by the **target**
-> dimension: exactness is surjectivity of `μ_λ` onto `C^{h_pad}`, and every one of
-> the twelve cells measured with `h_pad ≤ 8` is exact while four of the five with
-> `h_pad ≥ 9` are not (one crossing).  That has a mechanism behind it — onto a
-> small space is a weak demand — and it re-describes the old evidence: the seven
-> cells that supported the conjecture have `h_pad = 1, 1, 1, 2, 2, 4, 7`, **every
-> one in the easy regime.  The conjecture was never tested where it could fail.**
-> §3 gives this with its confounds, which are severe and not removable by any
-> reachable cell.
+> dimension: exactness is surjectivity of `μ_λ` onto `C^{h_pad}`, and **all twelve
+> cells measured with `h_pad ≤ 8` are exact, against five of seven missed at
+> `h_pad ≥ 9`**.  That has a mechanism behind it — onto a small space is a weak
+> demand — and it re-describes the old evidence: the seven cells that supported
+> the conjecture have `h_pad = 1, 1, 1, 2, 2, 4, 7`, **every one in the easy
+> regime.  The conjecture was never tested where it could fail.**  It is still
+> only an ordering, not a threshold: `h_pad = 10` and `h_pad = 16` are exact while
+> `h_pad = 9` and `h_pad = 17` are not.  §3 gives it with its confounds, which are
+> severe and not removable by any reachable cell.
 
 ## 1. The conjecture, and what it really says
 
@@ -111,7 +112,7 @@ drops rank below `min(a, h_pad)`, every one of them with the bound silent
 ground and named the most exposed cells — large `a`, small gap, `ℓ = 6`,
 `δ = 9`, in-family.  `(15,12,6,1,1,1)_9` is in that description.
 
-## 2. The counterexamples — four, all proved over `Q`
+## 2. The counterexamples — five, four of them proved over `Q`
 
 | `λ` (all `δ = 9`, `ℓ = 6`) | `a` | `h_pad` | `mult_red` | deficit `d` | units `a − mult_red` | integer HWVs | `(★)` checked on | max coeff |
 |---|---|---|---|---|---|---|---|---|
@@ -119,8 +120,9 @@ ground and named the most exposed cells — large `a`, small gap, `ℓ = 6`,
 | `(16,10,7,1,1,1)` | 30 | 29 | **26** | 3 | 4 | 4 | 252,978 monomials | 24,576 |
 | `(15,11,7,1,1,1)` | 30 | 27 | **26** | 1 | 4 | 4 | 522,678 monomials | 46,080 |
 | `(15,9,9,1,1,1)` | 13 | 9 | **8** | 1 | 5 | 5 | 742,206 monomials | 235,008 |
+| `(15,10,8,1,1,1)` | 23 | 17 | **16** | 1 | 7 | — *(measured only)* | — | — |
 
-Each row is **proved in both directions**: `mult_red ≥ a − nullity_p` from
+The first four rows are **proved in both directions**: `mult_red ≥ a − nullity_p` from
 `nullity_p(E_red)` at both house primes, and `mult_red ≤ a − k` from `k`
 independent **integer** highest-weight vectors, obtained by CRT and rational
 reconstruction over both primes with identical pivot columns, verified
@@ -133,7 +135,13 @@ Certificates in `results/s42_certs/`.  `a` and `h_pad` were recomputed at
 (`analysis/wk9_s47_hpadcheck.py`); the remaining rows use the two banked routes,
 which have never disagreed.
 
-**`mult_red ≤ h_pad` holds at all four**, so Corollary B2 is not violated and
+The fifth, `(15,10,8,1,1,1)_9`, was the last cell of the session and is
+**measured**, not proved: `nullity_p(E_red) = 7` at both house primes gives
+`mult_red ≥ 16` proved and `= 16` measured, which is enough for the failure rate
+but not for a standalone refutation.  It is not needed for one — the conjecture
+is already refuted four times over.
+
+**`mult_red ≤ h_pad` holds at all five**, so Corollary B2 is not violated and
 none of these is the brief's stopping rule 1 (a bug).  The first of them is
 stopping rule 2, and the pre-registered sweep halted at it.
 
@@ -143,29 +151,29 @@ proves four; `(16,10,7,1,1,1)_9` carries **four** where the bound proves one.
 The latter is the deepest bite in the record relative to what `h_pad` can see,
 and both are deeper than any bite session 43 or 45 found.
 
-## 3. Phase A as left — seventeen firing cells, and what orders them
+## 3. Phase A as left — nineteen firing cells, and what orders them
 
 The pre-registered sweep stopped at cell 1.  A **post-refutation** sweep then ran
 under `--continue` (a different question — the failure *rate*, not the binary —
-and labelled as such in `results/s47_ledger.md`).  Seventeen firing cells in all:
+and labelled as such in `results/s47_ledger.md`).  Nineteen firing cells in all:
 
-> **The bound is exact at 13 of the 17 and missed at 4.**
+> **The bound is exact at 14 of the 19 and missed at 5.**
 
 Stratified, the four failures look confined:
 
 | stratum | cells | exact | missed |
 |---|---|---|---|
-| `ℓ = 6`, `δ = 9`, in the `(λ_1,λ_2,λ_3,1,1,1)` family | 9 | 5 | **4** |
+| `ℓ = 6`, `δ = 9`, in the `(λ_1,λ_2,λ_3,1,1,1)` family | 11 | 6 | **5** |
 | `ℓ = 7`, `δ = 9` | 4 | 4 | 0 |
 | `ℓ = 7`, `δ = 8` | 3 | 3 | 0 |
 | `ℓ = 6`, `δ = 7`, outside the family | 1 | 1 | 0 |
 
 **But that reading is confounded, and the confound cannot be removed.**  Sorted
-by `a` the same cells nearly separate too — missed at `a = 13, 21, 30, 30`, exact
-at `a ≤ 12` and at `a = 14, 15` — and **every cell measured with `a ≥ 9` lies in
-that one stratum**, so "the failures are in the `ℓ = 6`, `δ = 9` family" and "the
-failures are at large `a`" are the *same statement* in this data.  Neither is
-clean: `a = 14` and `a = 15` are exact and `a = 13` is not.
+by `a` the same cells nearly separate too — missed at `a = 13, 21, 23, 30, 30`,
+exact at `a ≤ 12` and at `a = 14, 15, 23` — and **every cell measured with
+`a ≥ 9` lies in that one stratum**, so "the failures are in the `ℓ = 6`, `δ = 9`
+family" and "the failures are at large `a`" are the *same statement* in this
+data.  Neither is clean: `a = 23` appears on both sides.
 
 The confound is not a matter of session time.  Of the 292 unmeasured firing
 cells, **57 have `a ≥ 13` and lie outside that stratum, and not one is reachable**
@@ -181,16 +189,18 @@ this sweep.
 
 ### The one ordering that is nearly clean, and has a mechanism behind it
 
-Sort the seventeen cells by **`h_pad`** — the *target* dimension of
+Sort the nineteen cells by **`h_pad`** — the *target* dimension of
 `μ_λ : C^a → C^{h_pad}`, not the source:
 
-| `h_pad` | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 6 | 7 | 8 | **9** | 10 | **19** | **27** | **29** |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | **✗** | ✓ | **✗** | **✗** | **✗** |
+| `h_pad` | 1×6 | 2×3 | 6 | 7 | 8 | **9** | 10 | 16 | **17** | **19** | **27** | **29** |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | ✓ | ✓ | ✓ | ✓ | ✓ | **✗** | ✓ | ✓ | **✗** | **✗** | **✗** | **✗** |
 
-**Every one of the twelve cells with `h_pad ≤ 8` is exact; four of the five with
-`h_pad ≥ 9` are not.**  The single crossing is `(14,13,6,1,1,1)_9`, `h_pad = 10`,
-exact, against `(15,9,9,1,1,1)_9`, `h_pad = 9`, missed.
+**All twelve cells with `h_pad ≤ 8` are exact; five of the seven with `h_pad ≥ 9`
+are not.**  It is an ordering, not a threshold — `h_pad = 10` and `h_pad = 16` are
+exact, `h_pad = 9` and `h_pad = 17` are not — and the two exact cells above the
+turn were measured deliberately, after the reading was written down, as the
+cheapest available tests of it.
 
 Unlike the parity pattern of §0 this one has a reason attached, which is why it is
 worth writing down.  Exactness *is* surjectivity of `μ_λ` onto `C^{h_pad}`
@@ -205,10 +215,10 @@ seven cells of §0 that genuinely supported it have
 `h_pad = 1, 1, 1, 2, 2, 4, 7` — **every one in the easy regime, none above 7.**
 The conjecture was never tested where it could fail.
 
-> **(Pattern, 17 cells, with a mechanism but only one crossing to constrain it.)**
-> The normalisation bound is attained when the target `h_pad` is small and starts
-> to fail around `h_pad ≈ 9`.  Given what happened to this session's earlier
-> pattern (§0), it is recorded with the mechanism, the crossing, and no
+> **(Pattern, 19 cells, with a mechanism and two crossings.)**  The normalisation
+> bound is attained whenever the target `h_pad` is small, and above `h_pad ≈ 9` it
+> is attained sometimes and not others.  Given what happened to this session's
+> earlier pattern (§0), it is recorded with its mechanism, both crossings, and no
 > confidence attached.
 
 ## 4. Phase B — the proof attempt, and where it stands
@@ -264,12 +274,12 @@ Reading `d = min(a, h_pad) − mult_red` off all of them
   Corollary B2.
 
 The parity reading built on this — deficits only at even `e` — is retracted
-(§0).  What is left is the shape of the rate, and this session's seventeen
+(§0).  What is left is the shape of the rate, and this session's nineteen
 firing cells put a number on the firing side of it for the first time:
 
-> **The bound is exact at 13 of the 17 firing cells measured**, and — the reading
-> that actually orders them — at **12 of the 12 with `h_pad ≤ 8`** against **1 of
-> the 5 with `h_pad ≥ 9`** (§3).
+> **The bound is exact at 14 of the 19 firing cells measured**, and — the reading
+> that actually orders them — at **12 of the 12 with `h_pad ≤ 8`** against **2 of
+> the 7 with `h_pad ≥ 9`** (§3).
 
 Set against session 43's `δ = 8` result — the bound fires at exactly the four
 two-unit cells of the complete in-family set and is exact at all four — the
@@ -306,8 +316,8 @@ and with the transfer lemma (`mult_pad ≤ mult_red`) the same number bounds the
 pad-side units below.  `h_pad = 0` still proves `mult_red = 0` outright, and
 those 162 census cells remain negative instances of Kadish–Landsberg's
 Question 1.5.  `results/s47_units.md` tabulates the bound at all **311** cells
-of the census with `0 < h_pad < a`; **23** of them now have a measured
-`mult_red`, and the bound is attained at 19 and strictly exceeded at 4.
+of the census with `0 < h_pad < a`; **26** of them now have a measured
+`mult_red`, and the bound is attained at 21 and strictly exceeded at 5.
 
 **Gone:** the equality.  `h_pad` does **not** give the unit count at a firing
 cell, so the "predicted two-unit cells across the whole region" the brief asked
@@ -395,13 +405,13 @@ ten integer certificates this session, `results/s42_certs/`.
   the *unit counts* claimed at the other three it does: "four independent
   reducibility equations at `(16,10,7,1,1,1)_9`" is measured, not proved, until
   four integer vectors are exhibited.
-- The seventeen cells are not a sample of the region.  Nine are `ℓ = 6`,
+- The nineteen cells are not a sample of the region.  Eleven are `ℓ = 6`,
   `δ = 9`, in-family; seven are `ℓ = 7`; one is `ℓ = 6`, `δ = 7`, outside the
   family; **none is `ℓ = 8`**, and none is `ℓ = 6` at `δ = 8` outside what
   session 43 already did.  Worse, every cell reachable with `a ≥ 9` or
   `h_pad ≥ 9` is in the one stratum, so the `h_pad` ordering of §3 and the
   stratum reading cannot be separated by anything this engine can reach.  The
-  13-of-17 figure should not be read as a rate over the region.
+  14-of-19 figure should not be read as a rate over the region.
 - The rank-deficit reading of §4.3 is a reading of the *record*, and the record
   is not a random sample of the region: it is what was cheap, and it is heavily
   weighted towards `ℓ = 6` and towards the family.
@@ -446,4 +456,23 @@ ten integer certificates this session, `results/s42_certs/`.
    `mult_red = 0` for free, and they were being counted as evidence for a
    conjecture they say nothing about.  They are worth stating separately, as
    negative instances of Kadish–Landsberg Question 1.5, which is what they are.
+
+## 10. Verification
+
+Re-run at the end of the session over the banked cells
+(`results/s47_cells.jsonl`), not over anything written by hand:
+
+- all 19 banked cells satisfy `h_pad < a` (each is a genuine test of the
+  conjecture) and `mult_red ≤ h_pad` (**Corollary B2 intact at every cell** —
+  the brief's stopping rule 1 never fired), and every `verdict` field agrees
+  with recomputing `mult_red == h_pad`;
+- 12 of 12 at `h_pad ≤ 8` exact, 5 of 7 at `h_pad ≥ 9` missed;
+- 10 certificate files in `results/s42_certs/` written this session, holding
+  2, 2, 1, 1, 4, 3, 5, 4, 1 and 1 integer vectors — matching every claimed lift
+  in §2 and §7 exactly, re-read from disk by `analysis/wk9_s47_starcheck.py`
+  rather than from the lift's own memory;
+- 9 of 9 permanent weights measured and all empty (`mult = a`), and the 91-weight
+  enumeration was rebuilt independently of the ledgers it is compared against;
+- `a` and `h_pad` at the first counterexample agree across two and three
+  independent routes respectively.
 
