@@ -24,3 +24,4 @@ of `docs/transfer_lemma.md`, **`mult_pad = mult_red` at every weight of degree
 | `μ` | `a` | `N_S` | Stab | `n_χ` | route | `mult` | units | secs |
 |---|---|---|---|---|---|---|---|---|
 | `(7, 5, 4, 4, 2, 2)` | 1 | 285313 | 4 | 76792 | inject | 1 | 0 | 2420 |
+| `(6, 6, 5, 4, 2, 1)` | 1 | 162385 | 2 | 81865 | inject | 1 | 0 | 2326 |

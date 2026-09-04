@@ -24,19 +24,14 @@ the record; the wrapper reproduces it at both house primes.  Note `n_χ = 5740`
 against the census `nchi_lb = 12615`: the census field is `N_S/stab` and
 **over**estimates `n_χ`, which is why `results/s47_todo.md` orders by `N_S`.
 
-## Phase A — the sweep, and where it stopped
+## Phase A — the pre-registered sweep, and where it stopped
 
-| # | `λ` | `δ` | `ℓ` | `a` | `h_pad` | `n_χ` | `n_red` | `nnz_red` | nullity | `mult_red` | verdict | secs |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | `(15,12,6,1,1,1)` | 9 | 6 | 21 | 19 | 21451 | 20323 | 222487 | 3 | **18** | **REFUTED** | 686 |
-
-**The first cell measured refutes the conjecture.**  `mult_red = 18 < 19 =
-h_pad`, at both house primes (`nullity_p(E_red) = 3` at `p = 2147483647` and
-`p = 2147483629`).  `mult_red ≤ h_pad` holds, so Corollary B2 is not violated
-and this is not stopping rule 1.  It is stopping rule 2, and the sweep halted
-at once, as pre-registered.  Log `results/logs/s47_refutation_cell.log`.
-
-The remaining 15 cells of wave 1 (`results/logs/wave1.cells`) were not measured.
+The pre-registered sweep halted at its **first** cell.  `(15,12,6,1,1,1)_9`:
+`a = 21`, `h_pad = 19`, `nullity_p(E_red) = 3` at both house primes, so
+`mult_red = 18 < 19 = h_pad`.  That is stopping rule 2 of
+`results/PREREG_s47.md`, and the remaining 15 cells of wave 1
+(`results/logs/wave1.cells`) were not measured under it.  Log
+`results/logs/s47_refutation_cell.log`.
 
 ## The certificate
 
@@ -59,3 +54,34 @@ The nullity direction needs more than mod-`p`: `nullity_p ≥ nullity_Q`, so
 needs `mult_red ≤ 18`, i.e. `nullity_Q ≥ 3` — three independent **rational**
 kernel vectors.  `analysis/wk9_s42_lift.py` supplies them; see the row below.
 
+
+
+## Phase A' — the post-refutation sweep (a different question)
+
+Once the conjecture is known false the binary test is spent, and the measurement
+worth making is the **failure rate**, so the sweep was restarted under
+`--continue` (refuted cells banked, sweep carries on; a `BUG` verdict still
+halts) over cells stratified by the parity of the gap `a − h_pad`, which was the
+discriminant this session's rank-deficit reading proposed.  That reading is now
+also refuted — see `docs/exactness.md` §0.  This table is the whole of the
+session's firing-cell measurement, the pre-registered first cell included.
+
+<!-- PHASE A TABLE -->
+
+| # | `λ` | `δ` | `ℓ` | `a` | `h_pad` | gap `a−h_pad` | `n_red` | `nnz_red` | nullity | `mult_red` | `d` | units | verdict | secs |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | `(15,12,6,1,1,1)` | 9 | 6 | 21 | 19 | 2 | 20323 | 222487 | 3 | **18** | 1 | 3 | **REFUTED** | 686 |
+| 2 | `(14,13,6,1,1,1)` | 9 | 6 | 12 | 10 | 2 | 21742 | 241739 | 2 | **10** | 0 | 2 | exact | 557 |
+| 3 | `(16,10,7,1,1,1)` | 9 | 6 | 30 | 29 | 1 | 22720 | 248152 | 4 | **26** | 3 | 4 | **REFUTED** | 810 |
+| 4 | `(15,11,7,1,1,1)` | 9 | 6 | 30 | 27 | 3 | 27226 | 304026 | 4 | **26** | 1 | 4 | **REFUTED** | 1156 |
+| 5 | `(13,13,7,1,1,1)` | 9 | 6 | 9 | 6 | 3 | 15809 | 315180 | 3 | **6** | 0 | 3 | exact | 436 |
+
+**5 firing cells measured this session: the bound is exact at 2 and missed at 3.**
+
+| gap `a − h_pad` | parity | cells | missed |
+|---|---|---|---|
+| 1 | odd | 1 | 1 |
+| 2 | even | 2 | 1 |
+| 3 | odd | 2 | 1 |
+
+Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 2, 1: 2, 3: 1}.
