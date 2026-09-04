@@ -266,3 +266,8 @@ is `C(r,5) = dim Λ^5 C^r` at `r = 4, 5, 6, 7`.
    at `(5,7)`.  If the six at `(4,6)` are `Λ^5 L`, the 21 at `(5,7)` are
    `Λ^5 C^7`, and the two must be related by the same construction — a
    consistency test no single `r` can provide.
+
+**Verification** (`analysis/wk9_s48_verify.py`, `results/logs/s48_verify.log`).
+Both identities were re-checked as polynomial identities — every coefficient,
+not a sample point — at two fresh pencils and both house primes: 0 failures of
+36 for (I) and 0 of 16 for (II) in all four runs.
