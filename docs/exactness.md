@@ -17,7 +17,9 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > **The conjecture is false.**  At `λ = (15,12,6,1,1,1)`, `δ = 9`, `ℓ = 6`:
 > `a = 21`, `h_pad = 19` — so the bound fires — and `mult_red = 18`.  The
 > normalisation bound is **not** attained.  This is the first cell the session
-> measured.
+> measured.  Sixteen firing cells were measured in all: the bound is exact at
+> **12** and missed at **4**, and all four failures are proved over `Q`, not
+> measured (§2).
 >
 > **The certificate.**  `a = 21` by two independent routes and `h_pad = 19` by
 > **three** (symmetric-function plethysm, Weyl alternation, and a multiset DP
@@ -59,9 +61,14 @@ this clone.  Its §2 content is present in `results/sixrow_record.md` and
 > `(15,11,7,1,1,1)_9` (`e = −3`, odd) both fail, and the first of them fails by
 > `d = 3`, so "`d = 1` always" is gone too.  The pattern is recorded here because
 > it was proposed on the record and killed by this session's own measurements,
-> not because it survived.  **There is no known statistic that separates the
-> cells where `μ_λ` has maximal rank from those where it does not** — the same
-> conclusion session 43 reached about *where* the bites are, one level up.
+> not because it survived.  What is left is weaker and confounded: the bound was
+> attained at every firing cell measured with `a ≤ 12` and missed at four of the
+> five with `a ≥ 13`, but **every** cell reachable with `a ≥ 9` lies in the single
+> stratum `ℓ = 6`, `δ = 9`, `(λ_1,λ_2,λ_3,1,1,1)`, and no cell that could
+> separate the two readings is within reach of the engine at all (§3).  So there
+> is still **no statistic known to separate the cells where `μ_λ` has maximal
+> rank from those where it does not** — the same conclusion session 43 reached
+> about *where* the bites are, one level up.
 
 ## 1. The conjecture, and what it really says
 
