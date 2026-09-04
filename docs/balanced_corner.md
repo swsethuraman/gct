@@ -309,8 +309,17 @@ second-most-useful artefact.  It also means the two build-stage ranges in P2
 were predicted against the wrong `n_χ` and were both too pessimistic anyway; the
 falsifiers (`> 1800 s`, `> 3600 s`) were nowhere near.
 
-**The cost model was re-fitted, as the brief allowed, and the fit is better than
-its predecessor's** but its extrapolation is not: predicted `nnz_c` is within
+**The cost model was re-fitted twice, and its second weak point cost a cell.**
+The first refit (`results/s46_reach.md` §2) fixed `nnz` by fitting `nnz/n_rows`
+instead of `nnz/N_S`; it left `n_rows` itself fitted as `0.88·N_S`, and at
+`(9,8,5,2,2,2)_7` the truth is `2.05·N_S`, which mis-levelled the cell and lost
+it (§4, and `results/s46_ledger.md`).  The second refit (§5 of the reach table,
+written after Phase 3 and leaving the pre-registered order untouched) makes
+`n_rows` exact by the same character count as `n_χ` — 0.37 % worst case over all
+fourteen built cells.  **The lesson of this session, twice over, is that the two
+quantities the cost model most wanted were both exactly computable without
+enumerating anything, and both had been carried as fitted approximations for
+five sessions.**  With that said, the fit is better than its predecessor's but its extrapolation is not: predicted `nnz_c` is within
 0.1 % at all five cells where it can be checked and predicted wall clock within
 5 % at two, while the ns-per-op residuals straddle ±1.5 ns at `n_χ ≈ 10^5`, so a
 cost quoted at `n_χ ~ 3·10^5` could be out by a factor of two.  The ordering is
@@ -409,13 +418,20 @@ largest cell in the region is now 5 minutes, and **the solve is the whole cost**
 session touched it.  The named next targets, in order:
 
 1. `(9,8,5,2,2,2)_7` and `(9,7,6,2,2,2)_7` — balance 7, `n_χ` 182,806 and
-   214,220, predicted 4.8 h and 7.2 h.  The sweep stopped at the first of these
-   on its pre-registered cost budget.
+   214,220, **7.9 h and 11.9 h** on the corrected model of
+   `results/s46_reach.md` §5 (4.8 h and 7.2 h on the uncorrected one).  The
+   sweep stopped at the first of these on its pre-registered cost budget; the
+   budget was then extended and the cell attempted twice without reaching a
+   verdict (`results/s46_ledger.md`, "Not reached"), the second attempt ended by
+   its recorded process id at 2 h 22 m of an estimated 4–5 h sequence.  It is the
+   first cell a successor should start with, at `(12,2)`, and it should take one
+   sequence.
 2. `(7,7,7,4,2,1)_7` — the next **balance 6** cell, `n_χ = 236,122`, predicted
    9.2 h.
 3. `(6,6,4,4,4,4)_7` — balance **2**, the most balanced six-row weight of the
-   degree, `λ_1 < δ` so onset-only, `n_χ = 320,890`, `N_S = 14,564,331`,
-   predicted 61 h and ~2.5 GB of build.  It is a solve problem now, not a build
+   degree, `λ_1 < δ` so onset-only, `n_χ = 320,890`, `n_rows = 11,875,431`,
+   `N_S = 14,564,331`, predicted **40 h** on the corrected model (61 h on the
+   uncorrected one) and ~2.5 GB of build.  It is a solve problem now, not a build
    problem, and it is what more cores would buy.
 4. Balance 5, eight cells, smallest `n_χ = 476,063` — outside 48 h on this
    container by the refitted law, and the honest statement is that it needs

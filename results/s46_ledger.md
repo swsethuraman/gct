@@ -81,9 +81,27 @@ through this build — `(8,8,5,5,1,1)_7`, `(9,9,6,2,1,1)_7`, `(12,12,3,3,1,1)_8`
 `(13,10,6,1,1,1)_8` (at the cheap level and uncompressed).  Those are *not*
 counted as new cells anywhere in this session's totals.
 
-## Not reached
+## Not reached — `(9,8,5,2,2,2)_7`, and why
 
-`results/s46_notreached.jsonl` (empty: no cell was attempted and failed).  The
-sweep stopped where the pre-registered cost budget ran out, at
-`(9,8,5,2,2,2)_7` (balance 7, `n_χ = 182,806`, predicted 4.8 h) — recorded in
-`results/logs/s46_sweep.log` as a budget stop, not a failure.
+The pre-registered sweep stopped at this cell on its cost budget
+(`results/logs/s46_sweep.log`).  The budget was then extended by one cell and it
+was attempted twice; neither attempt reached a verdict, and
+`results/s46_notreached.jsonl` records it.  What happened is worth keeping,
+because it is a failure of the *cost model*, not of the route:
+
+- The first attempt was started at the cheap `(3,2)` level, because the model
+  predicted `n_rows/n_χ = 4.6` from the fitted `n_rows ≈ 0.88·N_S`.  The true
+  `n_rows` is **1,946,993** — `2.05·N_S`, outside the whole fitted range — so the
+  true ratio is **10.7**, above the level policy's threshold.  At `(3,2)` the
+  sample would have been 28 % of the rows, below the 32 % that had just failed at
+  `(9,9,3,3,2,2)_7`.  The run was ended by its recorded process id.
+- The second attempt was started at `(12,2)`, which is what the policy
+  prescribes at ratio 10.7, and which takes all 1,947,004 rows:
+  `nnz_c = 7,108,410`, an estimated 4–5 h of sequence.  It was ended by its
+  recorded process id at 2 h 22 m when the session was closed out.  **No
+  verdict was produced and nothing was banked for this cell.**
+
+The fix is in `results/s46_reach.md` §5: `n_rows` is exactly the same character
+count as `n_χ`, over each raising operator's target basis with `(H, χ|_H)`, and
+it is accurate to 0.37 % at all fourteen cells that have been built — exact to
+the row at this one.  Successors should level from that, not from a fit.
