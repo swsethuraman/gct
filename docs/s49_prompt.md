@@ -44,7 +44,7 @@ sufficient; fixing that is part of this session.
 
 ### 2.1 Both cap degrees are wrong in the repository
 
-`docs/sixrow_cap.md` and `docs/sixrow_close.md` quote 1197 (proved) and 666
+`docs/sixrow_cap.md` and `docs/sixrow_cap_closed.md` quote 1197 (proved) and 666
 (certified).  Both came from the **generic** rank `ρ_d` of the Macaulay matrix
 `M_d(F)` of the `r` partials.  The smallest usable minor is **(rank of the
 determinantal specialisation) + 1**, not `ρ_d`.  Corrected: **1148** proved,
