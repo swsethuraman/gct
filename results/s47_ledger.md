@@ -108,4 +108,22 @@ Stratified by where the cell sits:
 | `ell = 7`, `delta = 8` | 3 | 3 | 0 |
 | `ell = 7`, `delta = 9` | 4 | 4 | 0 |
 
+Stratified by the **target** dimension `h_pad` — exactness is surjectivity of
+`mu_lambda : C^a -> C^{h_pad}`, so this is the dimension the demand is made on:
+
+| `h_pad` | cells | exact | missed |
+|---|---|---|---|
+| 1 | 6 | 6 | 0 |
+| 2 | 3 | 3 | 0 |
+| 6 | 1 | 1 | 0 |
+| 7 | 1 | 1 | 0 |
+| 8 | 1 | 1 | 0 |
+| 9 | 1 | 0 | 1 |
+| 10 | 1 | 1 | 0 |
+| 19 | 1 | 0 | 1 |
+| 27 | 1 | 0 | 1 |
+| 29 | 1 | 0 | 1 |
+
+`h_pad <= 8`: 12 cells, 12 exact, 0 missed.  `h_pad >= 9`: 5 cells, 1 exact, 4 missed.
+
 Rank deficits `d = min(a, h_pad) − mult_red` seen: {0: 13, 1: 3, 3: 1}.

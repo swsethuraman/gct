@@ -71,6 +71,23 @@ def summary(rs):
     for k in sorted(st):
         L.append("| %s | %d | %d | %d |" % (k, st[k][0], st[k][0] - st[k][1], st[k][1]))
     L.append("")
+    L.append("Stratified by the **target** dimension `h_pad` — exactness is surjectivity of")
+    L.append("`mu_lambda : C^a -> C^{h_pad}`, so this is the dimension the demand is made on:")
+    L.append("")
+    L.append("| `h_pad` | cells | exact | missed |")
+    L.append("|---|---|---|---|")
+    hb = {}
+    for r in rs:
+        k = r['h_pad']; hb.setdefault(k, [0, 0])
+        hb[k][0] += 1; hb[k][1] += r['verdict'] == 'REFUTED'
+    for k in sorted(hb):
+        L.append("| %d | %d | %d | %d |" % (k, hb[k][0], hb[k][0] - hb[k][1], hb[k][1]))
+    lo = [r for r in rs if r['h_pad'] <= 8]; hi = [r for r in rs if r['h_pad'] >= 9]
+    L.append("")
+    L.append("`h_pad <= 8`: %d cells, %d exact, %d missed.  `h_pad >= 9`: %d cells, %d exact, %d missed."
+             % (len(lo), sum(1 for r in lo if r['verdict'] == 'EXACT'), sum(1 for r in lo if r['verdict'] == 'REFUTED'),
+                len(hi), sum(1 for r in hi if r['verdict'] == 'EXACT'), sum(1 for r in hi if r['verdict'] == 'REFUTED')))
+    L.append("")
     ds = Counter(min(r['a'], r['h_pad']) - r['mult_red'] for r in rs)
     L.append(f"Rank deficits `d = min(a, h_pad) − mult_red` seen: {dict(sorted(ds.items()))}.")
     L.append("")
