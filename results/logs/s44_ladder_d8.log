@@ -1,0 +1,15 @@
+[s44 ladder] n=4 r=6 d=8..8, seed 20260903, 3 trials/kind, box +-1000000, primes (2147483647, 2147483629)
+  d   rows   cols   h_d  rho_d   ceil     kind  t  rank p1  rank p2  corank   drop
+  8   1512   1287    90   1197   1147   smooth  0     1197     1197      90      0  [2.1s]
+  8   1512   1287    90   1197   1147   smooth  1     1197     1197      90      0  [2.1s]
+  8   1512   1287    90   1197   1147   smooth  2     1197     1197      90      0  [2.1s]
+  8   1512   1287    90   1197   1147      det  0     1146     1146     141     51 *DROP*  [2.1s]
+  8   1512   1287    90   1197   1147      det  1     1146     1146     141     51 *DROP*  [2.0s]
+  8   1512   1287    90   1197   1147      det  2     1146     1146     141     51 *DROP*  [2.1s]
+  8   1512   1287    90   1197   1147      pad  0      917      917     370    280 *DROP*  [2.0s]
+  8   1512   1287    90   1197   1147      pad  1      917      917     370    280 *DROP*  [2.0s]
+  8   1512   1287    90   1197   1147      pad  2      917      917     370    280 *DROP*  [2.0s]
+
+first strict drop, det: d = 8, rho_d = 1197
+first strict drop, pad: d = 8, rho_d = 1197
+[s44 ladder] done in 18.5s

@@ -1,0 +1,36 @@
+[s44 anchors] seed 20260903, 3 trials, box +-1000000, primes (2147483647, 2147483629)
+
+=== rho_d = dim Sym^d - h_d, checked by direct rank at random forms ===
+  n=3 r=4 d=3: dimS=   20 h=    4 rho=   16 measured [16, 16]  OK
+  n=3 r=4 d=4: dimS=   35 h=    1 rho=   34 measured [34, 34]  OK
+  n=3 r=5 d=3: dimS=   35 h=   10 rho=   25 measured [25, 25]  OK
+  n=3 r=5 d=5: dimS=  126 h=    1 rho=  125 measured [125, 125]  OK
+  n=4 r=4 d=5: dimS=   56 h=   16 rho=   40 measured [40, 40]  OK
+  n=4 r=4 d=6: dimS=   84 h=   10 rho=   74 measured [74, 74]  OK
+  n=4 r=5 d=5: dimS=  126 h=   51 rho=   75 measured [75, 75]  OK
+  n=4 r=5 d=6: dimS=  210 h=   45 rho=  165 measured [165, 165]  OK
+  n=4 r=6 d=4: dimS=  126 h=   90 rho=   36 measured [36, 36]  OK
+  n=4 r=6 d=5: dimS=  252 h=  126 rho=  126 measured [126, 126]  OK
+  n=5 r=4 d=8: dimS=  165 h=   31 rho=  134 measured [134, 134]  OK
+  n=3 r=6 d=3: dimS=   56 h=   20 rho=   36 measured [36, 36]  OK
+  formula check: PASS
+
+=== anchor A (cubic in 5 vars, 65): n=3 r=5 d=4 | rows 75 cols 70 h_d 5 rho 65 ===
+  smooth  trial 0: rank [65, 65]  (expect 65)  OK
+  smooth  trial 1: rank [65, 65]  (expect 65)  OK
+  smooth  trial 2: rank [65, 65]  (expect 65)  OK
+  det     trial 0: rank [64, 64]  corank [6, 6]  drop [1, 1]  DROP
+  det     trial 1: rank [64, 64]  corank [6, 6]  drop [1, 1]  DROP
+  det     trial 2: rank [64, 64]  corank [6, 6]  drop [1, 1]  DROP
+  anchor A (cubic in 5 vars, 65): PASS
+
+=== anchor B (quartic in 5 vars, 300): n=4 r=5 d=7 | rows 350 cols 330 h_d 30 rho 300 ===
+  smooth  trial 0: rank [300, 300]  (expect 300)  OK
+  smooth  trial 1: rank [300, 300]  (expect 300)  OK
+  smooth  trial 2: rank [300, 300]  (expect 300)  OK
+  det     trial 0: rank [299, 299]  corank [31, 31]  drop [1, 1]  DROP
+  det     trial 1: rank [299, 299]  corank [31, 31]  drop [1, 1]  DROP
+  det     trial 2: rank [299, 299]  corank [31, 31]  drop [1, 1]  DROP
+  anchor B (quartic in 5 vars, 300): PASS
+
+[s44 anchors] ALL PASS in 0.7s
