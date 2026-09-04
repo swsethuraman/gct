@@ -41,8 +41,17 @@ def census():
 def known():
     from wk9_s47_deficit import record
     k = {(r['lam'], r['delta']): r for r in record()}
-    k[((15, 12, 6, 1, 1, 1), 9)] = dict(lam=(15,12,6,1,1,1), delta=9, a=21, h_pad=19,
-                                        mult_red=18, d=1, e=-2, src='s47')
+    import json as _j
+    p = os.path.join(ROOT, 'results', 's47_cells.jsonl')
+    if os.path.exists(p):
+        for L in open(p):
+            L = L.strip()
+            if not L: continue
+            r = _j.loads(L)
+            k[(tuple(r['lam']), r['delta'])] = dict(
+                lam=tuple(r['lam']), delta=r['delta'], a=r['a'], h_pad=r['h_pad'],
+                mult_red=r['mult_red'], d=min(r['a'], r['h_pad']) - r['mult_red'],
+                e=r['h_pad'] - r['a'], src='s47')
     return k
 
 
