@@ -1,0 +1,25 @@
+      level 1: 86 prefixes
+      level 2: 2479 prefixes
+      level 3: 25955 prefixes
+      level 4: 165656 prefixes
+      level 5: 547945 prefixes
+      level 6: 823745 prefixes
+      level 7: 823745 prefixes
+  lam=(9, 9, 3, 3, 2, 2): N_S=823745 |Stab|=8 ngen=3 rounds=2 n_chi=105536 (orbits dropped: 6612) [gen, 1s, HWM 0.21 GB]
+    E_01: |H|=4 gens=2 targets 782035 canonical rows 200017 nnz 935491 (obstructed fixed targets cancelled: 10098) [3s, HWM 0.25 GB]
+    E_12: |H|=2 gens=1 targets 405556 canonical rows 214335 nnz 967476 (obstructed fixed targets cancelled: 0) [4s, HWM 0.25 GB]
+    E_23: |H|=4 gens=2 targets 681930 canonical rows 177459 nnz 449418 (obstructed fixed targets cancelled: 1965) [6s, HWM 0.26 GB]
+    E_34: |H|=2 gens=1 targets 508045 canonical rows 253166 nnz 687894 (obstructed fixed targets cancelled: 610) [7s, HWM 0.26 GB]
+    E_45: |H|=4 gens=2 targets 613469 canonical rows 148679 nnz 304726 (obstructed fixed targets cancelled: 1412) [9s, HWM 0.26 GB]
+  built[gen] (9, 9, 3, 3, 2, 2) d7: N_S=823745 |Stab|=8 n_chi=105536 rows=993656 nnz=3345005 (11s: mono 1s orbits 1s rows 9s; HWM 0.26 GB)
+    level 0 (3,2): 158345 rows, nnz 2015816 (full: 993665 rows, nnz 4294829)
+    level 0 (3,2): 158345 rows, nnz 2016201 (full: 993665 rows, nnz 4294829)
+    wied[c9_9_3_3_2_2d7_det p=2147483629 lvl=0 seed=1 k=0]: KERNEL SEQ n=105536 nrows=158345 nnz=2015816 k=0 len=211072 secs=1983.2 | BM deg=105534 f0=0 secs=2167.0 | DONE secs=3282.4 (3304s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 496837 rows, nnz 4294708 (full: 993665 rows, nnz 4294829)
+    wied[c9_9_3_3_2_2d7_det p=2147483647 lvl=0 seed=1 k=0]: KERNEL SEQ n=105536 nrows=158345 nnz=2016201 k=0 len=211072 secs=2002.9 | BM deg=105536 f0=0 secs=2189.3 | DONE secs=3306.1 (3330s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 496837 rows, nnz 4294688 (full: 993665 rows, nnz 4294829)
+    wied[c9_9_3_3_2_2d7_det p=2147483647 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=105536 nrows=496837 nnz=4294688 k=0 len=211072 secs=5195.9 | BM deg=105536 f0=1199471725 secs=5389.6 (8759s)
+    wied[c9_9_3_3_2_2d7_det p=2147483629 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=105536 nrows=496837 nnz=4294708 k=0 len=211072 secs=5471.7 | BM deg=105536 f0=113531724 secs=5655.2 (8998s)
+  (9, 9, 3, 3, 2, 2) d7 [det]: nullity = 0 -> mult_det = 1 = a PROVED  (9027s)
