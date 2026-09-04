@@ -1,0 +1,22 @@
+=== (15, 12, 6, 1, 1, 1) delta=9 ===
+  lam=(15, 12, 6, 1, 1, 1): N_S=279087 |Stab|=6 n_chi=21451 (orbits dropped: 54159) [fast, 15s]
+    E_01: |H|=6 targets 146142 canonical rows 19042 nnz 99794 (obstructed fixed targets cancelled: 31890) [1s]
+    E_12: |H|=6 targets 107484 canonical rows 14261 nnz 70052 (obstructed fixed targets cancelled: 21918) [1s]
+    E_23: |H|=2 targets 58192 canonical rows 29096 nnz 64353 (obstructed fixed targets cancelled: 0) [1s]
+    E_34: |H|=1 targets 64353 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s]
+    E_45: |H|=1 targets 64353 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s]
+  built: |Stab|=6 n_chi=21451 n_red=20323 n_nonred=1128 rows=62399 rows_red=59775 nnz_red=222487 cons=[0, 1] (17s)
+    level 0: 29888 rows, nnz 222456 (E: 59775 rows, nnz 222487)
+    wied[cell p=2147483647 seed=1 k=0]: KERNEL SEQ n=20323 nrows=29888 nnz=222456 k=0 len=40646 secs=32.5 | BM deg=20321 f0=0 secs=37.6 | DONE secs=57.2 (58s)
+    wied[cell p=2147483647 seed=2 k=1]: KERNEL SEQ n=20323 nrows=29888 nnz=222456 k=1 len=40646 secs=36.7 | BM deg=20322 f0=0 secs=41.8 | DONE secs=63.9 (122s)
+    wied[cell p=2147483647 seed=3 k=2]: KERNEL SEQ n=20323 nrows=29888 nnz=222456 k=2 len=40646 secs=40.6 | BM deg=20323 f0=0 secs=45.4 | DONE secs=70.5 (192s)
+    wied[cell p=2147483647 seed=4 k=3]: NONSINGULAR SEQ n=20323 nrows=29888 nnz=222456 k=3 len=40646 secs=45.0 | BM deg=20323 f0=2043149035 secs=50.2 (242s)
+  p=2147483647: nullity_p(E_red) = 3  -> mult_red >= 18  [sparse] (417s)
+    level 0: 29888 rows, nnz 222439 (E: 59775 rows, nnz 222487)
+    wied[cell p=2147483629 seed=1 k=0]: KERNEL SEQ n=20323 nrows=29888 nnz=222439 k=0 len=40646 secs=32.6 | BM deg=20321 f0=0 secs=37.6 | DONE secs=58.9 (59s)
+    wied[cell p=2147483629 seed=2 k=1]: KERNEL SEQ n=20323 nrows=29888 nnz=222439 k=1 len=40646 secs=37.7 | BM deg=20322 f0=0 secs=42.8 | DONE secs=65.6 (125s)
+    wied[cell p=2147483629 seed=3 k=2]: KERNEL SEQ n=20323 nrows=29888 nnz=222439 k=2 len=40646 secs=40.8 | BM deg=20323 f0=0 secs=45.9 | DONE secs=70.7 (196s)
+    wied[cell p=2147483629 seed=4 k=3]: NONSINGULAR SEQ n=20323 nrows=29888 nnz=222439 k=3 len=40646 secs=46.2 | BM deg=20323 f0=1774243584 secs=51.3 (260s)
+  p=2147483629: nullity_p(E_red) = 3  -> mult_red >= 18  [sparse] (677s)
+{"lam": [15, 12, 6, 1, 1, 1], "delta": 9, "ell": 6, "a": 21, "h_pad": 19, "mult_red": 18, "deficit": 3, "verdict": "REFUTED", "n_chi": 21451, "n_red": 20323, "nnz_red": 222487, "nullity": 3, "status": "measured (nullity 3, two primes); mult_red >= 18 proved", "wall": 686.4}
+!!! STOP: REFUTED at (15, 12, 6, 1, 1, 1) delta=9 (a=21 h_pad=19 mult_red=18)
