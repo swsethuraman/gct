@@ -16,7 +16,12 @@ h_pad is recomputed here from wk9_s42_hpad, not read from the census, so the
 comparison never rests on a cached number.
 
 usage: python3 wk9_s47_sweep.py --cells "9:15,12,6,1,1,1;8:9,9,9,3,1,1" [--route sparse]
-       python3 wk9_s47_sweep.py --auto N [--maxns 2000000] [--slot ell7] ...
+       python3 wk9_s47_sweep.py --cells "..." --continue
+
+--continue is for the POST-refutation sweep only: once the conjecture is known
+false (session 47 refuted it at (15,12,6,1,1,1)_9), the question stops being
+binary and becomes the failure rate, so REFUTED cells are banked and the sweep
+carries on.  A BUG verdict always halts.
 """
 import sys, os, json, time, traceback
 
@@ -69,6 +74,7 @@ if __name__ == '__main__':
             if not part: continue
             d, lam = part.split(':')
             cells.append((tuple(int(v) for v in lam.split(',')), int(d)))
+    keep_going = '--continue' in args   # post-refutation: measure the RATE, do not halt
     stop = None
     for lam, delta in cells:
         print(f"=== {lam} delta={delta} ===", flush=True)
@@ -83,7 +89,7 @@ if __name__ == '__main__':
         print(json.dumps({k: res[k] for k in
               ('lam','delta','ell','a','h_pad','mult_red','deficit','verdict',
                'n_chi','n_red','nnz_red','nullity','status','wall')}), flush=True)
-        if res['verdict'] in ('BUG', 'REFUTED'):
+        if res['verdict'] == 'BUG' or (res['verdict'] == 'REFUTED' and not keep_going):
             stop = res
             print(f"!!! STOP: {res['verdict']} at {lam} delta={delta} "
                   f"(a={res['a']} h_pad={res['h_pad']} mult_red={res['mult_red']})", flush=True)
