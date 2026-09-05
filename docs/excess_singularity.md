@@ -8,7 +8,20 @@ Inputs used: the Hilbert function of `Q = J(M)/J_F` measured in session 44
 
 ## 0. Statement
 
-> **Proposition D (no excess-singularity construction separates at `n = 4`).**
+> **Proved-vs-measured note (session 49, brief §2.5).**  In the inequality
+> `dim (S/J_{pad})_d > dim (S/J_{det})_d` the **pad side is a proved lower
+> bound** (`J_F ⊆ (l,c)`, a regular sequence — §1), while the **determinantal
+> side is a measured upper bound**: at `d = 6, 7, 8` it is the determinantal
+> corank read modulo `p` at random pencils (a mod-`p` corank is an *upper* bound
+> on the true corank, the safe direction here), and at `d ≥ 9` it is the
+> Gulliksen–Négård value `20d − 20` together with `dim Q_d = 0`, which was
+> **measured** in s44 (the six partials generating the full minor ideal from
+> degree 9), not proved.  So Proposition D is a theorem **given the s44
+> measurements of the determinantal Milnor corank**, and it is a statement about
+> the **Macaulay-minor mechanism specifically** — it renames accordingly:
+
+> **Proposition D (the Macaulay-minor mechanism does not separate at `n = 4`;
+> proved given the measured determinantal coranks).**
 > Fix `4 <= r <= 6`.  Let `F_det = det_4(M(s))` for a generic pencil
 > `M(s) = sum_{i=1}^r s_i A_i` of `4x4` matrices, and let `F_pad = l(s)·c(s)` be
 > any reducible quartic in `r` variables with `l` linear and `c` cubic, `l ∤ c`
@@ -69,9 +82,12 @@ have Hilbert function `10, 30, 46, 41, 12, 1, 0` in degrees `3..9` at `r = 6`.
 | 9 | 505 | 160 | 136 | 20 | 27 | 0 |
 | 10 | 671 | 180 | 166 | 20 | 30 | 0 |
 
-**Monotonicity (proved), `r = 6`.**  For `d >= 9` the determinantal corank is
-exactly `20d − 20` (s44: `Q_d = 0` from `d = 9`, and `H_{S/J(M)}(d) = 20d − 20`
-for `d >= 5`), so its increment is 20, while
+**Monotonicity (proved given the measured `Q_d = 0`), `r = 6`.**  For `d >= 9`
+the determinantal corank is exactly `20d − 20` — the Gulliksen–Négård value
+`H_{S/J(M)}(d) = 20d − 20` (`d >= 5`, adopted) plus `dim Q_d = 0`, the latter
+**measured** in s44 (the six partials generate the full minor ideal from `d = 9`;
+this is the measured input the proposition rests on) — so its increment is 20,
+while
 `padLB(d+1,6) − padLB(d,6) = C(d+4,3) − C(d+1,3) = 146` at `d = 9` and strictly
 increasing.  The gap is therefore increasing for `d >= 9`, and `d = 6, 7, 8` are
 in the table.  ∎  `r = 5` (determinantal corank constant at 20 for `d >> 0`,

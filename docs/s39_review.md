@@ -36,17 +36,23 @@ The new proved bound: the padded permanent is concise in ten variables, so
 `P_r ⊆ Sub_{10}`, whose coordinate ring carries only weights of length ≤ 10;
 hence `mult_pad = 0` for `ℓ(λ) ≥ 11`.  This is the standard subspace-variety
 concision fact, and the session's elementary weight-domination proof is
-correct.  With it the obstruction-eligible region is now **closed on all four
-sides, every side proved**:
+correct.  With it the region a **permanent-specific** obstruction can occupy is
+now bounded on all four sides:
 \[
   a \ge 1,\qquad \lambda_1 \ge \delta,\qquad 6 \le \ell(\lambda) \le 10 .
 \]
-`ℓ ≥ 6` (washout: five rows can't see the permanent), `ℓ ≤ 10` (this session),
-`ℓ ≤ δ` (Pieri), `λ_1 ≥ δ` (Kadish–Landsberg via (★)), `a ≥ 1` (BIP silent at
-(3,4)).  Rows 11–16 carry `mult_pad = 0 ≤ mult_det` — the wrong sign, never an
-obstruction.  This is a clean, quotable theorem for paper 2 and it is what
-makes the exhaustive screen *exhaustive*: it bounds the region rather than
-truncating it by budget.
+`ℓ ≤ 10` (this session), `ℓ ≤ δ` (Pieri), `λ_1 ≥ δ` (Kadish–Landsberg via (★)),
+`a ≥ 1` (BIP silent at (3,4)).  Rows 11–16 carry `mult_pad = 0 ≤ mult_det` — the
+wrong sign, never an obstruction.  **On the lower bound (corrected s49):**
+`ℓ ≥ 6` is where the permanent first *enters* (`docs/washout_lemma.md` Thm 6),
+**not** a proof that no obstruction exists at `ℓ ≤ 5`; washout (`P_r = R_r`,
+`r ≤ 5`) says only that any `D > 0` there would be a *reducibility* obstruction,
+not a permanent one, and does not preclude it.  What actually closes `ℓ ≤ 5` is
+containment at `ℓ ≤ 4` (`D ≤ 0` proved, `docs/r4_containment.md`) and
+*measurement* at `ℓ = 5` (`D ≤ 0` at every cell reached; `R_5 ⊆ D_5` is open).
+So `ℓ ≥ 6` bounds the *permanent-sensitive* region — the right statement for
+paper 2 — and it is what makes the screen exhaustive there; it is not a
+four-sided proof that the search space for *any* obstruction is `6 ≤ ℓ ≤ 10`.
 
 ## 3. What the result establishes
 

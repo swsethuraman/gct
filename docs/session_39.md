@@ -16,13 +16,19 @@ region where the `n = 3` ideal was first pinned (`docs/d5_ideal.md` §0).
 
 ## Headline results
 
-1. **Eligible region bounded on all four sides, all proved.**  An obstruction
-   can live only at `a ≥ 1`, `λ_1 ≥ δ`, `6 ≤ ℓ(λ) ≤ 10`.  The new bound this
-   session is **`ℓ ≤ 10`** (`docs/longweight_hunt.md` §1, from the integrator's
-   addendum): the padded permanent is concise in ten variables, so
-   `P_r ⊆ Sub_{10}` and `mult_pad = 0` for every `ℓ ≥ 11`.  Combined with
-   `ℓ ≤ 5` blind to the permanent (`docs/washout_lemma.md`) and `ℓ ≤ δ` from
+1. **Permanent-sensitive region bounded on all four sides.**  A *permanent-
+   specific* obstruction can live only at `a ≥ 1`, `λ_1 ≥ δ`, `6 ≤ ℓ(λ) ≤ 10`.
+   The new bound this session is **`ℓ ≤ 10`** (`docs/longweight_hunt.md` §1, from
+   the integrator's addendum): the padded permanent is concise in ten variables,
+   so `P_r ⊆ Sub_{10}` and `mult_pad = 0` for every `ℓ ≥ 11`.  With `ℓ ≤ δ` from
    Pieri, the permanent-sensitive long-weight region is `6 ≤ ℓ ≤ min(δ, 10)`.
+   **The lower bound `ℓ ≥ 6` is where the permanent first *enters* (washout_lemma
+   Thm 6), not a proof that no obstruction exists at `ℓ ≤ 5`** — corrected in
+   session 49.  At `ℓ ≤ 5`, washout gives `D = mult_R − mult_det`: an obstruction
+   there would be a statement about *reducibility*, not the permanent.  `ℓ ≤ 4`
+   is closed by containment (`D ≤ 0` proved, `docs/r4_containment.md`); `ℓ = 5`
+   is closed only because it was *measured* (`D ≤ 0` at the nine s27/s30 cells
+   and s38's exhaustive occurrence screen), `R_5 ⊆ D_5` being open.
 
 2. **The occurrence route is silent — an exhaustive negative.**  All **79,255**
    weights with `6 ≤ ℓ ≤ 10`, `λ_1 ≥ δ`, `δ = 8..12` were screened; of the

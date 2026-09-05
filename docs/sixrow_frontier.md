@@ -61,10 +61,13 @@ six-row determinant ideal empty at all its reachable cells of `δ = 6, 7`; the
 onset degree was unknown entering this session.  **Pinning it is the first job;
 the obstruction hunt rides on top of it.**
 
-*The eligible region is sharp* (all proved): `a ≥ 1` (BIP silent at `(3,4)`,
-`docs/s37_review.md` §2b — the gate is `a ≥ 1`, not `a ≥ 2`); `λ_1 ≥ δ` for an
-obstruction (Corollary B of `docs/reducible_ideal.md`: `λ_1 < δ ⇒ mult_pad = 0`);
-`6 ≤ ℓ(λ) ≤ 10` (permanent-visible).  The onset of the *determinant* ideal is
+*The permanent-sensitive region is sharp* (all proved): `a ≥ 1` (BIP silent at
+`(3,4)`, `docs/s37_review.md` §2b — the gate is `a ≥ 1`, not `a ≥ 2`); `λ_1 ≥ δ`
+for an obstruction (Corollary B of `docs/reducible_ideal.md`:
+`λ_1 < δ ⇒ mult_pad = 0`); `6 ≤ ℓ(λ) ≤ 10` (permanent-visible — `ℓ ≥ 6` is where
+the permanent *enters*, not a bar to an obstruction at `ℓ ≤ 5`, which is closed
+by containment at `ℓ ≤ 4` and by measurement at `ℓ = 5`; corrected s49).  The
+onset of the *determinant* ideal is
 not restricted by `λ_1 ≥ δ`; the census lists the `λ_1 < δ` cells separately as
 onset-eligible-only, and they are the balanced cells, all far above reach.
 

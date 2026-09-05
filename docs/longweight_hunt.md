@@ -25,16 +25,21 @@ exhaustive negative.**  Every one of the **79,255** weights `λ ⊢ 4δ` with
 one** has `a > m_det` (forced).  Phase 1 therefore had no obstruction test to
 run.  Three proved-and-measured statements:
 
-1. **The eligible region is now bounded on all four sides, all proved.**  An
-   occurrence obstruction (`mult_det = 0 < mult_pad`) or a forced multiplicity
-   drop can live only at a weight with `a ≥ 1`, `λ_1 ≥ δ`, and
-   **`6 ≤ ℓ(λ) ≤ 10`**.  The upper bound `ℓ ≤ 10` is new this session
+1. **The permanent-sensitive region is bounded on all four sides.**  A
+   *permanent-specific* occurrence obstruction (`mult_det = 0 < mult_pad`) or
+   forced multiplicity drop can live only at a weight with `a ≥ 1`, `λ_1 ≥ δ`,
+   and **`6 ≤ ℓ(λ) ≤ 10`**.  The upper bound `ℓ ≤ 10` is new this session
    (§1): the padded permanent is concise in ten variables, so its orbit
    closure lies in the subspace variety `Sub_10`, whose coordinate ring
    carries no weight of length `> 10`; hence `mult_pad = 0` and no obstruction
-   for every `ℓ ≥ 11`.  With `ℓ ≤ 5` unable to see the permanent at all
-   (`docs/washout_lemma.md`) and `ℓ ≤ δ` free from Pieri, the whole
-   permanent-sensitive long-weight region is `6 ≤ ℓ ≤ min(δ, 10)`.
+   for every `ℓ ≥ 11`.  With `ℓ ≤ δ` free from Pieri, the permanent-sensitive
+   long-weight region is `6 ≤ ℓ ≤ min(δ, 10)`.  **The lower bound `ℓ ≥ 6` is
+   where the permanent first enters (`docs/washout_lemma.md` Thm 6), not a proof
+   that no obstruction exists at `ℓ ≤ 5`** (corrected s49): washout
+   (`P_r = R_r`, `r ≤ 5`) makes any `D > 0` at `ℓ ≤ 5` a *reducibility*
+   statement, not a permanent one, and does not preclude it.  `ℓ ≤ 4` is closed
+   by containment (`D ≤ 0` proved, `docs/r4_containment.md`); `ℓ = 5` only by
+   measurement (`D ≤ 0` at every cell reached, `R_5 ⊆ D_5` open).
 
 2. **The occurrence route is silent, and not narrowly.**  For every screened
    cell `a(λ,δ) ≤ m_det(λ)`.  The margin is enormous and grows with `δ`: at the

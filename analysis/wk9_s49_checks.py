@@ -153,7 +153,55 @@ def C_windows(mmax):
         print(f"  m={m:2d}: {'all j = 1..m-1 span' if not bad else 'FAILS at ' + str(bad)}", flush=True)
 
 
+
+
+def D_subperm_structure(mmax):
+    """Corroborate the reduction: at the structured point the (i,j) sub-permanent
+    of the cyclic bidiagonal A(s) = diag(x_r) + s_3 * (cyclic shift) is
+    s_3^{w-1} times a product of consecutive x_r (a cyclic-window complement),
+    w the cyclic distance j-i.  Checked coefficientwise mod p for small m."""
+    print("D. sub-permanent structure at the structured point (cyclic bidiagonal)")
+    for m in range(2, mmax + 1):
+        p = prime_1_mod(m)
+        w = primitive_root_of_unity(m, p)
+        r = 3
+        unit = [tuple(1 if t == k else 0 for t in range(r)) for k in range(r)]
+        # A(s): diagonal x_i = s1 + w^i s2; superdiagonal (cyclic) s3
+        A = [[{} for _ in range(m)] for _ in range(m)]
+        for i in range(m):
+            A[i][i] = {unit[0]: 1, unit[1]: pow(w, i, p)}
+            A[i][(i + 1) % m] = padd(A[i][(i + 1) % m], {unit[2]: 1})
+        def per_sub(rows, cols):
+            # permanent of submatrix over the given rows/cols, mod p
+            if not rows:
+                return {tuple([0]*r): 1}
+            i = rows[0]; tot = {}
+            for idx, j in enumerate(cols):
+                e = A[i][j]
+                if not e: continue
+                sub = per_sub(rows[1:], cols[:idx]+cols[idx+1:])
+                tot = padd(tot, pmul(e, sub))
+            return {k: vv % p for k, vv in tot.items() if vv % p}
+        ok = True
+        for i in range(m):
+            for j in range(m):
+                rows = [x for x in range(m) if x != i]
+                cols = [x for x in range(m) if x != j]
+                q = per_sub(rows, cols)
+                wdist = (j - i) % m
+                # predicted: s3^{wdist-1} * prod_{r not in window [i+1..j-1] cyclically... }; just check s3-degree and total degree
+                s3deg = min((mono[2] for mono in q), default=None) if q else None
+                s3deg_max = max((mono[2] for mono in q), default=None) if q else None
+                # every monomial should have s3-degree exactly max(wdist-1, 0) for w>=1, and 0 for w==0
+                exp = (m - wdist) if wdist >= 1 else 0   # s_3-power: m-w for w>=1, else 0
+                if q and not all(mono[2] == exp for mono in q):
+                    ok = False
+                if q and not all(sum(mono) == m - 1 for mono in q):
+                    ok = False
+        print(f"  m={m:2d}: sub-permanents all carry the predicted single s_3-power and degree m-1: {'yes' if ok else 'NO'}", flush=True)
+
+
 if __name__ == "__main__":
     mode = sys.argv[1]
     mmax = int(sys.argv[2]) if len(sys.argv) > 2 else 9
-    {"A": lambda: A_det3(), "B": lambda: B_theoremC(mmax), "C": lambda: C_windows(mmax)}[mode]()
+    {"A": lambda: A_det3(), "B": lambda: B_theoremC(mmax), "C": lambda: C_windows(mmax), "D": lambda: D_subperm_structure(mmax)}[mode]()

@@ -24,15 +24,20 @@ Labels: **proved** / **measured** / **adopted-from-literature** /
 > so `Phi_{m,r}` is **not** dominant, and `P_r != R_r`, whenever
 > `m^2 r − orbit(m) < C(r+m−1, m)`.
 >
-> **(ii) Density direction (proved at each `(m, r)` in the verified range).**
-> Write `r*(m)` for the largest `r` with `m^2 r − orbit(m) >= C(r+m−1, m)`.
-> Then the Jacobian of `Phi_{m,r}` has full rank `C(r+m−1, m)` at an explicit
-> integer point modulo both house primes at every `(m, r)` with
-> `2 <= m <= 12`, `2 <= r <= r*(m)` and at every `(m, r)` with
-> `13 <= m <= 17`, `r = 3, 4`, `r <= r*(m)` — which **proves** density (Lemma 1 of
-> `docs/washout_lemma.md`; a rank at a point is a *lower* bound on the generic
-> rank, the direction that closes).  Hence `D_r^{per_m} = Sym^m C^r` and
-> `P_r = R_r` there.  In every case tested the bound of (i) is **attained**:
+> **(ii) Density direction.**  Write `r*(m)` for the largest `r` with
+> `m^2 r − orbit(m) >= C(r+m−1, m)`.  `r = 2` is dense for **every** `m` (§3),
+> and **`r = 3` is dense for every `m`** (session 49's uniform argument,
+> `docs/washout_r3_uniform.md` — a structured cyclic-bidiagonal point plus a
+> `q`-binomial window lemma; supersedes the finite-range check).  At the top
+> rows `r = 4, 5` density is **proved at each `(m, r)` in the verified range**:
+> the Jacobian of `Phi_{m,r}` has full rank `C(r+m−1, m)` at an explicit integer
+> point modulo both house primes at every `(m, r)` with `2 <= m <= 12`,
+> `2 <= r <= r*(m)` and at every `(m, r)` with `13 <= m <= 17`, `r = 3, 4`,
+> `r <= r*(m)` (Lemma 1 of `docs/washout_lemma.md`; a rank at a point is a
+> *lower* bound on the generic rank, the direction that closes) — an
+> **expectation** for `r = 4, 5` beyond that range.  Hence `D_r^{per_m} =
+> Sym^m C^r` and `P_r = R_r` wherever density holds.  In every case tested the
+> bound of (i) is **attained**:
 >
 >     dim D_r^{per_m}  =  min( C(r+m−1, m),  m^2 r − orbit(m) )      (measured)
 >
@@ -185,6 +190,14 @@ every `m >= 17`.  At `r = 3`, `9m^2 − 2m + 2 >= (m+1)(m+2)/2` for every
 `per_m(A(s,t)) = prod_i (a_i s + b_i t)`, and every binary form of degree `m`
 is such a product.  So `D_2^{per_m} = Sym^m C^2` for all `m`.  ∎
 
+**`r = 3` is dense for every `m` (proved, session 49).**  See
+`docs/washout_r3_uniform.md`: the structured cyclic-bidiagonal point
+`I·s_1 + diag(ω^i)·s_2 + P·s_3` has full Jacobian rank `C(m+2,2)` for every `m`,
+by the window lemma (a `q`-binomial non-vanishing) and the cyclic symmetry of
+that point.  So the density direction of `r*(m) = 3` (`m ≥ 17`) is a theorem,
+not a finite-range measurement.  (`r = 4, 5` density stays measured on the
+checked range, expectation beyond — §4.)
+
 ## 4. The Jacobian checks *(measured; `results/s48_washout.md`)*
 
 46 rows at `2 <= m <= 12` covering `r = 2 .. r*(m)+1`, plus `r = 3, 4` at
@@ -226,12 +239,21 @@ Pre-registered prediction **C4** — full rank at every `(m, r)` with
 Prediction **C2**, the `orbit(m) = 2m − 2` correction, is confirmed at prior
 0.85 and is moreover *sharp*: the bound is attained at every measured `(m,r)`.
 
-**What is not proved.**  Density for `m >= 18` at `r = 3` is **not** verified
-computationally: the sub-permanent DP costs `m^2 2^m` and runs out of budget
-past `m = 17` (the `m = 17`, `r = 4` row alone took 688 s per prime).  The failure direction of Theorem C is
-unconditional in `m`; the density direction is a theorem at each `(m, r)`
-actually run, and an **expectation** beyond.  `r = 2` is proved for all `m`
-(§3).
+**What is not proved *by this section*.**  Density for `m >= 18` at `r = 3` is
+not verified computationally here: the sub-permanent DP costs `m^2 2^m` and runs
+out of budget past `m = 17`.  **Session 49 closes this by a uniform argument**
+(`docs/washout_r3_uniform.md`): at the structured point
+`A(s) = I·s_1 + diag(ω^i)·s_2 + P·s_3` (cyclic bidiagonal), the sub-permanents
+are `s_3`-homogeneous and their binary factors are the `τ`-orbit of one cyclic
+window product, which spans by a `q`-binomial (window) lemma proved for all `m`;
+so `rank dΦ_{m,3} = C(m+2,2)` for **every** `m`, and **`r = 3` density is now
+proved, not measured**.  With `r = 2` also proved for all `m` (§3, every binary
+form splits) and the `r = 4` failure of the count unconditional (§3), the
+threshold `r*(m) = 3` for `m ≥ 17` rests on a proved density.  What remains
+*measured only* is density at the **top row** `r = r*(m) ∈ {4,5}` for
+`4 ≤ m ≤ 16` — Theorem C(ii) at `r = 4, 5`, a theorem at each `(m,r)` run and an
+**expectation** beyond that range.  The failure direction of Theorem C is
+unconditional in `m` throughout.
 
 ## 5. What it means, and what it is not
 
