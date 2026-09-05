@@ -1,0 +1,12 @@
+degeneracy-direction pre-check: Macaulay corank dim (S/J_F)_d (worked example, Proposition D)
+ten-variable points (the test set proper):
+  det_pencil             (r = 10): (615, 1452, 2996, 5720)
+  reducible              (r = 10): (615, 1488, 3174, 6276)
+  padded_permanent       (r = 10): (620, 1538, 3395, 6881)
+  verdict: WRONG DIRECTION -- the padded permanent is at least as degenerate as the determinant in every component; stop here
+  note: the reducible point and the full padded permanent DISAGREE -- that disagreement is the result
+six-variable companions (restrictions; labelled as such):
+  det_pencil_r6          (r = 6): (90, 126, 141, 132, 141)
+  reducible_r6           (r = 6): (90, 136, 191, 266, 370)
+  padded_permanent_r6    (r = 6): (90, 136, 191, 266, 370)
+  verdict: WRONG DIRECTION -- the padded permanent is at least as degenerate as the determinant in every component; stop here

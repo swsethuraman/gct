@@ -2,7 +2,17 @@
 
 Session 48, branch `s48-theorems`, 2026-09-04, off `9aa6a9c`.
 Pre-registration `results/PREREG_s48.md` (commit `902cccd`, **before any rank
-or nullspace was computed**).  Code `analysis/wk9_s48_syz.py`,
+or nullspace was computed**).
+
+> **Correction (session 49, 2026-09-05).**  Every cap degree in this document —
+> `666` certified, `1197` proved — was **one too large**: the smallest minor
+> vanishing on `D_6^{det_4}` has size `(determinantal rank) + 1`, not `ρ_d`.
+> Read **`661`** for `666` and **`1148`** for `1197` throughout; the corrected
+> bracket is `9 ≤ onset I(D_6^{det_4}) ≤ 661`, with `≤ 1148` proved.  See
+> `docs/sixrow_cap.md` (corrected in full) and `docs/s49_report.md` §2.1.  The
+> `(5,7)` numbers of this document — `ρ_10 = 5880`, determinantal rank `5859`,
+> drop `21` — are ranks and are unchanged; the minor there, were one taken,
+> would be size `5860`.  Code `analysis/wk9_s48_syz.py`,
 `analysis/wk9_s48_syzfam.py`, `analysis/wk9_s48_syzprobe.py`,
 `analysis/wk9_s48_ladder57.py`; logs `results/logs/s48_syz*.log`,
 `results/logs/s48_ladder57_d10.log`; raw ranks `results/s48_ladder57.md`,
@@ -12,8 +22,9 @@ Labels: **proved** / **measured** / **certified** / **expectation**.
 ## 0. Verdict
 
 > **Target A — the six-row cap is still not closed, but the search is now
-> narrowed to a proved boundary.**  `onset I(D_6^{det_4}) <= 666` remains
-> *certified, not proved* (s44 §4).  Two new **proved identities** produce
+> narrowed to a proved boundary.**  `onset I(D_6^{det_4}) <= 661` remains
+> *certified, not proved* (s44 §4; the cap is `660 + 1 = 661`, corrected from
+> `666` in session 49).  Two new **proved identities** produce
 > closed-form families of syzygies of the six partials, and both families turn
 > out to be entirely Koszul.  More: the **complete** span of every
 > `GL_4 x GL_4`-equivariant matrix word of `s`-degree 4 containing **one**
@@ -229,12 +240,12 @@ does not factor through a degenerate part of the pencil.
 
 ## 5. Status of the cap, and where a next session should push
 
-`onset I(D_6^{det_4}) <= 1197` is a theorem (s44 Theorem A).
-`onset I(D_6^{det_4}) <= 666` is **certified, not proved**, exactly as s44 left
+`onset I(D_6^{det_4}) <= 1148` is a theorem (s44 Theorem A, cap corrected in s49).
+`onset I(D_6^{det_4}) <= 661` is **certified, not proved**, exactly as s44 left
 it; nothing in this session weakens or strengthens that label.  The bracket is
-unchanged:
+unchanged (only the numbers are corrected):
 
-    9  <=  onset I(D_6^{det_4})  <=  666 .
+    9  <=  onset I(D_6^{det_4})  <=  661 .
 
 Pre-registered **A1** (find all six in closed form) was given prior 0.30 and is
 **not** achieved.  **A4** (the `𝒳 = adj(M)B` branch contains them) was given

@@ -16,12 +16,15 @@ For every `λ ⊢ 4δ` with `6 ≤ ℓ(λ) ≤ min(δ,10)` and `λ_1 ≥ δ`:
 - `m_det(λ)` = symmetric rectangular Kronecker coeff, rectangle `(δ^4)`,
   `= (1/2)[g(λ,(δ^4),(δ^4)) + T(λ)]` (`mult_det ≤ m_det`), computed only when `a ≥ 1`.
 
-The eligible region for an occurrence obstruction (`mult_det = 0 < mult_pad`)
-or a forced multiplicity drop is bounded, all proved: `a ≥ 1`
+The region for a **permanent-specific** occurrence obstruction
+(`mult_det = 0 < mult_pad`) or forced multiplicity drop is bounded: `a ≥ 1`
 (BIP silent at `(3,4)`); `λ_1 ≥ δ` (Kadish–Landsberg via (★),
-`docs/stabiliser_reduction.md`); `ℓ ≥ 6` (`ℓ ≤ 5` cannot see the permanent,
-`docs/washout_lemma.md`); `ℓ ≤ min(δ,10)` — `ℓ ≤ δ` since every constituent
-of `Sym^δ(Sym^4)` has `≤ δ` rows, and **`ℓ ≤ 10`** because the padded
+`docs/stabiliser_reduction.md`); `ℓ ≥ 6` — where the permanent *enters*
+(`docs/washout_lemma.md` Thm 6), **not** a proof that no obstruction exists at
+`ℓ ≤ 5` (corrected s49: washout `P_r = R_r` makes any `D > 0` at `ℓ ≤ 5` a
+reducibility statement, and does not preclude it; `ℓ ≤ 4` is closed by
+containment, `ℓ = 5` only by measurement); `ℓ ≤ min(δ,10)` — `ℓ ≤ δ` since every
+constituent of `Sym^δ(Sym^4)` has `≤ δ` rows, and **`ℓ ≤ 10`** because the padded
 permanent is concise in 10 variables, so `P_r ⊆ Sub_10` and `mult_pad = 0`
 for `ℓ ≥ 11` (`results/PREREG_s39.md` §0, proved).  Rows 11–16 are excluded
 by that theorem, not by budget.

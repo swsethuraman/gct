@@ -1,4 +1,27 @@
-# The six-row cap: `onset I(D_6^{det_4}) ≤ 666`, and why the measuring route is not made unnecessary
+# The six-row cap: `onset I(D_6^{det_4}) ≤ 661`, and why the measuring route is not made unnecessary
+
+> **Correction (session 49, 2026-09-05).**  The cap degrees quoted in this
+> document — 1197 proved, 666 certified — were **one too large each**.  The
+> smallest minor that vanishes identically on `D_6^{det_4}` has size **(rank of
+> the determinantal specialisation) + 1**, not `ρ_d` (the rank of a *smooth*
+> form).  At `d = 7` the determinantal rank is 660, so the usable minor is size
+> **661**, not 666; at `d = 8` the Gulliksen–Négård ceiling proves the
+> determinantal rank is `≤ 1147`, so the usable minor is size **1148**, not
+> 1197.  Both corrections *lower* the cap:
+>
+>     onset I(D_6^{det_4})  ≤  1148   (proved)      ≤  661   (certified).
+>
+> Recomputed from scratch in session 49 (`analysis/wk9_s49_cap.py`, seed
+> 20260905): `ρ_7 = 666`, `h_7 = 126`, GN ceiling 672, determinantal rank 660,
+> minor 661; `ρ_8 = 1197`, `h_8 = 90`, GN ceiling **1147**, determinantal rank
+> 1146, minor 1148.  The size-661 drop is re-certified over `Q` at three fresh
+> `±10^12` pencils (`results/logs/s49_certify661.log`).  The body below is left
+> as session 44 wrote it except that **every minor size `666` now reads `661`
+> and every proved minor size `1197` now reads `1148`**; the ranks `ρ_d`, the
+> determinantal ranks, and the GN ceiling are unchanged.  The same slip is
+> **not** present in paper 1's `prop:jaccap` (there the drop is exactly one,
+> `65 = 64 + 1`, so the minor size 65 is already `rank + 1`); see
+> `docs/s49_report.md` §2.1.
 
 Session 44, branch `s44-sixrowcap`, 2026-09-03, off `0c229c1`.
 Pre-registration `results/PREREG_s44.md` (commit `2e06e3f`, **before any rank
@@ -11,36 +34,43 @@ Labels: **proved** / **measured** / **certified** / **adopted-from-literature**
 
 > **Theorem A (the a priori six-row cap; proved, no computation).**  For every
 > pencil `M(s) = Σ_{i=1}^{6} s_i A_i` of `4×4` matrices whose rank-`≤ 2` locus
-> has the expected codimension 4, the size-`1197` minors of the degree-8
-> Macaulay matrix `M_8` of the six partials are degree-`1197` forms on
+> has the expected codimension 4, the size-`1148` minors of the degree-8
+> Macaulay matrix `M_8` of the six partials are degree-`1148` forms on
 > `Sym^4 C^6`, not identically zero, and vanishing on `D_6^{det_4}`.  Hence
 >
->     onset I(D_6^{det_4}) ≤ 1197 .
+>     onset I(D_6^{det_4}) ≤ 1148 .
 >
 > The proof is one line of Gulliksen–Négård arithmetic: Jacobi's formula puts
 > the Jacobian ideal inside the ideal `J(M)` of the sixteen `3×3` minors, whose
-> Hilbert function is exact, and `dim J(M)_8 = 1147 < 1197 = ρ_8`.
+> Hilbert function is exact, and `dim J(M)_8 = 1147 < 1197 = ρ_8`.  So
+> `rank M_8 ≤ 1147` at every determinantal point, and the smallest minor that
+> vanishes there has size **`1148 = 1147 + 1`** — not `ρ_8 = 1197`, which is the
+> *smooth* rank.  (The session-44 statement read `1197`; corrected in session
+> 49, and it *lowers* the cap.)
 >
 > **Theorem B (the sharp cap; certified at explicit pencils, with an explicit
 > failure probability).**  The first degree at which the Macaulay rank drops on
 > `D_6^{det_4}` is `d = 7`, where the generic rank is `ρ_7 = 666` and the
-> determinantal rank is `660` (corank `132 = h_7 + 6`).  Hence
+> determinantal rank is `660` (corank `132 = h_7 + 6`).  The smallest minor
+> vanishing on `D_6^{det_4}` therefore has size `660 + 1 = 661`, and
 >
->     onset I(D_6^{det_4}) ≤ 666 .
+>     onset I(D_6^{det_4}) ≤ 661 .
 >
-> The drop — `rank_Q M_7 < 666` — is **exact over `Q`** at three explicit
-> integer pencils drawn uniformly from `±10^12`, by a multimodular certificate
-> over ~1790 primes of 62 bits each (§4); the value 660 itself is measured
-> modulo `p`.  If the generic determinantal rank were 666, three uniform pencils
-> from that box would all kill a nonzero degree-2664 polynomial with probability
-> at most `(2664/(2·10^12))^3 ≈ 2.4·10^{-27}`.  It is **not** a theorem: no
-> argument here rules out a measure-zero coincidence, and §4 says exactly what
-> would be needed.
+> The drop — `rank_Q M_7 ≤ 660 < 661`, so every `661×661` minor vanishes — is
+> **exact over `Q`** at three explicit integer pencils drawn uniformly from
+> `±10^12`, by a multimodular certificate over ~1740 primes of 62 bits each
+> (§4; the size-`661` certificate was run in session 49,
+> `results/logs/s49_certify661.log`, and supersedes session 44's size-`666`
+> run); the value 660 itself is measured modulo `p`.  If the generic
+> determinantal rank were `≥ 661`, three uniform pencils from that box would all
+> kill a nonzero degree-`2644` polynomial with probability at most
+> `(2644/(2·10^12))^3 ≈ 2.3·10^{-27}`.  It is **not** a theorem: no argument here
+> rules out a measure-zero coincidence, and §4 says exactly what would be needed.
 >
 > **`d = 7` is the floor of this mechanism (proved).**  There is **no** drop at
 > `d = 4, 5, 6`: a determinantal point attains `ρ_d` there, a rank at a point is
 > a lower bound on the generic rank, and `ρ_d` is an upper bound for every form
-> — so the generic determinantal rank equals `ρ_d` exactly for `d ≤ 6`.  666
+> — so the generic determinantal rank equals `ρ_d` exactly for `d ≤ 6`.  661
 > cannot be improved by going to a lower Macaulay degree.
 >
 > **The hoped-for cheap answer does not happen.**  A drop at `d = 4` would have
@@ -48,17 +78,17 @@ Labels: **proved** / **measured** / **certified** / **adopted-from-literature**
 > answerable by direct measurement.  It does not drop there, nor at 5, nor at 6.
 > The bracket the programme now holds is
 >
->     9  ≤  onset I(D_6^{det_4})  ≤  666
+>     9  ≤  onset I(D_6^{det_4})  ≤  661
 >
 > (lower end: sessions 36 and 41, `mult_det = a` at all 90 reached cells through
 > `δ = 8`, in every component reached).  **The expensive half of the programme
-> is not made unnecessary.**  666 is three orders of magnitude above the
+> is not made unnecessary.**  661 is three orders of magnitude above the
 > `n_χ ≈ 20,000` frontier and points at no reachable cell.
 >
 > **The minors are not separators (measured; predicted).**  Padded permanents
 > `ℓ(s)·per_3(A(s))` are reducible, hence singular in codimension 2, and their
 > ranks drop earlier and much further — from `d = 5`, and by 140 at `d = 7`.
-> The size-666 minors vanish on the padded permanent too.  The cap bounds the
+> The size-661 minors vanish on the padded permanent too.  The cap bounds the
 > determinant ideal; it separates nothing.
 >
 > **The drop looks like `C(r,5)` (expectation).**  At `d = 3n−5`, where the
@@ -151,8 +181,11 @@ is exact, and `H_{S/J(M)}(d) = [t^d] (1 − 16t^3 + 30t^4 − 16t^5 + t^8)/(1−
 
 At `d = 8` the ceiling is 50 below the generic rank.  So `rank M_8 ≤ 1147 <
 1197` at *every* determinantal point of the open set where the grade is 4, the
-size-1197 minors vanish there, hence on the closure `D_6^{det_4}`, and they are
-not identically zero because a smooth quartic attains 1197.  ∎
+size-`1148` minors (`1148 = 1147 + 1`, the ceiling plus one) vanish there, hence
+on the closure `D_6^{det_4}`, and they are not identically zero because a smooth
+quartic attains `ρ_8 = 1197 ≥ 1148`.  ∎  *(The session-44 draft wrote the minor
+size as `1197 = ρ_8`; the smallest vanishing minor is `1148`, which is the
+better bound — corrected in session 49.)*
 
 This is the whole of Theorem A, and it was in `results/PREREG_s44.md` before
 any matrix was built.  Its five-row shadow: the same argument at `(n,r) = (4,5)`
@@ -177,7 +210,7 @@ of §4)*
 at `d = 4, 5, 6`.  A rank modulo `p` is a lower bound on the rank over `Q`, a
 rank at a point is a lower bound on the generic rank, and §1 gives `ρ_d` as an
 upper bound valid for every form.  The three inequalities close:
-`ρ_d ≤ generic ≤ ρ_d`.  So the six-row cap cannot be lowered below 666 by
+`ρ_d ≤ generic ≤ ρ_d`.  So the six-row cap cannot be lowered below 661 by
 choosing a smaller Macaulay degree.
 
 **`d = 7`: the drop is six non-Koszul syzygies** *(measured;
@@ -214,34 +247,35 @@ at a random pencil therefore proves nothing at all about `D_6^{det_4}`: it
 gives `generic rank ≥ 660`, which is consistent with `666`.  Two steps were run
 to close as much of this as can be closed by computation.
 
-**Step 1 — exact over `Q` at explicit pencils (certified).**  Every `666×666`
-minor of `M_7` is an integer, and Hadamard bounds it by `(max_i ‖∂_iF‖_2)^666`
-because every row of `M_7` is a permutation of the coefficient vector of some
-partial.  If `rank_p M_7 < 666` for a set of primes whose product exceeds twice
-that bound, every `666×666` minor is divisible by that product while bounded by
-half of it, hence **zero**; so `rank_Q M_7 < 666` exactly, at that pencil.
-Run at three pencils drawn uniformly from `±10^12`, with 62-bit primes
-(`analysis/wk9_s44_certify.py`, `results/logs/s44_certify_d7.log`): the rank
-was 660 at every prime of every run, so the certificate closes:
+**Step 1 — exact over `Q` at explicit pencils (certified).**  The cap is the
+smallest *vanishing* minor, size `661 = 660 + 1`, so what must be certified is
+that every `661×661` minor vanishes over `Q`.  Each `661×661` minor of `M_7` is
+an integer Hadamard-bounded by `(max_i ‖∂_iF‖_2)^{661}` (every row of `M_7` is a
+permutation of the coefficient vector of some partial).  If `rank_p M_7 < 661`
+for a set of primes whose product exceeds twice that bound, every `661×661`
+minor is divisible by that product while bounded by half of it, hence **zero**;
+so `rank_Q M_7 ≤ 660 < 661` exactly, at that pencil.  Session 49 ran this at
+three pencils drawn uniformly from `±10^12`, 62-bit primes
+(`analysis/wk9_s49_cap.py certify 7 661`, `results/logs/s49_certify661.log`):
+the rank was 660 at every prime of every run, so the certificate closes:
 
-    rank_Q M_7 < 666   at three explicit integer pencils,
+    rank_Q M_7 ≤ 660 < 661   at three explicit integer pencils,
 
-exact arithmetic, not a sample.  Each run needed about 1790 primes and 7.6
-minutes (`log_2 H ≈ 109,500`).  Note precisely what is and is not pinned: the
-certificate proves `rank_Q ≤ 665`, and `rank_p = 660` gives `rank_Q ≥ 660`, so
-`rank_Q ∈ [660, 665]` at those pencils.  The value **660** itself is measured
-modulo `p`, not certified; certifying it would need the same multimodular
-argument run at size 661, which is the same cost again and buys nothing — the
-cap only needs the drop.
+exact arithmetic, not a sample — hence `onset ≤ 661`.  Each run needed about
+1740 primes and ~7 minutes.  (Session 44 ran the same argument at size `666`,
+`analysis/wk9_s44_certify.py`, `results/logs/s44_certify_d7.log`, which
+certified only `onset ≤ 666`; the value `660` is measured modulo `p` at both.
+The size-`661` run is strictly stronger — the smaller Hadamard bound needs no
+more primes — and it is what pins the corrected cap.)
 
 **Step 2 — Schwartz–Zippel (an explicit probability, not a proof).**  Each
-`666×666` minor is a polynomial of degree `4 · 666 = 2664` in the 96 pencil
+`661×661` minor is a polynomial of degree `4 · 661 = 2644` in the 96 pencil
 entries (the entries of `M_7` are linear in the coefficients of `F`, which are
-quartic in the pencil).  If the generic determinantal rank were 666, some such
-minor would be a **nonzero** polynomial of degree 2664, and a pencil drawn
+quartic in the pencil).  If the generic determinantal rank were `≥ 661`, some
+such minor would be a **nonzero** polynomial of degree 2644, and a pencil drawn
 uniformly from a box of side `2·10^12 + 1` would kill it with probability at
-most `2664/(2·10^12+1) ≈ 1.33·10^{-9}`.  Three independent pencils:
-`≈ 2.4·10^{-27}`.
+most `2644/(2·10^12+1) ≈ 1.32·10^{-9}`.  Three independent pencils:
+`≈ 2.3·10^{-27}`.
 
 **The reformulation that a next session should use.**  A syzygy
 `Σ_k G_k ∂_kF = 0` is a vector field `δ = Σ_k G_k ∂/∂s_k` with `δ(F) = 0` — an
@@ -266,7 +300,7 @@ Koszul syzygy `K_{kA}` by Euler's identity, and lies in the 90.  The six extra
 syzygies are a genuinely new phenomenon at `r ≥ 6`, they are not visible at
 `r = 5` (where the extra syzygy space is one-dimensional and is Dimca's node
 defect), and this session did not find them.  **That is the one thing standing
-between `onset I(D_6^{det_4}) ≤ 666` and a theorem.**  Theorem A, `≤ 1197`, is
+between `onset I(D_6^{det_4}) ≤ 661` and a theorem.**  Theorem A, `≤ 1148`, is
 a theorem now.
 
 ## 5. The padded permanent — a bound, not a separator *(measured; pre-registered)*
@@ -314,7 +348,7 @@ decomposition of the minor module would be attempted only if the cap fell below
 200.  It is 666.  A degree-666 module in `Sym^666(Sym^4 C^6)` is out of reach by
 several orders of magnitude, and no partial decomposition is offered.  The
 honest pointer is a negative one: **the cap does not point at any measurable
-cell.**  The frontier is `δ ≤ 9` at `n_χ ≈ 20,000`; 666 is not adjacent to it.
+cell.**  The frontier is `δ ≤ 9` at `n_χ ≈ 20,000`; 661 is not adjacent to it.
 
 ## 8. The first drop across `(n, r)` *(measured; `results/logs/s44_sweep.log`)*
 
@@ -368,11 +402,22 @@ Two readings:
 
 The general cap this suggests, for `4 ≤ r ≤ 6` and `n ≥ 4`:
 
-    cap(n, r) = dim Sym^{3n−5} C^r − h_{3n−5}(n, r) ,   drop = C(r, 5)
+    ρ_{3n−5}(n, r) = dim Sym^{3n−5} C^r − h_{3n−5}(n, r) ,   drop = C(r, 5)
 
-which gives 65 and 300 at the two anchors, 666 at `(4,6)` and 2457 at `(5,6)`,
-and no cap at all at `r = 4`.  Only the `r = 5` column is a theorem
-(`docs/onset_conjecture.md`).
+whose values `ρ_{3n−5}` are 65 and 300 at the two anchors, 666 at `(4,6)` and
+2457 at `(5,6)`, and undefined at `r = 4` (no drop).  **These `ρ` are the
+*smooth* ranks, not the onset bounds.**  The smallest vanishing minor has size
+`(determinantal rank) + 1 = ρ_{3n−5} − C(r,5) + 1`, so the actual onset cap this
+mechanism gives is
+
+    cap(n, r) = ρ_{3n−5}(n, r) − C(r, 5) + 1 ,
+
+which is `65` and `300` at the two `r = 5` anchors (there `C(5,5) − 1 = 0`, so
+`cap = ρ`, and this is why the five-row theorem and paper 1's `prop:jaccap` are
+free of the slip), **`661` at `(4,6)`** (`666 − 6 + 1`) and `2452` at `(5,6)`
+(`2457 − 6 + 1`).  Only the `r = 5` column is a theorem
+(`docs/onset_conjecture.md`); the `r = 6` values are the certified caps of this
+document.
 
 **A limitation worth stating.**  At `r = 4` the mechanism produces *no*
 equations, and that is not because there are none: `dim D_4^{det_4} = 4·16 −
@@ -461,8 +506,10 @@ skim (ProjectEuclid blocked direct fetch); worth a human glance before print.
 
 ## 10. Standing after this session
 
-`onset I(D_6^{det_4}) ∈ [9, 666]`, with `≤ 1197` proved outright and `≤ 666`
-certified at explicit pencils with failure probability `≈ 2.4·10^{-27}`.
+`onset I(D_6^{det_4}) ∈ [9, 661]`, with `≤ 1148` proved outright and `≤ 661`
+certified at explicit pencils with failure probability `≈ 2.3·10^{-27}`
+(session-49 correction: the caps read 1197 and 666 before, one too large each —
+the usable minor is `(determinantal rank) + 1`, not `ρ_d`).
 `d = 7` is the floor of the mechanism (proved).  The minors are not separators,
 by a structural argument, so the obstruction question is untouched.  The
 measuring route is **not** made unnecessary: the cap is three orders of
@@ -471,7 +518,7 @@ magnitude above the frontier and points at no cell anyone can reach.
 The three things a next session could do, in order of value:
 
 1. **Close the gap of §4** — find the six non-Koszul syzygies of `(4, 6, 7)` in
-   closed form and turn `≤ 666` into a theorem.  Equivalently: the six degree-4
+   closed form and turn `≤ 661` into a theorem.  Equivalently: the six degree-4
    logarithmic derivations of `det M(s)` beyond the trivial ones.  The search
    space is `{ 𝒳M + M𝒴 : tr(𝒳 + 𝒴) = 0 } ∩ (L ⊗ S_4)` modulo Koszul,
    six-dimensional, and the numerics are cheap and already written
@@ -493,8 +540,8 @@ The three things a next session could do, in order of value:
 
 | # | prediction | outcome |
 |---|---|---|
-| — | a drop at `d = 8` is forced a priori by the GN ceiling; `onset ≤ 1197` before any computation | **correct** — Theorem A |
-| P1 | smallest `d` with a strict drop is **7**, cap **666** (prior 0.45; alternatives 8/0.35, 6/0.17, ≤5/0.03) | **correct** |
+| — | a drop at `d = 8` is forced a priori by the GN ceiling; `onset ≤ 1197` before any computation | **correct** — Theorem A (the *minor* size is 1148; see the correction header) |
+| P1 | smallest `d` with a strict drop is **7**, cap **666** (prior 0.45; alternatives 8/0.35, 6/0.17, ≤5/0.03) | **correct** on `d = 7`; the cap is **661**, not 666 (minor = rank + 1, session-49 correction) |
 | P1′ | corank at `d = 7` is `127 = h_7 + 1`, drop of one by analogy with five rows | **wrong** — the corank is `132`, the drop is **6** |
 | P1″ | no drop at `d = 4, 5` because the only linear syzygies would need `XA_i + A_iY ∈ L`, 60 conditions on a 31-dimensional space | **correct**, and now proved (§3) |
 | P2 | padded permanents also drop, so the minors are not separators (prior 0.97) | **correct**, and the drop is far larger and starts two degrees earlier |
