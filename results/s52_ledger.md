@@ -53,6 +53,7 @@ unstarred values are the point-free (★) computation of the dense route.
 | 10 | `(27, 5, 3, 3, 1, 1)` | 7 | 44095 | 4 | 8350 | 47300 | **1** | 0 | 1 | 0 | 1 | +0 | inplace | exact kernel, both primes, mult_red by (*) | 249.8 | 0.96 |
 | 7 | `(14, 5, 3, 2, 2, 2)` | 14 | 149822 | 6 | 30037 | 313184 | **1** | 0 | 1 | 0 | 1* | +0 | sparse | proved (nullity 0 at 2147483647) | 1609.1 | 0.34 |
 | 10 | `(28, 4, 3, 2, 2, 1)` | 8 | 31299 | 2 | 17000 | 79596 | **1** | 0 | 1 | 0 | 1 | +0 | inplace | exact kernel, both primes, mult_red by (*) | 1458.1 | 3.47 |
+| 7 | `(14, 5, 3, 3, 2, 1)` | 10 | 112552 | 2 | 54477 | 293964 | **1** | 0 | 1 | 0 | 1* | +0 | sparse | proved (nullity 0 at 2147483647) | 1591.4 | 0.32 |
 
-**15 cells measured, `i_det = 0` at 15 of them, `D > 0` at 0.**
+**16 cells measured, `i_det = 0` at 16 of them, `D > 0` at 0.**
 
