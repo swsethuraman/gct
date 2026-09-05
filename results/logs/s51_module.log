@@ -1,0 +1,15 @@
+# S51 section 4 -- module identification via dim polynomial
+# r : n d : drop : C(r,5) : ceiling(binds?)
+  r=2 : n=4 d=7 : drop=0 : C(r,5)=0 : ceil=8 rho=8 binds=False  0.0s
+  r=3 : n=4 d=7 : drop=0 : C(r,5)=0 : ceil=36 rho=36 binds=False  0.0s
+  r=4 : n=4 d=7 : drop=0 : C(r,5)=0 : ceil=120 rho=116 binds=False  0.0s
+  r=5 : n=4 d=7 : drop=1 : C(r,5)=1 : ceil=310 rho=300 binds=False  0.0s
+  r=6 : n=4 d=7 : drop=6 : C(r,5)=6 : ceil=672 rho=666 binds=False  0.2s
+  r=7 : n=5 d=10 : drop=[21, 21] : C(7,5)=21 : ceil=6173 rho=5880 binds=False  [62.9, 59.8]s
+# r=8 ceiling scan (looking for non-binding, affordable):
+    n=5 d=10: rho=12720 ceil=13133 binds=False matrix 13728x19448
+    n=6 d=13: rho=48120 ceil=53188 binds=False matrix 51480x77520
+    n=7 d=16: rho=146344 ceil=169991 binds=False matrix 155584x245157
+# polynomial check:
+  measured (r,drop) = [(2, 0), (3, 0), (4, 0), (5, 1), (6, 6), (7, 21)]
+  all equal C(r,5)? True
