@@ -1,0 +1,272 @@
+LIB "/root/gct/analysis/wk9_s61_polar.lib";
+int rt0 = rtimer;
+ring R = 2147483647, (x(0..8)), dp;
+poly F = x(0)*x(4)*x(8)+x(0)*x(5)*x(7)+x(1)*x(3)*x(8)+x(1)*x(5)*x(6)+x(2)*x(3)*x(7)+x(2)*x(4)*x(6);
+ideal J = jacob(F);
+print("FORM per3 nvars=9 char=2147483647 seed=62 degF=" + string(deg(F)) + " npartials=" + string(ncols(J)));
+// ---- slot k = 0
+ring S0 = 2147483647, (t(0..1)), dp;
+ideal images = (-69)*t(0)+(11)*t(1), (-31)*t(0)+(-73)*t(1), (-33)*t(0)+(-12)*t(1), (57)*t(0)+(6)*t(1), (57)*t(0)+(-77)*t(1), (73)*t(0)+(77)*t(1), (-88)*t(0)+(10)*t(1), (-58)*t(0)+(79)*t(1), (-82)*t(0)+(-28)*t(1);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[1][9];
+poly ellA = t(0);
+poly ellB = (-35)*t(0)+(-1)*t(1);
+poly g = (-22)*Jt[1]+(-53)*Jt[2]+(32)*Jt[3]+(4)*Jt[4]+(98)*Jt[5]+(-15)*Jt[6]+(-99)*Jt[7]+(-44)*Jt[8]+(-57)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=0 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 0);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=0 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 0);
+print("COUNTG form=per3 p=2147483647 seed=62 k=0 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S0;
+setring R;
+// ---- slot k = 1
+ring S1 = 2147483647, (t(0..2)), dp;
+ideal images = (-8)*t(0)+(-30)*t(1)+(44)*t(2), (20)*t(0)+(-85)*t(1)+(72)*t(2), (-78)*t(0)+(0)*t(1)+(-14)*t(2), (-78)*t(0)+(23)*t(1)+(12)*t(2), (-36)*t(0)+(11)*t(1)+(77)*t(2), (73)*t(0)+(-31)*t(1)+(-87)*t(2), (-11)*t(0)+(-59)*t(1)+(-23)*t(2), (-77)*t(0)+(5)*t(1)+(35)*t(2), (3)*t(0)+(34)*t(1)+(61)*t(2);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[1][9] = -2, -56, -12, -94, -9, -6, -99, -50, 15;
+poly ellA = t(0);
+poly ellB = (41)*t(0)+(65)*t(1)+(56)*t(2);
+poly g = (-58)*Jt[1]+(-72)*Jt[2]+(7)*Jt[3]+(33)*Jt[4]+(-81)*Jt[5]+(58)*Jt[6]+(69)*Jt[7]+(-71)*Jt[8]+(57)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=1 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 1);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=1 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 1);
+print("COUNTG form=per3 p=2147483647 seed=62 k=1 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S1;
+setring R;
+// ---- slot k = 2
+ring S2 = 2147483647, (t(0..3)), dp;
+ideal images = (-27)*t(0)+(-83)*t(1)+(10)*t(2)+(51)*t(3), (15)*t(0)+(92)*t(1)+(-63)*t(2)+(18)*t(3), (-56)*t(0)+(93)*t(1)+(47)*t(2)+(-48)*t(3), (-39)*t(0)+(54)*t(1)+(68)*t(2)+(-72)*t(3), (-63)*t(0)+(23)*t(1)+(31)*t(2)+(-34)*t(3), (1)*t(0)+(-32)*t(1)+(68)*t(2)+(-32)*t(3), (10)*t(0)+(-97)*t(1)+(-29)*t(2)+(42)*t(3), (87)*t(0)+(87)*t(1)+(15)*t(2)+(67)*t(3), (-30)*t(0)+(89)*t(1)+(-28)*t(2)+(-24)*t(3);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[2][9] = -22, 42, 96, -88, -16, -52, 69, 90, -16, 1, -57, -5, 52, 52, 80, -19, 34, 11;
+poly ellA = t(0);
+poly ellB = (-40)*t(0)+(20)*t(1)+(49)*t(2)+(51)*t(3);
+poly g = (38)*Jt[1]+(-33)*Jt[2]+(27)*Jt[3]+(97)*Jt[4]+(6)*Jt[5]+(-4)*Jt[6]+(-73)*Jt[7]+(5)*Jt[8]+(73)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=2 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 2);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=2 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 2);
+print("COUNTG form=per3 p=2147483647 seed=62 k=2 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S2;
+setring R;
+// ---- slot k = 3
+ring S3 = 2147483647, (t(0..4)), dp;
+ideal images = (-77)*t(0)+(-71)*t(1)+(-39)*t(2)+(-82)*t(3)+(-7)*t(4), (-99)*t(0)+(52)*t(1)+(45)*t(2)+(39)*t(3)+(-9)*t(4), (93)*t(0)+(-46)*t(1)+(-84)*t(2)+(36)*t(3)+(73)*t(4), (28)*t(0)+(97)*t(1)+(63)*t(2)+(-46)*t(3)+(27)*t(4), (72)*t(0)+(47)*t(1)+(54)*t(2)+(16)*t(3)+(86)*t(4), (42)*t(0)+(-28)*t(1)+(46)*t(2)+(64)*t(3)+(-10)*t(4), (85)*t(0)+(-12)*t(1)+(59)*t(2)+(-83)*t(3)+(77)*t(4), (-5)*t(0)+(86)*t(1)+(-53)*t(2)+(-86)*t(3)+(95)*t(4), (-41)*t(0)+(-29)*t(1)+(8)*t(2)+(6)*t(3)+(41)*t(4);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[3][9] = -36, 0, 14, 26, 73, -87, -34, 55, 87, 42, -88, -21, 41, -77, -15, 14, 32, -24, 73, 19, 23, -56, -34, 67, 62, -76, 69;
+poly ellA = t(0);
+poly ellB = (-26)*t(0)+(32)*t(1)+(73)*t(2)+(49)*t(3)+(-65)*t(4);
+poly g = (-10)*Jt[1]+(-53)*Jt[2]+(-12)*Jt[3]+(-71)*Jt[4]+(-3)*Jt[5]+(30)*Jt[6]+(96)*Jt[7]+(-7)*Jt[8]+(-63)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=3 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 3);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=3 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 3);
+print("COUNTG form=per3 p=2147483647 seed=62 k=3 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S3;
+setring R;
+// ---- slot k = 4
+ring S4 = 2147483647, (t(0..5)), dp;
+ideal images = (71)*t(0)+(50)*t(1)+(54)*t(2)+(-55)*t(3)+(29)*t(4)+(75)*t(5), (15)*t(0)+(62)*t(1)+(47)*t(2)+(15)*t(3)+(-7)*t(4)+(61)*t(5), (-2)*t(0)+(17)*t(1)+(-36)*t(2)+(-6)*t(3)+(-67)*t(4)+(-40)*t(5), (68)*t(0)+(-55)*t(1)+(75)*t(2)+(-7)*t(3)+(-1)*t(4)+(-3)*t(5), (96)*t(0)+(4)*t(1)+(61)*t(2)+(-13)*t(3)+(-60)*t(4)+(73)*t(5), (-15)*t(0)+(80)*t(1)+(35)*t(2)+(-99)*t(3)+(-74)*t(4)+(56)*t(5), (19)*t(0)+(78)*t(1)+(42)*t(2)+(43)*t(3)+(-84)*t(4)+(-38)*t(5), (17)*t(0)+(-89)*t(1)+(8)*t(2)+(2)*t(3)+(-51)*t(4)+(26)*t(5), (82)*t(0)+(44)*t(1)+(83)*t(2)+(25)*t(3)+(-80)*t(4)+(25)*t(5);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[4][9] = 49, -27, -6, -50, 99, -59, -68, 63, 55, 80, 30, -9, 79, -37, -66, 88, -45, -1, -34, 62, 14, -90, 51, -61, 12, 34, 38, 45, -74, 98, 6, 24, 94, 95, -60, 27;
+poly ellA = t(0);
+poly ellB = (51)*t(0)+(-21)*t(1)+(42)*t(2)+(-97)*t(3)+(99)*t(4)+(-43)*t(5);
+poly g = (36)*Jt[1]+(1)*Jt[2]+(-79)*Jt[3]+(43)*Jt[4]+(80)*Jt[5]+(20)*Jt[6]+(-38)*Jt[7]+(-34)*Jt[8]+(-21)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=4 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 4);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=4 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 4);
+print("COUNTG form=per3 p=2147483647 seed=62 k=4 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S4;
+setring R;
+// ---- slot k = 5
+ring S5 = 2147483647, (t(0..6)), dp;
+ideal images = (-67)*t(0)+(-69)*t(1)+(32)*t(2)+(31)*t(3)+(78)*t(4)+(63)*t(5)+(89)*t(6), (81)*t(0)+(16)*t(1)+(-53)*t(2)+(-55)*t(3)+(74)*t(4)+(62)*t(5)+(-24)*t(6), (18)*t(0)+(54)*t(1)+(92)*t(2)+(-20)*t(3)+(65)*t(4)+(-3)*t(5)+(74)*t(6), (-7)*t(0)+(-45)*t(1)+(-14)*t(2)+(12)*t(3)+(-87)*t(4)+(59)*t(5)+(39)*t(6), (-14)*t(0)+(14)*t(1)+(-58)*t(2)+(69)*t(3)+(-83)*t(4)+(-33)*t(5)+(-39)*t(6), (38)*t(0)+(45)*t(1)+(-64)*t(2)+(37)*t(3)+(-53)*t(4)+(85)*t(5)+(20)*t(6), (89)*t(0)+(-25)*t(1)+(-96)*t(2)+(98)*t(3)+(-77)*t(4)+(89)*t(5)+(-7)*t(6), (56)*t(0)+(-80)*t(1)+(55)*t(2)+(-67)*t(3)+(92)*t(4)+(-65)*t(5)+(86)*t(6), (-53)*t(0)+(30)*t(1)+(-59)*t(2)+(-61)*t(3)+(84)*t(4)+(-98)*t(5)+(80)*t(6);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[5][9] = 89, -24, 72, 96, -96, 12, 86, -29, 18, -99, -34, 28, -64, -62, -10, -48, 8, -28, 59, 30, 54, -24, -14, 50, -88, 9, 56, -30, -18, -76, -53, -95, -45, 95, 30, -94, -7, -66, -30, 54, -94, 79, 81, 11, -7;
+poly ellA = t(0);
+poly ellB = (52)*t(0)+(62)*t(1)+(37)*t(2)+(86)*t(3)+(31)*t(4)+(85)*t(5)+(57)*t(6);
+poly g = (97)*Jt[1]+(-38)*Jt[2]+(-59)*Jt[3]+(26)*Jt[4]+(51)*Jt[5]+(37)*Jt[6]+(-59)*Jt[7]+(-7)*Jt[8]+(-75)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=5 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 5);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=5 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 5);
+print("COUNTG form=per3 p=2147483647 seed=62 k=5 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S5;
+setring R;
+// ---- slot k = 6
+ring S6 = 2147483647, (t(0..7)), dp;
+ideal images = (19)*t(0)+(-15)*t(1)+(69)*t(2)+(15)*t(3)+(-71)*t(4)+(17)*t(5)+(-9)*t(6)+(20)*t(7), (53)*t(0)+(53)*t(1)+(61)*t(2)+(94)*t(3)+(78)*t(4)+(-30)*t(5)+(-27)*t(6)+(-14)*t(7), (43)*t(0)+(28)*t(1)+(50)*t(2)+(-19)*t(3)+(81)*t(4)+(-62)*t(5)+(93)*t(6)+(-27)*t(7), (-67)*t(0)+(-86)*t(1)+(15)*t(2)+(-62)*t(3)+(72)*t(4)+(53)*t(5)+(-89)*t(6)+(68)*t(7), (13)*t(0)+(85)*t(1)+(-14)*t(2)+(38)*t(3)+(-16)*t(4)+(51)*t(5)+(-13)*t(6)+(-15)*t(7), (38)*t(0)+(-85)*t(1)+(59)*t(2)+(-69)*t(3)+(65)*t(4)+(17)*t(5)+(-36)*t(6)+(62)*t(7), (-63)*t(0)+(-91)*t(1)+(-95)*t(2)+(20)*t(3)+(-42)*t(4)+(-59)*t(5)+(-16)*t(6)+(-22)*t(7), (78)*t(0)+(-52)*t(1)+(35)*t(2)+(-47)*t(3)+(4)*t(4)+(10)*t(5)+(-73)*t(6)+(-30)*t(7), (-70)*t(0)+(31)*t(1)+(-15)*t(2)+(-47)*t(3)+(-54)*t(4)+(-86)*t(5)+(-91)*t(6)+(-84)*t(7);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[6][9] = -41, 29, -40, 37, -47, 46, 48, -85, -50, -59, 80, 75, -90, 15, 59, -91, 88, -2, -1, 20, 88, -85, -88, 13, 45, -16, 55, 80, 15, -15, 19, 35, -11, 70, 49, 11, 81, -52, -72, -4, -2, 59, 62, 63, 93, 37, 65, -36, 84, 37, 63, -42, 24, 13;
+poly ellA = t(0);
+poly ellB = (38)*t(0)+(61)*t(1)+(16)*t(2)+(55)*t(3)+(60)*t(4)+(-70)*t(5)+(-5)*t(6)+(-55)*t(7);
+poly g = (64)*Jt[1]+(30)*Jt[2]+(18)*Jt[3]+(-9)*Jt[4]+(-29)*Jt[5]+(-12)*Jt[6]+(-14)*Jt[7]+(66)*Jt[8]+(-29)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=6 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 6);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=6 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 6);
+print("COUNTG form=per3 p=2147483647 seed=62 k=6 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S6;
+setring R;
+// ---- slot k = 7
+ring S7 = 2147483647, (t(0..8)), dp;
+ideal images = (59)*t(0)+(-2)*t(1)+(63)*t(2)+(72)*t(3)+(86)*t(4)+(17)*t(5)+(48)*t(6)+(4)*t(7)+(-49)*t(8), (-25)*t(0)+(96)*t(1)+(-49)*t(2)+(-35)*t(3)+(-19)*t(4)+(45)*t(5)+(83)*t(6)+(49)*t(7)+(16)*t(8), (76)*t(0)+(-10)*t(1)+(5)*t(2)+(47)*t(3)+(18)*t(4)+(85)*t(5)+(28)*t(6)+(-94)*t(7)+(-48)*t(8), (52)*t(0)+(-99)*t(1)+(89)*t(2)+(26)*t(3)+(-46)*t(4)+(-93)*t(5)+(-17)*t(6)+(-83)*t(7)+(0)*t(8), (-54)*t(0)+(-88)*t(1)+(-48)*t(2)+(-10)*t(3)+(-28)*t(4)+(85)*t(5)+(4)*t(6)+(54)*t(7)+(2)*t(8), (-4)*t(0)+(49)*t(1)+(11)*t(2)+(-89)*t(3)+(-48)*t(4)+(-15)*t(5)+(-25)*t(6)+(-84)*t(7)+(83)*t(8), (67)*t(0)+(-76)*t(1)+(-10)*t(2)+(37)*t(3)+(-36)*t(4)+(-11)*t(5)+(51)*t(6)+(-64)*t(7)+(-92)*t(8), (17)*t(0)+(-63)*t(1)+(-67)*t(2)+(-52)*t(3)+(51)*t(4)+(20)*t(5)+(-74)*t(6)+(2)*t(7)+(-37)*t(8), (-96)*t(0)+(71)*t(1)+(66)*t(2)+(-82)*t(3)+(-60)*t(4)+(74)*t(5)+(93)*t(6)+(37)*t(7)+(18)*t(8);
+map phi = R, images;
+poly G = phi(F);
+ideal Jt = phi(J);
+matrix C[7][9] = -2, -82, -39, 19, 63, 10, 80, -89, 60, -26, 25, 31, -32, -16, 48, -34, -45, -86, -87, -24, -64, -55, -75, 9, 7, -29, 90, -29, 38, 4, 95, 4, -54, 17, 10, -46, -13, -98, 40, 18, -90, -32, 23, -8, 34, 67, -35, 99, 44, 45, 30, 25, -55, -81, -12, 63, -32, -56, 2, 80, 73, 88, -47;
+poly ellA = t(0);
+poly ellB = (42)*t(0)+(16)*t(1)+(82)*t(2)+(29)*t(3)+(-34)*t(4)+(-55)*t(5)+(-38)*t(6)+(22)*t(7)+(-76)*t(8);
+poly g = (16)*Jt[1]+(94)*Jt[2]+(49)*Jt[3]+(18)*Jt[4]+(-11)*Jt[5]+(-86)*Jt[6]+(57)*Jt[7]+(-53)*Jt[8]+(-42)*Jt[9];
+int rt1 = rtimer;
+int rt2;
+int rt3;
+int degE = -1;
+int dimE = -2;
+int degp_g = -1;
+int dim_g = -2;
+int degr = -1;
+int vdB = -1;
+ideal E = std(Jt);
+dimE = dim(E); if (dimE >= 1) { degE = mult(E); }
+print("EXCESS k=7 dim=" + string(dimE) + " deg=" + string(degE));
+ideal Is = polar_sat(G, Jt, C, 7);
+list L = list(dim(Is), 0, -1);
+if (L[1] >= 0) { L[2] = mult(Is); }
+if (L[1] == 1) { L[3] = vdim(std(Is + (ellA - 1))); vdB = vdim(std(Is + (ellB - 1))); }
+if (L[1] == -1) { L[3] = 0; vdB = 0; }
+rt2 = rtimer;
+print("COUNT form=per3 p=2147483647 seed=62 k=7 dim=" + string(L[1]) + " degp=" + string(L[2]) + " vdA=" + string(L[3]) + " vdB=" + string(vdB) + " excess_dim=" + string(dimE) + " excess_deg=" + string(degE) + " sec=" + string(rt2 - rt1));
+list Lg = polar_count_g(G, Jt, C, ellA, g, 7);
+print("COUNTG form=per3 p=2147483647 seed=62 k=7 dim=" + string(Lg[1]) + " degp=" + string(Lg[2]));
+kill S7;
+setring R;
+print("DONE form=per3 p=2147483647 seed=62 total_sec=" + string(rtimer - rt0));
+quit;

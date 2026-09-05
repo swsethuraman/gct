@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////
+// Session 61 -- polar (conormal) degrees of a hypersurface by saturation.
+//
+// Convention (results/PREREG_s61.md section 0a): for X = {F = 0} in P^N,
+//   delta_k(X) = #{ x in X_smooth : x in Lambda, grad F(x) in LambdaCheck }
+// for generic linear Lambda of dimension k+1 and generic linear LambdaCheck of
+// codimension k.  Here Lambda is parametrised by t(0..k+1) through a random
+// integer basis (done by the Python driver, which builds G = F|Lambda and the
+// restricted partials Jt), and the k conditions are k random linear
+// combinations of the partials.  The excess locus of the unsaturated ideal is
+// exactly Sing(X) meet Lambda, where every partial vanishes; saturating by the
+// ideal of the restricted partials removes it and nothing else (legitimate
+// points have a nonzero gradient).
+//
+// Returns list(d, degp, vd, degr):
+//   d     : dim of the saturated ideal (affine cone), 1 = finitely many points,
+//           -1 = no points
+//   degp  : projective degree = number of points with multiplicity
+//   vd    : vdim on the affine chart ell = 1 (a "patch")
+//   degr  : degree of the radical (equals degp iff the scheme is reduced),
+//           or -1 if not computed
+////////////////////////////////////////////////////////////////////////////
+LIB "elim.lib";
+LIB "primdec.lib";
+
+// The unsaturated polar ideal (G, m_1, ..., m_k) with m_i = sum_a C[i,a] Jt[a].
+proc polar_ideal(poly G, ideal Jt, matrix C, int k)
+{
+  ideal I = G;
+  int i, a;
+  poly m;
+  for (i = 1; i <= k; i++) {
+    m = 0;
+    for (a = 1; a <= ncols(Jt); a++) { m = m + C[i, a] * Jt[a]; }
+    I = I + m;
+  }
+  return(I);
+}
+
+// Its saturation by the ideal of all restricted partials, as a standard basis.
+proc polar_sat(poly G, ideal Jt, matrix C, int k)
+{
+  ideal I = polar_ideal(G, Jt, C, k);
+  ideal Is = sat(I, Jt);
+  Is = std(Is);
+  return(Is);
+}
+
+proc polar_count(poly G, ideal Jt, matrix C, poly ell, int k, int do_radical)
+{
+  ideal Is = polar_sat(G, Jt, C, k);
+  int d = dim(Is);
+  int degp = 0;
+  if (d >= 0) { degp = mult(Is); }
+  int vd = -1;
+  if (d == 1) { ideal Ia = std(Is + (ell - 1)); vd = vdim(Ia); }
+  if (d == -1) { vd = 0; }
+  int degr = -1;
+  if (do_radical and d == 1) { ideal Ir = std(radical(Is)); degr = mult(Ir); }
+  return(list(d, degp, vd, degr));
+}
+
+// The same count, saturating by a single random combination g of the partials
+// instead of the whole Jacobian ideal (cheaper; g vanishes on Sing, and with
+// probability about #points/p also at a legitimate point, which the driver
+// detects as a disagreement with the full saturation).
+proc polar_count_g(poly G, ideal Jt, matrix C, poly ell, poly g, int k)
+{
+  ideal I = polar_ideal(G, Jt, C, k);
+  ideal Is = sat(I, ideal(g));
+  Is = std(Is);
+  int d = dim(Is);
+  int degp = 0;
+  if (d >= 0) { degp = mult(Is); }
+  return(list(d, degp));
+}

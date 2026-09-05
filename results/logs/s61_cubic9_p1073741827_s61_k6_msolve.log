@@ -1,0 +1,177 @@
+# msolve run cubic9_p1073741827_s61_k6_msolve: a random cubic in 9 variables (control: smooth, profile 3*2^k; form seed 10061); slot k=6, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       8
+#equations                       8
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  2       5       7       6 x 36        100.00%        5 new       0 zero         0.00 | 0.00         
+  3      10      10      56 x 156        21.47%       10 new       0 zero         0.00 | 0.00         
+  4      37      37     209 x 375        12.63%       19 new      18 zero         0.00 | 0.00         
+  5      97      97     504 x 693         9.51%       33 new      64 zero         0.02 | 0.00         
+  6     198     198     861 x 985         8.81%       47 new     151 zero         0.04 | 0.01         
+  7     301     301    1106 x 1102        9.48%       43 new     258 zero         0.04 | 0.01         
+  6     196     301     706 x 735        14.53%       34 new     162 zero         0.04 | 0.01         
+  6     257     272     870 x 874        13.69%       40 new     217 zero         0.04 | 0.01         
+  6     238     295     879 x 861        14.14%       21 new     217 zero         0.05 | 0.02         
+  5     168     225     714 x 774        14.75%       28 new     140 zero         0.03 | 0.01         
+  6     202     217     824 x 822        15.63%        7 new     195 zero         0.03 | 0.01         
+  5      56      71     577 x 722        15.16%        8 new      48 zero         0.01 | 0.01         
+  5       8      72     511 x 696        14.69%        1 new       7 zero         0.00 | 0.00         
+  5       8      72     511 x 696        14.73%        1 new       7 zero         0.00 | 0.00         
+  6      56      71     595 x 731        15.57%        0 new      56 zero         0.01 | 0.00         
+  7      15      15     491 x 668        23.90%        0 new      15 zero         0.01 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis      168 x 360        48.50%      168 new       0 zeroDimension of quotient: 192
+Staircase is not generic
+Multiplication by x1*x4*x7 gets outside the staircase
+Time for rational param:          0.32 (elapsed) sec /  0.11 sec (cpu)
+
+
+--------------- INPUT DATA ---------------
+#variables                       8
+#equations                       8
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+         0.01 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.32 sec
+overall(cpu)            0.11 sec
+select                  0.04 sec  14.0%
+symbolic prep.          0.05 sec  17.1%
+update                  0.02 sec   6.6%
+convert                 0.02 sec   5.9%
+linear algebra          0.18 sec  56.0%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   168
+#terms in basis               29596
+#pairs reduced                 1852
+#GM criterion                 44508
+#redundant elements             137
+#rows reduced                  3872
+#zero reductions               1555
+max. matrix data               1106 x 1102 (9.483%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+
+Changing variable order for possibly more generic staircase:
+s, t2, t3, t4, t5, t6, t7, t1
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  2       5       7       6 x 36        100.00%        5 new       0 zero         0.00 | 0.00         
+  3      10      10      56 x 156        21.47%       10 new       0 zero         0.00 | 0.00         
+  4      37      37     209 x 375        12.63%       19 new      18 zero         0.00 | 0.00         
+  5      97      97     504 x 693         9.43%       33 new      64 zero         0.01 | 0.00         
+  6     198     198     861 x 985         8.67%       47 new     151 zero         0.02 | 0.01         
+  7     301     301    1106 x 1102        9.33%       43 new     258 zero         0.05 | 0.01         
+  6     196     301     706 x 735        14.30%       34 new     162 zero         0.03 | 0.01         
+  6     257     272     870 x 874        13.63%       40 new     217 zero         0.04 | 0.01         
+  6     238     295     879 x 861        14.01%       21 new     217 zero         0.03 | 0.02         
+  5     154     211     700 x 760        14.70%       14 new     140 zero         0.03 | 0.01         
+  6     104     119     764 x 860        14.28%        7 new      97 zero         0.03 | 0.01         
+  5      50      65     577 x 722        14.72%        2 new      48 zero         0.01 | 0.00         
+  5       8      30     514 x 699        14.04%        1 new       7 zero         0.01 | 0.00         
+  5       7      23     518 x 703        14.18%        0 new       7 zero         0.00 | 0.00         
+  6       1      16     210 x 401        43.01%        0 new       1 zero         0.00 | 0.00         
+  7      15      15     334 x 511        34.68%        0 new      15 zero         0.01 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis      164 x 356        46.14%      161 new       0 zeroDimension of quotient: 192
+[192, 83], Non trivial / Trivial = 43.23%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.01 sec (0.44 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 192.
+Time for rational param:          0.32 (elapsed) sec /  0.11 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           0.64 sec (elapsed) /  0.22 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.28 sec
+overall(cpu)            0.10 sec
+select                  0.03 sec  11.5%
+symbolic prep.          0.05 sec  16.8%
+update                  0.03 sec  11.3%
+convert                 0.00 sec   1.0%
+linear algebra          0.17 sec  58.9%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   161
+#terms in basis               27856
+#pairs reduced                 1678
+#GM criterion                 38508
+#redundant elements             123
+#rows reduced                  3517
+#zero reductions               1402
+max. matrix data               1106 x 1102 (9.328%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+MSOLVE_RESULT form=cubic9 p=1073741827 seed=61 k=6 degree=192 rc=0 sec=1

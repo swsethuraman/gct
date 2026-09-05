@@ -1,0 +1,205 @@
+# msolve run lc_p1073741827_s61_k7_msolve: reducible l*c, l and c random in 10 variables (form seed 10061); slot k=7, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       9
+#equations                       9
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  3       6       8       7 x 165       100.00%        6 new       0 zero         0.00 | 0.00         
+  4      11      11      72 x 660        24.90%       11 new       0 zero         0.02 | 0.00         
+  5      41      41     298 x 1656       14.54%       23 new      18 zero         0.03 | 0.01         
+  6     118     118     831 x 3422       10.52%       48 new      70 zero         0.12 | 0.03         
+  3      15     203      61 x 165        32.56%        9 new       6 zero         0.00 | 0.00         
+  4      43     186     263 x 575        13.65%       16 new      27 zero         0.01 | 0.00         
+  5     100     168     716 x 1250        9.42%       29 new      71 zero         0.03 | 0.01         
+  6     215     215    1486 x 2210        7.60%       56 new     159 zero         0.08 | 0.03         
+  7     358     358    2517 x 3320        6.55%       75 new     283 zero         0.19 | 0.07         
+  4       7     560     180 x 509        15.00%        6 new       1 zero         0.01 | 0.00         
+  5      47     594     658 x 1198        8.69%       20 new      27 zero         0.01 | 0.01         
+  6     156     567    1408 x 2062        7.74%       34 new     128 zero         0.04 | 0.02         
+  3       5     447      55 x 155        34.02%        4 new       1 zero         0.00 | 0.00         
+  4      26     467     226 x 502        15.57%       10 new      16 zero         0.00 | 0.00         
+  5      82     478     722 x 1132        9.13%       26 new      56 zero         0.02 | 0.01         
+  6     222     348    1382 x 1798        7.87%       49 new     175 zero         0.07 | 0.02         
+  7     455     455    2267 x 2491        7.07%       96 new     396 zero         0.17 | 0.07         
+  8     706     706    2649 x 2592        7.66%       83 new     623 zero         0.28 | 0.11         
+  7     496     664    1626 x 1596       13.01%       83 new     413 zero         0.23 | 0.09         
+  6     692     747    1999 x 1881       12.38%       90 new     602 zero         0.30 | 0.12         
+  7     754     775    2648 x 2479       11.21%       63 new     691 zero         0.51 | 0.20         
+  6     558     587    1887 x 1850       13.06%       91 new     467 zero         0.30 | 0.12         
+  6     261     722    1471 x 1640       13.58%       37 new     224 zero         0.18 | 0.06         
+  6     332     554    1645 x 1744       13.61%       37 new     295 zero         0.21 | 0.08         
+  6      72     462    1202 x 1524       13.13%        9 new      63 zero         0.06 | 0.02         
+  6      81     399    1203 x 1516       13.46%        9 new      72 zero         0.07 | 0.02         
+  6       9     383    1101 x 1477       12.75%        1 new       8 zero         0.02 | 0.01         
+  6       9     375    1101 x 1477       12.77%        1 new       8 zero         0.02 | 0.01         
+  7     353     374    2059 x 2090       12.42%        0 new     353 zero         0.19 | 0.08         
+  8      21      21    2996 x 3359        7.36%        0 new      21 zero         0.08 | 0.04         
+------------------------------------------------------------------------------------------------------
+reduce final basis      388 x 772        42.67%      348 new       0 zeroDimension of quotient: 384
+Staircase is not generic
+Multiplication by x3*x4*x6*x8 gets outside the staircase
+Time for rational param:          3.29 (elapsed) sec /  1.24 sec (cpu)
+
+
+--------------- INPUT DATA ---------------
+#variables                       9
+#equations                       9
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+         0.03 | 0.01         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        3.28 sec
+overall(cpu)            1.24 sec
+select                  0.28 sec   8.6%
+symbolic prep.          0.33 sec  10.1%
+update                  0.37 sec  11.4%
+convert                 0.05 sec   1.6%
+linear algebra          2.22 sec  67.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   348
+#terms in basis              124231
+#pairs reduced                 6251
+#GM criterion                524714
+#redundant elements             683
+#rows reduced                 12940
+#zero reductions               5274
+max. matrix data               2996 x 3359 (7.357%)
+max. symbolic hash table size  2^13
+max. basis hash table size     2^16
+-----------------------------------------
+
+
+Changing variable order for possibly more generic staircase:
+s, t2, t3, t4, t5, t6, t7, t8, t1
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  3       6       8       7 x 165       100.00%        6 new       0 zero         0.00 | 0.00         
+  4      11      11      72 x 660        24.90%       11 new       0 zero         0.00 | 0.00         
+  5      41      41     298 x 1656       14.54%       23 new      18 zero         0.01 | 0.01         
+  6     118     118     831 x 3422       10.44%       48 new      70 zero         0.05 | 0.03         
+  3      15     203      61 x 165        32.56%        9 new       6 zero         0.00 | 0.00         
+  4      43     186     263 x 575        13.65%       16 new      27 zero         0.00 | 0.00         
+  5     100     168     716 x 1250        9.42%       29 new      71 zero         0.02 | 0.01         
+  6     215     215    1486 x 2210        7.57%       56 new     159 zero         0.09 | 0.03         
+  7     358     358    2517 x 3320        6.44%       75 new     283 zero         0.20 | 0.07         
+  4       7     560     180 x 509        15.00%        6 new       1 zero         0.00 | 0.00         
+  5      47     594     658 x 1198        8.69%       20 new      27 zero         0.01 | 0.01         
+  6     156     567    1408 x 2062        7.73%       34 new     128 zero         0.06 | 0.02         
+  3       5     447      55 x 155        34.02%        4 new       1 zero         0.00 | 0.00         
+  4      26     467     226 x 502        15.57%       10 new      16 zero         0.01 | 0.00         
+  5      82     478     722 x 1132        9.13%       26 new      56 zero         0.01 | 0.01         
+  6     222     360    1382 x 1798        7.86%       49 new     175 zero         0.06 | 0.02         
+  7     467     467    2279 x 2491        7.09%       96 new     408 zero         0.16 | 0.07         
+  8     706     706    2649 x 2592        7.61%       83 new     623 zero         0.27 | 0.11         
+  7     496     664    1626 x 1596       12.95%       83 new     413 zero         0.21 | 0.08         
+  6     692     860    1944 x 1826       12.51%       90 new     602 zero         0.31 | 0.12         
+  7     754     775    2574 x 2305       10.86%       63 new     691 zero         0.43 | 0.16         
+  6     499     528    1864 x 1828       13.11%       32 new     467 zero         0.25 | 0.11         
+  6     261     298    1453 x 1623       13.35%       37 new     224 zero         0.16 | 0.06         
+  6     304     336    1576 x 1664       14.04%        9 new     297 zero         0.16 | 0.07         
+  6      72     105    1189 x 1511       13.14%        9 new      63 zero         0.05 | 0.02         
+  6      73     106    1209 x 1521       13.42%        1 new      72 zero         0.04 | 0.02         
+  6       9      42    1101 x 1477       12.75%        1 new       8 zero         0.02 | 0.01         
+  6       8      41    1108 x 1484       12.79%        0 new       8 zero         0.02 | 0.01         
+  7      12      33    1261 x 1633       13.11%        0 new      12 zero         0.02 | 0.01         
+  8      21      21    1079 x 1442       20.23%        0 new      21 zero         0.03 | 0.01         
+------------------------------------------------------------------------------------------------------
+reduce final basis      388 x 772        42.72%      348 new       0 zeroDimension of quotient: 384
+[384, 191], Non trivial / Trivial = 49.74%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.07 sec (0.77 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.01 sec
+Elimination polynomial has degree 384.
+Time for rational param:          2.78 (elapsed) sec /  1.11 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           6.07 sec (elapsed) /  2.35 sec (cpu)
+------------------------------------------------------------------------------------
+         0.02 | 0.01         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        2.68 sec
+overall(cpu)            1.07 sec
+select                  0.22 sec   8.1%
+symbolic prep.          0.27 sec   9.9%
+update                  0.32 sec  12.1%
+convert                 0.03 sec   1.1%
+linear algebra          1.83 sec  68.2%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   348
+#terms in basis              124231
+#pairs reduced                 5826
+#GM criterion                430819
+#redundant elements             587
+#rows reduced                 12094
+#zero reductions               4947
+max. matrix data               2517 x 3320 (6.441%)
+max. symbolic hash table size  2^13
+max. basis hash table size     2^16
+-----------------------------------------
+
+MSOLVE_RESULT form=lc p=1073741827 seed=61 k=7 degree=384 rc=0 sec=6

@@ -1,0 +1,14 @@
+# session 61 polar profile run per3_p2147483647_s61_m2
+# form: per_3 of the generic 3x3 matrix, 9 variables
+# engine=m2 ks=[0, 1, 2, 3, 4, 5, 6, 7] prime=2147483647 seed=61 range=99 radical=0 sat=both
+# timeout 14000s, ulimit -v 6000000 kB
+FORM per3 nvars=9 char=2147483647 seed=61 degF=3 npartials=9
+COUNT form=per3 p=2147483647 seed=61 k=0 dim=1 degp=3 vdA=3 vdB=3 excess_dim=0 excess_deg=-1 sec=0
+COUNT form=per3 p=2147483647 seed=61 k=1 dim=1 degp=6 vdA=6 vdB=6 excess_dim=0 excess_deg=-1 sec=0
+COUNT form=per3 p=2147483647 seed=61 k=2 dim=1 degp=12 vdA=12 vdB=12 excess_dim=0 excess_deg=-1 sec=0
+COUNT form=per3 p=2147483647 seed=61 k=3 dim=1 degp=24 vdA=24 vdB=24 excess_dim=0 excess_deg=-1 sec=1
+COUNT form=per3 p=2147483647 seed=61 k=4 dim=1 degp=48 vdA=48 vdB=48 excess_dim=0 excess_deg=-1 sec=8
+COUNT form=per3 p=2147483647 seed=61 k=5 dim=1 degp=48 vdA=48 vdB=48 excess_dim=1 excess_deg=24 sec=36
+COUNT form=per3 p=2147483647 seed=61 k=6 dim=1 degp=30 vdA=30 vdB=30 excess_dim=2 excess_deg=24 sec=23
+COUNT form=per3 p=2147483647 seed=61 k=7 dim=1 degp=6 vdA=6 vdB=6 excess_dim=3 excess_deg=24 sec=7
+DONE form=per3 p=2147483647 seed=61

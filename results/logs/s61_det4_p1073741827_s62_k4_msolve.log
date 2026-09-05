@@ -1,0 +1,97 @@
+# msolve run det4_p1073741827_s62_k4_msolve: det_4 of the generic 4x4 matrix, 16 variables; slot k=4, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       6
+#equations                       6
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  3       3       5       4 x 56        100.00%        3 new       0 zero         0.00 | 0.00         
+  4       5       5      30 x 182        30.92%        5 new       0 zero         0.00 | 0.00         
+  5      11      11      90 x 347        19.80%       11 new       0 zero         0.00 | 0.00         
+  6      35      35     231 x 582        16.36%       22 new      13 zero         0.00 | 0.00         
+  7      76      76     430 x 825        15.21%       28 new      48 zero         0.01 | 0.00         
+  8     124     124     608 x 1006       14.88%       47 new      77 zero         0.02 | 0.01         
+  5       5     181      72 x 322        25.63%        5 new       0 zero         0.00 | 0.00         
+  6      25     201     236 x 554        19.42%       15 new      10 zero         0.00 | 0.00         
+  7     128     251     494 x 760        19.65%       75 new      53 zero         0.02 | 0.01         
+  6     145     330     423 x 639        25.93%       56 new      89 zero         0.02 | 0.01         
+  6      24     387     305 x 586        27.90%       24 new       0 zero         0.01 | 0.00         
+  6     120     407     417 x 578        29.94%       64 new      56 zero         0.02 | 0.01         
+  5     162     445     354 x 390        33.46%       39 new     123 zero         0.02 | 0.01         
+  5      30     368     213 x 342        35.69%       30 new       0 zero         0.01 | 0.00         
+  5     150     357     352 x 331        32.24%       35 new     115 zero         0.01 | 0.01         
+  5     126     290     320 x 304        32.65%       21 new     110 zero         0.01 | 0.00         
+  5      60     223     220 x 254        35.96%       10 new      50 zero         0.01 | 0.00         
+  5      35     192     189 x 239        38.76%        5 new      34 zero         0.00 | 0.00         
+  5       6     178     146 x 225        41.44%        1 new       5 zero         0.00 | 0.00         
+  6      76     177     438 x 446        26.68%        0 new      76 zero         0.01 | 0.00         
+  7      64     101     760 x 780        16.02%        0 new      64 zero         0.01 | 0.01         
+  8      37      37     985 x 1032       11.32%        0 new      37 zero         0.01 | 0.01         
+------------------------------------------------------------------------------------------------------
+reduce final basis      109 x 193        51.85%      109 new       0 zeroDimension of quotient: 84
+[84, 52], Non trivial / Trivial = 61.90%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.29 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 84.
+Time for rational param:          0.19 (elapsed) sec /  0.09 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           0.19 sec (elapsed) /  0.09 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.18 sec
+overall(cpu)            0.09 sec
+select                  0.02 sec   9.8%
+symbolic prep.          0.02 sec  11.1%
+update                  0.06 sec  32.7%
+convert                 0.00 sec   1.1%
+linear algebra          0.08 sec  44.7%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   109
+#terms in basis                9137
+#pairs reduced                 1447
+#GM criterion                124304
+#redundant elements             393
+#rows reduced                  3021
+#zero reductions                960
+max. matrix data                985 x 1032 (11.324%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+MSOLVE_RESULT form=det4 p=1073741827 seed=62 k=4 degree=84 rc=0 sec=0

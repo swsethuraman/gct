@@ -1,0 +1,69 @@
+// Session 61, M3: the singular locus of the 3x3 permanent hypersurface.
+// Minimal primes of the ideal of the nine 2x2 sub-permanents (= the partials of
+// per_3), over QQ; dimension and degree of every component; the pairwise
+// intersections; and the Hessian rank of per_3 at a random point of each
+// component (transversal type) and of each pairwise-intersection line.
+LIB "primdec.lib";
+LIB "random.lib";
+ring R = 0, (x(0..8)), dp;
+// x(3i+j) is the (i,j) entry, i,j = 0,1,2
+poly per3 = x(0)*x(4)*x(8) + x(0)*x(5)*x(7) + x(1)*x(3)*x(8) + x(1)*x(5)*x(6) + x(2)*x(3)*x(7) + x(2)*x(4)*x(6);
+ideal J = jacob(per3);
+print("per_3 = " + string(per3));
+print("number of partials: " + string(ncols(J)));
+ideal Js = std(J);
+print("Jacobian scheme: affine dim " + string(dim(Js)) + " (projective dim " + string(dim(Js)-1) + "), degree " + string(mult(Js)));
+list P = minAssGTZ(J);
+print("number of minimal primes: " + string(size(P)));
+int i, j;
+ideal Q; ideal Qs;
+list dims; list degs;
+for (i = 1; i <= size(P); i++) {
+  Qs = std(P[i]);
+  dims[i] = dim(Qs) - 1; degs[i] = mult(Qs);
+  print("component " + string(i) + ": proj dim " + string(dim(Qs)-1) + ", degree " + string(mult(Qs)) + ", generators: " + string(P[i]));
+}
+// Is the Jacobian ideal radical?  Compare with the intersection of the minimal primes.
+ideal Rad = P[1];
+for (i = 2; i <= size(P); i++) { Rad = intersect(Rad, P[i]); }
+ideal Rads = std(Rad);
+print("intersection of minimal primes: degree " + string(mult(Rads)) + "; J radical? " + string(size(reduce(Rad, Js)) == 0));
+// Pairwise intersections: dimension and degree.
+int npairs = 0; int nlines = 0; int npts = 0;
+for (i = 1; i <= size(P); i++) {
+  for (j = i+1; j <= size(P); j++) {
+    Qs = std(P[i] + P[j]);
+    if (dim(Qs) >= 1) {
+      npairs++;
+      if (dim(Qs) == 2) { nlines++; print("  components " + string(i) + " & " + string(j) + " meet in a curve of degree " + string(mult(Qs))); }
+      if (dim(Qs) == 1) { npts++; }
+    }
+  }
+}
+print("pairwise intersections: " + string(npairs) + " nonempty, of which " + string(nlines) + " curves and " + string(npts) + " finite");
+// Hessian rank at a random rational point of each component (transversal type).
+// A random point on a linear component: random combination of a basis of its
+// solution space.  On a quadric component we use the parametrisation implicitly
+// by solving: pick random values for all but one coordinate and solve the quadric.
+matrix H = jacob(J);   // 9x9 Hessian of per3
+print("Hessian rank of per_3 at a generic point: " + string(rank(H)));
+// generic point of the hypersurface itself: rank of H at a random point with per3 = 0
+// (solve for x(8) from per3 linear in x(8))
+poly a = diff(per3, x(8)); poly b = subst(per3, x(8), 0);
+int trial;
+number val;
+list pt;
+for (trial = 1; trial <= 3; trial++) {
+  pt = list();
+  for (i = 0; i <= 7; i++) { pt[i+1] = number(random(-50, 50)); }
+  // solve a*x8 + b = 0 at the point
+  poly ap = a; poly bp = b;
+  for (i = 0; i <= 7; i++) { ap = subst(ap, x(i), pt[i+1]); bp = subst(bp, x(i), pt[i+1]); }
+  val = -number(bp)/number(ap);
+  pt[9] = val;
+  matrix Hp = H;
+  for (i = 0; i <= 8; i++) { Hp = subst(Hp, x(i), pt[i+1]); }
+  poly chk = per3; for (i = 0; i <= 8; i++) { chk = subst(chk, x(i), pt[i+1]); }
+  print("random smooth point of {per3=0}, trial " + string(trial) + ": per3 = " + string(chk) + ", Hessian rank = " + string(rank(Hp)) + " => dim X^* = rank - 2 = " + string(rank(Hp)-2));
+}
+quit;

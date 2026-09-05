@@ -1,0 +1,102 @@
+# msolve run perdual_p1073741827_s61_k6_msolve: the dual sextic of per_3: 4 per(BoB) - 2 per(B)^2 - det(B)^2 (control: by biduality its profile must be the reversed profile of per_3); slot k=6, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       8
+#equations                       8
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  5       5       7       6 x 792       100.00%        5 new       0 zero         0.00 | 0.00         
+  6       7       7      56 x 2508       32.08%        7 new       0 zero         0.00 | 0.00         
+  7      15      15     224 x 5091       19.64%       15 new       0 zero         0.02 | 0.01         
+  8      39      39     722 x 9564       14.37%       30 new       9 zero         0.12 | 0.06         
+  9     131     131    1841 x 16705      11.20%       86 new      45 zero         0.62 | 0.31         
+  4      18     151      85 x 327        33.64%        3 new      15 zero         0.00 | 0.00         
+  5      15     142     291 x 792        17.19%       12 new       3 zero         0.00 | 0.00         
+  6      49     169    1130 x 2459        6.69%       26 new      23 zero         0.02 | 0.01         
+  7     122     227    2865 x 4882        4.50%       71 new      51 zero         0.11 | 0.05         
+  8     391     466    6422 x 8881        3.56%      117 new     274 zero         0.57 | 0.28         
+  9     771     771   10697 x 13288       3.22%      234 new     537 zero         1.81 | 0.91         
+ 10    1477    1477    6389 x 8346       10.14%      271 new    1206 zero         4.09 | 2.04         
+  5     525    1140    1015 x 687        22.26%      110 new     415 zero         0.13 | 0.06         
+  4     154    1077     381 x 314        35.18%       18 new     136 zero         0.02 | 0.01         
+  4     126     983     326 x 269        32.99%        0 new     126 zero         0.01 | 0.00         
+  5     242     857     546 x 373        25.32%        0 new     242 zero         0.01 | 0.01         
+  6      28     615    1647 x 1757        6.25%        3 new      25 zero         0.02 | 0.01         
+  5      21     608     334 x 448        20.27%       16 new       5 zero         0.02 | 0.01         
+  3      51     687     146 x 120        31.31%       19 new      32 zero         0.01 | 0.01         
+  3      36     670     119 x 89         15.68%        0 new      36 zero         0.00 | 0.00         
+  4      47     634     262 x 227        12.35%        6 new      41 zero         0.01 | 0.00         
+  3      21     608      49 x 35         20.00%        1 new      20 zero         0.00 | 0.00         
+  3       4     591      23 x 25         28.00%        0 new       4 zero         0.00 | 0.00         
+  7      81     587    2281 x 2206        2.85%        0 new      81 zero         0.02 | 0.01         
+  8     193     506    3151 x 2964        3.86%        0 new     193 zero         0.06 | 0.03         
+  9     259     313    3844 x 3591        4.83%        0 new     259 zero         0.10 | 0.05         
+ 10      54      54    3825 x 3777        1.43%        0 new      54 zero         0.02 | 0.01         
+------------------------------------------------------------------------------------------------------
+reduce final basis       18 x 24         28.47%       18 new       0 zeroDimension of quotient: 6
+[6, 5], Non trivial / Trivial = 83.33%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.02 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 6.
+Time for rational param:          7.80 (elapsed) sec /  3.90 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           7.81 sec (elapsed) /  3.90 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        7.80 sec
+overall(cpu)            3.89 sec
+select                  0.53 sec   6.8%
+symbolic prep.          0.71 sec   9.1%
+update                  0.35 sec   4.5%
+convert                 0.06 sec   0.7%
+linear algebra          6.14 sec  78.7%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                    18
+#terms in basis                 123
+#pairs reduced                 4882
+#GM criterion                554271
+#redundant elements            1040
+#rows reduced                  9782
+#zero reductions               3832
+max. matrix data              10697 x 13288 (3.224%)
+max. symbolic hash table size  2^15
+max. basis hash table size     2^17
+-----------------------------------------
+
+MSOLVE_RESULT form=perdual p=1073741827 seed=61 k=6 degree=6 rc=0 sec=8

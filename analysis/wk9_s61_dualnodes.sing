@@ -1,0 +1,34 @@
+// Session 61: the 51 singular points of a generic P^3-section of the dual sextic Z of per_3
+// are ordinary nodes (so Teissier gives delta_2(Z) = 6*25 - 2*51 = 48 = delta_5(per_3)).
+// Random P^3 in P^8 (seeded integer matrix), the restricted sextic h, its singular scheme,
+// its degree and radical, and the emptiness of the rank-<=2 Hessian locus on it.
+LIB "primdec.lib";
+LIB "random.lib";
+proc check(int p, int sd)
+{
+  ring S = p, (b(0..8)), dp;
+  poly perB = b(0)*b(4)*b(8)+b(0)*b(5)*b(7)+b(1)*b(3)*b(8)+b(1)*b(5)*b(6)+b(2)*b(3)*b(7)+b(2)*b(4)*b(6);
+  matrix B[3][3] = b(0),b(1),b(2),b(3),b(4),b(5),b(6),b(7),b(8);
+  poly perBB = b(0)^2*b(4)^2*b(8)^2+b(0)^2*b(5)^2*b(7)^2+b(1)^2*b(3)^2*b(8)^2+b(1)^2*b(5)^2*b(6)^2+b(2)^2*b(3)^2*b(7)^2+b(2)^2*b(4)^2*b(6)^2;
+  poly g = 4*perBB - 2*perB^2 - det(B)^2;
+  ring T = p, (u(0..3)), dp;
+  system("random", sd);
+  matrix V = random(99, 9, 4);   // 9 x 4 random integer matrix: b = V u
+  ideal imgs;
+  int i;
+  for (i = 1; i <= 9; i++) { imgs[i] = V[i,1]*u(0)+V[i,2]*u(1)+V[i,3]*u(2)+V[i,4]*u(3); }
+  map phi = S, imgs;
+  poly h = phi(g);
+  ideal J = jacob(h), h;
+  ideal Js = std(J);
+  int d = dim(Js); int dg = mult(Js);
+  ideal Jr = std(radical(J));
+  matrix H = jacob(jacob(h));
+  ideal M = minor(H, 3);
+  ideal JM = std(J + M);
+  print("p=" + string(p) + " seed=" + string(sd) + ": singular scheme of the sextic surface: affine dim " + string(d) + ", degree " + string(dg) + ", radical degree " + string(mult(Jr)) + "; rank<=2 Hessian locus on it: affine dim " + string(dim(JM)) + " (0 = empty projectively, so every singular point is an ordinary node)");
+}
+check(32003, 61);
+check(1000003, 62);
+check(1000003, 63);
+quit;

@@ -1,0 +1,85 @@
+# msolve run per3_p1000003_s62_k2_msolve: per_3 of the generic 3x3 matrix, 9 variables; slot k=2, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       4
+#equations                       4
+#invalid equations               0
+field characteristic       1000003
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  2       1       3       2 x 10        100.00%        1 new       0 zero         0.00 | 0.00         
+  3       3       3      12 x 30         35.00%        3 new       0 zero         0.00 | 0.00         
+  4       6       6      28 x 46         22.28%        5 new       1 zero         0.00 | 0.00         
+  5      12      12      44 x 52         21.72%        4 new       8 zero         0.00 | 0.00         
+  4       9      12      28 x 34         33.82%        3 new       6 zero         0.00 | 0.00         
+  4      11      12      36 x 41         29.07%        3 new       8 zero         0.00 | 0.00         
+  4       9      10      34 x 38         31.89%        1 new       8 zero         0.00 | 0.00         
+  3       4       5      24 x 33         35.86%        1 new       3 zero         0.00 | 0.00         
+  4       3       4      25 x 34         36.47%        0 new       3 zero         0.00 | 0.00         
+  5       1       1      26 x 37         34.20%        0 new       1 zero         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis       13 x 25         50.77%       13 new       0 zeroDimension of quotient: 12
+[12, 7], Non trivial / Trivial = 58.33%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.04 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 12.
+Time for rational param:          0.00 (elapsed) sec /  0.00 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           0.00 sec (elapsed) /  0.00 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.00 sec
+overall(cpu)            0.00 sec
+select                  0.00 sec  10.6%
+symbolic prep.          0.00 sec   7.0%
+update                  0.00 sec  31.0%
+convert                 0.00 sec  14.3%
+linear algebra          0.00 sec  14.3%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                    13
+#terms in basis                 169
+#pairs reduced                   59
+#GM criterion                   241
+#redundant elements              12
+#rows reduced                   131
+#zero reductions                 38
+max. matrix data                 44 x 52 (21.722%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+MSOLVE_RESULT form=per3 p=1000003 seed=62 k=2 degree=12 rc=0 sec=0
