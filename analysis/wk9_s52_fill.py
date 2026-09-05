@@ -79,12 +79,15 @@ def main():
     todo = json.load(open(os.path.join(ROOT, 'results/s52_todo.json')))
     left = [c for c in todo if (tuple(c['lam']), c['delta']) not in {(tuple(r['lam']), r['delta']) for r in LR}]
     b = []
+    lo9 = [c for c in left if c['delta'] <= 9]
+    lo10 = [c for c in left if c['delta'] == 10]
     b.append(f"1. **Coverage.**  {len(LR)} of the 129 informative `a = 1` cells were measured "
              f"this session and 51 were already banked, so **{len(left)} remain**.  They are not "
-             "unmeasured because time ran out at the cheap end: at `δ = 7, 8, 9` every one has "
-             "`n_χ ≳ 15,000` and all but one `≳ 24,000`, and the largest estimate in the list is "
-             f"{max(c['nchi_lb'] for c in left):,}.  The reachable ones are the four remaining "
-             "`δ = 10` cells and the `δ = 7, 8, 9` cells below about `n_χ = 10^5`.")
+             "unmeasured because time ran out at the cheap end: the cheapest remaining cell at "
+             f"`δ ≤ 9` has an `n_χ` estimate of **{min(c['nchi_lb'] for c in lo9):,}**, well "
+             "beyond session 41's dense frontier of 20,000, and the largest in the list is "
+             f"{max(c['nchi_lb'] for c in left):,}.  {len(lo10)} `δ = 10` cells remain, with "
+             f"estimates {', '.join(format(c['nchi_lb'], ',') for c in sorted(lo10, key=lambda x: x['nchi_lb']))}.")
     b.append("2. **The `δ = 10` census covers obstruction-eligible cells only.**  Its `λ_1 < 10` "
              "onset-only cells were never enumerated, so the `δ = 10` row cannot be compared "
              "with the `δ = 7, 8, 9` rows on the onset axis, only on the obstruction axis.")

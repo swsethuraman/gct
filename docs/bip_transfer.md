@@ -197,8 +197,13 @@ which is why the general statement needs Prop. 5.5):
 
 **The least `n` at which the machinery says anything at all about a six-row
 weight is `n = 9`** (Prop. 5.2, hooks `λ = (λ_1,1,1,1,1,1)` only, degree `≥ 9`).
-For a six-row weight with `λ_2 = L` the requirement is `n ≥ 9L²`; the census
-cells run to `λ_2 = 13`, i.e. `n ≥ 1521`.  We are at `n = 4`.
+For a six-row weight with `λ_2 = L` the requirement is `n ≥ 9L²`.
+
+And that hook case covers **no cell of this session's census**: over the 150
+`a = 1` obstruction-eligible cells at `δ = 7, 8, 9, 10`, `λ_2` runs from **2 to
+12** and **not one is a hook** (measured, `results/s52_census.md`).  So the
+requirement for the cells we actually measure is `n ≥ 9λ_2² ∈ [36, 1296]`.  We
+are at `n = 4`.
 
 ---
 
