@@ -231,18 +231,56 @@ the dense exact route finished the same cell in **3.3 s at 0.09 GB**.  The
 crossover is a property of the evaluation/compression stage, not the build.
 
 <!--MEASUREMENTS-->
+**14 `a = 1` cells measured this session** (1 at `δ = 7`, 1 at `δ = 9`, 12 at `δ = 10`), `n_χ` from 200 to 30,037, every one carrying one ambient unit.
+
+| | value |
+|---|---|
+| cells with `mult_det = a` (`i_det = 0`) | **14 of 14** |
+| cells with `mult_pad = a` (`i_pad = 0`) | 14 of 14 |
+| cells with `D > 0` | **0** |
+| cells with `D < 0` | 0 |
+| deferred | 0 |
+
+**The programme's first `δ = 10` cells.**  12 of the 17 `a = 1` cells at `δ = 10` are measured, `n_χ` from 200 to 8,350, all `mult_det = mult_pad = mult_red = 1 = a`.  Before this session the record stopped at `δ = 9`.
+
+**No cell reported `D > 0`, so the verification protocol was never entered and the sweep was never halted.**  Every determinant-side verdict is a *proof* rather than a measurement: on the dense route by the exact kernel at both primes with `a` re-derived and every kernel vector checked against the uncompressed raising-operator rows, and on the sparse route by a single-prime non-singularity certificate, which implies the rational statement one-sidedly.
+
+Combined with `results/sixrow_record.md`, the six-row determinant ideal is now empty at **207 measured cells** across `δ = 6, 7, 8, 9, 10`.
+<!--/MEASUREMENTS-->
 
 ---
 
 ## 5. Pre-registration scorecard
 
 <!--SCORECARD-->
+| | prediction | prior | outcome |
+|---|---|---|---|
+| **P1** | the BIP mechanism does not transfer to `n = 4` | 0.85 | **confirmed**, and more sharply than logged — the failure is a length gap (`ℓ(λ) ≤ 4` reachable at `n = 4`, census at `ℓ(λ) = 6`), not a constant |
+| **P2** | `δ = 7`: 258 eligible, 64 with `a = 1` | 0.80 | **confirmed exactly** |
+| **P3** | `δ = 8`: 591 eligible, 45 with `a = 1` | 0.80 | **confirmed exactly** |
+| **P4** | `δ = 9` census completes within 30 min | 0.85 | **confirmed**, 273 s by the plethysm route; reproduces s43's 1,079 / 86,363 |
+| **P5** | `δ = 10` census completes | 0.55 | **confirmed, but not by the route assumed** — the plethysm route was ended by the kernel at 3.9 GB; the Weyl route did it in 202 s inside 3 GB |
+| **P6** | `a = 1` share below 5% at `δ = 9` | 0.70 | **confirmed**, 2.2% at `δ = 9` and 0.95% at `δ = 10` |
+| **P7** | at least half the `a = 1` cells have `h_pad = 0` | 0.45 | **refuted** — 9/64, 10/45, 2/24, 0/17; the informative fraction rises with `δ` |
+| **P8** | `i_det = 0` at every cell measured | 0.93 | **confirmed**, 14 of 14 |
+| **P9** | no cell reports `D > 0` | 0.94 | **confirmed** |
+| **P10** | every measured cell reproduces `a` by kernel dimension | 0.97 | **confirmed** on the dense route (asserted in-process); on the sparse route `a` is the plethysm value by construction and the certificate is one-sided, as `results/s45_ledger.md` states |
+
+The re-measurement gate of pre-registration §5 passed at all three named cells with every field identical.
+<!--/SCORECARD-->
 
 ---
 
 ## 6. Honest boundary
 
 <!--BOUNDARY-->
+1. **Coverage.**  14 of the 129 informative `a = 1` cells were measured this session and 51 were already banked, so **64 remain**.  They are not unmeasured because time ran out at the cheap end: at `δ = 7, 8, 9` every one has `n_χ ≳ 15,000` and all but one `≳ 24,000`, and the largest estimate in the list is 118,889,575.  The reachable ones are the four remaining `δ = 10` cells and the `δ = 7, 8, 9` cells below about `n_χ = 10^5`.
+2. **The `δ = 10` census covers obstruction-eligible cells only.**  Its `λ_1 < 10` onset-only cells were never enumerated, so the `δ = 10` row cannot be compared with the `δ = 7, 8, 9` rows on the onset axis, only on the obstruction axis.
+3. **`δ ≥ 11` was not done.**  A `δ = 11` run was launched and ended by its recorded process id after 100 of 2,902 cells (about 2 s per cell under contention, so roughly 1.6 h): the enumeration order is ascending in `λ_1`, and the `a = 1` cells are the lopsided ones at the far end, so a partial run in that order carries no rate and is not reported. It is affordable in a session that starts with it.
+4. **One cross-check fewer at `δ = 10`.**  There, `a` is the Weyl alternation only — the plethysm route does not fit the container — so the two-route assertion that holds at `δ = 7, 8, 9` is not available. `h_pad` still has its two routes. The measured cells re-derive `a` by kernel dimension in-process, which is the second route where it matters.
+5. **The sparse route does not exhibit its kernel.**  A `nullity = 0` certificate proves `mult = a` and needs nothing further, which is every sparse row here; had any been non-zero it would have been a measurement, not a verdict, and would have gone through the exhibit-and-verify path before being written down.
+6. **`mult_red` on the sparse rows is forced, not measured** — `mult_pad ≤ mult_red ≤ a = 1` — and is marked `1*` in the ledger.
+<!--/BOUNDARY-->
 
 ---
 

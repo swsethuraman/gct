@@ -33,7 +33,27 @@ def load():
 def ledger_rows():
     p = os.path.join(ROOT, 'results/s52_ledger.jsonl')
     if not os.path.exists(p): return []
-    return [json.loads(ln) for ln in open(p)]
+    out = []
+    for ln in open(p):
+        r = json.loads(ln)
+        if r.get('status') == 'measured':
+            # rows banked before the route/certificate fields were added
+            if 'sides' in r:
+                r.setdefault('route', 'sparse')
+                r['route'] = 'sparse'
+                r.setdefault('cert', r['sides']['det']['status'])
+            else:
+                r.setdefault('cert', 'exact kernel, both primes; mult_red by (*)')
+            r['hwm_gb'] = round(r.get('hwm_gb') or r.get('hwm'), 2)
+            r['secs'] = round(r['secs'], 1)
+            # at a = 1, mult_pad <= mult_red <= a, so mult_pad = 1 forces mult_red = 1
+            if r.get('mult_red') is None and r['mult_pad'] == r['a'] == 1:
+                r['mult_red'] = '1*'
+            r['i_det'] = r['a'] - r['mult_det']
+            r['i_pad'] = r['a'] - r['mult_pad']
+            r['D'] = r['mult_pad'] - r['mult_det']
+        out.append(r)
+    return out
 
 
 def main():
@@ -112,7 +132,12 @@ def main():
     B = M.append
     B("# Session 52 ledger — the `a = 1` cells measured this session\n")
     B("`n = 4`, `ℓ(λ) = 6`, `a = 1`, ascending in the pre-registered `n_χ` order.\n")
-    B("**Route.**  Session 45's sparse certificate (`analysis/wk9_s45_cell.py`,\n"
+    B("**Routes.**  Below `n_χ ≈ 20,000`, the dense route of session 41\n"
+      "(`analysis/wk9_s41_cell.py`): exact kernel on the `χ_λ`-isotypic reduction,\n"
+      "both house primes, `a` re-derived as the kernel dimension and asserted equal to\n"
+      "the plethysm value, `rank(R) = n_χ − a` asserted, every kernel vector verified\n"
+      "against the uncompressed raising-operator rows, `mult_red` point-free by (★).\n"
+      "Above it, session 45's sparse certificate (`analysis/wk9_s45_cell.py`,\n"
       "`analysis/wk9_s42_wied.c`): `mult = a − dim ker[E; ev]` with the `K = a + 8`\n"
       "evaluation rows pinned through every compression level, both house primes\n"
       "`2147483647` and `2147483629` run concurrently.  Since `rank_p ≤ rank_Q`,\n"
@@ -120,6 +145,18 @@ def main():
       "that is exactly the brief's cheap direction, `i = 0` certified by one\n"
       "non-singularity certificate.  A non-zero nullity is a measurement, not a\n"
       "verdict, until its kernel vector is exhibited and verified.\n")
+    B("**An engineering note.**  The sparse route is not merely unnecessary on small\n"
+      "cells, it is worse.  At `(30,2,2,2,2,2)`, `δ = 10`, `n_χ = 200` it reached\n"
+      "4.6 GB and was ended by the kernel after 317 s (its build was 1 s at 0.07 GB,\n"
+      "so the cost is in the evaluation/compression stage), while the dense exact\n"
+      "route finished the same cell in **3.3 s at 0.09 GB**.\n")
+    B("**`n_χ` measured against the estimate.**  The work-list order is by\n"
+      "`⌈N_S/|Stab|⌉`; the measured `n_χ` below runs up to 20% above it\n"
+      "(`(14,5,3,2,2,2)_7`: estimate 24,971, measured 30,037), which is session 46's\n"
+      "correction seen again.\n")
+    B("**`mult_red` marked `1*`** is not measured but forced: `mult_pad ≤ mult_red ≤ a`\n"
+      "and `a = 1`, so a measured `mult_pad = 1` gives `mult_red = 1` for free.  The\n"
+      "unstarred values are the point-free (★) computation of the dense route.\n")
     B("**Points.**  det: `det_4(Σ s_i A_i)`, random integer `4×4` `A_i`.  pad: the\n"
       "**true** padded permanent `x_0·per_3(x_1..x_9)` restricted, never\n"
       "`ℓ·(random cubic)`.\n")
