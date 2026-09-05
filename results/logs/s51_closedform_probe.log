@@ -1,0 +1,11 @@
+== restricted-GN gamma vs measured corank(S/I3.S) ==
+  r=5 d=5: GN gamma=20  measured=20  OK
+  r=5 d=6: GN gamma=20  measured=20  OK
+  r=5 d=8: GN gamma=20  measured=20  OK
+  r=6 d=5: GN gamma=80  measured=80  OK
+  r=6 d=6: GN gamma=100  measured=100  OK
+  r=6 d=8: GN gamma=140  measured=140  OK
+  r=7 d=7: GN gamma=428  measured=428  OK
+== Hessian-image probe for the r=5 syzygy ==
+  dim span(Koszul+Hessian-image)=125; +syzygy=126 -> syzygy in span: False
+  dim Hessian-image=75; +syzygy=76 -> syzygy in Hessian-image alone: False
