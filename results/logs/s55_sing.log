@@ -1,0 +1,31 @@
+(i)  Giambelli-Thom-Porteous degrees
+     deg {rank<=1} in P^8  (3x3)  = 6   anchor: deg Seg(P^2 x P^2) = C(4,2) = 6
+     deg {rank<=1} in P^15 (4x4)  = 20   anchor: deg Seg(P^3 x P^3) = C(6,3) = 20
+     deg {rank<=2} in P^15 (4x4)  = 20   codim 4  -> a generic P^4 meets it in that many points
+     codim {rank<=2} in M_4 = (4-2)^2 = 4
+
+(ii,iii)  Hilbert function of the ideal of 3x3 minors on a random pencil
+          dim (S/I)_d ; the scheme {rank A(s) <= 2} in P^{r-1}
+     r=5  p=2147483647   d=3:19  d=4:20  d=5:20  d=6:20  d=7:20  d=8:20  d=9:20  d=10:20  d=11:20
+     r=5  p=   1000003   d=3:19  d=4:20  d=5:20  d=6:20  d=7:20  d=8:20  d=9:20  d=10:20  d=11:20
+     r=4  p=2147483647   d=3:4  d=4:1  d=5:0  d=6:0  d=7:0  d=8:0  d=9:0
+     r=4  p=   1000003   d=3:4  d=4:1  d=5:0  d=6:0  d=7:0  d=8:0  d=9:0
+
+     r=5 stabilises at 20  -> 20 points, i.e. 20 nodes on the quartic
+     threefold, so the discriminant vanishes on D_5.
+     r=4 reaches 0         -> empty, so a generic determinantal quartic
+     surface in P^3 is smooth and the discriminant does NOT vanish on D_4.
+
+     deg disc(Sym^4 C^r) = r . 3^{r-1} : {4: 108, 5: 405, 6: 1458, 7: 5103}
+
+supporting:  rank Hess(det_4)(M) as a function of rank M
+     rank M   rank Hess (Q)   mod p1   mod p2   2n = 8?
+          4              16       16       16   no
+          3               8        8        8   yes
+          2               4        4        4   yes
+          1               0        0        0   yes
+          0               0        0        0   yes
+
+     rank <= 3 (i.e. every point of the hypersurface) gives rank Hess <= 8,
+     so the LMR rank condition holds at EVERY point of {det A(s) = 0},
+     not only at generic ones -- which is what the divisibility needs.

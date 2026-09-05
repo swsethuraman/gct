@@ -1,0 +1,38 @@
+(b,e)  det_4 pencil at varying r: dual dimension against the generic r-2,
+       and the middle catalecticant rank against the generic dim S^2 C^r
+
+   r   dim X^*(det)   generic r-2   LMR non-vacuous?   Cat_{2,2}(det)   dim S^2 C^r
+    5              3             3   NO (vacuous)                    15            15
+    6              4             4   NO (vacuous)                    21            21
+    7              5             5   NO (vacuous)                    28            28
+    8              6             6   NO (vacuous)                    36            36
+    9              6             7   yes                             36            45
+   10              6             8   yes                             36            55
+   11              6             9   yes                             36            66
+
+(c)  rank Hess(per_3) on {per_3 = 0}  (the Mignon-Ressayre mechanism)
+     and rank Hess(x_0*per_3) at the same points
+     seed   rank Hess per_3 (9x9)   rank Hess x_0*per_3 (10x10)   dim X^*
+        1                      9                             9   7
+        2                      8                             8   6
+        3                      9                             9   7
+        4                      9                             9   7
+        5                      9                             9   7
+        6                      8                             8   6
+        7                      8                             8   6
+        8                      8                             8   6
+
+(d)  the padding identity:  P = l*q with l a variable not occurring in q.
+     Euler for q of degree 3 gives Hess(q).x = 2.grad(q), and q(x) = 0
+     gives grad(q).x = 0; the bordered determinant
+        det [[0, g^T],[g, x_0 K]] = -det(x_0 K) * g^T (x_0 K)^{-1} g
+     is then -det(x_0 K) * (grad q . x) / (2 x_0) = 0.
+     So det Hess(l*q) vanishes identically on {q = 0}: any such padded
+     form has dual defect at least 1, with no hypothesis on q.
+     Checked above: rank 9, never 10, at 8 independent points.
+
+(a)  genericity of the four-point table: extra seeds for C and D
+     seed   C dim X^*   D dim X^*   Cat22(C)   Cat22(D)
+       11           8           7         20         18
+       22           8           7         20         18
+       33           8           6         20         18

@@ -1,0 +1,28 @@
+n = 4, d = 3n - 5 = 7 unless stated
+
+  r   d   dim Sym^d C^r   h_d   rho_d   drop   det rank   minor size = degree
+  5   7             330    30     300      1        299      300     (drop = C(5,5) = 1;  measured (R/J)_7 = 31 vs 30)
+  6   7             792   126     666      6        660      661     (drop = C(6,5) = 6;  certified)
+  6   8            1287    90    1197     50       1147     1148     (d = 8; drop 50 is BACK-SOLVED from the repository's 1148, NOT re-derived here)
+
+  So: r = 5 -> 300, r = 6 -> 661 at d = 7 and 1148 at d = 8.
+  HONEST BOUNDARY: rho_d and dim Sym^d C^r are re-derived here; the drops
+  are not.  drop = C(r,5) = 6 at (r,d) = (6,7) is the repository's measured
+  value and matches; the d = 8 drop of 50 is back-solved from the quoted
+  1148 and is NOT independently checked by this session.
+  The two numbers the brief quotes as '661 certified, 1148 proved' and
+  '300' are reproduced.  Note the r = 5 value is unchanged by the s49
+  correction only because rho_7 - drop + 1 = 300 - 1 + 1 = 300 there;
+  the coincidence is not a general one (r = 6 moves 666 -> 661).
+
+  The discriminant, for comparison: deg disc(Sym^4 C^r) = r . 3^{r-1}
+    r =  4          108
+    r =  5          405
+    r =  6         1458
+    r =  7         5103
+    r =  8        17496
+    r =  9        59049
+    r = 10       196830
+
+  And the LMR module, for comparison: degree 24 for every r >= 9,
+  identically zero for r <= 8.
