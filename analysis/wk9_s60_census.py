@@ -36,8 +36,8 @@ writes results/s60_census.json and results/s60_census.md
 import sys, os, json, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
-from wk9_s42_census import N_S_tail, stab_order, a_weyl
-from wk9_s42_hpad import h_pad
+from wk9_s42_census import N_S_tail, stab_order, a_weyl, h_pad_weyl
+from wk9_s42_hpad import h_pad as h_pad_frob
 from wk9_s45_build import orbit_setup_arr
 
 N = 4
@@ -80,7 +80,9 @@ def s54_measured():
 def score(lam, delta, a, exact_cap, wcache):
     ns = N_S_tail(lam, delta, N)
     so = stab_order(lam)
-    hp = h_pad(lam, delta)
+    # h_pad by the Frobenius cubic plethysm at delta <= 9 (as s42/s47 did) and by the Weyl
+    # alternation over the Pieri strips at delta = 10 (as s52 did; the Frobenius memo is too large there)
+    hp = h_pad_frob(lam, delta) if delta <= 9 else h_pad_weyl(lam, delta, wcache)
     aw = a_weyl(lam, delta, N, wcache)
     if a is None: a = aw
     assert aw == a, ("a: Weyl alternation disagrees with the census", lam, delta, aw, a)
@@ -140,7 +142,8 @@ if __name__ == '__main__':
             f"measured by s54 {n_meas}; unmeasured {len(rows)} = informative {len(inf)} + dead {len(dead)}; "
             f"sum a (unmeasured) {sum(r['a'] for r in rows)}  [{time.time()-t0:.0f}s]")
         if len(wcache) > 2_000_000: wcache.clear()
-    with open(os.path.join(ROOT, 'results/s60_census.json'), 'w') as f:
+    outfile = args[args.index('--outfile') + 1] if '--outfile' in args else 'results/s60_census.json'
+    with open(os.path.join(ROOT, outfile), 'w') as f:
         json.dump(out, f)
     # markdown summary
     L = ["# Session 60 -- census of the balanced length-5 complement", "",
@@ -171,6 +174,6 @@ if __name__ == '__main__':
     allinf = sorted((r for d in deltas for r in out[str(d)]['cells'] if r['red'] == 'informative'), key=lambda r: r['key'])
     for r in allinf[:20]:
         L.append(f"| {r['delta']} | `{tuple(r['lam'])}` | {r['a']} | {r['h_pad']} | {r['N_S']} | {r['stab']} | {r['n_chi']}{'' if r['n_chi_exact'] else '~'} | {r['key']:.3g} |")
-    with open(os.path.join(ROOT, 'results/s60_census.md'), 'w') as f:
+    with open(os.path.join(ROOT, outfile.replace('.json', '.md')), 'w') as f:
         f.write("\n".join(L) + "\n")
-    log(f"wrote results/s60_census.json and results/s60_census.md [{time.time()-t_all:.0f}s]")
+    log(f"wrote {outfile} and its .md [{time.time()-t_all:.0f}s]")
