@@ -20,12 +20,19 @@
 
 supporting:  rank Hess(det_4)(M) as a function of rank M
      rank M   rank Hess (Q)   mod p1   mod p2   2n = 8?
-          4              16       16       16   no
-          3               8        8        8   yes
-          2               4        4        4   yes
-          1               0        0        0   yes
-          0               0        0        0   yes
+          4              16       16       16   no      (12 draws, all equal)
+          3               8        8        8   yes      (12 draws, all equal)
+          2               4        4        4   yes      (12 draws, all equal)
+          1               0        0        0   yes      (12 draws, all equal)
+          0               0        0        0   yes      (12 draws, all equal)
 
      rank <= 3 (i.e. every point of the hypersurface) gives rank Hess <= 8,
      so the LMR rank condition holds at EVERY point of {det A(s) = 0},
      not only at generic ones -- which is what the divisibility needs.
+
+     This is a PROOF, not a sample.  Hess(det_4)(X M Y) = (X (x) Y)^T .
+     Hess(det_4)(M) . (X (x) Y) up to the scalar det X det Y, so rank Hess
+     is constant on GL_4 x GL_4 orbits, and each rank stratum of M_4 is a
+     single such orbit.  The draws above therefore determine the value on
+     the whole stratum; the assertion that every draw in a stratum agrees
+     is the check on that.

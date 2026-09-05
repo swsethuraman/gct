@@ -123,7 +123,7 @@ print("(ii,iii)  Hilbert function of the ideal of 3x3 minors on a random pencil"
 print("          dim (S/I)_d ; the scheme {rank A(s) <= 2} in P^{r-1}")
 for R, dmax in ((5, 11), (4, 9)):
     for p in PRIMES:
-        rng = random.Random(770 + R)
+        rng = random.Random(770 + R + 13 * (p % 7))   # a different pencil per prime
         cub = minors3_of_pencil(R, rng)
         h = hilbert(cub, R, dmax, p)
         row = "  ".join(f"d={d}:{v}" for d, v in sorted(h.items()))
@@ -164,8 +164,8 @@ print("supporting:  rank Hess(det_4)(M) as a function of rank M")
 print("     rank M   rank Hess (Q)   mod p1   mod p2   2n = 8?")
 rng = random.Random(4242)
 for want in (4, 3, 2, 1, 0):
-    best = -1
-    for _ in range(6):
+    got = []
+    for _ in range(12):
         U = [[rng.randint(-5, 5) for _ in range(4)] for _ in range(4)]
         V = [[rng.randint(-5, 5) for _ in range(4)] for _ in range(4)]
         D = [[0] * 4 for _ in range(4)]
@@ -184,11 +184,20 @@ for want in (4, 3, 2, 1, 0):
         rp = [nmod_mat(16, 16,
                        [((c.numerator % p) * pow(c.denominator % p, p - 2, p)) % p
                         for c in rows], p).rank() for p in PRIMES]
-        best = max(best, rQ)
-        last = (rQ, rp)
-    print(f"     {want:6d}   {last[0]:13d}   {last[1][0]:6d}   {last[1][1]:6d}"
-          f"   {'yes' if last[0] <= 8 else 'no'}")
+        got.append((rQ, tuple(rp)))
+    assert got, f"no draw of rank {want} succeeded"
+    assert len(set(got)) == 1, f"rank Hess not constant on the rank-{want} stratum: {set(got)}"
+    rQ, rp = got[0]
+    print(f"     {want:6d}   {rQ:13d}   {rp[0]:6d}   {rp[1]:6d}"
+          f"   {'yes' if rQ <= 8 else 'no'}      ({len(got)} draws, all equal)")
 print()
 print("     rank <= 3 (i.e. every point of the hypersurface) gives rank Hess <= 8,")
 print("     so the LMR rank condition holds at EVERY point of {det A(s) = 0},")
 print("     not only at generic ones -- which is what the divisibility needs.")
+print()
+print("     This is a PROOF, not a sample.  Hess(det_4)(X M Y) = (X (x) Y)^T .")
+print("     Hess(det_4)(M) . (X (x) Y) up to the scalar det X det Y, so rank Hess")
+print("     is constant on GL_4 x GL_4 orbits, and each rank stratum of M_4 is a")
+print("     single such orbit.  The draws above therefore determine the value on")
+print("     the whole stratum; the assertion that every draw in a stratum agrees")
+print("     is the check on that.")
