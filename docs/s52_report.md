@@ -218,12 +218,14 @@ cells, 51 already have a `mult_det`; 78 do not.
 
 **The cost finding that reshaped the session.**  The brief's premise — "these
 are also our cheapest cells" — is true of the `a = 1` region as a whole and
-false of what is *left* in it at `δ = 7, 8, 9`: every unmeasured informative
-`a = 1` cell at those degrees has `n_χ ≳ 15,000`, and all but one `≳ 24,000`,
-i.e. at or beyond session 41's dense frontier.  Sessions 36, 41, 43, 45 and 46
-took the cheap ones already.  **The cheap `a = 1` cells are at `δ = 10`**, which
-the programme has never touched: 13 of its 17 have `n_χ < 16,000`, the smallest
-`n_χ = 200`.
+false of what was *left* in it at `δ = 7, 8, 9` entering this session: every
+unmeasured informative `a = 1` cell at those degrees had an `n_χ` estimate above
+15,000 and all but one above 24,000, i.e. at or beyond session 41's dense
+frontier.  Sessions 36, 41, 43, 45 and 46 took the cheap ones already, and the
+four this session added at `δ ≤ 9` (estimates 15,594 to 64,614) exhaust the
+affordable remainder: the cheapest still unmeasured now sits at 92,217.  **The
+cheap `a = 1` cells are at `δ = 10`**, which the programme had never touched:
+13 of its 17 have `n_χ < 17,000`, the smallest `n_χ = 200`.
 
 **Routes.**  Below `n_χ ≈ 20,000` the dense route (`analysis/wk9_s41_cell.py`,
 exact kernel, both primes, `mult_red` by (★)); above it session 45's sparse
