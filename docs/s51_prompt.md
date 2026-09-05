@@ -7,7 +7,7 @@
   `PROJECT_NOTES.md`, or `docs/boundary_deficit.html`.  Those have a single
   writer.  If you believe one is wrong, say so in your report.
 - Commit messages carry a `Co-Authored-By` trailer only.  No session-link
-  trailer, in commits or in any script that commits.  No `claude.ai/...` URL in
+  trailer, in commits or in any script that commits.  No session-link URL in
   any file you write.
 - Bound every run with `timeout` and `ulimit -v`.  Record the process id to
   `results/logs/<run>.pid` and end a run only by that recorded id.  Do not
@@ -85,8 +85,57 @@ dimension count rather than by measurement.
 `(n,r) = (5,7)`.  If it predicts anything else it is the wrong module, however
 well it fits `r = 4, 5, 6`.  Run this before writing up.
 
+## 4b. The step that matters most: turn the module into equations
+
+Identifying the module is not the deliverable.  **Converting it into a closed
+condition on the coefficients of the quartic is.**  This is the step with the
+best chance in the programme of producing a determinant equation below degree 24,
+and it should be attempted even if §4 only reaches a partial answer.
+
+The shape of it.  If determinant pencils are forced to carry a distinguished
+syzygy module — `Λ^5 V` or whatever §4 identifies —
+
+    f = det M  ⟹  Λ^5 V ↪ Syz(J_f),
+
+then build the universal presentation map `Ψ_f` whose rank detects that
+embedding, and impose
+
+    rank Ψ_f ≤ R.
+
+The Fitting minors of `Ψ_f` are then honest polynomial equations **in the
+coefficients of `f`**, of a degree set by the size of `Ψ_f` rather than by the
+`1148 × 1148` Macaulay condition.  Report that degree.  It is the number the
+session is for.
+
+Three requirements, none negotiable:
+
+1. `Ψ_f` must be built from `f` alone, not from the pencil `M`.  An equation in
+   the coefficients of `f` that needs `M` to write down is not an equation for
+   `D_r`; eliminating `M` is what inflates the degree, and it is the barrier that
+   has defeated every previous route.
+2. `rank Ψ_f ≤ R` is a closed condition, so it passes to the border
+   automatically.  Say so explicitly, and check it — this is what makes the
+   construction a candidate obstruction rather than an observation about exact
+   determinants.
+3. Run the degeneracy-direction pre-check (`docs/brief_wording.md` §5) on the
+   rank condition before developing it: evaluate at a `det_4` pencil, at a
+   reducible `ℓ·c`, and at the full ten-variable `ℓ·per_3`.  If the padded
+   permanent has rank at least as degenerate as the determinant, the condition
+   separates in the wrong direction and the work stops there.
+
+**A warning about the tempting shortcut.**  "The graded Betti numbers differ" is
+not by itself a border obstruction.  Graded Betti numbers are upper
+semicontinuous in flat families with constant Hilbert function; the Jacobian
+ideals of a degenerating family of hypersurfaces are not automatically such a
+family.  If you argue by semicontinuity you must first prove the family it
+applies to.  The safe route is the one above: determinant structure forces a rank
+condition on an explicit universal map, and a rank condition is closed with no
+flatness hypothesis at all.
+
 ## 5. What it buys
 
+- a coefficient-space equation of the degree reported in §4b, which is the
+  single number most likely to change the programme's shape;
 - `cap(n,r)` becomes provable rather than measured;
 - the certified bound `≤ 661` becomes a theorem;
 - the exact minor sizes follow from the construction rather than being read off
@@ -95,7 +144,8 @@ well it fits `r = 4, 5, 6`.  Run this before writing up.
 
 ## 6. Success and partial success
 
-**Success:** the `r = 5` syzygy in closed form, verified over `ℤ`.
+**Success:** the `r = 5` syzygy in closed form, verified over `ℤ`, **and the
+Fitting degree of §4b reported** even if only as a bound.
 
 **Partial success worth having:** the equivariant type identified — a proof that
 the syzygy space at `r = 5` carries the claimed `GL`-structure — even without the

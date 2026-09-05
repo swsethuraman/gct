@@ -11,7 +11,7 @@ of verification infrastructure.
   `PROJECT_NOTES.md`, or `docs/boundary_deficit.html`.  Those have a single
   writer.  If you believe one is wrong, say so in your report.
 - Commit messages carry a `Co-Authored-By` trailer only.  No session-link
-  trailer, in commits or in any script that commits.  No `claude.ai/...` URL in
+  trailer, in commits or in any script that commits.  No session-link URL in
   any file you write.
 - Bound every run with `timeout` and `ulimit -v`.  Record the process id to
   `results/logs/<run>.pid` and end a run only by that recorded id.  Do not
