@@ -193,7 +193,11 @@ mod-`p`.  Nothing on record fails a semantic check.
   touched this session): `results/s36_cells/8_8_8_2_2_d7_pad_exactZ.txt`
   (12.5 MB), `…_pad_p2147483629_vec1.txt` (13.1 MB), `…_pad_p2147483647_vec1.txt`
   (13.0 MB).  Recommend the integrator gzip them (as s43 did) or drop them; I did
-  not alter another session's committed measurement data.  All 50 files this
+  not alter another session's committed measurement data.
+  **Resolved at merge:** gzipped in place (about seventeen-fold, all three now
+  under 0.75 MB), with `results/s36_cells/README.md` recording the format.  The
+  uncompressed blobs are removed from history by the rewrite in
+  `docs/history_rewrite.md`.  All 50 files this
   session commits are well under the limit (largest 3.5 MB).
 - **`r = 4, 5` top-row washout density** (`4 ≤ m ≤ 16`) remains proved on the
   checked range only; the uniform argument this session gives is for `r = 3`.
