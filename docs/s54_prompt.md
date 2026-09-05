@@ -11,7 +11,7 @@ range, which most of the batch does not.
   `PROJECT_NOTES.md`, or `docs/boundary_deficit.html`.  Those have a single
   writer.  If you believe one is wrong, say so in your report.
 - Commit messages carry a `Co-Authored-By` trailer only.  No session-link
-  trailer, in commits or in any script that commits.  No `claude.ai/...` URL in
+  trailer, in commits or in any script that commits.  No session-link URL in
   any file you write.
 - Bound every run with `timeout` and `ulimit -v`.  Record the process id to
   `results/logs/<run>.pid` and end a run only by that recorded id.  Do not
@@ -98,12 +98,44 @@ For each case, compute the leading term and ask which reducible quartics `ℓ·c
 arise.  Use the reducibility screen first: `ℓ·c` factors as (linear)·(cubic), and
 most leading-quartic normal forms will not factor at all.
 
-## 5. Task 0 — order `≥ 2`
+## 4b. This session is the pilot for session 53
 
-As in session 53: if `det(M_0 + tM_1 + ...)` vanishes to order `k > 1`, the
-leading quartic is not the first polar.  State what happens at order `≥ 2` before
-starting the case analysis.  If Route A closes the question affirmatively, this
-is moot and you should say so and stop.
+Session 53 runs the same machinery at `r = 10`, where the quartic side is
+`P^714` (`dim Sym^4 C^10 = 715`).  Here it is `P^69` (`dim Sym^4 C^5 = 70`).
+**Run this session first.**  If the computation is intractable at 70
+coefficients it is certainly intractable at 715, and session 53's stopping rule
+fires a session earlier and far more cheaply; if it is tractable, session 53
+inherits working code and a validated formulation.
+
+So do Route B in the form session 53 specifies, not as a normal-cone analysis:
+
+- `X_5 = Hom(C^5, M_4)`, `Φ(M) = det M(s)`, coefficient ideal
+  `J = (F_1, ..., F_70)`, base locus `B_5 = {M : det M(s) ≡ 0}`;
+- `Proj R(J) = Bl_J(P X_5)` is the closure of the graph, and its image on the
+  quartic side is `D_5`;
+- any arc with `det M(t,s) = t^q f(s) + O(t^{q+1})` lifts by properness and
+  contributes `[f]` to the exceptional fibre over `M_0`, **for every `q` at
+  once** — so no separate treatment of contact orders is needed.
+
+Then ask which reducible quartics `ℓ·c` occur in the exceptional image.
+
+Two differences from session 53 worth keeping in view.  At `dim E ≤ 5` the
+primitive family `E = C^a ⊂ Hom(E, Λ^2 E)` of dimension 4 sits comfortably in
+range, so it is a live case here rather than an edge case — and at `n = 3`
+Hüttenhain–Lairez found that the corresponding piece (the skew-symmetric
+matrices) carried one of the two boundary components.  And `M_0` need not be
+injective here either; enumerate by the image `E`, not by `M_0`.
+
+## 5. Task 0 — arbitrary order, handled by the blow-up
+
+The blow-up formulation in §4b handles every contact order in one object, so
+there is no separate order-`≥ 2` analysis to plan.  What must still be stated is
+which object you computed: the special fibre at a *generic* point of a stratum is
+not the exceptional image over the stratum, and a given `ℓ·c` may arise only over
+special `M_0`.  Say which, and what is left open.
+
+If Route A closes the question affirmatively, all of this is moot — say so and
+stop.
 
 ## 6. If the answer is negative
 

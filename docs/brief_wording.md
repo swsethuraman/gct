@@ -82,3 +82,40 @@ result.
 - Kronecker-positivity hardness: Ikenmeyer, Mulmuley, Walter, *Comput.
   Complexity* **26** (2017) — not a 2022 FOCS paper.
 - Gulliksen–Négård: *C. R. Acad. Sci. Paris Sér. A* **274** (1972), 16–19.
+
+## 7. The functoriality pre-check
+
+§5 asks whether a statistic points the right way at the padded permanent.  This
+one asks the prior question: **why is the invariant an obstruction at all?**
+
+The programme works because the coordinate ring is a contravariant functor with a
+surjection in the right direction:
+
+    P ⊆ D  ⟹  I(D) ⊆ I(P)  ⟹  C[D] ↠ C[P]  ⟹  mult_λ C[P] ≤ mult_λ C[D]
+
+for every `λ`.  Containment *forces* `D = mult_pad − mult_det ≤ 0`, so `D > 0`
+refutes containment.  That surjection is the whole validity of the statistic.
+
+Before any work on a proposed invariant, answer:
+
+> Is it functorial in the right direction under closed immersion, or does it
+> specialise in a controlled direction under degeneration?
+
+If neither, "the two objects differ" says nothing about containment, however
+sophisticated the invariant.  Two objects can sit one inside the other and have
+unrelated Betti numbers, Chow groups, intersection cohomology, motives and Hodge
+structures.
+
+Worked examples, for calibration:
+
+| invariant | passes? | why |
+|---|---|---|
+| coordinate-ring multiplicities | yes | the surjection above |
+| Fitting minors of a rank condition | yes | closed conditions pass to closures |
+| Rees algebra / blow-up exceptional image | yes | blow-ups are proper, so arcs lift |
+| conormal and characteristic cycles | yes | specialisation theorem |
+| graded Betti numbers | **only with proof** | semicontinuous in *flat* families of controlled Hilbert function; a degenerating family of Jacobian ideals is not automatically one |
+| motives, Chow groups, intersection cohomology | no | no variance under closed immersion in either direction |
+| operator-algebra or interpretability encodings | no | no canonical construction, no monotonicity under degeneration |
+
+A proposal that cannot fill in the "why" column does not get a session.

@@ -11,7 +11,7 @@ not compute a multiplicity and does not use the `GCT` statistic.  It addresses
   `PROJECT_NOTES.md`, or `docs/boundary_deficit.html`.  Those have a single
   writer.  If you believe one is wrong, say so in your report.
 - Commit messages carry a `Co-Authored-By` trailer only.  No session-link
-  trailer, in commits or in any script that commits.  No `claude.ai/...` URL in
+  trailer, in commits or in any script that commits.  No session-link URL in
   any file you write.
 - Bound every run with `timeout` and `ulimit -v`.  Record the process id to
   `results/logs/<run>.pid` and end a run only by that recorded id.  Do not
@@ -26,134 +26,215 @@ not compute a multiplicity and does not use the `GCT` statistic.  It addresses
 - Before developing any statistic meant to characterise determinant type, run
   the degeneracy-direction pre-check in `docs/brief_wording.md` §6.
 
-## 1. Setup
+## 1. What changed since the first draft of this brief
 
-A border degeneration of a `det_4` pencil in `r` variables is
+The earlier version proposed classifying first determinant polars over the
+compression strata and hoping higher-order contact behaved.  That was the wrong
+object: an arc need not have its first nonzero normalised coefficient at order
+one, and there is no bound on the order.
 
-    M(t,s) = M_0(s) + t M_1(s) + t^2 M_2(s) + ...
+The replacement is the **blow-up of the determinant coefficient ideal**, which
+captures every order at once.  This session is the `n = 4` analogue of
+Hüttenhain–Lairez, *The boundary of the orbit of the 3 by 3 determinant
+polynomial* (arXiv:1512.02437), who carried out exactly this computation at
+`n = 3` — resolving the indeterminacy of the coefficient map by a blow-up, using
+the classification of maximal singular matrix spaces, and reading the boundary
+off the exceptional divisors.  They found the boundary has **two irreducible
+components**.  Read that paper first.  It is the method, the calibration, and
+the warning about scale: their ambient is dimension 80 and it took a paper with
+computer assistance; ours is dimension 159.
 
-with `det M_0(s) ≡ 0`.  Then `E = M_0(V) ⊆ M_4(C)` is a linear space of `4×4`
-matrices of rank at most three, of dimension at most `r`.
+## 2. Setup
 
-For `r = 10` — the length at which `ℓ·per_3` lives — the classification of such
-spaces is **complete**, and it is much more restrictive than a dimension bound.
+Let `X_r = Hom(C^r, M_4)` and
 
-## 2. What is actually known, and what to use
+    Φ : X_r → Sym^4(C^r)^*,   M ↦ det M(s),
 
-Do **not** argue from Atkinson–Lloyd's threshold.  That result says dimension
-*above* `nr − r + 1 = 12 − 3 + 1 = 10` forces compression structure, so at
-`dim E = 10` it does not apply.  As an argument for the case at hand it has a
-gap.
+with coefficient functions `F_1, ..., F_N`, `N = C(r+3, 4)`; at `r = 10`,
+`N = 715`.  The base locus `B_r = V(F_1, ..., F_N) = {M : det M(s) ≡ 0}` consists
+exactly of the `M` whose image is a space of singular `4×4` matrices, that is of
+bounded rank `3`.  With `J = (F_1, ..., F_N)`,
 
-Use the classification instead.  Atkinson (1983) classified primitive spaces of
-bounded rank `3`, and Huang–Landsberg (*On linear spaces of matrices of bounded
-rank*, Selecta Math.) confirm it: **there are no non-classical examples of spaces
-of bounded rank when `r ≤ 3`**, and the only primitive family is
+    Proj R(J) = Bl_J(P X_r)
 
-    E = C^a ⊂ Hom(E, Λ^2 E),   e ↦ (v ↦ e ∧ v),
+is the closure of the graph of `P X_r ⇢ P(Sym^4 C^r)^*`, and its image on the
+quartic side is `D_r`.
 
-of bounded rank `a − 1`, together with its projections.  For bounded rank `3`
-that is `a = 4`: a **four-dimensional** space, nowhere near ten.
+**Why this settles the order question.**  Given any arc
+`M(t) = M_0 + t M_1 + t^2 M_2 + ...` with `det M_0(s) ≡ 0` and
+`det M(t,s) = t^q f(s) + O(t^{q+1})` for any `q`, the arc lifts uniquely to the
+blow-up by properness, its limit lies over `M_0`, and its image is `[f]`.  The
+exceptional fibre therefore carries every order-`q` degeneration simultaneously.
+No separate treatment of `q = 1, 2, 3, ...` is needed.
 
-Hence every ten-dimensional space of singular `4×4` matrices is a subspace of a
-compression space.  The compression types for rank `≤ 3` in `M_4`, indexed by a
-subspace `K` of dimension `k` mapped into a subspace `I` of dimension `i` with
-`(4 − k) + i = 3`, are:
+## 3. Phase 1 — statements only, no computation
 
-| `(k,i)` | `dim` |
-|---|---|
-| `(1,0)` — common kernel vector | 12 |
-| `(2,1)` | 10 |
-| `(3,2)` | 10 |
-| `(4,3)` — common image hyperplane | 12 |
+Write these out correctly before any algebra.
 
-So the case list at `dim E = 10` is: the two ten-dimensional compression spaces,
-plus ten-dimensional subspaces of the two twelve-dimensional ones.  Small and
-finite.
+1. **The classification of bounded-rank-3 spaces.**  Two independent routes; use
+   both and depend on neither alone.  (a) Atkinson–Lloyd 1980, whose equality
+   case at `dim E = nr − r + 1 = 10` is reported to give the four families
+   directly — verify this against the paper, it is asserted in our
+   correspondence and unverified here.  (b) The full classification: Atkinson
+   1983 for `r = 3`, with Huang–Landsberg (*On linear spaces of matrices of
+   bounded rank*, Selecta Math.) confirming *there are no non-classical examples
+   of spaces of bounded rank when `r ≤ 3`*, the only primitive family being
+   `E = C^a ⊂ Hom(E, Λ^2 E)`, `e ↦ (v ↦ e ∧ v)`, of bounded rank `a − 1`.  Route
+   (b) has a gap that must be closed: "not primitive" does not immediately give
+   "contained in a single compression space".
 
-**Task 1 is to verify all of the above against the sources** before using it.
-This is an imported classification and it is load-bearing.  Confirm in
-particular that the primitive family cannot reach dimension ten at bounded rank
-three, and that no combination of primitive and compression pieces does either.
+2. **The case list, which is not four.**  The four compression types below are
+   the list for **injective** `M_0` only.  A non-injective `M_0` has
+   `dim E ≤ 9`, and there the primitive family (dimension 4 at bounded rank 3)
+   and its projections are available.  **Do not skip this branch.**
+   Hüttenhain–Lairez's case list at `n = 3` is three compression spaces *and the
+   skew-symmetric matrices* — which are exactly the primitive example at `a = 3`
+   — and one of their two boundary components comes from that piece.  At the one
+   value of `n` where this computation has been done, the primitive family
+   carried half the answer.
 
-## 3. Task 0, before any case analysis: what happens at order `≥ 2`
+   For injective `M_0`, indexed by `(k,i)` with `(4 − k) + i = 3`:
 
-The case list is finite **at leading order only**.  If
-`det(M_0 + t M_1 + ...)` vanishes to order `k` in `t`, the leading quartic is not
-the first polar, and the analysis of order-`k` terms is where border problems
-characteristically die.
+   | `(k,i)` | `dim` |
+   |---|---|
+   | `(1,0)` common kernel vector | 12 |
+   | `(2,1)` | 10 |
+   | `(3,2)` | 10 |
+   | `(4,3)` common image hyperplane | 12 |
 
-Before touching the cases, write down:
+   so `dim E = 10` means the two ten-dimensional types, or a ten-dimensional
+   subspace of one of the twelve-dimensional ones.
 
-- the order-`k` leading term of `det(M_0 + t M_1 + ...)` in general;
-- how many additional cases that generates for `k = 2, 3, ...`;
-- whether there is any bound on `k`, and if not, what would give one.
+3. **The blow-up formulation and the arc lifting**, as in §2, following
+   Hüttenhain–Lairez §2–3.
 
-If there is no plan for order `≥ 2`, **stop there and say so.**  Do not complete
-layer one and present it as near-completion.  Reporting "layer one is finite and
-here it is; layer two has no plan and here is why" is the honest and useful
-outcome, and it is an acceptable result for this session.
+4. **Why the exceptional image is the whole remaining question.**  This is the
+   step that makes the session bear on anything, and it must be stated:
+   (i) `ℓ·per_3 ∈ Φ(X_10)` is excluded, since an exact representation gives on
+   `ℓ = 1` an affine `4×4` determinantal representation of `per_3`, so
+   `dc(per_3) ≤ 4 < 7` against Alper–Bogart–Velasco;
+   (ii) so if `ℓ·per_3 ∈ D_10` it is in the closure and not the image;
+   (iii) by curve selection over `C` it is then a limit along an arc;
+   (iv) hence it lies in the exceptional image.
 
-## 4. Task 2 — the normal forms and their first polars
+   Note also that ABV's bound is for **exact** representations and their
+   Remark 1.9 shows `dc` is not upper semicontinuous — `xy^2 + yt^2 + z^3` has
+   `dc > 3` and degenerates to `z^3` with `dc = 3` — so nothing about
+   `dc(per_3) = 7` survives to the border by general principle.  The question is
+   genuinely open.
 
-Write out each compression normal form explicitly.  For the common-left-kernel
-case, coordinates can be chosen so the last row of `M_0` vanishes, and the first
-determinant polar in a transverse direction is
+## 4. Phase 2 — the four charts
 
-    Σ_{j=1}^{4} m^{(1)}_{4j}(s) · C_{4j}(M_0(s)),
+Derive each explicitly and symbolically, then regenerate independently and
+compare.  The integrator has checked all four; they are recorded here so that a
+disagreement is visible rather than silent.
 
-a linear form against cubic cofactors, summed over four terms.  Do the analogous
-expansion for the `(2,1)` and `(3,2)` cases.
+**Common left kernel.**  `M = (A ; w)` with `A` a `3×4` matrix of linear forms
+and `w` the last row; the compression space is `w = 0`.  Exactly,
 
-## 5. Task 3 — the cheap screen, run first
+    det M = Σ_{j=1..4} (−1)^{4+j} w_j det A_ĵ,
 
-`ℓ·per_3` is **reducible**: a linear form times a cubic.  So before any
-`GL_10`-equivalence test, screen each leading-quartic normal form by:
+so the determinant is **linear** in the normal directions.  Common right kernel
+is the transpose.
 
-1. Does it factor at all?  Most will not; those cases close immediately.
-2. If it factors, does it factor as (linear)·(cubic)?
-3. Only for survivors: is the cubic factor `GL_9`-equivalent to `per_3`?
+**The `(2,1)` type.**  Write `M` in block columns of widths 1 and 3, with
+`x_1, x_2, z_3, z_4 ∈ V^*` in the first and `y_1, y_2, w_3, w_4 ∈ (V^*)^3` in the
+second; the compression locus is `w_3 = w_4 = 0`.  Laplace along the first
+column gives exactly
 
-Reducibility is a closed, cheap, and very restrictive condition, and it should do
-most of the pruning.  Use it before any Hessian or singular-locus invariant.
+    det M = x_1 det(y_2,w_3,w_4) − x_2 det(y_1,w_3,w_4)
+          + z_3 det(y_1,y_2,w_4) − z_4 det(y_1,y_2,w_3),
 
-For step 3, cheap decisive invariants first: dimension and degree of the singular
-locus, Hessian rank profile, and the number of singular points if finite.
-`per_3` has a well-understood singular locus; use it as the discriminating
-statistic rather than attempting a normal-form match.
+so `det M = P_1 + P_2` with `P_1` linear and `P_2` quadratic in the normal block,
+and no cubic or quartic terms.  Equivalently
+`P_1 = (y_1 × y_2) · (z_3 w_4 − z_4 w_3)`.  The `(1,2)` type is the transpose.
 
-## 6. What this session is and is not
+Normal degrees across the four charts: **1, 2, 2, 1**.
 
-**Is:** a direct approach to `ℓ·per_3 ∉ D_10`, which is the entire open problem
-at `(3,4)`.
+**Do not conclude anything from that.**  Normal degree `≤ 2` does not bound
+contact order: the tangential blocks move too, and cancellation can persist to
+any order.  The blow-up is what handles this; the normal degrees are a hint that
+the algebra may be small, nothing more.
 
-**Is not:** a contribution to the multiplicity statistic.  Nothing here produces
-an equation in `Sym^δ Sym^4 C^r`, and this session does not feed s49–s52.
+## 5. Phase 3 — pull back the coefficient ideal
 
-Note why the question is genuinely open despite `dc(per_3) = 7`: Alper–Bogart–
-Velasco's bound is for **exact** determinantal representations, and their
-Remark 1.9 shows `dc` is *not* upper semicontinuous — `xy^2 + yt^2 + z^3` has
-`dc > 3` and degenerates to `z^3` with `dc = 3`.  So nothing about `dc(per_3)`
-survives to the border by general principle.
+For each chart compute the pulled-back ideal `J_C` of the coefficients of
+`det M(s)`, and then enough of the Rees algebra `R(J_C)` — or of the special
+fibre algebra `F(J_C) = R(J_C) ⊗_R R/m_C` — to describe the projective
+exceptional fibre.
 
-Related and already recorded, as background rather than a task: any exact `8×8`
-Pfaffian representation of `ℓ·per_3` with a common isotropic 4-plane would give
-`ℓ·per_3 = det B` for `B` a `4×4` matrix of linear forms, hence on `ℓ = 1` an
-affine `4×4` determinantal representation of `per_3`, contradicting
-`dc(per_3) = 7`.  The separating content there is entirely Alper–Bogart–Velasco's;
-the Pfaffian language localises which structure fails.  Do not restate it as a
-new separation.
+**State which object you computed.**  The special fibre at a *generic* point of
+the stratum is not the exceptional image over the stratum, and `ℓ·per_3` may
+arise only over special `M_0`.  Hüttenhain–Lairez had to establish smoothness of
+the blow-up centre precisely to control this.  If you compute the generic
+object, say explicitly what remains open.
 
-## 7. Success and failure
+## 6. Phase 4 — dimension before membership
 
-**Success:** Task 0 answered honestly, the classification verified, the normal
-forms written out, and the reducibility screen run on each.
+`dim X_10 = 160`.  The subgroup preserving `det M(s)`, `M ↦ P M Q` with
+`det P · det Q = 1`, has dimension 31, so the generic fibre of `Φ` is at least
+`31`-dimensional and `dim D_10 ≤ 128` inside `P^714`.  The exceptional image is a
+proper closed subset of `D_10`, hence of dimension `≤ 127`.
 
-**Best outcome:** every ten-dimensional case closed, with a clear statement of
-what remains at order `≥ 2` and at base-space dimensions `9, 8, ...`.
+Measure the exceptional image's dimension against that baseline before testing
+membership.  If a component already fills most of `D_10`, this route buys
+nothing and the stopping rule in §8 applies.
 
-**Failure mode to avoid:** presenting a finite first layer as a near-proof.
+What the exceptional image *is*, stated plainly: the boundary `∂D_10`.  This
+session is the `n = 4` analogue of Hüttenhain–Lairez and should be read as such.
 
-## 8. Report
+## 7. Phase 5 — membership, only at the end
+
+Only once the exceptional image is defined correctly, ask whether `[ℓ·per_3]`
+lies in it up to `GL_10`.  Filters first, and they are filters and not proofs:
+singular-locus dimension and degree, the module of partial derivatives, apolar
+Hilbert function, Hessian and polar data, Betti table, stabiliser.  Explicit
+elimination last.
+
+Screen on **reducibility** before any of these — `ℓ·per_3` is a linear form times
+a cubic, most normal forms will not factor at all, and this is the cheapest
+discriminant available.
+
+## 8. The stopping rule, which is hard
+
+If, after pulling the coefficient ideal back to the charts, the Rees or special
+fibre description is computationally intractable **and** no invariant survives
+from it into coefficient space, park the whole direct-border track and say so.
+Do not spend sessions cataloguing normal forms.  The bounded-rank classification
+earns its place only if it makes the graph boundary tractable.
+
+## 9. Run session 54 first
+
+Session 54 asks `R_5 ⊆ D_5` by the same machinery at `r = 5`, where the quartic
+side is `P^69` rather than `P^714` — `dim Sym^4 C^5 = 70` against 715.  It is the
+pilot for this session: if the special-fibre computation is intractable at 70
+coefficients it is certainly intractable at 715, and the stopping rule above
+fires a session earlier and far more cheaply.  If it is tractable, this session
+inherits working code and a validated formulation.
+
+Before any algebra, run the viability experiment at both `r = 5` and `r = 10`:
+choose a generic `M_0` in each stratum, take random jets
+`M(t) = M_0 + tM_1 + ... + t^k M_k`, impose exact cancellation through `t^{q−1}`,
+collect the first nonzero quartics, and estimate the tangent dimension of their
+image, for `k, q` from 1 to about 4.  This is not evidence of non-membership; it
+is a branch viability test.  If the dimensions rapidly approach the expected
+dimension of `D_r`, the compression stratification is buying little.
+
+## 10. Success and failure
+
+**Success:** Phase 1 written correctly, including the non-injective branch and
+the ABV link, and the viability experiment run.
+
+**Best outcome:** an exceptional image with real codimension in `D_10`, and a
+filter that `ℓ·per_3` fails.
+
+**Acceptable outcome:** the stopping rule firing, documented.  Parking the track
+on a clear computation is a result.
+
+**Failure mode to avoid:** treating the four compression types as the case list
+and skipping non-injective `M_0`, which is where the analogue of
+Hüttenhain–Lairez's second component would live.
+
+## 11. Report
 
 `docs/s53_report.md`.  Deliver as a bundle.
