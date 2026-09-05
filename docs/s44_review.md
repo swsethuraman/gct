@@ -3,7 +3,7 @@
 2026-09-03.  Branch `s44-sixrowcap`, head `d3f06c6` (5 commits on `0c229c1`;
 pre-registration `2e06e3f` before any rank).  Pure additions, no file over
 5 MB added, no session link in any of its own commits or scripts.  The verdict
-`9 ≤ onset I(D_6^{det_4}) ≤ 666` is accepted, with the labels as the session
+`onset I(D_6^{det_4}) ≤ 661` (no lower bracket is established; see `results/sixrow_record.md`) is accepted, with the labels as the session
 assigned them.
 
 ## 1. Verification — the ladder reproduces from scratch

@@ -8,7 +8,7 @@ or nullspace was computed**).
 > `666` certified, `1197` proved — was **one too large**: the smallest minor
 > vanishing on `D_6^{det_4}` has size `(determinantal rank) + 1`, not `ρ_d`.
 > Read **`661`** for `666` and **`1148`** for `1197` throughout; the corrected
-> bracket is `9 ≤ onset I(D_6^{det_4}) ≤ 661`, with `≤ 1148` proved.  See
+> bracket is `onset I(D_6^{det_4}) ≤ 661` (no lower bracket is established; see `results/sixrow_record.md`), with `≤ 1148` proved.  See
 > `docs/sixrow_cap.md` (corrected in full) and `docs/s49_report.md` §2.1.  The
 > `(5,7)` numbers of this document — `ρ_10 = 5880`, determinantal rank `5859`,
 > drop `21` — are ranks and are unchanged; the minor there, were one taken,

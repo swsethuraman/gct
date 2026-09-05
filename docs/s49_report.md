@@ -34,7 +34,11 @@ vanishes on `D_6^{det_4}` has size `(determinantal rank) + 1`, not `ρ_d` (the
   `rank M_8 ≤ 1147` at every determinantal point, so the size-1148 minors vanish
   a priori.  (The measured rank at `d = 8` is 1146, giving a *certified* 1147;
   the *proved* bound is 1148 from the ceiling.)
-- Corrected bracket: **`9 ≤ onset I(D_6^{det_4}) ≤ 661`**, `≤ 1148` proved.
+- Corrected bracket: **`onset I(D_6^{det_4}) ≤ 661`** certified, `≤ 1148` proved.
+  No lower bracket above the trivial one is established: `mult_det = a` at all
+  193 measured cells through `δ = 9`, but the measured set is not exhaustive at
+  any degree `≥ 7` (`results/sixrow_record.md`), so the earlier `9 ≤` is
+  withdrawn as reach-only.
 - Corrected in place: `docs/sixrow_cap.md` (headers, §0, §2, §4, §8, §10, §11)
   and `docs/sixrow_cap_closed.md`.  The `(5,7)` numbers there (`ρ_10 = 5880`,
   rank 5859, drop 21) are ranks and unchanged; a minor there would be size 5860.
