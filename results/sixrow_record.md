@@ -98,6 +98,12 @@ the degree where every pad-side bite in the record lives.
 | 9 | `(16,13,4,1,1,1)` | 7 | 6 | −1 | 9 | silent | integer lift (s47) |
 | 9 | `(17,12,4,1,1,1)` | 8 | 7 | −1 | 12 | silent | integer lift (s47) |
 
+The **bound** column records, per cell, whether the free normalisation bound
+`h_pad` *fires* (`h_pad < a`) and whether it is *exact there* (`h_pad =
+mult_red`).  These are per-cell facts.  They are **not** the claim "the bound is
+exact whenever it fires," which s47 refuted (see below) — a `mult_red < h_pad`
+cell such as `(15,10,8,1,1,1)_9` shows the bound firing without being exact.
+
 **No bite in the six-row record rests on a mod-`p` vector.**  Session 47 closed
 all six outstanding lifts, including two independent integer vectors at each of
 the two remaining `D = −2` cells.  The word "generator" is now earned at every
