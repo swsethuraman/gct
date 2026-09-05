@@ -1,0 +1,42 @@
+C5  rank A(s) at the point used for the det_4 pencil
+    rank A(s) = 3   (must be 3: on the hypersurface and a smooth point)
+
+C1  Cat_{1,3} : V^* -> S^3 V   (rank = dim span of the first partials)
+    point                 rank(Q)   mod p1   mod p2   dim V
+    A det_4 pencil            10       10       10      10
+    B generic quartic         10       10       10      10
+    C l*c                     10       10       10      10
+    D x_0*per_3               10       10       10      10
+    Full rank at all four points: Cat_{1,3} is vacuous, as expected.
+
+C4  Koszul flattening Phi_1 : V (x) V^* -> Lambda^2 V (x) S^2 V, over Q
+    point                 rank(Q)   mod p1   mod p2   columns
+    A det_4 pencil            99       99       99       100
+    B generic quartic         99       99       99       100
+    C l*c                     99       99       99       100
+    D x_0*per_3               99       99       99       100
+    Rank 99 everywhere: universal corank >= 1 (the element sum_c e_c (x) d_c
+    maps to zero by symmetry of second partials); corank exactly 1 measured.
+
+C6  the banked bound rank Cat_{2,2}(l.c) <= 2r (theory_directions sec.B(a))
+    r = 10:  bound 2r = 20;  measured rank Cat_22(l.c) = 20,  rank Cat_22(x_0.per_3) = 18
+    Both at or below the banked bound; the direction failure is s35's
+    proved lemma, not a new phenomenon.  New here: the det side is 36 at
+    r >= 8 (full rank at r <= 7), which is what fixes the minor size.
+
+C2  rank Hess(per_3) on {per_3 = 0}, all coordinates nonzero
+    all coordinates nonzero                          rank distribution over 40 draws: {9: 40}
+    coordinates from [-6,6] (the first run's sampler) rank distribution over 40 draws: {8: 17, 9: 23}
+    The dual dimension is the value at a GENERAL point, i.e. the maximum
+    of a lower-semicontinuous function: 9, hence dim X^* = 7.  Rank 10
+    never occurs, which is the padding identity.
+
+C3  a rank-2 point of a 5-dimensional pencil is an ORDINARY node
+    seed   P(s)   grad P(s)   rank Hess P(s)   ordinary node?
+       1   0      0                   4        yes
+       2   0      0                   4        yes
+       3   0      0                   4        yes
+       4   0      0                   4        yes
+    rank = r-1 = 4 at the singular point is exactly the condition for an
+    ordinary node (A_1) of a hypersurface in P^4: the projective Hessian
+    always has the point itself in its kernel, so 4 is the maximum.

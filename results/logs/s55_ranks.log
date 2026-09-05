@@ -1,0 +1,22 @@
+=== seed 55 ===
+
+M2  Hessian rank on the hypersurface, and dim X^* = rank - 2
+    point                            component        rank(Q)  mod p1  mod p2  smooth  dim X^*
+    A  det_4 pencil (r=10)           rank-3 point         8       8       8   True   6
+                                     --> dim X^* =    6
+    B  generic quartic               generic point       10      10      10   True   8
+                                     --> dim X^* =    8
+    C  l * c  (c generic cubic)      on {l=0}             2       2       2   True   0
+    C  l * c  (c generic cubic)      on {c=0}            10      10      10   True   8
+                                     --> dim X^* =    8
+    D  x_0 * per_3 (ten variables)   on {x_0=0}           2       2       2   True   0
+    D  x_0 * per_3 (ten variables)   on {per_3=0}         9       9       9   True   7
+                                     --> dim X^* =    7
+
+M3  flattening ranks
+    point                            Cat_{2,2}(Q)  mod p1  mod p2   Koszul Phi_1 (mod p1)
+    A  det_4 pencil (r=10)                     36      36      36       99
+    B  generic quartic                         55      55      55       99
+    C  l * c  (c generic cubic)                20      20      20       99
+    D  x_0 * per_3 (ten variables)             18      18      18       99
+

@@ -1,0 +1,35 @@
+SYMBOLIC
+  a_1 = (d-1)(d-2)(k+2)          = (d - 2)*(d - 1)*(k + 2)
+  a_2 = d(k+2) - 2k - 5          = d*k + 2*d - 2*k - 5
+  |lambda(k,d)| = a1 + 2a2 + 2k + 6 = d*(d - 1)*(k + 2)
+  |lambda| / d                   = (d - 1)*(k + 2)
+  CHECK  |lambda| = (k+2) d (d-1) and delta = (k+2)(d-1): PASS
+  ell(lambda) = k+3 (the last nonzero part is the 2 at position k+3)
+
+INSTANCES  (det_n: hypersurface of degree d = n in N = n^2 variables,
+            dual variety of dimension k = 2n-2)
+
+  n    k   d   lambda                                    |lambda|  delta  ell
+  ---------------------------------------------------------------------------
+  2    2   2   (1^2, 2^3)                                     8      4    5
+  3    4   3   (19, 7, 2^5)                                  36     12    7
+  4    6   4   (65, 17, 2^7)                                 96     24    9
+  5    8   5   (151, 31, 2^9)                               200     40   11
+  6   10   6   (289, 49, 2^11)                              360     60   13
+
+  LMR's own n = 3 instance : lambda = [19, 7, 2, 2, 2, 2, 2]   |lambda| = 36  delta = 12
+    matches the paper's (19, 7, 2^5) at delta = 12: PASS
+  our n = 4 instance       : lambda = [65, 17, 2, 2, 2, 2, 2, 2, 2]   |lambda| = 96  delta = 24
+    matches the repository reading (65, 17, 2^7) at delta = 24: PASS
+
+VERDICT
+  degree = (k+2)(d-1); at n = 4 this is 2n(n-1) = 24, NOT n(n-1) = 12.
+  The printed Theorem 1.0.2 degree n(n-1) is inconsistent with the
+  highest weight printed in the same theorem; Theorem 2.3.1 and
+  Landsberg's survey (Thm 4.2, 'of degree 2n(n-1)') agree with 24.
+
+  ell(lambda(6,4)) = 9, so S_lambda C^r = 0 for r <= 8: the LMR module
+  is identically zero on Sym^4 C^r for r <= 8, and gives no equation at
+  all for D_r with r <= 8.  Geometrically forced: a hypersurface in
+  P^{r-1} has dual of dimension at most r-2, so 'dual dim <= 6' is
+  vacuous unless r >= 9.

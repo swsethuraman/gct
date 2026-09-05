@@ -1,0 +1,18 @@
+valid range (admissibility automatic): r >= 9
+
+  r   rank d(mu) (Q)   mod p1   mod p2   dim cone X^*   dim X^*   Hessian route (wk9_s55_ranks2)
+   9               7        7        7              7         6                6   agree
+  10               7        7        7              7         6                6   agree
+  11               7        7        7              7         6                6   agree
+  12               7        7        7              7         6                6   agree
+
+  The two routes agree at every r in the valid range.  The Jacobian has
+  only 8 columns, so the rank saturates at 7 and dim X^* at 6 = 2n-2 --
+  because the Gauss image is a linear projection of the 6-dimensional
+  Segre variety of rank-1 4x4 matrices.  That is the geometric reason
+  k = 6 cannot be lowered: it is the dual dimension of det_4 itself, and
+  once r >= 9 the projection is generically finite so no linear section
+  makes it smaller.
+
+  NOTE the Hessian-route column is quoted from results/logs/s55_ranks2.log
+  and asserted against, not recomputed here.
