@@ -157,7 +157,7 @@ if __name__ == '__main__':
     a = ap.parse_args()
     cens = json.load(open(a.census))
     cells = [(tuple(l), int(av)) for l, av in cens[str(a.delta)]]
-    # cheap ordering proxy: more skewed (larger lam_1) => smaller weight space.
+    # cheap ordering heuristic: more skewed (larger lam_1) => smaller weight space.
     cells.sort(key=lambda x: (-x[0][0], -sum(y*y for y in x[0])))
     if a.limit: cells = cells[:a.limit]
     run(cells, a.out, maxnb=a.maxnb, want_pad_first=a.padfirst, seed=a.seed)
