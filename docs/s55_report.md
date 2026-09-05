@@ -197,7 +197,7 @@ of the census caught it. The first draft asserted `D_r ⊆ Dual_{k,4,r}` iff
 
 Flagged, not edited — none of these files is mine to write.
 
-1. **Every brief in the batch cites `docs/brief_wording.md` §6 for the
+1. **Every brief in the batch cites `docs/brief_wording.md` §5 for the
    degeneracy-direction pre-check. It is §5.** Counted: s49 twice, s50 once,
    s51 once, s52 once, s53 once, s54 once, s55 twice — nine occurrences, all
    wrong. §6 of the committed file is the citation-corrections section; §7 is

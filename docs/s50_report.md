@@ -36,7 +36,7 @@ Vocabulary per `docs/brief_wording.md`.
 >   `x_0·per_3` gives remainder **≠ 0** — **the equation vanishes on `D_det` and
 >   not on `P_pad`.**  Certified over `Q` by an independent implementation, and
 >   over three primes and five independent `9`-planes.
-> - **The degeneracy-direction pre-check (`brief_wording §6`) passes in the right
+> - **The degeneracy-direction pre-check (`brief_wording §5`) passes in the right
 >   direction.**  `det_4` is the most degenerate point (remainder 0); the padded
 >   permanent is strictly *less* degenerate (remainder ≠ 0).  Controls 3 and 4
 >   agree — the permanent is **not** more special than a generic reducible here,
@@ -123,6 +123,23 @@ exact big-integer arithmetic):
 | `n_χ` (character count, session-46 walk `O(N_S·#gen)`) | out of reach — `N_S` is the wall |
 | `h_pad(λ,24)` | `mult S_λ ⊂ Sym^24 V ⊗ Sym^24(Sym^3 V)`; not tabulated at `ℓ=9` |
 
+**Integrator correction (added at merge).**  The inference in this table from the
+ambient dimensions to an unreachable multiplicity is **invalid, and the number is
+small**.  Plethysm multiplicities do not depend on the variable count once
+`N ≥ ℓ(λ)`; here `ℓ(λ) = 9`, so `a(λ,24)` is a **nine-variable** computation, not
+a sixteen-variable one.  It is
+
+    a((65,17,2^7), 24) = 274
+
+computed in two minutes under two independent moduli, with the same code
+reproducing this paper's own `n = 3` value of 6, and obtained independently by an
+external reviewer via a Weyl alternant.  The row `a(λ,24) = not computed` and the
+"~20 orders of magnitude past the frontier in every dimension" reading below are
+superseded: the *ambient* dimensions are indeed astronomical, but `a` is not, and
+this section's own note that the `n = 3` analogue is 6 already contained the
+refutation.  What remains genuinely unsized is `N_S`, the weight-monomial count,
+which governs the cost of building a highest-weight basis.
+
 **The `i_det` linear system.**  `i_det = a − mult_det` is the nullity of the
 raising-operator-plus-evaluation system on the `a × n_χ` multiplicity space.  The
 six-row sweeps top out at `N_S ≈ 10⁷`, `n_χ ≈ 10⁵` (sessions 45–46).  Here the
@@ -180,7 +197,7 @@ and control 4 confirmed over a **third prime** and an **active-only plane** (a
 `9`-plane inside the 10 active variables — the padded permanent separates there
 too).
 
-### 3.4 The degeneracy-direction pre-check (`brief_wording §6`)
+### 3.4 The degeneracy-direction pre-check (`brief_wording §5`)
 
 The three committed points are control 1 (`det_4`), control 3 (`ℓ·c`), control 4
 (full `x_0·per_3`).  Reading "remainder 0" as "maximally degenerate":

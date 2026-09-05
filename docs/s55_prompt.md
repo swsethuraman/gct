@@ -23,7 +23,7 @@ that governs whether this programme is reachable at all.
 - Any cell reporting `D > 0` goes through the verification protocol before it is
   written down as a claim.
 - Before developing any statistic meant to characterise determinant type, run
-  the degeneracy-direction pre-check in `docs/brief_wording.md` §6.
+  the degeneracy-direction pre-check in `docs/brief_wording.md` §5.
 
 ## 1. The gap that defines the difficulty
 
@@ -80,7 +80,7 @@ produces at `n = 4`, whether the equation is **explicit** or merely
 ## 3. Standing checks
 
 - For every candidate, run the degeneracy-direction pre-check from
-  `docs/brief_wording.md` §6 before spending time on it: evaluate at a `det_4`
+  `docs/brief_wording.md` §5 before spending time on it: evaluate at a `det_4`
   pencil, a reducible `ℓ·c`, and the full ten-variable `ℓ·per_3`.  Two external
   sessions in a row produced invariants that were *more* degenerate at the padded
   permanent than at the determinant; that check costs minutes.

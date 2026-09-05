@@ -114,9 +114,17 @@ equation this mechanism produces vanishes on both.  Therefore:
   (`dim` of the Milnor algebra) on which the pad is *uniformly larger*.  The
   useful direction is closed off by the sign of a codimension.
 - The same argument closes every variant that produces equations from "the
-  singular locus is bigger than expected": Hessian-rank conditions, Jacobian-
-  ideal Hilbert-function conditions, Milnor-number conditions.  Any functional
-  that is monotone in `dim (S/J_F)_d` inherits the inequality.
+  singular locus is bigger than expected": Jacobian-ideal Hilbert-function
+  conditions, Milnor-number conditions.  Any functional that is monotone in
+  `dim (S/J_F)_d` inherits the inequality.
+  **Correction (s55, applied at merge).**  This clause previously also named
+  **Hessian-rank conditions**, and that is refuted.  The LMR / Mignon–Ressayre
+  Hessian condition runs the *opposite* way: `rank Hess` on the hypersurface is
+  **8** for `det_4` and **9** for `x_0·per_3`, so the determinant is the more
+  degenerate one and the condition separates in the useful direction — which is
+  exactly why s50's degree-24 evaluation works.  Hessian rank is not monotone in
+  `dim (S/J_F)_d`.  There are two families of statistic at `n = 4` and they run
+  in opposite directions; this proposition governs only the first.
 - s44's asymmetric `d = 5` row is explained rather than merely recorded: the
   minors of `M_5` vanish on pads and not on determinants precisely because the
   inequality already runs the pad's way there, and it always will.

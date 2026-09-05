@@ -24,7 +24,7 @@ of verification infrastructure.
 - Any cell reporting `D > 0` goes through the verification protocol before it is
   written down as a claim.
 - Before developing any statistic meant to characterise determinant type, run
-  the degeneracy-direction pre-check in `docs/brief_wording.md` §6.
+  the degeneracy-direction pre-check in `docs/brief_wording.md` §5.
 
 ## 1. Background you need
 
@@ -145,7 +145,7 @@ type is special in way `X`", and in both the padded permanent turned out to be
 *more* special in way `X`, so the invariant separated in the wrong direction.
 The same shape appears in our own Milnor-corank work.
 
-Add to `docs/brief_wording.md` §6 a **degeneracy-direction pre-check**, with a
+Add to `docs/brief_wording.md` §5 a **degeneracy-direction pre-check**, with a
 fixed committed test set of three evaluation points: a determinant pencil, a
 reducible `ℓ·c`, and the full ten-variable `ℓ·per_3`.  Any proposed statistic is
 evaluated at all three before anything is proved about it.

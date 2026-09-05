@@ -12,22 +12,28 @@ of which knows about the sessions that ran concurrently with it.
 
 ## The count
 
-**193 distinct six-row cells (`n = 4`, `ℓ(λ) = 6`, `a ≥ 1`) have a measured
-`mult_det`, carrying 593 ambient units, and `mult_det = a` at every one.**
+**210 distinct six-row cells (`n = 4`, `ℓ(λ) = 6`, `a ≥ 1`) have a measured
+`mult_det`, carrying 610 ambient units, and `mult_det = a` at every one.**
 
 The cell sets are disjoint: 34 from s36's `a ≥ 2` sweep, 19 more from s36's
 `a = 1` extension, 37 from s41, 89 from s43, 9 from s45, 5 from s46 —
-`34 + 19 + 37 + 89 + 9 + 5 = 193`, with **no cell measured twice and no
-disagreement anywhere**.  (The sessions ran on disjoint ranges: s43 worked at
+`34 + 19 + 37 + 89 + 9 + 5 + 17 = 210`, with **no cell measured twice and no
+disagreement anywhere**.  The final 17 are session 52's `a = 1` cells (3 at
+`δ = 7`, 1 at `δ = 9`, 13 at `δ = 10`), each carrying one ambient unit.  (The sessions ran on disjoint ranges: s43 worked at
 `n_χ ≤ 20,000`, s45 at `n_χ ≥ 23,700`, s46 in the balanced band at `δ = 7`.)
 
 | `δ` | cells | units | eligible (`λ_1 ≥ δ`) | onset-only (`λ_1 < δ`) |
 |---|---|---|---|---|
 | 6 | 16 | 19 | 15 | 1 |
-| 7 | 70 | 156 | 69 | 1 |
+| 7 | 73 | 159 | 72 | 1 |
 | 8 | 67 | 282 | 67 | 0 |
-| 9 | 40 | 136 | 40 | 0 |
-| **all** | **193** | **593** | **191** | **2** |
+| 9 | 41 | 137 | 41 | 0 |
+| 10 | 13 | 13 | 13 | 0 |
+| **all** | **210** | **610** | **208** | **2** |
+
+The `δ = 10` row is session 52's and covers **obstruction-eligible cells only**;
+its `λ_1 < 10` onset-only cells were never enumerated, so that row is comparable
+with the others on the obstruction axis but not on the onset axis.
 
 Cross-check: session 43 exhausted the reachable set at `δ = 7, 8` with 123
 eligible cells at `n_χ ≤ 20,000`; session 45 added 8 eligible cells above that
@@ -61,13 +67,13 @@ factor of 2.3 at `(9,8,5,2,2,2)_7`, which is why that cell was not reached.
 
 ## The determinant side
 
-`mult_det = a` at all 193 cells, across `δ = 6, 7, 8, 9`.  **The determinant's
+`mult_det = a` at all 210 cells, across `δ = 6, 7, 8, 9, 10`.  **The determinant's
 six-row ideal has never been observed to be nonzero.**  No cell has
 `mult_pad > mult_det`, so `D ≤ 0` everywhere and no obstruction exists at any
 measured cell.
 
 What this earns, stated as the reviews require: *no six-row determinant equation
-occurs at any measured cell of degree ≤ 9.*  It is not a statement about the
+occurs at any measured cell of degree ≤ 10.*  It is not a statement about the
 degrees themselves — the balanced corner at `δ = 8, 9` and every `λ_1 < δ` cell
 above `n_χ ≈ 3·10^5` remain unmeasured.
 
@@ -186,3 +192,24 @@ Nothing on the pad side: all lifts are closed.  On the determinant side,
 `(9,8,5,2,2,2)_7` remains unreached — session 46 attempted it twice within its
 cost budget and produced no verdict — and the balanced corner at `δ = 8, 9`
 above `n_χ ≈ 3·10^5` is untouched.
+
+## What 210 cells with `i_det = 0` now imply
+
+`D = i_det − i_pad`, so `i_det = 0` at **every** measured cell means `U_D = {0}`
+at every one.  Three consequences, recorded by session 52:
+
+1. `U_D ⊆ U_P` holds trivially, so `D ≤ 0` is **forced** rather than measured.
+2. The orientation failure mode — `dim U_D = dim U_P` with `U_D ≠ U_P`, which is
+   what makes a multiplicity obstruction weaker than a genuine separation — is
+   **not instantiable anywhere the programme has measured**.  It becomes
+   instantiable exactly when `i_det ≥ 1` is first observed.
+3. Therefore the `a = 1` selection principle is **retired**: it buys protection
+   against a failure mode that cannot yet occur, at the immediate cost of giving
+   up the strictly stronger of the two obstruction notions.  The successor test
+   is the direct containment `U_D ⊆ U_P`, available at every `a`, strictly
+   stronger than `D > 0`, and costing nothing beyond what a measured cell
+   already exhibits.
+
+**The onset — the first cell with `i_det ≥ 1` — is now the single quantity on
+which everything else in the programme depends.**  The certified bracket is
+`≤ 661` (`≤ 1148` proved); the measured range is `δ ≤ 10`.

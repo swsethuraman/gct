@@ -128,10 +128,15 @@ weight `lam` with `ell(lam) <= 5` and every `delta`:
    the s35 cell `((10,10,10,6,0), 9)` included — is a statement about the
    reducible locus `R_k` versus `D_k^{det_4}`, never about the permanent.  A
    `D > 0` cell at `ell <= 5`, should one exist, would be a multiplicity
-   witness of the *set-theoretic* non-containment `R_5 ⊄ D_5^{det_4}`
-   already proved as s32's Theorem 5 — a proof-of-concept for the
-   multiplicity method (exactly DIP's situation, `docs/dip_transfer.md`),
-   not new information about `per_3`.
+   witness of the *set-theoretic* non-containment `R_5 ⊄ D_5^{det_4}` — a
+   proof-of-concept for the multiplicity method (exactly DIP's situation,
+   `docs/dip_transfer.md`), not new information about `per_3`.
+   **Correction (s54, applied at merge).**  This previously cited s32's
+   Theorem 5 as having *proved* that non-containment.  It does not: s32
+   proves non-containment in the **image** `Φ(X_5)`, not in the **closure**
+   `D_5^{det_4}`.  The closure statement is open — see `docs/s54_report.md`,
+   which finds `dim(R_5 ∩ D_5) ≥ 35` against `dim R_5 = 39` and leans to
+   `R_5 ⊄ D_5` on two independent instruments without proving it.
 
 *Proof.*  (1) is the restriction lemma plus Theorem 2.  (2): both sides
 equal `I(R_k)_{lam, delta}` by (1) applied to `g` (restrictions of `g` to

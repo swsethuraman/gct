@@ -70,9 +70,14 @@ Consequently:
    *lower* `D`.  The permanent never creates an obstruction that reducibility
    alone would not give; it can only remove one.  The hunt for `D > 0` is
    therefore, at every length, first a hunt for a multiplicity witness of
-   `R_r ⊄ D_r^det` (a set-theoretic fact known for all `r >= 5`: Theorem 5
-   of `docs/singular_spaces.md` at `r = 5`, and restriction to 5-planes for
-   `r >= 6`), and only then a check that the permanent has not erased it.
+   `R_r ⊄ D_r^det`, and only then a check that the permanent has not erased
+   it.  **Correction (s54, applied at merge):** this previously called that
+   non-containment "a set-theoretic fact known for all `r >= 5`", citing
+   Theorem 5 of `docs/singular_spaces.md`.  That theorem proves
+   `R_5 ⊄ Φ(X_5)` — non-containment in the **image** — not in the
+   **closure** `D_5^det`, which is a different and currently **open**
+   statement (`docs/s54_report.md`).  The restriction-to-5-planes step for
+   `r >= 6` inherits the same gap.
 
 *Proof.*  Lemmas 1 and 2 give `mult_{P_r} <= mult_{R_r}`; subtract
 `mult_det`.  Items 1–4 are restatements.  ∎

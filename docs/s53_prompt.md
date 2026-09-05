@@ -24,7 +24,7 @@ not compute a multiplicity and does not use the `GCT` statistic.  It addresses
 - Any cell reporting `D > 0` goes through the verification protocol before it is
   written down as a claim.
 - Before developing any statistic meant to characterise determinant type, run
-  the degeneracy-direction pre-check in `docs/brief_wording.md` §6.
+  the degeneracy-direction pre-check in `docs/brief_wording.md` §5.
 
 ## 1. What changed since the first draft of this brief
 
@@ -173,8 +173,9 @@ object, say explicitly what remains open.
 
 `dim X_10 = 160`.  The subgroup preserving `det M(s)`, `M ↦ P M Q` with
 `det P · det Q = 1`, has dimension 31, so the generic fibre of `Φ` is at least
-`31`-dimensional and `dim D_10 ≤ 128` inside `P^714`.  The exceptional image is a
-proper closed subset of `D_10`, hence of dimension `≤ 127`.
+`31`-dimensional and `dim D_10 ≤ 129` inside `P^714` — the group acts with a
+one-dimensional kernel, so `dim D_r ≤ 16r − 30`.  The exceptional image is a
+proper closed subset of `D_10`, hence of dimension `≤ 128`.
 
 Measure the exceptional image's dimension against that baseline before testing
 membership.  If a component already fills most of `D_10`, this route buys

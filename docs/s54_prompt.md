@@ -24,7 +24,7 @@ range, which most of the batch does not.
 - Any cell reporting `D > 0` goes through the verification protocol before it is
   written down as a claim.
 - Before developing any statistic meant to characterise determinant type, run
-  the degeneracy-direction pre-check in `docs/brief_wording.md` §6.
+  the degeneracy-direction pre-check in `docs/brief_wording.md` §5.
 
 ## 1. The question
 

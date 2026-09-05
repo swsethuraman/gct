@@ -294,7 +294,7 @@ The re-measurement gate of pre-registration §5 passed at all three named cells 
 ## 7. Corrections and notes for the integrator
 
 1. **The brief's pointer is off by one section.**  `docs/s52_prompt.md` §0 says
-   "the degeneracy-direction pre-check in `docs/brief_wording.md` §6"; in the
+   "the degeneracy-direction pre-check in `docs/brief_wording.md` §5"; in the
    committed file that check is **§5**, §6 is the two citation corrections and
    §7 is the functoriality pre-check.  Recorded in the pre-registration §0; both
    §5 and §7 are answered in pre-registration §6 and in §4 above.
