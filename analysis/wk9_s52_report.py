@@ -123,16 +123,17 @@ def main():
     B("**Points.**  det: `det_4(Σ s_i A_i)`, random integer `4×4` `A_i`.  pad: the\n"
       "**true** padded permanent `x_0·per_3(x_1..x_9)` restricted, never\n"
       "`ℓ·(random cubic)`.\n")
-    B("\n| `δ` | λ | `h_pad` | `N_S` | \\|Stab\\| | `n_χ` | rows | `nnz` | `mult_det` | `i_det` | `mult_pad` | `i_pad` | `D` | status | secs | HWM GB |")
-    B("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    B("\n| `δ` | λ | `h_pad` | `N_S` | \\|Stab\\| | `n_χ` | rows | `mult_det` | `i_det` | `mult_pad` | `i_pad` | `mult_red` | `D` | route | certificate | secs | HWM GB |")
+    B("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for r in LR:
         if r.get('status') == 'DEFER':
             B(f"| {r['delta']} | `{tuple(r['lam'])}` | {r['h_pad']} | — | — | — | — | — | — | — | — | — | — | "
-              f"**DEFER** | {r.get('secs')} | — |")
+              f"— | **DEFER** | {r.get('secs')} | — |")
             continue
         B(f"| {r['delta']} | `{tuple(r['lam'])}` | {r['h_pad']} | {r['N_S']} | {r['stab']} | {r['n_chi']} | "
-          f"{r['nrows']} | {r['nnz']} | **{r['mult_det']}** | {r['i_det']} | {r['mult_pad']} | {r['i_pad']} | "
-          f"{r['D']:+d} | {r['sides']['det']['status']} | {r.get('secs')} | {r.get('hwm_gb')} |")
+          f"{r['nrows']} | **{r['mult_det']}** | {r['i_det']} | {r['mult_pad']} | {r['i_pad']} | "
+          f"{r.get('mult_red','—')} | {r['D']:+d} | {r.get('route')} | {r.get('cert')} | {r.get('secs')} | "
+          f"{r.get('hwm_gb')} |")
     ok = [r for r in LR if r.get('status') == 'measured']
     B(f"\n**{len(ok)} cells measured, `i_det = 0` at "
       f"{len([r for r in ok if r['i_det']==0])} of them, `D > 0` at "

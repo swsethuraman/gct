@@ -38,6 +38,7 @@ if __name__ == '__main__':
     limit = arg('--limit', 100)
     tmo = arg('--timeout', 3600)
     maxn = arg('--max-nchi', 200000)
+    dense_cap = arg('--dense-cap', 20000)
     todo = json.load(open(os.path.join(ROOT, 'results/s52_todo.json')))
     D = done()
     env = dict(os.environ, WIED_BIN='/home/claude/wied45', WIED_WORK='/home/claude/s45/work')
@@ -48,12 +49,26 @@ if __name__ == '__main__':
         if (lam, d) in D: continue
         if c['nchi_lb'] > maxn: continue
         n += 1
-        cmd = ['timeout', str(tmo), 'python3', os.path.join(ROOT, 'analysis/wk9_s45_cell.py'),
-               str(d)] + [str(x) for x in lam] + ['--side', 'both']
+        # route: the dense s41 route below the dense frontier, session 45's sparse
+        # certificate above it.  The s45 route is not merely unnecessary on small
+        # cells, it is worse: at (30,2,2,2,2,2) d10, n_chi = 200, it reached 4.6 GB
+        # and was ended by the kernel, while the dense exact route finished the same
+        # cell in 3.3 s at 0.09 GB.
+        if c['nchi_lb'] <= dense_cap:
+            cmd = ['timeout', str(tmo), 'python3', os.path.join(ROOT, 'analysis/wk9_s41_cell.py'),
+                   '--lam', ','.join(str(x) for x in lam), '--delta', str(d), '--a', '1',
+                   '--out', f"/home/claude/s52/cell_{'_'.join(str(x) for x in lam)}_d{d}.pkl",
+                   '--route', 'auto']
+            marker = 'RESULT '
+        else:
+            cmd = ['timeout', str(tmo), 'python3', os.path.join(ROOT, 'analysis/wk9_s45_cell.py'),
+                   str(d)] + [str(x) for x in lam] + ['--side', 'both']
+            marker = '{'
         t0 = time.time()
         print(f"[sweep] {n}: d{d} {lam} h_pad={c['h_pad']} nchi~{c['nchi_lb']} ...", file=sys.stderr, flush=True)
         p = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=ROOT)
-        last = [l for l in p.stdout.strip().split('\n') if l.startswith('{')]
+        last = [l[len(marker) - 1:] if marker == 'RESULT ' else l
+                for l in p.stdout.strip().split('\n') if l.startswith(marker)]
         if p.returncode != 0 or not last:
             rec = dict(lam=list(lam), delta=d, a=1, h_pad=c['h_pad'], status='DEFER',
                        rc=p.returncode, secs=round(time.time() - t0, 1),
@@ -62,6 +77,10 @@ if __name__ == '__main__':
             rec = json.loads(last[-1])
             rec['h_pad'] = c['h_pad']
             rec['status'] = 'measured'
+            rec.setdefault('route', 'sparse')
+            rec['hwm_gb'] = rec.get('hwm_gb', rec.get('hwm'))
+            rec['cert'] = (rec['sides']['det']['status'] if 'sides' in rec
+                           else 'exact kernel, both primes, mult_red by (*)')
             rec['i_det'] = rec['a'] - rec['mult_det'] if rec.get('mult_det') is not None else None
             rec['i_pad'] = rec['a'] - rec['mult_pad'] if rec.get('mult_pad') is not None else None
             rec['D'] = (rec['mult_pad'] - rec['mult_det']) if rec.get('mult_pad') is not None else None
