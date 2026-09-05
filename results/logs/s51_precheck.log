@@ -1,0 +1,10 @@
+# S51 sec 4b GATE -- degeneracy-direction pre-check, r=10, d=7, prime=2147483647
+# rho_7(4,10) = 6700   GN ceiling = 5720 (binds=True)   C(10,5)=252
+  (0) generic quartic  : drop=0  (rank=6700, rho=6700)   115s
+  (1) det_4 pencil      : drop=980  (rank=5720, rho=6700)   101s
+  (2) reducible l*c     : drop=1536  (rank=5164, rho=6700)   96s
+  (3) full 10-var l*per3: drop=2141  (rank=4559, rho=6700)   83s
+
+# GATE: drop(det_4)=980   drop(l*per_3)=2141
+# GATE FAILED: padded permanent at least as degenerate as the determinant.
+# The rank-drop statistic separates in the WRONG direction -> section 4b stops.

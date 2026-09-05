@@ -1,0 +1,21 @@
+=== S51 section 2: the drop from the restricted GN resolution ===
+-- n=4 ladder (non-ceiling): drop should be C(r,5) --
+n=4 r=4 d=7 seed=1004: dimS_d=120 h_d=4 rho=116 rank=116 corank(S/J)=4 DROP=0 C(r,5)=0
+     restricted-GN gamma_d=0 (measured 0: OK)  gamma-h=-4  e_d=drop-(gamma-h)=4
+n=4 r=5 d=7 seed=1005: dimS_d=330 h_d=30 rho=300 rank=299 corank(S/J)=31 DROP=1 C(r,5)=1
+     restricted-GN gamma_d=20 (measured 20: OK)  gamma-h=-10  e_d=drop-(gamma-h)=11
+n=4 r=6 d=7 seed=1006: dimS_d=792 h_d=126 rho=666 rank=660 corank(S/J)=132 DROP=6 C(r,5)=6
+     restricted-GN gamma_d=120 (measured 120: OK)  gamma-h=-6  e_d=drop-(gamma-h)=12
+-- n=3 negative control: C(r,5) only where GN ceiling does not bind --
+n=3 r=5 d=4 seed=305: dimS_d=70 h_d=5 rho=65 rank=64 corank(S/J)=6 DROP=1 C(r,5)=1
+n=3 r=6 d=4 seed=306: dimS_d=126 h_d=15 rho=111 rank=102 corank(S/J)=24 DROP=9 C(r,5)=6
+n=3 r=7 d=4 seed=307: dimS_d=210 h_d=35 rho=175 rank=149 corank(S/J)=61 DROP=26 C(r,5)=21
+-- (5,7): the discriminating case, drop must be 21 --
+n=5 r=7 d=10 seed=8007: dimS_d=8008 h_d=2128 rho=5880 rank=5859 corank(S/J)=2149 DROP=21 C(r,5)=21
+
+=== S51 section 3: the r=5 syzygy, exact + Z-verified ===
+pencil seed 5077 (box 6); nullity_7=51, Koszul=50, non-Koszul=1
+integer syzygy sizes |g_i| monomials: [50, 55, 60, 65, 65]
+max |coeff| = 179881098801701495821277343047220760386046584258758202916236520424773610340590656612968757340144313144778034290086751271
+Z-VERIFICATION  sum g_i d_iF == 0 over Z : PASS
+saved results/s51_r5_syzygy.json

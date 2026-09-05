@@ -1,0 +1,11 @@
+parsed cert: n=4 r=5 d=7; pencil of 5 4x4 matrices; syzygy g0..g4
+[L2] F = det_4(pencil) recomputed independently: 70 monomials, homogeneous degree 4
+[L2] each g_i homogeneous degree 4: OK   sizes [50, 55, 60, 65, 65]
+[L1] exact Z: sum g_i d_iF == 0 : PASS
+[L1] Schwartz-Zippel Z eval at 6 random integer points : PASS
+[L2] prime 2147483647: dim Koszul=50, +syzygy=51 -> non-Koszul: YES
+[L2] prime 2147483629: dim Koszul=50, +syzygy=51 -> non-Koszul: YES
+
+=== VERDICT ===
+  ALL CHECKS PASS: the recorded pencil is det_4; (g_i) is a genuine
+  degree-7 syzygy of its partials, exact over Z; and it is non-Koszul at two primes.
