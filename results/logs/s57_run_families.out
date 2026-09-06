@@ -1,0 +1,7 @@
+ended run A (pid 2428) and the runner (pid 2425) at 22:13:42: the F3_k7 Weyl cell at delta 14 was running for 15 min; relaunched with a Weyl-terms cap
+ended F1 run (pid 2652) at 22:26:53: the Weyl d=3 h_pad route at delta 17 took >10 min per cell; relaunched with --no-hpad
+ended the second runner (pid 2734) at 22:29:52 so that F5 (not needed: every touched ladder has its next-room cell at delta <= 10) is not launched; run A2 (F1,F2,F3 at 14-16) left running to completion
+ended run D (F4, pid 2938) at 23:21:53: the MdetEngine on balanced seven-row shapes at N=52 exceeded 19 min on one cell; F4 is tabulated as far as it reached (delta 13, ell 6-7) and pending beyond
+process-discipline note: at 23:43:55 a pkill -f pattern was used to end the first Theorem-P check (launched without a recorded pid); it self-matched the shell command and the command was ended by it (exit 144); no other run was affected. Recorded as a lapse of the process rule; every later run records its pid.
+ended the verification run (pid 3563) at 00:38:54: V1b's random sample drew balanced ell=8/9 cells whose Weyl route runs for hours; V1a (1874 cells, 0 disagreements) was complete and is kept; V1b relaunched with a tail-box cap
+ended the second verification run (pid 4041) at 01:25:48 after 26 V1b cells (0 disagreements): the eight- and nine-row cells at delta 11-12 take 7+ min each by the Weyl route; V2-V6 rerun with --skip-v1 and V1 results taken from the two logs

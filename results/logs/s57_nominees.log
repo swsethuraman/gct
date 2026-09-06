@@ -1,0 +1,61 @@
+### T1 room-1 cells (new room = 1), by n_chi~
+| tail | a_∞ | top dead (δ,a) | cell | δ | a | stable? | h_pad | pad-forced | n_χ~ | reach |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `(6, 2, 2, 2, 2)` | 9 | (9,8) | `(26, 6, 2, 2, 2, 2)` | 10 | 9 | yes | 28 | 0 | 5485 | dense |
+| `(12, 3, 1, 1, 1)` | 4 | (9,3) | `(22, 12, 3, 1, 1, 1)` | 10 | 4 | yes | 6 | 0 | 9800 | dense |
+| `(7, 2, 2, 2, 1)` | 7 | (8,6) | `(22, 7, 2, 2, 2, 1)` | 9 | 7 | yes | 29 | 0 | 9928 | dense |
+| `(13, 3, 1, 1, 1)` | 4 | (9,2) | `(21, 13, 3, 1, 1, 1)` | 10 | 3 | no | 6 | 0 | 11489 | dense |
+| `(11, 2, 2, 1, 1)` | 6 | (9,5) | `(23, 11, 2, 2, 1, 1)` | 10 | 6 | yes | 17 | 0 | 15924 | dense |
+| `(4, 3, 2, 2, 2)` | 2 | (7,1) | `(19, 4, 3, 2, 2, 2)` | 8 | 2 | yes | 10 | 0 | 16593 | dense |
+| `(9, 5, 1, 1, 1)` | 13 | (9,12) | `(23, 9, 5, 1, 1, 1)` | 10 | 13 | yes | 29 | 0 | 19239 | dense |
+| `(7, 3, 3, 1, 1)` | 6 | (8,5) | `(21, 7, 3, 3, 1, 1)` | 9 | 6 | yes | 25 | 0 | 28465 | sparse |
+| `(6, 4, 2, 1, 1)` | 5 | (7,4) | `(18, 6, 4, 2, 1, 1)` | 8 | 5 | yes | 30 | 0 | 28466 | sparse |
+| `(5, 3, 3, 2, 1)` | 2 | (7,1) | `(18, 5, 3, 3, 2, 1)` | 8 | 2 | yes | 13 | 0 | 68255 | sparse |
+| `(4, 4, 3, 2, 1)` | 2 | (7,1) | `(18, 4, 4, 3, 2, 1)` | 8 | 2 | yes | 14 | 0 | 78267 | sparse |
+
+### T2 first stable cells of open short ladders, dense frontier only
+| ℓ | tail | |λ̄| | a_∞ | cell | δ | a | sk | h_pad | pad-forced | n_χ~ | K_∞/|Stab'| |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 7 | `(3, 2, 2, 2, 2, 2)` | 13 | 1 | `(27, 3, 2, 2, 2, 2, 2)` | 10 | 1 | 50 | 4 | 0 | 3026 | 362 |
+| 6 | `(6, 2, 2, 2, 2)` | 14 | 9 | `(26, 6, 2, 2, 2, 2)` | 10 | 9 | 410 | 28 | 0 | 5485 | 625 |
+| 7 | `(4, 2, 2, 2, 2, 2)` | 14 | 3 | `(26, 4, 2, 2, 2, 2, 2)` | 10 | 3 | 179 | 9 | 0 | 6695 | 761 |
+| 6 | `(7, 2, 2, 2, 2)` | 15 | 12 | `(29, 7, 2, 2, 2, 2)` | 11 | 12 | 640 | 42 | 0 | 8871 | 934 |
+| 7 | `(4, 2, 2, 2, 2, 1)` | 13 | 1 | `(27, 4, 2, 2, 2, 2, 1)` | 10 | 1 | 179 | 6 | 0 | 9545 | 1137 |
+| 6 | `(7, 2, 2, 2, 1)` | 14 | 7 | `(26, 7, 2, 2, 2, 1)` | 10 | 7 | 533 | 30 | 0 | 10228 | 1156 |
+| 8 | `(3, 2, 2, 2, 2, 2, 2)` | 15 | 1 | `(25, 3, 2, 2, 2, 2, 2, 2)` | 10 | 1 | 63 | 4 | 0 | 11205 | 1199 |
+| 7 | `(5, 2, 2, 2, 2, 2)` | 15 | 4 | `(25, 5, 2, 2, 2, 2, 2)` | 10 | 4 | 385 | 16 | 0 | 13129 | 1403 |
+| 6 | `(8, 2, 2, 2, 2)` | 16 | 21 | `(32, 8, 2, 2, 2, 2)` | 12 | 21 | 1046 | 60 | 0 | 13618 | 1357 |
+| 6 | `(8, 2, 2, 2, 1)` | 15 | 11 | `(25, 8, 2, 2, 2, 1)` | 10 | 11 | 812 | 42 | 0 | 15148 | 1609 |
+| 6 | `(4, 3, 2, 2, 2)` | 13 | 2 | `(27, 4, 3, 2, 2, 2)` | 10 | 2 | 270 | 10 | 0 | 17344 | 2080 |
+| 7 | `(5, 2, 2, 2, 2, 1)` | 14 | 2 | `(26, 5, 2, 2, 2, 2, 1)` | 10 | 2 | 427 | 11 | 0 | 18328 | 2071 |
+| 6 | `(4, 4, 2, 2, 2)` | 14 | 6 | `(26, 4, 4, 2, 2, 2)` | 10 | 6 | 539 | 16 | 0 | 18859 | 2159 |
+
+### T3 the LMR ladder
+{'lam': [17, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 12, 'a': 2, 'sk': 2714, 'h_pad': 10, 'pad_forced': 0, 'nchi': 5103803, 'ns_status': 'exact'}
+{'lam': [21, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 13, 'a': 39, 'sk': 15383, 'h_pad': 73, 'pad_forced': 0, 'nchi': 16055838, 'ns_status': 'exact'}
+{'lam': [25, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 14, 'a': 93, 'sk': 26654, 'h_pad': 159, 'pad_forced': 0, 'nchi': 21116958, 'ns_status': 'exact'}
+{'lam': [29, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 15, 'a': 145, 'sk': 35340, 'h_pad': 251, 'pad_forced': 0, 'nchi': 24904389, 'ns_status': 'exact'}
+{'lam': [33, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 16, 'a': 188, 'sk': 41463, 'h_pad': 331, 'pad_forced': 0, 'nchi': 27483554, 'ns_status': 'exact'}
+{'lam': [37, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 17, 'a': 219, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 29116648, 'ns_status': 'exact'}
+{'lam': [41, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 18, 'a': 241, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 30079586, 'ns_status': 'exact'}
+{'lam': [45, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 19, 'a': 255, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 30603501, 'ns_status': 'exact'}
+{'lam': [49, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 20, 'a': 264, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 30862684, 'ns_status': 'exact'}
+{'lam': [53, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 21, 'a': 269, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 30977102, 'ns_status': 'exact'}
+{'lam': [57, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 22, 'a': 272, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 31021161, 'ns_status': 'exact'}
+{'lam': [61, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 23, 'a': 273, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 31035572, 'ns_status': 'exact'}
+{'lam': [65, 17, 2, 2, 2, 2, 2, 2, 2], 'delta': 24, 'a': 274, 'sk': None, 'h_pad': None, 'pad_forced': None, 'nchi': 31039465, 'ns_status': 'exact'}
+
+### T4 balanced corner
+{'lam': [8, 6, 6, 4, 4, 4], 'delta': 8, 'bal': 4, 'dead': False, 'a_inf': None, 'a': 4, 'sk': 6812, 'h_pad': 1, 'pad_forced': 3, 'nchi': 9922345, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': False}
+{'lam': [8, 7, 5, 4, 4, 4], 'delta': 8, 'bal': 4, 'dead': False, 'a_inf': None, 'a': 1, 'sk': 9499, 'h_pad': 0, 'pad_forced': 1, 'nchi': 18060601, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': True}
+{'lam': [8, 8, 4, 4, 4, 4], 'delta': 8, 'bal': 4, 'dead': False, 'a_inf': None, 'a': 5, 'sk': 2967, 'h_pad': 1, 'pad_forced': 4, 'nchi': 1693303, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': False}
+{'lam': [9, 6, 6, 6, 5, 4], 'delta': 9, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 3, 'sk': 33676, 'h_pad': 0, 'pad_forced': 3, 'nchi': 229749242, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': True}
+{'lam': [9, 7, 6, 5, 5, 4], 'delta': 9, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 6, 'sk': 98774, 'h_pad': 0, 'pad_forced': 6, 'nchi': 625482948, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': True}
+{'lam': [9, 7, 6, 6, 4, 4], 'delta': 9, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 8, 'sk': 88682, 'h_pad': 1, 'pad_forced': 7, 'nchi': 277493712, 'ns_status': 'exact', 'reach': 'beyond', 'lemmaA': False}
+{'lam': [10, 6, 6, 6, 6, 6], 'delta': 10, 'bal': 4, 'dead': False, 'a_inf': None, 'a': 5, 'sk': 10259, 'h_pad': 1, 'pad_forced': 4, 'nchi': 1276098, 'ns_status': 'lb', 'reach': 'beyond?', 'lemmaA': False}
+{'lam': [11, 7, 7, 7, 6, 6], 'delta': 11, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 14, 'sk': 270594, 'h_pad': 0, 'pad_forced': 14, 'nchi': 100626932, 'ns_status': 'lb', 'reach': 'beyond?', 'lemmaA': True}
+{'lam': [11, 8, 7, 6, 6, 6], 'delta': 11, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 52, 'sk': 792526, 'h_pad': 0, 'pad_forced': 52, 'nchi': 185581294, 'ns_status': 'lb', 'reach': 'beyond?', 'lemmaA': True}
+{'lam': [11, 9, 6, 6, 6, 6], 'delta': 11, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 37, 'sk': 496436, 'h_pad': 2, 'pad_forced': 35, 'nchi': 39946238, 'ns_status': 'lb', 'reach': 'beyond?', 'lemmaA': False}
+{'lam': [12, 8, 7, 7, 7, 7], 'delta': 12, 'bal': 5, 'dead': False, 'a_inf': None, 'a': 39, 'sk': 648210, 'h_pad': 0, 'pad_forced': 39, 'nchi': 193795861, 'ns_status': 'lb', 'reach': 'beyond?', 'lemmaA': True}
+00:10:54 T1 66 (room 1: 11), T2 101 (dense: 13), T3 13, T4 11
+rc=0
