@@ -1,0 +1,26 @@
+      level 1: 35 prefixes
+      level 2: 369 prefixes
+      level 3: 2025 prefixes
+      level 4: 6170 prefixes
+      level 5: 10629 prefixes
+      level 6: 11906 prefixes
+      level 7: 11906 prefixes
+  lam=(12, 10, 3, 2, 1): N_S=11906 |Stab|=1 n_chi=11906 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 10712 canonical rows 10712 nnz 50462 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 6003 canonical rows 6003 nnz 25795 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 7613 canonical rows 7613 nnz 19488 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 5606 canonical rows 5606 nnz 11906 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (12, 10, 3, 2, 1) d7: N_S=11906 |Stab|=1 n_chi=11906 rows=29934 nnz=107651 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 14985 rows, nnz 321934 (full: 29952 rows, nnz 321959)
+    level 0 (3,2): 14985 rows, nnz 321932 (full: 29952 rows, nnz 321959)
+    wied[c12_10_3_2_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11906 nrows=14985 nnz=321932 k=0 len=23812 secs=22.7 | BM deg=11906 f0=1693938449 secs=24.5 (25s)
+    level 0 (3,2): 13289 rows, nnz 89469 (full: 26577 rows, nnz 89505); floor k0=0
+    wied[c12_10_3_2_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11906 nrows=14985 nnz=321934 k=0 len=23812 secs=22.9 | BM deg=11906 f0=312345730 secs=24.8 (25s)
+    level 0 (3,2): 13289 rows, nnz 89464 (full: 26577 rows, nnz 89505); floor k0=0
+    wied[c12_10_3_2_1d7_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=9913 nrows=13289 nnz=89469 k=0 len=19826 secs=6.7 | BM deg=9913 f0=1397927359 secs=8.1 (8s)
+    level 0 (3,2): 14985 rows, nnz 321931 (full: 29952 rows, nnz 321959); floor k0=0
+    wied[c12_10_3_2_1d7_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=9913 nrows=13289 nnz=89464 k=0 len=19826 secs=7.0 | BM deg=9913 f0=1283750547 secs=8.5 (9s)
+    level 0 (3,2): 14985 rows, nnz 321918 (full: 29952 rows, nnz 321959); floor k0=0
+    wied[c12_10_3_2_1d7_redpts p=2147483647 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11906 nrows=14985 nnz=321931 k=0 len=23812 secs=22.7 | BM deg=11906 f0=798728007 secs=24.7 (25s)
+    wied[c12_10_3_2_1d7_redpts p=2147483629 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11906 nrows=14985 nnz=321918 k=0 len=23812 secs=23.1 | BM deg=11906 f0=607095362 secs=25.0 (25s)
+  RESULT (12, 10, 3, 2, 1) d7: a=10 n_chi=11906 route=sparse mult_det=10 mult_red(star)=10 mult_red(pts)=10 D=0  (59.1s, HWM 0.07 GB)

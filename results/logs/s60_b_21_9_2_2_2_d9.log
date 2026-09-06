@@ -1,0 +1,46 @@
+      level 1: 48 prefixes
+      level 2: 650 prefixes
+      level 3: 3641 prefixes
+      level 4: 11637 prefixes
+      level 5: 19369 prefixes
+      level 6: 21612 prefixes
+      level 7: 21793 prefixes
+      level 8: 21793 prefixes
+      level 9: 21793 prefixes
+  lam=(21, 9, 2, 2, 2): N_S=21793 |Stab|=6 n_chi=4764 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 16184 canonical rows 3588 nnz 17788 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 8822 canonical rows 4894 nnz 19205 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 16537 canonical rows 16537 nnz 30874 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 16537 canonical rows 16537 nnz 30874 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (21, 9, 2, 2, 2) d9: N_S=21793 |Stab|=6 n_chi=4764 rows=41556 nnz=98741 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 7204 rows, nnz 157811 (full: 41582 rows, nnz 222605)
+    level 0 (3,2): 7204 rows, nnz 157941 (full: 41582 rows, nnz 222605)
+    wied[c21_9_2_2_2d9_det p=2147483629 lvl=0 seed=1 k=0]: KERNEL SEQ n=4764 nrows=7204 nnz=157811 k=0 len=9528 secs=4.4 | BM deg=4750 f0=0 secs=4.7 | DONE secs=7.1 (7s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 20804 rows, nnz 222520 (full: 41582 rows, nnz 222605)
+    wied[c21_9_2_2_2d9_det p=2147483647 lvl=0 seed=1 k=0]: KERNEL SEQ n=4764 nrows=7204 nnz=157941 k=0 len=9528 secs=4.4 | BM deg=4752 f0=0 secs=4.7 | DONE secs=7.2 (7s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (12,2): 20804 rows, nnz 222549 (full: 41582 rows, nnz 222605)
+    wied[c21_9_2_2_2d9_det p=2147483629 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=4764 nrows=20804 nnz=222520 k=0 len=9528 secs=6.5 | BM deg=4764 f0=1205515117 secs=6.8 (14s)
+    level 0 (3,2): 5104 rows, nnz 23563 (full: 31020 rows, nnz 71527); floor k0=0
+    wied[c21_9_2_2_2d9_det p=2147483647 lvl=1 seed=2 k=0]: NONSINGULAR SEQ n=4764 nrows=20804 nnz=222549 k=0 len=9528 secs=6.6 | BM deg=4764 f0=1005135631 secs=6.9 (14s)
+    level 0 (3,2): 5104 rows, nnz 23447 (full: 31020 rows, nnz 71527); floor k0=0
+    wied[c21_9_2_2_2d9_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: KERNEL SEQ n=3381 nrows=5104 nnz=23563 k=0 len=6762 secs=0.7 | BM deg=3373 f0=0 secs=0.9 | DONE secs=1.3 (1s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 15510 rows, nnz 71456 (full: 31020 rows, nnz 71527); floor k0=0
+    wied[c21_9_2_2_2d9_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: KERNEL SEQ n=3381 nrows=5104 nnz=23447 k=0 len=6762 secs=0.7 | BM deg=3367 f0=0 secs=0.9 | DONE secs=1.4 (1s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 15510 rows, nnz 71463 (full: 31020 rows, nnz 71527); floor k0=0
+    wied[c21_9_2_2_2d9_star p=2147483629 lvl=1 seed=102 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=3381 nrows=15510 nnz=71456 k=0 len=6762 secs=1.8 | BM deg=3381 f0=1547766870 secs=1.9 (3s)
+    level 0 (3,2): 7204 rows, nnz 157976 (full: 41582 rows, nnz 222605); floor k0=0
+    wied[c21_9_2_2_2d9_star p=2147483647 lvl=1 seed=102 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=3381 nrows=15510 nnz=71463 k=0 len=6762 secs=1.8 | BM deg=3381 f0=306365454 secs=1.9 (3s)
+    level 0 (3,2): 7204 rows, nnz 157928 (full: 41582 rows, nnz 222605); floor k0=0
+    wied[c21_9_2_2_2d9_redpts p=2147483629 lvl=0 seed=201 k_extra=0 exhibited=0]: KERNEL SEQ n=4764 nrows=7204 nnz=157976 k=0 len=9528 secs=4.6 | BM deg=4762 f0=0 secs=4.9 | DONE secs=7.3 (7s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 20804 rows, nnz 222540 (full: 41582 rows, nnz 222605); floor k0=0
+    wied[c21_9_2_2_2d9_redpts p=2147483647 lvl=0 seed=201 k_extra=0 exhibited=0]: KERNEL SEQ n=4764 nrows=7204 nnz=157928 k=0 len=9528 secs=4.6 | BM deg=4752 f0=0 secs=4.9 | DONE secs=7.3 (7s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 20804 rows, nnz 222548 (full: 41582 rows, nnz 222605); floor k0=0
+    wied[c21_9_2_2_2d9_redpts p=2147483629 lvl=1 seed=202 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=4764 nrows=20804 nnz=222540 k=0 len=9528 secs=6.5 | BM deg=4764 f0=1753472147 secs=6.8 (14s)
+    wied[c21_9_2_2_2d9_redpts p=2147483647 lvl=1 seed=202 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=4764 nrows=20804 nnz=222548 k=0 len=9528 secs=6.5 | BM deg=4764 f0=1527882018 secs=6.8 (14s)
+  RESULT (21, 9, 2, 2, 2) d9: a=18 n_chi=4764 route=sparse mult_det=18 mult_red(star)=18 mult_red(pts)=18 D=0  (32.3s, HWM 0.07 GB)

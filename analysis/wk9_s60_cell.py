@@ -403,7 +403,7 @@ def _prime_job(args):
                                           notes=("basis recorded: N_S exceeds the verifier's kernel cap" if basis else None))
                 files.append([os.path.relpath(fn, ROOT), sz])
             else:
-                cs = nullspace_mod_p(G.T, p)                       # a x K -> combos killed by every det point
+                cs = nullspace_mod_p(G.T, p)                       # a x K -> combos annihilated by every det point
                 vecs = [expand_vector(arr, (c @ kern) % p, p) for c in cs]
                 claims = {"independent": True, "vanishes_at": det_recs,
                           "fresh_points": {"seed": 20260905, "count": max(6, len(vecs) + 2),

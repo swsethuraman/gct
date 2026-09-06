@@ -1,0 +1,28 @@
+      level 1: 35 prefixes
+      level 2: 416 prefixes
+      level 3: 2957 prefixes
+      level 4: 9043 prefixes
+      level 5: 12788 prefixes
+      level 6: 12788 prefixes
+  lam=(9, 6, 6, 2, 1): N_S=12788 |Stab|=2 n_chi=6501 (orbits dropped: 0) [lean, 0s, HWM 0.06 GB]
+    E_01: |H|=1 targets 9964 canonical rows 9964 nnz 42342 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 11766 canonical rows 11766 nnz 41898 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 5967 canonical rows 5967 nnz 21124 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 5943 canonical rows 3045 nnz 6501 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (9, 6, 6, 2, 1) d6: N_S=12788 |Stab|=2 n_chi=6501 rows=30742 nnz=111865 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 9794 rows, nnz 136186 (full: 30752 rows, nnz 176875)
+    level 0 (3,2): 9794 rows, nnz 136261 (full: 30752 rows, nnz 176875)
+    wied[c9_6_6_2_1d6_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=6501 nrows=9794 nnz=136261 k=0 len=13002 secs=5.4 | BM deg=6501 f0=623746197 secs=6.0 (6s)
+    level 0 (3,2): 8728 rows, nnz 60862 (full: 28601 rows, nnz 99882); floor k0=0
+    wied[c9_6_6_2_1d6_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=6501 nrows=9794 nnz=136186 k=0 len=13002 secs=5.5 | BM deg=6501 f0=1239164339 secs=6.0 (6s)
+    level 0 (3,2): 8728 rows, nnz 60939 (full: 28601 rows, nnz 99882); floor k0=0
+    wied[c9_6_6_2_1d6_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=5797 nrows=8728 nnz=60862 k=0 len=11594 secs=2.6 | BM deg=5797 f0=360377305 secs=3.0 (3s)
+    level 0 (3,2): 9794 rows, nnz 136013 (full: 30752 rows, nnz 176875); floor k0=0
+    wied[c9_6_6_2_1d6_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: KERNEL SEQ n=5797 nrows=8728 nnz=60939 k=0 len=11594 secs=2.6 | BM deg=5797 f0=0 secs=3.1 | DONE secs=4.7 (5s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 14301 rows, nnz 99827 (full: 28601 rows, nnz 99882); floor k0=0
+    wied[c9_6_6_2_1d6_redpts p=2147483629 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=6501 nrows=9794 nnz=136013 k=0 len=13002 secs=5.4 | BM deg=6501 f0=491410908 secs=6.0 (6s)
+    wied[c9_6_6_2_1d6_star p=2147483647 lvl=1 seed=102 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=5797 nrows=14301 nnz=99827 k=0 len=11594 secs=3.9 | BM deg=5797 f0=2024013689 secs=4.3 (9s)
+    level 0 (3,2): 9794 rows, nnz 136176 (full: 30752 rows, nnz 176875); floor k0=0
+    wied[c9_6_6_2_1d6_redpts p=2147483647 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=6501 nrows=9794 nnz=136176 k=0 len=13002 secs=5.6 | BM deg=6501 f0=1714150043 secs=6.2 (6s)
+  RESULT (9, 6, 6, 2, 1) d6: a=2 n_chi=6501 route=sparse mult_det=2 mult_red(star)=2 mult_red(pts)=2 D=0  (21.8s, HWM 0.07 GB)

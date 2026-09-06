@@ -1,0 +1,21 @@
+      level 1: 36 prefixes
+      level 2: 517 prefixes
+      level 3: 3616 prefixes
+      level 4: 13546 prefixes
+      level 5: 21694 prefixes
+      level 6: 21694 prefixes
+  lam=(8, 7, 5, 3, 1): N_S=21694 |Stab|=1 n_chi=21694 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 19188 canonical rows 19188 nnz 79470 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 16933 canonical rows 16933 nnz 65880 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 14436 canonical rows 14436 nnz 48017 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 8402 canonical rows 8402 nnz 21694 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (8, 7, 5, 3, 1) d6: N_S=21694 |Stab|=1 n_chi=21694 rows=58959 nnz=215061 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 29492 rows, nnz 475350 (full: 58971 rows, nnz 475389)
+    level 0 (3,2): 29492 rows, nnz 475339 (full: 58971 rows, nnz 475389)
+    wied[c8_7_5_3_1d6_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=21694 nrows=29492 nnz=475339 k=0 len=43388 secs=66.5 | BM deg=21694 f0=1080102779 secs=73.2 (74s)
+    level 0 (3,2): 28127 rows, nnz 199254 (full: 56254 rows, nnz 199294); floor k0=0
+    wied[c8_7_5_3_1d6_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=21694 nrows=29492 nnz=475350 k=0 len=43388 secs=66.8 | BM deg=21694 f0=642715503 secs=73.6 (74s)
+    level 0 (3,2): 28127 rows, nnz 199253 (full: 56254 rows, nnz 199294); floor k0=0
+    wied[c8_7_5_3_1d6_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=20137 nrows=28127 nnz=199254 k=0 len=40274 secs=31.6 | BM deg=20137 f0=1690005485 secs=37.4 (38s)
+    wied[c8_7_5_3_1d6_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=20137 nrows=28127 nnz=199253 k=0 len=40274 secs=31.5 | BM deg=20137 f0=451693351 secs=37.3 (38s)
+  RESULT (8, 7, 5, 3, 1) d6: a=4 n_chi=21694 route=sparse mult_det=4 mult_red(star)=4 mult_red(pts)=None D=0  (112.5s, HWM 0.08 GB)

@@ -1,0 +1,22 @@
+      level 1: 51 prefixes
+      level 2: 888 prefixes
+      level 3: 6319 prefixes
+      level 4: 19318 prefixes
+      level 5: 27255 prefixes
+      level 6: 28258 prefixes
+      level 7: 28258 prefixes
+  lam=(14, 6, 4, 2, 2): N_S=28258 |Stab|=2 n_chi=15358 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 18734 canonical rows 10216 nnz 50195 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 20552 canonical rows 11179 nnz 39561 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 15677 canonical rows 15677 nnz 46593 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 21323 canonical rows 21323 nnz 40779 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (14, 6, 4, 2, 2) d7: N_S=28258 |Stab|=2 n_chi=15358 rows=58395 nnz=177128 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 23094 rows, nnz 524000 (full: 58420 rows, nnz 561078)
+    level 0 (3,2): 23094 rows, nnz 523804 (full: 58420 rows, nnz 561078)
+    wied[c14_6_4_2_2d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=15358 nrows=23094 nnz=524000 k=0 len=30716 secs=50.1 | BM deg=15358 f0=266573534 secs=53.3 (54s)
+    level 0 (3,2): 17429 rows, nnz 99556 (full: 46818 rows, nnz 133674); floor k0=0
+    wied[c14_6_4_2_2d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=15358 nrows=23094 nnz=523804 k=0 len=30716 secs=50.6 | BM deg=15358 f0=1641804204 secs=53.8 (54s)
+    level 0 (3,2): 17429 rows, nnz 99493 (full: 46818 rows, nnz 133674); floor k0=0
+    wied[c14_6_4_2_2d7_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11598 nrows=17429 nnz=99556 k=0 len=23196 secs=9.6 | BM deg=11598 f0=798334620 secs=11.5 (11s)
+    wied[c14_6_4_2_2d7_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11598 nrows=17429 nnz=99493 k=0 len=23196 secs=9.7 | BM deg=11598 f0=531692577 secs=11.5 (12s)
+  RESULT (14, 6, 4, 2, 2) d7: a=17 n_chi=15358 route=sparse mult_det=17 mult_red(star)=17 mult_red(pts)=None D=0  (66.4s, HWM 0.08 GB)

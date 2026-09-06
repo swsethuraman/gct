@@ -1,0 +1,28 @@
+      level 1: 37 prefixes
+      level 2: 563 prefixes
+      level 3: 4059 prefixes
+      level 4: 15408 prefixes
+      level 5: 24857 prefixes
+      level 6: 24857 prefixes
+  lam=(8, 7, 4, 4, 1): N_S=24857 |Stab|=2 n_chi=12743 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 21982 canonical rows 11280 nnz 46375 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 16933 canonical rows 16933 nnz 65880 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 21694 canonical rows 21694 nnz 64271 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 8402 canonical rows 8402 nnz 24857 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (8, 7, 4, 4, 1) d6: N_S=24857 |Stab|=2 n_chi=12743 rows=58309 nnz=201383 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 19157 rows, nnz 259544 (full: 58319 rows, nnz 328813)
+    level 0 (3,2): 19157 rows, nnz 259654 (full: 58319 rows, nnz 328813)
+    wied[c8_7_4_4_1d6_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=12743 nrows=19157 nnz=259654 k=0 len=25486 secs=21.8 | BM deg=12743 f0=539518363 secs=24.3 (24s)
+    level 0 (3,2): 17734 rows, nnz 120081 (full: 55142 rows, nnz 186799); floor k0=0
+    wied[c8_7_4_4_1d6_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=12743 nrows=19157 nnz=259544 k=0 len=25486 secs=22.3 | BM deg=12743 f0=1191380612 secs=24.8 (25s)
+    level 0 (3,2): 17734 rows, nnz 120104 (full: 55142 rows, nnz 186799); floor k0=0
+    wied[c8_7_4_4_1d6_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11801 nrows=17734 nnz=120104 k=0 len=23602 secs=12.6 | BM deg=11801 f0=168056387 secs=14.7 (15s)
+    level 0 (3,2): 19157 rows, nnz 259684 (full: 58319 rows, nnz 328813); floor k0=0
+    wied[c8_7_4_4_1d6_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: KERNEL SEQ n=11801 nrows=17734 nnz=120081 k=0 len=23602 secs=11.7 | BM deg=11801 f0=0 secs=13.6 | DONE secs=20.8 (21s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 27571 rows, nnz 186732 (full: 55142 rows, nnz 186799); floor k0=0
+    wied[c8_7_4_4_1d6_star p=2147483629 lvl=1 seed=102 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=11801 nrows=27571 nnz=186732 k=0 len=23602 secs=16.0 | BM deg=11801 f0=298938510 secs=17.9 (39s)
+    level 0 (3,2): 19157 rows, nnz 259706 (full: 58319 rows, nnz 328813); floor k0=0
+    wied[c8_7_4_4_1d6_redpts p=2147483647 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=12743 nrows=19157 nnz=259684 k=0 len=25486 secs=23.5 | BM deg=12743 f0=2079957346 secs=26.0 (26s)
+    wied[c8_7_4_4_1d6_redpts p=2147483629 lvl=0 seed=201 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=12743 nrows=19157 nnz=259706 k=0 len=25486 secs=21.7 | BM deg=12743 f0=343600830 secs=23.9 (24s)
+  RESULT (8, 7, 4, 4, 1) d6: a=2 n_chi=12743 route=sparse mult_det=2 mult_red(star)=2 mult_red(pts)=2 D=0  (87.8s, HWM 0.07 GB)
