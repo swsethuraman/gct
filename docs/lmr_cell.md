@@ -156,3 +156,81 @@ of `|ρ|`, weights read off as `{x_i/x_j}_{i≠j} ∪ {1,1,1}`, trivial multipli
 extracted as the coefficient of `x^{(3,2,1,0)}` in (character × Vandermonde);
 prefix-shared DFS over partitions, `numpy` shift-adds mod `2³¹ − 1`.
 Calibrated 5/5 against the ground truth above before use.
+
+## 6. Where the 274th vector comes from
+
+The question "what event creates the final LMR copy at `δ = 24`?" has a precise
+form.  By the ladder theorem, multiplication by `u = e_1^4` is **injective** from
+the `λ_{δ−1}`-highest-weight space into the `λ_δ` one, so
+
+    a_δ − a_{δ−1}  =  dim coker(M_u)  =  the number of genuinely new directions,
+
+and every new direction is represented in the **`u`-free** part of the weight
+space — the monomials with no `e_1^4` factor.  That part is computable: it has
+dimension `N_S(λ_δ, δ) − N_S(λ_{δ−1}, δ−1)`, `N_S` the raw weight-space
+dimension.  For the LMR ladder:
+
+| `δ` | `λ_1` | `a` | new HWVs | `N_S` | `u`-free monomials |
+|---|---|---|---|---|---|
+| 12 | 17 | 2 | 11 | 51 446 325 457 | 51 446 325 457 |
+| 14 | 25 | 93 | **54** | 106 429 467 326 | 25 508 045 258 |
+| 18 | 41 | 241 | 22 | 151 601 110 197 | 4 853 208 876 |
+| 21 | 53 | 269 | 5 | 156 124 593 451 | 576 668 236 |
+| 22 | 57 | 272 | 3 | 156 346 649 229 | 222 055 778 |
+| 23 | 61 | 273 | 1 | 156 419 279 221 | 72 629 992 |
+| **24** | **65** | **274** | **1** | 156 438 903 314 | **19 624 093** |
+| 25 | 69 | 274 | **0** | 156 443 174 266 | 4 270 952 |
+| 26 | 73 | 274 | 0 | 156 443 907 591 | 733 325 |
+| 28 | 81 | 274 | 0 | 156 444 014 936 | 9 824 |
+| 30 | 89 | 274 | 0 | 156 444 015 695 | 36 |
+| 31 | 93 | 274 | 0 | 156 444 015 696 | **1** |
+| 32 | 97 | 274 | 0 | 156 444 015 696 | **0** |
+
+The endpoint is a closed-form check on the whole computation: at `δ = t = 31`
+every monomial has 31 factors and tail weight 31, so each factor has tail degree
+exactly 1 and the unique `u`-free monomial is `(e_1^3 e_2)^{17} ∏_{j=3}^{9}
+(e_1^3 e_j)^2`; at `δ = 32` there is none, which is the counting argument behind
+the stability half of the ladder theorem.
+
+**The reading.**  Saturation at `δ = 24` is **not** the counting phenomenon that
+the `δ ≥ t` bound describes.  At `δ = 25` the `u`-free part of the weight space
+still has 4.3 million monomials and produces **zero** new highest weight
+vectors; the same at 26, 27, 28.  So the right question is not "why does a new
+copy appear at 24" but
+
+> why does a `u`-free space of ten million dimensions stop carrying **any** new
+> highest weight vector after `δ = 24`, seven degrees before it empties?
+
+The birth profile is also worth recording as data rather than a scalar: the new
+directions per degree run `11, 37, 54, 52, 43, 31, 22, 14, 9, 5, 3, 1, 1` from
+`δ = 12` to `24` — unimodal, peaking at `δ = 14`, with a long thin tail.  The
+final `1` is the least remarkable entry in it.
+
+## 7. The LMR degree is the closing degree — for the whole family, not just LMR
+
+The observation that the LMR equation appears exactly where the ambient ladder
+saturates is a property of the **weight family**, checked at 16 members.  For
+
+    λ(k, m) = (3k + 2m, k, 2^m)   at   δ = k + m,   ρ = (k, 2^m),   t = k + 2m
+
+— the family on which `2δ = |ρ| + ρ_1` holds with equality and of which LMR at
+`n = 4` is `(k, m) = (17, 7)` — the first degree at which `a_δ = a_∞` is
+**exactly `k + m` at every member tested**:
+
+    (k,m) = (2,1) (3,1) (2,2) (3,2) (4,2) (4,3) (5,3) (5,4) (6,4)
+            (7,4) (8,4) (7,5) (9,5) (6,5) (8,6) (10,6)      — 16 / 16
+
+with `a_∞ = 1, 1, 1, 1, 3, 3, 4, 4, 9, 12, 21, 12, 28, 9, 22, 46`.  The `n = 3`
+LMR cell behaves the same way in its own (inner-degree-3) ladder: `ρ = (7,2^5)`,
+`a = 0, 2, 4, 5, 6, 6, …` from `δ = 8`, so `δ_close = 12`, which is the LMR
+degree at `n = 3`.
+
+So this is structural, not a coincidence of one cell, and it has a practical
+consequence: **an LMR-type equation sits at a closing cell**, which is exactly
+where the length-5 closure queue already points.  What it does *not* do is
+select: every tail has a closing degree, and among the 2 107 live length-5 tails
+42 % have the same final increment of 1 and LMR's "lateness"
+`(δ_close − δ_min)/(t − δ_min) = 0.632` sits just above the mean of 0.530 — while
+the `n = 3` LMR cell has lateness 0.444, *below* it.  Final-jump size and
+lateness are both refuted as selectors; the family identity is what carries the
+information.
