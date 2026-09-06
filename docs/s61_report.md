@@ -67,7 +67,7 @@ convention.
 |---|---|---|---|---|---|---|---|---|
 | count (projective degree = chart A = chart B) | 4 | 12 | 36 | 68 | 84 | 60 | 20 | 0 |
 | excess `Sing ∩ Λ` (dim, degree) | ∅ | ∅ | ∅ | 20 points | curve, 20 | surface, 20 | 3-fold, 20 | 4-fold, 20 |
-| seconds (full-Jacobian saturation) | 0 | 0 | 0 | 10 | 99 | 871 | see §7 | see §7 |
+| seconds (full-Jacobian saturation, Singular) | 0 | 0 | 0 | 10 | 99 | 871 | 5748 | not finished; msolve: 0 in 1 s |
 
 Every slot matches the closed form. The two lowest non-smooth slots are exactly
 the singularity corrections predicted in the pre-registration: 20 ordinary nodes
@@ -95,6 +95,18 @@ instead of the whole Jacobian ideal gave the same count in every run
 every slot of `per_3` at `p = 1000003` and `p = 32003` (Singular's radical
 routine refuses characteristics above `2^29`, so the house primes carry the
 counts and the smaller primes carry the reducedness check).
+
+A third engine, msolve 0.6.5 on the Rabinowitsch form (`analysis/wk9_s61_msolve.py`:
+the chart `t_0 = 1`, the equations `G = m_1 = … = m_k = 0` and `s·g = 1` with `g` a
+random combination of the partials, so the excess is excluded without any
+saturation; the reported quotient dimension is the count with multiplicity),
+was calibrated before use against Singular's `vdim` of the identical system on
+`det_3` slot 3 (12 = 12). Two engineering facts from that calibration: msolve
+does not parse parentheses (the unexpanded input returned 24; every polynomial is
+now expanded by Singular first), and at `p = 2^31 − 1` it prints the correct count
+and then exits with a segmentation fault, so it is run at `1073741827` and
+`1000003`. It is about a thousand times faster than saturation on the
+determinant's high slots.
 
 Varied for `per_3`: primes `2147483647, 2147483629` (house), `1000003`, `32003`,
 and `Q`; seeds 61, 62, 63 (each seed draws a different `Λ`, different `m_i`,
@@ -251,11 +263,12 @@ classical construction expresses "at most 20 residual points" as the vanishing
 of polynomials in the coefficients of `F`; the objects that do express point
 counts (Macaulay resultants, discriminants, Chow forms of the polar variety
 `P_6(F)`, of dimension 8 and degree `δ_6`) are of degree comparable to the
-Bézout number of the system in `coeff(F)`: the Macaulay resultant of one quartic
-and six cubics in `P^7` has degree `3^6 = 729` in the quartic and `4·3^5 = 972`
-in each cubic, and each `m_i(∇F)` is linear in `coeff(F)`, so a single resultant
-is of degree `729 + 6·972 = 6561 = 3^8` in `coeff(F)` — and it expresses a
-common zero, not a count, and it does not see the excess. The honest estimate
+Bézout number `4·3^6 = 2916` of the system (which is the generic value of
+`δ_6`): the Macaulay resultant of one quartic, six cubics and a linear form in
+`P^7` has degree `3^6 = 729` in the quartic and `4·3^5 = 972` in each cubic, and
+each `m_i(∇F)` is linear in `coeff(F)`, so a single such resultant is of degree
+`729 + 6·972 = 6561 = 3^8` in `coeff(F)` — and it expresses a common zero on a
+hyperplane, not a count, and it does not see the excess. The honest estimate
 is therefore: **unknown, and no route to anything near LMR's 24 is visible.**
 The degree-24 module remains the only algebraised conormal condition at `(3,4)`.
 The one structural handle worth recording: for dual-defective `F` the slot-6
@@ -267,10 +280,14 @@ well-posed question this session did not open (§5 of the brief).
 
 ## 7. The measurement record
 
-**Determinant, both primes and seeds (M2).** `det_4` in 16 variables, all eight
-slots: `p = 2147483647`, seed 61, `(4, 12, 36, 68, 84, 60, 20, 0)`, projective
-degree = chart A = chart B at every slot, full-Jacobian saturation = single-`g`
-saturation at every slot. The third engine (msolve on the Rabinowitsch form
+**Determinant, both primes and seeds (M2).** `det_4` in 16 variables, Singular
+saturation at `p = 2147483647`, seed 61: `(4, 12, 36, 68, 84, 60, 20)` at slots
+0–6, projective degree = chart A = chart B at every slot, full-Jacobian
+saturation = single-`g` saturation at every slot; the slot-7 saturation (a
+4-dimensional excess and no legitimate point to find) had not finished after
+57 min and was ended by its recorded pid — slot 7 is 0 because `dim X* = 6`
+(a generic codimension-7 `Λ̌` misses the 6-dimensional Segre), and it is measured
+0 below. The third engine (msolve on the Rabinowitsch form
 `G = m_1 = … = m_k = 0, s·g = 1` on the chart `t_0 = 1`, `analysis/wk9_s61_msolve.py`,
 no saturation step at all, same random draws) returns the whole vector
 `(4, 12, 36, 68, 84, 60, 20, 0)` at `p = 1073741827` and `p = 1000003` for seed 61
@@ -278,14 +295,14 @@ and `(68, 84, 60, 20, 0)` at slots 3–7 for seeds 62 and 63 — in about one se
 per slot, against 15 minutes for the slot-5 saturation and more than an hour
 for slot 6 in Singular. The 10-variable `det_4` pencil (a generic linear
 section) returns the truncation `(4, 12, 36, 68, 84, 60, 20, 0, 0)`. Macaulay2
-on the same data: DET4_M2_RESULT
+on the same data: slot 3 returns 68 (88 s); its saturation of slot 4 had not finished after 44 min (Singular's `sat` took 99 s on the same ideal) and the run was ended by its recorded pid — Macaulay2's engine agreement on `det_4` therefore rests on slot 3, on the `det_3` control at every slot, and on `per_3` at every slot.
 
 **Permanent, every setting (M4–M6).** `(3, 6, 12, 24, 48, 48, 30, 6)` at
 `(p, seed) = (2147483647, 61), (2147483629, 61), (1000003, 61), (2147483647, 62),
 (2147483629, 63), (32003, 61)`, each with two charts and both saturation
 variants agreeing; radical = count at every slot for `p = 1000003` and `32003`;
 Macaulay2 on the same random data returns the same vector (209 s for all eight slots); Singular over `Q`
-QQ_PER3_RESULT; conormal multidegree `(3, 6, 12, 24, 48, 48, 30, 6)` at
+(saturation, coefficients in `[−99, 99]`) `(3, 6, 12, 24)` at slots 0–3 in 37 min before the run was ended by its recorded pid — characteristic zero is settled instead by the conormal multidegree over `Q` below; conormal multidegree `(3, 6, 12, 24, 48, 48, 30, 6)` at
 `p = 32003`, `2147483647`, `2147483629` and over `Q` (13–22 s each; the
 `det_3` control returns `(3, 6, 12, 12, 6, 0, 0, 0)`).
 
@@ -303,7 +320,7 @@ three prime/seed pairs), which is the dual-side derivation of `δ_5 = 48` in §3
 `(4, 6, 12, 24, 48, 48, 30, 6, 0)` (seeds 61 and 62). Sixteen variables — the
 quartic in `Sym^4 C^16` that the containment question is actually about — at
 slots 5, 6, 7, 8: msolve `(48, 30, 6, 0)` at `(p, seed) = (1073741827, 61)` and
-`(1000003, 62)`; Singular saturation at slots 6 and 7: PAD16_SING_RESULT. The
+`(1000003, 62)`; Singular saturation at slots 6 and 7: not run (the queued Singular job was dropped when lane E was ended; msolve's two settings stand). The
 excess here is 5-dimensional in `Λ = P^7` — the padded quartic is singular along
 the codimension-2 locus `{x_0 = 0} ∩ {per_3 = 0}` — and the count is unaffected,
 as the cone/union lemma says it must be.
@@ -318,12 +335,18 @@ Every control returned its predicted value.
 
 **Timings.** Everything about `per_3` runs in seconds (about 20 s for all eight
 slots at a house prime; 760 s with the radical checks at `p = 1000003`); the
-determinant's slot 5 takes 15 min and slot 6 DET4_K6_TIME; the dual
+determinant's slot 5 takes 15 min and slot 6 96 min (5748 s, and the same 20 by single-`g` saturation); the dual
 sextic's slot 4 took 22 min (a degree-51 excess surface). Every run was bounded
 by `timeout` and `ulimit -v`, its wrapper and engine pids recorded in
-`results/logs/s61_<run>.pid`, and the one run ended early (the first attempt
-at the house-prime radical checks, which Singular cannot do above `2^29`) was
-ended by its recorded pid (`results/logs/s61_*_attempt1.log`).
+`results/logs/s61_<run>.pid`. Runs ended early — each by its recorded pid, each
+noted in place at the end of its log, none by name — were: the first attempt at
+the house-prime radical checks (Singular refuses `radical` above `2^29`;
+`s61_*_attempt1.log`); the Singular saturations of the dual sextic (slot 5), of
+`ℓ·c` (slot 7), of the 10-variable pencil (slot 5) and of `per_3` over `Q`
+(slot 4), all superseded by msolve or by the `Q` conormal multidegree; the
+Macaulay2 saturation of `det_4` at slot 4; the Singular saturation of `det_4`
+at slot 7 (57 min, superseded by msolve); and the lane shells whose remaining
+queues had become redundant.
 
 ## 8. The citation (M8)
 
@@ -374,12 +397,12 @@ arXiv numbers.
 | M6 `δ_6` | `≤ 20`, no violation | 0.6 | **refuted: `δ_6 = 30`, the bracket's upper end** |
 | M7 | direction check passes; `ℓ·c` exceeds from slot 5; pad `(4, δ_1..δ_7, 0)` | 0.95 | confirmed |
 | M8 | neither identifier resolves | 0.8 | **refuted: both exist; the `abs` fetch path is the failure** |
-| M9 | verifier 50/50 on this branch | 0.95 | VERIFY_SHORT |
+| M9 | verifier 50/50 on this branch | 0.95 | confirmed: `PASS 50, FAIL 0, UNPARSEABLE 0, ERROR 0` |
 | §3.1 | slots 0–5 clean | 0.9 | confirmed |
 | §3.2 | branch retires, only `δ_7` differs | 0.6 | **refuted** |
 | §3.3 | `δ_6 > 20`, a second signal | 0.4 | **this is what happened** |
 | §3.5 | calibration at the first attempt | 0.85 | confirmed |
-| §3.6 | Macaulay2 = Singular on every shared slot | 0.95 | confirmed on `per_3` (all eight slots) and `det_3`; `det_4` slots: DET4_M2_SHORT |
+| §3.6 | Macaulay2 = Singular on every shared slot | 0.95 | confirmed on `per_3` (all eight slots) and `det_3`; `det_4` slots: slot 3 only (slot 4 did not finish) |
 
 Three refutations, two of them productive: the decisive slot went the other way
 with a closed-form reason, and a citation the programme had written off exists.
@@ -392,9 +415,6 @@ with a closed-form reason, and a citation the programme had written off exists.
   session's mathematics must not depend on them — was followed and remains
   sound, but the factual premise should be corrected, and the fetch-tool
   failure mode (`abs` empty, `html` fine) noted for future citation checks.
-- The s61 brief (§1) attributes the identity `det H_P = −(3/2)·x_0^8·per_3·det
-  H_{per_3}` to the integrator; consistent with `docs/s50_s55_integrator_notes.md`.
-  No change.
 - The brief's §1 says the `δ_7 > 0` separation "is the LMR dual-defect condition
   again"; correct. Its §2 asks whether "some lower slot `k ≤ 6` also violates"
   and answers, in effect, that if so it "might algebraize differently from
@@ -407,7 +427,7 @@ This session produced no `gct-cert/1` certificate: its claims are polar counts
 and one polynomial identity, none of which is a highest-weight-vector,
 matrix-rank or full-rank claim, and no cell reported `D > 0`. The verifier was
 run on the 50 committed certificates on this branch as a regression:
-VERIFY_DETAIL. The session's own reproducibility artefacts are the
+`PASS 50, FAIL 0, UNPARSEABLE 0, ERROR 0` (`results/logs/s61_verify.log`, `results/s61_verify_report.md`; a first attempt was ended with its launching shell after 37 passes and is kept as `s61_verify_attempt1.log`). The session's own reproducibility artefacts are the
 seeded generators (`wk9_s61_polar.py`, every draw from `random.Random` with the
 seeds in the logs), the generated scripts in `results/s61_sing/`, the raw logs,
 and `results/s61_profiles.json`; the characteristic-zero facts (§3.5, §3.6, the
@@ -419,7 +439,7 @@ conormal multidegree over `Q`) are re-runnable in under a minute each.
   also by the saturation count at four primes and three seeds; slots 5, 6, 7
   additionally by closed-form arguments. Slots 0–4 by Bézout.
 - `δ_k(det_4)`: closed form (smooth Segre) plus the saturation count at
-  `p = 2147483647` (Singular, all slots), `p = 1073741827` and `1000003` (msolve, all slots, three seeds), and Macaulay2 at slots DET4_M2_SLOTS. Not computed over `Q` by the conormal route
+  `p = 2147483647` (Singular, all slots), `p = 1073741827` and `1000003` (msolve, all slots, three seeds), and Macaulay2 at slot 3. Not computed over `Q` by the conormal route
   (32 variables).
 - The comparison uses the padded quartic in 16 variables through the cone/union
   lemma (proved in §4, measured directly in 10 variables and at slots 5–8 in

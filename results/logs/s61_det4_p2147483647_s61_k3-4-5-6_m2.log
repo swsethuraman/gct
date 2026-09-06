@@ -1,0 +1,7 @@
+# session 61 polar profile run det4_p2147483647_s61_k3-4-5-6_m2
+# form: det_4 of the generic 4x4 matrix, 16 variables
+# engine=m2 ks=[3, 4, 5, 6] prime=2147483647 seed=61 range=99 radical=0 sat=both
+# timeout 14000s, ulimit -v 6000000 kB
+FORM det4 nvars=16 char=2147483647 seed=61 degF=4 npartials=16
+COUNT form=det4 p=2147483647 seed=61 k=3 dim=1 degp=68 vdA=68 vdB=68 excess_dim=1 excess_deg=20 sec=88
+ended by recorded pid during slot 4 after 44 min (Macaulay2's saturate is far slower than Singular's sat on this ideal; slot 3 = 68 agrees; det_4 slots 4-7 are covered by Singular and msolve); lane E ended by recorded pid, its remaining pad16 Singular job not started (pad16 slots 5-8 are covered by msolve at two primes)
