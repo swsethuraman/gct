@@ -52,8 +52,10 @@ if __name__ == '__main__':
     s39, zeros = load_s39()
     rnd = random.Random(5757)
     # ---- V1
-    if '--skip-v1' not in args:
-        t0 = time.time(); cache = {}; bad = []; n = 0
+    box_cap = float(args[args.index('--box-cap') + 1]) if '--box-cap' in args else 2e6
+    cache = {}
+    if '--skip-v1' not in args and '--skip-v1a' not in args:
+        t0 = time.time(); bad = []; n = 0
         for lam in region_cells(10, 6):
             a39 = s39[(lam, 10)][0] if (lam, 10) in s39 else 0
             aw, _, _ = a_weyl_mod(lam, 10, 4, cache)
@@ -61,24 +63,31 @@ if __name__ == '__main__':
             if aw != a39: bad.append((lam, a39, aw))
         log(f"V1a: delta 10 ell 6: {n} cells, Weyl route disagreements {len(bad)} [{time.time()-t0:.0f}s]")
         out['V1a'] = dict(cells=n, disagreements=bad)
-        # sample across the other chunks (fewer at ell = 10, where the Weyl route is slow)
+    elif '--skip-v1a' in args:
+        out['V1a'] = dict(cells=1874, disagreements=[], note='from the first run, results/logs/s57_verify_v1a.log')
+    if '--skip-v1' not in args:
+        # sample across the other chunks, restricted to cells whose tail box is within box_cap
+        # (the Weyl route on balanced eight- and nine-row cells runs for hours; the restriction is stated in the report)
+        from wk9_s57_lib import box_size
         pool = []
         for d in (10, 11, 12):
             for ell in (6, 7, 8, 9, 10):
                 if (d, ell) == (10, 6): continue
-                cells = region_cells(d, ell)
-                k = max(1, nsample // 14) if ell < 10 else 2
+                cells = [l for l in region_cells(d, ell) if box_size(l, d) <= box_cap]
+                k = min(len(cells), max(1, nsample // 14) if ell < 10 else 2)
                 pool += [(lam, d) for lam in rnd.sample(cells, k)]
-        t0 = time.time(); bad = []
+        t0 = time.time(); bad = []; done_n = 0; skipped = []
         for lam, d in pool:
             a39 = s39[(lam, d)][0] if (lam, d) in s39 else 0
-            aw, _, _ = a_weyl_mod(lam, d, 4, cache, terms_cap=20000) if len(lam) < 10 else (None, 0, 0)
-            if aw is None:
-                try: aw, _, _ = a_weyl_mod(lam, d, 4, cache, terms_cap=20000)
-                except MemoryError: continue
+            try:
+                aw, _, _ = a_weyl_mod(lam, d, 4, cache, box_cap=box_cap, terms_cap=20000)
+            except MemoryError as e:
+                skipped.append((list(lam), d, str(e))); continue
+            done_n += 1
             if aw != a39: bad.append((lam, d, a39, aw))
-        log(f"V1b: sample of {len(pool)} cells across delta 10-12, ell 7-10: disagreements {len(bad)} [{time.time()-t0:.0f}s]")
-        out['V1b'] = dict(cells=len(pool), disagreements=bad, sample=[[list(l), d] for l, d in pool])
+            log(f"V1b: {lam} delta {d}: s39 {a39} weyl {aw} [{time.time()-t0:.0f}s]")
+        log(f"V1b: sample of {len(pool)} cells across delta 10-12, ell 7-10 (tail box <= {box_cap:.0e}): {done_n} computed, disagreements {len(bad)}, skipped {len(skipped)} [{time.time()-t0:.0f}s]")
+        out['V1b'] = dict(cells=done_n, disagreements=bad, skipped=skipped, box_cap=box_cap, sample=[[list(l), d] for l, d in pool])
     # ---- V2
     try:
         from ambient_screen import m_det as mdet_house, chi as chi_house

@@ -159,7 +159,9 @@ if __name__ == '__main__':
         W("## 7. Verification runs (`analysis/wk9_s57_verify.py`, `results/s57_cells/verify.json`)\n")
         v = verify
         if 'V1a' in v: W(f"- V1a: `a` at all {v['V1a']['cells']:,} cells of (δ, ℓ) = (10, 6) recomputed by the modular Weyl route: {len(v['V1a']['disagreements'])} disagreements with the s39 table.")
-        if 'V1b' in v: W(f"- V1b: a sample of {v['V1b']['cells']} cells across the other chunks of δ = 10–12: {len(v['V1b']['disagreements'])} disagreements.")
+        if 'V1b' in v:
+            cov = ", ".join("(" + k.replace("|", ", ") + "): " + str(n) for k, n in sorted(v['V1b'].get('coverage', {}).items()))
+            W(f"- V1b: a sample of {v['V1b']['cells']} cells across the other chunks (by (δ, ℓ): {cov}; tail box ≤ {v['V1b'].get('box_cap', 0):.0e}): {len(v['V1b']['disagreements'])} disagreements.")
         if 'V2' in v and 'rows' in v['V2']: W(f"- V2: `sk` by the house Python route at {len(v['V2']['rows'])} cells of δ = 10: {'all agree' if v['V2']['all_agree'] else 'DISAGREEMENT'} with the s39 table.")
         if 'V3a' in v: W(f"- V3: `a` non-decreasing up ladders at {v['V3a']['pairs']:,} consecutive pairs on {v['V3a']['ladders']:,} ladders: {len(v['V3a']['violations'])} violations; `h_pad` at {v['V3b']['pairs']:,} pairs: {len(v['V3b']['violations'])} violations.")
         if 'V4' in v: W(f"- V4: `a ≤ a_∞` at {v['V4']['cells']:,} cells with a stable value: {len(v['V4']['violations_le'])} violations; `a = a_∞` at the {v['V4']['stable_cells']:,} of them with δ ≥ |λ̄|: {len(v['V4']['violations_eq'])} violations.")

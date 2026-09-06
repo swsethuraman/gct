@@ -7,8 +7,9 @@ Deliverables: this report; `results/s57_selector.md` (the table, the nominee
 lists, the scores); `results/s57_cells/` (the banked per-cell data as
 `csv.gz`, the census counts, the ladder and criterion analyses as JSON);
 `analysis/wk9_s57_*.py`; logs `results/logs/s57_*`.  Every run bounded by
-`timeout` and `ulimit -v`, pid recorded; two runs were ended early by their
-recorded ids and are logged as such in `results/logs/s57_run_families.out`.
+`timeout` and `ulimit -v`, pid recorded; the runs that were ended early were
+ended by their recorded ids and are logged in
+`results/logs/s57_run_families.out`, together with one lapse (§7).
 Exact integer arithmetic throughout; every `a` by two routes or two moduli.
 Labels **proved** / **measured** / **adopted-from-literature** / **expectation**.
 No rank was measured this session and no `D` is reported.  Delivered as a
@@ -37,39 +38,42 @@ bundle; nothing pushed.
 > every cell of the ladder's stable range sees identically.
 
 > **What the record now says, permanently.**  Of the 326 measured cells
-> (210 six-row, 116 length-5; every one `mult_det = a`), <<N_IMPLIED>> were
+> (210 six-row, 116 length-5; every one `mult_det = a`), 93 (59 six-row, 34 length-5) were
 > implied by a lower cell of the same ladder with the same `a` before they were
 > measured.  Of the 100 six-row ladders the record touches, **34 are
 > permanently dead** — the measured `a` already equals `a_∞`, so
 > `i_det = 0` at every cell above the measurement, at every degree, and the
 > corresponding isotypic component of `I(M_6)` is zero (**proved** given the
 > measurements); the other 66 have room above (`a_∞ − a` from 1 to
-> <<MAX_ROOM>>).  The peaked ladders `(4δ − 2(ℓ−1), 2^{ℓ−1})` are dead at
+> 570 (median 13)).  The peaked ladders `(4δ − 2(ℓ−1), 2^{ℓ−1})` are dead at
 > every `ℓ ≤ 16` and every `δ ≥ ℓ` with **no measurement at all** (Theorem P,
 > **proved**: `a_∞ = 1`, the unique highest-weight vector is the bordered
 > discriminant `c·det G_2 − (3/8) g_1^T adj(G_2) g_1`, and it is nonzero at a
-> generic pencil).  That covers <<N_PEAKED_MEASURED>> of the record's cells,
-> including the thirteen `δ = 10` cells of s52.
+> generic pencil).  That covers nine of the record's cells — the peaked
+> `ℓ = 5` and `ℓ = 6` families at `δ = 6..10` — among them s52's
+> `(30,2^5)_{10}`, the cell the integrator and an external reviewer had named
+> as the single best next test.
 
 > **The criteria (Task 2/3).**  *Closeness* `sk/a` (K2) is refuted as a
-> prior: it ranks the known-dead cells first (median percentile <<K2_MED>> in
-> their slices; <<K2_Q>>% in the first quartile).  *Balance* (K1) has no
+> prior: it ranks the known-dead cells first (median percentile 0.16 in
+> their slices; 65% in the first quartile).  *Balance* (K1) has no
 > positive support anywhere: the one cell of the region with `i_det ≥ 1`, the
-> LMR cell `(65,17,2^7)_24`, is among the <<LMR_SKEW>> most skewed of the
+> LMR cell `(65,17,2^7)_24`, is among the 0.4% most skewed of the
 > 1,033,030 eligible weights of its slice, and K1's own first nominees at
 > `δ ≤ 7`, `ℓ ≤ 6` are dead or untested; it survives the record only because
 > the record is skewed by cost.  *LMR proximity* (K3) has exactly one positive
 > and nominates dead cells almost as often as K2.  *Frontier degree* (K4) is
 > the one criterion Proposition S justifies: the first stable cell of a ladder
-> tests its whole isotypic component of `I(M_ℓ)` at once, and the ladders of
-> tail weight 11 and 12 at `ℓ = 6` reach their stable range exactly at
-> `δ = 11, 12`.
+> tests its whole isotypic component of `I(M_ℓ)` at once; the open ladders of
+> tail weight 13–16 at `ℓ = 6` reach their stable values by `δ = 8–12`
+> (observed), so the frontier cells decide whole components of `I(M_6)`, and
+> the record has already closed every tail of weight `≤ 12`.
 
 > **The LMR ladder.**  `a((4δ − 31, 17, 2^7), δ)` runs
-> <<LMR_PROFILE>> for `δ = 12, …, 24`, and `a_∞((17,2^7)) = 274` — the ladder
-> is already stable at the LMR cell.  <<LMR_FORCING>>
+> 2, 39, 93, 145, 188, 219, 241, 255, 264, 269, 272, 273, 274 for `δ = 12, …, 24`, and `a_∞((17,2^7)) = 274` — the ladder
+> is already stable at the LMR cell.  The last increment is exactly one, so `a(23) = 273 < 274` and the downward forcing of Lemma L reaches no cell below 24: pre-registered P8 resolved in its stated default direction, and no equation of degree 23 follows.  What follows instead is `i_det(23) ≤ i_det(24) ≤ i_det(23) + 1` — the cell `(61,17,2^7)_{23}` is the sharpest single test of "nothing below 24", and it costs `n_χ~ ≈ 3.1·10^7` (`N_S = 1.564·10^{11}`), the same as the LMR cell itself, which is now sized at `N_S = 156,438,903,314`, `n_χ~ = 31,039,465`; the normalisation bound does not fire there (`h_pad ≥ 331 > 274`), so no pad kernel is forced at the LMR cell and the multiplicity comparison `D` there remains open.
 
-> **What to measure (for session 56).**  <<NOMINEE_SUMMARY>>
+> **What to measure (for session 56).**  Think in ladders, and measure one stable cell per ladder.  **T1** — the eleven *room-one* cells: ladders the record touches whose next cell adds exactly one highest-weight vector; seven are inside the dense frontier (`n_χ~` 5,485–19,239), six of those at a cell where `a = a_∞`, so each is a one-function test that either exhibits the first six-row equation or closes its ladder for every degree.  **T2** — the first stable cells of the open short ladders (tail weight 13–16): thirteen inside the dense frontier, seven at `ℓ = 6`, five at `ℓ = 7` and one at `ℓ = 8` — the `ℓ ≥ 7` ones are the cheapest measurements the programme has never made (`n_χ~` from 3,026).  **T3** — the LMR ladder at `δ = 21–24`, where `a` is within five of its stable value, for an engine that reaches `n_χ ≈ 3·10^7` or works on the slice (`K_∞/|Stab'| ≈ 1.4·10^6`).  **T4** — the balanced corner, unchanged in cost (`n_χ~ ≥ 1.3·10^6`) and now known to be where the pad ideal is forced first; only for the onset question.
 
 ---
 
@@ -238,8 +242,10 @@ named as the single best next test before s52 measured it — and every peaked
 cell of the region at `ℓ = 6..10`, `δ ≤ 24`, with no further measurement.
 The same index-counting shows that *any* tail `(x, 2^{ℓ−2})` with `x ≥ 3` is
 `det^2 ⊗ S_{(x−2)}`, a covariant with two `ε`'s and `x − 2` free indices; the
-LMR tail `(17, 2^7)` is the case `x = 17`, `ℓ = 9`, and LMR's equation is such
-a covariant of degree 15 built from an `8 × 8` bordered-Hessian minor.
+LMR tail `(17, 2^7)` is the case `x = 17`, `ℓ = 9`: LMR's equation is such a
+covariant of degree 15 (their construction takes `(k+2) × (k+2)` minors of
+the Hessian; that the two `ε`'s are that minor is a reading of the weight, not
+a re-derivation of their construction).
 
 ---
 
@@ -254,13 +260,13 @@ committed).  Coverage, as pre-registered:
 - **C1** the census: 12,707,460 eligible cells in the 75 `(δ, ℓ)` chunks
   (`ℓ = 6..10`, `δ = 10..24`), exact; at `δ = 10, 11, 12` the counts agree with
   the s39 candidate counts chunk by chunk (V6).
-- **C2** every cell of `δ = 10, 11, 12` — 71,501 cells, 69,967 with `a ≥ 1` —
+- **C2** every cell of `δ = 10, 11, 12` — 71,501 cells, 64,357 with `a ≥ 1` —
   with all columns: `a` and `sk` from the s39 engine table (`a` re-verified at
   all 1,874 cells of `(10, 6)` and a sample across the other chunks by the
   modular Weyl route, V1; `sk` at three cells by the house Python route, V2),
   `h_pad` by the C engine at `d = 3` over the Pieri strips, `N_S` exact by the
   two-prime tail DP wherever the DP cost was within the cap or the merged
-  lower bound left the cell inside the sparse frontier (<<N_EXACT>> of the
+  lower bound left the cell inside the sparse frontier (15,695 of the
   69,967 cells; the rest carry the lower bound and the status `lb`), `n_χ~`,
   balance, `|Stab|`, the pad-forced kernel `max(0, a − h_pad)`, the Lemma-A flag
   `h_pad = 0`, and — from Lemma L against the record — the transport status
@@ -319,7 +325,7 @@ the obstruction question is not.)
 **The dense frontier at `ℓ = 6` is nearly exhausted by theorem.**  Of the 51
 cells of `(10, 6)` with `n_χ~ ≤ 20,000`, 34 are dead by transport from the
 record, 14 are bounded with room 1–13, and 3 are unconstrained with `a ≤ 3`;
-the same holds at `δ = 11, 12` (<<DENSE_11_12>>).  What is left inside the old
+the same holds at `δ = 11, 12` (48 dense cells at `δ = 11` of which 15 are not dead by transport (13 bounded, 2 unconstrained, `a` up to 24, five with room 1); 47 at `δ = 12` of which 14 (13 bounded, 1 unconstrained, `a` up to 25, five with room 1)).  What is left inside the old
 frontier is a short list of one- and few-function tests (§5).
 
 **`sk` dominates `a` everywhere and the cheap cells are the tight ones**, as
@@ -332,7 +338,7 @@ this).  `a`: 2, 39, 93, 145, 188, 219, 241, 255, 264, 269, 272, 273, 274 for
 `a_∞((17,2^7)) = 274` (Proposition S), so the ladder is stable from `δ = 24`
 on — one step above the threshold at which the known equation lives.  `sk`:
 2,714, 15,383, 26,654, 35,340, 41,463 at `δ = 12..16` (`≥ 41,463` at 24 by
-transport).  `h_pad`: 15, 73, 159, 251, 331 at `δ = 12..16`, so `h_pad(24) ≥ 331
+transport).  `h_pad`: 10, 73, 159, 251, 331 at `δ = 12..16`, so `h_pad(24) ≥ 331
 > 274 = a(24)`: the normalisation bound does **not** fire at the LMR cell
 (pre-registered P9 refuted by transport, no pad-forced kernel there).  `N_S`:
 `8.09·10^{10}` at `δ = 13` rising to `1.564·10^{11}` at `δ = 23` and
@@ -342,6 +348,29 @@ transport).  `h_pad`: 15, 73, 159, 251, 331 at `δ = 12..16`, so `h_pad(24) ≥ 
 slice `Z` the same isotypic computation has `K_∞ = 7,212,907,703` monomials,
 `K_∞/|Stab'| ≈ 1.43·10^6`: a factor 20 cheaper than the cell, still a factor
 10 beyond the sparse route.
+
+**A regularity across the LMR family (F3), not pre-registered.**  On the
+ladder of every LMR shape the stable value is reached *exactly* at the LMR
+degree, and the last step is exactly one:
+
+| k | ℓ | tail | a_∞ | a at δ = 3(k+2) − 1 | a at the LMR degree 3(k+2) | first stable δ observed | bound `|λ̄|` |
+|---|---|---|---|---|---|---|---|
+| 3 | 6 | `(11,2^4)` | 49 | 48 (δ = 14) | **49** (δ = 15) | 15 | 19 |
+| 4 | 7 | `(13,2^5)` | 94 | 93 (δ = 17) | **94** (δ = 18) | 18 | 23 |
+| 5 | 8 | `(15,2^6)` | 166 | 165 (δ = 20) | **166** (δ = 21) | 21 | 27 |
+| 6 | 9 | `(17,2^7)` | 274 | 273 (δ = 23) | **274** (δ = 24) | 24 | 31 |
+
+So `λ(k,4)` is, for `k = 3..6`, the first stable cell of its ladder, and the
+LMR degree `3(k+2)` is the degree at which the *last* highest-weight vector of
+its tail is born — the vector of maximal ordinary degree in the
+`λ̄`-isotypic part of `C[Z]`.  For `k ≥ 6` that vector (or the one new
+direction it spans, modulo `c`-multiples of lower ones) is the LMR equation;
+for `k = 3, 4, 5` the same last-born vector exists and does not vanish on
+`D_ℓ` (s55).  This is measured at four values of `k`, not proved; it predicts
+`a((69,19,2^8), 26) = 428` and `a((73,19,2^8), 27) = 429 = a_∞((19,2^8))` at
+`k = 7`, `ℓ = 10`, where the ladder is tabulated only to `δ = 16` (`a = 167`)
+because the Weyl route at ten rows was capped — a cheap check for a later
+session (**expectation**).
 
 ---
 
@@ -373,7 +402,7 @@ percentile 0.9954, rank 1,028,287 of 1,033,030 — only 3,869 cells of its slice
 are more skewed.  This is the wrong direction, by a wide margin, and it is not
 an accident of one weight: LMR's equations for `Dual_{k,d,N}` are of weight
 `det^2 ⊗ S_{(2k+3)}` in the tail, i.e. two `ε`'s and a covariant of positive
-degree, and every such module is maximally skewed for its length.
+degree, and every such module is extremely skewed for its length.
 (b) The record's dead cells sit in the skewed half of K1 (median percentile
 0.84; 9% in the first quartile), which is consistent with K1 but says nothing,
 because the record was selected by cost and cost rises with balance.
@@ -393,10 +422,10 @@ begins at `δ' = 3δ`.  They are the cells that see the smallest fraction of
 their ladder's eventual highest-weight space (`a` at the bottom against
 `a_∞`: e.g. tail `(4^5)`, `a = 2` at `δ = 7` against `a_∞ = 13`).  A kernel
 there would be a highest-weight vector whose dehomogenisation has ordinary
-degree `δ` far below its tail weight `3δ` — possible, but the opposite of every
-equation family that is known (LMR: degree 24 against tail weight 31; the
-bordered discriminants: degree `ℓ` against `2(ℓ−1)`; the Macaulay cap
-equations: degree 661 against tail weights in the thousands).
+degree `δ` far below its tail weight `3δ` — possible, but the opposite of the
+equation families whose types are known (LMR: degree 24 against tail weight
+31; the bordered discriminants: degree `ℓ` against `2(ℓ−1)`; the isotypic
+types of the degree-661 cap equations are not on record).
 
 *Verdict:* no positive support anywhere; the one positive points the other
 way; the balanced corner remains untested for the same reason it always was
@@ -450,6 +479,12 @@ single vector born there; or it is live, in which case an equation of degree
 23 exists at `ℓ = 9`.  The cell `(61,17,2^7)_{23}` is therefore the sharpest
 single test of "nothing below 24" that exists, and its cost is sized in §5.
 
+(e) The regularity of §2: at every `k = 3..6` the LMR cell is the first
+stable cell of its ladder and the LMR degree is where the last highest-weight
+vector of the tail is born.  Whatever the LMR construction is doing, it is
+producing the *top-degree* vector of its isotypic type, which is a statement
+about ladders, not about proximity in shape.
+
 *Verdict:* supported by one cell whose mechanism is proved absent below
 `ℓ = 9`; as an ordering it fails the record like K2.  Its content is better
 carried by the ladder: the cells `(4δ − 31, 17, 2^7)` for `δ` just below 24
@@ -480,24 +515,98 @@ measured, the first stable cells of the shortest open ladders cost
 The operational form of Lemma L: rank cells by the number of highest-weight
 vectors not obtained from a dead cell below.  Its nominees coincide with the
 *next-room cells* of the record's ladders (`results/s57_selector.md` §4.1):
-66 ladders touched by the record have room above, and at 22 of them the next
-cell adds exactly **one** vector, five of those inside the dense frontier at
-`δ = 10`: `(26,6,2,2,2,2)` (`n_χ~` 5,485, `a = 9 = a_∞`), `(22,12,3,1,1,1)`
-(9,800, `a = 4 = a_∞`), `(21,13,3,1,1,1)` (11,489), `(23,11,2,2,1,1)`
-(15,924, `a = 6 = a_∞`), `(23,9,5,1,1,1)` (19,239, `a = 13 = a_∞`).  Each is a
-one-function test; a dead verdict at a stable one closes its ladder for good.
+66 ladders touched by the record have room above, and at 11 of them the next
+cell adds exactly **one** vector, seven of those inside the dense frontier:
+`(26,6,2,2,2,2)_{10}` (`n_χ~` 5,485, `a = 9 = a_∞`), `(22,12,3,1,1,1)_{10}`
+(9,800, `a = 4 = a_∞`), `(22,7,2,2,2,1)_9` (9,928, `a = 7 = a_∞`),
+`(21,13,3,1,1,1)_{10}` (11,489), `(23,11,2,2,1,1)_{10}` (15,924,
+`a = 6 = a_∞`), `(19,4,3,2,2,2)_8` (16,593, `a = 2 = a_∞`), `(23,9,5,1,1,1)_{10}`
+(19,239, `a = 13 = a_∞`).  Each is a one-function test; a dead verdict at a
+stable one closes its ladder for good.
 
 ---
 
 ## 4. Task 3 — the score against the negative record
 
-<<SCORE_SECTION>>
+The machinery and its caveat are in §3.  Percentiles of the 324 eligible dead cells in their `(δ, ℓ)` slices (0 = the criterion's first nominee; the two onset-only dead cells `(4^6)_6` and `(6,6,6,6,2,2)_7` lie outside every eligible slice):
+
+| criterion | min | q1 | median | q3 | max | in first quartile | in first decile | ranked first in its slice |
+|---|---|---|---|---|---|---|---|---|
+| K1 balance | 0.000 | 0.567 | 0.840 | 0.962 | 0.999 | 9% | 3% | 0.3% |
+| K2 closeness `sk/a` | 0.000 | 0.066 | 0.163 | 0.310 | 0.838 | 65% | 34% | 2.8% |
+| K3 LMR shape | 0.000 | 0.140 | 0.323 | 0.533 | 0.996 | 41% | 19% | 0.9% |
+
+Per slice, the first nominee of each criterion and whether it is already dead (`results/s57_selector.md` §6.1 has every slice):
+
+| (δ, ℓ) | slice | dead | K1 first (balance) | dead? | K2 first (`sk/a`) | dead? | K3 first | dead? |
+|---|---|---|---|---|---|---|---|---|
+| (6, 5) | 105 | 44 | `(6,6,4,4,4)` (2) | no | `(16,2,2,2,2)` (8) | yes | `(10,8,2,2,2)` | no |
+| (7, 5) | 238 | 48 | `(7,7,5,5,4)` (3) | no | `(20,2,2,2,2)` (8) | yes | `(13,9,2,2,2)` | yes |
+| (8, 5) | 434 | 12 | `(8,6,6,6,6)` (2) | no | `(24,2,2,2,2)` (8) | yes | `(17,9,2,2,2)` | no |
+| (9, 5) | 705 | 12 | `(9,7,7,7,6)` (3) | no | `(28,2,2,2,2)` (8) | yes | `(21,9,2,2,2)` | no |
+| (6, 6) | 58 | 15 | `(6,4,4,4,4,2)` (4) | no | `(14,2,2,2,2,2)` (13) | yes | `(8,8,2,2,2,2)` | yes |
+| (7, 6) | 258 | 72 | `(7,6,4,4,4,3)` (4) | no | `(18,2,2,2,2,2)` (13) | yes | `(10,10,2,2,2,2)` | yes |
+| (8, 6) | 591 | 67 | `(8,6,6,4,4,4)` (4) | no | `(22,2,2,2,2,2)` (13) | yes | `(13,11,2,2,2,2)` | no |
+| (9, 6) | 1079 | 41 | `(9,6,6,6,5,4)` (5) | no | `(26,2,2,2,2,2)` (13) | yes | `(17,11,2,2,2,2)` | no |
+| (10, 6) | 1793 | 13 | `(10,6,6,6,6,6)` (4) | no | `(30,2,2,2,2,2)` (13) | yes | `(21,11,2,2,2,2)` | no |
+
+Reading.  **K2 is refuted**: its first nominee is dead in every one of the nine measured slices, 65% of the dead cells sit in its first quartile, and the one live cell has `sk/a` in the hundreds.  **K3 fails the same test** at three of the nine slices and nominates dead cells at 41% in the first quartile; its single positive is the cell it was built from.  **K1 is consistent with the record** (median 0.84, 9% in the first quartile) but *only* because the record is skewed by cost; its first nominees are unmeasured in every slice except `(7, 6)`, where the tie at balance 4 contains the dead `(8,4,4,4,4,4)`; and the one live cell is in its last half-percent.  None of the three would have picked the LMR cell out of its slice of a million; K3 picks it by construction and nothing else.
+
+The stronger reading of the record is the one Lemma L and Proposition S give: 93 of the 326 cells were implied before they were measured, 34 six-row ladders are closed for every degree, all seven six-row tails of weight `≤ 12` with a highest-weight vector are closed (`m_0(6) ≥ 13`), and the remaining 66 touched ladders have their next new vector at `δ ≤ 10`.  That is a statement about tails, not about balance or closeness, and it is what the nominees in §5 are built on.
 
 ---
 
 ## 5. The prior, and the nominees
 
-<<NOMINEES_SECTION>>
+**The prior, stated.**  A rank drop at `(λ, δ)` is a highest-weight vector of tail weight `λ̄` and ordinary degree `δ` vanishing on `D_ℓ`.  By Proposition S every such vector is, for `δ ≥ |λ̄|` (and in practice from the first `δ` at which `a = a_∞`), an equation of the affine variety `M_ℓ` of characteristic polynomials of traceless pencils, seen identically at every cell of its ladder; below that it is a "projective" vector confined to the non-stable segment.  The equations of `D_ℓ` whose types are known are of the first kind (LMR at tail weight 31 for `ℓ ≥ 9`; the bordered discriminants, which do not vanish; the types of the degree-661 cap equations are not on record), and the record proves that `I(M_6)` has no component of tail weight `≤ 12`.  So:
+
+1. *Measure ladders, not cells*: one cell per ladder, the cheapest at which `a = a_∞`, decides the ladder for every degree; a second cell on the same ladder is redundant (Lemma L).  Fifty-nine of the record's 210 six-row cells were such repeats.
+2. *Order ladders by tail weight*, lowest first, skipping the closed ones and the `a_∞ = 0` ones (which carry no vector at all — 346 of the 481 tails of weight `≤ 16`).  The first open tail weights are 13–16 at `ℓ = 6`, 13 at `ℓ = 7`, 15 at `ℓ = 8`, and above 16 at `ℓ = 9, 10` (the LMR tail is at 31).
+3. *Within a tail weight, by cost*; the cheap cells are the skewed ones, and skewness is no longer a bias, since a stable cell of a skewed weight tests the same isotypic component of `I(M_ℓ)` as any other cell of its ladder.
+4. *Prefer cells where the new room is one* (Lemma L): a single function to test, and a dead verdict closes the ladder if the cell is stable.
+5. *Carry the pad side*: the nominated cells below all have `h_pad ≥ a` (no forced pad kernel), so a determinant kernel there is an obstruction candidate in the same measurement, unlike the balanced corner where the pad ideal is forced to hold almost everything.
+
+**T1 — room-one cells** (ladders the record touches; the next cell adds exactly one highest-weight vector).  A dead verdict at a cell with `a = a_∞` closes the ladder.
+
+| tail | a_∞ | top dead (δ, a) | cell | δ | a | stable? | h_pad | n_χ~ | reach |
+|---|---|---|---|---|---|---|---|---|---|
+| `(6,2,2,2,2)` | 9 | (9, 8) | `(26,6,2,2,2,2)` | 10 | 9 | yes | 28 | 5,485 | dense |
+| `(12,3,1,1,1)` | 4 | (9, 3) | `(22,12,3,1,1,1)` | 10 | 4 | yes | 6 | 9,800 | dense |
+| `(7,2,2,2,1)` | 7 | (8, 6) | `(22,7,2,2,2,1)` | 9 | 7 | yes | 29 | 9,928 | dense |
+| `(13,3,1,1,1)` | 4 | (9, 2) | `(21,13,3,1,1,1)` | 10 | 3 | no | 6 | 11,489 | dense |
+| `(11,2,2,1,1)` | 6 | (9, 5) | `(23,11,2,2,1,1)` | 10 | 6 | yes | 17 | 15,924 | dense |
+| `(4,3,2,2,2)` | 2 | (7, 1) | `(19,4,3,2,2,2)` | 8 | 2 | yes | 10 | 16,593 | dense |
+| `(9,5,1,1,1)` | 13 | (9, 12) | `(23,9,5,1,1,1)` | 10 | 13 | yes | 29 | 19,239 | dense |
+| `(7,3,3,1,1)` | 6 | (8, 5) | `(21,7,3,3,1,1)` | 9 | 6 | yes | 25 | 28,465 | sparse |
+| `(6,4,2,1,1)` | 5 | (7, 4) | `(18,6,4,2,1,1)` | 8 | 5 | yes | 30 | 28,466 | sparse |
+| `(5,3,3,2,1)` | 2 | (7, 1) | `(18,5,3,3,2,1)` | 8 | 2 | yes | 13 | 68,255 | sparse |
+| `(4,4,3,2,1)` | 2 | (7, 1) | `(18,4,4,3,2,1)` | 8 | 2 | yes | 14 | 78,267 | sparse |
+
+**T2 — first stable cells of the open short ladders** (tail weight 13–16, `a_∞ ≥ 1`, not closed, not peaked), inside the dense frontier.  Each decides its tail's component of `I(M_ℓ)` for every degree.  The `ℓ = 7, 8` rows are the first cells at those lengths anyone would measure, and they are cheap.
+
+| ℓ | tail | \|λ̄\| | a_∞ | cell | δ | a | sk | h_pad | n_χ~ | K_∞/\|Stab'\| |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 7 | `(3,2,2,2,2,2)` | 13 | 1 | `(27,3,2,2,2,2,2)` | 10 | 1 | 50 | 4 | 3,026 | 362 |
+| 6 | `(6,2,2,2,2)` | 14 | 9 | `(26,6,2,2,2,2)` | 10 | 9 | 410 | 28 | 5,485 | 625 |
+| 7 | `(4,2,2,2,2,2)` | 14 | 3 | `(26,4,2,2,2,2,2)` | 10 | 3 | 179 | 9 | 6,695 | 761 |
+| 6 | `(7,2,2,2,2)` | 15 | 12 | `(29,7,2,2,2,2)` | 11 | 12 | 640 | 42 | 8,871 | 934 |
+| 7 | `(4,2,2,2,2,1)` | 13 | 1 | `(27,4,2,2,2,2,1)` | 10 | 1 | 179 | 6 | 9,545 | 1,137 |
+| 6 | `(7,2,2,2,1)` | 14 | 7 | `(26,7,2,2,2,1)` | 10 | 7 | 533 | 30 | 10,228 | 1,156 |
+| 8 | `(3,2,2,2,2,2,2)` | 15 | 1 | `(25,3,2,2,2,2,2,2)` | 10 | 1 | 63 | 4 | 11,205 | 1,199 |
+| 7 | `(5,2,2,2,2,2)` | 15 | 4 | `(25,5,2,2,2,2,2)` | 10 | 4 | 385 | 16 | 13,129 | 1,403 |
+| 6 | `(8,2,2,2,2)` | 16 | 21 | `(32,8,2,2,2,2)` | 12 | 21 | 1046 | 60 | 13,618 | 1,357 |
+| 6 | `(8,2,2,2,1)` | 15 | 11 | `(25,8,2,2,2,1)` | 10 | 11 | 812 | 42 | 15,148 | 1,609 |
+| 6 | `(4,3,2,2,2)` | 13 | 2 | `(27,4,3,2,2,2)` | 10 | 2 | 270 | 10 | 17,344 | 2,080 |
+| 7 | `(5,2,2,2,2,1)` | 14 | 2 | `(26,5,2,2,2,2,1)` | 10 | 2 | 427 | 11 | 18,328 | 2,071 |
+| 6 | `(4,4,2,2,2)` | 14 | 6 | `(26,4,4,2,2,2)` | 10 | 6 | 539 | 16 | 18,859 | 2,159 |
+
+The full T2 list (101 open short ladders, of which 88 are beyond the dense frontier) is in `results/s57_selector.md` §5; the sparse-route band (`n_χ~ ≤ 120,000`) adds a further 53 cells.
+
+**T3 — the LMR ladder.**  `a` is within five of its stable value from `δ = 21`; the cells `(4δ − 31, 17, 2^7)` for `δ = 21..24` have `n_χ~` from 30,977,102 to 31,039,465 (`N_S ≈ 1.56·10^{11}`), and the same isotypic computation on the slice `Z` has `K_∞/|Stab'| ≈ 1.43·10^6`.  Nothing the programme has reaches either number; the slice formulation is the cheaper by a factor twenty and is the one an engine for this ladder should be built on.  What the ladder would settle: at `δ = 23`, whether a degree-23 equation exists at `ℓ = 9` (the sharpest form of s55's "nothing below 24"); at `δ = 24`, `i_det` and `i_pad` at the one cell where a determinant kernel is known, hence whether the known separation is also a multiplicity obstruction — the question s50 §2 left open.
+
+**T4 — the balanced corner** (`ℓ = 6`, `δ = 8..12`, the K1 first nominees): `(8,6,6,4,4,4)_8` (`a = 4`, `h_pad = 1`, `n_χ~ ≈ 9.9·10^6`), `(8,8,4,4,4,4)_8` (`a = 5`, `h_pad = 1`, `1.7·10^6`), `(10,6,6,6,6,6)_{10}` (`a = 5`, `h_pad = 1`, `≥ 1.3·10^6`), and at `δ = 9, 11, 12` cells with `h_pad = 0` that Lemma A excludes from the obstruction ranking.  Unchanged in cost since s41, no positive evidence, and the pad ideal is forced to hold nearly all of `a` there; nominated for the onset question only, and last.
+
+**What would move the prior.**  A kernel at any T1 or T2 cell is the six-row (or seven-row) onset and its tail weight is the weighted onset `m_0(ℓ)`; that would say the first equations of `M_ℓ` are of low tail weight and skewed — the LMR pattern.  All of T1 and T2 dead would prove `m_0(6) ≥ 17` and push the search to tail weights 17–20 (still cheap at the stable end) while making the balanced, low-degree regime the only place a six-row equation of degree `≤ 12` could hide; that regime is priced above `10^6` and has been for six sessions.
 
 ---
 
@@ -505,18 +614,18 @@ one-function test; a dead verdict at a stable one closes its ladder for good.
 
 | # | prediction (prior) | outcome |
 |---|---|---|
-| P1 | s39 `a` reproduces by the Weyl route at all 1,874 cells of `(10, 6)` and a sample elsewhere (0.95) | **<<P1>>** |
-| P2 | K2 refuted as a closeness prior: ≥ 90% of the dead six-row cells in K2's first quartile (0.85) | **substance confirmed, threshold missed**: 65% in the first quartile, 34% in the first decile, and K2's first nominee is dead in every measured slice; the 90% was too strong because the balanced `ℓ = 5` stratum of s36 and the `(λ_1,λ_2,λ_3,1,1,1)` cells sit mid-slice |
+| P1 | s39 `a` reproduces by the Weyl route at all 1,874 cells of `(10, 6)` and a sample elsewhere (0.95) | **confirmed**: 1,874 of 1,874, and 26 of 26 in a sample across `(10, 7..10)` and `(11, 6..8)` restricted to tail boxes `≤ 2·10^6` (the sample run was ended by its recorded id when the eight- and nine-row cells of `δ = 11, 12` took over seven minutes each); `sk` reproduced by the house Python route at three cells (V2) |
+| P2 | K2 refuted as a closeness prior: ≥ 90% of the dead six-row cells in K2's first quartile (0.85) | **substance confirmed, threshold missed**: 65% in the first quartile, 34% in the first decile, and K2's first nominee is dead in every measured slice; the 90% was too strong because many measured cells — s36's balanced `ℓ = 5` stratum, the `(λ_1,λ_2,λ_3,1,1,1)` family — have mid-slice `sk/a` |
 | P3 | the LMR cell in the last K1 decile of its slice (0.85) | **confirmed**, percentile 0.9954 |
 | P4 | dead cells mostly in the skewed half of K1 (median > 0.5); K1's first nominee at `(7, 6)` dead (0.8) | **confirmed on the median** (0.84); the `(7, 6)` nominee is a three-way tie at balance 4 of which one member, `(8,4,4,4,4,4)`, is dead and two are unmeasured |
 | P5 | ≥ 40% of the 210 six-row dead cells implied by a lower dead cell with equal `a` (0.6) | **refuted**: 59 of 210 (28%); 34 of the 116 length-5 cells |
-| P6 | ≥ 40 cells of `δ = 10–12` dead by transport, including every peaked `ℓ = 6` cell (0.8) | **confirmed**: <<P6>> |
+| P6 | ≥ 40 cells of `δ = 10–12` dead by transport, including every peaked `ℓ = 6` cell (0.8) | **confirmed**: 34 at each of `δ = 10, 11, 12` at `ℓ = 6` (114 region cells in all with the family cells), every `ℓ = 6` peaked cell among them |
 | P7 | LMR ladder `a` non-decreasing, `a(24) = 274` (0.95) | **confirmed**, both |
 | P8 | `a(23) < 274` (0.5), the alternative forcing a degree-23 equation | **the stated default holds**: `a(23) = 273`; no equation below 24 follows; the increment at the last step is exactly one |
 | P9 | `h_pad(LMR cell) < 274` (0.7) | **refuted by transport**: `h_pad(16) = 331` and `h_pad` is non-decreasing up the ladder, so `h_pad(24) ≥ 331 > 274`; no pad-forced kernel at the LMR cell |
 | P10 | `sk/a ≥ 10` on every F1 cell with `sk` (0.9) | **confirmed**: 1,357, 394, 287, 244, 221 at `δ = 12..16` |
 | P11 | peaked ladders `a = 1`, `sk` constant `8, 13, 18, 21, 21, 18`; `ℓ = 6` dead by transport, `ℓ ≥ 7` unconstrained (0.9) | **confirmed and superseded**: the values hold at every tabulated `δ`, and Theorem P makes all of them dead at every `ℓ ≤ 16` without measurement |
-| P12 | `ℓ = 6`, `δ = 11, 12`: fewer than 40 dense cells not dead by transport, all with `a ≤ 3` (0.6) | **half right**: 15 at `δ = 11` and <<P12_12>> at `δ = 12`, but their `a` runs up to 24 (`(28,8,2^4)_{11}`, room 9) — the cheap cells are not all rigid |
+| P12 | `ℓ = 6`, `δ = 11, 12`: fewer than 40 dense cells not dead by transport, all with `a ≤ 3` (0.6) | **half right**: 15 at `δ = 11` and 14 at `δ = 12`, but their `a` runs up to 24 (`(28,8,2^4)_{11}`, room 9) — the cheap cells are not all rigid |
 | P13 | no criterion has positive support except K3's one cell (0.7) | **confirmed as stated**, but the outcome is not the brief's "acceptable" one: Lemma L and Proposition S supply a prior with a mechanism (§5), and the record already proves `m_0(6) ≥ 13` |
 
 Two things were decided after the pre-registration and are flagged: Proposition
@@ -558,9 +667,19 @@ cut short by cost.
 - **`h_pad` on the LMR ladder above `δ = 16`** is pending; the P9 verdict uses
   monotonicity, which is proved (Lemma L for the normalisation ring).
 - **Nothing here is an obstruction.**  No rank was measured; the nominees are
-  where to measure, with reasons; `D` is not reported anywhere.
+  where to measure, with reasons; `D` is not reported anywhere.  No
+  certificate was produced, so `tools/verify/` had nothing to check; its
+  self-test was run on this tree and passes (`results/logs/s57_verify_selftest.log`).
 - **The criteria scores are against a record selected by cost**, and the
   report says in §3 why that makes "dead cells rank low" a weak test.
+- **Verification** (`analysis/wk9_s57_verify.py`, `results/s57_cells/verify.json`):
+  V1 as in P1; V2 `sk` by the house route at three cells, all agree; V3 `a`
+  non-decreasing up ladders at 43,090 consecutive pairs on 37,276 ladders and
+  `h_pad` at 31,551 pairs, no violation (Lemma L on the data); V4 `a ≤ a_∞` at
+  750 cells with a stable value and `a = a_∞` at all 64 of them with
+  `δ ≥ |λ̄|`, no violation (Proposition S on the data); V5 the 48 family cells
+  with both `a` routes agree; V6 the census counts equal the s39 candidate
+  counts at `δ = 10–12`.
 
 ---
 

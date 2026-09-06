@@ -395,3 +395,13 @@ The one known live cell, `(65,17,2,2,2,2,2,2,2)` at δ = 24 (ℓ = 9): balance 6
 | (11, 10) | 3,701 | 0 | `(11,4,4,4,4,4,4,4,3,2)` (9) | no | `(26,2,2,2,2,2,2,2,2,2)` (18) | no | `(14,14,2,2,2,2,2,2,2,2)` | no | 0 |
 | (12, 10) | 7,840 | 0 | `(12,4,4,4,4,4,4,4,4,4)` (8) | no | `(30,2,2,2,2,2,2,2,2,2)` (18) | no | `(16,16,2,2,2,2,2,2,2,2)` | no | 0 |
 
+## 7. Verification runs (`analysis/wk9_s57_verify.py`, `results/s57_cells/verify.json`)
+
+- V1a: `a` at all 1,874 cells of (δ, ℓ) = (10, 6) recomputed by the modular Weyl route: 0 disagreements with the s39 table.
+- V1b: a sample of 26 cells across the other chunks (by (δ, ℓ): (10, 10): 2, (10, 7): 4, (10, 8): 4, (10, 9): 4, (11, 6): 4, (11, 7): 4, (11, 8): 4; tail box ≤ 2e+06): 0 disagreements.
+- V2: `sk` by the house Python route at 3 cells of δ = 10: all agree with the s39 table.
+- V3: `a` non-decreasing up ladders at 43,090 consecutive pairs on 37,276 ladders: 0 violations; `h_pad` at 31,551 pairs: 0 violations.
+- V4: `a ≤ a_∞` at 750 cells with a stable value: 0 violations; `a = a_∞` at the 64 of them with δ ≥ |λ̄|: 0 violations.
+- V5: family cells with both `a` routes: 48, disagreements 0.
+- V6: census counts vs the s39 candidate counts at δ = 10–12: 0 mismatches.
+
