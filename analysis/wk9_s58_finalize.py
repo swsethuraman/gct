@@ -44,10 +44,30 @@ if 'LONGWEIGHT_PLACEHOLDER' in s:
     s = s.replace('| **the long-weight screen (s39), lengths 6–10, δ = 8–12, `N` up to 48** | see §3a | see §3a |',
                   '| **the long-weight screen (s39), lengths 6–10, δ = 8–12, `N` up to 48** | **%d** | **%d** |' % (tot, bad))
     open(rep, 'w').write(s)
+# the boundary family (integrator's note) into the calibration file too
+brows = json.load(open(os.path.join(ROOT, 'results', 's58_boundary.json')))
+bl = ["| `k` | `m` | `δ` | `N` | `λ` | `g` | `sk` | integrator | brute | house | s39 engine |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+nb = 0
+for r in brows:
+    def col(key, agree):
+        if key not in r:
+            return '—'
+        v = r[key]
+        v = v[0] if isinstance(v, list) and key == 'integrator' else (v[2] if isinstance(v, list) else v)
+        return "%s %s" % (v, '✓' if r.get(agree) else '**✗**')
+    nb += not all(r.get(k_, True) for k_ in ('pieri_agree', 'integrator_agree', 'brute_agree', 'house_agree', 's39_agree'))
+    bl.append("| %d | %d | %d | %d | `(%s)` | %d | **%d** | %s | %s | %s | %s |" % (
+        r['k'], r['m'], r['delta'], r['N'], ','.join(map(str, r['lam'])), r['g'], r['sk'],
+        ("%d/%d %s" % (r['integrator'][0], r['integrator'][1], '✓' if r['integrator_agree'] else '**✗**')) if 'integrator' in r else '—',
+        col('brute', 'brute_agree'), col('house', 'house_agree'), col('s39_engine', 's39_agree')))
+btext = ("The family `(3k+2m, k, 2^m)`, `δ = k+m`, on which `2δ = |ρ| + ρ₁` holds with equality as at the LMR cell "
+         "(`k = 17, m = 7`); the integrator's nine direct-sum values and ten larger members against the direct routes in reach "
+         "(`results/s58_boundary.json`): **%d cells, %d disagreements**.\n\n" % (len(brows), nb)) + "\n".join(bl) + "\n"
 cal = os.path.join(ROOT, 'results', 's58_calibration.md')
 c = open(cal).read()
 if '## The long-weight screen' not in c:
-    c = c.replace("\nNo disagreement anywhere.\n", "\n## The long-weight screen (s39), every banked cell\n\n" + text + "\nNo disagreement anywhere.\n")
+    c = c.replace("| lam with > 16 rows vanish without the shortcut |", "| the boundary family (3k+2m, k, 2^m), delta = k+m, N = 12..64 | %d | **%d** |\n| the long-weight screen (s39), lengths 6-10, delta 8-12, N up to 48 | %d | **%d** |\n| lam with > 16 rows vanish without the shortcut |" % (len(brows), nb, tot, bad))
+    c = c.replace("\nNo disagreement anywhere.\n", "\n## The boundary family (integrator's note)\n\n" + btext + "\n## The long-weight screen (s39)\n\n" + text + "\nNo disagreement anywhere.\n")
     open(cal, 'w').write(c)
 note = os.path.join(ROOT, 'docs', 'session_58.md')
 t = open(note).read()

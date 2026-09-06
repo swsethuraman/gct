@@ -6,7 +6,8 @@ Branch `s58-sk` off `main` at `0960bd5` (= `work/main` on the laptop and
 `analysis/wk9_s58_sk.py` (+ `analysis/wk9_s58_chars.c`, a C pass for the
 character blocks; the Python pass is the reference and both run on every
 sample).  Calibration `results/s58_calibration.md`; every computed value in
-`results/s58_calibration.jsonl`, `results/s58_longweight_all.jsonl.gz`,
+`results/s58_calibration.jsonl`, `results/s58_boundary.json`,
+`results/s58_longweight_*.jsonl.gz`,
 `results/s58_costcurve.json`, `results/s58_engine_curve.json`,
 `results/s58_target.json`, `results/s58_sumrule_{20,24,28}.json`; logs
 `results/logs/s58_*`.  Nothing pushed; delivered as `s58_sk.bundle`.
@@ -15,7 +16,7 @@ sample).  Calibration `results/s58_calibration.md`; every computed value in
 
 > **`sk((65,17,2⁷), 24⁴) = 48 825`**, with `g((65,17,2⁷), 24⁴, 24⁴) = 92 000`
 > and Adams part `A = 5 650` (so the antisymmetric coefficient is `43 175`).
-> Computed in **0.4 s** (10.6 s including a one-off table shared by every cell
+> Computed in **0.2 s** (1.1 s including a one-off table shared by every cell
 > at `δ = 24`), by four internal routes that agree, from an algorithm calibrated
 > with **zero disagreements** against every banked value the brief lists, the
 > 2585-cell length-5 screen, the s39 C engine on the goal cell's own family
@@ -46,13 +47,13 @@ computations at each `δ`, and the direct partition sum of the s39 C engine
 reproduces the reduction's *pre-stable* values (`2714 … 41463` at `N = 48 … 64`,
 where the box condition actively cuts) as well as **nineteen cells of the
 boundary family `(3k+2m, k, 2^m)` at `δ = k+m`** on which the LMR cell sits at
-exact equality `2δ = |ρ| + ρ₁` (§3b).  The external audit's Manivel-route value
+exact equality `2δ = |ρ| + ρ₁` (§3a).  The external audit's Manivel-route value
 (`B_ρ = 92 000`, `T_ρ = 5 650`, `sk = 48 825`, communicated by the integrator)
 is therefore confirmed by a route that does not use stability at all.
 
 The pre-registered predictions: P1 (`sk ≥ 274`) **confirmed**, `48 825`; P2
 (`10³ ≤ sk ≤ 10⁶`) **confirmed**; P3 (flat cost in `N` at fixed tail)
-**confirmed**, 0.37–0.41 s at every `N` from 48 to 96; P5 (constant from
+**confirmed**, 0.19–0.22 s at every `N` from 48 to 96; P5 (constant from
 `δ = 24` to `32`) **confirmed**, and constancy begins one step earlier, at
 `δ = 23`.  Deliverable 3 (session 57's `pending` column) was **dropped by the
 integrator mid-session** — sessions 56 and 57 have not been run — and replaced
@@ -77,7 +78,7 @@ reduction returns values that are *not* the limit (`2714, 15383, 26654,
 direct `p(N)` character sum — returns the same five numbers; (ii) the whole
 boundary family `(3k+2m, k, 2^m)`, `δ = k+m`, on which `2δ = |ρ| + ρ₁` holds
 with equality exactly as at the LMR cell, is reproduced by direct sums at
-nineteen members through `N = 64` (§3b).  So the boundary concern does not
+nineteen members through `N = 64` (§3a).  So the boundary concern does not
 touch this route, and the value independently validates the external audit's
 use of Manivel's stability at equality.
 
@@ -206,7 +207,7 @@ prime is used anywhere.
 | brute force at **every** `λ ⊢ N` | `N = 20, 24` | 0 |
 | s39 C engine on the goal cell's family `(N−31,17,2⁷)`, `N = 48 … 64` | 5 | 0 |
 | **the boundary family `(3k+2m, k, 2^m)`, `δ = k+m`, `N = 12 … 64` (§3a)** | **19** | **0** |
-| **the long-weight screen (s39), lengths 6–10, δ = 8–12, `N` up to 48** | see §3b | see §3b |
+| **the long-weight screen (s39), lengths 6–10, δ = 8–12, `N` up to 48** (§3b) | **56 137** | **0** |
 
 The s39 engine values on the goal family are worth writing down, since they
 are the only independent computation on that family: `2714, 15383, 26654,
@@ -259,7 +260,20 @@ zero, and the value is already attained at `δ = 23`.
 
 ### 3b. The long-weight screen
 
-LONGWEIGHT_PLACEHOLDER
+δ = 8–11 exhaustively; at δ = 12 the 18 000 cells of smallest tail exhaustively
+plus a seeded random sample of 3 000 of the remaining 16 830 (the largest
+tails; `random.Random(58)`), the container having been suspended once
+mid-run (the two workers were resumed by `--resume`, skipping recorded cells).
+The 69 967 cells of `results/longweight_screen.csv` with a banked `m_det` (lengths 6–10, δ = 8–12, `N` up to 48, values by the s39 C engine): **56 137 checked, 0 disagreements** (`results/s58_longweight_*.jsonl.gz`, `wk9_s58_sk.py longweight`).
+
+| δ | `N` | cells with `m_det ≥ 0` in the screen | checked here | disagreements | mean / max time per cell | largest `sk` |
+|---|---|---|---|---|---|---|
+| 8 | 32 | 1479 | **1479** | **0** | 0.071 s / 0.26 s at `(8,8,5,4,3,2,1,1)` | 244549 at `(9,7,5,4,3,2,1,1)` |
+| 9 | 36 | 4131 | **4131** | **0** | 0.174 s / 0.74 s at `(9,9,6,4,3,2,1,1,1)` | 2226605 at `(11,8,6,4,3,2,1,1)` |
+| 10 | 40 | 9975 | **9975** | **0** | 0.300 s / 1.22 s at `(13,8,5,4,3,2,2,1,1,1)` | 24166182 at `(11,8,6,5,4,3,2,1)` |
+| 11 | 44 | 19552 | **19552** | **0** | 0.438 s / 2.17 s at `(13,8,5,5,4,3,2,2,1,1)` | 247341470 at `(12,9,7,5,4,3,2,1,1)` |
+| 12 | 48 | 34830 | **21000** | **0** | 0.589 s / 5.65 s at `(12,11,7,5,4,3,2,2,1,1)` | 1747169883 at `(14,10,8,6,4,3,2,1)` |
+
 
 ## 4. The cost curve
 
@@ -270,22 +284,26 @@ shares them); "cold" rebuilds them.  Inner class-sum terms: 53 829 at every `N`.
 
 | δ | N | `sk` | `g` | `A` | cold | warm | #β | s39 C engine: build + cell | engine memo |
 |---|---|---|---|---|---|---|---|---|---|
-| 12 | 48 | 2 714 | 5 241 | 187 | 3.9 s | 0.39 s | 691 | 2.8 s + 0.54 s | 1.3 M |
-| 13 | 52 | 15 383 | 29 326 | 1 440 | 4.8 s | 0.40 s | 890 | 6.1 s + 1.16 s | 2.6 M |
-| 14 | 56 | 26 654 | 50 660 | 2 648 | 5.6 s | 0.39 s | 1 079 | 12.2 s + 2.53 s | 4.7 M |
-| 15 | 60 | 35 340 | 67 035 | 3 645 | 6.4 s | 0.40 s | 1 251 | 26.0 s + 4.68 s | 8.3 M |
-| 16 | 64 | 41 463 | 78 520 | 4 406 | 7.0 s | 0.37 s | 1 402 | 50.9 s + 9.13 s | 14.2 M |
-| 17 | 68 | 45 366 | 85 782 | 4 950 | 8.0 s | 0.40 s | 1 533 | beyond `NMAX = 64` | — |
-| 18 | 72 | 47 488 | 89 672 | 5 304 | 8.6 s | 0.40 s | 1 645 | | |
-| 19 | 76 | 48 435 | 91 362 | 5 508 | 8.8 s | 0.40 s | 1 740 | | |
-| 20 | 80 | 48 744 | 91 883 | 5 605 | 9.4 s | 0.39 s | 1 819 | | |
-| 21 | 84 | 48 815 | 91 989 | 5 641 | 9.8 s | 0.41 s | 1 884 | | |
-| 22 | 88 | 48 824 | 91 999 | 5 649 | 10.0 s | 0.37 s | 1 936 | | |
-| 23 | 92 | 48 825 | 92 000 | 5 650 | 10.3 s | 0.39 s | 1 977 | | |
-| **24** | **96** | **48 825** | **92 000** | **5 650** | 10.6 s | 0.40 s | 2 008 | | |
+| 12 | 48 | 2 714 | 5 241 | 187 | 0.9 s | 0.19 s | 691 | 2.8 s + 0.54 s | 1.3 M |
+| 13 | 52 | 15 383 | 29 326 | 1 440 | 0.8 s | 0.20 s | 890 | 6.1 s + 1.16 s | 2.6 M |
+| 14 | 56 | 26 654 | 50 660 | 2 648 | 0.9 s | 0.21 s | 1 079 | 12.2 s + 2.53 s | 4.7 M |
+| 15 | 60 | 35 340 | 67 035 | 3 645 | 0.9 s | 0.20 s | 1 251 | 26.0 s + 4.68 s | 8.3 M |
+| 16 | 64 | 41 463 | 78 520 | 4 406 | 1.0 s | 0.21 s | 1 402 | 50.9 s + 9.13 s | 14.2 M |
+| 17 | 68 | 45 366 | 85 782 | 4 950 | 1.0 s | 0.22 s | 1 533 | beyond `NMAX = 64` | — |
+| 18 | 72 | 47 488 | 89 672 | 5 304 | 1.1 s | 0.22 s | 1 645 |  |  |
+| 19 | 76 | 48 435 | 91 362 | 5 508 | 1.1 s | 0.22 s | 1 740 |  |  |
+| 20 | 80 | 48 744 | 91 883 | 5 605 | 1.1 s | 0.20 s | 1 819 |  |  |
+| 21 | 84 | 48 815 | 91 989 | 5 641 | 1.1 s | 0.20 s | 1 884 |  |  |
+| 22 | 88 | 48 824 | 91 999 | 5 649 | 1.2 s | 0.20 s | 1 936 |  |  |
+| 23 | 92 | 48 825 | 92 000 | 5 650 | 1.2 s | 0.19 s | 1 977 |  |  |
+| **24** | **96** | **48 825** | **92 000** | **5 650** | 1.1 s | 0.19 s | 2 008 |  |  |
 
-The warm time is flat to within 10 % from `N = 48` to `N = 96` (P3); the cold
+The warm time is flat to within 15 % from `N = 48` to `N = 96` (P3); the cold
 time grows only with the number of `β` in the box, and is paid once per `δ`.
+(The pre-registration's cost-curve run used the first version of the C pass,
+parts ascending and dense; the final pass — parts descending, sparse states,
+sums of squares in 256 bits — is what the tables show.  The values never
+changed; only the timings did.)
 The s39 engine — the fastest house route, C with a memo — doubles per step of
 four in `N` (build ×2.0, cell ×1.9, memo ×1.7 per step) and stops at
 `NMAX = 64` with 64-bit beads.
@@ -297,13 +315,13 @@ four in `N` (build ×2.0, cell ×1.9, memo ×1.7 per step) and stops at
 | 4 | (36,2,2) | 2 | 0.00 s | 0.00 s | 3 | 10 |
 | 8 | (32,2,2,2,2) | 8 | 0.00 s | 0.00 s | 5 | 60 |
 | 12 | (28,4,4,2,2) | 175 | 0.01 s | 0.00 s | 9 | 397 |
-| 16 | (24,8,4,2,2) | 3 850 | 0.06 s | 0.01 s | 12 | 1 679 |
-| 20 | (20,8,4,2,2,2,2) | 43 521 | 0.23 s | 0.04 s | 20 | 6 412 |
-| 24 | (16,10,6,4,2,2) | 1 272 250 | 0.53 s | 0.11 s | 24 | 22 151 |
-| 28 | (12,12,8,4,2,2) | 591 245 | 1.09 s | 0.29 s | 24 | 54 071 |
+| 16 | (24,8,4,2,2) | 3 850 | 0.02 s | 0.01 s | 12 | 1 679 |
+| 20 | (20,8,4,2,2,2,2) | 43 521 | 0.07 s | 0.02 s | 20 | 6 412 |
+| 24 | (16,10,6,4,2,2) | 1 272 250 | 0.14 s | 0.06 s | 24 | 22 151 |
+| 28 | (12,12,8,4,2,2) | 591 245 | 0.38 s | 0.18 s | 24 | 54 071 |
 
 and, from the long-weight screen, the hardest tails there — `(4⁹)` at
-`δ = 12`, `m = 36`, `ℓ = 10` — take 1.3 s warm / 8.4 s cold.  The cost is
+`δ = 12`, `m = 36`, `ℓ = 10` — take 0.4 s warm / 2.5 s cold.  The cost is
 `Σ_τ p(|τ|) × (states)` with the states the sub-partitions of the tail: it is
 the tail's size and, second, its number of rows that matter.
 
@@ -311,7 +329,7 @@ the tail's size and, second, its number of rows that matter.
 
 | route | N = 20 | 24 | 28 | 32 | 36 | 40 | growth per +4 |
 |---|---|---|---|---|---|---|---|
-| house Python `m_det`, peaked cell `(N−8,2⁴)` | 0.04 s | 0.12 s | 0.29 s | 0.70 s | 1.6 s | 3.7 s | ×2.3 (memo ×2.1: 397 K entries at 40) |
+| house Python `m_det`, peaked cell `(N−8,2⁴)` | 0.05 s | 0.11 s | 0.27 s | 0.66 s | 1.5 s | 3.3 s | ×2.2 (memo ×2.1: 396 639 entries at 40) |
 
 and the s39 engine as in (i).
 
@@ -324,7 +342,7 @@ the `1.2 × 10⁸`-entry weight table — after an engine rewrite (`NMAX`, bead
 width).  The house Python route extrapolates to `3.7 s × 2.3¹⁴ ≈ 5 × 10⁵ s`
 for a *peaked* cell with a memo of `4 × 10⁵ × 2.1¹⁴ ≈ 10¹¹` entries, i.e.
 terabytes.  Neither fits the 7 GB container; the memory, not the time, is the
-wall.  The reduction does the same cell in `0.4 s` with `53 829` class-sum
+wall.  The reduction does the same cell in `0.2 s` with `53 829` class-sum
 terms over `S₂₃ … S₃₁` and a few MB.
 
 ## 5. The goal cell (`results/s58_target.json`, `results/logs/s58_target.log`)
@@ -335,8 +353,8 @@ terms over `S₂₃ … S₃₁` and a few MB.
     sk = (g + A)/2          = 48 825        ak = (g − A)/2 = 43 175
 
 Terms: `j = 0 … 8`, 16 tails `τ = (17−a, 2^{7−b}, 1^b)`, sizes 23–31;
-box `B_m(24, 4)`; four routes, all `48 825`: reduction 11.7 s cold, Pieri 2.1 s
-(cached), per-β `fmpz_mat` 17.7 s, pure-Python pass 35.4 s.  The stability
+box `B_m(24, 4)`; four routes, all `48 825`: reduction 1.5 s cold, Pieri 1.4 s,
+per-β `fmpz_mat` 16.7 s, pure-Python pass 27.0 s.  The stability
 probe `(N−31, 17, 2⁷)`, `δ = 20 … 32`:
 
 | δ | 20 | 21 | 22 | 23 | 24 | 25 … 32 |
@@ -377,8 +395,8 @@ two cores, so upper bounds):
 
 | tail size `m` | rows | `λ` | `δ` | sub-partitions of the tail | cold | warm |
 |---|---|---|---|---|---|---|
-| ≤ 36 | ≤ 9 | every cell of the long-weight screen | 8–12 | ≤ 715 | ≤ 8 s | ≤ 1 s |
-| 31 | 8 | `(65,17,2⁷)` (the goal cell) | 24 | 585 | 11 s | 0.23 s |
+| ≤ 36 | ≤ 9 | every cell of the long-weight screen | 8–12 | ≤ 715 | ≤ 6 s | ≤ 1 s |
+| 31 | 8 | `(65,17,2⁷)` (the goal cell) | 24 | 585 | 1.1 s | 0.19 s |
 | 40 | 6 | `(40,20,8,4,4,2,2)` | 20 | 4 939 | 79 s | 4.9 s |
 | 44 | 6 | `(36,24,8,4,4,2,2)` | 20 | 6 207 | 167 s | 11 s |
 | 48 | 6 | `(32,24,12,4,4,2,2)` | 20 | 9 281 | 325 s | 33 s |
@@ -413,7 +431,7 @@ price (`results/s58_lmrfamily.json`, `analysis/wk9_s58_lmrfamily.py`):
 | `n` | `λ` | `δ` | `N` | `p(N)` | `g` | `A` | `sk` | time |
 |---|---|---|---|---|---|---|---|---|
 | 3 | `(19,7,2⁵)` | 12 | 36 | 17 977 | 11 | 9 | **10** | 0.3 s (brute force agrees: 10) |
-| 4 | `(65,17,2⁷)` | 24 | 96 | 1.18 × 10⁸ | 92 000 | 5 650 | **48 825** | 0.4 s |
+| 4 | `(65,17,2⁷)` | 24 | 96 | 1.18 × 10⁸ | 92 000 | 5 650 | **48 825** | 0.2 s |
 | 5 | `(151,31,2⁹)` | 40 | 200 | 3.97 × 10¹² | 2 864 545 604 | 6 344 960 | **1 435 445 282** | 645 s |
 
 At `n = 3` the ambient multiplicity is `a = 6` (LMR's own value, reproduced

@@ -10,16 +10,26 @@ before any computation.  Deliverables `docs/s58_report.md`, `analysis/wk9_s58_sk
 ## Verdict
 
 > **`sk((65,17,2⁷), 24⁴) = 48 825`** (`g = 92 000`, Adams part `A = 5 650`,
-> antisymmetric part `43 175`), in 0.4 s, by a first-row reduction whose cost
+> antisymmetric part `43 175`), in 0.2 s, by a first-row reduction whose cost
 > depends on the tail `|λ̄| = 31` and not on `N = 96`.  Four internal routes agree;
 > calibration against every banked value the brief lists, all 2585 length-5 screen
-> cells, LONGWEIGHT_SUMMARY, the s39 C engine on the goal family through `N = 64`,
+> cells, 56 137 of the 69 967 long-weight screen cells (lengths 6–10, `N` up to 48), the s39 C engine on the goal family through `N = 64`,
 > and brute force at every partition of `N = 20, 24, 28` (sum rules exact):
 > **zero disagreements**.
 >
 > `Θ⁺ : C²⁷⁴ → C⁴⁸ ⁸²⁵`.  The LMR cell is a well-posed finite rank problem —
 > `274 × 48 825`, inside the size range the programme has handled (`n_χ` up to
 > 65 778 in s52).
+>
+> **Direct, not extrapolated** (the integrator's mid-session question): the
+> reduction is an identity of symmetric functions and computes `sk` *at* `δ = 24`
+> with the box condition `β₁ ≤ 24` as part of the exact formula; no stability
+> hypothesis enters.  The boundary family `(3k+2m, k, 2^m)`, `δ = k+m`, on which
+> the LMR cell sits at exact equality `2δ = |ρ| + ρ₁`, is reproduced at **nineteen
+> cells** (the integrator's nine direct-sum values through `N = 40`, and ten more
+> through `N = 64` against the s39 C engine, brute force and the house `m_det`),
+> zero disagreements.  This independently validates the external audit's
+> Manivel-route value (`B_ρ = 92 000`, `T_ρ = 5 650`) at equality.
 
 ## The reduction (proved in the pre-registration and the report)
 
@@ -40,7 +50,7 @@ for `δ = 23 … 32`.  The "length" analogue for `sk` is not a smaller variable 
 
 - Goal family `(N−31, 17, 2⁷)`: `2714, 15383, 26654, 35340, 41463, 45366, 47488,
   48435, 48744, 48815, 48824, 48825, 48825` at `δ = 12 … 24`; warm cost
-  0.37–0.41 s at every `N` (P3), while the s39 C engine doubles per step of four in
+  0.19–0.22 s at every `N` (P3), while the s39 C engine doubles per step of four in
   `N` and stops at its `NMAX = 64` (values agree at 48, 52, 56, 60, 64).
 - Partition sum at `N = 96`, in numbers: `p(96) = 118 114 304` classes; the s39
   engine extrapolates to ~5 h and ~10⁹ memo entries (tens of GB) after a rewrite;
@@ -62,8 +72,10 @@ agreement.  No prime used anywhere.
 
 P1 `sk ≥ 274` (0.85) confirmed; P2 `10³ ≤ sk ≤ 10⁶` (0.7) confirmed; P3 flat cost
 (0.95) confirmed; P5 constant `δ = 24 … 32` (0.7) confirmed, from 23.  M4 (s57
-`pending` column): **not run** — sessions 56/57 absent from the repo, `Projects\gct`
-and the project docs at session start; the report's §6 gives the reach table.
+`pending` column): **dropped by the integrator** — sessions 56/57 have not been run;
+replaced by the affordability rule (report §6): cost is set by the tail
+`|λ| − λ₁`, ≤ 40 boxes is seconds at any `N`, ≈ 48 minutes, ≥ 52 wide tails
+tens of minutes to hours.
 
 ## Corrections flagged (not edited)
 

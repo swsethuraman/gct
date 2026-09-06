@@ -40,7 +40,8 @@ reduction beyond the partition utilities:
                    of the inner class sums.
 
 Characters are exact integers (bead-mask Murnaghan-Nakayama, one depth-first pass
-over the trie of partitions of m with parts ascending, so that common small parts
+over the trie of partitions of m -- parts descending in the C pass, which keeps the
+reachable state set small, ascending in the Python reference -- so that common parts
 share work and the whole block of rows {chi^beta : beta in a box} is produced at
 once).  The pairings are exact integer dot products (python-flint fmpz_mat when
 available, Python integers otherwise); every division by m! is asserted exact.
@@ -48,7 +49,7 @@ available, Python integers otherwise); every division by m! is asserted exact.
 Usage
     wk9_s58_sk.py cell  <lam as a|b|c...> <delta> [--n 4] [--brute] [--house] [--pieri]
     wk9_s58_sk.py calibrate            # PREREG_s58 M1 (brief table, screens, samples, brute force)
-    wk9_s58_sk.py longweight [--delta 8,9] [--limit K] [--tag T] [--reverse]   # M1, the long-weight screen
+    wk9_s58_sk.py longweight [--delta 8,9] [--limit K] [--tag T] [--reverse] [--resume] [--sample K]   # M1, the long-weight screen
     wk9_s58_sk.py sumrule <N> [--n 4] [--brute]   # sum rules over all lam |- N
     wk9_s58_sk.py costcurve            # PREREG M2
     wk9_s58_sk.py target               # PREREG M3 and M5 (goal cell + stability probe)
@@ -936,6 +937,24 @@ def cmd_longweight(argv):
     rows.sort(key=lambda r: (r[0], sum(r[1][1:]), r[1]))          # cheap tails first
     if '--reverse' in argv:                                        # a second worker meeting the first in the middle
         rows.reverse()
+    if '--resume' in argv:                                         # skip cells already recorded by any earlier worker
+        import glob
+        done = set()
+        for f in glob.glob(os.path.join(ROOT, 'results', 's58_longweight_*.jsonl.gz')):
+            try:
+                with gzip.open(f, 'rt') as fh:
+                    for ln in fh:
+                        r = json.loads(ln)
+                        done.add((r['delta'], tuple(r['lam'])))
+            except EOFError:
+                pass
+        rows = [r for r in rows if (r[0], r[1]) not in done]
+        print("resume: %d cells already recorded, %d remaining" % (len(done), len(rows))); sys.stdout.flush()
+    if '--sample' in argv:                                         # a seeded random sample of what remains
+        import random
+        k = int(argv[argv.index('--sample') + 1])
+        rows = random.Random(58).sample(rows, min(k, len(rows)))
+        rows.sort(key=lambda r: (r[0], sum(r[1][1:]), r[1]))
     out = gzip.open(os.path.join(ROOT, 'results', 's58_longweight_%s.jsonl.gz' % tag), 'wt')
     bad = 0
     t0 = time.time()
