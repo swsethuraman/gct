@@ -31,9 +31,20 @@ external routes: a first-row Jacobi–Trudi reduction whose cost is driven by th
 tail `|λ̄| = 31` rather than by `N = 96`, and a Manivel rectangular-stability
 reduction to `dim S_ρ(sl_4)^{GL_4}` at `ρ = (17, 2⁷)`.
 
-**`g = 92,000` is confirmed here by a third route** (§3).  `T = 5,650` is not;
-it rests on the two external routes, so `sk = 48,825` is `g` at three routes
-plus `T` at two.
+**`g = 92,000` is confirmed here by a third route** (§3).  `T = 5,650` is not
+reachable independently here; it rests on session 58's reduction and the Manivel
+route, with session 58's `A` column validated at all thirteen cells of
+`docs/s58_review.md` §1.
+
+**Session 58 settled the direct-versus-extrapolated question.**  Its reduction —
+Jacobi–Trudi along `λ`'s first row, then Frobenius reciprocity on the rectangle —
+computes `sk(λ, 24⁴)` *at* `δ = 24`, with the rectangle entering only through the
+box condition `β₁ ≤ 24`; **no stability hypothesis enters anywhere**.  So the two
+routes are independent in the way that matters: one does not use stability at
+all, the other uses it at exact equality, and the first validates the second.
+Session 58 also reports `sk` constant from `δ = 23` and reproduces nineteen cells
+of the boundary family, twelve of which are re-verified independently in
+`docs/s58_review.md` §1.
 
 So the determinant block is `Θ⁺_LMR : C²⁷⁴ → C^{48825}` — 13.4 million entries
 dense, but the rank is at most 274, so the target coordinates need not all be
@@ -80,6 +91,37 @@ both external ones.
 The cell cannot be reached by descending in `δ`: the same tail at `δ = 12, 13,
 14` gives `g = 5241, 29326, 50660` and `sk = 2714, 15383, 26654`, still
 climbing, exactly as a cell below its stability threshold should.
+
+## 3a. The `δ = 23` predecessor is the sharper and cheaper experiment
+
+`a₂₃ = 273`, `a₂₄ = 274`, and `sk` is already constant at `48 825` from
+`δ = 23`.  So the predecessor cell `(61, 17, 2⁷)` at `δ = 23` is
+`Θ⁺ : C²⁷³ → C⁴⁸ ⁸²⁵` — one column narrower, identical target — and it decides
+the goal cell:
+
+    rank Θ⁺ at δ = 23  =  273     (full rank)
+      ⟹  mult_det,24 ≥ mult_det,23 = 273        (ladder monotonicity)
+      ⟹  i_det,24 = 274 − mult_det,24 ≤ 1
+      ⟹  i_det,24 = 1                            (LMR gives i_det,24 ≥ 1)
+
+The deduction uses only the two ambient values and monotonicity — no stability,
+no `sk`.  Both `a` values are confirmed in §3.  Note that the Manivel reduction
+is **not available at `δ = 23`** (`2δ = 46 < 48 = |ρ| + ρ₁`); its target
+dimension comes from session 58's reduction alone.
+
+## 3b. A free positive control at `n = 3`
+
+The LMR weight at `n = 3` is `λ = (19,7,2⁵)`, `δ = 12`, `ℓ = 7`, with
+`a = 6` (LMR's own value, reproduced here at inner degree 3) and `sk = 10`
+(session 58, reproduced here by the direct partition sum).  The LMR module is
+non-vacuous there, so `i_det ≥ 1` and
+
+    rank Θ⁺_{n=3} at ((19,7,2⁵), 12)  must be  ≤ 5,  not 6.
+
+This is a **`6 × 10` positive control** for the Foulkes engine and it is
+essentially free.  It belongs in the s56 calibration set ahead of the `δ = 3`
+blocks: those are `C → C²` maps of rank one and test the plumbing, whereas this
+one tests whether the engine can see a rank drop at all.
 
 ## 4. Why this cell is worth the 274 × 48,825
 

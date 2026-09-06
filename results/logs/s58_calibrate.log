@@ -1,0 +1,52 @@
+[1] the brief's table
+   (16,2,2,2,2)           /6   sk=8    (banked 8)  g=8 A=8  ok  [0.092s]
+   (20,2,2,2,2)           /7   sk=8    (banked 8)  g=8 A=8  ok  [0.003s]
+   (24,2,2,2,2)           /8   sk=8    (banked 8)  g=8 A=8  ok  [0.003s]
+   (30,2,2,2,2,2)         /10  sk=13   (banked 13)  g=13 A=13  ok  [0.006s]
+   (29,4,2,2,2,1)         /10  sk=78   (banked 78)  g=146 A=10  ok  [0.005s]
+   (29,3,2,2,2,2)         /10  sk=30   (banked 30)  g=40 A=20  ok  [0.002s]
+   (4,4,4,4,4)            /5   sk=5    (banked 5)  g=6 A=4  ok  [0.020s]
+[2] s39 timing-log cells
+   (22,2,2,2,2,2,2,2,2,2)           /10  sk=18     (banked 18) ok [0.11s]
+   (26,2,2,2,2,2,2,2,2,2)           /11  sk=18     (banked 18) ok [0.13s]
+   (30,2,2,2,2,2,2,2,2,2)           /12  sk=18     (banked 18) ok [0.13s]
+   (10,4,4,4,3,3,3,3,3,3)           /10  sk=4988   (banked 4988) ok [1.82s]
+   (11,4,4,4,4,4,4,3,3,3)           /11  sk=14123  (banked 14123) ok [3.92s]
+   (12,4,4,4,4,4,4,4,4,4)           /12  sk=2254   (banked 2254) ok [8.35s]
+   (32,1,1,1,1,1,1,1,1)             /10  sk=0      (banked 0) ok [0.00s]
+   (36,1,1,1,1,1,1,1,1)             /11  sk=0      (banked 0) ok [0.00s]
+   (40,1,1,1,1,1,1,1,1)             /12  sk=0      (banked 0) ok [0.00s]
+[3] n=3 anchors
+   n=3 delta=2: (sum, support) = (3, 3), banked (3, 3) ok
+   n=3 delta=3: (sum, support) = (11, 10), banked (11, 10) ok
+   n=3 delta=4: (sum, support) = (43, 34), banked (43, 34) ok
+   n=3 delta=10 (13,3,2,2,2,2,2,2,2)         sk=0 (banked 0) ok
+   n=3 delta=10 (12,5,2,2,2,2,2,2,1)         sk=0 (banked 0) ok
+   n=3 delta=10 (9,9,2,2,2,2,2,2)            sk=0 (banked 0) ok
+[4] length-5 screen, every cell
+   ...500/2585 cells, 0 mismatches [5s]
+   ...1000/2585 cells, 0 mismatches [17s]
+   ...1500/2585 cells, 0 mismatches [41s]
+   ...2000/2585 cells, 0 mismatches [63s]
+   ...2500/2585 cells, 0 mismatches [112s]
+   2585 cells, 0 mismatches [122s]
+[5] the other routes on samples
+   53 cells: pure-Python pass mismatches 0, per-beta route 0, Pieri organisation 0
+[6] brute force + house m_det, random cells of every length
+   N=20 done: 46 cells so far, brute mismatches 0, house mismatches 0
+   N=24 done: 92 cells so far, brute mismatches 0, house mismatches 0
+   N=28 done: 138 cells so far, brute mismatches 0, house mismatches 0
+[7] lam with more than 16 rows (must vanish)
+   (4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)      /5 -> (0, 0, 0)
+   (3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1)        /5 -> (0, 0, 0)
+   (2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)    /9 -> (0, 0, 0)
+   (5,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)    /6 -> (0, 0, 0)
+
+SUMMARY:
+   brief table                                                                 7 cells  0 disagreements
+   s39 log cells                                                               9 cells  0 disagreements
+   n=3 anchors + s28 zeros                                                     6 cells  0 disagreements
+   length-5 screen (s38), delta 5-10                                        2585 cells  0 disagreements
+   other routes (pure/per-beta/Pieri) on samples                              53 cells  0 disagreements
+   brute force (definition) on random cells of every length, N=20,24,28      138 cells  0 disagreements
+   lam with > 16 rows vanish without the shortcut                              4 cells  0 disagreements

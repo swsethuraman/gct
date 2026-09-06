@@ -1,0 +1,40 @@
+[i] fixed tail (17,2^7), delta 12..24 (cold = box weights rebuilt, warm = cached)
+   delta=12 N=48 lam=(17,17,2,2,2,2,2,2,2) sk=2714     g=5241     A=187    cold   0.92s warm   0.19s  (16 terms, 691 betas, 53829 inner ops)
+   delta=13 N=52 lam=(21,17,2,2,2,2,2,2,2) sk=15383    g=29326    A=1440   cold   0.79s warm   0.20s  (16 terms, 890 betas, 53829 inner ops)
+   delta=14 N=56 lam=(25,17,2,2,2,2,2,2,2) sk=26654    g=50660    A=2648   cold   0.86s warm   0.21s  (16 terms, 1079 betas, 53829 inner ops)
+   delta=15 N=60 lam=(29,17,2,2,2,2,2,2,2) sk=35340    g=67035    A=3645   cold   0.87s warm   0.20s  (16 terms, 1251 betas, 53829 inner ops)
+   delta=16 N=64 lam=(33,17,2,2,2,2,2,2,2) sk=41463    g=78520    A=4406   cold   0.96s warm   0.21s  (16 terms, 1402 betas, 53829 inner ops)
+   delta=17 N=68 lam=(37,17,2,2,2,2,2,2,2) sk=45366    g=85782    A=4950   cold   1.04s warm   0.22s  (16 terms, 1533 betas, 53829 inner ops)
+   delta=18 N=72 lam=(41,17,2,2,2,2,2,2,2) sk=47488    g=89672    A=5304   cold   1.11s warm   0.22s  (16 terms, 1645 betas, 53829 inner ops)
+   delta=19 N=76 lam=(45,17,2,2,2,2,2,2,2) sk=48435    g=91362    A=5508   cold   1.14s warm   0.22s  (16 terms, 1740 betas, 53829 inner ops)
+   delta=20 N=80 lam=(49,17,2,2,2,2,2,2,2) sk=48744    g=91883    A=5605   cold   1.15s warm   0.20s  (16 terms, 1819 betas, 53829 inner ops)
+   delta=21 N=84 lam=(53,17,2,2,2,2,2,2,2) sk=48815    g=91989    A=5641   cold   1.13s warm   0.20s  (16 terms, 1884 betas, 53829 inner ops)
+   delta=22 N=88 lam=(57,17,2,2,2,2,2,2,2) sk=48824    g=91999    A=5649   cold   1.16s warm   0.20s  (16 terms, 1936 betas, 53829 inner ops)
+   delta=23 N=92 lam=(61,17,2,2,2,2,2,2,2) sk=48825    g=92000    A=5650   cold   1.18s warm   0.19s  (16 terms, 1977 betas, 53829 inner ops)
+   delta=24 N=96 lam=(65,17,2,2,2,2,2,2,2) sk=48825    g=92000    A=5650   cold   1.14s warm   0.19s  (16 terms, 2008 betas, 53829 inner ops)
+[ii] growing tail at delta = 10 (N = 40): lam = (40 - m, tail_m)
+   m= 4 lam=(36,2,2)                 sk=2         cold   0.00s warm   0.00s (3 terms, 10 inner ops)
+   m= 8 lam=(32,2,2,2,2)             sk=8         cold   0.00s warm   0.00s (5 terms, 60 inner ops)
+   m= 8 lam=(32,4,2,2)               sk=18        cold   0.00s warm   0.00s (6 terms, 81 inner ops)
+   m=12 lam=(28,4,4,2,2)             sk=175       cold   0.01s warm   0.00s (9 terms, 397 inner ops)
+   m=14 lam=(26,6,4,2,2)             sk=1227      cold   0.01s warm   0.00s (12 terms, 956 inner ops)
+   m=16 lam=(24,8,4,2,2)             sk=3850      cold   0.02s warm   0.00s (12 terms, 1679 inner ops)
+   m=20 lam=(20,8,4,2,2,2,2)         sk=43521     cold   0.07s warm   0.02s (20 terms, 6412 inner ops)
+   m=22 lam=(18,10,4,4,2,2)          sk=191807    cold   0.09s warm   0.03s (18 terms, 10415 inner ops)
+   m=24 lam=(16,10,6,4,2,2)          sk=1272250   cold   0.14s warm   0.06s (24 terms, 22151 inner ops)
+   m=26 lam=(14,12,6,4,2,2)          sk=1007923   cold   0.23s warm   0.10s (24 terms, 34878 inner ops)
+   m=28 lam=(12,12,8,4,2,2)          sk=591245    cold   0.38s warm   0.18s (24 terms, 54071 inner ops)
+[iii] house partition sum (scripts/ambient_screen.m_det, Python), one cell (N-8,2,2,2,2) per N
+   N=20 p(N)=    627  house m_det=8      0.0s  (chi memo 5715 entries)
+   N=24 p(N)=   1575  house m_det=8      0.1s  (chi memo 14898 entries)
+   N=28 p(N)=   3718  house m_det=8      0.3s  (chi memo 36345 entries)
+   N=32 p(N)=   8349  house m_det=8      0.7s  (chi memo 84279 entries)
+   N=36 p(N)=  17977  house m_det=8      1.5s  (chi memo 185754 entries)
+   N=40 p(N)=  37338  house m_det=8      3.3s  (chi memo 396639 entries)
+[iv] the s39 C engine (analysis/wk9_s39_chars.c): engine build (rectangle weights over all rho |- N) + one cell of the fixed-tail family
+   N=48 p(N)=  147273 build    3.0s  cell (17,17,2,2,2,2,2,2,2)    0.48s -> 2714 (reduction: 2714 agree)   peaked cell 0.14s -> 8
+   N=52 p(N)=  281589 build    5.8s  cell (21,17,2,2,2,2,2,2,2)    1.12s -> 15383 (reduction: 15383 agree)   peaked cell 0.27s -> 8
+   N=56 p(N)=  526823 build   11.8s  cell (25,17,2,2,2,2,2,2,2)    2.39s -> 26654 (reduction: 26654 agree)   peaked cell 0.58s -> 8
+   N=60 p(N)=  966467 build   24.4s  cell (29,17,2,2,2,2,2,2,2)    4.78s -> 35340 (reduction: 35340 agree)   peaked cell 1.19s -> 8
+   s39 engine unavailable: AssertionError(('weighted_sums rc', -2, (56, 2, 2, 2, 2)))
+wrote results/s58_costcurve.json
