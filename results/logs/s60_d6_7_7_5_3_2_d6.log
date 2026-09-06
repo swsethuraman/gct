@@ -1,0 +1,21 @@
+      level 1: 44 prefixes
+      level 2: 739 prefixes
+      level 3: 5928 prefixes
+      level 4: 26789 prefixes
+      level 5: 50668 prefixes
+      level 6: 50668 prefixes
+  lam=(7, 7, 5, 3, 2): N_S=50668 |Stab|=2 n_chi=25101 (orbits dropped: 466) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 47357 canonical rows 47357 nnz 185656 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 39362 canonical rows 39352 nnz 154794 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=2 targets 33496 canonical rows 16518 nnz 55847 (obstructed fixed targets cancelled: 287) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 31917 canonical rows 15798 nnz 42075 (obstructed fixed targets cancelled: 134) [0s, HWM 0.08 GB]
+  built (7, 7, 5, 3, 2) d6: N_S=50668 |Stab|=2 n_chi=25101 rows=119025 nnz=438372 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+    level 0 (3,2): 37693 rows, nnz 503655 (full: 119034 rows, nnz 664281)
+    level 0 (3,2): 37693 rows, nnz 503423 (full: 119034 rows, nnz 664281)
+    wied[c7_7_5_3_2d6_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=25101 nrows=37693 nnz=503423 k=0 len=50202 secs=84.7 | BM deg=25101 f0=458968840 secs=93.5 (94s)
+    level 0 (3,2): 36061 rows, nnz 259101 (full: 116420 rows, nnz 418398); floor k0=0
+    wied[c7_7_5_3_2d6_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=25101 nrows=37693 nnz=503655 k=0 len=50202 secs=85.4 | BM deg=25101 f0=1661411047 secs=94.3 (95s)
+    level 0 (3,2): 36061 rows, nnz 259338 (full: 116420 rows, nnz 418398); floor k0=0
+    wied[c7_7_5_3_2d6_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=24019 nrows=36061 nnz=259101 k=0 len=48038 secs=49.4 | BM deg=24019 f0=890608793 secs=57.6 (58s)
+    wied[c7_7_5_3_2d6_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=24019 nrows=36061 nnz=259338 k=0 len=48038 secs=49.7 | BM deg=24019 f0=1065381079 secs=57.9 (58s)
+  RESULT (7, 7, 5, 3, 2) d6: a=1 n_chi=25101 route=sparse mult_det=1 mult_red(star)=1 mult_red(pts)=None D=0  (153.8s, HWM 0.09 GB)

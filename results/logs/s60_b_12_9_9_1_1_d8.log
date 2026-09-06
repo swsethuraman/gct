@@ -1,0 +1,35 @@
+      level 1: 27 prefixes
+      level 2: 256 prefixes
+      level 3: 1623 prefixes
+      level 4: 7855 prefixes
+      level 5: 23069 prefixes
+      level 6: 42189 prefixes
+      level 7: 49820 prefixes
+      level 8: 49820 prefixes
+  lam=(12, 9, 9, 1, 1): N_S=49820 |Stab|=4 n_chi=9800 (orbits dropped: 5603) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 42539 canonical rows 16556 nnz 80359 (obstructed fixed targets cancelled: 2566) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 47488 canonical rows 18503 nnz 80201 (obstructed fixed targets cancelled: 2328) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 11873 canonical rows 11873 nnz 38856 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 30343 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 172) [0s, HWM 0.08 GB]
+  built (12, 9, 9, 1, 1) d8: N_S=49820 |Stab|=4 n_chi=9800 rows=46932 nnz=199416 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+    level 0 (3,2): 14747 rows, nnz 272205 (full: 46947 rows, nnz 346416)
+    level 0 (3,2): 14747 rows, nnz 272086 (full: 46947 rows, nnz 346416)
+    wied[c12_9_9_1_1d8_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=9800 nrows=14747 nnz=272086 k=0 len=19600 secs=15.8 | BM deg=9800 f0=1731057252 secs=17.1 (17s)
+    level 0 (3,2): 14026 rows, nnz 117555 (full: 45427 rows, nnz 190468); floor k0=1
+    wied[c12_9_9_1_1d8_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=9800 nrows=14747 nnz=272205 k=0 len=19600 secs=16.0 | BM deg=9800 f0=177576923 secs=17.3 (17s)
+    level 0 (3,2): 14026 rows, nnz 117535 (full: 45427 rows, nnz 190468); floor k0=1
+    wied[c12_9_9_1_1d8_star p=2147483629 lvl=0 seed=101 k_extra=1 exhibited=0]: KERNEL SEQ n=9329 nrows=14026 nnz=117555 k=1 len=18658 secs=8.2 | BM deg=9329 f0=0 secs=9.3 | DONE secs=14.4 (15s)
+    wied[c12_9_9_1_1d8_star p=2147483647 lvl=0 seed=101 k_extra=1 exhibited=0]: KERNEL SEQ n=9329 nrows=14026 nnz=117535 k=1 len=18658 secs=8.1 | BM deg=9329 f0=0 secs=9.2 | DONE secs=14.3 (14s)
+    wied[c12_9_9_1_1d8_star p=2147483647 lvl=0 seed=102 k_extra=1 exhibited=1]: KERNEL SEQ n=9329 nrows=14026 nnz=117535 k=1 len=18658 secs=8.6 | BM deg=9329 f0=0 secs=9.8 | DONE secs=15.0 (29s)
+    wied[c12_9_9_1_1d8_star p=2147483629 lvl=0 seed=102 k_extra=1 exhibited=1]: KERNEL SEQ n=9329 nrows=14026 nnz=117555 k=1 len=18658 secs=8.6 | BM deg=9329 f0=0 secs=9.8 | DONE secs=15.0 (30s)
+    wied[c12_9_9_1_1d8_star p=2147483629 lvl=0 seed=103 k_extra=2 exhibited=2]: NONSINGULAR SEQ n=9329 nrows=14026 nnz=117555 k=2 len=18658 secs=9.0 | BM deg=9329 f0=506333816 secs=10.2 (40s)
+    level 0 (3,2): 14747 rows, nnz 272371 (full: 46947 rows, nnz 346416); floor k0=1
+    wied[c12_9_9_1_1d8_star p=2147483647 lvl=0 seed=103 k_extra=2 exhibited=2]: NONSINGULAR SEQ n=9329 nrows=14026 nnz=117535 k=2 len=18658 secs=9.1 | BM deg=9329 f0=836335498 secs=10.2 (40s)
+    level 0 (3,2): 14747 rows, nnz 272260 (full: 46947 rows, nnz 346416); floor k0=1
+    wied[c12_9_9_1_1d8_redpts p=2147483629 lvl=0 seed=201 k_extra=1 exhibited=0]: KERNEL SEQ n=9800 nrows=14747 nnz=272371 k=1 len=19600 secs=16.3 | BM deg=9800 f0=0 secs=17.6 | DONE secs=27.0 (27s)
+    wied[c12_9_9_1_1d8_redpts p=2147483647 lvl=0 seed=201 k_extra=1 exhibited=0]: KERNEL SEQ n=9800 nrows=14747 nnz=272260 k=1 len=19600 secs=16.5 | BM deg=9800 f0=0 secs=17.8 | DONE secs=27.2 (27s)
+    wied[c12_9_9_1_1d8_redpts p=2147483629 lvl=0 seed=202 k_extra=1 exhibited=1]: KERNEL SEQ n=9800 nrows=14747 nnz=272371 k=1 len=19600 secs=16.3 | BM deg=9800 f0=0 secs=17.6 | DONE secs=26.8 (54s)
+    wied[c12_9_9_1_1d8_redpts p=2147483647 lvl=0 seed=202 k_extra=1 exhibited=1]: KERNEL SEQ n=9800 nrows=14747 nnz=272260 k=1 len=19600 secs=16.3 | BM deg=9800 f0=0 secs=17.6 | DONE secs=26.9 (54s)
+    wied[c12_9_9_1_1d8_redpts p=2147483629 lvl=0 seed=203 k_extra=2 exhibited=2]: NONSINGULAR SEQ n=9800 nrows=14747 nnz=272371 k=2 len=19600 secs=17.3 | BM deg=9800 f0=1206479839 secs=18.6 (73s)
+    wied[c12_9_9_1_1d8_redpts p=2147483647 lvl=0 seed=203 k_extra=2 exhibited=2]: NONSINGULAR SEQ n=9800 nrows=14747 nnz=272260 k=2 len=19600 secs=17.4 | BM deg=9800 f0=84444011 secs=18.7 (73s)
+  RESULT (12, 9, 9, 1, 1) d8: a=7 n_chi=9800 route=sparse mult_det=7 mult_red(star)=5 mult_red(pts)=5 D=-2  (131.1s, HWM 0.08 GB)

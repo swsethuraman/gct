@@ -1,0 +1,25 @@
+      level 1: 54 prefixes
+      level 2: 990 prefixes
+      level 3: 7337 prefixes
+      level 4: 22881 prefixes
+      level 5: 32430 prefixes
+      level 6: 33610 prefixes
+      level 7: 33610 prefixes
+  lam=(14, 6, 3, 3, 2): N_S=33610 |Stab|=2 n_chi=16041 (orbits dropped: 1528) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 22234 canonical rows 10592 nnz 53111 (obstructed fixed targets cancelled: 659) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 20552 canonical rows 20525 nnz 70590 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 28258 canonical rows 27864 nnz 64737 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 21323 canonical rows 21293 nnz 53358 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (14, 6, 3, 3, 2) d7: N_S=33610 |Stab|=2 n_chi=16041 rows=80274 nnz=241796 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 24104 rows, nnz 305695 (full: 80284 rows, nnz 402206)
+    level 0 (3,2): 24104 rows, nnz 305589 (full: 80284 rows, nnz 402206)
+    wied[c14_6_3_3_2d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=16041 nrows=24104 nnz=305695 k=0 len=32082 secs=31.0 | BM deg=16041 f0=366758600 secs=34.4 (35s)
+    level 0 (3,2): 18292 rows, nnz 105389 (full: 63490 rows, nnz 182801); floor k0=0
+    wied[c14_6_3_3_2d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=16041 nrows=24104 nnz=305589 k=0 len=32082 secs=31.1 | BM deg=16041 f0=394244975 secs=34.6 (35s)
+    level 0 (3,2): 18292 rows, nnz 105182 (full: 63490 rows, nnz 182801); floor k0=0
+    wied[c14_6_3_3_2d7_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=12173 nrows=18292 nnz=105389 k=0 len=24346 secs=10.7 | BM deg=12173 f0=162532352 secs=12.7 (13s)
+    wied[c14_6_3_3_2d7_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: KERNEL SEQ n=12173 nrows=18292 nnz=105182 k=0 len=24346 secs=10.7 | BM deg=12173 f0=0 secs=12.7 | DONE secs=19.7 (20s)
+    (kernel vector of the compressed matrix is not in ker F: escalate)
+    level 1 (12,2): 31745 rows, nnz 182752 (full: 63490 rows, nnz 182801); floor k0=0
+    wied[c14_6_3_3_2d7_star p=2147483629 lvl=1 seed=102 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=12173 nrows=31745 nnz=182752 k=0 len=24346 secs=16.0 | BM deg=12173 f0=358757111 secs=18.0 (38s)
+  RESULT (14, 6, 3, 3, 2) d7: a=2 n_chi=16041 route=sparse mult_det=2 mult_red(star)=2 mult_red(pts)=None D=0  (73.2s, HWM 0.07 GB)

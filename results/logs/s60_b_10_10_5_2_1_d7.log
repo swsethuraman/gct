@@ -1,0 +1,22 @@
+      level 1: 35 prefixes
+      level 2: 409 prefixes
+      level 3: 2410 prefixes
+      level 4: 10304 prefixes
+      level 5: 23890 prefixes
+      level 6: 30931 prefixes
+      level 7: 30931 prefixes
+  lam=(10, 10, 5, 2, 1): N_S=30931 |Stab|=2 n_chi=15577 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 29643 canonical rows 29643 nnz 135514 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 20831 canonical rows 20831 nnz 94142 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=2 targets 15469 canonical rows 7798 nnz 25798 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 14228 canonical rows 7197 nnz 15577 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (10, 10, 5, 2, 1) d7: N_S=30931 |Stab|=2 n_chi=15577 rows=65469 nnz=271031 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+    level 0 (3,2): 23414 rows, nnz 443208 (full: 65485 rows, nnz 520263)
+    level 0 (3,2): 23414 rows, nnz 443041 (full: 65485 rows, nnz 520263)
+    wied[c10_10_5_2_1d7_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=15577 nrows=23414 nnz=443208 k=0 len=31154 secs=41.6 | BM deg=15577 f0=1178829435 secs=44.8 (45s)
+    level 0 (3,2): 21239 rows, nnz 167430 (full: 62218 rows, nnz 245154); floor k0=0
+    wied[c10_10_5_2_1d7_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=15577 nrows=23414 nnz=443041 k=0 len=31154 secs=41.6 | BM deg=15577 f0=719720750 secs=44.9 (45s)
+    level 0 (3,2): 21239 rows, nnz 167236 (full: 62218 rows, nnz 245154); floor k0=0
+    wied[c10_10_5_2_1d7_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=14138 nrows=21239 nnz=167430 k=0 len=28276 secs=17.1 | BM deg=14138 f0=614118318 secs=19.8 (20s)
+    wied[c10_10_5_2_1d7_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=14138 nrows=21239 nnz=167236 k=0 len=28276 secs=17.2 | BM deg=14138 f0=332489984 secs=20.0 (20s)
+  RESULT (10, 10, 5, 2, 1) d7: a=8 n_chi=15577 route=sparse mult_det=8 mult_red(star)=8 mult_red(pts)=None D=0  (65.7s, HWM 0.08 GB)

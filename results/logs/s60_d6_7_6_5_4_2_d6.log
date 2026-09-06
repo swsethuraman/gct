@@ -1,0 +1,21 @@
+      level 1: 45 prefixes
+      level 2: 810 prefixes
+      level 3: 7391 prefixes
+      level 4: 36254 prefixes
+      level 5: 70027 prefixes
+      level 6: 70027 prefixes
+  lam=(7, 6, 5, 4, 2): N_S=70027 |Stab|=1 n_chi=70027 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=1 targets 60085 canonical rows 60085 nnz 240936 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 58121 canonical rows 58121 nnz 216996 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 55158 canonical rows 55158 nnz 188905 (obstructed fixed targets cancelled: 0) [0s, HWM 0.09 GB]
+    E_34: |H|=1 targets 38382 canonical rows 38382 nnz 118026 (obstructed fixed targets cancelled: 0) [0s, HWM 0.09 GB]
+  built (7, 6, 5, 4, 2) d6: N_S=70027 |Stab|=1 n_chi=70027 rows=211746 nnz=764863 (1s: mono 0s orbits 0s rows 0s; HWM 0.09 GB)
+    level 0 (3,2): 105082 rows, nnz 1389232 (full: 211755 rows, nnz 1395106)
+    level 0 (3,2): 105082 rows, nnz 1389240 (full: 211755 rows, nnz 1395106)
+    wied[c7_6_5_4_2d6_det p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=70027 nrows=105082 nnz=1389240 k=0 len=140054 secs=691.1 | BM deg=70027 f0=1954860094 secs=759.0 (764s)
+    level 0 (3,2): 102125 rows, nnz 730693 (full: 207827 rows, nnz 743518); floor k0=0
+    wied[c7_6_5_4_2d6_det p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=70027 nrows=105082 nnz=1389232 k=0 len=140054 secs=692.0 | BM deg=70027 f0=387943327 secs=760.0 (766s)
+    level 0 (3,2): 102125 rows, nnz 730653 (full: 207827 rows, nnz 743518); floor k0=0
+    wied[c7_6_5_4_2d6_star p=2147483647 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=68062 nrows=102125 nnz=730653 k=0 len=136124 secs=416.5 | BM deg=68062 f0=274584671 secs=480.9 (483s)
+    wied[c7_6_5_4_2d6_star p=2147483629 lvl=0 seed=101 k_extra=0 exhibited=0]: NONSINGULAR SEQ n=68062 nrows=102125 nnz=730693 k=0 len=136124 secs=419.6 | BM deg=68062 f0=333188104 secs=483.8 (488s)
+  RESULT (7, 6, 5, 4, 2) d6: a=1 n_chi=70027 route=sparse mult_det=1 mult_red(star)=1 mult_red(pts)=None D=0  (1252.6s, HWM 0.15 GB)

@@ -1,0 +1,15 @@
+      level 1: 32 prefixes
+      level 2: 340 prefixes
+      level 3: 1449 prefixes
+      level 4: 2585 prefixes
+      level 5: 2795 prefixes
+      level 6: 2795 prefixes
+  lam=(12, 5, 5, 1, 1): N_S=2795 |Stab|=4 n_chi=524 (orbits dropped: 410) [lean, 0s, HWM 0.06 GB]
+    E_01: |H|=2 targets 1824 canonical rows 658 nnz 2795 (obstructed fixed targets cancelled: 150) [0s, HWM 0.06 GB]
+    E_12: |H|=2 targets 2553 canonical rows 927 nnz 2754 (obstructed fixed targets cancelled: 114) [0s, HWM 0.06 GB]
+    E_23: |H|=1 targets 929 canonical rows 929 nnz 2034 (obstructed fixed targets cancelled: 0) [0s, HWM 0.06 GB]
+    E_34: |H|=2 targets 1765 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 31) [0s, HWM 0.06 GB]
+  built (12, 5, 5, 1, 1) d6: N_S=2795 |Stab|=4 n_chi=524 rows=2514 nnz=7583 (0s: mono 0s orbits 0s rows 0s; HWM 0.06 GB)
+    dense kernel [exact] p=2147483629: nullity 2 = a, rank 522, all vectors verified on the full E (1s, HWM 0.09 GB)    dense kernel [exact] p=2147483647: nullity 2 = a, rank 522, all vectors verified on the full E (1s, HWM 0.09 GB)
+
+  RESULT (12, 5, 5, 1, 1) d6: a=2 n_chi=524 route=dense mult_det=2 mult_red(star)=2 mult_red(pts)=2 D=0  (0.6s, HWM 0.09 GB)
