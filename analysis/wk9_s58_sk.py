@@ -48,7 +48,7 @@ available, Python integers otherwise); every division by m! is asserted exact.
 Usage
     wk9_s58_sk.py cell  <lam as a|b|c...> <delta> [--n 4] [--brute] [--house] [--pieri]
     wk9_s58_sk.py calibrate            # PREREG_s58 M1 (brief table, screens, samples, brute force)
-    wk9_s58_sk.py longweight [--delta 8,9] [--limit K] [--tag T]   # M1, the long-weight screen
+    wk9_s58_sk.py longweight [--delta 8,9] [--limit K] [--tag T] [--reverse]   # M1, the long-weight screen
     wk9_s58_sk.py sumrule <N> [--n 4] [--brute]   # sum rules over all lam |- N
     wk9_s58_sk.py costcurve            # PREREG M2
     wk9_s58_sk.py target               # PREREG M3 and M5 (goal cell + stability probe)
@@ -78,6 +78,34 @@ def partitions(n, maxp=None):
     for k in range(maxp, 0, -1):
         for rest in partitions(n - k, k):
             yield (k,) + rest
+
+
+_PN = {}
+
+
+def num_partitions(n):
+    """p(n), by Euler's pentagonal recurrence (cached)."""
+    if n < 0:
+        return 0
+    if n in _PN:
+        return _PN[n]
+    for k in range(len(_PN), n + 1):
+        if k == 0:
+            _PN[0] = 1
+            continue
+        tot, j = 0, 1
+        while True:
+            g1 = j * (3 * j - 1) // 2
+            g2 = j * (3 * j + 1) // 2
+            if g1 > k:
+                break
+            sgn = 1 if j % 2 else -1
+            tot += sgn * _PN[k - g1]
+            if g2 <= k:
+                tot += sgn * _PN[k - g2]
+            j += 1
+        _PN[k] = tot
+    return _PN[n]
 
 
 def partitions_in_box(m, rows, cols):
@@ -288,7 +316,7 @@ def _load_so():
         lib.s58_char_block.restype = ctypes.c_int
         lib.s58_char_block.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_void_p,
                                        ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p,
-                                       ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p]
+                                       ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_int]
         _SO[0] = lib
     except Exception as e:          # pragma: no cover
         sys.stderr.write("[s58] C accelerator unavailable (%s); pure Python\n" % e)
@@ -303,15 +331,20 @@ def _char_block_c(lib, m, L, allowed, targets):
     idx = {mk: i for i, mk in enumerate(states)}
     st = np.array(states, dtype=np.uint64)
     tg = np.array([idx[t] for t in targets], dtype=np.int32)
-    nl = sum(1 for _ in partitions(m)) + 1
+    nl = num_partitions(m) + 1
     lo = np.zeros((nl, max(1, len(targets))), dtype=np.int64)
     hi = np.zeros((nl, max(1, len(targets))), dtype=np.int64)
     pr = np.zeros((nl, max(1, m)), dtype=np.int32)
     flags = ctypes.c_int(0)
     n = lib.s58_char_block(m, L, len(states), st.ctypes.data, len(targets), tg.ctypes.data,
-                           lo.ctypes.data, hi.ctypes.data, pr.ctypes.data, nl, ctypes.byref(flags))
+                           lo.ctypes.data, hi.ctypes.data, pr.ctypes.data, nl, ctypes.byref(flags), 0)
     assert flags.value == 0, ("C character block failed", flags.value)
-    rhos = [tuple(int(x) for x in reversed([v for v in pr[i] if v])) for i in range(n)]
+    desc = os.environ.get('S58_ASC') is None
+    prl = pr[:n].tolist()
+    if desc:
+        rhos = [tuple(x for x in row if x) for row in prl]
+    else:
+        rhos = [tuple(x for x in reversed(row) if x) for row in prl]
     if m == 0:
         rhos = [()]
     rows = {}
@@ -320,6 +353,44 @@ def _char_block_c(lib, m, L, allowed, targets):
         hi_j = hi[:n, j].tolist()
         rows[t] = [(h << 64) + (l & 0xFFFFFFFFFFFFFFFF) for l, h in zip(lo_j, hi_j)]
     return rhos, rows
+
+
+def char_block_sums(m, L, allowed, targets):
+    """Per class rho |- m: S1(rho) = sum_{t in targets} chi^t(rho) and S2(rho) = sum_t chi^t(rho)^2,
+    without materialising the (classes x targets) block.  C pass (256-bit S2) when
+    available, else the Python pass summed."""
+    if not PURE and max(allowed).bit_length() <= 63:
+        lib = _load_so()
+        if lib is not None:
+            import ctypes
+            import numpy as np
+            states = sorted(allowed)
+            idx = {mk: i for i, mk in enumerate(states)}
+            st = np.array(states, dtype=np.uint64)
+            tg = np.array([idx[t] for t in targets], dtype=np.int32)
+            nl = num_partitions(m) + 1
+            lo = np.zeros((nl, 6), dtype=np.int64)
+            hi = np.zeros((1, 1), dtype=np.int64)
+            pr = np.zeros((nl, max(1, m)), dtype=np.int32)
+            flags = ctypes.c_int(0)
+            n = lib.s58_char_block(m, L, len(states), st.ctypes.data, len(targets), tg.ctypes.data,
+                                   lo.ctypes.data, hi.ctypes.data, pr.ctypes.data, nl, ctypes.byref(flags), 1)
+            assert flags.value == 0, ("C character block (sum mode) failed", flags.value)
+            desc = os.environ.get('S58_ASC') is None
+            prl = pr[:n].tolist()
+            rhos = [tuple(x for x in row if x) for row in prl] if desc else [tuple(x for x in reversed(row) if x) for row in prl]
+            if m == 0:
+                rhos = [()]
+            M64 = 0xFFFFFFFFFFFFFFFF
+            S1, S2 = [], []
+            for row in lo[:n].tolist():
+                S1.append((row[1] << 64) + (row[0] & M64))
+                S2.append(((row[5] & M64) << 192) + ((row[4] & M64) << 128) + ((row[3] & M64) << 64) + (row[2] & M64))
+            return rhos, S1, S2
+    rhos, rows = char_block(m, L, allowed, targets, pure=True)
+    S1 = [sum(rows[t][i] for t in targets) for i in range(len(rhos))]
+    S2 = [sum(rows[t][i] ** 2 for t in targets) for i in range(len(rhos))]
+    return rhos, S1, S2
 
 
 def char_row_memo(lam, rhos, L=None):
@@ -443,26 +514,32 @@ def box_weights(m, n, delta):
         _BOX[key] = ({(): 1}, {(): 1}, 1)
         return _BOX[key]
     allowed_b = box_states(m, n, delta)
-    rhos_b, brows = char_block(m, n, allowed_b, [mask_of(b, n) for b in betas])
+    rhos_b, S1, S2 = char_block_sums(m, n, allowed_b, [mask_of(b, n) for b in betas])
     ib = {rho: i for i, rho in enumerate(rhos_b)}
-    cols = [[brows[mask_of(b, n)][i] for b in betas] for i in range(len(rhos_b))]
     wg = {}
     for rho, i in ib.items():
-        v = sum(c * c for c in cols[i])
-        if v:
-            wg[rho] = v
+        if S2[i]:
+            wg[rho] = S2[i]
     wa = {}
     for rho in partitions(m):
         i = ib.get(square_type(rho), -1)
-        if i >= 0:
-            v = sum(cols[i])
-            if v:
-                wa[rho] = v
+        if i >= 0 and S1[i]:
+            wa[rho] = S1[i]
     _BOX[key] = (wg, wa, len(betas))
     return _BOX[key]
 
 
 _CS = {}
+_TS = {}
+
+
+def _tail_states(tail_box, Lt):
+    key = (tail_box, Lt)
+    if key not in _TS:
+        _TS[key] = set(mask_of(s, Lt) for s in sub_partitions(tail_box))
+        if len(_TS) > 64:
+            _TS.pop(next(iter(_TS)))
+    return _TS[key]
 
 
 def _class_sizes(m):
@@ -481,7 +558,7 @@ def tail_sums(m, taus, n, delta, tail_box):
     wg, wa, _ = box_weights(m, n, delta)
     tail_box = tuple(x for x in tail_box if x)
     Lt = max(1, len(tail_box))
-    allowed_t = set(mask_of(s, Lt) for s in sub_partitions(tail_box))
+    allowed_t = _tail_states(tail_box, Lt)
     rhos_t, trows = char_block(m, Lt, allowed_t, [mask_of(t, Lt) for t in taus])
     mfact = factorial(m)
     cs = _class_sizes(m)
@@ -535,7 +612,7 @@ def sk_reduced(lam, delta, n=4, stats=None, shortcut=True, per_beta=False):
             sums = {t: (sum(G[t].values()), sum(Aa[t].values())) for t in taus}
         else:
             sums = tail_sums(mm, taus, n, delta, tail)
-        ops += len(taus) * sum(1 for _ in partitions(mm))
+        ops += len(taus) * num_partitions(mm)
         for s, tau in lst:
             g += s * sums[tau][0]
             A += s * sums[tau][1]
@@ -845,7 +922,8 @@ def cmd_longweight(argv):
     """PREREG_s58 M1, the long-weight screen: every m_det >= 0 cell of
     results/longweight_screen.csv (lengths 6-10, delta 8-12, N up to 48)."""
     import gzip
-    log_pid('s58_longweight')
+    tag = argv[argv.index('--tag') + 1] if '--tag' in argv else 'all'
+    log_pid('s58_longweight_' + tag)
     rows = read_screen(os.path.join(ROOT, 'results', 'longweight_screen.csv'))
     rows = [r for r in rows if r[3] >= 0]
     only = [int(x) for x in argv[argv.index('--delta') + 1].split(',')] if '--delta' in argv else None
@@ -856,7 +934,8 @@ def cmd_longweight(argv):
         import random
         rows = random.Random(58).sample(rows, min(limit, len(rows)))
     rows.sort(key=lambda r: (r[0], sum(r[1][1:]), r[1]))          # cheap tails first
-    tag = argv[argv.index('--tag') + 1] if '--tag' in argv else 'all'
+    if '--reverse' in argv:                                        # a second worker meeting the first in the middle
+        rows.reverse()
     out = gzip.open(os.path.join(ROOT, 'results', 's58_longweight_%s.jsonl.gz' % tag), 'wt')
     bad = 0
     t0 = time.time()
@@ -971,7 +1050,7 @@ def cmd_costcurve(argv):
         lam = (N - 8, 2, 2, 2, 2)
         house_chi.cache_clear()
         t0 = time.time(); v = house(lam, 4, delta); t1 = time.time()
-        pN = sum(1 for _ in partitions(N))
+        pN = num_partitions(N)
         out['house_python'].append({'N': N, 'lam': list(lam), 'sk': v, 'time': round(t1 - t0, 3), 'p_N': pN, 'memo': house_chi.cache_info().currsize})
         print("   N=%2d p(N)=%7d  house m_det=%d  %7.1fs  (chi memo %d entries)" % (N, pN, v, t1 - t0, house_chi.cache_info().currsize)); sys.stdout.flush()
         house_chi.cache_clear()
@@ -985,7 +1064,7 @@ def cmd_costcurve(argv):
             t0 = time.time(); E = C39.MdetEngine(delta, n=4); t1 = time.time()
             t2 = time.time(); v = E.m_det(lam); t3 = time.time()
             t4 = time.time(); v2 = E.m_det((N - 8, 2, 2, 2, 2)); t5 = time.time()
-            pN = sum(1 for _ in partitions(N))
+            pN = num_partitions(N)
             row = {'N': N, 'lam': list(lam), 'sk': v, 'build': round(t1 - t0, 3), 'cell': round(t3 - t2, 3), 'cell_peaked': round(t5 - t4, 3), 'p_N': pN}
             out['s39_engine'].append(row)
             mine = sk_reduced(lam, delta, 4)[2]

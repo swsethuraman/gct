@@ -1,6 +1,7 @@
 /* Session 58 -- Murnaghan-Nakayama character blocks on bead masks (C accelerator).
  *
- * One depth-first pass over the trie of partitions rho of m with parts ascending,
+ * One depth-first pass over the trie of partitions rho of m (parts descending by default,
+ * ascending with S58_ASC set),
  * carrying the vector D[state] = signed count of strip-addition paths from the empty
  * partition, restricted to a given set of allowed states (bead masks with L beads).
  * At a leaf (a full partition rho of m) D[target] = chi^target(rho).
@@ -26,8 +27,10 @@ static int *tr_off;              /* transitions: for k in 1..m, state s: entries
 static int *tr_to;
 static int8_t *tr_sg;
 static int64_t *out_lo, *out_hi; /* leaves x ntgt */
-static int *out_parts;           /* leaves x m (ascending parts, 0-padded) */
+static int *out_parts;           /* leaves x m (parts in visiting order, 0-padded) */
 static int nleaves, overflow;
+static int sum_mode;             /* 1: per leaf write S1 = sum_t D[t] (2 words) and S2 = sum_t D[t]^2 (4 words) */
+typedef unsigned __int128 u128;
 static int parts[256];
 
 static int find_state(uint64_t mk) {
@@ -84,9 +87,32 @@ static void build_transitions(void) {
     free(cnt);
 }
 
-static void dfs(int depth, int total, int minp, i128 *D) {
+static int order_desc = 1;   /* 1: parts descending (large first), 0: ascending */
+
+static void dfs(int depth, int total, int bound, i128 *D, const int *nzl, int nnz) {
+    /* D: dense vector over states; nzl[0..nnz): the indices where D may be nonzero */
     if (total == mm) {
         if (nleaves >= maxleaves) { overflow |= 2; return; }
+        if (sum_mode) {
+            i128 s1 = 0; u128 s2lo = 0, s2hi = 0;
+            for (int i = 0; i < ntgt; i++) {
+                i128 v = D[tgt[i]];
+                s1 += v;
+                u128 av = (u128)(v < 0 ? -v : v);
+                u128 a = av >> 64, b = av & 0xFFFFFFFFFFFFFFFFULL;   /* av = a 2^64 + b, a < 2^63 */
+                u128 bb = b * b, ab = a * b, aa = a * a;             /* av^2 = aa 2^128 + 2ab 2^64 + bb */
+                u128 mid_lo = (ab << 65), mid_hi = (ab >> 63);       /* 2ab 2^64 split at 2^128 */
+                u128 old = s2lo;
+                s2lo += bb; if (s2lo < old) s2hi++;
+                old = s2lo;
+                s2lo += mid_lo; if (s2lo < old) s2hi++;
+                s2hi += mid_hi + aa;
+            }
+            int64_t *o = out_lo + (size_t)nleaves * 6;
+            o[0] = (int64_t)(uint64_t)(s1 & 0xFFFFFFFFFFFFFFFFULL); o[1] = (int64_t)(s1 >> 64);
+            o[2] = (int64_t)(uint64_t)(s2lo & 0xFFFFFFFFFFFFFFFFULL); o[3] = (int64_t)(uint64_t)(s2lo >> 64);
+            o[4] = (int64_t)(uint64_t)(s2hi & 0xFFFFFFFFFFFFFFFFULL); o[5] = (int64_t)(uint64_t)(s2hi >> 64);
+        } else
         for (int i = 0; i < ntgt; i++) {
             i128 v = D[tgt[i]];
             out_lo[(size_t)nleaves * ntgt + i] = (int64_t)(uint64_t)(v & 0xFFFFFFFFFFFFFFFFULL);
@@ -96,31 +122,40 @@ static void dfs(int depth, int total, int minp, i128 *D) {
         nleaves++;
         return;
     }
-    i128 *D2 = (i128 *)malloc(nst * sizeof(i128));
-    for (int k = minp; k <= mm - total; k++) {
-        memset(D2, 0, nst * sizeof(i128));
-        int nz = 0;
-        for (int s = 0; s < nst; s++) {
+    i128 *D2 = (i128 *)calloc(nst, sizeof(i128));
+    int *touched = (int *)malloc(nst * sizeof(int));
+    int *nz2 = (int *)malloc(nst * sizeof(int));
+    char *seen = (char *)calloc(nst, 1);
+    int lo = order_desc ? 1 : bound, hi = order_desc ? (bound < mm - total ? bound : mm - total) : mm - total;
+    for (int kk = lo; kk <= hi; kk++) {
+        int k = order_desc ? (hi - (kk - lo)) : kk;      /* descending: largest admissible part first */
+        int nt = 0;
+        for (int q = 0; q < nnz; q++) {
+            int s = nzl[q];
             i128 v = D[s];
             if (v == 0) continue;
             int a = tr_off[k * nst + s], b = tr_off[k * nst + s + 1];
             for (int e = a; e < b; e++) {
                 int t = tr_to[e];
+                if (!seen[t]) { seen[t] = 1; touched[nt++] = t; }
                 if (tr_sg[e] > 0) D2[t] += v; else D2[t] -= v;
             }
         }
-        for (int s = 0; s < nst; s++) if (D2[s] != 0) { nz = 1; break; }
-        if (!nz) continue;
-        parts[depth] = k;
-        dfs(depth + 1, total + k, k, D2);
+        int n2 = 0;
+        for (int q = 0; q < nt; q++) { int t = touched[q]; if (D2[t] != 0) nz2[n2++] = t; }
+        if (n2) {
+            parts[depth] = k;
+            dfs(depth + 1, total + k, k, D2, nz2, n2);
+        }
+        for (int q = 0; q < nt; q++) { int t = touched[q]; D2[t] = 0; seen[t] = 0; }
     }
-    free(D2);
+    free(D2); free(touched); free(nz2); free(seen);
 }
 
 /* returns number of leaves written; sets *flags: bit 1 = leaf buffer too small */
 int s58_char_block(int m, int L, int nstates, const uint64_t *states_in, int ntargets, const int *targets_in,
-                   int64_t *o_lo, int64_t *o_hi, int *o_parts, int max_leaves, int *flags) {
-    mm = m; Lb = L; nst = nstates; ntgt = ntargets; maxleaves = max_leaves;
+                   int64_t *o_lo, int64_t *o_hi, int *o_parts, int max_leaves, int *flags, int mode) {
+    mm = m; Lb = L; nst = nstates; ntgt = ntargets; maxleaves = max_leaves; sum_mode = (mode == 1);
     masks = (uint64_t *)malloc(nst * sizeof(uint64_t));
     memcpy(masks, states_in, nst * sizeof(uint64_t));
     for (int i = 1; i < nst; i++) if (masks[i] <= masks[i - 1]) { *flags = 4; free(masks); return 0; }  /* must be sorted, distinct */
@@ -135,10 +170,13 @@ int s58_char_block(int m, int L, int nstates, const uint64_t *states_in, int nta
     if (e < 0) { *flags = 8; free(D); free(masks); free(tgt); free(tr_off); free(tr_to); free(tr_sg); return 0; }
     D[e] = 1;
     if (m == 0) {
-        for (int i = 0; i < ntgt; i++) { o_lo[i] = (tgt[i] == e); o_hi[i] = 0; }
+        if (sum_mode) { int c = 0; for (int i = 0; i < ntgt; i++) c += (tgt[i] == e); o_lo[0] = c; o_lo[1] = 0; o_lo[2] = c; o_lo[3] = o_lo[4] = o_lo[5] = 0; }
+        else for (int i = 0; i < ntgt; i++) { o_lo[i] = (tgt[i] == e); o_hi[i] = 0; }
         nleaves = 1;
     } else {
-        dfs(0, 0, 1, D);
+        order_desc = (getenv("S58_ASC") == NULL);
+        int nz0[1] = { e };
+        dfs(0, 0, order_desc ? m : 1, D, nz0, 1);
     }
     *flags = overflow;
     free(D); free(masks); free(tgt); free(tr_off); free(tr_to); free(tr_sg);
