@@ -1,5 +1,13 @@
 # Programme stock-take at the end of batch 9
 
+> **Correction (applied at merge of s56 and s57, same day).**  §1 below is wrong
+> on its central claim and §4's gating changes with it.  **Both sessions ran.**
+> Their bundles existed and had simply never been handed to the integrator, so
+> they were absent from the repository when this was written; they are merged
+> now.  §6 states what actually changed.  Everything in §2 and §3 stands, and
+> §2 gains two rows.  The ladder theorem's attribution also changes: **s57 proved
+> it first**, on 5–6 September; the audits and my notes to s58–s60 rederived it.
+
 Written at the checkpoint after s58, s59, s60, s61, the Rees audit and the
 slot-6 audit.  Three parts: what the repository actually holds (§1), what died
 (§2), and what the next ten should be (§4) — which differs from the sketch on
@@ -179,3 +187,66 @@ state first, then force-push the rewritten history.**  Two further corrections
 are queued for the same pass: `results/occurrence_screen.md`'s claim that
 `δ = 11, 12` exceed budget (false since s58), and `results/longweight_screen.md`'s
 silence about the s39 engine's `N ≤ 64` and bead-width limits.
+
+## 6. Correction, after s56 and s57 were merged
+
+### What was wrong
+
+| §1 said | actually |
+|---|---|
+| "s56 — the `Θ⁺` engine — never run.  No pre-registration, no code, no results." | **ran**; pre-registration `5d63e7c`, three commits, eight certificates, 40 cells |
+| "s57 — results exist only as a relayed summary" | **ran**; pre-registration `905c1a2`, the brief committed beside it, full artefacts |
+| "the ladder theorem … came through the audits, not through s57" | **s57 proved it** (Lemma L, Proposition S), and proved a sharper version |
+
+### What survives, in a different form
+
+The stock-take's headline was *"of the two things every party ranks first, one
+has zero lines of code and the other is blocked on it."*  The letter is wrong.
+The substance is not, and s56 is why:
+
+> `Θ⁺` **is** built and **does** calibrate — 40/40 at `δ = 2, 3, 4` — and the
+> session measured that it **cannot reach any cell where a rank drop could
+> live**.  `|H_{4,5}| = 2 546 168 625` and the engine is quadratic in that
+> module, so the six-row cells, every length-5 cell at `δ ≥ 5`, the `n = 3`
+> positive control at `δ = 12` and the LMR cell at `δ = 24` are all beyond it.
+
+So the gate is still shut.  What changed is that it is now **characterised
+rather than unopened**, which is a much better position: we know the
+construction is right, we know exactly what makes it infeasible, and we know
+what a successful continuation must avoid.
+
+### The revised item 1
+
+Not "build `Θ⁺` and validate it" — that is done.  Instead:
+
+> **Does the rank admit a tail reduction?**  s58 showed the *target dimension*
+> `sk(λ, 4×δ)` reduces to class sums over `S_{|λ̄|}`, with `N` absent from the
+> cost — the LMR cell in 0.2 s against `p(96) = 1.2 × 10⁸`.  s56 shows the
+> *rank* as currently computed is quadratic in `H_{4,δ}`.  The session is: push
+> the Gram kernel `K(π,π')` and its Hadamard square through s58's reduction, or
+> establish that it cannot be done.
+
+That is well-posed, has a worked precedent inside the programme, and either
+outcome is worth the slot.  Items 2, 3 and 4 remain gated — on *that* engine,
+not on s56.
+
+### Other consequences
+
+- **Item 8 is void.**  s57 is in the repository.
+- **`(30,2⁵)_{10}` is dead** — s57's Theorem P: the peaked family has `a_∞ = 1`
+  with the bordered discriminant as its unique highest-weight vector, nonzero at
+  a generic pencil, at every `ℓ ≤ 16`.  I had named that cell as the single best
+  next test; it needs no measurement and never did.
+- **§2 gains two rows.**  `sk/a` is now refuted four ways, the fourth being
+  s56's sharp `δ = 4` cells (`a = 1` against `sk = 11` and `sk = 10`, rank 1 at
+  both), and s57's `1 033 030`-weight sample puts the LMR cell in the 0.4 % most
+  skewed of its slice.
+- **A new object worth a session on its own.**  Proposition S identifies the
+  stable `i_det` as the multiplicity of `S_λ̄` in the ideal of `M_ℓ`, the variety
+  of characteristic polynomials of traceless `(ℓ−1)`-pencils of `4×4` matrices.
+  That turns "a rank drop somewhere up this ladder" into "an equation of one
+  explicit affine variety" — and `M_ℓ` is small enough for the CAS that is now
+  available.  It did not exist as a target when §4 was written.
+- **`tools/verify/verify.py`** has a real defect (s56): large `nonvanishing_minor`
+  determinants fail the `content` line on Python's integer-to-string limit after
+  the rank checks pass.  One line to fix, in the same pass as the rest.
