@@ -48,6 +48,7 @@ from wk9_s42_census import a_weyl
 N = 4
 R = 5
 PRIMES = (P1, P2)
+RED_PTS_CAP = 12000     # sparse-route cells above this n_chi get the reducible side by (star) only
 DET4, N_DET = det_form(4)
 CONVENTIONS = {"coefficient": "c_alpha(F) = coefficient of s^alpha in F",
                "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}"}
@@ -179,7 +180,7 @@ def kernel_dense(E, nc, p, a_expect, margin=64, chunk=64, seed=101, exact_cap=25
     t0 = time.time()
     nrows = E.shape[0]
     Em = E.tocsr(); Em.sort_indices()
-    if nc <= exact_cap and nrows * nc <= 40_000_000:
+    if nc <= exact_cap and nrows * nc <= 6_000_000:
         D = np.zeros((nrows, nc), dtype=np.int64)
         coo = Em.tocoo()
         D[coo.row, coo.col] = coo.data % p
@@ -500,7 +501,9 @@ def measure_cell(lam, delta, route='auto', dense_cap=4000, red_points='dense', c
                seeds=dict(det=seed_det, red=seed_red, wied=seed0), bound=bound, primes=list(PRIMES))
     if a == 0:
         out.update(status='a=0', secs=round(time.time() - t0, 1)); return out
-    want_red_pts = (red_points == 'always') or (red_points == 'dense' and route == 'dense')
+    # the l.c-points instrument on the sparse route costs as much as the determinant side; it is
+    # run at every dense-route cell and at sparse cells up to RED_PTS_CAP, (star) alone above
+    want_red_pts = (red_points == 'always' and nc <= RED_PTS_CAP) or (red_points == 'dense' and route == 'dense')
     det_pts = det_pencils(K, seed_det, bound)
     red_pts = reducible_points(K, seed_red, bound)
     if certs: os.makedirs(certs, exist_ok=True)
@@ -583,7 +586,7 @@ if __name__ == '__main__':
     outp = arg('--out', '')
     if outp:
         with open(outp, 'a') as f: f.write(json.dumps(res) + "\n")
-    if '--kern' in args and any(kerns.values()):
+    if any(kerns.values()):      # kernel vectors are kept whenever a side produced them (a bite), not only on --kern
         import pickle
         kd = arg('--kern-dir', '/home/claude/s60/kern'); os.makedirs(kd, exist_ok=True)
         pickle.dump(dict(res=res, kerns=kerns), open(os.path.join(kd, f"kern_{'_'.join(map(str, lam))}_d{delta}.pkl"), 'wb'))
