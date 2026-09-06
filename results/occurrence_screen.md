@@ -42,7 +42,15 @@ arithmetic alone, with no rank computation (the s28 `n=3` mechanism). The first
 **δ=11, 12 are spot-checked at the two fire-risk extremes**, not fully
 enumerated — the `m_det` character sums over partitions of 44 and 48 exceed the
 session's character-computation budget (the brief's "as far as … allow in
-budget"). A fire (`a > m_det`) can only hide at one of two extremes, and both
+budget").
+
+> **Correction (session 58).**  The budget statement is no longer true.  The
+> first-row reduction of `docs/`/`analysis/wk9_s58_sk.py` computes
+> `sk(λ, 4×δ)` from the **tail** `λ̄` rather than from `p(N)`, so the whole
+> `δ = 11, 12` length-5 region — every tail of size `≤ 4δ − δ = 36` — is minutes
+> of work rather than beyond budget.  The exhaustive rows can be had for the
+> asking; the spot-check argument below stands on its own and is not withdrawn,
+> but it is no longer forced by cost. A fire (`a > m_det`) can only hide at one of two extremes, and both
 are clean:
 
 - **Smallest-`m_det` end (peaked cells).** The tightest family `(4δ−8,2,2,2,2)`

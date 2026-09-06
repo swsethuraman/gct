@@ -78,3 +78,19 @@ A chunk is COMPLETE iff its `.done` marker exists; else PARTIAL (banked/candidat
 Totals across banked rows: **69967 cells (a≥1), 0 one-bit, 0 forced.**
 
 _(generated 2026-09-02 20:22 UTC by `analysis/wk9_s39_publish.py`)_
+
+---
+
+**Correction (session 58) — the engine's limits, which this table did not state.**
+The values above are by the session-39 C engine, which is bounded in two ways
+that the table does not record and that a reader would otherwise take for
+coverage:
+
+* `NMAX = 64`: no cell with `N > 64` can be computed by it at all;
+* the bead width is 64-bit, so a cell needs `λ₁ + 9 < 64`; the `(56, 2⁴)` cell
+  at `N = 64` is refused for that reason, not because it is absent.
+
+Neither is a defect of the engine, but "complete" in the status column means
+*complete within those two bounds*, not complete over the stated `(δ, ℓ)` box.
+Session 58's reduction is not subject to either bound and reproduced 56 137 of
+these cells with zero disagreements.

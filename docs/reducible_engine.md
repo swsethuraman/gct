@@ -503,3 +503,28 @@ certificate that proves `mult_red = a` in seconds at `n_χ ~ 10^4` proves
 `mult_det = a` the same way; the ideal itself has two new minimal
 generators in degree 8, `(13,12,4,1,1,1)` and `(13,10,6,1,1,1)`, that the
 normalisation bound cannot see.
+
+---
+
+**Correction (session 60) — `h_pad` is not tight at length 5 either.**  §B's
+record of the six-row cells has `h_pad = mult_red` at four of the five bites and
+one miss.  At `r = 5` the bound is looser than that reading suggests.  Session 60
+measured eleven cells with `mult_red < a`; **eight are strictly below `h_pad`**,
+and six of those have `h_pad ≥ a`, so the bound would have permitted
+`mult_red = a`:
+
+| `λ`, `δ` | `a` | `h_pad` | `mult_red` | |
+|---|---|---|---|---|
+| `(12,4,4,4,4)_7` | 4 | 4 | 3 | `< h_pad = a` |
+| `(11,11,8,1,1)_8` | 8 | 8 | 7 | `< h_pad = a` |
+| `(12,9,9,1,1)_8` | 7 | 6 | 5 | `< h_pad < a` |
+| `(16,4,4,4,4)_8` | 7 | 10 | 6 | `< a < h_pad` |
+| `(13,9,8,1,1)_8` | 15 | 21 | 13 | `< a < h_pad` |
+| `(15,15,4,1,1)_9` | 9 | 12 | 8 | `< a < h_pad` |
+| `(20,4,4,4,4)_9` | 9 | 13 | 8 | `< a < h_pad` |
+| `(13,13,8,1,1)_9` | 19 | 17 | 15 | `< h_pad < a` |
+
+All eight have `mult_det = a`, so `0 = i_det < i_red` at every one — the
+direction `R_5 ⊆ D_5` implies.  `h_pad` remains a **proved upper bound** and
+`h_pad = 0` still proves `mult_red = 0`; what is withdrawn is any reading of it
+as exact where it fires.  The same failure was found at length 6 by session 47.
