@@ -1,0 +1,17 @@
+P^1 x P^1  (dual of det_2 in P^3):
+   deg c_i(T) . h^(m-i), i=0..m : [2, 4, 4]
+   polar degrees mu_0..mu_m       : [2, 2, 2]
+   => predicted det_2 profile     : [2, 2, 2] then zeros
+   sum (generic ED degree)        : 6
+P^2 x P^2  (dual of det_3 in P^8):
+   deg c_i(T) . h^(m-i), i=0..m : [6, 18, 24, 18, 9]
+   polar degrees mu_0..mu_m       : [6, 12, 12, 6, 3]
+   => predicted det_3 profile     : [3, 6, 12, 12, 6] then zeros
+   sum (generic ED degree)        : 39
+P^3 x P^3  (dual of det_4 in P^15):
+   deg c_i(T) . h^(m-i), i=0..m : [20, 80, 144, 152, 104, 48, 16]
+   polar degrees mu_0..mu_m       : [20, 60, 84, 68, 36, 12, 4]
+   => predicted det_4 profile     : [4, 12, 36, 68, 84, 60, 20] then zeros
+   sum (generic ED degree)        : 284
+
+M1 check: reversed mu == (4,12,36,68,84,60,20)? True

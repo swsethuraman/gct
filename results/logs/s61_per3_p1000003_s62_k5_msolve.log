@@ -1,0 +1,91 @@
+# msolve run per3_p1000003_s62_k5_msolve: per_3 of the generic 3x3 matrix, 9 variables; slot k=5, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       7
+#equations                       7
+#invalid equations               0
+field characteristic       1000003
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  2       4       6       5 x 28        100.00%        4 new       0 zero         0.00 | 0.00         
+  3       8       8      42 x 112        23.49%        8 new       0 zero         0.00 | 0.00         
+  4      26      26     145 x 247        13.78%       14 new      12 zero         0.00 | 0.00         
+  5      61      61     298 x 395        11.17%       19 new      42 zero         0.00 | 0.00         
+  6     104     104     433 x 493        10.79%       28 new      76 zero         0.01 | 0.00         
+  6      54     119     258 x 318        17.31%       19 new      35 zero         0.00 | 0.00         
+  5     123     138     381 x 400        16.15%       24 new      99 zero         0.01 | 0.00         
+  5      35     129     244 x 326        17.94%       17 new      18 zero         0.00 | 0.00         
+  4      21     154     173 x 247        21.25%        9 new      12 zero         0.00 | 0.00         
+  5     152     167     428 x 381        17.51%       18 new     134 zero         0.01 | 0.00         
+  4     126     141     299 x 241        21.24%       19 new     107 zero         0.00 | 0.00         
+  4      49     136     197 x 204        22.33%        7 new      42 zero         0.00 | 0.00         
+  4       7     124     138 x 180        23.55%        1 new       6 zero         0.00 | 0.00         
+  4       7     118     135 x 177        23.86%        1 new       6 zero         0.00 | 0.00         
+  5     102     117     319 x 265        17.52%        0 new     102 zero         0.00 | 0.00         
+  6      15      15     306 x 339        16.12%        0 new      15 zero         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis       60 x 108        44.63%       60 new       0 zeroDimension of quotient: 48
+[48, 23], Non trivial / Trivial = 47.92%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.18 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 48.
+Time for rational param:          0.04 (elapsed) sec /  0.02 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           0.04 sec (elapsed) /  0.02 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.03 sec
+overall(cpu)            0.02 sec
+select                  0.00 sec   7.6%
+symbolic prep.          0.01 sec  18.9%
+update                  0.00 sec  12.3%
+convert                 0.00 sec   2.0%
+linear algebra          0.02 sec  57.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                    60
+#terms in basis                2815
+#pairs reduced                  894
+#GM criterion                 18021
+#redundant elements             135
+#rows reduced                  1848
+#zero reductions                706
+max. matrix data                433 x 493 (10.791%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+MSOLVE_RESULT form=per3 p=1000003 seed=62 k=5 degree=48 rc=0 sec=0

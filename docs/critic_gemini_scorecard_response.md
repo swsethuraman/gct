@@ -76,6 +76,17 @@ specialisation behaviour, and that is a real starting point.  But the session
 would be exploratory rather than an application of an established technique, and
 it should be briefed and scheduled as such.
 
+**Correction (session 61, confirmed by the integrator).** The preprints exist —
+`arXiv:2606.13628` and `arXiv:2606.15970`, Karthik Sheshadri — and were located
+and quoted by session 61. My searches all went through `arxiv.org/abs/<id>`,
+which returns an empty document through the fetch tool, while
+`arxiv.org/html/<id>` and the search index resolve; I have reproduced both
+behaviours. **The "could not locate" finding above was a tooling false negative
+and it was mine.** The rule it was used to justify is unaffected in substance:
+session 61 built nothing on either paper and proved its own specialisation
+inequality (`docs/s61_review.md` §4), which is Lemma 15 plus Proposition 1 of
+2606.13628 arrived at independently. Keep the rule; drop the premise.
+
 ## 4. Two of the ten sessions are one session
 
 Sessions 3 (Kronecker-quiver relations) and 8 (border Rees track) are the same

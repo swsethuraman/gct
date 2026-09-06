@@ -1,0 +1,78 @@
+# msolve run det4_p1000003_s63_k7_msolve: det_4 of the generic 4x4 matrix, 16 variables; slot k=7, chart t0=1, Rabinowitsch variable s for g
+
+--------------- INPUT DATA ---------------
+#variables                       9
+#equations                       9
+#invalid equations               0
+field characteristic       1000003
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  3       6       8       7 x 165       100.00%        6 new       0 zero         0.00 | 0.00         
+  4      11      11      72 x 660        24.94%       11 new       0 zero         0.01 | 0.00         
+  5      31      31     322 x 1704       14.34%       28 new       3 zero         0.02 | 0.01         
+  6     119     119    1099 x 3790       10.69%       68 new      51 zero         0.10 | 0.05         
+  7     417     417    2672 x 7010        9.02%      181 new     236 zero         0.61 | 0.31         
+  7     153    1005    1701 x 5761       12.15%       23 new     130 zero         0.23 | 0.12         
+  4      35     304     146 x 644        26.77%        4 new      31 zero         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis        1 x 1         100.00%        1 new       0 zeroTime for rational param:          0.97 (elapsed) sec /  0.48 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time           0.97 sec (elapsed) /  0.49 sec (cpu)
+------------------------------------------------------------------------------------
+         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.97 sec
+overall(cpu)            0.48 sec
+select                  0.10 sec  10.6%
+symbolic prep.          0.14 sec  14.7%
+update                  0.03 sec   3.4%
+convert                 0.02 sec   2.5%
+linear algebra          0.66 sec  68.1%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                     1
+#terms in basis                   1
+#pairs reduced                  772
+#GM criterion                 53261
+#redundant elements             329
+#rows reduced                  1545
+#zero reductions                451
+max. matrix data               2672 x 7010 (9.023%)
+max. symbolic hash table size  2^14
+max. basis hash table size     2^16
+-----------------------------------------
+
+Grobner basis has a single element
+No solution
+MSOLVE_RESULT form=det4 p=1000003 seed=63 k=7 degree=0 rc=0 sec=1

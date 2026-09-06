@@ -93,6 +93,18 @@ separation is LMR's, independently established — so nothing propagates. But th
 specialization theorem itself remains unverified here, and no session should
 build on it until someone produces the arXiv number.
 
+**Correction (session 61, confirmed by the integrator).** The preprints exist:
+`arXiv:2606.13628` and `arXiv:2606.15970`, both Karthik Sheshadri. Every one of
+my searches used `arxiv.org/abs/<id>`, which returns an empty document through
+the fetch tool; `arxiv.org/html/<id>` and the search index resolve normally. The
+title, abstract, Lemma 15 and Theorem 3 of the first were read here directly.
+**The failure was mine and it was a tooling false negative, not a missing
+paper.** For future citation checks: an empty `abs` page proves nothing — try
+`html` before concluding the identifier is invalid. The rule below — that no
+session's mathematics may depend on an unread citation — was right and stands;
+session 61 followed it and proves the one statement it needs (`docs/s61_review.md`
+§4).
+
 **The one thing worth running:** the full polar profile `(δ_0..δ_7)` of `per_3`,
 compared componentwise against `(4,12,36,68,84,60,20)`. If some slot `k ≤ 6`
 violates the determinant bound, there is a conormal inequality independent of
@@ -101,6 +113,13 @@ slot is fine and only `δ_7` differs, then conormal geometry has told us the
 whole microlocal signal at `(3,4)` collapses to LMR — and we park the branch
 knowing why. Either answer is worth one bounded session. This is the only
 concrete new computation in the five.
+
+**Answered (session 61, verified by the integrator).** Slot 6 violates:
+`δ(per_3) = (3, 6, 12, 24, 48, 48, 30, 6)`, so the padded quartic has
+`δ_6 = 30 > 20` as well as `δ_7 = 6 > 0`. The branch does **not** collapse to
+LMR — the two conditions are incomparable — but the reach of the whole profile
+is still exactly `dc̄(per_3) ≥ 5`, because `det_5` dominates every slot. A second
+certificate at size 4, not a stronger bound. `docs/s61_review.md`.
 
 ## 4. Quiver — the best of the five, and the only genuinely new engine
 

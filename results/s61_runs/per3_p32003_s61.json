@@ -1,0 +1,211 @@
+{
+ "countg": {
+  "0": {
+   "degp": 3,
+   "dim": 1
+  },
+  "1": {
+   "degp": 6,
+   "dim": 1
+  },
+  "2": {
+   "degp": 12,
+   "dim": 1
+  },
+  "3": {
+   "degp": 24,
+   "dim": 1
+  },
+  "4": {
+   "degp": 48,
+   "dim": 1
+  },
+  "5": {
+   "degp": 48,
+   "dim": 1
+  },
+  "6": {
+   "degp": 30,
+   "dim": 1
+  },
+  "7": {
+   "degp": 6,
+   "dim": 1
+  }
+ },
+ "counts": {
+  "0": {
+   "degp": 3,
+   "dim": 1,
+   "sec": 0,
+   "vdA": 3,
+   "vdB": 3
+  },
+  "1": {
+   "degp": 6,
+   "dim": 1,
+   "sec": 0,
+   "vdA": 6,
+   "vdB": 6
+  },
+  "2": {
+   "degp": 12,
+   "dim": 1,
+   "sec": 0,
+   "vdA": 12,
+   "vdB": 12
+  },
+  "3": {
+   "degp": 24,
+   "dim": 1,
+   "sec": 0,
+   "vdA": 24,
+   "vdB": 24
+  },
+  "4": {
+   "degp": 48,
+   "dim": 1,
+   "sec": 1,
+   "vdA": 48,
+   "vdB": 48
+  },
+  "5": {
+   "degp": 48,
+   "dim": 1,
+   "sec": 4,
+   "vdA": 48,
+   "vdB": 48
+  },
+  "6": {
+   "degp": 30,
+   "dim": 1,
+   "sec": 10,
+   "vdA": 30,
+   "vdB": 30
+  },
+  "7": {
+   "degp": 6,
+   "dim": 1,
+   "sec": 6,
+   "vdA": 6,
+   "vdB": 6
+  }
+ },
+ "elapsed_s": 1025.5,
+ "engine": "singular",
+ "excess": {
+  "0": {
+   "deg": -1,
+   "dim": 0
+  },
+  "1": {
+   "deg": -1,
+   "dim": 0
+  },
+  "2": {
+   "deg": -1,
+   "dim": 0
+  },
+  "3": {
+   "deg": -1,
+   "dim": 0
+  },
+  "4": {
+   "deg": -1,
+   "dim": 0
+  },
+  "5": {
+   "deg": 24,
+   "dim": 1
+  },
+  "6": {
+   "deg": 24,
+   "dim": 2
+  },
+  "7": {
+   "deg": 24,
+   "dim": 3
+  }
+ },
+ "form": "per3",
+ "form_description": "per_3 of the generic 3x3 matrix, 9 variables",
+ "ks": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "mem_kb": 6000000,
+ "nvars": 9,
+ "prime": 32003,
+ "profile": [
+  3,
+  6,
+  12,
+  24,
+  48,
+  48,
+  30,
+  6
+ ],
+ "radical": {
+  "0": {
+   "degp": 3,
+   "degr": 3,
+   "reduced": true,
+   "sec": 0
+  },
+  "1": {
+   "degp": 6,
+   "degr": 6,
+   "reduced": true,
+   "sec": 0
+  },
+  "2": {
+   "degp": 12,
+   "degr": 12,
+   "reduced": true,
+   "sec": 0
+  },
+  "3": {
+   "degp": 24,
+   "degr": 24,
+   "reduced": true,
+   "sec": 0
+  },
+  "4": {
+   "degp": 48,
+   "degr": 48,
+   "reduced": true,
+   "sec": 40
+  },
+  "5": {
+   "degp": 48,
+   "degr": 48,
+   "reduced": true,
+   "sec": 596
+  },
+  "6": {
+   "degp": 30,
+   "degr": 30,
+   "reduced": true,
+   "sec": 368
+  },
+  "7": {
+   "degp": 6,
+   "degr": 6,
+   "reduced": true,
+   "sec": 0
+  }
+ },
+ "range": 99,
+ "returncode": 0,
+ "run": "per3_p32003_s61",
+ "sat_mode": "both",
+ "seed": 61,
+ "timeout_s": 14000
+}

@@ -1,0 +1,26 @@
+// Session 61: the dual sextic of per_3 in closed form, verified over Q, and its singular locus.
+// (Run from the repo root: Singular -q analysis/wk9_s61_dualcheck.sing; log results/logs/s61_dual_identity.log.)
+// f below is the elimination output of analysis/wk9_s61_dual.m2 at p = 32003, lifted to integers.
+ring S = 0, (b(0..8)), dp;
+// f as returned by the elimination (p = 32003), lifted to integers
+poly f = b(2)^2*b(4)^2*b(6)^2-2*b(1)*b(2)*b(4)*b(5)*b(6)^2+b(1)^2*b(5)^2*b(6)^2-2*b(2)^2*b(3)*b(4)*b(6)*b(7)-6*b(1)*b(2)*b(3)*b(5)*b(6)*b(7)-6*b(0)*b(2)*b(4)*b(5)*b(6)*b(7)-2*b(0)*b(1)*b(5)^2*b(6)*b(7)+b(2)^2*b(3)^2*b(7)^2-2*b(0)*b(2)*b(3)*b(5)*b(7)^2+b(0)^2*b(5)^2*b(7)^2-6*b(1)*b(2)*b(3)*b(4)*b(6)*b(8)-2*b(0)*b(2)*b(4)^2*b(6)*b(8)-2*b(1)^2*b(3)*b(5)*b(6)*b(8)-6*b(0)*b(1)*b(4)*b(5)*b(6)*b(8)-2*b(1)*b(2)*b(3)^2*b(7)*b(8)-6*b(0)*b(2)*b(3)*b(4)*b(7)*b(8)-6*b(0)*b(1)*b(3)*b(5)*b(7)*b(8)-2*b(0)^2*b(4)*b(5)*b(7)*b(8)+b(1)^2*b(3)^2*b(8)^2-2*b(0)*b(1)*b(3)*b(4)*b(8)^2+b(0)^2*b(4)^2*b(8)^2;
+matrix B[3][3] = b(0),b(1),b(2),b(3),b(4),b(5),b(6),b(7),b(8);
+poly perB = b(0)*b(4)*b(8)+b(0)*b(5)*b(7)+b(1)*b(3)*b(8)+b(1)*b(5)*b(6)+b(2)*b(3)*b(7)+b(2)*b(4)*b(6);
+poly detB = det(B);
+poly perBB = b(0)^2*b(4)^2*b(8)^2+b(0)^2*b(5)^2*b(7)^2+b(1)^2*b(3)^2*b(8)^2+b(1)^2*b(5)^2*b(6)^2+b(2)^2*b(3)^2*b(7)^2+b(2)^2*b(4)^2*b(6)^2;
+poly g = 4*perBB - 2*perB^2 - detB^2;
+print("f - (4 per(BoB) - 2 per(B)^2 - det(B)^2) = " + string(f - g));
+// singular locus of Z over QQ: dimension and degree
+ideal JZ = jacob(g), g;
+ideal JZs = std(JZ);
+print("Sing(Z): affine dim " + string(dim(JZs)) + " (projective " + string(dim(JZs)-1) + "), degree " + string(mult(JZs)));
+// check that per_3 vanishes on ... biduality sanity: the point padj(A) for a random singular A lies on Z
+ring R = 0, (a(0..8)), dp;
+poly per3 = a(0)*a(4)*a(8)+a(0)*a(5)*a(7)+a(1)*a(3)*a(8)+a(1)*a(5)*a(6)+a(2)*a(3)*a(7)+a(2)*a(4)*a(6);
+ideal padj = jacob(per3);
+map phi = S, padj;   // b_i -> padj_i(a)
+poly gA = phi(g);
+// gA should be divisible by per3 (it vanishes on {per3 = 0}); check reduce
+print("g(padj(A)) mod per3 = " + string(reduce(gA, std(ideal(per3)))));
+print("g(padj(A)) / per3 = " + string(gA / per3));
+quit;

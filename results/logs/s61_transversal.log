@@ -1,0 +1,52 @@
+component                                      point-type   Hessian ranks (5 random points)
+rows 0,1 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+rows 0,2 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+rows 1,2 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+cols 0,1 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+cols 0,2 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+cols 1,2 = 0 (plane)                      generic      [6, 6, 6, 6, 6]
+row 0 = 0, col 0 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 0 = 0, col 1 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 0 = 0, col 2 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 1 = 0, col 0 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 1 = 0, col 1 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 1 = 0, col 2 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 2 = 0, col 0 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 2 = 0, col 1 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+row 2 = 0, col 2 = 0, 2x2 permanent = 0 (quadric)   generic      [6, 6, 6, 6, 6]
+rows 0,1 = 0, col 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 0,1 = 0, col 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 0,1 = 0, col 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 0,2 = 0, col 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 0,2 = 0, col 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 0,2 = 0, col 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 1,2 = 0, col 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 1,2 = 0, col 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+rows 1,2 = 0, col 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,1 = 0, row 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,1 = 0, row 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,1 = 0, row 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,2 = 0, row 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,2 = 0, row 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 0,2 = 0, row 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 1,2 = 0, row 0 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 1,2 = 0, row 1 = 0 (line)             special      [4, 4, 4, 4, 4]
+cols 1,2 = 0, row 2 = 0 (line)             special      [4, 4, 4, 4, 4]
+the nine coordinate points e_ij                 special      [4, 4, 4, 4, 4, 4, 4, 4, 4]
+
+M3 transversal check (rank 6 on all 15 components, rank 4 on the 18 lines): PASS
+
+Node check for the P^6-section (M5): rank of B^T H B, B = [point | 6 random directions]
+  rows 0,1 = 0 plane: restricted Hessian rank 6
+  rows 0,2 = 0 plane: restricted Hessian rank 6
+  rows 1,2 = 0 plane: restricted Hessian rank 6
+  row 0, col 0 quadric: restricted Hessian rank 6
+  row 0, col 1 quadric: restricted Hessian rank 6
+  row 0, col 2 quadric: restricted Hessian rank 6
+  row 1, col 0 quadric: restricted Hessian rank 6
+  row 1, col 1 quadric: restricted Hessian rank 6
+  row 1, col 2 quadric: restricted Hessian rank 6
+  row 2, col 0 quadric: restricted Hessian rank 6
+  row 2, col 1 quadric: restricted Hessian rank 6
+  row 2, col 2 quadric: restricted Hessian rank 6
+Node check: PASS (every generic-section singular point is an A_1 node of the 5-fold)
