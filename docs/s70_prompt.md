@@ -36,8 +36,8 @@ it down, and the answer is reusable whichever way it goes.
 
 ## Part B — `rank S_{λ,24}`, and what each outcome means
 
-The four outcomes are **not symmetric**, and a session that reads
-"success = 274" will mis-report two of them.  Use these semantics exactly:
+The outcomes are **not symmetric**, and a session that reads "success = 274"
+will mis-report both of them.  Use these semantics exactly:
 
 - **`rank S < 274`.**  Then `mult_pad ≤ mult_red = rank S < 274`, hence
   `i_pad ≥ 1`.  With `i_det = 1` that gives `D ≤ 0`: **the LMR cell is settled
