@@ -91,8 +91,39 @@ def check(delta, seed_fresh=20260907, n_fresh=16, bound=50):
     out["nonzero_generic_cubic"] = evaluate(cv) != 0
     out["certifies_i_det_ge_1_over_Q"] = bool(out["nonzero"] and out["integer"] and out["E_v_zero_over_Z"]
                                               and out["vanishes_fresh_det_over_Z"] and out["nonzero_generic_cubic"])
-    out["support"] = int(sum(1 for x in v if x))
-    out["max_abs_coeff"] = int(max(abs(x) for x in v))
+    out["support_chi"] = int(sum(1 for x in v if x))
+    out["max_abs_coeff_chi"] = int(max(abs(x) for x in v))
+    # monomial coordinates (integrator note 2 §5.1): the number of terms and a named nonzero one.
+    coeff_int = [int(c) for c in coeff]
+    nz = [i for i in range(len(coeff_int)) if coeff_int[i] != 0]
+    out["monomial_term_count"] = len(nz)
+    # the term of largest |coeff|, written as its multiset of exponent vectors (each degree 3, r=7) and its coeff
+    imax = max(nz, key=lambda i: abs(coeff_int[i]))
+    mono = [list(A[int(Msel[imax, k])]) for k in range(Msel.shape[1])]
+    out["named_nonzero_term"] = {"monomial_exponent_vectors": mono, "coefficient": coeff_int[imax]}
+    out["max_abs_coeff_monomial"] = int(max(abs(coeff_int[i]) for i in nz))
+    # a COMPACT summary of the monomial-coordinate vector (the full 240k-term expansion is
+    # ~68 MB, over the 5 MB commit limit; it regenerates from the chi-coordinate vector via
+    # this checker).  Save the term count, the weight, and the first 60 terms + the named term.
+    order = sorted(nz, key=lambda i: tuple(int(x) for x in Msel[i]))
+    sample = []
+    for i in order[:60]:
+        sample.append([[list(A[int(Msel[i, k])]) for k in range(Msel.shape[1])], coeff_int[i]])
+    wsum = [0] * R
+    for k in range(Msel.shape[1]):
+        for j, x in enumerate(A[int(Msel[order[0], k])]):
+            wsum[j] += x
+    with open(os.path.join(ROOT, "results", f"s62_n3_hwv_monomial_d{delta}.json"), "w") as fh:
+        json.dump({"lambda": list(lam), "delta": delta, "n": N_DEG, "r": R,
+                   "coefficient_convention": "c_alpha(F) = coefficient of s^alpha in F; term = multiset of alpha's, |alpha|=3",
+                   "monomial_term_count": len(order), "weight_of_first_term": wsum,
+                   "named_nonzero_term": out["named_nonzero_term"],
+                   "first_60_terms": sample,
+                   "full_vector_chi_coords": f"results/s62_n3_vec_d{delta}.json (compact; expand via analysis/wk10_s62_n3check.py)",
+                   "note": "SUMMARY of the programme's first exhibited element of I(D_7^{det_3})^{HWV} with i_det>0; "
+                           "a highest-weight vector of weight lambda in the ideal, exhibited over Z (term count, "
+                           "weight check, and 60 sample terms; full expansion regenerates from the chi-vector)"}, fh)
+    out["monomial_vector_summary_file"] = f"results/s62_n3_hwv_monomial_d{delta}.json"
     return out
 
 
