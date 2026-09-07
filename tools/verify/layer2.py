@@ -90,7 +90,7 @@ def parse_vector(raw, r):
 def check_cell(cell, log):
     n, r, lam, delta, a = cell["n"], cell["r"], tuple(cell["lambda"]), cell["delta"], cell["a"]
     ok = True
-    ok &= _rec(log, "cell: n = 4", n == 4, f"n = {n}")
+    ok &= _rec(log, "cell: n in {3, 4}", n in (3, 4), f"n = {n}")
     ok &= _rec(log, "cell: length(lambda) = r", len(lam) == r and lam[-1] > 0,
                f"lambda {lam}, r {r}")
     ok &= _rec(log, "cell: lambda weakly decreasing", all(lam[i] >= lam[i + 1] for i in range(len(lam) - 1)))
@@ -147,7 +147,7 @@ def check_hwv_certificate(cert, log):
             continue
         vals = []
         for j, pt in enumerate(pts):
-            F = form_of_point(pt, r)
+            F = form_of_point(pt, r, n)
             vals.append([evaluate(vec, F, modulus) for vec in vectors])
         if want_zero:
             allz = all(v == 0 for row in vals for v in row)
@@ -165,7 +165,7 @@ def check_hwv_certificate(cert, log):
             rnd = random.Random(seed + 1000 * FAMILIES.index(fam))
             bad = 0
             for _ in range(count):
-                F = form_of_point(fresh_point(fam, r, rnd), r)
+                F = form_of_point(fresh_point(fam, r, rnd, n=n), r, n)
                 bad += sum(1 for vec in vectors if evaluate(vec, F, modulus) != 0)
             ok &= _rec(log, f"vanishes at {count} fresh {fam} points (seed {seed})", bad == 0,
                        "" if bad == 0 else f"{bad} nonzero (vector, point) pairs")
@@ -173,7 +173,7 @@ def check_hwv_certificate(cert, log):
             rnd = random.Random(seed + 1000 * FAMILIES.index(fam))
             vals = []
             for _ in range(count):
-                F = form_of_point(fresh_point(fam, r, rnd), r)
+                F = form_of_point(fresh_point(fam, r, rnd, n=n), r, n)
                 vals.append([evaluate(vec, F, modulus) for vec in vectors])
             rk = _eval_rank(vals, len(vectors), modulus)
             ok &= _rec(log, f"evaluation at {count} fresh {fam} points (seed {seed}) has full row rank",
@@ -269,7 +269,7 @@ def check_full_rank_certificate(cert, log):
     for pt in pts:
         if pt["type"] != cert["variety"]:
             return _rec(log, "points are of the claimed variety", False, f"{pt['type']} vs {cert['variety']}") and False
-        F = form_of_point(pt, r)
+        F = form_of_point(pt, r, n)
         vals.append([evaluate(vec, F, p) for vec in basis_vecs])
     rk = _eval_rank(vals, len(basis_vecs), p)
     ok &= _rec(log, f"evaluation of the a = {a} highest-weight vectors at {len(pts)} recorded {cert['variety']} points has rank a mod {p}",

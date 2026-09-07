@@ -203,8 +203,10 @@ def validate(cert):
         _check_conventions(cert["conventions"])
         if _int(cert["prime"], "prime") < 3:
             raise Unparseable("prime: expected a prime >= 3")
-        if cert["variety"] not in ("det_pencil", "padded_permanent", "reducible"):
-            raise Unparseable("variety: expected det_pencil, padded_permanent or reducible")
+        if cert["variety"] not in ("det_pencil", "permanent", "padded_permanent", "reducible"):
+            raise Unparseable("variety: expected det_pencil, permanent, padded_permanent or reducible")
+        if cert["variety"] in ("padded_permanent", "reducible") and cert["cell"]["n"] != 4:
+            raise Unparseable(f"variety {cert['variety']} is defined only at n = 4")
         _check_points(cert["points"], "points")
         if cert["basis"] is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
             raise Unparseable("basis: expected null or a nonempty list of vectors")
@@ -222,8 +224,10 @@ def validate(cert):
         if knd != "Fp":
             raise Unparseable("sparse_nullity: field must be a finite field F_<p> "
                               "(a full-column-rank mod p certifies mult = a over Q; a char-0 nullity is not this kind)")
-        if cert["variety"] not in ("det_pencil", "padded_permanent", "reducible"):
-            raise Unparseable("variety: expected det_pencil, padded_permanent or reducible")
+        if cert["variety"] not in ("det_pencil", "permanent", "padded_permanent", "reducible"):
+            raise Unparseable("variety: expected det_pencil, permanent, padded_permanent or reducible")
+        if cert["variety"] in ("padded_permanent", "reducible") and cert["cell"]["n"] != 4:
+            raise Unparseable(f"variety {cert['variety']} is defined only at n = 4")
         if _int(cert["nullity"], "nullity") < 0:
             raise Unparseable("nullity: expected a nonnegative integer")
         _check_points(cert["points"], "points")

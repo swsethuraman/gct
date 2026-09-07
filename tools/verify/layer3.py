@@ -190,7 +190,7 @@ def check_sparse_nullity_certificate(cert, log):
         if pt.get("type") != variety:
             return _rec(log, "points are of the claimed variety", False, f"{pt.get('type')} vs {variety}") and False
     try:
-        forms = [form_of_point(pt, r) for pt in pts]
+        forms = [form_of_point(pt, r, n) for pt in pts]
     except ValueError as e:
         return _rec(log, "points rebuilt from substitution data (lie on the variety)", False, str(e)) and False
     _rec(log, f"{len(pts)} points rebuilt from substitution data (variety {variety})", True)

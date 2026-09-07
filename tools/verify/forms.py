@@ -103,17 +103,31 @@ def per_of_linear_matrix(entries):
     return rec(list(range(n)), list(range(n)))
 
 
-def det_pencil_form(pencil, r):
-    """pencil: list of r integer 4x4 matrices A_1..A_r.  Returns det_4(sum s_i A_i)."""
+def _pencil_entries(pencil, r, n):
     if len(pencil) != r:
         raise ValueError(f"pencil has {len(pencil)} matrices, expected r = {r}")
-    n = len(pencil[0])
-    if n != 4 or any(len(A) != 4 or any(len(row) != 4 for row in A) for A in pencil):
-        raise ValueError("pencil matrices must be 4x4")
-    entries = [[linear_form([pencil[k][i][j] for k in range(r)]) for j in range(4)]
-               for i in range(4)]
-    F = det_of_linear_matrix(entries)
-    poly_degree_check(F, 4, r)
+    if any(len(A) != n or any(len(row) != n for row in A) for A in pencil):
+        raise ValueError(f"pencil matrices must be {n}x{n}")
+    return [[linear_form([pencil[k][i][j] for k in range(r)]) for j in range(n)]
+            for i in range(n)]
+
+
+def det_pencil_form(pencil, r, n=4):
+    """pencil: list of r integer n x n matrices A_1..A_r.  Returns det_n(sum s_i A_i).
+    n defaults to 4, so every call site written before the n = 3 extension is
+    unchanged in meaning."""
+    F = det_of_linear_matrix(_pencil_entries(pencil, r, n))
+    poly_degree_check(F, n, r)
+    return F
+
+
+def permanent_pencil_form(pencil, r, n=3):
+    """The UNPADDED permanent pencil: per_n(sum s_i A_i), a form of degree n in r
+    variables.  This is not the padded family -- see padded_permanent_form for
+    x_0 * per_3, which is the programme's model.  Used by the n = 3 comparison
+    of the batch-11 plan section 1.1."""
+    F = per_of_linear_matrix(_pencil_entries(pencil, r, n))
+    poly_degree_check(F, n, r)
     return F
 
 

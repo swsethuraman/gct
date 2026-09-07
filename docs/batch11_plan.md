@@ -1,10 +1,11 @@
 # Batch 11 — the consolidated plan
 
 Two boards were drafted for this batch: mine, and Sol's reply to it
-(`sol_feedback1.txt`).  Sol adopted the architecture — **ten ungated sessions,
-two gated** — and proposed two pre-batch checks and five modifications.  This
-document is the merge.  Every number below is either banked in this repository,
-verified here while the plan was being written, or labelled as a hypothesis.
+(`sol_feedback1.txt`).  The architecture evolved from the initial **ten ungated /
+two gated** draft to the final **eleven ungated / one partially gated** design
+after the C6 fallback and C3 split-gate changes below.  This document is the
+merge.  Every number below is either banked in this repository, verified here
+while the plan was being written, or labelled as a hypothesis.
 
 The design principle is unchanged and is the one thing batch 10 got wrong:
 
@@ -299,7 +300,7 @@ algorithmic content of C1.  Concretely:
 |---|---|---|
 | **S1 — a cheaper determinant equation** | Not "does the LMR family have a smaller member" — it does not, below the known case. The question is whether **any other explicit determinant-orbit equation exists in a dramatically cheaper cell**. Exhaustive primary-literature and constructive audit over the named mechanism families (§10). **Cost-indexed**: every candidate returned as `(r, δ, λ, a_δ, n_χ, expected support)`, never as a citation, so that a beautiful but computationally useless result is visibly useless. | A guaranteed determinant equation at `r = 5, 6, 7, 8` would give a positive kernel cell with a manageable carrier and delete four batches of pain. |
 | **S2 — wreath/`Θ` intertwiner at `q = 2`** | An actual `R₂`, an actual `S₂`, a verified commutative square on tiny `n, δ`, injectivity on at least one multiplicity block, explicit row-growth bookkeeping. | The only surviving credible asymptotic route. If `q = 2` cannot be made natural, general `q` dies cheaply. |
-| **S3 — `r = 5` exhaustion theorem** | Turn s66's measured singular-stratum picture into a finite exhaustion / upper-bound theorem. Shares one written target statement with C5 (§5). | The exact missing implication for `R₅ ⊄ D₅`. |
+| **S3 — `r = 5` exhaustion theorem** | Turn s66's measured singular-stratum picture into a finite exhaustion / upper-bound theorem. Shares one written target statement with C5 (§6). | The exact missing implication for `R₅ ⊄ D₅`. |
 | **S4 — stable `a_∞ = 2, 3`** | In this order: all weight-13 `a_∞ = 2`; then `a_∞ = 3`; **stop at the first nonzero stable ideal**; if all die, formulate the resulting stronger stable dead-region theorem. Exact low-rank tests on `M₆`, not another census. P0-B is closed, so it opens immediately. | Independent second determinant-equation laboratory; 44 of 47 weight-13 shapes are still open and need ranks, not scalars. |
 | **S5 — intrinsic wreath source** | Does `[λ]^{S₄≀S_δ}` admit a Bratteli / Jucys–Murphy / partition-algebra recursion whose live state count tracks `a_δ` rather than `dim[λ]`? Pre-register the maximum live state count at `δ = 12, 14, 16, 18`. | Third and most theorem-oriented attack on the bottleneck; the one route nobody has tried. |
 | **S6 — adversarial audit** | Read **code and docs**, explicitly ignoring session conclusions until the underlying implementation has been checked. What machinery already exists that the board thinks is missing? Which dead routes died mathematically and which only in one implementation? Which assumptions are merely inherited? Given every inequality now known, which numerical outcomes at LMR still permit `D > 0`? Then draft the batch-12 board. | Batch 10 specified four items as missing that were already in the repository. This is the direct fix. |
@@ -414,14 +415,32 @@ and that is worth knowing on night one rather than after three sessions.
 
 ## 6. Gate structure
 
-    ungated (11):  C1  C2  C4  C5  C6(Mode B)  S1 S2 S3 S4 S5 S6
-    gated  (1):    C3, on (C1 or C2 or S5), and only for its second rank —
-                   and possibly not at all, per §5(ii)
+    ungated (11):          C1  C2  C4  C5  C6(Mode B)  S1 S2 S3 S4 S5 S6
+    partially gated (1):  C3.  Its first-hour source-dependence determination is
+                          ungated.  If `rank S_{λ,24}` is source-independent, that
+                          rank runs ungated and only `det A₂₄` waits on
+                          (C1 or C2 or S5).  If `rank S_{λ,24}` itself requires the
+                          explicit source, both LMR ranks wait on the same single
+                          source gate.
 
 The anti-s65 rule for this batch, stated so a worker can apply it without
 asking: **no session may have a gate whose opening depends on another gate.**
-Every gated session carries a default mode that produces a pre-registered number
-from material already in the repository.
+Every gated or partially gated session carries an ungated, pre-registered
+fallback deliverable.  For C3, if no source lands and `rank S_{λ,24}` is
+source-dependent, the fallback is: prove/document that dependence precisely,
+then implement the same `S` construction on the banked, manageable `n = 4`
+cells `(8,4,4,4,4)_6` and `(12,9,9,1,1)_8`, reporting their exact ranks and
+costs.  Both are *discriminating* cells — `mult_red < a` — so they calibrate the
+`S` construction against banked truth rather than against a tautology (s60 §,
+`docs/reducible_engine.md`, s64's table):
+
+    (8,4,4,4,4)_6    a = 2,  h_pad = 1,  mult_red = 1,  i_red = 1,  mult_pad = 1
+    (12,9,9,1,1)_8   a = 7,  h_pad = 6,  mult_red = 5,  i_red = 2,  mult_pad = 5
+
+so `S` is `2 × 1` and `7 × 6` there, and a correct construction returns
+`rank S = 1` and `rank S = 5` — both strictly below `a`, which is exactly the
+regime that matters at LMR.  It must not fall back to the LMR carrier-space
+engine killed by s63.
 
 C5 and S3 attack the same theorem computationally and theoretically.  **They
 share one written target statement, fixed in this plan before either starts**,
@@ -517,9 +536,19 @@ Carried from batch 10's corrections ledger, and all four are its direct lessons:
 6. Delivery by git bundle only.  No file over 5 MB.  Commit messages carry
    `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` and nothing else.
 
-Queued housekeeping, unchanged: add a `gct-cert/1` kind for the `n = 3` result —
-the verifier hard-asserts `n = 4` at `tools/verify/layer2.py:93`, and s63
-recommended the one-line extension to `n ∈ {3,4}`.  C6 Mode B needs it.
+**Session numbers.**  The Claude sessions of this batch are **68 to 73**:
+
+    C1 = s68   C2 = s69   C3 = s70   C4 = s71   C5 = s72   C6 = s73
+
+with briefs `docs/s68_prompt.md` … `docs/s73_prompt.md` and standing conditions
+in `docs/batch11_worker_preamble.md`.  **65 stays a gap in the numbering** — its
+brief was written, its gate never opened, and s73 subsumes its Mode A content.
+Pretending it ran would corrupt the one thing the record is for.
+
+Queued housekeeping, **now done**: the verifier hard-asserted `n = 4` at
+`tools/verify/layer2.py`, which made the `n = 3` result uncertifiable.  It now
+accepts `n ∈ {3, 4}` and the P0-A certificate is banked, so C6 Mode B can
+certify its rungs as it goes.
 
 ---
 
