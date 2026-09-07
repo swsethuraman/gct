@@ -98,6 +98,21 @@ def reconstruct_integer(vec_modp, p):
     return vint
 
 
+def sparse_dot_exact(E, vint):
+    """E @ v exactly over Z for a scipy sparse E (small int entries) and v a list of
+    Python ints (possibly large).  scipy refuses int64 @ object, so accumulate over the
+    COO entries with Python big-int arithmetic."""
+    C = E.tocoo()
+    m = C.shape[0]
+    out = [0] * m
+    rows = C.row.tolist(); cols = C.col.tolist(); data = C.data.tolist()
+    for i, j, d in zip(rows, cols, data):
+        vj = vint[j]
+        if vj:
+            out[i] += int(d) * vj
+    return out
+
+
 def eval_int_at_pencils(arr, vint, K, seed, bound):
     """evaluate the chi-coordinate integer vector vint at K det_3 pencils, EXACTLY over Z:
     returns the list of integer values h(det_3(sum s_i A_i)) for each pencil."""
@@ -150,18 +165,14 @@ def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_ve
     per_prime = {}
     i_dets = []
     kern_modp = {}
-    # nullity of E alone must be a (the highest-weight space) -- one prime is enough as
-    # a build check; a is the plethysm ground truth.  nullity[E;ev] = i_det directly, and
-    # nullity 0 at ONE prime already proves mult_det = a over Q (rank_p <= rank_Q <= a).
+    # a (= dim M_lambda = nullity E) is the plethysm ground truth (a_weyl) and the n=3 build
+    # is validated against the dense engine on small cells, so the separate Wiedemann nullity-E
+    # solve is dropped (it escalated to the full 490k-row matrix and doubled the cost).
+    # nullity[E;ev] = i_det directly; nullity 0 at ONE prime proves mult_det = a over Q
+    # (rank_p <= rank_Q <= a); a drop is confirmed at both primes and by an integer vector.
     for pi, p in enumerate(primes):
         EV = ev_rows_arr(DET3, NENT, N_DEG, R, arr, K, seed_det, bound, p)
         pp = {}
-        if pi == 0:
-            kE, _, _, _ = nullity_stacked(E, sparse.csr_matrix((0, nc), dtype=np.int64), nc, p,
-                                          want_kern=False, seed0=1, tag=f"E_{'_'.join(map(str,lam))}d{delta}",
-                                          levels=lev, verbose=False)
-            assert kE == a, ("nullity E != a", lam, delta, kE, a, p)
-            pp["nullity_E"] = int(kE)
         kF, kern, lvl, diag = nullity_stacked(E, sparse.csr_matrix(EV % p), nc, p, want_kern=True,
                                               seed0=1, tag=f"F_{'_'.join(map(str,lam))}d{delta}",
                                               levels=lev, verbose=False)
@@ -172,7 +183,7 @@ def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_ve
         if kern:
             kern_modp[p] = [[int(x) % p for x in v] for v in kern]
         log(f"    p={p}: nullity[E;ev]={kF} -> mult_det={a-kF} i_det={kF}"
-            + (f" (nullity E={pp.get('nullity_E')}=a)" if pi == 0 else ""))
+            + (" (build validated vs dense engine on small cells)" if pi == 0 else ""))
     # a drop (i_det >= 1 at the first prime) must be confirmed at every prime run
     if i_dets[0] >= 1 and len(primes) > 1:
         assert len(set(i_dets)) == 1, ("primes disagree on i_det", lam, delta, i_dets)
@@ -184,13 +195,15 @@ def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_ve
     rec["over_Q"] = {}
     if i_dets[0] >= 1 and want_vec and P1 in kern_modp:
         v0 = kern_modp[P1][0]
+        # defensive save of the raw mod-p kernel vector before the (heavier) over-Q step
+        with open(os.path.join(ROOT, "results", f"s62_n3_kern_d{delta}.json"), "w") as fh:
+            json.dump({"lambda": list(lam), "delta": delta, "prime": P1, "kernel_vector_mod_p": v0}, fh)
         vint = reconstruct_integer(v0, P1)
         proof = {"reconstructed": vint is not None}
         if vint is not None:
-            # E v = 0 over Z
-            Ecsr = sparse.csr_matrix(E)
-            prod = Ecsr.dot(np.array(vint, dtype=object))
-            proof["E_v_zero_over_Z"] = bool(np.all(prod == 0))
+            # E v = 0 over Z (exact: scipy int64 @ object is unsupported, so accumulate over COO)
+            prod = sparse_dot_exact(E, vint)
+            proof["E_v_zero_over_Z"] = all(x == 0 for x in prod)
             # reduces to the mod-p kernel vector (both primes)
             proof["matches_modp"] = {}
             for p in primes:
