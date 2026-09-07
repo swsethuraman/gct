@@ -255,10 +255,24 @@ than re-derived — the certificate is checkable on demand at the cost of one
 rebuild plus one Wiedemann sequence, which is the cost of the original
 measurement; that is inherent to an algorithmic certificate.
 
+A Gram-route rank claim is honoured only when the producer **labels** the matrix
+`matrix_role: "gram"` (then `field: "Q"` is forced).  A matrix that is
+semantically a Gram but is left `matrix_role: "generic"`/unlabelled is read as a
+plain rank of that matrix (mod `p` or over `Q` as declared), **not** as
+`rank Θ` — so it can never smuggle a mod-`p` Gram rank in as a char-0
+`rank Θ`; the labelling is the producer's responsibility, and session 63's
+outputs must carry it.
+
 ## Exit status and report
 
-`verify.py` prints one line per file (`PASS`, `FAIL`, `UNPARSEABLE`, `ERROR`)
-followed by every check with its outcome, writes the same as Markdown with
-`--report <file>`, and exits 0 only when every file passed.  A `sparse_nullity`
-whose re-derivation was skipped for budget prints `RECORDED` inside a `PASS`
-(the certificate parsed and is reproducible; nothing failed).
+`verify.py` prints one line per file — `PASS`, `RECORDED`, `FAIL`, `UNPARSEABLE`
+or `ERROR` — followed by every check with its outcome, writes the same as
+Markdown with `--report <file>`, and exits 0 only when there is no `FAIL`,
+`UNPARSEABLE` or `ERROR`.  **`PASS` means the claim was re-derived and holds.**
+**`RECORDED`** is distinct: the certificate is well-formed, its field and points
+check out, and its recorded size matches the true weight-space dimension the
+verifier recomputes (a mismatch is a `FAIL`), but its nullity claim was **not**
+re-derived this run because the true `N_S` exceeds `VERIFY_MAX_NS` — the claim is
+reproducible on demand (one build plus one Wiedemann sequence) by re-running with
+a larger budget.  The verifier never reports `PASS` for a claim it did not check,
+and never trusts a size declared in the certificate.

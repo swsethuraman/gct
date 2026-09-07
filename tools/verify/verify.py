@@ -272,7 +272,15 @@ def verify_file(path):
         return "UNPARSEABLE", log + [("content", False, str(e))]
     except Exception as e:                       # noqa: BLE001
         return "ERROR", log + [("internal error", False, f"{e!r}\n{traceback.format_exc()}")]
-    return ("PASS" if ok else "FAIL"), log
+    if not ok:
+        return "FAIL", log
+    # RECORDED: the certificate is well-formed and reproducible but its claim was
+    # NOT re-derived this run (a budget skip).  It is distinct from a verified PASS
+    # -- the tool never reports "PASS" for a claim it did not check.
+    for name, o, _ in log:
+        if o and isinstance(name, str) and name.startswith("__RECORDED__"):
+            return "RECORDED", log
+    return "PASS", log
 
 
 def collect(paths):
@@ -308,7 +316,7 @@ def main(argv):
         return 2
     lines = ["# Verifier report", "", f"{len(files)} certificate file(s); verifier tools/verify at "
              f"{time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}", ""]
-    summary = {"PASS": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
+    summary = {"PASS": 0, "RECORDED": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
     for path in files:
         t0 = time.time()
         status, log = verify_file(path)
@@ -326,13 +334,15 @@ def main(argv):
             lines.append(f"*{title}*  ({time.time()-t0:.1f}s)")
             lines.append("")
         for name, ok, detail in log:
+            disp = name[len("__RECORDED__"):].strip() if isinstance(name, str) and name.startswith("__RECORDED__") else name
+            disp = disp or "re-derivation skipped (RECORDED)"
             mark = "ok  " if ok else "FAIL"
             if not quiet or not ok:
-                print(f"    [{mark}] {name}" + (f" — {detail}" if detail else ""), flush=True)
-            lines.append(f"- [{'x' if ok else ' '}] {name}" + (f" — {detail}" if detail else ""))
+                print(f"    [{mark}] {disp}" + (f" — {detail}" if detail else ""), flush=True)
+            lines.append(f"- [{'x' if ok else ' '}] {disp}" + (f" — {detail}" if detail else ""))
         lines.append("")
-    tail = (f"PASS {summary['PASS']}, FAIL {summary['FAIL']}, UNPARSEABLE {summary['UNPARSEABLE']}, "
-            f"ERROR {summary['ERROR']}")
+    tail = (f"PASS {summary['PASS']}, RECORDED {summary['RECORDED']}, FAIL {summary['FAIL']}, "
+            f"UNPARSEABLE {summary['UNPARSEABLE']}, ERROR {summary['ERROR']}")
     print(tail)
     lines.insert(3, tail)
     if report:

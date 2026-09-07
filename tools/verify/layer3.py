@@ -200,26 +200,27 @@ def check_sparse_nullity_certificate(cert, log):
     if a_ind is not None and a_ind != a:
         return _rec(log, "a recomputed", False, f"{a_ind} vs {a}") and False
 
-    # cheap pre-build skip: if the recorded N_S already exceeds this run's budget,
-    # do not build E at all -- the schema, field and points are validated and the
-    # certificate is reproducible; report RECORDED.
-    rec_ns = (cert.get("recipe") or {}).get("N_S")
-    if isinstance(rec_ns, int) and rec_ns > VERIFY_MAX_NS:
-        _rec(log, f"re-derivation skipped: recorded N_S = {rec_ns} exceeds VERIFY_MAX_NS = {VERIFY_MAX_NS}", True,
-             "schema/field/points validated; reproducible on demand")
-        return ok and _rec(log, "status: RECORDED (recipe valid, re-derivation beyond this run's budget)", True)
-
-    # rebuild E and ev, independently
+    # size guard, on the TRUE N_S -- computed here, never trusted from the
+    # certificate.  A budget skip enumerates only the weight-lambda monomials
+    # (cheap, level-by-level numpy) to get N_S; the expensive raising-operator
+    # build is done only when the cell is within budget.  A recipe.N_S in the
+    # certificate is provenance and is checked against the truth, never trusted.
     t0 = time.time()
-    E, M = chi_build.raising_operator_full(n, r, delta, lam)
+    M = chi_build.weight_monomials_idx(n, r, delta, lam)
     N_S = M.shape[0]
+    rec_ns = (cert.get("recipe") or {}).get("N_S")
+    if isinstance(rec_ns, int) and rec_ns != N_S:
+        return _rec(log, "recipe.N_S matches the true weight-space dimension", False,
+                    f"recorded {rec_ns}, true {N_S} -- certificate misrepresents its size") and False
+    if N_S > VERIFY_MAX_NS:
+        _rec(log, f"__RECORDED__ true N_S = {N_S} exceeds VERIFY_MAX_NS = {VERIFY_MAX_NS}", True,
+             "schema/field/points and the true N_S validated; the nullity claim is NOT re-derived "
+             "this run (reproducible on demand at the cost of one build + Wiedemann sequence)")
+        return ok
+    # rebuild E on the monomial basis just enumerated
+    E, M = chi_build.raising_operator_full(n, r, delta, lam)
     _rec(log, "E and monomial basis rebuilt (full weight space, verifier-owned)", True,
          f"N_S = {N_S}, E {E.shape}, nnz {E.nnz} ({time.time()-t0:.1f}s)")
-    if N_S > VERIFY_MAX_NS:
-        _rec(log, f"re-derivation skipped: N_S = {N_S} exceeds VERIFY_MAX_NS = {VERIFY_MAX_NS}", True,
-             "certificate is reproducible; re-run with a larger budget to re-derive")
-        # not a failure: the certificate parsed and is reproducible; report NOT-RE-DERIVED
-        return ok and _rec(log, "status: RECORDED (recipe valid, re-derivation beyond this run's budget)", True)
     EV = chi_build.eval_rows_full(M, n, r, pts, p)
     F = sparse.vstack([E, sparse.csr_matrix(EV.astype(np.int64))]).tocsr()
 

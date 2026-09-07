@@ -24,10 +24,15 @@ body of unwitnessed claims in the programme.  This session gives them one.
 ## Structural validation — all 264
 
 `tools/verify/verify.py` on all 264 files (`VERIFY_MAX_NS=0`, re-derivation
-deferred): **PASS 264, FAIL 0, UNPARSEABLE 0, ERROR 0**.  For each: the schema
-and conventions parse, the field is a valid finite field, `a` is recomputed by
-the Weyl alternation and matches, and every recorded point rebuilds onto the
-`det_pencil` variety.  So all 264 certificates are well-formed and reproducible.
+deferred): **PASS 0, RECORDED 264, FAIL 0, UNPARSEABLE 0, ERROR 0**.  `RECORDED`
+is the honest verdict for a valid-but-not-re-derived certificate — distinct from
+a verified `PASS`.  For each of the 264: the schema and conventions parse, the
+field is a valid finite field, `a` is recomputed by the Weyl alternation and
+matches, every recorded point rebuilds onto the `det_pencil` variety, **and the
+recorded `N_S` matches the true weight-space dimension the verifier recomputes
+from the cell** (a mismatch would be a `FAIL`; the verifier never trusts a size
+declared in the certificate).  So all 264 certificates are well-formed,
+self-consistent and reproducible.
 
 ## Independent re-derivation — a sample
 
