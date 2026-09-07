@@ -19,6 +19,16 @@ Exit status 0 iff every certificate parsed and passed.
 """
 import sys, os, json, gzip, time, traceback
 
+# A large nonvanishing_minor determinant (any full-rank minor of order ~300 with
+# entries of this programme's size exceeds 4300 decimal digits) is computed
+# exactly by layer1 and then rendered into the report's detail line.  Python caps
+# int->str at 4300 digits by default (CVE-2020-10735 mitigation), so that render
+# raised ValueError -- reported as UNPARSEABLE -- AFTER the rank checks had
+# already passed (session 56).  Raise the cap so the exact value can be printed;
+# the mathematics (rank over Q and mod p, the minor over Z) never needed the
+# decimal string and is unaffected.
+sys.set_int_max_str_digits(2_000_000)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from layer1 import check_matrix_certificate          # noqa: E402

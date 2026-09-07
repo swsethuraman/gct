@@ -26,15 +26,58 @@ from wk9_s36_stabred import stab_group, perm_tables, orbit_setup
 from wk8_s30_core import exps, monomials
 from math import comb
 
-def _codes(M, L):
-    """multiset combinadic of each row of the (N x d) sorted int array M (values < L)."""
+# _codes is used only to RANK monomials injectively (argsort + searchsorted give
+# each monomial's index in the basis).  Any injection into a totally ordered set
+# gives identical downstream results, because every consumer takes the returned
+# code only through argsort/searchsorted and reads back a basis index -- the code
+# VALUES never enter a rank, a nullity or a (star)-split.  The multiset
+# combinadic code(m) = sum_k C(m_k + k, k+1) is that injection.
+#
+# Its largest value, C(L + d - 1, d) - 1, exceeds int64 once d = delta is large:
+# at r = 5 (L = 70) it fits through delta = 19 and overflows at delta = 20,
+# which capped the session-45 build's tail closure (docs/s60_report.md sec.9,
+# results/s60_tail_census CODE_SAFE_DELTA = 18, conservative by one).  Session 67
+# widens the code: the int64 path is kept BYTE-FOR-BYTE for every cell that fit
+# before (identical values, dtype and speed -> bit-identical builds, verified in
+# analysis/wk10_s67_bitident.py), and an exact Python-integer (object dtype) path
+# takes over only where int64 would overflow.  Because object ints equal the
+# int64 values wherever the latter did not overflow, the two paths give the same
+# argsort/searchsorted and hence the same basis indices on every reachable cell;
+# above the old wall the object path is the only correct one.  Widening the code
+# must not alter any banked value (stopping rule): that is what the bit-identity
+# test enforces.
+_CODES_WIDE_OVERRIDE = None      # None: auto by size; True/False: force object/int64 (tests only)
+
+
+def _codes_fit_int64(L, d):
+    """True iff every combinadic value of a sorted d-multiset over [0, L) fits a
+    signed int64 (the max value is C(L + d - 1, d) - 1)."""
+    return comb(L + d - 1, d) - 1 < (1 << 63)
+
+
+def _codes(M, L, wide=None):
+    """multiset combinadic of each row of the (N x d) sorted int array M (values
+    < L), as an injective integer key per row.
+
+    dtype is int64 when every value fits (unchanged from the original code) and
+    Python-integer object otherwise; `wide` forces the choice (True -> object,
+    False -> int64) for the bit-identity test, defaulting to the module override
+    then to the exact size test.  Injectivity is asserted (the caller relies on
+    it), and int64 is used only when it cannot overflow, so the assertion can
+    never mask a silent wraparound."""
     N, d = M.shape
-    code = np.zeros(N, dtype=np.int64)
+    if wide is None:
+        wide = _CODES_WIDE_OVERRIDE
+    if wide is None:
+        wide = not _codes_fit_int64(L, d)
+    dt = object if wide else np.int64
+    if not wide:
+        assert _codes_fit_int64(L, d), ("int64 combinadic would overflow at these sizes", L, d)
+    code = np.zeros(N, dtype=dt)
     for k in range(d):
         # C(m + k, k + 1) via a lookup table over m in [0, L)
-        tab = np.array([comb(m + k, k + 1) for m in range(L)], dtype=np.int64)
-        code += tab[M[:, k]]
-    assert comb(L + d - 1, d) < (1 << 63)
+        tab = np.array([comb(m + k, k + 1) for m in range(L)], dtype=dt)
+        code = code + tab[M[:, k]]
     return code
 
 def orbit_setup_fast(n, r, delta, lam, verbose=True, want_vecs=True, arrays=False):

@@ -13,7 +13,11 @@
      must PASS (this is paper 2's cap(4) = 300 mechanism);
   5. the same matrix with claimed rank 300: must FAIL;
   6. a "full_rank" certificate at the cell (r=2, lambda=(4,4), delta=2) with
-     det_pencil points: must PASS with mult = a = 1.
+     det_pencil points: must PASS with mult = a = 1;
+  7. a "matrix" certificate whose nonvanishing_minor determinant exceeds 4300
+     decimal digits: must PASS.  Before the session-67 fix this was reported
+     UNPARSEABLE -- the rank checks passed but rendering the exact determinant
+     into the report line hit Python's int->str digit cap (session 56's defect).
 """
 import os, sys, json, random, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -88,6 +92,26 @@ def main():
         "points": [fresh_point("det_pencil", 2, random.Random(5)) for _ in range(3)], "basis": None,
     }
     results.append(("6 full_rank PASS", "PASS", verify_file(write(d, fr))))
+    # 7: a matrix certificate whose nonvanishing_minor determinant exceeds 4300
+    # decimal digits.  An upper-triangular integer matrix with a large diagonal
+    # has determinant = product of the diagonal (a nonzero minor is the whole
+    # matrix); 520 entries near 1e9 give ~4400 digits, comfortably over the cap.
+    bign = 520
+    rb = random.Random(56)
+    big = [[0] * bign for _ in range(bign)]
+    for i in range(bign):
+        big[i][i] = rb.randint(10 ** 8, 10 ** 9 - 1)
+        for j in range(i + 1, bign):
+            big[i][j] = rb.randint(-5, 5)
+    ndigits = len(str(abs(__import__("math").prod(big[i][i] for i in range(bign)))))
+    bigcert = {
+        "format": FORMAT, "kind": "matrix",
+        "title": f"selftest: nonvanishing minor with a {ndigits}-digit determinant",
+        "produced_by": "tools/verify/selftest.py",
+        "matrix": big,
+        "nonvanishing_minor": {"rows": list(range(bign)), "cols": list(range(bign))},
+    }
+    results.append((f"7 oversized minor ({ndigits} digits) PASS", "PASS", verify_file(write(d, bigcert))))
     allok = True
     for name, expect, (status, log) in results:
         good = status == expect
