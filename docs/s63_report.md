@@ -4,15 +4,16 @@ Branch `s63-lmrdet` off `226b4ef1` (ancestry gate passed). Pre-registration
 `results/PREREG_s63.md`, commit `26993f5`, before any measurement. Container:
 2 cores, 7 GB RAM, python-flint 0.9.0. Deliverables: this report;
 `results/s63_routes.md`; `results/PREREG_s63.md`; code `analysis/wk10_s63_*.py`;
-artefact `results/artefacts/s63_n3_ideal_vectors.npz`; logs `results/logs/s63_*`.
+the two-sided control `results/s63_n3ladder.json`; artefact
+`results/artefacts/s63_n3_ideal_vectors.npz`; logs `results/logs/s63_*`.
 Bundle `s63_lmr_det.bundle` + `.md5`.
 
 ## Verdict
 
 **The two integers the whole deduction rests on are independently reproduced, and
-the instrument is validated against the programme's first rank drop — but the one
-rank the LMR cell needs is not affordable in a 7 GB / 2-core container, by three
-to eighty-plus orders of magnitude on every route.**
+the instrument is validated two-sided against the programme's first rank drop —
+but the one rank the LMR cell needs is not affordable in a 7 GB / 2-core
+container, by three to eighty-plus orders of magnitude on every route.**
 
 Concretely:
 
@@ -23,11 +24,15 @@ Concretely:
    matches s57/s58 exactly, is monotone, has final increment 1, and is constant
    at `274` by `δ = 31` where the ladder theorem guarantees it. **[measured, three
    independent routes]**
-2. **The `n = 3` LMR positive control passes.** At `((19,7,2⁵), 12)`, `a = 6`,
-   the HWV/evaluation instrument returns `mult_det = 5`, `i_det = 1` at **both**
-   house primes — the first rank drop the programme has ever exhibited. The single
-   ideal HWV `U_D` is preserved and re-verified (`E·U_D = 0`, and `ev_det·U_D = 0`
-   at all 14 det₃ pencils). **[measured, both primes; the ≤ 5 half is theorem]**
+2. **The `n = 3` LMR positive control passes, two-sided.** At `((19,7,2⁵), 12)`,
+   `a = 6`, the instrument returns `mult_det = 5`, `i_det = 1` at both house
+   primes — the first rank drop the programme has ever exhibited. Ran below the
+   closing degree as well (`δ = 9, 10, 11`): **full rank at all three**
+   (`i_det = 0`), a drop **only** at `δ = 12`, both primes — so the instrument
+   does not under-report rank and the drop is genuine, not a degenerate-evaluation
+   artefact (integrator note 2). The ideal HWV `U_D` is preserved and checked five
+   ways incl. fresh-seed vanishing and generic-point non-vanishing.
+   **[measured both primes; the `i_det ≥ 1` half is theorem]**
 3. **All three projections at `r = 9` are walled** (`results/s63_routes.md`):
    native HWV build 14.4 TB / ≈ 415 days; Foulkes column `|H_{4,24}| = 1.2×10⁹³`;
    Gram/Schur `|S| ≥ 6×10⁶`. The deciding number `|S|` is ≥ 2 orders past the
@@ -88,7 +93,7 @@ union. The C2 nonsingularity step is **characteristic-free**
 (`rank(MᵀM) ≤ rank(M)`); that is a genuine improvement over the char-0 framing,
 but it does not move the `|S|` wall.
 
-## 3. Task 3 / the `n = 3` positive control — the instrument sees a rank drop
+## 3. Task 3 / the `n = 3` positive control — the instrument is two-sided
 
 The `r = 9` rank is walled (§2), so no LMR rank is certified. The method itself
 is validated where it is affordable, at the cell both integrator notes name
@@ -103,13 +108,46 @@ mandatory and no prior session ran (`docs/lmr_cell.md` §3b, `docs/s58_review.md
     p = 2147483647 :  i_det = 1,  mult_det = 5
     p = 2147483629 :  i_det = 1,  mult_det = 5
 
-`rank_p ≤ mult_det` gives `mult_det ≥ 5` at both primes (the **safe** direction —
-no modular-drop concern, cf. F2); the LMR theorem gives `mult_det ≤ 5`; so
-`mult_det = 5`, `i_det = 1`, **exactly**. This is the first cell in the programme
-where the evaluation instrument is shown a rank drop, and it returns it. The ideal
-HWV `U_D` (weight `(19,7,2⁵)`, degree 12, in `I(D_7^{det₃})`) is preserved
-(`results/artefacts/s63_n3_ideal_vectors.npz`) and independently re-verified:
-`E·U_D = 0` and `ev_det·U_D = 0` at all 14 pencils, at `p = 2147483629`.
+**Which half of `i_det = 1` comes from where (integrator note 2 §2).** Random
+evaluation only *lower*-bounds the true rank, and reduction mod `p` only lowers
+rank further, so the measurement gives
+
+    i_det = nullity_Q[E; ev_all]  ≤  nullity_Q[E; ev_14]  ≤  nullity_p[E; ev_14] = 1,
+
+i.e. **`i_det ≤ 1`**; the LMR theorem supplies **`i_det ≥ 1`**; together `= 1`
+exactly, and that is rigorous. The instrument did **not** independently certify a
+drop — it confirmed it does **not over-report rank**. That is exactly what a
+one-sided positive control establishes, and the two-sided control below removes
+the remaining ambiguity.
+
+**The two-sided control (integrator note 2 §4).** Below `δ_close = 12` the module
+is vacuous, so the engine must return full rank; a spurious early drop would make
+`δ = 12` meaningless. Ran at both primes (`analysis/wk10_s63_n3ladder.py`,
+`results/s63_n3ladder.json`):
+
+| `δ` | `a` | `mult_det` (P1, P2) | `i_det` | expected | |
+|---|---|---|---|---|---|
+| 9 | 2 | 2, 2 | 0 | full rank | ✓ |
+| 10 | 4 | 4, 4 | 0 | full rank | ✓ |
+| 11 | 5 | 5, 5 | 0 | full rank | ✓ |
+| 12 | 6 | 5, 5 | **1** | **drop** | ✓ |
+
+Full rank at 9, 10, 11 and a drop only at 12 — the engine does not
+systematically under-report rank, so the drop is real. And `δ = 11` buys the
+whole predecessor argument in miniature: `mult_det(11) = 5` full rank + ladder
+monotonicity + LMR give `mult_det(12) ≥ 5 ⟹ i_det(12) ≤ 1 ⟹ = 1` — **exactly the
+273/274 predecessor-to-goal deduction of the LMR cell, validated end-to-end at
+`n = 3` before it is trusted at `n = 4`.**
+
+**The ideal vector `U_D`** (weight `(19,7,2⁵)`, degree 12, in `I(D_7^{det₃})`,
+`results/artefacts/s63_n3_ideal_vectors.npz`) — the programme's **first exhibited
+element of `I(D)^{HWV}` with `i_det > 0`** — passes the note-2 §5 checks:
+
+1. `U_D ≠ 0`: 3 900 nonzero χ-coordinates, a recorded nonzero coefficient.
+2. `E·U_D = 0` on the **full** sparse `E` (not only the compressed form).
+3. `ev_det·U_D = 0` at det₃ pencils from **three fresh seeds** (`20265807`,
+   `12345`, `99999`) not used in the measurement, **and** `U_D` is **nonzero at
+   generic cubics** of `Sym³C⁷` — ruling out a vector trivially in every ideal.
 
 **Certificate status, stated plainly.** The `gct-cert/1` verifier
 (`tools/verify/layer2.py:93`) hard-asserts `n = 4`, so the `hwv`/`full_rank`
@@ -146,8 +184,8 @@ determinant-side rank the load-bearing number. `D_LMR` further needs `i_pad`
 | P2 | LMR ladder matches s57/s58, `a_∞ = 274` at `δ=31` | **hit** — exact, monotone, final increment 1 |
 | P3 | native `n_χ` build at `δ=23` does NOT close in 90 min / 6 GB | **hit** — 14.4 TB / ≈ 415 d, off by ~2 000× |
 | P4 | Foulkes single-column route infeasible | **hit** — `|H_{4,24}| = 1.2×10⁹³` |
-| P5 | any measured rank agrees at both primes | **hit** — `n=3` control, both primes `mult_det=5` |
-| P6 | no genuine rank drop observed | **n/a→hit** — the only drop (`n=3` control) is theorem-guaranteed, not a surprise; no spurious drop, no `D>0` event |
+| P5 | any measured rank agrees at both primes | **hit** — all four `n=3` rungs, both primes agree |
+| P6 | no genuine rank drop observed | **n/a→hit** — the only drop (`n=3` `δ=12`) is theorem-guaranteed and two-sided-validated (full rank at `δ=9,10,11`); no spurious drop, no `D>0` event |
 
 ## 6. For the integrator / next sessions
 

@@ -1,0 +1,98 @@
+{
+ "check": "two-sided n=3 LMR ladder control (integrator note 2 sec.4)",
+ "n": 3,
+ "r": 7,
+ "seed": 20260907,
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "ladder": [
+  {
+   "delta": 9,
+   "lam": [
+    10,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 2,
+   "mult_det_P1": 2,
+   "mult_det_P2": 2,
+   "i_det": 0,
+   "expect": "full rank",
+   "as_expected": true
+  },
+  {
+   "delta": 10,
+   "lam": [
+    13,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 4,
+   "mult_det_P1": 4,
+   "mult_det_P2": 4,
+   "i_det": 0,
+   "expect": "full rank",
+   "as_expected": true
+  },
+  {
+   "delta": 11,
+   "lam": [
+    16,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 5,
+   "mult_det_P1": 5,
+   "mult_det_P2": 5,
+   "i_det": 0,
+   "expect": "full rank",
+   "as_expected": true
+  },
+  {
+   "delta": 12,
+   "lam": [
+    19,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 6,
+   "mult_det_P1": 5,
+   "mult_det_P2": 5,
+   "i_det": 1,
+   "expect": "DROP",
+   "as_expected": true
+  }
+ ],
+ "verdict": "full rank at delta=9,10,11 (i_det=0) and drop ONLY at delta=12 (i_det=1), both primes: the engine does not under-report rank, the delta=12 drop is genuine, the control is two-sided",
+ "predecessor_argument": "mult_det(11)=5 full rank + ladder monotonicity + LMR => mult_det(12)>=5 => i_det(12)<=1 => =1: the 273/274 predecessor argument in miniature at n=3",
+ "U_D_checks": {
+  "nonzero": true,
+  "nonzero_chi_coords": 3900,
+  "E_dot_v_zero_on_full_E": true,
+  "vanishes_at_fresh_seeds": [
+   20265807,
+   12345,
+   99999
+  ],
+  "nonzero_at_generic_cubics": true,
+  "conclusion": "first exhibited element of I(D)^HWV with i_det>0"
+ }
+}
