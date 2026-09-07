@@ -1,0 +1,42 @@
+{
+ "cell": {
+  "n": 3,
+  "r": 7,
+  "lam": [
+   19,
+   7,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "delta": 12
+ },
+ "a": 6,
+ "n_chi": 17047,
+ "seed": 20260907,
+ "bound": 40,
+ "K": 14,
+ "instrument": "mult_det = a - nullity[E; ev_det], sparse Wiedemann (wk9_s45_cell.nullity_stacked), both house primes",
+ "per_prime": {
+  "2147483647": {
+   "i_det": 1,
+   "mult_det": 5,
+   "level": 1,
+   "secs": 494
+  },
+  "2147483629": {
+   "i_det": 1,
+   "mult_det": 5,
+   "level": 1,
+   "secs": 482
+  }
+ },
+ "primes_agree": true,
+ "i_det": 1,
+ "mult_det": 5,
+ "rank_drop": true,
+ "verdict": "POSITIVE CONTROL PASSED: rank drop, i_det=1 >= 1, mult_det=5 <= 5, both house primes agree",
+ "note": "rank_p <= rank_Q so mult_det <= 5 over Q at both primes; rank G = 5 gives mult_det >= 5; hence mult_det = 5 exactly, i_det = 1. First rank drop exhibited by the HWV/evaluation instrument. U_D (1 ideal HWV) in results/artefacts/s63_n3_ideal_vectors.npz"
+}
