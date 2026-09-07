@@ -1,0 +1,831 @@
+{
+ "n": 4,
+ "delta": 3,
+ "N": 12,
+ "H": 5775,
+ "enum_s": 0.0,
+ "orbitals": 9,
+ "labelled_margin_matrices": 120,
+ "orbitals_s": 0.02,
+ "K_by_orbital": {
+  "((0, 0, 4), (0, 4, 0), (4, 0, 0))": 13824,
+  "((0, 0, 4), (1, 3, 0), (3, 1, 0))": 3456,
+  "((0, 0, 4), (2, 2, 0), (2, 2, 0))": 2304,
+  "((0, 1, 3), (1, 2, 1), (3, 1, 0))": -864,
+  "((0, 1, 3), (1, 3, 0), (3, 0, 1))": 864,
+  "((0, 1, 3), (2, 1, 1), (2, 2, 0))": 576,
+  "((0, 2, 2), (2, 0, 2), (2, 2, 0))": 384,
+  "((0, 2, 2), (2, 1, 1), (2, 1, 1))": -384,
+  "((1, 1, 2), (1, 2, 1), (2, 1, 1))": -96
+ },
+ "constituents": 9,
+ "max_a": 1,
+ "sum_a2": 9,
+ "sum_a2_equals_orbitals": true,
+ "mult2_constituents": [],
+ "cells": {
+  "(12,)": {
+   "lambda": [
+    12
+   ],
+   "r": 1,
+   "a": 1,
+   "n_lam": 1,
+   "orbit_sizes_min_max": [
+    5775,
+    5775
+   ],
+   "pass": {
+    "total_s": 0.0,
+    "per_rep_s": 0.0,
+    "n_pass": 1,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 9.0,
+    "max": 9,
+    "min": 9
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "496628858880000"
+    ]
+   ],
+   "rank_Q_B": 1,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    1
+   ],
+   "hwv_support_union": 1,
+   "u_free_monomials": 0,
+   "N_S_pred": 1,
+   "snf_G": [
+    "496628858880000"
+   ],
+   "snf_B": [
+    "13795246080000"
+   ],
+   "pred": {
+    "lambda": [
+     8
+    ],
+    "a": 1
+   },
+   "room": 0,
+   "rank_Q_A": 1,
+   "A_nonsingular": true,
+   "schur": null,
+   "cell_s": 0.01,
+   "H_times_nlam": 5775
+  },
+  "(10, 2)": {
+   "lambda": [
+    10,
+    2
+   ],
+   "r": 2,
+   "a": 1,
+   "n_lam": 2,
+   "orbit_sizes_min_max": [
+    1575,
+    4200
+   ],
+   "pass": {
+    "total_s": 0.001,
+    "per_rep_s": 0.0,
+    "n_pass": 2,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 8.5,
+    "max": 9,
+    "min": 8
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "413857382400000"
+    ]
+   ],
+   "rank_Q_B": 2,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    2
+   ],
+   "hwv_support_union": 2,
+   "u_free_monomials": 0,
+   "N_S_pred": 2,
+   "snf_G": [
+    "413857382400000"
+   ],
+   "snf_B": [
+    "627056640000",
+    "18811699200000"
+   ],
+   "pred": {
+    "lambda": [
+     6,
+     2
+    ],
+    "a": 1
+   },
+   "room": 0,
+   "rank_Q_A": 1,
+   "A_nonsingular": true,
+   "schur": null,
+   "cell_s": 0.0,
+   "H_times_nlam": 11550
+  },
+  "(9, 3)": {
+   "lambda": [
+    9,
+    3
+   ],
+   "r": 2,
+   "a": 1,
+   "n_lam": 3,
+   "orbit_sizes_min_max": [
+    315,
+    3780
+   ],
+   "pass": {
+    "total_s": 0.001,
+    "per_rep_s": 0.0,
+    "n_pass": 3,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 7.111111111111111,
+    "max": 9,
+    "min": 4
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "90296156160000"
+    ]
+   ],
+   "rank_Q_B": 3,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    3
+   ],
+   "hwv_support_union": 3,
+   "u_free_monomials": 1,
+   "N_S_pred": 2,
+   "snf_G": [
+    "90296156160000"
+   ],
+   "snf_B": [
+    "25082265600",
+    "5643509760000",
+    "11287019520000"
+   ],
+   "pred": {
+    "lambda": [
+     5,
+     3
+    ],
+    "a": 0
+   },
+   "room": 1,
+   "schur": {
+    "det_A": "1",
+    "s": "90296156160000",
+    "det_G": "90296156160000",
+    "s_zero": false,
+    "born": false,
+    "empty_predecessor": true
+   },
+   "new_vector_support": 3,
+   "new_vector_u_free_support": 1,
+   "cell_s": 0.0,
+   "H_times_nlam": 17325
+  },
+  "(8, 4)": {
+   "lambda": [
+    8,
+    4
+   ],
+   "r": 2,
+   "a": 1,
+   "n_lam": 4,
+   "orbit_sizes_min_max": [
+    35,
+    3360
+   ],
+   "pass": {
+    "total_s": 0.002,
+    "per_rep_s": 0.0,
+    "n_pass": 4,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 6.375,
+    "max": 9,
+    "min": 3
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "14046068736000"
+    ]
+   ],
+   "rank_Q_B": 4,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    3
+   ],
+   "hwv_support_union": 3,
+   "u_free_monomials": 1,
+   "N_S_pred": 3,
+   "snf_G": [
+    "14046068736000"
+   ],
+   "snf_B": [
+    "16721510400",
+    "83607552000",
+    "1254113280000",
+    "30098718720000"
+   ],
+   "pred": {
+    "lambda": [
+     4,
+     4
+    ],
+    "a": 1
+   },
+   "room": 0,
+   "rank_Q_A": 1,
+   "A_nonsingular": true,
+   "schur": null,
+   "cell_s": 0.0,
+   "H_times_nlam": 23100
+  },
+  "(8, 2, 2)": {
+   "lambda": [
+    8,
+    2,
+    2
+   ],
+   "r": 3,
+   "a": 1,
+   "n_lam": 8,
+   "orbit_sizes_min_max": [
+    35,
+    2240
+   ],
+   "pass": {
+    "total_s": 0.003,
+    "per_rep_s": 0.0,
+    "n_pass": 8,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 6.59375,
+    "max": 9,
+    "min": 3
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "20901888000000"
+    ]
+   ],
+   "rank_Q_B": 8,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    5
+   ],
+   "hwv_support_union": 5,
+   "u_free_monomials": 3,
+   "N_S_pred": 5,
+   "snf_G": [
+    "20901888000000"
+   ],
+   "snf_B": [
+    "928972800",
+    "41803776000",
+    "83607552000",
+    "83607552000",
+    "418037760000",
+    "418037760000",
+    "1254113280000",
+    "752467968000000"
+   ],
+   "pred": {
+    "lambda": [
+     4,
+     2,
+     2
+    ],
+    "a": 0
+   },
+   "room": 1,
+   "schur": {
+    "det_A": "1",
+    "s": "20901888000000",
+    "det_G": "20901888000000",
+    "s_zero": false,
+    "born": false,
+    "empty_predecessor": true
+   },
+   "new_vector_support": 5,
+   "new_vector_u_free_support": 3,
+   "cell_s": 0.01,
+   "H_times_nlam": 46200
+  },
+  "(7, 4, 1)": {
+   "lambda": [
+    7,
+    4,
+    1
+   ],
+   "r": 3,
+   "a": 1,
+   "n_lam": 8,
+   "orbit_sizes_min_max": [
+    35,
+    2520
+   ],
+   "pass": {
+    "total_s": 0.003,
+    "per_rep_s": 0.0,
+    "n_pass": 8,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 6.46875,
+    "max": 9,
+    "min": 3
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "45148078080000"
+    ]
+   ],
+   "rank_Q_B": 8,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    6
+   ],
+   "hwv_support_union": 6,
+   "u_free_monomials": 8,
+   "N_S_pred": 0,
+   "snf_G": [
+    "45148078080000"
+   ],
+   "snf_B": [
+    "1393459200",
+    "20901888000",
+    "20901888000",
+    "62705664000",
+    "250822656000",
+    "3762339840000",
+    "15049359360000",
+    "15049359360000"
+   ],
+   "pred": null,
+   "room": 1,
+   "cell_s": 0.01,
+   "H_times_nlam": 46200
+  },
+  "(6, 6)": {
+   "lambda": [
+    6,
+    6
+   ],
+   "r": 2,
+   "a": 1,
+   "n_lam": 5,
+   "orbit_sizes_min_max": [
+    225,
+    3600
+   ],
+   "pass": {
+    "total_s": 0.002,
+    "per_rep_s": 0.0,
+    "n_pass": 5,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 6.48,
+    "max": 9,
+    "min": 4
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "752467968000000"
+    ]
+   ],
+   "rank_Q_B": 5,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    5
+   ],
+   "hwv_support_union": 5,
+   "u_free_monomials": 5,
+   "N_S_pred": 0,
+   "snf_G": [
+    "752467968000000"
+   ],
+   "snf_B": [
+    "14929920000",
+    "44789760000",
+    "179159040000",
+    "537477120000",
+    "107495424000000"
+   ],
+   "pred": null,
+   "room": 1,
+   "cell_s": 0.0,
+   "H_times_nlam": 28875
+  },
+  "(6, 4, 2)": {
+   "lambda": [
+    6,
+    4,
+    2
+   ],
+   "r": 3,
+   "a": 1,
+   "n_lam": 15,
+   "orbit_sizes_min_max": [
+    15,
+    1440
+   ],
+   "pass": {
+    "total_s": 0.006,
+    "per_rep_s": 0.0,
+    "n_pass": 15,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 5.524444444444445,
+    "max": 9,
+    "min": 2
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.0,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "222953472000000"
+    ]
+   ],
+   "rank_Q_B": 15,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    15
+   ],
+   "hwv_support_union": 15,
+   "u_free_monomials": 15,
+   "N_S_pred": 0,
+   "snf_G": [
+    "222953472000000"
+   ],
+   "snf_B": [
+    "199065600",
+    "995328000",
+    "995328000",
+    "1990656000",
+    "1990656000",
+    "5971968000",
+    "5971968000",
+    "35831808000",
+    "35831808000",
+    "71663616000",
+    "2149908480000",
+    "4299816960000",
+    "4299816960000",
+    "4299816960000",
+    "116095057920000000"
+   ],
+   "pred": null,
+   "room": 1,
+   "cell_s": 0.01,
+   "H_times_nlam": 86625
+  },
+  "(4, 4, 4)": {
+   "lambda": [
+    4,
+    4,
+    4
+   ],
+   "r": 3,
+   "a": 1,
+   "n_lam": 23,
+   "orbit_sizes_min_max": [
+    1,
+    1728
+   ],
+   "pass": {
+    "total_s": 0.009,
+    "per_rep_s": 0.0,
+    "n_pass": 23,
+    "H": 5775
+   },
+   "touched_orbitals_per_pair": {
+    "mean": 4.669187145557656,
+    "max": 9,
+    "min": 1
+   },
+   "B_build_s": 0.0,
+   "hwv_s": 0.001,
+   "G_s": 0.0,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "rank_mod_p_G_info_only": {
+    "2147483647": 1,
+    "2147483629": 1
+   },
+   "G": [
+    [
+     "28665446400000"
+    ]
+   ],
+   "rank_Q_B": 23,
+   "B_full_rank": true,
+   "hwv_support_each": [
+    23
+   ],
+   "hwv_support_union": 23,
+   "u_free_monomials": 23,
+   "N_S_pred": 0,
+   "snf_G": [
+    "28665446400000"
+   ],
+   "snf_B": [
+    "15925248",
+    "398131200",
+    "398131200",
+    "398131200",
+    "398131200",
+    "398131200",
+    "796262400",
+    "796262400",
+    "796262400",
+    "9555148800",
+    "9555148800",
+    "9555148800",
+    "9555148800",
+    "28665446400",
+    "28665446400",
+    "114661785600",
+    "1719926784000",
+    "1719926784000",
+    "1719926784000",
+    "3439853568000",
+    "6879707136000",
+    "1031956070400000",
+    "15479341056000000"
+   ],
+   "pred": null,
+   "room": 1,
+   "cell_s": 0.01,
+   "H_times_nlam": 132825
+  }
+ },
+ "weights": {
+  "(12,)": {
+   "nb": 1,
+   "rank_Q_B": 1
+  },
+  "(11, 1)": {
+   "nb": 1,
+   "rank_Q_B": 1
+  },
+  "(10, 2)": {
+   "nb": 2,
+   "rank_Q_B": 2
+  },
+  "(10, 1, 1)": {
+   "nb": 2,
+   "rank_Q_B": 2
+  },
+  "(9, 3)": {
+   "nb": 3,
+   "rank_Q_B": 3
+  },
+  "(9, 2, 1)": {
+   "nb": 4,
+   "rank_Q_B": 4
+  },
+  "(8, 4)": {
+   "nb": 4,
+   "rank_Q_B": 4
+  },
+  "(8, 3, 1)": {
+   "nb": 6,
+   "rank_Q_B": 6
+  },
+  "(8, 2, 2)": {
+   "nb": 8,
+   "rank_Q_B": 8
+  },
+  "(7, 5)": {
+   "nb": 4,
+   "rank_Q_B": 4
+  },
+  "(7, 4, 1)": {
+   "nb": 8,
+   "rank_Q_B": 8
+  },
+  "(7, 3, 2)": {
+   "nb": 11,
+   "rank_Q_B": 11
+  },
+  "(6, 6)": {
+   "nb": 5,
+   "rank_Q_B": 5
+  },
+  "(6, 5, 1)": {
+   "nb": 9,
+   "rank_Q_B": 9
+  },
+  "(6, 4, 2)": {
+   "nb": 15,
+   "rank_Q_B": 15
+  },
+  "(6, 3, 3)": {
+   "nb": 16,
+   "rank_Q_B": 16
+  },
+  "(5, 5, 2)": {
+   "nb": 15,
+   "rank_Q_B": 15
+  },
+  "(5, 4, 3)": {
+   "nb": 19,
+   "rank_Q_B": 19
+  },
+  "(4, 4, 4)": {
+   "nb": 23,
+   "rank_Q_B": 23
+  }
+ },
+ "route_b": {
+  "(12,)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(11, 1)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(10, 2)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(10, 1, 1)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(9, 3)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(9, 2, 1)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(8, 4)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(8, 3, 1)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(8, 2, 2)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(7, 5)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(7, 4, 1)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(7, 3, 2)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(6, 6)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(6, 5, 1)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(6, 4, 2)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  },
+  "(6, 3, 3)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(5, 5, 2)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(5, 4, 3)": {
+   "m_routeb": 0,
+   "a_routeb": 0
+  },
+  "(4, 4, 4)": {
+   "m_routeb": 1,
+   "a_routeb": 1,
+   "rank_Q_G": 1,
+   "agree": true
+  }
+ },
+ "route_b_agrees_everywhere": true,
+ "total_s": 0.2,
+ "sum_nlam_constituents": 69
+}
