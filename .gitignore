@@ -34,3 +34,9 @@ results/s57_cells/bank_d*_l*.jsonl
 results/s57_cells/ladder_status.json
 results/s57_cells/ladder_profiles_l6.json
 results/s57_cells/short_ladders.json
+
+# s62: large regenerable pair-orbital count cache (over the 5 MB commit limit; rebuild via analysis/wk10_s62_run.py --cache)
+results/logs/s62_counts_n4_d4.npz
+# stray delivery artefacts (the bundle + md5 live in the container home / are delivered, not tracked)
+s62_gram.bundle
+s62_gram.bundle.md5
