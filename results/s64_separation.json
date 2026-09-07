@@ -1,0 +1,68 @@
+{
+ "note": "r>=6 separation of ev_pad from ev_red at the sample-variety level (integrator note 2 \u00a74)",
+ "dims": [
+  {
+   "r": 5,
+   "dim_quartic": 70,
+   "dim_P": 39,
+   "dim_P_p2": 39,
+   "dim_R": 39,
+   "dim_R_p2": 39,
+   "expected_P": 39,
+   "expected_R": 39,
+   "separates": false
+  },
+  {
+   "r": 6,
+   "dim_quartic": 126,
+   "dim_P": 55,
+   "dim_P_p2": 55,
+   "dim_R": 61,
+   "dim_R_p2": 61,
+   "expected_P": 55,
+   "expected_R": 61,
+   "separates": true
+  },
+  {
+   "r": 7,
+   "dim_quartic": 210,
+   "dim_P": 65,
+   "dim_P_p2": 65,
+   "dim_R": 90,
+   "dim_R_p2": 90,
+   "expected_P": 65,
+   "expected_R": 90,
+   "separates": true
+  }
+ ],
+ "r6_multiplicity": [
+  {
+   "cell": {
+    "delta": 6,
+    "lam": [
+     18,
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "status": "a=0"
+  },
+  {
+   "cell": {
+    "delta": 6,
+    "lam": [
+     16,
+     4,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "status": "a=0"
+  }
+ ]
+}
