@@ -1,0 +1,26 @@
+// Session 66 : reduced bilinear system Qpi at a P_SP point; alpha=2, beta=8
+LIB "primdec.lib";
+ring r = 32003, (a(1..2), b(1..8)), dp;
+option(redSB);
+ideal I = (-14662)*a(1)*b(1) + (-7618)*a(1)*b(2) + (548)*a(1)*b(3) + (-5351)*a(1)*b(4) + (183)*a(1)*b(5) + (8062)*a(1)*b(6) + (9536)*a(1)*b(7) + (1025)*a(1)*b(8) + (183)*a(2)*b(1) + (8062)*a(2)*b(2) + (9536)*a(2)*b(3) + (1025)*a(2)*b(4) + (13930)*a(2)*b(5) + (7373)*a(2)*b(6) + (-6689)*a(2)*b(7) + (1251)*a(2)*b(8),
+  (-5803)*a(1)*b(1) + (5718)*a(1)*b(2) + (-787)*a(1)*b(3) + (6839)*a(1)*b(4) + (15585)*a(1)*b(5) + (-4917)*a(1)*b(6) + (-5519)*a(1)*b(7) + (-11573)*a(1)*b(8) + (15585)*a(2)*b(1) + (-4917)*a(2)*b(2) + (-5519)*a(2)*b(3) + (-11573)*a(2)*b(4) + (7469)*a(2)*b(5) + (13950)*a(2)*b(6) + (-9140)*a(2)*b(7) + (7450)*a(2)*b(8),
+  (-11153)*a(1)*b(1) + (-11338)*a(1)*b(2) + (8253)*a(1)*b(3) + (12710)*a(1)*b(4) + (-15142)*a(1)*b(5) + (2429)*a(1)*b(6) + (-8692)*a(1)*b(7) + (-10090)*a(1)*b(8) + (-15142)*a(2)*b(1) + (2429)*a(2)*b(2) + (-8692)*a(2)*b(3) + (-10090)*a(2)*b(4) + (7715)*a(2)*b(5) + (1622)*a(2)*b(6) + (-5488)*a(2)*b(7) + (-4353)*a(2)*b(8),
+  (5349)*a(1)*b(1) + (7522)*a(1)*b(2) + (-4462)*a(1)*b(3) + (13575)*a(1)*b(4) + (-1527)*a(1)*b(5) + (-155)*a(1)*b(6) + (143)*a(1)*b(7) + (15007)*a(1)*b(8) + (-1527)*a(2)*b(1) + (-155)*a(2)*b(2) + (143)*a(2)*b(3) + (15007)*a(2)*b(4) + (759)*a(2)*b(5) + (-6902)*a(2)*b(6) + (3890)*a(2)*b(7) + (-9597)*a(2)*b(8);
+int t0 = timer;
+ideal G = std(I);
+print("Qpi: dim V = " + string(dim(G)) + ", time " + string(timer - t0));
+t0 = timer;
+list mp = minAssGTZ(I);
+print("Qpi: " + string(size(mp)) + " minimal primes, time " + string(timer - t0));
+write(":w results/s66_bilprimes_P_SP_s1_p32003_Qpi.txt", "");
+int i; int j;
+for (i = 1; i <= size(mp); i++) {
+  ideal Pi = std(mp[i]);
+  int islin = 1;
+  for (j = 1; j <= size(Pi); j++) { if (deg(Pi[j]) > 1) { islin = 0; } }
+  print("  prime " + string(i) + ": dim " + string(dim(Pi)) + ", degree " + string(mult(Pi)) + ", ngens " + string(size(Pi)) + ", linear " + string(islin));
+  write(":a results/s66_bilprimes_P_SP_s1_p32003_Qpi.txt", "PRIME " + string(i));
+  write(":a results/s66_bilprimes_P_SP_s1_p32003_Qpi.txt", string(Pi));
+  kill islin;
+}
+quit;
