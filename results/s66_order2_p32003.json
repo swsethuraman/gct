@@ -1,0 +1,64 @@
+[
+ {
+  "spec": "P_SP",
+  "seed": 1,
+  "p": 32003,
+  "rank_dPhi": 29,
+  "dim_ker": 51,
+  "comps": {
+   "P": 43,
+   "SP": 49
+  },
+  "union": 51,
+  "quotient": 0,
+  "dimQ2": 12,
+  "dimQpi": 4,
+  "Qpi": {
+   "exit": 0,
+   "summary": [
+    "Qpi: dim V = 50, time 0",
+    "Qpi: 2 minimal primes, time 0",
+    "  prime 1: dim 47, degree 1, ngens 4, linear 1",
+    "  prime 2: dim 50, degree 1, ngens 1, linear 1"
+   ]
+  },
+  "Q2": {
+   "exit": 0,
+   "summary": [
+    "Q2: dim V = 49, time 2",
+    "Q2: 2 minimal primes, time 2",
+    "  prime 1: dim 43, degree 1, ngens 8, linear 1 =T_P",
+    "  prime 2: dim 49, degree 1, ngens 2, linear 1 =T_SP"
+   ]
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "dim": 47,
+    "contains": [
+     "P"
+    ],
+    "equals": [],
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 77,
+    "rank_con": 54,
+    "order2_reducible": 23
+   },
+   {
+    "prime": 2,
+    "dim": 50,
+    "contains": [
+     "SP"
+    ],
+    "equals": [],
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 77,
+    "rank_con": 51,
+    "order2_reducible": 26
+   }
+  ],
+  "seconds": 84.8
+ }
+]
