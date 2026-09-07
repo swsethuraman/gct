@@ -541,3 +541,71 @@ def run_generic_kernel(spec, seed, p, verbose=True):
               f"(ker M(a) dim {len(kb)}): image {rec['generic_a'].get('order2_reducible')}; generic-b component "
               f"(ker N(b) dim {len(ka)}): image {rec['generic_b'].get('order2_reducible')}", flush=True)
     return rec
+
+# ----------------------------------------------------------------------
+# order-3 arcs at an incidence : M_1 tangent to one of the components (the only
+# second-order-solvable directions where V(Q_2) = T_1 cup T_2), M_2 cancelling
+# g_2 (solvable since e_2(M_1) in im dPhi) plus a random kernel element, M_3
+# with pi g_3 = 0 ; then rank d(g_1,g_2,g_3) - rank d(g_1,g_2,pi g_3).
+def run_order3(spec, seed, p, verbose=True):
+    rng = random.Random(seed*7919 + zlib.crc32(spec.encode()) % 1000 + 3)
+    theta, build = family(spec, rng, p)
+    pen = pencil_int(build(theta, Fp(p)))
+    dP = dPhi_matrix(pen, p); rk = dP.rank(); kerB = kernel_basis(dP); k = len(kerB)
+    _, T = tangents_at(spec, theta, p, rng)
+    zero = pencil_zero(Fp(p))
+    dcols = [[int(dP[i, j]) for i in range(NQ)] for j in range(80)]      # columns of dPhi
+    rec = dict(spec=spec, seed=seed, p=p, rank_dPhi=rk, dim_ker=k, order3={})
+    for nm, tv in T.items():
+        basis = rref_basis(tv, 80, p)
+        m1v = [0]*80
+        for v in basis:
+            c = rng.randint(1, p-1)
+            for r_ in range(80): m1v[r_] = (m1v[r_] + c*v[r_]) % p
+        M1 = vec_pencil(m1v)
+        g1, g2c = all_g(build, theta, [M1, zero], 2, p); assert not any(g1)
+        part = solve_aug(dcols, g2c, NQ, p)                      # dPhi(M_2) = -e_2(M_1)
+        if part is None:
+            rec['order3'][nm] = dict(note='e_2(M_1) not in im dPhi : M_1 not second-order solvable'); continue
+        m2p = [v % p for v in part]                               # particular M_2 : g_2 = 0
+        M2p = vec_pencil(m2p)
+        g1, g2, g3c = all_g(build, theta, [M1, M2p, zero], 3, p); assert not any(g1) and not any(g2)
+        # g_3 is affine-linear in (N_0, M_3) where M_2 = M_2^part + N_0, N_0 in ker dPhi :
+        # solve pi g_3 = 0 for (z, M_3) jointly
+        const = [g3c[i] for i in S5DEG0]; cols3 = []
+        for v in kerB:                                            # directions N_0 = K_i (in the M_2 slot)
+            Dp = vec_pencil(v)
+            # directional derivative of g_3 along M_2 -> K_i, by linearity in M_2 :
+            g_plus = all_g(build, theta, [M1, pencil_add(Fp(p), M2p, Dp), zero], 3, p)[2]
+            cols3.append([(g_plus[i] - g3c[i]) % p for i in S5DEG0])
+        for kk in range(R):
+            for a_ in range(n):
+                for b_ in range(n):
+                    g = all_g(build, theta, [M1, M2p, zero], 3, p, dual=('m', 3, kk, a_, b_))[2]
+                    cols3.append([g[i] for i in S5DEG0])
+        part3 = solve_aug(cols3, const, len(S5DEG0), p)
+        if part3 is None:
+            rec['order3'][nm] = dict(note='pi g_3 = 0 unsolvable in (N_0, M_3)'); continue
+        X, nul = nmod_mat(len(S5DEG0), len(cols3), [int(cols3[j][r_]) for r_ in range(len(S5DEG0)) for j in range(len(cols3))], p).nullspace()
+        sol = [v % p for v in part3]
+        for t in range(nul):
+            c = rng.randint(1, p-1)
+            for j in range(len(cols3)): sol[j] = (sol[j] + c*int(X[j, t])) % p
+        m2v = list(m2p)
+        for i, v in enumerate(kerB):
+            for r_ in range(80): m2v[r_] = (m2v[r_] + sol[i]*v[r_]) % p
+        M2 = vec_pencil(m2v)
+        M3 = vec_pencil([sol[k + j] % p for j in range(80)])
+        g1, g2, g3 = all_g(build, theta, [M1, M2, M3], 3, p)
+        assert not any(g1) and not any(g2) and not any(g3[i] for i in S5DEG0)
+        g3_in_im = solve_aug(dcols, [(-x) % p for x in g3], NQ, p) is not None
+        rows_full = []; rows_con = []
+        params = [('t', i) for i in range(len(theta))] + \
+                 [('m', j, kk, a_, b_) for j in (1, 2, 3) for kk in range(R) for a_ in range(n) for b_ in range(n)]
+        for pr in params:
+            gg = all_g(build, theta, [M1, M2, M3], 3, p, dual=pr)
+            rows_full.append(gg[0] + gg[1] + gg[2]); rows_con.append(gg[0] + gg[1] + [gg[2][i] for i in S5DEG0])
+        rf = rank_mod(rows_full, 3*NQ, p); rc = rank_mod(rows_con, 2*NQ + len(S5DEG0), p)
+        rec['order3'][nm] = dict(M1_in=nm, g3_nonzero=any(g3), g3_in_im_dPhi=g3_in_im, rank_full=rf, rank_con=rc, order3_reducible=rf - rc)
+        if verbose: print(f"[{spec} seed={seed} p={p}] order 3, M_1 in T_{nm}: g3 in im dPhi {g3_in_im}; reducible image = {rf - rc}", flush=True)
+    return rec

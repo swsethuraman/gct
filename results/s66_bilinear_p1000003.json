@@ -1,0 +1,606 @@
+[
+ {
+  "spec": "P_SP",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 29,
+  "dim_ker": 51,
+  "comps": {
+   "P": 43,
+   "SP": 49
+  },
+  "dim_inter": 41,
+  "alpha": 2,
+  "beta": 8,
+  "a_is_transverse_to": "SP",
+  "b_is_transverse_to": "P",
+  "systems": {
+   "Q2": {
+    "n": 12,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 8,
+    "generic_rank_N": 2,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 8, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 2, degree 1, ngens 8, linear 1",
+      "  prime 2: dim 8, degree 1, ngens 2, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 4,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 4,
+    "generic_rank_N": 1,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 9, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 6, degree 1, ngens 4, linear 1",
+      "  prime 2: dim 9, degree 1, ngens 1, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 4,
+    "linear": true,
+    "dim_ab": 6,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 77,
+    "rank_con": 54,
+    "order2_reducible": 23
+   },
+   {
+    "prime": 2,
+    "ngens": 1,
+    "linear": true,
+    "dim_ab": 9,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 77,
+    "rank_con": 51,
+    "order2_reducible": 26
+   }
+  ],
+  "seconds": 303.3
+ },
+ {
+  "spec": "P_coker",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 14,
+  "dim_ker": 66,
+  "comps": {
+   "P": 43,
+   "coker": 63
+  },
+  "dim_inter": 40,
+  "alpha": 3,
+  "beta": 23,
+  "a_is_transverse_to": "coker",
+  "b_is_transverse_to": "P",
+  "systems": {
+   "Q2": {
+    "n": 41,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 23,
+    "generic_rank_N": 3,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 23, time 1",
+      "Q2: 2 minimal primes, time 2",
+      "  prime 1: dim 3, degree 1, ngens 23, linear 1",
+      "  prime 2: dim 23, degree 1, ngens 3, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 25,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 15,
+    "generic_rank_N": 3,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 23, time 2",
+      "Qpi: 2 minimal primes, time 2",
+      "  prime 1: dim 11, degree 1, ngens 15, linear 1",
+      "  prime 2: dim 23, degree 1, ngens 3, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 15,
+    "linear": true,
+    "dim_ab": 11,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 63,
+    "rank_con": 39,
+    "order2_reducible": 24
+   },
+   {
+    "prime": 2,
+    "ngens": 3,
+    "linear": true,
+    "dim_ab": 23,
+    "is_T2": true,
+    "is_T1": false,
+    "note": "tangent space of coker (order 2 adds nothing)"
+   }
+  ],
+  "seconds": 177.5
+ },
+ {
+  "spec": "P_meet",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 28,
+  "dim_ker": 52,
+  "comps": {
+   "P": 43,
+   "SPT": 49
+  },
+  "dim_inter": 40,
+  "alpha": 3,
+  "beta": 9,
+  "a_is_transverse_to": "SPT",
+  "b_is_transverse_to": "P",
+  "systems": {
+   "Q2": {
+    "n": 19,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 9,
+    "generic_rank_N": 3,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 9, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 3, degree 1, ngens 9, linear 1",
+      "  prime 2: dim 9, degree 1, ngens 3, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 12,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 6,
+    "generic_rank_N": 3,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 9, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 6, degree 1, ngens 6, linear 1",
+      "  prime 2: dim 9, degree 1, ngens 3, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 6,
+    "linear": true,
+    "dim_ab": 6,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 76,
+    "rank_con": 53,
+    "order2_reducible": 23
+   },
+   {
+    "prime": 2,
+    "ngens": 3,
+    "linear": true,
+    "dim_ab": 9,
+    "is_T2": true,
+    "is_T1": false,
+    "note": "tangent space of SPT (order 2 adds nothing)"
+   }
+  ],
+  "seconds": 108.4
+ },
+ {
+  "spec": "SP_c32",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 21,
+  "dim_ker": 59,
+  "comps": {
+   "SP": 49,
+   "c32": 57
+  },
+  "dim_inter": 47,
+  "alpha": 2,
+  "beta": 10,
+  "a_is_transverse_to": "c32",
+  "b_is_transverse_to": "SP",
+  "systems": {
+   "Q2": {
+    "n": 17,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 10,
+    "generic_rank_N": 2,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 10, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 2, degree 1, ngens 10, linear 1",
+      "  prime 2: dim 10, degree 1, ngens 2, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 11,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 7,
+    "generic_rank_N": 2,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 10, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 5, degree 1, ngens 7, linear 1",
+      "  prime 2: dim 10, degree 1, ngens 2, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 7,
+    "linear": true,
+    "dim_ab": 5,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 67,
+    "rank_con": 43,
+    "order2_reducible": 24
+   },
+   {
+    "prime": 2,
+    "ngens": 2,
+    "linear": true,
+    "dim_ab": 10,
+    "is_T2": true,
+    "is_T1": false,
+    "note": "tangent space of c32 (order 2 adds nothing)"
+   }
+  ],
+  "seconds": 113.8
+ },
+ {
+  "spec": "SP_c21",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 20,
+  "dim_ker": 60,
+  "comps": {
+   "SP": 49,
+   "c21": 57
+  },
+  "dim_inter": 46,
+  "alpha": 3,
+  "beta": 11,
+  "a_is_transverse_to": "c21",
+  "b_is_transverse_to": "SP",
+  "systems": {
+   "Q2": {
+    "n": 15,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 8,
+    "generic_rank_N": 3,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 11, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 6, degree 1, ngens 8, linear 1",
+      "  prime 2: dim 11, degree 1, ngens 3, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 7,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 5,
+    "generic_rank_N": 2,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 12, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 9, degree 1, ngens 5, linear 1",
+      "  prime 2: dim 12, degree 1, ngens 2, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 5,
+    "linear": true,
+    "dim_ab": 9,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 65,
+    "rank_con": 40,
+    "order2_reducible": 25
+   },
+   {
+    "prime": 2,
+    "ngens": 2,
+    "linear": true,
+    "dim_ab": 12,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 65,
+    "rank_con": 37,
+    "order2_reducible": 28
+   }
+  ],
+  "seconds": 146.5
+ },
+ {
+  "spec": "SP_coker",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 12,
+  "dim_ker": 68,
+  "comps": {
+   "SP": 49,
+   "coker": 63
+  },
+  "dim_inter": 44,
+  "alpha": 5,
+  "beta": 19,
+  "a_is_transverse_to": "coker",
+  "b_is_transverse_to": "SP",
+  "systems": {
+   "Q2": {
+    "n": 41,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 19,
+    "generic_rank_N": 5,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 19, time 71",
+      "Q2: 2 minimal primes, time 87",
+      "  prime 1: dim 5, degree 1, ngens 19, linear 1",
+      "  prime 2: dim 19, degree 1, ngens 5, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 22,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 13,
+    "generic_rank_N": 4,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 20, time 27",
+      "Qpi: 2 minimal primes, time 32",
+      "  prime 1: dim 11, degree 1, ngens 13, linear 1",
+      "  prime 2: dim 20, degree 1, ngens 4, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 13,
+    "linear": true,
+    "dim_ab": 11,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 60,
+    "rank_con": 34,
+    "order2_reducible": 26
+   },
+   {
+    "prime": 2,
+    "ngens": 4,
+    "linear": true,
+    "dim_ab": 20,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 53,
+    "rank_con": 25,
+    "order2_reducible": 28
+   }
+  ],
+  "seconds": 468.7
+ },
+ {
+  "spec": "c21_c32",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 16,
+  "dim_ker": 64,
+  "comps": {
+   "c21": 57,
+   "c32": 57
+  },
+  "dim_inter": 50,
+  "alpha": 7,
+  "beta": 7,
+  "a_is_transverse_to": "c32",
+  "b_is_transverse_to": "c21",
+  "systems": {
+   "Q2": {
+    "n": 25,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 7,
+    "generic_rank_N": 7,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 7, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 7, degree 1, ngens 7, linear 1",
+      "  prime 2: dim 7, degree 1, ngens 7, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 13,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 5,
+    "generic_rank_N": 5,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 9, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 9, degree 1, ngens 5, linear 1",
+      "  prime 2: dim 9, degree 1, ngens 5, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 5,
+    "linear": true,
+    "dim_ab": 9,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 60,
+    "rank_con": 33,
+    "order2_reducible": 27
+   },
+   {
+    "prime": 2,
+    "ngens": 5,
+    "linear": true,
+    "dim_ab": 9,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 60,
+    "rank_con": 33,
+    "order2_reducible": 27
+   }
+  ],
+  "seconds": 24.2
+ },
+ {
+  "spec": "ker_c21",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 13,
+  "dim_ker": 67,
+  "comps": {
+   "ker": 63,
+   "c21": 57
+  },
+  "dim_inter": 53,
+  "alpha": 10,
+  "beta": 4,
+  "a_is_transverse_to": "c21",
+  "b_is_transverse_to": "ker",
+  "systems": {
+   "Q2": {
+    "n": 22,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 4,
+    "generic_rank_N": 10,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 10, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 10, degree 1, ngens 4, linear 1",
+      "  prime 2: dim 4, degree 1, ngens 10, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 12,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 3,
+    "generic_rank_N": 7,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 11, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 11, degree 1, ngens 3, linear 1",
+      "  prime 2: dim 7, degree 1, ngens 7, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 3,
+    "linear": true,
+    "dim_ab": 11,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 55,
+    "rank_con": 26,
+    "order2_reducible": 29
+   },
+   {
+    "prime": 2,
+    "ngens": 7,
+    "linear": true,
+    "dim_ab": 7,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 58,
+    "rank_con": 30,
+    "order2_reducible": 28
+   }
+  ],
+  "seconds": 24.5
+ }
+]

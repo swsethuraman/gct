@@ -1,0 +1,145 @@
+[
+ {
+  "spec": "P_c32",
+  "seed": 1,
+  "p": 1000003,
+  "rank_dPhi": 19,
+  "dim_ker": 61,
+  "comps": {
+   "P": 43,
+   "SP": 49,
+   "c32": 57
+  },
+  "dim_common_intersection": 39,
+  "reduced_vars": 22,
+  "systems": {
+   "Q2": {
+    "n": 28,
+    "i_dependent_entries": 0,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 18, time 1",
+      "Q2: 3 minimal primes, time 0",
+      "  prime 1: dim 18, degree 1, ngens 4, linear 1 =T_c32",
+      "  prime 2: dim 8, degree 1, ngens 14, linear 1",
+      "  prime 3: dim 10, degree 1, ngens 12, linear 1 =T_SP"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 14,
+    "i_dependent_entries": 0,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 19, time 1",
+      "Qpi: 3 minimal primes, time 1",
+      "  prime 1: dim 13, degree 1, ngens 9, linear 1",
+      "  prime 2: dim 14, degree 1, ngens 8, linear 1",
+      "  prime 3: dim 19, degree 1, ngens 3, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 9,
+    "linear": true,
+    "dim_w": 13,
+    "equals": [],
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 65,
+    "rank_con": 42,
+    "order2_reducible": 23
+   },
+   {
+    "prime": 2,
+    "ngens": 8,
+    "linear": true,
+    "dim_w": 14,
+    "equals": [],
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 65,
+    "rank_con": 41,
+    "order2_reducible": 24
+   },
+   {
+    "prime": 3,
+    "ngens": 3,
+    "linear": true,
+    "dim_w": 19,
+    "equals": [],
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 63,
+    "rank_con": 36,
+    "order2_reducible": 27
+   }
+  ],
+  "seconds": 361.8
+ },
+ {
+  "spec": "ker_coker",
+  "seed": 1,
+  "p": 1000003,
+  "alpha": 12,
+  "beta": 12,
+  "nQpi": 31,
+  "comps": {
+   "ker": 63,
+   "coker": 63
+  },
+  "generic_a": {
+   "rank_M": 9,
+   "kernel_dim": 3,
+   "tag": "generic a, b in ker M(a)",
+   "g2_nonzero": true,
+   "rank_full": 47,
+   "rank_con": 18,
+   "order2_reducible": 29
+  },
+  "generic_b": {
+   "rank_N": 9,
+   "kernel_dim": 3,
+   "tag": "generic b, a in ker N(b)",
+   "g2_nonzero": true,
+   "rank_full": 47,
+   "rank_con": 18,
+   "order2_reducible": 29
+  }
+ },
+ {
+  "spec": "ker_coker",
+  "seed": 2,
+  "p": 32003,
+  "alpha": 12,
+  "beta": 12,
+  "nQpi": 31,
+  "comps": {
+   "ker": 63,
+   "coker": 63
+  },
+  "generic_a": {
+   "rank_M": 9,
+   "kernel_dim": 3,
+   "tag": "generic a, b in ker M(a)",
+   "g2_nonzero": true,
+   "rank_full": 47,
+   "rank_con": 18,
+   "order2_reducible": 29
+  },
+  "generic_b": {
+   "rank_N": 9,
+   "kernel_dim": 3,
+   "tag": "generic b, a in ker N(b)",
+   "g2_nonzero": true,
+   "rank_full": 47,
+   "rank_con": 18,
+   "order2_reducible": 29
+  }
+ }
+]
