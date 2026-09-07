@@ -1,16 +1,20 @@
 """Session 62 — independent checker for the n = 3 LMR positive control.
 
 Reads the exhibited integer highest-weight vector results/s62_n3_vec_d<delta>.json and,
-by an INDEPENDENT rebuild of the cell (no reuse of the measurement's kernel), certifies
-over Z that it is a nonzero highest-weight vector in I(D_7^{det_3}) of weight lambda:
+by an INDEPENDENT rebuild of the cell (no reuse of the measurement's kernel), exhibits it
+over Z as a nonzero highest-weight vector vanishing on a strong sample of D_7^{det_3}:
 
   1. v != 0 and its coordinates are integers;
   2. E v = 0 over Z, E the simple raising operators on V_chi (rebuilt here);
   3. v vanishes at N_det fresh integer det_3 pencils, evaluated EXACTLY over Z;
   4. v does not vanish at a generic integer cubic.
 
-(1)-(4) prove i_det(lambda, delta) >= 1 over Q, hence mult_det <= a - 1: the rank drop.
-Independent of the block-Wiedemann measurement -- it recomputes E and evaluates by hand.
+(1)-(4) EXHIBIT v as an element of I(D)^{HWV} of weight lambda: a genuine highest-weight
+vector (E v = 0 exact) vanishing on a strong sample of D.  Finite-point vanishing is
+Schwartz-Zippel EVIDENCE of ideal membership, not a proof; the rigorous i_det >= 1 remains
+the LMR theorem (and the predecessor route mult_det(11)=5 => i_det(12)<=1 => =1).  This
+checker is independent of the block-Wiedemann measurement -- it recomputes E and evaluates
+by hand -- and names the exhibited candidate equation.
 
     python3 analysis/wk10_s62_n3check.py [delta ...]        (default 12)
 """
@@ -89,8 +93,9 @@ def check(delta, seed_fresh=20260907, n_fresh=16, bound=50):
     rndc = random.Random(seed_fresh + 1)
     cv = [rndc.randint(-bound, bound) for _ in A]
     out["nonzero_generic_cubic"] = evaluate(cv) != 0
-    out["certifies_i_det_ge_1_over_Q"] = bool(out["nonzero"] and out["integer"] and out["E_v_zero_over_Z"]
-                                              and out["vanishes_fresh_det_over_Z"] and out["nonzero_generic_cubic"])
+    out["all_checks_pass"] = bool(out["nonzero"] and out["integer"] and out["E_v_zero_over_Z"]
+                                  and out["vanishes_fresh_det_over_Z"] and out["nonzero_generic_cubic"])
+    out["caveat"] = "exhibits a candidate ideal element (finite-point evidence); rigorous i_det>=1 is LMR + predecessor route"
     out["support_chi"] = int(sum(1 for x in v if x))
     out["max_abs_coeff_chi"] = int(max(abs(x) for x in v))
     # monomial coordinates (integrator note 2 §5.1): the number of terms and a named nonzero one.
@@ -136,5 +141,5 @@ if __name__ == "__main__":
         print(json.dumps(r, indent=1))
     with open(os.path.join(ROOT, "results", "s62_n3_check.json"), "w") as fh:
         json.dump(res, fh, indent=1)
-    allok = all(r.get("certifies_i_det_ge_1_over_Q") for r in res.values())
-    print("ALL CERTIFY i_det>=1 over Q:", allok)
+    allok = all(r.get("all_checks_pass") for r in res.values())
+    print("ALL CHECKS PASS (exhibited candidate ideal element; rigorous i_det>=1 is LMR):", allok)

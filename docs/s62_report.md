@@ -30,11 +30,11 @@ ratio of two Gram determinants — integrator note 1), and **it vanishes at the
    mandatory control: `mult_det = 5 < a = 6`, `i_det = 1`, at both house primes,
    with the first exhibited element of `I(D)^{HWV}` the programme has ever
    produced.
-3. **The cost curve, measured, with `|S|` — the Foulkes-basis support — as the
+3. **The cost curve, measured, with `|S|` — the reduced-route support — as the
    number that decides session 63.** The enumeration route dies at `δ = 5`
-   (stopping rule 2); `|S| = N_S` at the balanced cells, so the reduced route is
-   out of reach at the LMR cell too. Session 63 must run the direct `λ`-block
-   (evaluation) route, exactly as the `n = 3` control is done here.
+   (stopping rule 2), and the reduced-route support `|S| ~ n_λ ~ 10¹¹` at the LMR
+   cell puts that route out of reach too. Session 63 must run the direct
+   `λ`-block (evaluation) route, exactly as the `n = 3` control is done here.
 
 ## 0. Provenance — what was banked before this session
 
@@ -119,8 +119,10 @@ constituents (3 + 9 + 28):
 
 No equation is born below the reach. The independent route (b) — s56's weight
 route, `m_λ = Σ_μ (K⁻¹)_{λμ} rank_Q B_μ` over every dominant weight — agrees with
-`rank_Q G_λ` at every constituent, at `δ = 2,3,4`. 40 `matrix` certificates
-(`results/certs/s62/s62_G_n4_*`) pass `tools/verify`.
+`rank_Q G_λ` at every constituent at `δ = 2` and `δ = 3` (run with `--kostka`; at
+`δ = 4` it is not run, the `B_μ` on all 43 weights of 16 being many `|H|`-passes,
+and `rank_Q G_λ` there is independently certified anyway). 40 `matrix`
+certificates (`results/certs/s62/s62_G_n4_*`) pass `tools/verify`.
 
 **Bookkeeping (P6), confirmed exactly.** Pair-orbitals of `S_{4δ}` on `H_{4,δ}`:
 3, 9, 43. Constituents of `Sym^δ(Sym^4)`: 3, 9, 28. Max multiplicity: 1, 1, 2,
@@ -195,13 +197,18 @@ predecessor-to-goal deduction end to end at `n = 3` before it is trusted at
 **The exhibited equation.** The mod-`p` kernel of `[E; ev_det]` is
 rational-reconstructed to an exact integer highest-weight vector `v` and, on the
 **full** sparse `E` and at **fresh** seeds (distinct from the measurement seed):
-`E·v = 0` over `Z`; `v` vanishes at 28 fresh `det_3` pencils over `Z`; `v ≠ 0` at
-a generic cubic. Weight `(19,7,2^5)`, 240 510 monomial terms, max `|coeff| = 544`.
-Re-certified by an independent rebuild (`analysis/wk10_s62_n3check.py`). This is
-the programme's **first exhibited element of `I(D)^{HWV}` with `i_det > 0`**;
-the compact `χ`-coordinate vector and a monomial-coordinate summary are banked
-(`results/s62_n3_vec_d12.json`, `results/s62_n3_hwv_monomial_d12.json`). The
-declared `hwv` certificate kind fixes `n = 4` (its verifier rebuilds `n = 4`
+`E·v = 0` over `Z` (so `v` is a genuine highest-weight vector); `v` vanishes at 28
+fresh `det_3` pencils over `Z`; `v ≠ 0` at a generic cubic. Weight `(19,7,2^5)`,
+240 510 monomial terms, max `|coeff| = 544`. Re-certified by an independent
+rebuild (`analysis/wk10_s62_n3check.py`). Following integrator note 2 §5, this is
+named the programme's **first exhibited element of `I(D)^{HWV}` with `i_det > 0`**
+— a highest-weight vector that vanishes on a strong sample of `D_7`. **The
+finite-point vanishing is Schwartz–Zippel evidence of ideal membership, not a
+proof of it**: the rigorous `i_det ≥ 1` remains the LMR theorem (and the
+predecessor route), and `v` is the concrete candidate equation those force to
+exist. The compact `χ`-coordinate vector and a monomial-coordinate summary are
+banked (`results/s62_n3_vec_d12.json`, `results/s62_n3_hwv_monomial_d12.json`).
+The declared `hwv` certificate kind fixes `n = 4` (its verifier rebuilds `n = 4`
 raising operators), so this `n = 3` vector ships as the artefact plus the
 independent checker rather than a `gct-cert/1 hwv` file.
 
@@ -215,41 +222,50 @@ and the explicit machinery is already exhibited on the `n = 2` proved control.
 
 ## 6. Cost, and `|S|` (Tasks 1, 5)
 
-`analysis/wk10_s62_cost.py`; `results/s62_cost.md`, `.json`. Two objects.
+`analysis/wk10_s62_cost.py`; `results/s62_cost.md`, `.json`. **Three scales, kept
+apart** (an earlier draft of this section conflated them; corrected after the
+adversarial review): `n_λ` the weight-space dimension (number of monomials `O`,
+= s57's `N_S`); `|S|` the reduced-route deciding number; `|H_{4,δ}|` the whole
+Foulkes module.
 
 **The enumeration route** (this session's `B_λ` construction, = s56's pass): one
 sweep of `H_{4,δ}` per orbit representative, cost `Θ(|H_{4,δ}| · n_λ)`. Measured
 rate **174 ns per element of `H` per representative** (`δ = 4`, 0.456 s/rep over
 2 627 625). Projected single-pass time: `δ = 5` → 7.4 min (× ~192 weights per
-length-5 cell ≈ 24 h, matching s56's measured wall), `δ = 6` → 9 days,
-`δ = 24` → beyond astronomical. **Dead at `δ = 5` (stopping rule 2).**
+length-5 cell ≈ 24 h, matching s56's measured wall), `δ = 6` → 9 days. **Dead at
+`δ = 5` (stopping rule 2).** Its raw support `Σ_{O∈supp}|O| = |H|` when the HWV is
+dense in the weight space.
 
-**`|S|`, the Foulkes-basis support** (integrator note 3) — the support of the
-highest-weight vectors in the block-decomposition basis, `= Σ_{O ∈ supp} |O|`,
-the number that decides the reduced (block-intersection) route: forming
-`A = C_Sᵀ β_S C_S` costs `~ a·|S|² + a²·|S|`. **Measured: `|S| = N_S` at every
-balanced cell** — the HWV touches every orbit, so the Foulkes support is
-essentially the whole module. Consequences:
+**`|S|`, the reduced-route support** (integrator note 3) — the support of the
+highest-weight vectors in the **weight-space / orbit-sum basis**, `|S| ≤ n_λ`.
+Forming the reduced block `A = C_Sᵀ β_S C_S` is a quadratic form over these, cost
+`~ a·|S|² + a²·|S|`. **Measured: `|S| = n_λ` at 11 of 28 `δ = 4` cells** (the
+rectangular and near-rectangular ones — the HWVs reach the whole weight space);
+at the skewed cells `|S| < n_λ` but stays the same order. So the reduced-route
+cost is set by `n_λ`. Consequences:
 
-- `n = 4`, `δ = 24` LMR: `N_S = 1.564·10¹¹` (s57); `|S| ~ 10¹¹`, so the reduced
-  `273×273` block is trivial as a determinant but its **entries** cost
-  `~273·|S|² ~ 3·10²⁴` — out of reach.
-- `n = 3`, `δ = 12` control: `|H_{3,12}| ~ 3.7·10²³`, so the Foulkes Gram is out
-  of reach **even for the mandatory control** — its ground truth is therefore
-  taken by the evaluation engine, not the Foulkes Gram. This is the concrete
-  proof that the Gram route cannot reach an LMR cell.
+- `n = 4`, `δ = 24` LMR: `n_λ = 156,438,903,314` (s57). With 273 transported
+  source vectors the union of supports is a large fraction of `n_λ`, so
+  `|S| ~ 10¹¹` — far past the `10⁵` "out of reach" regime of integrator note 3.
+  The reduced `273×273` block is trivial as a determinant but its **entries** cost
+  `~273·|S|² ~ 6·10²⁴`. Out of reach. (Enumeration is worse: `|H_{4,24}| ~ 1.2·10⁹³`.)
+- `n = 3`, `δ = 12` control: `n_λ = 1,155,302`, `|H_{3,12}| ~ 3.6·10²³`. The
+  Foulkes Gram is out of reach **even for the mandatory control** — its ground
+  truth is taken by the evaluation engine on the `n_χ = 17,047` reduction, not
+  the Foulkes Gram. This is the concrete proof that the Gram route cannot reach
+  an LMR cell.
 
 **What a Gram entry needs (Task 5).** One entry `B_λ(O,O')` needs, for the fixed
 `O'`, the distribution of the pair-orbital `d = rel(π, O'_0)` over `π ∈ O` — the
 counts `N_d(O,O')` — and the single scalar `K_d` per orbital. `K_d` is one signed
 tensor sum per orbital (`n_orb = 3, 9, 43` at `δ = 2,3,4`; `analysis/wk10_s62_gram.Orbitals`
-computes them once), and `β_d = K_d²`. The cost of one entry is the cost of that
-distribution: at `δ = 4` a pair touches up to all 43 orbitals (mean ≈ 32), and the
-counts are obtained by one sweep of `O` against `O'_0`. The enumeration route
-gets all counts by sweeping `H` once per `O'`; the reduced route (session 63)
-gets one entry from the block-intersection distribution over `|S|` decompositions,
-which is why `|S|` is the cost. There is no cheaper handle: the entry is a
-quadratic form over the Foulkes support.
+computes them once, `β_d = K_d²`; `|K_d|` values 96–331 776). At `δ = 4` a pair
+touches up to all 43 orbitals (mean ≈ 32). The enumeration route gets all counts
+by sweeping `H` once per `O'` (cost `|H|`); the reduced route (session 63) gets
+one entry from the block-intersection distribution over the `|S|` orbit
+representatives its source vectors touch — the entry is a quadratic form over the
+reduced-route support, which is why `|S|` (`~ n_λ`) is the cost and the number
+session 63 must report at `r = 9` first.
 
 ## 7. SNF diagnostics (Task 6)
 
@@ -267,14 +283,14 @@ exactly `[0]` (elementary divisor 0, the proved drop). Nothing structured.
 | P1 | `dim M_λ = a` at every cell | **hit** (build check; isotypic test P3 at `δ=2,3`) |
 | P2 | reproduce s56: `rank_Q G = a`, `i_det = 0`, room-one `s ≠ 0` | **hit**, all 40 |
 | P3 | `M_λ` in the `λ`-isotypic component | **hit**, all 12 (`δ=2,3`) after fixing an index bug |
-| P4 | route (b) inverse Kostka = `rank_Q G` | **hit**, every weight `δ ≤ 4` |
+| P4 | route (b) inverse Kostka = `rank_Q G` | **hit**, every weight at `δ = 2,3` (not run at `δ=4`) |
 | P5 | `n = 2` proved drop: `rank 0` at `δ=5,6`, full at `δ=3,4` | **hit**, both sides |
 | P6 | orbital / constituent / `Σa²` counts | **hit**, exactly (3/9/43, 3/9/28, 1/1/2) |
 | P7 | `n = 3` control: `mult_det ≤ 5 < a = 6` | **hit**, both primes + exhibited vector |
 | P8 | the scalar: `A` nonsingular, `s = 0` at `(19,7,2^5)_{12}` | **hit** (structurally: `i_det=1` + full-rank predecessor) |
 | P9 | predecessors full rank; `s ≠ 0` at `δ=11` | **hit** (2,4,5 full rank) |
-| P10 | Foulkes Gram out of reach at the LMR cell | **hit** (`|S| ~ N_S`) |
-| P11 | cost curve dies at `δ=5`; Gram-entry cost in `|S|` | **hit** (measured wall; `|S| = N_S`) |
+| P10 | Foulkes Gram out of reach at the LMR cell | **hit** (`|S| ~ n_λ ~ 10¹¹`) |
+| P11 | cost curve dies at `δ=5`; Gram-entry cost in `|S|` | **hit** (measured wall; `|S| = n_λ` at 11/28 δ=4 cells) |
 | P12 | SNF generic | **hit** |
 
 All twelve hit. Two integrator notes folded in mid-session (the within-degree
@@ -285,8 +301,8 @@ the precise one-sided reading of the `n = 3` control and the two-sided ladder).
 ## 9. For session 63 (with these numbers in hand — do not enter without them)
 
 - The Foulkes/enumeration Gram cannot reach `δ = 24`; the reduced block route is
-  bounded by `|S| ~ 10¹¹`, out of reach too unless `|S|` collapses, which the
-  balanced-cell measurements say it does not. **Report `|S|` at `r = 9` as the
+  bounded by `|S| ~ n_λ ~ 10¹¹`, out of reach too unless `|S|` collapses, which
+  the measured supports say it does not. **Report `|S|` at `r = 9` as the
   first deliverable**, then run the **direct `λ`-block (evaluation) route**,
   exactly as the `n = 3` control is done here.
 - The C2 reduction (`A_24 = B_{λ,24}|_{J(M_23)}` nonsingular ⟹ `rank = 273` ⟹

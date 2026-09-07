@@ -113,9 +113,16 @@ def cell(lam):
     for v in vecs:
         union |= {k for k, x in enumerate(v) if x}
     rec["hwv_support_each"] = supp_each
-    rec["hwv_support_union"] = len(union)          # weight-space (n_lam-basis) support
-    rec["foulkes_support_S"] = G.foulkes_support(wo["size"], union)   # |S|: the cost-deciding number
-    rec["N_S"] = int(sum(int(x) for x in wo["size"]))                 # |H^{S_lambda}| in Foulkes basis
+    # |S|, the REDUCED-ROUTE deciding number (integrator note 3): the support of the HWVs
+    # in the weight-space / orbit-sum basis -- how many monomials O the source vectors touch.
+    # The reduced block A = C_S^T beta_S C_S is a quadratic form over these, cost ~ a|S|^2.
+    rec["reduced_route_S"] = len(union)            # = |S|, orbit-basis support (<= n_lam = weight-space dim)
+    rec["hwv_support_union"] = len(union)          # (kept: same quantity, old name)
+    rec["S_over_n_lam"] = str(Fraction(len(union), wo["n_lam"]))
+    # the ENUMERATION-route cost object: the raw number of block decompositions the HWVs touch,
+    # = sum of orbit sizes over the support = |H| when the HWV is dense in the weight space.
+    rec["enumeration_raw_S"] = G.foulkes_support(wo["size"], union)   # = Sum_{O in supp} |O|
+    rec["H_total"] = int(sum(int(x) for x in wo["size"]))            # = |H_{n,delta}| (orbit sizes partition all of H)
     NS, ufree, NSp = G.u_free_count(n, r, delta, lam)
     rec["u_free_monomials"] = ufree
     rec["N_S_pred"] = NSp
