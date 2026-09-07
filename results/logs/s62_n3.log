@@ -1,0 +1,37 @@
+[   149.6s]   built (10, 7, 2, 2, 2, 2, 2) d9: N_S=809508 n_chi=11425 rows=489929 nnz=1066436 (149s)
+[   220.4s]     p=2147483647: nullity[E;ev]=0 -> mult_det=2 i_det=0 (build validated vs dense engine on small cells)
+[   220.4s] delta=9: a=2 mult_det=2 i_det=0
+[   416.8s]   built (13, 7, 2, 2, 2, 2, 2) d10: N_S=1017919 n_chi=14598 rows=620990 nnz=1341614 (196s)
+[   538.8s]     p=2147483647: nullity[E;ev]=0 -> mult_det=4 i_det=0 (build validated vs dense engine on small cells)
+[   538.8s] delta=10: a=4 mult_det=4 i_det=0
+[   767.5s]   built (16, 7, 2, 2, 2, 2, 2) d11: N_S=1118518 n_chi=16318 rows=687524 nnz=1475958 (228s)
+[   927.0s]     p=2147483647: nullity[E;ev]=0 -> mult_det=5 i_det=0 (build validated vs dense engine on small cells)
+[   927.0s] delta=11: a=5 mult_det=5 i_det=0
+[  1174.4s]   built (19, 7, 2, 2, 2, 2, 2) d12: N_S=1155302 n_chi=17047 rows=713677 nnz=1526091 (246s)
+[  1507.3s]     p=2147483647: nullity[E;ev]=1 -> mult_det=5 i_det=1 (build validated vs dense engine on small cells)
+[  1841.2s]     p=2147483629: nullity[E;ev]=1 -> mult_det=5 i_det=1
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk10_s62_n3.py", line 254, in <module>
+    rec = measure(d, lam, primes=primes)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk10_s62_n3.py", line 188, in measure
+    prod = Ecsr.dot(np.array(vint, dtype=object))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_base.py", line 603, in dot
+    return self @ other
+           ~~~~~^~~~~~~
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_base.py", line 923, in __matmul__
+    return self._matmul_dispatch(other)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_base.py", line 808, in _matmul_dispatch
+    return self._matmul_vector(other)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py", line 391, in _matmul_vector
+    result = np.zeros(M, dtype=upcast_char(self.dtype.char, other.dtype.char))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py", line 64, in upcast_char
+    t = upcast(*map(np.dtype, args))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py", line 56, in upcast
+    raise TypeError(f'no supported conversion for types: {args!r}')
+TypeError: no supported conversion for types: (dtype('int64'), dtype('O'))
