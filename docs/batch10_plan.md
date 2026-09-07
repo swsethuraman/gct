@@ -1,381 +1,568 @@
-# Batch 10 — the next twelve sessions, with two reserves
+# Batch 10 — the twelve, final
 
-Written at the batch boundary, after the history rewrite and the repository
-split.  Base commit for every brief in this batch: **`226b4ef1`**.
+Base commit for every brief in this batch: **`226b4ef1`**.
 
-Read `docs/stocktake_batch9.md` first, including its §6 correction.  This
-document does not repeat it; it says what to do next and why, and it differs
-from the stock-take's §4 in four places, each marked **[change]**.
-
----
-
-## 0. The one sentence
-
-Batch 9 produced twelve clean negatives and excellent instrumentation, and left
-the programme with **no computable rank at any cell where a rank drop could
-live**.  Everything below is organised around that single fact: two independent
-attacks on it, four sessions that only run if one of them succeeds, four that
-are worth running whatever happens, and two that ask — adversarially — whether
-the programme's instruments can reach past the bound Landsberg–Manivel–Ressayre
-already published.
+**Supersedes** three documents, and consolidates all of them: the integrator's
+first `docs/batch10_plan.md` (commit `a3d2949`), Sol's `next_12_session_roadmap`
+and its revision, and `sol_insights` and its revision.  Where they disagreed,
+the disagreements were settled by computation and the settlements are in §1
+and §5.  Read `docs/stocktake_batch9.md` §6 for what batch 9 left behind.
 
 ---
 
-## 1. The gate, attacked twice **[change]**
+## 0. The phase change
 
-The stock-take made the gate a single session and everything else wait on it.
-That is the wrong shape.  The gate is one obstacle with two unrelated ways
-round, the two share no code, no method and no failure mode, and each is a
-legitimate session on its own terms.  **Run them in parallel.**
+At `(per_3, det_4)` the programme no longer has a separator-discovery problem.
+Two independent geometric routes already separate `x_0·per_3` from the `det_4`
+orbit closure: the LMR degree-24 dual-defect construction, and the conormal
+slot-6 violation `δ_6(x_0·per_3) = 30 > 20 = δ_6(det_4)`.  The open question is
+narrower and sharper:
 
-| | route | owner | cost driver if it works |
-|---|---|---|---|
-| **C1** | tail-reduce the `Θ⁺` **rank**, as s58 tail-reduced the target dimension | Claude | `\|λ̄\|`, not `\|H_{4,δ}\|` |
-| **S1** | compute stable `i_det` as an ideal multiplicity of `M_ℓ`, per Proposition S | Sol | `ℓ`, not `δ` or `N` |
+> **Can the multiplicity statistic see a separation that geometry already knows
+> is there?**
 
-C1 keeps the Foulkes formulation and tries to make it cheap.  S1 abandons rank
-computation entirely and asks a commutative-algebra question about one small
-explicit affine variety instead.  If either lands, Track II opens.  If neither
-does, §5 says what the batch becomes.
+That is `D(λ,δ) = mult_pad − mult_det = i_det − i_pad > 0` at some cell, and the
+LMR cell `λ = (65,17,2⁷)`, `δ = 24` is the canonical place to ask, because it is
+the one cell where a determinant equation is known to exist and the ambient
+multiplicity is small: `a_24 = 274`, `a_23 = 273`, `sk_24 = 48 825`.  The
+determinant side is therefore not an astronomical multiplicity problem.  It is a
+finite rank problem, `C²⁷⁴ → C⁴⁸ ⁸²⁵`.
+
+Batch 9's lesson, stated once: **search for the mechanism of rank loss, not for
+a rare ambient shape.**  Every scalar selector read off ambient plethysm data
+has now died.
+
+---
+
+## 1. Pre-batch checks — both closed before the batch starts
+
+### P0 — birth-sequence morphology.  **Done.  Retire it.**
+
+Run here on all 2 107 live length-5 tails (`tailcensus5.json`), not the 1 075
+of `results/s60_tail_census.json`:
+
+| observable | full census | s60 subset |
+|---|---|---|
+| room-one (final birth = 1) | **885 / 2 107 = 42.0 %** | 481 / 1 075 = 44.7 % |
+| birth sequence unimodal | **2 107 / 2 107 = 100.0 %** | 1 075 / 1 075 |
+| birth sequence log-concave | **2 000 / 2 107 = 94.9 %** | 1 024 / 1 075 = 95.3 % |
+| … log-concave given room-one | 789 / 885 = 89.2 % | 433 / 481 = 90.0 % |
+
+LMR's births are `2, 37, 54, 52, 43, 31, 22, 14, 9, 5, 3, 1, 1` — unimodal like
+every other tail, and non-log-concave by three marginal misses
+(`14² = 196 < 198`, `5² = 25 < 27`, `1² = 1 < 3`), which puts it in a 5.1 %
+class of 107 tails.
+
+**`ε_final = 1/a_∞` is worse than useless: it points the wrong way.**  LMR's
+`1/274 = 0.00365` ranks **632 of 885** room-one tails, against a median of
+`0.00052`.  So the typical room-one tail has `a_∞ ≈ 1 900` and LMR's 274 is on
+the *small* side — and small `a_∞` is already a dead selector (s60: 99 closed
+tails, `a_∞` 1…56, all full rank).  `ε` is dead twice over.
+
+**Decision: birth morphology is retired.**  E6, if ever activated, compares
+determinant-specific invariants of the last-born line, never ambient sequence
+shape.
+
+### P1 — C1 sizing.  What s56 gives, and what it does not.
+
+The s56 engine avoids highest-weight vectors, so it does not record the support
+sizes C1 needs.  What it does give:
+
+    tensor-row support 24^δ          δ=3 → 13 824 ;  δ=4 → 331 776
+    δ=4 weight route                 64 passes, Σ n_b = 5 709, max n_b = 465
+    example δ=3 Gram sizes           8, 15, 23
+    example δ=4 certified block      51 × 51 at (8,4,4)
+    full δ=4 old-engine runtime      ≈ 2.1 h
+
+So C1 is not obviously walled at small degree.  But **C1 must measure the new
+last-born and source-vector supports itself** before anything is extrapolated
+to `δ = 23, 24`.  That measurement is task 1 of C1 and it gates the rest of the
+Gram route.
 
 ---
 
 ## 2. The twelve
 
-| # | owner | session | gated on | wave |
+| wave | # | owner | session | gate |
 |---|---|---|---|---|
-| **C1** | Claude | the tail reduction of the `Θ⁺` rank | — | 1 |
-| **C5** | Claude | the length-5 closure walk, and the int64 widening | — | 1 |
-| **S1** | Sol | Proposition S made computational: the ideal of `M_ℓ` | — | 1 |
-| **S3** | Sol | the polar reach at `n = 5` — two integers | — | 1 |
-| **C6** | Claude | the certificate gap: `gct-cert/1`, and the verifier defect | — | 2 |
-| **C2** | Claude | the LMR predecessor, `δ = 23` | C1 **or** S1 | 2 |
-| **S2** | Sol | the `r = 5` special fibre at the primitive family | — | 2 |
-| **S6** | Sol | the Adams part at the LMR cell, independently | — | 2 |
-| **C3** | Claude | the LMR cell itself | C2 inconclusive | 3 |
-| **C4** | Claude | the padded side at the LMR cell | C2 **or** C3 | 3 |
-| **S4** | Sol | the stable-range `D` search | S1 | 3 |
-| **S5** | Sol | the `dc̄` reach audit | S3 | 3 |
+| 1 | **C1** | Claude | Gram/`Θ⁺` positive control and support sizing | — |
+| 1 | **C6** | Claude | certification, degeneration certifier, verifier fix, int64 widening | — |
+| 1 | **S1** | Sol | Proposition S computational: the stable ideal of `M_ℓ` | — |
+| 1 | **S2** | Sol | the noncommutative orbital commutant and the last-born scalar | — |
+| 1 | **S3** | Sol | the exact padded multiplicity-space map — **critical path** | — |
+| 2 | **C2** | Claude | the LMR determinant multiplicity | C1 |
+| 2 | **C3** | Claude | padded map implementation and calibration | S3 |
+| 2 | **S4** | Sol | the `r = 5` primitive/compression theorem route | — |
+| 2 | **S6** | Sol | the LMR isotypic and Adams independent audit | — |
+| 3 | **C4** | Claude | the LMR padded rank **and orientation** | C2 + C3 |
+| 3 | **C5** | Claude | the `r = 5` special normal cone, at the primitive family | S4 |
+| 3 | **S5** | Sol | the `n = 5` polar check, then replication and reach | — |
 
-Six each.  Waves are guidance, not a schedule: anything ungated may start at any
-time.
+Six each.  Seven of the twelve are ungated.
+
+**One change from Sol's revision, with a reason: C6 moves from wave 3 to wave 1.**
+It is ungated infrastructure, and its Part A defines the certificate kind that
+C2's LMR claims will need.  Landing it after those claims are produced means
+back-filling certificates for the batch's most load-bearing result.
+
+**And the scheduling correction stands: S3 launches in wave 1.**  `S3 → C3 → C4`
+is the longest chain in the batch, `C4` additionally waits on `C2`, and S3's
+head is ungated.  Nothing about it belongs in a later phase.
 
 ---
 
-## 3. The sessions
+## 3. Dependency graph
 
-### C1 — the tail reduction of the `Θ⁺` rank
+    C1 ──> C2 ─┐
+               ├──> C4          (the batch's resolving session)
+    S3 ──> C3 ─┘
 
-**Goal.**  s56 established `mult_det(λ,δ) = rank Hom_{S_N}([λ], Θ⁺_δ)` with
-`Θ⁺_δ(π) = ε_π ⊗ ε_π`, calibrated 40/40 at `δ = 2, 3, 4`, and measured the wall:
-the engine is quadratic in `|H_{4,δ}|`, and `|H_{4,5}| = 2 546 168 625`.  s58
-showed the *target dimension* `sk(λ, 4×δ)` reduces — Jacobi–Trudi along `λ`'s own
-first row, then Frobenius reciprocity on the rectangle — to class sums over
-`S_{|λ̄|}`, with `N` absent from the cost, taking the LMR cell from
-`p(96) = 1.18×10⁸` to 0.2 s.
+    S4 ──> C5
 
-The session is the obvious question and nobody has asked it: **does the Gram
-kernel `K(π,π')` and its Hadamard square push through the same reduction?**
+    C6   S1   S2   S5   S6      (ungated throughout)
 
-**Deliverable, either way.**  A rank algorithm whose cost is driven by `|λ̄|`,
-calibrated against s56's forty cells and then against the `n = 3` LMR positive
-control; *or* a written statement of the precise obstruction — which class
-function fails to descend, and why — with the failure exhibited on the smallest
-cell where it bites.
+`S2` feeds `C1`/`C2` opportunistically — if it produces a block-local formula
+for the last-born scalar, `C2` uses it; if not, `C2` proceeds on `C1`'s direct
+implementation.  It is a force multiplier, not a gate.
 
-**Calibration, in this order and not negotiable.**  (i) s56's forty cells at
-`δ = 2, 3, 4`.  (ii) The `n = 3` LMR cell `((19,7,2⁵), 12)`, `a = 6`,
-`sk = 10`: **this must return rank ≤ 5.**  Every cell the programme has ever
-measured is full rank; this is the first rank drop any engine would be shown,
-and it costs a `6 × 10` matrix.  If it returns 6, the session stops and reports
-that, and Track II does not open on this route.
+---
 
-**Stopping rule.**  If the descent is shown impossible before the halfway mark,
-write the negative and stop.  A characterised failure is a full deliverable
-here — it is what tells S1 it is carrying the batch.
+## 4. The sessions
 
-### S1 — Proposition S made computational: the ideal of `M_ℓ`
+### C1 — Gram/`Θ⁺` positive control and support sizing  ·  Claude  ·  wave 1
 
-**Goal.**  s57's Proposition S gives
+**Question.** Can a room-one determinant birth be detected by the exact
+Schur-complement scalar, starting from the `n = 3` LMR positive control?
 
-    a_∞(λ̄)  =  [S_λ̄]  Sym(Sym² ⊕ Sym³ ⊕ Sym⁴)(C^{ℓ−1}),
+**The mechanism.**  At a room-one closing cell whose predecessor is full rank,
+`M_δ = u·M_{δ−1} ⊕ ⟨v_ρ⟩` and, writing `G = Θ*Θ` in that splitting,
 
-reproduced here at 155 of 155 length-5 tails of weight `t ≤ 16`, and its
-companion: **stable `i_det` is the multiplicity of `S_λ̄` in the ideal of `M_ℓ`**,
-the variety of characteristic polynomials of traceless `(ℓ−1)`-pencils of `4×4`
-matrices.  That converts "a rank drop somewhere up this ladder" into "an
-equation of one explicit affine variety", and `M_ℓ` is small.  Singular, msolve
-and Macaulay2 are all available now; s61 established the discipline for using
-them.
+        ⎡ A  b ⎤
+    G = ⎢      ⎥ ,    det G = det A · s ,    s = c − bᵀA⁻¹b ,
+        ⎣ bᵀ c ⎦
 
-**Deliverable.**  `M_ℓ` built explicitly for `ℓ = 3, 4, 5` and as far beyond as
-the CAS reaches; its ideal computed and decomposed into `S_λ̄`-isotypics; a
-stable-range `i_det` engine, or a characterised obstruction to one.
+with `A` nonsingular exactly because the predecessor is full rank.  Then
 
-**Calibration.**  Use the peaked family.  For `λ = (4δ − 2(ℓ−1), 2^{ℓ−1})` the
-tail has `t = 2(ℓ−1)`, so `δ ≥ 2(ℓ−1)` puts the cell **in the proved stable
-range** (`λ₁ ≥ 3δ`), and s57's Theorem P gives `a_∞ = 1` with the unique
-highest-weight vector the bordered discriminant
-`c·det G₂ − (3/8) g₁ᵀ adj(G₂) g₁`, nonzero at a generic pencil — so
-`i_det,∞ = 0`.  **The engine must return 0 at every member.**  This is a
-genuine calibration set with a known answer and it is free; note that no length-5
-*closing* cell is in the stable range (s60: 0 of 2 107), so the census cannot
-supply one.
+> **a new determinant kernel is born ⟺ `s = 0`.**
 
-**The question that matters most, and it is second.**  Does the padded side
-admit the same description?  `D = i_det − i_pad`, and an engine for `i_det`
-alone produces no obstruction.  The ladder theorem was proved for `C[D_r]` and
-`C[R_r]`; whether `u = e₁⁴` gives the same statement for the padded permanent,
-and whether the padded analogue of `M_ℓ` exists and is computable, is the whole
-value of the route.  Answer it even if the answer is no.
+**Tasks.**
+1. Measure the source / HWV / last-born support sizes at `δ = 2, 3, 4` in the
+   new implementation.  This is the number that decides whether the route
+   reaches LMR; measure it before promising anything.
+2. Build the exact rational `G = Θ*Θ` on tiny controls.
+3. Reproduce every `δ = 2` and `δ = 3` full-rank calibration.
+4. **Reproduce the `n = 3` LMR rank drop as an exact `6 × 6` Schur complement,
+   `s = 0`.**  `((19,7,2⁵), 12)`, `a = 6`, `sk = 10`, `i_det ≥ 1` by theorem, and
+   its `a`-sequence `0,2,4,5,6,6` makes it room-one — so the mechanism above
+   applies verbatim.  This is the first rank drop any engine in this programme
+   would ever be shown.
+5. Record exactly which pair-orbital / block-intersection data suffices to
+   compute a Gram entry.
+6. Smith normal forms and determinantal divisors as cheap diagnostics only —
+   not a congruence programme (see §5).
 
-### S3 — the polar reach at `n = 5`: two integers **[change, new]**
+**Success.**  `s = 0` at the `n = 3` cell; `s ≠ 0` at every known negative
+control; a measured cost curve rather than an estimated one.
 
-**Goal.**  s61 proved the specialisation inequality
-`P ∈ closure(GL₁₆·det₄) ⟹ δ_k(P) ≤ δ_k(det₄)` and measured
+**Stopping rule and pivot.**  Any mismatch with a banked rank stops the implementation, not
+the theorem.  If Gram-entry construction explodes by `δ = 4`, keep the Schur
+complement result and switch C2 to a direct `λ`-block `Θ⁺` implementation.
 
-    det₄        4, 12, 36, 68, 84, 60, 20,  0
-    per₃        3,  6, 12, 24, 48, 48, 30,  6
-    x₀·per₃     4,  6, 12, 24, 48, 48, 30,  6, 0     (16 variables)
+**Field caveat, binding.**  `rank(Θ*Θ) = rank Θ` is **not** a safe finite-field
+identity.  The Gram route is exact-characteristic-zero.  Ordinary mod-`p` full
+rank of the *original* map remains a valid characteristic-zero lower bound and
+is unaffected.
 
-with the violation at slot 6 (`30 > 20`) and again at slot 7 (`6 > 0`).  That
-certifies `x₀·per₃ ∉ closure(GL₁₆·det₄)`, hence `dc̄(per₃) ≥ 5` — exactly LMR's
-bound, by an independent method.  **Nobody has asked what the same method gives
-at `n = 5`,** and it is nearly free to ask, because the padded profile is
-frozen: padding moves slot 0 to the new degree, leaves slots 1–7 at per₃'s
-values, and appends zeros.
+### C6 — certification, degeneration, verifier, widening  ·  Claude  ·  wave 1
 
-**The reduction.**  The dual of `det_n` is the rank-one locus, the Segre
-`P^{n−1} × P^{n−1}`, of dimension `2n − 2` and degree `C(2n−2, n−1)`.  Polar
-degrees vanish above `dim X^∨` and the top nonzero one is `deg X^∨`, which
-reproduces `det₄`'s tail exactly: `δ₇ = 0` and `δ₆ = C(6,3) = 20`.  ✓  At
-`n = 5` the dual has dimension 8, so `δ₈(det₅) = C(8,4) = 70` and `δ_k = 0` for
-`k ≥ 9`.  **The support of the padded profile (slots 0–7) therefore sits strictly
-inside `det₅`'s support (slots 0–8), and the slot-7 violation that worked at
-`n = 4` is gone.**  What is left is one comparison:
-
-> **is `δ₆(det₅) < 30`, and is `δ₇(det₅) < 6`?**
-
-Two integers decide whether the conormal method reaches `dc̄(per₃) ≥ 6` or caps
-at 5.  A *lower* bound of 30 on `δ₆(det₅)` closes the branch; no exact value is
-needed to kill it.
-
-**Deliverable.**  The two integers, or two-sided bounds sufficient to decide;
-and the general statement for `n ≥ 5` — since `2n − 2 ≥ 8 > 7` always, the
-route can never again win on support and needs a numerical violation every time.
-
-**Health warning.**  The derivation in this section is the integrator's, from
-the dual-variety identification, and is checked only against `det₄`'s measured
-profile.  Re-derive it before relying on it.  Note also that
-`x₀²·per₃` is non-reduced; state which conormal cycle is being compared and
-whether the specialisation inequality applies to it as stated, before computing
-anything.
-
-### C5 — the length-5 closure walk, and the int64 widening
-
-**Goal.**  s60 built the census and the ladder theorem gave it teeth: a
-full-rank result at a tail's closing cell settles that tail for `D > 0` **in
-every degree**.  `results/s60_tail_census.md` is sorted for exactly this.
-
-    n_χ ≤ 30 000  : 127 tails, 517 census rungs
-    n_χ ≤ 100 000 : 199 tails, 775 census rungs
-    n_χ ≤ 300 000 : 289 tails, 1 058 census rungs
-
-**Deliverable.**  Walk the queue by `n_χ` as far as the budget reaches, banking
-per cell.  Plus the named engineering item: **widen the int64 multiset code** of
-the s45 build, which is what confines the walk to `δ_close ≤ 18` and blocks 183
-tails.  892 of 1 075 closing cells are buildable today; the widening is what
-makes the census finishable rather than merely long.
-
-**Why it is worth a slot even though it has never found anything.**  It is the
-only line in the programme with low variance, and the ladder theorem converts
-each result from one cell into a whole tail.  It also keeps the certificate
-corpus growing while the gate sessions run.
-
-### C6 — the certificate gap, and the verifier defect
-
-**Goal.**  s60 reports `mult_det = a` at 419 cells, of which **264 carry no
-checkable certificate** — their proof is algorithmic, by the sparse Wiedemann
-route.  That is the largest body of unwitnessed claims in the programme and
-nobody has proposed fixing it.
-
-**Deliverable.**  A `gct-cert/1` kind for the sparse-route nonsingularity
-certificate — seeds, levels, pinned evaluation rows, checked kernel candidates —
-written into `docs/artifacts.md`, implemented in `tools/verify/verify.py`, and
-back-filled across s60's 264 cells.  In the same pass, the verifier defect s56
-flagged: large `nonvanishing_minor` determinants fail the `content` line on
-Python's integer-to-string limit *after* the rank checks pass.  One
+**Part A — certificates.**  Add a `gct-cert/1` kind for the sparse/Wiedemann
+full-rank route (seeds, levels, pinned evaluation rows, checked kernel
+candidates) and back-fill s60's **264 uncertified cells** — the largest body of
+unwitnessed claims in the programme.  Ensure every new `Θ⁺`/Gram/padded output
+is machine-reproducible.  **Separate finite-field full-rank certificates from
+characteristic-zero kernel certificates in the format itself**, so the C1 caveat
+cannot be lost downstream.  Fix the `tools/verify/verify.py` defect s56 flagged:
+large `nonvanishing_minor` determinants fail the `content` line on Python's
+integer-to-string limit after the rank checks pass — one
 `sys.set_int_max_str_digits` call.
 
-### C2 — the LMR predecessor at `δ = 23`  ·  gated on C1 or S1
+**Part B — degeneration as a full-rank certifier, one direction only.**
+`rank(in Θ) ≤ rank Θ`, so full rank of the initial map certifies full rank of
+the original.  Test it on known negative blocks.  **A rank drop in the
+degeneration is never evidence of an obstruction** — the inequality runs the
+wrong way, and this is the whole reason the Rogers–Ramanujan framing was
+dropped.
 
-`a₂₃ = 273`, `a₂₄ = 274`, `sk` already constant at 48 825 from `δ = 23`.  So the
-predecessor `((61,17,2⁷), 23)` is `Θ⁺ : C²⁷³ → C⁴⁸ ⁸²⁵` — one column narrower,
-identical target — and full rank there forces `i_det = 1` at the LMR cell
-exactly, using only the two ambient values and ladder monotonicity.  Cheaper
-than the goal cell and strictly more informative.
+**Part C.**  Widen the int64 monomial encoding of the s45 build, which is what
+confines tail closure to `δ_close ≤ 18` and blocks 183 of 1 075 closing cells.
 
-**Read S6 first.**  Manivel's reduction is unavailable at `δ = 23`
-(`2δ = 46 < 48 = |ρ| + ρ₁`), so this cell's target dimension rests on s58's
-reduction alone.  That is the single largest single-source dependency in the
-programme and S6 exists to remove it.
+### S1 — Proposition S computational: the stable ideal of `M_ℓ`  ·  Sol  ·  wave 1
 
-### C3 — the LMR cell itself  ·  gated, and only if C2 is inconclusive
+**Question.** Can the stable determinant ideal be reached directly through
+`M_ℓ`, the variety of characteristic polynomials of traceless `(ℓ−1)`-pencils of
+`4×4` matrices, producing the first nonzero stable `i_det` independently of any
+`Θ` implementation?
 
-`C²⁷⁴ → C⁴⁸ ⁸²⁵`.  13.4 million entries dense, but the rank is at most 274, so
-the target coordinates need not be materialised at once.  Skip this session
-entirely if C2 settles the cell.
+**Tasks.** Re-derive the stable `M_ℓ` model in implementation-ready form.
+Identify the smallest tail weights where `I(M_ℓ)` could first carry a
+highest-weight vector, **respecting the banked closure `m_0(6) ≥ 13`**
+(`docs/s57_report.md`).  Produce **one** exact finite test for the first
+plausible stable ideal copy.  Separate theorem from computational conjecture
+throughout.
 
-### C4 — the padded side at the LMR cell  ·  gated on C2 or C3
+**Calibration.**  The peaked family gives a free calibration set with a known
+answer: `λ = (4δ − 2(ℓ−1), 2^{ℓ−1})` has `t = 2(ℓ−1)`, so `δ ≥ 2(ℓ−1)` puts it
+in the proved stable range `λ_1 ≥ 3δ`, and s57's Theorem P gives `a_∞ = 1` with
+the bordered discriminant as unique highest-weight vector, nonzero at a generic
+pencil — hence `i_det,∞ = 0`.  The engine must return 0 at every member.  Note
+no length-5 closing cell is in the stable range (s60: 0 of 2 107), so the census
+cannot supply one.
 
-**This is the session the batch exists for.**  `i_det = 1` is not `D > 0`;
-`D = i_det − i_pad` needs `i_pad` at the same cell.  Every other session in
-Track II is preparation for this one.  Brief it early even though it runs last,
-because the padded-side instrument does not exist yet and its construction is
-the long pole — and because C1's and S1's answers determine what it can be built
-on.
+**Success.**  An explicit nonzero stable determinant ideal copy, **or** a theorem
+pushing the stable dead region further out.
 
-### S2 — the `r = 5` special fibre, at the primitive family **[change]**
+**Stopping rule.**  If the first tractable range is provably beyond exact access, report
+the obstruction.  Do not turn this into a broad census.
 
-**The re-scoping is the point.**  The Rees boundary audit proposed the
-compression incidences and a four-dimensional transverse quotient.  **That four
-is zero**: at `C₂₁ ∩ C₃₂` the two components' tangent spaces are 57-dimensional
-each — not 50; the omitted 7 is the flag motion in `Gr(2,4) × Gr(1,4)` — and
-they span the full 64-dimensional `ker dΦ`.  Same at `C₂₁` alone (57 = 57) and
-at `ker ∩ coker` (75 = 75).  Every spanning vector was checked to annihilate
-`dΦ`.  A session briefed on the transverse problem would be briefed on nothing.
+### S2 — the noncommutative orbital commutant and the last-born scalar  ·  Sol  ·  wave 1
 
-What survives, and what the audit itself ranked third, is the right first
-priority: **the primitive family and its incidences** — the analogue of the
-`n = 3` skew-symmetric component that Hüttenhain–Lairez show compression
-analysis provably misses, and the only base-locus type at `r = 5` where nobody
-has looked.
+**Measured input, not hypothesis.**  `Sym^δ(Sym⁴)` is **not** multiplicity-free:
 
-**Deliverable.**  `dim F(J_C)`, or an upper bound on `dim(D₅ ∩ W)`.  Recall
-`R₅ ⊆ D₅ ⟺ dim(D₅ ∩ W) = 35`, and `≥ 31` is certified over `Q`.  **An upper
-bound below 35 is a theorem, not a measurement** — the only such route the
-programme has.  s59 named this deliverable and said it needed a CAS; the CAS is
-now available.
+    δ = 2 :  3 constituents, max multiplicity 1, Σ a² =  3
+    δ = 3 :  9 constituents, max multiplicity 1, Σ a² =  9
+    δ = 4 : 28 constituents, max multiplicity 2, Σ a² = 43
+            multiplicity 2 at (12,4), (10,6), (10,4,2), (8,6,2), (8,4,4)
+
+so the `δ = 4` commutant is `23·(1×1) ⊕ 5·(2×2)`, dimension 43, and it is
+**noncommutative**.  Those `Σ a²` values equal the orbital counts computed
+independently (3, 9, 43 pair-orbitals over `|H_{4,δ}| = 35`, `5 775`,
+`2 627 625`), so the identity `Σ_λ a_λ² = #orbitals` validates both
+computations.  Sol's falsifier fired at the first `δ` where it could.
+
+**Tasks.**  Formalise the orbital invariance of `G` — `G_{P,Q} = ⟨ε_P,ε_Q⟩²` is
+`S_{4δ}`-invariant, hence a function of the block-intersection type alone.  Use
+coherent-configuration / centralizer language, **not** global Bose–Mesner
+commutativity.  Derive the room-one Schur complement in `λ`-block coordinates.
+Determine whether `s_ρ` can be evaluated without constructing the full target.
+Identify any block-local character-sum or product structure.
+
+**What survives and what died.**  Surviving: orbital constancy of the entries;
+coherent-configuration compression (which needs no commutativity, so closure
+under the Hadamard product still holds and the *squaring* — the step that makes
+this the determinant problem rather than the Foulkes problem — is free); the
+`a_λ × a_λ` block; and, decisively, **the room-one Schur complement is a scalar
+whether or not the commutant is commutative.**  Dead: a global diagonalisation
+or product formula resting on commutativity.
+
+**Stopping rule.**  If symmetry gives no reduction beyond the already-small `a × a` block,
+keep the Schur-complement result and park the spectral programme.
+
+### S3 — the exact padded multiplicity-space map  ·  Sol  ·  wave 1, critical path
+
+**Question.**  What is the correct finite polarised map for `f = ℓ·per_3(A)` on
+**the same source multiplicity space** `M_λ` the determinant side uses?
+
+**Why this is the batch's most important derivation.**  `Θ⁺` exists for the
+determinant.  For the padded permanent there is nothing — no finite equivariant
+model, no target module, no evaluator.  `D = i_det − i_pad` cannot be measured
+at LMR or anywhere else until this exists, and C3 and C4 cannot be briefed
+without it.
+
+**Tasks.**  Derive the degree-`δ` coordinate pullback.  Polarise it into an
+`S_{4δ}`-equivariant finite model if one exists.  Identify the target module, or
+a rigorously equivalent source-basis evaluation scheme.  State exactly how
+`mult_pad` is computed as a rank.  **Preserve common source coordinates with the
+determinant side**, so that C4 can compare kernels and not merely dimensions.
+Specify the tiny and `r = 5` calibration cases.
+
+**Stopping rule — and it is a soft one.**  If no compact target decomposition exists, do
+not abandon the route: reduce to source-basis evaluation.  `a_LMR = 274` is
+small enough that a generic-evaluation rank test is viable.
+
+### C2 — the LMR determinant multiplicity  ·  Claude  ·  wave 2  ·  gate: C1
+
+**Goals, in cost order.**
+
+    A.  predecessor  (61,17,2⁷), δ = 23, source 273
+    B.  goal cell    (65,17,2⁷), δ = 24, source 274
+
+**Either of two results settles it.**  `rank_23 = 273` forces `i_det,24 = 1` by
+ladder monotonicity and the known degree-24 equation.  Or, directly at `δ = 24`,
+`rank_24 ≥ 273` suffices — the known equation already gives `rank_24 ≤ 273`, so
+the two together pin `rank_24 = 273` and `i_det = 1`.
+
+**Do not insist on materialising all 48 825 target rows.**  The rank is at most
+274.
+
+**Read S6 before relying on the `δ = 23` target dimension.**  Manivel's
+reduction is unavailable there (`2δ = 46 < 48 = |ρ| + ρ_1`), so at `δ = 23` the
+target dimension rests on s58's reduction alone.
+
+**Inconclusive.**  Preserve the partial compressed operators and move direct
+degree-24 completion to reserve E1.  Do not burn the batch on it.
+
+### C3 — padded map implementation and calibration  ·  Claude  ·  wave 2  ·  gate: S3
+
+Implement S3's `T_pad` or common-source evaluator.  Calibrate at low degree.
+Calibrate on the `r = 5` cells where `P_5 = R_5` and s60 supplies exact
+multiplicities.  Verify rank agreement across at least two independent
+constructions or seeds.  Preserve explicit kernel coordinates in `M_λ` — C4
+needs them.
+
+**Stopping rule.**  Any unexplained mismatch with a banked pad or reducible multiplicity
+stops LMR use immediately.  A padded engine that disagrees anywhere is not
+usable at the one cell that matters.
+
+### C4 — the LMR padded rank and orientation  ·  Claude  ·  wave 3  ·  gates: C2 + C3
+
+**This is the session the batch exists for.**  In the same `M_λ ≅ C²⁷⁴`, compute
+`U_D = ker T_det`, `U_P = ker T_pad`, `i_pad`, `dim(U_D ∩ U_P)`, and whether the
+known LMR determinant kernel line lies in `U_P`.
+
+| outcome | reading |
+|---|---|
+| `i_pad = 0` | `D = +1` — **the first multiplicity obstruction in the programme** |
+| `i_pad = 1` | `D = 0`; then test orientation, and `U_D ≠ U_P` is a clean demonstration that multiplicity loses orientation where geometry does not |
+| `i_pad ≥ 2` | `D < 0` — the multiplicity statistic points the wrong way despite a known geometric separator |
+
+**Success is any one of the three, exactly established.**  Do not define success
+as `D > 0`.  All three resolve the LMR cell and all three are publishable; the
+second and third are results about the *limits* of the multiplicity statistic,
+which is what a GCT programme is ultimately obliged to report.
+
+### S4 — the `r = 5` primitive/compression theorem route  ·  Sol  ·  wave 2
+
+**Corrected input — this is the correction that matters most in the batch.**
+There is **no four-dimensional transverse quotient**:
+
+| point | `dim ker dΦ` | tangent span | transverse quotient |
+|---|---|---|---|
+| `C_21 ∩ C_32` | 64 | 57 + 57 → 64 | **0** |
+| `C_21` alone | 57 | 57 | **0** |
+| `ker ∩ coker` | 75 | 75 | **0** |
+
+The erroneous 60 came from counting fixed-flag tangents (5 × 10 = 50 each); the
+flag motion in `Gr(2,4) × Gr(1,4)` supplies the missing 7 per component.  Every
+spanning vector was verified to annihilate `dΦ`
+(`docs/rees_boundary_audit.md`).
+
+**Tasks.**  Formulate the primitive family and its compression incidences — the
+genuine analogue of the `n = 3` skew-symmetric component that Hüttenhain–Lairez
+show compression analysis provably misses, and the only base-locus type at
+`r = 5` where nobody has looked.  Identify the finite normal-cone or
+special-fibre algebra that could raise the fixed-factor image.  Seek either a
+universal degeneration proving `R_5 ⊆ D_5`, or an upper bound excluding 35.
+Hand C5 a finite CAS goal, not a request for more Rees order.
+
+**Why it earns a slot.**  `R_5 ⊆ D_5 ⟺ dim(D_5 ∩ W) = 35`, and `≥ 31` is
+certified over `Q`.  **An upper bound below 35 is a theorem, not a
+measurement** — the only such route the programme has.
 
 **A caution the audit earns.**  "The tangent cone spans" does not close the
 loophole: a normal cone can carry components no tangent space sees.  The quadric
-system in the 64-dimensional kernel and its minimal primes remain legitimate.
-What is *not* available is the dramatic coordinate reduction the audit promised,
-because there is no transverse complement to eliminate.
+system and its minimal primes remain legitimate.  What is *not* available is a
+coordinate reduction eliminating a transverse complement, because there is none.
 
-### S6 — the Adams part at the LMR cell, independently
+### S6 — the LMR isotypic and Adams independent audit  ·  Sol  ·  wave 2
 
-**Goal.**  `sk = (g + T)/2` with `g = 92 000` and `T = A = 5 650`.  `g` is
-confirmed by three routes.  **`A = 5 650` is single-source**: s58's reduction and
-the external Manivel route, with s58's `A` column validated at thirteen smaller
-cells but not at the goal cell, where the direct partition sum is out of reach
-(`p(96) = 1.18×10⁸`).  C2 and C3 both rest on it, and at `δ = 23` Manivel is
-unavailable, so there `A` rests on s58 alone.
+**Question.**  Can every representation-theoretic step between "the LMR family
+separates" and "the `(65,17,2⁷)` multiplicity block carries a determinant
+kernel" be independently certified?
 
-**Deliverable.**  `A` at `((65,17,2⁷), 24)` and at `((61,17,2⁷), 23)` by a route
-sharing no code with s58 — the natural candidate being the Adams operation on
-the `sl₄` side, evaluated where Manivel's threshold does not reach.  A
-disagreement here would invalidate Track II before it is run, which is precisely
-why it is worth a slot that produces no new mathematics if it agrees.
+**Tasks.**  Verify the exact lowest LMR irreducible and its multiplicity.
+Reconcile the LMR module with the common 274-dimensional source.  **Independently
+recheck the Adams/transposition contribution behind `sk = 48 825`** — `sk =
+(g + T)/2` with `g = 92 000` confirmed by three routes, while `T = A = 5 650` is
+single-source (s58's reduction plus the external Manivel route), validated at
+thirteen smaller cells but not at the goal cell, where the direct partition sum
+is out of reach at `p(96) = 1.18 × 10⁸`.  C2 and C4 both rest on it.  If C2
+produces a kernel vector, identify it representation-theoretically.  Look for a
+formula generalising the `n = 3 → n = 4` pattern, without assuming commutativity.
 
-### S4 — the stable-range `D` search  ·  gated on S1
+**Success.**  Remove the last "standard identification" caveat from the LMR
+multiplicity statement, and provide an independent audit of C2.  A disagreement
+here invalidates Track II before it is run, which is precisely why it is funded
+even though agreement produces no new mathematics.
 
-If S1 lands, the programme gains an axis it has never had: search over **tails**
-`λ̄` rather than over cells, with cost driven by `ℓ` and `|λ̄|` and independent
-of `δ` and `N`.  The stable range is where the ladder theorem says nothing more
-can change, so a stable `D > 0` is a `D > 0` at every degree above.  Scope: how
-far in `ℓ` the CAS reaches, and whether `ℓ = 9` — the smallest length at which
-any equation the programme knows is non-vacuous — is inside it.
+### C5 — the `r = 5` special normal cone, at the primitive family  ·  Claude  ·  wave 3  ·  gate: S4
 
-### S5 — the `dc̄` reach audit  ·  uses S3
+**Explicitly not the obsolete 60 + 4 transverse calculation.**  See S4.
 
-**Adversarial, and the batch's most useful session if the gate stays shut.**
-Every obstruction the programme holds certifies `dc̄(per₃) ≥ 5`, which is LMR's
-published bound.  Ask what would have to be true for **any** instrument now in
-hand to reach 6 — the conormal method (S3 answers this concretely), the LMR
-module family at `n = 5` and the census conditions that pinch it, the Foulkes
-rank, the Rees route — and say plainly, per instrument, if the answer is that it
-cannot.
+Instantiate S4's nominated primitive/compression algebra.  Compute radicals,
+minimal primes and special-fibre components as appropriate.  Measure reducible
+image dimensions against the certified 31 and the target 35.  If the nominated
+locus is exhausted, move to S4's next-ranked incidence.  **No generic `q > 4`
+sweep** — s59 showed `29,29,28,28,24` invariant in `q` at `q = 2,3,4` — and no
+broad brute-force Rees algebra.
 
-**Read `docs/` and not the reports.**  Five of batch 9's corrections were to
-statements that were right in a report and wrong in the summary of it.
+**Success.**  A dangerous hidden component found, or this special-normal-cone
+loophole rigorously closed.
 
----
+### S5 — the `n = 5` polar check, then replication and reach  ·  Sol  ·  wave 3
 
-## 4. Dependencies, drawn
+**Opening bounded check — one integer.**  s61 proved
+`P ∈ closure(GL_16·det_4) ⟹ δ_k(P) ≤ δ_k(det_4)` and measured
 
-    C1 ─┐                       C5   C6   S2   S3   S6      (ungated)
-        ├──> C2 ──> C3 ──> C4                    │
-    S1 ─┘                                        └──> S5
-     └────> S4
+    det_4        4, 12, 36, 68, 84, 60, 20,  0
+    x_0·per_3    4,  6, 12, 24, 48, 48, 30,  6, 0
 
-`C4` will accept an opening from either gate.  `C3` runs only if `C2` is
-inconclusive.  Nothing else waits on anything.
+with violations at slots 6 (`30 > 20`) and 7 (`6 > 0`).  The padded profile is
+*frozen* under further padding — padding moves slot 0 to the new degree, leaves
+slots 1–7 at `per_3`'s values, and appends zeros — while `det_n`'s dual is the
+Segre `P^{n−1} × P^{n−1}`, of dimension `2n − 2` and degree `C(2n−2, n−1)`.
+That reproduces `det_4`'s tail exactly (`δ_7 = 0`, `δ_6 = C(6,3) = 20`), and at
+`n = 5` predicts `δ_8(det_5) = C(8,4) = 70` with `δ_k = 0` for `k ≥ 9`.  So the
+padded support (slots 0–7) sits strictly **inside** `det_5`'s support (0–8), the
+slot-7 violation that worked at `n = 4` is gone, and what remains is:
 
----
+> **is `δ_6(det_5) < 30`?**  A lower bound of 30 closes the branch; no exact
+> value is needed to retire it.
 
-## 5. The decision point
+If yes, audit immediately whether the padded 30 improves the geometric border
+bound past LMR's `dc̄(per_3) ≥ 5`.  If no, bank the negative and continue into
+the main task without consuming the session.
 
-If **both** C1 and S1 return negatives, Track II never runs and three Claude
-slots come free.  Do not backfill them with more of C5.  The batch becomes:
+**Provenance warning.**  The paragraph above is the integrator's derivation from
+the dual-variety identification, checked only against `det_4`'s measured
+profile.  s61 computed nothing at `n = 5`.  Re-derive before relying on it, and
+settle which conormal cycle the specialisation inequality applies to, since
+`x_0²·per_3` is non-reduced.
 
-1. **S5 delivers the verdict**, with C1's and S1's characterised failures as
-   evidence rather than as absences.
-2. **The write-up takes the free slots.**  `paper/det3-conductor.tex` and
-   `paper/det4-onset.tex` are single-writer files that have waited across four
-   batches.  The repository is public now.  Twelve dead routes, the ladder
-   theorem, Theorem P, Proposition S, the specialisation inequality and the
-   conormal certificates are a paper whether or not `D > 0` is ever found — and
-   seven ambient-plethysm selectors carrying no signal is a result other people
-   should not have to rediscover.
+**Main task — replication and asymptotic reach.**  The programme already has one
+replication operator: `u = e_1⁴` transports kernels up the ladder, moving `δ`
+while fixing `ℓ` and `n`.  The Valiant-relevant demand is different: the padded
+side imposes `ℓ(λ) ≤ m² + 1`, while `n` must eventually exceed every polynomial
+in `m`.  LMR's own family fails this — `ℓ(λ(k,n)) = k + 3` and the census forces
+`k ≥ min(6, r−2)`, so rows grow with `n`.
 
-State this in advance so it is not read as retreat when it happens.
+Audit Adams operations, plethysm, wreath induction and restriction, induction
+products, and any natural intertwiner of `Θ`.  For each, compute how `m`, `n`,
+`δ` and `ℓ(λ)` transform.  **Keep only operators that provably transport kernel
+information.**  Rank the survivors by `n`-growth against row-growth.
 
----
-
-## 6. Why the split is 6/6 and not 5/5
-
-Batch 9 was 5/5 and produced no implementation of the instrument everything else
-was waiting on.  The stock-take corrected to 6/4 for that reason.  It is back at
-6/6 here because S1 **is** implementation — it just happens to be CAS
-implementation rather than repository implementation, and it belongs with the
-side that has the CAS discipline and does not need the certificate format.
-
-The dividing line is not theory versus practice.  It is: **does the session
-write into the repository's certificate corpus?**  C1–C6 do and are briefed
-against `226b4ef1` with pre-registration and bundle delivery.  S1–S6 deliver
-prose, numbers and code that the integrator re-derives before anything enters
-the record.
+**Stopping rule.**  Purely formal scaling of `λ` and `δ` at fixed `n` does not count.
 
 ---
 
-## 7. Reserves
+## 5. Corrections carried into this batch — do not let these reappear
 
-**R1 — external critic, round 4.**  Only after S5.  A critic pointed at the
-programme before the reach question is settled will re-litigate settled ground.
-
-**R2 — the six-row and length-6 closure extension.**  `wk9_s60_tails.py`
-generalises.  Worth having costed before it is needed, not before.
+1. **"Four transverse directions at `C_21 ∩ C_32`."**  It is zero.  Measured
+   three ways (§4, S4).  It has now surfaced in three separate documents after
+   being corrected once; every `r = 5` brief must be searched for it.
+2. **"The orbital algebra is a commutative association scheme."**  False from
+   `δ = 4` on (§4, S2).  Multiplicity-freeness holds only at `δ ≤ 3`.
+3. **Birth morphology as a selector.**  Retired by P0.  Unimodality is
+   2 107/2 107; `ε` puts LMR at rank 632 of 885 and on the wrong side.
+4. **The `n = 5` polar demotion attributed to s61.**  s61 computed nothing at
+   `n = 5`; the support argument is from this batch's planning discussion and is
+   unchecked (§4, S5).
+5. **Old base-commit hashes.**  `0960bd5` and its generation resolve only in the
+   private `gct-archive` now.  Every `PREREG` in this batch names `226b4ef1`.
 
 ---
 
-## 8. Standing conditions for every brief in this batch
+## 6. Reserves
 
-- Base commit `226b4ef1`; every `PREREG` names it.  Old base hashes
-  (`0960bd5` and the rest) resolve only in the private archive now.
+**E1 — direct degree-24 completion.**  Trigger: C2's predecessor inconclusive.
+`rank_24 ≥ 273` is enough.
+
+**E2 — the length-5 closure walk.**  Trigger: spare compute, or a
+determinant-specific selector nominating tails.  Background falsification now,
+not the intellectual programme: 99 tails closed, no determinant kernel.  The
+int64 widening it needs is already C6 Part C.
+
+**E3 — retired.**  Birth morphology; done as P0.
+
+**E4 — the stable-range `D` search.**  Trigger: S1 finds a nonzero stable
+`i_det`.  Search over tails with cost driven by `ℓ` and `|λ̄|`, independent of
+`δ` and `N`.
+
+**E5 — the `K(q)` series ladder.**  Trigger: *multiple* nonzero stable
+determinant kernels.  Escalation discipline, in order:
+rational → `q`-holonomic → `η`-quotient → theta/false theta → mock modular.
+**Do not fit a modular form to zero data.**
+
+**E6 — the room-one mechanism ensemble.**  Trigger: C1 and S2 make the last-born
+scalar cheap.  885 naturally normalised one-dimensional probes of `Θ⁺`, with the
+`n = 3` LMR line as the one known dier.  Compare determinant-specific invariants
+of `v_ρ` — tableau coordinates, `Θ*Θ` block position, Jucys–Murphy content,
+leading standard monomial — never ambient shape statistics, which P0 retired.
+
+**E8 — a second determinant-equation mechanism.**  Trigger: LMR turns out
+multiplicity-invisible or asymptotically non-scalable.  Must nominate an
+explicit `(λ, δ)` with a rank-loss mechanism.  No broad survey.
+
+**E9 — the slot-6 toy saturation experiment.**  Quantify saturation degree
+inflation in a small model.  s61's own numbers are the better starting point
+than a fresh toy: the `P⁴`-section's 20 nodes correct `4·27 = 108` to 68, and
+the `P⁵`-section's degree-20 curve of `A_1` points corrects `4·81 = 324` to 84 —
+37 % and 74 % inflation at the exact object of interest.
+
+**E10 — external critic, round 4.**  Trigger: after C2/C4, or a theorem-level
+`r = 5` result.  Audit the new load-bearing conclusion, not the whole project.
+
+---
+
+## 7. Batch success criteria
+
+The batch succeeds if **any** of the following happens:
+
+1. `D_LMR > 0` is proved.
+2. `D_LMR = 0` but `U_D ≠ U_P` is proved.
+3. `D_LMR < 0` is proved exactly.
+4. A determinant-specific last-born scalar algorithm or formula is derived.
+5. A nonzero stable determinant ideal copy is found through `M_ℓ`.
+6. The `r = 5` containment question is settled, or a major primitive loophole is
+   closed.
+7. The `n = 5` polar check improves the geometric lower bound.
+8. A credible row-efficient replication operator is found.
+
+**The batch is not judged by cells measured.**  The metric is how many
+load-bearing unknowns were converted into exact finite statements, theorems, or
+clean negatives.
+
+---
+
+## 8. House rules for this batch
+
+1. Distinguish mechanism score from information score.
+2. Do not fund a scalar selector that a one-command census can retire.
+3. Positive rank-drop claims require characteristic zero, or a rigorous lifting.
+4. Mod-`p` full rank of the original map is a safe characteristic-zero lower
+   bound; a mod-`p` Gram kernel is not a characteristic-zero kernel.
+5. Treat any commutant as noncommutative unless multiplicity-freeness is proved.
+6. The `n = 3` LMR cell is the mandatory first positive rank-drop calibration.
+7. Build determinant and padded maps in common source coordinates.
+8. At LMR, `rank ≥ 273` at `δ = 24` is enough.
+9. Length-5 closure walking is background falsification.
+10. Every asymptotic idea states its row-budget economics explicitly.
+11. Ambient morphology is retired; ensembles compare determinant-specific
+    invariants.
+12. Every `r = 5` brief is searched for the stale transverse-direction claim
+    before it goes out.
+13. **Provenance.**  Attribute a result to the session that produced it.  A
+    derivation made in planning discussion is unchecked until a session checks
+    it, and is labelled as such — three of this batch's planning corrections
+    were to claims that had drifted from their source.
+
+---
+
+## 9. Standing conditions
+
+- Base commit `226b4ef1`; every `PREREG` names it.
 - Pre-registration before any computation.  Bank per cell.
-- `python-flint` for exact linear algebra; both house primes
-  `2147483647` and `2147483629`.
-- Any `D > 0` cell goes through the verification protocol before it is
-  reported anywhere, including in conversation.
-- `docs/brief_wording.md` §2 and §4 are binding, and §5 — the degeneracy
-  direction pre-check at all three of `det₄` pencil, reducible `ℓ·c`, and the
-  full ten-variable `ℓ·per₃` — applies to any new statistic S3 or S5 proposes.
+- `python-flint` for exact linear algebra; both house primes `2147483647` and
+  `2147483629`.  Where a route is characteristic-zero by nature (C1, C4), say so
+  in the pre-registration and certify accordingly.
+- Any `D > 0` cell goes through the verification protocol before it is reported
+  anywhere, including in conversation.
+- `docs/brief_wording.md` §2 and §4 are binding; §5's degeneracy-direction
+  pre-check — evaluate at a `det_4` pencil, at a reducible `ℓ·c`, and at the full
+  ten-variable `ℓ·per_3` — applies to any new statistic S5 proposes.
 - Bound every long run at launch with `timeout` and `ulimit -v`; write the run's
   process id to `results/logs/<run>.pid`; end a run only by that recorded id.
 - Single-writer files are not touched by workers: `paper/det3-conductor.tex`,
   `paper/det4-onset.tex`, `PROJECT_NOTES.md`, `docs/boundary_deficit.html`.
 - Delivery by bundle.  No file over 5 MB.  Logs under `results/logs/`.
 - Commit messages carry `Co-Authored-By` only.  No session-link trailer, in
-  commits or in any script that writes commits, and no such URL in any file —
-  the history was rewritten once to remove 260 of them.
+  commits or in any script that writes commits, and no such URL in any file.
