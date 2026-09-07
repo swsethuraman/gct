@@ -15,6 +15,7 @@ lev*.dat
 *.o
 
 *.bundle
+*.bundle.md5
 *.tar.gz
 paper/*.aux
 paper/*.log
@@ -28,6 +29,9 @@ results/s61_sing/*.ms.out
 
 # session 56 compiled pass
 /analysis/wk9_s56_pass
+
+# session 67 verifier Wiedemann helper (compiled from tools/verify/wied_check.c)
+/tools/verify/wied_check
 
 # s57 raw per-chunk banks (published as csv.gz) and the raw large analysis JSON (committed gzipped)
 results/s57_cells/bank_d*_l*.jsonl

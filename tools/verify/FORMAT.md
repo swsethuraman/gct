@@ -154,8 +154,125 @@ points must be given by substitution data and not by coefficients.  A cell
 beyond the cap with no recorded basis is reported as **not verified**, not as
 verified.
 
+## The declared field (session 67; Part A4 of the C6 brief)
+
+`rank_p ≤ rank_Q`.  That single inequality splits certificates into two kinds
+that must never be confused downstream:
+
+- a mod-`p` **full column rank** (`nullity_p = 0`) certifies **characteristic
+  zero**: `mult = a`, `i_det = 0`.  Sound.  This is the direction `full_rank`
+  and `sparse_nullity` conclude in.
+- a mod-`p` **kernel** of dimension `k` certifies only `nullity_p = k`, hence
+  `mult ≥ a − k`, i.e. `i ≤ k` — an **upper bound on the ideal codimension** and
+  **no** characteristic-zero ideal membership.  To prove `i ≥ 1` (a genuine
+  bite) one must exhibit a **characteristic-zero** vector and verify it exactly:
+  the `hwv` kind with `modulus: null`.
+
+The trap this rule exists to stop: the Gram route `rank(Θ*Θ) = rank Θ` (the
+Foulkes/`Θ⁺` engine, session 56, and session 63) holds **only in characteristic
+zero** — a nonzero vector can be isotropic mod `p` — so a mod-`p` Gram rank
+certifies nothing about `rank Θ`.
+
+Therefore certificates carry a declared **`field`**, either
+
+    "field": "Q"            exact characteristic zero (a rational/integer
+                            computation, or a multimodular lift certified over Z)
+    "field": "F_<p>"        a single finite field, p a decimal prime
+
+with these rules, enforced by the verifier:
+
+- **`sparse_nullity`** (below) and any **Gram** matrix certificate
+  (`matrix_role: "gram"`) **require** `field`.  A Gram certificate is accepted
+  **only** with `field: "Q"`; a Gram matrix declaring a finite field is
+  **UNPARSEABLE**.  A `sparse_nullity` requires a finite field (its whole point
+  is `rank_p ≤ rank_Q`); `field: "Q"` there is **UNPARSEABLE**.
+- On the pre-session-67 kinds (`hwv`, `matrix`, `full_rank`) `field` is
+  **optional and additive**: absent, the verifier infers it from
+  `modulus`/`prime` exactly as before (so every certificate written before this
+  session verifies unchanged); present, it must agree with `modulus`/`prime`
+  (`Q ⟺ modulus null`; `F_p ⟺ modulus/prime = p`).
+- A new **`matrix_role`** key (`"gram" | "macaulay" | "generic"`, optional)
+  labels a `matrix` certificate; only `"gram"` triggers the `field: "Q"`
+  requirement above.  It is how session 63's `Θ⁺`/Gram rank certificates
+  (`mult_det = (rank of β on the λ-isotypic part)/f_λ`, `β = K∘K`) declare
+  themselves, and how the verifier refuses to read a char-0 `rank Θ` off a
+  finite-field β.
+
+## Kind `sparse_nullity` — the sparse (Wiedemann) route (session 67)
+
+The determinant-side sweeps prove `mult_X(λ, δ) = a` for a cell too large for an
+explicit kernel by showing `nullity_p([E; ev_X]) = 0` at a single prime, where
+`E` is the stacked simple raising operators on the weight-`λ` space and `ev_X`
+the evaluation rows at `K = a + 8` points of the variety `X`
+(`docs/sparse_det_route.md`, Lemmas 1–2).  This kind records that claim in a
+form a reader with `tools/verify/verify.py` and no access to the original run can
+re-derive.
+
+```json
+{"format": "gct-cert/1", "kind": "sparse_nullity", "title": "...", "produced_by": "...",
+ "cell": {"n": 4, "r": 5, "lambda": [12,5,4,2,1], "delta": 6, "a": 5},
+ "conventions": {...},
+ "field": "F_2147483647",
+ "variety": "det_pencil",
+ "nullity": 0,
+ "points": [ <points of that variety, as substitution data> ],
+ "recipe":     {"K": 13, "point_seed": 11, "bound": 40, "levels": "cheap", "wied_seed": 1},
+ "provenance": {"instrument": "sparse [E; ev_det]", "produced_in": "session 60",
+                "cross_checked_prime": 2147483629, "bm_degree": 4209, "f0": 957228052},
+ "basis": null}
+```
+
+- `field`: required, a finite field `F_p` (see above).
+- `variety`: `det_pencil`, `padded_permanent` or `reducible`.
+- `nullity`: the claimed `nullity_p([E; ev_X])`.  `0` is the full-rank proof
+  `mult_X = a` over `Q`.  A positive `k` records a mod-`p` nullity — a **bound**
+  `mult ≥ a − k`, never a char-0 ideal — and then `basis` must record the checked
+  kernel vectors (canonical term lists, as in `hwv`), which the verifier checks
+  against the full `[E; ev]` and for independence.
+- `points`: the evaluation points **as substitution data**, exactly as the other
+  kinds record them, so the verifier rebuilds each form and checks it lies on the
+  variety.  (They may be reconstructed from `recipe.point_seed`/`K`/`bound`, but
+  the certificate carries them explicitly so it is self-contained.)
+- `recipe`: the reproducible provenance of the original run — the point seed and
+  count, the compression levels, the Wiedemann seed.  Informational for the
+  checker (which re-derives with its own randomness), authoritative for a reader
+  who wants to replay the exact original run.
+- `provenance`: free-form record of the original verdict (instrument, session,
+  the cross-checked second prime, the Berlekamp–Massey degree and `f(0)`).
+
+What the verifier does with it: it recomputes `a`, checks the cell and the field,
+rebuilds the points from their substitution data, and then — in
+`tools/verify/chi_build.py` and `tools/verify/wied_check.c`, importing nothing
+from `analysis/` and **not** using the stabiliser reduction the original run used
+— rebuilds `E` and `ev` on the full weight space, confirms `nullity_p(E) = a`
+(the build's kernel is the highest-weight space; exact where the cell densifies,
+else a two-sided Wiedemann test), and decides `nullity_p([E; ev])` itself: an
+exact flint rank for a small cell, otherwise its own preconditioned Wiedemann
+(re-derived, not the recorded verdict).  On `nullity = 0` it prints the Lemma-2
+conclusion `mult_X = a` over `Q`.  A cell whose `N_S` exceeds this run's budget
+is reported **RECORDED** (the recipe is valid and the claim reproducible) rather
+than re-derived — the certificate is checkable on demand at the cost of one
+rebuild plus one Wiedemann sequence, which is the cost of the original
+measurement; that is inherent to an algorithmic certificate.
+
+A Gram-route rank claim is honoured only when the producer **labels** the matrix
+`matrix_role: "gram"` (then `field: "Q"` is forced).  A matrix that is
+semantically a Gram but is left `matrix_role: "generic"`/unlabelled is read as a
+plain rank of that matrix (mod `p` or over `Q` as declared), **not** as
+`rank Θ` — so it can never smuggle a mod-`p` Gram rank in as a char-0
+`rank Θ`; the labelling is the producer's responsibility, and session 63's
+outputs must carry it.
+
 ## Exit status and report
 
-`verify.py` prints one line per file (`PASS`, `FAIL`, `UNPARSEABLE`, `ERROR`)
-followed by every check with its outcome, writes the same as Markdown with
-`--report <file>`, and exits 0 only when every file passed.
+`verify.py` prints one line per file — `PASS`, `RECORDED`, `FAIL`, `UNPARSEABLE`
+or `ERROR` — followed by every check with its outcome, writes the same as
+Markdown with `--report <file>`, and exits 0 only when there is no `FAIL`,
+`UNPARSEABLE` or `ERROR`.  **`PASS` means the claim was re-derived and holds.**
+**`RECORDED`** is distinct: the certificate is well-formed, its field and points
+check out, and its recorded size matches the true weight-space dimension the
+verifier recomputes (a mismatch is a `FAIL`), but its nullity claim was **not**
+re-derived this run because the true `N_S` exceeds `VERIFY_MAX_NS` — the claim is
+reproducible on demand (one build plus one Wiedemann sequence) by re-running with
+a larger budget.  The verifier never reports `PASS` for a claim it did not check,
+and never trusts a size declared in the certificate.

@@ -19,11 +19,22 @@ Exit status 0 iff every certificate parsed and passed.
 """
 import sys, os, json, gzip, time, traceback
 
+# A large nonvanishing_minor determinant (any full-rank minor of order ~300 with
+# entries of this programme's size exceeds 4300 decimal digits) is computed
+# exactly by layer1 and then rendered into the report's detail line.  Python caps
+# int->str at 4300 digits by default (CVE-2020-10735 mitigation), so that render
+# raised ValueError -- reported as UNPARSEABLE -- AFTER the rank checks had
+# already passed (session 56).  Raise the cap so the exact value can be printed;
+# the mathematics (rank over Q and mod p, the minor over Z) never needed the
+# decimal string and is unaffected.
+sys.set_int_max_str_digits(2_000_000)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from layer1 import check_matrix_certificate          # noqa: E402
 from layer2 import check_hwv_certificate, check_full_rank_certificate  # noqa: E402
 from points import FAMILIES                          # noqa: E402
+from layer3 import check_sparse_nullity_certificate, parse_field  # noqa: E402
 
 FORMAT = "gct-cert/1"
 CONVENTIONS = {
@@ -77,13 +88,27 @@ def _check_points(pts, where):
             raise Unparseable(f"{where}: point without a type")
 
 
+def _check_field(cert, where="field"):
+    """The declared field (Part A4, session 67).  'Q' or 'F_<p>'.  Additive: on
+    the pre-session-67 kinds it is optional and, when present, must be consistent
+    with modulus/prime; on the new kinds it is required and enforced by their
+    schema.  A finite field never certifies a characteristic-zero *kernel*."""
+    f = cert["field"]
+    try:
+        knd, p = parse_field(f)
+    except ValueError as e:
+        raise Unparseable(f"{where}: {e}")
+    return knd, p
+
+
 def validate(cert):
     """Strict schema check; raises Unparseable."""
     _need(cert, ["format", "kind", "title", "produced_by"],
           allowed=["format", "kind", "title", "produced_by", "notes", "cell", "conventions",
                    "modulus", "vectors", "claims", "matrix", "matrix_source", "claimed_rank_Q",
                    "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero", "prime",
-                   "variety", "points", "basis"])
+                   "variety", "points", "basis", "field", "matrix_role", "nullity",
+                   "recipe", "provenance"])
     if cert["format"] != FORMAT:
         raise Unparseable(f"format: expected {FORMAT!r}")
     kind = cert["kind"]
@@ -92,9 +117,17 @@ def validate(cert):
     base = {"format", "kind", "title", "produced_by", "notes"}
     if kind == "hwv":
         _need(cert, ["cell", "conventions", "modulus", "vectors", "claims"],
-              allowed=list(base | {"cell", "conventions", "modulus", "vectors", "claims"}))
+              allowed=list(base | {"cell", "conventions", "modulus", "vectors", "claims", "field"}))
         _check_cell(cert["cell"])
         _check_conventions(cert["conventions"])
+        if "field" in cert:
+            knd, p = _check_field(cert)
+            m = cert["modulus"]
+            want = "Q" if m is None else "Fp"
+            if knd != want:
+                raise Unparseable(f"field: {cert['field']!r} disagrees with modulus {m!r}")
+            if knd == "Fp" and p != m:
+                raise Unparseable(f"field: F_{p} disagrees with modulus {m}")
         if cert["modulus"] is not None:
             m = _int(cert["modulus"], "modulus")
             if m < 3:
@@ -126,9 +159,26 @@ def validate(cert):
                     raise Unparseable(f"claims.fresh_points.{key}: families must be among {FAMILIES}")
     elif kind == "matrix":
         _need(cert, [], allowed=list(base | {"matrix", "matrix_source", "claimed_rank_Q",
-                                             "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero"}))
+                                             "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero",
+                                             "field", "matrix_role"}))
         if "matrix" not in cert and "matrix_source" not in cert:
             raise Unparseable("matrix certificate needs a matrix or a matrix_source")
+        role = cert.get("matrix_role")
+        if role is not None and role not in ("gram", "macaulay", "generic"):
+            raise Unparseable(f"matrix_role: expected gram, macaulay or generic, got {role!r}")
+        if "field" in cert:
+            knd, _p = _check_field(cert)
+            # Part A4/A5: rank(Gram) = rank(Theta) is the characteristic-zero Gram
+            # identity (a nonzero vector can be isotropic mod p).  A Gram-route
+            # rank claim is therefore accepted only over Q.
+            if role == "gram" and knd != "Q":
+                raise Unparseable("matrix_role 'gram': rank(Gram) = rank(Theta) holds only in "
+                                  "characteristic zero; a Gram rank certificate must declare field 'Q'")
+            # a claimed_rank_Q means the exact rank over Q was certified; it must not be labelled a finite field
+            if "claimed_rank_Q" in cert and knd != "Q" and role == "gram":
+                raise Unparseable("field: a claimed_rank_Q over a finite field is contradictory for a gram matrix")
+        elif role == "gram":
+            raise Unparseable("matrix_role 'gram' requires a declared field (must be 'Q')")
         if "claimed_rank_Q" in cert:
             _int(cert["claimed_rank_Q"], "claimed_rank_Q")
         if "claimed_ranks_mod_p" in cert:
@@ -148,7 +198,7 @@ def validate(cert):
             raise Unparseable("matrix certificate makes no claim")
     elif kind == "full_rank":
         _need(cert, ["cell", "conventions", "prime", "variety", "points", "basis"],
-              allowed=list(base | {"cell", "conventions", "prime", "variety", "points", "basis"}))
+              allowed=list(base | {"cell", "conventions", "prime", "variety", "points", "basis", "field"}))
         _check_cell(cert["cell"])
         _check_conventions(cert["conventions"])
         if _int(cert["prime"], "prime") < 3:
@@ -158,6 +208,33 @@ def validate(cert):
         _check_points(cert["points"], "points")
         if cert["basis"] is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
             raise Unparseable("basis: expected null or a nonempty list of vectors")
+        if "field" in cert:
+            knd, p = _check_field(cert)
+            if knd != "Fp" or p != cert["prime"]:
+                raise Unparseable(f"field: full_rank certifies over F_p; must read F_{cert['prime']}")
+    elif kind == "sparse_nullity":
+        _need(cert, ["cell", "conventions", "field", "variety", "nullity", "points"],
+              allowed=list(base | {"cell", "conventions", "field", "variety", "nullity", "points",
+                                   "recipe", "provenance", "basis"}))
+        _check_cell(cert["cell"])
+        _check_conventions(cert["conventions"])
+        knd, p = _check_field(cert)
+        if knd != "Fp":
+            raise Unparseable("sparse_nullity: field must be a finite field F_<p> "
+                              "(a full-column-rank mod p certifies mult = a over Q; a char-0 nullity is not this kind)")
+        if cert["variety"] not in ("det_pencil", "padded_permanent", "reducible"):
+            raise Unparseable("variety: expected det_pencil, padded_permanent or reducible")
+        if _int(cert["nullity"], "nullity") < 0:
+            raise Unparseable("nullity: expected a nonnegative integer")
+        _check_points(cert["points"], "points")
+        if cert["nullity"] > 0 and cert.get("basis") in (None, []):
+            raise Unparseable("sparse_nullity with nullity > 0 must record the checked kernel vectors in basis")
+        if cert.get("basis") is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
+            raise Unparseable("basis: expected null or a nonempty list of vectors")
+        if "recipe" in cert and not isinstance(cert["recipe"], dict):
+            raise Unparseable("recipe: expected an object")
+        if "provenance" in cert and not isinstance(cert["provenance"], dict):
+            raise Unparseable("provenance: expected an object")
     else:
         raise Unparseable(f"kind: unknown kind {kind!r}")
     return kind
@@ -187,13 +264,23 @@ def verify_file(path):
             ok = check_hwv_certificate(cert, log)
         elif kind == "matrix":
             ok = check_matrix_certificate(cert, log)
+        elif kind == "sparse_nullity":
+            ok = check_sparse_nullity_certificate(cert, log)
         else:
             ok = check_full_rank_certificate(cert, log)
     except ValueError as e:                      # malformed content found while checking
         return "UNPARSEABLE", log + [("content", False, str(e))]
     except Exception as e:                       # noqa: BLE001
         return "ERROR", log + [("internal error", False, f"{e!r}\n{traceback.format_exc()}")]
-    return ("PASS" if ok else "FAIL"), log
+    if not ok:
+        return "FAIL", log
+    # RECORDED: the certificate is well-formed and reproducible but its claim was
+    # NOT re-derived this run (a budget skip).  It is distinct from a verified PASS
+    # -- the tool never reports "PASS" for a claim it did not check.
+    for name, o, _ in log:
+        if o and isinstance(name, str) and name.startswith("__RECORDED__"):
+            return "RECORDED", log
+    return "PASS", log
 
 
 def collect(paths):
@@ -229,7 +316,7 @@ def main(argv):
         return 2
     lines = ["# Verifier report", "", f"{len(files)} certificate file(s); verifier tools/verify at "
              f"{time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}", ""]
-    summary = {"PASS": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
+    summary = {"PASS": 0, "RECORDED": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
     for path in files:
         t0 = time.time()
         status, log = verify_file(path)
@@ -247,13 +334,15 @@ def main(argv):
             lines.append(f"*{title}*  ({time.time()-t0:.1f}s)")
             lines.append("")
         for name, ok, detail in log:
+            disp = name[len("__RECORDED__"):].strip() if isinstance(name, str) and name.startswith("__RECORDED__") else name
+            disp = disp or "re-derivation skipped (RECORDED)"
             mark = "ok  " if ok else "FAIL"
             if not quiet or not ok:
-                print(f"    [{mark}] {name}" + (f" — {detail}" if detail else ""), flush=True)
-            lines.append(f"- [{'x' if ok else ' '}] {name}" + (f" — {detail}" if detail else ""))
+                print(f"    [{mark}] {disp}" + (f" — {detail}" if detail else ""), flush=True)
+            lines.append(f"- [{'x' if ok else ' '}] {disp}" + (f" — {detail}" if detail else ""))
         lines.append("")
-    tail = (f"PASS {summary['PASS']}, FAIL {summary['FAIL']}, UNPARSEABLE {summary['UNPARSEABLE']}, "
-            f"ERROR {summary['ERROR']}")
+    tail = (f"PASS {summary['PASS']}, RECORDED {summary['RECORDED']}, FAIL {summary['FAIL']}, "
+            f"UNPARSEABLE {summary['UNPARSEABLE']}, ERROR {summary['ERROR']}")
     print(tail)
     lines.insert(3, tail)
     if report:
