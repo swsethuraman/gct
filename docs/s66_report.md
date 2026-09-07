@@ -273,7 +273,7 @@ again at `1000003`.  Every minimal prime found is **linear**.
 | `ker ∩ c21` | 10, 4 | **`= T_ker ∪ T_c21`** | `L_11 ⊃ T_ker`, `L_7 ⊃ T_c21` |
 | `ker ∩ coker` | 12, 12 | (not decomposed in the box) | generic-kernel components sampled directly (§6) |
 | `P ∩ c32` (three components, 22 reduced variables) | — | `T_c32 ∪ T_SP ∪ L_8` (`L_8 ⊋ T_P`, dim 8 vs 4) | three linear primes (19, 13, 14) |
-| `P ∩ c21` (four spaces, 30 reduced variables) | — | `std` did not finish in the box | `Q_2^π` (9 quadrics) running at write-up; see §8 |
+| `P ∩ c21` (four spaces, 30 reduced variables) | — | `std` did not finish in the box | `Q_2^π` (9 quadrics): Singular and Macaulay2 both timed out; see §8 |
 
 **No tangent-cone component beyond the tangent spaces** at seven of the nine
 decomposed points.  At `P ∩ c32` and `SP ∩ c21` the quadrics leave one further
@@ -398,15 +398,21 @@ so that no one re-derives it; the exactness argument settles those loci.
   the order-1 images over every locus; the order-2 images over every component
   of `V(Q_2^π)` found; the order-3 images at every two-component incidence and
   on the skew locus.
+- **Independently re-derived (third prime `2147483587`, `analysis/wk10_s66_indep.py`,
+  no shared code):** `dΦ` by an explicit cofactor adjugate and the tangent
+  spaces by sympy's symbolic Jacobian give generic `P`: `37 / 43 / 43 / 0`;
+  generic `SP`: `31 / 49 / 49 / 0`; `P ∩ SP`: `rank 29`; `P ∩ coker`: `rank 14`.
 - **Adopted:** Atkinson's classification of bounded-rank-3 spaces through
   Huang–Landsberg and s32 Theorem 4 (the eight types exhaust `B_5`; used to say
   that an extra linear component of `V(Q_2)` is not a hidden base-locus
   component); s32/s59 for the certified `31`; `dim D_5 = 50`.
 - **Not done / open:** (1) `P ∩ c21` (rank-2 `u`, `P` singular there): the
   reduced `Q_2` (18 quadrics, 30 variables) did not finish in the 25-minute
-  box, `Q_2^π` (9 quadrics) was still running at write-up — its order-2 image is
-  the one number of the primitive world not on the table (order 1 there is
-  10); (2) the rank-drop strata of `M(a)` at `ker ∩ coker` (a compression-world
+  box, and `Q_2^π` (9 quadrics) did not finish in Singular (25 min) or in
+  Macaulay2's `minimalPrimes` (15 min) — its order-2 image is the one number of
+  the primitive world not on the table (order 1 there is 10; the locus is
+  33-dimensional and every direction in it is a first-order direction of the
+  singular locus of `P`); (2) the rank-drop strata of `M(a)` at `ker ∩ coker` (a compression-world
   point, outside the brief's target); (3) contact order `≥ 4` at the
   incidences, and order `≥ 3` with `M_1` outside the tangent spaces where
   `V(Q_2)` has an extra component (`P ∩ c32`, `SP ∩ c21`); (4) deeper strata of
