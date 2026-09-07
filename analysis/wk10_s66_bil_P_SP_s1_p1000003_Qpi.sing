@@ -1,0 +1,26 @@
+// Session 66 : reduced bilinear system Qpi at a P_SP point; alpha=2, beta=8
+LIB "primdec.lib";
+ring r = 1000003, (a(1..2), b(1..8)), dp;
+option(redSB);
+ideal I = (-228487)*a(1)*b(1) + (-66737)*a(1)*b(2) + (-401050)*a(1)*b(3) + (15794)*a(1)*b(4) + (-139017)*a(1)*b(5) + (-256718)*a(1)*b(6) + (39282)*a(1)*b(7) + (280304)*a(1)*b(8) + (-139017)*a(2)*b(1) + (-256718)*a(2)*b(2) + (39282)*a(2)*b(3) + (280304)*a(2)*b(4) + (457333)*a(2)*b(5) + (445812)*a(2)*b(6) + (176325)*a(2)*b(7) + (82696)*a(2)*b(8),
+  (382526)*a(1)*b(1) + (498656)*a(1)*b(2) + (62363)*a(1)*b(3) + (302430)*a(1)*b(4) + (489760)*a(1)*b(5) + (-15395)*a(1)*b(6) + (-442160)*a(1)*b(7) + (-219699)*a(1)*b(8) + (489760)*a(2)*b(1) + (-15395)*a(2)*b(2) + (-442160)*a(2)*b(3) + (-219699)*a(2)*b(4) + (-327513)*a(2)*b(5) + (-490901)*a(2)*b(6) + (-322582)*a(2)*b(7) + (-115761)*a(2)*b(8),
+  (-15756)*a(1)*b(1) + (134123)*a(1)*b(2) + (377730)*a(1)*b(3) + (65389)*a(1)*b(4) + (413927)*a(1)*b(5) + (-287762)*a(1)*b(6) + (291815)*a(1)*b(7) + (-422773)*a(1)*b(8) + (413927)*a(2)*b(1) + (-287762)*a(2)*b(2) + (291815)*a(2)*b(3) + (-422773)*a(2)*b(4) + (-23867)*a(2)*b(5) + (192061)*a(2)*b(6) + (37145)*a(2)*b(7) + (-6370)*a(2)*b(8),
+  (399928)*a(1)*b(1) + (183888)*a(1)*b(2) + (-52534)*a(1)*b(3) + (117194)*a(1)*b(4) + (-484674)*a(1)*b(5) + (167557)*a(1)*b(6) + (194160)*a(1)*b(7) + (-66744)*a(1)*b(8) + (-484674)*a(2)*b(1) + (167557)*a(2)*b(2) + (194160)*a(2)*b(3) + (-66744)*a(2)*b(4) + (-439640)*a(2)*b(5) + (-160140)*a(2)*b(6) + (197016)*a(2)*b(7) + (483821)*a(2)*b(8);
+int t0 = timer;
+ideal G = std(I);
+print("Qpi: dim V = " + string(dim(G)) + ", time " + string(timer - t0));
+t0 = timer;
+list mp = minAssGTZ(I);
+print("Qpi: " + string(size(mp)) + " minimal primes, time " + string(timer - t0));
+write(":w results/s66_bilprimes_P_SP_s1_p1000003_Qpi.txt", "");
+int i; int j;
+for (i = 1; i <= size(mp); i++) {
+  ideal Pi = std(mp[i]);
+  int islin = 1;
+  for (j = 1; j <= size(Pi); j++) { if (deg(Pi[j]) > 1) { islin = 0; } }
+  print("  prime " + string(i) + ": dim " + string(dim(Pi)) + ", degree " + string(mult(Pi)) + ", ngens " + string(size(Pi)) + ", linear " + string(islin));
+  write(":a results/s66_bilprimes_P_SP_s1_p1000003_Qpi.txt", "PRIME " + string(i));
+  write(":a results/s66_bilprimes_P_SP_s1_p1000003_Qpi.txt", string(Pi));
+  kill islin;
+}
+quit;

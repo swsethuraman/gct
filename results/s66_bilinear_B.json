@@ -225,5 +225,126 @@
    }
   ],
   "seconds": 29.0
+ },
+ {
+  "spec": "ker_coker",
+  "seed": 1,
+  "p": 32003,
+  "rank_dPhi": 5,
+  "dim_ker": 75,
+  "comps": {
+   "ker": 63,
+   "coker": 63
+  },
+  "dim_inter": 51,
+  "alpha": 12,
+  "beta": 12,
+  "a_is_transverse_to": "coker",
+  "b_is_transverse_to": "ker",
+  "systems": {
+   "Q2": {
+    "n": 59,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 12,
+    "generic_rank_N": 12,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 12, time 347",
+      "Q2: 2 minimal primes, time 383",
+      "  prime 1: dim 12, degree 1, ngens 12, linear 1",
+      "  prime 2: dim 12, degree 1, ngens 12, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 31,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 9,
+    "generic_rank_N": 9,
+    "singular": {
+     "exit": 124,
+     "summary": []
+    }
+   }
+  },
+  "seconds": 2213.8
+ },
+ {
+  "spec": "ker_c21",
+  "seed": 1,
+  "p": 32003,
+  "rank_dPhi": 13,
+  "dim_ker": 67,
+  "comps": {
+   "ker": 63,
+   "c21": 57
+  },
+  "dim_inter": 53,
+  "alpha": 10,
+  "beta": 4,
+  "a_is_transverse_to": "c21",
+  "b_is_transverse_to": "ker",
+  "systems": {
+   "Q2": {
+    "n": 22,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 4,
+    "generic_rank_N": 10,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Q2: dim V = 10, time 0",
+      "Q2: 2 minimal primes, time 0",
+      "  prime 1: dim 10, degree 1, ngens 4, linear 1",
+      "  prime 2: dim 4, degree 1, ngens 10, linear 1"
+     ]
+    }
+   },
+   "Qpi": {
+    "n": 12,
+    "nonbilinear_entries": 0,
+    "generic_rank_M": 3,
+    "generic_rank_N": 7,
+    "singular": {
+     "exit": 0,
+     "summary": [
+      "Qpi: dim V = 11, time 0",
+      "Qpi: 2 minimal primes, time 0",
+      "  prime 1: dim 11, degree 1, ngens 3, linear 1",
+      "  prime 2: dim 7, degree 1, ngens 7, linear 1"
+     ]
+    }
+   }
+  },
+  "order2": [
+   {
+    "prime": 1,
+    "ngens": 3,
+    "linear": true,
+    "dim_ab": 11,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 55,
+    "rank_con": 26,
+    "order2_reducible": 29
+   },
+   {
+    "prime": 2,
+    "ngens": 7,
+    "linear": true,
+    "dim_ab": 7,
+    "is_T2": false,
+    "is_T1": false,
+    "g2_nonzero": true,
+    "g2_in_im_dPhi": false,
+    "rank_full": 58,
+    "rank_con": 30,
+    "order2_reducible": 28
+   }
+  ],
+  "seconds": 26.7
  }
 ]
