@@ -260,6 +260,15 @@ def build_point(spec, seed, p):
         pen, tang = prim_point(Rg, pt['phi'], pt['u'])
         comps['P'] = tang
         curves['P'] = prim_curve(pt['phi'], pt['u'], rng, p)
+        if spec == 'P_meet':
+            # the cokernel vector is linear of rank 3 here : the point lies on SP^T
+            par = sp_frame_from_pencil(pencil_T(pen), rng, p)
+            assert par is not None, "P_meet point not on SP^T"
+            pen2, tang2 = sp_point(Rg, par['phi'], par['x'], par['c'], par['P'], par['Q'])
+            assert pencil_vec(pencil_T(pen2)) == pencil_vec(pen)
+            comps['SPT'] = [pencil_T(t) for t in tang2]
+            penE, tangE = sp_curve(par, rng, p)
+            curves['SPT'] = (pencil_T(penE), [pencil_T(t) for t in tangE])
     elif spec == 'SP_c32':
         pt = sp_random(Rg, rng, p, phi_rank=2)
         pen, tang = sp_point(Rg, pt['phi'], pt['x'], pt['c'], pt['P'], pt['Q'])
@@ -354,3 +363,69 @@ SPECS_ORDER = ['c21_c32', 'ker_coker', 'c21_gen', 'ker_gen',
 
 if __name__ == '__main__':
     print("wk10_s66_points loaded;", len(SPECS_ORDER), "specs")
+
+# ----------------------------------------------------------------------
+# SP frame recovered from a pencil with a LINEAR kernel vector of rank 3
+def linear_kernel_vector(pen, p):
+    """kappa_1..kappa_5 in C^4 with M(s) kappa(s) == 0, kappa(s) = sum s_k kappa_k :
+    solve B_j kappa_k + B_k kappa_j = 0 (j<k), B_k kappa_k = 0.  Returns the
+    solution space (list of 20-vectors)."""
+    rows = []
+    for j in range(R):
+        for k in range(j, R):
+            for a in range(n):
+                row = [0]*(R*n)
+                for b in range(n):
+                    if j == k:
+                        row[k*n + b] = (row[k*n + b] + pen[k][a][b]) % p
+                    else:
+                        row[k*n + b] = (row[k*n + b] + pen[j][a][b]) % p
+                        row[j*n + b] = (row[j*n + b] + pen[k][a][b]) % p
+                rows.append(row)
+    A = nmod_mat(len(rows), R*n, [int(x) % p for r in rows for x in r], p)
+    return kernel_basis(A)
+
+def sp_frame_from_pencil(pen, rng, p):
+    """pen with a unique linear kernel vector kappa(s) whose values span a 3-space U.
+    Returns SP parameters (phi43, x, c, P=I, Q=g^{-1}) reproducing pen, or None."""
+    Rg = Fp(p)
+    ks = linear_kernel_vector(pen, p)
+    if len(ks) != 1: return None
+    kap = [[ks[0][k*n + b] % p for b in range(n)] for k in range(R)]       # kappa_k
+    A = nmod_mat(R, n, [int(x) for row in kap for x in row], p)
+    if A.rank() != 3: return None
+    rr = A.rref()[0]
+    Y = [[int(rr[i, j]) for j in range(n)] for i in range(3)]
+    g = complete_basis(Y, rng, p); gi = mat_inv(g, p)
+    x = []
+    for k in range(R):
+        coords = [sum(gi[i][b]*kap[k][b] for b in range(n)) % p for i in range(n)]
+        assert coords[3] == 0
+        x.append(coords[:3])
+    # L_k = B_k g : first three columns = phi43 N(x_k) ; solve for phi43 (12 unknowns)
+    L = [mat_mul(Rg, pen[k], g) for k in range(R)]
+    rows = []; rhs = []
+    for k in range(R):
+        Nk = skewN(Rg, x[k])
+        for a in range(n):
+            for j in range(3):
+                # (phi43 N(x_k))[a][j] = sum_i phi43[a][i] Nk[i][j]
+                row = [0]*12
+                for i in range(3): row[a*3 + i] = Nk[i][j] % p
+                rows.append(row); rhs.append(L[k][a][j] % p)
+    sol = None
+    Aug = nmod_mat(len(rows), 13, [int(rows[r][j]) if j < 12 else (-rhs[r]) % p
+                                   for r in range(len(rows)) for j in range(13)], p)
+    X, nul = Aug.nullspace()
+    for t in range(nul):
+        last = int(X[12, t]) % p
+        if last:
+            inv = pow(last, p-2, p); sol = [(int(X[j, t])*inv) % p for j in range(12)]; break
+    if sol is None: return None
+    phi43 = [[sol[a*3 + i] for i in range(3)] for a in range(n)]
+    c = [[L[k][a][3] % p for a in range(n)] for k in range(R)]
+    I4 = [[1 if i == j else 0 for j in range(n)] for i in range(n)]
+    par = dict(phi=phi43, x=x, c=c, P=I4, Q=gi)
+    pen2, _ = sp_point(Rg, phi43, x, c, I4, gi)
+    if pencil_vec(pen2) != pencil_vec(pen): return None
+    return par
