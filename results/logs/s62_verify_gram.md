@@ -1,7 +1,7 @@
 # Verifier report
 
-40 certificate file(s); verifier tools/verify at 2026-09-07 03:46:41 UTC
-PASS 40, FAIL 0, UNPARSEABLE 0, ERROR 0
+44 certificate file(s); verifier tools/verify at 2026-09-07 05:49:04 UTC
+PASS 44, FAIL 0, UNPARSEABLE 0, ERROR 0
 
 ## PASS — `results/certs/s62/s62_G_n4_d2_4_4.json`
 
@@ -442,4 +442,46 @@ PASS 40, FAIL 0, UNPARSEABLE 0, ERROR 0
 - [x] rank mod 2147483629 — computed 1, claimed 1
 - [x] mod-p ranks do not exceed the rank over Q
 - [x] minor 1x1 is nonzero over Z — det = 262815992119296000000
+
+## PASS — `results/certs/s62/s62_n2_G_2p3.json`
+
+*n=2 proved control: G for lambda=(2^3), delta=3: rank over Q 1 of a=1 (mult_det=1, i_det=0) -- full rank, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)*  (0.0s)
+
+- [x] shape — 1x1
+- [x] rank over Q (exact, multimodular certificate) — computed 1 (0 certificate primes), claimed 1
+- [x] rank mod 2147483647 — computed 1, claimed 1
+- [x] rank mod 2147483629 — computed 1, claimed 1
+- [x] mod-p ranks do not exceed the rank over Q
+- [x] minor 1x1 is nonzero over Z — det = 1152
+
+## PASS — `results/certs/s62/s62_n2_G_2p4.json`
+
+*n=2 proved control: G for lambda=(2^4), delta=4: rank over Q 1 of a=1 (mult_det=1, i_det=0) -- full rank, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)*  (0.0s)
+
+- [x] shape — 1x1
+- [x] rank over Q (exact, multimodular certificate) — computed 1 (0 certificate primes), claimed 1
+- [x] rank mod 2147483647 — computed 1, claimed 1
+- [x] rank mod 2147483629 — computed 1, claimed 1
+- [x] mod-p ranks do not exceed the rank over Q
+- [x] minor 1x1 is nonzero over Z — det = 46080
+
+## PASS — `results/certs/s62/s62_n2_G_2p5.json`
+
+*n=2 proved control: G for lambda=(2^5), delta=5: rank over Q 0 of a=1 (mult_det=0, i_det=1) -- RANK DROP, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)*  (0.0s)
+
+- [x] shape — 1x1
+- [x] rank over Q (exact, multimodular certificate) — computed 0 (0 certificate primes), claimed 0
+- [x] rank mod 2147483647 — computed 0, claimed 0
+- [x] rank mod 2147483629 — computed 0, claimed 0
+- [x] mod-p ranks do not exceed the rank over Q
+
+## PASS — `results/certs/s62/s62_n2_G_2p6.json`
+
+*n=2 proved control: G for lambda=(2^6), delta=6: rank over Q 0 of a=1 (mult_det=0, i_det=1) -- RANK DROP, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)*  (0.0s)
+
+- [x] shape — 1x1
+- [x] rank over Q (exact, multimodular certificate) — computed 0 (0 certificate primes), claimed 0
+- [x] rank mod 2147483647 — computed 0, claimed 0
+- [x] rank mod 2147483629 — computed 0, claimed 0
+- [x] mod-p ranks do not exceed the rank over Q
 
