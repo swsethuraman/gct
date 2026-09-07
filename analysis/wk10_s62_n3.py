@@ -132,7 +132,7 @@ def eval_int_at_pencils(arr, vint, K, seed, bound):
     return vals
 
 
-def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_vec=True):
+def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_vec=True, primes=PRIMES):
     lam = tuple(lam)
     assert sum(lam) == N_DEG * delta and len(lam) == R
     a = a_weyl(lam, delta, N_DEG, {})
@@ -150,23 +150,32 @@ def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_ve
     per_prime = {}
     i_dets = []
     kern_modp = {}
-    for p in PRIMES:
+    # nullity of E alone must be a (the highest-weight space) -- one prime is enough as
+    # a build check; a is the plethysm ground truth.  nullity[E;ev] = i_det directly, and
+    # nullity 0 at ONE prime already proves mult_det = a over Q (rank_p <= rank_Q <= a).
+    for pi, p in enumerate(primes):
         EV = ev_rows_arr(DET3, NENT, N_DEG, R, arr, K, seed_det, bound, p)
-        # nullity of E alone must be a (sanity: the highest-weight space)
-        kE, _, _, _ = nullity_stacked(E, sparse.csr_matrix((0, nc), dtype=np.int64), nc, p,
-                                      want_kern=False, seed0=1, tag=f"E_{'_'.join(map(str,lam))}d{delta}",
-                                      levels=lev, verbose=False)
-        assert kE == a, ("nullity E != a", lam, delta, kE, a, p)
+        pp = {}
+        if pi == 0:
+            kE, _, _, _ = nullity_stacked(E, sparse.csr_matrix((0, nc), dtype=np.int64), nc, p,
+                                          want_kern=False, seed0=1, tag=f"E_{'_'.join(map(str,lam))}d{delta}",
+                                          levels=lev, verbose=False)
+            assert kE == a, ("nullity E != a", lam, delta, kE, a, p)
+            pp["nullity_E"] = int(kE)
         kF, kern, lvl, diag = nullity_stacked(E, sparse.csr_matrix(EV % p), nc, p, want_kern=True,
                                               seed0=1, tag=f"F_{'_'.join(map(str,lam))}d{delta}",
                                               levels=lev, verbose=False)
         i_dets.append(kF)
-        per_prime[str(p)] = {"nullity_E": int(kE), "nullity_F": int(kF), "mult_det": int(a - kF),
-                             "level": int(lvl)}
+        pp.update(nullity_F=int(kF), mult_det=int(a - kF), level=int(lvl),
+                  proves_full_rank_over_Q=bool(kF == 0))
+        per_prime[str(p)] = pp
         if kern:
             kern_modp[p] = [[int(x) % p for x in v] for v in kern]
-        log(f"    p={p}: nullity E={kE} (=a) nullity[E;ev]={kF} -> mult_det={a-kF} i_det={kF}")
-    assert i_dets[0] == i_dets[1], ("primes disagree on i_det", lam, delta, i_dets)
+        log(f"    p={p}: nullity[E;ev]={kF} -> mult_det={a-kF} i_det={kF}"
+            + (f" (nullity E={pp.get('nullity_E')}=a)" if pi == 0 else ""))
+    # a drop (i_det >= 1 at the first prime) must be confirmed at every prime run
+    if i_dets[0] >= 1 and len(primes) > 1:
+        assert len(set(i_dets)) == 1, ("primes disagree on i_det", lam, delta, i_dets)
     rec["per_prime"] = per_prime
     rec["i_det"] = int(i_dets[0])
     rec["mult_det"] = int(a - i_dets[0])
@@ -184,7 +193,7 @@ def measure(delta, lam, seed_det=11, bound=30, margin=8, levels="cheap", want_ve
             proof["E_v_zero_over_Z"] = bool(np.all(prod == 0))
             # reduces to the mod-p kernel vector (both primes)
             proof["matches_modp"] = {}
-            for p in PRIMES:
+            for p in primes:
                 red = [x % p for x in vint]
                 # equal up to scale to kern_modp[p][0]
                 proof["matches_modp"][str(p)] = bool(check_kernel_full(
@@ -237,11 +246,16 @@ if __name__ == "__main__":
     lam_of = {d: (3 * d - 17, 7, 2, 2, 2, 2, 2) for d in deltas}
     out = {"cell_family": "(3delta-17, 7, 2^5), n=3 det_3, r=7", "cells": {}}
     os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
+    ALLBOTH = "--both" in deltas if False else ("--both" in sys.argv)
+    deltas = [d for d in deltas]
     for d in deltas:
         lam = lam_of[d]
         if lam[0] < lam[1]:
             log(f"delta={d}: lambda_1 < lambda_2, skip"); continue
-        rec = measure(d, lam)
+        # the LMR degree (delta = 12, the drop) needs both primes + an integer vector;
+        # predecessors are full rank, and nullity 0 at ONE prime proves it over Q.
+        primes = PRIMES if (d == 12 or ALLBOTH) else (P1,)
+        rec = measure(d, lam, primes=primes)
         arr = rec.pop("_arr"); E = rec.pop("_E")
         vint = rec.pop("vint", None)
         out["cells"][str(d)] = rec

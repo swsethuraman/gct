@@ -520,7 +520,11 @@ def transported_and_new(n, r, delta, lam, pred_basis, pred_vecs, basis, vecs):
 
 def schur_complement(G_full_basis):
     """G given in a basis whose LAST vector is the new one: returns (det A, s, det G)
-    as Fractions, with A the leading (a-1) x (a-1) block; s = c - b^T A^{-1} b."""
+    as Fractions, with A the leading (a-1) x (a-1) block = B_{lambda,delta}|_{J(M_{delta-1})}
+    (the CURRENT-degree Gram on the transported predecessor, NOT the predecessor's own
+    Gram -- integrator note 1); s = c - b^T A^{-1} b = det G / det A, and s >= 0 with
+    equality iff the new line's image lies in the transported image (integrator's
+    distance form s = ||(I-P) T(v)||^2, cross-checked in schur_all_forms)."""
     a = len(G_full_basis)
     if a == 1:
         return Fraction(1), Fraction(G_full_basis[0][0]), Fraction(G_full_basis[0][0])
@@ -534,6 +538,95 @@ def schur_complement(G_full_basis):
     detG = flint.fmpz_mat(a, a, [int(x_) for row in G_full_basis for x_ in row]).det()
     assert _to_frac(detA) * s == Fraction(int(detG)), "det G != det A * s"
     return _to_frac(detA), s, Fraction(int(detG))
+
+
+def schur_all_forms(G_full_basis):
+    """Return s in the three coincident forms (integrator note 1) and assert they agree:
+      s1 = c - b^T A^{-1} b        (the Schur complement)
+      s2 = det B / det A           (B = full Gram, A = transported block)
+      s3 = ||(I - P) T(v)||^2      (squared distance of the new image from the transported
+                                    image, P the B-orthogonal projector onto J(M_{delta-1}))
+    All exact rationals; s3 >= 0 makes s >= 0 manifest, = 0 iff dependence."""
+    detA, s1, detG = schur_complement(G_full_basis)
+    s2 = detG / detA
+    a = len(G_full_basis)
+    if a == 1:
+        return {"s_schur": s1, "s_detB_over_detA": s2, "s_distance": s1,
+                "agree": s1 == s2}
+    A = flint.fmpq_mat(a - 1, a - 1, [int(G_full_basis[i][j]) for i in range(a - 1) for j in range(a - 1)])
+    b = flint.fmpq_mat(a - 1, 1, [int(G_full_basis[i][a - 1]) for i in range(a - 1)])
+    x = A.solve(b)                    # coordinates of the B-orthogonal projection of T(v) onto J(M)
+    # ||(I-P)T(v)||^2 = <v,v>_B - x^T A x  (= c - b^T A^{-1} b since A x = b)
+    xt_A_x = Fraction(0)
+    Ax = A * x
+    for i in range(a - 1):
+        xt_A_x += _to_frac(x[i, 0]) * _to_frac(Ax[i, 0])
+    s3 = Fraction(int(G_full_basis[a - 1][a - 1])) - xt_A_x
+    agree = (s1 == s2 == s3)
+    return {"s_schur": s1, "s_detB_over_detA": s2, "s_distance": s3, "agree": agree}
+
+
+def detA_mod_p(G_full_basis, p):
+    """det of the transported block A mod p -- the LOWER-BOUND (predecessor-full-rank)
+    step is valid in every characteristic: det A != 0 mod p already proves det A != 0
+    over Z, hence rank_Q A = a-1, hence rank_Q of the map on M_{delta-1} is a-1 = full
+    (rank(M^T M) <= rank M in every characteristic; integrator note 2).  A claimed
+    s = 0 (a rank drop) is NOT provable mod p and stays characteristic zero."""
+    a = len(G_full_basis)
+    if a == 1:
+        return None
+    Am = flint.nmod_mat(a - 1, a - 1, [int(G_full_basis[i][j]) % p for i in range(a - 1) for j in range(a - 1)], p)
+    return int(Am.det())
+
+
+def foulkes_support(size, support_orbit_indices):
+    """|S| = the support of the highest-weight vectors in the FOULKES basis (block
+    decompositions), = sum of orbit sizes over the monomials O the HWVs touch
+    (integrator note 3: this is the number that decides the Gram-entry cost, not the
+    weight-space support n_lam).  `size` the orbit sizes, `support_orbit_indices` the
+    set of monomial indices with a nonzero HWV coordinate."""
+    return int(sum(int(size[o]) for o in support_orbit_indices))
+
+
+def gram_H(V, size):
+    """N_lambda = V^T diag(size) V, the Gram of the HWV basis under the standard
+    S_N-invariant inner product on H (<m_O, m_O'> = |O| delta_{OO'}); used for the
+    centrality check (beta central on M_lambda iff G_lambda proportional to N_lambda)."""
+    a = len(V)
+    n_lam = len(size)
+    N = [[0] * a for _ in range(a)]
+    for p in range(a):
+        for q in range(p, a):
+            s = 0
+            vp, vq = V[p], V[q]
+            for i in range(n_lam):
+                if vp[i] and vq[i]:
+                    s += vp[i] * vq[i] * int(size[i])
+            N[p][q] = N[q][p] = s
+    return N
+
+
+def proportional(G, Nmat):
+    """are the two a x a integer symmetric matrices proportional over Q?  Returns
+    (bool, ratio-or-None).  Used to test whether beta is scalar (central) on M_lambda:
+    G_lambda = c * N_lambda for a scalar c iff beta acts as the scalar c there."""
+    a = len(G)
+    # find a nonzero entry of N to fix the ratio
+    c = None
+    for i in range(a):
+        for j in range(a):
+            if Nmat[i][j] != 0:
+                c = Fraction(G[i][j], Nmat[i][j])
+                break
+        if c is not None:
+            break
+    if c is None:
+        return False, None
+    for i in range(a):
+        for j in range(a):
+            if Fraction(G[i][j]) != c * Nmat[i][j]:
+                return False, c
+    return True, c
 
 
 def _to_frac(q):

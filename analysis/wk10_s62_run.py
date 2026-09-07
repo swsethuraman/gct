@@ -33,8 +33,13 @@ delta = int(args[1])
 KOSTKA = "--kostka" in args
 SNF = "--no-snf" not in args
 CERTS = args[args.index("--certs") + 1] if "--certs" in args else None
+CACHE = args[args.index("--cache") + 1] if "--cache" in args else None
 N = n * delta
 P1, P2 = C56.P1, C56.P2
+CACHED = None
+if CACHE and os.path.exists(CACHE):
+    _z = np.load(CACHE)
+    CACHED = {k: _z[k] for k in _z.files}
 
 
 def frac(x):
@@ -75,7 +80,12 @@ def cell(lam):
     rec["n_lam"] = wo["n_lam"]
     rec["orbit_sizes_min_max"] = [int(wo["size"].min()), int(wo["size"].max())]
     t1 = time.time()
-    Ncount, cost = G.pair_counts(lab, wo, orb, verbose=(wo["n_lam"] > 100), tag=str(lam))
+    if CACHED is not None and str(lam) in CACHED:
+        Ncount = CACHED[str(lam)]
+        cost = {"total_s": 0.0, "per_rep_s": 0.0, "n_pass": wo["n_lam"], "H": nH, "cached": True}
+        assert np.array_equal(Ncount.sum(axis=2), np.repeat(wo["size"][:, None], wo["n_lam"], axis=1))
+    else:
+        Ncount, cost = G.pair_counts(lab, wo, orb, verbose=(wo["n_lam"] > 100), tag=str(lam))
     rec["pass"] = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in cost.items()}
     rec["touched_orbitals_per_pair"] = G.n_touched(Ncount)
     t2 = time.time()
@@ -103,10 +113,23 @@ def cell(lam):
     for v in vecs:
         union |= {k for k, x in enumerate(v) if x}
     rec["hwv_support_each"] = supp_each
-    rec["hwv_support_union"] = len(union)
+    rec["hwv_support_union"] = len(union)          # weight-space (n_lam-basis) support
+    rec["foulkes_support_S"] = G.foulkes_support(wo["size"], union)   # |S|: the cost-deciding number
+    rec["N_S"] = int(sum(int(x) for x in wo["size"]))                 # |H^{S_lambda}| in Foulkes basis
     NS, ufree, NSp = G.u_free_count(n, r, delta, lam)
     rec["u_free_monomials"] = ufree
     rec["N_S_pred"] = NSp
+    # centrality (integrator note 4): beta scalar on M_lambda iff G_lambda proportional to
+    # N_lambda = V^T diag(|O|) V (the standard H inner product).  a >= 2 makes it a real test.
+    if a_of[lam] >= 2:
+        Nmat = G.gram_H(V, wo["size"])
+        prop, c = G.proportional(Gm, Nmat)
+        rec["centrality"] = {"N_lambda": [[str(x) for x in row] for row in Nmat],
+                             "G_proportional_to_N": bool(prop),
+                             "ratio": (str(c) if c is not None else None),
+                             "central_block": bool(prop),
+                             "note": "beta is scalar (central) on this multiplicity space iff proportional"}
+        G.log(f"  centrality lambda={lam}: G proportional to N = {prop} -> block {'central (scalar)' if prop else 'NONCENTRAL'}")
     # SNF diagnostics
     if SNF:
         rec["snf_G"] = [str(x) for x in G.snf_diagonal(Gm)]
@@ -133,13 +156,19 @@ def cell(lam):
             if room == 1:
                 full = TV + [G.to_orbit_coords(wo["monos"], [new])[0]]
                 Gfull = G.gram_block(full, B)
+                forms = G.schur_all_forms(Gfull)
                 detA, s, detG = G.schur_complement(Gfull)
                 rec["schur"] = {"det_A": frac(detA), "s": frac(s), "det_G": frac(detG), "s_zero": s == 0,
-                                "born": s == 0}
+                                "born": s == 0,
+                                "s_schur": frac(forms["s_schur"]), "s_detB_over_detA": frac(forms["s_detB_over_detA"]),
+                                "s_distance": frac(forms["s_distance"]), "three_forms_agree": bool(forms["agree"]),
+                                "detA_mod_p": {str(P1): G.detA_mod_p(Gfull, P1), str(P2): G.detA_mod_p(Gfull, P2)},
+                                "A_nonsingular_mod_p_lower_bound": (G.detA_mod_p(Gfull, P1) != 0 and G.detA_mod_p(Gfull, P2) != 0)}
+                assert forms["agree"], ("three Schur forms disagree", lam)
                 nvec_ufree = sum(1 for k, x in enumerate(new) if x and G.exps(n, r).index((n,) + (0,) * (r - 1)) not in basis[k])
                 rec["new_vector_u_free_support"] = nvec_ufree
                 rec["new_vector_support"] = sum(1 for x in new if x)
-                G.log(f"  room-one: a={a_of[lam]} a_pred={a_pred} det A={detA} s={s} -> {'BORN' if s == 0 else 'not born'}")
+                G.log(f"  room-one: a={a_of[lam]} a_pred={a_pred} det A={detA} s={s} (3 forms agree={forms['agree']}) -> {'BORN' if s == 0 else 'not born'}")
             elif room >= 2:
                 # block Schur complement rank = rank G - rank A
                 rec["schur_block"] = {"rank_G_minus_rank_A": rQ - rec["rank_Q_A"], "room": room}
