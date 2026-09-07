@@ -1,0 +1,107 @@
+{
+ "n": 2,
+ "cells": {
+  "(2, 2, 2)": {
+   "lambda": [
+    2,
+    2,
+    2
+   ],
+   "a": 1,
+   "n_lam": 5,
+   "H": 15,
+   "orbitals": 3,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "G": [
+    [
+     "1152"
+    ]
+   ],
+   "rank_Q_B": 5,
+   "B_full_rank": true,
+   "secs": 0.0,
+   "expected_rank": 1,
+   "expected": "rank 1 = a (disc of a rank-4 symmetric matrix, delta<=4)",
+   "matches_theorem": true
+  },
+  "(2, 2, 2, 2)": {
+   "lambda": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 1,
+   "n_lam": 17,
+   "H": 105,
+   "orbitals": 5,
+   "rank_Q_G": 1,
+   "i_det": 0,
+   "G": [
+    [
+     "46080"
+    ]
+   ],
+   "rank_Q_B": 17,
+   "B_full_rank": true,
+   "secs": 0.0,
+   "expected_rank": 1,
+   "expected": "rank 1 = a (disc of a rank-4 symmetric matrix, delta<=4)",
+   "matches_theorem": true
+  },
+  "(2, 2, 2, 2, 2)": {
+   "lambda": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 1,
+   "n_lam": 73,
+   "H": 945,
+   "orbitals": 7,
+   "rank_Q_G": 0,
+   "i_det": 1,
+   "G": [
+    [
+     "0"
+    ]
+   ],
+   "rank_Q_B": 72,
+   "B_full_rank": false,
+   "secs": 2.4,
+   "expected_rank": 0,
+   "expected": "rank 0 < a = 1 (disc of a rank-<=4 matrix in delta>=5 variables vanishes)",
+   "matches_theorem": true
+  },
+  "(2, 2, 2, 2, 2, 2)": {
+   "lambda": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 1,
+   "n_lam": 388,
+   "H": 10395,
+   "orbitals": 11,
+   "rank_Q_G": 0,
+   "i_det": 1,
+   "G": [
+    [
+     "0"
+    ]
+   ],
+   "rank_Q_B": 372,
+   "B_full_rank": false,
+   "secs": 527.6,
+   "expected_rank": 0,
+   "expected": "rank 0 < a = 1 (disc of a rank-<=4 matrix in delta>=5 variables vanishes)",
+   "matches_theorem": true
+  }
+ }
+}
