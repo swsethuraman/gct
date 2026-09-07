@@ -26,13 +26,13 @@
     "i": 1,
     "mult": 5,
     "level": 1,
-    "secs": 291.3
+    "secs": 500.7
    },
    "per": {
     "i": 0,
     "mult": 6,
     "level": 1,
-    "secs": 146.2
+    "secs": 261.8
    },
    "D": 1
   },
@@ -41,13 +41,13 @@
     "i": 1,
     "mult": 5,
     "level": 1,
-    "secs": 289.2
+    "secs": 500.6
    },
    "per": {
     "i": 0,
     "mult": 6,
     "level": 1,
-    "secs": 149.6
+    "secs": 266.1
    },
    "D": 1
   }
@@ -59,6 +59,7 @@
  "mult_per": 6,
  "D": 1,
  "det_control_ok": true,
- "verdict": "D = +1: i_det=1 > 0 = i_per, so I(D) not contained in I(P), so per_3 is not in the closure of GL_9 . det_3 -- an exhibited occurrence obstruction, rigorous (rank_p <= rank_Q).",
- "secs": 876.7
+ "obstruction_kind": "multiplicity",
+ "verdict": "D = +1: mult_per=6 > 5=mult_det, both nonzero, so this is a MULTIPLICITY obstruction (not an occurrence obstruction: S_lambda occurs in both coordinate rings).  P contained in D would force mult_P <= mult_D, so per_3 is not in the closure of GL_9 . det_3.  Rigorous: rank_p <= rank_Q <= a makes mult_per = a exact over Q, and i_det >= 1 is LMR.",
+ "secs": 1531.8
 }

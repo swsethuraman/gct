@@ -25,6 +25,12 @@ GL forces P subset D and D <= 0 (docs/stocktake_batch10.md 6).
 Only the positive branch is rigorous: rank_p <= rank_Q <= a, so a measured
 i_per = 0 at either prime forces mult_per = 6 over Q.
 
+Terminology: mult_det = 5 and mult_per = 6 are BOTH nonzero, so S_lambda occurs
+in both coordinate rings and this is a MULTIPLICITY obstruction, not an
+occurrence obstruction.  That is the stronger and more interesting reading:
+occurrence obstructions are ruled out in the padded regime (Buergisser-Ikenmeyer
+-Panova), multiplicity obstructions are not.
+
 usage: python3 analysis/wk11_int_p0a.py [--seed 20260907] [--bound 40]
 """
 import sys, os, time, json, random, pickle
@@ -108,9 +114,12 @@ def main():
         res['D'] = idet - iper
         res['det_control_ok'] = bool(idet == 1)
         if iper == 0 and idet >= 1:
-            res['verdict'] = (f'D = +{idet}: i_det={idet} > 0 = i_per, so I(D) not contained in I(P), '
-                              'so per_3 is not in the closure of GL_9 . det_3 -- an exhibited '
-                              'occurrence obstruction, rigorous (rank_p <= rank_Q).')
+            res['obstruction_kind'] = 'multiplicity'
+            res['verdict'] = (f'D = +{idet}: mult_per={A_AMB-iper} > {A_AMB-idet}=mult_det, both nonzero, so this '
+                              'is a MULTIPLICITY obstruction (not an occurrence obstruction: S_lambda occurs in '
+                              'both coordinate rings).  P contained in D would force mult_P <= mult_D, so '
+                              'per_3 is not in the closure of GL_9 . det_3.  Rigorous: rank_p <= rank_Q <= a '
+                              'makes mult_per = a exact over Q, and i_det >= 1 is LMR.')
         elif iper >= 1 and idet > iper:
             res['verdict'] = f'D = {idet-iper} > 0 but i_per={iper} >= 1: compare the kernel lines.'
         elif idet == iper:

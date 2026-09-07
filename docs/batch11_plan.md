@@ -74,12 +74,13 @@ dominant (`9r − 4 ≥ C(r+2,3)` for `r ≤ 5`) and containment forces `D ≤ 0
 `r = 7` neither variety fills the ambient, so the comparison is not vacuous.
 
 **What a positive result would and would not mean.**  It would *not* be a new
-theorem: `per₃ ∉ closure(GL₉·det₃)` follows already from the banked
-`dc̄(per₃) ≥ 5 > 3`.  It would be **the first complete, exhibited obstruction
-certificate the programme has ever produced** — a representation occurring in
-the ideal of the determinant orbit closure and not in the ideal of the permanent
-one, computed end to end by the programme's own machinery, at a carrier of
-`n_χ = 17 047` rather than `3.10×10⁷`.  Since `P ⊆ D ⟹ I(D) ⊆ I(P) ⟹
+theorem: `per₃ ∉ closure(GL₉·det₃)` follows already from the dimension count
+above (`59 > 47`), and independently from the banked `dc̄(per₃) ≥ 5 > 3`.  It
+would be **the first complete, exhibited multiplicity obstruction the programme
+has ever produced** — a representation whose multiplicity in the coordinate ring
+of the permanent variety strictly exceeds its multiplicity in that of the
+determinant, computed end to end by the programme's own machinery, at a carrier
+of `n_χ = 17 047` rather than `3.10×10⁷`.  Since `P ⊆ D ⟹ I(D) ⊆ I(P) ⟹
 i_det ≤ i_per`, a strict `i_det > i_per` certifies `P ⊄ D` on its own terms.
 That is a positive control the programme has never had; every control in the
 record so far is a calibration or a negative.
@@ -96,7 +97,9 @@ engine on one build (`analysis/wk11_int_p0a.py`, `results/wk11_int_p0a.json`,
 | 2 147 483 629 | 1 | 5 | **0** | **6** | **+1** |
 
 The determinant column reproduces s63's positive control exactly, on an
-independently written driver.
+independently written driver.  The whole measurement was then run a second time
+after the terminology correction of §10, and returned the same four numbers at
+both primes (876 s and 1 532 s; the difference is machine load, not the result).
 
 **The result is rigorous, and the two sides are rigorous for different reasons.**
 
@@ -108,9 +111,25 @@ independently written driver.
   `i_det(Q) ≥ 1` is LMR's theorem at this cell, which is exactly what made s63's
   measurement a control rather than an observation.  So `i_det = 1` exactly.
 
-Hence `S_λ` occurs in `I(D₇)` and not in `I(P₇)`, so `I(D₇) ⊄ I(P₇)`, so
-`P₇ ⊄ D₇`: **`per₃` is not in the closure of `GL₉·det₃`, certified by an
-exhibited occurrence obstruction.**
+Hence `mult_per = 6 > 5 = mult_det`, so `P₇ ⊆ D₇` is impossible (containment
+would give a surjection `C[D₇] ↠ C[P₇]` and hence `mult_P ≤ mult_D` at every
+`λ`): **`per₃` is not in the closure of `GL₉·det₃`, certified by an exhibited
+multiplicity obstruction with `D = +1`.**
+
+**It is a multiplicity obstruction, not an occurrence obstruction** — Sol's
+correction, and it is the stronger reading.  The standard distinction is
+
+    occurrence obstruction    mult_pad(λ) > 0 = mult_det(λ)
+    multiplicity obstruction  mult_pad(λ) > mult_det(λ), both possibly positive
+
+and here `mult_det = 5` and `mult_per = 6` are **both nonzero**, so `S_λ` occurs
+in both coordinate rings and no occurrence obstruction is present.  The
+distinction matters beyond bookkeeping: in the padded permanent-versus-
+determinant setting Bürgisser–Ikenmeyer–Panova rule out occurrence obstructions
+over the range of `n` the programme cares about, while multiplicity obstructions
+remain open — which is why `D = mult_pad − mult_det` is the programme's chosen
+quantity in the first place.  The programme's first `D > 0` is therefore of the kind the literature
+leaves open, which is the kind it needs to be.
 
 **What this is worth, stated honestly.**  The *statement* is not new and is not
 even hard: `dim P₇ = 59 > 47 = dim D₇`, so the containment fails by a dimension
@@ -267,9 +286,9 @@ algorithmic content of C1.  Concretely:
 
 | | mission | gate | success | kill |
 |---|---|---|---|---|
-| **C1 — ladder source** | Build `M_λ` rung by rung along `λ_δ = (4δ−31,17,2⁷)`, `δ = 12→24`, by support-restricted transport plus a deflated birth-space solve of dimension `a_δ − a_{δ−1}`; never form the full carrier. Begin at `δ = 12` (§2.1). Per-rung completeness certificate as in §2.3. | none | all 274 genuine highest-weight vectors with per-rung transition data; or the first `k` rungs certified with a cost curve | live support or closure grows to carrier scale at a rung whose `a_δ` is small |
+| **C1 — ladder source** | **Seed step first** (§5 iii): materialise and certify the two `M₁₂` highest-weight vectors at `n_χ ≈ 5.1×10⁶` by the best available black-box/nullspace method, and report failure there as the first wall rather than assuming the seed. Then build `M_λ` rung by rung along `λ_δ = (4δ−31,17,2⁷)`, `δ = 12→24`, by support-restricted transport plus a **deflated** birth-space solve of dimension `a_δ − a_{δ−1} ≤ 54`; never form the full carrier. Per-rung completeness certificate as in §2.3. | none | the seed, then all 274 genuine highest-weight vectors with per-rung transition data; or the first `k` rungs certified with a cost curve | the seed cannot be materialised in budget — which is itself the result, since `δ = 12` is the cheapest point on the ladder; or live support grows to carrier scale at a rung whose `a_δ` is small |
 | **C2 — compact circuit** | Exploit `(65,17,2⁷) = (2⁹) + (63,15)`; represent source and highest-weight vectors as contraction/bracket circuits rather than coordinate vectors. | none | reproduce the `n = 3` `U_D` exactly, then reach `n = 4` | fails the exact `n = 3` control |
-| **C3 — the two ranks** | `rank S_{λ,24}` (the `274 × 521` reducible-normalisation split) **first**; then `det A₂₄` at both house primes, with §2.2's branch reading. | see §5 — split gate | `rank S = 274` **and** `A₂₄` nonsingular ⟹ `i_det = 1`; **or** `A₂₄` singular ⟹ `i_det(23) ≥ 1`, stronger | `rank S < 274` — padded full rank 274 is then impossible and the `ℓ·det₃` route closes |
+| **C3 — the two ranks** | `rank S_{λ,24}` (the `274 × 521` reducible-normalisation split) **first**; then `det A₂₄` at both house primes, with §2.2's branch reading. Report all four outcomes with the semantics of §4C — in particular `rank S = 274` does **not** establish padded full rank. | see §5 — split gate | `rank S = 274` **and** `A₂₄` nonsingular ⟹ `i_det = 1` and the `i_pad = 0` route stays open, for C6 to settle; **or** `A₂₄` singular ⟹ `i_det(23) ≥ 1`, stronger | `rank S < 274` ⟹ `mult_pad ≤ mult_red < 274` ⟹ `i_pad ≥ 1`, which with `i_det = 1` gives `D ≤ 0`: **the LMR cell dies to a 274 × 521 rank** |
 | **C4 — `r = 5` closure falsifier** | Exhaust the 1 075 stable closing cells in increasing **certified cost order**, using degeneration and hybrid certificates where they apply; stop immediately on `i_det > i_red`. | none | one cell with `i_det > i_red` kills `R₅ ⊆ D₅` | no falsifier after the affordable prefix; report the cost curve and where it flattened |
 | **C5 — `r = 5` upper bound** | Implement the special-fibre / exhaustion bound. **Not another lower-bound arc search.** Prove every remaining component has fixed-factor image `< 35`. | none | the bound, on all remaining components | discover a rank-35 component — which settles the question the other way |
 | **C6 — the decision table** | Mode A: `i_pad`, `i_{per₄}` (§1.1) and `i_det` at LMR from whichever source lands, with `U_P`, `U_D`, `dim(U_D ∩ U_P)` and the three-outcome table. Mode B (default): the same pipeline up the `n = 3` ladder `λ_δ = (3δ−17, 7, 2⁵)`, `δ = 12, 13, 14`, starting from the `D = +1` of §1.1 — does the obstruction survive transport, or does `i_per` become positive above it? | none (§5) | exact `D` and its orientation at whichever `n` is reached; in Mode B, the first three rungs of a `D`-ladder | Mode B also unavailable — cannot happen, the cell builds in 274 s and the run is 876 s |
@@ -278,10 +297,10 @@ algorithmic content of C1.  Concretely:
 
 | | mission | why now |
 |---|---|---|
-| **S1 — is LMR minimal?** | Exhaustive primary-literature and constructive audit of every plausible `det₄`-orbit equation mechanism at `r < 9` or `δ < 24`. **Cost-indexed**: every candidate reported as `(r, δ, λ, a_δ, n_χ, expected support)`, not as a citation. | A smaller guaranteed determinant equation deletes the entire carrier problem. Four batches of pain disappear. |
+| **S1 — a cheaper determinant equation** | Not "does the LMR family have a smaller member" — it does not, below the known case. The question is whether **any other explicit determinant-orbit equation exists in a dramatically cheaper cell**. Exhaustive primary-literature and constructive audit over the named mechanism families (§10). **Cost-indexed**: every candidate returned as `(r, δ, λ, a_δ, n_χ, expected support)`, never as a citation, so that a beautiful but computationally useless result is visibly useless. | A guaranteed determinant equation at `r = 5, 6, 7, 8` would give a positive kernel cell with a manageable carrier and delete four batches of pain. |
 | **S2 — wreath/`Θ` intertwiner at `q = 2`** | An actual `R₂`, an actual `S₂`, a verified commutative square on tiny `n, δ`, injectivity on at least one multiplicity block, explicit row-growth bookkeeping. | The only surviving credible asymptotic route. If `q = 2` cannot be made natural, general `q` dies cheaply. |
 | **S3 — `r = 5` exhaustion theorem** | Turn s66's measured singular-stratum picture into a finite exhaustion / upper-bound theorem. Shares one written target statement with C5 (§5). | The exact missing implication for `R₅ ⊄ D₅`. |
-| **S4 — stable `a_∞ = 2, 3`** | Nominate the smallest weight-13 stable blocks and derive exact low-rank tests on `M₆`. P0-B is closed, so this opens immediately. | Independent second determinant-equation laboratory; 44 of 47 weight-13 shapes are still open and need ranks, not scalars. |
+| **S4 — stable `a_∞ = 2, 3`** | In this order: all weight-13 `a_∞ = 2`; then `a_∞ = 3`; **stop at the first nonzero stable ideal**; if all die, formulate the resulting stronger stable dead-region theorem. Exact low-rank tests on `M₆`, not another census. P0-B is closed, so it opens immediately. | Independent second determinant-equation laboratory; 44 of 47 weight-13 shapes are still open and need ranks, not scalars. |
 | **S5 — intrinsic wreath source** | Does `[λ]^{S₄≀S_δ}` admit a Bratteli / Jucys–Murphy / partition-algebra recursion whose live state count tracks `a_δ` rather than `dim[λ]`? Pre-register the maximum live state count at `δ = 12, 14, 16, 18`. | Third and most theorem-oriented attack on the bottleneck; the one route nobody has tried. |
 | **S6 — adversarial audit** | Read **code and docs**, explicitly ignoring session conclusions until the underlying implementation has been checked. What machinery already exists that the board thinks is missing? Which dead routes died mathematically and which only in one implementation? Which assumptions are merely inherited? Given every inequality now known, which numerical outcomes at LMR still permit `D > 0`? Then draft the batch-12 board. | Batch 10 specified four items as missing that were already in the repository. This is the direct fix. |
 
@@ -307,8 +326,17 @@ Accepted.**  The ordering is right: `rank S < 274` makes padded full rank
 impossible before any permanent-specific cubic block is touched.  And s63
 quantified the carrier wall on all three existing realisations, so a fallback
 there is not a contingency, it is a way to spend a night reconfirming a
-measurement.  **Amended** by §2.2: `det A₂₄ = 0` is the *stronger* outcome, and
-the brief must say so.
+measurement.  **Amended twice.**  By §2.2: `det A₂₄ = 0` is the *stronger* outcome, and the
+brief must say so.  And by Sol's second point here, which is a correction to my
+wording: **`rank S = 274` does not establish padded full rank 274.**  `S` is the
+universal reducible-normalisation stage; the permanent-specific cubic stage can
+still drop rank afterwards, so `rank S = 274` gives `i_red = 0` and leaves
+`i_pad` unknown — C6 must still determine it.  The converse is the valuable one
+and my kill line understated it: since `mult_pad ≤ mult_red = rank S`, a
+`rank S < 274` forces `i_pad ≥ 1`, and with `i_det = 1` that gives `D ≤ 0` at
+LMR **before any permanent-specific block is touched**.  Both semantics go in
+the C3 row verbatim, because the four outcomes are not symmetric and a worker
+reading "success = 274" will mis-report two of them.
 
 **D — S2 starts at `q = 2` only. Accepted without change.**  The five concrete
 requirements Sol lists are the brief.
@@ -355,9 +383,32 @@ needs no source, gated on (C1 or C2 or S5) if it does.  Either way C3 reports
 the determination, because the answer is reusable and nobody has written it
 down.
 
-**(iii) C1 carries the birth-space algorithm and starts at `δ = 12`.**  §2.1 and
-§2.3.  Both are cheap to state and both change what the session does on its
-first night.
+**(iii) C1 carries the birth-space algorithm, starts at `δ = 12`, and
+pre-registers the seed step separately.**  §2.1 and §2.3 give the algorithm; Sol
+supplies the missing initial condition, and the point is sharp.  A recursion
+`M_δ = J(M_{δ−1}) ⊕ B_δ` needs `M₁₂`, and `M₁₂` is a 2-dimensional kernel inside
+`n_χ ≈ 5.1×10⁶` coordinates — the one genuinely hard object in the whole scheme.
+Without a separate pre-registration, C1 can quietly become *incremental source
+construction assuming we already have the source*, and report a working ladder
+algorithm that was never tested against the thing that makes it hard.
+
+So the brief states the seed step as its own pre-registered item, with its own
+budget and its own verdict:
+
+> **Seed.**  Obtain the two `M₁₂` highest-weight vectors and certify them
+> against the **full** raising action (not the support-restricted one), with
+> `dim = a₁₂ = 2` exactly.  Any method is admissible — block Wiedemann,
+> structured sparse elimination, or the compact-circuit route if C2 gets there
+> first.  If the seed cannot be materialised within the budget, **say so and
+> stop**: that is the first wall, it is a reportable result, and it must not be
+> described as a failure of the ladder algorithm, which will not have been
+> tested.
+
+And there is no cheaper entry point to fall back to: the ladder begins at
+`δ = 12` because `4δ − 31 ≥ 17` fails below it, and §2.1 shows every higher rung
+is more expensive.  **`δ = 12` is the cheapest point on the LMR ladder, full
+stop.**  If the seed is out of reach there, the ladder route is out of reach,
+and that is worth knowing on night one rather than after three sessions.
 
 ---
 
@@ -376,13 +427,41 @@ C5 and S3 attack the same theorem computationally and theoretically.  **They
 share one written target statement, fixed in this plan before either starts**,
 or they will produce incomparable partial results:
 
-> *Target (r = 5 upper bound).*  For every irreducible component `Z` of
-> `Sing V(J)` in the `r = 5` model, the fixed-factor image of the exceptional
-> fibre over `Z` has dimension `< 35`; equivalently no component of the
-> exceptional divisor of the blow-up along `J` carries a rank-35 fixed factor.
-> With s66's contact-order lemma (at a smooth point of `V(J)` the exceptional
-> fibre is `P(im dΦ)` at every order), this exhausts the locus and yields
-> `R₅ ⊄ D₅`.
+> *Target (r = 5 upper bound).*  Let `R` be the coordinate ring of the `r = 5`
+> model and `J` the ideal of the base scheme of `Φ`.  For **every irreducible
+> component `E` of the exceptional divisor `Proj gr_J R`** of the blow-up of
+> `Spec R` along `J` that is supported over `Sing V(J)` — including components
+> supported over *proper subloci* of an irreducible singular component, over the
+> incidence and rank-degeneration strata, and components arising from the
+> *embedded, non-reduced* structure of the base scheme — the fixed-factor image
+> of `E` has dimension `< 35`.  Together with s66's contact-order lemma, which
+> disposes of every component supported over the smooth locus of `V(J)` (there
+> the exceptional fibre is `P(im dΦ)` at every order), this exhausts
+> `Proj gr_J R` and yields `R₅ ⊄ D₅`.
+
+**Why the quantifier is over the normal cone and not over `Sing V(J)`** —
+Sol's correction, and the repository already contains the reason.  s66 §5
+measured `in(J) ⊊ in(I₁ ∩ I₂)` at a generic point of every pairwise incidence
+(`dim Q₂ = 12 < 16` at `P ∩ SP`, `41 < 69` at `P ∩ coker`, `25 < 49` at
+`c21 ∩ c32`, `59 < 144` at `ker ∩ coker`), and concluded that **the base scheme
+is generically reduced along every component and non-reduced along every
+pairwise incidence** — "the precise sense in which the normal cone of `J`
+differs from the normal cone of the reduced base locus, and why the exceptional
+fibre over an incidence is larger than `P(im dΦ)`".  A statement quantified over
+irreducible components of the reduced singular locus therefore has a real
+logical gap: a component of `E` can sit over a proper sublocus or over embedded
+structure and be invisible at the generic point of any `Z`.  My earlier wording
+had that gap; this one does not.
+
+**And the residue is finite and already named.**  s66 §8 lists exactly four
+places a component of `E` could still hide: (1) `P ∩ c21`, whose order-2 image
+did not finish in the 25-minute box — the one number of the primitive world not
+on the table; (2) the rank-drop strata of `M(a)` at `ker ∩ coker`; (3) contact
+order `≥ 4` at the incidences, and order `≥ 3` with `M₁` outside the tangent
+spaces where `V(Q₂)` has an extra component (`P ∩ c32`, `SP ∩ c21`); (4) deeper
+strata of the rank-`≤2` world.  **C5 and S3 close that list, not an open-ended
+survey.**  By the contact-order lemma none of the four can be a smooth point of
+`V(J)`, and each is a proper closed subset of a locus already measured.
 
 s66 pushed every measured primitive and compression exceptional image to at most
 `29 < 31 < 35` through the reachable orders.  The remaining work is not another
@@ -395,13 +474,18 @@ s66 pushed every measured primitive and compression exceptional image to at most
 Expected scientific value per unit effort — **not execution order**, since C3
 may be gated:
 
-    S1  ≈  C1  >  C6  >  S5  >  C2  >  S3  >  C5  >  C3  >  S4  >  C4  >  S6  >  S2
+    S1  ≈  C1  >  S5  ≈  C6  >  C2  >  S3  >  C5  >  C3  >  S4  >  C4  >  S6  >  S2
 
-Two departures from Sol's ranking, both deliberate:
+This is Sol's final ordering and I adopt it.  It moves S5 level with C6 rather
+than below it, on the argument that S5 changes the complexity class of the whole
+project if it works, whereas C6 teaches a finite mechanism — a fair reading of
+expected value against certainty, and the execution architecture does not depend
+on it.
 
-- **C6 rises** from eleventh to third, because Mode B makes it ungated, certain
-  to produce a number, and its number is the `n = 3` decision table — the
-  programme's first exact `D` of any kind.
+Two departures from Sol's *first* ranking, both retained:
+
+- **C6 rises** from eleventh, because Mode B makes it ungated, certain to
+  produce a number, and its number continues the programme's first exact `D`.
 - **S6 rises** past S2.  Sol placed S6 second-to-last while arguing it could
   prevent another wasted batch; those two positions are inconsistent, and the
   batch-10 corrections ledger settles it in S6's favour.
@@ -446,11 +530,91 @@ is worth writing: *a multiplicity space of dimension 274 that no available
 construction realises below `10⁷` coordinates, on a ladder whose carrier is
 already at 16% of full size when the multiplicity is 2.*  §2.1 makes that
 sharper than it was yesterday — the cost is not concentrated at `δ = 24`, it is
-flat along the whole ladder, which says the obstruction is in the wreath
-symmetry and not in the degree.
+flat along the whole ladder (89% of full size at `δ = 16`, where `a_δ = 188`,
+and 16% at `δ = 12`, where `a_δ = 2`), which says the pathology belongs to the
+wreath symmetry and its realisations, not to the degree.  Sol's compression of
+the diagnosis is the one to write down:
+
+> `dim M_λ` ≪ the size of every known realisation of `M_λ`.
+
+That is a representation-theoretic *algorithm* problem, not a size problem, and
+it is why S5 gets more important as the ladder measurement gets worse, not
+less.
 
 And the write-up does not depend on it: twenty-four dead routes, the ladder
 theorem, Theorem P, Proposition S, the contact-order lemma, the specialisation
 inequality, the conormal certificates, and now the programme's first exhibited
 obstruction certificate (§1.1) — a `D = +1` produced end to end by its own
 machinery, which is the one thing the record was missing on the positive side.
+
+---
+
+## 10. Sol's review of this plan — four corrections, and the list S1 carries
+
+Sol reviewed the plan above and asked to freeze the architecture with four
+corrections.  All four are accepted; the sections above already carry them.
+Recorded here so the change is visible rather than silently absorbed.
+
+**1. Multiplicity, not occurrence — my error.**  I described the P0-A result as
+an exhibited *occurrence* obstruction.  It is not one: `mult_det = 5` and
+`mult_per = 6` are both nonzero, so `S_λ` occurs in both coordinate rings.  It
+is a **multiplicity obstruction**, which is both the correct term and the
+stronger claim, since occurrence obstructions are ruled out in the padded regime
+and multiplicity obstructions are not.  Fixed in §1.1 and in
+`analysis/wk11_int_p0a.py`, and the run was repeated so the banked verdict in
+`results/wk11_int_p0a.json` carries the corrected reading rather than a
+hand-edited one.  The numbers are unchanged.
+
+**2. C3's success semantics were loose.**  `rank S_{λ,24} = 274` does not
+establish padded full rank; it clears the universal reducible-normalisation
+stage and leaves the permanent-specific cubic stage free to drop rank
+afterwards.  The valuable branch is the converse, which my kill line
+understated: `rank S < 274 ⟹ mult_pad ≤ mult_red < 274 ⟹ i_pad ≥ 1`, and with
+`i_det = 1` that is `D ≤ 0` at LMR, decided by a `274 × 521` rank before any
+permanent block is touched.  Fixed in the C3 row and §4C.
+
+**3. The `r = 5` target statement had a logical gap.**  Quantifying over
+irreducible components of `Sing V(J)` misses components of the exceptional
+divisor supported over proper subloci, over incidence strata, or over embedded
+non-reduced structure — and s66 §5 *measured* exactly that non-reducedness at
+every pairwise incidence.  The target is now quantified over irreducible
+components of the normal cone `Proj gr_J R`, and §6 also pins the residue to the
+four loci s66 §8 already names, so C5 and S3 close a finite list.  Fixed in §6.
+
+**4. C1 needed its initial condition pre-registered.**  The birth-space
+recursion is only as good as `M₁₂`, and `M₁₂` is the hard object.  The seed step
+is now its own pre-registered item with its own verdict, and an unreachable seed
+is a reportable first wall rather than a silent assumption.  Fixed in the C1 row
+and §5(iii).
+
+### The mechanism families S1 must cover
+
+Sol's list, adopted verbatim.  S1 audits each, and returns every candidate as
+`(r, δ, λ, a_δ, n_χ, expected support)` rather than as a citation:
+
+1. Young and Koszul flattenings
+2. Hessian and minor equations
+3. conductor and non-normality equations
+4. singular-locus and Jacobian equations
+5. Landsberg–Manivel style modules
+6. boundary-component equations
+7. equations obtained from dual varieties
+8. restrictions and specialisations of larger determinant equations
+9. any computational-algebra results on `closure(GL·det₄)`
+10. equations of the **orbit** versus the **orbit closure**, carefully
+    distinguished
+
+The prize is stated plainly in the brief: one guaranteed determinant equation at
+`r = 5, 6, 7, 8` would give a positive kernel cell with a manageable carrier.
+
+### Where the Ramanujan idea actually lives
+
+Not in the birth sequence as a numerical series, and not in a standalone
+`q`-series session.  It is in the decomposition `M_δ = J(M_{δ−1}) ⊕ B_δ` with
+`dim B_δ` tiny, and the task of constructing `B_δ` directly — the recurrence
+rather than the coefficient.  If S5 finds `B_δ` controlled by a partition
+algebra, a small Bratteli diagram, a constant-term coefficient or a `q`-difference
+recurrence, the programme follows that structure, and only if the resulting
+generating series is naturally mock or false modular does mock theta return.
+The `F₄` coincidence stays where Sol put it: a thirty-minute falsifier inside
+S6, killed in writing by default.
