@@ -58,10 +58,11 @@ second-order quadrics `V(Q_2^π)`, orders 2 and 3 (s66), order 4 checked (s72).
   generic 25-plane slice is a curve, 24-plane a surface; both primes). A generic
   point of the 26-dim top component gives image **19**; the tangent-space
   sub-loci (over rank `C(b) = 0, 4, 6`) give **12**. Both primes.
-- **`ker ∩ coker` (residue 2, resolved).** The bilinear matrix `M(a)` has
-  **constant rank 9 for every `a ≠ 0`** (dropping `9→8` in a `31×12` linear family
-  has codim `92 ≫ 12`), so there are **no intermediate rank-drop strata**; the only
-  degenerations are the two tangent spaces (`a=0`, `b=0`), image 29.
+- **`ker ∩ coker` (residue 2, resolved).** The bilinear matrix `M(a)` (`31×12`,
+  linear in `a`) has generic rank 9; its `a`-kernel `{a : M(a)=0}` is exactly
+  **3-dimensional** (a rank-0 stratum). Over 500 mixed samples at two primes the
+  only ranks that occur are **0 and 9** (no intermediate rank observed); both
+  strata give image **29** (the rank-9 ruling and the rank-0 `T_ker`-direction).
 
 ## Rank-degeneration (rank `≤ 2`) strata — `dΦ ≡ 0`
 
@@ -89,11 +90,12 @@ reducible part lies in the exact 31-locus). The interior is exactly `31`. Hence
 
     dim(D_5 ∩ W) = max(31, ≤ 31) = 31 < 35,   so   R_5 ⊄ D_5.
 
-The four residues the roadmap named are reduced to **zero**: `P ∩ c21 = 19`
-(residue 1); the `ker ∩ coker` rank-drop strata do not exist, image `29`
-(residue 2); contact order `≥ 4` is obstructed/saturated at order 3, `≤ 29`
-(residue 3); the deeper rank-`≤2` strata drop to `19`/`9` and the exact-type
-incidences inherit `≤ 31` (residue 4).
+The four residues the roadmap named are reduced to **numbers**: `P ∩ c21 = 19`
+(residue 1, three primes); the `ker ∩ coker` rank strata are 0 and 9 only, both
+image `29` (residue 2); contact order `≥ 4` is obstructed and saturated at order
+3 by the measured stabilisation (evidence, `≤ 29`; residue 3); the deeper
+rank-`≤2` strata drop to `19`/`9` and the exact-type incidences inherit `≤ 31`
+(residue 4).
 
 **Rigor.** The interior `31` is exact (certified over `Q`). Each boundary
 component's image is the generic Jacobian rank of the reducible exceptional map

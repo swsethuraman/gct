@@ -91,56 +91,58 @@ def image_at_ab(S, a, b):
     rf = rank_mod(rows_full, 2*NQ, p); rc = rank_mod(rows_con, NQ + len(S5DEG0), p)
     return rf - rc
 
-def rank_drop_points(S, target_ranks=(8, 7, 6), tries=30):
-    """find a-vectors with rank M(a) < generic, by forcing extra kernel vectors."""
-    p = S['p']; Cq = S['Cq']; alpha = S['alpha']; beta = S['beta']; rng = S['rng']
-    a0 = [rng.randint(1, p-1) for _ in range(alpha)]
-    rgen = nmod_mat(len(Cq), beta, [int(x) for row in Ma(Cq, a0, alpha, beta, p) for x in row], p).rank()
-    found = {}
-    # force extra kernel vectors b*_1..b*_m in ker M(a): M(a) b*_t = 0 for all t
-    for m in range(1, alpha):
-        Bt = [[rng.randint(1, p-1) for _ in range(beta)] for _ in range(m)]
-        # equations in a: for each quadric-row l and each t: sum_i a_i (sum_j Cq[l][i][j] b*_t[j]) = 0
-        rows = []
-        for t in range(m):
-            for C in Cq:
-                rows.append([sum(C[i][j]*Bt[t][j] for j in range(beta)) % p for i in range(alpha)])
-        Amat = nmod_mat(len(rows), alpha, [int(x) for r in rows for x in r], p)
-        Xa, nula = Amat.nullspace()
-        if nula == 0: continue
+def rank_strata(S, n_scan=500):
+    """the complete rank stratification of M(a) = sum_i a_i M_i (linear in the
+    alpha a-coordinates).  Compute the a-kernel {a : M(a)=0} exactly (nullspace of
+    the (nq*beta) x alpha matrix whose i-th column is flatten(M_i)); scan a mix of
+    a-kernel + generic directions for every rank that occurs.  Returns
+    (generic_rank, akernel_dim, {rank: representative a})."""
+    p = S['p']; Cq = S['Cq']; alpha = S['alpha']; beta = S['beta']; rng = S['rng']; nq = len(Cq)
+    Amat = nmod_mat(nq*beta, alpha, [int(Cq[l][i][j]) for l in range(nq) for j in range(beta) for i in range(alpha)], p)
+    K, aknul = Amat.nullspace()
+    akvecs = [[int(K[i, t]) for i in range(alpha)] for t in range(aknul)]
+    def rk(a): return nmod_mat(nq, beta, [int(x) for row in Ma(Cq, a, alpha, beta, p) for x in row], p).rank()
+    seen = {}
+    # rank-0 stratum: a in the a-kernel
+    if akvecs:
         a = [0]*alpha
-        for tt in range(nula):
+        for v in akvecs:
             c = rng.randint(1, p-1)
-            for i in range(alpha): a[i] = (a[i] + c*int(Xa[i, tt])) % p
-        if not any(a): continue
-        M = nmod_mat(len(Cq), beta, [int(x) for row in Ma(Cq, a, alpha, beta, p) for x in row], p)
-        r = M.rank(); kerdim = beta - r
-        found.setdefault(r, (a, kerdim))
-    return rgen, found
+            for i in range(alpha): a[i] = (a[i] + c*v[i]) % p
+        seen[0] = a
+    for _ in range(n_scan):
+        a = [0]*alpha
+        for v in akvecs:
+            c = rng.choice([0, 0, 1, rng.randint(1, p-1)])
+            for i in range(alpha): a[i] = (a[i] + c*v[i]) % p
+        for _ in range(rng.randint(0, 2)):
+            for i in range(alpha): a[i] = (a[i] + rng.choice([0, 1, rng.randint(1, p-1)])*rng.randint(1, p-1)) % p
+        if any(a): seen.setdefault(rk(a), a)
+    gen = max(seen)
+    return gen, aknul, seen
 
 def run(spec, seed, p, verbose=True):
     S = setup(spec, seed, p)
     rec = dict(spec=spec, seed=seed, p=p, alpha=S['alpha'], beta=S['beta'], nQpi=len(S['Cq']))
-    rgen, found = rank_drop_points(S)
-    rec['generic_rank_M'] = rgen
+    gen, aknul, seen = rank_strata(S)
+    rec['generic_rank_M'] = gen; rec['a_kernel_dim'] = aknul
+    rec['ranks_observed'] = sorted(seen)
     rec['strata'] = []
-    if verbose: print(f"[{spec} seed={seed} p={p}] generic rank M(a) = {rgen}", flush=True)
-    for r in sorted(found, reverse=True):
-        a, kerdim = found[r]
-        # b generic in ker M(a)
+    if verbose: print(f"[{spec} seed={seed} p={p}] generic rank M(a) = {gen}; a-kernel dim = {aknul}; "
+                       f"ranks observed = {sorted(seen)}", flush=True)
+    for r in sorted(seen):
+        a = seen[r]
         M = nmod_mat(len(S['Cq']), S['beta'], [int(x) for row in Ma(S['Cq'], a, S['alpha'], S['beta'], p) for x in row], p)
-        Kb, knul = M.nullspace()
-        b = [0]*S['beta']
+        Kb, knul = M.nullspace(); b = [0]*S['beta']
         for t in range(knul):
             c = S['rng'].randint(1, p-1)
             for j in range(S['beta']): b[j] = (b[j] + c*int(Kb[j, t])) % p
         img = image_at_ab(S, a, b)
-        e = dict(rank_M=r, ker_dim=kerdim, image=img)
-        rec['strata'].append(e)
-        if verbose: print(f"   rank M(a)={r} (ker {kerdim}): fixed-factor image = {img}", flush=True)
+        rec['strata'].append(dict(rank_M=r, ker_dim=knul, image=img))
+        if verbose: print(f"   rank M(a)={r} (ker {knul}): fixed-factor image = {img}", flush=True)
     imgs = [e['image'] for e in rec['strata'] if e['image'] is not None]
-    rec['max_image_rankdrop'] = max(imgs) if imgs else None
-    if verbose: print(f"   ==> max image over rank-drop strata = {rec['max_image_rankdrop']}", flush=True)
+    rec['max_image'] = max(imgs) if imgs else None
+    if verbose: print(f"   ==> ranks {sorted(seen)}, max image over all strata = {rec['max_image']}", flush=True)
     return rec
 
 if __name__ == '__main__':

@@ -2,26 +2,89 @@
  "residue": "P_cap_c21_order2",
  "a_linear": "proved: 0 non-a-linear entries (12 a-vars, 18 b-vars in the 30 reduced coords)",
  "dim_V_Qpi_reduced": 26,
- "dim_V_Qpi_full": 59,
- "dim_via": "generic 25-plane slice is a curve, 24-plane a surface; both primes 32003, 1000003",
+ "dim_via": "generic 25-plane slice leaves 1 free var (curve), 24-plane leaves 2 (surface); primes 32003,1000003,2147483647",
  "top_component_image": 19,
  "tangent_subloci_image": 12,
- "tangent_spaces": {
-  "T_c21_reduced": 24,
-  "T_SP_reduced": 15,
-  "T_P_reduced": 6
- },
- "rank_C_strata": {
-  "T_c21": 0,
-  "T_SP": 4,
-  "T_P": 6,
-  "generic_top": 0
- },
+ "reproducible_script": "analysis/wk11_s72_pc21_top.py -> results/s72_pc21_top.json",
  "primes": [
   32003,
-  1000003
+  1000003,
+  2147483647
  ],
- "seeds_points": 4,
+ "points_per_prime": 4,
  "verdict": "max order-2 fixed-factor image over P cap c21 = 19 < 31 < 35",
- "method": "a-linear fibration of Q_2^pi + slice-25 Groebner (msolve) generic top-component point, verified on V(Q_2^pi) at both primes"
+ "top_json": [
+  {
+   "p": 32003,
+   "a_linear_nonzero": 0,
+   "free_vars_after_25cut": 1,
+   "dim_V_reduced": 26,
+   "points": [
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ]
+   ]
+  },
+  {
+   "p": 1000003,
+   "a_linear_nonzero": 0,
+   "free_vars_after_25cut": 1,
+   "dim_V_reduced": 26,
+   "points": [
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ]
+   ]
+  },
+  {
+   "p": 2147483647,
+   "a_linear_nonzero": 0,
+   "free_vars_after_25cut": 1,
+   "dim_V_reduced": 26,
+   "points": [
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ],
+    [
+     true,
+     19
+    ]
+   ]
+  }
+ ]
 }

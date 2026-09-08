@@ -117,6 +117,8 @@ if __name__ == '__main__':
         for p in [int(x) for x in a.primes.split(',')]:
             for seed in [int(x) for x in a.seeds.split(',')]:
                 r = order4_image(spec, comp, seed, p)
+                r.setdefault('spec', spec); r.setdefault('comp', comp)
+                r['p'] = p; r['seed'] = seed
                 res.append(r); json.dump(res, open(a.out, 'w'), indent=1)
                 print(f"[{spec}:{comp} p={p} seed={seed}] order-4 image = {r.get('order4_image')}  {r.get('note','')}", flush=True)
     print("wrote", a.out)
