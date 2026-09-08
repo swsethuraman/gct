@@ -350,7 +350,18 @@ else.
 
 ## 9. Mode A checkpoint
 
-Pre-registered checkpoint 2026-09-08 04:30 UTC.  MODE_A_TEXT
+Pre-registered checkpoint 2026-09-08 04:30 UTC.  At the checkpoint the
+session's link to the laptop was down (it had been down since about 02:00 UTC,
+with brief reconnections at 04:08 and later that did not survive a call), so
+`Projects/gct` could not be listed for an s68/s69/S5 bundle; nothing carrying
+an LMR source basis was delivered into the conversation either.  As
+pre-registered, the session stayed in **Mode B** and did not wait.  The Mode A
+tasks (`i_det`, `i_pad`, `i_{per_4}` at LMR from a source, `U_D`, `U_P`, the
+three-outcome table at LMR) remain exactly session 65's, unchanged; the one
+structural remark this session adds to them is in §8: by the same Lemma-L
+argument, once `D(24)` is known on the `n = 4` LMR ladder it is known at every
+`δ ≥ 24` (s57 measured that the LMR cell is the first stable cell of its
+ladder), so Mode A is one cell, not a ladder.
 
 ## 10. Deliverables
 
