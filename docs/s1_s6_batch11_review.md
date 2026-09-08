@@ -13,11 +13,13 @@ the report).
 > **S5 is the session that matters, and it is better than its own report
 > claims.**  The one-block recursion is correct — I checked the group theory and
 > the Pieri branching — and its economics are not merely acceptable, they are
-> the first realisation of `M_λ` in the programme's history that is small.  The
-> precursor at the control rung is **31-dimensional** against a native carrier
-> of `5.10×10⁶`, and the whole memoised recursion from the LMR cell down to
-> `δ = 1` touches **7 656 distinct shapes, peaking at 585 per level**.  That is
-> the answer to the diagnosis the batch opened with.
+> the first realisation of `M_λ` in the programme's history that is small.
+> **At the goal cell itself the precursor is 2 168-dimensional**, against a
+> carrier of `31 039 465`: the LMR source is the `+1` eigenspace of one block
+> swap on a space of about two thousand dimensions.  At the bottom rung it is 31
+> against `5.10×10⁶`.  And the whole memoised recursion from the LMR cell down
+> to `δ = 1` touches **7 656 distinct shapes, peaking at 585 per level**.  That
+> is the answer to the diagnosis the batch opened with.
 >
 > **S4's theorem is true but its enumeration was incomplete.**  There is an
 > eleventh weight-13 block with `a_∞ ≤ 3` that the session did not test:
@@ -135,11 +137,40 @@ and asks for it before any coding.  Computed here with the repository's own
 census alternation (`analysis/wk11_int_bdelta.py`, independent of anything S5
 ran):
 
-    δ = 12:   a = 2,  3 channels,  B = 31      (a_11 = 12, 11, 8)
+    δ = 12:   a = 2,   3 channels,  B_12 = 31       (a_11 = 12, 11, 8)
+    δ = 24:   a = 274, 12 channels,  B_24 = 2168
 
-against a native carrier of `n_χ(12) ≈ 5.10×10⁶` at the same rung.  **A factor
-of 165 000.**  Higher rungs are in flight and are recorded in
-`results/wk11_int_bdelta.json` as they land.
+against native carriers of `n_χ(12) ≈ 5.10×10⁶` and `n_χ(24) = 31 039 465` — a
+factor of **165 000** at the bottom rung and **14 300** at the goal cell.  The
+twelve predecessor multiplicities at `δ = 24`
+(`analysis/wk11_int_b24.py`, `results/wk11_int_b24.json`):
+
+| `μ` (`λ₂₄` less a horizontal 4-strip) | `a₂₃(μ)` |
+|---|---|
+| `(65,15,2⁶)` | 166 |
+| `(65,14,2⁶,1)` | 102 |
+| `(65,13,2⁷)` | 109 |
+| `(64,16,2⁶)` | 215 |
+| `(64,15,2⁶,1)` | 130 |
+| `(64,14,2⁷)` | 150 |
+| `(63,17,2⁶)` | 246 |
+| `(63,16,2⁶,1)` | 163 |
+| `(63,15,2⁷)` | 180 |
+| `(62,17,2⁶,1)` | 199 |
+| `(62,16,2⁷)` | 235 |
+| `(61,17,2⁷)` | **273** |
+| **`B₂₄`** | **2 168** |
+
+**The computation checks itself.**  The twelfth predecessor `(61,17,2⁷)` *is*
+`λ₂₃` on the LMR ladder, so its `a₂₃` must come back as the banked `273`.  It
+does, on the nose, and it was computed by the same alternation as the other
+eleven with no special-casing.
+
+**Against S5's own gate this is a clear GO.**  Sol set `B ≤ 10⁴` as "GO
+immediately"; `B₂₄ = 2 168` is **4.6× below** it, and the ratio `B/a` is
+*improving* up the ladder — `15.5` at `δ = 12`, `7.9` at `δ = 24`.  The LMR
+source is the `+1` eigenspace of one block swap on a **2 168-dimensional**
+space.
 
 **But `B_δ` measures one level, and an implementation is recursive.**  Each
 predecessor multiplicity space must itself be built before the level above it
