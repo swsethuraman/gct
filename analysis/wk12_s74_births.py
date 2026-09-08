@@ -16,10 +16,21 @@ Modes
   --rungs 13,14,...            discover (same seed rule; the probe's first draws coincide)
   --anchors                    the delta=12 seeds, F_57 at delta=24, S1's ten vectors
 
-State: results/s74/births_d<d>.json (one file per rung, rewritten as the rung
-progresses, complete when "complete": true).  Seeds: stream random.Random(500+d)
-with k drawn by rng.choice([5,6,7,8,9]) before each draw (the probe's rule);
-u=0 points random.Random(61000+11j) at P1 and random.Random(62000+11j) at P2.
+The stream.  Draws come from the house sampler (wk11_s69_circuit.random_filling,
+k shared tall-column letters) and, once a rung has stalled (--stall consecutive
+draws without a new direction, default 60), from a bandit over eight arms --
+(house | ones-first sampler of wk12_s74_sampler) x k in {6,7,8,9} -- with
+Thompson sampling on each arm's observed new-direction rate.  Before the stall
+the stream is exactly the probe's (rng = Random(500+d), k = rng.choice([5..9])
+consumed before each draw), so the first draws coincide with the integrator's.
+A candidate whose value at the first u=0 point is 0 is discarded without the
+other evaluations (a nonzero class vanishing there has probability <= 24/p per
+candidate; efficiency only -- a zero row is never kept in any case).
+Per-rung state including the random-number states is checkpointed after every
+batch, so an interrupted rung resumes where it stopped.
+
+Seeds: u=0 points random.Random(61000+11j) at P1 and random.Random(62000+11j)
+at P2; bandit rng Random(1500+d).
 """
 import argparse
 import json
@@ -38,6 +49,7 @@ from wk8_s30_core import P1, P2, exps                                    # noqa:
 from wk11_s69_circuit import (Filling, random_filling, sym_table,        # noqa: E402
                               symbols_from_coeffs, generic_point,
                               dp_eval_c, fast_eval_c, rank_mod)
+from wk12_s74_sampler import random_filling_ones_first                   # noqa: E402
 
 N, H, N2 = 4, 9, 15
 BIRTH = {12: 2, 13: 37, 14: 54, 15: 52, 16: 43, 17: 31, 18: 22,
@@ -48,8 +60,9 @@ _E = exps(N, H)
 IU = _E.index(tuple([N] + [0] * (H - 1)))     # u = c_(4,0,...,0); LAST in this ordering
 _A, _idx, _fact, TAB = sym_table(N, H)
 KSET = (5, 6, 7, 8, 9)
+ARMS = [(s, k) for s in ("house", "ones") for k in (6, 7, 8, 9)]
 POINT_SEED = {P1: 61000, P2: 62000}
-OUT = os.path.join(ROOT, "results", "s74")
+OUT = os.environ.get("S74_OUT", os.path.join(ROOT, "results", "s74"))
 T0 = time.time()
 
 
@@ -105,13 +118,23 @@ def _row(Fj):
     return [ev(F, ms, _P) for ms in _MS]
 
 
-def eval_rows(fillings_json, cvs, p, workers):
+def _row_sc(Fj):
+    """short-circuit: None if the value at the first point is 0."""
+    F = Filling.from_json(Fj)
+    v0 = ev(F, _MS[0], _P)
+    if v0 == 0:
+        return None
+    return [v0] + [ev(F, ms, _P) for ms in _MS[1:]]
+
+
+def eval_rows(fillings_json, cvs, p, workers, short_circuit=False):
     msyms = [symbols_from_coeffs(cv, N, H, p) for cv in cvs]
+    fn = _row_sc if short_circuit else _row
     if workers <= 1 or len(fillings_json) == 1:
         _init(msyms, p)
-        return [_row(Fj) for Fj in fillings_json]
+        return [fn(Fj) for Fj in fillings_json]
     with Pool(workers, initializer=_init, initargs=(msyms, p)) as pool:
-        return pool.map(_row, fillings_json, chunksize=1)
+        return pool.map(fn, fillings_json, chunksize=1)
 
 
 # ------------------------------------------------------------------ linear algebra
@@ -134,85 +157,158 @@ def nonzero_minor(rows, p):
     return cols, None
 
 
+# ------------------------------------------------------------------ rng state (de)serialisation
+def rng_dump(r):
+    st = r.getstate()
+    return [st[0], list(st[1]), st[2]]
+
+
+def rng_load(s):
+    r = random.Random()
+    r.setstate((s[0], tuple(s[1]), s[2]))
+    return r
+
+
 # ------------------------------------------------------------------ one rung
-def run_rung(delta, workers, max_draws, cap_secs, batch, s1_candidates=None):
+def run_rung(delta, workers, max_draws, cap_secs, batch, stall, s1_candidates=None):
     b = BIRTH[delta]
     n1 = n1_of(delta)
     K = b + 8
     path = os.path.join(OUT, f"births_d{delta}.json")
+    st = None
     if os.path.exists(path):
         st = json.load(open(path, encoding="utf-8"))
         if st.get("complete") and st.get("p2_rank") == b:
             log(f"delta={delta}: already complete ({b}/{b} both primes), skipping")
             return st
+        if "rng_state" not in st:
+            st = None                      # an old-format partial file: restart the rung
     cvs1 = u0_points(P1, K)
-    rng = random.Random(500 + delta)
-    rows, keep, hits = [], [], []
-    tried = filtered = 0
-    t0 = time.time()
-    st = dict(delta=delta, lam=[4 * delta - 31, 17] + [2] * 7, a=A_LADDER[delta], b=b, K=K,
-              stream_seed=500 + delta, kset=list(KSET), point_seed_P1=POINT_SEED[P1],
-              point_seed_P2=POINT_SEED[P2], point_rule="generic_point(4,9,p,Random(seed+11j)); cv[494]=0",
-              filter="reject any filling with a pure-u letter (four legs in one-columns)",
-              keep_rule="any(row) and rank increases, rows = values at the K u=0 points mod P1",
-              draws_to_last_keep=0, past_filter_to_last_keep=0, complete=False)
+    if st is None:
+        st = dict(delta=delta, lam=[4 * delta - 31, 17] + [2] * 7, a=A_LADDER[delta], b=b, K=K,
+                  stream_seed=500 + delta, kset=list(KSET), point_seed_P1=POINT_SEED[P1],
+                  point_seed_P2=POINT_SEED[P2],
+                  point_rule="generic_point(4,9,p,Random(seed+11j)); cv[494]=0",
+                  filter="reject any filling with a pure-u letter (four legs in one-columns)",
+                  keep_rule="value at point 0 nonzero and rank increases; rows = values at the K u=0 points mod P1",
+                  fillings=[], rows_P1=[], hits=[], draws=0, past_filter=0, zero_rows=0,
+                  draws_to_last_keep=0, past_filter_to_last_keep=0, complete=False, secs=0.0,
+                  stall_after=stall, stalled_at=None, consecutive_misses=0,
+                  arm_stats={f"{s}:{k}": [0, 0] for s, k in ARMS},      # [draws, new]
+                  k_stats={str(k): [0, 0, 0] for k in KSET},           # [draws, zero, new] house phase
+                  rng_state=rng_dump(random.Random(500 + delta)),
+                  bandit_state=rng_dump(random.Random(1500 + delta)))
+        pending = []
+        if s1_candidates:
+            for i, Fj in enumerate(s1_candidates):
+                F = Filling.from_json(Fj)
+                assert F.delta == delta
+                if pure_u_letters(F):
+                    log(f"delta={delta}: S1 candidate {i} carries a pure-u letter, rejected by the filter")
+                    continue
+                pending.append((f"s1:{i}", "s1:0", "s1", 0, 0, F))
+        st["_pending"] = [(t, a, ph, x, y, F.to_json()) for t, a, ph, x, y, F in pending]
+    rng = rng_load(st["rng_state"])
+    brng = rng_load(st["bandit_state"])
+    rows = [r[:] for r in st["rows_P1"]]
+    keep = [Filling.from_json(f) for f in st["fillings"]]
+    hits = st["hits"]
+    tried, filtered = st["draws"], st["past_filter"]
+    pending = [(t, a, ph, x, y, Filling.from_json(Fj)) for t, a, ph, x, y, Fj in st.get("_pending", [])]
+    t_start = time.time() - st["secs"]
 
     def flush():
-        st.update(fillings=[F.to_json() for F in keep], rows_P1=rows, rank_P1=len(rows),
-                  hits=hits, draws=tried, past_filter=filtered, secs=round(time.time() - t0, 1))
+        st.update(fillings=[F.to_json() for F in keep], rows_P1=rows, rank_P1=len(rows), hits=hits,
+                  draws=tried, past_filter=filtered, secs=round(time.time() - t_start, 1),
+                  rng_state=rng_dump(rng), bandit_state=rng_dump(brng),
+                  _pending=[(t, a, ph, x, y, F.to_json()) for t, a, ph, x, y, F in pending])
         tmp = path + ".tmp"
         json.dump(st, open(tmp, "w", encoding="utf-8"), indent=1)
         os.replace(tmp, path)
 
-    # optional externally supplied first candidates (S1's replayed classes); they
-    # go through exactly the same filter and rank test as any draw
-    pending = []
-    if s1_candidates:
-        for i, Fj in enumerate(s1_candidates):
-            F = Filling.from_json(Fj)
-            assert F.delta == delta
-            if pure_u_letters(F):
-                log(f"delta={delta}: S1 candidate {i} carries a pure-u letter, rejected by the filter")
-                continue
-            pending.append((f"s1:{i}", 0, 0, F))
-    while len(rows) < b and tried < max_draws and time.time() - t0 < cap_secs:
-        # draw a batch of filter-survivors (draw order preserved; each candidate
-        # carries the draw counters at the moment it was drawn, so the recorded
-        # counts are those of the equivalent sequential loop)
+    def draw_one():
+        """returns (arm label, filling) or None; consumes the stream exactly as the probe
+        does before the stall, the bandit after."""
+        if st["stalled_at"] is None:
+            k = rng.choice(list(KSET))
+            try:
+                F = random_filling(H, N, delta, N2, n1, rng, k=k)
+            except Exception:                                # noqa: BLE001
+                return None
+            return f"house:{k}", "probe", F
+        # Thompson sampling over the arms
+        best, bestv = None, -1.0
+        for s, k in ARMS:
+            d_, n_ = st["arm_stats"][f"{s}:{k}"]
+            v = brng.betavariate(n_ + 1, d_ - n_ + 1)
+            if v > bestv:
+                best, bestv = (s, k), v
+        s, k = best
+        try:
+            if s == "house":
+                F = random_filling(H, N, delta, N2, n1, brng, k=k)
+            else:
+                F = random_filling_ones_first(H, N, delta, N2, n1, brng, k=k)
+        except Exception:                                    # noqa: BLE001
+            return None
+        return f"{s}:{k}", "bandit", F
+
+    while len(rows) < b and tried < max_draws and time.time() - t_start < cap_secs:
         cand = list(pending)
         pending = []
         while len(cand) < batch and tried < max_draws:
-            try:
-                F = random_filling(H, N, delta, N2, n1, rng, k=rng.choice(list(KSET)))
-            except Exception:                                # noqa: BLE001
+            r = draw_one()
+            if r is None:
                 continue
+            arm, phase, F = r
             tried += 1
             if pure_u_letters(F):
                 continue
             filtered += 1
-            cand.append((tried, tried, filtered, F))
+            cand.append((tried, arm, phase, tried, filtered, F))
         if not cand:
             break
-        res = eval_rows([F.to_json() for _, _, _, F in cand], cvs1, P1, workers)
-        for (tag, tr, fi, F), row in zip(cand, res):
+        res = eval_rows([F.to_json() for _, _, _, _, _, F in cand], cvs1, P1, workers, short_circuit=True)
+        for (tag, arm, phase, tr, fi, F), row in zip(cand, res):
             if len(rows) >= b:
-                break
-            if any(row) and rank_mod(rows + [row], P1) > len(rows):
+                continue                                       # drawn past the b-th keep; not consumed
+            s_, k_ = arm.split(":")
+            if phase == "bandit":
+                st["arm_stats"][arm][0] += 1
+            elif phase == "probe":
+                st["k_stats"][k_][0] += 1
+            if row is None:
+                st["zero_rows"] += 1
+                if phase == "probe":
+                    st["k_stats"][k_][1] += 1
+                st["consecutive_misses"] += 1
+            elif rank_mod(rows + [row], P1) > len(rows):
                 rows.append(row)
                 keep.append(F)
-                hits.append(dict(draw=tag, k_shared=len(F.shared), rank=len(rows),
-                                 secs=round(time.time() - t0, 1)))
+                hits.append(dict(draw=tag, arm=arm, k_shared=len(F.shared), rank=len(rows),
+                                 secs=round(time.time() - t_start, 1)))
+                st["consecutive_misses"] = 0
+                if phase == "bandit":
+                    st["arm_stats"][arm][1] += 1
+                elif phase == "probe":
+                    st["k_stats"][k_][2] += 1
                 if not isinstance(tag, str):
                     st["draws_to_last_keep"] = tr
                     st["past_filter_to_last_keep"] = fi
+            else:
+                st["consecutive_misses"] += 1
+            if st["stalled_at"] is None and st["consecutive_misses"] >= stall and len(rows) < b:
+                st["stalled_at"] = dict(draw=tried, rank=len(rows))
+                log(f"delta={delta}: stalled at rank {len(rows)}/{b} after {stall} misses (draw {tried}); "
+                    f"switching to the bandit stream")
+        pending = []
         flush()
-        log(f"delta={delta} b={b}: rank {len(rows)}/{b}, draws {tried} ({filtered} past filter), "
-            f"{time.time()-t0:.0f}s")
+        log(f"delta={delta} b={b}: rank {len(rows)}/{b}, draws {tried} ({filtered} past filter, "
+            f"{st['zero_rows']} zero rows), {time.time()-t_start:.0f}s")
     st["complete"] = len(rows) == b
     if st["complete"]:
         cols, dmin = nonzero_minor(rows, P1)
         st["minor_P1"] = dict(cols=cols, det=dmin)
-        # second prime, fresh points
         cvs2 = u0_points(P2, K)
         rows2 = eval_rows([F.to_json() for F in keep], cvs2, P2, workers)
         st["rows_P2"] = rows2
@@ -220,10 +316,10 @@ def run_rung(delta, workers, max_draws, cap_secs, batch, s1_candidates=None):
         cols2, dmin2 = nonzero_minor(rows2, P2)
         st["minor_P2"] = dict(cols=cols2, det=dmin2)
         log(f"delta={delta}: COMPLETE {b}/{b} at P1 (minor det {dmin}); P2 rank {st['p2_rank']}/{b} "
-            f"(minor det {dmin2}); draws {tried}, past filter {filtered}, {time.time()-t0:.0f}s")
+            f"(minor det {dmin2}); draws {tried}, past filter {filtered}, {time.time()-t_start:.0f}s")
     else:
         log(f"delta={delta}: NOT FILLED rank {len(rows)}/{b} after {tried} draws ({filtered} past filter), "
-            f"{time.time()-t0:.0f}s -- reported, stream not enlarged")
+            f"{time.time()-t_start:.0f}s -- reported, stream not enlarged")
     flush()
     return st
 
@@ -289,8 +385,9 @@ def main(argv):
     ap.add_argument("--anchors", action="store_true")
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--max-draws", type=int, default=4000)
-    ap.add_argument("--cap", type=float, default=3600.0)
+    ap.add_argument("--cap", type=float, default=7200.0)
     ap.add_argument("--batch", type=int, default=6)
+    ap.add_argument("--stall", type=int, default=60)
     ap.add_argument("--with-s1", action="store_true",
                     help="admit S1's eight delta=13 classes as the first rung-13 candidates")
     args = ap.parse_args(argv)
@@ -304,7 +401,7 @@ def main(argv):
                                 encoding="utf-8"))
             s1c = [v["native_filling"] for v in s1["vectors"] if v["native_degree"] == 13]
         for d in [int(x) for x in args.rungs.split(",")]:
-            run_rung(d, args.workers, args.max_draws, args.cap, args.batch,
+            run_rung(d, args.workers, args.max_draws, args.cap, args.batch, args.stall,
                      s1_candidates=(s1c if (d == 13 and s1c) else None))
     return 0
 
