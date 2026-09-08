@@ -124,11 +124,11 @@ def best_cover(F, nc, seed=20260908, names=None):
 # ------------------------------------------------------------- the residual
 def _split_rows(F, rows, colS, colU, p):
     """rows of F (CSR) split into the S part (T, columns re-indexed to S positions,
-    data mod p as uint32 with the diagonal inverses) and the U part (dense uint32)."""
+    data mod p as uint32 with the diagonal inverses) and the U part (CSR int32,
+    columns re-indexed to U positions)."""
     R = F[rows].tocsr(); R.sort_indices()
     inS = colS[R.indices] >= 0
     nS = len(rows); nU = int((colU >= 0).sum())
-    # T
     rowid = np.repeat(np.arange(nS), np.diff(R.indptr))
     Tr = rowid[inS]; Tc = colS[R.indices[inS]]; Tv = (R.data[inS] % p).astype(np.int64)
     T = sparse.csr_matrix((Tv, (Tr, Tc)), shape=(nS, nS), dtype=np.int64); T.sort_indices()
@@ -136,14 +136,10 @@ def _split_rows(F, rows, colS, colU, p):
     assert np.all(diag != 0), "cover diagonal vanishes mod p"
     assert T.nnz == int(inS.sum())
     dinv = np.array([pow(int(d), -1, p) for d in diag], dtype=np.uint32)
-    # U part, dense
-    B = np.zeros((nS, nU), dtype=np.uint32)
-    Ur = rowid[~inS]; Uc = colU[R.indices[~inS]]; Uv = (R.data[~inS] % p)
+    Ur = rowid[~inS]; Uc = colU[R.indices[~inS]]
     assert np.all(Uc >= 0)
-    np.add.at(B, (Ur, Uc), Uv.astype(np.uint32))       # no duplicates in CSR, but keep it exact
-    B %= p
     TU = sparse.csr_matrix((R.data[~inS].astype(np.int32), (Ur, Uc)), shape=(nS, nU), dtype=np.int32); TU.sort_indices()
-    return T, dinv, B, TU
+    return T, dinv, TU
 
 
 def trisolve(T, dinv, B, p):
@@ -167,18 +163,23 @@ def spmm_mod(A, X, p):
     return Y
 
 
-def matmul_mod(A, B, p):
-    """(A @ B) mod p for int64 arrays with entries in [0, p), p < 2^31, inner
-    dimension < 2^21: 16-bit limb split, each partial product exact in float64."""
-    A = np.asarray(A, dtype=np.int64) % p; B = np.asarray(B, dtype=np.int64) % p
+def matmul_mod(A, B, p, blk=64):
+    """(A @ B) mod p for arrays with entries in [0, p), p < 2^31, inner dimension
+    < 2^21: 16-bit limb split, each partial product exact in float64; B is taken
+    in column blocks so its float64 limbs never exceed a block."""
+    A = np.asarray(A, dtype=np.int64) % p
     assert A.shape[1] < (1 << 21)
     Alo = (A & 0xFFFF).astype(np.float64); Ahi = (A >> 16).astype(np.float64)
-    Blo = (B & 0xFFFF).astype(np.float64); Bhi = (B >> 16).astype(np.float64)
-    ll = (Alo @ Blo); lh = (Alo @ Bhi); hl = (Ahi @ Blo); hh = (Ahi @ Bhi)
-    ll = ll.astype(np.int64) % p; lh = lh.astype(np.int64) % p; hl = hl.astype(np.int64) % p; hh = hh.astype(np.int64) % p
-    mid = ((lh + hl) % p) * 65536 % p
-    top = (hh * ((1 << 32) % p)) % p
-    return (ll + mid + top) % p
+    out = np.zeros((A.shape[0], B.shape[1]), dtype=np.int64)
+    for c0 in range(0, B.shape[1], blk):
+        Bc = np.asarray(B[:, c0:c0 + blk], dtype=np.int64) % p
+        Blo = (Bc & 0xFFFF).astype(np.float64); Bhi = (Bc >> 16).astype(np.float64)
+        ll = (Alo @ Blo).astype(np.int64) % p; lh = (Alo @ Bhi).astype(np.int64) % p
+        hl = (Ahi @ Blo).astype(np.int64) % p; hh = (Ahi @ Bhi).astype(np.int64) % p
+        mid = ((lh + hl) % p) * 65536 % p
+        top = (hh * ((1 << 32) % p)) % p
+        out[:, c0:c0 + blk] = (ll + mid + top) % p
+    return out
 
 
 def check_kernel_mat(E, K, p, chunk=16):
@@ -194,27 +195,6 @@ def check_kernel_mat(E, K, p, chunk=16):
     return True
 
 
-def rank_tall(K, p, seed=20260908, extra=32):
-    """rank mod p of a tall (n x a) matrix: first a random sparse +-1 projection
-    to (a + extra) rows (rank(Q K) <= rank K, so attaining a is a proof of
-    rank a), then the exact flint rank only if the projection fell short."""
-    K = np.asarray(K, dtype=np.int64) % p
-    n, a = K.shape
-    if a == 0: return 0
-    if n <= a + extra:
-        return rank_mod_p(K, p)
-    rng = np.random.default_rng(seed + n + a)
-    m = a + extra; per = 8
-    cols = np.repeat(np.arange(n), per); rws = rng.integers(0, m, size=n * per)
-    sg = rng.choice(np.array([-1, 1], dtype=np.int64), size=n * per)
-    Q = sparse.csr_matrix((sg, (rws, cols)), shape=(m, n), dtype=np.int64)
-    # |Q K| entries: sums of at most 8n/m terms below 2^31 -- exact in int64 for n < 2^31
-    QK = (Q @ K) % p
-    r = rank_mod_p(QK, p)
-    if r == a: return a
-    return rank_mod_p(K, p)
-
-
 def rank_mod_p(M, p):
     M = np.asarray(M, dtype=np.int64) % p
     if M.size == 0: return 0
@@ -228,57 +208,119 @@ def nullspace_mod_p(M, p):
     return np.array([[int(X[i, j]) for i in range(n)] for j in range(nul)], dtype=np.int64).reshape(nul, n)
 
 
-def hybrid_kernel(E, nc, p, a_expect, cov, seed=20260908, extra=64, nproj=8, retries=4, verbose=True, tag=''):
+def rank_tall(K, p, seed=20260908, extra=32, exact_cap=30_000_000):
+    """rank mod p of a tall (n x a) matrix K, exactly: a random sparse +-1
+    projection Q with a + extra rows gives r = rank(Q K) <= rank K; if r = a
+    that is a proof.  Otherwise the kernel C of Q K (a - r vectors) is checked
+    exactly on K: K C = 0 exhibits nullity(K) >= a - r, so rank K <= r, hence
+    rank K = r.  If the check fails (the projection lost rank) it is repeated
+    with more rows; the dense flint rank is the last resort for small K."""
+    n, a = K.shape
+    if a == 0: return 0
+    if n <= a + extra:
+        return rank_mod_p(np.asarray(K, dtype=np.int64), p)
+    rng = np.random.default_rng(seed + n + a)
+    m = a + extra
+    for attempt in range(4):
+        per = 8 + 4 * attempt
+        cols = np.repeat(np.arange(n), per); rws = rng.integers(0, m, size=n * per)
+        sg = rng.choice(np.array([-1, 1], dtype=np.int64), size=n * per)
+        Q = sparse.csr_matrix((sg, (rws, cols)), shape=(m, n), dtype=np.int64)
+        QK = np.zeros((m, a), dtype=np.int64)
+        for c0 in range(0, a, 64):                         # |Q K| entries: sums of < 2^31 terms, exact in int64
+            QK[:, c0:c0 + 64] = (Q @ np.asarray(K[:, c0:c0 + 64], dtype=np.int64)) % p
+        r = rank_mod_p(QK, p)
+        if r == a: return a
+        C = nullspace_mod_p(QK, p)                          # (a - r) x a combos: Q K c = 0
+        assert C.shape[0] == a - r
+        okv = True
+        for r0 in range(0, n, 200_000):
+            blkK = np.asarray(K[r0:r0 + 200_000], dtype=np.int64) % p
+            if np.any(matmul_mod(blkK, C.T % p, p)):
+                okv = False; break
+        if okv: return r
+        m += a + extra
+    if n * a <= exact_cap:
+        return rank_mod_p(np.asarray(K, dtype=np.int64), p)
+    raise RuntimeError(("rank_tall: projection lost rank four times", n, a))
+
+
+def hybrid_kernel(E, nc, p, a_expect, cov, seed=20260908, extra=64, nproj=8, retries=4, verbose=True, tag='',
+                  ublock=None, vblock=64, mem_x=1.0e9):
     """the exact mod-p kernel of E (nc columns) through the cover `cov`.
-    Returns (K (nc x a int64, verified E K = 0), info)."""
+    Returns (K (nc x a uint32, verified E K = 0), info).  X = T^{-1} R_1[:, U] is
+    never held whole: it is formed in column blocks of U (`ublock`, sized so a
+    block is at most `mem_x` bytes), each block's Schur columns projected and
+    discarded; the kernel is lifted in blocks of `vblock` vectors."""
     t0 = time.time()
     E = E.tocsr(); E.sort_indices()
     rows = cov['rows']; S = cov['S']; U = cov['U']
     nS, nU = len(S), len(U)
     colS = np.full(nc, -1, dtype=np.int32); colS[S] = np.arange(nS, dtype=np.int32)
     colU = np.full(nc, -1, dtype=np.int32); colU[U] = np.arange(nU, dtype=np.int32)
-    T, dinv, B, TU = _split_rows(E, rows, colS, colU, p)
+    T, dinv, TU = _split_rows(E, rows, colS, colU, p)
+    TUc = TU.tocsc()
     t1 = time.time()
-    X = trisolve(T, dinv, B, p)                                 # nS x nU
-    t2 = time.time()
+    mem_x = float(os.environ.get('S71_MEM_X', mem_x))
+    if ublock is None:
+        ublock = nU if 4.0 * nS * nU <= mem_x else max(32, int(mem_x / (4.0 * nS)))
+    nblocks = (nU + ublock - 1) // ublock if nU else 0
     mask = np.ones(E.shape[0], dtype=bool); mask[rows] = False
     Fo = E[np.nonzero(mask)[0]].tocsr(); Fo.sort_indices()
     indptr = Fo.indptr.astype(np.int64); indices = Fo.indices.astype(np.int32); data = (Fo.data % p).astype(np.uint32)
     info = dict(nS=int(nS), nU=int(nU), excess=int(nU - a_expect), nnzT=int(T.nnz), rows_other=int(Fo.shape[0]),
-                order=cov.get('order'), cover_stats=cov.get('stats'), attempts=[])
+                order=cov.get('order'), cover_stats=cov.get('stats'), ublock=int(ublock), nblocks=int(nblocks), attempts=[])
     m = nU + extra
     K = None
     for attempt in range(retries):
+        ta = time.time(); t_solve = 0.0; t_schur = 0.0
         G = np.zeros((m, nU), dtype=np.uint32)
-        rc = lib().schur_project(Fo.shape[0], _ptr(indptr), _ptr(indices), _ptr(data), _ptr(colS), _ptr(colU),
-                                 _ptr(X), nU, m, _ptr(G), p, np.uint64(seed + 7919 * attempt + p % 1000), nproj)
-        assert rc == 0, ("schur_project", rc)
+        pseed = np.uint64((seed + 7919 * attempt + p % 1000) % (1 << 63))
+        for b0 in range(0, nU, ublock):
+            b1 = min(nU, b0 + ublock); blk = b1 - b0
+            ts = time.time()
+            Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+            trisolve(T, dinv, Bb, p)                                                                     # X block
+            t_solve += time.time() - ts; ts = time.time()
+            colUb = np.full(nc, -1, dtype=np.int32); colUb[U] = -2; colUb[U[b0:b1]] = np.arange(blk, dtype=np.int32)
+            Gb = np.zeros((m, blk), dtype=np.uint32)
+            rc = lib().schur_project(Fo.shape[0], _ptr(indptr), _ptr(indices), _ptr(data), _ptr(colS), _ptr(colUb),
+                                     _ptr(Bb), blk, m, _ptr(Gb), p, pseed, nproj)
+            assert rc == 0, ("schur_project", rc)
+            G[:, b0:b1] = Gb
+            del Bb, Gb, colUb
+            t_schur += time.time() - ts
         t3 = time.time()
         yU = nullspace_mod_p(G.astype(np.int64), p)              # nul x nU
         nul = yU.shape[0]
+        del G
         t4 = time.time()
-        # lift: y_S = -T^{-1} (TU y_U)
-        yUt = np.ascontiguousarray(yU.T.astype(np.uint32))         # nU x nul
-        w = spmm_mod(TU, yUt, p)                                   # nS x nul
-        w = np.ascontiguousarray(((p - w.astype(np.int64)) % p).astype(np.uint32))
-        yS = trisolve(T, dinv, w, p)                               # nS x nul
-        Kc = np.zeros((nc, nul), dtype=np.int64)
-        Kc[S] = yS.astype(np.int64); Kc[U] = yUt.astype(np.int64)
-        ok = check_kernel_mat(E, Kc, p)
+        # lift in blocks of vectors: y_S = -T^{-1} (TU y_U)
+        Kc = np.zeros((nc, nul), dtype=np.uint32)
+        ok = True
+        for v0 in range(0, nul, vblock):
+            v1 = min(nul, v0 + vblock)
+            yUt = np.ascontiguousarray(yU[v0:v1].T.astype(np.uint32))       # nU x vb
+            w = spmm_mod(TU, yUt, p)                                         # nS x vb
+            w = np.ascontiguousarray(((p - w.astype(np.int64)) % p).astype(np.uint32))
+            yS = trisolve(T, dinv, w, p)
+            Kc[S, v0:v1] = yS; Kc[U, v0:v1] = yUt
+            if not check_kernel_mat(E, Kc[:, v0:v1].astype(np.int64), p): ok = False
         t5 = time.time()
         rk = rank_tall(Kc, p) if nul else 0
         info['attempts'].append(dict(attempt=attempt, m=int(m), nproj=int(nproj), projected_nullity=int(nul), verified=bool(ok),
-                                     rank=int(rk), secs=dict(split=round(t1 - t0, 1), trisolve=round(t2 - t1, 1), schur=round(t3 - t2, 1),
-                                                             nullspace=round(t4 - t3, 1), lift_verify=round(t5 - t4, 1))))
+                                     rank=int(rk), secs=dict(split=round(t1 - t0, 1), trisolve=round(t_solve, 1), schur=round(t_schur, 1),
+                                                             nullspace=round(t4 - t3, 1), lift_verify=round(t5 - t4, 1), rank=round(time.time() - t5, 1))))
         if verbose:
-            log(f"    hybrid{tag} p={p} attempt {attempt}: |S|={nS} |U|={nU} (a={a_expect}, excess {nU - a_expect}) m={m} "
-                f"projected nullity {nul}, verified={ok}, rank {rk} [split {t1-t0:.1f}s trisolve {t2-t1:.1f}s schur {t3-t2:.1f}s "
-                f"null {t4-t3:.1f}s lift {t5-t4:.1f}s]")
+            log(f"    hybrid{tag} p={p} attempt {attempt}: |S|={nS} |U|={nU} (a={a_expect}, excess {nU - a_expect}) m={m} blocks {nblocks}x{ublock} "
+                f"projected nullity {nul}, verified={ok}, rank {rk} [split {t1-t0:.1f}s trisolve {t_solve:.1f}s schur {t_schur:.1f}s "
+                f"null {t4-t3:.1f}s lift {t5-t4:.1f}s rank {time.time()-t5:.1f}s]")
         if ok and nul == a_expect and rk == a_expect:
             K = Kc; break
         if nul < a_expect:
             raise RuntimeError(("hybrid: projected nullity below a -- impossible if a is right", nul, a_expect))
-        m += nU + extra; nproj += 4; t2 = time.time()
+        del Kc
+        m += nU + extra; nproj += 4
     if K is None:
         raise RuntimeError(("hybrid: projection retries exhausted", tag, p, info))
     info['secs'] = round(time.time() - t0, 1)

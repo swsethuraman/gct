@@ -142,9 +142,9 @@ def measure_cell(lam, delta, a_given=None, hpad=None, bound=40, npts=None, paral
     _SHARED['B'] = B; _SHARED['red'] = red; _SHARED['cov'] = cov
     jobs = [(p, opts) for p in PRIMES]
     nU = nc - cov['size']
-    mem_x = 4.0 * cov['size'] * nU
+    mem_x = min(4.0 * cov['size'] * nU, 1.0e9) + 4.0 * nc * a      # one X block (capped) + the uint32 kernel
     out['pred_mem_x_bytes'] = int(mem_x)
-    if parallel and 2 * mem_x < 2.5e9:
+    if parallel and 2 * mem_x < 3.0e9:
         import multiprocessing as mp
         with mp.get_context('fork').Pool(2) as pool:
             res = pool.map(_prime_job, jobs)

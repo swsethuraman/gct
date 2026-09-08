@@ -69,6 +69,7 @@ int schur_project(int64_t nrows, const int64_t *indptr, const int32_t *indices,
             if (!v) continue;
             int32_t u = colU[c];
             if (u >= 0) { s[u] = (uint32_t)((s[u] + v) % p); any = 1; continue; }
+            if (u == -2) { any = 1; continue; }          /* a U column outside this block */
             int32_t j = colS[c];
             if (j < 0) { free(s); return -4; }
             uint64_t nv = p - v;

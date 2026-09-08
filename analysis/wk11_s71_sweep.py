@@ -37,9 +37,9 @@ def predict(q, cal):
     """re-fitted certified cost (results/s71_cost_refit.json) and the hybrid's memory per prime"""
     n = q['n_chi_census']; a = q['a']; N = q['N_S']; d = q['delta']
     nnz = cal['rho'] * n; U = a + cal['f'] * n
-    mem = 4.0 * n * U
+    mem = min(4.0 * n * U, 1.0e9) + 4.0 * n * a            # one X block (capped, blocked over U) + the uint32 kernel, per prime
     tb = cal['c_b'] * N * d; tc = cal['c_c'] * nnz * 5; th = cal['c_h'] * nnz * U + cal['c_v'] * nnz * a
-    te = cal.get('c_e', 2.7e-8) * 3 * (a + 8) * N * d * (1 if 2 * mem < 2.5e9 else 2)
+    te = cal.get('c_e', 2.7e-8) * 3 * (a + 8) * N * d * (1 if 2 * mem < 3.0e9 else 2)
     tr = cal.get('c_r', 1e-9) * 3 * (a + 8) * n * a
     return tb + tc + th + te + tr, mem
 
@@ -85,8 +85,8 @@ if __name__ == '__main__':
         if pred > remaining:
             log(f"rank {q['rank']} {q['lam']} d{q['delta']}: predicted {pred:.0f}s exceeds the remaining budget {remaining:.0f}s; sweep ends (rule 5)")
             break
-        if q['pred_route'] == 'beyond' or mem > 5e9:
-            log(f"rank {q['rank']} {q['lam']}: beyond reach by the pre-registered memory bound ({mem/1e9:.1f} GB); sweep ends")
+        if q['N_S'] * q['delta'] > 2.0e8:
+            log(f"rank {q['rank']} {q['lam']}: beyond reach of the build in this container (N_S*delta = {q['N_S']*q['delta']:.2e} > 2e8); sweep ends")
             break
         bound = int(min(max(10 * pred, 1200), 4 * 3600))
         tag = '_'.join(map(str, q['lam'])) + f"_d{q['delta']}"
