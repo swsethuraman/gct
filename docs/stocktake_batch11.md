@@ -167,8 +167,19 @@ that, because the *reduced* matrix already has `nnz ≈ N_S` (the fit
 and the solve untouched.
 
 s69's `i_det(12) = 0` is also the first measurement ever made on the `n = 4` LMR
-ladder, and it is consistent: Lemma L makes `i_det` non-decreasing and
-`i_det(24) = 1`, so zero at the bottom is what a correct instrument returns.
+ladder, and it is consistent: Lemma L makes `i_det` non-decreasing and LMR gives
+`i_det(24) ≥ 1`, so zero at the bottom is what a correct instrument returns.
+
+> **Corrected 2026-09-08.**  This paragraph first read `i_det(24) = 1`.  That
+> equality is *not* banked — LMR gives only `i_det(24) ≥ 1`, equivalently
+> `mult_det ≤ 273`, and the equality needs a certified lower bound
+> `rank T_det ≥ 273`.  The consistency argument here needs only the inequality,
+> so nothing in this section changes.  What does change is elsewhere: the
+> batch-11 C3 line that read "`rank S < 274` ⟹ `i_pad ≥ 1`, which with
+> `i_det = 1` gives `D ≤ 0`" leaned on the equality and is withdrawn.  See
+> `docs/batch12_integrator_note1.md` §1 for the economy that follows —
+> the determinant side never needs the 274th vector, and the one it may skip is
+> the last-born direction at `δ = 24`.
 
 ---
 

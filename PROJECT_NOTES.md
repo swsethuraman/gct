@@ -85,6 +85,36 @@ THREAD 2 IN TEN LINES
     B_delta, C_delta and the DAG counts, all computed by characteristic-zero
     plethysm.  It is legitimate exactly when p > |lambda|.  CONSTRAINT: no prime
     below 97 anywhere in the S5 route, at any delta, however tempting for speed.
+  THE WEIGHT-13 STABLE CENSUS, RECOUNTED (integrator, batch 12 pre-batch).  The
+    review of S4 asked that the "47 weight-13 shapes" figure be recounted rather
+    than inherited, having got 46.  Recounted exhaustively here: 57 partitions of
+    13 into at most 5 parts, of which TEN have a_inf = 0, not eleven, leaving 47
+    with a nonempty stable block.  The record's 47 stands.  S4's substantive
+    correction is confirmed and untouched: there are FOUR tails with a_inf = 1,
+    not three -- (7,2,2,1,1), (5,5,1,1,1), (5,3,3,2), (5,3,3,1,1) -- and
+    (5,3,3,2) is the one no session of either batch had tested; it was run in
+    batch 11 and is dead, so a_inf <= 3 is closed on ELEVEN blocks.  New and
+    load-bearing for the successor session: the first open frontier a_inf = 4 is
+    exactly FIVE blocks, and 36 of the 47 have a_inf >= 4.  Engine
+    `analysis/wk12_int_w13_census.py`, result `results/wk12_int_w13_census.json`.
+  THE TWO CERTIFIERS AGREE (integrator, batch 12 pre-batch -- the certification
+    debt).  s71's hybrid says of itself that it re-implements s67's initial-term
+    certifier "from its record" -- from the report, not the code, because s71
+    branched before s67 was merged.  Compared here, line for line and then
+    empirically.  Line for line: s67 takes each row's MAXIMUM-key column as its
+    lead, s71 each row's MINIMUM-position column; the two are the same object
+    under pos = (nc-1) - key, and both families of orders are closed under
+    reversal, so neither searches a better family.  Real but harmless
+    differences: s67 tries more random orders, so its best cover can only be at
+    least s71's; s71 additionally picks the sparsest row per lead and returns the
+    covered/uncovered split, which its Schur residual needs.  Neither reverses
+    the inequality -- both certify rank >= d only, and a shortfall is
+    uninformative in both.  Empirically: 40 comparisons, five cells, EVERY ORDER
+    agreeing exactly, not merely the maxima.  Corroborates s71's headline as a
+    side effect -- the cover reaches 99.4% to 99.9% of n_chi on these cells, so
+    the exact residual really is the small part.  Engine
+    `analysis/wk12_int_certifier_compare.py`, result
+    `results/wk12_int_certifier_compare.json`.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
     and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs
@@ -1273,6 +1303,14 @@ tree; two rebuilt banked machinery and one of those rebuilds was never compared
 against the original.  The check is being fixed to key on the tree rather than on
 whether the worker feels blocked, and the integrator now verifies the push by
 ls-remote before briefs go out.
+
+PUSHED 2026-09-08.  origin/main = c984e2c6d59ba0bbc6ac2fdd113edf920a8aebd9,
+verified by `git ls-remote origin refs/heads/main` from the owner's machine and
+independently from the integrator container.  The durable clone at
+Projects\work was re-cloned fresh from GitHub first and fast-forwarded, so it
+matches origin exactly; the pre-rewrite snapshot at Projects\work-preRewrite
+(5496a55e) is untouched.  Batch-12 workers clone a tree that contains batch 11 --
+the first batch since the programme began for which that is true.
 
 RECONCILED WITH THE REASONING SIDE (2026-09-08 late): the batch-12 board is now
 the MERGED one in `docs/batch12_integrator_note1.md` section 7 -- six Claude

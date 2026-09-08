@@ -284,15 +284,15 @@ Against the roadmap's §0, so nothing is assumed:
 | reconcile the verifier family-name difference | **done** — s73's appended `permanent_pencil` adopted; my inserted `permanent` was a latent defect (it shifted fresh-point seed offsets) and s73 caught it |
 | verifier extensions in the base commit | **done** — 1,082 certificates, six kinds, all schema-valid, self-test passing |
 | plan, stock-take, P0-A artefacts in the base commit | **done** |
-| reconcile the duplicated s67 / s71 certifier code | **not done** — two `sparse_nullity` dialects are *accepted*, not *unified*; the two certifier implementations have never been compared line for line; `split_rank` and `hybrid_kernel` report RECORDED, not re-derived |
-| mark `i_det(24) = 1` OPEN pending rank 273 | **doing now** (§1) |
+| reconcile the duplicated s67 / s71 certifier code | **comparison done** — see the addendum below; what remains is unifying the two `sparse_nullity` dialects and deciding whether `split_rank` / `hybrid_kernel` can be made re-derivable |
+| mark `i_det(24) = 1` OPEN pending rank 273 | **done** — `PROJECT_NOTES.md`, and `docs/stocktake_batch11.md` §s69 carries the correction inline |
 | birth-profile first entry `a₁₂ = 2` | **done in batch 11** (`docs/lmr_cell.md` §6; old sequence summed to 283 against `a₂₄ = 274`) |
-| stable missing tail `(5,3,3,2)` | to record |
-| weight-13 nonzero-block total flagged for recount | to record |
+| stable missing tail `(5,3,3,2)` | **done** — banked with the recount below |
+| weight-13 nonzero-block total flagged for recount | **recounted, not flagged** — see the addendum; 47 stands |
 | independent `B₂₄` re-derivation | **not done** — needs a second engine |
 | weighted DAG economics | **superseded** — `C_δ` (§3) is the sharper form of the same question, and `C₁₂` is exact |
 | freeze the three-outcome table | adopt the roadmap's four-outcome §6 as is |
-| **push `origin/main`** | **not done, and it blocks the batch** |
+| **push `origin/main`** | **done 2026-09-08** — `origin/main` = `c984e2c`, verified by `ls-remote` from both sides |
 
 The certifier debt is the one item I would not leave in pre-batch — but the
 reason two sessions rebuilt banked machinery was the unpushed tree, not the
@@ -360,3 +360,71 @@ stopping rule much better.
    `hybrid_kernel` can be made re-derivable.
 5. Write the twelve briefs against the merged board, with the four-outcome
    decision table and the "do not fund" list attached to all of them.
+
+
+---
+
+## Addendum — two items closed while the push was going through
+
+### The certifier debt: the two implementations agree
+
+s71's hybrid says of itself that it re-implements s67's initial-term certifier
+"from its record" — from the report, not the code, because s71 branched before
+s67 was merged.  Two independent implementations of the same rank lower bound,
+never compared.  Compared now, both ways.
+
+**Line for line.**  s67 (`wk10_s67_degeneration.leading_columns`) takes each
+row's **maximum-key** column as its lead; s71 (`wk11_s71_hybrid.cover`) takes
+each row's **minimum-position** column.  These are the same object under
+`pos = (nc − 1) − key`: row by row, `argmin(pos) = argmax(key)`, so the leads
+agree and so do the counts.  Both order families are closed under reversal —
+s67 tries `arange` and its reverse, column-support ascending and descending, and
+random; s71 tries natural, reversed, fill-ascending, fill-descending, and one
+random — so neither searches a better family in principle.  Two differences are
+real and neither is a defect: s67 tries more random orders, so its best cover
+can only be ≥ s71's; and s71 additionally picks the sparsest row per lead and
+returns the covered/uncovered column split, which its Schur residual needs but
+which cannot change the count.  Neither reverses the inequality: both certify
+`rank ≥ d` only, and a shortfall is uninformative in both.
+
+**Empirically** (`analysis/wk12_int_certifier_compare.py`): 40 comparisons over
+five cells, agreeing **on every individual order**, not merely at the maximum.
+
+A side effect worth keeping: on those five cells the cover reaches 99.4% to
+99.9% of `n_χ` (521/524, 728/736, 4558/4562, 4956/4978, 9730/9738).  That is
+s71's headline — the exact residual is the small part — corroborated on an
+instrument that is not s71's.
+
+What remains of the debt for s78: unify the two `sparse_nullity` dialects into
+one, and decide whether `split_rank` and `hybrid_kernel` can be made
+re-derivable rather than RECORDED.
+
+### The weight-13 count: recounted, and the record was right
+
+The roadmap's §0.2 asks that the weight-13 nonzero-block total be marked for
+recount before publication, the batch-11 review having got 46 against the
+record's 47.  It is cheap enough to settle rather than flag
+(`analysis/wk12_int_w13_census.py`, seconds):
+
+    57 partitions of 13 into at most 5 parts
+    10 with a_∞ = 0   (not 11)
+    47 with a nonempty stable block   ← the record's figure stands
+
+The review's substantive correction is confirmed and untouched: there are
+**four** tails with `a_∞ = 1`, not three — `(7,2,2,1,1)`, `(5,5,1,1,1)`,
+`(5,3,3,2)`, `(5,3,3,1,1)` — and `(5,3,3,2)` is the one no session of either
+batch had tested.  It was tested in batch 11 and is dead, so `a_∞ ≤ 3` is closed
+on eleven blocks.
+
+One new number falls out that neither board had, and it bears directly on the
+contention in §7.  The full distribution gives
+
+    a_∞ ≤ 3 : 11 blocks   (all closed)
+    a_∞ = 4 :  5 blocks   ← the first open frontier
+    a_∞ ≥ 4 : 36 blocks
+
+So the stable frontier session is a **five-block test**, not a census.  That is
+small enough that it no longer needs to compete with the adversarial audit for
+the last theory slot — it can ride along inside the successor session (T5),
+which is already asking what the programme does outside LMR.  I withdraw the
+contention on that basis and take both.
