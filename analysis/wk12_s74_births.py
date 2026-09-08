@@ -48,8 +48,9 @@ from flint import nmod_mat                                               # noqa:
 from wk8_s30_core import P1, P2, exps                                    # noqa: E402
 from wk11_s69_circuit import (Filling, random_filling, sym_table,        # noqa: E402
                               symbols_from_coeffs, generic_point,
-                              dp_eval_c, fast_eval_c, rank_mod)
+                              fast_eval_c, rank_mod)
 from wk12_s74_sampler import random_filling_ones_first                   # noqa: E402
+from wk12_s74_dp import dp_eval_compact                                  # noqa: E402
 
 N, H, N2 = 4, 9, 15
 BIRTH = {12: 2, 13: 37, 14: 54, 15: 52, 16: 43, 17: 31, 18: 22,
@@ -85,8 +86,11 @@ def u0_points(p, K):
 
 
 def ev(F, msym, p):
+    """the compact-state DP (wk12_s74_dpc.c, validated entry for entry against the
+    s69 evaluator); the mixed-discriminant evaluator only if the pathwidth is out
+    of range."""
     try:
-        return dp_eval_c(F, msym, p, TAB) % p
+        return dp_eval_compact(F, msym, p, TAB) % p
     except Exception:                                        # noqa: BLE001
         return fast_eval_c(F, msym, p, TAB) % p
 

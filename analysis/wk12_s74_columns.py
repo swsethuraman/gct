@@ -39,7 +39,8 @@ sys.path.insert(0, HERE)
 
 from wk8_s30_core import P1, P2, exps, restrict, det_form, per_form, per_padded   # noqa: E402
 from wk11_s69_circuit import (Filling, sym_table, symbols_from_coeffs,          # noqa: E402
-                              dp_eval_c, fast_eval_c, rank_mod)
+                              fast_eval_c, rank_mod)
+from wk12_s74_dp import dp_eval_compact                                          # noqa: E402
 
 N, H, N2, TOP = 4, 9, 15, 24
 BIRTH = {12: 2, 13: 37, 14: 54, 15: 52, 16: 43, 17: 31, 18: 22,
@@ -62,8 +63,11 @@ def log(*a):
 
 
 def ev(F, msym, p):
+    """the compact-state DP (wk12_s74_dpc.c, validated entry for entry against the
+    s69 evaluator); the mixed-discriminant evaluator only if the pathwidth is out
+    of range."""
     try:
-        return dp_eval_c(F, msym, p, TAB) % p
+        return dp_eval_compact(F, msym, p, TAB) % p
     except Exception:                                        # noqa: BLE001
         return fast_eval_c(F, msym, p, TAB) % p
 
