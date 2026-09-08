@@ -90,3 +90,32 @@ refused at `n ≠ 4`) and is never a substitute for it.  `n = 4` behaviour is
 unchanged and the existing corpus re-verifies.  First `n = 3` certificates:
 `results/certs/19_7_2_2_2_2_2_d12_n3_permanent_p*.json.gz`, the permanent half
 of the `D = +1` at `(19,7,2⁵)₁₂`, both `RECORDED`.
+
+
+## Batch 11: the corpus, and what the merge did to it
+
+**1 082 certificates, six kinds, all schema-valid**, and the self-test passes:
+`hwv`, `matrix`, `full_rank`, `sparse_nullity`, and — registered at the
+batch-11 merge — `split_rank` (session 70) and `hybrid_kernel` (session 71).
+`tools/verify/FORMAT.md` carries the two new schemas.
+
+**Compliance was much better than batch 10's.**  Session 73 shipped 46
+certificates for its `D`-ladder and all 46 pass; session 71 shipped 302
+`hybrid_kernel` records; session 70 shipped three `split_rank` records.  The
+gap batch 10 recorded — sessions 63, 64 and 66 shipping none — has no batch-11
+equivalent.
+
+**Two things the merge had to reconcile, both caused by the tree not being
+pushed.**  Session 73 wrote a second dialect of `sparse_nullity` and a second
+`n ∈ {3,4}` extension, and session 71 re-implemented session 67's certifier,
+because neither could see the merged tree.  Both dialects are now accepted with
+no check weakened; unifying them to one is session 78's job.  The unpadded
+family is named `permanent_pencil` and **appended** to `FAMILIES`, which is
+session 73's naming and ordering, not the integrator's first version — inserting
+it in the middle shifts the fresh-point seed offsets of every later family.
+
+**Recorded honestly:** `split_rank` and `hybrid_kernel` report `RECORDED`, not
+`PASS`.  Their cells, fields and the internal consistency of every claim are
+checked; the ranks themselves are not re-derived, because each needs the cell's
+build — and for `split_rank`, the quartic source session 70 proved the
+construction requires.

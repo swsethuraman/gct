@@ -34,13 +34,37 @@ THREAD 2 IN TEN LINES
     separation it certifies is available by a dimension count (59 > 47), so the
     content is the certificate, not the statement: it is the programme's first
     positive control, and the first end-to-end D > 0 its machinery has produced.
-  THE BOTTLENECK, stated once: dim M_lambda = 274, and every construction the
-    programme owns realises M_lambda as a kernel inside a carrier of size at
-    least 10^7.  Not the rank, not the target, not the field.  And the ladder
-    does NOT thin downward -- the carrier is at 16 per cent of full size where
-    the multiplicity is 2 (delta = 12) and 89 per cent by delta = 16 -- so the
-    pathology belongs to the wreath symmetry and its realisations, not to the
-    degree.  dim M_lambda << the size of every known realisation of M_lambda.
+  THE BOTTLENECK IS GONE (batch 11).  It was: dim M_lambda = 274, and every
+    construction the programme owned realised M_lambda inside a carrier of size
+    at least 10^7.  Batch 11 produced TWO independent realisations that are
+    small, neither touching the carrier.
+      (a) A bracket-contraction circuit (session 69).  A highest-weight vector
+          is a contraction network -- one antisymmetriser per column, one
+          polarised copy of the form per letter -- and one is EVALUATED at the
+          goal cell in 0.13 s, against 14.4 TB and 415 days to build one in
+          coordinates.  Its ideal vector reproduces the banked n = 3 control
+          entry for entry, 0 mismatches in all 17,047 coordinates, equal up to
+          sign over Z.  Residue: enumerating a spanning basis, priced at 12-15
+          CPU-hours.
+      (b) A one-block recursion (Sol S5).  M_lambda is the +1 eigenspace of a
+          single block swap on a precursor assembled from at most twelve
+          horizontal-4-strip predecessors.  Measured here: the precursor is 31
+          dimensional at the bottom rung and B_24 = 2168 at the goal cell,
+          against carriers of 5.1e6 and 3.1e7 -- compressions of 165,000x and
+          14,300x -- and the whole memoised recursion touches 7,656 distinct
+          shapes.  The computation checks itself: one of the twelve predecessors
+          is the goal cell's own ladder predecessor and its multiplicity must
+          come back as the banked 273, which it does.
+    So the wall was a property of the coordinates, not of the object.  What
+    remains is BASIS ENUMERATION: every multiplicity at the goal cell is a rank
+    on the same 274 x K evaluation matrix, cheap once 274 spanning vectors
+    exist.
+  THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
+    ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
+    and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs
+    measured anyway, agreeing everywhere; 46 certificates, 46 pass.  And by the
+    same argument at n = 4, once D(24) is known it is known at every delta >= 24:
+    the n = 4 question is one cell, not a ladder.
   PROVED AND BANKED: the ladder theorem and Lemma L (s57); Theorem P; the
     stable-multiplicity Proposition S; the h_pad Pieri identity, proved via
     Kempf collapsing (s42); the contact-order lemma (s66); the specialisation
@@ -51,10 +75,14 @@ THREAD 2 IN TEN LINES
   CERTIFICATION: 264 algorithmic claims machine-checkable under
     `tools/verify/` (`gct-cert/1`); the verifier accepts n in {3,4} since batch
     11, and the first n = 3 certificate is banked.
-  OPEN: i_det and i_pad at LMR, hence D there; R_5 not inside D_5, which needs
-    the upper bound over the NORMAL CONE, not the reduced singular locus, and
-    whose residue is four named loci; m_0(6) >= 14 (44 of 47 weight-13 shapes
-    need ranks); a row-efficient replication operator.
+  OPEN: i_det and i_pad at LMR, hence D there -- now one basis enumeration
+    away rather than behind a 14 TB wall.  R_5 not inside D_5: session 72 gives
+    dim(D_5 ∩ W) = 31 < 35 on the ENUMERATED normal cone, with all four named
+    residues closed to numbers and the interior an exact Jacobian bound; what
+    remains is completeness of the enumeration.  The stable frontier at
+    a_infinity = 4 (a_infinity <= 3 is closed on eleven weight-13 blocks).  A
+    determinant-specific intertwiner: every standard q = 2 functorial operation
+    is closed (Sol S2).
 
 PROCESS, HARD-WON, DO NOT RELEARN
   Single-writer files -- `paper/det3-conductor.tex`, `paper/det4-onset.tex`,
@@ -1190,7 +1218,24 @@ delivered as a git bundle. Swami merges.
 - Session numbering continues the boundary-deficit log (last: session 10 +
   the grind session of 2026-08-24).
 
-## Roadmap — thread 2 (refreshed 2026-09-08, batch 11 in flight)
+## Roadmap — thread 2 (refreshed 2026-09-08 evening, batch 12 specified)
+
+Batch 12 is sessions 74-79 (Claude) and S1-S6 (Sol), specified in
+`docs/batch12_plan.md`: TWELVE ungated sessions, no gate at all, the first such
+batch since the programme began -- a consequence of the wall falling, not a
+relaxation.  It funds the NEW bottleneck (basis enumeration) three ways, exactly
+as batch 11 funded the old one: sampling (s74), the block-swap recursion (s75),
+and a straightening basis of fillings (Sol S1, the highest-leverage session on
+the board, because it makes the other two unnecessary).
+
+BEFORE ANYTHING: push.  origin/main is still at the batch-10 base commit and
+local main is 65 commits ahead.  Every session of batch 11 cloned the pre-batch
+tree; two rebuilt banked machinery and one of those rebuilds was never compared
+against the original.  The check is being fixed to key on the tree rather than on
+whether the worker feels blocked, and the integrator now verifies the push by
+ls-remote before briefs go out.
+
+## Roadmap — thread 2, batch 11 (superseded, kept for the trail)
 
 Batch 11 is sessions 68–73 (Claude) and S1–S6 (Sol), eleven ungated and one
 partially gated, specified in `docs/batch11_plan.md`.  Its design principle,
