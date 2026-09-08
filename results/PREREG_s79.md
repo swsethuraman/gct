@@ -315,3 +315,12 @@ weight).  On the hybrid `(7,5,4,4,2,2)_8` reproduces s47's `mult = a = 1` in
 
 **A.4 Delivery of Q1/Q3 results.**  `results/s79_cells.jsonl` (quartic),
 `results/s79_per6.jsonl` (cubic), certificates under `results/certs/s79_*`.
+
+**A.5 Deviation noted (Part 1 instrument, §1.3 item 2).**  The kernel is not
+taken by sequential dense intersections but as the exact `python-flint`
+nullspace of `R·E` for a random dense `R` with `nc + 24` rows (entries below
+`2^20`), every vector then re-verified on the sparse `E` and the dimension
+compared with `a_∞`.  `ker(R·E) ⊇ ker_p(E) ⊇ (L mod p)` with `dim(L mod p) = a_∞`,
+so `dim ker(R·E) = a_∞` with every vector verified pins `ker_p(E)` exactly; the
+randomness can only make a run inconclusive (a retry), never unsound.
+Written after Part 1 ran (23:40 UTC), before any Part-1 number is reported.

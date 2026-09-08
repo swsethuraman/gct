@@ -209,7 +209,7 @@ def _prime_job(args):
 
 
 def measure_cell(lam, delta, a_given=None, bound=40, npts=None, parallel=True, verbose=True, certs=None,
-                 keep_kernel=True, seedshift=0):
+                 keep_kernel=True, seedshift=0, fullrank_certs=True):
     lam = tuple(lam); R = len(lam)
     assert sum(lam) == N * delta and all(lam[i] >= lam[i + 1] for i in range(R - 1)) and lam[-1] >= 1
     t0 = time.time()
@@ -339,7 +339,7 @@ def measure_cell(lam, delta, a_given=None, bound=40, npts=None, parallel=True, v
             files.append([os.path.relpath(fn, ROOT), os.path.getsize(fn)])
             # format-verifiable full_rank certificates (kind full_rank, tools/verify) for the full-rank families,
             # with the kernel basis expanded to canonical terms when it is small enough to ship
-            if 'kernel_chi' in r and B['N_S'] * a <= 3_000_000:
+            if 'kernel_chi' in r and B['N_S'] * a <= 3_000_000 and fullrank_certs:
                 basis_terms = [expand_vector(B['arr'], np.array(v, dtype=np.int64), p, R) for v in r['kernel_chi']]
                 for name, variety, recs in (('det', 'det_pencil', [point_record('det_pencil', pt) for pt in det_pts]),
                                             ('pad', 'padded_permanent', [point_record_pad(V) for V in pad_pts]),
@@ -382,7 +382,7 @@ if __name__ == '__main__':
     delta, lam = pos[0], tuple(pos[1:])
     res = measure_cell(lam, delta, a_given=(arg('--a', -1) if '--a' in args else None), bound=arg('--bound', 40),
                        npts=arg('--npts', 0) or None, parallel=('--sequential' not in args), certs=arg('--certs', '') or None,
-                       seedshift=arg('--seedshift', 0))
+                       seedshift=arg('--seedshift', 0), fullrank_certs=('--no-fullrank' not in args))
     print("RESULT " + json.dumps(res), flush=True)
     outp = arg('--out', '')
     if outp:

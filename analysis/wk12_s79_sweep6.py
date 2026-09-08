@@ -37,14 +37,18 @@ def main(argv):
                 r = json.loads(ln); done.add((tuple(r['lam']), r['delta']))
             except Exception:
                 pass
+    deadline = None
+    if until:
+        hh, mm = map(int, until.split(':'))
+        now = datetime.datetime.utcnow()
+        deadline = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+        if deadline <= now: deadline += datetime.timedelta(days=1)
     status_path = os.path.join(ROOT, 'results', 's79_sweep6_status.json')
     status = dict(started=datetime.datetime.utcnow().isoformat(), queue=len(Q), reached=[], skipped_cost=[], not_reached=[], halted=None)
     for rank, c in enumerate(Q, 1):
         key = (tuple(c['lam']), c['delta'])
         if until:
-            hh, mm = map(int, until.split(':'))
-            now = datetime.datetime.utcnow()
-            if (now.hour, now.minute) >= (hh, mm) and now.hour >= hh:
+            if datetime.datetime.utcnow() >= deadline:
                 status['not_reached'].append(dict(rank=rank, lam=c['lam'], delta=c['delta'], NS_delta=c['NS_delta'], reason='wall clock'))
                 continue
         if key in done:
@@ -54,7 +58,7 @@ def main(argv):
             status['skipped_cost'].append(dict(rank=rank, lam=c['lam'], delta=c['delta'], NS_delta=c['NS_delta'], reason='above the build wall'))
             continue
         cmd = ['python3', os.path.join(HERE, 'wk12_s79_cell6.py'), str(c['delta'])] + [str(x) for x in c['lam']] + \
-              ['--out', out, '--certs', certs, '--sequential']
+              ['--out', out, '--certs', certs, '--sequential'] + (['--no-fullrank'] if '--no-fullrank' in argv else [])
         t0 = time.time()
         with open(log_path, 'a') as lf:
             lf.write(f"\n=== rank {rank} {key} N_S*delta {c['NS_delta']} a {c['a']} {datetime.datetime.utcnow().isoformat()}\n"); lf.flush()

@@ -1,0 +1,324 @@
+{
+ "rho": [
+  6,
+  3,
+  3,
+  1,
+  0
+ ],
+ "weight": 13,
+ "a_inf": 4,
+ "raw_weight_space": 1668,
+ "targets": [
+  1048,
+  1420,
+  698,
+  0
+ ],
+ "nnz": 8694,
+ "K_pts": 12,
+ "point_seed": 20260908,
+ "point_bound": 1000000,
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "conventions": {
+  "generators": "y_(d,alpha) = coefficient of s^alpha in the degree-d form, d in {2,3,4}, 5 variables",
+  "raising": "E_{i,i+1} y_(d,alpha) = (alpha_i + 1) y_(d, alpha + e_i - e_{i+1})  (0 if alpha_{i+1} = 0), extended as a derivation",
+  "point": "y_(2,.), y_(3,.), y_(4,.) = coefficients of e_2, e_3, e_4 of det(t I - A(s')), A(s') = sum_k s_k A_k traceless",
+  "source": "analysis/wk10_int_stable_hwv.py + wk10_int_stable_subst.py (batch-10 integrator instrument), unchanged conventions"
+ },
+ "mult_det_inf": 4,
+ "i_det_inf": 0,
+ "primes_agree": true,
+ "status": "PROVED: i_det^inf = 0 (full rank at both primes; one suffices)",
+ "covariance_all_pass": true,
+ "secs": 13.4,
+ "per_prime": {
+  "2147483647": {
+   "nullity": 4,
+   "nullity_eq_a_inf": true,
+   "kernel_rank": 4,
+   "kernel_verified_on_E": true,
+   "mult_det_inf": 4,
+   "i_det_inf": 0,
+   "covariance": {
+    "pencil_seed": 4242,
+    "eps": [
+     1,
+     7,
+     999
+    ],
+    "base": [
+     1646828452,
+     999248520,
+     31517790,
+     2004380317
+    ],
+    "results": {
+     "E_12,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_12,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_12,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ]
+    },
+    "all_pass": true
+   },
+   "negative_control_random": {
+    "raisings_failed": 3,
+    "of": 4,
+    "has_teeth": true
+   },
+   "negative_control_partial": {
+    "rho": [
+     6,
+     3,
+     3,
+     1,
+     0
+    ],
+    "prime": 2147483647,
+    "dropped_raising": "E_34",
+    "three_raising_nullity": 31,
+    "per_raising": {
+     "E_12": {
+      "invariant": [
+       true,
+       true,
+       true
+      ],
+      "expected_invariant": true
+     },
+     "E_23": {
+      "invariant": [
+       true,
+       true,
+       true
+      ],
+      "expected_invariant": true
+     },
+     "E_34": {
+      "invariant": [
+       false,
+       false,
+       false
+      ],
+      "expected_invariant": false
+     }
+    },
+    "control_behaves": true
+   },
+   "secs": 6.5
+  },
+  "2147483629": {
+   "nullity": 4,
+   "nullity_eq_a_inf": true,
+   "kernel_rank": 4,
+   "kernel_verified_on_E": true,
+   "mult_det_inf": 4,
+   "i_det_inf": 0,
+   "covariance": {
+    "pencil_seed": 4242,
+    "eps": [
+     1,
+     7,
+     999
+    ],
+    "base": [
+     230984332,
+     341033202,
+     1727074330,
+     409451321
+    ],
+    "results": {
+     "E_12,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_12,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_12,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_23,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_34,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=1": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=7": [
+      true,
+      true,
+      true,
+      true
+     ],
+     "E_45,eps=999": [
+      true,
+      true,
+      true,
+      true
+     ]
+    },
+    "all_pass": true
+   },
+   "negative_control_random": {
+    "raisings_failed": 3,
+    "of": 4,
+    "has_teeth": true
+   },
+   "negative_control_partial": {
+    "rho": [
+     6,
+     3,
+     3,
+     1,
+     0
+    ],
+    "prime": 2147483629,
+    "dropped_raising": "E_34",
+    "three_raising_nullity": 31,
+    "per_raising": {
+     "E_12": {
+      "invariant": [
+       true,
+       true,
+       true
+      ],
+      "expected_invariant": true
+     },
+     "E_23": {
+      "invariant": [
+       true,
+       true,
+       true
+      ],
+      "expected_invariant": true
+     },
+     "E_34": {
+      "invariant": [
+       false,
+       false,
+       false
+      ],
+      "expected_invariant": false
+     }
+    },
+    "control_behaves": true
+   },
+   "secs": 6.3
+  }
+ }
+}
