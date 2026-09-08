@@ -1,0 +1,234 @@
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_det_kernel_vec0_int.json.gz  (69.1s)  s73: integer highest-weight vector of weight (19, 7, 2, 2, 2, 2, 2) (delta=12, n=3, r=7) in the kernel of the det_pencil evaluation pairing: an element of I(D_7)^HWV not vanishing on P_7
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] vectors parsed — 1 vector(s), supports [240510], integer coefficients
+    [ok  ] vector 0: shape, degree, canonical terms, weight = lambda
+    [ok  ] vector 0: annihilated by every E_(i,i+1) over Z
+    [ok  ] vectors linearly independent — rank 1 over Q (lower bound from primes [1, 1]; equals the count so exact)
+    [ok  ] vanishes at 14 recorded point(s) [det_pencil]
+    [ok  ] evaluation at 14 recorded point(s) [permanent_pencil] has full row rank — rank 1 of 1
+    [ok  ] vanishes at 6 fresh det_pencil points (seed 20260908)
+    [ok  ] evaluation at 6 fresh permanent_pencil points (seed 20260908) has full row rank — rank 1 of 1
+    [ok  ] evaluation at 6 fresh generic points (seed 20260908) has full row rank — rank 1 of 1
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_det_p2147483629_sparse_nullity.json  (10.7s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483629 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17047 vs n_chi 17047, f(0) = 1598420533
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_19_7_2_2_2_2_2_d12_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483629: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_det_p2147483647_sparse_nullity.json  (10.5s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483647 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17047 vs n_chi 17047, f(0) = 1438652706
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_19_7_2_2_2_2_2_d12_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483647: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_fullE_p2147483647_sparse_nullity.json  (10.4s)  s73: nullity_p(E) = 6 = a at p = 2147483647 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): the raising operators on V_chi have kernel of the plethysm dimension
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 6, mult 0
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] variety none: no evaluation rows (the kernel of E alone, nullity = a expected) — 0 points, nullity 6, a 6
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17047 vs n_chi 17047, f(0) = 771177339
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 6, nullity 6
+    [ok  ] conclusion: nullity_p(E) = 6 = a at p = 2147483647: the 6 kernel vectors (an explicit basis of the highest-weight space mod p) are banked as an artefact by the producer and are NOT certified here (a mod-p basis of this size does not fit a certificate); the count is closed by the Berlekamp-Massey record above
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_permanent_p2147483629_sparse_nullity.json  (10.4s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483629 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17047 vs n_chi 17047, f(0) = 1485065476
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483629, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_19_7_2_2_2_2_2_d12_n3_permanent_p2147483647_sparse_nullity.json  (10.1s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483647 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (19, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 36 vs 3*12
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17047 vs n_chi 17047, f(0) = 1812513685
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483647, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_22_7_2_2_2_2_2_d13_n3_det_kernel_vec0_int.json.gz  (70.3s)  s73: integer highest-weight vector of weight (22, 7, 2, 2, 2, 2, 2) (delta=13, n=3, r=7) in the kernel of the det_pencil evaluation pairing: an element of I(D_7)^HWV not vanishing on P_7
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (22, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 39 vs 3*13
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] vectors parsed — 1 vector(s), supports [240510], integer coefficients
+    [ok  ] vector 0: shape, degree, canonical terms, weight = lambda
+    [ok  ] vector 0: annihilated by every E_(i,i+1) over Z
+    [ok  ] vectors linearly independent — rank 1 over Q (lower bound from primes [1, 1]; equals the count so exact)
+    [ok  ] vanishes at 14 recorded point(s) [det_pencil]
+    [ok  ] evaluation at 14 recorded point(s) [permanent_pencil] has full row rank — rank 1 of 1
+    [ok  ] vanishes at 6 fresh det_pencil points (seed 20260908)
+    [ok  ] evaluation at 6 fresh permanent_pencil points (seed 20260908) has full row rank — rank 1 of 1
+    [ok  ] evaluation at 6 fresh generic points (seed 20260908) has full row rank — rank 1 of 1
+PASS        results/certs/s73/s73_22_7_2_2_2_2_2_d13_n3_det_p2147483629_sparse_nullity.json  (11.7s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483629 for lambda = (22, 7, 2, 2, 2, 2, 2), delta = 13 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (22, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 39 vs 3*13
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17306 vs n_chi 17306, f(0) = 1160250683
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_22_7_2_2_2_2_2_d13_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483629: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_22_7_2_2_2_2_2_d13_n3_det_p2147483647_sparse_nullity.json  (11.5s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483647 for lambda = (22, 7, 2, 2, 2, 2, 2), delta = 13 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (22, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 39 vs 3*13
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17306 vs n_chi 17306, f(0) = 1190862143
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_22_7_2_2_2_2_2_d13_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483647: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_22_7_2_2_2_2_2_d13_n3_permanent_p2147483629_sparse_nullity.json  (11.4s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483629 for lambda = (22, 7, 2, 2, 2, 2, 2), delta = 13 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (22, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 39 vs 3*13
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17306 vs n_chi 17306, f(0) = 2051383523
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483629, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_22_7_2_2_2_2_2_d13_n3_permanent_p2147483647_sparse_nullity.json  (11.4s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483647 for lambda = (22, 7, 2, 2, 2, 2, 2), delta = 13 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (22, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 39 vs 3*13
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17306 vs n_chi 17306, f(0) = 1861182039
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483647, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_25_7_2_2_2_2_2_d14_n3_det_kernel_vec0_int.json.gz  (73.5s)  s73: integer highest-weight vector of weight (25, 7, 2, 2, 2, 2, 2) (delta=14, n=3, r=7) in the kernel of the det_pencil evaluation pairing: an element of I(D_7)^HWV not vanishing on P_7
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (25, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 42 vs 3*14
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] vectors parsed — 1 vector(s), supports [240510], integer coefficients
+    [ok  ] vector 0: shape, degree, canonical terms, weight = lambda
+    [ok  ] vector 0: annihilated by every E_(i,i+1) over Z
+    [ok  ] vectors linearly independent — rank 1 over Q (lower bound from primes [1, 1]; equals the count so exact)
+    [ok  ] vanishes at 14 recorded point(s) [det_pencil]
+    [ok  ] evaluation at 14 recorded point(s) [permanent_pencil] has full row rank — rank 1 of 1
+    [ok  ] vanishes at 6 fresh det_pencil points (seed 20260908)
+    [ok  ] evaluation at 6 fresh permanent_pencil points (seed 20260908) has full row rank — rank 1 of 1
+    [ok  ] evaluation at 6 fresh generic points (seed 20260908) has full row rank — rank 1 of 1
+PASS        results/certs/s73/s73_25_7_2_2_2_2_2_d14_n3_det_p2147483629_sparse_nullity.json  (13.3s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483629 for lambda = (25, 7, 2, 2, 2, 2, 2), delta = 14 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (25, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 42 vs 3*14
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17379 vs n_chi 17379, f(0) = 873341137
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_25_7_2_2_2_2_2_d14_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483629: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_25_7_2_2_2_2_2_d14_n3_det_p2147483647_sparse_nullity.json  (12.7s)  s73: nullity_p([E; ev_det]) = 1 at p = 2147483647 for lambda = (25, 7, 2, 2, 2, 2, 2), delta = 14 (n = 3, r = 7): mult_det = 5 (>= 5 proved, = 5 measured)
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (25, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 42 vs 3*14
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 1, mult 5
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded det_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17379 vs n_chi 17379, f(0) = 386655928
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 1, nullity 1
+    [ok  ] nullity 1: 1 companion hwv certificate(s) named and present — named ['s73_25_7_2_2_2_2_2_d14_n3_det_kernel_vec0_int.json.gz'], present [True]
+    [ok  ] conclusion: nullity_p = 1 at p = 2147483647: mult >= 5 proved; = 5 measured, carried to Q by the companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, vanishing at fresh det_pencil points)
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_25_7_2_2_2_2_2_d14_n3_permanent_p2147483629_sparse_nullity.json  (12.6s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483629 for lambda = (25, 7, 2, 2, 2, 2, 2), delta = 14 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (25, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 42 vs 3*14
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17379 vs n_chi 17379, f(0) = 1703448158
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483629, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS        results/certs/s73/s73_25_7_2_2_2_2_2_d14_n3_permanent_p2147483647_sparse_nullity.json  (12.9s)  s73: nullity_p([E; ev_per]) = 0 at p = 2147483647 for lambda = (25, 7, 2, 2, 2, 2, 2), delta = 14 (n = 3, r = 7): mult_per = 6 = a, proved over Q
+    [ok  ] cell: n in {3, 4} — n = 3
+    [ok  ] cell: length(lambda) = r — lambda (25, 7, 2, 2, 2, 2, 2), r 7
+    [ok  ] cell: lambda weakly decreasing
+    [ok  ] cell: |lambda| = n*delta — 42 vs 3*14
+    [ok  ] cell: a recomputed (Weyl alternation) — recomputed 6, claimed 6
+    [ok  ] claim: mult = a - nullity — a 6, nullity 0, mult 6
+    [ok  ] claim: 0 <= nullity <= a
+    [ok  ] 14 recorded permanent_pencil points rebuilt from substitution data (each a nonzero form of degree 3) — 0 zero forms; need at least a = 6 points
+    [ok  ] reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)
+    [ok  ] closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular) — degree 17379 vs n_chi 17379, f(0) = 258167334
+    [ok  ] closing run pinned k_extra = nullity random dense rows (so nullity_p <= k) — k_extra 0, nullity 0
+    [ok  ] conclusion: nullity_p([E; ev]) = 0 at p = 2147483647, so mult_permanent_pencil(lambda, delta) = a = 6 over Q (rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed certificate implies the full one
+    [ok  ] NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded seeds: analysis/wk11_s73_cell.py)
+PASS 16, FAIL 0, UNPARSEABLE 0, ERROR 0
