@@ -164,6 +164,46 @@ def parse_field(field):
     raise ValueError(f"field must be 'Q' or 'F_<p>', got {field!r}")
 
 
+def sparse_nullity_view(cert):
+    """The three dialect-sensitive fields of a sparse_nullity certificate, read
+    from whichever spelling the certificate uses.
+
+    TWO DIALECTS exist, written independently -- session 67's
+    (field / nullity / recipe) and session 73's (prime / claim.nullity /
+    reduction) -- because s73 branched before s67's tree was merged.  The schema
+    layer in verify.py has accepted both since the batch-11 merge; THIS layer did
+    not, and read cert["field"] unconditionally, so every s73-dialect certificate
+    passed schema validation and then died with KeyError('field') in
+    re-derivation.  Schema validation is not re-derivation, and the merge-time
+    pass was the former.  Found by tools/verify/sample_corpus.py on its first
+    stratified draw; the defect is the integrator's, introduced by extending one
+    layer of the reconciliation and not the other.
+
+    Returns (field_string, nullity, recorded_N_S_or_None).  No check is
+    weakened: the finite-field discipline, the nonnegative nullity and the
+    recorded-size guard all still apply, each read off the dialect in use.  One
+    check is STRENGTHENED -- s73's reduction.N_S is now compared against the
+    verifier's own N_S exactly as s67's recipe.N_S always was, so a certificate
+    that misrepresents its size is refused in either dialect.
+    """
+    if "field" in cert:
+        field = cert["field"]
+    elif "prime" in cert:
+        field = f"F_{int(cert['prime'])}"
+    else:
+        raise ValueError("sparse_nullity: no field and no prime")
+    if "nullity" in cert:
+        nullity = cert["nullity"]
+    elif isinstance(cert.get("claim"), dict) and "nullity" in cert["claim"]:
+        nullity = cert["claim"]["nullity"]
+    else:
+        raise ValueError("sparse_nullity: no nullity and no claim.nullity")
+    rec_ns = (cert.get("recipe") or {}).get("N_S")
+    if rec_ns is None:
+        rec_ns = (cert.get("reduction") or {}).get("N_S")
+    return field, nullity, rec_ns
+
+
 def check_sparse_nullity_certificate(cert, log):
     """Checker for kind == 'sparse_nullity'."""
     from layer2 import check_cell
@@ -171,9 +211,9 @@ def check_sparse_nullity_certificate(cert, log):
     cell = cert["cell"]
     n, r, lam, delta, a = cell["n"], cell["r"], tuple(cell["lambda"]), cell["delta"], cell["a"]
     ok = check_cell(cell, log)
-    kind_field, p = parse_field(cert["field"])
+    field_str, nullity_claim, recorded_N_S = sparse_nullity_view(cert)
+    kind_field, p = parse_field(field_str)
     variety = cert["variety"]
-    nullity_claim = cert["nullity"]
 
     # field discipline (Part A4)
     if kind_field != "Fp":
@@ -208,10 +248,9 @@ def check_sparse_nullity_certificate(cert, log):
     t0 = time.time()
     M = chi_build.weight_monomials_idx(n, r, delta, lam)
     N_S = M.shape[0]
-    rec_ns = (cert.get("recipe") or {}).get("N_S")
-    if isinstance(rec_ns, int) and rec_ns != N_S:
-        return _rec(log, "recipe.N_S matches the true weight-space dimension", False,
-                    f"recorded {rec_ns}, true {N_S} -- certificate misrepresents its size") and False
+    if isinstance(recorded_N_S, int) and recorded_N_S != N_S:
+        return _rec(log, "recorded N_S matches the true weight-space dimension", False,
+                    f"recorded {recorded_N_S}, true {N_S} -- certificate misrepresents its size") and False
     if N_S > VERIFY_MAX_NS:
         _rec(log, f"__RECORDED__ true N_S = {N_S} exceeds VERIFY_MAX_NS = {VERIFY_MAX_NS}", True,
              "schema/field/points and the true N_S validated; the nullity claim is NOT re-derived "

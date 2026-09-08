@@ -308,6 +308,28 @@ the exact Wiedemann sequence, and `kernel_certificates` keeps a 240 510-term
 integer vector out of the certificate and under the 5 MB rule while still
 exhibiting it.  What must not survive is the split itself.
 
+> **Defect found and fixed, batch-12 pre-batch.**  The batch-11 merge taught the
+> *schema* layer (`verify.py`) both dialects and left the *re-derivation* layer
+> (`layer3.py`) reading `cert["field"]` unconditionally.  So every s73-dialect
+> certificate validated and then died in re-derivation with `KeyError('field')`
+> — 46 certificates, silently, because the merge-time pass was schema
+> validation and schema validation is not re-derivation.  The fix is
+> `layer3.sparse_nullity_view(cert)`, one accessor for the three
+> dialect-sensitive fields (`field`/`prime`, `nullity`/`claim.nullity`,
+> `recipe.N_S`/`reduction.N_S`), used by the checker.  Selftest cases 11 and 12
+> cover it: the same claim in both dialects must PASS identically, and must FAIL
+> in either when it misrepresents its `N_S`.
+>
+> One check is **strengthened** by the fix.  `reduction.N_S` is now compared
+> against the verifier's own recomputed `N_S`, exactly as `recipe.N_S` always
+> was; before, an s73-dialect certificate could misstate its size and nothing
+> looked.  Nothing is weakened.
+>
+> Found by `tools/verify/sample_corpus.py` on its first stratified draw.  The
+> lesson is the tool's reason for existing: a defect introduced by extending one
+> layer of a reconciliation and not the other is invisible to the pass that
+> reconciliation ran.
+
 **The unpadded family is named `permanent_pencil`**, appended to `FAMILIES` so
 the fresh-point seed offsets of the older families are unchanged.  The
 integrator's first version called it `permanent` and *inserted* it at index 1,

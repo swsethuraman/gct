@@ -26,7 +26,15 @@
      identity, so a Gram rank over F_p certifies nothing (Part A4);
  10. a "sparse_nullity" certificate declaring field "Q": must be UNPARSEABLE --
      a full-column-rank mod p certifies mult = a over Q, but the kind is a
-     finite-field object and a char-0 "nullity" is not it (Part A4).
+     finite-field object and a char-0 "nullity" is not it (Part A4);
+ 11. the certificate of 8 rewritten in session 73's dialect (prime instead of
+     field, claim.nullity instead of nullity, reduction instead of recipe):
+     must PASS identically.  Before the batch-12 fix it was ERROR -- the schema
+     layer accepted both dialects and layer3 read cert["field"] unconditionally,
+     so every s73-dialect certificate passed validation and then died in
+     re-derivation.  Schema validation is not re-derivation;
+ 12. that same certificate misrepresenting its N_S in reduction: must FAIL, so
+     the size guard is not lost by changing dialect.
 """
 import os, sys, json, random, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -144,6 +152,24 @@ def main():
     # 10: a sparse_nullity declaring field Q must be rejected
     sn_q = json.loads(json.dumps(sn)); sn_q["field"] = "Q"
     results.append(("10 sparse_nullity over Q UNPARSEABLE", "UNPARSEABLE", verify_file(write(d, sn_q))))
+    # 11: THE SAME certificate in session 73's dialect -- prime instead of field,
+    # claim.nullity instead of nullity, reduction instead of recipe -- must PASS
+    # identically.  Before the batch-12 fix this was ERROR: the schema layer
+    # accepted both dialects and layer3 read cert["field"] unconditionally, so
+    # every s73-dialect certificate died in re-derivation with KeyError('field').
+    sn73 = json.loads(json.dumps(sn))
+    del sn73["field"], sn73["nullity"], sn73["recipe"], sn73["basis"]
+    sn73["prime"] = P1
+    sn73["claim"] = {"nullity": 0, "mult": 1}
+    sn73["reduction"] = {"N_S": 3, "n_chi": 3, "stab": 1, "nrows_E": 2, "nnz_E": 4}
+    sn73["title"] = "selftest: the same claim in the session-73 dialect"
+    results.append(("11 sparse_nullity s73 dialect PASS", "PASS", verify_file(write(d, sn73))))
+    # 12: and the size guard applies in that dialect too -- reduction.N_S is
+    # checked against the verifier's own N_S exactly as recipe.N_S always was.
+    sn73_bad = json.loads(json.dumps(sn73))
+    sn73_bad["reduction"]["N_S"] = 99
+    sn73_bad["title"] = "selftest: s73 dialect misrepresenting its size (must reject)"
+    results.append(("12 s73 dialect wrong reduction.N_S FAIL", "FAIL", verify_file(write(d, sn73_bad))))
     allok = True
     for name, expect, (status, log) in results:
         good = status == expect
