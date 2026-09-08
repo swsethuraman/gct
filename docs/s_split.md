@@ -105,56 +105,73 @@ primes; both hash seeds; the `(★)/E_red` route `rank kern[:,¬red]`
 Two-sided: full rank where `mult_red = a`, the correct drop at each bite; every
 number matches across primes, seeds, the `(★)` route and the banked record.
 
-## 5. Part A — the determination: `rank S` is **source-dependent** *(proved)*
+## 5. Part A — the determination: `rank S` is source-dependent
+
+*(A **determination**, not a theorem: a proved fact about the `μ*` construction
+plus a hardness judgment about the alternatives. Labelled as the PREREG did —
+measured support + expectation, prior 0.85, falsifier F-A — not "proved". The
+gating **conclusion** rests on the proved half and on a fact, not on the
+judgment; see the end.)*
 
 **Question.** `det A₂₄` needs the explicit source. Does `rank S_{λ,24}`? The
 brief's conditional: *if `S`'s rows are the Pieri shapes and its columns the
 ambient multiplicity **abstractly** (not explicit source vectors), then `S` is
 computable from `λ,δ` alone and the LMR half is ungated.*
 
-**Answer: the antecedent fails; `rank S` is source-dependent, exactly as
-`det A₂₄` is.** The rows/target (§2) and the map `μ*` (§1) are source-free, but
-the **columns are a basis of `M⁴_λ = HWV_λ(Sym^δ Sym⁴V)`, the `a`-dimensional
-quartic source, and there is no basis of that space that is not explicit source
-vectors.** Three independent grounds:
+**Answer: the antecedent fails for `S` as constructed; the natural alternatives
+are no cheaper; so `rank S` is source-dependent, gated exactly as `det A₂₄` is.**
+The rows/target (§2) and the map `μ*` (§1) are source-free, but the **columns are
+a basis of `M⁴_λ = HWV_λ(Sym^δ Sym⁴V)`, the `a`-dimensional quartic source.**
 
-1. **No abstract column basis carries `μ*`.** To fill column `j` you must apply
-   `μ*` to the `j`-th source vector, and `μ*` (§1) acts on the *realisation* of
-   that vector as a polynomial in the `c_α` (equivalently, on its `χ_λ`-carrier
-   coordinates). The "ambient multiplicity" `M⁴_λ` is an `a`-dimensional space
-   with **no canonical basis** and no combinatorial model on which `μ*` has a
-   known rule; any handle on a specific vector of it *is* an explicit quartic
-   HWV. (Contrast the target: `⊕_μ M³_μ` has the canonical Pieri/cubic basis.)
+1. **Proved — no abstract column basis carries `μ*`.** To fill column `j` you
+   must apply `μ*` to the `j`-th source vector, and `μ*` (§1) is defined on the
+   *realisation* of that vector as a polynomial in the `c_α` (equivalently, on its
+   `χ_λ`-carrier coordinates). The "ambient multiplicity" `M⁴_λ` is an
+   `a`-dimensional space with **no canonical basis**; any concrete basis of it is,
+   by definition, a set of explicit quartic highest-weight vectors, and the
+   columns of the *matrix* of `S` in such a basis are their `μ*`-images. So the
+   matrix `S` cannot be filled without realizing the source. (Contrast the
+   target: `⊕_μ M³_μ` has the canonical Pieri/cubic basis, `μ*` is a fixed
+   formula.) This is a fact about the `μ*` construction, and it is what makes
+   *this* instrument gated at LMR.
 
-2. **A source-free matrix would make `mult_red` a closed form — false.** If the
-   *matrix* `S` were writable from `λ,δ` alone, then `rank S = mult_red` would be
-   a function of `λ,δ`. It is not: s42 §B **proves** `h_pad − mult_red =
+2. **The free target does not hand you `mult_red` (proved), which closes the one
+   obvious shortcut.** One might hope to read `mult_red` off the source-free
+   normalisation side. s42 §B **proves** this fails: `h_pad − mult_red =
    mult_λ(D_δ/C[R_r]_δ)` is the multiplicity of the normalisation quotient,
    supported on the non-normal locus `{ℓℓ'q} ∪ {ℓ²q}`, and "computing it is
-   exactly the original problem — the image of `A` in `D`"; and s60 **measured**
-   eight `r=5` cells with `mult_red < min(a,h_pad)` by amounts (`1,1,1,1,2,2,4,…`)
-   with no combinatorial law. A source-free `S`-matrix cannot exist without
-   contradicting both.
+   exactly the original problem — the image of `A` in `D`"; s60 **measured** eight
+   `r=5` cells with `mult_red < min(a,h_pad)` by amounts (`1,1,1,1,2,2,4,…`) with
+   no combinatorial law. This does **not** by itself prove that *no* source-free
+   matrix anywhere has rank `mult_red` — a source-free matrix can have a rank with
+   no closed form (the raising matrix `E` is combinatorial and `nullity E = a` is
+   a plethysm with no closed form). It proves only that the free side of *this*
+   construction does not deliver `mult_red`; the general non-existence is the
+   judgment in the header, not a theorem.
 
-   The one thing that *is* free is the embedding `M⁴_λ ↪ Sym^δ(V⊗Sym³V)` (via
-   `Sym^δ` of the split), whose `λ`-isotypic image sits inside the source-free
-   Cauchy space `⊕_{π⊢δ} S_πV ⊗ S_π(Sym³V)`; but pinning that image *is* locating
-   the quartic plethysm inside the Cauchy expansion — the source realisation
-   again, no cheaper.
+3. **The natural steelman is no cheaper (judgment).** Transposing `S` frees the
+   domain (`⊕_μ M³_μ`) but its kernel becomes the normalisation-quotient
+   multiplicity, gated on the same isotypic projection; embedding
+   `M⁴_λ ↪ Sym^δ(V⊗Sym³V)` (via `Sym^δ` of the split) lands its `λ`-image in the
+   source-free Cauchy space `⊕_{π⊢δ} S_πV ⊗ S_π(Sym³V)`, but pinning that image is
+   locating the quartic plethysm across the `π`-blocks — comparable work, not a
+   shortcut. s64 §7 concurs from the other side: the factorized route's `ev_pad`
+   fast branch "is gated on the **same wall** (building/evaluating the common
+   source at `r=9, δ=24`)"; its 48-block advantage is on the **target**, not the
+   source. No source-free route was found; that none exists is the expectation.
 
-3. **s64 §7 says so, from the other side.** The factorized route's `ev_pad` fast
-   branch "is gated on the **same wall** (building/evaluating the common source at
-   `r=9, δ=24`)"; its 48-block advantage is on the **target**, not the source.
-
-**Consequence.** At LMR, `M⁴_λ` is precisely the object session 63 measured
-walled on all three realisations: native HWV build `N_S = 1.56·10¹¹` (14.4 TB),
-Foulkes column `1.2·10⁹³`, Gram/Schur `|S| ≥ 6·10⁶` (the `χ_λ`-carrier,
-`n_χ ~ 3.1·10⁷`, `u`-free slice `~1.4·10⁶`; `docs/lmr_cell.md` §6). So the LMR
-`274 × 521` rank is **gated on the same source as `det A₂₄`**, no source lands
-(carrier build forbidden, s63 wall), and the batch's ungated half is the `n=4`
-calibration of §4. The construction is exact and reusable: when a streaming
-orbit-rep source engine reaches `r=9, δ=24` (s63's reserve-class opening),
-`S` computes `mult_red = rank S` at LMR with the PREREG §0 semantics attached.
+**Consequence (does not depend on the judgment).** Whatever the status of a
+hypothetical unknown source-free route, the `S`-construction as posed needs the
+quartic source (ground 1, proved), and at LMR that source is the object session
+63 measured **walled** on all three realisations: native HWV `N_S = 1.56·10¹¹`
+(14.4 TB), Foulkes column `1.2·10⁹³`, Gram/Schur `|S| ≥ 6·10⁶` (the `χ_λ`-carrier,
+`n_χ ~ 3.1·10⁷`, `u`-free slice `~1.4·10⁶`; `docs/lmr_cell.md` §6). The carrier
+build is forbidden (S5) and no source lands, so the LMR `274 × 521` rank **cannot
+be run this session** — gated as a matter of fact, exactly as `det A₂₄` is. The
+batch's ungated half is the `n=4` calibration of §4. The construction is exact
+and reusable: when a streaming orbit-rep source engine reaches `r=9, δ=24` (s63's
+reserve-class opening), `S` computes `mult_red = rank S` at LMR with the PREREG §0
+semantics attached.
 
 ## 6. What `S` is not
 

@@ -10,31 +10,34 @@ single-writer files untouched. Labels: **proved** / **measured** / **adopted**.
 
 ## 0. The determination (Part A), first
 
-**`rank S_{λ,24}` is source-dependent — it needs the explicit `a = 274`
-quartic source exactly as `det A₂₄` needs the `273`-dimensional predecessor
-image, so both LMR numbers are gated on the same `r = 9, δ = 24` source that
-session 63 measured walled on all three realisations.** The reducible-normalisation
-split `S = S_{λ,δ} : M⁴_λ → ⊕_μ M³_μ` (the comultiplication `Sym⁴V → V⊗Sym³V`
-restricted to the `λ`-highest-weight space, `rank S = mult_red`) has a
-**source-free target** — the 48 Pieri/cubic blocks `⊕_μ M³_μ` of dimension
-`h_pad = 521`, from the session-42 identity — and a source-free map, but its
-**columns are a basis of `M⁴_λ = HWV_λ(Sym^δ Sym⁴V)`, the `a = 274` quartic
-source, for which no basis exists that is not explicit highest-weight vectors.**
-The brief's ungating conditional ("columns indexed by the ambient multiplicity
-rather than by explicit source vectors") therefore fails at its antecedent. Three
-independent grounds, in `docs/s_split.md` §5: (i) no combinatorial model of the
-`a`-dimensional multiplicity space `M⁴_λ` carries the `μ*` action — any handle on
-one of its vectors is an explicit quartic HWV; (ii) a source-free *matrix* would
-make `mult_red` a closed form of `λ,δ`, contradicting s42 §B (the
-normalisation-quotient multiplicity is supported on the non-normal locus and
-"computing it is exactly the original problem") and s60's eight measured
-`mult_red < min(a,h_pad)` cells with no combinatorial law; (iii) s64 §7 states
-the factorized route's fast branch "is gated on the same wall (building /
-evaluating the common source at `r=9, δ=24`)" — the 48-block advantage is on the
-target, not the source. Since no source lands and the LMR carrier build is
-forbidden, the ungated deliverable is the construction, written out for the first
-time, plus its `n=4` calibration; the LMR rank is reusable the moment a streaming
-orbit-rep source engine reaches the cell (session 63's reserve-class opening).
+**`rank S_{λ,24}` is source-dependent — it needs the explicit `a = 274` quartic
+source exactly as `det A₂₄` needs the `273`-dimensional predecessor image, so both
+LMR numbers are gated on the same `r = 9, δ = 24` source that session 63 measured
+walled on all three realisations.** The reducible-normalisation split
+`S = S_{λ,δ} : M⁴_λ → ⊕_μ M³_μ` (the comultiplication `Sym⁴V → V⊗Sym³V` restricted
+to the `λ`-highest-weight space, `rank S = mult_red`) has a **source-free target**
+— the 48 Pieri/cubic blocks `⊕_μ M³_μ` of dimension `h_pad = 521`, from the
+session-42 identity — and a source-free map, but its **columns are a basis of
+`M⁴_λ = HWV_λ(Sym^δ Sym⁴V)`, the `a = 274` quartic source: any concrete basis of
+that multiplicity space is a set of explicit highest-weight vectors, so the matrix
+of `S` cannot be filled without realizing the source (proved).** The brief's
+ungating conditional ("columns indexed by the ambient multiplicity rather than by
+explicit source vectors") therefore fails at its antecedent. That the natural
+*alternatives* are also no cheaper — reading `mult_red` off the free normalisation
+side fails (s42 §B: the quotient multiplicity is supported on the non-normal locus
+and "computing it is exactly the original problem"; s60's eight measured
+`mult_red < min(a,h_pad)` cells with no combinatorial law), the transpose and the
+Cauchy-space embedding relocate the same cost, and s64 §7 puts the factorized
+route's fast branch "on the same wall" — is a hardness **judgment**, not a
+theorem, and is labelled as the PREREG labelled it (expectation, prior 0.85,
+falsifier F-A). **The gating conclusion does not rest on that judgment:** the
+`S`-construction provably needs the quartic source, that source is walled (s63),
+and the carrier build is forbidden (S5), so the LMR rank cannot be run this
+session as a matter of fact — whatever the status of a hypothetical unknown
+source-free route. The ungated deliverable is the construction, written out for
+the first time, plus its `n=4` calibration; the LMR rank is reusable the moment a
+streaming orbit-rep source engine reaches the cell (s63's reserve-class opening).
+Full argument: `docs/s_split.md` §5.
 
 ## 1. What was asked, and what a session can deliver here
 
@@ -114,13 +117,21 @@ characteristic, so `det A₂₄ ≢ 0 mod p ⟹ rank ≥ 273 over Z`, both house
 ## 5. Honest boundary
 
 * **Proved:** `rank S = mult_red` (Schur, §3 of `docs/s_split.md`); the target
-  decomposition `⊕_μ M³_μ` and `dim = h_pad` (session-42 identity); the Part A
-  source-dependence determination (§5 of `docs/s_split.md`), resting on s42 §B,
-  s60's measured bites, and s64 §7; the characteristic-freeness of the `det A₂₄`
-  nonsingularity step.
+  decomposition `⊕_μ M³_μ` and `dim = h_pad` (session-42 identity); that the
+  `S`-construction needs the quartic source — its columns are a basis of `M⁴_λ`,
+  which has no basis that is not explicit HWVs (`docs/s_split.md` §5 ground 1);
+  that the free normalisation side does not deliver `mult_red` (s42 §B); the
+  characteristic-freeness of the `det A₂₄` nonsingularity step.
+* **Determination (measured support + expectation, not a theorem):** that *no*
+  source-free route to `rank S_{λ,24}` exists — the general source-dependence
+  (`docs/s_split.md` §5 grounds 2–3; PREREG P5, prior 0.85, falsifier F-A). The
+  **gating conclusion** stands without it: the construction provably needs the
+  source (above), the source is walled (s63), the carrier build is forbidden.
 * **Measured, exact, both primes (+ two hash seeds + `(★)` route + banked):**
   `rank S = 6, 1, 5` at the three `n=4` cells; `nullity(E) = a_weyl`; every HWV
-  verified `E·v = 0` on the full sparse `E`.
+  verified `E·v = 0` on the full sparse `E`. Independently reproduced by an
+  adversarial audit with a from-scratch exact-multiset-key reimplementation
+  (no hashing, no shared code): `6, 1, 5` again.
 * **Not computed (gated):** `rank S` at LMR and `det A₂₄` at LMR — both behind
   the `r = 9, δ = 24` source wall (s63); the carrier build is forbidden (S5) and
   was not attempted; the LMR carrier-space engine s63 measured dead was not
@@ -146,10 +157,13 @@ characteristic, so `det A₂₄ ≢ 0 mod p ⟹ rank ≥ 273 over Z`, both house
 | P2 | `rank S = 5` at (12,9,9,1,1)₈ | 0.90 | **confirmed** |
 | P3 | both primes + both hash seeds agree | 0.97 | **confirmed** (12/12 numbers) |
 | P4 | `(★)` route agrees at both cells | 0.95 | **confirmed** (+ the control) |
-| P5 | Part A resolves source-**dependent** | 0.85 | **confirmed**, three grounds |
+| P5 | Part A resolves source-**dependent** | 0.85 | **confirmed** — proved for the construction, judgment for the general case |
 
 Unregistered addition: the full-rank control `(10,6,4,2,2)₆` (`rank S = a = 6`),
-making the calibration two-sided.
+making the calibration two-sided; and an adversarial audit that reproduced the
+three ranks from scratch (exact multiset keys) and prompted the Part A relabel
+above (proved core vs hardness judgment), plus two harmless code-guard fixes
+(`analysis/wk11_s70_split.py`).
 
 ## 7. For the integrator / downstream
 

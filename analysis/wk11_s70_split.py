@@ -90,8 +90,8 @@ def explode(M, r, seeds=(0x9E3779B1, 0x85EBCA6B)):
     CHi, CHc, cstart, nA3 = split_tables(r)
     N_S, delta = M.shape
     base = delta + 1
-    POW = np.array([base ** c for c in range(r)], dtype=np.int64)   # base^i < 2^63 for r*log(base) small
-    assert int(POW.max()) * (delta) < (1 << 62), "gamma packing overflow"
+    POW = np.array([base ** c for c in range(r)], dtype=np.int64)   # base^i
+    assert base ** r < (1 << 62), "gamma packing overflow"          # any base-(delta+1) r-digit key < (delta+1)^r
     Hs = []
     for s in seeds:
         rng = np.random.default_rng(s)
@@ -143,9 +143,10 @@ def rank_S(B, kern_chi, p_list, verbose=True):
         valid = col_of >= 0
         W[:, valid] = (kern[:, col_of[valid]] * sgn[valid]) % p
         for si, (T, ncod) in enumerate(Ts):
-            # C = W @ T  (a x ncod); accumulate in int64 (bounded below), reduce mod p
-            maxT = int(T.data.max()) if T.nnz else 0
-            assert (p - 1) * maxT * (N_S) < (1 << 62) or True, "int64 accumulation bound"
+            # C = W @ T  (a x ncod); accumulate in int64, reduce mod p.
+            # per-entry |C[ai,col]| = |sum_m W[ai,m] T[m,col]| <= (p-1) * max_col_sum(T)
+            colsum = int(np.asarray(T.sum(axis=0)).ravel().max()) if T.nnz else 0
+            assert (p - 1) * colsum < (1 << 62), ("int64 accumulation bound", p, colsum)
             C = (T.transpose().dot(W.transpose())).transpose()   # ncod x a -> a x ncod (dense)
             C = np.asarray(C) % p
             rk = rank_mod_p(C, ncod, p)
