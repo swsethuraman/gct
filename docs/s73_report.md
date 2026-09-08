@@ -219,9 +219,12 @@ an obstruction; the unpadded comparison is the one with content.
 weight goes into `c_{(3,0,…,0)}` factors), one stacked Wiedemann sequence
 150–190 s at level `(12,2)` (`≈ 1.0·10^5` rows), two sequences per positive
 nullity; a rung with both sides at both primes is 27–30 min on the two cores.
-The full-`E` solve at 12 needed the uncompressed matrix (`7.1·10^5` rows; the
-`(12,2)` sample of `E` alone has a spurious kernel, caught by the full-matrix
-check and escalated as designed) and cost 93 min for seven sequences.
+The full-`E` solves (needed at 9–12 for the explicit bases) run on the
+uncompressed matrix (`5–7·10^5` rows: the `(12,2)` sample of `E` alone has a
+spurious kernel at every rung, caught by the full-matrix check and escalated as
+designed) at 400–800 s per sequence, `a + 1` sequences each — 93 min at 12.
+Whole session: ten rung runs (nine rungs plus the second family at 12),
+`≈ 7` core-hours, peak resident under 1 GB.
 
 ## 5. Transport: the same line on both engines
 
@@ -282,7 +285,7 @@ Nothing in the protocol changed a number.
 
 ## 7. Certificates and the verifier
 
-`results/certs/s73/`, all in `gct-cert/1`, all **PASS** `tools/verify`
+`results/certs/s73/` — 46 files in `gct-cert/1`, **46 PASS, 0 FAIL** under `tools/verify`
 (`results/logs/s73_verify_all.md`):
 
 | file | kind | what it certifies |

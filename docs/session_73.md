@@ -30,7 +30,7 @@ the programme's first `D = +1` (at `δ = 12`) survives transport up the ladder.
    the determinant side at every rung — the LMR vector, born at 12 and
    transported — and none on the permanent side, ever.  The prediction was
    pre-registered before the rungs were measured.
-2. **The rungs agree with it at every point.**  `δ = 12, 13, 14` (and 15, 16)
+2. **The rungs agree with it at every point.**  `δ = 12, 13, 14, 15, 16`
    directly: `nullity[E; ev_det] = 1`, `nullity[E; ev_per] = 0` at both house
    primes on fresh pre-registered evaluation families; `δ = 9, 10, 11` both
    sides full rank at both primes.  `dim(U_D ∩ U_P) = 0` everywhere;
@@ -44,7 +44,7 @@ the programme's first `D = +1` (at `δ = 12`) survives transport up the ladder.
    Above 12: `J(M_12) = M_13`, and `J(v_12) = ±v_13`, `J(v_13) = ±v_14`, …
    **exactly over `Z`** — the direct Wiedemann measurement on an independently
    built cell and the transport of the previous rung's vector coincide.
-4. **Certificates.**  For every rung: `sparse_nullity` records for both sides
+4. **Certificates (46, all PASS).**  For every rung: `sparse_nullity` records for both sides
    at both primes (the closing Berlekamp–Massey nonsingularity record with the
    pencils as substitution data) and, at the positive rungs, the LMR line as
    an **integer `hwv` certificate** (240 510 terms, 1.45 MB) — annihilated by
