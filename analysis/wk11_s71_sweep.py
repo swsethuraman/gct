@@ -34,10 +34,14 @@ def log(*a):
 
 
 def predict(q, cal):
+    """re-fitted certified cost (results/s71_cost_refit.json) and the hybrid's memory per prime"""
     n = q['n_chi_census']; a = q['a']; N = q['N_S']; d = q['delta']
     nnz = cal['rho'] * n; U = a + cal['f'] * n
+    mem = 4.0 * n * U
     tb = cal['c_b'] * N * d; tc = cal['c_c'] * nnz * 5; th = cal['c_h'] * nnz * U + cal['c_v'] * nnz * a
-    return tb + tc + th, 4.0 * n * U
+    te = cal.get('c_e', 2.7e-8) * 3 * (a + 8) * N * d * (1 if 2 * mem < 2.5e9 else 2)
+    tr = cal.get('c_r', 1e-9) * 3 * (a + 8) * n * a
+    return tb + tc + th + te + tr, mem
 
 
 def done_cells():
