@@ -25,6 +25,9 @@ usage: python3 analysis/wk11_s71_cell.py delta lam1 .. lam5 [--a A] [--hpad H] [
 prints one JSON line (RESULT ...) and appends it to --out.
 """
 import sys, os, time, json, gzip
+# one BLAS thread per prime-worker: two forked workers on two cores, no OpenBLAS oversubscription
+for _v in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMEXPR_NUM_THREADS'):
+    os.environ.setdefault(_v, '1')
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
 os.environ.setdefault('WIED_BIN', '/home/claude/s71/wied71')
