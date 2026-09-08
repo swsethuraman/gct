@@ -1,0 +1,31 @@
+[     1.8s] cell (25, 7, 2, 2, 2, 2, 2) delta=14: a=6; fillings of lambda'=(7,7,2^5,1^18)
+      level 1: 72 prefixes
+      level 2: 1933 prefixes
+      level 3: 24599 prefixes
+      level 4: 153794 prefixes
+      level 5: 525846 prefixes
+      level 6: 993166 prefixes
+      level 7: 1157685 prefixes
+      level 8: 1167156 prefixes
+      level 9: 1167156 prefixes
+      level 10: 1167156 prefixes
+      level 11: 1167156 prefixes
+      level 12: 1167156 prefixes
+      level 13: 1167156 prefixes
+      level 14: 1167156 prefixes
+  lam=(25, 7, 2, 2, 2, 2, 2): N_S=1167156 |Stab|=120 n_chi=17379 (orbits dropped: 0) [lean, 296s, HWM 0.33 GB]
+    E_01: |H|=120 targets 791295 canonical rows 11948 nnz 61450 (obstructed fixed targets cancelled: 0) [186s, HWM 0.34 GB]
+    E_12: |H|=24 targets 487609 canonical rows 29299 nnz 112390 (obstructed fixed targets cancelled: 0) [210s, HWM 0.34 GB]
+    E_23: |H|=6 targets 865704 canonical rows 170575 nnz 342385 (obstructed fixed targets cancelled: 0) [230s, HWM 0.36 GB]
+    E_34: |H|=6 targets 865704 canonical rows 170575 nnz 342385 (obstructed fixed targets cancelled: 0) [249s, HWM 0.37 GB]
+    E_45: |H|=6 targets 865704 canonical rows 170575 nnz 342385 (obstructed fixed targets cancelled: 0) [267s, HWM 0.38 GB]
+    E_56: |H|=6 targets 865704 canonical rows 170575 nnz 342385 (obstructed fixed targets cancelled: 0) [289s, HWM 0.38 GB]
+  built (25, 7, 2, 2, 2, 2, 2) d14: N_S=1167156 |Stab|=120 n_chi=17379 rows=723547 nnz=1543380 (594s: mono 9s orbits 296s rows 289s; HWM 0.38 GB)
+[   596.0s]   built: N_S=1167156 |Stab|=120 n_chi=17379 E (723547, 17379) nnz 1543380
+[   596.8s]   sample 3: rank -> 1 (shared k=7)
+[   597.3s]   sample 5: rank -> 2 (shared k=6)
+[   597.7s]   sample 7: rank -> 3 (shared k=5)
+[   598.7s]   sample 11: rank -> 4 (shared k=6)
+[   599.2s]   sample 13: rank -> 5 (shared k=5)
+[   667.7s]   generic rank 5 of a=6 after 300 samples; 0.0149s per evaluation
+[   667.7s]   SPANNING FAILED (P2 falsified)

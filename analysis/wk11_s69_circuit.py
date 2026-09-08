@@ -530,12 +530,24 @@ def letter_order(F, rng=None, restarts=200):
     return best
 
 
+_ORDER_CACHE = {}
+
+
+def cached_order(F):
+    """the processing order depends only on the filling, not on the point: cache it."""
+    k = F.key()
+    if k not in _ORDER_CACHE:
+        if len(_ORDER_CACHE) > 20000: _ORDER_CACHE.clear()
+        _ORDER_CACHE[k] = letter_order(F, restarts=50)
+    return _ORDER_CACHE[k]
+
+
 def dp_pack(F, msym, p, tab=None, order=None):
     h, n = F.h, F.n
     if tab is None:
         _, _, _, tab = sym_table(n, h)
     if order is None:
-        order, W = letter_order(F)
+        order, W = cached_order(F)
     LT = letter_tensors(F, msym, p, tab)
     d = F.delta
     pos = {l: t for t, l in enumerate(order)}
