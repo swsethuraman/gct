@@ -1,0 +1,33 @@
+[     1.0s] cell (22, 7, 2, 2, 2, 2, 2) delta=13: a=6; fillings of lambda'=(7,7,2^5,1^15)
+      level 1: 71 prefixes
+      level 2: 1932 prefixes
+      level 3: 23752 prefixes
+      level 4: 151887 prefixes
+      level 5: 523939 prefixes
+      level 6: 991259 prefixes
+      level 7: 1155778 prefixes
+      level 8: 1165249 prefixes
+      level 9: 1165249 prefixes
+      level 10: 1165249 prefixes
+      level 11: 1165249 prefixes
+      level 12: 1165249 prefixes
+      level 13: 1165249 prefixes
+  lam=(22, 7, 2, 2, 2, 2, 2): N_S=1165249 |Stab|=120 n_chi=17306 (orbits dropped: 0) [lean, 129s, HWM 0.31 GB]
+    E_01: |H|=120 targets 791043 canonical rows 11928 nnz 61302 (obstructed fixed targets cancelled: 0) [93s, HWM 0.33 GB]
+    E_12: |H|=24 targets 486164 canonical rows 29156 nnz 112094 (obstructed fixed targets cancelled: 0) [114s, HWM 0.33 GB]
+    E_23: |H|=6 targets 864117 canonical rows 170148 nnz 341736 (obstructed fixed targets cancelled: 0) [134s, HWM 0.35 GB]
+    E_34: |H|=6 targets 864117 canonical rows 170148 nnz 341736 (obstructed fixed targets cancelled: 0) [146s, HWM 0.37 GB]
+    E_45: |H|=6 targets 864117 canonical rows 170148 nnz 341736 (obstructed fixed targets cancelled: 0) [154s, HWM 0.37 GB]
+    E_56: |H|=6 targets 864117 canonical rows 170148 nnz 341736 (obstructed fixed targets cancelled: 0) [163s, HWM 0.37 GB]
+  built (22, 7, 2, 2, 2, 2, 2) d13: N_S=1165249 |Stab|=120 n_chi=17306 rows=721676 nnz=1540340 (296s: mono 4s orbits 129s rows 163s; HWM 0.37 GB)
+[   297.5s]   built: N_S=1165249 |Stab|=120 n_chi=17306 E (721676, 17306) nnz 1540340
+[   297.7s]   sample 1: rank -> 1 (shared k=7)
+[   298.6s]   sample 9: rank -> 2 (shared k=6)
+[   298.8s]   sample 11: rank -> 3 (shared k=6)
+[   301.3s]   sample 32: rank -> 4 (shared k=5)
+[   305.8s]   sample 71: rank -> 5 (shared k=6)
+[   307.8s]   sample 88: rank -> 6 (shared k=7)
+[   307.8s]   generic rank 6 of a=6 after 88 samples; 0.0073s per evaluation
+[   310.6s]   det rank {'2147483647': 5, '2147483629': 5} -> mult_det, i_det = {'2147483647': 1, '2147483629': 1}; kernel dims {'2147483647': 1, '2147483629': 1}
+[   565.3s]   filling 0: 812851200 terms in 231s, 41401 monomials -> chi support 826, max|c|=4299816960, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[   846.0s]   filling 1: 812851200 terms in 256s, 164871 monomials -> chi support 2710, max|c|=859963392, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True

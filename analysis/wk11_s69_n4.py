@@ -4,14 +4,14 @@ by the compact circuit -- no coordinates anywhere.
 
   * fillings of lambda' = (9, 9, 2^15): two 9-columns, fifteen 2-columns, no 1-columns;
     every filling has k >= 6 letters shared by the two tall columns (12 letters, 18 tall slots);
-  * sample fillings, evaluate at generic points (C evaluator, Identity 3), greedy independent
+  * sample fillings, evaluate at generic points (the Grassmann DP evaluator, wk11_s69_dp.c), greedy independent
     set until the generic rank reaches a = 2;
   * evaluate the basis at det_4 pencils at both primes: rank = mult_det, kernel = U_D (if any);
   * record every evaluation value at the committed points (seeds in the record) so that a
     coordinate-side vector can be compared with the circuit without any conversion;
   * R4: one LMR-shape filling (delta = 24, n1 = 48) at one point, timing only.
 
-    python3 analysis/wk11_s69_n4.py [--kgen 8] [--kdet 8] [--extra 2] [--lmr]
+    python3 analysis/wk11_s69_n4.py [--kgen 12] [--kdet 12] [--extra 20] [--lmr]
 """
 import argparse, json, os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
@@ -19,7 +19,9 @@ sys.path.insert(0, HERE)
 from wk8_s30_core import P1, P2                                              # noqa: E402
 from wk9_s42_census import a_weyl                                            # noqa: E402
 from wk11_s69_circuit import (Filling, random_filling, sym_table, symbols_from_coeffs, generic_point,
-                              det_point, fast_eval_c, rank_mod, left_kernel_mod, PRIMES)   # noqa: E402
+                              det_point, fast_eval_c, dp_eval_c, letter_order, rank_mod, left_kernel_mod, PRIMES)   # noqa: E402
+
+EVAL = dp_eval_c          # the Grassmann DP evaluator (validated against fast_eval_c, results/s69_dp_check.json)
 
 N_DEG, R, H = 4, 9, 9
 T0 = time.time()
@@ -31,10 +33,10 @@ def log(*a):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--kgen", type=int, default=8)
-    ap.add_argument("--kdet", type=int, default=8)
-    ap.add_argument("--extra", type=int, default=2, help="nonzero fillings beyond a to keep sampling for")
-    ap.add_argument("--maxsamples", type=int, default=60)
+    ap.add_argument("--kgen", type=int, default=12)
+    ap.add_argument("--kdet", type=int, default=12)
+    ap.add_argument("--extra", type=int, default=20, help="nonzero fillings beyond a to keep sampling for")
+    ap.add_argument("--maxsamples", type=int, default=400)
     ap.add_argument("--kset", default="6,7,8,9")
     ap.add_argument("--seed", type=int, default=69)
     ap.add_argument("--lmr", action="store_true", help="R4 timing only")
@@ -48,9 +50,11 @@ def main():
         F = random_filling(H, N_DEG, 24, 15, 48, rng, k=6)
         cv = generic_point(N_DEG, R, P1, random.Random(1))
         ms = symbols_from_coeffs(cv, N_DEG, R, P1)
-        t = time.time(); val = fast_eval_c(F, ms, P1, tab); secs = time.time() - t
+        t = time.time(); val = EVAL(F, ms, P1, tab); secs = time.time() - t
+        t = time.time(); val2 = fast_eval_c(F, ms, P1, tab); secs2 = time.time() - t
+        assert val == val2, "the two evaluators disagree at the LMR shape"
         rec = dict(shape="LMR (65,17,2^7) delta=24", filling=F.to_json(), shared=len(F.shared), value_nonzero=val != 0,
-                   secs=round(secs, 2), dets=2 ** 15 * 2 ** 9)
+                   secs_dp=round(secs, 2), secs_mixed_disc=round(secs2, 2), W=letter_order(F)[1], dets_mixed_disc=2 ** 15 * 2 ** 9)
         log(f"LMR-shape evaluation: {secs:.1f}s, value {'nonzero' if val else 'ZERO'}, k={len(F.shared)}")
         json.dump(rec, open(os.path.join(ROOT, "results", "s69_n4_lmr_timing.json"), "w"), indent=1)
         return
@@ -81,13 +85,13 @@ def main():
         samples += 1
         t = time.time()
         # first point alone decides zero-ness cheaply
-        v0 = fast_eval_c(F, msym_gen[P1][0], P1, tab)
+        v0 = EVAL(F, msym_gen[P1][0], P1, tab)
         t_eval += time.time() - t; n_eval += 1
         if v0 == 0:
-            hist.append((samples, "zero", len(F.shared))); log(f"  sample {samples}: k={len(F.shared)} zero at point 0 ({time.time()-t:.1f}s)")
+            hist.append((samples, "zero", len(F.shared)))
             continue
         t = time.time()
-        row = [v0] + [fast_eval_c(F, ms, P1, tab) for ms in msym_gen[P1][1:]]
+        row = [v0] + [EVAL(F, ms, P1, tab) for ms in msym_gen[P1][1:]]
         t_eval += time.time() - t; n_eval += len(row) - 1
         nonzero.append((F, row))
         r_new = rank_mod(basis_rows + [row], P1)
@@ -96,11 +100,10 @@ def main():
             log(f"  sample {samples}: k={len(F.shared)} rank -> {r_new}  ({t_eval/n_eval:.1f}s per evaluation)")
         else:
             hist.append((samples, "dep", len(F.shared)))
-            log(f"  sample {samples}: k={len(F.shared)} dependent (rank stays {len(basis)})")
         rec.update(samples=samples, basis=[F.to_json() for F in basis], basis_rows_P1=basis_rows,
                    nonzero_fillings=[F.to_json() for F, _ in nonzero], nonzero_rows_P1=[r for _, r in nonzero],
-                   sample_history=hist, eval_secs=round(t_eval / max(n_eval, 1), 2))
-        json.dump(rec, open(os.path.join(ROOT, "results", args.out), "w"), indent=1)   # bank as we go
+                   sample_history=hist, eval_secs=round(t_eval / max(n_eval, 1), 3))
+        if samples % 20 == 0: json.dump(rec, open(os.path.join(ROOT, "results", args.out), "w"), indent=1)   # bank as we go
     rec["generic_rank_P1"] = len(basis)
     if len(basis) < a:
         rec["status"] = "SPANNING_FAILED"; json.dump(rec, open(os.path.join(ROOT, "results", args.out), "w"), indent=1); return
@@ -108,12 +111,12 @@ def main():
     rec["all_nonzero_rank_P1"] = rank_mod([r for _, r in nonzero], P1)
     # both primes, generic and det, on the basis
     rows_gen = {str(P1): basis_rows}
-    rows_gen[str(P2)] = [[fast_eval_c(F, ms, P2, tab) for ms in msym_gen[P2]] for F in basis]
+    rows_gen[str(P2)] = [[EVAL(F, ms, P2, tab) for ms in msym_gen[P2]] for F in basis]
     rec["generic_rank"] = {p: rank_mod(rows_gen[p], int(p)) for p in rows_gen}
     log(f"  generic ranks {rec['generic_rank']}")
     rows_det = {}
     for p in PRIMES:
-        rows_det[str(p)] = [[fast_eval_c(F, ms, p, tab) for ms in msym_det[p]] for F in basis]
+        rows_det[str(p)] = [[EVAL(F, ms, p, tab) for ms in msym_det[p]] for F in basis]
         log(f"  det rows done at p={p}")
     rec["rows_generic"] = rows_gen; rec["rows_det"] = rows_det
     rec["det_rank"] = {p: rank_mod(rows_det[p], int(p)) for p in rows_det}

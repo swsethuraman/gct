@@ -473,3 +473,129 @@ def reconstruct_integer_vector(vec_modp, p):
     for x in vint: g = math.gcd(g, abs(x))
     if g > 1: vint = [x // g for x in vint]
     return vint
+
+
+# ----------------------------------------------------------------------------- Grassmann DP evaluator
+_DPLIB = None
+
+
+def _dplib():
+    global _DPLIB
+    if _DPLIB is None:
+        so = os.path.join(HERE, "wk11_s69_dp.so"); src = os.path.join(HERE, "wk11_s69_dp.c")
+        if not os.path.exists(so) or os.path.getmtime(so) < os.path.getmtime(src):
+            os.system(f"gcc -O3 -march=native -shared -fPIC -o {so} {src}")
+        _DPLIB = ctypes.CDLL(so); _DPLIB.dp_eval.restype = ctypes.c_longlong
+    return _DPLIB
+
+
+def letter_order(F, rng=None, restarts=200):
+    """a processing order of the letters minimising the maximum number of simultaneously
+    open 2-columns (greedy from every start letter, plus random restarts).  Returns
+    (order, W)."""
+    d = F.delta
+    adj = [[] for _ in range(d)]
+    for e, (a, b) in enumerate(F.two):
+        adj[a].append((e, b)); adj[b].append((e, a))
+    def run(order_start, rng_):
+        done = [False] * d; order = []; open_edges = set(); W = 0
+        cur = order_start
+        while len(order) < d:
+            done[cur] = True; order.append(cur)
+            for e, other in adj[cur]:
+                if done[other]: open_edges.discard(e)
+                else: open_edges.add(e)
+            W = max(W, len(open_edges))
+            if len(order) == d: break
+            # next: the undone letter minimising the resulting open count (ties random)
+            best, bestv = None, None
+            cand = [l for l in range(d) if not done[l]]
+            if rng_ is not None: rng_.shuffle(cand)
+            for l in cand:
+                v = len(open_edges)
+                for e, other in adj[l]:
+                    if done[other]: v -= 1
+                    else: v += 1
+                if bestv is None or v < bestv: best, bestv = l, v
+            cur = best
+        return order, W
+    best = None
+    for s0 in range(d):
+        o, W = run(s0, None)
+        if best is None or W < best[1]: best = (o, W)
+    rng_ = rng or random.Random(0)
+    for _ in range(restarts):
+        o, W = run(rng_.randrange(d), rng_)
+        if W < best[1]: best = (o, W)
+    return best
+
+
+def dp_pack(F, msym, p, tab=None, order=None):
+    h, n = F.h, F.n
+    if tab is None:
+        _, _, _, tab = sym_table(n, h)
+    if order is None:
+        order, W = letter_order(F)
+    LT = letter_tensors(F, msym, p, tab)
+    d = F.delta
+    pos = {l: t for t, l in enumerate(order)}
+    # slots: allocate on open, free AFTER the closing letter (never reuse within the same letter)
+    first = [None] * F.n2; firstside = [0] * F.n2; slot = [-1] * F.n2
+    free_slots = []; nslots = 0; open_by_letter = {}
+    for t, l in enumerate(order):
+        edges = LT[l][2]
+        # close first
+        freed = []
+        for e, sd in edges:
+            if first[e] is not None and first[e] != t:
+                freed.append(slot[e])
+        for e, sd in edges:
+            if first[e] is None:
+                first[e] = t; firstside[e] = sd
+                if free_slots: slot[e] = free_slots.pop()
+                else: slot[e] = nslots; nslots += 1
+        free_slots += freed
+    W = nslots
+    maxd2 = n
+    l_inC1 = np.zeros(d, np.int32); l_inC2 = np.zeros(d, np.int32); l_d2 = np.zeros(d, np.int32)
+    l_edge = np.full((d, maxd2), -1, np.int32); l_side = np.zeros((d, maxd2), np.int32)
+    l_off = np.zeros(d + 1, np.int64); tens = []
+    for t, l in enumerate(order):
+        inC1, inC2, edges, T = LT[l]
+        l_inC1[t] = inC1; l_inC2[t] = inC2; l_d2[t] = len(edges)
+        for q, (e, sd) in enumerate(edges): l_edge[t, q] = e; l_side[t, q] = sd
+        ni = h if inC1 else 1; nj = h if inC2 else 1
+        l_off[t] = len(tens)
+        for i in range(ni):
+            for j in range(nj):
+                for bits in range(1 << len(edges)):
+                    tens.append(T[(i if inC1 else None, j if inC2 else None, bits)])
+        l_off[t + 1] = len(tens)
+    tens = np.array(tens, dtype=np.int64)
+    # row-order signs of the processing order
+    def rho_sign(col):
+        rows = [col.index(l) for l in order if l in col]
+        s = 1
+        for i in range(len(rows)):
+            for j in range(i + 1, len(rows)):
+                if rows[i] > rows[j]: s = -s
+        return s
+    sign = rho_sign(F.C1) * rho_sign(F.C2)
+    return dict(h=h, d=d, n2=F.n2, W=W, p=p, sign=sign, order=order,
+                l_inC1=l_inC1, l_inC2=l_inC2, l_d2=l_d2, l_edge=l_edge, l_side=l_side, l_off=l_off, tens=tens,
+                slot=np.array(slot, np.int32), first=np.array(first, np.int32), firstside=np.array(firstside, np.int32))
+
+
+def dp_eval_c(F, msym, p, tab=None, order=None, max_W=8):
+    P = dp_pack(F, msym, p, tab, order)
+    if P["W"] > max_W:
+        raise RuntimeError(f"pathwidth W={P['W']} exceeds max_W={max_W}")
+    lib = _dplib()
+    I32 = ctypes.POINTER(ctypes.c_int32); I64 = ctypes.POINTER(ctypes.c_int64)
+    val = lib.dp_eval(ctypes.c_int(P["h"]), ctypes.c_int(P["d"]), ctypes.c_int(P["n2"]), ctypes.c_int(P["W"]), ctypes.c_longlong(p),
+                      P["l_inC1"].ctypes.data_as(I32), P["l_inC2"].ctypes.data_as(I32), P["l_d2"].ctypes.data_as(I32),
+                      P["l_edge"].ctypes.data_as(I32), P["l_side"].ctypes.data_as(I32), ctypes.c_int(P["l_edge"].shape[1]),
+                      P["l_off"].ctypes.data_as(I64), P["tens"].ctypes.data_as(I64),
+                      P["slot"].ctypes.data_as(I32), P["first"].ctypes.data_as(I32), P["firstside"].ctypes.data_as(I32))
+    assert val >= 0, "dp_eval failed (allocation)"
+    return P["sign"] * int(val) % p
