@@ -1,0 +1,12 @@
+[2026-09-08T23:30:34Z] streams paused (pgid 3027)
+[2026-09-08T23:30:34Z] start build: python3 analysis/wk12_s74_columns.py --build
+[2026-09-08T23:30:35Z] end build (exit 0)
+[2026-09-08T23:30:35Z] start det_P1: python3 analysis/wk12_s74_columns.py --family det --prime 2147483647 --workers 2
+[2026-09-08T23:45:25Z] streams paused (pgid 3762)
+[2026-09-08T23:45:25Z] start build: python3 analysis/wk12_s74_columns.py --build
+[2026-09-08T23:45:25Z] end build (exit 0)
+[2026-09-08T23:45:25Z] start det_P1: python3 analysis/wk12_s74_columns.py --family det --prime 2147483647 --workers 2
+[2026-09-08T23:48:56Z] end det_P1 (exit 0)
+[2026-09-08T23:48:56Z] start decide_det: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det
+[2026-09-08T23:48:57Z] end decide_det (exit 0)
+[2026-09-08T23:48:57Z] det column at P1: rows 56, rank_24 56; rows<=23 55, rank_23 55  ->  rank T_det(24) >= 55 (running lower bound)
