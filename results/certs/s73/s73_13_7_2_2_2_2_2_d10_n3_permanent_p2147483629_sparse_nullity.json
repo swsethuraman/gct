@@ -1,14 +1,14 @@
 {
  "format": "gct-cert/1",
  "kind": "sparse_nullity",
- "title": "s73: nullity_p([E; ev_per]) = 0 at p = 2147483647 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): mult_per = 6 = a, proved over Q",
+ "title": "s73: nullity_p([E; ev_per]) = 0 at p = 2147483629 for lambda = (13, 7, 2, 2, 2, 2, 2), delta = 10 (n = 3, r = 7): mult_per = 4 = a, proved over Q",
  "produced_by": "analysis/wk11_s73_cell.py via wk9_s45_cell.nullity_stacked (session 73)",
- "notes": "seed family 'primary': K = 14 pencils from random.Random(20261908), entries in [-40, 40]; levels s42 ((12,2) then uncompressed), Wiedemann seeds from seed0 = 1; the ev rows are pinned through every level.  Level recorded as [sample_factor, group]; [0, 1] = the uncompressed E.",
+ "notes": "K = 12 pencils from random.Random(20261908), entries in [-40, 40]; levels s42 ((12,2) then uncompressed), Wiedemann seeds from seed0 = 1; the ev rows are pinned through every level.  Level recorded as [sample_factor, group]; [0, 1] = the uncompressed E.",
  "cell": {
   "n": 3,
   "r": 7,
   "lambda": [
-   19,
+   13,
    7,
    2,
    2,
@@ -16,14 +16,14 @@
    2,
    2
   ],
-  "delta": 12,
-  "a": 6
+  "delta": 10,
+  "a": 4
  },
  "conventions": {
   "coefficient": "c_alpha(F) = coefficient of s^alpha in F",
   "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}"
  },
- "prime": 2147483647,
+ "prime": 2147483629,
  "variety": "permanent_pencil",
  "points": [
   {
@@ -1513,262 +1513,14 @@
      ]
     ]
    ]
-  },
-  {
-   "type": "permanent_pencil",
-   "pencil": [
-    [
-     [
-      27,
-      -40,
-      25
-     ],
-     [
-      8,
-      -35,
-      -36
-     ],
-     [
-      -27,
-      -36,
-      6
-     ]
-    ],
-    [
-     [
-      -16,
-      22,
-      -11
-     ],
-     [
-      29,
-      -2,
-      33
-     ],
-     [
-      -28,
-      -13,
-      16
-     ]
-    ],
-    [
-     [
-      -35,
-      -38,
-      -6
-     ],
-     [
-      -24,
-      -8,
-      8
-     ],
-     [
-      -36,
-      26,
-      23
-     ]
-    ],
-    [
-     [
-      33,
-      -26,
-      -1
-     ],
-     [
-      -22,
-      12,
-      26
-     ],
-     [
-      -24,
-      4,
-      2
-     ]
-    ],
-    [
-     [
-      -32,
-      26,
-      21
-     ],
-     [
-      -16,
-      -34,
-      10
-     ],
-     [
-      -34,
-      -13,
-      -33
-     ]
-    ],
-    [
-     [
-      31,
-      -7,
-      4
-     ],
-     [
-      7,
-      40,
-      36
-     ],
-     [
-      25,
-      0,
-      32
-     ]
-    ],
-    [
-     [
-      0,
-      -6,
-      -23
-     ],
-     [
-      38,
-      18,
-      36
-     ],
-     [
-      28,
-      -35,
-      39
-     ]
-    ]
-   ]
-  },
-  {
-   "type": "permanent_pencil",
-   "pencil": [
-    [
-     [
-      17,
-      -21,
-      -39
-     ],
-     [
-      -10,
-      5,
-      24
-     ],
-     [
-      19,
-      -26,
-      21
-     ]
-    ],
-    [
-     [
-      18,
-      -11,
-      -2
-     ],
-     [
-      -17,
-      6,
-      -13
-     ],
-     [
-      -5,
-      -6,
-      26
-     ]
-    ],
-    [
-     [
-      -10,
-      34,
-      39
-     ],
-     [
-      27,
-      36,
-      -22
-     ],
-     [
-      -15,
-      15,
-      32
-     ]
-    ],
-    [
-     [
-      -39,
-      24,
-      40
-     ],
-     [
-      -12,
-      5,
-      3
-     ],
-     [
-      25,
-      -29,
-      26
-     ]
-    ],
-    [
-     [
-      -18,
-      3,
-      35
-     ],
-     [
-      27,
-      -33,
-      32
-     ],
-     [
-      -26,
-      21,
-      -7
-     ]
-    ],
-    [
-     [
-      -16,
-      -12,
-      40
-     ],
-     [
-      -16,
-      -28,
-      -32
-     ],
-     [
-      -30,
-      40,
-      1
-     ]
-    ],
-    [
-     [
-      9,
-      -14,
-      -15
-     ],
-     [
-      -11,
-      30,
-      -14
-     ],
-     [
-      12,
-      -6,
-      21
-     ]
-    ]
-   ]
   }
  ],
  "reduction": {
-  "N_S": 1155302,
-  "n_chi": 17047,
+  "N_S": 1017919,
+  "n_chi": 14598,
   "stab": 120,
-  "nrows_E": 713677,
-  "nnz_E": 1526091,
+  "nrows_E": 620990,
+  "nnz_E": 1341614,
   "note": "chi_lambda-isotypic reduction of the weight-lambda monomial space (docs/stabiliser_reduction.md), built by analysis/wk9_s45_build.build_cell(n=3)"
  },
  "run": {
@@ -1779,15 +1531,15 @@
   "seed0": 1,
   "wied_seed": 1,
   "k_extra": 0,
-  "bm_degree": 17047,
-  "bm_f0": 1812513685,
-  "rows": 102328,
-  "nnz": 675836,
-  "log": "SEQ n=17047 nrows=102328 nnz=675836 k=0 len=34094 secs=147.3 | BM deg=17047 f0=1812513685 secs=154.1",
-  "secs": 171.5
+  "bm_degree": 14598,
+  "bm_f0": 931638220,
+  "rows": 87632,
+  "nnz": 553245,
+  "log": "SEQ n=14598 nrows=87632 nnz=553245 k=0 len=29196 secs=101.0 | BM deg=14598 f0=931638220 secs=106.2",
+  "secs": 119.1
  },
  "claim": {
   "nullity": 0,
-  "mult": 6
+  "mult": 4
  }
 }

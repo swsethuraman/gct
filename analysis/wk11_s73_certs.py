@@ -83,7 +83,7 @@ def main(delta, seedtag='primary', fresh_count=6):
     rec = latest_record(delta, seedtag)
     with gzip.open(os.path.join(ART, f"s73_kernels_d{delta}_{seedtag}.json.gz"), 'rt', encoding='utf-8') as fh:
         K = json.load(fh)
-    lamstr = '_'.join(map(str, lam))
+    lamstr = '_'.join(map(str, lam)) + ('' if seedtag == 'primary' else f"_{seedtag}")
     cell = {"n": N_DEG, "r": R, "lambda": list(lam), "delta": int(delta), "a": int(a)}
     red = {"N_S": rec['N_S'], "n_chi": rec['n_chi'], "stab": rec['stab'], "nrows_E": rec['nrows_E'],
            "nnz_E": rec['nnz_E'],
@@ -103,7 +103,7 @@ def main(delta, seedtag='primary', fresh_count=6):
         other = 'per' if sd == 'det' else 'det'
         for vi, vint in enumerate(ints):
             terms = expand_terms_int(arr, vint)
-            name = f"s73_{lamstr}_d{delta}_n3_{TAG[sd]}_kernel_vec{vi}_int.json.gz"
+            name = f"s73_{lamstr}_d{delta}_n3_{TAG[sd]}_kernel_vec{vi}_int.json.gz"   # lamstr carries the seed family
             cert = {"format": "gct-cert/1", "kind": "hwv",
                     "title": f"s73: integer highest-weight vector of weight {lam} (delta={delta}, n=3, r=7) in the kernel of "
                              f"the {VARIETY[sd]} evaluation pairing: an element of I({'D' if sd == 'det' else 'P'}_7)^HWV "
@@ -139,7 +139,7 @@ def main(delta, seedtag='primary', fresh_count=6):
                     "title": f"s73: nullity_p([E; ev_{sd}]) = {k} at p = {p} for lambda = {lam}, delta = {delta} (n = 3, r = 7): "
                              f"mult_{sd} = {a - k}" + (" = a, proved over Q" if k == 0 else f" (>= {a-k} proved, = {a-k} measured)"),
                     "produced_by": "analysis/wk11_s73_cell.py via wk9_s45_cell.nullity_stacked (session 73)",
-                    "notes": f"K = {side['K']} pencils from random.Random({side['seed']}), entries in [-40, 40]; levels s42 "
+                    "notes": f"seed family '{seedtag}': K = {side['K']} pencils from random.Random({side['seed']}), entries in [-40, 40]; levels s42 "
                              f"((12,2) then uncompressed), Wiedemann seeds from seed0 = 1; the ev rows are pinned through "
                              f"every level.  Level recorded as [sample_factor, group]; [0, 1] = the uncompressed E.",
                     "cell": cell, "conventions": dict(CONVENTIONS), "prime": p, "variety": VARIETY[sd],

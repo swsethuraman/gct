@@ -238,7 +238,7 @@ records in `results/s73_transport.jsonl`).
 | `12 → 13` | the six basis vectors of `M_12` and the integer line `v_12` | all six `J(v)` are highest-weight at 13 (`E_13 J(v) = 0` mod `P1`), rank 6 = `a(12)` (injective), and since `a(13) = 6`, `M_13 = J(M_12)`: **birth `0` at 13**; `E_13 J(v_12) = 0` over `Z`; `J(v_12) = ± v_13` **exactly over `Z`** (primitive vectors equal), `U_D(13) = J(U_D(12))` mod both primes |
 | `13 → 14` | the integer line `v_13` | `E_14 J(v_13) = 0` over `Z`; `J(v_13) = ± v_14` exactly over `Z`; `U_D(14) = J(U_D(13))` mod both primes |
 | `12 (s62) → 13 (s73)` | session 62's exhibited integer vector | `E_13 J(v_62) = 0` over `Z` and `J(v_62) = ± v_13`: two sessions, two drivers, two evaluation families, one line |
-| `9 → 10 → 11 → 12` | the explicit bases `M_9, M_10, M_11` (full-`E` solves) | RUNG_LOW_TRANSPORT |
+| `9 → 10 → 11 → 12` | the explicit bases `M_9, M_10, M_11, M_12` (full-`E` solves at every rung `≤ 12`, nullities `2, 4, 5, 6 = a`) | `J(M_9) ⊆ M_10` with rank 2 (birth 2), `J(M_10) ⊆ M_11` with rank 4 (birth 1), `J(M_11) ⊆ M_12` with rank 5 (birth 1: the LMR direction); at every step the `u`-free rank of the upper basis equals the birth dimension (`2, 1, 1`), i.e. the increment `a(δ) − a(δ−1)` — the cokernel of `J` is exactly the `u`-free part, as the integrator's note on the 274th LMR vector (`6d92c60`) says it must be |
 
 So the direct Wiedemann measurement at each new rung and the transport of the
 previous rung's vector produce the **same integer vector** — support 3900 of
@@ -252,7 +252,10 @@ the cross-session comparison with s62 closes the loop on the `δ = 12` line
 2. **Independent evaluation family.**  The pre-registered seeds are new
    (`20260908 (+1000)`), independent of s62/s63/P0-A (`seed = 11`); the
    verifier's fresh points are a third family (`seed 20260908`, box `1000`);
-   PROTOCOL_SECOND_FAMILY
+   and the pre-registered second family (`seeds +2000 / +3000`, `K = a + 20 = 26`
+   pencils) was run at `δ = 12`: nullity `1` (det) and `0` (per) at both
+   primes again, and its reconstructed integer vector **equals the primary
+   one up to sign** (`results/s73_crosscheck.json`).
 3. **Characteristic zero.**  The kernel vector is rationally reconstructed to
    an integer vector (support 3900, largest coefficient 544), `E v = 0` holds
    over `Z`, `v mod P2` lies in the `P2` kernel, `v` vanishes exactly at 12
@@ -288,7 +291,10 @@ Nothing in the protocol changed a number.
 | `s73_<λ>_d<δ>_n3_det_p<p>_sparse_nullity.json` (δ = 12, 13, 14; both primes) | `sparse_nullity` | `nullity_p[E; ev_det] = 1`: the closing Berlekamp–Massey record (degree `n_χ`, `f(0) ≠ 0`, one pinned row) and the companion `hwv` certificate |
 | `s73_<λ>_d<δ>_n3_permanent_p<p>_sparse_nullity.json` (δ = 12, 13, 14; both primes) | `sparse_nullity` | `nullity_p[E; ev_per] = 0`: `mult_per = a` over `Q` (modulo re-running the recorded sequence) |
 | `s73_19_7_2_2_2_2_2_d12_n3_fullE_p2147483647_sparse_nullity.json` | `sparse_nullity`, variety `none` | `nullity_p(E) = 6 = a` at 12 (the explicit basis is the artefact `s73_M_basis_d12_p1.npz`) |
-| CERTS_LOW_RUNGS | | |
+| `s73_<λ>_d<δ>_n3_{det,permanent}_p<p>_sparse_nullity.json` (δ = 9, 10, 11; both primes) | `sparse_nullity` | both sides full rank: `mult_det = mult_per = a` over `Q` at the three rungs below the LMR degree |
+| `s73_<λ>_d<δ>_n3_det_kernel_vec0_int.json.gz` and the four `sparse_nullity` files (δ = 15, 16) | `hwv`, `sparse_nullity` | the same at rungs 15 and 16 |
+| `s73_<λ>_d<δ>_n3_fullE_p2147483647_sparse_nullity.json` (δ = 9, 10, 11) | `sparse_nullity`, variety `none` | `nullity_p(E) = a` (2, 4, 5); bases banked as artefacts |
+| `s73_19_7_2_2_2_2_2_second_d12_n3_*` (5 files) | `hwv`, `sparse_nullity` | the verification-protocol family at 12 (`K = 26`): the same nullities, the same integer vector |
 
 **The verifier extension (flagged for reconciliation).**  The brief says the
 verifier "now accepts `n ∈ {3,4}` and has a `permanent` point family"; that
@@ -329,7 +335,8 @@ else.
   monomial basis, no `χ`-reduction) is independent of that build for the
   *positive* claims; the *full-rank* claims (`i_per = 0`) still rest on the
   build's `E` (validated by s62 at `n = 3` on small cells against the dense
-  engine, and here by `nullity(E) = a` at 12 and at RUNG_FULLE_LIST).  A
+  engine, and here by `nullity(E) = a` at 9, 10, 11 and 12, with the bases
+  transporting into each other exactly as Lemma L requires).  A
   fully independent full-rank certificate would need an explicit
   highest-weight basis in monomial terms (`full_rank` with `basis`), which at
   `n_χ ≈ 17 000` and `N_S ≈ 1.2·10^6` does not fit the 5 MB rule.
@@ -372,7 +379,7 @@ ladder), so Mode A is one cell, not a ladder.
 - artefacts `results/artefacts/`: `s73_chi_basis_d<δ>.npz` (the `χ`-column
   representatives and signs, the `u`-free columns), `s73_kernels_d<δ>_primary.json.gz`
   (`U_D`, `U_P` mod both primes and over `Z`, with the pencils), `s73_M_basis_d<δ>_p1.npz`
-  (explicit highest-weight bases mod `P1` at RUNG_FULLE_LIST);
+  (explicit highest-weight bases mod `P1` at δ = 9, 10, 11, 12);
 - certificates `results/certs/s73/` (§7) and the verifier report `results/logs/s73_verify_all.md`;
 - code `analysis/wk11_s73_{lib,cell,transport,certs,table,crosscheck,ainf}.py`;
   logs `results/logs/s73_*.log`;
