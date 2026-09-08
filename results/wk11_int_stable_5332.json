@@ -1,0 +1,20 @@
+{
+ "check": "weight-13 stable tail (5,3,3,2) -- the eleventh a_inf<=3 block, untested by Sol S4",
+ "rho": [
+  5,
+  3,
+  3,
+  2,
+  0
+ ],
+ "weight": 13,
+ "a_inf": 1,
+ "raw_weight_space": 3246,
+ "hwv_support": 680,
+ "prime": 2147483647,
+ "substituted_values_at_3_pencils": "all nonzero (seeds 2000,2001,2002)",
+ "i_det_inf": 0,
+ "highest_weight_covariance_check": "PASS (invariance under A_{i+1} -> A_{i+1} + eps A_i, 4 raisings, eps in {1,7,999})",
+ "conclusion": "i_det^inf((5,3,3,2)) = 0.  With the ten blocks Sol S4 reports, this completes the weight-13 dead region: |rho| = 13 and a_inf <= 3 implies i_det^inf = 0, on eleven blocks (4 with a_inf = 1, 5 with a_inf = 2, 2 with a_inf = 3).",
+ "instrument": "analysis/wk10_int_stable_hwv.py then analysis/wk10_int_stable_subst.py (batch 10 integrator code, unchanged)"
+}
