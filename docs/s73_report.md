@@ -42,7 +42,7 @@ minimally, and is flagged for reconciliation.
 > `P_7`, exhibited over `Z`), `U_P = 0`.
 >
 > **The rungs were measured anyway, and they agree with the theorem at every
-> point** — `δ = 12, 13, 14` directly at both house primes on fresh evaluation
+> point** — `δ = 12, 13, 14, 15, 16` directly at both house primes on fresh evaluation
 > families, the transported vector reproduced by an independent build at each
 > step, `δ = 9, 10, 11` on both sides, with certificates for every full-rank
 > claim and every exhibited kernel vector (§4–§6).  A run whose answer is
@@ -179,11 +179,11 @@ primes agree everywhere (stopping rule R2 never triggered).
 | **12** | `(19,7,2^5)` | 6 | 1 155 302 | 17 047 | **1** (measured; `≥ 1` LMR) | 5 | **0** (proved) | 6 | **+1** | 0 | `U_D ⊄ U_P`, `U_P = 0` |
 | **13** | `(22,7,2^5)` | 6 | 1 165 249 | 17 306 | **1** | 5 | **0** (proved) | 6 | **+1** | 0 | `U_D ⊄ U_P`, `U_P = 0` |
 | **14** | `(25,7,2^5)` | 6 | 1 167 156 | 17 379 | **1** | 5 | **0** (proved) | 6 | **+1** | 0 | `U_D ⊄ U_P`, `U_P = 0` |
-| 15 | `(28,7,2^5)` | 6 | RUNG15_NS | RUNG15_NCHI | RUNG15_IDET | RUNG15_MDET | RUNG15_IPER | RUNG15_MPER | RUNG15_D | RUNG15_INT | RUNG15_OR |
-| 16 | `(31,7,2^5)` | 6 | RUNG16_NS | RUNG16_NCHI | RUNG16_IDET | RUNG16_MDET | RUNG16_IPER | RUNG16_MPER | RUNG16_D | RUNG16_INT | RUNG16_OR |
+| **15** | `(28,7,2^5)` | 6 | 1 167 408 | 17 399 | **1** | 5 | **0** (proved) | 6 | **+1** | 0 | `U_D ⊄ U_P`, `U_P = 0` |
+| **16** | `(31,7,2^5)` | 6 | 1 167 429 | 17 403 | **1** | 5 | **0** (proved) | 6 | **+1** | 0 | `U_D ⊄ U_P`, `U_P = 0` |
 | `≥ 17` | `(3δ−17,7,2^5)` | 6 | — | — | 1 | 5 | 0 | 6 | +1 | 0 | by Lemma L (§2) |
 
-`i_det = 1` at `δ = 12, 13, 14` is the nullity `1` of `[E; ev_det]` at both
+`i_det = 1` at `δ = 12, 13, 14, 15, 16` is the nullity `1` of `[E; ev_det]` at both
 primes with the kernel vector exhibited over `Z` (a lower bound `mult_det ≥ 5`
 proved, `= 5` measured; `i_det ≥ 1` proved by LMR at 12 and by transport
 above).  `i_per = 0` is a nullity-`0` certificate at each prime: `mult_per = a`
@@ -194,7 +194,7 @@ above).  `i_per = 0` is a nullity-`0` certificate at each prime: `mult_per = a`
 
 | case | condition | reading | at `δ = 12, 13, 14` |
 |---|---|---|---|
-| (i) | `i_per < i_det` | `D > 0`: multiplicity obstruction; `P_7 ⊄ D_7` re-certified by this cell | **this case**, `D = +1`, both primes |
+| (i) | `i_per < i_det` | `D > 0`: multiplicity obstruction; `P_7 ⊄ D_7` re-certified by this cell | **this case** at 12, 13, 14, 15, 16: `D = +1`, both primes |
 | (ii) | `i_per = i_det` | `D = 0`; the orientation decides: `U_D = U_P` (silent) or `U_D ≠ U_P` (an equation each way) | — |
 | (iii) | `i_per > i_det` | `D < 0`; `U_P ⊄ U_D` would refute `D_7 ⊆ P_7` | — |
 

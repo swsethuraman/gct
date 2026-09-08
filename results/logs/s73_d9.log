@@ -1,0 +1,39 @@
+[     6.7s] rung delta=9 lam=(10, 7, 2, 2, 2, 2, 2): a = 2 (verifier DP = house Weyl alternation)
+      level 1: 66 prefixes
+      level 2: 1658 prefixes
+      level 3: 18393 prefixes
+      level 4: 105743 prefixes
+      level 5: 345922 prefixes
+      level 6: 677322 prefixes
+      level 7: 802506 prefixes
+      level 8: 809508 prefixes
+      level 9: 809508 prefixes
+  lam=(10, 7, 2, 2, 2, 2, 2): N_S=809508 |Stab|=120 n_chi=11425 (orbits dropped: 0) [lean, 107s, HWM 0.20 GB]
+    E_01: |H|=120 targets 644448 canonical rows 9247 nnz 42663 (obstructed fixed targets cancelled: 0) [82s, HWM 0.23 GB]
+    E_12: |H|=24 targets 321319 canonical rows 18706 nnz 76257 (obstructed fixed targets cancelled: 0) [91s, HWM 0.23 GB]
+    E_23: |H|=6 targets 595920 canonical rows 115494 nnz 236879 (obstructed fixed targets cancelled: 0) [97s, HWM 0.23 GB]
+    E_34: |H|=6 targets 595920 canonical rows 115494 nnz 236879 (obstructed fixed targets cancelled: 0) [103s, HWM 0.24 GB]
+    E_45: |H|=6 targets 595920 canonical rows 115494 nnz 236879 (obstructed fixed targets cancelled: 0) [109s, HWM 0.24 GB]
+    E_56: |H|=6 targets 595920 canonical rows 115494 nnz 236879 (obstructed fixed targets cancelled: 0) [114s, HWM 0.24 GB]
+  built (10, 7, 2, 2, 2, 2, 2) d9: N_S=809508 |Stab|=120 n_chi=11425 rows=489929 nnz=1066436 (224s: mono 2s orbits 107s rows 114s; HWM 0.24 GB)
+[   230.6s]   built: N_S=809508 |Stab|=120 n_chi=11425 rows=489929 nnz=1066436 (224s)
+    level 0 (12,2): 68582 rows, nnz 298374 (full: 489929 rows, nnz 1066436)
+    level 0 (12,2): 68592 rows, nnz 412506 (full: 489939 rows, nnz 1180686)
+    wied[s73_d9_det_p1_primary p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11425 nrows=68592 nnz=412506 k=0 len=22850 secs=64.3 | BM deg=11425 f0=657914641 secs=67.5 (157s)
+    level 0 (12,2): 68592 rows, nnz 412862 (full: 489939 rows, nnz 1180686)
+    wied[s73_d9_fullE_p1_primary p=2147483647 lvl=0 seed=701 k=0]: KERNEL SEQ n=11425 nrows=68582 nnz=298374 k=0 len=22850 secs=54.2 | BM deg=11423 f0=0 secs=57.3 | DONE secs=86.9 (203s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (None,1): 489929 rows, nnz 1066436 (full: 489929 rows, nnz 1066436)
+    wied[s73_d9_det_p2_primary p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11425 nrows=68592 nnz=412862 k=0 len=22850 secs=61.4 | BM deg=11425 f0=133709641 secs=64.4 (150s)
+    level 0 (12,2): 68592 rows, nnz 412506 (full: 489939 rows, nnz 1180686)
+    wied[s73_d9_per_p1_primary p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11425 nrows=68592 nnz=412506 k=0 len=22850 secs=60.8 | BM deg=11425 f0=1520593790 secs=64.0 (184s)
+    level 0 (12,2): 68592 rows, nnz 412862 (full: 489939 rows, nnz 1180686)
+    wied[s73_d9_per_p2_primary p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=11425 nrows=68592 nnz=412862 k=0 len=22850 secs=63.8 | BM deg=11425 f0=314844569 secs=67.0 (193s)
+    wied[s73_d9_fullE_p1_primary p=2147483647 lvl=1 seed=702 k=0]: KERNEL SEQ n=11425 nrows=489929 nnz=1066436 k=0 len=22850 secs=225.5 | BM deg=11424 f0=0 secs=228.6 | DONE secs=337.8 (939s)
+    wied[s73_d9_fullE_p1_primary p=2147483647 lvl=1 seed=703 k=1]: KERNEL SEQ n=11425 nrows=489929 nnz=1066436 k=1 len=22850 secs=218.3 | BM deg=11425 f0=0 secs=221.3 | DONE secs=333.9 (1447s)
+    wied[s73_d9_fullE_p1_primary p=2147483647 lvl=1 seed=704 k=2]: NONSINGULAR SEQ n=11425 nrows=489929 nnz=1066436 k=2 len=22850 secs=214.9 | BM deg=11425 f0=114495520 secs=217.9 (1777s)
+[  2008.2s]   [det] nullity = 0 at primes {2147483629: 0, 2147483647: 0} -> mult_det = 2, i_det = 0
+[  2008.2s]   [per] nullity = 0 at primes {2147483629: 0, 2147483647: 0} -> mult_per = 2, i_per = 0
+[  2008.2s]   D = i_det - i_per = 0 - 0 = 0; intersection {'dim_UD': 0, 'dim_UP': 0, 'dim_intersection': 0, 'UD_subset_UP': True, 'UP_subset_UD': True}
+[  2008.2s]   fullE: nullity(E) = 2 = a; rank on the 4576 u-free columns = 2 (birth space dim 2, dim J(M_prev) = 0)
+[  2008.2s] rung 9 banked to /root/gct/results/s73_dladder.jsonl: {"a": 2, "D": 0, "decision": "D = 0: orientation test decides"}
