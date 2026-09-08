@@ -184,6 +184,16 @@ and LMR gives `rank(T_det) ≤ 273`.
 | span < 274 but det rank 273 on the span reached | `i_det = 1` exactly | **the determinant column is finished**, not stalled; report it as a completed half |
 | partial source, no full-rank half | rank lower bounds only | do not infer nullity from a sampling shortfall; preserve certified lower bounds and the missing directions |
 
+**The outcomes are not equally expensive, and this is not obvious.**  `rank_p ≤
+rank_Q`, so a nonzero minor certifies a rank *floor* cheaply while a rank *drop*
+certifies nothing.  `D = +1` needs only two floors — `rank T_det|_{M₂₃} = 273`
+(which with LMR forces `i_det(24) = 1`) and `rank T_pad|_{M₂₄} = 274` — both
+nonzero minors, neither a vanishing claim.  **Every other outcome needs a
+certified `i_pad ≥ 1`**, which is a membership proof and needs an exact identity
+or a justified determining set, not a solve against finitely many points.  So if
+you reach `D ≤ 0`, report certified rank floors and the observed shortfall, and
+do not present the shortfall as a theorem.
+
 ## What this batch does not fund
 
 Native carrier construction at `n_χ` scale; support-restricted carrier ladders;

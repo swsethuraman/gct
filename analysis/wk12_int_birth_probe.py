@@ -83,7 +83,7 @@ def pure_u_letters(F):
     return [l for l in range(F.delta) if c[l] == 0]
 
 
-def probe_saved(state="results/s69_lmr_state.json", npts=6):
+def probe_saved(state="results/s69_lmr_state.json", npts=24):
     st = json.load(open(os.path.join(ROOT, state), encoding="utf-8"))
     fills = [Filling.from_json(b) for b in st["basis"]]
     clean = [i for i, F in enumerate(fills) if not pure_u_letters(F)]
@@ -92,7 +92,9 @@ def probe_saved(state="results/s69_lmr_state.json", npts=6):
         rec = {}
         for p, tag in ((P1, "P1"), (P2, "P2")):
             vals = [ev(fills[i], u0_point(p, 12000 + 97 * j), p) for j in range(npts)]
-            rec[tag] = {"nonzero": sum(1 for v in vals if v), "of": npts}
+            rec[tag] = {"nonzero": sum(1 for v in vals if v), "of": npts,
+                        "point_seeds": [12000 + 97 * j for j in range(npts)],
+                        "values": [int(v) for v in vals]}
         out["probe"][str(i)] = rec
     out["hits"] = [i for i in clean
                    if out["probe"][str(i)]["P1"]["nonzero"] and out["probe"][str(i)]["P2"]["nonzero"]]
@@ -126,10 +128,16 @@ def stream_rung(delta, cap_secs=150, seed=None, max_draws=4000, kset=(5, 6, 7, 8
         if any(row) and rank_mod(rows + [row], P1) > len(rows):
             rows.append(row)
             keep.append(F)
+    # ALWAYS retain the accepted fillings.  An earlier version kept them only for
+    # b <= 5 to hold the JSON down, which discarded precisely the evidence that
+    # makes a run checkable -- the delta=20 run lost all nine.  A filling is a few
+    # hundred integers; there was never a reason.
     return {"delta": delta, "b": b, "rank": len(rows), "draws": tried, "past_filter": filtered,
             "secs": round(time.time() - t0, 1), "complete": len(rows) == b,
             "points": b + 8, "seed": seed if seed is not None else 500 + delta,
-            "fillings": [F.to_json() for F in keep] if len(rows) == b and b <= 5 else None}
+            "point_seeds": [61000 + 11 * j for j in range(b + 8)],
+            "rows": [[int(x) for x in r] for r in rows],
+            "fillings": [F.to_json() for F in keep]}
 
 
 def main(argv):
