@@ -59,6 +59,32 @@ THREAD 2 IN TEN LINES
     remains is BASIS ENUMERATION: every multiplicity at the goal cell is a rank
     on the same 274 x K evaluation matrix, cheap once 274 spanning vectors
     exist.
+  THE SIZE OF THE BLOCK SWAP IS C_delta, NOT B_delta (integrator, batch 12
+    pre-batch).  tau does not preserve W_delta = (S^lambda)^{K_delta}: tau v is
+    invariant under tau K tau^{-1}, so "tau v = v" cannot be written inside the
+    2168-dimensional precursor.  The residual lives in the invariants of
+    K' = K ^ tau K tau^{-1} = H_{delta-2} x S_4 x S_4, of dimension
+      C_delta = sum over two-step horizontal-4-strip paths lambda -> mu -> nu of
+                a_{delta-2}(nu)
+              = sum over one-strip predecessors mu of B_{delta-1}(mu),
+    one more level of the same recursion.  EXACT: C_12 = 239 (against B_12 = 31,
+    a_12 = 2), 36 paths over 23 shapes, 21 nonzero, largest channel 18.  The
+    path structure SATURATES at delta = 14 and is constant to delta = 24:
+    12 one-strip predecessors, 160 two-strip paths, 42 distinct shapes, max
+    multiplicity 10.  ESTIMATE at the goal cell: C_24 ~ 1.7e4, from two
+    independent one-level ratios, C_12/B_12 = 7.71 and B_24/a_24 = 7.91.  That
+    is 8x the precursor and 300x below the carrier -- the route is operational,
+    and C_24 exactly is a deliverable, not a hope.  Engine
+    `analysis/wk11_int_cdelta.py`, result `results/wk11_int_c12.json`.
+  CHARACTERISTIC p IS NOT AN ISSUE FOR THE S5 ROUTE, AND HERE IS WHY (banked
+    lemma).  |lambda_delta| = 4*delta, so lambda_24 |- 96, and both house primes
+    exceed 96; F_p[S_96] is therefore semisimple by Maschke, and every
+    characteristic-zero statement about S^lambda, its H- and K-invariants and
+    the projectors onto them holds verbatim mod p.  This licenses what the
+    programme does everywhere -- sizing mod-p computations with a_delta,
+    B_delta, C_delta and the DAG counts, all computed by characteristic-zero
+    plethysm.  It is legitimate exactly when p > |lambda|.  CONSTRAINT: no prime
+    below 97 anywhere in the S5 route, at any delta, however tempting for speed.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
     and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs
@@ -75,6 +101,19 @@ THREAD 2 IN TEN LINES
   CERTIFICATION: 264 algorithmic claims machine-checkable under
     `tools/verify/` (`gct-cert/1`); the verifier accepts n in {3,4} since batch
     11, and the first n = 3 certificate is banked.
+  CORRECTION CARRIED FORWARD (Sol batch-11 stock-take, accepted).  i_det(24) = 1
+    is NOT banked.  LMR gives i_det(24) >= 1, i.e. mult_det <= 273; the equality
+    needs a certified lower bound rank T_det >= 273.  My batch-11 C3 line
+    ("rank S < 274 implies i_pad >= 1, which with i_det = 1 gives D <= 0") leans
+    on the unbanked equality and is withdrawn.  What falls out is an economy:
+    a 273-dimensional subspace on which the determinant evaluation has rank 273
+    already forces i_det = 1, so THE DETERMINANT SIDE NEVER NEEDS THE 274TH
+    VECTOR -- and by the birth profile (2, 37, 54, 52, 43, 31, 22, 14, 9, 5, 3,
+    1, 1) the one it may skip is the last-born at delta = 24, the last coupon and
+    the most expensive direction in the whole sampling run.  The padded side has
+    no such luxury: i_pad = 0 means rank T_pad = 274 and needs every direction.
+    So the residual difficulty of the LMR decision now sits on ONE identifiable
+    vector, the direction born at the top rung.
   OPEN: i_det and i_pad at LMR, hence D there -- now one basis enumeration
     away rather than behind a 14 TB wall.  R_5 not inside D_5: session 72 gives
     dim(D_5 ∩ W) = 31 < 35 on the ENUMERATED normal cone, with all four named
@@ -1234,6 +1273,22 @@ tree; two rebuilt banked machinery and one of those rebuilds was never compared
 against the original.  The check is being fixed to key on the tree rather than on
 whether the worker feels blocked, and the integrator now verifies the push by
 ls-remote before briefs go out.
+
+RECONCILED WITH THE REASONING SIDE (2026-09-08 late): the batch-12 board is now
+the MERGED one in `docs/batch12_integrator_note1.md` section 7 -- six Claude
+sessions s74-s79 and six theory sessions T1-T6, still ungated.  What the merge
+took from the reasoning side: the Pieri-to-circuit bridge (s76/T2, the best idea
+on either board, because it makes a deterministic basis EVALUABLE rather than
+merely deterministic); T3, proving i_pad = 0 structurally; the four-outcome LMR
+decision table pre-registered before computation; the "do not fund" list and its
+closing test (an idea must produce an operator, a recurrence, a rank implication
+or a complexity reduction); an independent second engine for B_24, now that 2168
+sizes the route and has one implementation behind it.  What it kept from mine:
+the push as a hard blocker with a verification command; a priced successor for
+D(24) <= 0; the ell = 6 padded frontier and the finite minimality search, the
+only lines outside LMR and r = 5; and the census re-price under the new cost
+models.  One contention left open for the principal: the stable a_infty = 4
+frontier at weight 13 against the adversarial audit for the last theory slot.
 
 ## Roadmap — thread 2, batch 11 (superseded, kept for the trail)
 
