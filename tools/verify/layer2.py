@@ -332,6 +332,11 @@ def check_sparse_nullity_certificate(cert, log, cert_dir=None):
         _rec(log, f"conclusion: nullity_p([E; ev]) = 0 at p = {p}, so mult_{var}(lambda, delta) = a = {a} over Q "
                   f"(rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed "
                   f"certificate implies the full one", True)
+    elif var == "none":
+        _rec(log, f"conclusion: nullity_p(E) = {k} = a at p = {p}: the {k} kernel vectors (an explicit basis of the "
+                  f"highest-weight space mod p) are banked as an artefact by the producer and are NOT certified here "
+                  f"(a mod-p basis of this size does not fit a certificate); the count is closed by the Berlekamp-Massey "
+                  f"record above", True)
     else:
         comp = cert.get("kernel_certificates", [])
         exists = [bool(cert_dir and os.path.exists(os.path.join(cert_dir, f))) for f in comp]

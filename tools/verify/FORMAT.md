@@ -191,7 +191,11 @@ What the verifier does with it, from scratch: the cell (`a` recomputed), every
 point rebuilt from its substitution data (so it lies on the claimed variety;
 at least `a` of them), the arithmetic `mult = a − nullity`, `bm_degree = n_χ`
 and `bm_f0 ≢ 0 (mod p)`, `k_extra = nullity`, and for a positive nullity the
-presence of exactly `nullity` companion `hwv` certificates.  **What it does not
+presence of exactly `nullity` companion `hwv` certificates (for
+`variety = "none"`, the kernel of `E` alone, the `a` kernel vectors are an
+explicit mod-`p` basis of the highest-weight space and are banked by the
+producer as an artefact rather than certified — a basis of that size does not
+fit a certificate — and the verifier says so).  **What it does not
 re-do:** the `χ`-isotypic build and the `2 n_χ`-term Wiedemann sequence.  Both
 are re-runnable from the recorded seeds with `analysis/wk11_s73_cell.py`, and
 the verifier's report carries that line explicitly.  A `nullity = 0`
