@@ -1,0 +1,122 @@
+# Session 78 — `r = 5` by bounded elimination
+
+*(the reconciled proposal's s77.  Read the preamble first.)*
+
+## What changed under you, and it is a lot
+
+This was "prove the enumeration is complete."  It is not that any more, in two
+directions.
+
+**The completeness framing lost its point.**  S2 supplies an exhaustive
+formulation that assumes **no** support enumeration at all: two projective-source
+chart elimination ideals that decide noncontainment, covering all schemes and all
+contact orders.  Completeness of the old list is no longer on the critical path.
+
+**And the number you were going to lean on is not a theorem.**  s72's interior
+value `dim(D₅ ∩ W) = 31` was obtained by a *probabilistic* protocol — pointwise
+Jacobian ranks as lower bounds plus a Schwartz–Zippel argument against a missed
+higher minor — not an exact identity over `Q`.  The programme has been quoting
+`31 < 35` as a near-theorem; it is source-recorded evidence.  **You may not
+promote it, and you may not build a deterministic proof on it without saying you
+have.**  The sufficient global bound you actually need is **34**.
+
+## Two things S2 proved that you should use, and one it disproved
+
+**Use.**  On the ker/coker locus where the restricted cubic `det(B|_{s₅=0})` is
+irreducible: the reduced ranks are exactly 0 and 9, the parameter kernel has
+dimension 3, every order-two fixed-factor leading form is `s₅ ×` an honest `3×3`
+linear determinant, and the affine image dimension is `≤ 29` uniformly there.
+That bound comes from a structural parametrization, not sampling — it is the kind
+of statement the r = 5 argument has been short of.  Lean on it.
+
+**Use.**  The vertex correction: the exceptional fibre over the zero pencil
+already contains `P(D₅)`, so bounding it as an independently understood deep-rank
+residue restates the original problem.  **Projectivize the source.**
+
+**Disproved — and it is a mandatory control.**  The unqualified 0/9 dichotomy is
+false.  S2 exhibits a five-dimensional base pencil with reduced rank exactly 3
+and an actual arc with
+
+    det M(t) = t² s₅ s₄ (s₂ + s₅)(s₃ + s₅)
+
+so intermediate ranks 1–8 cannot be discarded globally.  Note carefully what it
+does **not** show: that leading form is itself an exact determinant, so the
+example contradicts neither the desired noncontainment nor the recorded image
+bounds.  It disproves a coverage shortcut.  **Reproduce this arc as your first
+control** — any pipeline that cannot see it is not entitled to a global claim.
+
+## The specification
+
+From S2's handoff, section A.  For `h = 0` and `h = 64`, dehomogenize `x_h = 1`
+and in `Q[x_other79, y1..y69]` compute
+
+    H_h = ( f_α − y_α f₀ : α = 1..69 ) : f₀^∞
+
+— equivalently eliminate `u` from `(1 − u f₀, all 69 ratio equations)` — **and
+only after that** impose `y_α = 0` for the 35 indices with `α₅ = 0`, then
+eliminate all 79 source variables.  The result in `Q[y_good34]` is `I_h`.
+
+**The ordering is the whole point.**  Form the saturated graph first, impose the
+fixed-factor target conditions second.  Reversing them risks losing boundary
+directions, and replacing `J` by its radical before the Rees algebra is formed
+can change the image.  Preserve the full scheme until the graph and the `W`
+restriction exist.
+
+- **Success:** a nonzero exact polynomial in each `I_h` (a unit ideal is fine for
+  an empty chart).  That proves `W ⊄ D₅` and supplies the affine bound `≤ 34`.
+  The 80-chart cover reduces to these two by finite row/column permutations and
+  permutations of `s₁..s₄`; no classification hypothesis, no contact cutoff.
+- **Reversal:** a *certified exact* `I_h = (0)` for either `h` proves that chart
+  image is dense and hence `W ⊆ D₅`.  A timeout, a failed search, or a modular
+  zero is **not** that certificate.
+
+## Economics — read this before you launch anything
+
+Each ring has 149 variables in lex order.  Generating the equations is not
+evidence an elimination finishes, and S2 says so itself.
+
+- Begin with algebraic reductions, not with the raw ideal.
+- **Bounded pilot first**: one job, ten minutes wall clock, an explicit memory
+  limit, `timeout` and `ulimit -v` per the preamble, pid recorded.
+- **Do not launch an unbounded 149-variable lex run merely because the inputs
+  exist.**  A certified elimination order other than lex is acceptable; record
+  which you used and why.
+- If the pilot fails, **preserve the exact residual ideal** and report it.  That
+  is a deliverable.
+
+Your environment has `Singular` and `msolve` installed and working, and `sympy`
+and `python-flint`.  S2's host had none of them, which is why the jobs exist and
+were never run.
+
+## If the exhaustive jobs do not finish
+
+Fall back to S2's finite residual list (handoff section C) and concentrate where
+the new theorem does not reach: **the reducible and identically-zero restricted
+cubic strata, and higher contact.**  For the reducible case, stratify by the
+minors `I_{j+1}(L_b)` saturating on every nonzero `j`-minor — constant row
+multiples of `B'` always give a three-dimensional kernel when `f ≠ 0`, so
+`j = 0..9` suffices.  Every nonempty rank stratum must be intersected with the
+full exceptional graph before any all-contact image claim.
+
+Required inequality throughout: **every fixed-factor image has affine dimension
+`≤ 34`**.  To retain the stronger recorded 19 on `P ∩ C21`, prove it by exact
+target elimination — a slice dimension and a handful of reconstructed points is
+not a component certificate.
+
+## Certificates
+
+Preserve rational bases and exact generator provenance for the graph saturation.
+For a positive equation, show membership **after** the graph is formed and `W`
+imposed, never in a prematurely restricted or saturated source.  Retain
+transformation matrices or explicit identities for standard-basis and elimination
+steps and reduce their differences to zero independently.  Record denominator
+exclusions.  A modular nonzero equation does not lift automatically; CRT or
+rational reconstruction requires exact substitution and membership verification.
+For a zero-ideal or dimension claim, verify the complete elimination basis and
+its Hilbert/dimension calculation, including the change to the 34-variable ring.
+
+## Deliverables
+
+`results/PREREG_s78.md`; the rank-3 arc reproduced; the pilot's exact scope,
+limits and outcome; whatever `I_h` was obtained, or the exact preserved residual;
+`docs/s78_report.md`, separating PROVED from MEASURED from RECORDED in every row.

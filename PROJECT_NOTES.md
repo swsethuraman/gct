@@ -1388,6 +1388,19 @@ arbitrary partition family without exhibiting the contraction representation and
 a pathwidth bound -- my C4/C6 wording treated a shape-class result as a general
 repricing and it is not one.
 
+BATCH 12 IS SPECIFIED AND THE BRIEFS ARE WRITTEN (2026-09-08).  Consolidation in
+`docs/batch12_s1_s2_consolidated.md`; standing conditions in
+`docs/batch12_worker_preamble.md`; six briefs `docs/s74_prompt.md` ..
+`docs/s79_prompt.md`.  S1 and S2 both missed their headline and both replaced a
+structural goal with a SPECIFIED COMPUTATION, and in both cases this environment
+can run it -- the birth probe was run here, and Singular and msolve are installed
+for the r=5 eliminations.  So batch 12 is an implementation batch, not a theory
+batch.  Each also removed a claim the programme leaned on: S1 removed "a
+deterministic basis is coming"; S2 removed "31 < 35 is a theorem" (s72's interior
+value came from a probabilistic Jacobian protocol).  Firmer ground, and narrower.
+Priority: s74 > s78 > s75 > s77 > s76 > s79.  Session numbering differs from the
+reconciled proposal's and the mapping table is on page one of every brief.
+
 ## Roadmap — thread 2, batch 11 (superseded, kept for the trail)
 
 Batch 11 is sessions 68–73 (Claude) and S1–S6 (Sol), eleven ungated and one
