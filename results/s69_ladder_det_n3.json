@@ -1,0 +1,7 @@
+{
+ "n": 3, "top": 12, "a": 6, "lam": [19,7,2,2,2,2,2],
+ "generic_rank": 6, "det_rank_2147483647": 5, "det_rank_2147483629": 5,
+ "i_det_2147483647": 1, "i_det_2147483629": 1, "kernel_dim": 1,
+ "basis_births": [9,9,10,10,11,12],
+ "note": "n=3 ladder validation: climbing delta=9->12 (2 seed vectors at delta=9, then +2,+1,+1 new at delta=10,11,12) reproduces generic rank 6 = a and det rank 5 = mult_det, i_det=1, kernel dim 1 at both house primes. Matches the passed naive-sampler control (results/s69_n3_d12.json) whose U_D equals the banked vector exactly. Confirms the ladder builds the correct M_lambda and mult_det."
+}

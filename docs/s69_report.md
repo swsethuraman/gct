@@ -54,11 +54,19 @@ walled at 14.4 TB / 415 days (s63).
    `M_λ` and reads off `i_det` directly.
 
 5. **The LMR cell itself (beyond the brief's tasks).** `((65,17,2^7), 24)`,
-   `a = 274`. [FILLED ON COMPLETION — see §6.] The evaluation cost is
-   ~0.13 s per (filling, point) by the exterior-algebra DP, against 48–95 s
-   for the `2^15·512` determinants of the mixed-discriminant route; the object
-   is 274-dimensional, so `mult_det` at the LMR cell is a few-CPU-hour rank by
-   evaluation, not a 14.4 TB coordinate build.
+   `a = 274`. Evaluation of a highest-weight vector costs ~0.13 s
+   (exterior-algebra DP), against s63's 14.4 TB / 415 days to build one vector
+   in coordinates — so for evaluation the wall is entirely in the
+   representation. Computing `mult_det` needs a spanning basis of the
+   274-dimensional `M_λ`; the ladder (Lemma L, `u = e_1^4` = climbing by
+   diagonal scaling) makes this reachable and is **validated exactly at n = 3**
+   (`mult_det = 5`, `i_det = 1` by climbing `δ = 9→12`). At `n = 4` it climbs
+   but each rung carries a coupon-collector concentration tail (measured), so a
+   full LMR basis is a ~12–15 CPU-hour job in this container — feasible, not a
+   14.4 TB wall, but not completed tonight. The residual cost is *basis
+   enumeration*, not evaluation, and its cause is the object's late-born tail
+   (the birth profile). This is the precise statement of the circuit's
+   limitation the brief's success criterion asks for.
 
 ## The representation
 
@@ -179,24 +187,45 @@ statement of what the circuit, sampled naively, cannot cheaply express: not the
 evaluation of a vector, but the *enumeration of a basis* — and specifically the
 late-born tail of it.
 
-**The principled route a successor should take (the ladder).** Lemma L (s57):
+**The ladder (implemented, validated at n = 3).** Lemma L (s57):
 multiplication by `u = e_1^4` is injective `M_{δ−1} ↪ M_δ`, and in filling
 terms `u·F` is `F` with the new letter placed as four height-1 columns (all
-index 1) — exactly the four `1`-columns the shape gains at each `δ` step. So a
-spanning set of `M_24` is obtained by **climbing the ladder**: carry a spanning
-set of `M_{δ−1}` up by adding the `e_1^4` letter (free), and at each rung sample
-only for the `a_δ − a_{δ−1}` *new* directions modulo the climbed ones. This
-replaces one 274-dimensional coupon-collector problem by twelve small ones
-(`+37, +54, +52, …, +1, +1`), and — decisively — reduces the hard δ = 24 step
-to hunting a **single** u-free direction, projecting out the 273-dimensional
-`u·M_23` that came up for free. The evaluator is already fast enough for this;
-it is an orchestration a successor session can run in a night. This session
-establishes the evaluator, the semantics (exactly, via the n = 3 control) and
-the diagnosis; it does not implement the ladder orchestration.
+index 1) — exactly the four `1`-columns the shape gains at each `δ` step. The
+identity is verified exactly here: `(u·F)(f) = F(f)·4!·f_{s_1^4}` for every `F`,
+`f` (`wk11_s69_ladder`). So at a fixed set of points **climbing is a diagonal
+scaling of the evaluation row** by the point's `s_1^4` coefficient, and a
+spanning set of `M_24` is built by climbing: carry the lower basis up for free,
+and at each rung sample only for the `a_δ − a_{δ−1}` new directions modulo the
+climbed ones. This replaces one 274-dimensional coupon-collector problem by
+twelve small ones (`+37, +54, +52, …, +1, +1`).
 
-The spanning run is checkpointed (`results/s69_lmr_state.json`,
-`results/s69_lmr_curve.json`) and resumable; the highest rank reached in this
-container by bundle time is recorded there and in the size table.
+`analysis/wk11_s69_ladder.py` implements it and it is **validated on the
+`n = 3` ladder**: climbing `δ = 9 → 12` reaches generic rank `6 = a` in seconds
+(against 9–556 naive samples), and the det side gives `mult_det = 5`,
+`i_det = 1`, kernel dim 1 at both primes — the passed control, rebuilt by
+climbing.
+
+At `n = 4` the ladder climbs but **each rung has its own concentration tail**:
+the first directions of a rung come fast, the last few are rare. Measured at
+`δ = 13` (target `a_13 = 39`, `results/s69_lmr_concentration.json`): rank 29
+after one batch, 34, 36, then `36 → 37` over 160 → 320 further samples — no hard
+plateau (every direction is reachable; a wider `k ∈ {5,…,9}` does not change the
+tail), but a coupon-collector tail of ~150–200 samples per remaining dimension.
+Summed over the twelve rungs this makes a full `n = 4` LMR basis a **~12–15
+CPU-hour job in this 2-core / 7 GB container** — reachable, where the coordinate
+build is 14.4 TB, but longer than one window. The run is checkpointed
+(`results/s69_ladder_n4.json`) and resumable; the highest rank reached by bundle
+time is recorded there.
+
+**The precise statement of what the circuit cannot cheaply express**, then, is
+not the evaluation of a highest-weight vector at the LMR cell — that is ~0.13 s —
+nor the reproduction of the object (the `n = 3` control is exact) — but the
+**enumeration of a spanning basis** of the 274-dimensional `M_λ` by sampling:
+the object's own late-born tail (the birth profile) makes the last dimensions
+rare, and getting them needs a construction (a straightening / plethysm basis of
+fillings), not random sampling. That construction is the one piece this session
+identifies but does not build; everything it rests on — the evaluator, the exact
+semantics, the ladder, the per-rung diagnosis — is delivered and checked.
 
 ## Scorecard against the pre-registration
 

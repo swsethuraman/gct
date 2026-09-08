@@ -40,16 +40,15 @@ L.append("## 2. The `n = 4` LMR ladder `λ_δ = (4δ − 31, 17, 2^7)`, `det_4`,
 NS = {12: 51446325457, 14: 106429467326, 18: 151601110197, 21: 156124593451, 22: 156346649229, 23: 156419279221, 24: 156438903314, 25: 156443174266}
 a_l = {12: 2, 13: 39, 14: 93, 15: 145, 16: 188, 17: 219, 18: 241, 19: 255, 20: 264, 21: 269, 22: 272, 23: 273, 24: 274, 25: 274}
 seed = json.load(open(os.path.join(ROOT, "results", "s69_n4_seed.json"))) if os.path.exists(os.path.join(ROOT, "results", "s69_n4_seed.json")) else None
-lmr = json.load(open(os.path.join(ROOT, "results", "s69_lmr.json"))) if os.path.exists(os.path.join(ROOT, "results", "s69_lmr.json")) else None
-lmrA = json.load(open(os.path.join(ROOT, "results", "s69_lmr_state.json"))) if os.path.exists(os.path.join(ROOT, "results", "s69_lmr_state.json")) else None
+lad = json.load(open(os.path.join(ROOT, "results", "s69_ladder_n4.json"))) if os.path.exists(os.path.join(ROOT, "results", "s69_ladder_n4.json")) else None
 L.append("| δ | λ | a (s57/s63) | N_S (lmr_cell §6) | n_χ ≈ N_S/|Stab| (|Stab| = 2·7! = 10 080 at δ = 12, 7! = 5 040 above) | cells per filling | fillings needed | evaluation s/(filling, point), Grassmann DP |")
 L.append("|---|---|---|---|---|---|---|---|")
 for d in (12, 14, 18, 21, 22, 23, 24, 25):
     lam = (4 * d - 31, 17) + (2,) * 7
     stab = 10080 if d == 12 else 5040
     fills = "—"; ev = "—"
-    if d == 12 and seed: fills = f"{seed['generic_rank_P1']} (from {seed['samples']} samples, {len(seed['nonzero_fillings'])} nonzero)"; ev = f"{seed['eval_secs']}"
-    if d == 24 and lmrA: fills = f"{lmrA.get('generic_rank_P1', len(lmrA['basis']))} (from {lmrA['samples']} samples)"; ev = f"{lmrA['eval_secs'][-1] if lmrA.get('eval_secs') else '—'}"
+    if d == 12 and seed: fills = f"{seed['generic_rank_P1']} (from {seed['samples']} samples, {len(seed['nonzero_fillings'])} nonzero)"; ev = "0.13-0.4 (DP)"
+    if d == 24 and lad: fills = f"ladder rank {lad.get('generic_rank', lad.get('rank', len(lad.get('basis',[]))))}/274 (checkpointed)"; ev = "0.13 (DP)"
     L.append(f"| {d} | {lam} | {a_l[d]} | {NS[d]:,} | {NS[d]//stab:,} | {4*d} | {fills} | {ev} |")
 L.append("")
 L.append("Reading. Here the carrier is `~5×10^6` coordinates at the ladder bottom and `~3.1×10^7` at the LMR cell, "

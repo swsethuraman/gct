@@ -115,44 +115,60 @@ def main():
     statef = os.path.join(ROOT, "results", f"s69_ladder_n{n}.json")
     st = json.load(open(statef)) if os.path.exists(statef) else dict(n=n, top=top, a=P["a"], basis=[], rung_log=[])
     basis = st["basis"]           # list of dict(filling=native json, birth=delta)
-    rows = []                      # lifted-to-top rows (mod p) for the current basis
-    # rebuild lifted rows for any saved basis
+    margin = 24                    # points beyond the current target (rank certified up to target)
+
+    # per-rung point count: we only need (target + margin) points to detect rank up to target,
+    # so early rungs evaluate at far fewer than NPTS points.  The basis (small) is re-evaluated
+    # at more points when a later rung needs them.
+    def eval_native_rows(fillings, np_):
+        with Pool(args.workers, initializer=_init, initargs=(msyms[:np_], tab, p)) as pool:
+            return pool.map(_eval_native, fillings, chunksize=8)
+
+    cur_npts = 0; rows = []
+    def lift(nr, birth, np_):
+        up = upow[birth]
+        return [int(nr[j]) * int(up[j]) % p for j in range(np_)]
+
+    def ensure_npts(np_):
+        nonlocal cur_npts, rows
+        np_ = min(np_, NPTS)
+        if np_ <= cur_npts: return
+        native = eval_native_rows([b["filling"] for b in basis], np_) if basis else []
+        rows = [lift(nr, basis[i]["birth"], np_) for i, nr in enumerate(native)]
+        cur_npts = np_
+
     if basis:
-        with Pool(args.workers, initializer=_init, initargs=(msyms, tab, p)) as pool:
-            native_rows = pool.map(_eval_native, [b["filling"] for b in basis])
-        for b, nr in zip(basis, native_rows):
-            up = upow[b["birth"]]
-            rows.append([int(x) * int(up[j]) % p for j, x in enumerate(nr)])
-        log(f"resume: {len(basis)} basis vectors, rank {rank_mod(rows, p)}")
+        ensure_npts(min(NPTS, P["a"][top] + margin))
+        log(f"resume: {len(basis)} basis vectors at {cur_npts} pts, rank {rank_mod(rows, p)}")
     rank = rank_mod(rows, p) if rows else 0
 
     rng = random.Random(args.seed + len(basis))
-    with Pool(args.workers, initializer=_init, initargs=(msyms, tab, p)) as pool:
-        for delta in P["deltas"]:
-            target = P["a"][delta]
-            n1 = n1_of(P, delta)
-            rung_batches = 0
-            while rank < target and rung_batches < args.maxbatch_per_rung:
-                batch = [random_filling(h, n, delta, P["n2"], n1, rng, k=rng.choice(kset)).to_json()
-                         for _ in range(args.batch)]
-                res = pool.map(_eval_native, batch, chunksize=8)
-                up = upow[delta]; added = 0; nz = 0
-                for Fj, nr in zip(batch, res):
-                    if nr is None: continue
-                    nz += 1
-                    lifted = [int(x) * int(up[j]) % p for j, x in enumerate(nr)]
-                    if rank_mod(rows + [lifted], p) > rank:
-                        rows.append(lifted); basis.append(dict(filling=Fj, birth=delta)); rank += 1; added += 1
-                        if rank >= target: break
-                rung_batches += 1
-                st["basis"] = basis; st["rank"] = rank
-                json.dump(st, open(statef + ".tmp", "w")); os.replace(statef + ".tmp", statef)
-                log(f"  delta={delta} target {target}: batch {len(batch)}, {nz} nonzero, +{added} -> rank {rank}")
-            st["rung_log"].append(dict(delta=delta, target=target, rank=rank, batches=rung_batches))
+    for delta in P["deltas"]:
+        target = P["a"][delta]
+        n1 = n1_of(P, delta)
+        ensure_npts(target + margin)
+        rung_batches = 0
+        while rank < target and rung_batches < args.maxbatch_per_rung:
+            batch = [random_filling(h, n, delta, P["n2"], n1, rng, k=rng.choice(kset)).to_json()
+                     for _ in range(args.batch)]
+            res = eval_native_rows(batch, cur_npts)
+            added = 0; nz = 0
+            for Fj, nr in zip(batch, res):
+                if nr is None: continue
+                nz += 1
+                lifted = lift(nr, delta, cur_npts)
+                if rank_mod(rows + [lifted], p) > rank:
+                    rows.append(lifted); basis.append(dict(filling=Fj, birth=delta)); rank += 1; added += 1
+                    if rank >= target: break
+            rung_batches += 1
+            st["basis"] = basis; st["rank"] = rank
             json.dump(st, open(statef + ".tmp", "w")); os.replace(statef + ".tmp", statef)
-            if rank < target:
-                log(f"  delta={delta}: STUCK at rank {rank} < {target} after {rung_batches} batches"); break
-            log(f"delta={delta}: rank {rank}/{target} DONE")
+            log(f"  delta={delta} target {target} ({cur_npts} pts): batch {len(batch)}, {nz} nonzero, +{added} -> rank {rank}")
+        st["rung_log"].append(dict(delta=delta, target=target, rank=rank, batches=rung_batches, npts=cur_npts))
+        json.dump(st, open(statef + ".tmp", "w")); os.replace(statef + ".tmp", statef)
+        if rank < target:
+            log(f"  delta={delta}: STUCK at rank {rank} < {target} after {rung_batches} batches"); break
+        log(f"delta={delta}: rank {rank}/{target} DONE")
     st["generic_rank"] = rank
     json.dump(st, open(statef, "w"))
     log(f"generic spanning: rank {rank} of {P['a'][top]}")

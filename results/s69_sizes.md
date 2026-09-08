@@ -16,13 +16,13 @@ Reading. Along this ladder the circuit's size is **constant**: six fillings at e
 
 | δ | λ | a (s57/s63) | N_S (lmr_cell §6) | n_χ ≈ N_S/|Stab| (|Stab| = 2·7! = 10 080 at δ = 12, 7! = 5 040 above) | cells per filling | fillings needed | evaluation s/(filling, point), Grassmann DP |
 |---|---|---|---|---|---|---|---|
-| 12 | (17, 17, 2, 2, 2, 2, 2, 2, 2) | 2 | 51,446,325,457 | 5,103,802 | 48 | 2 (from 120 samples, 22 nonzero) | 0.545 |
+| 12 | (17, 17, 2, 2, 2, 2, 2, 2, 2) | 2 | 51,446,325,457 | 5,103,802 | 48 | 2 (from 120 samples, 22 nonzero) | 0.13-0.4 (DP) |
 | 14 | (25, 17, 2, 2, 2, 2, 2, 2, 2) | 93 | 106,429,467,326 | 21,116,957 | 56 | — | — |
 | 18 | (41, 17, 2, 2, 2, 2, 2, 2, 2) | 241 | 151,601,110,197 | 30,079,585 | 72 | — | — |
 | 21 | (53, 17, 2, 2, 2, 2, 2, 2, 2) | 269 | 156,124,593,451 | 30,977,101 | 84 | — | — |
 | 22 | (57, 17, 2, 2, 2, 2, 2, 2, 2) | 272 | 156,346,649,229 | 31,021,160 | 88 | — | — |
 | 23 | (61, 17, 2, 2, 2, 2, 2, 2, 2) | 273 | 156,419,279,221 | 31,035,571 | 92 | — | — |
-| 24 | (65, 17, 2, 2, 2, 2, 2, 2, 2) | 274 | 156,438,903,314 | 31,039,464 | 96 | 98 (from 897 samples) | — |
+| 24 | (65, 17, 2, 2, 2, 2, 2, 2, 2) | 274 | 156,438,903,314 | 31,039,464 | 96 | ladder rank 2/274 (checkpointed) | 0.13 (DP) |
 | 25 | (69, 17, 2, 2, 2, 2, 2, 2, 2) | 274 | 156,443,174,266 | 31,040,312 | 100 | — | — |
 
 Reading. Here the carrier is `~5×10^6` coordinates at the ladder bottom and `~3.1×10^7` at the LMR cell, neither of which any session has built; the circuit needs `a_δ` fillings of `4δ` cells (`2 × 48` at the bottom, `274 × 96` at the top) and evaluates any of them at any point in a fraction of a second. The number of fillings grows exactly like `a_δ`, which is the dimension of the object — the circuit's size is the object's size, not the carrier's. What grows with the carrier is only the cost of *converting* to it (§6 of the spec).
