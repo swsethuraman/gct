@@ -1,0 +1,42 @@
+[     8.8s] rung delta=10 lam=(13, 7, 2, 2, 2, 2, 2): a = 4 (verifier DP = house Weyl alternation)
+      level 1: 68 prefixes
+      level 2: 1748 prefixes
+      level 3: 20758 prefixes
+      level 4: 122789 prefixes
+      level 5: 425700 prefixes
+      level 6: 849998 prefixes
+      level 7: 1008448 prefixes
+      level 8: 1017919 prefixes
+      level 9: 1017919 prefixes
+      level 10: 1017919 prefixes
+  lam=(13, 7, 2, 2, 2, 2, 2): N_S=1017919 |Stab|=120 n_chi=14598 (orbits dropped: 0) [lean, 127s, HWM 0.25 GB]
+    E_01: |H|=120 targets 742591 canonical rows 10884 nnz 53556 (obstructed fixed targets cancelled: 0) [70s, HWM 0.25 GB]
+    E_12: |H|=24 targets 410894 canonical rows 24134 nnz 96558 (obstructed fixed targets cancelled: 0) [78s, HWM 0.25 GB]
+    E_23: |H|=6 targets 751686 canonical rows 146493 nnz 297875 (obstructed fixed targets cancelled: 0) [84s, HWM 0.28 GB]
+    E_34: |H|=6 targets 751686 canonical rows 146493 nnz 297875 (obstructed fixed targets cancelled: 0) [91s, HWM 0.29 GB]
+    E_45: |H|=6 targets 751686 canonical rows 146493 nnz 297875 (obstructed fixed targets cancelled: 0) [96s, HWM 0.30 GB]
+    E_56: |H|=6 targets 751686 canonical rows 146493 nnz 297875 (obstructed fixed targets cancelled: 0) [103s, HWM 0.31 GB]
+  built (13, 7, 2, 2, 2, 2, 2) d10: N_S=1017919 |Stab|=120 n_chi=14598 rows=620990 nnz=1341614 (233s: mono 3s orbits 127s rows 103s; HWM 0.31 GB)
+[   241.6s]   built: N_S=1017919 |Stab|=120 n_chi=14598 rows=620990 nnz=1341614 (233s)
+    level 0 (12,2): 87620 rows, nnz 378772 (full: 620990 rows, nnz 1341614)
+    level 0 (12,2): 87632 rows, nnz 553486 (full: 621002 rows, nnz 1516790)
+    wied[s73_d10_det_p1_primary p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=14598 nrows=87632 nnz=553486 k=0 len=29196 secs=102.1 | BM deg=14598 f0=426190755 secs=107.0 (108s)
+    level 0 (12,2): 87632 rows, nnz 553245 (full: 621002 rows, nnz 1516790)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=0 seed=701 k=0]: KERNEL SEQ n=14598 nrows=87620 nnz=378772 k=0 len=29196 secs=86.1 | BM deg=14588 f0=0 secs=91.4 | DONE secs=137.9 (140s)
+    (kernel vector of the compressed matrix is not in ker[E; ev]: escalate)
+    level 1 (None,1): 620990 rows, nnz 1341614 (full: 620990 rows, nnz 1341614)
+    wied[s73_d10_det_p2_primary p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=14598 nrows=87632 nnz=553245 k=0 len=29196 secs=98.5 | BM deg=14598 f0=2037995495 secs=103.4 (104s)
+    level 0 (12,2): 87632 rows, nnz 553486 (full: 621002 rows, nnz 1516790)
+    wied[s73_d10_per_p1_primary p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=14598 nrows=87632 nnz=553486 k=0 len=29196 secs=99.4 | BM deg=14598 f0=149152229 secs=104.3 (105s)
+    level 0 (12,2): 87632 rows, nnz 553245 (full: 621002 rows, nnz 1516790)
+    wied[s73_d10_per_p2_primary p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=14598 nrows=87632 nnz=553245 k=0 len=29196 secs=101.0 | BM deg=14598 f0=931638220 secs=106.2 (115s)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=1 seed=702 k=0]: KERNEL SEQ n=14598 nrows=620990 nnz=1341614 k=0 len=29196 secs=344.2 | BM deg=14595 f0=0 secs=349.2 | DONE secs=506.6 (662s)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=1 seed=703 k=1]: KERNEL SEQ n=14598 nrows=620990 nnz=1341614 k=1 len=29196 secs=326.3 | BM deg=14596 f0=0 secs=331.2 | DONE secs=525.6 (1274s)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=1 seed=704 k=2]: KERNEL SEQ n=14598 nrows=620990 nnz=1341614 k=2 len=29196 secs=397.6 | BM deg=14597 f0=0 secs=402.8 | DONE secs=625.8 (2220s)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=1 seed=705 k=3]: KERNEL SEQ n=14598 nrows=620990 nnz=1341614 k=3 len=29196 secs=384.9 | BM deg=14598 f0=0 secs=389.8 | DONE secs=583.8 (2906s)
+    wied[s73_d10_fullE_p1_primary p=2147483647 lvl=1 seed=706 k=4]: NONSINGULAR SEQ n=14598 nrows=620990 nnz=1341614 k=4 len=29196 secs=389.6 | BM deg=14598 f0=1436579530 secs=394.5 (3308s)
+[  3550.4s]   [det] nullity = 0 at primes {2147483629: 0, 2147483647: 0} -> mult_det = 4, i_det = 0
+[  3550.4s]   [per] nullity = 0 at primes {2147483629: 0, 2147483647: 0} -> mult_per = 4, i_per = 0
+[  3550.4s]   D = i_det - i_per = 0 - 0 = 0; intersection {'dim_UD': 0, 'dim_UP': 0, 'dim_intersection': 0, 'UD_subset_UP': True, 'UP_subset_UD': True}
+[  3550.5s]   fullE: nullity(E) = 4 = a; rank on the 3173 u-free columns = 2 (birth space dim 2, dim J(M_prev) = 2)
+[  3550.5s] rung 10 banked to /root/gct/results/s73_dladder.jsonl: {"a": 4, "D": 0, "decision": "D = 0: orientation test decides"}

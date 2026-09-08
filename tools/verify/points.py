@@ -3,7 +3,7 @@
 A recorded point is a dict with a "type" and the data that pins the form:
 
   {"type": "det_pencil",       "pencil": [A_1, ..., A_r]}       A_i integer n x n
-  {"type": "permanent",        "pencil": [A_1, ..., A_r]}       A_i integer n x n, UNPADDED
+  {"type": "permanent_pencil", "pencil": [A_1, ..., A_r]}       A_i integer n x n, UNPADDED per_n
   {"type": "padded_permanent", "linear_forms": [x_0, ..., x_9]} each a length-r int vector
   {"type": "reducible",        "l": [..r ints..], "cubic": [[alpha, coeff], ...]}
   {"type": "form",             "coefficients": [[alpha, coeff], ...]}   degree n
@@ -11,7 +11,7 @@ A recorded point is a dict with a "type" and the data that pins the form:
 The matrix size of a pencil and the degree of an explicit form follow the cell's
 n, which the caller passes; n = 4 is the default, so nothing written before the
 n = 3 extension changes meaning.  "padded_permanent" is x_0 * per_3 and exists
-only at n = 4; it is refused at any other n.  "permanent" is the unpadded per_n
+only at n = 4; it is refused at any other n.  "permanent_pencil" is the unpadded per_n
 and is a different variety -- see the batch-11 plan section 1.1 for why the two
 must never be conflated.
 
@@ -25,7 +25,14 @@ import random
 from forms import (det_pencil_form, permanent_pencil_form, padded_permanent_form,
                    reducible_form, poly_degree_check)
 
-FAMILIES = ("det_pencil", "permanent", "padded_permanent", "reducible", "generic")
+# The order fixes the fresh-point seed offsets (seed + 1000*k).  permanent_pencil
+# is APPENDED, not inserted: session 73 pointed out that inserting it (as the
+# integrator's first version did) silently shifts the offsets of
+# padded_permanent, reducible and generic, so a certificate's "fresh points of
+# family X" would be drawn from a different stream than when it was written.
+# The regression that was run missed it because every cert it touched used
+# det_pencil, which is index 0 either way.  Do not reorder this tuple.
+FAMILIES = ("det_pencil", "padded_permanent", "reducible", "generic", "permanent_pencil")
 
 
 def _int_vec(v, length, what):
@@ -76,8 +83,8 @@ def form_of_point(pt, r, n=4):
     t = pt["type"]
     if t == "det_pencil":
         return det_pencil_form(_check_pencil(pt, r, n, "det_pencil"), r, n)
-    if t == "permanent":
-        return permanent_pencil_form(_check_pencil(pt, r, n, "permanent"), r, n)
+    if t == "permanent_pencil":
+        return permanent_pencil_form(_check_pencil(pt, r, n, "permanent_pencil"), r, n)
     if t == "padded_permanent":
         if n != 4:
             raise ValueError("padded_permanent point: the padded family is defined only at n = 4")
@@ -118,7 +125,7 @@ def _exps(deg, r):
 
 def fresh_point(family, r, rnd, box=1000, n=4):
     """A recorded-style point dict drawn from rnd (so it can be written down)."""
-    if family in ("det_pencil", "permanent"):
+    if family in ("det_pencil", "permanent_pencil"):
         return {"type": family,
                 "pencil": [[[rnd.randint(-box, box) for _ in range(n)] for _ in range(n)]
                            for _ in range(r)]}

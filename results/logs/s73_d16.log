@@ -1,0 +1,41 @@
+[    25.3s] rung delta=16 lam=(31, 7, 2, 2, 2, 2, 2): a = 6 (verifier DP = house Weyl alternation)
+      level 1: 72 prefixes
+      level 2: 2005 prefixes
+      level 3: 24872 prefixes
+      level 4: 154067 prefixes
+      level 5: 526119 prefixes
+      level 6: 993439 prefixes
+      level 7: 1157958 prefixes
+      level 8: 1167429 prefixes
+      level 9: 1167429 prefixes
+      level 10: 1167429 prefixes
+      level 11: 1167429 prefixes
+      level 12: 1167429 prefixes
+      level 13: 1167429 prefixes
+      level 14: 1167429 prefixes
+      level 15: 1167429 prefixes
+      level 16: 1167429 prefixes
+  lam=(31, 7, 2, 2, 2, 2, 2): N_S=1167429 |Stab|=120 n_chi=17403 (orbits dropped: 0) [lean, 277s, HWM 0.35 GB]
+    E_01: |H|=120 targets 791317 canonical rows 11953 nnz 61490 (obstructed fixed targets cancelled: 0) [173s, HWM 0.38 GB]
+    E_12: |H|=24 targets 487846 canonical rows 29339 nnz 112458 (obstructed fixed targets cancelled: 0) [187s, HWM 0.38 GB]
+    E_23: |H|=6 targets 865947 canonical rows 170662 nnz 342502 (obstructed fixed targets cancelled: 0) [200s, HWM 0.40 GB]
+    E_34: |H|=6 targets 865947 canonical rows 170662 nnz 342502 (obstructed fixed targets cancelled: 0) [213s, HWM 0.41 GB]
+    E_45: |H|=6 targets 865947 canonical rows 170662 nnz 342502 (obstructed fixed targets cancelled: 0) [224s, HWM 0.41 GB]
+    E_56: |H|=6 targets 865947 canonical rows 170662 nnz 342502 (obstructed fixed targets cancelled: 0) [237s, HWM 0.41 GB]
+  built (31, 7, 2, 2, 2, 2, 2) d16: N_S=1167429 |Stab|=120 n_chi=17403 rows=723940 nnz=1543956 (522s: mono 8s orbits 277s rows 237s; HWM 0.41 GB)
+[   547.2s]   built: N_S=1167429 |Stab|=120 n_chi=17403 rows=723940 nnz=1543956 (522s)
+    level 0 (12,2): 104464 rows, nnz 689259 (full: 723954 rows, nnz 1787598)
+    level 0 (12,2): 104464 rows, nnz 688915 (full: 723954 rows, nnz 1787598)
+    wied[s73_d16_det_p1_primary p=2147483647 lvl=0 seed=1 k=0]: KERNEL SEQ n=17403 nrows=104464 nnz=689259 k=0 len=34806 secs=169.1 | BM deg=17403 f0=0 secs=176.1 | DONE secs=263.3 (526s)
+    wied[s73_d16_det_p2_primary p=2147483629 lvl=0 seed=1 k=0]: KERNEL SEQ n=17403 nrows=104464 nnz=688915 k=0 len=34806 secs=171.4 | BM deg=17403 f0=0 secs=178.4 | DONE secs=266.4 (532s)
+    wied[s73_d16_det_p1_primary p=2147483647 lvl=0 seed=2 k=1]: NONSINGULAR SEQ n=17403 nrows=104464 nnz=689259 k=1 len=34806 secs=169.5 | BM deg=17403 f0=2084865851 secs=176.4 (808s)
+    wied[s73_d16_det_p2_primary p=2147483629 lvl=0 seed=2 k=1]: NONSINGULAR SEQ n=17403 nrows=104464 nnz=688915 k=1 len=34806 secs=171.8 | BM deg=17403 f0=1988851195 secs=178.8 (812s)
+    level 0 (12,2): 104464 rows, nnz 689259 (full: 723954 rows, nnz 1787598)
+    level 0 (12,2): 104464 rows, nnz 688915 (full: 723954 rows, nnz 1787598)
+    wied[s73_d16_per_p1_primary p=2147483647 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=17403 nrows=104464 nnz=689259 k=0 len=34806 secs=158.1 | BM deg=17403 f0=644468686 secs=165.1 (188s)
+    wied[s73_d16_per_p2_primary p=2147483629 lvl=0 seed=1 k=0]: NONSINGULAR SEQ n=17403 nrows=104464 nnz=688915 k=0 len=34806 secs=161.6 | BM deg=17403 f0=201494028 secs=168.6 (191s)
+[  1597.7s]   [det] nullity = 1 at primes {2147483629: 1, 2147483647: 1} -> mult_det = 5, i_det = 1
+[  1597.7s]   [per] nullity = 0 at primes {2147483629: 0, 2147483647: 0} -> mult_per = 6, i_per = 0
+[  1608.1s]   [det] kernel vector 0: {'reconstructed': True, 'E_v_zero_over_Z': True, 'support': 3900, 'max_abs_coeff': 544, 'in_mod_P2_kernel_span': True, 'vanishes_fresh_det_over_Z': True, 'n_fresh_det': 12, 'nonzero_fresh_per_over_Z': [True, True, True, True, True, True, True, True, True, True, True, True], 'nonzero_generic_cubic_over_Z': [True, True, True, True]}
+[  1608.1s]   D = i_det - i_per = 1 - 0 = 1; intersection {'dim_UD': 1, 'dim_UP': 0, 'dim_intersection': 0, 'UD_subset_UP': False, 'UP_subset_UD': True}
+[  1608.2s] rung 16 banked to /root/gct/results/s73_dladder.jsonl: {"a": 6, "D": 1, "decision": "D > 0: multiplicity obstruction (i_per < i_det)"}

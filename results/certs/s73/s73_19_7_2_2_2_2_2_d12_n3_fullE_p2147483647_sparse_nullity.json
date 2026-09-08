@@ -1,0 +1,56 @@
+{
+ "format": "gct-cert/1",
+ "kind": "sparse_nullity",
+ "title": "s73: nullity_p(E) = 6 = a at p = 2147483647 for lambda = (19, 7, 2, 2, 2, 2, 2), delta = 12 (n = 3, r = 7): the raising operators on V_chi have kernel of the plethysm dimension",
+ "produced_by": "analysis/wk11_s73_cell.py via wk9_s45_cell.nullity_stacked (session 73)",
+ "notes": "the kernel of E alone (no evaluation rows); its a vectors are the explicit basis of M_delta banked in results/artefacts/s73_M_basis_d<delta>_p1.npz (mod P1)",
+ "cell": {
+  "n": 3,
+  "r": 7,
+  "lambda": [
+   19,
+   7,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "delta": 12,
+  "a": 6
+ },
+ "conventions": {
+  "coefficient": "c_alpha(F) = coefficient of s^alpha in F",
+  "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}"
+ },
+ "prime": 2147483647,
+ "variety": "none",
+ "points": [],
+ "reduction": {
+  "N_S": 1155302,
+  "n_chi": 17047,
+  "stab": 120,
+  "nrows_E": 713677,
+  "nnz_E": 1526091,
+  "note": "chi_lambda-isotypic reduction of the weight-lambda monomial space (docs/stabiliser_reduction.md), built by analysis/wk9_s45_build.build_cell(n=3)"
+ },
+ "run": {
+  "level": [
+   0,
+   1
+  ],
+  "seed0": 1,
+  "wied_seed": 708,
+  "k_extra": 6,
+  "bm_degree": 17047,
+  "bm_f0": 771177339,
+  "rows": 713677,
+  "nnz": 1526091,
+  "log": "SEQ n=17047 nrows=713677 nnz=1526091 k=6 len=34094 secs=514.4 | BM deg=17047 f0=771177339 secs=521.1",
+  "secs": 5562.2
+ },
+ "claim": {
+  "nullity": 6,
+  "mult": 0
+ }
+}

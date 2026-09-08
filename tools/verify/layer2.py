@@ -26,6 +26,7 @@ the rank modulo the prime must be a.  Since rank_p <= rank_Q <= a, that proves
 mult = a over Q at the cell, provided the points lie on the claimed variety --
 which is exactly what rebuilding them from substitution data checks.
 """
+import os
 import random
 from flint import nmod_mat, fmpz_mat
 from hwv import (check_vector_shape, is_highest_weight, star_support, evaluate,
@@ -276,4 +277,74 @@ def check_full_rank_certificate(cert, log):
                rk == a, f"rank {rk}")
     if ok:
         _rec(log, f"conclusion: mult_{cert['variety']}(lambda, delta) = a = {a} over Q (rank_p <= rank_Q <= a)", True)
+    return ok
+
+
+# ------------------------------------------------------------- sparse nullity (session 73)
+def check_sparse_nullity_certificate(cert, log, cert_dir=None):
+    """A recorded sparse-Wiedemann run on the stacked matrix [E; ev] of a cell
+    (docs/sparse_det_route.md, Lemmas 1-4).  What is checked here from scratch:
+    the cell (a recomputed), the evaluation points rebuilt from substitution
+    data (so they lie on the claimed variety), the arithmetic of the claim
+    (mult = a - nullity), the closing Berlekamp-Massey record (degree = n_chi,
+    f(0) != 0, and k_extra = nullity pinned rows for the run that closed the
+    count), and -- when the nullity is positive -- that the named companion
+    hwv certificates exist and are as many as the nullity.  What is NOT
+    re-done here: the chi-isotypic build and the Wiedemann sequence itself
+    (2 n_chi sparse products); both are re-runnable from the recorded seeds
+    with analysis/wk11_s73_cell.py, and the report says so in its own line."""
+    cell = cert["cell"]
+    n, r, lam, delta, a = cell["n"], cell["r"], tuple(cell["lambda"]), cell["delta"], cell["a"]
+    ok = check_cell(cell, log)
+    p = cert["prime"]
+    red = cert["reduction"]
+    run = cert["run"]
+    claim = cert["claim"]
+    k = claim["nullity"]
+    ok &= _rec(log, "claim: mult = a - nullity", claim["mult"] == a - k, f"a {a}, nullity {k}, mult {claim['mult']}")
+    ok &= _rec(log, "claim: 0 <= nullity <= a", 0 <= k <= a)
+    var = cert["variety"]
+    pts = cert["points"]
+    if var == "none":
+        ok &= _rec(log, "variety none: no evaluation rows (the kernel of E alone, nullity = a expected)",
+                   not pts and k == a, f"{len(pts)} points, nullity {k}, a {a}")
+    else:
+        bad = 0
+        for pt in pts:
+            if pt["type"] != var:
+                return _rec(log, "points are of the claimed variety", False, f"{pt['type']} vs {var}") and False
+            try:
+                F = form_of_point(pt, r, n)
+                if not F:
+                    bad += 1
+            except ValueError as e:
+                return _rec(log, "point rebuilt from substitution data", False, str(e)) and False
+        ok &= _rec(log, f"{len(pts)} recorded {var} points rebuilt from substitution data (each a nonzero form of degree {n})",
+                   bad == 0 and len(pts) >= a, f"{bad} zero forms; need at least a = {a} points")
+    ok &= _rec(log, "reduction sizes recorded (N_S, n_chi, |Stab|, rows and nnz of E)",
+               all(isinstance(red[key], int) and red[key] >= 0 for key in ("N_S", "n_chi", "stab", "nrows_E", "nnz_E")))
+    ok &= _rec(log, "closing Berlekamp-Massey record: degree = n_chi and f(0) != 0 (Lemma 4: [E_c; ev; R] nonsingular)",
+               run["bm_degree"] == red["n_chi"] and run["bm_f0"] % p != 0,
+               f"degree {run['bm_degree']} vs n_chi {red['n_chi']}, f(0) = {run['bm_f0']}")
+    ok &= _rec(log, "closing run pinned k_extra = nullity random dense rows (so nullity_p <= k)",
+               run["k_extra"] == k, f"k_extra {run['k_extra']}, nullity {k}")
+    if k == 0:
+        _rec(log, f"conclusion: nullity_p([E; ev]) = 0 at p = {p}, so mult_{var}(lambda, delta) = a = {a} over Q "
+                  f"(rank_p <= rank_Q <= a); the row sampling/grouping of E can only lose rank, so the compressed "
+                  f"certificate implies the full one", True)
+    elif var == "none":
+        _rec(log, f"conclusion: nullity_p(E) = {k} = a at p = {p}: the {k} kernel vectors (an explicit basis of the "
+                  f"highest-weight space mod p) are banked as an artefact by the producer and are NOT certified here "
+                  f"(a mod-p basis of this size does not fit a certificate); the count is closed by the Berlekamp-Massey "
+                  f"record above", True)
+    else:
+        comp = cert.get("kernel_certificates", [])
+        exists = [bool(cert_dir and os.path.exists(os.path.join(cert_dir, f))) for f in comp]
+        ok &= _rec(log, f"nullity {k}: {k} companion hwv certificate(s) named and present",
+                   len(comp) == k and all(exists), f"named {comp}, present {exists}")
+        _rec(log, f"conclusion: nullity_p = {k} at p = {p}: mult >= {a-k} proved; = {a-k} measured, carried to Q by the "
+                  f"companion hwv certificate(s) (integer vectors annihilated by the raising operators over Z, "
+                  f"vanishing at fresh {var} points)", True)
+    _rec(log, "NOT re-done here: the chi-isotypic build and the Wiedemann sequence (re-runnable from the recorded "
+              "seeds: analysis/wk11_s73_cell.py)", True)
     return ok

@@ -227,7 +227,7 @@ re-derive.
 ```
 
 - `field`: required, a finite field `F_p` (see above).
-- `variety`: `det_pencil`, `permanent`, `padded_permanent` or `reducible`.
+- `variety`: `det_pencil`, `permanent_pencil`, `padded_permanent` or `reducible`.
   `permanent` is the **unpadded** `per_n` pencil, a form of degree `n` in `r`
   variables; it is a different variety from `padded_permanent` (`x_0 * per_3`,
   which is the programme's model and exists only at `n = 4`), and the two are
@@ -285,3 +285,85 @@ re-derived this run because the true `N_S` exceeds `VERIFY_MAX_NS` — the claim
 reproducible on demand (one build plus one Wiedemann sequence) by re-running with
 a larger budget.  The verifier never reports `PASS` for a claim it did not check,
 and never trusts a size declared in the certificate.
+
+
+## Two dialects of `sparse_nullity` (batch-11 merge, to be unified by session 78)
+
+Session 73 branched before session 67's tree was merged and could not see the
+kind session 67 had defined, so it defined its own.  Both are accepted by the
+verifier and neither is weaker; a certificate uses one or the other, not a mix.
+
+| | session 67 | session 73 |
+|---|---|---|
+| the field | `field: "F_p"` | `prime: p` |
+| the claim | `nullity: k` | `claim: {nullity, mult}` |
+| provenance | `recipe`, `provenance` | `run` (level, seeds, Berlekamp–Massey degree and `f(0)`, rows, nnz) |
+| build sizes | — | `reduction` (`N_S`, `n_chi`, `stab`, `nrows_E`, `nnz_E`) |
+| a positive nullity's kernel | `basis`, inline | `kernel_certificates`, companion `hwv` files |
+| a bare `nullity(E) = a` | — | `variety: "none"`, `points: []` |
+
+Session 73's additions are improvements and should survive the unification:
+`reduction` records the build the claim rests on, `run` records enough to replay
+the exact Wiedemann sequence, and `kernel_certificates` keeps a 240 510-term
+integer vector out of the certificate and under the 5 MB rule while still
+exhibiting it.  What must not survive is the split itself.
+
+**The unpadded family is named `permanent_pencil`**, appended to `FAMILIES` so
+the fresh-point seed offsets of the older families are unchanged.  The
+integrator's first version called it `permanent` and *inserted* it at index 1,
+which silently shifted those offsets; session 73's naming and ordering are the
+ones that stand.  The two integrator certificates written under the old name were
+renamed.
+
+## Kind `split_rank` (session 70) and kind `hybrid_kernel` (session 71)
+
+Both were defined by their producing sessions and neither was checkable by the
+verifier until the batch-11 merge; both are **recipe-style**, and both report
+`RECORDED` rather than `PASS`, because the number they claim needs the cell's
+build (or, for `split_rank`, the quartic source that session 70 proved the
+construction requires) and is not re-derived.
+
+`split_rank` — `rank S_{λ,δ} = mult_red`, `S` the comultiplication
+`Sym⁴V → V ⊗ Sym³V` restricted to the `λ`-highest-weight space.
+
+```json
+{"format": "gct-cert/1", "kind": "split_rank", "title": "...", "produced_by": "...",
+ "cell": {"n": 4, "r": 5, "lambda": [8,4,4,4,4], "delta": 6, "a": 2, "h_pad": 1},
+ "claim": {"rank_S": 1, "equals": "mult_red", "i_red": 1},
+ "cross_checks": {...}, "detail": {...}}
+```
+
+Checked: the cell (including `a` recomputed by the Weyl alternation),
+`0 ≤ rank_S ≤ a`, and `i_red = a − rank_S`.
+
+`hybrid_kernel` — the full mod-`p` kernel of the raising operator by session
+71's initial-term cover plus an exact Schur complement on the uncovered columns,
+and the multiplicities read off it.
+
+```json
+{"format": "gct-cert/1", "kind": "hybrid_kernel", ...,
+ "cell": {...}, "field": "F_2147483629", "prime": 2147483629,
+ "sizes":  {"N_S": 211636, "stab": 2, "n_chi": 82004, "n_red": 69840,
+            "rows_E": 184191, "nnz_E": 840337},
+ "recipe": {"cover_order": "reversed", "cover_size": 81470, ...},
+ "claims": {"nullity_p_E": 137, "mult_det": 137, "mult_per4": 137,
+            "mult_red_star": 131, "mult_red_pts": 131},
+ "points": {...}, "kernel_chi": ...}
+```
+
+Checked: the cell and its recomputed `a`; the field is finite; every claimed
+rank lies in `[0, a]`; `nullity_p(E) = a`; `mult_red ≤ mult_det` (the
+containment direction); the two reducible routes agree; and `n_chi ≤ N_S`.
+
+**`n_chi` is not bounded below by `N_S/|Stab|`.**  It counts `χ`-twisted orbits
+of `Stab(λ)`, and the build drops orbits whose twisted sum vanishes identically,
+so it can and does fall below that ratio.  An earlier version of this checker
+asserted the opposite and fired on a correct certificate.
+
+### Corpus status after the batch-11 merge
+
+1 082 certificates across six kinds — `hwv`, `matrix`, `full_rank`,
+`sparse_nullity`, `split_rank`, `hybrid_kernel` — all schema-valid, and the
+self-test passes.  What remains for session 78 is not validity but *unification*:
+one dialect of `sparse_nullity` instead of two, and a decision on whether
+`split_rank` and `hybrid_kernel` can be made re-derivable rather than recorded.
