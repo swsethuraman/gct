@@ -147,7 +147,7 @@ def measure_cell(lam, delta, a_given=None, hpad=None, bound=40, npts=None, paral
     nU = nc - cov['size']
     mem_x = min(4.0 * cov['size'] * nU, 1.0e9) + 4.0 * nc * a      # one X block (capped) + the uint32 kernel
     out['pred_mem_x_bytes'] = int(mem_x)
-    if parallel and 2 * mem_x < 3.0e9:
+    if parallel and 2 * mem_x < 6.0e8:            # concurrent primes only for small cells; large ones run primes sequentially (peak memory, no fork thrash on a 7 GB / 2-core box)
         import multiprocessing as mp
         with mp.get_context('fork').Pool(2) as pool:
             res = pool.map(_prime_job, jobs)
