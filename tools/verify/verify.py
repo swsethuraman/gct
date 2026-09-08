@@ -22,7 +22,8 @@ import sys, os, json, gzip, time, traceback
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from layer1 import check_matrix_certificate          # noqa: E402
-from layer2 import check_hwv_certificate, check_full_rank_certificate  # noqa: E402
+from layer2 import (check_hwv_certificate, check_full_rank_certificate,   # noqa: E402
+                    check_sparse_nullity_certificate)
 from points import FAMILIES                          # noqa: E402
 
 FORMAT = "gct-cert/1"
@@ -83,7 +84,7 @@ def validate(cert):
           allowed=["format", "kind", "title", "produced_by", "notes", "cell", "conventions",
                    "modulus", "vectors", "claims", "matrix", "matrix_source", "claimed_rank_Q",
                    "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero", "prime",
-                   "variety", "points", "basis"])
+                   "variety", "points", "basis", "reduction", "run", "claim", "kernel_certificates"])
     if cert["format"] != FORMAT:
         raise Unparseable(f"format: expected {FORMAT!r}")
     kind = cert["kind"]
@@ -153,11 +154,40 @@ def validate(cert):
         _check_conventions(cert["conventions"])
         if _int(cert["prime"], "prime") < 3:
             raise Unparseable("prime: expected a prime >= 3")
-        if cert["variety"] not in ("det_pencil", "padded_permanent", "reducible"):
-            raise Unparseable("variety: expected det_pencil, padded_permanent or reducible")
+        if cert["variety"] not in ("det_pencil", "padded_permanent", "reducible", "permanent_pencil"):
+            raise Unparseable("variety: expected det_pencil, padded_permanent, reducible or permanent_pencil")
         _check_points(cert["points"], "points")
         if cert["basis"] is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
             raise Unparseable("basis: expected null or a nonempty list of vectors")
+    elif kind == "sparse_nullity":
+        _need(cert, ["cell", "conventions", "prime", "variety", "points", "reduction", "run", "claim"],
+              allowed=list(base | {"cell", "conventions", "prime", "variety", "points", "reduction", "run",
+                                   "claim", "kernel_certificates"}))
+        _check_cell(cert["cell"])
+        _check_conventions(cert["conventions"])
+        if _int(cert["prime"], "prime") < 3:
+            raise Unparseable("prime: expected a prime >= 3")
+        if cert["variety"] not in ("det_pencil", "permanent_pencil", "padded_permanent", "reducible", "none"):
+            raise Unparseable("variety: expected det_pencil, permanent_pencil, padded_permanent, reducible or none")
+        if cert["variety"] == "none":
+            if cert["points"] != []:
+                raise Unparseable("points: must be [] when variety is none")
+        else:
+            _check_points(cert["points"], "points")
+        _need(cert["reduction"], ["N_S", "n_chi", "stab", "nrows_E", "nnz_E"],
+              allowed=["N_S", "n_chi", "stab", "nrows_E", "nnz_E", "note"], where="reduction")
+        for key in ("N_S", "n_chi", "stab", "nrows_E", "nnz_E"):
+            _int(cert["reduction"][key], f"reduction.{key}")
+        _need(cert["run"], ["level", "seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz"],
+              allowed=["level", "seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz", "secs", "log"],
+              where="run")
+        for key in ("seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz"):
+            _int(cert["run"][key], f"run.{key}")
+        _need(cert["claim"], ["nullity", "mult"], where="claim")
+        _int(cert["claim"]["nullity"], "claim.nullity"); _int(cert["claim"]["mult"], "claim.mult")
+        if "kernel_certificates" in cert and not (isinstance(cert["kernel_certificates"], list)
+                                                  and all(isinstance(x, str) for x in cert["kernel_certificates"])):
+            raise Unparseable("kernel_certificates: expected a list of file names")
     else:
         raise Unparseable(f"kind: unknown kind {kind!r}")
     return kind
@@ -187,6 +217,8 @@ def verify_file(path):
             ok = check_hwv_certificate(cert, log)
         elif kind == "matrix":
             ok = check_matrix_certificate(cert, log)
+        elif kind == "sparse_nullity":
+            ok = check_sparse_nullity_certificate(cert, log, cert_dir=os.path.dirname(os.path.abspath(path)))
         else:
             ok = check_full_rank_certificate(cert, log)
     except ValueError as e:                      # malformed content found while checking

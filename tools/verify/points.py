@@ -2,7 +2,8 @@
 
 A recorded point is a dict with a "type" and the data that pins the form:
 
-  {"type": "det_pencil",       "pencil": [A_1, ..., A_r]}       A_i integer 4x4
+  {"type": "det_pencil",       "pencil": [A_1, ..., A_r]}       A_i integer n x n (n = 4 or 3)
+  {"type": "permanent_pencil", "pencil": [A_1, ..., A_r]}       A_i integer n x n: per_n(sum s_i A_i)
   {"type": "padded_permanent", "linear_forms": [x_0, ..., x_9]} each a length-r int vector
   {"type": "reducible",        "l": [..r ints..], "cubic": [[alpha, coeff], ...]}
   {"type": "form",             "coefficients": [[alpha, coeff], ...]}   an explicit quartic
@@ -14,10 +15,12 @@ with integer entries in [-box, box]; the seed is recorded in the certificate
 and every drawn object is reproducible from it.
 """
 import random
-from forms import (det_pencil_form, padded_permanent_form, reducible_form,
-                   poly_degree_check)
+from forms import (det_pencil_form, permanent_pencil_form, padded_permanent_form,
+                   reducible_form, poly_degree_check)
 
-FAMILIES = ("det_pencil", "padded_permanent", "reducible", "generic")
+# the order fixes the fresh-point seed offsets (seed + 1000*k); permanent_pencil
+# was appended by session 73 so the older families keep their offsets
+FAMILIES = ("det_pencil", "padded_permanent", "reducible", "generic", "permanent_pencil")
 
 
 def _int_vec(v, length, what):
@@ -46,25 +49,27 @@ def _form_from_pairs(pairs, r, deg, what):
     return F
 
 
-def form_of_point(pt, r):
-    """Rebuild the quartic from a recorded point.  Raises ValueError on any
-    malformed data (never guesses)."""
+def form_of_point(pt, r, n=4):
+    """Rebuild the form (degree n) from a recorded point.  Raises ValueError on
+    any malformed data (never guesses)."""
     if not isinstance(pt, dict) or "type" not in pt:
         raise ValueError("point must be a dict with a type")
     t = pt["type"]
-    if t == "det_pencil":
+    if t in ("det_pencil", "permanent_pencil"):
         if set(pt) != {"type", "pencil"}:
-            raise ValueError("det_pencil point: keys must be exactly type, pencil")
+            raise ValueError(f"{t} point: keys must be exactly type, pencil")
         P = pt["pencil"]
         if not (isinstance(P, list) and len(P) == r):
-            raise ValueError(f"det_pencil point: need r = {r} matrices")
+            raise ValueError(f"{t} point: need r = {r} matrices")
         for A in P:
-            if not (isinstance(A, list) and len(A) == 4):
-                raise ValueError("det_pencil point: matrices must be 4x4")
+            if not (isinstance(A, list) and len(A) == n):
+                raise ValueError(f"{t} point: matrices must be {n}x{n}")
             for row in A:
-                _int_vec(row, 4, "det_pencil point")
-        return det_pencil_form(P, r)
+                _int_vec(row, n, f"{t} point")
+        return det_pencil_form(P, r, n) if t == "det_pencil" else permanent_pencil_form(P, r, n)
     if t == "padded_permanent":
+        if n != 4:
+            raise ValueError("padded_permanent point: the padded model x_0.per_3 is a quartic (n = 4 only)")
         if set(pt) != {"type", "linear_forms"}:
             raise ValueError("padded_permanent point: keys must be exactly type, linear_forms")
         L = pt["linear_forms"]
@@ -77,13 +82,13 @@ def form_of_point(pt, r):
         if set(pt) != {"type", "l", "cubic"}:
             raise ValueError("reducible point: keys must be exactly type, l, cubic")
         l = _int_vec(pt["l"], r, "reducible point")
-        c = _form_from_pairs(pt["cubic"], r, 3, "reducible point cubic")
-        return reducible_form(l, c, r)
+        c = _form_from_pairs(pt["cubic"], r, n - 1, "reducible point cubic")
+        return reducible_form(l, c, r, n)
     if t == "form":
         if set(pt) != {"type", "coefficients"}:
             raise ValueError("form point: keys must be exactly type, coefficients")
-        F = _form_from_pairs(pt["coefficients"], r, 4, "form point")
-        poly_degree_check(F, 4, r)
+        F = _form_from_pairs(pt["coefficients"], r, n, "form point")
+        poly_degree_check(F, n, r)
         return F
     raise ValueError(f"unknown point type {t!r}")
 
@@ -98,13 +103,15 @@ def _exps(deg, r):
     return out
 
 
-def fresh_point(family, r, rnd, box=1000):
+def fresh_point(family, r, rnd, box=1000, n=4):
     """A recorded-style point dict drawn from rnd (so it can be written down)."""
-    if family == "det_pencil":
-        return {"type": "det_pencil",
-                "pencil": [[[rnd.randint(-box, box) for _ in range(4)] for _ in range(4)]
+    if family in ("det_pencil", "permanent_pencil"):
+        return {"type": family,
+                "pencil": [[[rnd.randint(-box, box) for _ in range(n)] for _ in range(n)]
                            for _ in range(r)]}
     if family == "padded_permanent":
+        if n != 4:
+            raise ValueError("padded_permanent family is n = 4 only")
         return {"type": "padded_permanent",
                 "linear_forms": [[rnd.randint(-box, box) for _ in range(r)] for _ in range(10)]}
     def nz():
@@ -113,8 +120,8 @@ def fresh_point(family, r, rnd, box=1000):
     if family == "reducible":
         return {"type": "reducible",
                 "l": [rnd.randint(-box, box) for _ in range(r)],
-                "cubic": [[list(a), nz()] for a in _exps(3, r)]}
+                "cubic": [[list(a), nz()] for a in _exps(n - 1, r)]}
     if family == "generic":
         return {"type": "form",
-                "coefficients": [[list(a), nz()] for a in _exps(4, r)]}
+                "coefficients": [[list(a), nz()] for a in _exps(n, r)]}
     raise ValueError(f"unknown family {family!r}")

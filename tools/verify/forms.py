@@ -5,11 +5,13 @@ dict {exponent tuple (length r): integer coefficient}; c_alpha(F) is the plain
 coefficient of s^alpha in F.  Everything is exact over Z; a modulus may be
 applied at the end by the caller.
 
-The three families of evaluation points the programme uses:
+The families of evaluation points the programme uses (n = 4 unless stated;
+session 73 made the pencil families n-generic for the n = 3 comparison):
 
-  det pencil     F(s) = det_4( sum_i s_i A_i ),        A_i in Z^{4x4}
-  padded per_3   F(s) = x_0(s) * per_3( X(s) ),        x_0, X_11..X_33 linear forms in s
-  reducible      F(s) = l(s) * c(s),                    l linear, c a cubic
+  det pencil     F(s) = det_n( sum_i s_i A_i ),        A_i in Z^{n x n}
+  per pencil     F(s) = per_n( sum_i s_i A_i ),        A_i in Z^{n x n}   (unpadded permanent)
+  padded per_3   F(s) = x_0(s) * per_3( X(s) ),        x_0, X_11..X_33 linear forms in s   (n = 4 only)
+  reducible      F(s) = l(s) * c(s),                    l linear, c of degree n - 1
 
 The padded permanent is the restriction of the ten-variable form
 x_0 * per_3(x_1..x_9) along a linear map C^r -> C^10 given by ten linear forms.
@@ -103,17 +105,30 @@ def per_of_linear_matrix(entries):
     return rec(list(range(n)), list(range(n)))
 
 
-def det_pencil_form(pencil, r):
-    """pencil: list of r integer 4x4 matrices A_1..A_r.  Returns det_4(sum s_i A_i)."""
+def det_pencil_form(pencil, r, n=4):
+    """pencil: list of r integer n x n matrices A_1..A_r.  Returns det_n(sum s_i A_i)."""
     if len(pencil) != r:
         raise ValueError(f"pencil has {len(pencil)} matrices, expected r = {r}")
-    n = len(pencil[0])
-    if n != 4 or any(len(A) != 4 or any(len(row) != 4 for row in A) for A in pencil):
-        raise ValueError("pencil matrices must be 4x4")
-    entries = [[linear_form([pencil[k][i][j] for k in range(r)]) for j in range(4)]
-               for i in range(4)]
+    if any(len(A) != n or any(len(row) != n for row in A) for A in pencil):
+        raise ValueError(f"pencil matrices must be {n}x{n}")
+    entries = [[linear_form([pencil[k][i][j] for k in range(r)]) for j in range(n)]
+               for i in range(n)]
     F = det_of_linear_matrix(entries)
-    poly_degree_check(F, 4, r)
+    poly_degree_check(F, n, r)
+    return F
+
+
+def permanent_pencil_form(pencil, r, n=4):
+    """pencil: list of r integer n x n matrices A_1..A_r.  Returns per_n(sum s_i A_i)
+    -- the unpadded permanent restricted to an r-pencil (session 73)."""
+    if len(pencil) != r:
+        raise ValueError(f"pencil has {len(pencil)} matrices, expected r = {r}")
+    if any(len(A) != n or any(len(row) != n for row in A) for A in pencil):
+        raise ValueError(f"pencil matrices must be {n}x{n}")
+    entries = [[linear_form([pencil[k][i][j] for k in range(r)]) for j in range(n)]
+               for i in range(n)]
+    F = per_of_linear_matrix(entries)
+    poly_degree_check(F, n, r)
     return F
 
 
@@ -129,11 +144,12 @@ def padded_permanent_form(lin, r):
     return F
 
 
-def reducible_form(l, cubic, r):
-    """l: integer vector of length r; cubic: {exponent tuple: int} of degree 3."""
-    poly_degree_check(cubic, 3, r)
+def reducible_form(l, cubic, r, n=4):
+    """l: integer vector of length r; cubic: {exponent tuple: int} of degree n - 1
+    (a cubic when n = 4, a quadric when n = 3)."""
+    poly_degree_check(cubic, n - 1, r)
     F = poly_mul(linear_form(l), cubic)
-    poly_degree_check(F, 4, r)
+    poly_degree_check(F, n, r)
     return F
 
 
