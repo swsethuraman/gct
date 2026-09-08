@@ -1,0 +1,16 @@
+      level 1: 50 prefixes
+      level 2: 1056 prefixes
+      level 3: 11979 prefixes
+      level 4: 54372 prefixes
+      level 5: 94675 prefixes
+      level 6: 94675 prefixes
+  lam=(8, 4, 4, 4, 4): N_S=94675 |Stab|=24 n_chi=4562 (orbits dropped: 0) [lean, 1s, HWM 0.09 GB]
+    E_01: |H|=6 targets 60305 canonical rows 10719 nnz 44540 (obstructed fixed targets cancelled: 0) [0s, HWM 0.09 GB]
+    E_12: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [0s, HWM 0.09 GB]
+    E_23: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_34: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+  built (8, 4, 4, 4, 4) d6: N_S=94675 |Stab|=24 n_chi=4562 rows=136845 nnz=425759 (2s: mono 0s orbits 1s rows 1s; HWM 0.09 GB)
+    dense kernel [compressed] p=2147483647: nullity 2 = a, rank 4560, all vectors verified on the full E (31s, HWM 0.59 GB)
+    dense kernel [compressed] p=2147483629: nullity 2 = a, rank 4560, all vectors verified on the full E (30s, HWM 0.60 GB)
+    mu* expansion: 30,044,781 terms over N_S=94675 (14s, HWM 2.72 GB)
+  RESULT (8, 4, 4, 4, 4) d6: a=2 h_pad=1 n_chi=4562 rank_S=1 (star mult_red=1) i_red=1 agree=True  [150.3s]
