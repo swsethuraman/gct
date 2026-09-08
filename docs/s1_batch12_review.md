@@ -47,10 +47,17 @@ Two consequences, and they are the reason this session matters more than its
 headline:
 
 1. **The ideal grows only by births.**  `i_X(d) − i_X(d−1)` counts births *inside*
-   the ideal, and an ideal vector born at rung `d` is nonzero mod `u`.  So the
-   obstruction — the thing the whole programme is looking for — can be found and
-   certified entirely inside the birth quotient.  It never has to be separated
-   from the transported source.
+   the ideal, and an ideal element born at rung `d` has nonzero **class** in the
+   birth quotient.
+
+   > **Corrected on the reasoning side's objection, and the objection is right.**
+   > This is a statement about classes, not representatives.  A filling with
+   > nonzero class *spans* the birth quotient when `b_d = 1`; it is not thereby an
+   > element of any ideal.  An ideal element of that class differs from it by a
+   > transported `u w`, `w ∈ M_{d−1}`, and finding `w` needs the lower source.  I
+   > wrote "the single `δ = 24` birth direction *is* the determinant ideal vector";
+   > that is true of the class and false of the representative, and I withdraw it.
+   > The `δ = 23` shortcut below is unaffected, as is `i_X(d) − i_X(d−1) ≤ b_d`.
 
 2. **`i_X(d) − i_X(d−1) ≤ b_d`.**  At the goal cell `b₂₄ = 1`, so
 
@@ -85,10 +92,14 @@ proposition predicts it is not divisible by `u`.  Run here
 So it is a birth direction, as the proposition requires.
 
 A second economy falls out that nobody has stated: **only 729 of 17,047
-coordinates survive `u = 0`**.  The restriction compresses the coordinate space
-**23-fold** as well as shrinking the rank matrix.  On the determinant side that
-is a second multiplicative saving on every evaluation, not just on the
-elimination.
+coordinates survive `u = 0`** — a 23-fold compression of the coordinate space.
+
+> **Narrowed on the same objection, also correctly.**  That is a saving for a
+> *coordinate-based* implementation.  The compact circuit evaluator never forms
+> those coordinates, so I claim no speedup of circuit evaluation; using the
+> restriction inside that evaluator would need its own algorithm and benchmark.
+> I originally wrote "a second multiplicative saving on every evaluation", which
+> was wrong for the circuit path.
 
 ## 3. Where I would qualify the stock-take
 
@@ -174,4 +185,4 @@ two exist.  `s77` gains the paragraph above about what would revive straightenin
 | coordinate compression `17,047 → 729` at the `n = 3` control | **MEASURED** |
 | ten evaluation-ready goal-cell vectors | **CERTIFIED**, and 264 short of a source |
 | unrestricted Plücker straightening as the route to the goal-cell basis | **RETIRED**, for want of an independence theorem after umbral contraction — not for want of a larger term cap |
-| candidate hitting / stream hit rate | **OPEN** — and now the only thing between the programme and `D(24)` |
+| candidate hitting / stream hit rate | **MEASURED**, see `docs/batch12_integrator_note2.md` — and it is not the only thing left: the determinant and true-padded evaluation and certification remain |

@@ -130,12 +130,18 @@ THREAD 2 IN TEN LINES
     forces w in I.  Both hypotheses hold on both sides: I(Det_4) and I(l.per_3)
     are orbit closures hence prime, and the coefficient of s_1^n is det(A_1)
     resp. a_1.per(B_1), generically nonzero.  Hence (1) THE IDEALS GROW ONLY BY
-    BIRTHS -- an obstruction born at rung d is nonzero mod u and can be found and
-    certified inside the birth quotient, never separated from the transported
-    source; and (2) i_X(d) - i_X(d-1) <= b_d, so at the goal cell, where b_24 = 1,
-      i_det(24) = i_det(23) + eps,  eps in {0,1},
-    and with LMR's i_det(24) >= 1 either i_det(23) >= 1, or i_det(23) = 0 and the
-    single delta=24 birth direction IS the determinant ideal vector.  On the
+    BIRTHS -- an ideal element born at rung d has nonzero class in the birth
+    quotient; and (2) i_X(d) - i_X(d-1) <= b_d, so at the goal cell, where
+    b_24 = 1,
+      i_det(24) = i_det(23) + eps,  eps in {0,1}.
+    CORRECTED 2026-09-08, on the reasoning side's objection, and the correction is
+    right: this is a statement about CLASSES, not representatives.  A filling with
+    nonzero class spans the birth quotient; it is not thereby in any ideal.  An
+    ideal element of that class differs from it by a transported u w, w in
+    M_{d-1}, and finding w needs the lower source.  The earlier phrasing here --
+    "the single delta=24 birth direction IS the determinant ideal vector" -- was
+    true of the class and false of the representative, and is withdrawn.  What
+    survives untouched is the degree-23 shortcut.  On the
     transported source the rank is pinned exactly:
       rank T_det restricted to u M_23  =  273 - i_det(23),
     so i_det(23) = 0 alone gives rank T_det = 273 with NO delta=24 candidate, and
@@ -143,8 +149,12 @@ THREAD 2 IN TEN LINES
     delta = 12 determinant ideal vector (s62 via s69) has 54 of its 3,900 nonzero
     chi-coordinates u-free, so its restriction is nonzero and it is a birth
     direction, as the proposition requires.  Measured alongside: only 729 of the
-    17,047 chi-coordinates survive u = 0, a 23-fold COORDINATE compression on top
-    of the smaller rank matrix.  Engine `analysis/wk12_int_birth_quotient.py`,
+    17,047 chi-coordinates survive u = 0, a 23-fold compression of the COORDINATE
+    space.  NARROWED on the same objection: that is a saving for a
+    coordinate-based implementation only.  The compact circuit evaluator never
+    forms those coordinates, so no speedup of circuit evaluation is claimed or
+    implied; using the restriction inside that evaluator would need its own
+    algorithm and benchmark.  Engine `analysis/wk12_int_birth_quotient.py`,
     result `results/wk12_int_birth_quotient.json`, review `docs/s1_batch12_review.md`.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
