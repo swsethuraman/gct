@@ -6,9 +6,18 @@ the ambient sequence `a_delta` from `delta_min` to `t`, `a_inf = a_t` (proved st
 the closing cell settles the whole tail for `D > 0` in every degree.  `buildable`: `delta_close <= 18` (the int64 multiset code
 of the session-45 build); beyond that the build needs a different monomial code.
 
+**SUPERSEDED, in one column only (integrator, after session 67).**  The
+`buildable` flag and its count below are session 60's, computed against
+`delta_close <= 18` -- session 60's conservative int64 bound, where the true
+int64 reach at `r = 5` is `delta <= 19` (overflow begins at 20).  Session 67
+then widened the monomial code, byte-for-byte identical wherever the int64 path
+already worked, and **all 1075 closing cells now build** (`docs/s67_report.md`
+3.2, `analysis/wk10_s67_bitident.py`).  Every other column of this census
+stands; read `buildable: 892` below as `1075`.
+
 tails: 1075; live (`a_inf > 0`): 1075; dead at every degree (`a_inf = 0`): 0; 
 closing cells with `lam_1 >= 3 delta`: 0; 
-buildable closing cells: 892
+buildable closing cells: 892  <-- SUPERSEDED: all 1075 build (session 67)
 
 - closing cells with `n_chi <= 3000`: 34 tails, settling 159 census rungs
 - closing cells with `n_chi <= 10000`: 73 tails, settling 320 census rungs

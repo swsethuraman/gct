@@ -40,7 +40,7 @@ and the one-directional discipline (a shortfall is uninformative, never an
 obstruction) is stated correctly throughout.
 
 **Part C's correction to session 60 is accepted and matters:** the int64 wall was
-at `δ_close = 20`, not `δ ≥ 19`; `CODE_SAFE_DELTA = 18` was conservative by two,
+at `δ_close = 20`, not `δ ≥ 19`; `CODE_SAFE_DELTA = 18` was conservative by one,
 1 048 cells were already int64-buildable, and only the 27 `δ_close = 20` cells
 genuinely overflowed.  **Buildable closing cells 892 → all 1 075.**  Bit-identity
 on seven cells up to `n_χ = 70 027`, no banked value changed.

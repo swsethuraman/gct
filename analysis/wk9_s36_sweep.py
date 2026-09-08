@@ -82,8 +82,12 @@ def commit(msg):
     subprocess.run(["git", "-C", ROOT, "add", "results/s36_ledger.md", "results/s36_cells"],
                    capture_output=True)
     subprocess.run(["git", "-C", ROOT, "-c", "user.name=s36", "-c", "user.email=s36@gct",
-                    "commit", "-q", "-m", msg + "\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\n"
-                    "Claude-Session: https://claude.ai/code/session_01QB6t2UxtgLpGwCj9oQ2ZkD"],
+                    # The session-link trailer that used to be appended here was removed by the
+                    # batch-11 housekeeping pass.  The standing rule is that a commit message ends
+                    # with the Co-Authored-By line and nothing else -- in a commit or in any script
+                    # that writes one -- and this script would have re-injected one on every run.
+                    # The repository history was rewritten once to remove 260 of them.
+                    "commit", "-q", "-m", msg + "\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\n"],
                    capture_output=True)
 
 def order(r6, r7, cap_gb):

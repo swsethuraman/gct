@@ -57,3 +57,36 @@ session 63's `Θ⁺`/Gram ranks as `matrix` with `matrix_role: "gram"`,
 `field: "Q"`; session 64's padded-side proofs as `full_rank`/`sparse_nullity`
 with `variety: "padded_permanent"`.  The format and its enforcement exist before
 those sessions run, which is why C6 (session 67) is wave 1.
+
+**How batch 10 actually complied, and what the integrator fixed afterwards.**
+Honest scorecard, because the rule above was only partly followed.
+
+- Session 62's 44 Gram certificates were produced in wave 1, *before* the format
+  landed, and carried neither `matrix_role` nor `field`.  They verified, but as
+  plain ranks of the matrices — which is exactly the reading that stops an
+  unlabelled Gram from being taken for `rank Θ⁺`, so their titles asserted more
+  than they certified.  Relabelled `matrix_role: "gram"`, `field: "Q"` in the
+  batch-11 housekeeping pass (`analysis/wk11_int_s62_relabel.py`); all 44
+  re-verify `PASS`, and now certify what they claim.  The rank is over `Q` with
+  an integer minor exhibited, so the characteristic-zero Gram identity applies.
+- **Sessions 63, 64 and 66 shipped no certificates at all.**  The 48-cell padded
+  calibration — including the two kernel witnesses the integrator independently
+  re-verified — is uncertified.  This is a real shortfall and is recorded rather
+  than repaired: back-filling it needs the producing session's artefacts.
+
+**`PASS` versus `RECORDED` is a standing convention, not a batch-10 detail.**  A
+certificate whose cell exceeds the checker's re-derivation budget is reported
+`RECORDED`: schema, cell, independently recomputed `a`, declared field and every
+evaluation point rebuilt from substitution data are all checked, and only the
+rank or nullity itself is left reproducible on demand at the cost of the
+original measurement.  That is inherent to an algorithmic certificate and is not
+a weaker claim about the mathematics — it is a statement about this run's budget.
+
+**Cells with `n = 3` (batch 11).**  The verifier accepts `n ∈ {3, 4}`: pencil
+points carry `n × n` matrices, an explicit form has degree `n`, and there is a
+`permanent` point family for the **unpadded** `per_n` pencil.  That family is a
+different variety from `padded_permanent` (`x_0 · per_3`, the programme's model,
+refused at `n ≠ 4`) and is never a substitute for it.  `n = 4` behaviour is
+unchanged and the existing corpus re-verifies.  First `n = 3` certificates:
+`results/certs/19_7_2_2_2_2_2_d12_n3_permanent_p*.json.gz`, the permanent half
+of the `D = +1` at `(19,7,2⁵)₁₂`, both `RECORDED`.

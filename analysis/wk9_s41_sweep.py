@@ -112,8 +112,9 @@ def commit(msg):
     if os.path.isdir(CELLS):
         subprocess.run(['git', '-C', ROOT, 'add', 'results/s41_cells'], capture_output=True)
     subprocess.run(['git', '-C', ROOT, '-c', 'user.name=s41', '-c', 'user.email=s41@gct', 'commit', '-q', '-m',
-                    msg + "\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\n"
-                    "Claude-Session: https://claude.ai/code/session_01H25jyjcL346hHpBdn8L7dT"], capture_output=True)
+                    # Session-link trailer removed by the batch-11 housekeeping pass; see the note
+                    # in wk9_s36_sweep.py.  A commit message ends at the Co-Authored-By line.
+                    msg + "\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\n"], capture_output=True)
 
 def order(census, frontier):
     """the pre-registered order; returns [(phase, cell)]"""

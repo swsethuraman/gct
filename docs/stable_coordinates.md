@@ -46,6 +46,26 @@ one-line argument goes through — `per_3(diag(s_1,s_1,s_1)) = s_1³`, so
 `s_1⁴ = s_1·per_3(…) ∈ P_r` and `u` does not vanish on it — but it is **not in
 the record** and should be written down before it is used.
 
+**The argument is available at every `n`, not only at `n = 4` (integrator, after
+S6's family formula).**  S6 put the LMR family in closed form:
+
+    δ_n = 2n(n−1),   λ_n = (2n³−4n²+1, 2n²−4n+1, 2^{2n−1}),   ℓ(λ_n) = 2n+1,
+
+with `|λ_n| = n·δ_n` identically, and `|ρ_n| + (ρ_n)₁ = 4n(n−1) = 2δ_n` **exactly
+at every `n`** — the whole family sits on the rectangular-stability boundary,
+which is why Manivel's reduction is available at these cells at all.  The
+consequence S6 does not draw is the one that matters here.  The tail weight is
+`t_n = |ρ_n| = 2n²−1`, and
+
+    t_n − δ_n = (2n² − 1) − (2n² − 2n) = 2n − 1 > 0   for every n ≥ 1,
+
+so **`δ_n < t_n` at every member: every LMR cell lies strictly below its proved
+stable threshold.**  The monotonicity route of §2 — `i_X(δ_n) ≤ i_X(∞)` on both
+sides, with LMR supplying the determinant lower bound — is therefore available
+for the whole family, not for `n = 4` alone.  At `n = 4` it reads
+`24 < 31`, the case §2 uses; at `n = 3` it reads `12 < 17`, which is the cell
+where `D = +1` was measured (`docs/batch11_plan.md` §1.1).
+
 ## 3. The saving, measured
 
 `analysis/wk10_int_stable_weight.py`, exact multiset counts:

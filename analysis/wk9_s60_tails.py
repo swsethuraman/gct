@@ -38,7 +38,16 @@ from wk9_s45_build import orbit_setup_arr
 from math import comb
 
 N = 4; R = 5
-CODE_SAFE_DELTA = 18      # the multiset combinadic of the s45 build is int64: comb(70 + delta - 1, delta) < 2^63
+# SUPERSEDED by session 67.  This flag was session 60's conservative int64 bound
+# (the multiset combinadic of the s45 build is int64: comb(70 + delta - 1, delta)
+# < 2^63).  The true int64 reach at r = 5 is delta <= 19 -- it overflows at 20 --
+# so 18 was conservative by one; session 67 then widened the monomial code and
+# EVERY closing cell builds, 892 -> 1075, bit-identically wherever the int64 path
+# already worked (docs/s67_report.md 3.2).  The constant is kept so this
+# generator still reproduces its original output; a regeneration meant to be
+# current sets REGEN_ALL_BUILDABLE = True.
+CODE_SAFE_DELTA = 18
+REGEN_ALL_BUILDABLE = False
 
 
 def log(*a): print(*a, file=sys.stderr, flush=True)
@@ -95,7 +104,7 @@ if __name__ == '__main__':
                 arr = orbit_setup_arr(N, R, dc, lam, verbose=False); nchi, ex = int(arr['n_chi']), True; del arr
             else: nchi, ex = (ns + so - 1) // so, False
             rec.update(lam_close=list(lam), close_N_S=ns, close_stab=so, close_n_chi=nchi, close_n_chi_exact=ex,
-                       close_h_pad=hp, close_key=nchi ** 2 * (L['a_inf'] + 30), close_buildable=(dc <= CODE_SAFE_DELTA),
+                       close_h_pad=hp, close_key=nchi ** 2 * (L['a_inf'] + 30), close_buildable=(True if REGEN_ALL_BUILDABLE else dc <= CODE_SAFE_DELTA),
                        lam1_ge_3delta=(lam[0] >= 3 * dc))
         out.append(rec)
         if (i + 1) % 100 == 0: log(f"  {i+1} tails [{time.time()-t0:.0f}s]")

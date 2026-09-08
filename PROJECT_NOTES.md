@@ -1,6 +1,81 @@
 # gct — project notes
 
-## STATUS AT A GLANCE (2026-08-31 — read before anything below)
+## STATUS AT A GLANCE — THREAD 2, THE SEPARATION PROGRAMME (2026-09-08)
+
+**Read this first.  The block below it is thread 1 and has not been the active
+work since session 23.**
+
+This repository now carries two threads under one session numbering.
+
+  THREAD 1 — conductors and deficits of orbit closures (sessions 1–23).
+    Its standing record is the block below, `docs/boundary_deficit.html` and
+    `paper/det3-conductor.tex`.  Dormant, not retracted.
+
+  THREAD 2 — permanent-versus-determinant separation in a length-reduced GCT
+    model, per_3 padded against det_4 (sessions 24–73).  This is the active
+    work.  Its standing record is `paper/det4-onset.tex` plus the batch
+    stock-takes `docs/stocktake_batch9.md`, `docs/stocktake_batch10.md` and the
+    batch plans; this file carries only the state of play.
+
+THREAD 2 IN TEN LINES
+  The quantity is D = mult_pad − mult_det = i_det − i_pad; D > 0 at any cell
+    refutes containment, because P inside D forces mult_P <= mult_D at every
+    weight.  D > 0 is the object of the programme.
+  Goal cell (LMR): lambda = (65,17,2^7), delta = 24, ell = 9, a = 274,
+    N_S = 156,438,903,314, n_chi = 31,039,465.  i_det and i_pad there are the
+    two numbers the programme does not have.
+  THE FIRST D > 0, and it is new (batch 11 pre-batch check): at the n = 3
+    member of the same family, lambda = (19,7,2^5), delta = 12, r = 7, a = 6,
+    the UNPADDED comparison gives mult_det = 5 and mult_per = 6 at both house
+    primes, so D = +1.  Both multiplicities are nonzero, so it is a
+    MULTIPLICITY obstruction and not an occurrence obstruction -- the reading
+    the literature leaves open.  Rigorous: mult_per = a is a modular rank and
+    rank_p <= rank_Q <= a; the determinant side is LMR's own lower bound.  The
+    separation it certifies is available by a dimension count (59 > 47), so the
+    content is the certificate, not the statement: it is the programme's first
+    positive control, and the first end-to-end D > 0 its machinery has produced.
+  THE BOTTLENECK, stated once: dim M_lambda = 274, and every construction the
+    programme owns realises M_lambda as a kernel inside a carrier of size at
+    least 10^7.  Not the rank, not the target, not the field.  And the ladder
+    does NOT thin downward -- the carrier is at 16 per cent of full size where
+    the multiplicity is 2 (delta = 12) and 89 per cent by delta = 16 -- so the
+    pathology belongs to the wreath symmetry and its realisations, not to the
+    degree.  dim M_lambda << the size of every known realisation of M_lambda.
+  PROVED AND BANKED: the ladder theorem and Lemma L (s57); Theorem P; the
+    stable-multiplicity Proposition S; the h_pad Pieri identity, proved via
+    Kempf collapsing (s42); the contact-order lemma (s66); the specialisation
+    inequality; the n = 2 two-sided calibration, the only place a theorem fixes
+    both sides and the machinery matches it.
+  DEAD: twenty-four routes across batches 9 and 10, listed in
+    `docs/stocktake_batch10.md` section 2 with what killed each.
+  CERTIFICATION: 264 algorithmic claims machine-checkable under
+    `tools/verify/` (`gct-cert/1`); the verifier accepts n in {3,4} since batch
+    11, and the first n = 3 certificate is banked.
+  OPEN: i_det and i_pad at LMR, hence D there; R_5 not inside D_5, which needs
+    the upper bound over the NORMAL CONE, not the reduced singular locus, and
+    whose residue is four named loci; m_0(6) >= 14 (44 of 47 weight-13 shapes
+    need ranks); a row-efficient replication operator.
+
+PROCESS, HARD-WON, DO NOT RELEARN
+  Single-writer files -- `paper/det3-conductor.tex`, `paper/det4-onset.tex`,
+    this file, `docs/boundary_deficit.html` -- are never touched by a worker.
+  Workers deliver by git bundle and do not push; the proxy's refusal is an
+    access control.  PUSH THE PLAN BEFORE THE BRIEFS GO OUT: two sessions in
+    batch 10 cloned a tree that did not contain it, and batch 11's preamble now
+    makes a worker stop if the plan is missing from its clone.
+  Read the code before believing a document.  Batch 10 specified four things as
+    missing that were already implemented, each costing part of a session.
+  Bound every run with `timeout` and `ulimit -v`, record the pid, and end a run
+    only by that recorded id -- never by matching a name pattern.  And check the
+    real memory ceiling with `free -g`: a virtual-memory limit set above it does
+    nothing, which cost a 900-second job in batch 11's preparation.
+  Commit messages carry the Co-Authored-By trailer and nothing else.  No
+    session-link URL, in a commit or in any file; the history was rewritten once
+    to remove 260 of them.
+
+---
+
+## STATUS AT A GLANCE — THREAD 1 (2026-08-31 — the conductor programme)
 ESTABLISHED (no covariance assumption was ever used in any of these):
   World A solved; World B conductor transport (254/254).
   e(det3) = 18 = 2n^2; Phi18(det3) = -877,879,296,000; V(Phi18) ∩ closure
@@ -1115,7 +1190,38 @@ delivered as a git bundle. Swami merges.
 - Session numbering continues the boundary-deficit log (last: session 10 +
   the grind session of 2026-08-24).
 
-## Roadmap (refreshed 2026-08-24)
+## Roadmap — thread 2 (refreshed 2026-09-08, batch 11 in flight)
+
+Batch 11 is sessions 68–73 (Claude) and S1–S6 (Sol), eleven ungated and one
+partially gated, specified in `docs/batch11_plan.md`.  Its design principle,
+which is the one thing batch 10 got wrong: fund the bottleneck redundantly, and
+do not make the batch wait for it.  Three independent approaches to the same
+274-dimensional source (s68 ladder, s69 compact circuit, Sol S5 wreath
+recursion); everything else stays productive if all three fail.
+
+T1. The source at LMR.  Seed the ladder at delta = 12, where a = 2 is the
+    smallest nullity anywhere on it, then grow by birth spaces of dimension
+    a_delta − a_{delta−1} (at most 54).  If the seed is out of reach at delta =
+    12 the ladder route is out of reach, because delta = 12 is the cheapest
+    point on the ladder.
+T2. The two ranks at LMR: rank S_{lambda,24} first -- a short rank there settles
+    the cell against D > 0 by itself -- then det A_24, whose SINGULAR branch is
+    the stronger outcome, since it means a determinant equation at degree 23.
+T3. R_5 not inside D_5: the exhaustion bound quantified over the components of
+    Proj gr_J R, with the four residues session 66 named.  Note that
+    `paper/det4-onset.tex` states the non-containment as a theorem; remark
+    `rem:noncontain-status` there now records precisely what that rests on.
+T4. The stable frontier: weight-13 shapes with a_infinity = 2 and 3.  The three
+    with a_infinity = 1 are closed, all with i_det = 0.
+T5. Is LMR minimal?  Whether any other explicit determinant-orbit equation
+    exists in a dramatically cheaper cell.  Highest expected value on the board;
+    a guaranteed equation at r = 5..8 would delete four batches of work.
+T6. If all three source approaches fail, the honest output is the theorem-shaped
+    statement of why -- a multiplicity space of dimension 274 that no available
+    construction realises below 10^7 coordinates, on a ladder that is already at
+    16 per cent of full carrier size when the multiplicity is 2.
+
+## Roadmap — thread 1 (refreshed 2026-08-24)
 
 R1. **[COMPLETE — sessions 12-16.** Second-point certificate at R
     (H-inequivalent, TOTAL_R = 1,152,144,000) and the k=2 rung closed

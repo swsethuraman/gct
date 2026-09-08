@@ -1,1 +1,27 @@
-{"format": "gct-cert/1", "kind": "matrix", "title": "n=2 proved control: G for lambda=(2^4), delta=4: rank over Q 1 of a=1 (mult_det=1, i_det=0) -- full rank, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)", "produced_by": "analysis/wk10_s62_certs.py (session 62)", "matrix": [[46080]], "claimed_rank_Q": 1, "claimed_ranks_mod_p": {"2147483647": 1, "2147483629": 1}, "nonvanishing_minor": {"rows": [0], "cols": [0]}, "notes": "Foulkes Gram of the weight-(2^4) highest-weight vector (the discriminant) in Sym^4(Sym^2 C^4). det_2 is a rank-4 quadratic form, so every quadric in D_4^{det_2} has symmetric-matrix rank <= 4; the disc is full rank for delta<=4 and identically zero for delta>=5. The engine returns rank 1, matching. This is the explicit end-to-end validation of the Gram/Schur machinery on a PROVED rank drop."}
+{
+ "format": "gct-cert/1",
+ "kind": "matrix",
+ "title": "n=2 proved control: G for lambda=(2^4), delta=4: rank over Q 1 of a=1 (mult_det=1, i_det=0) -- full rank, matching the theorem (disc of a rank-<=4 symmetric matrix: full rank at delta<=4, zero at delta>=5)",
+ "produced_by": "analysis/wk10_s62_certs.py (session 62)",
+ "matrix": [
+  [
+   46080
+  ]
+ ],
+ "claimed_rank_Q": 1,
+ "claimed_ranks_mod_p": {
+  "2147483647": 1,
+  "2147483629": 1
+ },
+ "nonvanishing_minor": {
+  "rows": [
+   0
+  ],
+  "cols": [
+   0
+  ]
+ },
+ "notes": "Foulkes Gram of the weight-(2^4) highest-weight vector (the discriminant) in Sym^4(Sym^2 C^4). det_2 is a rank-4 quadratic form, so every quadric in D_4^{det_2} has symmetric-matrix rank <= 4; the disc is full rank for delta<=4 and identically zero for delta>=5. The engine returns rank 1, matching. This is the explicit end-to-end validation of the Gram/Schur machinery on a PROVED rank drop.",
+ "matrix_role": "gram",
+ "field": "Q"
+}

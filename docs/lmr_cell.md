@@ -92,7 +92,18 @@ The cell cannot be reached by descending in `δ`: the same tail at `δ = 12, 13,
 14` gives `g = 5241, 29326, 50660` and `sk = 2714, 15383, 26654`, still
 climbing, exactly as a cell below its stability threshold should.
 
-## 3a. The `δ = 23` predecessor is the sharper and cheaper experiment
+## 3a. The `δ = 23` predecessor is the sharper experiment — but not a cheaper one
+
+> **Correction (integrator, batch 10 note 2, re-measured in batch 11).**  This
+> section originally read "sharper and *cheaper*".  The first half is right and
+> the second is false.  `Θ⁺` at `δ = 23` is one column narrower, but the *source*
+> costs the same: counting weight-`λ` monomials directly
+> (`analysis/wk11_int_ladder_size.py`) gives `N_S(23) = 1.56419×10¹¹` against
+> `N_S(24) = 156 438 903 314`, a ratio of `0.99987`, and `n_χ` agrees to three
+> significant figures at `3.104×10⁷`.  The predecessor is not a cheaper cell; it
+> is the same cell with one fewer column.  Session 57 sized it the same way
+> (`n_χ ≈ 3.1·10⁷`, "the same as the LMR cell itself").  Nothing below is
+> affected except the word.
 
 `a₂₃ = 273`, `a₂₄ = 274`, and `sk` is already constant at `48 825` from
 `δ = 23`.  So the predecessor cell `(61, 17, 2⁷)` at `δ = 23` is

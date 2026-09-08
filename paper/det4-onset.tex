@@ -427,6 +427,58 @@ table, it shows that the two varieties genuinely differ in both directions at
 $r=5$ --- yet, as \S\ref{sec:negative} records, neither difference has yet been
 made to produce a weight with $\Delta>0$.
 
+\begin{remark}[What the non-containment currently rests on]\label{rem:noncontain-status}
+The word \emph{unconditional} above should be read carefully, and the
+subsequent computational record has sharpened both what is established and what
+is not.  Every measured exceptional image has since been pushed below the
+threshold: through the reachable contact orders, and at every incidence of the
+primitive family, no reducible image exceeds $29<31\ll35$.  The following are
+now proved rather than measured.
+
+\emph{(i) The contact-order lemma.}  At a smooth point of $V(J)$ the
+exceptional fibre is $\bP(\operatorname{im} d\Phi)$ at every order.  This turns
+the observed invariance of contact order into a theorem and, more usefully,
+localises any hidden component of the exceptional divisor to $\mathrm{Sing}\,V(J)$.
+
+\emph{(ii) The stratum list is longer than the classification used above.}  The
+base locus decomposes into eight components once the singular-pencil stratum
+$SP$ is included, and a further $49$-dimensional semi-primitive component was
+found that is absent from every earlier stratum list; moreover $\Pp\cap\ker$ is
+a rank-$\le2$ locus rather than the rank-$3$ incidence it had been taken for.
+
+\emph{(iii) The base scheme is non-reduced.}  At a generic point of every
+pairwise incidence the initial ideal is strictly smaller than that of the
+intersection of the component ideals --- $\dim Q_2=12<16$, $41<69$, $25<49$ and
+$59<144$ at the four incidences --- so the base scheme of $\Phi$ at $r=5$ is
+\emph{generically reduced along every component and non-reduced along every
+pairwise incidence}.  This is the precise sense in which the normal cone of $J$
+differs from the normal cone of the reduced base locus, and it is why the
+exceptional fibre over an incidence is larger than $\bP(\operatorname{im}d\Phi)$.
+
+Consequence (iii) is why the bound must be quantified over the normal cone and
+not over the reduced singular locus: a component of the exceptional divisor can
+be supported over a proper sublocus of an irreducible singular component, or
+over embedded structure, and be invisible at the generic point of any of them.
+The remaining obligation is therefore
+
+\begin{quote}
+for every irreducible component $E$ of $\operatorname{Proj}\operatorname{gr}_J R$
+supported over $\mathrm{Sing}\,V(J)$ --- including components over proper
+subloci, over the incidence and rank-degeneration strata, and components arising
+from embedded structure --- the fixed-factor image of $E$ has dimension $<35$,
+\end{quote}
+
+which together with (i) exhausts the blow-up.  Four loci remain unbounded and
+are named rather than assumed away: the order-$2$ image over $\Pp\cap c_{21}$;
+the rank-drop strata of $M(a)$ at $\ker\cap\operatorname{coker}$; contact order
+$\ge4$ at the incidences and order $\ge3$ outside the tangent spaces where an
+extra component appears; and the deeper incidences of the rank-$\le2$ types.  By
+(i) none can be a smooth point of $V(J)$, and each is a proper closed subset of a
+locus already measured.  Until they are closed, the honest statement is that the
+non-containment is established modulo the exhaustiveness of the stratum
+classification, which (ii) shows was incomplete once already.
+\end{remark}
+
 \section{The cap theorem}\label{sec:cap}
 
 We now turn to the determinant's own ideal, the object whose onset bounds the
@@ -650,6 +702,70 @@ multiplicity method on a separation established by other means.  What the
 present study contributes is a map of where the certificate can live --- length
 $\ge6$, degree $\ge8$, first row $\ge$ degree --- and a proof that large parts
 of that map are empty.
+
+\subsection*{The method exhibited on a separation of its own size.}
+
+That frame invites an obvious test, and it can now be reported.  Take the
+$n=3$ member of the family that supplies the length-nine equation, namely
+$\lambda=(19,7,2^{5})$, $\delta=12$, $r=7$, with ambient multiplicity $a=6$; and
+compare $\det_3$ against the \emph{unpadded} $\per_3$, both cubics in nine
+variables restricted to seven.  The comparison is favourably oriented, unlike
+the padded one at small length: writing $\Ddet_7$ and $\Pp_7$ for the two
+varieties of cubics in $\Sym^{3}\bC^{7}$ (of dimension $84$),
+\[
+  \dim\Ddet_7 = 9r-16 = 47 ,\qquad \dim\Pp_7 = 9r-4 = 59 ,
+\]
+so the determinant variety is the smaller of the two and neither fills the
+ambient space.  Measured at both house primes, on one build and one source,
+\[
+  \mult\nolimits_{\det}=5,\qquad \mult\nolimits_{\per}=6=a ,\qquad
+  \Delta = \mult\nolimits_{\per}-\mult\nolimits_{\det} = +1 .
+\]
+The two halves are rigorous for different reasons, and it is worth separating
+them.  $\mult_{\per}=a$ was measured as a rank modulo $p$, and
+$\rank_p\le\rank_\bQ\le a$ forces equality over $\bQ$; there is no
+finite-point caveat in this direction, since the caveat is that vanishing at
+finitely many points does not prove ideal membership and here nothing vanishes.
+The determinant side is bounded below by \cite{LMR} at this cell, which is what
+makes the measurement a control rather than an observation, so
+$\mult_{\det}=5$ exactly.  Both multiplicities are nonzero, so
+$S_\lambda$ occurs in both coordinate rings: this is a \emph{multiplicity}
+obstruction and not an occurrence obstruction --- which is the stronger reading,
+since \cite{BIP} closes the occurrence route in the padded regime and leaves the
+multiplicity route open.
+
+We claim nothing new for the separation itself: $\dim\Pp_7=59>47=\dim\Ddet_7$
+already gives $\Pp_7\not\subseteq\Ddet_7$ by a dimension count.  The point is
+the certificate.  It is the first $\Delta>0$ this programme has produced end to
+end by its own machinery, at a cell of $17\,047$ coordinates rather than the
+$3.1\times10^{7}$ of the length-nine cell, and it exercises exactly the pipeline
+the length-nine comparison requires: one source, one raising kernel, two
+evaluation families, two primes.  It is unpadded and at $n=3$, so it bears on the
+padded model only as calibration --- indeed the \emph{padded} $n=3$ cell can
+never carry an obstruction, since $\per_2$ and $\det_2$ are both rank-four
+quadratic forms in four variables and hence $\GL$-equivalent, so the padded
+$\per_2$ in degree three is $\ell\cdot\det_2$ up to $\GL$, which is the block
+split $\operatorname{diag}(\ell,A_2)$ inside $\det_3$ and forces
+$\Delta\le0$ there identically.
+
+\subsection*{What the length-nine cell reduces to.}
+
+At $n=4$ the smallest length carrying a non-vacuous determinant equation is
+$r=9$, and the deduction there needs neither the target dimension nor
+stability.  The ambient multiplicities along the ladder
+$(4\delta-31,17,2^{7})$ end $\dots,272,273,274$, so the last two increments are
+one apiece, and the ladder's monotonicity turns the whole question into a single
+rank lower bound: $\rank\Theta^{+}\ge273$ at the predecessor forces
+$\mult_{\det}\ge273$ at the goal cell, hence $i_{\det}\le1$, hence
+$i_{\det}=1$ given the lower bound of \cite{LMR}.  Equivalently, in the
+room-one form, the equation is born exactly when the Schur complement
+$c-b^{\mathsf T}A^{-1}b$ vanishes, with $A$ the degree-$24$ Gram restricted to
+the transported predecessor.  The $n=3$ shadow above exhibits the same mechanism
+at a size where it can be run.  We record, with the caveat that any exhibited
+element of $I(\Ddet)^{\mathrm{HWV}}$ obtained by evaluation carries: vanishing
+at finitely many points is Schwartz--Zippel evidence of ideal membership, not a
+proof of it, and the rigorous lower bound on the determinant side remains
+\cite{LMR}'s.
 
 \section{Open problems}\label{sec:open}
 
