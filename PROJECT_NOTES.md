@@ -156,6 +156,21 @@ THREAD 2 IN TEN LINES
     implied; using the restriction inside that evaluator would need its own
     algorithm and benchmark.  Engine `analysis/wk12_int_birth_quotient.py`,
     result `results/wk12_int_birth_quotient.json`, review `docs/s1_batch12_review.md`.
+  THE GOAL CELL IS delta=23 PLUS TWO BITS (integrator, after S1).  With
+    M_24 = u M_23 + <v>, v = F_{T57}, and I_X prime with u not in I_X, the map
+    I_X ^ M_24 -> M_24/uM_23 (one-dimensional) has kernel u(I_X ^ M_23), so
+      i_X(24) = i_X(23) + eps_X,  eps_X in {0,1},
+      eps_X = 1 iff there is w in M_23 with v + u w in I_X,
+    and therefore  D(24) = D(23) + eps_det - eps_pad.  The delta=24 question is
+    delta=23 plus TWO BINARY MEMBERSHIP TESTS ON A LINE, not two ranks at 274.
+    Two consequences.  (i) eps_det is FORCED, not measured: LMR gives
+    i_det(24) >= 1, so i_det(23) = 0 implies eps_det = 1 -- the determinant ideal
+    meets the birth line, and the w with v + u w in I(Det) is a linear solve once
+    the delta=23 source exists, making the goal-cell determinant obstruction
+    explicitly constructible.  (ii) ALL THE REMAINING UNCERTAINTY IS PADDED:
+    i_det(23) = 0 forces i_det(24) = 1, hence D(24) = 1 - i_pad(24), so D = +1 iff
+    i_pad(24) = 0.  Notation: F_{T57} is the polynomial of saved filling T57 in
+    results/s69_lmr_state.json -- 57 is an identifier, not a degree or a group.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
     and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs
