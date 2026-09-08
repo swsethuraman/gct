@@ -28,10 +28,44 @@ Clone `https://github.com/swsethuraman/gct.git`.  The base commit is the tip of
 `docs/batch12_s1_s2_consolidated.md` and this file.  If it does not, stop and say
 so** — you have an older tree and your bundle will not apply.
 
-**Read first:** `docs/batch12_s1_s2_consolidated.md` (the batch, and what the two
-theory sessions changed), `docs/batch12_claude_board.md`,
-`docs/brief_wording.md` (binding), `docs/stocktake_batch11.md`, then the
-documents your own brief names.
+## new — what to read, in tiers
+
+Read tier 1 in full before you write any code.  Read tier 2 only when your own
+brief sends you to a specific section of it.  **Do not read tier 3 unless
+something you are doing depends on it**; it is the historical record and it is
+large.
+
+    tier 1, required, ~23 KB total
+      docs/batch12_worker_preamble.md          this file, 8 KB
+      docs/batch12_s1_s2_consolidated.md      10 KB -- the batch in one document
+      docs/brief_wording.md                    5 KB -- binding on your report
+      your own brief
+
+    tier 2, on demand, named by your brief section by section
+      docs/batch12_claude_board.md            15 KB
+      results/astra/S1/S1_report.md           27 KB
+      results/astra/S2/S2_report.md           33 KB
+      results/astra/S2/HANDOFF_s77.md         15 KB
+      docs/lmr_cell.md, docs/compact_circuit.md   13 KB each
+
+    tier 3, reference only
+      docs/stocktake_batch11.md               28 KB
+      docs/s1_batch12_review.md, docs/batch12_integrator_note2.md
+      PROJECT_NOTES.md
+
+If you find yourself reconstructing context from tier 3 to answer a question your
+brief should have answered, **say so in your report** — that is a defect in the
+brief and the integrator wants to know.
+
+## new — the Astra theory deliverables are in the tree
+
+S1 and S2 ran on a different host and wrote outside the repository.  Their
+deliverables are staged at `results/astra/S1/` and `results/astra/S2/`; read
+`results/astra/README.md` first.  Paths *inside* those files point at the
+original Windows directory — resolve them against `results/astra/` instead.
+They are session deliverables, not integrator-verified results: treat every
+number in them as MEASURED-by-that-session until this repository's own code has
+re-derived it.
 
 ## Delivery
 

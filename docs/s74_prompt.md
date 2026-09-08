@@ -2,6 +2,23 @@
 
 *(the reconciled proposal's s74.  Read `docs/batch12_worker_preamble.md` first.)*
 
+## First 30 minutes — run these before you plan anything
+
+    git rev-parse main                       # record this; it is your base commit
+    ls docs/batch12_s1_s2_consolidated.md    # if absent, STOP: you have an old tree
+    python3 tools/verify/selftest.py         # expect 12 cases, "selftest PASSED"
+
+    # the working example of everything this brief asks for, ~3 minutes:
+    python3 analysis/wk12_int_birth_probe.py --stream 23,22 --cap 60
+
+Expect: `108` saved fillings with a pure-`u` letter and `5` without; hits `[57]`;
+`0` control failures; birth rank `1/1` at `δ = 23` and `3/3` at `δ = 22`.  **If
+any of that disagrees, stop and report it** — it means what you were handed is
+wrong, which is a result.
+
+Read that script before you write your own.  It is 200 lines and it contains the
+point construction, the filter, the evaluator call and the rank loop.
+
 ## What changed under you
 
 This was a sampling session.  It is not one any more.
@@ -63,6 +80,14 @@ example of everything below.
   row ranks and corrupts kernel coefficients when normalized and literal rows are
   mixed.  Declare one row system and use it for the generic, determinant,
   reducible and true-padded columns alike.
+- **S1's ten evaluation-ready vectors** are staged at
+  `results/astra/S1/partial_source_10.json` — eight replayed degree-13 birth
+  classes plus the two seeds, with their retained minors in
+  `birth13_checks.json`.  Replay them through your own instrument before you
+  trust them; they are a session deliverable, not a verified result.  S1 also
+  left 24 of its 32 saved degree-13 classes unreplayed and five degree-13 slots
+  unfilled — that is 29 of `b₁₃ = 37` still to do, and it is your cheapest
+  starting work after `i_det(23)`.
 - s69's checkpoints: `results/s69_lmr_state.json` (113 fillings, `113 × 300`
   generic matrix), `results/s69_ladder_n4.json` (34 saved: two native `δ = 12`,
   32 native `δ = 13`), `results/s69_n4_seed.json`.  **The 113-filling checkpoint

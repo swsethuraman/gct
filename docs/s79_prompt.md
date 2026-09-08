@@ -2,6 +2,19 @@
 
 *(the reconciled proposal's s78 and s79, merged.  Read the preamble first.)*
 
+## First 30 minutes
+
+    git rev-parse main
+    ls docs/batch12_s1_s2_consolidated.md    # if absent, STOP: you have an old tree
+    python3 tools/verify/selftest.py
+
+    # the five blocks you are about to test, and the census behind them
+    python3 analysis/wk12_int_w13_census.py
+
+Expect 57 shapes, 10 with `a_∞ = 0`, 47 with a nonempty stable block, 11 closed
+at `a_∞ ≤ 3`, and **5 at `a_∞ = 4`** — your part 1 in full.  The distribution and
+the shape list are in `results/wk12_int_w13_census.json`.
+
 ## Why one session
 
 The stable frontier was scoped as a full session on the strength of "44 of 47

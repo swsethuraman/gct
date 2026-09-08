@@ -3,6 +3,22 @@
 *(the reconciled proposal's s75, second half — a session of its own.  Read the
 preamble first.)*
 
+## First 30 minutes
+
+    git rev-parse main
+    ls docs/batch12_s1_s2_consolidated.md    # if absent, STOP: you have an old tree
+    python3 tools/verify/selftest.py
+
+    # the C_delta engine, and the saturated path structure you will build against
+    python3 analysis/wk11_int_cdelta.py 12 60 /tmp/c12.pkl
+    python3 -c "import sys;sys.path.insert(0,'analysis');\
+from wk11_int_cdelta import two_strip_paths;\
+p=two_strip_paths(24);print(len(p),'paths,',len({n for _,n in p}),'shapes')"
+
+Expect 160 paths over 42 shapes at `δ = 24` — identical to `δ = 14`, which is the
+saturation that makes this tractable.  Start the `C₂₄` run early and checkpointed;
+it is the deliverable that lands regardless of how the rest goes.
+
 ## Why this is separate from s75
 
 The `δ = 12` control is an *operator-correctness* problem in a 239-dimensional

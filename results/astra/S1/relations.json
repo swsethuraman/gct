@@ -1,0 +1,191 @@
+{
+ "normalization": "m_alpha = alpha! c_alpha",
+ "plucker_example": {
+  "left": {
+   "h": 3,
+   "n": 4,
+   "delta": 4,
+   "C1": [
+    0,
+    1,
+    2
+   ],
+   "C2": [
+    0,
+    1,
+    2
+   ],
+   "two": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "one": [
+    0,
+    2,
+    3,
+    3
+   ],
+   "lam": [
+    9,
+    5,
+    2
+   ]
+  },
+  "positive": {
+   "h": 3,
+   "n": 4,
+   "delta": 4,
+   "C1": [
+    0,
+    1,
+    2
+   ],
+   "C2": [
+    0,
+    1,
+    2
+   ],
+   "two": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "one": [
+    0,
+    2,
+    3,
+    3
+   ],
+   "lam": [
+    9,
+    5,
+    2
+   ]
+  },
+  "negative": {
+   "h": 3,
+   "n": 4,
+   "delta": 4,
+   "C1": [
+    0,
+    1,
+    2
+   ],
+   "C2": [
+    0,
+    1,
+    2
+   ],
+   "two": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "one": [
+    0,
+    2,
+    3,
+    3
+   ],
+   "lam": [
+    9,
+    5,
+    2
+   ]
+  },
+  "coefficients": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "checks": [
+   {
+    "p": 2147483647,
+    "values": [
+     2108161279,
+     0,
+     39322368
+    ]
+   },
+   {
+    "p": 2147483629,
+    "values": [
+     2108161261,
+     0,
+     39322368
+    ]
+   }
+  ]
+ },
+ "rules": [
+  {
+   "id": "column_sign",
+   "coefficient": -1,
+   "operation": "swap two entries in one column"
+  },
+  {
+   "id": "letter_relabel",
+   "coefficient": 1,
+   "operation": "rename all occurrences by a bijection"
+  },
+  {
+   "id": "equal_height_columns",
+   "coefficient": 1,
+   "operation": "permute whole columns of equal height"
+  },
+  {
+   "id": "plucker_nested",
+   "operation": "[a b][c d] = [a d][c b] - [a c][d b], a<c<d<b",
+   "decreases": "sum over two-columns (b-a)^2"
+  },
+  {
+   "id": "pure_u_factor",
+   "operation": "delete a letter appearing in n one-columns only; F=n! u F_deleted"
+  },
+  {
+   "id": "unshared_rank_zero",
+   "condition": "h-k>n",
+   "operation": "F=0; fixed binary edge assignment gives at most n distinct tall-only column vectors"
+  }
+ ]
+}

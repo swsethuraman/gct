@@ -2,6 +2,24 @@
 
 *(the reconciled proposal's s76.  Read the preamble first.)*
 
+## First 30 minutes
+
+    git rev-parse main
+    ls docs/batch12_s1_s2_consolidated.md    # if absent, STOP: you have an old tree
+    python3 tools/verify/selftest.py
+
+    # S1's own identities and its ten evaluation-ready vectors
+    ls results/astra/S1/ && head -40 results/astra/README.md
+    python3 -c "import json;d=json.load(open('results/astra/S1/relations.json'));print(type(d),len(d))"
+
+    # the baseline you must beat, and the n=3 control you must reproduce
+    python3 analysis/wk12_int_birth_probe.py --stream 22 --cap 60
+    python3 analysis/wk12_int_birth_quotient.py
+
+The second command reproduces the banked `n = 3` `δ = 12` determinant ideal
+vector's `u`-restriction: 54 nonzero `u`-free coordinates of 3,900 support.  That
+vector is your first control's target.
+
 ## What S1 established, and what it retired
 
 **Retired, and narrowly:** unrestricted Plücker expansion as the route to the

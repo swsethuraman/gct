@@ -2,6 +2,21 @@
 
 *(the reconciled proposal's s75, first half.  Read the preamble first.)*
 
+## First 30 minutes
+
+    git rev-parse main
+    ls docs/batch12_s1_s2_consolidated.md    # if absent, STOP: you have an old tree
+    python3 tools/verify/selftest.py         # expect 12 cases, PASSED
+
+    python3 analysis/wk11_int_bdelta.py      # the predecessors and B_delta
+    python3 -c "import json;d=json.load(open('results/wk11_int_c12.json'));\
+print('C_12 =',d['C'],'over',d['two_strip_paths'],'paths,',d['distinct_shapes'],'shapes')"
+
+Expect `B₁₂ = 31` and `C₁₂ = 239` over 36 paths and 23 shapes.  `C₁₂` is your
+control; read `analysis/wk11_int_cdelta.py` (it is short) to see how it is
+computed, because you will need the same object at `δ = 12` from the operator
+side.
+
 ## The question
 
 Does S5's one-block recursion produce an invariant source that can be
