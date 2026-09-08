@@ -88,7 +88,7 @@ def _prime_job(args):
     # ideal vectors on the determinant side (the falsifier object), kept when they exist
     if out['sides']['det']['mult'] < a:
         cs = nullspace_mod_p(G['det'].T, p)                 # combos c with ev_det K c = 0
-        out['det_ideal_chi'] = ((cs @ K.T) % p).tolist()     # vectors in chi-coordinates
+        out['det_ideal_chi'] = matmul_mod(cs % p, K.T, p).tolist()     # vectors in chi-coordinates (exact mod p)
     if opts['keep_kernel'] and nc * a <= 400_000:
         out['kernel_chi'] = K.T.tolist()
     out['secs'] = round(time.time() - t0, 1)
