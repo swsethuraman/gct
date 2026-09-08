@@ -53,7 +53,7 @@ def normalise(cells):
 
 
 # ------------------------------------------------- standard skew tableaux
-@lru_cache(maxsize=None)
+@lru_cache(maxsize=256)
 def standard_fillings(D):
     """all standard fillings of the (normalised) skew diagram D with 1..|D|,
     as tuples cell_1, ..., cell_m (cell_k = position of entry k); sorted."""
@@ -110,7 +110,7 @@ def _s_action(D, i):
     return M
 
 
-@lru_cache(maxsize=None)
+@lru_cache(maxsize=64)
 def s_columns(D, i):
     """sparse columns of s_i on S^D: list over basis index k of
     [(row_index, Fraction), ...] -- the image of e_{T_k}."""
@@ -338,7 +338,6 @@ def recoupling_D(D):
     return tuple(subsets), R
 
 
-@lru_cache(maxsize=None)
 def recoupling(nu, eta):
     """R^{nu/eta} in the basis u_xi, xi over intermediate_shapes(nu, eta)
     (sorted descending).  Computed once per normalised skew diagram."""

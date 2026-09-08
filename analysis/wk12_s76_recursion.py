@@ -36,7 +36,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 from wk11_int_bdelta import lam_of, horiz_strips                   # noqa: E402
-from wk12_s76_seminormal import recoupling, intermediate_shapes   # noqa: E402
+from wk12_s76_seminormal import recoupling_D, intermediate_shapes, skew_cells   # noqa: E402
 
 P1, P2 = 2147483647, 2147483629
 
@@ -85,18 +85,27 @@ class Recursion:
         self._rcache = {}
         os.makedirs(out, exist_ok=True)
 
-    # ---- recoupling, reduced to the rows of rref(R - I) mod p, cached
+    # ---- recoupling, reduced to the rows of rref(R - I) mod p, cached by
+    #      the normalised skew diagram (the per-pair data is only the xi order)
     def reduced_recoupling(self, nu, eta):
-        key = (nu, eta)
-        if key in self._rcache:
-            return self._rcache[key]
-        xis, R = recoupling(nu, eta)
-        m = len(xis)
-        RmI = np.array([[frac_mod(R[i][j] - (1 if i == j else 0), self.p)
-                         for j in range(m)] for i in range(m)], dtype=np.int64)
-        Q = rref_rows(RmI, self.p)
-        self._rcache[key] = (xis, Q, m)
-        return self._rcache[key]
+        cells = skew_cells(nu, eta)
+        r0 = min(r for r, _ in cells)
+        c0 = min(c for _, c in cells)
+        D = frozenset((r - r0, c - c0) for r, c in cells)
+        if D not in self._rcache:
+            subsets, R = recoupling_D(D)
+            m = len(subsets)
+            RmI = np.array([[frac_mod(R[i][j] - (1 if i == j else 0), self.p)
+                             for j in range(m)] for i in range(m)], dtype=np.int64)
+            Q = rref_rows(RmI, self.p)
+            self._rcache[D] = (subsets, Q, m)
+        subsets, Q, m = self._rcache[D]
+        pos = {S: k for k, S in enumerate(subsets)}
+        xis = intermediate_shapes(nu, eta)
+        order = [pos[frozenset((r - r0, c - c0) for r, c in skew_cells(xi, eta))]
+                 for xi in xis]
+        assert order == list(range(m)), (nu, eta, order)
+        return xis, Q, m
 
     def node(self, nu, d, Eprev, aprev, aprev2):
         """E_d(nu) from the level-(d-1) matrices Eprev and dims aprev, aprev2."""
@@ -143,7 +152,7 @@ class Recursion:
             return E, B, B, 0, C_full
         A = np.zeros((nrows, B), dtype=np.int64)
         for eta, q, r0 in rowblocks:
-            xis, Q, m = self._rcache[(nu, eta)]
+            xis, Q, m = self.reduced_recoupling(nu, eta)
             a_eta = aprev2[eta]
             for t, xi in enumerate(xis):
                 coef = q[t]
@@ -308,13 +317,23 @@ def main():
     log = open(os.path.join(ROOT, "results", "logs", f"s76_recursion_top{args.top}_p{args.prime}.log"), "a")
     refs, src = load_refs(ROOT, args.top)
     if args.check_amb:
-        from wk8_s30_pleth import amb
+        # the symmetric-function plethysm for delta <= check_amb, computed once
+        # and cached on disk (its character cache is memory-hungry)
+        cache = os.path.join(ROOT, "results", "s76_amb_refs.json")
+        if os.path.exists(cache):
+            amb_refs = json.load(open(cache))
+        else:
+            amb_refs = {}
         t = time.time()
         for d in range(1, min(args.check_amb, upto) + 1):
-            A = amb(d, 4, 9)
-            for lam, v in A.items():
-                refs[(tuple(lam), d)] = v
-            src[f"amb{d}"] = len(A)
+            if str(d) not in amb_refs:
+                from wk8_s30_pleth import amb
+                A = amb(d, 4, 9)
+                amb_refs[str(d)] = {str(list(lam)): v for lam, v in A.items()}
+                json.dump(amb_refs, open(cache, "w"))
+            for k, v in amb_refs[str(d)].items():
+                refs[(tuple(eval(k)), d)] = v
+            src[f"amb{d}"] = len(amb_refs[str(d)])
         print(f"amb references for delta <= {min(args.check_amb, upto)} in {time.time() - t:.0f}s")
     print("reference sources:", dict(src), flush=True)
     rec = Recursion(top, args.prime, out, log)
