@@ -259,3 +259,59 @@ stable cell, `a = a_∞ = 4` — the quartic `i_det` must equal Part 1's
 certificates and artefacts); `results/s79_cells.jsonl` (every cell, both
 primes, all four families, cost and model); `results/s79_queue.json`;
 `docs/s79_report.md`; bundle `s79_frontiers.bundle` + `.md5`.
+
+---
+
+## Addendum A (committed 2026-09-08 23:10 UTC, before the cubic-side scan; after the
+## length-6 calibration of §2.3 and before any Q1 cell)
+
+**A.1 Calibration outcome (MEASURED).**  All six §2.3 cells reproduce the record
+at both primes (`results/s79_calibration6.jsonl`): `(12,9,8,1,1,1)_8` det 6 /
+red 4 / pad 4; `(14,8,7,1,1,1)_8` red 8 = pad 8; `(17,12,4,1,1,1)_9` det 8 /
+red 7 / pad 7; `(16,13,4,1,1,1)_9` det 7 / red 6 / pad 6; `(19,9,5,1,1,1)_9`
+det 12; `(22,6,2,2,2,2)_9` det 8; per4 = a at all; `mult_pad = mult_red` at
+every `δ ≤ 8` cell (the theorem).  The per4 column is proper at length 6
+(`results/s79_per4_dimension_R6.json`: Jacobian rank 90 = 16R − 6 at both
+primes, det control 66 = 16R − 30).  The cross-instrument cells
+`(19,5,3,2,2,1)_8`, `(23,5,3,2,2,1)_9`, `(27,5,3,2,2,1)_10` all give `i_det = 0`
+at `a = a_∞ = 4`, so the quartic instrument PREDICTS `i_det^∞((5,3,2,2,1)) = 0`
+for Part 1's block 4 (F1-P2 fires if Part 1 disagrees).
+
+**A.2 A record correction, found while sizing.**  Four of the five `a_∞ = 4`
+blocks were already closed by the quartic record via Proposition S before this
+session: `(19,6,3,3,1)_8` and `(19,4,4,3,2)_8` (s60, `a = 4 = a_∞`,
+`mult_det = 4`), `(19,6,2,2,2,1)_8` and `(23,5,2,2,2,2)_9` (s43, same).  The
+census counted "open" against the stable instrument's own history, not the
+quartic record.  Only `(5,3,2,2,1)` was open on both.  Part 1 runs all five
+regardless (the brief), and for the four it is an independent-instrument
+reproduction at `a_∞ = 4`.
+
+**A.3 The theorem route for the padded half (added, pre-registered here).**
+`mult_pad < mult_red` at any six-row cell of degree `δ` requires
+`I(D_6^{per_3})_δ ≠ 0` (Prop. 8(2)), and `I(D_6^{per_3})_δ = 0` gives
+`mult_pad = mult_red` at EVERY six-row weight of degree `δ` (Prop. 8(1)).  The
+cubic side is the same build with `n = 3` and session 41's family
+`per_3(Σ_{i≤6} s_i A_i)` (seed 41, bound 40, `a + 8` points), which sessions
+37/41/43/47 ran through `δ = 8` on the Wiedemann/injectivity route (hours per
+weight).  On the hybrid `(7,5,4,4,2,2)_8` reproduces s47's `mult = a = 1` in
+10.5 s against 2 420 s, with a format-verifiable `full_rank` certificate at
+`n = 3` / `permanent_pencil` (verifier PASS).  So:
+
+- **Q3 (cubic side):** all 210 length-6 weights `μ ⊢ 27` with `a(μ,9) ≥ 1`
+  (`Σa = 592`, max `a = 9`), then the 402 at `δ = 10` (`Σa = 2 225`, max
+  `a = 24`) as far as the wall clock allows, each by
+  `analysis/wk12_s79_per6.py`, both primes, in `N_S` order.
+- **Prediction P6 (EXPECTATION 0.6):** `I(D_6^{per_3})_9 = 0` — then
+  `mult_pad = mult_red` at every six-row weight of degree 9 is a THEOREM and
+  the quartic sweep's `δ = 9` pad column is a consistency check of it.
+  EXPECTATION 0.4 that `δ = 10` is also empty if reached.
+- **A drop at any `μ`:** re-checked in the same call at `3a + 24` fresh points
+  (seed 907) at both primes, the vector exhibited and verified `E·v = 0`;
+  the scan halts; the quartic confirmation is then sought at the weights
+  `λ ⊇ μ` with `λ/μ` a horizontal 9-strip (Prop. 8(2)) — this is the only
+  route by which a `mult_pad < mult_red` cell can be reached and it is
+  pre-registered as such.
+- Falsifier of the instrument: any `δ ≤ 8` re-run disagreeing with s41/s43/s47.
+
+**A.4 Delivery of Q1/Q3 results.**  `results/s79_cells.jsonl` (quartic),
+`results/s79_per6.jsonl` (cubic), certificates under `results/certs/s79_*`.
