@@ -1,0 +1,1406 @@
+calibration set: 72 cells, 0 already done
+      level 1: 41 prefixes
+      level 2: 312 prefixes
+      level 3: 536 prefixes
+      level 4: 553 prefixes
+      level 5: 553 prefixes
+  lam=(12, 2, 2, 2, 2): N_S=553 |Stab|=24 n_chi=56 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 216 canonical rows 56 nnz 197 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 424 canonical rows 242 nnz 416 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=2 targets 424 canonical rows 242 nnz 416 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 424 canonical rows 242 nnz 416 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (12, 2, 2, 2, 2) d5: N_S=553 |Stab|=24 n_chi=56 rows=782 nnz=1445 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (12, 2, 2, 2, 2) d5: cover(E) 55/56 by reversed (a=1, |U|=1, excess 0; {'natural': 51, 'reversed': 55, 'fill_asc': 55, 'fill_desc': 45, 'random': 48}); cover(E_red) 21/21 CERTIFIED i_red = 0 (0.0s)
+    hybrid[12_2_2_2_2d5] p=2147483629 attempt 0: |S|=55 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[12_2_2_2_2d5] p=2147483647 attempt 0: |S|=55 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (12, 2, 2, 2, 2) d5: a=1 n_chi=56 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (12, 2, 2, 2, 2) d5: n_chi=56 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.2s)
+      level 1: 23 prefixes
+      level 2: 170 prefixes
+      level 3: 486 prefixes
+      level 4: 621 prefixes
+      level 5: 621 prefixes
+  lam=(9, 7, 2, 1, 1): N_S=621 |Stab|=2 n_chi=218 (orbits dropped: 185) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 535 canonical rows 183 nnz 676 (obstructed fixed targets cancelled: 47) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 290 canonical rows 99 nnz 330 (obstructed fixed targets cancelled: 21) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 309 canonical rows 290 nnz 436 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 403 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (9, 7, 2, 1, 1) d5: N_S=621 |Stab|=2 n_chi=218 rows=572 nnz=1442 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (9, 7, 2, 1, 1) d5: cover(E) 217/218 by reversed (a=1, |U|=1, excess 0; {'natural': 208, 'reversed': 217, 'fill_asc': 188, 'fill_desc': 187, 'random': 186}); cover(E_red) 147/148 (0.0s)
+    hybrid[9_7_2_1_1d5] p=2147483629 attempt 0: |S|=217 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[9_7_2_1_1d5] p=2147483647 attempt 0: |S|=217 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (9, 7, 2, 1, 1) d5: a=1 n_chi=218 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.1s, HWM 0.07 GB)
+CALIB (9, 7, 2, 1, 1) d5: n_chi=218 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.1s)
+      level 1: 32 prefixes
+      level 2: 255 prefixes
+      level 3: 659 prefixes
+      level 4: 774 prefixes
+      level 5: 774 prefixes
+  lam=(10, 5, 3, 1, 1): N_S=774 |Stab|=2 n_chi=276 (orbits dropped: 222) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 543 canonical rows 189 nnz 726 (obstructed fixed targets cancelled: 45) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 535 canonical rows 183 nnz 544 (obstructed fixed targets cancelled: 31) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 331 canonical rows 330 nnz 552 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 498 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (10, 5, 3, 1, 1) d5: N_S=774 |Stab|=2 n_chi=276 rows=702 nnz=1822 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (10, 5, 3, 1, 1) d5: cover(E) 275/276 by reversed (a=1, |U|=1, excess 0; {'natural': 263, 'reversed': 275, 'fill_asc': 232, 'fill_desc': 232, 'random': 219}); cover(E_red) 168/168 CERTIFIED i_red = 0 (0.0s)
+    hybrid[10_5_3_1_1d5] p=2147483629 attempt 0: |S|=275 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[10_5_3_1_1d5] p=2147483647 attempt 0: |S|=275 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (10, 5, 3, 1, 1) d5: a=1 n_chi=276 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.1s, HWM 0.07 GB)
+CALIB (10, 5, 3, 1, 1) d5: n_chi=276 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.1s)
+      level 1: 47 prefixes
+      level 2: 483 prefixes
+      level 3: 1152 prefixes
+      level 4: 1280 prefixes
+      level 5: 1280 prefixes
+      level 6: 1280 prefixes
+  lam=(15, 3, 2, 2, 2): N_S=1280 |Stab|=6 n_chi=304 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 608 canonical rows 155 nnz 589 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 846 canonical rows 481 nnz 1114 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 985 canonical rows 985 nnz 1732 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 985 canonical rows 985 nnz 1732 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (15, 3, 2, 2, 2) d6: N_S=1280 |Stab|=6 n_chi=304 rows=2606 nnz=5167 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (15, 3, 2, 2, 2) d6: cover(E) 303/304 by reversed (a=1, |U|=1, excess 0; {'natural': 295, 'reversed': 303, 'fill_asc': 289, 'fill_desc': 259, 'random': 275}); cover(E_red) 120/120 CERTIFIED i_red = 0 (0.0s)
+    hybrid[15_3_2_2_2d6] p=2147483647 attempt 0: |S|=303 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[15_3_2_2_2d6] p=2147483629 attempt 0: |S|=303 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (15, 3, 2, 2, 2) d6: a=1 n_chi=304 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (15, 3, 2, 2, 2) d6: n_chi=304 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.2s)
+      level 1: 28 prefixes
+      level 2: 194 prefixes
+      level 3: 642 prefixes
+      level 4: 1044 prefixes
+      level 5: 1121 prefixes
+      level 6: 1121 prefixes
+  lam=(12, 8, 2, 1, 1): N_S=1121 |Stab|=2 n_chi=391 (orbits dropped: 339) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 927 canonical rows 324 nnz 1325 (obstructed fixed targets cancelled: 86) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 493 canonical rows 169 nnz 598 (obstructed fixed targets cancelled: 37) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 556 canonical rows 520 nnz 782 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 730 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (12, 8, 2, 1, 1) d6: N_S=1121 |Stab|=2 n_chi=391 rows=1013 nnz=2705 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (12, 8, 2, 1, 1) d6: cover(E) 390/391 by reversed (a=1, |U|=1, excess 0; {'natural': 374, 'reversed': 390, 'fill_asc': 334, 'fill_desc': 339, 'random': 316}); cover(E_red) 267/268 (0.0s)
+    hybrid[12_8_2_1_1d6] p=2147483629 attempt 0: |S|=390 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[12_8_2_1_1d6] p=2147483647 attempt 0: |S|=390 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (12, 8, 2, 1, 1) d6: a=1 n_chi=391 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.1s, HWM 0.07 GB)
+CALIB (12, 8, 2, 1, 1) d6: n_chi=391 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.1s)
+      level 1: 38 prefixes
+      level 2: 300 prefixes
+      level 3: 651 prefixes
+      level 4: 705 prefixes
+      level 5: 705 prefixes
+  lam=(11, 4, 2, 2, 1): N_S=705 |Stab|=2 n_chi=399 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 424 canonical rows 242 nnz 933 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 409 canonical rows 409 nnz 1107 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 543 canonical rows 543 nnz 953 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 354 canonical rows 354 nnz 705 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (11, 4, 2, 2, 1) d5: N_S=705 |Stab|=2 n_chi=399 rows=1548 nnz=3698 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (11, 4, 2, 2, 1) d5: cover(E) 398/399 by reversed (a=1, |U|=1, excess 0; {'natural': 381, 'reversed': 398, 'fill_asc': 348, 'fill_desc': 349, 'random': 340}); cover(E_red) 190/190 CERTIFIED i_red = 0 (0.0s)
+    hybrid[11_4_2_2_1d5] p=2147483629 attempt 0: |S|=398 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[11_4_2_2_1d5] p=2147483647 attempt 0: |S|=398 |U|=1 (a=1, excess 0) m=65 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (11, 4, 2, 2, 1) d5: a=1 n_chi=399 |U|=1 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.1s, HWM 0.07 GB)
+CALIB (11, 4, 2, 2, 1) d5: n_chi=399 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.1s)
+      level 1: 33 prefixes
+      level 2: 291 prefixes
+      level 3: 980 prefixes
+      level 4: 1419 prefixes
+      level 5: 1463 prefixes
+      level 6: 1463 prefixes
+  lam=(13, 6, 3, 1, 1): N_S=1463 |Stab|=2 n_chi=524 (orbits dropped: 415) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 1028 canonical rows 363 nnz 1541 (obstructed fixed targets cancelled: 94) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 927 canonical rows 324 nnz 1048 (obstructed fixed targets cancelled: 53) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 621 canonical rows 620 nnz 1048 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 939 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (13, 6, 3, 1, 1) d6: N_S=1463 |Stab|=2 n_chi=524 rows=1307 nnz=3637 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (13, 6, 3, 1, 1) d6: cover(E) 522/524 by reversed (a=1, |U|=2, excess 1; {'natural': 499, 'reversed': 522, 'fill_asc': 430, 'fill_desc': 440, 'random': 407}); cover(E_red) 325/326 (0.0s)
+    hybrid[13_6_3_1_1d6] p=2147483647 attempt 0: |S|=522 |U|=2 (a=1, excess 1) m=66 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[13_6_3_1_1d6] p=2147483629 attempt 0: |S|=522 |U|=2 (a=1, excess 1) m=66 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (13, 6, 3, 1, 1) d6: a=1 n_chi=524 |U|=2 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.1s, HWM 0.07 GB)
+CALIB (13, 6, 3, 1, 1) d6: n_chi=524 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.1s)
+      level 1: 49 prefixes
+      level 2: 607 prefixes
+      level 3: 1993 prefixes
+      level 4: 2542 prefixes
+      level 5: 2565 prefixes
+      level 6: 2565 prefixes
+      level 7: 2565 prefixes
+  lam=(18, 4, 2, 2, 2): N_S=2565 |Stab|=6 n_chi=606 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 1339 canonical rows 322 nnz 1363 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1482 canonical rows 837 nnz 2235 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1965 canonical rows 1965 nnz 3503 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1965 canonical rows 1965 nnz 3503 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (18, 4, 2, 2, 2) d7: N_S=2565 |Stab|=6 n_chi=606 rows=5089 nnz=10604 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (18, 4, 2, 2, 2) d7: cover(E) 603/606 by reversed (a=3, |U|=3, excess 0; {'natural': 583, 'reversed': 603, 'fill_asc': 569, 'fill_desc': 516, 'random': 531}); cover(E_red) 277/277 CERTIFIED i_red = 0 (0.0s)
+    hybrid[18_4_2_2_2d7] p=2147483629 attempt 0: |S|=603 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[18_4_2_2_2d7] p=2147483647 attempt 0: |S|=603 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (18, 4, 2, 2, 2) d7: a=3 n_chi=606 |U|=3 mult_det=3 mult_per4=3 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (18, 4, 2, 2, 2) d7: n_chi=606 banked det/star/pts = 3/3/3 hybrid = 3/3/3 per4=3 a=3 AGREE (0.3s)
+      level 1: 29 prefixes
+      level 2: 208 prefixes
+      level 3: 722 prefixes
+      level 4: 1440 prefixes
+      level 5: 1733 prefixes
+      level 6: 1761 prefixes
+      level 7: 1761 prefixes
+  lam=(15, 9, 2, 1, 1): N_S=1761 |Stab|=2 n_chi=622 (orbits dropped: 517) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 1443 canonical rows 501 nnz 2209 (obstructed fixed targets cancelled: 151) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 743 canonical rows 255 nnz 949 (obstructed fixed targets cancelled: 58) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 872 canonical rows 824 nnz 1244 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1139 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (15, 9, 2, 1, 1) d7: N_S=1761 |Stab|=2 n_chi=622 rows=1580 nnz=4402 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (15, 9, 2, 1, 1) d7: cover(E) 620/622 by reversed (a=2, |U|=2, excess 0; {'natural': 592, 'reversed': 620, 'fill_asc': 531, 'fill_desc': 533, 'random': 506}); cover(E_red) 432/434 (0.0s)
+    hybrid[15_9_2_1_1d7] p=2147483647 attempt 0: |S|=620 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[15_9_2_1_1d7] p=2147483629 attempt 0: |S|=620 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (15, 9, 2, 1, 1) d7: a=2 n_chi=622 |U|=2 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (15, 9, 2, 1, 1) d7: n_chi=622 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.2s)
+      level 1: 34 prefixes
+      level 2: 333 prefixes
+      level 3: 1203 prefixes
+      level 4: 1767 prefixes
+      level 5: 1824 prefixes
+      level 6: 1824 prefixes
+  lam=(13, 5, 4, 1, 1): N_S=1824 |Stab|=2 n_chi=658 (orbits dropped: 508) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 1173 canonical rows 409 nnz 1760 (obstructed fixed targets cancelled: 114) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1463 canonical rows 524 nnz 1582 (obstructed fixed targets cancelled: 66) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 673 canonical rows 659 nnz 1316 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1166 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (13, 5, 4, 1, 1) d6: N_S=1824 |Stab|=2 n_chi=658 rows=1592 nnz=4658 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (13, 5, 4, 1, 1) d6: cover(E) 654/658 by reversed (a=2, |U|=4, excess 2; {'natural': 624, 'reversed': 654, 'fill_asc': 541, 'fill_desc': 534, 'random': 497}); cover(E_red) 406/408 (0.0s)
+    hybrid[13_5_4_1_1d6] p=2147483647 attempt 0: |S|=654 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[13_5_4_1_1d6] p=2147483629 attempt 0: |S|=654 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (13, 5, 4, 1, 1) d6: a=2 n_chi=658 |U|=4 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (13, 5, 4, 1, 1) d6: n_chi=658 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.2s)
+      level 1: 35 prefixes
+      level 2: 372 prefixes
+      level 3: 1720 prefixes
+      level 4: 3218 prefixes
+      level 5: 3562 prefixes
+      level 6: 3575 prefixes
+      level 7: 3575 prefixes
+  lam=(16, 5, 5, 1, 1): N_S=3575 |Stab|=4 n_chi=663 (orbits dropped: 534) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2155 canonical rows 770 nnz 3503 (obstructed fixed targets cancelled: 206) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 3264 canonical rows 1177 nnz 3466 (obstructed fixed targets cancelled: 141) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1200 canonical rows 1200 nnz 2582 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 2268 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 35) [0s, HWM 0.07 GB]
+  built (16, 5, 5, 1, 1) d7: N_S=3575 |Stab|=4 n_chi=663 rows=3147 nnz=9551 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (16, 5, 5, 1, 1) d7: cover(E) 660/663 by reversed (a=3, |U|=3, excess 0; {'natural': 628, 'reversed': 660, 'fill_asc': 591, 'fill_desc': 585, 'random': 549}); cover(E_red) 422/424 (0.0s)
+    hybrid[16_5_5_1_1d7] p=2147483629 attempt 0: |S|=660 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[16_5_5_1_1d7] p=2147483647 attempt 0: |S|=660 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (16, 5, 5, 1, 1) d7: a=3 n_chi=663 |U|=3 mult_det=3 mult_per4=3 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (16, 5, 5, 1, 1) d7: n_chi=663 banked det/star/pts = 3/3/3 hybrid = 3/3/3 per4=3 a=3 AGREE (0.3s)
+      level 1: 38 prefixes
+      level 2: 356 prefixes
+      level 3: 1064 prefixes
+      level 4: 1325 prefixes
+      level 5: 1337 prefixes
+      level 6: 1337 prefixes
+  lam=(14, 5, 2, 2, 1): N_S=1337 |Stab|=2 n_chi=752 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 846 canonical rows 481 nnz 2037 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 710 canonical rows 710 nnz 2113 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1028 canonical rows 1028 nnz 1822 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 665 canonical rows 665 nnz 1337 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (14, 5, 2, 2, 1) d6: N_S=1337 |Stab|=2 n_chi=752 rows=2884 nnz=7309 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (14, 5, 2, 2, 1) d6: cover(E) 750/752 by reversed (a=2, |U|=2, excess 0; {'natural': 714, 'reversed': 750, 'fill_asc': 647, 'fill_desc': 653, 'random': 622}); cover(E_red) 386/386 CERTIFIED i_red = 0 (0.0s)
+    hybrid[14_5_2_2_1d6] p=2147483629 attempt 0: |S|=750 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[14_5_2_2_1d6] p=2147483647 attempt 0: |S|=750 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (14, 5, 2, 2, 1) d6: a=2 n_chi=752 |U|=2 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (14, 5, 2, 2, 1) d6: n_chi=752 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.2s)
+      level 1: 34 prefixes
+      level 2: 304 prefixes
+      level 3: 1209 prefixes
+      level 4: 2178 prefixes
+      level 5: 2405 prefixes
+      level 6: 2414 prefixes
+      level 7: 2414 prefixes
+  lam=(16, 7, 3, 1, 1): N_S=2414 |Stab|=2 n_chi=870 (orbits dropped: 674) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 1733 canonical rows 615 nnz 2782 (obstructed fixed targets cancelled: 169) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1443 canonical rows 501 nnz 1743 (obstructed fixed targets cancelled: 93) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1019 canonical rows 1016 nnz 1740 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1544 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (16, 7, 3, 1, 1) d7: N_S=2414 |Stab|=2 n_chi=870 rows=2132 nnz=6265 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (16, 7, 3, 1, 1) d7: cover(E) 866/870 by reversed (a=4, |U|=4, excess 0; {'natural': 823, 'reversed': 866, 'fill_asc': 712, 'fill_desc': 720, 'random': 674}); cover(E_red) 556/559 (0.0s)
+    hybrid[16_7_3_1_1d7] p=2147483629 attempt 0: |S|=866 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[16_7_3_1_1d7] p=2147483647 attempt 0: |S|=866 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (16, 7, 3, 1, 1) d7: a=4 n_chi=870 |U|=4 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (16, 7, 3, 1, 1) d7: n_chi=870 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.2s)
+      level 1: 30 prefixes
+      level 2: 217 prefixes
+      level 3: 754 prefixes
+      level 4: 1751 prefixes
+      level 5: 2412 prefixes
+      level 6: 2551 prefixes
+      level 7: 2558 prefixes
+      level 8: 2558 prefixes
+  lam=(18, 10, 2, 1, 1): N_S=2558 |Stab|=2 n_chi=899 (orbits dropped: 760) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2087 canonical rows 733 nnz 3355 (obstructed fixed targets cancelled: 219) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1041 canonical rows 358 nnz 1378 (obstructed fixed targets cancelled: 83) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1267 canonical rows 1194 nnz 1798 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1659 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (18, 10, 2, 1, 1) d8: N_S=2558 |Stab|=2 n_chi=899 rows=2285 nnz=6531 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (18, 10, 2, 1, 1) d8: cover(E) 897/899 by reversed (a=2, |U|=2, excess 0; {'natural': 856, 'reversed': 897, 'fill_asc': 763, 'fill_desc': 774, 'random': 728}); cover(E_red) 636/638 (0.0s)
+    hybrid[18_10_2_1_1d8] p=2147483647 attempt 0: |S|=897 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[18_10_2_1_1d8] p=2147483629 attempt 0: |S|=897 |U|=2 (a=2, excess 0) m=66 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (18, 10, 2, 1, 1) d8: a=2 n_chi=899 |U|=2 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (18, 10, 2, 1, 1) d8: n_chi=899 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.2s)
+      level 1: 49 prefixes
+      level 2: 663 prefixes
+      level 3: 2842 prefixes
+      level 4: 4368 prefixes
+      level 5: 4538 prefixes
+      level 6: 4538 prefixes
+      level 7: 4538 prefixes
+      level 8: 4538 prefixes
+  lam=(21, 5, 2, 2, 2): N_S=4538 |Stab|=6 n_chi=1040 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 2625 canonical rows 625 nnz 2746 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 2403 canonical rows 1353 nnz 3973 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 3475 canonical rows 3475 nnz 6261 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3475 canonical rows 3475 nnz 6261 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (21, 5, 2, 2, 2) d8: N_S=4538 |Stab|=6 n_chi=1040 rows=8928 nnz=19241 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (21, 5, 2, 2, 2) d8: cover(E) 1036/1040 by reversed (a=4, |U|=4, excess 0; {'natural': 999, 'reversed': 1036, 'fill_asc': 963, 'fill_desc': 883, 'random': 888}); cover(E_red) 525/525 CERTIFIED i_red = 0 (0.0s)
+    hybrid[21_5_2_2_2d8] p=2147483647 attempt 0: |S|=1036 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[21_5_2_2_2d8] p=2147483629 attempt 0: |S|=1036 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (21, 5, 2, 2, 2) d8: a=4 n_chi=1040 |U|=4 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (21, 5, 2, 2, 2) d8: n_chi=1040 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.3s)
+      level 1: 35 prefixes
+      level 2: 364 prefixes
+      level 3: 1594 prefixes
+      level 4: 2940 prefixes
+      level 5: 3252 prefixes
+      level 6: 3264 prefixes
+      level 7: 3264 prefixes
+  lam=(16, 6, 4, 1, 1): N_S=3264 |Stab|=2 n_chi=1177 (orbits dropped: 910) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2155 canonical rows 770 nnz 3527 (obstructed fixed targets cancelled: 206) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 2414 canonical rows 870 nnz 2858 (obstructed fixed targets cancelled: 117) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1200 canonical rows 1175 nnz 2354 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 2087 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (16, 6, 4, 1, 1) d7: N_S=3264 |Stab|=2 n_chi=1177 rows=2815 nnz=8739 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (16, 6, 4, 1, 1) d7: cover(E) 1172/1177 by reversed (a=3, |U|=5, excess 2; {'natural': 1112, 'reversed': 1172, 'fill_asc': 945, 'fill_desc': 962, 'random': 860}); cover(E_red) 751/754 (0.0s)
+    hybrid[16_6_4_1_1d7] p=2147483647 attempt 0: |S|=1172 |U|=5 (a=3, excess 2) m=69 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[16_6_4_1_1d7] p=2147483629 attempt 0: |S|=1172 |U|=5 (a=3, excess 2) m=69 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (16, 6, 4, 1, 1) d7: a=3 n_chi=1177 |U|=5 mult_det=3 mult_per4=3 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (16, 6, 4, 1, 1) d7: n_chi=1177 banked det/star/pts = 3/3/3 hybrid = 3/3/3 per4=3 a=3 AGREE (0.2s)
+      level 1: 30 prefixes
+      level 2: 221 prefixes
+      level 3: 762 prefixes
+      level 4: 1951 prefixes
+      level 5: 3083 prefixes
+      level 6: 3465 prefixes
+      level 7: 3510 prefixes
+      level 8: 3510 prefixes
+      level 9: 3510 prefixes
+  lam=(21, 11, 2, 1, 1): N_S=3510 |Stab|=2 n_chi=1243 (orbits dropped: 1024) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2885 canonical rows 1010 nnz 4789 (obstructed fixed targets cancelled: 317) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1393 canonical rows 479 nnz 1902 (obstructed fixed targets cancelled: 114) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1736 canonical rows 1643 nnz 2486 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 2267 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (21, 11, 2, 1, 1) d9: N_S=3510 |Stab|=2 n_chi=1243 rows=3132 nnz=9177 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (21, 11, 2, 1, 1) d9: cover(E) 1239/1243 by reversed (a=4, |U|=4, excess 0; {'natural': 1180, 'reversed': 1239, 'fill_asc': 1052, 'fill_desc': 1059, 'random': 996}); cover(E_red) 897/901 (0.0s)
+    hybrid[21_11_2_1_1d9] p=2147483647 attempt 0: |S|=1239 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[21_11_2_1_1d9] p=2147483629 attempt 0: |S|=1239 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (21, 11, 2, 1, 1) d9: a=4 n_chi=1243 |U|=4 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (21, 11, 2, 1, 1) d9: n_chi=1243 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.2s)
+      level 1: 39 prefixes
+      level 2: 383 prefixes
+      level 3: 1448 prefixes
+      level 4: 2168 prefixes
+      level 5: 2257 prefixes
+      level 6: 2257 prefixes
+      level 7: 2257 prefixes
+  lam=(17, 6, 2, 2, 1): N_S=2257 |Stab|=2 n_chi=1267 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 1482 canonical rows 837 nnz 3771 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 1106 canonical rows 1106 nnz 3578 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1733 canonical rows 1733 nnz 3091 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1118 canonical rows 1118 nnz 2257 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (17, 6, 2, 2, 1) d7: N_S=2257 |Stab|=2 n_chi=1267 rows=4794 nnz=12697 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (17, 6, 2, 2, 1) d7: cover(E) 1263/1267 by reversed (a=4, |U|=4, excess 0; {'natural': 1202, 'reversed': 1263, 'fill_asc': 1078, 'fill_desc': 1105, 'random': 1050}); cover(E_red) 694/695 (0.0s)
+    hybrid[17_6_2_2_1d7] p=2147483629 attempt 0: |S|=1263 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[17_6_2_2_1d7] p=2147483647 attempt 0: |S|=1263 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (17, 6, 2, 2, 1) d7: a=4 n_chi=1267 |U|=4 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (17, 6, 2, 2, 1) d7: n_chi=1267 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.2s)
+      level 1: 34 prefixes
+      level 2: 313 prefixes
+      level 3: 1338 prefixes
+      level 4: 2943 prefixes
+      level 5: 3605 prefixes
+      level 6: 3673 prefixes
+      level 7: 3673 prefixes
+      level 8: 3673 prefixes
+  lam=(19, 8, 3, 1, 1): N_S=3673 |Stab|=2 n_chi=1327 (orbits dropped: 1019) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2688 canonical rows 962 nnz 4542 (obstructed fixed targets cancelled: 267) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 2087 canonical rows 733 nnz 2677 (obstructed fixed targets cancelled: 134) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1546 canonical rows 1539 nnz 2654 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 2346 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (19, 8, 3, 1, 1) d8: N_S=3673 |Stab|=2 n_chi=1327 rows=3234 nnz=9873 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (19, 8, 3, 1, 1) d8: cover(E) 1322/1327 by reversed (a=5, |U|=5, excess 0; {'natural': 1254, 'reversed': 1322, 'fill_asc': 1080, 'fill_desc': 1104, 'random': 1001}); cover(E_red) 882/885 (0.0s)
+    hybrid[19_8_3_1_1d8] p=2147483629 attempt 0: |S|=1322 |U|=5 (a=5, excess 0) m=69 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[19_8_3_1_1d8] p=2147483647 attempt 0: |S|=1322 |U|=5 (a=5, excess 0) m=69 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (19, 8, 3, 1, 1) d8: a=5 n_chi=1327 |U|=5 mult_det=5 mult_per4=5 mult_red(star)=5 mult_red(pts)=5 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (19, 8, 3, 1, 1) d8: n_chi=1327 banked det/star/pts = 5/5/5 hybrid = 5/5/5 per4=5 a=5 AGREE (0.3s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2061 prefixes
+      level 5: 3693 prefixes
+      level 6: 4480 prefixes
+      level 7: 4644 prefixes
+      level 8: 4651 prefixes
+      level 9: 4651 prefixes
+      level 10: 4651 prefixes
+  lam=(24, 12, 2, 1, 1): N_S=4651 |Stab|=2 n_chi=1642 (orbits dropped: 1367) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 3837 canonical rows 1354 nnz 6548 (obstructed fixed targets cancelled: 418) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 1800 canonical rows 620 nnz 2520 (obstructed fixed targets cancelled: 150) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2301 canonical rows 2171 nnz 3284 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3009 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (24, 12, 2, 1, 1) d10: N_S=4651 |Stab|=2 n_chi=1642 rows=4145 nnz=12352 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (24, 12, 2, 1, 1) d10: cover(E) 1638/1642 by reversed (a=4, |U|=4, excess 0; {'natural': 1559, 'reversed': 1638, 'fill_asc': 1392, 'fill_desc': 1409, 'random': 1318}); cover(E_red) 1208/1212 (0.0s)
+    hybrid[24_12_2_1_1d10] p=2147483629 attempt 0: |S|=1638 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[24_12_2_1_1d10] p=2147483647 attempt 0: |S|=1638 |U|=4 (a=4, excess 0) m=68 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (24, 12, 2, 1, 1) d10: a=4 n_chi=1642 |U|=4 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (24, 12, 2, 1, 1) d10: n_chi=1642 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.3s)
+      level 1: 50 prefixes
+      level 2: 684 prefixes
+      level 3: 3530 prefixes
+      level 4: 6730 prefixes
+      level 5: 7465 prefixes
+      level 6: 7489 prefixes
+      level 7: 7489 prefixes
+      level 8: 7489 prefixes
+      level 9: 7489 prefixes
+  lam=(24, 6, 2, 2, 2): N_S=7489 |Stab|=6 n_chi=1710 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 4598 canonical rows 1059 nnz 4939 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 3651 canonical rows 2047 nnz 6562 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 5716 canonical rows 5716 nnz 10402 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 5716 canonical rows 5716 nnz 10402 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (24, 6, 2, 2, 2) d9: N_S=7489 |Stab|=6 n_chi=1710 rows=14538 nnz=32305 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (24, 6, 2, 2, 2) d9: cover(E) 1701/1710 by reversed (a=9, |U|=9, excess 0; {'natural': 1635, 'reversed': 1701, 'fill_asc': 1570, 'fill_desc': 1436, 'random': 1446}); cover(E_red) 946/947 (0.0s)
+    hybrid[24_6_2_2_2d9] p=2147483647 attempt 0: |S|=1701 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[24_6_2_2_2d9] p=2147483629 attempt 0: |S|=1701 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (24, 6, 2, 2, 2) d9: a=9 n_chi=1710 |U|=9 mult_det=9 mult_per4=9 mult_red(star)=9 mult_red(pts)=9 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.07 GB)
+CALIB (24, 6, 2, 2, 2) d9: n_chi=1710 banked det/star/pts = 9/9/9 hybrid = 9/9/9 per4=9 a=9 AGREE (0.5s)
+      level 1: 42 prefixes
+      level 2: 449 prefixes
+      level 3: 1408 prefixes
+      level 4: 1769 prefixes
+      level 5: 1785 prefixes
+      level 6: 1785 prefixes
+  lam=(14, 4, 3, 2, 1): N_S=1785 |Stab|=1 n_chi=1785 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 985 canonical rows 985 nnz 4368 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 1337 canonical rows 1337 nnz 3702 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1173 canonical rows 1173 nnz 2838 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 881 canonical rows 881 nnz 1785 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (14, 4, 3, 2, 1) d6: N_S=1785 |Stab|=1 n_chi=1785 rows=4376 nnz=12693 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (14, 4, 3, 2, 1) d6: cover(E) 1782/1785 by reversed (a=1, |U|=3, excess 2; {'natural': 1734, 'reversed': 1782, 'fill_asc': 1565, 'fill_desc': 1493, 'random': 1367}); cover(E_red) 903/903 CERTIFIED i_red = 0 (0.0s)
+    hybrid[14_4_3_2_1d6] p=2147483647 attempt 0: |S|=1782 |U|=3 (a=1, excess 2) m=67 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]    hybrid[14_4_3_2_1d6] p=2147483629 attempt 0: |S|=1782 |U|=3 (a=1, excess 2) m=67 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+
+  RESULT (14, 4, 3, 2, 1) d6: a=1 n_chi=1785 |U|=3 mult_det=1 mult_per4=1 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (14, 4, 3, 2, 1) d6: n_chi=1785 banked det/star/pts = 1/1/1 hybrid = 1/1/1 per4=1 a=1 AGREE (0.2s)
+      level 1: 35 prefixes
+      level 2: 399 prefixes
+      level 3: 2297 prefixes
+      level 4: 6617 prefixes
+      level 5: 9397 prefixes
+      level 6: 9867 prefixes
+      level 7: 9883 prefixes
+      level 8: 9883 prefixes
+  lam=(18, 6, 6, 1, 1): N_S=9883 |Stab|=4 n_chi=1816 (orbits dropped: 1403) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 6250 canonical rows 2296 nnz 11151 (obstructed fixed targets cancelled: 567) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 9110 canonical rows 3391 nnz 11228 (obstructed fixed targets cancelled: 340) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2987 canonical rows 2963 nnz 7210 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 6213 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (18, 6, 6, 1, 1) d8: N_S=9883 |Stab|=4 n_chi=1816 rows=8650 nnz=29589 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (18, 6, 6, 1, 1) d8: cover(E) 1812/1816 by reversed (a=2, |U|=4, excess 2; {'natural': 1691, 'reversed': 1812, 'fill_asc': 1598, 'fill_desc': 1637, 'random': 1434}); cover(E_red) 1311/1315 (0.0s)
+    hybrid[18_6_6_1_1d8] p=2147483629 attempt 0: |S|=1812 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[18_6_6_1_1d8] p=2147483647 attempt 0: |S|=1812 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (18, 6, 6, 1, 1) d8: a=2 n_chi=1816 |U|=4 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (18, 6, 6, 1, 1) d8: n_chi=1816 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.3s)
+      level 1: 34 prefixes
+      level 2: 317 prefixes
+      level 3: 1391 prefixes
+      level 4: 3594 prefixes
+      level 5: 5000 prefixes
+      level 6: 5271 prefixes
+      level 7: 5280 prefixes
+      level 8: 5280 prefixes
+      level 9: 5280 prefixes
+  lam=(22, 9, 3, 1, 1): N_S=5280 |Stab|=2 n_chi=1915 (orbits dropped: 1450) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 3948 canonical rows 1419 nnz 6919 (obstructed fixed targets cancelled: 400) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 2885 canonical rows 1010 nnz 3867 (obstructed fixed targets cancelled: 200) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2215 canonical rows 2203 nnz 3830 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3365 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (22, 9, 3, 1, 1) d9: N_S=5280 |Stab|=2 n_chi=1915 rows=4632 nnz=14616 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (22, 9, 3, 1, 1) d9: cover(E) 1906/1915 by reversed (a=8, |U|=9, excess 1; {'natural': 1802, 'reversed': 1906, 'fill_asc': 1556, 'fill_desc': 1575, 'random': 1446}); cover(E_red) 1314/1321 (0.0s)
+    hybrid[22_9_3_1_1d9] p=2147483647 attempt 0: |S|=1906 |U|=9 (a=8, excess 1) m=73 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[22_9_3_1_1d9] p=2147483629 attempt 0: |S|=1906 |U|=9 (a=8, excess 1) m=73 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (22, 9, 3, 1, 1) d9: a=8 n_chi=1915 |U|=9 mult_det=8 mult_per4=8 mult_red(star)=8 mult_red(pts)=8 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.07 GB)
+CALIB (22, 9, 3, 1, 1) d9: n_chi=1915 banked det/star/pts = 8/8/8 hybrid = 8/8/8 per4=8 a=8 AGREE (0.4s)
+      level 1: 35 prefixes
+      level 2: 375 prefixes
+      level 3: 1846 prefixes
+      level 4: 4214 prefixes
+      level 5: 5174 prefixes
+      level 6: 5265 prefixes
+      level 7: 5265 prefixes
+      level 8: 5265 prefixes
+  lam=(19, 7, 4, 1, 1): N_S=5265 |Stab|=2 n_chi=1922 (orbits dropped: 1421) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 3611 canonical rows 1293 nnz 6242 (obstructed fixed targets cancelled: 364) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 3673 canonical rows 1327 nnz 4675 (obstructed fixed targets cancelled: 193) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 1925 canonical rows 1892 nnz 3844 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3343 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (19, 7, 4, 1, 1) d8: N_S=5265 |Stab|=2 n_chi=1922 rows=4512 nnz=14761 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (19, 7, 4, 1, 1) d8: cover(E) 1910/1922 by reversed (a=9, |U|=12, excess 3; {'natural': 1803, 'reversed': 1910, 'fill_asc': 1542, 'fill_desc': 1542, 'random': 1395}); cover(E_red) 1273/1281 (0.0s)
+    hybrid[19_7_4_1_1d8] p=2147483647 attempt 0: |S|=1910 |U|=12 (a=9, excess 3) m=76 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[19_7_4_1_1d8] p=2147483629 attempt 0: |S|=1910 |U|=12 (a=9, excess 3) m=76 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (19, 7, 4, 1, 1) d8: a=9 n_chi=1922 |U|=12 mult_det=9 mult_per4=9 mult_red(star)=9 mult_red(pts)=9 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.07 GB)
+CALIB (19, 7, 4, 1, 1) d8: n_chi=1922 banked det/star/pts = 9/9/9 hybrid = 9/9/9 per4=9 a=9 AGREE (0.4s)
+      level 1: 44 prefixes
+      level 2: 550 prefixes
+      level 3: 2353 prefixes
+      level 4: 3606 prefixes
+      level 5: 3753 prefixes
+      level 6: 3753 prefixes
+      level 7: 3753 prefixes
+  lam=(17, 4, 4, 2, 1): N_S=3753 |Stab|=2 n_chi=1958 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=1 targets 1965 canonical rows 1965 nnz 9272 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 3291 canonical rows 3291 nnz 8975 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2155 canonical rows 2155 nnz 6003 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=2 targets 1835 canonical rows 973 nnz 1958 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (17, 4, 4, 2, 1) d7: N_S=3753 |Stab|=2 n_chi=1958 rows=8384 nnz=26208 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (17, 4, 4, 2, 1) d7: cover(E) 1955/1958 by reversed (a=3, |U|=3, excess 0; {'natural': 1868, 'reversed': 1955, 'fill_asc': 1733, 'fill_desc': 1692, 'random': 1544}); cover(E_red) 1055/1056 (0.0s)
+    hybrid[17_4_4_2_1d7] p=2147483647 attempt 0: |S|=1955 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[17_4_4_2_1d7] p=2147483629 attempt 0: |S|=1955 |U|=3 (a=3, excess 0) m=67 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (17, 4, 4, 2, 1) d7: a=3 n_chi=1958 |U|=3 mult_det=3 mult_per4=3 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=0 i_per4=0 D=0  (0.2s, HWM 0.07 GB)
+CALIB (17, 4, 4, 2, 1) d7: n_chi=1958 banked det/star/pts = 3/3/3 hybrid = 3/3/3 per4=3 a=3 AGREE (0.2s)
+      level 1: 39 prefixes
+      level 2: 391 prefixes
+      level 3: 1712 prefixes
+      level 4: 3146 prefixes
+      level 5: 3493 prefixes
+      level 6: 3505 prefixes
+      level 7: 3505 prefixes
+      level 8: 3505 prefixes
+  lam=(20, 7, 2, 2, 1): N_S=3505 |Stab|=2 n_chi=1961 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 2403 canonical rows 1353 nnz 6359 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=1 targets 1623 canonical rows 1623 nnz 5578 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2688 canonical rows 2688 nnz 4824 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 1726 canonical rows 1726 nnz 3505 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (20, 7, 2, 2, 1) d8: N_S=3505 |Stab|=2 n_chi=1961 rows=7390 nnz=20266 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (20, 7, 2, 2, 1) d8: cover(E) 1955/1961 by reversed (a=6, |U|=6, excess 0; {'natural': 1859, 'reversed': 1955, 'fill_asc': 1672, 'fill_desc': 1709, 'random': 1614}); cover(E_red) 1147/1149 (0.0s)
+    hybrid[20_7_2_2_1d8] p=2147483629 attempt 0: |S|=1955 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[20_7_2_2_1d8] p=2147483647 attempt 0: |S|=1955 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (20, 7, 2, 2, 1) d8: a=6 n_chi=1961 |U|=6 mult_det=6 mult_per4=6 mult_red(star)=6 mult_red(pts)=6 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (20, 7, 2, 2, 1) d8: n_chi=1961 banked det/star/pts = 6/6/6 hybrid = 6/6/6 per4=6 a=6 AGREE (0.3s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2107 prefixes
+      level 5: 4179 prefixes
+      level 6: 5521 prefixes
+      level 7: 5932 prefixes
+      level 8: 5977 prefixes
+      level 9: 5977 prefixes
+      level 10: 5977 prefixes
+      level 11: 5977 prefixes
+  lam=(27, 13, 2, 1, 1): N_S=5977 |Stab|=2 n_chi=2122 (orbits dropped: 1733) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 4978 canonical rows 1753 nnz 8664 (obstructed fixed targets cancelled: 556) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 2268 canonical rows 782 nnz 3253 (obstructed fixed targets cancelled: 193) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2953 canonical rows 2797 nnz 4244 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3855 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (27, 13, 2, 1, 1) d11: N_S=5977 |Stab|=2 n_chi=2122 rows=5332 nnz=16161 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (27, 13, 2, 1, 1) d11: cover(E) 2116/2122 by reversed (a=6, |U|=6, excess 0; {'natural': 2010, 'reversed': 2116, 'fill_asc': 1802, 'fill_desc': 1808, 'random': 1701}); cover(E_red) 1589/1595 (0.0s)
+    hybrid[27_13_2_1_1d11] p=2147483629 attempt 0: |S|=2116 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[27_13_2_1_1d11] p=2147483647 attempt 0: |S|=2116 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (27, 13, 2, 1, 1) d11: a=6 n_chi=2122 |U|=6 mult_det=6 mult_per4=6 mult_red(star)=6 mult_red(pts)=6 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (27, 13, 2, 1, 1) d11: n_chi=2122 banked det/star/pts = 6/6/6 hybrid = 6/6/6 per4=6 a=6 AGREE (0.3s)
+      level 1: 35 prefixes
+      level 2: 401 prefixes
+      level 3: 2136 prefixes
+      level 4: 4994 prefixes
+      level 5: 6143 prefixes
+      level 6: 6250 prefixes
+      level 7: 6250 prefixes
+      level 8: 6250 prefixes
+  lam=(19, 6, 5, 1, 1): N_S=6250 |Stab|=2 n_chi=2298 (orbits dropped: 1654) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=2 targets 3946 canonical rows 1432 nnz 6957 (obstructed fixed targets cancelled: 377) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 5265 canonical rows 1922 nnz 6413 (obstructed fixed targets cancelled: 235) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 2086 canonical rows 2086 nnz 4596 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 3952 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+  built (19, 6, 5, 1, 1) d8: N_S=6250 |Stab|=2 n_chi=2298 rows=5440 nnz=17966 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB)
+  sieve (19, 6, 5, 1, 1) d8: cover(E) 2285/2298 by reversed (a=5, |U|=13, excess 8; {'natural': 2179, 'reversed': 2285, 'fill_asc': 1818, 'fill_desc': 1858, 'random': 1616}); cover(E_red) 1522/1530 (0.0s)
+    hybrid[19_6_5_1_1d8] p=2147483647 attempt 0: |S|=2285 |U|=13 (a=5, excess 8) m=77 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[19_6_5_1_1d8] p=2147483629 attempt 0: |S|=2285 |U|=13 (a=5, excess 8) m=77 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (19, 6, 5, 1, 1) d8: a=5 n_chi=2298 |U|=13 mult_det=5 mult_per4=5 mult_red(star)=5 mult_red(pts)=5 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.07 GB)
+CALIB (19, 6, 5, 1, 1) d8: n_chi=2298 banked det/star/pts = 5/5/5 hybrid = 5/5/5 per4=5 a=5 AGREE (0.3s)
+      level 1: 50 prefixes
+      level 2: 688 prefixes
+      level 3: 3940 prefixes
+      level 4: 9259 prefixes
+      level 5: 11377 prefixes
+      level 6: 11557 prefixes
+      level 7: 11557 prefixes
+      level 8: 11557 prefixes
+      level 9: 11557 prefixes
+      level 10: 11557 prefixes
+  lam=(27, 7, 2, 2, 2): N_S=11557 |Stab|=6 n_chi=2591 (orbits dropped: 0) [lean, 0s, HWM 0.07 GB]
+    E_01: |H|=6 targets 7549 canonical rows 1729 nnz 8265 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_12: |H|=2 targets 5301 canonical rows 2965 nnz 10154 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_23: |H|=1 targets 8815 canonical rows 8815 nnz 16156 (obstructed fixed targets cancelled: 0) [0s, HWM 0.07 GB]
+    E_34: |H|=1 targets 8815 canonical rows 8815 nnz 16156 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (27, 7, 2, 2, 2) d10: N_S=11557 |Stab|=6 n_chi=2591 rows=22324 nnz=50731 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (27, 7, 2, 2, 2) d10: cover(E) 2580/2591 by reversed (a=11, |U|=11, excess 0; {'natural': 2472, 'reversed': 2580, 'fill_asc': 2364, 'fill_desc': 2182, 'random': 2188}); cover(E_red) 1540/1543 (0.0s)
+    hybrid[27_7_2_2_2d10] p=2147483629 attempt 0: |S|=2580 |U|=11 (a=11, excess 0) m=75 projected nullity 11, verified=True, rank 11 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[27_7_2_2_2d10] p=2147483647 attempt 0: |S|=2580 |U|=11 (a=11, excess 0) m=75 projected nullity 11, verified=True, rank 11 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (27, 7, 2, 2, 2) d10: a=11 n_chi=2591 |U|=11 mult_det=11 mult_per4=11 mult_red(star)=11 mult_red(pts)=11 i_det=0 i_red=0 i_per4=0 D=0  (0.7s, HWM 0.08 GB)
+CALIB (27, 7, 2, 2, 2) d10: n_chi=2591 banked det/star/pts = 11/11/11 hybrid = 11/11/11 per4=11 a=11 AGREE (0.7s)
+      level 1: 35 prefixes
+      level 2: 318 prefixes
+      level 3: 1408 prefixes
+      level 4: 4056 prefixes
+      level 5: 6467 prefixes
+      level 6: 7214 prefixes
+      level 7: 7282 prefixes
+      level 8: 7282 prefixes
+      level 9: 7282 prefixes
+      level 10: 7282 prefixes
+  lam=(25, 10, 3, 1, 1): N_S=7282 |Stab|=2 n_chi=2647 (orbits dropped: 1988) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 5555 canonical rows 2007 nnz 10027 (obstructed fixed targets cancelled: 564) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 3837 canonical rows 1354 nnz 5368 (obstructed fixed targets cancelled: 268) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3047 canonical rows 3028 nnz 5294 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 4635 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (25, 10, 3, 1, 1) d10: N_S=7282 |Stab|=2 n_chi=2647 rows=6389 nnz=20689 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (25, 10, 3, 1, 1) d10: cover(E) 2635/2647 by reversed (a=11, |U|=12, excess 1; {'natural': 2487, 'reversed': 2635, 'fill_asc': 2139, 'fill_desc': 2182, 'random': 1998}); cover(E_red) 1874/1884 (0.0s)
+    hybrid[25_10_3_1_1d10] p=2147483629 attempt 0: |S|=2635 |U|=12 (a=11, excess 1) m=76 projected nullity 11, verified=True, rank 11 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[25_10_3_1_1d10] p=2147483647 attempt 0: |S|=2635 |U|=12 (a=11, excess 1) m=76 projected nullity 11, verified=True, rank 11 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (25, 10, 3, 1, 1) d10: a=11 n_chi=2647 |U|=12 mult_det=11 mult_per4=11 mult_red(star)=11 mult_red(pts)=11 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.08 GB)
+CALIB (25, 10, 3, 1, 1) d10: n_chi=2647 banked det/star/pts = 11/11/11 hybrid = 11/11/11 per4=11 a=11 AGREE (0.4s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2123 prefixes
+      level 5: 4523 prefixes
+      level 6: 6526 prefixes
+      level 7: 7351 prefixes
+      level 8: 7515 prefixes
+      level 9: 7522 prefixes
+      level 10: 7522 prefixes
+      level 11: 7522 prefixes
+      level 12: 7522 prefixes
+  lam=(30, 14, 2, 1, 1): N_S=7522 |Stab|=2 n_chi=2666 (orbits dropped: 2190) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 6304 canonical rows 2233 nnz 11175 (obstructed fixed targets cancelled: 697) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 2801 canonical rows 967 nnz 4096 (obstructed fixed targets cancelled: 242) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3715 canonical rows 3514 nnz 5332 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 4856 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (30, 14, 2, 1, 1) d12: N_S=7522 |Stab|=2 n_chi=2666 rows=6714 nnz=20603 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (30, 14, 2, 1, 1) d12: cover(E) 2660/2666 by reversed (a=6, |U|=6, excess 0; {'natural': 2526, 'reversed': 2660, 'fill_asc': 2263, 'fill_desc': 2283, 'random': 2143}); cover(E_red) 2030/2036 (0.0s)
+    hybrid[30_14_2_1_1d12] p=2147483629 attempt 0: |S|=2660 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]    hybrid[30_14_2_1_1d12] p=2147483647 attempt 0: |S|=2660 |U|=6 (a=6, excess 0) m=70 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+
+  RESULT (30, 14, 2, 1, 1) d12: a=6 n_chi=2666 |U|=6 mult_det=6 mult_per4=6 mult_red(star)=6 mult_red(pts)=6 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.08 GB)
+CALIB (30, 14, 2, 1, 1) d12: n_chi=2666 banked det/star/pts = 6/6/6 hybrid = 6/6/6 per4=6 a=6 AGREE (0.4s)
+      level 1: 40 prefixes
+      level 2: 393 prefixes
+      level 3: 1856 prefixes
+      level 4: 4132 prefixes
+      level 5: 5065 prefixes
+      level 6: 5155 prefixes
+      level 7: 5155 prefixes
+      level 8: 5155 prefixes
+      level 9: 5155 prefixes
+  lam=(23, 8, 2, 2, 1): N_S=5155 |Stab|=2 n_chi=2879 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 3651 canonical rows 2047 nnz 9951 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 2267 canonical rows 2267 nnz 8224 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3948 canonical rows 3948 nnz 7121 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 2529 canonical rows 2529 nnz 5155 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (23, 8, 2, 2, 1) d9: N_S=5155 |Stab|=2 n_chi=2879 rows=10791 nnz=30451 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (23, 8, 2, 2, 1) d9: cover(E) 2869/2879 by reversed (a=10, |U|=10, excess 0; {'natural': 2726, 'reversed': 2869, 'fill_asc': 2440, 'fill_desc': 2508, 'random': 2339}); cover(E_red) 1777/1782 (0.0s)
+    hybrid[23_8_2_2_1d9] p=2147483647 attempt 0: |S|=2869 |U|=10 (a=10, excess 0) m=74 projected nullity 10, verified=True, rank 10 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[23_8_2_2_1d9] p=2147483629 attempt 0: |S|=2869 |U|=10 (a=10, excess 0) m=74 projected nullity 10, verified=True, rank 10 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (23, 8, 2, 2, 1) d9: a=10 n_chi=2879 |U|=10 mult_det=10 mult_per4=10 mult_red(star)=10 mult_red(pts)=10 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.08 GB)
+CALIB (23, 8, 2, 2, 1) d9: n_chi=2879 banked det/star/pts = 10/10/10 hybrid = 10/10/10 per4=10 a=10 AGREE (0.4s)
+      level 1: 35 prefixes
+      level 2: 384 prefixes
+      level 3: 1979 prefixes
+      level 4: 5390 prefixes
+      level 5: 7558 prefixes
+      level 6: 7950 prefixes
+      level 7: 7962 prefixes
+      level 8: 7962 prefixes
+      level 9: 7962 prefixes
+  lam=(22, 8, 4, 1, 1): N_S=7962 |Stab|=2 n_chi=2908 (orbits dropped: 2146) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 5616 canonical rows 2039 nnz 10157 (obstructed fixed targets cancelled: 554) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 5280 canonical rows 1915 nnz 7119 (obstructed fixed targets cancelled: 291) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 2903 canonical rows 2853 nnz 5816 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 5054 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (22, 8, 4, 1, 1) d9: N_S=7962 |Stab|=2 n_chi=2908 rows=6807 nnz=23092 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (22, 8, 4, 1, 1) d9: cover(E) 2891/2908 by reversed (a=12, |U|=17, excess 5; {'natural': 2722, 'reversed': 2891, 'fill_asc': 2309, 'fill_desc': 2352, 'random': 2048}); cover(E_red) 1999/2011 (0.0s)
+    hybrid[22_8_4_1_1d9] p=2147483629 attempt 0: |S|=2891 |U|=17 (a=12, excess 5) m=81 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[22_8_4_1_1d9] p=2147483647 attempt 0: |S|=2891 |U|=17 (a=12, excess 5) m=81 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (22, 8, 4, 1, 1) d9: a=12 n_chi=2908 |U|=17 mult_det=12 mult_per4=12 mult_red(star)=12 mult_red(pts)=12 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.08 GB)
+CALIB (22, 8, 4, 1, 1) d9: n_chi=2908 banked det/star/pts = 12/12/12 hybrid = 12/12/12 per4=12 a=12 AGREE (0.5s)
+      level 1: 52 prefixes
+      level 2: 776 prefixes
+      level 3: 3550 prefixes
+      level 4: 5538 prefixes
+      level 5: 5768 prefixes
+      level 6: 5768 prefixes
+      level 7: 5768 prefixes
+  lam=(17, 4, 3, 2, 2): N_S=5768 |Stab|=2 n_chi=3197 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 2990 canonical rows 1671 nnz 7827 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 4306 canonical rows 2400 nnz 6642 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3753 canonical rows 3753 nnz 9272 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 4406 canonical rows 4406 nnz 8037 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (17, 4, 3, 2, 2) d7: N_S=5768 |Stab|=2 n_chi=3197 rows=12230 nnz=31778 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (17, 4, 3, 2, 2) d7: cover(E) 3191/3197 by reversed (a=2, |U|=6, excess 4; {'natural': 3141, 'reversed': 3191, 'fill_asc': 2938, 'fill_desc': 2876, 'random': 2609}); cover(E_red) 1690/1691 (0.0s)
+    hybrid[17_4_3_2_2d7] p=2147483647 attempt 0: |S|=3191 |U|=6 (a=2, excess 4) m=70 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]    hybrid[17_4_3_2_2d7] p=2147483629 attempt 0: |S|=3191 |U|=6 (a=2, excess 4) m=70 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+
+  RESULT (17, 4, 3, 2, 2) d7: a=2 n_chi=3197 |U|=6 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.08 GB)
+CALIB (17, 4, 3, 2, 2) d7: n_chi=3197 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.3s)
+      level 1: 43 prefixes
+      level 2: 504 prefixes
+      level 3: 2081 prefixes
+      level 4: 3165 prefixes
+      level 5: 3291 prefixes
+      level 6: 3291 prefixes
+      level 7: 3291 prefixes
+  lam=(17, 5, 3, 2, 1): N_S=3291 |Stab|=1 n_chi=3291 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=1 targets 1965 canonical rows 1965 nnz 9272 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 2257 canonical rows 2257 nnz 6883 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 2155 canonical rows 2155 nnz 5267 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 1608 canonical rows 1608 nnz 3291 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (17, 5, 3, 2, 1) d7: N_S=3291 |Stab|=1 n_chi=3291 rows=7985 nnz=24713 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (17, 5, 3, 2, 1) d7: cover(E) 3284/3291 by reversed (a=4, |U|=7, excess 3; {'natural': 3193, 'reversed': 3284, 'fill_asc': 2857, 'fill_desc': 2741, 'random': 2467}); cover(E_red) 1796/1798 (0.0s)
+    hybrid[17_5_3_2_1d7] p=2147483647 attempt 0: |S|=3284 |U|=7 (a=4, excess 3) m=71 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[17_5_3_2_1d7] p=2147483629 attempt 0: |S|=3284 |U|=7 (a=4, excess 3) m=71 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (17, 5, 3, 2, 1) d7: a=4 n_chi=3291 |U|=7 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.08 GB)
+CALIB (17, 5, 3, 2, 1) d7: n_chi=3291 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.3s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2127 prefixes
+      level 5: 4731 prefixes
+      level 6: 7417 prefixes
+      level 7: 8828 prefixes
+      level 8: 9239 prefixes
+      level 9: 9284 prefixes
+      level 10: 9284 prefixes
+      level 11: 9284 prefixes
+      level 12: 9284 prefixes
+      level 13: 9284 prefixes
+  lam=(33, 15, 2, 1, 1): N_S=9284 |Stab|=2 n_chi=3304 (orbits dropped: 2676) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 7849 canonical rows 2777 nnz 14110 (obstructed fixed targets cancelled: 881) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 3404 canonical rows 1176 nnz 5072 (obstructed fixed targets cancelled: 299) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 4581 canonical rows 4343 nnz 6608 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 5980 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (33, 15, 2, 1, 1) d13: N_S=9284 |Stab|=2 n_chi=3304 rows=8296 nnz=25790 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (33, 15, 2, 1, 1) d13: cover(E) 3295/3304 by reversed (a=9, |U|=9, excess 0; {'natural': 3124, 'reversed': 3295, 'fill_asc': 2801, 'fill_desc': 2815, 'random': 2633}); cover(E_red) 2553/2562 (0.0s)
+    hybrid[33_15_2_1_1d13] p=2147483647 attempt 0: |S|=3295 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[33_15_2_1_1d13] p=2147483629 attempt 0: |S|=3295 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (33, 15, 2, 1, 1) d13: a=9 n_chi=3304 |U|=9 mult_det=9 mult_per4=9 mult_red(star)=9 mult_red(pts)=9 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.08 GB)
+CALIB (33, 15, 2, 1, 1) d13: n_chi=3304 banked det/star/pts = 9/9/9 hybrid = 9/9/9 per4=9 a=9 AGREE (0.5s)
+      level 1: 46 prefixes
+      level 2: 807 prefixes
+      level 3: 5729 prefixes
+      level 4: 14700 prefixes
+      level 5: 18333 prefixes
+      level 6: 18630 prefixes
+      level 7: 18630 prefixes
+      level 8: 18630 prefixes
+  lam=(19, 4, 4, 4, 1): N_S=18630 |Stab|=6 n_chi=3411 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 9241 canonical rows 4787 nnz 24403 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 16315 canonical rows 16315 nnz 46378 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 16315 canonical rows 16315 nnz 46378 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 6577 canonical rows 3444 nnz 9610 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (19, 4, 4, 4, 1) d8: N_S=18630 |Stab|=6 n_chi=3411 rows=40861 nnz=126769 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (19, 4, 4, 4, 1) d8: cover(E) 3405/3411 by reversed (a=5, |U|=6, excess 1; {'natural': 3184, 'reversed': 3405, 'fill_asc': 3153, 'fill_desc': 3028, 'random': 2839}); cover(E_red) 2162/2165 (0.1s)
+    hybrid[19_4_4_4_1d8] p=2147483647 attempt 0: |S|=3405 |U|=6 (a=5, excess 1) m=70 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[19_4_4_4_1d8] p=2147483629 attempt 0: |S|=3405 |U|=6 (a=5, excess 1) m=70 projected nullity 5, verified=True, rank 5 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (19, 4, 4, 4, 1) d8: a=5 n_chi=3411 |U|=6 mult_det=5 mult_per4=5 mult_red(star)=5 mult_red(pts)=5 i_det=0 i_red=0 i_per4=0 D=0  (0.7s, HWM 0.08 GB)
+CALIB (19, 4, 4, 4, 1) d8: n_chi=3411 banked det/star/pts = 5/5/5 hybrid = 5/5/5 per4=5 a=5 AGREE (0.7s)
+      level 1: 46 prefixes
+      level 2: 648 prefixes
+      level 3: 3441 prefixes
+      level 4: 6669 prefixes
+      level 5: 7396 prefixes
+      level 6: 7419 prefixes
+      level 7: 7419 prefixes
+  lam=(16, 5, 3, 3, 1): N_S=7419 |Stab|=2 n_chi=3504 (orbits dropped: 411) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 4406 canonical rows 2065 nnz 9961 (obstructed fixed targets cancelled: 183) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 5022 canonical rows 5022 nnz 14952 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6290 canonical rows 6160 nnz 13567 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 3025 canonical rows 3025 nnz 7008 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (16, 5, 3, 3, 1) d7: N_S=7419 |Stab|=2 n_chi=3504 rows=16272 nnz=45488 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (16, 5, 3, 3, 1) d7: cover(E) 3499/3504 by reversed (a=2, |U|=5, excess 3; {'natural': 3426, 'reversed': 3499, 'fill_asc': 3209, 'fill_desc': 3257, 'random': 2942}); cover(E_red) 2173/2176 (0.0s)
+    hybrid[16_5_3_3_1d7] p=2147483629 attempt 0: |S|=3499 |U|=5 (a=2, excess 3) m=69 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[16_5_3_3_1d7] p=2147483647 attempt 0: |S|=3499 |U|=5 (a=2, excess 3) m=69 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (16, 5, 3, 3, 1) d7: a=2 n_chi=3504 |U|=5 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.3s, HWM 0.08 GB)
+CALIB (16, 5, 3, 3, 1) d7: n_chi=3504 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.3s)
+      level 1: 35 prefixes
+      level 2: 318 prefixes
+      level 3: 1412 prefixes
+      level 4: 4323 prefixes
+      level 5: 7842 prefixes
+      level 6: 9436 prefixes
+      level 7: 9708 prefixes
+      level 8: 9717 prefixes
+      level 9: 9717 prefixes
+      level 10: 9717 prefixes
+      level 11: 9717 prefixes
+  lam=(28, 11, 3, 1, 1): N_S=9717 |Stab|=2 n_chi=3543 (orbits dropped: 2631) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 7557 canonical rows 2739 nnz 13968 (obstructed fixed targets cancelled: 771) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 4978 canonical rows 1753 nnz 7192 (obstructed fixed targets cancelled: 366) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 4054 canonical rows 4028 nnz 7086 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 6174 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (28, 11, 3, 1, 1) d11: N_S=9717 |Stab|=2 n_chi=3543 rows=8520 nnz=28246 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (28, 11, 3, 1, 1) d11: cover(E) 3527/3543 by reversed (a=16, |U|=16, excess 0; {'natural': 3318, 'reversed': 3527, 'fill_asc': 2857, 'fill_desc': 2906, 'random': 2636}); cover(E_red) 2578/2591 (0.0s)
+    hybrid[28_11_3_1_1d11] p=2147483647 attempt 0: |S|=3527 |U|=16 (a=16, excess 0) m=80 projected nullity 16, verified=True, rank 16 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[28_11_3_1_1d11] p=2147483629 attempt 0: |S|=3527 |U|=16 (a=16, excess 0) m=80 projected nullity 16, verified=True, rank 16 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (28, 11, 3, 1, 1) d11: a=16 n_chi=3543 |U|=16 mult_det=16 mult_per4=16 mult_red(star)=16 mult_red(pts)=16 i_det=0 i_red=0 i_per4=0 D=0  (0.7s, HWM 0.08 GB)
+CALIB (28, 11, 3, 1, 1) d11: n_chi=3543 banked det/star/pts = 16/16/16 hybrid = 16/16/16 per4=16 a=16 AGREE (0.7s)
+      level 1: 54 prefixes
+      level 2: 910 prefixes
+      level 3: 5456 prefixes
+      level 4: 10849 prefixes
+      level 5: 12103 prefixes
+      level 6: 12141 prefixes
+      level 7: 12141 prefixes
+      level 8: 12141 prefixes
+  lam=(20, 4, 4, 2, 2): N_S=12141 |Stab|=4 n_chi=3553 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 6044 canonical rows 3360 nnz 16577 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 10638 canonical rows 5863 nnz 16096 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6894 canonical rows 6894 nnz 19624 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 9241 canonical rows 4787 nnz 8796 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (20, 4, 4, 2, 2) d8: N_S=12141 |Stab|=4 n_chi=3553 rows=20904 nnz=61093 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (20, 4, 4, 2, 2) d8: cover(E) 3545/3553 by reversed (a=6, |U|=8, excess 2; {'natural': 3450, 'reversed': 3545, 'fill_asc': 3299, 'fill_desc': 3220, 'random': 2958}); cover(E_red) 2019/2022 (0.0s)
+    hybrid[20_4_4_2_2d8] p=2147483647 attempt 0: |S|=3545 |U|=8 (a=6, excess 2) m=72 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[20_4_4_2_2d8] p=2147483629 attempt 0: |S|=3545 |U|=8 (a=6, excess 2) m=72 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (20, 4, 4, 2, 2) d8: a=6 n_chi=3553 |U|=8 mult_det=6 mult_per4=6 mult_red(star)=6 mult_red(pts)=6 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.08 GB)
+CALIB (20, 4, 4, 2, 2) d8: n_chi=3553 banked det/star/pts = 6/6/6 hybrid = 6/6/6 per4=6 a=6 AGREE (0.5s)
+      level 1: 35 prefixes
+      level 2: 412 prefixes
+      level 3: 2392 prefixes
+      level 4: 6772 prefixes
+      level 5: 9540 prefixes
+      level 6: 10022 prefixes
+      level 7: 10036 prefixes
+      level 8: 10036 prefixes
+      level 9: 10036 prefixes
+  lam=(22, 7, 5, 1, 1): N_S=10036 |Stab|=2 n_chi=3718 (orbits dropped: 2600) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 6637 canonical rows 2427 nnz 12266 (obstructed fixed targets cancelled: 641) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 7962 canonical rows 2908 nnz 10420 (obstructed fixed targets cancelled: 394) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3326 canonical rows 3324 nnz 7436 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 6318 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (22, 7, 5, 1, 1) d9: N_S=10036 |Stab|=2 n_chi=3718 rows=8659 nnz=30122 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (22, 7, 5, 1, 1) d9: cover(E) 3693/3718 by reversed (a=15, |U|=25, excess 10; {'natural': 3496, 'reversed': 3693, 'fill_asc': 2916, 'fill_desc': 2947, 'random': 2575}); cover(E_red) 2555/2574 (0.0s)
+    hybrid[22_7_5_1_1d9] p=2147483629 attempt 0: |S|=3693 |U|=25 (a=15, excess 10) m=89 projected nullity 15, verified=True, rank 15 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[22_7_5_1_1d9] p=2147483647 attempt 0: |S|=3693 |U|=25 (a=15, excess 10) m=89 projected nullity 15, verified=True, rank 15 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (22, 7, 5, 1, 1) d9: a=15 n_chi=3718 |U|=25 mult_det=15 mult_per4=15 mult_red(star)=15 mult_red(pts)=15 i_det=0 i_red=0 i_per4=0 D=0  (0.7s, HWM 0.08 GB)
+CALIB (22, 7, 5, 1, 1) d9: n_chi=3718 banked det/star/pts = 15/15/15 hybrid = 15/15/15 per4=15 a=15 AGREE (0.7s)
+      level 1: 50 prefixes
+      level 2: 689 prefixes
+      level 3: 4137 prefixes
+      level 4: 11579 prefixes
+      level 5: 16256 prefixes
+      level 6: 17052 prefixes
+      level 7: 17076 prefixes
+      level 8: 17076 prefixes
+      level 9: 17076 prefixes
+      level 10: 17076 prefixes
+      level 11: 17076 prefixes
+  lam=(30, 8, 2, 2, 2): N_S=17076 |Stab|=6 n_chi=3815 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=6 targets 11617 canonical rows 2610 nnz 12972 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 7405 canonical rows 4131 nnz 15011 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 12995 canonical rows 12995 nnz 23975 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 12995 canonical rows 12995 nnz 23975 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (30, 8, 2, 2, 2) d11: N_S=17076 |Stab|=6 n_chi=3815 rows=32731 nnz=75933 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (30, 8, 2, 2, 2) d11: cover(E) 3796/3815 by reversed (a=19, |U|=19, excess 0; {'natural': 3631, 'reversed': 3796, 'fill_asc': 3459, 'fill_desc': 3188, 'random': 3170}); cover(E_red) 2411/2418 (0.0s)
+    hybrid[30_8_2_2_2d11] p=2147483647 attempt 0: |S|=3796 |U|=19 (a=19, excess 0) m=83 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[30_8_2_2_2d11] p=2147483629 attempt 0: |S|=3796 |U|=19 (a=19, excess 0) m=83 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (30, 8, 2, 2, 2) d11: a=19 n_chi=3815 |U|=19 mult_det=19 mult_per4=19 mult_red(star)=19 mult_red(pts)=19 i_det=0 i_red=0 i_per4=0 D=0  (1.2s, HWM 0.08 GB)
+CALIB (30, 8, 2, 2, 2) d11: n_chi=3815 banked det/star/pts = 19/19/19 hybrid = 19/19/19 per4=19 a=19 AGREE (1.2s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2128 prefixes
+      level 5: 4840 prefixes
+      level 6: 8145 prefixes
+      level 7: 10301 prefixes
+      level 8: 11127 prefixes
+      level 9: 11291 prefixes
+      level 10: 11298 prefixes
+      level 11: 11298 prefixes
+      level 12: 11298 prefixes
+      level 13: 11298 prefixes
+      level 14: 11298 prefixes
+  lam=(36, 16, 2, 1, 1): N_S=11298 |Stab|=2 n_chi=4016 (orbits dropped: 3266) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 9611 canonical rows 3415 nnz 17509 (obstructed fixed targets cancelled: 1069) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 4079 canonical rows 1411 nnz 6175 (obstructed fixed targets cancelled: 363) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 5573 canonical rows 5277 nnz 8032 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 7282 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (36, 16, 2, 1, 1) d14: N_S=11298 |Stab|=2 n_chi=4016 rows=10103 nnz=31716 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (36, 16, 2, 1, 1) d14: cover(E) 4007/4016 by reversed (a=9, |U|=9, excess 0; {'natural': 3797, 'reversed': 4007, 'fill_asc': 3408, 'fill_desc': 3435, 'random': 3181}); cover(E_red) 3146/3155 (0.0s)
+    hybrid[36_16_2_1_1d14] p=2147483629 attempt 0: |S|=4007 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[36_16_2_1_1d14] p=2147483647 attempt 0: |S|=4007 |U|=9 (a=9, excess 0) m=73 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (36, 16, 2, 1, 1) d14: a=9 n_chi=4016 |U|=9 mult_det=9 mult_per4=9 mult_red(star)=9 mult_red(pts)=9 i_det=0 i_red=0 i_per4=0 D=0  (0.6s, HWM 0.08 GB)
+CALIB (36, 16, 2, 1, 1) d14: n_chi=4016 banked det/star/pts = 9/9/9 hybrid = 9/9/9 per4=9 a=9 AGREE (0.6s)
+      level 1: 40 prefixes
+      level 2: 393 prefixes
+      level 3: 1914 prefixes
+      level 4: 4969 prefixes
+      level 5: 6890 prefixes
+      level 6: 7247 prefixes
+      level 7: 7259 prefixes
+      level 8: 7259 prefixes
+      level 9: 7259 prefixes
+      level 10: 7259 prefixes
+  lam=(26, 9, 2, 2, 1): N_S=7259 |Stab|=2 n_chi=4045 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 5301 canonical rows 2965 nnz 14808 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 3065 canonical rows 3065 nnz 11609 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 5555 canonical rows 5555 nnz 10059 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 3548 canonical rows 3548 nnz 7259 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (26, 9, 2, 2, 1) d10: N_S=7259 |Stab|=2 n_chi=4045 rows=15133 nnz=43735 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (26, 9, 2, 2, 1) d10: cover(E) 4031/4045 by reversed (a=14, |U|=14, excess 0; {'natural': 3826, 'reversed': 4031, 'fill_asc': 3430, 'fill_desc': 3528, 'random': 3261}); cover(E_red) 2619/2627 (0.0s)
+    hybrid[26_9_2_2_1d10] p=2147483629 attempt 0: |S|=4031 |U|=14 (a=14, excess 0) m=78 projected nullity 14, verified=True, rank 14 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[26_9_2_2_1d10] p=2147483647 attempt 0: |S|=4031 |U|=14 (a=14, excess 0) m=78 projected nullity 14, verified=True, rank 14 [split 0.1s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (26, 9, 2, 2, 1) d10: a=14 n_chi=4045 |U|=14 mult_det=14 mult_per4=14 mult_red(star)=14 mult_red(pts)=14 i_det=0 i_red=0 i_per4=0 D=0  (0.7s, HWM 0.08 GB)
+CALIB (26, 9, 2, 2, 1) d10: n_chi=4045 banked det/star/pts = 14/14/14 hybrid = 14/14/14 per4=14 a=14 AGREE (0.7s)
+      level 1: 35 prefixes
+      level 2: 388 prefixes
+      level 3: 2032 prefixes
+      level 4: 6288 prefixes
+      level 5: 10195 prefixes
+      level 6: 11345 prefixes
+      level 7: 11437 prefixes
+      level 8: 11437 prefixes
+      level 9: 11437 prefixes
+      level 10: 11437 prefixes
+  lam=(25, 9, 4, 1, 1): N_S=11437 |Stab|=2 n_chi=4209 (orbits dropped: 3019) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 8314 canonical rows 3025 nnz 15529 (obstructed fixed targets cancelled: 837) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 7282 canonical rows 2647 nnz 10323 (obstructed fixed targets cancelled: 424) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 4152 canonical rows 4086 nnz 8418 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 7228 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (25, 9, 4, 1, 1) d10: N_S=11437 |Stab|=2 n_chi=4209 rows=9758 nnz=34270 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (25, 9, 4, 1, 1) d10: cover(E) 4182/4209 by reversed (a=22, |U|=27, excess 5; {'natural': 3920, 'reversed': 4182, 'fill_asc': 3343, 'fill_desc': 3357, 'random': 2939}); cover(E_red) 2992/3014 (0.0s)
+    hybrid[25_9_4_1_1d10] p=2147483629 attempt 0: |S|=4182 |U|=27 (a=22, excess 5) m=91 projected nullity 22, verified=True, rank 22 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[25_9_4_1_1d10] p=2147483647 attempt 0: |S|=4182 |U|=27 (a=22, excess 5) m=91 projected nullity 22, verified=True, rank 22 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (25, 9, 4, 1, 1) d10: a=22 n_chi=4209 |U|=27 mult_det=22 mult_per4=22 mult_red(star)=22 mult_red(pts)=22 i_det=0 i_red=0 i_per4=0 D=0  (0.8s, HWM 0.08 GB)
+CALIB (25, 9, 4, 1, 1) d10: n_chi=4209 banked det/star/pts = 22/22/22 hybrid = 22/22/22 per4=22 a=22 AGREE (0.8s)
+      level 1: 45 prefixes
+      level 2: 693 prefixes
+      level 3: 3864 prefixes
+      level 4: 7600 prefixes
+      level 5: 8448 prefixes
+      level 6: 8475 prefixes
+      level 7: 8475 prefixes
+  lam=(16, 4, 4, 3, 1): N_S=8475 |Stab|=2 n_chi=4384 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=1 targets 4406 canonical rows 4406 nnz 21498 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 7419 canonical rows 7419 nnz 20864 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6290 canonical rows 6290 nnz 18099 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 3464 canonical rows 1836 nnz 4384 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (16, 4, 4, 3, 1) d7: N_S=8475 |Stab|=2 n_chi=4384 rows=19951 nnz=64845 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (16, 4, 4, 3, 1) d7: cover(E) 4376/4384 by reversed (a=2, |U|=8, excess 6; {'natural': 4205, 'reversed': 4376, 'fill_asc': 3947, 'fill_desc': 3891, 'random': 3445}); cover(E_red) 2682/2686 (0.0s)
+    hybrid[16_4_4_3_1d7] p=2147483647 attempt 0: |S|=4376 |U|=8 (a=2, excess 6) m=72 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[16_4_4_3_1d7] p=2147483629 attempt 0: |S|=4376 |U|=8 (a=2, excess 6) m=72 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (16, 4, 4, 3, 1) d7: a=2 n_chi=4384 |U|=8 mult_det=2 mult_per4=2 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.08 GB)
+CALIB (16, 4, 4, 3, 1) d7: n_chi=4384 banked det/star/pts = 2/2/2 hybrid = 2/2/2 per4=2 a=2 AGREE (0.4s)
+      level 1: 35 prefixes
+      level 2: 318 prefixes
+      level 3: 1413 prefixes
+      level 4: 4453 prefixes
+      level 5: 8994 prefixes
+      level 6: 11822 prefixes
+      level 7: 12578 prefixes
+      level 8: 12646 prefixes
+      level 9: 12646 prefixes
+      level 10: 12646 prefixes
+      level 11: 12646 prefixes
+      level 12: 12646 prefixes
+  lam=(31, 12, 3, 1, 1): N_S=12646 |Stab|=2 n_chi=4619 (orbits dropped: 3408) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 9992 canonical rows 3635 nnz 18857 (obstructed fixed targets cancelled: 1019) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 6304 canonical rows 2233 nnz 9403 (obstructed fixed targets cancelled: 467) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 5266 canonical rows 5230 nnz 9238 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 8027 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (31, 12, 3, 1, 1) d12: N_S=12646 |Stab|=2 n_chi=4619 rows=11098 nnz=37498 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (31, 12, 3, 1, 1) d12: cover(E) 4599/4619 by reversed (a=19, |U|=20, excess 1; {'natural': 4320, 'reversed': 4599, 'fill_asc': 3717, 'fill_desc': 3793, 'random': 3408}); cover(E_red) 3443/3460 (0.0s)
+    hybrid[31_12_3_1_1d12] p=2147483629 attempt 0: |S|=4599 |U|=20 (a=19, excess 1) m=84 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[31_12_3_1_1d12] p=2147483647 attempt 0: |S|=4599 |U|=20 (a=19, excess 1) m=84 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (31, 12, 3, 1, 1) d12: a=19 n_chi=4619 |U|=20 mult_det=19 mult_per4=19 mult_red(star)=19 mult_red(pts)=19 i_det=0 i_red=0 i_per4=0 D=0  (0.9s, HWM 0.08 GB)
+CALIB (31, 12, 3, 1, 1) d12: n_chi=4619 banked det/star/pts = 19/19/19 hybrid = 19/19/19 per4=19 a=19 AGREE (0.9s)
+      level 1: 31 prefixes
+      level 2: 222 prefixes
+      level 3: 764 prefixes
+      level 4: 2128 prefixes
+      level 5: 4886 prefixes
+      level 6: 8678 prefixes
+      level 7: 11681 prefixes
+      level 8: 13101 prefixes
+      level 9: 13512 prefixes
+      level 10: 13557 prefixes
+      level 11: 13557 prefixes
+      level 12: 13557 prefixes
+      level 13: 13557 prefixes
+      level 14: 13557 prefixes
+      level 15: 13557 prefixes
+  lam=(39, 17, 2, 1, 1): N_S=13557 |Stab|=2 n_chi=4835 (orbits dropped: 3887) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 11625 canonical rows 4127 nnz 21402 (obstructed fixed targets cancelled: 1306) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 4833 canonical rows 1673 nnz 7430 (obstructed fixed targets cancelled: 436) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6681 canonical rows 6340 nnz 9670 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 8722 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (39, 17, 2, 1, 1) d15: N_S=13557 |Stab|=2 n_chi=4835 rows=12140 nnz=38502 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (39, 17, 2, 1, 1) d15: cover(E) 4823/4835 by reversed (a=12, |U|=12, excess 0; {'natural': 4565, 'reversed': 4823, 'fill_asc': 4101, 'fill_desc': 4123, 'random': 3853}); cover(E_red) 3835/3847 (0.0s)
+    hybrid[39_17_2_1_1d15] p=2147483647 attempt 0: |S|=4823 |U|=12 (a=12, excess 0) m=76 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[39_17_2_1_1d15] p=2147483629 attempt 0: |S|=4823 |U|=12 (a=12, excess 0) m=76 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (39, 17, 2, 1, 1) d15: a=12 n_chi=4835 |U|=12 mult_det=12 mult_per4=12 mult_red(star)=12 mult_red(pts)=12 i_det=0 i_red=0 i_per4=0 D=0  (0.9s, HWM 0.08 GB)
+CALIB (39, 17, 2, 1, 1) d15: n_chi=4835 banked det/star/pts = 12/12/12 hybrid = 12/12/12 per4=12 a=12 AGREE (0.9s)
+      level 1: 35 prefixes
+      level 2: 417 prefixes
+      level 3: 2814 prefixes
+      level 4: 11057 prefixes
+      level 5: 21913 prefixes
+      level 6: 26560 prefixes
+      level 7: 27214 prefixes
+      level 8: 27232 prefixes
+      level 9: 27232 prefixes
+      level 10: 27232 prefixes
+  lam=(24, 7, 7, 1, 1): N_S=27232 |Stab|=4 n_chi=5180 (orbits dropped: 3501) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 17475 canonical rows 6524 nnz 34774 (obstructed fixed targets cancelled: 1607) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 25572 canonical rows 9610 nnz 34908 (obstructed fixed targets cancelled: 1098) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 7654 canonical rows 7638 nnz 20472 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 16944 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 124) [0s, HWM 0.08 GB]
+  built (24, 7, 7, 1, 1) d10: N_S=27232 |Stab|=4 n_chi=5180 rows=23772 nnz=90154 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (24, 7, 7, 1, 1) d10: cover(E) 5158/5180 by reversed (a=19, |U|=22, excess 3; {'natural': 4773, 'reversed': 5158, 'fill_asc': 4521, 'fill_desc': 4553, 'random': 3840}); cover(E_red) 3918/3936 (0.0s)
+    hybrid[24_7_7_1_1d10] p=2147483629 attempt 0: |S|=5158 |U|=22 (a=19, excess 3) m=86 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[24_7_7_1_1d10] p=2147483647 attempt 0: |S|=5158 |U|=22 (a=19, excess 3) m=86 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (24, 7, 7, 1, 1) d10: a=19 n_chi=5180 |U|=22 mult_det=19 mult_per4=19 mult_red(star)=19 mult_red(pts)=19 i_det=0 i_red=0 i_per4=0 D=0  (1.3s, HWM 0.08 GB)
+CALIB (24, 7, 7, 1, 1) d10: n_chi=5180 banked det/star/pts = 19/19/19 hybrid = 19/19/19 per4=19 a=19 AGREE (1.3s)
+      level 1: 50 prefixes
+      level 2: 689 prefixes
+      level 3: 4207 prefixes
+      level 4: 13313 prefixes
+      level 5: 21635 prefixes
+      level 6: 23998 prefixes
+      level 7: 24179 prefixes
+      level 8: 24179 prefixes
+      level 9: 24179 prefixes
+      level 10: 24179 prefixes
+      level 11: 24179 prefixes
+      level 12: 24179 prefixes
+  lam=(33, 9, 2, 2, 2): N_S=24179 |Stab|=6 n_chi=5343 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=6 targets 17136 canonical rows 3834 nnz 19419 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 10030 canonical rows 5586 nnz 21290 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 18392 canonical rows 18392 nnz 34083 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 18392 canonical rows 18392 nnz 34083 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (33, 9, 2, 2, 2) d12: N_S=24179 |Stab|=6 n_chi=5343 rows=46204 nnz=108875 (1s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (33, 9, 2, 2, 2) d12: cover(E) 5320/5343 by reversed (a=23, |U|=23, excess 0; {'natural': 5078, 'reversed': 5320, 'fill_asc': 4822, 'fill_desc': 4457, 'random': 4445}); cover(E_red) 3544/3553 (0.1s)
+    hybrid[33_9_2_2_2d12] p=2147483629 attempt 0: |S|=5320 |U|=23 (a=23, excess 0) m=87 projected nullity 23, verified=True, rank 23 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.1s]
+    hybrid[33_9_2_2_2d12] p=2147483647 attempt 0: |S|=5320 |U|=23 (a=23, excess 0) m=87 projected nullity 23, verified=True, rank 23 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.1s]
+  RESULT (33, 9, 2, 2, 2) d12: a=23 n_chi=5343 |U|=23 mult_det=23 mult_per4=23 mult_red(star)=23 mult_red(pts)=23 i_det=0 i_red=0 i_per4=0 D=0  (1.8s, HWM 0.08 GB)
+CALIB (33, 9, 2, 2, 2) d12: n_chi=5343 banked det/star/pts = 23/23/23 hybrid = 23/23/23 per4=23 a=23 AGREE (1.8s)
+      level 1: 40 prefixes
+      level 2: 393 prefixes
+      level 3: 1932 prefixes
+      level 4: 5561 prefixes
+      level 5: 8810 prefixes
+      level 6: 9794 prefixes
+      level 7: 9884 prefixes
+      level 8: 9884 prefixes
+      level 9: 9884 prefixes
+      level 10: 9884 prefixes
+      level 11: 9884 prefixes
+  lam=(29, 10, 2, 2, 1): N_S=9884 |Stab|=2 n_chi=5500 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 7405 canonical rows 4131 nnz 21087 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 4017 canonical rows 4017 nnz 15834 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 7557 canonical rows 7557 nnz 13730 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 4818 canonical rows 4818 nnz 9884 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (29, 10, 2, 2, 1) d11: N_S=9884 |Stab|=2 n_chi=5500 rows=20523 nnz=60535 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (29, 10, 2, 2, 1) d11: cover(E) 5481/5500 by reversed (a=19, |U|=19, excess 0; {'natural': 5197, 'reversed': 5481, 'fill_asc': 4638, 'fill_desc': 4804, 'random': 4420}); cover(E_red) 3704/3716 (0.0s)
+    hybrid[29_10_2_2_1d11] p=2147483647 attempt 0: |S|=5481 |U|=19 (a=19, excess 0) m=83 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[29_10_2_2_1d11] p=2147483629 attempt 0: |S|=5481 |U|=19 (a=19, excess 0) m=83 projected nullity 19, verified=True, rank 19 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (29, 10, 2, 2, 1) d11: a=19 n_chi=5500 |U|=19 mult_det=19 mult_per4=19 mult_red(star)=19 mult_red(pts)=19 i_det=0 i_red=0 i_per4=0 D=0  (0.9s, HWM 0.08 GB)
+CALIB (29, 10, 2, 2, 1) d11: n_chi=5500 banked det/star/pts = 19/19/19 hybrid = 19/19/19 per4=19 a=19 AGREE (0.9s)
+      level 1: 43 prefixes
+      level 2: 530 prefixes
+      level 3: 2630 prefixes
+      level 4: 4967 prefixes
+      level 5: 5514 prefixes
+      level 6: 5531 prefixes
+      level 7: 5531 prefixes
+      level 8: 5531 prefixes
+  lam=(20, 6, 3, 2, 1): N_S=5531 |Stab|=1 n_chi=5531 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=1 targets 3475 canonical rows 3475 nnz 17213 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 3505 canonical rows 3505 nnz 11628 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 3611 canonical rows 3611 nnz 8880 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 2690 canonical rows 2690 nnz 5531 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (20, 6, 3, 2, 1) d8: N_S=5531 |Stab|=1 n_chi=5531 rows=13281 nnz=43252 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (20, 6, 3, 2, 1) d8: cover(E) 5518/5531 by reversed (a=8, |U|=13, excess 5; {'natural': 5361, 'reversed': 5518, 'fill_asc': 4761, 'fill_desc': 4552, 'random': 4024}); cover(E_red) 3240/3247 (0.0s)
+    hybrid[20_6_3_2_1d8] p=2147483629 attempt 0: |S|=5518 |U|=13 (a=8, excess 5) m=77 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[20_6_3_2_1d8] p=2147483647 attempt 0: |S|=5518 |U|=13 (a=8, excess 5) m=77 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (20, 6, 3, 2, 1) d8: a=8 n_chi=5531 |U|=13 mult_det=8 mult_per4=8 mult_red(star)=8 mult_red(pts)=8 i_det=0 i_red=0 i_per4=0 D=0  (0.4s, HWM 0.08 GB)
+CALIB (20, 6, 3, 2, 1) d8: n_chi=5531 banked det/star/pts = 8/8/8 hybrid = 8/8/8 per4=8 a=8 AGREE (0.4s)
+      level 1: 35 prefixes
+      level 2: 421 prefixes
+      level 3: 2525 prefixes
+      level 4: 8263 prefixes
+      level 5: 13560 prefixes
+      level 6: 15074 prefixes
+      level 7: 15189 prefixes
+      level 8: 15189 prefixes
+      level 9: 15189 prefixes
+      level 10: 15189 prefixes
+  lam=(25, 8, 5, 1, 1): N_S=15189 |Stab|=2 n_chi=5651 (orbits dropped: 3887) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 10427 canonical rows 3848 nnz 20037 (obstructed fixed targets cancelled: 996) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 11437 canonical rows 4209 nnz 15942 (obstructed fixed targets cancelled: 584) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 5007 canonical rows 5002 nnz 11302 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 9538 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (25, 8, 5, 1, 1) d10: N_S=15189 |Stab|=2 n_chi=5651 rows=13059 nnz=47281 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (25, 8, 5, 1, 1) d10: cover(E) 5615/5651 by reversed (a=23, |U|=36, excess 13; {'natural': 5293, 'reversed': 5615, 'fill_asc': 4416, 'fill_desc': 4483, 'random': 3822}); cover(E_red) 4031/4060 (0.0s)
+    hybrid[25_8_5_1_1d10] p=2147483647 attempt 0: |S|=5615 |U|=36 (a=23, excess 13) m=100 projected nullity 23, verified=True, rank 23 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[25_8_5_1_1d10] p=2147483629 attempt 0: |S|=5615 |U|=36 (a=23, excess 13) m=100 projected nullity 23, verified=True, rank 23 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (25, 8, 5, 1, 1) d10: a=23 n_chi=5651 |U|=36 mult_det=23 mult_per4=23 mult_red(star)=23 mult_red(pts)=23 i_det=0 i_red=0 i_per4=0 D=0  (1.0s, HWM 0.08 GB)
+CALIB (25, 8, 5, 1, 1) d10: n_chi=5651 banked det/star/pts = 23/23/23 hybrid = 23/23/23 per4=23 a=23 AGREE (1.0s)
+      level 1: 36 prefixes
+      level 2: 389 prefixes
+      level 3: 2049 prefixes
+      level 4: 6859 prefixes
+      level 5: 12809 prefixes
+      level 6: 15425 prefixes
+      level 7: 15826 prefixes
+      level 8: 15838 prefixes
+      level 9: 15838 prefixes
+      level 10: 15838 prefixes
+      level 11: 15838 prefixes
+  lam=(28, 10, 4, 1, 1): N_S=15838 |Stab|=2 n_chi=5834 (orbits dropped: 4170) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 11789 canonical rows 4326 nnz 22657 (obstructed fixed targets cancelled: 1165) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 9717 canonical rows 3543 nnz 14373 (obstructed fixed targets cancelled: 588) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 5734 canonical rows 5643 nnz 11668 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 10004 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (28, 10, 4, 1, 1) d11: N_S=15838 |Stab|=2 n_chi=5834 rows=13512 nnz=48698 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (28, 10, 4, 1, 1) d11: cover(E) 5801/5834 by reversed (a=28, |U|=33, excess 5; {'natural': 5421, 'reversed': 5801, 'fill_asc': 4607, 'fill_desc': 4671, 'random': 4041}); cover(E_red) 4277/4303 (0.0s)
+    hybrid[28_10_4_1_1d11] p=2147483647 attempt 0: |S|=5801 |U|=33 (a=28, excess 5) m=97 projected nullity 28, verified=True, rank 28 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[28_10_4_1_1d11] p=2147483629 attempt 0: |S|=5801 |U|=33 (a=28, excess 5) m=97 projected nullity 28, verified=True, rank 28 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (28, 10, 4, 1, 1) d11: a=28 n_chi=5834 |U|=33 mult_det=28 mult_per4=28 mult_red(star)=28 mult_red(pts)=28 i_det=0 i_red=0 i_per4=0 D=0  (1.2s, HWM 0.08 GB)
+CALIB (28, 10, 4, 1, 1) d11: n_chi=5834 banked det/star/pts = 28/28/28 hybrid = 28/28/28 per4=28 a=28 AGREE (1.2s)
+      level 1: 53 prefixes
+      level 2: 841 prefixes
+      level 3: 4839 prefixes
+      level 4: 9524 prefixes
+      level 5: 10607 prefixes
+      level 6: 10638 prefixes
+      level 7: 10638 prefixes
+      level 8: 10638 prefixes
+  lam=(20, 5, 3, 2, 2): N_S=10638 |Stab|=2 n_chi=5863 (orbits dropped: 0) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 6044 canonical rows 3360 nnz 16577 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 7256 canonical rows 4043 nnz 12303 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6894 canonical rows 6894 nnz 17213 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 8111 canonical rows 8111 nnz 14947 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (20, 5, 3, 2, 2) d8: N_S=10638 |Stab|=2 n_chi=5863 rows=22408 nnz=61040 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (20, 5, 3, 2, 2) d8: cover(E) 5851/5863 by reversed (a=4, |U|=12, excess 8; {'natural': 5756, 'reversed': 5851, 'fill_asc': 5361, 'fill_desc': 5276, 'random': 4737}); cover(E_red) 3361/3366 (0.0s)
+    hybrid[20_5_3_2_2d8] p=2147483647 attempt 0: |S|=5851 |U|=12 (a=4, excess 8) m=76 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[20_5_3_2_2d8] p=2147483629 attempt 0: |S|=5851 |U|=12 (a=4, excess 8) m=76 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (20, 5, 3, 2, 2) d8: a=4 n_chi=5863 |U|=12 mult_det=4 mult_per4=4 mult_red(star)=4 mult_red(pts)=4 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.08 GB)
+CALIB (20, 5, 3, 2, 2) d8: n_chi=5863 banked det/star/pts = 4/4/4 hybrid = 4/4/4 per4=4 a=4 AGREE (0.5s)
+      level 1: 35 prefixes
+      level 2: 318 prefixes
+      level 3: 1413 prefixes
+      level 4: 4502 prefixes
+      level 5: 9831 prefixes
+      level 6: 14184 prefixes
+      level 7: 15821 prefixes
+      level 8: 16093 prefixes
+      level 9: 16102 prefixes
+      level 10: 16102 prefixes
+      level 11: 16102 prefixes
+      level 12: 16102 prefixes
+      level 13: 16102 prefixes
+  lam=(34, 13, 3, 1, 1): N_S=16102 |Stab|=2 n_chi=5894 (orbits dropped: 4314) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=2 targets 12921 canonical rows 4711 nnz 24798 (obstructed fixed targets cancelled: 1320) [0s, HWM 0.08 GB]
+    E_12: |H|=2 targets 7849 canonical rows 2777 nnz 12006 (obstructed fixed targets cancelled: 605) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6691 canonical rows 6645 nnz 11788 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=1 targets 10208 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+  built (34, 13, 3, 1, 1) d13: N_S=16102 |Stab|=2 n_chi=5894 rows=14133 nnz=48592 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (34, 13, 3, 1, 1) d13: cover(E) 5868/5894 by reversed (a=25, |U|=26, excess 1; {'natural': 5498, 'reversed': 5868, 'fill_asc': 4741, 'fill_desc': 4815, 'random': 4361}); cover(E_red) 4485/4508 (0.0s)
+    hybrid[34_13_3_1_1d13] p=2147483629 attempt 0: |S|=5868 |U|=26 (a=25, excess 1) m=90 projected nullity 25, verified=True, rank 25 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[34_13_3_1_1d13] p=2147483647 attempt 0: |S|=5868 |U|=26 (a=25, excess 1) m=90 projected nullity 25, verified=True, rank 25 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (34, 13, 3, 1, 1) d13: a=25 n_chi=5894 |U|=26 mult_det=25 mult_per4=25 mult_red(star)=25 mult_red(pts)=25 i_det=0 i_red=0 i_per4=0 D=0  (1.2s, HWM 0.08 GB)
+CALIB (34, 13, 3, 1, 1) d13: n_chi=5894 banked det/star/pts = 25/25/25 hybrid = 25/25/25 per4=25 a=25 AGREE (1.2s)
+      level 1: 44 prefixes
+      level 2: 624 prefixes
+      level 3: 3893 prefixes
+      level 4: 9602 prefixes
+      level 5: 11899 prefixes
+      level 6: 12095 prefixes
+      level 7: 12095 prefixes
+      level 8: 12095 prefixes
+  lam=(19, 5, 5, 2, 1): N_S=12095 |Stab|=2 n_chi=5895 (orbits dropped: 305) [lean, 0s, HWM 0.08 GB]
+    E_01: |H|=1 targets 6894 canonical rows 6894 nnz 34226 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_12: |H|=1 targets 11015 canonical rows 11003 nnz 33337 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_23: |H|=1 targets 6250 canonical rows 6246 nnz 19208 (obstructed fixed targets cancelled: 0) [0s, HWM 0.08 GB]
+    E_34: |H|=2 targets 5763 canonical rows 2778 nnz 5842 (obstructed fixed targets cancelled: 53) [0s, HWM 0.08 GB]
+  built (19, 5, 5, 2, 1) d8: N_S=12095 |Stab|=2 n_chi=5895 rows=26921 nnz=92613 (0s: mono 0s orbits 0s rows 0s; HWM 0.08 GB)
+  sieve (19, 5, 5, 2, 1) d8: cover(E) 5885/5895 by reversed (a=7, |U|=10, excess 3; {'natural': 5666, 'reversed': 5885, 'fill_asc': 5317, 'fill_desc': 5253, 'random': 4653}); cover(E_red) 3829/3836 (0.0s)
+    hybrid[19_5_5_2_1d8] p=2147483647 attempt 0: |S|=5885 |U|=10 (a=7, excess 3) m=74 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[19_5_5_2_1d8] p=2147483629 attempt 0: |S|=5885 |U|=10 (a=7, excess 3) m=74 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (19, 5, 5, 2, 1) d8: a=7 n_chi=5895 |U|=10 mult_det=7 mult_per4=7 mult_red(star)=7 mult_red(pts)=7 i_det=0 i_red=0 i_per4=0 D=0  (0.5s, HWM 0.08 GB)
+CALIB (19, 5, 5, 2, 1) d8: n_chi=5895 banked det/star/pts = 7/7/7 hybrid = 7/7/7 per4=7 a=7 AGREE (0.5s)
+      level 1: 50 prefixes
+      level 2: 1056 prefixes
+      level 3: 11979 prefixes
+      level 4: 54372 prefixes
+      level 5: 94675 prefixes
+      level 6: 94675 prefixes
+  lam=(8, 4, 4, 4, 4): N_S=94675 |Stab|=24 n_chi=4562 (orbits dropped: 0) [lean, 1s, HWM 0.09 GB]
+    E_01: |H|=6 targets 60305 canonical rows 10719 nnz 44540 (obstructed fixed targets cancelled: 0) [0s, HWM 0.09 GB]
+    E_12: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_23: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_34: |H|=2 targets 82457 canonical rows 42042 nnz 127073 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+  built (8, 4, 4, 4, 4) d6: N_S=94675 |Stab|=24 n_chi=4562 rows=136845 nnz=425759 (2s: mono 0s orbits 1s rows 1s; HWM 0.10 GB)
+  sieve (8, 4, 4, 4, 4) d6: cover(E) 4558/4562 by reversed (a=2, |U|=4, excess 2; {'natural': 4363, 'reversed': 4558, 'fill_asc': 4414, 'fill_desc': 4064, 'random': 3911}); cover(E_red) 4285/4289 (0.2s)
+    hybrid[8_4_4_4_4d6] p=2147483647 attempt 0: |S|=4558 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s]
+    hybrid[8_4_4_4_4d6] p=2147483629 attempt 0: |S|=4558 |U|=4 (a=2, excess 2) m=68 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s]
+  RESULT (8, 4, 4, 4, 4) d6: a=2 n_chi=4562 |U|=4 mult_det=2 mult_per4=2 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=1 i_per4=0 D=-1  (3.0s, HWM 0.1 GB)
+CALIB (8, 4, 4, 4, 4) d6: n_chi=4562 banked det/star/pts = 2/1/1 hybrid = 2/1/1 per4=2 a=2 AGREE (3.0s)
+      level 1: 24 prefixes
+      level 2: 234 prefixes
+      level 3: 1280 prefixes
+      level 4: 5470 prefixes
+      level 5: 14269 prefixes
+      level 6: 20299 prefixes
+      level 7: 20299 prefixes
+  lam=(9, 9, 8, 1, 1): N_S=20299 |Stab|=4 n_chi=3969 (orbits dropped: 2374) [lean, 0s, HWM 0.10 GB]
+    E_01: |H|=2 targets 19373 canonical rows 7470 nnz 31669 (obstructed fixed targets cancelled: 1035) [0s, HWM 0.10 GB]
+    E_12: |H|=2 targets 18305 canonical rows 7068 nnz 30060 (obstructed fixed targets cancelled: 962) [0s, HWM 0.10 GB]
+    E_23: |H|=2 targets 5160 canonical rows 2534 nnz 7746 (obstructed fixed targets cancelled: 71) [0s, HWM 0.10 GB]
+    E_34: |H|=2 targets 12438 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 98) [0s, HWM 0.10 GB]
+  built (9, 9, 8, 1, 1) d7: N_S=20299 |Stab|=4 n_chi=3969 rows=17072 nnz=69475 (0s: mono 0s orbits 0s rows 0s; HWM 0.10 GB)
+  sieve (9, 9, 8, 1, 1) d7: cover(E) 3919/3969 by reversed (a=2, |U|=50, excess 48; {'natural': 3610, 'reversed': 3919, 'fill_asc': 3329, 'fill_desc': 3313, 'random': 2692}); cover(E_red) 3719/3763 (0.0s)
+    hybrid[9_9_8_1_1d7] p=2147483629 attempt 0: |S|=3919 |U|=50 (a=2, excess 48) m=114 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[9_9_8_1_1d7] p=2147483647 attempt 0: |S|=3919 |U|=50 (a=2, excess 48) m=114 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (9, 9, 8, 1, 1) d7: a=2 n_chi=3969 |U|=50 mult_det=2 mult_per4=2 mult_red(star)=1 mult_red(pts)=1 i_det=0 i_red=1 i_per4=0 D=-1  (0.5s, HWM 0.1 GB)
+CALIB (9, 9, 8, 1, 1) d7: n_chi=3969 banked det/star/pts = 2/1/1 hybrid = 2/1/1 per4=2 a=2 AGREE (0.5s)
+      level 1: 41 prefixes
+      level 2: 561 prefixes
+      level 3: 4368 prefixes
+      level 4: 22890 prefixes
+      level 5: 77167 prefixes
+      level 6: 127004 prefixes
+      level 7: 127004 prefixes
+  lam=(8, 8, 8, 2, 2): N_S=127004 |Stab|=12 n_chi=11778 (orbits dropped: 0) [lean, 1s, HWM 0.11 GB]
+    E_01: |H|=2 targets 119656 canonical rows 63864 nnz 272916 (obstructed fixed targets cancelled: 0) [0s, HWM 0.11 GB]
+    E_12: |H|=2 targets 119656 canonical rows 63864 nnz 272916 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_23: |H|=2 targets 50372 canonical rows 25393 nnz 107667 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_34: |H|=6 targets 94940 canonical rows 16136 nnz 32034 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+  built (8, 8, 8, 2, 2) d7: N_S=127004 |Stab|=12 n_chi=11778 rows=169257 nnz=685533 (2s: mono 0s orbits 1s rows 1s; HWM 0.11 GB)
+  sieve (8, 8, 8, 2, 2) d7: cover(E) 11744/11778 by reversed (a=3, |U|=34, excess 31; {'natural': 11428, 'reversed': 11744, 'fill_asc': 11250, 'fill_desc': 10889, 'random': 9208}); cover(E_red) 11385/11419 (0.3s)
+    hybrid[8_8_8_2_2d7] p=2147483629 attempt 0: |S|=11744 |U|=34 (a=3, excess 31) m=98 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.1s]
+    hybrid[8_8_8_2_2d7] p=2147483647 attempt 0: |S|=11744 |U|=34 (a=3, excess 31) m=98 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.1s]
+  RESULT (8, 8, 8, 2, 2) d7: a=3 n_chi=11778 |U|=34 mult_det=3 mult_per4=3 mult_red(star)=2 mult_red(pts)=2 i_det=0 i_red=1 i_per4=0 D=-1  (3.9s, HWM 0.11 GB)
+CALIB (8, 8, 8, 2, 2) d7: n_chi=11778 banked det/star/pts = 3/2/2 hybrid = 3/2/2 per4=3 a=3 AGREE (3.9s)
+      level 1: 54 prefixes
+      level 2: 1374 prefixes
+      level 3: 16283 prefixes
+      level 4: 81907 prefixes
+      level 5: 176145 prefixes
+      level 6: 205616 prefixes
+      level 7: 205616 prefixes
+  lam=(12, 4, 4, 4, 4): N_S=205616 |Stab|=24 n_chi=9738 (orbits dropped: 0) [lean, 3s, HWM 0.12 GB]
+    E_01: |H|=6 targets 110498 canonical rows 19579 nnz 97441 (obstructed fixed targets cancelled: 0) [1s, HWM 0.12 GB]
+    E_12: |H|=2 targets 178743 canonical rows 90996 nnz 278732 (obstructed fixed targets cancelled: 0) [1s, HWM 0.13 GB]
+    E_23: |H|=2 targets 178743 canonical rows 90996 nnz 278732 (obstructed fixed targets cancelled: 0) [2s, HWM 0.14 GB]
+    E_34: |H|=2 targets 178743 canonical rows 90996 nnz 278732 (obstructed fixed targets cancelled: 0) [2s, HWM 0.14 GB]
+  built (12, 4, 4, 4, 4) d7: N_S=205616 |Stab|=24 n_chi=9738 rows=292567 nnz=933637 (5s: mono 0s orbits 3s rows 2s; HWM 0.14 GB)
+  sieve (12, 4, 4, 4, 4) d7: cover(E) 9730/9738 by reversed (a=4, |U|=8, excess 4; {'natural': 9331, 'reversed': 9730, 'fill_asc': 9377, 'fill_desc': 8733, 'random': 8266}); cover(E_red) 8421/8427 (0.5s)
+    hybrid[12_4_4_4_4d7] p=2147483629 attempt 0: |S|=9730 |U|=8 (a=4, excess 4) m=72 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s]
+    hybrid[12_4_4_4_4d7] p=2147483647 attempt 0: |S|=9730 |U|=8 (a=4, excess 4) m=72 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s]
+  RESULT (12, 4, 4, 4, 4) d7: a=4 n_chi=9738 |U|=8 mult_det=4 mult_per4=4 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=1 i_per4=0 D=-1  (7.6s, HWM 0.14 GB)
+CALIB (12, 4, 4, 4, 4) d7: n_chi=9738 banked det/star/pts = 4/3/3 hybrid = 4/3/3 per4=4 a=4 AGREE (7.6s)
+      level 1: 27 prefixes
+      level 2: 249 prefixes
+      level 3: 1367 prefixes
+      level 4: 6285 prefixes
+      level 5: 20068 prefixes
+      level 6: 39615 prefixes
+      level 7: 49204 prefixes
+      level 8: 49204 prefixes
+  lam=(11, 11, 8, 1, 1): N_S=49204 |Stab|=4 n_chi=9684 (orbits dropped: 5507) [lean, 0s, HWM 0.14 GB]
+    E_01: |H|=2 targets 47488 canonical rows 18503 nnz 87032 (obstructed fixed targets cancelled: 2702) [0s, HWM 0.14 GB]
+    E_12: |H|=2 targets 40951 canonical rows 15926 nnz 74867 (obstructed fixed targets cancelled: 2332) [0s, HWM 0.14 GB]
+    E_23: |H|=2 targets 12269 canonical rows 6064 nnz 19051 (obstructed fixed targets cancelled: 110) [0s, HWM 0.14 GB]
+    E_34: |H|=2 targets 29977 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 174) [0s, HWM 0.14 GB]
+  built (11, 11, 8, 1, 1) d8: N_S=49204 |Stab|=4 n_chi=9684 rows=40493 nnz=180950 (1s: mono 0s orbits 0s rows 0s; HWM 0.14 GB)
+  sieve (11, 11, 8, 1, 1) d8: cover(E) 9569/9684 by reversed (a=8, |U|=115, excess 107; {'natural': 8737, 'reversed': 9569, 'fill_asc': 8015, 'fill_desc': 8193, 'random': 6278}); cover(E_red) 9131/9240 (0.1s)
+    hybrid[11_11_8_1_1d8] p=2147483629 attempt 0: |S|=9569 |U|=115 (a=8, excess 107) m=179 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.0s]
+    hybrid[11_11_8_1_1d8] p=2147483647 attempt 0: |S|=9569 |U|=115 (a=8, excess 107) m=179 projected nullity 8, verified=True, rank 8 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.0s]
+  RESULT (11, 11, 8, 1, 1) d8: a=8 n_chi=9684 |U|=115 mult_det=8 mult_per4=8 mult_red(star)=7 mult_red(pts)=7 i_det=0 i_red=1 i_per4=0 D=-1  (1.4s, HWM 0.14 GB)
+CALIB (11, 11, 8, 1, 1) d8: n_chi=9684 banked det/star/pts = 8/7/7 hybrid = 8/7/7 per4=8 a=8 AGREE (1.4s)
+      level 1: 27 prefixes
+      level 2: 256 prefixes
+      level 3: 1623 prefixes
+      level 4: 7855 prefixes
+      level 5: 23069 prefixes
+      level 6: 42189 prefixes
+      level 7: 49820 prefixes
+      level 8: 49820 prefixes
+  lam=(12, 9, 9, 1, 1): N_S=49820 |Stab|=4 n_chi=9800 (orbits dropped: 5603) [lean, 0s, HWM 0.14 GB]
+    E_01: |H|=2 targets 42539 canonical rows 16556 nnz 80359 (obstructed fixed targets cancelled: 2566) [0s, HWM 0.14 GB]
+    E_12: |H|=2 targets 47488 canonical rows 18503 nnz 80201 (obstructed fixed targets cancelled: 2328) [0s, HWM 0.14 GB]
+    E_23: |H|=1 targets 11873 canonical rows 11873 nnz 38856 (obstructed fixed targets cancelled: 0) [0s, HWM 0.14 GB]
+    E_34: |H|=2 targets 30343 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 172) [0s, HWM 0.14 GB]
+  built (12, 9, 9, 1, 1) d8: N_S=49820 |Stab|=4 n_chi=9800 rows=46932 nnz=199416 (1s: mono 0s orbits 0s rows 0s; HWM 0.14 GB)
+  sieve (12, 9, 9, 1, 1) d8: cover(E) 9720/9800 by reversed (a=7, |U|=80, excess 73; {'natural': 8760, 'reversed': 9720, 'fill_asc': 8511, 'fill_desc': 8597, 'random': 6726}); cover(E_red) 9250/9329 (0.1s)
+    hybrid[12_9_9_1_1d8] p=2147483647 attempt 0: |S|=9720 |U|=80 (a=7, excess 73) m=144 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s]
+    hybrid[12_9_9_1_1d8] p=2147483629 attempt 0: |S|=9720 |U|=80 (a=7, excess 73) m=144 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s]
+  RESULT (12, 9, 9, 1, 1) d8: a=7 n_chi=9800 |U|=80 mult_det=7 mult_per4=7 mult_red(star)=5 mult_red(pts)=5 i_det=0 i_red=2 i_per4=0 D=-2  (1.4s, HWM 0.14 GB)
+CALIB (12, 9, 9, 1, 1) d8: n_chi=9800 banked det/star/pts = 7/5/5 hybrid = 7/5/5 per4=7 a=7 AGREE (1.4s)
+      level 1: 60 prefixes
+      level 2: 1512 prefixes
+      level 3: 18407 prefixes
+      level 4: 103844 prefixes
+      level 5: 239390 prefixes
+      level 6: 294338 prefixes
+      level 7: 299333 prefixes
+      level 8: 299333 prefixes
+  lam=(16, 4, 4, 4, 4): N_S=299333 |Stab|=24 n_chi=14148 (orbits dropped: 0) [lean, 4s, HWM 0.15 GB]
+    E_01: |H|=6 targets 145916 canonical rows 25876 nnz 141534 (obstructed fixed targets cancelled: 0) [1s, HWM 0.15 GB]
+    E_12: |H|=2 targets 260239 canonical rows 132492 nnz 404636 (obstructed fixed targets cancelled: 0) [2s, HWM 0.16 GB]
+    E_23: |H|=2 targets 260239 canonical rows 132492 nnz 404636 (obstructed fixed targets cancelled: 0) [3s, HWM 0.17 GB]
+    E_34: |H|=2 targets 260239 canonical rows 132492 nnz 404636 (obstructed fixed targets cancelled: 0) [4s, HWM 0.17 GB]
+  built (16, 4, 4, 4, 4) d8: N_S=299333 |Stab|=24 n_chi=14148 rows=423352 nnz=1355442 (9s: mono 1s orbits 4s rows 4s; HWM 0.17 GB)
+  sieve (16, 4, 4, 4, 4) d8: cover(E) 14138/14148 by reversed (a=7, |U|=10, excess 3; {'natural': 13571, 'reversed': 14138, 'fill_asc': 13594, 'fill_desc': 12680, 'random': 12007}); cover(E_red) 11304/11310 (0.7s)
+    hybrid[16_4_4_4_4d8] p=2147483647 attempt 0: |S|=14138 |U|=10 (a=7, excess 3) m=74 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.5s]
+    hybrid[16_4_4_4_4d8] p=2147483629 attempt 0: |S|=14138 |U|=10 (a=7, excess 3) m=74 projected nullity 7, verified=True, rank 7 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.5s]
+  RESULT (16, 4, 4, 4, 4) d8: a=7 n_chi=14148 |U|=10 mult_det=7 mult_per4=7 mult_red(star)=6 mult_red(pts)=6 i_det=0 i_red=1 i_per4=0 D=-1  (13.7s, HWM 0.21 GB)
+CALIB (16, 4, 4, 4, 4) d8: n_chi=14148 banked det/star/pts = 7/6/None hybrid = 7/6/6 per4=7 a=7 AGREE (13.7s)
+      level 1: 28 prefixes
+      level 2: 265 prefixes
+      level 3: 1974 prefixes
+      level 4: 8639 prefixes
+      level 5: 23209 prefixes
+      level 6: 38081 prefixes
+      level 7: 42539 prefixes
+      level 8: 42539 prefixes
+  lam=(13, 9, 8, 1, 1): N_S=42539 |Stab|=2 n_chi=16556 (orbits dropped: 9427) [lean, 0s, HWM 0.17 GB]
+    E_01: |H|=2 targets 35388 canonical rows 13675 nnz 67882 (obstructed fixed targets cancelled: 2328) [0s, HWM 0.17 GB]
+    E_12: |H|=2 targets 38291 canonical rows 14862 nnz 64303 (obstructed fixed targets cancelled: 1891) [0s, HWM 0.17 GB]
+    E_23: |H|=1 targets 10684 canonical rows 10677 nnz 33112 (obstructed fixed targets cancelled: 0) [0s, HWM 0.17 GB]
+    E_34: |H|=1 targets 25983 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [0s, HWM 0.17 GB]
+  built (13, 9, 8, 1, 1) d8: N_S=42539 |Stab|=2 n_chi=16556 rows=39214 nnz=165297 (0s: mono 0s orbits 0s rows 0s; HWM 0.17 GB)
+  sieve (13, 9, 8, 1, 1) d8: cover(E) 16321/16556 by reversed (a=15, |U|=235, excess 220; {'natural': 15453, 'reversed': 16321, 'fill_asc': 12640, 'fill_desc': 12684, 'random': 10023}); cover(E_red) 15221/15435 (0.1s)
+    hybrid[13_9_8_1_1d8] p=2147483629 attempt 0: |S|=16321 |U|=235 (a=15, excess 220) m=299 projected nullity 15, verified=True, rank 15 [split 0.0s trisolve 0.1s schur 0.2s null 0.0s lift 0.1s]
+    hybrid[13_9_8_1_1d8] p=2147483647 attempt 0: |S|=16321 |U|=235 (a=15, excess 220) m=299 projected nullity 15, verified=True, rank 15 [split 0.0s trisolve 0.1s schur 0.2s null 0.0s lift 0.1s]
+  RESULT (13, 9, 8, 1, 1) d8: a=15 n_chi=16556 |U|=235 mult_det=15 mult_per4=15 mult_red(star)=13 mult_red(pts)=13 i_det=0 i_red=2 i_per4=0 D=-2  (1.8s, HWM 0.17 GB)
+CALIB (13, 9, 8, 1, 1) d8: n_chi=16556 banked det/star/pts = 15/13/None hybrid = 15/13/13 per4=15 a=15 AGREE (1.8s)
+      level 1: 28 prefixes
+      level 2: 215 prefixes
+      level 3: 1107 prefixes
+      level 4: 3739 prefixes
+      level 5: 8986 prefixes
+      level 6: 16516 prefixes
+      level 7: 21799 prefixes
+      level 8: 23136 prefixes
+      level 9: 23136 prefixes
+  lam=(15, 15, 4, 1, 1): N_S=23136 |Stab|=4 n_chi=4415 (orbits dropped: 2912) [lean, 0s, HWM 0.17 GB]
+    E_01: |H|=2 targets 22666 canonical rows 8523 nnz 42038 (obstructed fixed targets cancelled: 1735) [0s, HWM 0.17 GB]
+    E_12: |H|=2 targets 12085 canonical rows 4478 nnz 21838 (obstructed fixed targets cancelled: 964) [0s, HWM 0.17 GB]
+    E_23: |H|=2 targets 8122 canonical rows 3972 nnz 8646 (obstructed fixed targets cancelled: 60) [0s, HWM 0.17 GB]
+    E_34: |H|=2 targets 14414 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 118) [0s, HWM 0.17 GB]
+  built (15, 15, 4, 1, 1) d9: N_S=23136 |Stab|=4 n_chi=4415 rows=16973 nnz=72522 (0s: mono 0s orbits 0s rows 0s; HWM 0.17 GB)
+  sieve (15, 15, 4, 1, 1) d9: cover(E) 4376/4415 by reversed (a=9, |U|=39, excess 30; {'natural': 3896, 'reversed': 4376, 'fill_asc': 3691, 'fill_desc': 3748, 'random': 3079}); cover(E_red) 3850/3887 (0.0s)
+    hybrid[15_15_4_1_1d9] p=2147483629 attempt 0: |S|=4376 |U|=39 (a=9, excess 30) m=103 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+    hybrid[15_15_4_1_1d9] p=2147483647 attempt 0: |S|=4376 |U|=39 (a=9, excess 30) m=103 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s]
+  RESULT (15, 15, 4, 1, 1) d9: a=9 n_chi=4415 |U|=39 mult_det=9 mult_per4=9 mult_red(star)=8 mult_red(pts)=8 i_det=0 i_red=1 i_per4=0 D=-1  (0.8s, HWM 0.17 GB)
+CALIB (15, 15, 4, 1, 1) d9: n_chi=4415 banked det/star/pts = 9/8/8 hybrid = 9/8/8 per4=9 a=9 AGREE (0.8s)
+      level 1: 60 prefixes
+      level 2: 1582 prefixes
+      level 3: 20473 prefixes
+      level 4: 120635 prefixes
+      level 5: 278632 prefixes
+      level 6: 345597 prefixes
+      level 7: 352936 prefixes
+      level 8: 353074 prefixes
+      level 9: 353074 prefixes
+  lam=(20, 4, 4, 4, 4): N_S=353074 |Stab|=24 n_chi=16732 (orbits dropped: 0) [lean, 5s, HWM 0.17 GB]
+    E_01: |H|=6 targets 163325 canonical rows 29036 nnz 166147 (obstructed fixed targets cancelled: 0) [1s, HWM 0.17 GB]
+    E_12: |H|=2 targets 307432 canonical rows 156616 nnz 474183 (obstructed fixed targets cancelled: 0) [3s, HWM 0.17 GB]
+    E_23: |H|=2 targets 307432 canonical rows 156616 nnz 474183 (obstructed fixed targets cancelled: 0) [4s, HWM 0.19 GB]
+    E_34: |H|=2 targets 307432 canonical rows 156616 nnz 474183 (obstructed fixed targets cancelled: 0) [5s, HWM 0.19 GB]
+  built (20, 4, 4, 4, 4) d9: N_S=353074 |Stab|=24 n_chi=16732 rows=498884 nnz=1588696 (11s: mono 1s orbits 5s rows 5s; HWM 0.19 GB)
+  sieve (20, 4, 4, 4, 4) d9: cover(E) 16721/16732 by reversed (a=9, |U|=11, excess 2; {'natural': 16058, 'reversed': 16721, 'fill_asc': 16041, 'fill_desc': 14985, 'random': 14288}); cover(E_red) 12650/12656 (0.8s)
+    hybrid[20_4_4_4_4d9] p=2147483647 attempt 0: |S|=16721 |U|=11 (a=9, excess 2) m=75 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.8s]
+    hybrid[20_4_4_4_4d9] p=2147483629 attempt 0: |S|=16721 |U|=11 (a=9, excess 2) m=75 projected nullity 9, verified=True, rank 9 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 0.9s]
+  RESULT (20, 4, 4, 4, 4) d9: a=9 n_chi=16732 |U|=11 mult_det=9 mult_per4=9 mult_red(star)=8 mult_red(pts)=8 i_det=0 i_red=1 i_per4=0 D=-1  (18.4s, HWM 0.27 GB)
+CALIB (20, 4, 4, 4, 4) d9: n_chi=16732 banked det/star/pts = 9/8/None hybrid = 9/8/8 per4=9 a=9 AGREE (18.4s)
+      level 1: 27 prefixes
+      level 2: 261 prefixes
+      level 3: 1395 prefixes
+      level 4: 6570 prefixes
+      level 5: 23189 prefixes
+      level 6: 55255 prefixes
+      level 7: 89165 prefixes
+      level 8: 101838 prefixes
+      level 9: 101838 prefixes
+  lam=(13, 13, 8, 1, 1): N_S=101838 |Stab|=4 n_chi=20099 (orbits dropped: 11122) [lean, 0s, HWM 0.19 GB]
+    E_01: |H|=2 targets 99005 canonical rows 38803 nnz 196998 (obstructed fixed targets cancelled: 5935) [0s, HWM 0.19 GB]
+    E_12: |H|=2 targets 79556 canonical rows 31058 nnz 157186 (obstructed fixed targets cancelled: 4821) [1s, HWM 0.19 GB]
+    E_23: |H|=2 targets 25137 canonical rows 12461 nnz 39711 (obstructed fixed targets cancelled: 169) [1s, HWM 0.19 GB]
+    E_34: |H|=2 targets 61853 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 256) [1s, HWM 0.19 GB]
+  built (13, 13, 8, 1, 1) d9: N_S=101838 |Stab|=4 n_chi=20099 rows=82322 nnz=393895 (1s: mono 0s orbits 0s rows 1s; HWM 0.19 GB)
+  sieve (13, 13, 8, 1, 1) d9: cover(E) 19881/20099 by reversed (a=19, |U|=218, excess 199; {'natural': 18057, 'reversed': 19881, 'fill_asc': 16595, 'fill_desc': 16910, 'random': 12528}); cover(E_red) 19005/19217 (0.2s)
+    hybrid[13_13_8_1_1d9] p=2147483629 attempt 0: |S|=19881 |U|=218 (a=19, excess 199) m=282 projected nullity 19, verified=True, rank 19 [split 0.1s trisolve 0.1s schur 0.6s null 0.0s lift 0.1s]
+    hybrid[13_13_8_1_1d9] p=2147483647 attempt 0: |S|=19881 |U|=218 (a=19, excess 199) m=282 projected nullity 19, verified=True, rank 19 [split 0.1s trisolve 0.1s schur 0.7s null 0.0s lift 0.2s]
+  RESULT (13, 13, 8, 1, 1) d9: a=19 n_chi=20099 |U|=218 mult_det=19 mult_per4=19 mult_red(star)=15 mult_red(pts)=15 i_det=0 i_red=4 i_per4=0 D=-4  (4.2s, HWM 0.19 GB)
+CALIB (13, 13, 8, 1, 1) d9: n_chi=20099 banked det/star/pts = 19/15/None hybrid = 19/15/15 per4=19 a=19 AGREE (4.2s)
+      level 1: 61 prefixes
+      level 2: 1653 prefixes
+      level 3: 22424 prefixes
+      level 4: 130560 prefixes
+      level 5: 297540 prefixes
+      level 6: 367982 prefixes
+      level 7: 375815 prefixes
+      level 8: 375953 prefixes
+      level 9: 375953 prefixes
+      level 10: 375953 prefixes
+  lam=(24, 4, 4, 4, 4): N_S=375953 |Stab|=24 n_chi=17896 (orbits dropped: 0) [lean, 6s, HWM 0.19 GB]
+    E_01: |H|=6 targets 169725 canonical rows 30240 nnz 176284 (obstructed fixed targets cancelled: 0) [1s, HWM 0.19 GB]
+    E_12: |H|=2 targets 327879 canonical rows 167156 nnz 502226 (obstructed fixed targets cancelled: 0) [3s, HWM 0.19 GB]
+    E_23: |H|=2 targets 327879 canonical rows 167156 nnz 502226 (obstructed fixed targets cancelled: 0) [5s, HWM 0.20 GB]
+    E_34: |H|=2 targets 327879 canonical rows 167156 nnz 502226 (obstructed fixed targets cancelled: 0) [6s, HWM 0.20 GB]
+  built (24, 4, 4, 4, 4) d10: N_S=375953 |Stab|=24 n_chi=17896 rows=531708 nnz=1682962 (13s: mono 1s orbits 6s rows 6s; HWM 0.20 GB)
+  sieve (24, 4, 4, 4, 4) d10: cover(E) 17885/17896 by reversed (a=10, |U|=11, excess 1; {'natural': 17177, 'reversed': 17885, 'fill_asc': 17152, 'fill_desc': 16001, 'random': 15252}); cover(E_red) 13099/13105 (1.0s)
+    hybrid[24_4_4_4_4d10] p=2147483647 attempt 0: |S|=17885 |U|=11 (a=10, excess 1) m=75 projected nullity 10, verified=True, rank 10 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 1.1s]
+    hybrid[24_4_4_4_4d10] p=2147483629 attempt 0: |S|=17885 |U|=11 (a=10, excess 1) m=75 projected nullity 10, verified=True, rank 10 [split 0.0s trisolve 0.0s schur 0.3s null 0.0s lift 1.2s]
+  RESULT (24, 4, 4, 4, 4) d10: a=10 n_chi=17896 |U|=11 mult_det=10 mult_per4=10 mult_red(star)=9 mult_red(pts)=9 i_det=0 i_red=1 i_per4=0 D=-1  (22.4s, HWM 0.29 GB)
+CALIB (24, 4, 4, 4, 4) d10: n_chi=17896 banked det/star/pts = 10/9/None hybrid = 10/9/9 per4=10 a=10 AGREE (22.4s)
+      level 1: 48 prefixes
+      level 2: 879 prefixes
+      level 3: 7210 prefixes
+      level 4: 23469 prefixes
+      level 5: 34057 prefixes
+      level 6: 35729 prefixes
+      level 7: 35768 prefixes
+      level 8: 35768 prefixes
+      level 9: 35768 prefixes
+  lam=(22, 5, 4, 4, 1): N_S=35768 |Stab|=2 n_chi=18396 (orbits dropped: 0) [lean, 0s, HWM 0.20 GB]
+    E_01: |H|=2 targets 19525 canonical rows 10085 nnz 54008 (obstructed fixed targets cancelled: 0) [0s, HWM 0.20 GB]
+    E_12: |H|=1 targets 28482 canonical rows 28482 nnz 92550 (obstructed fixed targets cancelled: 0) [0s, HWM 0.20 GB]
+    E_23: |H|=1 targets 31332 canonical rows 31332 nnz 90013 (obstructed fixed targets cancelled: 0) [0s, HWM 0.20 GB]
+    E_34: |H|=1 targets 12483 canonical rows 12483 nnz 35768 (obstructed fixed targets cancelled: 0) [0s, HWM 0.20 GB]
+  built (22, 5, 4, 4, 1) d9: N_S=35768 |Stab|=2 n_chi=18396 rows=82382 nnz=272339 (1s: mono 0s orbits 0s rows 0s; HWM 0.20 GB)
+  sieve (22, 5, 4, 4, 1) d9: cover(E) 18357/18396 by reversed (a=12, |U|=39, excess 27; {'natural': 17799, 'reversed': 18357, 'fill_asc': 16415, 'fill_desc': 16168, 'random': 14162}); cover(E_red) 12333/12357 (0.1s)
+    hybrid[22_5_4_4_1d9] p=2147483647 attempt 0: |S|=18357 |U|=39 (a=12, excess 27) m=103 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.2s]
+    hybrid[22_5_4_4_1d9] p=2147483629 attempt 0: |S|=18357 |U|=39 (a=12, excess 27) m=103 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.2s]
+  RESULT (22, 5, 4, 4, 1) d9: a=12 n_chi=18396 |U|=39 mult_det=12 mult_per4=12 mult_red(star)=12 mult_red(pts)=12 i_det=0 i_red=0 i_per4=0 D=0  (1.9s, HWM 0.2 GB)
+CALIB (22, 5, 4, 4, 1) d9: n_chi=18396 banked det/star/pts = 12/12/None hybrid = 12/12/12 per4=12 a=12 AGREE (1.9s)
+      level 1: 58 prefixes
+      level 2: 1253 prefixes
+      level 3: 12100 prefixes
+      level 4: 56296 prefixes
+      level 5: 119815 prefixes
+      level 6: 144680 prefixes
+      level 7: 146934 prefixes
+      level 8: 146934 prefixes
+  lam=(16, 7, 3, 3, 3): N_S=146934 |Stab|=6 n_chi=21991 (orbits dropped: 5108) [lean, 0s, HWM 0.20 GB]
+    E_01: |H|=6 targets 100054 canonical rows 14841 nnz 80473 (obstructed fixed targets cancelled: 6774) [1s, HWM 0.20 GB]
+    E_12: |H|=2 targets 82797 canonical rows 39657 nnz 146647 (obstructed fixed targets cancelled: 1358) [1s, HWM 0.20 GB]
+    E_23: |H|=1 targets 122654 canonical rows 121133 nnz 272764 (obstructed fixed targets cancelled: 0) [1s, HWM 0.20 GB]
+    E_34: |H|=1 targets 122654 canonical rows 121133 nnz 272764 (obstructed fixed targets cancelled: 0) [2s, HWM 0.20 GB]
+  built (16, 7, 3, 3, 3) d8: N_S=146934 |Stab|=6 n_chi=21991 rows=296764 nnz=772648 (2s: mono 0s orbits 0s rows 2s; HWM 0.20 GB)
+  sieve (16, 7, 3, 3, 3) d8: cover(E) 21982/21991 by reversed (a=3, |U|=9, excess 6; {'natural': 21741, 'reversed': 21982, 'fill_asc': 20663, 'fill_desc': 21256, 'random': 19524}); cover(E_red) 17993/18000 (0.4s)
+    hybrid[16_7_3_3_3d8] p=2147483647 attempt 0: |S|=21982 |U|=9 (a=3, excess 6) m=73 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s]
+    hybrid[16_7_3_3_3d8] p=2147483629 attempt 0: |S|=21982 |U|=9 (a=3, excess 6) m=73 projected nullity 3, verified=True, rank 3 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s]
+  RESULT (16, 7, 3, 3, 3) d8: a=3 n_chi=21991 |U|=9 mult_det=3 mult_per4=3 mult_red(star)=3 mult_red(pts)=3 i_det=0 i_red=0 i_per4=0 D=0  (4.1s, HWM 0.2 GB)
+CALIB (16, 7, 3, 3, 3) d8: n_chi=21991 banked det/star/pts = 3/3/None hybrid = 3/3/3 per4=3 a=3 AGREE (4.1s)
+calibration complete: every cell agrees

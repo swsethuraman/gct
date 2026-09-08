@@ -1,0 +1,21 @@
+{
+ "constants": {
+  "c_b": 2.1e-06,
+  "rho": 10.0,
+  "c_c": 1e-07,
+  "c_h": 8e-08,
+  "c_v": 2e-08,
+  "f": 0.013,
+  "c_e": 2.7e-08,
+  "c_r": 1e-09
+ },
+ "note": "re-fitted on the 72 banked calibration cells (results/s71_calibration.jsonl); the queue order is NOT changed by the re-fit (PREREG sec. 2)",
+ "formulas": {
+  "t_build": "c_b*N_S*delta",
+  "t_sieve": "c_c*nnz*5",
+  "t_hybrid": "c_h*nnz*|U|, |U| = a + f*n_chi",
+  "t_ev": "c_e*3*(a+8)*N_S*delta per prime",
+  "t_rank": "c_r*3*(a+8)*n_chi*a",
+  "mem_x": "4*n_chi*|U| bytes per prime"
+ }
+}
