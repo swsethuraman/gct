@@ -1,8 +1,7 @@
-# Batch 11, Claude side — review of sessions 68, 69, 70, 72, 73
+# Batch 11, Claude side — review of sessions 68 to 73
 
-Five of six delivered; **session 71 (C4, the `r = 5` closure falsifier) has not
-arrived** and this review is written without it.  All five bundles verify
-against their `.md5` and apply cleanly onto `226b4ef1`.  Labels: **confirmed**
+All six delivered.  Every bundle verifies against its `.md5` and applies cleanly
+onto `226b4ef1`.  Labels: **confirmed**
 (reproduced here), **corrected**, **relayed** (not checkable here), **new**
 (found here).
 
@@ -39,6 +38,14 @@ against their `.md5` and apply cleanly onto `226b4ef1`.  Labels: **confirmed**
 > **s70 did the ungated fallback exactly as briefed** and wrote down `S` for the
 > first time, with a two-sided calibration.  Its Part A determination is sound.
 > One of its two premises has since been overtaken — see §5.
+>
+> **s71 swept 151 cells, found no falsifier, and built a better instrument than
+> the one it was asked to use.**  `i_det = 0` at every one, proved; 250 of the
+> 1 075 length-5 tails now closed for `D > 0` in every degree; the first length-5
+> cells ever measured at `δ = 18, 19, 20`.  Its Schur-complement hybrid
+> reproduces every banked number and is **two to three orders of magnitude**
+> cheaper than the house Wiedemann route.  It also found two errors in my brief
+> (§8).
 
 ---
 
@@ -66,6 +73,13 @@ The consequences are visible and were paid for:
   from the banked ones.  That converts an accident into the strongest possible
   confirmation: two integrator runs and one worker session, three independent
   evaluation families, all giving `mult_per = 6`.
+- **s71 could not find session 67's bundle either** — not in the public clone,
+  not on the laptop — so it re-implemented the widened monomial code and the
+  initial-term certifier from session 67's *report*.  It says plainly that the
+  two implementations have not been compared line for line.  That is a second
+  duplicated engineering effort caused by the same missing push, and unlike the
+  verifier rename it is not free: two independent implementations of the same
+  certifier now exist and only one has been validated against the other's cells.
 - The briefs themselves reached the sessions (they were pasted), which is why
   the work is on target despite the tree being a batch behind.
 
@@ -97,6 +111,14 @@ cross-validation gets.
 `a` (`1 < 2`, `5 < 7`), which is the LMR regime, and the control returns
 `rank S = a`, so the instrument is two-sided.  A construction returning `a` at
 either bite would have been wrong.
+
+**s71's `per₄` dominance and its closing-cell arithmetic.**
+`dim Sym⁴C⁵ = 70`, `det₄` forms `16·5 − 30 = 50` (matching the banked
+`dim D₅ = 50`), `per₄` forms `16·5 − 6 = 74 ≥ 70` — dominant, so `I(Per₅) = 0`
+exactly as claimed, and proper again at `r = 6` (`90 < 126`) and `r = 9`
+(`138 < 495`).  `99 + 976 = 1075` and `99 + 151 = 250` check out, and its
+discriminant degree `5·3⁴ = 405` agrees with the value Sol's S1 arrived at
+independently the same night.
 
 **s73's `n = 3` `a`-ladder, the premise of its theorem.**  Recomputed here with
 the house Kostant alternation:
@@ -245,6 +267,32 @@ the image-versus-closure gap that s54/s59 raised and that Sol's S6 independently
 re-raised this batch.  **It is honest about the one thing it does not prove** —
 that the enumeration is complete — and correctly assigns that to S3.
 
+**s71 (C4) — the sweep, and a better instrument.**  151 cells in frozen
+pre-registered cost order, `i_det = 0` at every one and **proved** (full column
+rank at both primes ⟹ `mult_det = a` over `Q`), so 250 of the 1 075 tails are now
+closed for `D > 0` in every degree and 513 census rungs are settled.  First
+length-5 cells at `δ = 18, 19, 20`; `a` to 640; `n_χ` to 193 330; 3.4 h total.
+It stopped on the pre-registered information-rate rule rather than a wall, and
+says precisely what a further night buys (~150–200 more tails, no new signal
+expected) and what it does not (the closure question, which needs the geometric
+route).
+
+Its second deliverable is the better one.  Session 67's initial-term cover,
+finished by an **exact Schur complement on the uncovered ~0.1 % of columns**,
+produces the full mod-`p` kernel of the raising operator — and it reproduces all
+72 banked calibration cells exactly, the eleven `mult_red < a` ones included,
+at 10 s against 3 094 s for the Wiedemann route on the same matrices.  It is
+bounded by the build, not by `n_χ²`.  **This should become the house instrument
+below the build wall**, and it hands back the kernel basis `K` as a by-product,
+which is `U_D` in source coordinates wherever the build fits.
+
+Two smaller things it got right: the 25 newly closed reducible-first tails all
+have tail shape `(x, y, ·, 1)`, consistent with session 60's record and now a
+much larger sample; and it recorded a workflow defect of its own (an edit to a
+module while the sweep was running, which made ~58 queued cells fail at import)
+along with the fact that it ended the sweep **by its recorded pid** and removed
+the spurious records.  That is the process rule working.
+
 **s73 (C6) — the theorem.**  `D = +1` at every rung, proved rather than
 measured, plus five rungs measured to check the instrument against a predicted
 answer.  The transport work is the best part: the same integer vector arrives by
@@ -254,7 +302,51 @@ one, and session 62's independently exhibited vector transports into session
 
 ---
 
-## 7. What I would do with this
+## 7. Three errors in my own briefs, found by the sessions
+
+Recorded because the pattern matters more than any one of them.
+
+**(i) The `per₄` column at `r = 5` is vacuous** (s71 §8, confirmed here).  The
+plan's §1.1 told C4 to add the unpadded `per₄` evaluation "wherever a cell is
+already being evaluated".  At `r = 5` the `per₄` pencil map is **dominant**:
+`dim{per₄ forms in r vars} = 16r − 6 = 74 ≥ 70 = dim Sym⁴C⁵`, so `I(Per₅) = 0`
+and `i_{per₄} = 0` identically — a theorem, not a measurement.  The column
+carries no information at `r = 5`.  It becomes a genuine comparison only at
+`r ≥ 6` (`90 < 126`), and my LMR statement (`138 < 495` at `r = 9`) is unaffected.
+
+s71 turned it into something useful anyway — a two-sided control the engine
+passed 223 times, where the answer is provably zero.  But **this is the second
+time I have specified a comparison without checking both varieties are proper**;
+the first was the `r ≥ 6` separation test of batch 10, which s47 had already
+made vacuous.  The check is one line of arithmetic and it now goes in the
+pre-registration of any new evaluation column.
+
+**(ii) "Sieve first" cannot work on the determinant side** (s71 §2.1).  My s71
+brief made the cost ordering "degeneration first, hybrid for the residue", on
+the ground that the initial-term certifier "removes cells from your search list
+at almost no cost".  It does — on the *reducible* side.  On the determinant side
+the `a + 8` evaluation rows are dense and share at most one leading column, so
+the distinct-leading-column count stops short by `a − 1` at every cell with
+`a ≥ 2`.  That is structural, not a matter of a better column order.  I had
+conflated `E_red` with `[E; ev_det]`.  The plan should say so, and s71 says it
+should.
+
+**(iii) The support-restriction premise in C1 was wrong** (s68 Part C).  The
+highest-weight space is **dense** — support 0.91–1.00 of `n_χ` on every reachable
+cell, against the `0.20–0.26` the plan projected.  And the u-free part carries
+births only as a *quotient*: `ker(E|_{u-free}) = 0` at every rung, so column
+restriction returns nothing and the deflation needs the full carrier.  I hedged
+this one in the plan ("measured at `δ = 4`, not here") but still made it C1's
+method.  s68's exact sequence `0 → J(M_{δ−1}) → M_δ → π(M_δ) → 0` is the correct
+statement and is new.
+
+The common shape: **three premises taken from a measurement made somewhere else
+and not re-checked in the regime the brief applies them to.**  That is the same
+failure the batch-10 corrections ledger recorded, in a different costume.
+
+---
+
+## 8. What I would do with this
 
 1. **Push the tree**, before anything else.  It has now cost one duplicated
    verifier extension and would have cost more.
@@ -265,5 +357,14 @@ one, and session 62's independently exhibited vector transports into session
    named, priced obstacle.
 3. **Reconcile the two verifier extensions** — one-word rename, and s73's
    `sparse_nullity` documentation should be merged with the banked one.
-4. **s71 is missing** and C4's falsifier sweep is the one ungated result the
-   batch does not have.
+4. **Adopt s71's hybrid as the house instrument** below the build wall, and
+   reconcile it against session 67's actual code — two implementations of the
+   same certifier now exist because the bundle was unreachable.
+5. **The closure question is now formally out of the multiplicity route's
+   reach**, and two sessions said so independently this batch: s71 from the
+   sweep (251 cells across two batches, `i_det = 0` everywhere, through
+   `δ = 20`) and s72 from the geometry (`dim(D₅ ∩ W) = 31 < 35` on the
+   enumerated cone).  s72's is the one that decides it, modulo completeness of
+   the enumeration — which is Sol's S3.  The sweep should continue only as
+   coverage, from queue rank 152, and should not be sold as progress on
+   containment.
