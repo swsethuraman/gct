@@ -1,0 +1,19 @@
+[     0.9s] cell (19, 7, 2, 2, 2, 2, 2) delta=12: a=6; fillings of lambda'=(7,7,2^5,1^12)
+[     1.1s]   built: N_S=1155302 |Stab|=120 n_chi=17047 E (713677, 17047) nnz 1526091
+[     1.2s]   sample 1: rank -> 1 (shared k=7)
+[     1.3s]   sample 2: rank -> 2 (shared k=5)
+[     1.5s]   sample 4: rank -> 3 (shared k=6)
+[     1.8s]   sample 6: rank -> 4 (shared k=7)
+[     1.9s]   sample 7: rank -> 5 (shared k=6)
+[     2.1s]   sample 9: rank -> 6 (shared k=6)
+[     2.1s]   generic rank 6 of a=6 after 9 samples; 0.0072s per evaluation
+[     4.8s]   det rank {'2147483647': 5, '2147483629': 5} -> mult_det, i_det = {'2147483647': 1, '2147483629': 1}; kernel dims {'2147483647': 1, '2147483629': 1}
+[   245.7s]   filling 0: 812851200 terms in 218s, 161973 monomials -> chi support 2645, max|c|=3583180800, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[   478.8s]   filling 1: 812851200 terms in 210s, 44867 monomials -> chi support 887, max|c|=13271040, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[   743.7s]   filling 2: 812851200 terms in 241s, 182560 monomials -> chi support 2877, max|c|=238878720, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[   991.5s]   filling 3: 812851200 terms in 224s, 43328 monomials -> chi support 866, max|c|=7166361600, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[  1258.0s]   filling 4: 812851200 terms in 246s, 191670 monomials -> chi support 2998, max|c|=1074954240, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[  1500.1s]   filling 5: 812851200 terms in 222s, 194411 monomials -> chi support 3165, max|c|=955514880, orbit-inconsistent 0, dropped-nonzero 0, missing 0, E v nonzero rows 0, coord-eval==circuit True
+[  1500.2s]   chi-vector rank {'2147483647': 6, '2147483629': 6}
+[  1500.8s]   banked comparison: {'2147483647': {'proportional': True, 'mismatches': 0, 'scalar': 2147390335, 'support_u': 3900, 'support_banked': 3900}, '2147483629': {'proportional': True, 'mismatches': 0, 'scalar': 2147390317, 'support_u': 3900, 'support_banked': 3900}}  over Z: {'equal_up_to_sign': True, 'sign': -1, 'support': 3900, 'max_abs': 544, 'E_u_nonzero_rows': 0}
+[  1500.8s] done
