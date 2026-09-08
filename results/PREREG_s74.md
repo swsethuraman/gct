@@ -226,3 +226,27 @@ The preamble asks for `Co-Authored-By: Claude Opus 5`.  The model running this
 session is not Opus 5; commits carry the truthful `Co-Authored-By: Claude
 Fable 5.1 <noreply@anthropic.com>` and no session-link trailer, as the
 standing rule requires.  Noted here so the deviation is deliberate and visible.
+
+## 9. Addenda, dated (committed before the measurements they govern)
+
+- **2026-09-08 23:15 UTC — the stream after a stall.**  At rung 13 the house
+  sampler's `k = 5` draws vanish identically (0 hits in 27 draws; 4/4 zero at
+  generic points) and the last few directions are rare (34/37 after 270
+  draws).  After 60 consecutive misses a rung switches to a Thompson-sampling
+  bandit over `(house | ones-first) × k ∈ {6,7,8,9}` (`wk12_s74_sampler.py`);
+  candidates vanishing at the first `u = 0` point are discarded without further
+  evaluation.  Neither changes what a rung certifies (rank `b_d` at both
+  primes on the kept fillings); both change only which fillings are drawn.
+  The per-rung draw budget stays 4 000 draws / 2 h wall; it is not enlarged.
+- **2026-09-08 23:30 UTC — sequencing (integrator relay, batch-12 note 3).**
+  The determinant column is evaluated rung by rung as rungs land, as a
+  running lower bound `rank T_det(24) ≥ m` on any `m` independent transported
+  rows (valid because `ker T_det ∩ uM₂₃ = u(I(Det) ∩ M₂₃)`, `I(Det)` prime,
+  `u ∉ I(Det)`), and the determinant side stops the moment it reaches 273.
+  With `i_det(23) = 0`, `ε_det = 1` is forced and the goal-cell determinant
+  obstruction `v + u·w`, `v = F_{T₅₇}`, `w ∈ M₂₃`, is the one-dimensional left
+  kernel of the 274-row determinant matrix (coefficient on `v` normalised to
+  1); it is banked as such.  The true padded column is prioritised over the
+  reducible and `per₄` columns.  Note 3 itself (`2ba3519`) was not reachable
+  from the container (`origin/main` still `afb8c33` at 23:25 UTC); this is
+  from the relay text.
