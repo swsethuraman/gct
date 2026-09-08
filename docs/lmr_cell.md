@@ -213,9 +213,18 @@ copy appear at 24" but
 > highest weight vector after `δ = 24`, seven degrees before it empties?
 
 The birth profile is also worth recording as data rather than a scalar: the new
-directions per degree run `11, 37, 54, 52, 43, 31, 22, 14, 9, 5, 3, 1, 1` from
+directions per degree run `2, 37, 54, 52, 43, 31, 22, 14, 9, 5, 3, 1, 1` from
 `δ = 12` to `24` — unimodal, peaking at `δ = 14`, with a long thin tail.  The
 final `1` is the least remarkable entry in it.
+
+> **Correction (integrator, batch 11).**  The first entry read `11` from the
+> time this section was written until session 69 quoted it back.  It is `2`:
+> the birth at the bottom rung is `a₁₂` itself, and `a₁₂ = 2` is banked in
+> `results/s63_aladder.json` and recomputed independently here.  The old
+> sequence also summed to 283, against `a₂₄ = 274`; the corrected one sums to
+> 274 exactly.  Only the first entry changes — the twelve increments
+> `37, 54, …, 1, 1` were always right, so nothing that used the tail (session
+> 69's concentration diagnosis, the plan's §2.3) is affected.
 
 ## 7. The LMR degree is the closing degree — for the whole family, not just LMR
 
