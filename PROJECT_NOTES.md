@@ -115,6 +115,37 @@ THREAD 2 IN TEN LINES
     the exact residual really is the small part.  Engine
     `analysis/wk12_int_certifier_compare.py`, result
     `results/wk12_int_certifier_compare.json`.
+  THE LADDER HAS A BIRTH QUOTIENT, AND THE IDEALS RESPECT IT (Astra S1, batch 12,
+    plus a proposition and a check added here).  S1 proves that restricting to
+    u = 0, u = c_(n,0,...,0), realises the ladder birth quotient exactly:
+      ker( M_d --u=0--> R/(u) ) = u M_{d-1},   so  M_d / u M_{d-1} = rho_d(M_d).
+    Since u M_{d-1} is Lemma L's transport, the quotient is the birth space, of
+    dimension b_d = a_d - a_{d-1}.  Testing a candidate for newness becomes a
+    b_d x b_d rank problem at points with u = 0 instead of elimination against a
+    source climbing to 274: worst retained matrix 55 x 62 at d = 14, and 2 x 9 at
+    d = 23 and 24.  Proof checked here line by line; u is a highest-weight vector
+    because E_ij c_alpha vanishes when alpha_j = 0.
+  WHAT FOLLOWS, AND IT IS THE USEFUL PART (integrator).  For a PRIME ideal I with
+    u not in I,  (I ^ M_d) ^ uM_{d-1} = u (I ^ M_{d-1}), because v = uw in I
+    forces w in I.  Both hypotheses hold on both sides: I(Det_4) and I(l.per_3)
+    are orbit closures hence prime, and the coefficient of s_1^n is det(A_1)
+    resp. a_1.per(B_1), generically nonzero.  Hence (1) THE IDEALS GROW ONLY BY
+    BIRTHS -- an obstruction born at rung d is nonzero mod u and can be found and
+    certified inside the birth quotient, never separated from the transported
+    source; and (2) i_X(d) - i_X(d-1) <= b_d, so at the goal cell, where b_24 = 1,
+      i_det(24) = i_det(23) + eps,  eps in {0,1},
+    and with LMR's i_det(24) >= 1 either i_det(23) >= 1, or i_det(23) = 0 and the
+    single delta=24 birth direction IS the determinant ideal vector.  On the
+    transported source the rank is pinned exactly:
+      rank T_det restricted to u M_23  =  273 - i_det(23),
+    so i_det(23) = 0 alone gives rank T_det = 273 with NO delta=24 candidate, and
+    then forces i_det(24) = 1 exactly.  CHECKED on banked data: the n = 3
+    delta = 12 determinant ideal vector (s62 via s69) has 54 of its 3,900 nonzero
+    chi-coordinates u-free, so its restriction is nonzero and it is a birth
+    direction, as the proposition requires.  Measured alongside: only 729 of the
+    17,047 chi-coordinates survive u = 0, a 23-fold COORDINATE compression on top
+    of the smaller rank matrix.  Engine `analysis/wk12_int_birth_quotient.py`,
+    result `results/wk12_int_birth_quotient.json`, review `docs/s1_batch12_review.md`.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
     and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs

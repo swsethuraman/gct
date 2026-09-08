@@ -55,7 +55,14 @@ f̃^{⊗δ}⟩` with the slots matched by `T`.
 
 **The LMR shapes.** `λ = (65, 17, 2^7)` has `λ' = (9, 9, 2^{15}, 1^{48})`; the
 `n = 3` control `(19, 7, 2^5)` has `λ' = (7, 7, 2^5, 1^{12})`; the ladder
-`λ_δ = (4δ − 31, 17, 2^7)` adds one `1`-column per degree. Every shape in this
+`λ_δ = (4δ − 31, 17, 2^7)` adds **`n` `1`-columns per degree**, not one.
+(Corrected 2026-09-08, batch-12 pre-batch, on Astra S1's report.  `λ'_δ =
+(9, 9, 2^15, 1^{4δ−48})`, so a ladder step lengthens the `1`-column run by 4 at
+`n = 4`; at the `n = 3` control `λ' = (7, 7, 2^5, 1^{3δ−21})` and a step adds 3.
+The implementation was always right — one ladder step appends the `n` singleton
+columns of a fresh letter, which is exactly multiplication by
+`u = c_{(n,0,…,0)}` — so nothing computed from it is affected; only this line
+was wrong.) Every shape in this
 session is `λ' = (h, h, 2^{n_2}, 1^{n_1})`: two *tall columns* `C_1, C_2`, `n_2`
 *two-columns*, `n_1` *one-columns*, with `2h + 2n_2 + n_1 = nδ`. The `(2^9) +
 (63,15)` of the brief is exactly this: the tall columns are the two `9×9`
