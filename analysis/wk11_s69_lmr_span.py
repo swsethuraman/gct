@@ -37,9 +37,10 @@ def _init(msyms, tab):
 
 def _eval_filling(Fj):
     F = Filling.from_json(Fj)
-    row = [dp_eval_c(F, ms, P1, _TAB) for ms in _MS]
-    if not any(row):
+    v0 = dp_eval_c(F, _MS[0], P1, _TAB)
+    if v0 == 0:
         return None
+    row = [v0] + [dp_eval_c(F, ms, P1, _TAB) for ms in _MS[1:]]
     return (Fj, row)
 
 
@@ -64,19 +65,21 @@ def main():
     st["span_method"] = "parallel pooled (wk11_s69_lmr_span.py)"; st["npts_generic"] = NPTS
     st["generic_seed_rule"] = "random.Random(69*1000+i), uniform mod P1, point i"
     basis = [Filling.from_json(F) for F in st["basis"]]
-    # rebuild the rows of the current basis at the fixed points (once)
-    log(f"resume: {len(basis)} basis fillings; evaluating them at {NPTS} fixed points to seed the rank")
-    with Pool(args.workers, initializer=_init, initargs=(msyms, tab)) as pool:
-        seed_rows = pool.map(_eval_filling, [F.to_json() for F in basis])
-    rows = [r[1] for r in seed_rows if r is not None]
-    # keep only an independent subset in order
-    keep, keeprows = [], []
-    for F, pr in zip(basis, [r for r in seed_rows]):
-        if pr is None: continue
-        if rank_mod(keeprows + [pr[1]], P1) > len(keep):
-            keep.append(F); keeprows.append(pr[1])
-    basis, rows = keep, keeprows
-    rank = rank_mod(rows, P1) if rows else 0
+    if st.get("rows") and st["rows"] and len(st["rows"][0]) == NPTS and len(st["rows"]) == len(basis):
+        rows = st["rows"]
+        rank = rank_mod(rows, P1) if rows else 0
+        log(f"resume: reusing {len(rows)} seeded rows at {NPTS} points, rank {rank}")
+    else:
+        log(f"resume: {len(basis)} basis fillings; evaluating them at {NPTS} fixed points to seed the rank")
+        with Pool(args.workers, initializer=_init, initargs=(msyms, tab)) as pool:
+            seed_rows = pool.map(_eval_filling, [F.to_json() for F in basis])
+        keep, keeprows = [], []
+        for F, pr in zip(basis, seed_rows):
+            if pr is None: continue
+            if rank_mod(keeprows + [pr[1]], P1) > len(keep):
+                keep.append(F); keeprows.append(pr[1])
+        basis, rows = keep, keeprows
+        rank = rank_mod(rows, P1) if rows else 0
     st["basis"] = [F.to_json() for F in basis]; st["rows"] = rows; st["npts"] = NPTS
     json.dump(st, open(STATE + ".tmp", "w")); os.replace(STATE + ".tmp", STATE)
     log(f"seeded rank {rank} of {A_LMR}")
