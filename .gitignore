@@ -44,3 +44,8 @@ results/logs/s62_counts_n4_d4.npz
 # stray delivery artefacts (the bundle + md5 live in the container home / are delivered, not tracked)
 s62_gram.bundle
 s62_gram.bundle.md5
+
+# session 71: pid files are for the running session's own bookkeeping (the standing
+# rule is to RECORD the pid so a run can be ended by id, not to commit it).
+# Already-tracked ones stay tracked; this stops new ones.
+results/logs/*.pid

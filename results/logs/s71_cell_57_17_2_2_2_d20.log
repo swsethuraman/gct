@@ -1,0 +1,31 @@
+      level 1: 50 prefixes
+      level 2: 689 prefixes
+      level 3: 4232 prefixes
+      level 4: 15229 prefixes
+      level 5: 39237 prefixes
+      level 6: 80066 prefixes
+      level 7: 126004 prefixes
+      level 8: 155381 prefixes
+      level 9: 166710 prefixes
+      level 10: 169150 prefixes
+      level 11: 169331 prefixes
+      level 12: 169331 prefixes
+      level 13: 169331 prefixes
+      level 14: 169331 prefixes
+      level 15: 169331 prefixes
+      level 16: 169331 prefixes
+      level 17: 169331 prefixes
+      level 18: 169331 prefixes
+      level 19: 169331 prefixes
+      level 20: 169331 prefixes
+  lam=(57, 17, 2, 2, 2): N_S=169331 |Stab|=6 n_chi=36488 (orbits dropped: 0) [lean, 1s, HWM 0.13 GB]
+    E_01: |H|=6 targets 140469 canonical rows 30363 nnz 172899 (obstructed fixed targets cancelled: 0) [2s, HWM 0.13 GB]
+    E_12: |H|=2 targets 56883 canonical rows 31438 nnz 149591 (obstructed fixed targets cancelled: 0) [3s, HWM 0.13 GB]
+    E_23: |H|=1 targets 128306 canonical rows 128306 nnz 241819 (obstructed fixed targets cancelled: 0) [4s, HWM 0.13 GB]
+    E_34: |H|=1 targets 128306 canonical rows 128306 nnz 241819 (obstructed fixed targets cancelled: 0) [5s, HWM 0.14 GB]
+  built (57, 17, 2, 2, 2) d20: N_S=169331 |Stab|=6 n_chi=36488 rows=318413 nnz=806128 (7s: mono 1s orbits 1s rows 5s; HWM 0.14 GB)
+  sieve (57, 17, 2, 2, 2) d20: cover(E) 36366/36488 by reversed (a=122, |U|=122, excess 0; {'natural': 34372, 'reversed': 36366, 'fill_asc': 32364, 'fill_desc': 30123, 'random': 29592}); cover(E_red) 29565/29655 (0.5s)
+    hybrid[57_17_2_2_2d20] p=2147483647 attempt 0: |S|=36366 |U|=122 (a=122, excess 0) m=186 projected nullity 122, verified=True, rank 122 [split 0.0s trisolve 0.1s schur 0.9s null 0.0s lift 3.5s]
+    hybrid[57_17_2_2_2d20] p=2147483629 attempt 0: |S|=36366 |U|=122 (a=122, excess 0) m=186 projected nullity 122, verified=True, rank 122 [split 0.1s trisolve 0.1s schur 0.9s null 0.0s lift 3.5s]
+  RESULT (57, 17, 2, 2, 2) d20: a=122 n_chi=36488 |U|=122 mult_det=122 mult_per4=122 mult_red(star)=122 mult_red(pts)=122 i_det=0 i_red=0 i_per4=0 D=0  (46.2s, HWM 0.48 GB)
+RESULT {"lam": [57, 17, 2, 2, 2], "delta": 20, "ell": 5, "a": 122, "K": 130, "N_S": 169331, "stab": 6, "n_chi": 36488, "nrows": 318413, "nnz": 806128, "nfixed": 0, "build_secs": 7.4, "build_hwm_gb": 0.14, "route": "hybrid", "h_pad": 300, "seeds": {"det": 11, "red": 29, "per4": 47, "hybrid": 20260908}, "bound": 40, "primes": [2147483647, 2147483629], "n_red": 29655, "cover_E": {"size": 36366, "order": "reversed", "stats": {"natural": 34372, "reversed": 36366, "fill_asc": 32364, "fill_desc": 30123, "random": 29592}, "n_chi": 36488, "a": 122, "excess": 0, "certified_rank_lb": 36366}, "cover_Ered": {"size": 29565, "order": "reversed", "stats": {"natural": 28169, "reversed": 29565, "fill_asc": 26686, "fill_desc": 25466, "random": 24618}, "n_red": 29655, "certified": false}, "sieve_secs": 0.5, "pred_mem_x_bytes": 17746608, "primes_concurrent": true, "per_prime": {"2147483647": {"sides": {"det": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + det evaluation rows"}, "per4": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + per4 evaluation rows"}, "red_pts": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + red_pts evaluation rows"}, "red_star": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + (star)"}}, "hybrid": {"nS": 36366, "nU": 122, "excess": 0, "nnzT": 71894, "rows_other": 282047, "order": "reversed", "cover_stats": {"natural": 34372, "reversed": 36366, "fill_asc": 32364, "fill_desc": 30123, "random": 29592}, "attempts": [{"attempt": 0, "m": 186, "nproj": 8, "projected_nullity": 122, "verified": true, "rank": 122, "secs": {"split": 0.0, "trisolve": 0.1, "schur": 0.9, "nullspace": 0.0, "lift_verify": 3.5}}], "secs": 4.6}, "ev_secs": 30.4, "rank_secs": 3.0, "secs": 38.1, "hwm_gb": 0.48}, "2147483629": {"sides": {"det": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + det evaluation rows"}, "per4": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + per4 evaluation rows"}, "red_pts": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + red_pts evaluation rows"}, "red_star": {"mult": 122, "nullity": 0, "instrument": "hybrid kernel + (star)"}}, "hybrid": {"nS": 36366, "nU": 122, "excess": 0, "nnzT": 71894, "rows_other": 282047, "order": "reversed", "cover_stats": {"natural": 34372, "reversed": 36366, "fill_asc": 32364, "fill_desc": 30123, "random": 29592}, "attempts": [{"attempt": 0, "m": 186, "nproj": 8, "projected_nullity": 122, "verified": true, "rank": 122, "secs": {"split": 0.1, "trisolve": 0.1, "schur": 0.9, "nullspace": 0.0, "lift_verify": 3.5}}], "secs": 4.8}, "ev_secs": 30.3, "rank_secs": 2.8, "secs": 37.9, "hwm_gb": 0.48}}, "sides": {"det": {"mult": 122, "per_prime": {"2147483647": 122, "2147483629": 122}, "primes_agree": true, "instrument": "hybrid kernel + det evaluation rows", "status": "proved (full rank at both primes: mult = a over Q)"}, "per4": {"mult": 122, "per_prime": {"2147483647": 122, "2147483629": 122}, "primes_agree": true, "instrument": "hybrid kernel + per4 evaluation rows", "status": "proved (full rank at both primes: mult = a over Q)"}, "red_star": {"mult": 122, "per_prime": {"2147483647": 122, "2147483629": 122}, "primes_agree": true, "instrument": "hybrid kernel + (star)", "status": "proved (full rank at both primes: mult = a over Q)"}, "red_pts": {"mult": 122, "per_prime": {"2147483647": 122, "2147483629": 122}, "primes_agree": true, "instrument": "hybrid kernel + red_pts evaluation rows", "status": "proved (full rank at both primes: mult = a over Q)"}}, "mult_det": 122, "mult_per4": 122, "mult_red_star": 122, "mult_red_pts": 122, "mult_red": 122, "star_eq_pts": true, "i_det": 0, "i_red": 0, "i_per4": 0, "D": 0, "refute": false, "halt": false, "ok": true, "secs": 46.2, "hwm_gb": 0.48, "certs": [["results/certs/s71/57_17_2_2_2_d20_hybrid_p2147483647.json.gz", 40108], ["results/certs/s71/57_17_2_2_2_d20_hybrid_p2147483629.json.gz", 40107]]}
