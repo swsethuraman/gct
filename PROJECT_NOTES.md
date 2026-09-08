@@ -1325,8 +1325,27 @@ sizes the route and has one implementation behind it.  What it kept from mine:
 the push as a hard blocker with a verification command; a priced successor for
 D(24) <= 0; the ell = 6 padded frontier and the finite minimality search, the
 only lines outside LMR and r = 5; and the census re-price under the new cost
-models.  One contention left open for the principal: the stable a_infty = 4
-frontier at weight 13 against the adversarial audit for the last theory slot.
+models.  The contention over the last theory slot is
+withdrawn: the a_infty = 4 frontier is FIVE blocks (measured here), an afternoon
+rather than a night, so both fit.
+
+FINAL BOARD (2026-09-08 late).  The reasoning side's reconciled proposal is
+adopted for S1-S6 as written.  For the Claude side see
+`docs/batch12_claude_board.md`: three changes to its s74-s79, each resting on a
+number that did not exist when it was written.  (1) SPLIT its s75 -- the delta=12
+control and the scale to delta=24 are different-shaped problems (operator
+correctness in a 239-dimensional recoupling space versus build-and-memoise in a
+1.7e4-dimensional one), and merging them is a gate inside a session; the split
+costs nothing because the scaling session's exact C_24 lands whether or not the
+control passed.  (2) RESTORE the Pieri-to-circuit bridge, which is on neither
+final board though it was on the earlier one -- without it the batch has two
+deterministic constructions that do not compose, and no answer to its own stated
+risk that the recursion returns vectors that cannot be paired with determinant
+points.  (3) MERGE the a_infty = 4 frontier into the length-6 session, bounded
+work first.  Conceded in full: the s69 circuit economics do not transfer to an
+arbitrary partition family without exhibiting the contraction representation and
+a pathwidth bound -- my C4/C6 wording treated a shape-class result as a general
+repricing and it is not one.
 
 ## Roadmap — thread 2, batch 11 (superseded, kept for the trail)
 
