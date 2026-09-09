@@ -24,7 +24,7 @@ ROOT = os.path.abspath(os.path.join(HERE, ".."))
 sys.path.insert(0, HERE)
 from wk8_s30_core import P1, P2                                       # noqa: E402
 
-OUT = os.path.join(ROOT, "results", "s74")
+OUT = os.environ.get("S74_OUT", os.path.join(ROOT, "results", "s74"))
 CERTS = os.path.join(ROOT, "results", "certs")
 CONV = {"coefficient": "c_alpha(F) = coefficient of s^alpha in F",
         "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}"}

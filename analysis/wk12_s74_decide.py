@@ -30,7 +30,7 @@ from flint import nmod_mat                                            # noqa: E4
 from wk8_s30_core import P1, P2                                       # noqa: E402
 from wk11_s69_circuit import rank_mod, nullspace_mod, rat_recon       # noqa: E402
 
-OUT = os.path.join(ROOT, "results", "s74")
+OUT = os.environ.get("S74_OUT", os.path.join(ROOT, "results", "s74"))
 A24, A23 = 274, 273
 
 
