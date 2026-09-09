@@ -92,13 +92,21 @@ def _val_order_B(r, c, lo, val, cnt, delta, n):
     return range(lo, delta)
 
 
+def _val_order_R(r, c, lo, val, cnt, delta, n):
+    """birth-informed (large-values-first): try the LARGEST feasible value first.  This drives
+    the newest (high-index) letters into the tall and two-columns, so they are not pure-u --
+    which is exactly the birth condition (a filling not of the form u.F').  Front-loads births
+    up the ladder, where the small-values-first order buries them under the u-tower."""
+    return range(delta - 1, lo - 1, -1)
+
+
 def ssyt_fillings(h, n, delta, n2, n1, order="A", limit=None, kset=None):
     """DETERMINISTIC stream of SSYT-fillings of lambda'=(h,h,2^{n2},1^{n1}) in the
     chosen canonical order.  Yields Filling objects.  If `kset` is given, only SSYT whose
     tall-column overlap |C1 cap C2| is in kset are produced (pruned when column 1 completes,
     before the deep two-/one-column enumeration)."""
     rows = shape_cells(h, n2, n1)
-    vo = _val_order_A if order == "A" else _val_order_B
+    vo = {"A": _val_order_A, "B": _val_order_B, "R": _val_order_R}[order]
     count = 0
     for D in _run(rows, n, delta, vo, kset):
         T = [[D[(r, c)] for c in rows[r]] for r in range(h)]
@@ -122,12 +130,36 @@ def _run(rows, n, delta, value_order, kset=None):
         order += [(0, 2 + e), (1, 2 + e)]
     for c in range(n1):
         order += [(0, 2 + n2 + c)]
-    val = {}; cnt = [0] * delta; ncells = len(order)
+    val = {}; cnt = [0] * delta
     col1_done = 2 * h - 1                                # after this index, column 1 is full
+    boundary = 2 * h + 2 * n2                            # cells 0..boundary-1 = tall + two-columns;
+    #                                                     the n1 one-columns are then FORCED.
+
+    def complete_ones():
+        """the one-columns are the sorted multiset of remaining legs (row-0 tail, weakly
+        increasing).  Deterministic -- no branching.  Returns the completed dict or None if
+        row-weak with the last two-column top fails."""
+        remaining = []
+        for l in range(delta):
+            remaining += [l] * (n - cnt[l])
+        if len(remaining) != n1:
+            return None
+        remaining.sort()
+        # last row-0 value placed (last two-column top, or C2[0] if no two-columns)
+        last = val[(0, 1 + n2)] if n2 >= 1 else val[(0, 1)]
+        if n1 and remaining[0] < last:
+            return None
+        D = dict(val)
+        for c, v in enumerate(remaining):
+            D[(0, 2 + n2 + c)] = v
+        return D
 
     def rec(t):
-        if t == ncells:
-            yield dict(val); return
+        if t == boundary:
+            D = complete_ones()
+            if D is not None:
+                yield D
+            return
         r, c = order[t]
         av = val.get((r - 1, c)) if r >= 1 else None
         lv = val.get((r, c - 1)) if c >= 1 else None
