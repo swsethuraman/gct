@@ -38,6 +38,55 @@ def exps(n, r):
     return out
 
 
+def _tails(r, n):
+    """all beta in N^{r-1} with |beta| <= n."""
+    out = []
+
+    def rec(k, left, cur):
+        if k == r - 1:
+            out.append(tuple(cur)); return
+        for v in range(left + 1):
+            rec(k + 1, left - v, cur + [v])
+    rec(0, n, [])
+    return out
+
+
+def weight_monomials_count(n, r, delta, lam):
+    """N_S = the number of weight-lambda degree-delta monomials, COUNTED and not
+    enumerated.
+
+    weight_monomials_idx below materialises every monomial, which at the LMR goal
+    cell is 1.56e11 rows and unreachable -- and the size guard that is supposed to
+    prevent an unreachable re-derivation used to run *after* it, so pointing the
+    verifier at a goal-cell certificate would try to build the array in order to
+    learn that it must not.  Session 74 reported that; this is the fix.
+
+    The count is the tail DP: the first coordinate is determined by the rest, so
+    the state is (letters used, residual on coordinates 2..r), a numpy array of
+    (delta+1) x prod(lam_i + 1 for i >= 2).  At lambda_24 = (65,17,2^7) that is
+    25 x 18 x 3^7 = 984,150 int64, about 8 MB.
+    """
+    lam = tuple(lam)
+    if any(x < 0 for x in lam) or sum(lam) != n * delta:
+        return 0
+    tail = lam[1:]
+    shape = (delta + 1,) + tuple(t + 1 for t in tail)
+    F = np.zeros(shape, dtype=object if delta * n > 62 else np.int64)
+    if F.dtype != object:
+        F = np.zeros(shape, dtype=np.int64)
+    F[(0,) * len(shape)] = 1
+    for beta in _tails(r, n):
+        if any(beta[i] > tail[i] for i in range(r - 1)):
+            continue
+        src = tuple(slice(0, tail[i] + 1 - beta[i]) for i in range(r - 1))
+        dst = tuple(slice(beta[i], tail[i] + 1) for i in range(r - 1))
+        for d in range(1, delta + 1):
+            F[(d,) + dst] += F[(d - 1,) + src]
+    v = int(F[(delta,) + tail])
+    assert v < (1 << 62), "int64 headroom exceeded in the N_S tail DP"
+    return v
+
+
 def _row_codes(M, L):
     """Injective integer key per sorted monomial row (positional base-L; int64
     when L**delta fits, else exact Python integers).  Used only for argsort /

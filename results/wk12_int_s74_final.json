@@ -1,0 +1,532 @@
+{
+ "checks": [
+  {
+   "name": "u is the last exponent index in the wk8_s30_core ordering, resolved not assumed",
+   "ok": true,
+   "index": 494
+  },
+  {
+   "name": "gen p=2147483647: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "gen p=2147483647: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "det p=2147483647: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "det p=2147483647: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "pad p=2147483647: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "pad p=2147483647: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "red p=2147483647: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "red p=2147483647: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "per4 p=2147483647: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "per4 p=2147483647: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "gen p=2147483647: rank 274, nullity 0 (s74 says 274)",
+   "ok": true,
+   "rank": 274,
+   "nullity": 0
+  },
+  {
+   "name": "det p=2147483647: rank 273, nullity 1 (s74 says 273)",
+   "ok": true,
+   "rank": 273,
+   "nullity": 1
+  },
+  {
+   "name": "pad p=2147483647: rank 269, nullity 5 (s74 says 269)",
+   "ok": true,
+   "rank": 269,
+   "nullity": 5
+  },
+  {
+   "name": "red p=2147483647: rank 269, nullity 5 (s74 says 269)",
+   "ok": true,
+   "rank": 269,
+   "nullity": 5
+  },
+  {
+   "name": "per4 p=2147483647: rank 274, nullity 0 (s74 says 274)",
+   "ok": true,
+   "rank": 274,
+   "nullity": 0
+  },
+  {
+   "name": "p=2147483647: the 274 transported births are a basis of M_24 (generic nullity 0)",
+   "ok": true
+  },
+  {
+   "name": "p=2147483647: i_per4 = 0 -- no equation of the unpadded per_4 pencils in this weight",
+   "ok": true
+  },
+  {
+   "name": "p=2147483647: U_R = U_P -- the padded and reducible kernels are the same 5-space, so mult_pad = mult_red",
+   "ok": true,
+   "dim_pad": 5,
+   "dim_red": 5,
+   "dim_join": 5
+  },
+  {
+   "name": "p=2147483647: dim(U_D cap U_P) = 0 and U_D is not inside U_P",
+   "ok": true,
+   "intersection": 0
+  },
+  {
+   "name": "p=2147483647: every padded kernel vector is supported on rungs <= 14, so the candidates are transported from the 39- and 93-dimensional cells",
+   "ok": true,
+   "top_rungs": [
+    13,
+    13,
+    13,
+    14,
+    14
+   ]
+  },
+  {
+   "name": "p=2147483647: no padded kernel vector touches the delta=24 birth row, so eps_pad = 0 and i_pad(24) = i_pad(23)",
+   "ok": true
+  },
+  {
+   "name": "p=2147483647: the LMR line y is nonzero at 282/282 pad points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483647: the LMR line y is nonzero at 282/282 red points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483647: the LMR line y is nonzero at 282/282 per4 points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483647: the LMR line y is nonzero at 282/282 gen points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483647: the whole five-column ladder agrees with s74",
+   "ok": true
+  },
+  {
+   "name": "gen p=2147483629: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "gen p=2147483629: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "det p=2147483629: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "det p=2147483629: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "pad p=2147483629: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "pad p=2147483629: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "red p=2147483629: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "red p=2147483629: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "per4 p=2147483629: my msym_u agrees with the stored u_symbol at all 282 points",
+   "ok": true,
+   "first_mismatch": null
+  },
+  {
+   "name": "per4 p=2147483629: no delivered point is a u-zero",
+   "ok": true,
+   "zeros": []
+  },
+  {
+   "name": "gen p=2147483629: rank 274, nullity 0 (s74 says 274)",
+   "ok": true,
+   "rank": 274,
+   "nullity": 0
+  },
+  {
+   "name": "det p=2147483629: rank 273, nullity 1 (s74 says 273)",
+   "ok": true,
+   "rank": 273,
+   "nullity": 1
+  },
+  {
+   "name": "pad p=2147483629: rank 269, nullity 5 (s74 says 269)",
+   "ok": true,
+   "rank": 269,
+   "nullity": 5
+  },
+  {
+   "name": "red p=2147483629: rank 269, nullity 5 (s74 says 269)",
+   "ok": true,
+   "rank": 269,
+   "nullity": 5
+  },
+  {
+   "name": "per4 p=2147483629: rank 274, nullity 0 (s74 says 274)",
+   "ok": true,
+   "rank": 274,
+   "nullity": 0
+  },
+  {
+   "name": "p=2147483629: the 274 transported births are a basis of M_24 (generic nullity 0)",
+   "ok": true
+  },
+  {
+   "name": "p=2147483629: i_per4 = 0 -- no equation of the unpadded per_4 pencils in this weight",
+   "ok": true
+  },
+  {
+   "name": "p=2147483629: U_R = U_P -- the padded and reducible kernels are the same 5-space, so mult_pad = mult_red",
+   "ok": true,
+   "dim_pad": 5,
+   "dim_red": 5,
+   "dim_join": 5
+  },
+  {
+   "name": "p=2147483629: dim(U_D cap U_P) = 0 and U_D is not inside U_P",
+   "ok": true,
+   "intersection": 0
+  },
+  {
+   "name": "p=2147483629: every padded kernel vector is supported on rungs <= 14, so the candidates are transported from the 39- and 93-dimensional cells",
+   "ok": true,
+   "top_rungs": [
+    13,
+    13,
+    13,
+    14,
+    14
+   ]
+  },
+  {
+   "name": "p=2147483629: no padded kernel vector touches the delta=24 birth row, so eps_pad = 0 and i_pad(24) = i_pad(23)",
+   "ok": true
+  },
+  {
+   "name": "p=2147483629: the LMR line y is nonzero at 282/282 pad points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483629: the LMR line y is nonzero at 282/282 red points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483629: the LMR line y is nonzero at 282/282 per4 points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483629: the LMR line y is nonzero at 282/282 gen points",
+   "ok": true,
+   "nonzero": 282
+  },
+  {
+   "name": "p=2147483629: the whole five-column ladder agrees with s74",
+   "ok": true
+  },
+  {
+   "name": "both primes give the same nullities on every column",
+   "ok": true
+  }
+ ],
+ "ladder": {
+  "2147483647": [
+   {
+    "delta": 12,
+    "a": 2,
+    "i_det": 0,
+    "i_pad": 0,
+    "i_red": 0,
+    "i_per4": 0,
+    "D": 0
+   },
+   {
+    "delta": 13,
+    "a": 39,
+    "i_det": 0,
+    "i_pad": 3,
+    "i_red": 3,
+    "i_per4": 0,
+    "D": -3
+   },
+   {
+    "delta": 14,
+    "a": 93,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 15,
+    "a": 145,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 16,
+    "a": 188,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 17,
+    "a": 219,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 18,
+    "a": 241,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 19,
+    "a": 255,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 20,
+    "a": 264,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 21,
+    "a": 269,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 22,
+    "a": 272,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 23,
+    "a": 273,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 24,
+    "a": 274,
+    "i_det": 1,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -4
+   }
+  ],
+  "2147483629": [
+   {
+    "delta": 12,
+    "a": 2,
+    "i_det": 0,
+    "i_pad": 0,
+    "i_red": 0,
+    "i_per4": 0,
+    "D": 0
+   },
+   {
+    "delta": 13,
+    "a": 39,
+    "i_det": 0,
+    "i_pad": 3,
+    "i_red": 3,
+    "i_per4": 0,
+    "D": -3
+   },
+   {
+    "delta": 14,
+    "a": 93,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 15,
+    "a": 145,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 16,
+    "a": 188,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 17,
+    "a": 219,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 18,
+    "a": 241,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 19,
+    "a": 255,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 20,
+    "a": 264,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 21,
+    "a": 269,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 22,
+    "a": 272,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 23,
+    "a": 273,
+    "i_det": 0,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -5
+   },
+   {
+    "delta": 24,
+    "a": 274,
+    "i_det": 1,
+    "i_pad": 5,
+    "i_red": 5,
+    "i_per4": 0,
+    "D": -4
+   }
+  ]
+ },
+ "status": "OK"
+}

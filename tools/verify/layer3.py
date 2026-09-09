@@ -246,16 +246,28 @@ def check_sparse_nullity_certificate(cert, log):
     # build is done only when the cell is within budget.  A recipe.N_S in the
     # certificate is provenance and is checked against the truth, never trusted.
     t0 = time.time()
-    M = chi_build.weight_monomials_idx(n, r, delta, lam)
-    N_S = M.shape[0]
+    # N_S is COUNTED first and enumerated only if the cell is within budget.
+    # weight_monomials_idx materialises every monomial, and at the LMR goal cell
+    # that is 1.56e11 rows: the guard below used to run after it, so pointing the
+    # verifier at a goal-cell certificate would try to build the array in order to
+    # learn that it must not.  Session 74 reported that.  The tail DP counts the
+    # same number in about three seconds and costs 8 MB.
+    N_S = chi_build.weight_monomials_count(n, r, delta, lam)
     if isinstance(recorded_N_S, int) and recorded_N_S != N_S:
         return _rec(log, "recorded N_S matches the true weight-space dimension", False,
                     f"recorded {recorded_N_S}, true {N_S} -- certificate misrepresents its size") and False
     if N_S > VERIFY_MAX_NS:
         _rec(log, f"__RECORDED__ true N_S = {N_S} exceeds VERIFY_MAX_NS = {VERIFY_MAX_NS}", True,
-             "schema/field/points and the true N_S validated; the nullity claim is NOT re-derived "
-             "this run (reproducible on demand at the cost of one build + Wiedemann sequence)")
+             "schema/field/points and the true N_S validated (counted, not enumerated); the nullity "
+             "claim is NOT re-derived this run (reproducible on demand at the cost of one build + "
+             "Wiedemann sequence)")
         return ok
+    # within budget: enumerate, and check the count against the enumeration
+    M = chi_build.weight_monomials_idx(n, r, delta, lam)
+    if M.shape[0] != N_S:
+        return _rec(log, "the counted N_S matches the enumerated weight space", False,
+                    f"counted {N_S}, enumerated {M.shape[0]} -- the verifier's own two routes "
+                    f"disagree, which is a fault in the verifier and not in the certificate") and False
     # rebuild E on the monomial basis just enumerated
     E, M = chi_build.raising_operator_full(n, r, delta, lam)
     _rec(log, "E and monomial basis rebuilt (full weight space, verifier-owned)", True,
