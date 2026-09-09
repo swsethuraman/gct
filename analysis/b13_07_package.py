@@ -13,7 +13,7 @@ DEST=Path('C:/Users/swami/Projects/gct-gpt/Batch13_Results/B13-07')
 OUT=ROOT/'results/b13_07'
 
 def run(args):
-    return subprocess.check_output(args,cwd=ROOT,stderr=subprocess.STDOUT).decode('utf-8').strip()
+    return subprocess.check_output(args,cwd=ROOT,stderr=subprocess.PIPE).decode('utf-8').strip()
 def sha(path,alg='sha256'):
     h=hashlib.new(alg)
     with open(path,'rb') as f:
@@ -84,7 +84,8 @@ def deliver():
     DEST.mkdir(parents=True,exist_ok=True)
     bundle=DEST/'b13_07_s79_audit.bundle'
     run(['git','bundle','create',str(bundle),BASE+'..HEAD'])
-    verify=run(['git','bundle','verify',str(bundle)])
+    verification=subprocess.run(['git','bundle','verify',str(bundle)],cwd=ROOT,capture_output=True,text=True,check=True)
+    verify=(verification.stdout+verification.stderr).strip()
     refs=run(['git','bundle','list-heads',str(bundle)])
     assert head in refs
     part=DEST/(bundle.name+'.part00'); shutil.copyfile(bundle,part)
