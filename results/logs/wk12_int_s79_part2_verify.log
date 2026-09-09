@@ -1,0 +1,20 @@
+[PASS] the degree-9 cubic scan has 210 distinct weights  {'count': 210}
+[PASS] every degree-9 cubic record reports mult = a at BOTH primes  {'offenders': []}
+[PASS] every degree-10 cubic record reports mult = a at both primes  {'offenders': []}
+[PASS] my Weyl alternation reproduces a(mu,9) at all 210 scanned weights [7s]  {'offenders': []}
+[PASS] sum of a over the degree-9 scan is 592  {'total': 592}
+[PASS] max a on the degree-9 scan is 9  {'mx': 9}
+[PASS] the scan covers EVERY length-exactly-6 partition of 27 with a >= 1 (331 candidates) [5s]  {'missing': []}
+[FAIL] GAP: 365 partitions of 27 of length <= 5 have a >= 1 (sum a = 1213) and NONE is in the scan, so I(D_6^per3)_9 = 0 is established only on the length-exactly-6 part  {'count': 365, 'sum_a': 1213, 'by_length': {1: 1, 2: 11, 3: 48, 4: 117, 5: 188}, 'largest': [((13, 8, 4, 2), 11), ((11, 8, 4, 2, 2), 11), ((13, 6, 4, 2, 2), 10), ((12, 8, 4, 2, 1), 10)]}
+[PASS] the degree-10 scan covers 296 weights (296 reported)  {'count': 296}
+[PASS] 682 six-row cells delivered (682 reported)  {'count': 682}
+[PASS] i_det = 0 at every delivered six-row cell  {'offenders': []}
+[PASS] mult_pad = mult_red at every delivered six-row cell  {'offenders': []}
+[PASS] i_per4 = 0 at every delivered six-row cell  {'offenders': []}
+[PASS] the 682 cells are distinct  {'distinct': 682}
+[PASS] 59 reducible drops (59 reported)  {'count': 59}
+[PASS] 58 of the 59 drops have at least two trailing 1s  {'histogram': {1: 1, 2: 7, 3: 51}}
+[PASS] the largest reducible bite is -25 at (13,9,9,3,1,1)_9  {'cell': ([13, 9, 9, 3, 1, 1], 9), 'bite': -25}
+[PASS] my Weyl alternation reproduces a at 18 sampled quartic cells [2s]  {'offenders': []}
+
+RESULT FAILURES (17/18)
