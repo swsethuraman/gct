@@ -1,0 +1,25 @@
+lambda_13 = (21, 17, 2, 2, 2, 2, 2, 2, 2)  |lambda| = 52  delta = 13
+horizontal-13-strip predecessors: 15
+malformed (size != 39 or more than 9 parts): []
+fixed-factor weight lam^- = (8, 17, 2, 2, 2, 2, 2, 2, 2), weight-space dim = 809,527,307
+a^(3) by Kostant alternation + tail DP in 79s
+a^(4)(lambda_13, 13) = 39  (Kostant + tail DP, 31s)
+  (21, 6, 2, 2, 2, 2, 2, 2)            parts=8  |mu|=39  a=  5  N_S=15,938,771
+  (21, 5, 2, 2, 2, 2, 2, 2, 1)         parts=9  |mu|=39  a=  1  N_S=60,408,023
+  (21, 4, 2, 2, 2, 2, 2, 2, 2)         parts=9  |mu|=39  a=  2  N_S=117,718,904
+  (20, 7, 2, 2, 2, 2, 2, 2)            parts=8  |mu|=39  a=  6  N_S=24,106,596
+  (20, 6, 2, 2, 2, 2, 2, 2, 1)         parts=9  |mu|=39  a=  2  N_S=100,317,022
+  (20, 5, 2, 2, 2, 2, 2, 2, 2)         parts=9  |mu|=39  a=  3  N_S=219,816,302
+  (19, 8, 2, 2, 2, 2, 2, 2)            parts=8  |mu|=39  a=  8  N_S=34,104,118
+  (19, 7, 2, 2, 2, 2, 2, 2, 1)         parts=9  |mu|=39  a=  3  N_S=153,401,944
+  (19, 6, 2, 2, 2, 2, 2, 2, 2)         parts=9  |mu|=39  a=  5  N_S=369,720,484
+  (18, 9, 2, 2, 2, 2, 2, 2)            parts=8  |mu|=39  a=  9  N_S=45,302,282
+  (18, 8, 2, 2, 2, 2, 2, 2, 1)         parts=9  |mu|=39  a=  4  N_S=218,042,768
+  (18, 7, 2, 2, 2, 2, 2, 2, 2)         parts=9  |mu|=39  a=  5  N_S=569,323,864
+  (17, 10, 2, 2, 2, 2, 2, 2)           parts=8  |mu|=39  a=  9  N_S=56,619,400
+  (17, 9, 2, 2, 2, 2, 2, 2, 1)         parts=9  |mu|=39  a=  4  N_S=289,180,512
+  (17, 8, 2, 2, 2, 2, 2, 2, 2)         parts=9  |mu|=39  a=  7  N_S=809,527,307
+sum over predecessors of a^(3)(mu,13) = 73   (dim of the Pieri channel space B^lambda)
+predecessors with a >= 1: 15 of 15
+lengths: {8: 5, 9: 10}
+done in 111s
