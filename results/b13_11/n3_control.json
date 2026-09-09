@@ -1,0 +1,208 @@
+{
+ "board_numbering": "batch13",
+ "session_id": "B13-11",
+ "minors": [
+  {
+   "family": "det",
+   "prime": 2147483647,
+   "rank_floor": 5,
+   "rows": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "cols": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "det_mod_p": 1039976059,
+   "status": "CERTIFIED",
+   "scope": "banked matrix arithmetic; source evaluations inherited"
+  },
+  {
+   "family": "det",
+   "prime": 2147483629,
+   "rank_floor": 5,
+   "rows": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "cols": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "det_mod_p": 898798153,
+   "status": "CERTIFIED",
+   "scope": "banked matrix arithmetic; source evaluations inherited"
+  },
+  {
+   "family": "unpadded_per3",
+   "prime": 2147483647,
+   "rank_floor": 6,
+   "rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "cols": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "det_mod_p": 1018711257,
+   "status": "CERTIFIED",
+   "scope": "banked matrix arithmetic; source evaluations inherited"
+  },
+  {
+   "family": "unpadded_per3",
+   "prime": 2147483629,
+   "rank_floor": 6,
+   "rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "cols": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "det_mod_p": 718047479,
+   "status": "CERTIFIED",
+   "scope": "banked matrix arithmetic; source evaluations inherited"
+  }
+ ],
+ "source": "results/astra/S4/artifacts/n3_control.json",
+ "unpadded_comparison": {
+  "status": "ADOPTED",
+  "mult_per3": 6,
+  "mult_det": 5,
+  "gap": 1,
+  "dependencies": [
+   "docs/s63_report.md section 3: LMR upper bound",
+   "results/certs/19_7_2_2_2_2_2_d12_n3_permanent_pencil_p2147483647.json.gz",
+   "results/certs/19_7_2_2_2_2_2_d12_n3_permanent_pencil_p2147483629.json.gz"
+  ]
+ },
+ "padded_control": {
+  "status": "PROVED",
+  "essential_variables": 5,
+  "weight_length": 7,
+  "a": 6,
+  "mult_pad": 0,
+  "i_pad": 6,
+  "D": -5,
+  "argument": "Pullbacks and their closures lie in Sub_5. Its coordinate ring contains no Schur constituent of length >5. Therefore a seven-row weight has zero padded multiplicity.",
+  "derivative_monomials": [
+   [
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "values_are": "integer coefficients of first partial derivatives of z*(a*d+b*c)",
+  "derivative_matrix": [
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  ]
+ },
+ "source_defect": "s63_n3control.json reverses the modular rank inequality in its note; the correct upper bound comes from LMR, as stated in docs/s63_report.md"
+}
