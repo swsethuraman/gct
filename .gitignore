@@ -49,3 +49,12 @@ s62_gram.bundle.md5
 # rule is to RECORD the pid so a run can be ended by id, not to commit it).
 # Already-tracked ones stay tracked; this stops new ones.
 results/logs/*.pid
+
+# session 76: the recursion's per-level kernel bases (results/s76_dag/level_DD_pP.npz,
+# 128 MB per prime, over the 5 MB commit limit; regenerate in 32 minutes with
+# analysis/wk12_s76_recursion.py --top 24 --prime P --check-amb 8), its dims json
+# (md5-identical copies are tracked as results/s76_dag_dims_pP.json), and the
+# delivered bundle + md5, which live in the container home and are not tracked.
+results/s76_dag/
+s76_scale24.bundle
+s76_scale24.bundle.md5
