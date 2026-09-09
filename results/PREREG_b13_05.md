@@ -223,3 +223,40 @@ host); this replacement is recorded here as a change of instrument, not of
 question.
 
 board_numbering: batch13
+
+## Addendum B (2026-09-09 15:50 UTC / 11:50 ET) — committed before the computations it governs
+
+**Banked so far:** the bound is silent at degrees 8 and 9 too (sum rule exact
+at both; no `b < a` anywhere; minimum margins 322 / 29 at `ℓ = 7 / 8`, `δ = 8`
+and 691 / 62 / 4 at `ℓ = 7 / 8 / 9`, `δ = 9`) — outcome N1.  I5 settled all 19
+top cells (`i = 0`, exact integer determinants).  Jacobian witnesses
+`rank dΦ_r = 9r − 4` at `r = 7, 8, 9`, both primes.  The I4 inheritance cell
+reproduces the record.
+
+**B1 — instrument I6: the `ℓ = δ − 1` cells through the Pieri image of a top
+cell.**  For `ℓ(μ) = n`, `δ = n + 1`: every top cell `μ' = λ' + (1ⁿ)` of degree
+`n` with `μ/μ'` a horizontal 3-strip gives, by Pieri, a unique (up to scale)
+highest-weight vector `v_μ ∈ S_{μ'} ⊗ Sym³V`, `v_μ = Σ_γ v_γ ⊗ e^γ`,
+`v_γ ∈ S_{λ'}[μ − 1ⁿ − γ] ⊗ det`, computed exactly over `Q` in the wedge model
+`S_{λ'} ⊂ Λⁿ(Sym²V)` (bases of the weight spaces by simple lowering operators
+from `ω_ν`, checked against Kostka numbers `K_{λ',w}`; the Pieri kernel must be
+1-dimensional).  Its image under multiplication,
+`h(c) = Σ_γ Σ_R x_{R,γ} · det[⟨c, m e_k⟩]_{m∈R, k} · ⟨c, e^γ⟩`, is a weight-`μ`
+highest-weight vector of `Sym^{n+1}(Sym³V)` (equivariance), nonzero iff it is
+nonzero at one random cubic (checked).  For `a(μ,δ) = 1` it is *the*
+highest-weight vector; for `a = 2` (one cell, `(8,6,5,3,2,1,1,1)₉`) two
+independent images are needed and the evaluation rank at random cubics says
+whether they span.  Decision at a cell: the `a × (a+8)` matrix of exact
+rational values at `per₃` pencils (seed 11, box ±40) has rank `a` ⟹ `i = 0`
+**CERTIFIED** (exact arithmetic; the only randomness is the choice of pencil,
+and one full-rank instance is a proof); rank `< a` ⟹ candidate, verification
+protocol.  If no top cell gives a nonzero image at some `μ`, that is reported
+as an unresolved cell (it would contradict the Landsberg–Weyman generation of
+`I(Sub_{n−1})` by the `n×n` minors, which is **not** assumed anywhere here).
+Objects: the 42 cells of `(δ=8, ℓ=7)` and the 62 of `(δ=9, ℓ=8)`.  Bounded:
+`timeout 3600`, `ulimit -v 5000000`, pid file.  This is validation of the
+structural claim "the `ℓ = δ−1` cells are decided by `(δ−1)×(δ−1)` minors
+times one coefficient", not a census by the house instrument; the cells it
+certifies are reported cell by cell so B13-09 need not recompute them.
+
+board_numbering: batch13
