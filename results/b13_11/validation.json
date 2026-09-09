@@ -1,0 +1,108 @@
+{
+ "board_numbering": "batch13",
+ "checks": [
+  {
+   "name": "legacy snapshot contains 326 cells",
+   "ok": true
+  },
+  {
+   "name": "all legacy exclusions retained without changing dimensions/ranks",
+   "ok": true
+  },
+  {
+   "name": "full-rank compatibility view has 1521 cells",
+   "ok": true
+  },
+  {
+   "name": "two explicitly omitted s60 cells included",
+   "ok": true
+  },
+  {
+   "name": "LMR excluded from full-rank-only API",
+   "ok": true
+  },
+  {
+   "name": "all compatibility rows are full rank",
+   "ok": true
+  },
+  {
+   "name": "no ambient dimension conflicts",
+   "ok": true
+  },
+  {
+   "name": "polynomial degree is part of cell identity",
+   "ok": true
+  },
+  {
+   "name": "invalid partition fails loudly",
+   "ok": true
+  },
+  {
+   "name": "incorrect cell size fails loudly",
+   "ok": true
+  },
+  {
+   "name": "sampled deficiency never becomes membership",
+   "ok": true
+  },
+  {
+   "name": "conflicting dimensions recorded and cannot close",
+   "ok": true
+  },
+  {
+   "name": "zero-padded and short tails join while preserving caller key",
+   "ok": true
+  },
+  {
+   "name": "deficient row does not close stable tail",
+   "ok": true
+  },
+  {
+   "name": "unequal ambient and stable dimensions do not close tail",
+   "ok": true
+  },
+  {
+   "name": "LMR rank and interval preserved",
+   "ok": true
+  },
+  {
+   "name": "n3 padded weight vanishes without conflating unpadded control",
+   "ok": true
+  },
+  {
+   "name": "length4 containment stops before length5",
+   "ok": true
+  },
+  {
+   "name": "exact census complete",
+   "ok": true
+  },
+  {
+   "name": "census dimensions match the frozen independent historical census",
+   "ok": true
+  },
+  {
+   "name": "rank openness remains distinct from containment exclusion",
+   "ok": true
+  },
+  {
+   "name": "cubic remainder matches board cutoff",
+   "ok": true
+  },
+  {
+   "name": "inventory cell keys unique and complete",
+   "ok": true
+  },
+  {
+   "name": "stable_replay.json complete and passing",
+   "ok": true
+  },
+  {
+   "name": "controls.json complete and passing",
+   "ok": true
+  }
+ ],
+ "passed": 25,
+ "session_id": "B13-11",
+ "total": 25
+}

@@ -1,0 +1,44 @@
+{
+ "board_numbering": "batch13",
+ "rules": [
+  {
+   "formula": "P subset D implies mult_pad<=mult_det",
+   "rule": "coordinate_ring_surjection",
+   "source": "docs/brief_wording.md section 7",
+   "status": "PROVED"
+  },
+  {
+   "formula": "rank_p<=rank_Q<=a; full rank implies i=0",
+   "rule": "full_rank_floor",
+   "status": "PROVED"
+  },
+  {
+   "formula": "sampled rank k gives i<=a-k, never i>=a-k",
+   "rule": "deficient_sample",
+   "status": "PROVED"
+  },
+  {
+   "rule": "Lemma_L_and_Prop_S",
+   "source": "docs/s57_report.md sections 2 and 3",
+   "status": "ADOPTED"
+  },
+  {
+   "rule": "length_le_4_padded_containment",
+   "source": "docs/n4_gate.md section 1",
+   "status": "ADOPTED"
+  },
+  {
+   "rule": "length_le_5_cubic_per3_dominance",
+   "source": "docs/washout_lemma.md Theorems 2 and 3(1)",
+   "status": "ADOPTED"
+  },
+  {
+   "conclusion": "padded/reducible equality in that degree; does not exclude D>0 alone",
+   "dependency": "210 six-row full-rank claims plus inherited 365 shorter constituents",
+   "rule": "degree9_cubic_complete",
+   "source": "docs/batch13_corrections.md section 2",
+   "status": "ADOPTED"
+  }
+ ],
+ "session_id": "B13-11"
+}
