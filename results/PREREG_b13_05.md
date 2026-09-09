@@ -164,3 +164,62 @@ before the measurements they govern.
 Author of record for the session: B13-05 (Claude Fable 5.1).  Programme author:
 Swami Sethuraman, swsethuraman@beneficus.ai, Beneficus AI.
 board_numbering: batch13
+
+---
+
+## Addendum A (2026-09-09 15:35 UTC / 11:35 ET) — committed before the computations it governs
+
+**What is already known at this point (banked in `305ae5a`):** the census
+through degree 9 (two `a`-routes agree at all 1444 rows) and the
+orbit-stabiliser bound through degree 7: checks I3.1, I3.2, I3.4 pass, and
+the bound is **silent** at every cell with `a ≥ 1` (minimum margin `b − a = 117`
+at `(9,2⁶)₇`).  Degrees 8 and 9 of the bound will be run for the record; the
+expectation is N1.
+
+**A1 — a new structural instrument, I5: the top cells are catalecticant minors.**
+For `ℓ(μ) = δ` write `λ = μ − (1^δ)`.  Claim to be proved in the report: the
+`GL(V)`-map `ψ : Λ^δ(Sym²V) ⊗ Λ^δV → Sym^δ(Sym³V)`,
+`(q₁∧…∧q_δ) ⊗ (v₁∧…∧v_δ) ↦ Σ_σ sgn(σ) Π_i (q_i · v_{σ(i)})`, sends the
+highest-weight vector `m₁∧…∧m_δ` (the quadratic monomials of the shifted diagram
+of the strict partition `λ`) ⊗ `e₁∧…∧e_δ` to the weight-`μ` highest-weight vector
+
+    h_μ(c) = det [ ⟨c, m_i e_j⟩ ]_{i,j=1..δ}  =  a δ×δ maximal minor of the catalecticant Cat_{1,2}(c): V → Sym²V*,
+
+and, since `a(μ,δ) = 1` at every top cell in range (census), `h_μ` spans the
+weight-`μ` highest-weight space whenever it is a nonzero polynomial.  Then
+`i(μ,δ) = 0` **iff** `h_μ(c) ≠ 0` at one point `c = per₃(Σ sᵢAᵢ)` — a single
+`δ×δ` determinant of third derivatives (polarised permanents), no `N_S`-sized
+linear algebra.  Validation of I5 before use: (a) at `δ = 3, 4, 5` express `h_μ`
+in the house monomial basis and check exactly that it is killed by the house
+raising operators (`wk8_s30_core.build_R`) and is nonzero; (b) at every top
+cell `δ ≤ 9` check the weight and nonvanishing at a random rational cubic;
+(c) at `δ ≤ 6` the value at a `per₃` pencil must be nonzero (the record has
+`I = 0` there).  Then evaluate at the 19 top cells of `δ = 7, 8, 9`
+(`5 + 6 + 8`), both house primes, `a + 8 = 9` pencils each (seed 11, box ±40,
+the house family), and report: a nonzero determinant at one pencil at one prime
+is a **CERTIFIED** `i = 0`; a zero at all pencils at both primes is a
+**candidate** `i = 1` and goes to the verification protocol, not to the report
+as a result.  The `ℓ = 9`, `δ = 9` top cells are outside the assignment and are
+reported as exploratory.
+
+**A2 — I3.3 cap.**  The brute-force check is run at `δ = 2` for every `μ ⊢ 6`
+and at `δ = 3` for every `μ ⊢ 9` whose monomial space (9×9 contingency tables
+with row sums `μ` and magic column sums) has at most `2·10⁵` elements; the
+weights above the cap are named in the report as unchecked by I3.3.  Method:
+`F`-orbit sums first, then the left raising operators on the orbit-sum basis,
+exact rank over `Q` (flint `fmpq_mat`) and at both primes.
+
+**A3 — dimension witnesses.**  Jacobian rank of `Φ_r : M₃ʳ → Sym³Cʳ` at one
+random integer point (box ±10⁶, seed 20260909), both primes, for `r = 7, 8, 9`;
+a rank equal to `9r − 4` proves `dim D_r^{per₃} = 9r − 4` (Lemma 1 + Prop. 5 of
+`docs/washout_lemma.md`, the sandwich), extending Corollary 7's table.
+
+**A4 — the I4 cells, named.**  (ℓ=6, δ=7) at `r = 7`: `(11,2,2,2,2,2,0)`,
+`N_S = 4603`, the cheapest length-6 weight of degree 7 (s41 line 1), run with
+`wk8_s30_core.measure(per₃, 9, 3, 7, 7, ·)`; expected `a = 1`, `mult = 1` at
+both primes.  The (ℓ=7, δ=7) and (ℓ=8, δ=8) I4 cells are **replaced by I5**
+(their `N_S` are 48 122+ and 1 259 739+, above the dense route's reach on this
+host); this replacement is recorded here as a change of instrument, not of
+question.
+
+board_numbering: batch13
