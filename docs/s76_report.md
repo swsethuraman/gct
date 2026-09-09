@@ -411,8 +411,7 @@ the adjacent block swaps); (b) by unfolding the recursion's coordinates —
 each tableau of the `ξ`-part — recursively to `δ = 0`, the recursion re-run
 from scratch for the cells checked.  At every cell of the `λ₁₂` sub-DAG with
 `δ ≤ 4` and `dim S^ν ≤ 3 000` (`results/s76_objectcheck_p2147483647.json`,
-OBJCHECK_N cells, `dim S^ν` up to OBJCHECK_MAXDIM, including the `a = 2` cell
-`(12,4)`) the two subspaces are **equal**, and the unfolded basis in reduced
+18 cells, `dim S^ν` up to 2 673, including the `a = 2` cell `(12,4)`) the two subspaces are **equal**, and the unfolded basis in reduced
 row echelon form agrees with the direct one **entry by entry**.  That
 certifies the coefficients of the stored `E_d(ν)` — the strip invariants,
 the recoupling matrices, the column layout, the whole convention — at those
