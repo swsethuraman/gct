@@ -6,3 +6,6 @@
 [2026-09-09T05:02:03Z] end rest_P1 (exit 0)
 [2026-09-09T05:02:03Z] start decide3: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families gen,det,pad,red,per4
 [2026-09-09T05:02:04Z] end decide3 (exit 0)
+[2026-09-09T05:02:05Z] committed: s74: generic, reducible and per_4 columns at P1 banked.
+[2026-09-09T05:02:05Z] start verify_det_P1: python3 analysis/wk12_s74_verify.py --families det --prime 2147483647 --K 294 --workers 2
+[2026-09-09T05:40:10Z] end verify_det_P1 (exit 0)
