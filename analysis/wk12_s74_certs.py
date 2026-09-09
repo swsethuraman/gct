@@ -65,7 +65,7 @@ def write(p):
                                  "F_57 results/wk12_int_lmr_birth24.json",
                        "row_system": src["row_system"],
                        "rank_mod_p": c["rank_24"], "rows": c["rows"],
-                       "instrument": "bracket-circuit evaluation (wk11_s69_dp.c), python-flint rank; "
+                       "instrument": "bracket-circuit evaluation (wk12_s74_dpc.c, the s69 DP with compact state, validated against wk11_s69_dp.c), python-flint rank; "
                                      "NOT [E; ev] on the weight space -- N_S is out of range"},
             "provenance": {"instrument": "circuit source by births", "produced_in": "session 74",
                            "cross_checked_prime": (P2 if p == P1 else P1),
