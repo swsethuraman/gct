@@ -66,31 +66,43 @@ cubic-screen-first ordering rule in this batch.
 Clone `https://github.com/swsethuraman/gct.git`.  Record `git rev-parse main` in
 your pre-registration.
 
-**Check that your clone contains `docs/batch13_plan.md`,
-`docs/stocktake_batch12.md` and this file.  If it does not, stop and say so** —
-you have an older tree and your bundle will not apply.
+**Check that your clone contains `docs/batch13_board.md`,
+`docs/batch13_corrections.md`, `docs/stocktake_batch12.md` and this file.  If any
+is missing, stop and say so** — you have a tree from before the batch-13 freeze,
+and your bundle will not apply.  (`docs/batch13_plan.md` is a superseded draft
+and its presence proves nothing.)
 
 ## What to read, in tiers
 
     tier 1, required
       docs/batch13_worker_preamble.md      this file
+      docs/batch13_board.md                the CONTROLLING document -- find your
+                                           B13-xx entry and read the objectives
+      docs/batch13_corrections.md          what the first draft got wrong
       docs/stocktake_batch12.md            the batch in one document
       docs/brief_wording.md                binding on your report
-      your own brief
 
-    tier 2, on demand, named by your brief
-      docs/batch13_plan.md                 the board and the protocols
+    tier 2, on demand, named by your B13-xx entry
       docs/transfer_lemma.md               Prop. 8 -- read it if you touch the cubic side
+      docs/washout_lemma.md                Thm 2 and Thm 3(1) -- the length <= 5 exclusion
       docs/s74_final_review.md             the goal cell's verified state
-      docs/rung13_reducible.md             the rung-13 measurement
-      docs/s79_part2_review.md             what the degree-9 scan does and does not cover
+      docs/rung13_reducible.md             the degree-13 measurement
+      docs/s79_review.md                   Part 1, verified 60/60
+      docs/s79_part2_review.md             what the degree-9 scan covers
+      results/logs/wk12_int_pred13_audit.log   the fifteen predecessors, audited
+      docs/batch11_plan.md                 C3, the rank S screen
       docs/lmr_cell.md, docs/compact_circuit.md, docs/sparse_det_route.md
 
     tier 3, reference only
-      PROJECT_NOTES.md, the batch stock-takes, the per-session reviews
+      PROJECT_NOTES.md, the batch stock-takes, the per-session reviews.
+      docs/batch13_plan.md is a SUPERSEDED draft: do not run from it.
 
-If you reconstruct context from tier 3 to answer a question your brief should
-have answered, **say so in your report** — that is a defect in the brief.
+There are no per-session brief files this batch.  Your assignment is your
+`B13-xx` entry in `docs/batch13_board.md`; the twelve `*_prompt.md` files of the
+first draft are withdrawn.
+
+If you reconstruct context from tier 3 to answer a question your assignment
+should have answered, **say so in your report** — that is a defect in the board.
 
 ## Delivery — read this twice, batch 12 lost a part
 
@@ -186,7 +198,7 @@ check that skipped the targets it could not place and reported PASS on nothing.
 **MEASURED** / **ADOPTED** / **RECORDED**, say what you did not do, and give the
 cost of what you did not reach so the next batch can price it.  A negative
 characterised over a stated, priced region is a deliverable; an unstated gap is
-not.  Report defects in your brief — the integrator wants them.
+not.  Report defects in your `B13-xx` entry — the integrator wants them.
 
 Author: Swami Sethuraman, swsethuraman@beneficus.ai, Beneficus AI.
 board_numbering: batch13
