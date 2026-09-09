@@ -2,6 +2,16 @@
 
 ## STATUS AT A GLANCE — THREAD 2, THE SEPARATION PROGRAMME (2026-09-09)
 
+BATCH 12 IS CLOSED.  Stock-take: docs/stocktake_batch12.md.  Next batch:
+docs/batch13_plan.md, twelve sessions on ONE question -- is I(D_r^{per_3})_delta
+ever nonzero in reach?  By transfer-lemma Prop. 8 that is the necessary and
+sufficient condition for the padded permanent to differ from the reducible locus
+at any weight of that length and degree, so it is asked once per (r, delta)
+rather than once per weight, and it needs no padded point.  Session 79's
+degree-9 answer at r = 6 covers the length-exactly-6 weights only: 365 weights of
+length <= 5 with a >= 1 (sum a = 1213) were not scanned, and closing that is
+batch 13's first measurement.
+
 **Read this first.  The block below it is thread 1 and has not been the active
 work since session 23.**
 
