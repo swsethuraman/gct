@@ -48,7 +48,8 @@ def main(argv):
             status['not_reached'].append(dict(rank=rank, mu=c['mu'], a=c['a'], N_S=c['N_S'], reason='wall clock')); continue
         if c['N_S'] > max_ns:
             status['not_reached'].append(dict(rank=rank, mu=c['mu'], a=c['a'], N_S=c['N_S'], reason='above the N_S cap')); continue
-        cmd = ['python3', os.path.join(HERE, 'wk12_s79_per6.py'), str(delta)] + [str(x) for x in c['mu']] + ['--out', out, '--certs', certs]
+        cmd = ['python3', os.path.join(HERE, 'wk12_s79_per6.py'), str(delta)] + [str(x) for x in c['mu']] + ['--out', out, '--a', str(c['a'])] + \
+              ([] if '--no-certs' in argv else ['--certs', certs])
         t0 = time.time()
         with open(log_path, 'a') as lf:
             lf.write(f"\n=== rank {rank} {key} N_S {c['N_S']} a {c['a']} {datetime.datetime.utcnow().isoformat()}\n"); lf.flush()
