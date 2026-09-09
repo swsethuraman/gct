@@ -159,23 +159,30 @@ their `s₁⁴` coefficient vanishes (recorded); no other family skipped a point
 
 | column | `P1` rank / nullity | `P2` rank / nullity | on the δ=23 rows (273) | status |
 |---|---|---|---|---|
-| generic (assembly check) | 274 / 0 | __GEN_P2__ | 273 / 0 | CERTIFIED: the 274 transported births are a basis of `M₂₄` |
+| generic (assembly check) | 274 / 0 | 274 / 0 | 273 / 0 | CERTIFIED: the 274 transported births are a basis of `M₂₄` |
 | `det₄` pencils | 273 / 1 | 273 / 1 | 273 / 0 | CERTIFIED floor 273 (minor); = 273 with LMR; `i_det(23) = 0`, `i_det(24) = 1` |
 | true padded `ℓ·per₃` | 269 / 5 | 269 / 5 | 268 / 5 | CERTIFIED floor 269 (minor); 269 MEASURED at two primes and at fresh box-1000 points |
-| reducible `ℓ·c` | __RED_P1__ | __RED_P2__ | __RED_23__ | __RED_STATUS__ |
-| unpadded `per₄` | __PER4_P1__ | __PER4_P2__ | __PER4_23__ | __PER4_STATUS__ |
+| reducible `ℓ·c` | 269 / 5 | 269 / 5 | 268 / 5 | floor 269 (a mod-`p` rank is a floor over `Q`); 269 MEASURED at two primes; `U_R = U_P` at both primes (the five padded relations are reducible-locus relations) |
+| unpadded `per₄` | 274 / 0 | 274 / 0 | 273 / 0 | CERTIFIED `i_per4 = 0`: no equation of the unpadded `per₄` 9-pencil variety in this weight |
 
 Kernels (mod `p`, on the literal rows): `U_D` one-dimensional at both primes,
 with nonzero coefficient on `F_{T₅₇}` as `ε_det = 1` forces; `U_P`
 five-dimensional at both primes; `dim(U_D ∩ U_P) = 0`, `U_D ⊄ U_P`, `U_P ⊄ U_D`
 (`results/s74/decision_<p>.json`, `results/certs/s74_kernel_*.json`).
-__RED_KERNEL__
+`U_R ⊆ U_P` with `dim U_R = dim U_P = 5`, so `U_R = U_P` at both primes:
+`mult_pad = mult_red = 269` — the padded permanent inherits no equation in
+this weight beyond those of the reducible locus `ℓ·c` (the `r ≤ 5` identity
+`mult_pad = mult_red` of s64 recurs at `r = 9`, mod both primes).  `U_R ⊄ U_D`.
+The five padded/reducible kernel vectors (echelon form) are supported exactly
+on the rows of rungs `≤ 13` (three of them) and `≤ 14` (two), at both primes:
+they are `u¹¹·(M₁₃ ∩ I)` and `u¹⁰·(M₁₄ ∩ I)`, so an exact membership proof for
+the candidates lives at the 39- and 93-dimensional cells, not at 274.
 
 **Fresh points, literal path.**  `analysis/wk12_s74_verify.py` re-evaluates the
 *literal* climbed fillings directly (no native value, no transport scalar) at
 `K = 294` fresh points with entries in `[−1000, 1000]` (seeds `+100000`):
 padded rank `269/274`, `268/273` on the δ=23 rows at `P1` — AGREE;
-__VERIFY_DET__ __VERIFY_PAD_P2__
+determinant rank `273/274`, `273/273` on the δ=23 rows at `P1` — AGREE; padded rank `269/274`, `268/273` on the δ=23 rows at `P2` — AGREE (`results/s74/verify_<p>.json`).
 
 **The D-ladder** (`results/s74/ladder_ranks.json`, both primes identical).
 Restricting the banked columns to the rows of rung `≤ d` reads `mult_X(d)`
@@ -186,11 +193,16 @@ variety with `u ∉ I_X`):
     a         2  39  93 145 188 219 241 255 264 269 272 273 274
     i_det     0   0   0   0   0   0   0   0   0   0   0   0   1
     i_pad     0   3   5   5   5   5   5   5   5   5   5   5   5
-    D         0  −3  −5  −5  −5  −5  −5  −5  −5  −5  −5  −5  −4     (MEASURED, mod P1 and P2)
+    i_red     0   3   5   5   5   5   5   5   5   5   5   5   5
+    i_per4    0   0   0   0   0   0   0   0   0   0   0   0   0
+    D         0  −3  −5  −5  −5  −5  −5  −5  −5  −5  −5  −5  −4     (MEASURED, mod P1 and P2;
+                                                                     every sub-source has generic nullity 0)
 
-The LMR equation is born exactly at `δ = 24`; the padded ideal enters the
-ladder at `δ = 13` (three directions in a 39-dimensional space) and `δ = 14`
-(two more) and is pure transport from there on — consistent with the
+The LMR equation is born exactly at `δ = 24`; the padded ideal — which
+coincides with the reducible ideal at every rung — enters the ladder at
+`δ = 13` (three directions in a 39-dimensional space) and `δ = 14` (two more)
+and is pure transport from there on; the unpadded `per₄` pencils have no
+equation anywhere on the ladder — consistent with the
 inequality `i_X(d) − i_X(d−1) ≤ b_d` for prime ideals not containing `u`.
 `i_pad(23) = 5`, `ε_pad = 0`: `F_{T₅₇}`'s padded evaluation escapes the old
 padded image (rank 268 → 269).
@@ -230,7 +242,8 @@ Per the integrator's instruction (03:05 UTC) and note 3 §8's asymmetry:
   certifies `y(f) ≠ 0` over `Q`.  The residues are nonzero at **282/282 true
   padded points at both primes**: `y ∈ I(Det) ∖ I(Pad)`.  Exact determinant
   membership of `y` comes from LMR's theorem and the floor, not from
-  evaluation; no rational reconstruction is involved.  __LMR_RED_PER4__
+  evaluation; no rational reconstruction is involved.  The same residues are nonzero at 282/282 reducible, 282/282 unpadded-`per₄`
+and 282/282 generic points at both primes: `y ∉ I(Red)`, `y ∉ I(Per₄)`.
 - **Why the kernel line is not reconstructed over `Q`.**  Its coordinates on
   the random-filling basis are ratios of `273×273` minors of a matrix whose
   entries are integers near `10^170` (degree-24 evaluations at integer
@@ -270,7 +283,9 @@ cores.  Validated entry for entry against `dp_eval_c` on 50 random (filling,
 point) pairs across rungs 12–24 at both primes, `u = 0` points included
 (`wk12_s74_dp.py validate`); the verifier keeps the original evaluator behind
 `S74_VERIFY_S69_DP=1`, and `--spot` checks the s69 DP against the
-mixed-discriminant evaluator __SPOT__.  A full `274 × 282` column costs
+mixed-discriminant evaluator (Identity 3, `wk11_s69_eval.c`) on literal δ=24 fillings at fresh determinant
+points: 8/8 agreements at both primes, `0.05–0.16 s` against `47 s` per
+evaluation (`results/s74/spot_evaluators.json`).  A full `274 × 282` column costs
 20–45 min instead of hours; the whole session's evaluation budget was about
 9 CPU-hours.
 
@@ -289,8 +304,14 @@ weight space and rebuilding `[E; ev]`, which at `N_S = 156 438 903 314` is not
 reachable (and its enumeration runs before the `VERIFY_MAX_NS` guard, so the
 integrator should not point it at these files without a size guard).  The
 independent re-derivation is `analysis/wk12_s74_verify.py`: fresh points,
-literal fillings, a recount of `N_S` __NS__.  The verifier's `forms.py` was
-used to confirm every point record.  __RED_PER4_CERTS__
+literal fillings, a recount of `N_S` by an exact multiset DP (`results/s74/ns_count.json`):
+`N_S(λ₂₃) = 156 419 279 221` and `N_S(λ₂₄) = 156 438 903 314`, both equal to
+`lmr_cell.md` §6 — an independent confirmation of the sizes the certificates
+carry.  The verifier's `forms.py` was
+used to confirm every point record.  Eight certificates in all: the four varieties at both primes (`reducible`
+269 / nullity 5 with its kernel companion, `permanent_pencil` 274 / nullity 0 —
+the latter a sound `i_per4 = 0` over `Q` in the format's own semantics, if the
+verifier could reach the cell).
 
 ## 9. Honest boundary
 
