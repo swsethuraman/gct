@@ -1,0 +1,40 @@
+--- p = 2147483647
+  d    a | rk_det i_det | rk_pad i_pad |   D  | s74
+ 12    2 |      2     0 |      2     0 |   +0 | agrees
+ 13   39 |     39     0 |     36     3 |   -3 | agrees
+ 14   93 |     93     0 |     88     5 |   -5 | agrees
+ 15  145 |    145     0 |    140     5 |   -5 | agrees
+ 16  188 |    188     0 |    183     5 |   -5 | agrees
+ 17  219 |    219     0 |    214     5 |   -5 | agrees
+ 18  241 |    241     0 |    236     5 |   -5 | agrees
+ 19  255 |    255     0 |    250     5 |   -5 | agrees
+ 20  264 |    264     0 |    259     5 |   -5 | agrees
+ 21  269 |    269     0 |    264     5 |   -5 | agrees
+ 22  272 |    272     0 |    267     5 |   -5 | agrees
+ 23  273 |    273     0 |    268     5 |   -5 | agrees
+ 24  274 |    273     1 |    269     5 |   -4 | agrees
+  rung 13 padded kernel: dim 3, zero-extends into the rung-24 kernel: True
+  rung 14 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+  rung 15 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+  rung 23 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+--- p = 2147483629
+  d    a | rk_det i_det | rk_pad i_pad |   D  | s74
+ 12    2 |      2     0 |      2     0 |   +0 | agrees
+ 13   39 |     39     0 |     36     3 |   -3 | agrees
+ 14   93 |     93     0 |     88     5 |   -5 | agrees
+ 15  145 |    145     0 |    140     5 |   -5 | agrees
+ 16  188 |    188     0 |    183     5 |   -5 | agrees
+ 17  219 |    219     0 |    214     5 |   -5 | agrees
+ 18  241 |    241     0 |    236     5 |   -5 | agrees
+ 19  255 |    255     0 |    250     5 |   -5 | agrees
+ 20  264 |    264     0 |    259     5 |   -5 | agrees
+ 21  269 |    269     0 |    264     5 |   -5 | agrees
+ 22  272 |    272     0 |    267     5 |   -5 | agrees
+ 23  273 |    273     0 |    268     5 |   -5 | agrees
+ 24  274 |    273     1 |    269     5 |   -4 | agrees
+  rung 13 padded kernel: dim 3, zero-extends into the rung-24 kernel: True
+  rung 14 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+  rung 15 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+  rung 23 padded kernel: dim 5, zero-extends into the rung-24 kernel: True
+
+RESULT the whole ladder agrees with s74 at both primes: True
