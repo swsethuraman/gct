@@ -61,7 +61,6 @@ unbounded degree extension.
 
 **Success** an exact completed range or the first verified candidate deficiency.
 **Fallback** a complete costed census and a certified prefix.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled

@@ -104,12 +104,20 @@ first draft are withdrawn.
 If you reconstruct context from tier 3 to answer a question your assignment
 should have answered, **say so in your report** — that is a defect in the board.
 
+## Filenames — `NN` is your board number
+
+Every path in this file spells your session's number as `NN`, the two digits of
+your `B13-NN` label: B13-01 writes `results/PREREG_b13_01.md`,
+`docs/b13_01_report.md` and `b13_01_<name>.bundle`.  Twelve sessions write into
+one repository; a shared filename is a merge conflict for the integrator and a
+lost result for you.
+
 ## Delivery — read this twice, batch 12 lost a part
 
 You do not push.  Work on a branch named for your session and deliver a git
 bundle made against your recorded base:
 
-    git bundle create s8N_<name>.bundle <base>..HEAD
+    git bundle create b13_NN_<name>.bundle <base>..HEAD
 
 with an accompanying `.md5`.  Then:
 
@@ -128,7 +136,7 @@ attempt to work around it by any means.**
 
 ## Discipline
 
-- **Pre-registration first.**  `results/PREREG_s8N.md`: question, instrument,
+- **Pre-registration first.**  `results/PREREG_b13_NN.md`: question, instrument,
   cells or objects, stopping rules, and what counts as a negative.  Commit it,
   then compute.  Anything not pre-registered is reported as exploratory.  Dated
   addenda are fine and are committed before the measurements they govern.
@@ -194,7 +202,7 @@ check that skipped the targets it could not place and reported PASS on nothing.
 
 ## Your report
 
-`docs/s8N_report.md`.  Label every statement **PROVED** / **CERTIFIED** /
+`docs/b13_NN_report.md`.  Label every statement **PROVED** / **CERTIFIED** /
 **MEASURED** / **ADOPTED** / **RECORDED**, say what you did not do, and give the
 cost of what you did not reach so the next batch can price it.  A negative
 characterised over a stated, priced region is a deliverable; an unstated gap is

@@ -72,7 +72,6 @@ allocation bottleneck identified.
 
 **No other daytime session depends on this.**  Its production consumers are
 batch 14's.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled

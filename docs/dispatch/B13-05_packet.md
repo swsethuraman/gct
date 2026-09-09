@@ -64,7 +64,6 @@ and neither runs the other's census.
 specified smaller set of constituents that must still be computed.
 **Fallback** a proved reduction and a complete finite census with the unresolved
 components named.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled

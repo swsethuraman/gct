@@ -1,8 +1,20 @@
 # Batch 13 — launch packet
 
-Everything a session needs, in one folder, so nothing depends on a bundle having
-been applied first.  The repository copies are authoritative; these are the same
-files at commit `main` as of the batch-13 freeze.
+**Reference documents.**  Computational inputs come from the frozen repository
+and from named supplemental archives — not from this packet.  These are the
+documents a session reads, at commit `main` as of the batch-13 freeze; the
+repository copies are authoritative.
+
+The computational inputs live at:
+
+    results/s74/                          the 274-row source and its columns
+    results/s79_cells.jsonl, s79_per6.jsonl   the six-row and cubic scans
+    results/astra/S3/degree13_conversion/ S3's degree-13 delivery -- read its
+                                          README first; three files totalling
+                                          19.5 MB are over the repository limit
+                                          and are supplied separately
+    results/s74/source.json               the integral degree-13 fillings that
+                                          are B13-01's primary source
 
 ## Give every session
 

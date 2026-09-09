@@ -51,7 +51,6 @@ promote sampled vanishing to a rational identity.**
 **Success** full-rank certificates for the completed list, or a reproducible
 candidate deficiency with explicit vectors.  **Fallback** a completed, resumable
 prefix.  The eleven largest cases are batch 14's.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled

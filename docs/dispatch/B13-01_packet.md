@@ -40,9 +40,23 @@ earlier draft had this backwards.
 
 ### B13-01 — Fable — exact degree-13 reducible identity
 
-**Inputs** S3's completed 39-dimensional rational source; session 74's native
-fillings, which are integral polynomials and a rational source in their own
-right; s74's modular candidate relations; the existing pullback formulas.
+**Inputs — the primary source is in the repository.**  Session 74's degree-13
+fillings (`results/s74/source.json`, the 39 entries of rung ≤ 13) are **integral
+polynomials**: a rational source in their own right, verified here, generic
+nullity 0.  **Work from those.**  s74's modular candidate relations
+(`results/s74/decision_<p>.json`) guide the search; the existing pullback
+formulas do the deciding.
+
+*Supplemental, optional:* S3's completed degree-13 conversion is now staged at
+`results/astra/S3/degree13_conversion/` — the rational-source transport, the
+conversion and evaluation certificates, the per-node and Gram certificates and
+the integer point families.  It offers a **structured** rational convention and
+an independent 39-dimensional basis; it is not the only rational source and
+nothing in this assignment waits on it.  Read that directory's `README.md`
+first: it is a session deliverable, not an integrator-verified result, and three
+files totalling 19.5 MB (`gram_spherical.json`, `nodes_p2147483647.json`,
+`nodes_p2147483629.json`) are over the repository limit and are named there with
+their digests, to be supplied separately if you need them.
 
 Deliver **one explicit nonzero rational polynomial** in `M₁₃` whose restriction
 to a general product `ℓ·c` vanishes identically.  Stretch: all three degree-13
@@ -65,7 +79,6 @@ reducible kernel at both primes, with a 39/39 generic control
 **Success** one identity with a nonzero witness and an exact replay certificate.
 **Fallback** exact partial restriction matrices, the supported candidate
 coordinates, and the smallest unresolved symbolic calculation.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled

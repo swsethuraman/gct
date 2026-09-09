@@ -77,7 +77,6 @@ every `k ≤ 5`.
 **Success** a sufficient condition, an exact image/intersection criterion with a
 computable example, or a counterexample to a proposed converse.
 **Fallback** a rigorous necessary-condition refinement and an explicit small test.
-
 ## The rules that cost batch 12 a session each
 
 - **A nonzero minor is a rank FLOOR.**  It proves `i <= a - k`.  A sampled
