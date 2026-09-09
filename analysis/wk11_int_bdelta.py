@@ -75,7 +75,23 @@ def main():
         for m, v in parts:
             print(f'      {str(m):32s} a_{d-1} = {v}', flush=True)
         assert B >= a_here, f'B_{d} = {B} < a_{d} = {a_here}: the recursion forces B >= a'
-    json.dump(rows, open(os.path.join(ROOT, 'results', 'wk11_int_bdelta.json'), 'w'), indent=1)
+    # MERGE, never overwrite.  This file is a bank keyed by delta, and the output
+    # path does not depend on the input -- so a rerun at a different delta used to
+    # destroy the previous record silently.  Session 75 ran it at delta = 12 and
+    # the banked delta = 24 row (a = 274, B = 2168) was lost; that was a trap in
+    # this script, not a fault of the session.  Read what is there, key by delta,
+    # write the union.
+    path = os.path.join(ROOT, 'results', 'wk11_int_bdelta.json')
+    prior = []
+    if os.path.exists(path):
+        try:
+            prior = json.load(open(path))
+        except Exception:                                    # noqa: BLE001
+            prior = []
+    by = {r['delta']: r for r in prior if isinstance(r, dict) and 'delta' in r}
+    for r in rows:
+        by[r['delta']] = r
+    json.dump([by[d] for d in sorted(by)], open(path, 'w'), indent=1)
     print('RESULT ' + json.dumps([{k: r[k] for k in ('delta', 'a', 'channels', 'B')} for r in rows]))
     return 0
 

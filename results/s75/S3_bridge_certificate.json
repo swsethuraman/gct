@@ -1,0 +1,355 @@
+{
+ "status": "full_two_prime_control_bridge_verified",
+ "arithmetic_scope": "Exact residues of explicitly defined rational vectors at two good primes; no unbounded-height rational reconstruction is asserted.",
+ "normalization": {
+  "g_tc": "260219038130785936600032618419240717460731768774188862903040000000000",
+  "q_norm": 4314952315699200,
+  "house_global_factor": "36520347436056576",
+  "frozen_symbols_checked": 3960,
+  "identity": "m_alpha = alpha! c_alpha = 4! polarized_f_alpha; 12 letters supply (4!)^12",
+  "P_H_is_average_not_sum": true,
+  "Pieri_four_strip_coefficients_are_one_without_extra_factorial": true,
+  "seminormal_and_tensor_Gram_ratio": "4096/247014822459512262871911396973379885417197271858002734375"
+ },
+ "orientation": "Vectors are columns; A rows alpha, columns i; C=G^-1 A; evaluation matrices have source rows, point columns; E_recursive=C^(-t) E_circuit",
+ "common_source_definition": "At each node: integer lift of P1 U entries in [0,P1), using recursively common children, followed by rational H_d average. P1 native is the P1 reduction.",
+ "results": [
+  {
+   "prime": 2147483647,
+   "A_native": [
+    [
+     373300726,
+     0
+    ],
+    [
+     1996294392,
+     181427106
+    ]
+   ],
+   "Gram_native": [
+    [
+     529455088,
+     956684577
+    ],
+    [
+     956684577,
+     306644646
+    ]
+   ],
+   "C_native": [
+    [
+     1597100221,
+     1489000107
+    ],
+    [
+     585121715,
+     1758421183
+    ]
+   ],
+   "det_A_native": 1425711649,
+   "det_Gram_native": 417796854,
+   "det_C_native": 194514631,
+   "C_native_inverse": [
+    [
+     700931732,
+     873882349
+    ],
+    [
+     1568862881,
+     1573167020
+    ]
+   ],
+   "L_common_in_native": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "A_common": [
+    [
+     373300726,
+     0
+    ],
+    [
+     1996294392,
+     181427106
+    ]
+   ],
+   "Gram_common": [
+    [
+     529455088,
+     956684577
+    ],
+    [
+     956684577,
+     306644646
+    ]
+   ],
+   "C_common": [
+    [
+     1597100221,
+     1489000107
+    ],
+    [
+     585121715,
+     1758421183
+    ]
+   ],
+   "det_C_common": 194514631,
+   "evaluations": [
+    {
+     "family": "generic",
+     "rows": "recursive alpha; columns: retained point index 0,1",
+     "circuit": [
+      [
+       326599477,
+       1673993621
+      ],
+      [
+       1352709440,
+       7817699
+      ]
+     ],
+     "native_recursive": [
+      [
+       1252173785,
+       1406743650
+      ],
+      [
+       351657039,
+       4114621
+      ]
+     ],
+     "common_recursive": [
+      [
+       1252173785,
+       1406743650
+      ],
+      [
+       351657039,
+       4114621
+      ]
+     ],
+     "native_recursive_minor": 1935257229,
+     "common_recursive_minor": 1935257229,
+     "circuit_minor": 1332552299,
+     "scalar_Cramer_check": true
+    },
+    {
+     "family": "det",
+     "rows": "recursive alpha; columns: retained point index 0,1",
+     "circuit": [
+      [
+       773694872,
+       2077693445
+      ],
+      [
+       1632857925,
+       304395666
+      ]
+     ],
+     "native_recursive": [
+      [
+       435372940,
+       232573506
+      ],
+      [
+       2012567321,
+       803376413
+      ]
+     ],
+     "common_recursive": [
+      [
+       435372940,
+       232573506
+      ],
+      [
+       2012567321,
+       803376413
+      ]
+     ],
+     "native_recursive_minor": 479985475,
+     "common_recursive_minor": 479985475,
+     "circuit_minor": 949517201,
+     "scalar_Cramer_check": true
+    }
+   ]
+  },
+  {
+   "prime": 2147483629,
+   "A_native": [
+    [
+     917118675,
+     0
+    ],
+    [
+     388646819,
+     2110604172
+    ]
+   ],
+   "Gram_native": [
+    [
+     1598245008,
+     1880910919
+    ],
+    [
+     1880910919,
+     1211147809
+    ]
+   ],
+   "C_native": [
+    [
+     1455314980,
+     212933046
+    ],
+    [
+     1984521268,
+     1481147717
+    ]
+   ],
+   "det_A_native": 500903348,
+   "det_Gram_native": 964901446,
+   "det_C_native": 103940278,
+   "C_native_inverse": [
+    [
+     1863794604,
+     873818584
+    ],
+    [
+     2034008019,
+     1573174091
+    ]
+   ],
+   "L_common_in_native": [
+    [
+     822825181,
+     1843234226
+    ],
+    [
+     1317242147,
+     975886836
+    ]
+   ],
+   "A_common": [
+    [
+     552007754,
+     1240498839
+    ],
+    [
+     884266693,
+     1896968505
+    ]
+   ],
+   "Gram_common": [
+    [
+     733248617,
+     1825191442
+    ],
+    [
+     1825191442,
+     604307164
+    ]
+   ],
+   "C_common": [
+    [
+     1439828613,
+     1154547940
+    ],
+    [
+     2061276652,
+     562800278
+    ]
+   ],
+   "det_C_common": 424251855,
+   "evaluations": [
+    {
+     "family": "generic",
+     "rows": "recursive alpha; columns: retained point index 0,1",
+     "circuit": [
+      [
+       367682131,
+       2128609132
+      ],
+      [
+       1677047322,
+       1845007556
+      ]
+     ],
+     "native_recursive": [
+      [
+       1801049721,
+       65400651
+      ],
+      [
+       1217343724,
+       112907339
+      ]
+     ],
+     "common_recursive": [
+      [
+       1001353112,
+       1049000869
+      ],
+      [
+       1295218788,
+       1106444761
+      ]
+     ],
+     "native_recursive_minor": 1281177107,
+     "common_recursive_minor": 248863681,
+     "circuit_minor": 305414543,
+     "scalar_Cramer_check": true
+    },
+    {
+     "family": "det",
+     "rows": "recursive alpha; columns: retained point index 0,1",
+     "circuit": [
+      [
+       1757189841,
+       1483549893
+      ],
+      [
+       2023364006,
+       1078522424
+      ]
+     ],
+     "native_recursive": [
+      [
+       230048669,
+       1484944638
+      ],
+      [
+       143269010,
+       658078444
+      ]
+     ],
+     "common_recursive": [
+      [
+       234926528,
+       672242328
+      ],
+      [
+       344771575,
+       730859316
+      ]
+     ],
+     "native_recursive_minor": 414864629,
+     "common_recursive_minor": 1872742583,
+     "circuit_minor": 17818470,
+     "scalar_Cramer_check": true
+    }
+   ]
+  }
+ ],
+ "target_status": {
+  "B24": 2168,
+  "usable_274_basis": "unfinished",
+  "determinant_rank_273": "open",
+  "true_padded_rank_274": "open",
+  "D_1": "not implied"
+ }
+}
