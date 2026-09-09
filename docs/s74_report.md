@@ -175,8 +175,9 @@ this weight beyond those of the reducible locus `ℓ·c` (the `r ≤ 5` identity
 `mult_pad = mult_red` of s64 recurs at `r = 9`, mod both primes).  `U_R ⊄ U_D`.
 The five padded/reducible kernel vectors (echelon form) are supported exactly
 on the rows of rungs `≤ 13` (three of them) and `≤ 14` (two), at both primes:
-they are `u¹¹·(M₁₃ ∩ I)` and `u¹⁰·(M₁₄ ∩ I)`, so an exact membership proof for
-the candidates lives at the 39- and 93-dimensional cells, not at 274.
+they lie in `u¹¹·M₁₃` and `u¹⁰·M₁₄` respectively, so the candidates are (mod
+`p`) transported from the 39- and 93-dimensional cells `(21,17,2⁷)_{13}` and
+`(25,17,2⁷)_{14}`, where an exact membership proof would live, not at 274.
 
 **Fresh points, literal path.**  `analysis/wk12_s74_verify.py` re-evaluates the
 *literal* climbed fillings directly (no native value, no transport scalar) at
@@ -286,8 +287,8 @@ point) pairs across rungs 12–24 at both primes, `u = 0` points included
 mixed-discriminant evaluator (Identity 3, `wk11_s69_eval.c`) on literal δ=24 fillings at fresh determinant
 points: 8/8 agreements at both primes, `0.05–0.16 s` against `47 s` per
 evaluation (`results/s74/spot_evaluators.json`).  A full `274 × 282` column costs
-20–45 min instead of hours; the whole session's evaluation budget was about
-9 CPU-hours.
+20–45 min instead of hours; the whole session's evaluation budget was roughly
+20 CPU-hours.
 
 ## 8. Certificates and the verifier
 
