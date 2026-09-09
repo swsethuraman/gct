@@ -80,6 +80,6 @@ def main():
                 utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
     (LOG / f'{a.name}_run.json').write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2)); print((LOG / f'{a.name}.log').read_text()[-6000:])
-    sys.exit(0 if code == 0 else 1)
+    sys.exit(0 if code == 0 and status == 'completed' else 1)
 
 if __name__ == '__main__': main()

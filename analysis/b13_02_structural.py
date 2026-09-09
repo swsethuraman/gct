@@ -288,12 +288,18 @@ def audit():
     print('Audited all 274 source circuits; selected 5 exact coefficient columns',flush=True)
 
 def pilot(arg):
-    column=int(arg);source=read('results/s74/source.json')['entries'];audit=read('results/b13_02/source_audit.json')
+    args=arg.split(':');column=int(args[0]);resume=len(args)>1 and args[1]=='resume'
+    maximum_new=int(args[2]) if len(args)>2 else 274
+    source=read('results/s74/source.json')['entries'];audit=read('results/b13_02/source_audit.json')
     target=tuple(tuple(t) for t in audit['coefficient_columns'][column]['cubic_triples'])
-    result=[];start=time.time()
+    previous=read(f'results/b13_02/pilot_column_{column:02d}.json') if resume else None
+    retained={x['source_row']:x for x in previous['entries']} if previous else {}
+    start=time.time();new_count=0
     # Native controls first, then all remaining source rows if within the launch bound.
     row_order=list(dict.fromkeys([0,1,2,39,273]+list(range(274))))
     for j in row_order:
+        if j in retained and retained[j]['coefficient'] is not None:continue
+        if new_count>=maximum_new:break
         deadline()
         e=source[j];m=list(target);power=e['exponent'];stat={}
         if m.count((0,0,0))<power:value=0;stat={'reason':'transport monomial support exclusion','complete':True}
@@ -303,10 +309,12 @@ def pilot(arg):
                 value,stat=extract(e['native'],tuple(m));value*=24**power
             except (RuntimeError,MemoryError) as exc:
                 value=None;stat={'complete':False,'reason':str(exc)}
-        result.append(dict(source_row=j,coefficient=value,computation=stat))
+        retained[j]=dict(source_row=j,coefficient=value,computation=stat);new_count+=1
+        result=[retained[i] for i in row_order if i in retained]
         write(f'pilot_column_{column:02d}.json',dict(column_index=column,cubic_monomial=target,
             values_are='exact integer coefficients of s74 literal degree-24 source evaluated at x1*c; null means NOT computed, not zero',
-            entries=result,elapsed_seconds=time.time()-start))
+            entries=result,elapsed_seconds=time.time()-start,
+            previous_elapsed_seconds=previous['elapsed_seconds'] if previous else None))
         print('column',column,'row',j,'coefficient',value,'stats',stat,flush=True)
         if time.time()-start>550:break
 
@@ -381,6 +389,54 @@ def dimensions():
         fixed_factor_cubic_weight_monomials=cubic_weight,exact_weight_counts_cached=len(cache),seconds=time.time()-start,
         verification='Weyl alternation; canonicalized weight multisets; pre-addition int64 overflow checks; independent power-sum small controls'))
 
+def verify():
+    source=read('results/s74/source.json')['entries']
+    columns=[read(f'results/b13_02/pilot_column_{i:02d}.json') for i in range(5)]
+    matrix=[[None]*5 for _ in range(274)];statistics=[]
+    for j,col in enumerate(columns):
+        target=col['cubic_monomial']
+        assert len(target)==24 and tuple(sum(t.count(i) for t in target) for i in range(9))==(41,17)+(2,)*7
+        ids=[e['source_row'] for e in col['entries']];assert len(ids)==len(set(ids))
+        for e in col['entries']:
+            assert (e['coefficient'] is not None)==e['computation']['complete']
+            matrix[e['source_row']][j]=e['coefficient']
+        statistics.append(dict(column=j,attempted=len(ids),completed=sum(matrix[i][j] is not None for i in range(274)),
+            nonzero=sum(matrix[i][j] not in (None,0) for i in range(274)),
+            uncomputed_rows=[i for i in range(274) if matrix[i][j] is None],elapsed_seconds=col['elapsed_seconds']))
+    # Deliberately different gauges/orders: relabel letters; exchange tall columns;
+    # reverse exactly one short column. Each transformed polynomial is -F.
+    replay=[]
+    for row,col in [(39,2),(273,4)]:
+        F=source[row]['native'];d=F['delta'];perm=list(reversed(range(d)))
+        G=dict(F);G['C1']=[perm[l] for l in F['C2']];G['C2']=[perm[l] for l in F['C1']]
+        G['two']=[[perm[a],perm[b]] for a,b in F['two']];G['two'][0].reverse();G['one']=[perm[l] for l in F['one']]
+        m=[tuple(t) for t in columns[col]['cubic_monomial']];k=24-d
+        for _ in range(k):m.remove((0,0,0))
+        v,stats=extract(G,tuple(m));v*=24**k
+        assert v==-matrix[row][col]
+        replay.append(dict(row=row,column=col,negative_gauge_value=v,original_value=matrix[row][col],stats=stats))
+    minor=[[matrix[r][c] for c in [2,4]] for r in [39,273]]
+    assert all(v is not None for rr in minor for v in rr)
+    det=minor[0][0]*minor[1][1]-minor[0][1]*minor[1][0];assert det
+    # This is an exact Z determinant. Reductions are ancillary checks at BOTH primes.
+    residues=[dict(prime=p,determinant_mod_p=det%p) for p in PRIMES]
+    assert all(x['determinant_mod_p'] for x in residues)
+    candidates=[]
+    for p in PRIMES:
+        c=read(f'results/s74/decision_{p}.json')['columns']['red']
+        candidates.append(dict(prime=p,candidates=[dict(index=k,support=[c['kernel_rows_index'][i] for i,v in enumerate(row) if v])
+                                                   for k,row in enumerate(c['kernel_vectors_modp'])]))
+    packed('partial_matrix.json.gz',dict(values_are='exact integer coefficients in ordinary cubic variables after x1 fixation; null is uncomputed',
+        source_order='results/s74/source.json entries, unchanged',column_monomials=[c['cubic_monomial'] for c in columns],matrix=matrix))
+    write('verification.json',dict(status='PASS within explicitly limited scope',column_statistics=statistics,
+        complete_entries=sum(v is not None for rr in matrix for v in rr),
+        missing_entries=sum(v is None for rr in matrix for v in rr),coefficient_gauge_replays=replay,
+        minor_rows=[39,273],minor_columns=[2,4],exact_minor=minor,exact_minor_determinant=det,residues=residues,
+        new_exact_partial_rank_floor=2,full_map_rank_floor_adopted=269,full_map_upper_bound=274,
+        h_pad_verified=521,candidate_supports=candidates,
+        not_verified=['full rank of S','rational kernel membership at LMR','Q stage','s74 144-entry Q cross-check not triggered','degree-23/24 ideal equality']))
+    print('Verified exact partial minor',minor,'det',det,'entries',sum(v is not None for rr in matrix for v in rr),flush=True)
+
 def main(mode,arg=''):
     deadline()
     if mode=='audit':audit()
@@ -388,4 +444,5 @@ def main(mode,arg=''):
     elif mode=='pilot':pilot(arg)
     elif mode=='dimensions':dimensions()
     elif mode=='taller_controls':taller_controls()
+    elif mode=='verify':verify()
     else:raise ValueError(mode)
