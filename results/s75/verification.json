@@ -1,0 +1,88 @@
+{
+ "cell": "lambda=(17,17,2^7), delta=12, n=4, r=9, a=2",
+ "checks": {
+  "g_tc_matches_S3": true,
+  "g_tc": "260219038130785936600032618419240717460731768774188862903040000000000",
+  "perm_inversion_lengths": [
+   579,
+   640
+  ],
+  "perm_lengths_expected": [
+   579,
+   640
+  ],
+  "S3_bridge": {
+   "2147483647": {
+    "Gram_C_eq_A": true,
+    "det_C": 194514631,
+    "det_C_nonzero": true,
+    "det_C_matches_S3": true,
+    "families": {
+     "generic": {
+      "Ct_Erec_eq_Ecirc": true,
+      "recursive_minor": 1935257229,
+      "circuit_minor": 1332552299,
+      "recursive_minor_nonzero": true,
+      "circuit_minor_nonzero": true
+     },
+     "det": {
+      "Ct_Erec_eq_Ecirc": true,
+      "recursive_minor": 479985475,
+      "circuit_minor": 949517201,
+      "recursive_minor_nonzero": true,
+      "circuit_minor_nonzero": true
+     }
+    },
+    "A_common_eq_Lt_A": true,
+    "C_common_eq_Linv_C": true,
+    "det_C_common": 194514631,
+    "det_C_common_nonzero": true,
+    "common_det_minor": 479985475,
+    "common_det_minor_nonzero": true
+   },
+   "2147483629": {
+    "Gram_C_eq_A": true,
+    "det_C": 103940278,
+    "det_C_nonzero": true,
+    "det_C_matches_S3": true,
+    "families": {
+     "generic": {
+      "Ct_Erec_eq_Ecirc": true,
+      "recursive_minor": 1281177107,
+      "circuit_minor": 305414543,
+      "recursive_minor_nonzero": true,
+      "circuit_minor_nonzero": true
+     },
+     "det": {
+      "Ct_Erec_eq_Ecirc": true,
+      "recursive_minor": 414864629,
+      "circuit_minor": 17818470,
+      "recursive_minor_nonzero": true,
+      "circuit_minor_nonzero": true
+     }
+    },
+    "A_common_eq_Lt_A": true,
+    "C_common_eq_Linv_C": true,
+    "det_C_common": 424251855,
+    "det_C_common_nonzero": true,
+    "common_det_minor": 1872742583,
+    "common_det_minor_nonzero": true
+   }
+  },
+  "s69_circuit_i_det": {
+   "2147483647": {
+    "generic_rank": 2,
+    "det_rank": 2,
+    "mult_det": 2,
+    "i_det": 0
+   },
+   "2147483629": {
+    "generic_rank": 2,
+    "det_rank": 2,
+    "mult_det": 2,
+    "i_det": 0
+   }
+  }
+ },
+ "VERDICT": "PASS -- i_det(12)=0; C invertible both primes; both halves of the control pass"
+}
