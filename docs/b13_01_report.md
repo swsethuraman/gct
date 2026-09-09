@@ -87,10 +87,16 @@ independent counts `B1 = 809 527 307`, `B2 = 117 718 904`):
 
     h_pad(21,17,2⁷;13) = 73,   over the 15 strips, a₃ = [1,2,2,3,3,4,4,5,5,5,6,7,8,9,9].
 
-**Cross-check (independent):** the fifteen strips and their `a₃` reproduce
-`docs/batch13_board.md` B13-04's re-audit exactly — "fifteen horizontal-13-strip
-predecessors of `λ₁₃`, all `a ≥ 1`, `a` from 1 to 9."  Those `a` **are** these
-`a₃`.
+**Three independent cross-checks.**  (i) The fifteen strips and their `a₃`
+reproduce `docs/batch13_board.md` B13-04's re-audit exactly — "fifteen
+horizontal-13-strip predecessors of `λ₁₃`, all `a ≥ 1`, `a` from 1 to 9."  Those
+`a` **are** these `a₃`.  (ii) The `mcount` C counter reproduces the two
+independent cubic-multiset totals `B1 = 809 527 307`, `B2 = 117 718 904` (also
+computed in pure Python).  (iii) The Weyl-alternation `h_pad` method agrees with
+the house `amb`-plethysm method (`wk9_s42_hpad.h_pad`) on six small cells,
+including the s42 banked cells `(8,4,4,4,4)₆ → 1`, `(12,9,9,1,1)₈ → 6`,
+`(9,9,8,1,1)₇ → 1`, `(12,8,8)₇ → 7` (the house method `amb` OOMs on the rung-13
+cell, which is why the Weyl route is used there).
 
 Since `73 > 39 = a`, the bound gives `mult_red ≤ min(a, h_pad) = 39`, i.e.
 `i_red ≥ 0` — **vacuous**.  This is the exact analogue of the LMR cell, where
