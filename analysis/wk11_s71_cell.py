@@ -90,7 +90,15 @@ def _prime_job(args):
         assert mstar <= opts['hpad'], ('mult_red exceeds the normalisation bound h_pad', mstar, opts['hpad'])
     # ideal vectors on the determinant side (the falsifier object), kept when they exist
     if out['sides']['det']['mult'] < a:
-        cs = nullspace_mod_p(G['det'].T, p)                 # combos c with ev_det K c = 0
+        # G = ev . K has rows = points and columns = kernel vectors, so the ideal
+        # elements are combinations of KERNEL VECTORS: c with G c = 0, i.e.
+        # nullspace(G).  This read nullspace(G.T) -- combinations of POINTS --
+        # and then multiplied a (K_pts - mult) x K_pts matrix by K.T, which is
+        # a x nc: the shapes only agree when K_pts = a, and K_pts = a + 8.  The
+        # branch never ran in session 71 because no drop occurred there; session
+        # 79 reached it on its first padded drop and it crashed.  No session-71
+        # number is affected.
+        cs = nullspace_mod_p(G['det'], p)                   # combos c with ev_det K c = 0
         out['det_ideal_chi'] = matmul_mod(cs % p, K.T, p).tolist()     # vectors in chi-coordinates (exact mod p)
     if opts['keep_kernel'] and nc * a <= 400_000:
         out['kernel_chi'] = K.T.tolist()
