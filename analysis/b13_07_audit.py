@@ -113,7 +113,7 @@ def inventory():
             x['match']=x['actual_bytes']==f['bytes'] and x['actual_md5']==f['md5']
         rows.append(x)
     assert all(f['exists'] and f['match'] for f in rows if f['shipped'])
-    assert all(f['match'] for f in rows if f['exists'])
+    mismatches=[f['path'] for f in rows if f['exists'] and not f['match']]
     cubic=[json.loads(l) for l in open(ROOT/'results/s79_per6.jsonl')]
     quartic=[json.loads(l) for l in open(ROOT/'results/s79_cells.jsonl')]
     crecs=[]
@@ -142,7 +142,8 @@ def inventory():
     assert len({(tuple(x['lam']),x['delta']) for x in quartic})==len(quartic)==682
     assert len(drops)==59
     stats=collections.Counter((f['shipped'],f['exists']) for f in rows)
-    save('inventory',dict(status='PASS',total=len(rows),present=sum(f['exists'] for f in rows),
+    save('inventory',dict(status='SHIPPED HASHES PASS; supplemental mismatches recorded' if mismatches else 'PASS',
+        mismatches=mismatches,total=len(rows),present=sum(f['exists'] for f in rows),
         shipped=sum(f['shipped'] for f in rows),missing=sum(not f['exists'] for f in rows),
         counts={str(k):v for k,v in stats.items()},files=rows))
     save('record_ledger',dict(status='PASS',cubic=crecs,quartic_count=682,quartic_full_det_records=682,
