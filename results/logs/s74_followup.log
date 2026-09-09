@@ -1,2 +1,25 @@
 [2026-09-09T02:41:58Z] follow-up start
 [2026-09-09T02:41:58Z] start verify_pad_P1: python3 analysis/wk12_s74_verify.py --families pad --prime 2147483647 --K 294 --workers 2
+[2026-09-09T03:19:49Z] end verify_pad_P1 (exit 0)
+[2026-09-09T03:19:49Z] committed: s74: padded column re-derived at fresh box-1000 points (P1).
+[2026-09-09T03:19:49Z] start rest_P1: python3 analysis/wk12_s74_columns.py --family gen,red,per4 --prime 2147483647 --workers 2
+[2026-09-09T05:02:03Z] end rest_P1 (exit 0)
+[2026-09-09T05:02:03Z] start decide3: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families gen,det,pad,red,per4
+[2026-09-09T05:02:04Z] end decide3 (exit 0)
+[2026-09-09T05:02:05Z] committed: s74: generic, reducible and per_4 columns at P1 banked.
+[2026-09-09T05:02:05Z] start verify_det_P1: python3 analysis/wk12_s74_verify.py --families det --prime 2147483647 --K 294 --workers 2
+[2026-09-09T05:40:10Z] end verify_det_P1 (exit 0)
+[2026-09-09T05:40:11Z] committed: s74: determinant column re-derived at fresh box-1000 points (P1).
+[2026-09-09T05:40:11Z] start rest_P2: python3 analysis/wk12_s74_columns.py --family gen,red,per4 --prime 2147483629 --workers 2
+[2026-09-09T07:25:26Z] end rest_P2 (exit 0)
+[2026-09-09T07:25:26Z] start decide5: python3 analysis/wk12_s74_decide.py --prime 2147483629 --families gen,det,pad,red,per4
+[2026-09-09T07:25:27Z] end decide5 (exit 0)
+[2026-09-09T07:25:28Z] committed: s74: all five columns at both primes banked.
+[2026-09-09T07:25:28Z] start verify_pad_P2: python3 analysis/wk12_s74_verify.py --families pad --prime 2147483629 --K 294 --workers 2
+[2026-09-09T08:03:53Z] end verify_pad_P2 (exit 0)
+[2026-09-09T08:03:53Z] start countns: python3 analysis/wk12_s74_verify.py --count-ns 23,24
+[2026-09-09T08:05:30Z] end countns (exit 0)
+[2026-09-09T08:05:30Z] start spot: python3 analysis/wk12_s74_verify.py --spot 4
+[2026-09-09T08:11:46Z] end spot (exit 0)
+[2026-09-09T08:11:46Z] committed: s74: fresh-point padded re-derivation at P2, the N_S recount and the evaluator spot check banked.
+[2026-09-09T08:11:46Z] follow-up done

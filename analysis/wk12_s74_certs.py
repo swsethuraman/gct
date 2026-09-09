@@ -35,6 +35,8 @@ N_S = {24: 156438903314, 23: 156419279221}
 def write(p):
     dec = json.load(open(os.path.join(OUT, f"decision_{p}.json"), encoding="utf-8"))
     src = json.load(open(os.path.join(OUT, "source.json"), encoding="utf-8"))
+    cpath = os.path.join(OUT, "certified.json")
+    certified = json.load(open(cpath, encoding="utf-8"))["primes"].get(str(p), {}) if os.path.exists(cpath) else {}
     os.makedirs(CERTS, exist_ok=True)
     written = []
     for fam, var in VARIETY.items():
@@ -74,6 +76,9 @@ def write(p):
                                    "from above; i_det >= 1 is the LMR theorem, not this file"},
             "basis": None,
         }
+        minor = {"det": certified.get("det_minor_delta23"), "pad": certified.get("pad_minor")}.get(fam)
+        if minor:
+            cert["recipe"]["nonzero_minor"] = {k: minor[k] for k in ("rank", "row_set", "col_set", "det_mod_p", "statement")}
         if nul > 0:
             comp = f"s74_kernel_{fam}_{p}.json"
             kv = c.get("kernel_vectors_modp")
