@@ -77,14 +77,22 @@ definition at random points over `ℚ` and both primes (all good and bad
 coordinates match), and the `P`-decomposition verified to reproduce the
 determinant coefficient-by-coefficient.
 
-**Equivalence (PROVED).** `W` is irreducible and `y₀` is not identically zero on
-it, so `{y₀ ≠ 0}` is dense in `W`. A generic point of `W`, if it lies in `D₅`,
-is an actual image point of a source point with `A₅` invertible (from `y₀ ≠ 0`)
-whose first four matrices span a singular space (from membership in `W`) — i.e.
-of a point of the reduced source `S`. Hence
+**Equivalence (PROVED, modulo the inherited irreducibility of `W`).** `W` is
+irreducible (an inherited/RECORDED fact — `W ≅ Sym³ C⁵` is a linear space) and
+`y₀` is not identically zero on it, so `{y₀ ≠ 0}` is dense in `W`. A generic
+point of `W`, if it lies in `D₅`, is an actual image point of a source point
+with `A₅` invertible (from `y₀ ≠ 0`) whose first four matrices span a singular
+space (from membership in `W`) — i.e. of a point of the reduced source `S`.
+The 34 chart coordinates are affine coordinates on the `y₀ = 1` chart of
+`P(W) = P³⁴`, so the generic rank of `G` is the dimension of that chart image
+and is `≤ 34`. Hence
 
-> `W ⊆ D₅  ⇔  the char-coefficient map G: S → 𝔸³⁴ is dominant (generic rank 34)`,
-> equivalently `dim(D₅∩W) = 34` affine; and `W ⊄ D₅ ⇔ generic rank ≤ 33`.
+> `W ⊆ D₅  ⇔  the char-coefficient map G: S → 𝔸³⁴ is dominant (generic rank 34)`;
+> and `W ⊄ D₅ ⇔ generic rank ≤ 33`.
+
+In affine-cone terms (cone dimension = chart rank + 1): containment is
+`dim(D₅∩W) = 35 = dim W`, and the sufficient noncontainment bound
+`dim(D₅∩W) ≤ 34` affine is exactly `generic rank ≤ 33`.
 
 This settles the S2 §7 boundary worry **for the dimension/noncontainment
 question**: because `W` is irreducible, `dim(D₅∩W)` is exactly the dimension of
