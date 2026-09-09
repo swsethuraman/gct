@@ -1,6 +1,6 @@
 # gct — project notes
 
-## STATUS AT A GLANCE — THREAD 2, THE SEPARATION PROGRAMME (2026-09-08)
+## STATUS AT A GLANCE — THREAD 2, THE SEPARATION PROGRAMME (2026-09-09)
 
 **Read this first.  The block below it is thread 1 and has not been the active
 work since session 23.**
@@ -22,8 +22,40 @@ THREAD 2 IN TEN LINES
     refutes containment, because P inside D forces mult_P <= mult_D at every
     weight.  D > 0 is the object of the programme.
   Goal cell (LMR): lambda = (65,17,2^7), delta = 24, ell = 9, a = 274,
-    N_S = 156,438,903,314, n_chi = 31,039,465.  i_det and i_pad there are the
-    two numbers the programme does not have.
+    N_S = 156,438,903,314, n_chi = 31,039,465.
+  THE GOAL CELL, AFTER SESSION 74 (batch 12, verified here 47/47,
+    docs/s74_checkpoint_review.md, merge 5d1a1da).  A COMPLETE 274-ROW SOURCE
+    EXISTS.  The source-construction problem, the programme's bottleneck for
+    four batches, is finished, and neither column will need a delta = 24
+    candidate again.
+      rank T_det(24) = 273 EXACTLY.  Proved, not sampled: the transported
+        delta = 23 rows have determinant rank 273 on a 273-dimensional space, so
+        T_det is injective on u M_23; the birth-quotient proposition gives
+        i_det(23) = 0; b_24 = 1 and LMR's i_det(24) >= 1 then force
+        i_det(24) = 1.  The determinant kernel line is LMR's own equation y, and
+        y is nonzero at 282 of 282 padded points at both primes.
+      rank T_pad(24) >= 269, a certified floor.  The nullity 5 is a CEILING read
+        off one point family and is not a theorem.
+      i_pad(24) = i_pad(23) EXACTLY (eps_pad = 0), because all five padded
+        kernel vectors have coefficient zero on the delta = 24 native row, so
+        the sampled kernel -- and the ideal intersection inside it -- lies in
+        u M_23.
+      HENCE  D = 1 - i_pad(23),  and  -4 <= D <= +1.  D is OPEN, and the whole
+        remaining question is whether the padded ideal is zero at rung 23.
+      D = +1 is the ONLY value evaluation can prove; a nonzero minor is a rank
+        floor and can only push i_pad down.  Every other value needs i_pad >= 1,
+        a membership statement.  The routes are the reducible column rung by
+        rung, the pre-registered rank S screen (batch11_plan C3, never yet run
+        against a complete source), and S4's factorization
+        rank T_pad = rank S - dim(S(M_lambda) ^ ker Q), which computes i_pad
+        exactly.  See docs/batch12_integrator_note4.md.
+  THE u-TRANSPORT, verified end to end (docs/s3_transport_review.md, 20/20).
+    Evaluation is a ring homomorphism, so transporting a row by u^k scales
+    column j by u(P_j)^k.  A rank FLOOR therefore transports unconditionally --
+    no primality, no ideal -- provided no sampled point is a u-zero, which must
+    be recorded per point and not assumed.  Primality of I(X) with u not in I(X)
+    is what makes the transport EXACT: rank T_X restricted to u^k M_{d-k}
+    equals a_{d-k} - i_X(d-k).  Both sides of the programme now rest on it.
   THE FIRST D > 0, and it is new (batch 11 pre-batch check): at the n = 3
     member of the same family, lambda = (19,7,2^5), delta = 12, r = 7, a = 6,
     the UNPADDED comparison gives mult_det = 5 and mult_per = 6 at both house
