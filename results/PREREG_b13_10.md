@@ -116,3 +116,10 @@ Exploratory, not banked, operator agreement only (`E_old` vs `E_new`, plus `null
 
 Author: Swami Sethuraman, swsethuraman@beneficus.ai, Beneficus AI.
 board_numbering: batch13
+
+## Addendum A — 2026-09-09 15:35 UTC (11:35 America/New_York), before the cells it governs ran
+
+1. **The two exploratory length-9 cells are replaced.**  `(10,1⁸)₆` and `(16,1⁸)₆` have `n_χ = 0` (the sign character on eight equal parts empties the isotypic part; verified here in a 40 320-element stabiliser loop), so they check nothing.  X1 is now `n = 3`, `(11,4,2,2,1⁵)₈` (`a = 0`, `N_S = 247 436`, `|Stab| = 240`, `L = 165`) and X2 is `n = 4`, `(15,4,2,2,1⁵)₇` (`a = 0`, `L = 495`); both are operator-agreement checks with `a = 0` (the hybrid then certifies full column rank), exploratory as before.  Every length-9 cubic weight through δ = 8 that was priced has `a = 0`.
+2. **Instrument detail.**  The suite is run by `analysis/wk13_b10_suite.py`; the large cells (B5, B6, B7, C4, C5, C6, D1, X1, X2) each in their own driver process so that the driver's `VmHWM` is that cell's consumer-side peak (old `E` loaded as int64 + lean `E` + hybrid + evaluation rows); the small cells in one loop.  Both loops bounded (`ulimit -v 7 000 000`, `timeout 7200 / 3600` per driver), pids in `results/logs/b13_10_suiteA.pid`, `b13_10_suiteB.pid`, and one pid file per build subprocess.  The consumer runs with `S71_MEM_X = 2.5·10⁸` as session 79 did.
+3. **The tradeoff variants** run on B6, B7, C5, C6 only: `(recompute, memory, 400 000)`, `(store, disk, 400 000)`, `(recompute, disk, 200 000)`, each a separate bounded build, each checked identical to the old operator.
+4. Three cells (A1, B2, C1) were run once as a smoke test of the driver before this addendum (all PASS, identical operators); they are re-run in the loop and the smoke records are discarded.
