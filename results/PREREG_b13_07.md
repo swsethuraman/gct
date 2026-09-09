@@ -56,7 +56,7 @@ is a dependency. No publication, push, or new schedule.
 
 One numerical worker, all BLAS/OpenMP thread counts set to one. Windows native
 GlobalMemoryStatusEx preflight reports total physical memory 33752997888 bytes,
-available 7445483520 bytes (about 6.93 GiB) at 15:07 UTC; measure again at every
+available 7445483520 bytes (about 6.93 GiB) during preflight; measure again at every
 launch. Use a Windows Job Object cap of 1.5 GiB per job, and do not start a
 numerical job with less than 2 GiB available. Every launch writes its PID and
 has a supervisor wall limit: dominance/inventory 300 s, census 1800 s, each
