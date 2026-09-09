@@ -44,7 +44,20 @@ THREAD 2 IN TEN LINES
         remaining question is whether the padded ideal is zero at rung 23.
       D = +1 is the ONLY value evaluation can prove; a nonzero minor is a rank
         floor and can only push i_pad down.  Every other value needs i_pad >= 1,
-        a membership statement.  The routes are the reducible column rung by
+        a membership statement.
+      THE REMAINING QUESTION HAS NO PERMANENT IN IT (integrator, verified here,
+        docs/rung13_reducible.md).  The whole five-dimensional padded kernel at
+        rung 24 is transported from rungs 13 and 14 -- nothing new is born from
+        rung 15 up -- and at rung 13 the three padded relations vanish on EVERY
+        l . cubic, not only on l . per_3: the padded and reducible kernels there
+        are the same 3-space at both primes, with a 39/39 generic control saying
+        the rows are independent and the evaluator sound.  Since V_pad sits
+        inside V_red, i_red <= i_pad, and V_red is the classical image of
+        (linear forms) x (cubics) -> quartics.  So membership in I(V_red) is a
+        finite exact linear-algebra question, and ONE proved reducible relation
+        at rung 13 gives i_pad(13) >= 1, hence i_pad(23) >= 1 by monotonicity,
+        hence D <= 0.  What is certified is i_red(13) <= 3; what is not
+        established is i_red(13) >= 1, and that is the whole remaining content.  The routes are the reducible column rung by
         rung, the pre-registered rank S screen (batch11_plan C3, never yet run
         against a complete source), and S4's factorization
         rank T_pad = rank S - dim(S(M_lambda) ^ ker Q), which computes i_pad

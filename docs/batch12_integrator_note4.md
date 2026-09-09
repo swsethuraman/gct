@@ -30,6 +30,13 @@ cell, and it points the work at exact methods rather than at more sampling.
 
 ## 2. What to run, in cost order
 
+> **Measured since this note was drafted, and it settles the ordering.**  At
+> rung 13 the reducible rank stalls at 36 of 39 exactly as the padded rank does,
+> the two kernels are the **same** three-dimensional space at both primes, and
+> the generic control is 39 of 39.  The three relations are reducible relations.
+> So (a) is answered at rung 13 and the work moves to (b) and (c), pointed at
+> `V_red` rather than at the permanent.  See `docs/rung13_reducible.md`.
+
 **(a) The reducible column, at rung 13 first — highest information per second.**
 `mult_pad <= mult_red`, so `i_red <= i_pad`, and the two readings are both
 decisive:
