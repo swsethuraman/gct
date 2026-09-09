@@ -204,6 +204,10 @@ def char_poly_coeffs(As, deg):
 
 
 def main(argv):
+    output = os.path.join(ROOT, 'results', 'wk12_int_s79_stable_verify.json')
+    if '--out' in argv:
+        argv = list(argv)
+        i = argv.index('--out'); output = argv[i + 1]; del argv[i:i + 2]
     blocks = argv or ['6_3_3_1', '4_4_3_2', '6_2_2_2_1', '5_3_2_2_1', '5_2_2_2_2']
     for b in blocks:
         path = os.path.join(SRC, f'stable_{b}.json')
@@ -287,8 +291,8 @@ def main(argv):
         out['blocks'][str(rho)] = dict(a_inf=ai, raw=len(mine), i_det_inf=0)
     ok = all(c['ok'] for c in out['checks'])
     out['status'] = 'OK' if ok else 'FAILURES'
-    json.dump(out, open(os.path.join(ROOT, 'results',
-                                     'wk12_int_s79_stable_verify.json'), 'w'), indent=1)
+    with open(output, 'w', encoding='utf-8') as f:
+        json.dump(out, f, indent=1)
     print(f'\nRESULT {out["status"]} '
           f'({sum(c["ok"] for c in out["checks"])}/{len(out["checks"])})')
     return 0 if ok else 1

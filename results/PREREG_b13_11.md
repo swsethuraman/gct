@@ -79,3 +79,23 @@ Bank independent completed units. Deliver report and manifest, bundle against
 the frozen base, contiguous part00 onward, whole/part MD5 and SHA256 with bare
 filenames. Copy user-facing outputs to Batch13_Results/B13-11. No publication,
 push or follow-up schedules. Completion deadline: 2026-09-09 20:30 EDT.
+
+## Dated addendum — 2026-09-09 18:08 UTC, before the inherited-closure inventory
+
+RECORDED: The exact census leaves nineteen positive stable tails absent from
+both rank records, all with at most three tail parts. Apply the existing
+length-at-most-four padded containment theorem in docs/n4_gate.md section 1
+as a separate exclusion for D>0, not as a full-determinant-rank claim.
+This exact closure source was not named in the board; located while tracing
+its requested quartic closure rules. Report rank-record openness separately
+from openness after all inherited closures.
+
+Also replay the four small n3 minors in
+results/astra/S4/artifacts/n3_control.json, with their delivered integer points
+and source conventions, and the existing s74 det/pad/gen value matrices using
+the declared msym_u transport at both house primes. These replay only banked
+values; source evaluation identities remain inherited. No new points/search.
+Use the same 600-second/1-GiB per-unit cap. Independently replay all sixteen
+s79 stable blocks (the preregistered stable-certificate check completed 192/192).
+Retain the 29 mismatches against unshipped manifest entries as unresolved
+certificate-version flags; all 1200 declared-shipped digests match.
