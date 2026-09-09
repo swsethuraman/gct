@@ -9,7 +9,9 @@ What is independent of the measurement path (wk12_s74_columns / decide):
     the other side;
   * ranks by python-flint on the fresh matrix; both primes on request.
 What is shared: the DP circuit evaluator (the only evaluator that reaches this
-cell).  --spot cross-checks it against the mixed-discriminant evaluator
+cell) -- the compact-state one by default, the s69 original with
+S74_VERIFY_S69_DP=1 (the two agree entry for entry, wk12_s74_dp.validate).
+--spot cross-checks the s69 DP against the mixed-discriminant evaluator
 fast_eval_c (Identity 3, a different algorithm) on sampled (filling, point)
 pairs.  --count-ns recounts N_S(lambda_delta) by an exact multiset DP.
 
@@ -35,6 +37,13 @@ from wk8_s30_core import P1, P2, exps, restrict, det_form, per_form, per_padded 
 from wk11_s69_circuit import (Filling, sym_table, symbols_from_coeffs, dp_eval_c,   # noqa: E402
                               fast_eval_c, rank_mod)
 import wk12_s74_columns as COL                                                  # noqa: E402
+from wk12_s74_dp import dp_eval_compact                                        # noqa: E402
+
+USE_S69_DP = os.environ.get("S74_VERIFY_S69_DP") == "1"     # the original evaluator (slow, no parallel gain)
+
+
+def dp_eval(F, ms, p, tab):
+    return (dp_eval_c if USE_S69_DP else dp_eval_compact)(F, ms, p, tab)
 
 OUT = os.path.join(ROOT, "results", "s74")
 N, H = 4, 9
@@ -72,7 +81,7 @@ def _init(msyms, p):
 
 def _row_literal(Fj):
     F = Filling.from_json(Fj)
-    return [dp_eval_c(F, ms, _P, TAB) % _P for ms in _MS]
+    return [dp_eval(F, ms, _P, TAB) % _P for ms in _MS]
 
 
 def rederive(families, p, K, workers, block=4):
