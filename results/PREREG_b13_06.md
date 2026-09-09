@@ -5,7 +5,7 @@ model: gpt-6-astra
 reasoning_effort: xhigh
 base: 00495110c62acfbbbc951e82cc218ed091563b3f
 branch: b13-06
-registered_at: 2026-09-09T11:13:00-04:00
+registered_at: 2026-09-09T10:58:00-04:00
 ---
 
 # B13-06 preregistration: products of the LMR equation module
