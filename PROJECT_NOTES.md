@@ -56,6 +56,23 @@ THREAD 2 IN TEN LINES
         prime.  That is brief_wording section 5's three-point test at the goal
         cell: (2) and (3) agree, and their agreement is the result.  s64 saw
         mult_pad = mult_red at r <= 5; it recurs at r = 9, delta = 24.
+      THE CHEAPER SCREEN, FROM SESSION 79 (r = 6) AND THE TRANSFER LEMMA.
+        Prop. 8(2) of docs/transfer_lemma.md: mult_pad < mult_red at a cell of
+        length r and degree delta REQUIRES I(D_r^{per_3})_delta != 0 -- a
+        condition on the CUBIC side, with no padded points, no orbit closure and
+        no degree-delta quartic build in it.  Prop. 8(1) is the converse
+        direction: I(D_r^{per_3})_delta = 0 gives mult_pad = mult_red at EVERY
+        weight of that length and degree.  s79 ran it at r = 6: all 210 weights
+        of degree 9 have mult = a at both primes, so I(D_6^{per_3})_9 = 0 and
+        mult_pad = mult_red at every six-row weight of degree 9 is a THEOREM
+        (reported; Part 2's bundle has not arrived).  So the order of work is:
+        compute I(D_r^{per_3})_delta FIRST -- one scan per (length, degree) for
+        every weight at once -- and only then spend anything on quartic cells.
+      AND THE PATTERN IT SITS IN.  mult_pad = mult_red now at r = 5 (s64), at
+        r = 6 through delta = 9 as a theorem and through delta = 12 on 682 cells
+        (s79), at r = 9 delta = 13 (integrator) and at r = 9 delta = 24 (s74,
+        verified here).  Three lengths, four instruments, no exception found:
+        the permanent is invisible to this statistic wherever anyone has looked.
       THE SCREEN THIS HANDS THE PROGRAMME.  mult_pad <= mult_red always, so only
         a cell with mult_pad < mult_red can carry permanent-specific
         information, and mult_red is a multiplicity of the classical variety
