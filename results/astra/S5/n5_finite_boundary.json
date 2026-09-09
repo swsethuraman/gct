@@ -1,0 +1,338 @@
+{
+  "first_layer": {
+    "channels": 15,
+    "correction_proof": "sole excluded component is [S^(2^9)] Sym^9(Sym^2)=1 because Sym^k(Sym^2)=direct_sum_{alpha partition k} S^(2 alpha)",
+    "degree": 39,
+    "failing_channels": [
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -1,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 8,
+            "maximum_needed_non_linear_factors": 9,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "q1": 31,
+            "removed_vertical": 0,
+            "tau": [
+              31,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "pairs_checked": 2187,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "shape": [
+          146,
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tail": [
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "finite_B40": 176451,
+    "finite_correction": 1,
+    "stable_channels": 14,
+    "stable_precursor": 176452
+  },
+  "schema": "batch12-s5-finite-boundary/1",
+  "second_layer": {
+    "degree": 38,
+    "distinct_shapes": 54,
+    "failing_shapes": [
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -1,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 7,
+            "maximum_needed_non_linear_factors": 8,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "q1": 31,
+            "removed_vertical": 0,
+            "tau": [
+              31,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "pairs_checked": 1951,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "paths": 3,
+        "shape": [
+          143,
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -1,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 7,
+            "maximum_needed_non_linear_factors": 8,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "q1": 31,
+            "removed_vertical": 0,
+            "tau": [
+              31,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ]
+          },
+          "pairs_checked": 5263,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "paths": 1,
+        "shape": [
+          143,
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -1,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 7,
+            "maximum_needed_non_linear_factors": 8,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "q1": 31,
+            "removed_vertical": 0,
+            "tau": [
+              31,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1
+            ]
+          },
+          "pairs_checked": 3961,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "paths": 2,
+        "shape": [
+          142,
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -1,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 8,
+            "maximum_needed_non_linear_factors": 9,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "q1": 30,
+            "removed_vertical": 0,
+            "tau": [
+              30,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "pairs_checked": 2113,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "paths": 2,
+        "shape": [
+          142,
+          30,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "audit": {
+          "finite_equals_stable": false,
+          "minimum_slack": -2,
+          "minimum_slack_witness": {
+            "available_non_linear_factors": 7,
+            "maximum_needed_non_linear_factors": 9,
+            "nu": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "q1": 31,
+            "removed_vertical": 0,
+            "tau": [
+              31,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "pairs_checked": 2187,
+          "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+        },
+        "paths": 1,
+        "shape": [
+          141,
+          31,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "finite_C_residual_status": "OPEN: five boundary multiplicities require exact finite corrections",
+    "path_weight_of_failing_shapes": 9,
+    "stable_shapes": 49
+  },
+  "status": "PROVED_WITH_CLASSICAL_SYM2_DECOMPOSITION"
+}

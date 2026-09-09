@@ -1,0 +1,654 @@
+{
+  "S1": {
+    "claim": "rank(T_det) >= 2 for the transported saved source pair",
+    "rows": [
+      {
+        "match": true,
+        "nonzero": true,
+        "prime": 2147483647,
+        "recomputed": 1633168943,
+        "recorded": 1633168943
+      },
+      {
+        "match": true,
+        "nonzero": true,
+        "prime": 2147483629,
+        "recomputed": 2005871687,
+        "recorded": 2005871687
+      }
+    ],
+    "scope": "Lower bound only; no 273-dimensional source basis was delivered.",
+    "status": "PASS"
+  },
+  "S2_isolated_replay": {
+    "independent_jet_cases": 8,
+    "intermediate_arc": {
+      "base_span": 5,
+      "independent_point_checks": 24,
+      "leading_form": "v*w*(y+v)*(z+v)",
+      "rank_M": 3
+    },
+    "rank_cases": {
+      "integral_fresh_rank9": 9,
+      "integral_rank0": 0,
+      "integral_rank9": 9,
+      "reducible_rank3": 3
+    },
+    "tangent_calibration": {
+      "intersection": 50,
+      "kernel": 64,
+      "quotient": 0,
+      "rank_dPhi": 16,
+      "span": 64,
+      "tangents": [
+        57,
+        57
+      ]
+    },
+    "time_utc": "2026-09-09T01:46:44.495227+00:00"
+  },
+  "S3": {
+    "bridge": [
+      {
+        "checks": {
+          "C_common": true,
+          "C_native": true,
+          "det_circuit": true,
+          "det_common": true,
+          "det_native": true,
+          "generic_circuit": true,
+          "generic_common": true,
+          "generic_native": true
+        },
+        "pass": true,
+        "prime": 2147483647
+      },
+      {
+        "checks": {
+          "C_common": true,
+          "C_native": true,
+          "det_circuit": true,
+          "det_common": true,
+          "det_native": true,
+          "generic_circuit": true,
+          "generic_common": true,
+          "generic_native": true
+        },
+        "pass": true,
+        "prime": 2147483629
+      }
+    ],
+    "claim": "degree-12 control residual rank is exactly 29 with nullity 2, and the common-source evaluation bridge is nondegenerate at both house primes",
+    "control": [
+      {
+        "RU_zero_recomputed": true,
+        "match": true,
+        "prime": 2147483647,
+        "rank_lower_bound": 29,
+        "recomputed_minor": 1235010539,
+        "recorded_minor": 1235010539,
+        "shape": [
+          239,
+          31
+        ]
+      },
+      {
+        "RU_zero_recomputed": true,
+        "match": true,
+        "prime": 2147483629,
+        "rank_lower_bound": 29,
+        "recomputed_minor": 142343174,
+        "recorded_minor": 142343174,
+        "shape": [
+          239,
+          31
+        ]
+      }
+    ],
+    "scope": "Control cell only; the degree-24 274-source target assembly remains unfinished.",
+    "status": "PASS"
+  },
+  "S4": {
+    "claim": "rank(T_pad) >= 12 for the explicitly evaluated true padded-permanent prefix",
+    "rows": [
+      {
+        "match": true,
+        "nonzero": true,
+        "prime": 2147483647,
+        "recomputed": 1086325324,
+        "recorded": 1086325324,
+        "shape": [
+          34,
+          12
+        ]
+      },
+      {
+        "match": true,
+        "nonzero": true,
+        "prime": 2147483629,
+        "recomputed": 2097075880,
+        "recorded": 2097075880,
+        "shape": [
+          34,
+          12
+        ]
+      }
+    ],
+    "scope": "Twelve columns only; rank 274 and a 274-dimensional source basis remain open.",
+    "status": "PASS"
+  },
+  "audit_incidents": [
+    {
+      "detail": "S1 verify_n3_minors.py rewrote n3_independent_minors.json while replaying eight passing minors; the original 5,391-byte file was restored from S1_artifacts.zip and its manifest SHA256 0d51ff68f9fcc32c1cdb9dac19cd8df25670e8eb8ec5069d44a522a30ba93f69 was rechecked.",
+      "status": "REMEDIATED"
+    }
+  ],
+  "created_utc": "2026-09-09T02:32:35.306700+00:00",
+  "frozen_manifest_checks": [
+    {
+      "entries": 60,
+      "failures": [],
+      "label": "S1",
+      "manifest": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S1\\artifact_manifest.json",
+      "status": "PASS",
+      "verified": 60,
+      "verified_bytes": 4002354
+    },
+    {
+      "entries": 218,
+      "failures": [],
+      "label": "S2",
+      "manifest": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S2\\artifact_manifest.json",
+      "status": "PASS",
+      "verified": 218,
+      "verified_bytes": 5452503
+    },
+    {
+      "entries": 37,
+      "failures": [],
+      "label": "S3",
+      "manifest": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S3\\artifact_manifest.json",
+      "status": "PASS",
+      "verified": 37,
+      "verified_bytes": 2384034
+    },
+    {
+      "entries": 59,
+      "failures": [],
+      "label": "S3 continuation",
+      "manifest": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S3\\continuation_20260908\\continuation_manifest.json",
+      "status": "PASS",
+      "verified": 59,
+      "verified_bytes": 295388995
+    },
+    {
+      "entries": 68,
+      "failures": [],
+      "label": "S4",
+      "manifest": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S4\\artifact_manifest.json",
+      "status": "PASS",
+      "verified": 68,
+      "verified_bytes": 2465488
+    }
+  ],
+  "git": {
+    "branch_line": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+    "c984_is_ancestor": true,
+    "cached_origin_main": "afb8c3319d3d1f3afc3d2578c8cb322f2b8a3b92",
+    "clean": false,
+    "head": "afb8c3319d3d1f3afc3d2578c8cb322f2b8a3b92",
+    "head_equals_cached_origin_main": true,
+    "network_fetch_performed": false,
+    "qualification": "Cached origin/main only; restricted network prevented a fresh remote fetch."
+  },
+  "overall": "PASS_WITH_OPEN_TARGETS",
+  "protocol": {
+    "a": 274,
+    "delta": 24,
+    "house_primes": [
+      2147483647,
+      2147483629
+    ],
+    "lambda": [
+      65,
+      17,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "r": 9
+  },
+  "semantics": {
+    "certifier_all_agree": true,
+    "certifier_comparisons": 40,
+    "certifier_full_rank_cells": 0,
+    "certifier_scope": "Five selected cells and eight orders each; semantic equivalence of two lower-bound implementations, not a full certificate corpus PASS.",
+    "family_order": [
+      "det_pencil",
+      "padded_permanent",
+      "reducible",
+      "generic",
+      "permanent_pencil"
+    ],
+    "family_order_pass": true,
+    "padded_and_unpadded_permanent_are_distinct": true,
+    "repository_selftest": {
+      "reason": "ModuleNotFoundError: No module named 'flint'",
+      "status": "BLOCKED_BEFORE_TESTS",
+      "tests_run": 0
+    }
+  },
+  "session_inventory": [
+    {
+      "report": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S1\\S1_report.md",
+      "slot": "S1",
+      "status": "COMPLETED_BOUNDED_FALLBACK"
+    },
+    {
+      "report": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S2\\S2_report.md",
+      "slot": "S2",
+      "status": "COMPLETED_BOUNDED_FALLBACK"
+    },
+    {
+      "report": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S3\\S3_report.md",
+      "slot": "S3",
+      "status": "COMPLETED_WITH_CONTROL_CONTINUATION"
+    },
+    {
+      "report": null,
+      "slot": "S3-degree13",
+      "status": "INCOMPLETE_NO_REPORT_OR_MANIFEST"
+    },
+    {
+      "report": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch12_Results\\S4\\S4_report.md",
+      "slot": "S4",
+      "status": "COMPLETED_12_COLUMN_PREFIX"
+    },
+    {
+      "report": null,
+      "slot": "S5",
+      "status": "INCOMPLETE_NO_REPORT_OR_MANIFEST"
+    },
+    {
+      "report": null,
+      "slot": "s74",
+      "status": "NOT_DELIVERED"
+    },
+    {
+      "report": null,
+      "slot": "s75",
+      "status": "NOT_DELIVERED"
+    },
+    {
+      "report": null,
+      "slot": "s76",
+      "status": "NOT_DELIVERED"
+    },
+    {
+      "report": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\s78_review_repo\\docs\\s78_report.md",
+      "slot": "s77",
+      "status": "PARTIAL_EVIDENCE_UNDER_MISLABELLED_S78_REPORT"
+    },
+    {
+      "report": null,
+      "slot": "s78",
+      "status": "NOT_DELIVERED_STABLE_M6_RANKS"
+    },
+    {
+      "report": null,
+      "slot": "s79",
+      "status": "NOT_DELIVERED"
+    }
+  ],
+  "stable_census": {
+    "correction": "The canonical brief's count 46 is contradicted by the exhaustive recount: 57 total, 10 zero, 47 positive.",
+    "distribution": {
+      "0": 10,
+      "1": 4,
+      "10": 3,
+      "11": 2,
+      "12": 3,
+      "15": 2,
+      "17": 1,
+      "18": 1,
+      "19": 4,
+      "2": 5,
+      "20": 2,
+      "22": 1,
+      "25": 1,
+      "27": 1,
+      "3": 2,
+      "33": 1,
+      "4": 5,
+      "5": 4,
+      "7": 2,
+      "8": 2,
+      "9": 1
+    },
+    "frontier_a_infinity_4": [
+      {
+        "a_infinity": 4,
+        "house_prime_raw_residues": {
+          "2147483629": 1668,
+          "2147483647": 1668
+        },
+        "raw_match": true,
+        "raw_weight_space": 1668,
+        "tail": [
+          6,
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "a_infinity": 4,
+        "house_prime_raw_residues": {
+          "2147483629": 3716,
+          "2147483647": 3716
+        },
+        "raw_match": true,
+        "raw_weight_space": 3716,
+        "tail": [
+          4,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "a_infinity": 4,
+        "house_prime_raw_residues": {
+          "2147483629": 4636,
+          "2147483647": 4636
+        },
+        "raw_match": true,
+        "raw_weight_space": 4636,
+        "tail": [
+          6,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "a_infinity": 4,
+        "house_prime_raw_residues": {
+          "2147483629": 6922,
+          "2147483647": 6922
+        },
+        "raw_match": true,
+        "raw_weight_space": 6922,
+        "tail": [
+          5,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "a_infinity": 4,
+        "house_prime_raw_residues": {
+          "2147483629": 9166,
+          "2147483647": 9166
+        },
+        "raw_match": true,
+        "raw_weight_space": 9166,
+        "tail": [
+          5,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "house_prime_residues_all_57": {
+      "[10, 1, 1, 1, 0]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[10, 2, 1, 0, 0]": {
+        "2147483629": 12,
+        "2147483647": 12
+      },
+      "[10, 3, 0, 0, 0]": {
+        "2147483629": 19,
+        "2147483647": 19
+      },
+      "[11, 1, 1, 0, 0]": {
+        "2147483629": 2,
+        "2147483647": 2
+      },
+      "[11, 2, 0, 0, 0]": {
+        "2147483629": 15,
+        "2147483647": 15
+      },
+      "[12, 1, 0, 0, 0]": {
+        "2147483629": 7,
+        "2147483647": 7
+      },
+      "[13, 0, 0, 0, 0]": {
+        "2147483629": 5,
+        "2147483647": 5
+      },
+      "[3, 3, 3, 2, 2]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[3, 3, 3, 3, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[4, 3, 2, 2, 2]": {
+        "2147483629": 2,
+        "2147483647": 2
+      },
+      "[4, 3, 3, 2, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[4, 3, 3, 3, 0]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[4, 4, 2, 2, 1]": {
+        "2147483629": 3,
+        "2147483647": 3
+      },
+      "[4, 4, 3, 1, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[4, 4, 3, 2, 0]": {
+        "2147483629": 4,
+        "2147483647": 4
+      },
+      "[4, 4, 4, 1, 0]": {
+        "2147483629": 5,
+        "2147483647": 5
+      },
+      "[5, 2, 2, 2, 2]": {
+        "2147483629": 4,
+        "2147483647": 4
+      },
+      "[5, 3, 2, 2, 1]": {
+        "2147483629": 4,
+        "2147483647": 4
+      },
+      "[5, 3, 3, 1, 1]": {
+        "2147483629": 1,
+        "2147483647": 1
+      },
+      "[5, 3, 3, 2, 0]": {
+        "2147483629": 1,
+        "2147483647": 1
+      },
+      "[5, 4, 2, 1, 1]": {
+        "2147483629": 2,
+        "2147483647": 2
+      },
+      "[5, 4, 2, 2, 0]": {
+        "2147483629": 11,
+        "2147483647": 11
+      },
+      "[5, 4, 3, 1, 0]": {
+        "2147483629": 10,
+        "2147483647": 10
+      },
+      "[5, 4, 4, 0, 0]": {
+        "2147483629": 8,
+        "2147483647": 8
+      },
+      "[5, 5, 1, 1, 1]": {
+        "2147483629": 1,
+        "2147483647": 1
+      },
+      "[5, 5, 2, 1, 0]": {
+        "2147483629": 7,
+        "2147483647": 7
+      },
+      "[5, 5, 3, 0, 0]": {
+        "2147483629": 3,
+        "2147483647": 3
+      },
+      "[6, 2, 2, 2, 1]": {
+        "2147483629": 4,
+        "2147483647": 4
+      },
+      "[6, 3, 2, 1, 1]": {
+        "2147483629": 2,
+        "2147483647": 2
+      },
+      "[6, 3, 2, 2, 0]": {
+        "2147483629": 12,
+        "2147483647": 12
+      },
+      "[6, 3, 3, 1, 0]": {
+        "2147483629": 4,
+        "2147483647": 4
+      },
+      "[6, 4, 1, 1, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[6, 4, 2, 1, 0]": {
+        "2147483629": 20,
+        "2147483647": 20
+      },
+      "[6, 4, 3, 0, 0]": {
+        "2147483629": 19,
+        "2147483647": 19
+      },
+      "[6, 5, 1, 1, 0]": {
+        "2147483629": 5,
+        "2147483647": 5
+      },
+      "[6, 5, 2, 0, 0]": {
+        "2147483629": 20,
+        "2147483647": 20
+      },
+      "[6, 6, 1, 0, 0]": {
+        "2147483629": 10,
+        "2147483647": 10
+      },
+      "[7, 2, 2, 1, 1]": {
+        "2147483629": 1,
+        "2147483647": 1
+      },
+      "[7, 2, 2, 2, 0]": {
+        "2147483629": 11,
+        "2147483647": 11
+      },
+      "[7, 3, 1, 1, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[7, 3, 2, 1, 0]": {
+        "2147483629": 15,
+        "2147483647": 15
+      },
+      "[7, 3, 3, 0, 0]": {
+        "2147483629": 8,
+        "2147483647": 8
+      },
+      "[7, 4, 1, 1, 0]": {
+        "2147483629": 9,
+        "2147483647": 9
+      },
+      "[7, 4, 2, 0, 0]": {
+        "2147483629": 33,
+        "2147483647": 33
+      },
+      "[7, 5, 1, 0, 0]": {
+        "2147483629": 19,
+        "2147483647": 19
+      },
+      "[7, 6, 0, 0, 0]": {
+        "2147483629": 12,
+        "2147483647": 12
+      },
+      "[8, 2, 1, 1, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[8, 2, 2, 1, 0]": {
+        "2147483629": 10,
+        "2147483647": 10
+      },
+      "[8, 3, 1, 1, 0]": {
+        "2147483629": 5,
+        "2147483647": 5
+      },
+      "[8, 3, 2, 0, 0]": {
+        "2147483629": 25,
+        "2147483647": 25
+      },
+      "[8, 4, 1, 0, 0]": {
+        "2147483629": 27,
+        "2147483647": 27
+      },
+      "[8, 5, 0, 0, 0]": {
+        "2147483629": 18,
+        "2147483647": 18
+      },
+      "[9, 1, 1, 1, 1]": {
+        "2147483629": 0,
+        "2147483647": 0
+      },
+      "[9, 2, 1, 1, 0]": {
+        "2147483629": 2,
+        "2147483647": 2
+      },
+      "[9, 2, 2, 0, 0]": {
+        "2147483629": 17,
+        "2147483647": 17
+      },
+      "[9, 3, 1, 0, 0]": {
+        "2147483629": 19,
+        "2147483647": 19
+      },
+      "[9, 4, 0, 0, 0]": {
+        "2147483629": 22,
+        "2147483647": 22
+      }
+    },
+    "independent_partition_count": 57,
+    "nonzero_blocks": 47,
+    "retained_a_infinity_1_tail": [
+      5,
+      3,
+      3,
+      2
+    ],
+    "scope": "Ambient stable multiplicities and raw weight spaces only; no stable determinant restriction ranks were evaluated.",
+    "status": "PASS",
+    "zero_blocks": 10
+  }
+}

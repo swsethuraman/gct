@@ -1,0 +1,160 @@
+{
+  "ambient_multiplicity": 17107,
+  "crt": {
+    "modulus": 45671921168693645933699105804560590380377589537,
+    "modulus_exceeds_upper_bound": true,
+    "primes": [
+      2147483647,
+      2147483629,
+      2147483587,
+      2147483579,
+      2147483563
+    ],
+    "residues": [
+      17107,
+      17107,
+      17107,
+      17107,
+      17107
+    ],
+    "upper_bound": 26661962020138904060787601545021881610
+  },
+  "delta": 40,
+  "elapsed_seconds": 475.831486,
+  "lambda": [
+    151,
+    31,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "n": 5,
+  "schema": "batch12-s5-ambient/1",
+  "status": "CERTIFIED",
+  "tail": [
+    31,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "tail_size": 49,
+  "truncation_audit": {
+    "finite_equals_stable": true,
+    "minimum_slack": 0,
+    "minimum_slack_witness": {
+      "available_non_linear_factors": 9,
+      "maximum_needed_non_linear_factors": 9,
+      "nu": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "q1": 31,
+      "removed_vertical": 0,
+      "tau": [
+        31,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "pairs_checked": 2187,
+    "reason": "generators Sym^i for 2<=i<=n use at most floor(|nu|/2) factors"
+  },
+  "upper_bound_derivation": {
+    "factor_count_max": 24,
+    "factor_count_min": 10,
+    "method": "forget generator-degree constraints and order each multiset",
+    "terms": [
+      {
+        "factors": 10,
+        "ordered_composition_bound": 1259286280714113437500000
+      },
+      {
+        "factors": 11,
+        "ordered_composition_bound": 26640326495964540080037888
+      },
+      {
+        "factors": 12,
+        "ordered_composition_bound": 457458975156204738300100608
+      },
+      {
+        "factors": 13,
+        "ordered_composition_bound": 6563877523768649878724798504
+      },
+      {
+        "factors": 14,
+        "ordered_composition_bound": 80538021001340032673812500000
+      },
+      {
+        "factors": 15,
+        "ordered_composition_bound": 861019435438618705920000000000
+      },
+      {
+        "factors": 16,
+        "ordered_composition_bound": 8145138777396163643859642875904
+      },
+      {
+        "factors": 17,
+        "ordered_composition_bound": 69063576618791158164163055106234
+      },
+      {
+        "factors": 18,
+        "ordered_composition_bound": 530619856368520607881941703296672
+      },
+      {
+        "factors": 19,
+        "ordered_composition_bound": 3728417070266902026646864000000000
+      },
+      {
+        "factors": 20,
+        "ordered_composition_bound": 24150834126747344732839200000000000
+      },
+      {
+        "factors": 21,
+        "ordered_composition_bound": 145213329090464152275606968961432360
+      },
+      {
+        "factors": 22,
+        "ordered_composition_bound": 815393795356019192892110536511867360
+      },
+      {
+        "factors": 23,
+        "ordered_composition_bound": 4298507008781818489270436146792366080
+      },
+      {
+        "factors": 24,
+        "ordered_composition_bound": 21374359858535130720000000000000000000
+      }
+    ],
+    "weight_multiplicity_upper": 26661962020138904060787601545021881610
+  },
+  "weyl": {
+    "collapsed_nonzero_weights": 1111,
+    "monomial_generators_degrees_2_through_n": 2992
+  }
+}

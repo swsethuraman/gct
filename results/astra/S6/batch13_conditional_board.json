@@ -1,0 +1,72 @@
+[
+  {
+    "branch": "LMR rank resolution",
+    "fallback": "Bank the largest exact common-source minors and a residual-block ledger; do not infer D.",
+    "input": "S1 10-source bank, S3 compact operator/common-source bridge, S4 34-candidate/12-certified padded prefix; lambda=(65,17,2^7), delta=24, r=9, a=274.",
+    "kill": "Kill any implementation that changes source order/family semantics, exceeds its preregistered wall/memory bound without checkpoint progress, or reports a sampled deficiency as an upper bound.",
+    "priority": 1,
+    "success": "A 273-minor closes rank(T_det)=273 using the LMR upper bound; a 274-minor closes rank(T_pad)=274; record D from certified exact ranks.",
+    "target": "Assemble one deterministic 274-dimensional rational source basis and compute T_det and T_pad on identical ordered sources.",
+    "verification": "Both house primes, one independent evaluator, fresh reproducible points, common source order, normalization/orientation record, and SHA256 manifest."
+  },
+  {
+    "branch": "D > 0",
+    "fallback": "Publish the finite-cell separation and a bounded mechanism ledger only.",
+    "input": "An exact positive D from priority 1.",
+    "kill": "Kill extrapolation from a single cell or any fixed-m n=5 proposal violating 11 <= m^2+1.",
+    "priority": 2,
+    "success": "Duplicate exact ranks/minors and an invariant mechanism that selects at least one growing-m successor family.",
+    "target": "Identify the source/kernel mechanism causing determinant-side excess vanishing and test admissible successor rows with 2n+1 <= m^2+1.",
+    "verification": "Both house primes, one independent evaluator, fresh reproducible points, common source order, normalization/orientation record, and SHA256 manifest."
+  },
+  {
+    "branch": "D = 0",
+    "fallback": "Bank exact intersection/containment bounds with witnessed vectors.",
+    "input": "Exact equality of the two certified target ranks.",
+    "kill": "Kill dimension-only reasoning that substitutes equal nullities for equal subspaces.",
+    "priority": 3,
+    "success": "Certify whether the kernels coincide, contain one another, or differ by explicit rational/modular witnesses.",
+    "target": "Compare determinant and padded kernel subspaces on the common source basis.",
+    "verification": "Both house primes, one independent evaluator, fresh reproducible points, common source order, normalization/orientation record, and SHA256 manifest."
+  },
+  {
+    "branch": "D < 0",
+    "fallback": "Retain the negative result and fund only the cheapest verified successor checkpoint.",
+    "input": "An exact negative D from priority 1.",
+    "kill": "Kill relabelling a negative cell as an evaluator failure absent a failed control.",
+    "priority": 4,
+    "success": "A frozen negative certificate plus one admissible successor cost model with all components exposed.",
+    "target": "Bank the negative LMR result and move to precommitted scaling/stable successors.",
+    "verification": "Both house primes, one independent evaluator, fresh reproducible points, common source order, normalization/orientation record, and SHA256 manifest."
+  },
+  {
+    "branch": "r=5 geometry",
+    "fallback": "Publish residual ideals, component ledger, exact lower bounds, and the next smallest elimination.",
+    "input": "S2 exact charts and the bounded 98-variable characteristic-coefficient reduction from the mislabelled s78 report.",
+    "kill": "Stop a bounded CAS job at its fixed wall/memory limit; never promote an unfinished ideal or interior sampling bound.",
+    "priority": 5,
+    "success": "A rational certificate giving the required global bound/completeness, with every exceptional component accounted for.",
+    "target": "Prove an exact global generic-image bound or classify all residual components, including reducible/singular strata.",
+    "verification": "Independent exact substitution and rational certificate checking; modular scouting at both house primes is not itself a Q proof."
+  },
+  {
+    "branch": "stable M6 a_infinity=4 frontier",
+    "fallback": "Bank each completed exact rank and resume at the next untouched block.",
+    "input": "Five blocks in raw-cost order: (6,3,3,1):1668; (4,4,3,2):3716; (6,2,2,2,1):4636; (5,3,2,2,1):6922; (5,2,2,2,2):9166.",
+    "kill": "Stop at the first equation; a negative prefix is not a theorem about the untested suffix.",
+    "priority": 6,
+    "success": "A first nonzero stable determinant kernel is duplicated and structurally analysed; or all five are certified full rank, closing the scoped a_infinity<=4 search.",
+    "target": "Compute determinant restriction ranks sequentially in that order, stopping at the first stable equation.",
+    "verification": "Both house primes, one independent evaluator, fresh reproducible points, common source order, normalization/orientation record, and SHA256 manifest."
+  },
+  {
+    "branch": "scaling economics",
+    "fallback": "Publish exact ambient/boundary components and conservative upper/lower cost bounds without a scaling claim.",
+    "input": "Unfrozen S5 precursor/boundary/width artifacts and the stable frontier; row-budget constraint 2n+1 <= m^2+1.",
+    "kill": "Kill conclusions based on width samples, omitted boundary residuals, or fixed m=3 at n=5.",
+    "priority": 7,
+    "success": "Independent counts agree and the projected successor fits explicit time/memory budgets with checkpointable state.",
+    "target": "Freeze exact finite a_40, C_total, C_peak, boundary corrections, and a peak-memory cost law for an admissible growing-m family.",
+    "verification": "Two exact count paths, boundary exhaustiveness audit, measured peak memory, versioned source, and SHA256 manifest."
+  }
+]
