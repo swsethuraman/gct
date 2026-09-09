@@ -1,0 +1,3945 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-04",
+ "model": "C",
+ "f": {
+  "(1, 1, 1)": 1
+ },
+ "N": 3,
+ "r": 3,
+ "delta": 4,
+ "seed": 20260909,
+ "bound": 7,
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "conventions": "E_ij c_alpha = (alpha_i+1) c_{alpha+e_i-e_j}; fixed factor x_1 = index 0; ranks exact over Q (fmpz_mat), primes as cross-checks; all values native (values_are: none)",
+ "cubic": {
+  "(12, 0, 0)": {
+   "nu": [
+    12,
+    0,
+    0
+   ],
+   "a3": 1,
+   "N_S": 1,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(10, 2, 0)": {
+   "nu": [
+    10,
+    2,
+    0
+   ],
+   "a3": 1,
+   "N_S": 2,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(9, 3, 0)": {
+   "nu": [
+    9,
+    3,
+    0
+   ],
+   "a3": 1,
+   "N_S": 3,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(8, 4, 0)": {
+   "nu": [
+    8,
+    4,
+    0
+   ],
+   "a3": 1,
+   "N_S": 4,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(8, 2, 2)": {
+   "nu": [
+    8,
+    2,
+    2
+   ],
+   "a3": 1,
+   "N_S": 8,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(7, 4, 1)": {
+   "nu": [
+    7,
+    4,
+    1
+   ],
+   "a3": 1,
+   "N_S": 8,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(7, 3, 2)": {
+   "nu": [
+    7,
+    3,
+    2
+   ],
+   "a3": 1,
+   "N_S": 12,
+   "rank_eval_Q": 0,
+   "rank_p": [
+    0,
+    0
+   ],
+   "kernel_dim_sampled": 1,
+   "kernel_certified": true,
+   "i3": 1,
+   "kernel": [
+    [
+     1
+    ]
+   ]
+  },
+  "(6, 6, 0)": {
+   "nu": [
+    6,
+    6,
+    0
+   ],
+   "a3": 1,
+   "N_S": 5,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(6, 4, 2)": {
+   "nu": [
+    6,
+    4,
+    2
+   ],
+   "a3": 1,
+   "N_S": 16,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(4, 4, 4)": {
+   "nu": [
+    4,
+    4,
+    4
+   ],
+   "a3": 1,
+   "N_S": 25,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  }
+ },
+ "cells": [
+  {
+   "lam": [
+    16,
+    0,
+    0
+   ],
+   "a4": 1,
+   "N_S4": 1,
+   "lam_minus": [
+    12,
+    0,
+    0
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      12,
+      0,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 1,
+   "N_S_lam_minus": 1,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    14,
+    2,
+    0
+   ],
+   "a4": 1,
+   "N_S4": 2,
+   "lam_minus": [
+    10,
+    2,
+    0
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      12,
+      0,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    },
+    {
+     "nu": [
+      11,
+      1,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 2,
+   "N_S_lam_minus": 2,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    13,
+    3,
+    0
+   ],
+   "a4": 1,
+   "N_S4": 3,
+   "lam_minus": [
+    9,
+    3,
+    0
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      12,
+      0,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    },
+    {
+     "nu": [
+      11,
+      1,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 3,
+   "N_S_lam_minus": 3,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    12,
+    4,
+    0
+   ],
+   "a4": 2,
+   "N_S4": 5,
+   "lam_minus": [
+    8,
+    4,
+    0
+   ],
+   "mult_R_fixedfactor": 2,
+   "mult_R_eval_Q": 2,
+   "mult_R_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_eval_Q": 2,
+   "mult_P_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_fixedfactor_eval_Q": 2,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      12,
+      0,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    },
+    {
+     "nu": [
+      11,
+      1,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 4,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    12,
+    2,
+    2
+   ],
+   "a4": 1,
+   "N_S4": 9,
+   "lam_minus": [
+    8,
+    2,
+    2
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      2,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 2,
+   "N_S_lam_minus": 8,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    11,
+    4,
+    1
+   ],
+   "a4": 1,
+   "N_S4": 10,
+   "lam_minus": [
+    7,
+    4,
+    1
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      11,
+      1,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      10,
+      1,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 8,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    11,
+    3,
+    2
+   ],
+   "a4": 1,
+   "N_S4": 14,
+   "lam_minus": [
+    7,
+    3,
+    2
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      2,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        5,
+        -2
+       ],
+       "q": {
+        "(2, 0, 0)": -3,
+        "(1, 1, 0)": 4,
+        "(1, 0, 1)": 0,
+        "(0, 2, 0)": -5,
+        "(0, 1, 1)": -2,
+        "(0, 0, 2)": 1
+       },
+       "lhs": -1904,
+       "rhs": -224
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ]
+        ],
+        -4
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        9
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        3
+       ]
+      ]
+     ]
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 4,
+   "N_S_lam_minus": 12,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    10,
+    6,
+    0
+   ],
+   "a4": 2,
+   "N_S4": 7,
+   "lam_minus": [
+    6,
+    6,
+    0
+   ],
+   "mult_R_fixedfactor": 2,
+   "mult_R_eval_Q": 2,
+   "mult_R_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_eval_Q": 2,
+   "mult_P_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_fixedfactor_eval_Q": 2,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      6,
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 5,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    10,
+    5,
+    1
+   ],
+   "a4": 1,
+   "N_S4": 13,
+   "lam_minus": [
+    6,
+    5,
+    1
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      10,
+      1,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 9,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    10,
+    4,
+    2
+   ],
+   "a4": 2,
+   "N_S4": 22,
+   "lam_minus": [
+    6,
+    4,
+    2
+   ],
+   "mult_R_fixedfactor": 2,
+   "mult_R_eval_Q": 2,
+   "mult_R_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_eval_Q": 2,
+   "mult_P_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_fixedfactor_eval_Q": 2,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 3,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      10,
+      2,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      2,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        1,
+        2
+       ],
+       "q": {
+        "(2, 0, 0)": 0,
+        "(1, 1, 0)": -5,
+        "(1, 0, 1)": -3,
+        "(0, 2, 0)": 1,
+        "(0, 1, 1)": -5,
+        "(0, 0, 2)": -4
+       },
+       "lhs": 64,
+       "rhs": -176
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ]
+        ],
+        -4
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        9
+       ]
+      ]
+     ]
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 7,
+   "N_S_lam_minus": 16,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    9,
+    6,
+    1
+   ],
+   "a4": 1,
+   "N_S4": 16,
+   "lam_minus": [
+    5,
+    6,
+    1
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      6,
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 9,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    9,
+    5,
+    2
+   ],
+   "a4": 1,
+   "N_S4": 27,
+   "lam_minus": [
+    5,
+    5,
+    2
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      9,
+      2,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      2,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        -4,
+        -5
+       ],
+       "q": {
+        "(2, 0, 0)": -5,
+        "(1, 1, 0)": 1,
+        "(1, 0, 1)": 1,
+        "(0, 2, 0)": 2,
+        "(0, 1, 1)": 2,
+        "(0, 0, 2)": 2
+       },
+       "lhs": -20336,
+       "rhs": 1488
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        3
+       ]
+      ]
+     ]
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      5,
+      5,
+      2
+     ],
+     "a3": 0,
+     "i3": 0
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 6,
+   "N_S_lam_minus": 16,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    9,
+    4,
+    3
+   ],
+   "a4": 1,
+   "N_S4": 35,
+   "lam_minus": [
+    5,
+    4,
+    3
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 2,
+   "J_certified": true,
+   "dim_W_plus_J": 3,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      9,
+      3,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        -4,
+        3
+       ],
+       "q": {
+        "(2, 0, 0)": 1,
+        "(1, 1, 0)": -5,
+        "(1, 0, 1)": -4,
+        "(0, 2, 0)": 4,
+        "(0, 1, 1)": -2,
+        "(0, 0, 2)": -2
+       },
+       "lhs": -34920,
+       "rhs": -43200
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -2
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        6
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -6
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        9
+       ]
+      ]
+     ]
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      6,
+      3,
+      3
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      5,
+      4,
+      3
+     ],
+     "a3": 0,
+     "i3": 0
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 5,
+   "N_S_lam_minus": 21,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    8,
+    8,
+    0
+   ],
+   "a4": 1,
+   "N_S4": 8,
+   "lam_minus": [
+    4,
+    8,
+    0
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 1,
+   "N_S_lam_minus": 4,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    8,
+    6,
+    2
+   ],
+   "a4": 2,
+   "N_S4": 33,
+   "lam_minus": [
+    4,
+    6,
+    2
+   ],
+   "mult_R_fixedfactor": 2,
+   "mult_R_eval_Q": 2,
+   "mult_R_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_eval_Q": 2,
+   "mult_P_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_fixedfactor_eval_Q": 2,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 3,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      8,
+      3,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      8,
+      2,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        -1,
+        -3
+       ],
+       "q": {
+        "(2, 0, 0)": 4,
+        "(1, 1, 0)": 1,
+        "(1, 0, 1)": 3,
+        "(0, 2, 0)": 4,
+        "(0, 1, 1)": 1,
+        "(0, 0, 2)": -3
+       },
+       "lhs": 2034,
+       "rhs": 3164
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -2
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        4
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -9
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -3
+       ]
+      ]
+     ]
+    },
+    {
+     "nu": [
+      6,
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 6,
+   "N_S_lam_minus": 16,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    8,
+    4,
+    4
+   ],
+   "a4": 2,
+   "N_S4": 51,
+   "lam_minus": [
+    4,
+    4,
+    4
+   ],
+   "mult_R_fixedfactor": 2,
+   "mult_R_eval_Q": 2,
+   "mult_R_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_eval_Q": 2,
+   "mult_P_eval_p": [
+    2,
+    2
+   ],
+   "mult_P_fixedfactor_eval_Q": 2,
+   "dim_J_lam_minus": 2,
+   "J_certified": true,
+   "dim_W_plus_J": 4,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      8,
+      4,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      5,
+      4,
+      3
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      4,
+      4,
+      4
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 4,
+   "N_S_lam_minus": 25,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    7,
+    6,
+    3
+   ],
+   "a4": 1,
+   "N_S4": 49,
+   "lam_minus": [
+    3,
+    6,
+    3
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 2,
+   "J_certified": true,
+   "dim_W_plus_J": 3,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      7,
+      5,
+      0
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      7,
+      4,
+      1
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      7,
+      3,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 3,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        -5,
+        5
+       ],
+       "q": {
+        "(2, 0, 0)": 0,
+        "(1, 1, 0)": -5,
+        "(1, 0, 1)": 5,
+        "(0, 2, 0)": -5,
+        "(0, 1, 1)": -2,
+        "(0, 0, 2)": -5
+       },
+       "lhs": 1350000,
+       "rhs": -1350000
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        1
+       ],
+       [
+        [
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -2
+       ],
+       [
+        [
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ]
+        ],
+        3
+       ],
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        2
+       ],
+       [
+        [
+         [
+          2,
+          0,
+          1
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        -5
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          0,
+          2
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          1,
+          1
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        4
+       ],
+       [
+        [
+         [
+          2,
+          1,
+          0
+         ],
+         [
+          1,
+          2,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        -3
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          2,
+          1
+         ]
+        ],
+        -2
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          2,
+          1
+         ],
+         [
+          0,
+          1,
+          2
+         ]
+        ],
+        9
+       ],
+       [
+        [
+         [
+          3,
+          0,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          3,
+          0
+         ],
+         [
+          0,
+          0,
+          3
+         ]
+        ],
+        -27
+       ]
+      ]
+     ]
+    },
+    {
+     "nu": [
+      6,
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    },
+    {
+     "nu": [
+      6,
+      3,
+      3
+     ],
+     "a3": 0,
+     "i3": 0
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 4,
+   "N_S_lam_minus": 18,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    6,
+    6,
+    4
+   ],
+   "a4": 1,
+   "N_S4": 66,
+   "lam_minus": [
+    2,
+    6,
+    4
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      6,
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 2
+    },
+    {
+     "nu": [
+      6,
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      6,
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 3
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 2,
+   "N_S_lam_minus": 16,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  }
+ ],
+ "seconds": 0.2
+}
