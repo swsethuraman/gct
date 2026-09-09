@@ -1,0 +1,170 @@
+{
+ "checks": [
+  {
+   "name": "S1 transported matrix = base . diag(u^12), p=2147483647",
+   "ok": true
+  },
+  {
+   "name": "S1 transported det = base minor . prod u^12, p=2147483647",
+   "ok": true,
+   "base_minor": 1203347414,
+   "scale": 2106253371,
+   "recorded": 1633168943
+  },
+  {
+   "name": "S1 base minor is nonzero, p=2147483647",
+   "ok": true
+  },
+  {
+   "name": "no sampled seed point is a u-zero, p=2147483647",
+   "ok": true,
+   "u_values": [
+    1193,
+    196
+   ]
+  },
+  {
+   "name": "S1 base minor agrees with its own control minor, p=2147483647",
+   "ok": true,
+   "control": 1203347414
+  },
+  {
+   "name": "S1 transported matrix = base . diag(u^12), p=2147483629",
+   "ok": true
+  },
+  {
+   "name": "S1 transported det = base minor . prod u^12, p=2147483629",
+   "ok": true,
+   "base_minor": 1424748952,
+   "scale": 1683547261,
+   "recorded": 2005871687
+  },
+  {
+   "name": "S1 base minor is nonzero, p=2147483629",
+   "ok": true
+  },
+  {
+   "name": "no sampled seed point is a u-zero, p=2147483629",
+   "ok": true,
+   "u_values": [
+    1193,
+    196
+   ]
+  },
+  {
+   "name": "S1 base minor agrees with its own control minor, p=2147483629",
+   "ok": true,
+   "control": 1424748952
+  },
+  {
+   "name": "u(P) = det(A_1) nonzero at all 12 repository determinant points",
+   "ok": true,
+   "u_values": [
+    212428,
+    -959124,
+    110257,
+    124151,
+    5600,
+    303993,
+    -203728,
+    -14924,
+    276015,
+    -93684,
+    -8092,
+    53942
+   ]
+  },
+  {
+   "name": "repository seed gives a nonzero 2x2 determinant minor, p=2147483647",
+   "ok": true,
+   "cols": [
+    0,
+    1
+   ],
+   "minor": 1361963321
+  },
+  {
+   "name": "its transport to rung 24 is nonzero, p=2147483647",
+   "ok": true,
+   "transported_minor": 1107343932
+  },
+  {
+   "name": "repository seed gives a nonzero 2x2 determinant minor, p=2147483629",
+   "ok": true,
+   "cols": [
+    0,
+    1
+   ],
+   "minor": 596224962
+  },
+  {
+   "name": "its transport to rung 24 is nonzero, p=2147483629",
+   "ok": true,
+   "transported_minor": 1611236870
+  },
+  {
+   "name": "a_13 = 39 on the banked ladder",
+   "ok": true,
+   "a_13": 39
+  },
+  {
+   "name": "a_24 = 274 on the banked ladder",
+   "ok": true,
+   "a_24": 274
+  },
+  {
+   "name": "u^11 carries rung 13 to rung 24 in degree",
+   "ok": true
+  },
+  {
+   "name": "u^11 carries rung 13 to rung 24 in weight",
+   "ok": true,
+   "lam13": [
+    21,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "shifted": [
+    65,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "lam24": [
+    65,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "name": "the ladder is nondecreasing, so i_det is too",
+   "ok": true
+  }
+ ],
+ "independent_lower_bound_from_repo_data": 2,
+ "raise": {
+  "i_det_13": 0,
+  "a_13": 39,
+  "k": 11,
+  "rank_T_det_24_lower_bound": 39,
+  "i_det_24_upper_bound": 235
+ },
+ "status": "OK"
+}
