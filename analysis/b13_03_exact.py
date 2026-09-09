@@ -307,13 +307,36 @@ def load_source(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--input")
+    mode.add_argument("--cell", help="n:r:degree:lambda1,lambda2,...; build complete HW space")
     parser.add_argument("--output", required=True)
     parser.add_argument("--full", action="store_true")
     args = parser.parse_args()
     start = time.perf_counter()
-    data, E, polys = load_source(args.input)
-    c = data["cell"]
+    if args.input:
+        data, E, polys = load_source(args.input)
+        c = data["cell"]
+        completeness = "not asserted by this supplied-source interface"
+    else:
+        n, r, d, lam = args.cell.split(":")
+        n, r, d = int(n), int(r), int(d)
+        weight = tuple(map(int, lam.split(",")))
+        if len(weight) != r or sorted(weight, reverse=True) != list(weight):
+            raise ValueError("weight must be dominant with exactly r nonnegative entries")
+        if any(x < 0 for x in weight):
+            raise ValueError("negative weight entry")
+        c = {"n": n, "r": r, "degree": d, "lambda": weight}
+        E = exps(n, r)
+        basis = weight_monomials(n, r, d, weight)
+        rows, _ = raising_matrix(basis, E)
+        source = echelon(rows, len(basis))
+        polys = [{m: a for m, a in zip(basis, v) if a} for v in source["kernel"]]
+        completeness = {"weight_dimension": len(basis), "raising_rows": len(rows),
+                        "raising_rank_Q": source["rank"],
+                        "raising_rank_mod_p": {str(p): echelon(rows, len(basis), p)["rank"] for p in PRIMES},
+                        "basis": [polynomial_json(poly) for poly in polys],
+                        "exponents": E}
     fixed = fixed_factor(polys, E, c["n"], c["r"], c["degree"], c["lambda"])
     source_rows, _ = image_matrix(polys)
     source_rank = echelon(source_rows, len(polys))["rank"]
@@ -321,7 +344,7 @@ def main():
         raise ValueError("source vectors are linearly dependent")
     result = {"board_numbering": "batch13", "session_id": "B13-03", "cell": c,
               "source_rank": source_rank, "highest_weight_verified_over_Q": True,
-              "source_completeness": "not asserted by this supplied-source interface",
+              "source_completeness": completeness,
               "fixed_factor": serialize_images(fixed, False)}
     if args.full:
         full, counts = full_pullback(polys, E, c["n"], c["r"], c["degree"], c["lambda"])

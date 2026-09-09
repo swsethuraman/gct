@@ -61,6 +61,24 @@ def cap_memory(megabytes):
     return job  # keep handle alive for this process
 
 
+def process_memory():
+    class Counters(C.Structure):
+        _fields_ = [("cb", W.DWORD), ("faults", W.DWORD)] + [
+            (name, C.c_size_t) for name in
+            ("peak_working_set", "working_set", "peak_paged_pool", "paged_pool",
+             "peak_nonpaged_pool", "nonpaged_pool", "pagefile", "peak_pagefile")]
+    value = Counters()
+    value.cb = C.sizeof(value)
+    kernel = C.windll.kernel32
+    kernel.GetCurrentProcess.restype = W.HANDLE
+    psapi = C.windll.psapi
+    psapi.GetProcessMemoryInfo.argtypes = [W.HANDLE, C.c_void_p, W.DWORD]
+    if not psapi.GetProcessMemoryInfo(kernel.GetCurrentProcess(), C.byref(value), value.cb):
+        raise C.WinError()
+    return {key: getattr(value, key) for key in
+            ("peak_working_set", "working_set", "peak_pagefile")}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--seconds", type=int, default=600)
@@ -102,6 +120,7 @@ def main():
         timer.cancel()
         meta["wall_seconds"] = time.perf_counter() - start
         meta["memory_after"] = memory()
+        meta["process_memory"] = process_memory()
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         print(json.dumps({"wall_seconds": meta["wall_seconds"]}), flush=True)
 
