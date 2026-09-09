@@ -15,7 +15,8 @@ def write(p,v):p.write_text(json.dumps(v,indent=2)+'\n')
 def file_record(p):
     b=p.read_bytes()
     return dict(path=p.relative_to(ROOT).as_posix(),bytes=len(b),
-                sha256=hashlib.sha256(b).hexdigest(),md5=hashlib.md5(b).hexdigest())
+                sha256=hashlib.sha256(b).hexdigest(),md5=hashlib.md5(b).hexdigest(),
+                sha256_lf_normalized=hashlib.sha256(b.replace(b'\r\n',b'\n')).hexdigest())
 def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
 
 
@@ -74,6 +75,7 @@ def main():
                      part_count=1,delivery_checksums='external MD5 and SHA-256 lists cover whole and part00'),
          inputs=[file_record(p) for p in inputs],outputs=[file_record(p) for p in sorted(set(files))],
          input_semantics='s74 ranks ADOPTED; modular kernels remain measurements; see report',
+         checksum_semantics='Raw workspace/delivered bytes; sha256_lf_normalized also permits Git CRLF conversion.',
          replay=[['analysis/b13_06_decompose.py']]+[
             ['analysis/b13_06_ambient.py','--degree',str(a['degree']),'--weight',','.join(map(str,a['partition']))]
             for a in ambient]+[['analysis/b13_06_controls.py']],
