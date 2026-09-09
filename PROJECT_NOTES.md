@@ -45,6 +45,23 @@ THREAD 2 IN TEN LINES
       D = +1 is the ONLY value evaluation can prove; a nonzero minor is a rank
         floor and can only push i_pad down.  Every other value needs i_pad >= 1,
         a membership statement.
+      THIS WEIGHT DOES NOT SEE THE PERMANENT (session 74 complete, verified
+        here 54/54, docs/s74_final_review.md).  All five columns at both primes:
+        generic 274/0 (so the 274 transported births ARE a basis of M_24),
+        det 273/1, pad 269/5, red 269/5, per_4 274/0.  U_R = U_P -- the padded
+        kernel and the reducible kernel are the SAME five-space -- and i_per4 = 0.
+        So every equation the padded permanent has in (65,17,2^7) is an equation
+        of the reducible locus l.c, the unpadded per_4 has none, and the
+        statistic cannot distinguish l.per_3 from l.c at any rung at either
+        prime.  That is brief_wording section 5's three-point test at the goal
+        cell: (2) and (3) agree, and their agreement is the result.  s64 saw
+        mult_pad = mult_red at r <= 5; it recurs at r = 9, delta = 24.
+      THE SCREEN THIS HANDS THE PROGRAMME.  mult_pad <= mult_red always, so only
+        a cell with mult_pad < mult_red can carry permanent-specific
+        information, and mult_red is a multiplicity of the classical variety
+        {l.c} -- no permanent in it, no orbit closure to sample.  Compute i_red
+        FIRST at any candidate cell; spend evaluation only where i_pad exceeds
+        it.  This is the most transferable thing the LMR cell has produced.
       THE REMAINING QUESTION HAS NO PERMANENT IN IT (integrator, verified here,
         docs/rung13_reducible.md).  The whole five-dimensional padded kernel at
         rung 24 is transported from rungs 13 and 14 -- nothing new is born from
@@ -57,7 +74,14 @@ THREAD 2 IN TEN LINES
         finite exact linear-algebra question, and ONE proved reducible relation
         at rung 13 gives i_pad(13) >= 1, hence i_pad(23) >= 1 by monotonicity,
         hence D <= 0.  What is certified is i_red(13) <= 3; what is not
-        established is i_red(13) >= 1, and that is the whole remaining content.  The routes are the reducible column rung by
+        established is i_red(13) >= 1, and that is the whole remaining content.
+        The instrument for it is session S3's continuation: a 39-dimensional
+        rung-13 source that is RATIONAL by a specified convention rather than by
+        reconstruction from residues, and the only place in the programme where
+        rung 13 exists over Q.  Written in that basis the three candidates are
+        exact rational vectors and their membership in I(V_red) is finite exact
+        linear algebra.  S3 also gives a_13 = 39 a third way (root residual
+        2383 x 315, rank 276, kernel 39) and i_det(13) = 0 a second way.  The routes are the reducible column rung by
         rung, the pre-registered rank S screen (batch11_plan C3, never yet run
         against a complete source), and S4's factorization
         rank T_pad = rank S - dim(S(M_lambda) ^ ker Q), which computes i_pad
