@@ -50,3 +50,13 @@
 [2026-09-09T00:47:21Z] start decide_det: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det
 [2026-09-09T00:47:21Z] end decide_det (exit 0)
 [2026-09-09T00:47:21Z] det column at P1: rows 229, rank_24 229; rows<=23 228, rank_23 228  ->  rank T_det(24) >= 228 (running lower bound)
+[2026-09-09T00:47:21Z] commit (ok): s74: determinant column at P1 on 229 source rows (rungs [13, 14, 15, 16]), running lower bound rank T_det >= 228.
+[2026-09-09T00:47:21Z] streams resumed
+[2026-09-09T00:48:21Z] streams paused (pgid 4503)
+[2026-09-09T00:48:21Z] start build: python3 analysis/wk12_s74_columns.py --build
+[2026-09-09T00:48:22Z] end build (exit 0)
+[2026-09-09T00:48:22Z] start det_P1: python3 analysis/wk12_s74_columns.py --family det --prime 2147483647 --workers 2
+[2026-09-09T00:51:18Z] end det_P1 (exit 0)
+[2026-09-09T00:51:18Z] start decide_det: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det
+[2026-09-09T00:51:18Z] end decide_det (exit 0)
+[2026-09-09T00:51:18Z] det column at P1: rows 259, rank_24 259; rows<=23 258, rank_23 258  ->  rank T_det(24) >= 258 (running lower bound)
