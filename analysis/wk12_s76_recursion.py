@@ -36,7 +36,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 from wk11_int_bdelta import lam_of, horiz_strips                   # noqa: E402
-from wk12_s76_seminormal import recoupling_D, intermediate_shapes, skew_cells   # noqa: E402
+from wk12_s76_seminormal import recoupling_modp, intermediate_shapes, skew_cells   # noqa: E402
 
 P1, P2 = 2147483647, 2147483629
 
@@ -93,9 +93,9 @@ class Recursion:
         c0 = min(c for _, c in cells)
         D = frozenset((r - r0, c - c0) for r, c in cells)
         if D not in self._rcache:
-            subsets, R = recoupling_D(D)
+            subsets, R = recoupling_modp(D, self.p)
             m = len(subsets)
-            RmI = np.array([[frac_mod(R[i][j] - (1 if i == j else 0), self.p)
+            RmI = np.array([[(R[i][j] - (1 if i == j else 0)) % self.p
                              for j in range(m)] for i in range(m)], dtype=np.int64)
             Q = rref_rows(RmI, self.p)
             self._rcache[D] = (subsets, Q, m)

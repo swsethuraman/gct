@@ -358,6 +358,130 @@ def recoupling(nu, eta):
     return xis, R
 
 
+# ------------------------------------------------ the same thing mod p, fast
+def _tau_word(n=8):
+    word = []
+    perm = list(range(n // 2 + 1, n + 1)) + list(range(1, n // 2 + 1))
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(perm) - 1):
+            if perm[i] > perm[i + 1]:
+                perm[i], perm[i + 1] = perm[i + 1], perm[i]
+                word.append(i + 1)
+                changed = True
+    return word
+
+
+TAU_WORD = _tau_word()
+
+
+def intermediate_subsets(D):
+    """the intermediate 4-cell subsets S of the normalised two-strip diagram D
+    (xi/eta = S and nu/xi = D - S horizontal strips, S an order ideal of D), in
+    the canonical order (row-count vector descending)."""
+    D = frozenset(D)
+    nrows = max(r for r, _ in D) + 1
+    subsets = []
+    for S in itertools.combinations(sorted(D), 4):
+        S = frozenset(S)
+        T = D - S
+        if not (_is_hstrip(S) and _is_hstrip(T)):
+            continue
+        ok = all(((r, c - 1) not in D or (r, c - 1) in S) and
+                 ((r - 1, c) not in D or (r - 1, c) in S) for r, c in S)
+        if ok:
+            subsets.append(S)
+    subsets.sort(key=lambda S: _rowcounts(S, nrows), reverse=True)
+    return tuple(subsets)
+
+
+def recoupling_modp(D, p):
+    """(subsets, R mod p) for the normalised two-strip diagram D: the block-swap
+    recoupling matrix reduced mod p, computed in F_p from the start with numpy
+    (the seminormal coefficients rho = 1/d are inverted mod p; p > every axial
+    distance).  Verified in F_p: tau u_S lies in the span of the u_S (entry by
+    entry on the disjoint supports) and R^2 = I."""
+    import numpy as np
+    D = frozenset(D)
+    assert len(D) == 8
+    fills = standard_fillings(D)
+    index = {T: k for k, T in enumerate(fills)}
+    n = len(fills)
+    diag, off, offc = [], [], []
+    for i in range(1, 8):
+        dg = np.zeros(n, dtype=np.int64)
+        of = np.full(n, -1, dtype=np.int64)
+        oc = np.zeros(n, dtype=np.int64)
+        for k, T in enumerate(fills):
+            a, b = T[i - 1], T[i]
+            if a[0] == b[0]:
+                dg[k] = 1
+            elif a[1] == b[1]:
+                dg[k] = p - 1
+            else:
+                d = (b[1] - b[0]) - (a[1] - a[0])
+                rho = pow(d % p, -1, p)
+                Tp = list(T)
+                Tp[i - 1], Tp[i] = b, a
+                dg[k] = rho
+                of[k] = index[tuple(Tp)]
+                oc[k] = (1 - rho) % p
+        diag.append(dg)
+        off.append(of)
+        offc.append(oc)
+    masks = [of >= 0 for of in off]
+    targets = [of[mk] for of, mk in zip(off, masks)]
+
+    def apply(i, v):
+        out = (diag[i - 1] * v) % p
+        mk = masks[i - 1]
+        out[targets[i - 1]] = (out[targets[i - 1]] + offc[i - 1][mk] * v[mk]) % p
+        return out
+
+    subsets = intermediate_subsets(D)
+    U, first = [], []
+    for S in subsets:
+        T = D - S
+        ra, ca = min(r for r, _ in S), min(c for _, c in S)
+        rb, cb = min(r for r, _ in T), min(c for _, c in T)
+        cA = strip_invariant(frozenset((r - ra, c - ca) for r, c in S))
+        cB = strip_invariant(frozenset((r - rb, c - cb) for r, c in T))
+        u = np.zeros(n, dtype=np.int64)
+        for TA, va in cA.items():
+            TAabs = tuple((r + ra, c + ca) for r, c in TA)
+            va_p = (va.numerator % p) * pow(va.denominator % p, -1, p) % p
+            for TB, vb in cB.items():
+                TBabs = tuple((r + rb, c + cb) for r, c in TB)
+                vb_p = (vb.numerator % p) * pow(vb.denominator % p, -1, p) % p
+                k = index[TAabs + TBabs]
+                u[k] = (u[k] + va_p * vb_p) % p
+        supp = np.nonzero(u)[0]
+        k0 = int(supp.min())
+        assert u[k0] == 1
+        U.append(u)
+        first.append(k0)
+    m = len(subsets)
+    owner = np.full(n, -1, dtype=np.int64)
+    for j in range(m):
+        supp = np.nonzero(U[j])[0]
+        assert np.all(owner[supp] == -1)
+        owner[supp] = j
+    R = [[0] * m for _ in range(m)]
+    for i in range(m):
+        t = U[i].copy()
+        for w in TAU_WORD:
+            t = apply(w, t)
+        expect = np.zeros(n, dtype=np.int64)
+        for j in range(m):
+            R[j][i] = int(t[first[j]])
+            expect = (expect + R[j][i] * U[j]) % p
+        assert np.array_equal(t, expect), (D, "tau u not in the span of the u (mod p)")
+    RR = [[sum(R[i][k] * R[k][j] for k in range(m)) % p for j in range(m)] for i in range(m)]
+    assert RR == [[int(i == j) for j in range(m)] for i in range(m)], (D, "R^2 != I mod p")
+    return subsets, R
+
+
 # ------------------------------------------------------------- selftest
 def selftest(verbose=True):
     import random
@@ -398,6 +522,26 @@ def selftest(verbose=True):
     if verbose:
         print("recoupling: delta = 2 signs", {k: int(v) for k, v in signs.items()},
               "(h_2[h_4] = s_8 + s_62 + s_44)")
+    # the mod-p route agrees with the exact route on every goal-cell diagram
+    from wk11_int_cdelta import two_strip_paths
+    from wk11_int_bdelta import lam_of
+    lam = lam_of(24)
+    p = 2147483647
+    nD = 0
+    for eta in sorted({nu for _, nu in two_strip_paths(24)}):
+        xis, R = recoupling(lam, eta)
+        cells = skew_cells(lam, eta)
+        r0, c0 = min(r for r, _ in cells), min(c for _, c in cells)
+        D = frozenset((r - r0, c - c0) for r, c in cells)
+        subsets, Rp = recoupling_modp(D, p)
+        assert len(subsets) == len(xis)
+        for i in range(len(xis)):
+            for j in range(len(xis)):
+                x = R[i][j]
+                assert Rp[i][j] == (x.numerator % p) * pow(x.denominator % p, -1, p) % p
+        nD += 1
+    if verbose:
+        print(f"recoupling mod p agrees with the exact recoupling on all {nD} goal-cell diagrams")
     return True
 
 
