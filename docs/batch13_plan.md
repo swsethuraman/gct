@@ -1,4 +1,11 @@
-# Batch 13 — the plan
+# Batch 13 — the plan (SUPERSEDED)
+
+> **Superseded by `docs/batch13_board.md`.**  This draft's central premise was
+> wrong: it treated the cubic screen `I(D_r^{per₃})_δ` as the necessary condition
+> for a positive obstruction.  It is the necessary condition for
+> `mult_pad < mult_red` — permanent-specific equations — and those are a
+> *different* question from `D = mult_pad − mult_det > 0`.  See
+> `docs/batch13_corrections.md`.  Kept for provenance; do not run from it.
 
 **Basis:** `docs/stocktake_batch12.md`.  Twelve sessions: eight worker (s80–s87)
 and four reasoning (S7–S10).  Board numbering: **batch13**; every report and

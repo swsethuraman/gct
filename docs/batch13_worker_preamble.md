@@ -10,34 +10,50 @@ in the report's front matter and as a top-level JSON key in every manifest.  A
 reviewer who sees the field never has to guess, and a reviewer who does not see
 it must ask rather than reject.
 
-| | mission |
-|---|---|
-| s80 | a leaner raising-row builder; then extend `negative_record()` to sessions 55–79 |
-| s81 | close `I(D₆^{per₃})₉` — the 365 length-≤5 weights — then degree 10 completely |
-| s82 | `I(D₇^{per₃})_δ` and `I(D₈^{per₃})_δ`, by degree |
-| s83 | `I(D₉^{per₃})₁₃` in full; `I(D₉^{per₃})₂₃` priced, then as far as it fits |
-| s84 | `i_pad(23)` exactly, by S4's factorization on s74's 274-row source |
-| s85 | the three rung-13 reducible relations over `Q`, on S3's rational source |
-| s86 | the balanced six-row cells, on s80's builder |
-| s87 | the `n = 3` positive control: the §5 three-point test where `D > 0` |
+| | model | mission |
+|---|---|---|
+| B13-01 | Fable | exact degree-13 reducible identity |
+| B13-02 | Astra | structural restriction of the LMR source |
+| B13-03 | Astra | reusable exact reducible membership method |
+| B13-04 | Fable | sharpen the cubic-to-quartic transfer |
+| B13-05 | Fable | finite-range padded/reducible equality |
+| B13-06 | Astra | a mechanism for a positive gap beyond the LMR cell |
+| B13-07 | Astra | independent audit of session 79 |
+| B13-08 | Fable | the moderate degree-10 cubic remainder |
+| B13-09 | Fable | higher-length cubic exploration |
+| B13-10 | Fable | leaner raising-row construction |
+| B13-11 | Astra | reconciled research ledger and control semantics |
+| B13-12 | Astra | repair the five-variable orbit-closure formulation |
 
-## The one question this batch asks
+The full assignments are in `docs/batch13_board.md`, which is the controlling
+document.  The twelve `s8*_prompt.md` / `S*_prompt.md` files of the first draft
+are withdrawn; `docs/batch13_corrections.md` records why.
 
-`mult_pad = mult_red` was measured at three lengths on four instruments in batch
-12 with no exception.  The transfer lemma says why that is the whole question:
+## Two objectives, and they are not the same question
 
-> **Prop. 8(2)** `mult_pad < mult_red` at length `r`, degree `δ` **requires**
-> `I(D_r^{per₃})_δ ≠ 0`.
-> **Prop. 8(1)** `I(D_r^{per₃})_δ = 0` gives `mult_pad = mult_red` at **every**
-> weight of that length and degree.
+    1.  a positive multiplicity obstruction      D = mult_P - mult_D > 0
+    2.  permanent-specific equations             mult_P < mult_R
 
-So the batch asks it once per `(r, δ)` instead of once per weight, on the cubic
-side, with no padded points.  **No quartic sweep at a new length runs before the
-cubic screen at that length has.**  If your brief seems to ask you to break that
-order, say so in your report before you do.
+**The second is not necessary for the first.**  `P ⊆ D` forces
+`mult_P ≤ mult_D` at every weight, so `mult_P > mult_D` refutes containment
+whether or not the equation is permanent-specific.  Padded/reducible equality
+does not obstruct objective 1.
 
-`docs/stocktake_batch12.md` is the context in one document; read it, and
-`docs/batch13_plan.md` §0 for the reasoning.
+Since `mult_P ≤ mult_R`, objective 1 needs `i_det > i_red` — the determinant
+ideal larger than the reducible one at some weight.  Measured: across session
+79's 682 six-row cells, `i_det = 0` at **every one** and `i_red < i_det` at
+**none**.  **The binding constraint is the determinant ideal being empty**, and
+the only cell in the record with `i_det ≥ 1` is the LMR cell, where `i_det = 1`
+and `i_red = 5`.
+
+An earlier draft of this preamble organised the batch on the cubic screen as
+"the necessary condition for everything else".  That was wrong and is corrected
+in `docs/batch13_corrections.md` §1.  The cubic screen detects permanent-specific
+information and makes the padded side computable by the cheap reducible route; it
+is not a prerequisite for a determinant-side search, and there is no
+cubic-screen-first ordering rule in this batch.
+
+`docs/stocktake_batch12.md` is the context; `docs/batch13_board.md` is the board.
 
 ## The repository
 

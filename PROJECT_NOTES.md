@@ -3,14 +3,27 @@
 ## STATUS AT A GLANCE — THREAD 2, THE SEPARATION PROGRAMME (2026-09-09)
 
 BATCH 12 IS CLOSED.  Stock-take: docs/stocktake_batch12.md.  Next batch:
-docs/batch13_plan.md, twelve sessions on ONE question -- is I(D_r^{per_3})_delta
-ever nonzero in reach?  By transfer-lemma Prop. 8 that is the necessary and
-sufficient condition for the padded permanent to differ from the reducible locus
-at any weight of that length and degree, so it is asked once per (r, delta)
-rather than once per weight, and it needs no padded point.  Session 79's
-degree-9 answer at r = 6 covers the length-exactly-6 weights only: 365 weights of
-length <= 5 with a >= 1 (sum a = 1213) were not scanned, and closing that is
-batch 13's first measurement.
+docs/batch13_board.md, twelve sessions B13-01..B13-12, six Astra and six Fable,
+none depending on another.
+  TWO OBJECTIVES, AND THEY ARE NOT THE SAME QUESTION.  D = mult_P - mult_D > 0 is
+    the obstruction; mult_P < mult_R is permanent-specific information.  The
+    second is NOT necessary for the first: P inside D forces mult_P <= mult_D at
+    every weight, so mult_P > mult_D refutes containment whether or not the
+    equation is permanent-specific.  An earlier plan of mine organised batch 13
+    on the cubic screen as the gate for the obstruction; that was wrong and is
+    corrected in docs/batch13_corrections.md.
+  WHERE THE PROGRAMME IS ACTUALLY STUCK.  Since mult_P <= mult_R, D > 0 needs
+    i_det > i_red.  Across session 79's 682 six-row cells i_det = 0 at EVERY one,
+    i_red >= 1 at 59, and i_red < i_det at NONE.  The binding constraint is the
+    DETERMINANT ideal being empty, not the padded one being full, and the only
+    cell in the record with i_det >= 1 is the LMR cell, where i_det = 1 and
+    i_red = 5.
+  AND THE 365 SHORTER WEIGHTS ARE ALREADY EXCLUDED.  docs/washout_lemma.md
+    Theorem 2 (proved, exact full-Jacobian-rank witness, rank 35 at both primes)
+    gives D_r^{per_3} = Sym^3 C^r for r <= 5, so the cubic ideal vanishes
+    identically at length <= 5 and Theorem 3(1) carries it to every degree.
+    Session 79 had an undeclared dependency, not a hole, and my s79 Part 2 review
+    is corrected.
 
 **Read this first.  The block below it is thread 1 and has not been the active
 work since session 23.**

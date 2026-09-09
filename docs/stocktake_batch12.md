@@ -96,8 +96,22 @@ quartic build.  And Prop. 8(1) is the converse: an empty cubic ideal gives
 `mult_pad = mult_red` at **every** weight of that length and degree at once.
 
 So the programme has a screen that is one computation per `(length, degree)`
-instead of one per weight, and it is the *necessary* condition for everything
-else.  s79 ran it at `r = 6`, `δ = 9` and found nothing — with the hole in §5.
+instead of one per weight.  s79 ran it at `r = 6`, `δ = 9` and found nothing.
+
+> **Corrected, 2026-09-09 (see `docs/batch13_corrections.md`).**  An earlier
+> version of this section called that screen "the necessary condition for
+> everything else".  It is not.  It is necessary for `mult_pad < mult_red`, and
+> that is a *different* question from `D = mult_pad − mult_det > 0`: containment
+> `P ⊆ D` forces `mult_pad ≤ mult_det` at every weight, so `mult_pad > mult_det`
+> refutes containment whether or not the equation is permanent-specific.
+>
+> The correct necessary condition for `D > 0`, since `mult_pad ≤ mult_red`, is
+> **`i_det > i_red`**.  Measured across the 682 six-row cells: `i_det = 0` at
+> every one, `i_red ≥ 1` at 59, `i_red < i_det` at **none**.  So the binding
+> constraint on the obstruction is the **determinant** ideal being empty, not the
+> padded one being full, and the only cell in the record with `i_det ≥ 1` is the
+> LMR cell, where `i_det = 1 < 5 = i_red`.  That is where the programme is stuck,
+> and no plan before the consolidated board named it.
 
 ## 5. The most critical new learnings
 
@@ -148,7 +162,7 @@ else.  s79 ran it at `r = 6`, `δ = 9` and found nothing — with the hole in §
 
 | question | where it lives | cost |
 |---|---|---|
-| `I(D₆^{per₃})₉ = 0` as stated | 365 length-≤5 weights, `Σa = 1213` | smaller than the 210 already done |
+| `I(D₆^{per₃})₉ = 0` as stated | **closed by inheritance** — `docs/washout_lemma.md` Thm 2 gives `D_r^{per₃} = Sym³Cʳ` for `r ≤ 5`, so every length-≤5 weight is excluded at every degree | audit the dependency, do not recompute |
 | `I(D₆^{per₃})₁₀` | 106 unreached length-6 weights + all shorter | 69 below `N_S = 5·10⁶`, eleven above `10⁷` |
 | `i_red(23)` at the goal cell | S4's factorization on s74's source | the only exact route |
 | the three rung-13 reducible relations over `Q` | S3's rational rung-13 source | 39 dimensions |

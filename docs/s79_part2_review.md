@@ -21,8 +21,24 @@ and I staged it from `Projects\gct` directly.  Reassembled, md5
 | every degree-9 and degree-10 cubic record reports `mult = a` at **both** primes | **PASS** |
 | my Weyl alternation reproduces `a(μ,9)` at all 210 scanned weights | **PASS** |
 | the scan covers every length-**exactly-6** partition of 27 with `a ≥ 1` (331 candidates) | **PASS** |
+| the 365 length-≤5 weights are excluded by `washout_lemma.md` Thm 2 + Thm 3(1) | **inherited, see §2** |
 
-## 2. The gap — `I(D₆^{per₃})₉ = 0` is not yet established
+## 2. Not a gap — an undeclared dependency
+
+> **Corrected, 2026-09-09.**  What follows was written as a gap in session 79's
+> theorem.  It is not one.  `docs/washout_lemma.md` **Theorem 2 (proved)** gives
+> `D_r^{per₃} = Sym³Cʳ` for `r ≤ 5`, by an exact full-Jacobian-rank witness —
+> rank 35 = `dim Sym³C⁵` at both house primes — so `I(D_r^{per₃})` vanishes
+> identically at length ≤ 5, and Theorem 3(1)'s restriction lemma carries that to
+> every weight of length ≤ 5 at every degree.  **The 365 shorter weights are
+> excluded by a theorem in this repository.**  Session 79's 210 length-six checks
+> together with that inheritance do establish the full degree-9 statement.
+>
+> What is fair to ask of the report is that it **declare** the dependency; what
+> was unfair was my calling it a hole.  The count below stands as a description
+> of the weights the scan did not touch, and B13-07 audits the chain.
+
+## 2a. The weights the scan did not touch, and why they are covered
 
 The scan ran the 210 weights of length **exactly** 6.  There are
 
