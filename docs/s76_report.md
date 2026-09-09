@@ -10,7 +10,9 @@ Swami Sethuraman / swsethuraman@beneficus.ai / Beneficus AI.
 
 ## 0. What landed
 
-Both halves of the brief's success criterion, not one:
+The brief's second success criterion in full — exact `C₂₄` plus a
+characterised account of where the scaling stopped — and the *dimension* half of
+the first (a deterministic 274-dimensional source, not an evaluable one):
 
 1. **`C₂₄ = 17 778`, exactly** (MEASURED, two independent routes).  The brief's
    estimate `≈ 1.7 × 10⁴` was right to 5 %; `C₂₄/B₂₄ = 8.20`, `C₂₄/a₂₄ = 64.9`.
@@ -24,7 +26,13 @@ Both halves of the brief's success criterion, not one:
    LMR `a`-ladder, `C₂₄` a second time, and the plethysm coefficient at every
    node of the DAG — `3 677` nonzero multiplicities out of `7 658` — with
    **zero disagreements** against every independent value available
-   (§4.3).
+   (§4.3).  The invariant form was carried along the recursion, so the
+   **actual spherical operator** `T = P_W τ|_W` on the `2 168`-dimensional
+   precursor exists as a matrix, and S3's spectral identity
+   `(T − I)((d−1)T + I) = 0` holds on it at the goal cell: spectrum
+   `1^{274} ⊕ (−1/23)^{1894}` (§4.5).  The coefficients — not only the
+   dimensions — of the stored bases were checked against the ambient
+   `H_d`-invariants at 20 small cells (§4.6).
 3. **The four evaluation columns are not reached** — the pre-registered
    expectation, on the brief's first stopping rule.  The step and the
    quantities are named in §5, and so is what s77 needs from this session.
@@ -150,9 +158,9 @@ on `(S^ν)^{K′} = ⊕_{(ξ,η)} M_{δ−2}(η) ⊗ (S^{ν/η})^{S₄×S₄}` (
 - **Model.**  `S^ν` in Young's seminormal form, uniform rule
   `s_i e_T = ρ e_T + (1 − ρ) e_{s_iT}`, `ρ = 1/(c(i+1) − c(i))`; `+1` / `−1`
   on same-row / same-column pairs.  Coxeter relations verified on assorted
-  skew diagrams (`selftest()`).  Every denominator is an axial distance
-  `< 97`; both house primes invert it — this is what "no prime below 97"
-  buys, and it was honoured everywhere.
+  skew diagrams (`selftest()`).  Every denominator is a product of axial
+  distances, each `< 97`; both house primes invert them — this is what "no
+  prime below 97" buys, and it was honoured everywhere.
 - **Strip invariants.**  For a horizontal 4-strip `ξ/η` (a disjoint union of
   row segments, so `S^{ξ/η} ≅ M^{(k₁,k₂,…)}`), the trivial `S₄`-vector
   `c^{ξ/η} = ⋂ ker(s_i − 1)` in the seminormal basis of standard fillings,
@@ -168,10 +176,10 @@ on `(S^ν)^{K′} = ⊕_{(ξ,η)} M_{δ−2}(η) ⊗ (S^{ν/η})^{S₄×S₄}` (
   entry — that verification *is* the statement that `τ` preserves the
   invariants.  `R² = I` is checked for every diagram.  Computed exactly over
   `Q` for the 42 goal-cell diagrams (`results/s76_recoupling_goal.json`,
-  PROVED-by-computation) and in `F_p` with numpy for the bulk
+  MEASURED — exact rational arithmetic, `R² = I` checked) and in `F_p` with numpy for the bulk
   (`recoupling_modp`; agrees with the exact route on all 42 goal-cell
   diagrams, `selftest()`).
-- **Base cases** (B0, PROVED-by-computation): at `δ = 2` the one-dimensional
+- **Base cases** (B0, MEASURED, against the PROVED `h₂[h₄] = s₈ + s₆₂ + s₄₄`): at `δ = 2` the one-dimensional
   channels carry `τ = +1` on `(8), (6,2), (4,4)` and `−1` on `(7,1), (5,3)`,
   i.e. `h₂[h₄] = s₈ + s₆₂ + s₄₄`.
 - **The system at a node.**  A vector of `W_d(ν)` is a coefficient vector
@@ -184,7 +192,7 @@ on `(S^ν)^{K′} = ⊕_{(ξ,η)} M_{δ−2}(η) ⊗ (S^{ν/η})^{S₄×S₄}` (
   `E_d(ν)`, an `a_d(ν) × B_d(ν)` matrix.  `python-flint` `nmod_mat` for every
   kernel and rank.
 
-**At the goal cell** (RECORDED in `results/s76_recoupling_goal.json`): 42
+**At the goal cell** (MEASURED, banked in `results/s76_recoupling_goal.json`): 42
 channels `η`, `m_η ≤ 10`, `Σ_η m_η a₂₂(η) = 17 778 = C₂₄`;
 `dim Fix(τ)` on the `K′`-invariants `= Σ_η a₂₂(η) f_η = 9 678` (B4); the
 reduced system is **`8 100 × 2 168`**, and `M₂₄ = W₂₄ ∩ Fix(τ)` is its
@@ -207,7 +215,8 @@ arithmetic (the first implementation spent 99 % of its time there).
 `analysis/wk12_s76_recursion.py`, bottom-up over the shapes reachable from
 `λ₂₄` by removing horizontal 4-strips: `7 658` nodes (`1 + 5 + 22 + … + 12 + 1`;
 the integrator's `7 656` counts `δ = 1..23`), 585 per level at `δ = 12..16`.
-One level of `E` matrices is held at a time; every level is written to disk
+Two levels of `E` matrices are held at a time (the one being built and the
+one below it); every level is written to disk
 (`results/s76_dag/level_DD_pP.npz`, not committed — 128 MB per prime,
 regenerated deterministically in 32 minutes) and the dimension table to
 `results/s76_dag_dims_pP.json` (committed).
@@ -247,9 +256,12 @@ stored for the level; `C` the full `K′`-invariant dimension of a node and
 `95 746` multiplicity dimensions over the DAG; `70 070 803` stored entries in
 all.
 
-**The peak weighted state count** the brief asks for: **`8 091 452` stored
-entries at `δ = 19`** (32 MB as `uint32`; the nodes are cheap, the
-multiplicities are not, and the multiplicities are still small).  The largest
+**The peak weighted state count** the brief asks for: the largest single
+level holds **`8 091 452` entries (`δ = 19`)**, and since the code keeps the
+level being built and the level below it live together, the true peak is
+**`Σa·B(19) + Σa·B(20) = 15 997 326` entries (64 MB as `uint32`)** — the
+nodes are cheap, the multiplicities are not, and the multiplicities are
+still small.  The largest
 system solved is **`9 047 × 1 999`** at `(62,17,2⁶,1)`, `δ = 23`, whose
 `K′`-invariants have dimension `18 870` — larger than the goal cell's own
 `17 778`.  Peak resident memory, re-measured on the largest node alone, is 0.67 GB (the
@@ -288,35 +300,124 @@ worker, not in the route).
 
 | reference | nodes | source | result |
 |---|---|---|---|
-| symmetric-function plethysm `wk8_s30_pleth.amb`, every DAG node `δ ≤ 8` | 1 446 (of which 1 446 compared, zero and nonzero alike) | independent route (characters, power sums) | agree |
+| symmetric-function plethysm `wk8_s30_pleth.amb`, every DAG node `δ = 1..8` | 1 445 (zero and nonzero alike) | independent route (characters, power sums) | agree |
 | `results/wk11_int_c12.json`, `δ = 10` | 23 | Weyl alternation | agree |
 | s57/s63 LMR ladder, `δ = 12..24` | 13 | banked | agree |
 | `results/s76_c24.json`, `δ = 22` | 42 | Weyl alternation (this session) | agree |
 | `results/wk11_int_b24.json`, `δ = 23` | 12 | Weyl alternation | agree |
-| fresh Weyl-alternation spot checks at unbanked nodes, `δ = 9..23` (`analysis/wk12_s76_spotcheck.py`, seeded sample, `results/s76_weyl_spotchecks.json`) | 106 (65 nonzero, 41 zero) | `wk9_s42_census.a_weyl` | agree |
-| second house prime, every node | 7 658 | the same recursion at `2147483629` | agree |
+| fresh Weyl-alternation spot checks at unbanked nodes, `δ = 9..21` (`analysis/wk12_s76_spotcheck.py`, seeded sample, `results/s76_weyl_spotchecks.json`) | 106 (65 nonzero, 41 zero) | `wk9_s42_census.a_weyl` | agree |
+| second house prime, every node | 7 658 | the same code at `2147483629` — detects modular accidents only, not a wrong operator | agree |
 
-What a dimension check does and does not certify: a wrong recoupling matrix or
-a wrong strip invariant changes kernel dimensions generically, and over 1 600
-independent values (plus the second prime) leave no room for that.  What it
-cannot see is a *consistent* rescaling of the strip invariants — that
-conjugates every `R` by a diagonal and rescales the coordinates of every
-`E_d(ν)` channel by channel without moving a single dimension.  That freedom
-is exactly the normalisation recorded in `PREREG_s76.md` §4.1, and it is the
-first thing s77's bridge has to fix (§5).
+Coverage, stated plainly: the independent values sit at `δ ≤ 8` (every
+node), `δ = 10` (23 of 545), `δ = 22, 23, 24` (every node) and the ladder;
+in the middle of the DAG, `δ = 9` and `δ = 11..21`, only the 106 spot checks
+and the ladder rungs — 139 of 6 157 nodes, 2.3 % — are independently valued.
+A wrong recoupling matrix or a wrong strip invariant changes kernel
+dimensions generically, and the 1 639 comparisons leave no room for a
+*systematic* defect; a defect confined to diagrams that first occur in the
+uncovered middle levels would be caught only by the ladder rungs and the
+spot checks there.  What no dimension check can see at all is a *consistent*
+rescaling of the strip invariants — that conjugates every `R` by a diagonal
+and rescales the coordinates of every `E_d(ν)` channel by channel without
+moving a single dimension — and, more generally, whether the stored
+*coefficients* are those of the actual `H_d`-invariants.  §4.5 and §4.6
+address the coefficients directly; the rescaling freedom is exactly the
+normalisation recorded in `PREREG_s76.md` §4.1 and the first thing s77's
+bridge has to fix (§5).
 
 ### 4.4 Two side observations (MEASURED, both primes, not pre-registered)
 
 - **Projection ranks.**  The rank of the projection of `M₂₄` onto each
   predecessor block `M₂₃(μ) ⊗ c^{λ/μ}` (`results/s76_source24_projections.json`)
   is full (`= a₂₃(μ)`) for ten of the twelve channels — including the ladder
-  block, `273`, as `uM₂₃ ⊂ M₂₄` requires — and deficient for two:
-  `(65,14,2⁶,1)`: `94` of `102`; `(62,17,2⁶,1)`: `156` of `199`.  A modular
-  rank is a lower bound, so the two deficits are two-prime evidence, not
-  theorems; the ten full ranks are proved (full rank at one prime).
+  block, `273` — and deficient for two: `(65,14,2⁶,1)`: `94` of `102`;
+  `(62,17,2⁶,1)`: `156` of `199`.  A modular rank is a lower bound, so the
+  two deficits are two-prime evidence, not theorems; the ten full ranks are
+  proved (full rank at one prime).  Surjectivity onto a block is not
+  containment: `M₂₄` meets every single Pieri channel
+  `M₂₃(μ) ⊗ c^{λ/μ}` trivially (rank of `E₂₄` off each block is 274 at both
+  primes), the ladder channel included.  Lemma L's `uM₂₃ ⊂ M₂₄` is not
+  contradicted — in the `K₂₄`-decomposition a transported vector has
+  components in many channels, because the last block can be any of the
+  twenty-four.
 - **Nonzero nodes.**  `3 677` of the `7 658` DAG nodes carry a nonzero
   multiplicity; the per-level count of nonzero shapes is flat at 292 across
   `δ = 12..16`, matching the flat 585-shape plateau.
+
+### 4.5 The invariant form and the actual spherical operator (MEASURED, both primes unless stated)
+
+The seminormal basis is orthogonal for the `S_n`-invariant form, with
+`⟨e_T, e_T⟩ = γ_T = Π_{i<j, j strictly above i} (d−1)/(d+1)`, `d = c(j) − c(i)`
+— the `2×2` ratio rule `γ_{s_iT}/γ_T = (1+ρ)/(1−ρ)` was verified on every
+transposition pair of twelve partition and skew diagrams (16 234 pairs,
+`analysis/wk12_s76_gram.py` docstring).  Since every entry of a tableau's
+`η`-part is smaller than every entry of a strip filling above it, `γ`
+factorises along the branching chain, the form on `W_d(ν)` is block
+diagonal with blocks `G_{d−1}(ξ)·‖c^{ν/ξ}‖²`, and the Gram matrix of the
+stored basis of `M_d(ν)` is
+
+    G_d(ν) = E_d(ν) · blockdiag_ξ( G_{d−1}(ξ) ‖c^{ν/ξ}‖² ) · E_d(ν)ᵀ.
+
+The recursion was run over the whole DAG at both primes (330 s at
+`p = 2147483647`; the `274 × 274` Gram of the top basis is banked as
+`results/s76_gram24_pP.npz`, nonsingular, rank 274 — the form restricted to
+`M₂₄` is nondegenerate mod `p`, as semisimplicity requires).
+
+With the form in hand the operator the brief asked for exists as a matrix:
+`T = P_W τ|_W = G_W^{-1} Jᵀ G′ τ J` on the `B_d(ν)`-dimensional precursor.
+The relay's identity from S3, `I + (d−1)T = d·P_{H_d}|_{W_d}` — one line:
+`H = ⊔_i g_iK` with `g_i` the block transpositions `(i d)`, each
+`P_K g_i v = P_K τ v` for `v ∈ V^K` because `(i d)` is `K`-conjugate to `τ` —
+predicts `(T − I)((d−1)T + I) = 0`, spectrum `1` (multiplicity `a_d`) and
+`−1/(d−1)` (multiplicity `B_d − a_d`), `ker(T − I) = M_d(ν)`.  Checked at
+22 nodes, `δ = 12..24`, ladder rungs and random shapes, and **at the goal
+cell**:
+
+| node | `B` | `a` | `Y = JᵀG′τJ` symmetric | `(T−I)((d−1)T+I) = 0` | `rank(T−I)` | `rank((d−1)T+I)` | `E_d` fixed by `T` |
+|---|---|---|---|---|---|---|---|
+| `(17,17,2⁷)`, 12 | 31 | 2 | yes | yes | 29 | 2 | yes |
+| `(25,17,2⁷)`, 14 | 744 | 93 | yes | yes | 651 | 93 | yes |
+| `(33,17,2⁷)`, 16 | 1 519 | 188 | yes | yes | 1 331 | 188 | yes |
+| `(41,17,2⁷)`, 18 | 1 935 | 241 | yes | yes | 1 694 | 241 | yes |
+| `(49,17,2⁷)`, 20 | 2 104 | 264 | yes | yes | 1 840 | 264 | yes |
+| `(57,17,2⁷)`, 22 | 2 157 | 272 | yes | yes | 1 885 | 272 | yes |
+| `(61,17,2⁷)`, 23 | 2 165 | 273 | yes | yes | 1 892 | 273 | yes |
+| **`(65,17,2⁷)`, 24** | **2 168** | **274** | yes | yes | **1 894** | **274** | yes |
+| 14 other nodes, `δ = 12..23` | 5–1 748 | 1–175 | yes | yes | `B − a` | `a` | yes |
+
+(`results/s76_spherical_p2147483647.json`; the second prime,
+`results/s76_spherical_p2147483629.json`, at `δ = 12, 16, 20, 24`.)  So at
+the goal cell the spectrum is **`1^{274} ⊕ (−1/23)^{1894}`**, exactly S3's
+prediction, and the `δ = 12` control's residual has rank 29 — S3's
+`239 × 31` residual of rank 29, from an implementation that shares nothing
+with S3's.  The symmetry of `Y` is itself a check: `τ` is self-adjoint for
+the invariant form, so `‖u_{ξ′}‖² R_{ξ′ξ} = ‖u_ξ‖² R_{ξξ′}` ties the
+recoupling matrices to the strip norms, and it holds at every node.
+
+What this adds to §4.3: the identity is an operator-level statement, and it
+holds only if the recoupling matrices, the strip invariants and the strip
+norms are mutually consistent as an involution and a form on the same
+space.  It still does not fix the one normalisation freedom of
+`PREREG_s76.md` §4.1 — a diagonal rescaling of the strip invariants with
+the form transported along leaves every number in this section unchanged.
+
+### 4.6 The object, not the dimension (MEASURED, `p = 2147483647`)
+
+`analysis/wk12_s76_objectcheck.py` rebuilds `M_d(ν)` inside the ambient
+seminormal module `S^ν` two ways and compares subspaces: (a) directly, as
+the joint fixed space of generators of `S₄ ≀ S_d` (the `s_i` inside blocks and
+the adjacent block swaps); (b) by unfolding the recursion's coordinates —
+`Σ_ξ Σ_j c_{ξ,j} (unfold(e_{ξ,j}) ⊗ c^{ν/ξ})`, the strip filling appended to
+each tableau of the `ξ`-part — recursively to `δ = 0`, the recursion re-run
+from scratch for the cells checked.  At every cell of the `λ₁₂` sub-DAG with
+`δ ≤ 4` and `dim S^ν ≤ 3 000` (`results/s76_objectcheck_p2147483647.json`,
+OBJCHECK_N cells, `dim S^ν` up to OBJCHECK_MAXDIM, including the `a = 2` cell
+`(12,4)`) the two subspaces are **equal**, and the unfolded basis in reduced
+row echelon form agrees with the direct one **entry by entry**.  That
+certifies the coefficients of the stored `E_d(ν)` — the strip invariants,
+the recoupling matrices, the column layout, the whole convention — at those
+cells; it is the check the adversarial audit asked for, and it is the only
+check in this session that is not a dimension.
 
 ## 5. The evaluation columns (Question C): not reached, and why
 
@@ -342,8 +443,8 @@ rule applies.  The step, and the quantities:
   why the recursion runs in half an hour and why it cannot evaluate.
 - **Why there is no shortcut inside the recursion.**  The evaluation
   functional at a point `f` is itself a vector `ψ_f ∈ M₂₄` (it is
-  `H₂₄`-invariant); the four columns are ranks of Gram-type matrices
-  `⟨e_i, ψ_{f_j}⟩`.  Computing `ψ_f`'s 274 compact coordinates is the same
+  `H₂₄`-invariant); the four columns are ranks of matrices
+  `⟨e_i, ψ_{f_j}⟩` in the invariant form of §4.5.  Computing `ψ_f`'s 274 compact coordinates is the same
   problem: any transfer-matrix contraction of `f^{⊗24}` along the block chain
   carries a bond space of the size of the weight lattice of `V_{λ^k}` — the
   native carrier in disguise.  This is an argument on the page, not a
@@ -358,14 +459,22 @@ rule applies.  The step, and the quantities:
      diagram (`recoupling_modp`, `recoupling_D`);
   3. the top source at both primes and the dimension table of every node;
      every level's `E` matrices regenerate in 32 minutes;
-  4. the one scalar per strip type that relates the seminormal Pieri
-     embedding `M_{d−1}(ξ) ⊗ c^{ν/ξ} → M_d(ν)` to the circuit's "adjoin the
-     new letter in the strip" map (the antisymmetriser of a column absorbs
-     that of its sub-column, so the circuit map is the Pieri map up to a
-     scalar depending on the strip and the column lengths) — **not
-     computed here**; with it and a straightening basis at each node the
-     unfolding costs what the recursion costs, without it the unfolding is
-     (i) or (ii) above.
+  4. EXPECTATION, not computed here: one scalar per strip type relating the
+     seminormal Pieri embedding `M_{d−1}(ξ) ⊗ c^{ν/ξ} → M_d(ν)` to the
+     circuit's "adjoin the new letter in the strip" map.  The reasoning —
+     the antisymmetriser of a column absorbs that of its sub-column, so the
+     circuit map would be the Pieri map up to a scalar depending on the
+     strip and the column lengths — is an argument on the page, unverified;
+     and a straightening basis at each node is S1's missing independence
+     theorem.  If both existed the unfolding would cost what the recursion
+     costs, and the negative above would be conditional on work not done
+     rather than on a carrier-scale quantity.  As things stand neither
+     exists, and (i)/(ii) are the only unfoldings available.
+  5. the invariant form in these coordinates: the Gram recursion of §4.5
+     (`results/s76_gram24_p*.npz`, the `274 × 274` Gram of the stored basis,
+     nonsingular at both primes).  The seminormal basis is orthogonal but
+     not orthonormal, so any pairing `⟨e_i, ψ⟩` needs it; S3's control
+     conversion `C = G_M^{-1}A` is the same object at `δ = 12`.
 
 Nothing about `i_det`, `i_pad`, `U_D`, `U_P` or `D` is claimed.  The decision
 table was not entered.
@@ -385,8 +494,9 @@ table was not entered.
 - The brief's "roughly 90 chunked evaluations of the `B₂₄` cost class" for
   `C₂₄` is not how the cost falls: 94 770 tail DPs at `δ = 22` dominated by
   the 4 374-term nine-row shapes (3 minutes each), 51 CPU-minutes in all.
-- `wk11_int_cdelta.py`'s checkpoint is per shape and only when its budget
-  expires; a run ended otherwise loses the shape in progress.  The driver
+- `wk11_int_cdelta.py`'s checkpoint is written after each shape (and when
+  its budget expires); a run ended any other way loses the shape in
+  progress.  The driver
   here checkpoints every 50 keys; the engine itself was not modified.
 - The brief says the recoupling combinatorics "at the top of the ladder are
   identical to those at `δ = 14`"; true (41 diagrams, `δ ≥ 14`), but the
@@ -400,6 +510,36 @@ table was not entered.
   The commits here carry `Co-Authored-By: Claude Fable 5.1`, the model that
   did the work; the trailer is otherwise as the preamble asks (no session
   link, no URL).
+- **Two relays from the integrator arrived mid-session** (S3 has run; its
+  report, `results/astra/S3/`, `HANDOFF_s75.md`, `artifacts/pairing_handoff.json`,
+  and `results/astra/S4/` are "in the tree").  They are not in this tree:
+  GitHub `main` is still `afb8c33`, `Projects\gct\work\results\astra` on the
+  laptop holds only `S1` and `S2`, and the request for the folder the astra
+  README names as their origin (`Projects\gct-gpt\Batch12_Results`) was not
+  answered in time.  Consequences: (i) S3's dimension half (`31 → 2`, the
+  `239 × 31` residual of rank 29, the 42 local `F` blocks) was **not**
+  re-derived on purpose — the same objects appear here only as by-products
+  of the `δ = 24` build and as the operator-level check of §4.5; (ii) the
+  relay's "four scalars" — the pairing `A_{αi}`, `C = G_M^{-1}A` and the
+  converted `δ = 12` vectors against determinant points — were **not
+  attempted**: they are defined in S3's conventions and artefacts, which
+  could not be read, and re-inventing the conversion in this session's
+  conventions is s77's bridge (§5, item 4).  The Gram matrices of §4.5 are
+  the `G_M` of that conversion in these coordinates.
+- The relay's bounds `4 062 ≤ C₂₄ ≤ 2.24 × 10¹²` (S3) and the calibrated
+  estimate `≈ 16 180` are both consistent with the measured `17 778`, which
+  is 5 % above the brief's `1.7 × 10⁴` and 10 % above the calibrated
+  figure.  The relay's "checkpoint per endpoint" is what §2 did (per 50
+  keys, in fact).
+- The relay's DAG count "7 657 with the root" counts `δ = 1..24`; this
+  report's 7 658 also counts the empty shape at `δ = 0`, which the code
+  carries as the base of the recursion.
+- The relay's common-field rule is honoured in §4.2/§7: identical pivots and
+  zero patterns at two primes are consistent with, not a certificate of, a
+  common rational matrix.  No rational reconstruction was attempted.
+- The relay's accounting identity for the padded side,
+  `521 − rank T_pad = (521 − rank S) + dim(S(M_λ) ∩ K)`, is noted for
+  whoever evaluates a source; nothing here evaluates one.
 - No `D`, no obstruction, no verification-protocol trigger.
 
 ## 7. Deliverables
@@ -412,6 +552,8 @@ table was not entered.
 | `analysis/wk12_s76_recursion.py` | the memoised recursion over the DAG |
 | `analysis/wk12_s76_spotcheck.py`, `results/s76_weyl_spotchecks.json` | 106 independent Weyl values at unbanked nodes |
 | `analysis/wk12_s76_summary.py`, `results/s76_recursion_summary.json` | the two-prime summary |
+| `analysis/wk12_s76_gram.py`, `results/s76_spherical_p*.json`, `results/s76_gram24_p*.npz` | the invariant form along the recursion, the spherical operator and its spectral identity at 22 nodes, the `274 × 274` Gram of the source |
+| `analysis/wk12_s76_objectcheck.py`, `results/s76_objectcheck_p2147483647.json` | direct `H_d`-invariants vs the unfolded recursion at small cells |
 | `results/s76_recoupling_goal.json` | the 42 goal-cell recoupling matrices over `Q`, `Fix(τ)` bookkeeping |
 | `results/s76_dag_dims_p2147483647.json`, `…p2147483629.json` | `a_d(ν)` at all 7 658 nodes, per-level statistics |
 | `results/s76_source24_p2147483647.npz`, `…p2147483629.npz` | the 274 × 2 168 source at each prime |
@@ -422,4 +564,9 @@ table was not entered.
 Not committed (5 MB rule): `results/s76_dag/level_DD_pP.npz`, 128 MB per
 prime — the nested source below the top; `python3
 analysis/wk12_s76_recursion.py --top 24 --prime P --check-amb 8` regenerates
-it bit for bit in 32 minutes.
+it in 32 minutes (the run writes `results/s76_dag/dims_pP.json`; the
+committed `results/s76_dag_dims_pP.json` are md5-identical copies).
+"Deterministic" means: the same code, prime and conventions return the same
+matrices; the two primes' `E₂₄` have identical pivot columns and zero
+patterns, which is consistent with — and by the integrator's common-field
+rule not a certificate of — their being reductions of one rational matrix.

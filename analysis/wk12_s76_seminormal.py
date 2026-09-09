@@ -243,8 +243,10 @@ def strip_invariant(D):
     assert len(basis) == 1, (D, len(basis))
     v = basis[0]
     k0 = min(k for k in range(len(fills)) if v[k])
+    # the lexicographically first standard filling always carries a nonzero
+    # coefficient (checked on every strip diagram of the DAG below lambda_24)
+    assert k0 == 0, (D, "first standard filling has coefficient 0")
     v = [x / v[k0] for x in v]
-    assert k0 == 0 or all(v[k] == 0 for k in range(k0))
     return {fills[k]: v[k] for k in range(len(fills)) if v[k]}
 
 
@@ -255,11 +257,6 @@ def intermediate_shapes(nu, eta):
     from wk11_int_bdelta import horiz_strips
     xs = [xi for xi in horiz_strips(nu, 4) if eta in horiz_strips(xi, 4)]
     return xs
-
-
-def _shift_filling(fill, cells_D):
-    """re-express a filling given in absolute cells in the normalised cells."""
-    return fill
 
 
 def _rowcounts(S, nrows):

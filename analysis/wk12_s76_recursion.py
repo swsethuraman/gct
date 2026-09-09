@@ -22,6 +22,7 @@ Usage: python3 analysis/wk12_s76_recursion.py [--top 24] [--prime P] [--upto D]
        [--out results/s76_dag] [--check-amb 8]
 """
 import argparse
+import ast
 import json
 import os
 import sys
@@ -286,7 +287,7 @@ def load_refs(root, top_delta):
     try:
         c12 = json.load(open(os.path.join(root, "results", "wk11_int_c12.json")))
         for k, v in c12["a_10_by_shape"].items():
-            refs[(tuple(eval(k)), 10)] = v
+            refs[(tuple(ast.literal_eval(k)), 10)] = v
             src["c12"] += 1
     except FileNotFoundError:
         pass
@@ -332,7 +333,7 @@ def main():
                 amb_refs[str(d)] = {str(list(lam)): v for lam, v in A.items()}
                 json.dump(amb_refs, open(cache, "w"))
             for k, v in amb_refs[str(d)].items():
-                refs[(tuple(eval(k)), d)] = v
+                refs[(tuple(ast.literal_eval(k)), d)] = v
             src[f"amb{d}"] = len(amb_refs[str(d)])
         print(f"amb references for delta <= {min(args.check_amb, upto)} in {time.time() - t:.0f}s")
     print("reference sources:", dict(src), flush=True)

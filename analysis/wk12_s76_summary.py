@@ -7,6 +7,8 @@ Writes results/s76_recursion_summary.json and results/s76_source24_p<P>.npz
 (the 274 x 2168 reduced-row-echelon basis of M_24 in precursor coordinates,
 column blocks over the twelve predecessors in horiz_strips order).
 """
+import ast
+import hashlib
 import json
 import os
 import sys
@@ -50,13 +52,13 @@ for p in ps:
     top_d = max(int(d) for d in a)
     rec = {"levels_done": top_d}
     if top_d >= 23:
-        a23 = {tuple(eval(k)): v for k, v in a["23"].items()}
+        a23 = {tuple(ast.literal_eval(k)): v for k, v in a["23"].items()}
         preds = horiz_strips(lam, 4)
         rec["a_23_by_predecessor"] = {str(mu): a23.get(mu, 0) for mu in preds}
         rec["B_24_recursion"] = sum(a23.get(mu, 0) for mu in preds)
         rec["ladder_predecessor_a_23"] = a23.get(tuple(lam_of(23)), 0)
     if top_d >= 22:
-        a22 = {tuple(eval(k)): v for k, v in a["22"].items()}
+        a22 = {tuple(ast.literal_eval(k)): v for k, v in a["22"].items()}
         from wk11_int_cdelta import two_strip_paths
         rec["C_24_recursion"] = sum(a22.get(nu, 0) for _, nu in two_strip_paths(24))
     if top_d >= 24:
@@ -99,7 +101,16 @@ for p in ps:
                             block_widths=np.array([rec["a_23_by_predecessor"][str(mu)]
                                                    for mu in horiz_strips(lam, 4)]))
         rec["source24_shape"] = list(E.shape)
-        rec["source24_pivots"] = int(sum(1 for i in range(E.shape[0])))
+        rec["source24_pivot_columns"] = [int(np.nonzero(E[i])[0][0]) for i in range(E.shape[0])]
+        rec["source24_nonzeros"] = int((E != 0).sum())
+        rec["source24_zero_pattern_md5"] = hashlib.md5((E != 0).tobytes()).hexdigest()
+if len(out["primes"]) == 2:
+    r1, r2 = out["primes"].values()
+    out["source24_two_prime"] = {
+        "pivot_columns_identical": r1.get("source24_pivot_columns") == r2.get("source24_pivot_columns"),
+        "zero_patterns_identical": r1.get("source24_zero_pattern_md5") == r2.get("source24_zero_pattern_md5"),
+        "note": "identical pivots and zero patterns at two primes are consistent with, and not a certificate of, "
+                "a common rational matrix (the integrator's common-field rule)"}
 json.dump(out, open(os.path.join(ROOT, "results", "s76_recursion_summary.json"), "w"), indent=1)
 print(json.dumps({k: v for k, v in out.items() if k != "primes"}, indent=1))
 for p, rec in out["primes"].items():

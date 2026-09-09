@@ -7,6 +7,7 @@ Picks `per_level` nodes per requested level from the shape DAG below lambda_24
 wk9_s42_census.a_weyl (pruned Weyl alternation + tail DP), the same instrument
 that produced B_24.  Writes results/s76_weyl_spotchecks.json incrementally.
 """
+import ast
 import json
 import os
 import random
