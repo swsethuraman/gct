@@ -51,9 +51,12 @@ THREAD 2 IN TEN LINES
           horizontal-4-strip predecessors.  Measured here: the precursor is 31
           dimensional at the bottom rung and B_24 = 2168 at the goal cell,
           against carriers of 5.1e6 and 3.1e7 -- compressions of 165,000x and
-          14,300x -- and the whole memoised recursion touches 7,656 distinct
-          shapes.  The computation checks itself: one of the twelve predecessors
-          is the goal cell's own ladder predecessor and its multiplicity must
+          14,300x -- and the whole memoised recursion touches 7,657 distinct
+          shapes -- 7,656 BELOW the root, which is what the driver prints and
+          what was quoted here before; S3 caught the reporting slip, and 921 is
+          likewise 922 with the root.  The computation checks itself: one of the
+          twelve predecessors is the goal cell's own ladder predecessor and its
+          multiplicity must
           come back as the banked 273, which it does.
     So the wall was a property of the coordinates, not of the object.  What
     remains is BASIS ENUMERATION: every multiplicity at the goal cell is a rank
