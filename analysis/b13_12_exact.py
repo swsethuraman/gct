@@ -312,12 +312,38 @@ def replay_s2():
     print(json.dumps(result, indent=2))
 
 
+def triangular_control():
+    E, P = coefficients()
+    below = {16*k+4*i+j for k in range(4) for i in range(4) for j in range(i)}
+    actual = {e:{m:c for m,c in p.items() if not any(a in below for a in m)} for e,p in P.items()}
+    expected = {e:{} for e in E}
+    for choices in product(range(5), repeat=4):
+        e = tuple(choices.count(k) for k in range(5))
+        m = tuple(sorted(16*k+5*i for i,k in enumerate(choices) if k != 4))
+        expected[e][m] = expected[e].get(m,0) + 1
+    assert actual == expected
+    # Zero first diagonal linear form: the fixed factor is then v, identically.
+    first = {16*k for k in range(4)}
+    fixed = {e:{m:c for m,c in p.items() if not any(a in first for a in m)} for e,p in actual.items()}
+    assert all(not p for e,p in fixed.items() if e[4] == 0)
+    assert sum(map(len, fixed.values())) == 125
+    save('triangular_control.json', dict(board_numbering='batch13', session_id='B13-12',
+         status='CERTIFIED', full_polynomial_comparisons=70,
+         identity='det(v I4+B(s))=product_(a=1)^4 (v+L_a(s)) for every upper triangular tuple',
+         triangular_terms=sum(map(len,actual.values())), one_zero_L_terms=sum(map(len,fixed.values())),
+         family_image_dimension=16, fixed_factor_chart_dimension=12,
+         dimension_proof='The 16 diagonal coefficients are integral over the coefficient image algebra: each is a root of the corresponding univariate characteristic polynomial. The diagonal map is finite, hence closed and dimension preserving. Product L_a=0 iff some entire L_a=0.',
+         scope='Closure of images of simultaneously triangularizable tuples; not full graph over triangular supports.'))
+    print('Triangular identity: 70/70 coefficients; 625 terms; fixed-factor family dimension 12 by finite-map proof.')
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     parser = argparse.ArgumentParser()
-    parser.add_argument('unit', choices=('coefficients','boundary','s2'))
+    parser.add_argument('unit', choices=('coefficients','boundary','s2','triangular'))
     opt = parser.parse_args()
-    {'coefficients':audit_and_jobs,'boundary':boundary_controls,'s2':replay_s2}[opt.unit]()
+    {'coefficients':audit_and_jobs,'boundary':boundary_controls,'s2':replay_s2,
+     'triangular':triangular_control}[opt.unit]()
 
 
 if __name__ == '__main__':
