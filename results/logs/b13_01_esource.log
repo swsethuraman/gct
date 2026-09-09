@@ -1,0 +1,33 @@
+p=2147483647: s74 padded rung-13 rank 36/39, kernel dim 3
+p=2147483629: s74 padded rung-13 rank 36/39, kernel dim 3
+  after   1 reducible points: rank 1/39 (P1), 1/39 (P2);  generic control 1/39, 1/39;  padded relations still vanishing: 3/3   [34s]
+  after   2 reducible points: rank 2/39 (P1), 2/39 (P2);  generic control 2/39, 2/39;  padded relations still vanishing: 3/3   [68s]
+  after   5 reducible points: rank 5/39 (P1), 5/39 (P2);  generic control 5/39, 5/39;  padded relations still vanishing: 3/3   [169s]
+  after  10 reducible points: rank 10/39 (P1), 10/39 (P2);  generic control 10/39, 10/39;  padded relations still vanishing: 3/3   [340s]
+  reducible point 11: msym_u = 0, skipped
+  reducible point 13: msym_u = 0, skipped
+  after  15 reducible points: rank 13/39 (P1), 13/39 (P2);  generic control 13/39, 13/39;  padded relations still vanishing: 3/3   [434s]
+  after  20 reducible points: rank 18/39 (P1), 18/39 (P2);  generic control 18/39, 18/39;  padded relations still vanishing: 3/3   [593s]
+  reducible point 20: msym_u = 0, skipped
+  reducible point 23: msym_u = 0, skipped
+  after  25 reducible points: rank 21/39 (P1), 21/39 (P2);  generic control 21/39, 21/39;  padded relations still vanishing: 3/3   [688s]
+  after  30 reducible points: rank 26/39 (P1), 26/39 (P2);  generic control 26/39, 26/39;  padded relations still vanishing: 3/3   [847s]
+  reducible point 32: msym_u = 0, skipped
+  after  35 reducible points: rank 30/39 (P1), 30/39 (P2);  generic control 30/39, 30/39;  padded relations still vanishing: 3/3   [974s]
+  after  40 reducible points: rank 35/39 (P1), 35/39 (P2);  generic control 35/39, 35/39;  padded relations still vanishing: 3/3   [1133s]
+  after  45 reducible points: rank 36/39 (P1), 36/39 (P2);  generic control 39/39, 39/39;  padded relations still vanishing: 3/3   [1295s]
+  reducible point 45: msym_u = 0, skipped
+  after  50 reducible points: rank 36/39 (P1), 36/39 (P2);  generic control 39/39, 39/39;  padded relations still vanishing: 3/3   [1428s]
+  reducible point 53: msym_u = 0, skipped
+  after  55 reducible points: rank 36/39 (P1), 36/39 (P2);  generic control 39/39, 39/39;  padded relations still vanishing: 3/3   [1558s]
+  after  60 reducible points: rank 36/39 (P1), 36/39 (P2);  generic control 39/39, 39/39;  padded relations still vanishing: 3/3   [1718s]
+
+p=2147483647: reducible rank 36/39 (i_red(13) <= 3), generic control 39/39
+   the 3 padded relations vanish at every reducible point: True
+   the reducible kernel and the padded kernel are the same space: True
+
+p=2147483629: reducible rank 36/39 (i_red(13) <= 3), generic control 39/39
+   the 3 padded relations vanish at every reducible point: True
+   the reducible kernel and the padded kernel are the same space: True
+
+RESULT {"2147483647": {"reducible_rank": 36, "reducible_kernel_dim": 3, "generic_rank": 39, "padded_kernel_dim": 3, "padded_relations_escaping_on_reducible": 0, "kernels_coincide": true}, "2147483629": {"reducible_rank": 36, "reducible_kernel_dim": 3, "generic_rank": 39, "padded_kernel_dim": 3, "padded_relations_escaping_on_reducible": 0, "kernels_coincide": true}}
