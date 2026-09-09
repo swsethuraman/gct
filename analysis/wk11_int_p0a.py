@@ -131,7 +131,15 @@ def main():
     res['secs'] = round(time.time() - t0, 1)
     log('  ' + res['verdict'])
     os.makedirs(os.path.join(ROOT, 'results'), exist_ok=True)
-    json.dump(res, open(os.path.join(ROOT, 'results', 'wk11_int_p0a.json'), 'w'), indent=1)
+    # The default output path is a function of every argument that changes the
+    # computation; --seed and --bound choose the points, so they belong in the
+    # record and in the name.  A fixed path plus a variable parameter is how
+    # session 75's delta = 12 run silently destroyed the banked delta = 24 row
+    # in wk11_int_bdelta.json.
+    res['seed'] = seed; res['bound'] = bound
+    name = ('wk11_int_p0a.json' if (seed, bound) == (20260907, 40)
+            else f'wk11_int_p0a_seed{seed}_bound{bound}.json')
+    json.dump(res, open(os.path.join(ROOT, 'results', name), 'w'), indent=1)
     print('RESULT ' + json.dumps({k: v for k, v in res.items() if k != 'per_prime'}))
     return 0
 

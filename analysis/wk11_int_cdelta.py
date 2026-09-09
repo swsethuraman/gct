@@ -28,12 +28,15 @@ Usage:  python3 wk11_int_cdelta.py <delta> [seconds] [state.pkl]
 
 Banked: C_12 = 239  (B_12 = 31, a_12 = 2), 36 paths over 23 shapes, 21 nonzero.
 """
+import json
 import os
 import pickle
 import sys
 import time
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.normpath(os.path.join(HERE, '..'))
+sys.path.insert(0, HERE)
 from wk9_s42_census import N_S_tail_n, perm_sign
 from wk11_int_bdelta import lam_of, horiz_strips
 
@@ -126,4 +129,5 @@ if __name__ == "__main__":
     print(f"  C_{delta} = {C}")
     json.dump({"delta": delta, "C": C, "paths": len(paths),
                "shapes": len(shapes), "a_by_shape": a},
-              open(f"c{delta}_result.json", "w"), indent=1)
+              open(os.path.join(ROOT, "results", f"wk11_int_c{delta}_result.json"),
+                   "w"), indent=1)

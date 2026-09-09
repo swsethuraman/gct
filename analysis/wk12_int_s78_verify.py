@@ -137,7 +137,15 @@ def main(argv):
                     "on independently chosen points" if ok else "DISCREPANCY"),
     }
     print(json.dumps(out, indent=1))
-    with open(os.path.join(ROOT, "results/wk12_int_s78_verify.json"), "w", encoding="utf-8") as f:
+    # The default output path is a function of every argument that changes the
+    # computation.  A fixed path plus a variable parameter is how session 75's
+    # delta = 12 run silently destroyed the banked delta = 24 row in
+    # wk11_int_bdelta.json.  That was a trap in the script, not a fault of the
+    # session, and this is the class fix.
+    out["seed"] = seed
+    name = ("results/wk12_int_s78_verify.json" if seed == 7801
+            else f"results/wk12_int_s78_verify_seed{seed}.json")
+    with open(os.path.join(ROOT, name), "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1)
     return 0 if ok else 1
 

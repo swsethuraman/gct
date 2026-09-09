@@ -157,7 +157,20 @@ def main(argv):
         print(f"  delta={d:2d} b={r['b']:2d}: birth rank {r['rank']:2d}/{r['b']} from {r['draws']} draws "
               f"({r['past_filter']} past filter) in {r['secs']}s"
               f"{'' if r['complete'] else '   [time-capped, not stalled]'}", flush=True)
-    with open(os.path.join(ROOT, "results/wk12_int_birth_probe.json"), "w", encoding="utf-8") as f:
+    # MERGE by rung, never overwrite.  The output path does not depend on
+    # --stream, so a rerun at other rungs used to destroy the earlier record --
+    # the same trap that cost the banked delta = 24 row in wk11_int_bdelta.json.
+    path = os.path.join(ROOT, "results/wk12_int_birth_probe.json")
+    if os.path.exists(path):
+        try:
+            prior = json.load(open(path, encoding="utf-8"))
+        except Exception:                                        # noqa: BLE001
+            prior = {}
+        by = {r["delta"]: r for r in prior.get("streams", []) if "delta" in r}
+        for r in res["streams"]:
+            by[r["delta"]] = r
+        res["streams"] = [by[d] for d in sorted(by, reverse=True)]
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(res, f, indent=1)
     return 0
 

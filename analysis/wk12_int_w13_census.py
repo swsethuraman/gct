@@ -58,7 +58,13 @@ def census(weight=13, maxlen=5):
 
 def main(argv):
     weight = int(argv[argv.index("--weight") + 1]) if "--weight" in argv else 13
-    out = argv[argv.index("--out") + 1] if "--out" in argv else "results/wk12_int_w13_census.json"
+    # The default output path is a function of every argument that changes the
+    # computation.  A fixed path plus a variable parameter is how session 75's
+    # delta = 12 run silently destroyed the banked delta = 24 row in
+    # wk11_int_bdelta.json.  That was a trap in the script, not a fault of the
+    # session, and this is the class fix.
+    out = (argv[argv.index("--out") + 1] if "--out" in argv
+           else f"results/wk12_int_w{weight}_census.json")
     vals, secs = census(weight)
     nz = {k: v for k, v in vals.items() if v}
     dist = dict(sorted(Counter(nz.values()).items()))

@@ -19,6 +19,20 @@ the translation; never infer an assignment from a number alone.
 | s78 | s77 | r = 5 by bounded elimination |
 | s79 | s78 + s79 | the two independent frontiers |
 
+**new — carry the numbering with the artefact.**  This table protects a worker who
+receives a brief.  It does not protect a reviewer who never received one: in
+batch 12 a theory session rejected the r = 5 report for an assignment mismatch
+that does not exist, because the report named a number and nothing in the report
+said which board that number came from.  So **every report and every manifest
+carries a `board_numbering` field**, verbatim:
+
+    board_numbering: batch12          # this board -- the left column above
+    board_numbering: reconciled       # the reconciled proposal -- the middle column
+
+in the report's front matter and as a top-level JSON key in every manifest you
+deliver.  A reviewer who sees the field never has to guess, and a reviewer who
+does not see it must ask rather than reject.
+
 ## The repository
 
 Clone `https://github.com/swsethuraman/gct.git`.  The base commit is the tip of
@@ -124,13 +138,24 @@ This cost a wrong answer here before it cost one anywhere else.  **Always resolv
 a letter by `E.index(...)` in the ordering the module you are calling uses, never
 by a literal.**
 
-## new — the tools that exist in your environment
+## new — the tools your environment may or may not have
 
-`Singular`, `msolve`, `sympy`, `python-flint`, `numpy`, `scipy` are all installed
-and working.  Check before assuming; a missing import is an environment gap and
-never a mathematical result.  (A batch-12 theory session recorded
-`ModuleNotFoundError: flint` on a different host; that is not a calibration
-failure and must not be reported as one.)
+`Singular`, `msolve`, `sympy`, `python-flint`, `numpy`, `scipy` are the ones this
+programme uses.  **Check, then install what is missing** — do not assume any of
+them is present.  The batch-12 line that said they are "all installed and
+working" was wrong: three worker containers and one theory host had no
+`python-flint`, and one had no C compiler.  Open your run with
+
+    python3 -c "import flint, sympy, numpy, scipy; print('ok')" \
+      || pip install python-flint sympy numpy scipy
+
+and record what you had to install in the report's preflight table.  A missing
+import is an environment gap and never a mathematical result; equally, an
+environment gap you could have closed with one `pip install` is not a reason to
+downgrade an exact computation to a sampled one.  If a tool genuinely cannot be
+installed, say so and say what you used instead — `sympy` over `Q` is an
+acceptable substitute for `python-flint` at small sizes and is not acceptable as
+a silent one.
 
 ## new — the verifier, and which dialect to emit
 
