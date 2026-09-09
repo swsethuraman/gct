@@ -9,6 +9,7 @@ import itertools
 import json
 import math
 from pathlib import Path
+import random
 import time
 
 import b13_03_exact as e
@@ -115,11 +116,15 @@ def primary():
     assert mixedmaps["full_pullback"]["exact"]["kernel"] == [[1, -1]]
     assert all(x for x in mixedmaps["coordinate_factor_surviving_terms"][0])
     assert all(x for x in mixedmaps["coordinate_factor_surviving_terms"][1])
-    # An explicit small non-element witness on x1*(x2^3+x3^3).
+    # Deterministic bounded search for an exact small non-element witness.
     C = e.exps(3, 3)
-    cube = [int(b in ((0, 3, 0), (0, 0, 3))) for b in C]
-    cv = [cube[C.index((a[0]-1,)+a[1:])] if a[0] else 0 for a in E]
-    witness = [e.evaluate(p, cv) for p in polys]
+    rng = random.Random(130300)
+    for witness_index in range(8):
+        cube = [rng.randint(-3, 3) for _ in C]
+        cv = [cube[C.index((a[0]-1,)+a[1:])] if a[0] else 0 for a in E]
+        witness = [e.evaluate(p, cv) for p in polys]
+        if witness[1]:
+            break
     assert witness[0] == 0 and witness[1] != 0
     # Exact repeat of S4 point evaluations, remapped by exponent tuples.
     point_checks = []
@@ -154,6 +159,7 @@ def primary():
               "normalization_multiplicity_control": cubic_proof,
               "non_element_witness": {"ell": [1, 0, 0], "cubic_exponents": C,
                                       "cubic_coefficients": cube,
+                                      "seed": 130300, "index": witness_index,
                                       "values_are": "unscaled exact ordinary source evaluations",
                                       "source_values": [str(x) for x in witness]},
               "archived_point_checks": point_checks,
