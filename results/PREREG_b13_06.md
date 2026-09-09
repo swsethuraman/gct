@@ -108,3 +108,26 @@ is committed. Deliver report, manifest, replay scripts, bundle against the
 frozen base and part00-based whole/part checksums under Batch13_Results/B13-06.
 No pushes, publication, or further schedules. Aim to finish well before 20:30
 America/New_York on 2026-09-09.
+
+## Addendum, 2026-09-09 11:06 America/New_York (before the added measurements)
+
+The completed census has 31 degree-25 and 305 degree-26 tensor constituents.
+The two additional guaranteed Cartan weights are (71,19,2^7) and (69,21,2^7),
+with tensor-domain multiplicities 2 and 3. Price these more concretely by
+computing their ambient plethysms, after the control (65,17,2^7)_24. Also
+recount the two u-ladder cells (69,17,2^7)_25 and (73,17,2^7)_26.
+One process at a time, 1,200 s per cell, 768 MiB hard process cap; reject a DP
+box above 8,000,000 entries before allocation. Use the existing Weyl character
+formula with a separately implemented tail DP and signed-overflow detection at
+EVERY nonnegative addition. This is exact integer combinatorics, not a rank
+calculation. Bank each complete cell; a partial prefix is the bounded fallback.
+
+For the registered coefficient-HWV nonzero controls use the first committed
+determinant and reducible points, and an invertible ten-variable completion of
+the first committed padded point. Evaluate all three quadratic HWVs exactly.
+This checks the coefficient factors; it is not a new positive-gap test.
+Audit u and line-residue arithmetic from the stored native s74 columns even if
+python-flint remains unavailable, keeping adopted ranks distinct from replayed
+arithmetic. The verbose installation log identifies WinError 10013 (socket
+access denied), not absence of a published Windows wheel. Do not route around
+that restriction.
