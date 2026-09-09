@@ -230,6 +230,21 @@ Three things the models show:
   lower bound 0: the first additional equations not forced by a count.  So the
   exact criterion is needed; Cor. D is a screen on both sides, not a substitute.
 
+**Lemma B(4) on a house cell (exploratory, not pre-registered; CERTIFIED).**
+S4's calibration control `(8,8,8)`, `δ = 6`, `r = 3` (`a = 2`, reducible and
+padded multiplicity 1, `results/s64_calibration_unified.jsonl`) has
+`N_S = 561`, so its two HWVs can be written out over `Q`.  The fixed-factor
+restriction `ρ` has rank exactly 1 over `Q`, so `mult_R = 1` and `i_R = 1` are
+**certified**; the kernel vector is the first basis HWV itself (S4's "explicit
+kernel `(1,0)`"), 377 monomials, **none** of them `x₁`-pure — the support test
+of Lemma B(4) passes by inspection — and, as an independent confirmation of the
+lemma, `h(ℓ·c)` expanded symbolically in the 13 coefficients of `(ℓ, c)` is the
+zero polynomial.  True padded points `ℓ·per₃(As)` give rank 1 as well
+(`P₃ = R₃`, Theorem 2).  `analysis/wk13_b04_control888.py`,
+`results/b13_04/control_888_d6.json`, 0.8 s.  This is the shape of the
+certificate B13-03 can use: a reducible-ideal membership is a support
+condition on a highest-weight vector, with no reducible pullback to expand.
+
 ## 5. A cheap exact certificate of non-descent: the swap identity
 
 **Lemma F (PROVED).**  For every `F ∈ ρ(H_λ)`, every `ℓ` with `ℓ₁ ≠ 0` and every
@@ -381,14 +396,16 @@ expanded basis, is not available at the goal cell.
   `xyz`); the theorems are general, the numerical behaviour is the models'.
   A first `per₃` instance costs the first deficient cubic cell — the degree-10
   length-6 remainder (B13-08) is the cheapest place it could appear.
-- Lemma B(4)'s support test was not exercised on a house cell with a reducible
-  deficiency (none of the models has `I(R)_δ ≠ 0` at these sizes; the smallest
-  six-row cell with a measured reducible deficiency, `(21,12,4,1,1,1)₁₀`, has
-  `N_S = 125,231`, beyond dense exact arithmetic here).  Price: one exact
-  kernel of the raising operators restricted to the non-`x₁`-pure columns, or a
-  modular kernel vector reconstructed and verified over `Z` (`E·v = 0` and
-  support off the pure monomials), which would upgrade a MEASURED `i_red ≥ 1`
-  to CERTIFIED at that cell.  This is B13-03's territory and is offered to it.
+- Lemma B(4)'s support test was exercised only at the `r = 3` control
+  `(8,8,8)₆` (§4).  The measured reducible deficiencies of the record — s64's
+  twelve `r = 5` cells (`N_S` from 20,299 at `(9,9,8,1,1)₇`) and s79's 59
+  six-row cells (`N_S` from 125,231 at `(21,12,4,1,1,1)₁₀`) — are beyond dense
+  exact arithmetic here.  Price to upgrade any one of them from MEASURED
+  `i_red ≥ 1` to CERTIFIED: one exact kernel of the raising operators
+  restricted to the non-`x₁`-pure columns, or one modular kernel vector
+  reconstructed and verified over `Z` (`E·v = 0` and support off the pure
+  monomials, both cheap to check once the vector is in hand).  This is
+  B13-03's territory and is offered to it.
 - No sufficient condition beyond Corollary D's dimension count was found that
   does not require computing the intersection.  The intrinsic question —
   which vectors of `B^λ` extend to quartic HWVs — is the question of which
@@ -434,6 +451,7 @@ expanded basis, is not available at the goal cell.
 | `results/b13_04/model_{A_d2,B_d3,B_d4,B_d5,C_d4}.json` | every cell: `a⁽⁴⁾`, `mult_R` (fixed-factor over `Q`, points over `Q`, both primes), `mult_P` (padded and fixed-factor points), `dim J_{λ⁻}` with certification flag, criterion, direct gap, per-predecessor `a⁽³⁾`, `i⁽³⁾`, branching vectors, `branch_in_W`, swap certificates, explicit witnesses.  All stored values are native (`values_are: none`); points are regenerated from `seed = 20260909`, `bound = 7` |
 | `results/logs/b13_04_model*.log` | run logs |
 | `analysis/wk13_b04_pred13.py`, `results/b13_04/pred13.json`, `results/logs/b13_04_pred13{,_reconcile}.log` | the audit and its reconciliation |
+| `analysis/wk13_b04_control888.py`, `results/b13_04/control_888_d6.json`, `results/logs/b13_04_control888.log` | the `(8,8,8)₆` support-test control (exploratory) |
 | `docs/b13_04_report.md` | this report |
 
 Replay of the criterion at any cell of the models is `run_model(...)` with the
@@ -451,6 +469,7 @@ same ranks (they are exact statements about the ideal, not about the points).
 | Theorem E: the converse of Prop. 8(2) fails at `((6,2), 2)` over `(4,2)` for `f = x³` | PROVED, machine-confirmed |
 | Lemma F: the swap identity | PROVED |
 | 82 model cells: all ranks, ideals, gaps, witnesses | CERTIFIED over `Q` (ideal membership by symbolic identity; ranks exact) |
+| `(8,8,8)₆`, `r = 3`: `mult_R = 1`, `i_R = 1`, the reducible equation with 377 monomials none `x₁`-pure, `h(ℓ·c) ≡ 0` symbolically | CERTIFIED (exploratory) |
 | in the 30 pre-registered cells the gap equals Cor. D's lower bound; at `δ = 5` five cells exceed it | CERTIFIED (exact facts about the models), exploratory at `δ = 5` |
 | the swap identity detected all 152 non-descents | MEASURED (a property of the search, not a theorem) |
 | fifteen predecessors of `λ₁₃`, `a`, `N_S`, `Σ a⁽³⁾ = 73`, `a⁽⁴⁾ = 39` | re-derived, agree with the audit log (CERTIFIED as exact counts; the audit log RECORDED) |
