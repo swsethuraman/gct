@@ -74,25 +74,59 @@ def main(argv):
     best = {P1: 0, P2: 0}
     hist = []
     for j in range(npts):
+        tp = time.time()
         if fam == 'pad':
             lf = [[rng.randint(-bound, bound) for _ in range(R)] for _ in range(10)]
             mu = msym_u_pad(lf)
-            if mu == 0: continue
+            if mu == 0:
+                print(f'  point {j}: msym_u = 0, skipped'); continue
             cv = pad_cv(lf)
+        elif fam == 'red':                       # l(s) . generic cubic -- the
+            # reducible control.  V_pad is inside V_red, so I(red) is inside
+            # I(pad) and i_red <= i_pad.  A relation that is already reducible is
+            # a relation satisfied by every l . cubic, which is a far more
+            # structured object than a permanent-specific one and much likelier
+            # to admit an exact membership proof.
+            import itertools as _it
+            lf = [rng.randint(-bound, bound) for _ in range(R)]
+            cub = {e: rng.randint(-bound, bound)
+                   for e in _it.product(range(4), repeat=R) if sum(e) == 3}
+            l = {tuple(1 if k == i else 0 for k in range(R)): c
+                 for i, c in enumerate(lf) if c}
+            f4 = {}
+            for e1, c1 in l.items():
+                for e2, c2 in cub.items():
+                    e = tuple(x + y for x, y in zip(e1, e2))
+                    f4[e] = f4.get(e, 0) + c1 * c2
+            cv = [int(f4.get(al, 0)) for al in exps(N, R)]
+            mu = 24 * lf[0] * cub.get((3,) + (0,) * (R - 1), 0)
+            if mu == 0:
+                print(f'  point {j}: msym_u = 0, skipped'); continue
         else:                                    # det, as a control
-            cv, _ = C.det_point(N, R, rng, bound=bound)
+            cv, As = C.det_point(N, R, rng, bound=bound)
+            A1 = As[0]
+            mu = 24 * round(__import__('numpy').linalg.det(
+                [[A1[4 * r + c] for c in range(4)] for r in range(4)]))
+            if mu == 0:
+                print(f'  point {j}: msym_u = 0, skipped'); continue
         for p in (P1, P2):
             msym = [(cv[k] % p) * fact[k] % p for k in range(len(A))]
-            # rung-d rows are evaluated as themselves; the transport to rung 24 is
-            # a nonzero column scaling and does not change any rank, so it is
-            # left off here.
             vals = [C.dp_eval_c(F, msym, p, tab) for F in fills]
-            for i in range(a): rows[p][i].append(vals[i])
-        if (j + 1) % 5 == 0 or j < 3:
+            # Rows of different native rung must be scaled RELATIVE to each other
+            # before their rank means anything: row i enters rung d as
+            # F_{T_i} . mu^(d - rung_i).  Using the exponent (24 - rung_i)
+            # instead differs by the uniform column factor mu^(24-d), which is a
+            # column scaling and changes no rank -- so one convention serves every
+            # rung.  Leaving the scaling off altogether does NOT: it mixes weights.
+            m = mu % p
+            for i in range(a):
+                rows[p][i].append(vals[i] * pow(m, 24 - deg[i], p) % p)
+        if True:
             for p in (P1, P2): best[p] = rank_modp(rows[p], p)
             hist.append(dict(points=j + 1, rank_P1=best[P1], rank_P2=best[P2]))
             print(f'  after {j+1:4d} points: rank {best[P1]}/{a} at P1, '
-                  f'{best[P2]}/{a} at P2   [{time.time()-t0:.0f}s]', flush=True)
+                  f'{best[P2]}/{a} at P2   [{time.time()-t0:.0f}s total, '
+                  f'{time.time()-tp:.1f}s this point]', flush=True)
             if best[P1] == a and best[P2] == a:
                 print('  FULL RANK reached; stopping.')
                 break

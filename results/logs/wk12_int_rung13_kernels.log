@@ -1,0 +1,26 @@
+p=2147483647: s74 padded rung-13 rank 36/39, kernel dim 3
+p=2147483629: s74 padded rung-13 rank 36/39, kernel dim 3
+  after   1 reducible points: rank 1/39 (P1), 1/39 (P2);  generic control 1/39, 1/39;  padded relations still vanishing: 3/3   [33s]
+  after   2 reducible points: rank 2/39 (P1), 2/39 (P2);  generic control 2/39, 2/39;  padded relations still vanishing: 3/3   [66s]
+  after   5 reducible points: rank 5/39 (P1), 5/39 (P2);  generic control 5/39, 5/39;  padded relations still vanishing: 3/3   [167s]
+  after  10 reducible points: rank 10/39 (P1), 10/39 (P2);  generic control 10/39, 10/39;  padded relations still vanishing: 3/3   [330s]
+  after  15 reducible points: rank 15/39 (P1), 15/39 (P2);  generic control 15/39, 15/39;  padded relations still vanishing: 3/3   [491s]
+  reducible point 16: msym_u = 0, skipped
+  after  20 reducible points: rank 19/39 (P1), 19/39 (P2);  generic control 19/39, 19/39;  padded relations still vanishing: 3/3   [621s]
+  after  25 reducible points: rank 24/39 (P1), 24/39 (P2);  generic control 24/39, 24/39;  padded relations still vanishing: 3/3   [781s]
+  after  30 reducible points: rank 29/39 (P1), 29/39 (P2);  generic control 29/39, 29/39;  padded relations still vanishing: 3/3   [941s]
+  reducible point 30: msym_u = 0, skipped
+  after  35 reducible points: rank 33/39 (P1), 33/39 (P2);  generic control 33/39, 33/39;  padded relations still vanishing: 3/3   [1069s]
+  after  40 reducible points: rank 36/39 (P1), 36/39 (P2);  generic control 38/39, 38/39;  padded relations still vanishing: 3/3   [1231s]
+  reducible point 40: msym_u = 0, skipped
+  reducible point 44: msym_u = 0, skipped
+
+p=2147483647: reducible rank 36/39 (i_red(13) <= 3), generic control 39/39
+   the 3 padded relations vanish at every reducible point: True
+   the reducible kernel and the padded kernel are the same space: True
+
+p=2147483629: reducible rank 36/39 (i_red(13) <= 3), generic control 39/39
+   the 3 padded relations vanish at every reducible point: True
+   the reducible kernel and the padded kernel are the same space: True
+
+RESULT {"2147483647": {"reducible_rank": 36, "reducible_kernel_dim": 3, "generic_rank": 39, "padded_kernel_dim": 3, "padded_relations_escaping_on_reducible": 0, "kernels_coincide": true}, "2147483629": {"reducible_rank": 36, "reducible_kernel_dim": 3, "generic_rank": 39, "padded_kernel_dim": 3, "padded_relations_escaping_on_reducible": 0, "kernels_coincide": true}}
