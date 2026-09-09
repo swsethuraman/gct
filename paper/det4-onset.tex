@@ -131,6 +131,23 @@ where $\dim\Pp_6=55<61=\dim\Rr_6$, and by a Pieri bound only from degree seven
 \S\ref{sec:washout} the dimension tables of the whole programme become
 unconditional.
 
+\emph{The washout persists past the dimension gap.}  At $r\le5$ the equality
+$\Pp_r=\Rr_r$ makes the blindness a theorem.  At $r\ge6$ the two varieties
+differ, and yet in every weight we have measured the two multiplicities still
+agree: $\mult_\lambda\bC[\Pp_r]=\mult_\lambda\bC[\Rr_r]$ at $r=6$ in $682$
+six-row cells through degree twelve, and at $r=9$ at the goal cell
+$\lambda=(65,17,2^{7})$ and at rung thirteen of its ladder, where the padded and
+reducible kernels are the same space over both house primes.  At the goal cell
+the \emph{unpadded} $\per_4$ has no equation at all in that weight.  The
+mechanism is Proposition~\ref{prop:pieri}'s second half: a strict inequality
+$\mult_\lambda\bC[\Pp_r]<\mult_\lambda\bC[\Rr_r]$ in degree $\delta$
+requires $I(\Ddet_r^{\per_3})_\delta\neq0$ on the cubic side, and that ideal is
+empty in every degree we have been able to compute --- through degree eight for
+every length at most six \cite{Companion}, and in degree nine at $r=6$ on the
+weights of length exactly six.  So the reducibility reading of the $r\le5$
+washout survives, empirically, into the range where the varieties are known to be
+distinct.
+
 \emph{The transfer lemma} (\S\ref{sec:transfer}).  Because $\Pp_r\subseteq\Rr_r$,
 one has $\mult_\lambda\bC[\Pp_r]\le\mult_\lambda\bC[\Rr_r]$ weight by weight; a
 multiplicity gap computed against $\Rr_r$ therefore transfers to the padded
@@ -785,11 +802,40 @@ $i_{\det}=1$ given the lower bound of \cite{LMR}.  Equivalently, in the
 room-one form, the equation is born exactly when the Schur complement
 $c-b^{\mathsf T}A^{-1}b$ vanishes, with $A$ the degree-$24$ Gram restricted to
 the transported predecessor.  The $n=3$ shadow above exhibits the same mechanism
-at a size where it can be run.  We record, with the caveat that any exhibited
-element of $I(\Ddet)^{\mathrm{HWV}}$ obtained by evaluation carries: vanishing
-at finitely many points is Schwartz--Zippel evidence of ideal membership, not a
-proof of it, and the rigorous lower bound on the determinant side remains
-\cite{LMR}'s.
+at a size where it can be run.
+
+That rank lower bound has since been established.  A basis of
+$M_{\lambda}=\mathrm{HWV}_{\lambda}(\Sym^{24}\Sym^{4}\bC^{9})$ of all $274$
+vectors was constructed by births along the ladder, each rung's birth quotient
+$M_d/uM_{d-1}$ certified by a nonzero minor at both primes, where
+$u=c_{(4,0,\dots,0)}$; multiplication by $u$ is injective and
+$\ker(M_d\to R/(u))=uM_{d-1}$, so the transported births are a basis, which the
+generic column confirms.  Evaluating at determinant pencils gives a nonzero
+$273\times273$ minor \emph{on the transported degree-$23$ rows alone}, so
+$\Theta^{+}$ is injective on $uM_{23}$ and $i_{\det}(23)=0$; with
+$b_{24}=1$ and \cite{LMR} this pins
+\[
+  \rank\Theta_{\lambda}^{\det}=273,\qquad i_{\det}=1
+\]
+exactly, and no degree-$24$ candidate enters the argument.  The one-dimensional
+kernel is therefore \cite{LMR}'s own equation, and its residues are nonzero at
+every one of $282$ integer padded points at both primes, so it does not vanish on
+the padded permanent.
+
+On the padded side a nonzero $269\times269$ minor gives the floor
+$\rank\Theta_{\lambda}^{\mathrm{pad}}\ge269$, hence $\Delta\in[-4,+1]$.  The
+observed nullity of five is a ceiling read off a finite point set and is not a
+theorem: a nonzero minor bounds $i$ from above and nothing bounds it from below
+except a membership proof.  Two structural facts do stand.  None of the five
+kernel directions meets the degree-$24$ birth line, so
+$i_{\mathrm{pad}}(24)=i_{\mathrm{pad}}(23)$ and $\Delta=1-i_{\mathrm{pad}}(23)$;
+and the padded and reducible kernels coincide, so
+$\mult_{\mathrm{pad}}=\mult_{\mathrm{red}}$ and the whole question is one about
+$\Rr_9$ rather than about the permanent.  We record, with the caveat that any
+exhibited element of $I(\Ddet)^{\mathrm{HWV}}$ obtained by evaluation carries:
+vanishing at finitely many points is Schwartz--Zippel evidence of ideal
+membership, not a proof of it, and the rigorous lower bound on the determinant
+side remains \cite{LMR}'s.
 
 \section{Open problems}\label{sec:open}
 
@@ -802,8 +848,12 @@ bite below degree $65$ settles it in the negative.
 
 \begin{question}
 Does a multiplicity obstruction between $\Pp_6$ and $\Ddet_6$ exist at length
-six?  By Proposition~\ref{prop:pieri} the first candidate degree is seven; the
-reduced six-row cells at degree seven are the frontier.
+six?  By Proposition~\ref{prop:pieri} the first candidate degree is seven.  The
+$682$ six-row cells we have measured through degree twelve --- the skewed ones,
+which are the affordable ones --- carry no determinant equation, no
+permanent-specific equation and no $\per_4$ equation, and $63$ tails are closed
+at every degree by the first-stable-cell argument.  The balanced six-row cells,
+with $n_\chi\ge10^{6}$, remain unmeasured and are the frontier.
 \end{question}
 
 \begin{question}
@@ -818,6 +868,17 @@ Does the reducible-locus screen (Theorem~\ref{thm:transfer}) ever certify
 blindness over an unbounded degree range?  Direction 1's Kempf-collapsing
 computation of $\bC[\Rr_r]$ weight by weight, if carried out, would decide
 whether $\Delta\le0$ holds for all $\delta$ on a fixed length.
+\end{question}
+
+\begin{question}
+Is $I(\Ddet_r^{\per_3})_\delta$ ever nonzero?  By
+Proposition~\ref{prop:pieri} this single cubic-side ideal governs the whole
+question of whether the permanent is visible at all: it is empty in degree
+$\delta$ at length $r$ if and only if $\mult_\lambda\bC[\Pp_r]=
+\mult_\lambda\bC[\Rr_r]$ at \emph{every} weight of that length and degree.  It
+is empty in every degree we have computed.  One scan settles a whole degree, so
+this is the cheapest open question the programme has, and a nonzero weight would
+be the first place the permanent becomes visible to a multiplicity.
 \end{question}
 
 \section*{Acknowledgements}
