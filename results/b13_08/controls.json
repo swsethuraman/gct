@@ -1,0 +1,366 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-08",
+ "engine": "analysis/wk12_s79_per6.py (unchanged)",
+ "S71_MEM_X": "250000000",
+ "host": {
+  "cpus": 2
+ },
+ "A": {
+  "per_form_is_permanent": true,
+  "hand_value": 3746,
+  "per3_ne_det3_points": 10,
+  "degree8_controls": [
+   {
+    "mu": [
+     11,
+     4,
+     4,
+     2,
+     2,
+     1
+    ],
+    "a": 2,
+    "mult": 2,
+    "units": 0,
+    "secs": 0.6,
+    "wall": 0.6
+   },
+   {
+    "mu": [
+     10,
+     6,
+     4,
+     2,
+     1,
+     1
+    ],
+    "a": 2,
+    "mult": 2,
+    "units": 0,
+    "secs": 0.3,
+    "wall": 0.3
+   }
+  ],
+  "status": "PASS"
+ },
+ "B": [
+  {
+   "mu": [
+    11,
+    6,
+    5,
+    3,
+    3,
+    2
+   ],
+   "a": 5,
+   "compare": {
+    "a": {
+     "here": 5,
+     "record": 5,
+     "equal": true
+    },
+    "N_S": {
+     "here": 1698457,
+     "record": 1698457,
+     "equal": true
+    },
+    "stab": {
+     "here": 2,
+     "record": 2,
+     "equal": true
+    },
+    "n_chi": {
+     "here": 829080,
+     "record": 829080,
+     "equal": true
+    },
+    "nrows": {
+     "here": 4733597,
+     "record": 4733597,
+     "equal": true
+    },
+    "nnz": {
+     "here": 16316731,
+     "record": 16316731,
+     "equal": true
+    },
+    "mult": {
+     "here": 5,
+     "record": 5,
+     "equal": true
+    },
+    "units": {
+     "here": 0,
+     "record": 0,
+     "equal": true
+    },
+    "primes_agree": {
+     "here": true,
+     "record": true,
+     "equal": true
+    },
+    "cover_size": {
+     "here": 828970,
+     "record": 828970,
+     "equal": true
+    },
+    "cover_order": {
+     "here": "reversed",
+     "record": "reversed",
+     "equal": true
+    },
+    "nU_p2147483647": {
+     "here": 110,
+     "record": 110,
+     "equal": true
+    },
+    "mult_p2147483647": {
+     "here": 5,
+     "record": 5,
+     "equal": true
+    },
+    "nU_p2147483629": {
+     "here": 110,
+     "record": 110,
+     "equal": true
+    },
+    "mult_p2147483629": {
+     "here": 5,
+     "record": 5,
+     "equal": true
+    }
+   },
+   "all_equal": true,
+   "wall_secs": 100.8,
+   "secs": 100.8,
+   "hwm_gb": 1.84,
+   "record_secs": 83.6,
+   "record_hwm_gb": 1.89,
+   "build_secs": 41.5,
+   "record_build_secs": 36.0,
+   "K_md5": {
+    "2147483647": "4effbb6598c6b2e23bbee80fa82616e7",
+    "2147483629": "a9d39398c404a59e79d968718ef51650"
+   }
+  },
+  {
+   "mu": [
+    9,
+    8,
+    5,
+    4,
+    3,
+    1
+   ],
+   "a": 13,
+   "compare": {
+    "a": {
+     "here": 13,
+     "record": 13,
+     "equal": true
+    },
+    "N_S": {
+     "here": 1448828,
+     "record": 1448828,
+     "equal": true
+    },
+    "stab": {
+     "here": 1,
+     "record": 1,
+     "equal": true
+    },
+    "n_chi": {
+     "here": 1448828,
+     "record": 1448828,
+     "equal": true
+    },
+    "nrows": {
+     "here": 4972392,
+     "record": 4972392,
+     "equal": true
+    },
+    "nnz": {
+     "here": 20408109,
+     "record": 20408109,
+     "equal": true
+    },
+    "mult": {
+     "here": 13,
+     "record": 13,
+     "equal": true
+    },
+    "units": {
+     "here": 0,
+     "record": 0,
+     "equal": true
+    },
+    "primes_agree": {
+     "here": true,
+     "record": true,
+     "equal": true
+    },
+    "cover_size": {
+     "here": 1448235,
+     "record": 1448235,
+     "equal": true
+    },
+    "cover_order": {
+     "here": "reversed",
+     "record": "reversed",
+     "equal": true
+    },
+    "nU_p2147483647": {
+     "here": 593,
+     "record": 593,
+     "equal": true
+    },
+    "mult_p2147483647": {
+     "here": 13,
+     "record": 13,
+     "equal": true
+    },
+    "nU_p2147483629": {
+     "here": 593,
+     "record": 593,
+     "equal": true
+    },
+    "mult_p2147483629": {
+     "here": 13,
+     "record": 13,
+     "equal": true
+    }
+   },
+   "all_equal": true,
+   "wall_secs": 315.1,
+   "secs": 315.1,
+   "hwm_gb": 3.68,
+   "record_secs": 293.0,
+   "record_hwm_gb": 3.24,
+   "build_secs": 28.2,
+   "record_build_secs": 26.6,
+   "K_md5": {
+    "2147483647": "26c0054ed992a1a394d2739c3338a8b9",
+    "2147483629": "11bbe237280703ff6400220bd6493120"
+   }
+  }
+ ],
+ "C": [
+  {
+   "mu": [
+    11,
+    6,
+    5,
+    3,
+    3,
+    2
+   ],
+   "a": 5,
+   "diag_seed": 20260909,
+   "points": 13,
+   "per_prime": {
+    "2147483647": {
+     "rank_diagonal_pencils": 0,
+     "rank_det3_pencils": 5,
+     "rank_per3_pencils": 5,
+     "diag_all_rows_zero": true
+    },
+    "2147483629": {
+     "rank_diagonal_pencils": 0,
+     "rank_det3_pencils": 5,
+     "rank_per3_pencils": 5,
+     "diag_all_rows_zero": true
+    }
+   }
+  },
+  {
+   "mu": [
+    9,
+    8,
+    5,
+    4,
+    3,
+    1
+   ],
+   "a": 13,
+   "diag_seed": 20260909,
+   "points": 21,
+   "per_prime": {
+    "2147483647": {
+     "rank_diagonal_pencils": 0,
+     "rank_det3_pencils": 13,
+     "rank_per3_pencils": 13,
+     "diag_all_rows_zero": true
+    },
+    "2147483629": {
+     "rank_diagonal_pencils": 0,
+     "rank_det3_pencils": 13,
+     "rank_per3_pencils": 13,
+     "diag_all_rows_zero": true
+    }
+   }
+  }
+ ],
+ "B_status": "PASS",
+ "C_status": "PASS",
+ "D": [
+  {
+   "mu": [
+    11,
+    6,
+    5,
+    3,
+    3,
+    2
+   ],
+   "a": 5,
+   "identical": {
+    "mult": true,
+    "n_chi": true,
+    "cover_size": true,
+    "nU": {
+     "2147483647": true,
+     "2147483629": true
+    },
+    "K_md5": {
+     "2147483647": true,
+     "2147483629": true
+    }
+   },
+   "all_identical": true,
+   "wall_secs": 100.9,
+   "hwm_gb": 3.68,
+   "mult": 5
+  },
+  {
+   "mu": [
+    9,
+    8,
+    5,
+    4,
+    3,
+    1
+   ],
+   "a": 13,
+   "identical": {
+    "mult": true,
+    "n_chi": true,
+    "cover_size": true,
+    "nU": {
+     "2147483647": true,
+     "2147483629": true
+    },
+    "K_md5": {
+     "2147483647": true,
+     "2147483629": true
+    }
+   },
+   "all_identical": true,
+   "wall_secs": 364.4,
+   "hwm_gb": 3.68,
+   "mult": 13
+  }
+ ],
+ "D_status": "PASS"
+}
