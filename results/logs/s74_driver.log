@@ -69,3 +69,16 @@
 [2026-09-09T00:53:36Z] start decide_det: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det
 [2026-09-09T00:53:37Z] end decide_det (exit 0)
 [2026-09-09T00:53:37Z] det column at P1: rows 274, rank_24 273; rows<=23 273, rank_23 273  ->  rank T_det(24) >= 273 (running lower bound)
+[2026-09-09T00:53:37Z] commit (ok): s74: determinant column at P1 on 274 source rows (rungs [13, 14, 15, 16, 17, 18, 19]), running lower bound rank T_det >= 273.
+[2026-09-09T00:53:37Z] DETERMINANT SIDE FINISHED: rank T_det = 273 on the transported delta=23 source (i_det(23) = 0, hence i_det(24) = 1 with LMR)
+[2026-09-09T00:53:37Z] streams ended; final source build and the padded column
+[2026-09-09T00:53:37Z] start build: python3 analysis/wk12_s74_columns.py --build
+[2026-09-09T00:53:37Z] end build (exit 0)
+[2026-09-09T00:53:37Z] start rowcheck: python3 analysis/wk12_s74_columns.py --check-rows --workers 2
+[2026-09-09T00:54:20Z] end rowcheck (exit 0)
+[2026-09-09T00:54:20Z] start det_P1: python3 analysis/wk12_s74_columns.py --family det --prime 2147483647 --workers 2
+[2026-09-09T00:54:20Z] end det_P1 (exit 0)
+[2026-09-09T00:54:20Z] start pad_P1: python3 analysis/wk12_s74_columns.py --family pad --prime 2147483647 --workers 2
+[2026-09-09T01:29:05Z] end pad_P1 (exit 0)
+[2026-09-09T01:29:05Z] start decide2: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det,pad
+[2026-09-09T01:29:05Z] end decide2 (exit 0)
