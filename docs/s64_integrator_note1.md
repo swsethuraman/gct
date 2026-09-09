@@ -45,8 +45,22 @@ milliseconds.
 This is not a criticism of S3 and it does not reduce the memo's value.  **What
 is genuinely new is the reading**, and it is a real upgrade: `h_pad` is not
 merely a bound but the *intermediate multiplicity space* of an explicit two-step
-map, the deficit `h_pad − mult_pad` is exactly the cubic-permanent kernels, and
-quotienting blockwise turns a bound into a construction.  Attribute the identity
+map, and quotienting blockwise turns a bound into a construction.
+
+> **Corrected 2026-09-09, on batch-12 S4, and the correction is right.**  This
+> sentence originally read "the deficit `h_pad − mult_pad` is exactly the
+> cubic-permanent kernels."  That is false.  With `S` the split and
+> `K = ⊕_μ ker Q_μ` the cubic-permanent kernels,
+>
+>     h_pad − rank T_pad  =  (h_pad − rank S)  +  dim(S(M_λ) ∩ K)
+>
+> and `rank S ≤ dim M_λ = 274`, so at LMR the deficit from 521 is **at least 247
+> for dimensional reasons alone**, before any kernel is considered.  Only the
+> second term is kernel.  The architecture below survives untouched — the
+> factorization is now *proved*, with normalization pinned, by S4 — but the
+> accounting did not, and nothing may read `mult_pad` off the block kernels.
+> The exact identity is `rank T_pad = rank S − dim(S(M_λ) ∩ K)`, so full padded
+> rank needs **both** `ker S = 0` and that intersection zero.  Attribute the identity
 to session 42 and the factorization to S3 (house rule 13).
 
 ## 3. The number nobody computed — and it could have ended the track

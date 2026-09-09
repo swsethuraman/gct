@@ -171,6 +171,34 @@ THREAD 2 IN TEN LINES
     i_det(23) = 0 forces i_det(24) = 1, hence D(24) = 1 - i_pad(24), so D = +1 iff
     i_pad(24) = 0.  Notation: F_{T57} is the polynomial of saved filling T57 in
     results/s69_lmr_state.json -- 57 is an identifier, not a degree or a group.
+  THE PADDED SIDE HAS A FLOOR AT LAST, AND MY 521 ACCOUNTING WAS WRONG (S4,
+    batch 12, verified here).  S4 certifies rank T_pad >= 12 at the goal cell:
+    two 12-minors on TRUE padded points (ell.per_3, not ell.c), both house
+    primes, two independently written evaluators.  Re-derived here from S4's own
+    36 points and 34 fillings through the s69 Grassmann DP evaluator that S4's
+    Windows host could not load -- 144 entries x 2 primes x 2 normalization
+    routes = 576 agreements, and both determinants reproduced by modular
+    elimination and exact Bareiss.  Engine `analysis/wk12_int_s4_verify.py`.
+    That is the programme's FIRST certified target padded rank; before it the
+    padded side had no floor at all.  With S1's transported determinant bound,
+      2 <= rank T_det <= 273,   12 <= rank T_pad <= 274,   -261 <= D <= 272.
+    MY ERROR, corrected: docs/s64_integrator_note1.md said "the deficit
+    h_pad - mult_pad is exactly the cubic-permanent kernels".  False.  With S the
+    split and K the cubic-permanent kernels,
+      h_pad - rank T_pad = (h_pad - rank S) + dim(S(M_lambda) ^ K),
+    and rank S <= 274, so the deficit from 521 is at least 247 for dimensional
+    reasons before any kernel.  The exact identity is
+    rank T_pad = rank S - dim(S(M_lambda) ^ K); full padded rank needs BOTH
+    ker S = 0 and that intersection zero.  The factorization architecture is
+    unaffected and is now proved with its normalization pinned.
+    Also banked from S4: the fixed-factor kernel lemma (ker R_1 = ker S on
+    highest-weight sources -- setting the linear factor to x_1 is an EXACT kernel
+    test, no reducible pullback needed); dim P_6 = 55 < 61 = dim R_6, the first
+    hard evidence that the padded and reducible families differ at the parameter
+    level; and the correction that the s64 48-row ledger has ZERO rows with
+    mult_pad != mult_red and twelve with mult_pad != mult_det, so no banked
+    padded-versus-reducible discriminating cell exists.  The 48-block census and
+    the a_3 sum of 521 were re-enumerated here and agree exactly.
   THE FIRST OBSTRUCTION IS A THEOREM (session 73).  On the n = 3 ladder the
     ambient multiplicity is flat from delta = 12, so Lemma L forces i_det = 1
     and i_per = 0 at EVERY rung: D(delta) = +1 for all delta >= 12.  Five rungs
