@@ -346,7 +346,7 @@ verifier could reach the cell).
 
 `results/PREREG_s74.md`; `results/s74/births_d13..23.json`, `anchors.json`,
 `source.json`, `row_system_check.json`, `columns_{gen,det,pad,red,per4}_{P1,P2}.json`,
-`decision_{P1,P2}.json`, `ladder_ranks.json`, `certified.json`,
+`decision_{P1,P2}.json` (the generic columns gzipped under the 5 MB rule), `ladder_ranks.json`, `certified.json`,
 `verify_{P1,P2}.json`, `s4_crosscheck.json`, `ns_count.json`,
 `spot_evaluators.json`; `results/certs/s74_*.json`; `analysis/wk12_s74_*.py`,
 `wk12_s74_dpc.c`; logs under `results/logs/`; this report; bundle

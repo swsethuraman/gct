@@ -203,14 +203,35 @@ def _row(Fj):
 
 
 def col_path(family, p):
-    return os.path.join(OUT, f"columns_{family}_{p}.json")
+    """the generic column is stored gzipped: its point records carry 495
+    coefficients each and the plain file exceeds the 5 MB rule."""
+    base = os.path.join(OUT, f"columns_{family}_{p}.json")
+    return base + ".gz" if family == "gen" else base
+
+
+def _dump(st, path):
+    tmp = path + ".tmp"
+    if path.endswith(".gz"):
+        import gzip
+        with gzip.open(tmp, "wt", encoding="utf-8", compresslevel=9) as f:
+            json.dump(st, f)
+    else:
+        json.dump(st, open(tmp, "w", encoding="utf-8"))
+    os.replace(tmp, path)
+
+
+def _load(path):
+    if path.endswith(".gz"):
+        import gzip
+        return json.load(gzip.open(path, "rt", encoding="utf-8"))
+    return json.load(open(path, encoding="utf-8"))
 
 
 def evaluate(family, p, workers, K, block):
     src = load_source()
     path = col_path(family, p)
     if os.path.exists(path):
-        st = json.load(open(path, encoding="utf-8"))
+        st = _load(path)
         assert st["K"] == K, "point count changed; refusing to mix"
         pts_cv = st["points_cv"]
     else:
@@ -234,9 +255,7 @@ def evaluate(family, p, workers, K, block):
                 st["rows_native"][json.dumps(e["key"])] = r
             st["secs"] = round(st["secs"] + time.time() - t0, 1)
             t0 = time.time()
-            tmp = path + ".tmp"
-            json.dump(st, open(tmp, "w", encoding="utf-8"))
-            os.replace(tmp, path)
+            _dump(st, path)
             log(f"{family} p={p}: {len(st['rows_native'])}/{len(src['entries'])} rows "
                 f"(rung {chunk[-1]['rung']}), {st['secs']:.0f}s")
     return st

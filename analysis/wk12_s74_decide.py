@@ -35,10 +35,14 @@ A24, A23 = 274, 273
 
 
 def load_col(family, p):
+    """a banked column; the generic column is stored gzipped (5 MB rule)."""
     path = os.path.join(OUT, f"columns_{family}_{p}.json")
-    if not os.path.exists(path):
-        return None
-    return json.load(open(path, encoding="utf-8"))
+    if os.path.exists(path):
+        return json.load(open(path, encoding="utf-8"))
+    if os.path.exists(path + ".gz"):
+        import gzip
+        return json.load(gzip.open(path + ".gz", "rt", encoding="utf-8"))
+    return None
 
 
 def assemble(src, col, p, top):
