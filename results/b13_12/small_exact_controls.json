@@ -1,0 +1,23 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-12",
+  "status": "CERTIFIED",
+  "saturation": {
+    "raw": "(x^2-z*x)",
+    "saturation": "(x-z)",
+    "multiplier": "x",
+    "after_saturation_then_z": "(x,z)",
+    "wrong_order": "(x^2):x^infinity=(1)",
+    "upper_certificate": "Q[x,z]/(x-z)=Q[x], so multiplication by x is injective"
+  },
+  "contraction": {
+    "map": "(a,b)->(u=a,v=a*b)",
+    "full_kernel": "(0)",
+    "proof": "All monomials u^i*v^j map to distinct a^(i+j)*b^j for every i,j>=0",
+    "finite_control_degree": 6,
+    "finite_monomials_checked": 28,
+    "correct_W_image": "u=0, v arbitrary in closure",
+    "restricted_actual_image": "u=v=0"
+  },
+  "warning": "The small example refutes a general inference, not the actual s78 containment statement."
+}
