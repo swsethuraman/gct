@@ -178,18 +178,27 @@ def _prime_job(args):
     K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[{opts['tag']}]", verbose=opts['verbose'])
     out['hybrid'] = info
     t = time.time()
-    fam = {}
-    fam['det'] = ev_rows_from_coeffs(arr, [det_coeffs(pt, R) for pt in opts['det_pts']], p, R)
-    fam['pad'] = ev_rows_from_coeffs(arr, [pad_coeffs(V) for V in opts['pad_pts']], p, R)
-    fam['per4'] = ev_rows_from_coeffs(arr, [per4_coeffs(pt, R) for pt in opts['per4_pts']], p, R)
-    fam['red_pts'] = ev_rows_from_coeffs(arr, [red_coeffs(pt, R) for pt in opts['red_pts']], p, R)
-    out['ev_secs'] = round(time.time() - t, 1)
-    t = time.time()
-    G = {}
-    for name, EV in fam.items():
-        G[name] = matmul_mod(EV % p, K % p, p)
+    # one family at a time (the evaluation rows of a large-a cell are the memory peak: (a+8) x n_chi int64 per family)
+    coeffs = {'det': lambda: [det_coeffs(pt, R) for pt in opts['det_pts']],
+              'pad': lambda: [pad_coeffs(V) for V in opts['pad_pts']],
+              'per4': lambda: [per4_coeffs(pt, R) for pt in opts['per4_pts']],
+              'red_pts': lambda: [red_coeffs(pt, R) for pt in opts['red_pts']]}
+    G = {}; ev_secs = 0.0; rank_secs = 0.0
+    Kp_ = np.asarray(K % p, dtype=np.int64)
+    for name in ('det', 'pad', 'per4', 'red_pts'):
+        t1 = time.time()
+        cl = coeffs[name](); parts = []
+        for c0 in range(0, len(cl), 8):                       # eight points at a time: the rows never exceed 8 x n_chi
+            EV = ev_rows_from_coeffs(arr, cl[c0:c0 + 8], p, R)
+            parts.append(matmul_mod(EV % p, Kp_, p)); del EV
+        ev_secs += time.time() - t1; t1 = time.time()
+        G[name] = np.vstack(parts); del parts
         m = rank_mod_p(G[name], p)
+        rank_secs += time.time() - t1
         out['sides'][name] = dict(mult=int(m), nullity=int(a - m), instrument=f'hybrid kernel + {name} evaluation rows')
+    del Kp_
+    out['ev_secs'] = round(ev_secs, 1)
+    t = time.time() - rank_secs
     mstar = rank_tall(K[nonred], p) if len(nonred) else 0
     out['sides']['red_star'] = dict(mult=int(mstar), nullity=int(a - mstar), instrument='hybrid kernel + (star)')
     out['rank_secs'] = round(time.time() - t, 1)
