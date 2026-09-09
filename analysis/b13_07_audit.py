@@ -266,6 +266,65 @@ def epsilon():
         missing='A rational proof that the degree-24 birth row is independent of the transported source after restriction to P; two-prime containment is insufficient.',
         unconditional='D = 1 - i_pad(24), -4 <= D <= 1; exact determinant rank 273 and padded floor 269 retained.'))
 
+def stable_census():
+    import wk12_int_s79_stable_verify as v
+    from wk8_s30_pleth import parts
+    rows=[]
+    for rho in parts(13):
+        if len(rho)>5: continue
+        ai=v.a_inf(rho); assert ai>=0
+        rows.append(dict(rho=rho,a_inf=ai))
+    wanted={tuple(x['rho']):x['a_inf'] for x in rows if 0<x['a_inf']<=4}
+    replay={tuple(x for x in read(p)['rho'] if x):read(p)['a_inf'] for p in OUT.glob('stable_*.json') if p.name not in ('stable_batch.json','stable_census.json')}
+    assert wanted==replay and len(wanted)==16
+    save('stable_census',dict(status='CERTIFIED',rows=rows,partitions=len(rows),positive_at_most_four=len(wanted),
+         counts={str(a):sum(x['a_inf']==a for x in rows) for a in range(5)}))
+
+def coverage():
+    ledger=read(OUT/'record_ledger.json')
+    records=[json.loads(l) for l in open(ROOT/'results/s79_per6.jsonl')]
+    record_index={(tuple(x['mu']),x['delta']):x for x in records}
+    d9=[]
+    for x in ledger['cubic']:
+        if x['delta']!=9: continue
+        r=record_index[tuple(x['mu']),9]
+        complete=[p for p in x['available_fullrank'] if (OUT/('replay_'+Path(p).name.replace('.json.gz','.json'))).exists()]
+        x=dict(x,replayed_certificates=complete,
+            status='CERTIFIED: both primes independently replayed' if len(complete)==2 else 'ADOPTED full-rank result; source regeneration required',
+            original_fullrank_certificate_count=len(r.get('certs',[])),
+            regeneration_arguments=['analysis/wk12_s79_per6.py','9',*map(str,x['mu']),'--a',str(x['a']),
+              '--out','results/b13_07/regenerated_per6.jsonl','--certs','results/b13_07/regenerated_certs'])
+        d9.append(x)
+    missing=[x for x in d9 if len(x['replayed_certificates'])!=2]
+    quartic=[json.loads(l) for l in open(ROOT/'results/s79_cells.jsonl')]
+    q={(tuple(x['lam']),x['delta']):x for x in read(ROOT/'results/s79_queue.json')}
+    stable=[x for x in quartic if (tuple(x['lam']),x['delta']) in q and q[tuple(x['lam']),x['delta']]['a_inf']==x['a']]
+    assert len(stable)==69 and len({tuple(x['lam'][1:]) for x in stable})==63
+    assert all(x['mult_pad']==x['mult_red']==x['mult_det']==x['mult_per4']==x['a'] for x in stable)
+    q1drops=[x for x in ledger['quartic_sampled_drops'] if x['delta']>=10 and (tuple(x['lam']),x['delta']) in q]
+    assert len(q1drops)==4 and ledger['higher_degree_drop_count']==35
+    manifest=read(OUT/'inventory.json')
+    # The original blobs cannot be reconstructed by checking only gzip timestamps.
+    # Add canonical-content hashes to identify the actual supplemental objects.
+    supplements=[]
+    for f in manifest['files']:
+        if f['path'] not in manifest['mismatches']: continue
+        payload=read(ROOT/f['path'])
+        canonical=json.dumps(payload,sort_keys=True,separators=(',',':')).encode()
+        supplements.append(dict(path=f['path'],actual_sha256=f['sha256'],canonical_json_sha256=hashlib.sha256(canonical).hexdigest(),
+            expected_md5=f['md5'],actual_md5=f['actual_md5'],original_bytes=f['bytes'],actual_bytes=f['actual_bytes'],
+            kind=payload.get('kind'),source_state='supplemental merged/checkpoint object; original final bytes unavailable'))
+    save('coverage',dict(status='VERIFIED PREFIX with explicit regeneration boundary',degree9=d9,
+        fully_replayed_weights=210-len(missing),requires_regeneration=len(missing),
+        missing_original_certificates=sum(x['original_fullrank_certificate_count'] for x in missing),
+        missing_weights_never_had_expanded_certificate=sum(x['original_fullrank_certificate_count']==0 for x in missing),
+        original_seconds_for_missing=round(sum(x['original_seconds'] for x in missing),1),
+        missing_max_N_S=max(x['N_S'] for x in missing),missing_max_NS_delta=max(x['NS_delta'] for x in missing),
+        q1_first_stable_records=69,q1_closed_tail_records=63,
+        q1_high_degree_sampled_drops=q1drops,total_high_degree_sampled_drops=35,
+        supplemental_hash_mismatches=supplements))
+
 if __name__=='__main__':
     mode,*args=sys.argv[1:]
-    {'dominance':dominance,'inventory':inventory,'census':census,'cert':cert,'stable':stable,'epsilon':epsilon}[mode](*args)
+    {'dominance':dominance,'inventory':inventory,'census':census,'cert':cert,'stable':stable,'epsilon':epsilon,
+     'stable_census':stable_census,'coverage':coverage}[mode](*args)
