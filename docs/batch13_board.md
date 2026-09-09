@@ -21,12 +21,29 @@ does not obstruct objective 1; it makes the padded side computable by the cheap
 reducible route.  My first draft got this backwards and organised the batch on
 it; `docs/batch13_corrections.md` §1 records the correction.
 
-**What the corrected logic says, measured.**  `mult_P ≤ mult_R`, so
-`D > 0 ⟹ i_det > i_red`.  Across session 79's 682 six-row cells: `i_det = 0` at
-**every one**, `i_red ≥ 1` at 59, and `i_red < i_det` at **none**.  So the
-binding constraint on objective 1 is the **determinant** ideal being empty, not
-the padded one being full.  The only cell in the record with `i_det ≥ 1` is the
-LMR cell, where `i_det = 1` and `i_red = 5`.
+**What the corrected logic says, and what the certificates support.**
+`mult_pad <= mult_red`, so `D > 0` needs `i_det > i_red`.  Across session 79's
+682 six-row cells the determinant side is at **full rank at both primes**, so
+`i_det = 0` there is CERTIFIED over `Q`.  **That alone rules out `D > 0` in those
+cells** -- `D = mult_pad - mult_det <= a - a = 0` -- with no claim about the
+reducible side needed.
+
+s79 also **measured** positive reducible nullities at 59 of them.  Those are
+sampled deficiencies: a rank read off a finite point set is a floor on the rank
+and therefore a ceiling on `i`, so it does **not** establish `i_red >= 1`.  The
+board makes no use of that direction.
+
+At the degree-24 `n = 4` LMR target, `i_det = 1` is exact -- a certified
+273-minor against LMR's upper bound -- while the reducible nullity 5 is
+**measured**, and the exact reducible nullity there is unresolved.  B13-01 and
+B13-02 are the two routes to it.
+
+So the binding constraint on objective 1 is the **determinant** ideal being empty
+wherever it has been measured, and our completed degree-24 `n = 4` LMR target is
+the one place in this programme's measured `n = 4` region where `i_det >= 1` is
+established.  (Determinant equations are known elsewhere, and the `n = 3` control
+`(19,7,2^5)` at degree 12 has `i_det = 1`; the claim here is about the measured
+`n = 4` region, not the literature.)
 
 **At the LMR cell.**  `rank T_det = 273` exactly (certified floor plus LMR's
 upper bound), `rank T_pad ≥ 269` certified.  `D = 1 − i_pad(24)`, the justified
@@ -78,11 +95,17 @@ most 273, hence `i_pad ≥ 1` and `D ≤ 0` — the screen pre-registered in
 `docs/batch11_plan.md` C3 and never runnable for want of a source.
 **Stretch** exact reducible rank 269.
 
-*Cross-checks that must hold:* `rank S ≥ mult_pad ≥ 269` (s74's certified floor);
-`rank S ≤ 274` and `≤ h_pad = 521`; s74's 12-minor cross-check
-(`results/s74/s4_crosscheck.json`, 144/144) reproducing on your build of `S`
-and `Q`.  A `rank S` below 269 contradicts a nonzero minor and is an instrument
-defect, not a result.
+*Cross-checks for the primary result:* exact structural-map controls at small
+size; `rank S ≤ 274` and `≤ h_pad = 521`; and consistency with s74's certified
+padded floor, `rank S ≥ mult_pad ≥ 269`.  A `rank S` below 269 contradicts a
+nonzero minor and is an instrument defect, not a result.
+
+*Conditional:* reproducing s74's 12-minor cross-check
+(`results/s74/s4_crosscheck.json`, 144/144) is **mandatory if this session
+constructs or uses `Q`**, and a stretch check otherwise.  Requiring the whole
+padded minor to replay through a newly built `S` and `Q` would turn an exact
+reducible-rank job into the larger padded-factorization job, which is not what
+this session is for.
 
 **Do not** require reconstruction of the degree-24 determinant kernel.  **Do
 not** identify the degree-23 and degree-24 padded nullities without proof; the
@@ -123,11 +146,24 @@ image with the cubic ideal**, not through Pieri compatibility, which is only
 necessary.
 
 **Audit the horizontal-strip predecessor enumeration for the degree-13 LMR
-cell.**  The integrator priced fifteen horizontal-13-strip predecessors of
-`λ₁₃ = (21,17,2⁷)`, `a` from 1 to 9, `N_S` from `1.59·10⁷` at `(21,6,2⁷)` to
-`3.70·10⁸` at `(19,6,2⁷,2)`.  Check the enumeration, and **state clearly that a
-predecessor screen is targeted at one quartic cell and does not exhaust
-`I(D₉^{per₃})₁₃`** — the first draft's brief said "in full" and was wrong.
+cell.**  The review flagged the integrator's written example `(19,6,2⁷,2)` as
+malformed — ten parts, size 41, where a degree-13 cubic predecessor must have
+size 39 and at most nine parts.  It was right, and the re-audit
+(`results/logs/wk12_int_pred13_audit.log`) separates two things:
+
+- the **enumeration is correct** — fifteen horizontal-13-strip predecessors of
+  `λ₁₃ = (21,17,2⁷)`, every one of size 39 with at most nine parts, and all
+  fifteen have `a ≥ 1`, `a` from 1 to 9;
+- the **prose was wrong twice**.  Both exponent shorthands were malformed: the
+  cheapest is `(21,6,2⁶)`, eight parts, not `(21,6,2⁷)`; and `(19,6,2⁷,2)` is
+  `(19,6,2⁷)`, nine parts.  And the quoted price range came from a truncated
+  list of ten.  The true range is `N_S` from **`1.59·10⁷`** at `(21,6,2⁶)` to
+  **`8.10·10⁸`** at `(17,8,2⁷)` — the top is 2.2× dearer than advertised.
+
+Take the fifteen from the audit log rather than from prose, and **re-derive them
+yourself** before using them.  **State clearly that a predecessor screen is
+targeted at one quartic cell and does not exhaust `I(D₉^{per₃})₁₃`** — the first
+draft's brief said "in full" and was wrong.
 
 State the length quantifier once, precisely, in a form a brief can quote: `μ`
 interlaces `λ`, so `μ_r` may be 0 and a shorter `μ` pairs with `λ`; and say when
@@ -156,6 +192,11 @@ of any naive census.
 proper containment already implies equality fails eventually.  A finite-degree
 range or a specific-family theorem is the target.
 
+**Scope boundary with B13-09.**  B13-05 owns the **structural proofs and
+pruning** and computes only to validate a claim.  **B13-09 owns the numerical
+queue** at lengths seven and eight.  Share findings; neither waits for the other,
+and neither runs the other's census.
+
 **Success** a new exact exclusion or bounded equality theorem, or a rigorously
 specified smaller set of constituents that must still be computed.
 **Fallback** a proved reduction and a complete finite census with the unresolved
@@ -171,10 +212,12 @@ polynomials of degrees one and two.  Do degree-25/26 components improve the
 determinant-versus-padded comparison?
 
 **The fact this session must explain.**  `D > 0` needs `i_det > i_red`.  In the
-682 six-row cells `i_det = 0` at every one, in the 326-cell record `mult_det = a`
-at every one, and at the LMR cell `i_det = 1 < 5 = i_red`.  So any proposed
-mechanism has to say **how `i_det` becomes positive** somewhere the reducible
-ideal is smaller.  That is the gate, and no plan before this one named it.
+682 six-row cells `i_det = 0` at every one -- certified, full rank at both
+primes, which by itself gives `D <= 0` there -- and in the 326-cell record
+`mult_det = a` at every one.  At the degree-24 LMR target `i_det = 1` is exact
+while the reducible nullity 5 is only measured.  So any proposed mechanism has to
+say **how `i_det` becomes positive** somewhere the reducible ideal is provably
+smaller.  That is the gate, and no plan before this one named it.
 
 **Success** a finite list of justified components, each with the precise rank or
 membership question that decides it; or a rigorous limitation showing why the
@@ -204,11 +247,12 @@ In priority order:
 3. The stable-family exclusions — the sixteen-block weight-13 theorem, verified
    60/60 by the integrator on an independent instrument.
 4. The distinction between full-rank quartic results and sampled deficient ranks.
-5. **The `ε_pad` argument** of `docs/batch13_corrections.md` §4: the containment
-   `ker(T_pad) ⊆ uM₂₃` is computed mod `p` at both primes, and lifting it to `Q`
-   requires that no rational ideal element has a birth coefficient divisible by
-   both house primes.  Audit that, and say whether `i_pad(24) = i_pad(23)` may be
-   used or must be carried as conditional.
+5. **The `ε_pad` argument** of `docs/batch13_corrections.md` §4.  Audit whether
+   the available certificates imply `I(P) ∩ M₂₄ ⊆ uM₂₃` **over `Q`**.  Modular
+   containment alone is insufficient.  Supply an exact argument, or retain
+   `i_pad(24) = i_pad(23)` as conditional and say so.  The integrator offered one
+   route to closing the lift; treat it as a candidate argument, not as the shape
+   the answer must take.
 
 **Success** a claim-by-claim verified ledger with exact inherited dependencies.
 **Fallback** a verified prefix and the certificates needing regeneration.
@@ -236,7 +280,8 @@ lower-length results.
 
 A bounded investigation at lengths seven and eight through degree nine.
 Enumerate and price the relevant new components **before** selecting the
-executable queue.
+executable queue.  **This session owns the numerical queue**; B13-05 owns the
+structural pruning and computes only to validate a claim.
 
 **Account for shorter components explicitly** — by citing Theorem 2 and the
 restriction lemma where they apply, and by computing only what they do not cover.
@@ -265,11 +310,20 @@ with the rows exceeding 4 GB, killed at `E_45`, while its kernels were never the
 constraint — the largest hybrid phase in 682 cells was 202 s at
 `n_χ = 732 815`.
 
-**Acceptance** exact agreement on a pre-registered representative suite spanning
-both polynomial degrees and both problem sizes — at least fifteen banked cells,
-`n_χ` from `10³` to `10⁶`, `n = 3` and `n = 4`, lengths 5, 6 and 9 where banked
-cells exist — the same `mult_det` at those cells at both primes, then a measured
-difficult-cell pilot.
+**Acceptance.**  Matching `mult_det` is **not** sufficient — two incorrect
+operators can give the same sampled rank.  On a pre-registered representative
+suite spanning both polynomial degrees and both problem sizes (at least fifteen
+banked cells, `n_χ` from `10³` to `10⁶`, `n = 3` and `n = 4`, lengths 5, 6 and 9
+where banked cells exist), require:
+
+1. **exact operator agreement** under declared row and column conventions, or an
+   explicitly verified equivalent row space;
+2. **kernel vectors returned by the new builder verified against the original
+   uncompressed operators**;
+3. evaluation ranks — `mult_det` at both primes — as *additional* checks, not as
+   the acceptance test;
+
+then a measured difficult-cell pilot.
 
 **Success** a validated construction ceiling and a reproducible memory curve.
 **Fallback** a working improvement on a bounded range with the remaining

@@ -39,12 +39,18 @@ are withdrawn; `docs/batch13_corrections.md` records why.
 whether or not the equation is permanent-specific.  Padded/reducible equality
 does not obstruct objective 1.
 
-Since `mult_P ≤ mult_R`, objective 1 needs `i_det > i_red` — the determinant
-ideal larger than the reducible one at some weight.  Measured: across session
-79's 682 six-row cells, `i_det = 0` at **every one** and `i_red < i_det` at
-**none**.  **The binding constraint is the determinant ideal being empty**, and
-the only cell in the record with `i_det ≥ 1` is the LMR cell, where `i_det = 1`
-and `i_red = 5`.
+Since `mult_pad ≤ mult_red`, objective 1 needs `i_det > i_red`.  Across session
+79's 682 six-row cells the determinant side is at **full rank at both primes**,
+so `i_det = 0` there is CERTIFIED over `Q` — and **that alone rules out `D > 0`
+in those cells**, since `D = mult_pad − mult_det ≤ a − a = 0`.  s79 also measured
+positive reducible nullities at 59 of them; a sampled deficiency bounds `i` from
+above, so it does **not** establish `i_red ≥ 1`, and nothing here rests on it.
+
+At the degree-24 `n = 4` LMR target, `i_det = 1` is exact while the reducible
+nullity 5 is **measured** and the exact reducible nullity is unresolved.  So the
+binding constraint is the **determinant** ideal being empty wherever it has been
+measured, and that target is the one place in this programme's measured `n = 4`
+region where `i_det ≥ 1` is established.
 
 An earlier draft of this preamble organised the batch on the cubic screen as
 "the necessary condition for everything else".  That was wrong and is corrected

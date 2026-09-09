@@ -12,12 +12,17 @@ none depending on another.
     equation is permanent-specific.  An earlier plan of mine organised batch 13
     on the cubic screen as the gate for the obstruction; that was wrong and is
     corrected in docs/batch13_corrections.md.
-  WHERE THE PROGRAMME IS ACTUALLY STUCK.  Since mult_P <= mult_R, D > 0 needs
-    i_det > i_red.  Across session 79's 682 six-row cells i_det = 0 at EVERY one,
-    i_red >= 1 at 59, and i_red < i_det at NONE.  The binding constraint is the
-    DETERMINANT ideal being empty, not the padded one being full, and the only
-    cell in the record with i_det >= 1 is the LMR cell, where i_det = 1 and
-    i_red = 5.
+  WHERE THE PROGRAMME IS ACTUALLY STUCK.  Since mult_pad <= mult_red, D > 0
+    needs i_det > i_red.  Across session 79's 682 six-row cells the determinant
+    side is at FULL RANK at both primes, so i_det = 0 there is CERTIFIED over Q,
+    and that alone gives D <= 0 in those cells with no claim about the reducible
+    side.  (s79 also measured deficient reducible ranks at 59 of them; a sampled
+    deficiency is a ceiling on i_red and does not establish i_red >= 1.)  So the
+    binding constraint is the DETERMINANT ideal being empty wherever it has been
+    measured.  At the degree-24 n = 4 LMR target i_det = 1 is exact while the
+    reducible nullity 5 is measured and the exact value is unresolved; that
+    target is the one place in the measured n = 4 region where i_det >= 1 is
+    established.
   AND THE 365 SHORTER WEIGHTS ARE ALREADY EXCLUDED.  docs/washout_lemma.md
     Theorem 2 (proved, exact full-Jacobian-rank witness, rank 35 at both primes)
     gives D_r^{per_3} = Sym^3 C^r for r <= 5, so the cubic ideal vanishes

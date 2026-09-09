@@ -106,12 +106,16 @@ instead of one per weight.  s79 ran it at `r = 6`, `δ = 9` and found nothing.
 > refutes containment whether or not the equation is permanent-specific.
 >
 > The correct necessary condition for `D > 0`, since `mult_pad ≤ mult_red`, is
-> **`i_det > i_red`**.  Measured across the 682 six-row cells: `i_det = 0` at
-> every one, `i_red ≥ 1` at 59, `i_red < i_det` at **none**.  So the binding
-> constraint on the obstruction is the **determinant** ideal being empty, not the
-> padded one being full, and the only cell in the record with `i_det ≥ 1` is the
-> LMR cell, where `i_det = 1 < 5 = i_red`.  That is where the programme is stuck,
-> and no plan before the consolidated board named it.
+> **`i_det > i_red`**.  Across the 682 six-row cells the determinant side is at
+> full rank at both primes, so `i_det = 0` is **certified** — and that alone
+> gives `D ≤ 0` there, with no claim about the reducible side.  (s79 also
+> measured deficient reducible ranks at 59; a sampled deficiency bounds `i_red`
+> from above and does not establish `i_red ≥ 1`.)  So the binding constraint on
+> the obstruction is the **determinant** ideal being empty wherever it has been
+> measured.  At the degree-24 `n = 4` LMR target `i_det = 1` is exact while the
+> reducible nullity 5 is measured and the exact value is unresolved.  That is
+> where the programme is stuck, and no plan before the consolidated board named
+> it.
 
 ## 5. The most critical new learnings
 

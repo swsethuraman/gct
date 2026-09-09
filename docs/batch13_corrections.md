@@ -29,19 +29,27 @@ It is not a prerequisite for a determinant-side search.  **Correction accepted.*
 
 I checked that against session 79's 682 six-row cells (`results/s79_cells.jsonl`):
 
-| | |
-|---|---|
-| cells with `i_red < i_det` — the direction an obstruction needs | **0** |
-| cells with `i_det ≥ 1` | **0** |
-| cells with `i_red ≥ 1` | 59 |
-| `D_R` distribution | `0` at 623, and `−1, −2, −3, −4, −5, −7, −25` at the rest |
+| | | status |
+|---|---|---|
+| cells at full determinant rank, both primes | **682 of 682** | **certified** over `Q` |
+| cells with a measured deficient reducible rank | 59 | **measured** — a ceiling on `i_red`, not a floor |
+| cells with `i_red < i_det` — the direction an obstruction needs | **0** | follows from the first row |
+| `D_R` distribution | `0` at 623, `−1, −2, −3, −4, −5, −7, −25` at the rest | measured |
 
-`mult_red ≤ mult_det` at every one of the 682, and the determinant side is
-full-rank at every one.  So **the binding constraint on `D > 0` is `i_det`, not
-`i_pad`** — the determinant ideal must be *larger* than the reducible one at some
-weight, and that has never been observed anywhere in the record.  The only cell
-in the programme with `i_det ≥ 1` is the LMR cell, where `i_det = 1` and
-`i_red = 5`.
+The first row is the load-bearing one and it is certified: `mult_det = a` at
+every one of the 682, so `D = mult_pad − mult_det ≤ a − a = 0` there **with no
+claim about the reducible side at all**.  The 59 deficient reducible ranks are
+sampled and bound `i_red` from above; they do not establish `i_red ≥ 1`, and the
+argument does not use them.
+
+So **the binding constraint on `D > 0` is `i_det`, not `i_pad`** — the
+determinant ideal must be *larger* than the reducible one at some weight, and
+that has not been observed anywhere it has been measured.  At the degree-24
+`n = 4` LMR target `i_det = 1` is exact while the reducible nullity 5 is
+measured; that target is the one place in the measured `n = 4` region where
+`i_det ≥ 1` is established.  (The `n = 3` control `(19,7,2⁵)₁₂` also has
+`i_det = 1`, and determinant equations are known in the literature; the statement
+is about the measured `n = 4` region.)
 
 Neither plan said this.  It follows from the correction, not from my premise, and
 it is the honest statement of where the programme is stuck.
