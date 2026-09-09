@@ -181,12 +181,6 @@ def build_tower(top, primes=(P1, P2), verbose=True, checkpoint=None):
             aw = a_weyl(rho, m, 4, {})
             a_of[rho] = akept
             status = "ok" if akept == aw else "MISMATCH"
-            import os
-            if akept != aw and os.environ.get('DEBUG_S75'):
-                print(f'  DEBUG {rho}: B={B} C={C} rankR={rank} a={akept} aw={aw}', flush=True)
-                print(f'    Windex={Windex}', flush=True)
-                for (nu,e),(lm,S,md) in Smats.items():
-                    print(f'    group nu={nu},e={e}: lm={lm} mudict_keys={list(md.keys())}', flush=True)
             if akept != aw:
                 print(f"  !!! {rho} level {m}: tower a={akept}  a_weyl={aw}  {status}", flush=True)
                 raise RuntimeError("tower disagrees with a_weyl")
