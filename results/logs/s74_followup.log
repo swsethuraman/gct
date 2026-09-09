@@ -9,3 +9,8 @@
 [2026-09-09T05:02:05Z] committed: s74: generic, reducible and per_4 columns at P1 banked.
 [2026-09-09T05:02:05Z] start verify_det_P1: python3 analysis/wk12_s74_verify.py --families det --prime 2147483647 --K 294 --workers 2
 [2026-09-09T05:40:10Z] end verify_det_P1 (exit 0)
+[2026-09-09T05:40:11Z] committed: s74: determinant column re-derived at fresh box-1000 points (P1).
+[2026-09-09T05:40:11Z] start rest_P2: python3 analysis/wk12_s74_columns.py --family gen,red,per4 --prime 2147483629 --workers 2
+[2026-09-09T07:25:26Z] end rest_P2 (exit 0)
+[2026-09-09T07:25:26Z] start decide5: python3 analysis/wk12_s74_decide.py --prime 2147483629 --families gen,det,pad,red,per4
+[2026-09-09T07:25:27Z] end decide5 (exit 0)
