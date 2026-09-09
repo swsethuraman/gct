@@ -19,7 +19,8 @@ Modes
 The stream.  Draws come from the house sampler (wk11_s69_circuit.random_filling,
 k shared tall-column letters) and, once a rung has stalled (--stall consecutive
 draws without a new direction, default 60), from a bandit over eight arms --
-(house | ones-first sampler of wk12_s74_sampler) x k in {6,7,8,9} -- with
+(house | ones-first sampler of wk12_s74_sampler) x k in {6,7,8,9}, plus a
+mutation arm (random cell swaps on a kept filling) -- with
 Thompson sampling on each arm's observed new-direction rate.  Before the stall
 the stream is exactly the probe's (rng = Random(500+d), k = rng.choice([5..9])
 consumed before each draw), so the first draws coincide with the integrator's.
@@ -49,7 +50,7 @@ from wk8_s30_core import P1, P2, exps                                    # noqa:
 from wk11_s69_circuit import (Filling, random_filling, sym_table,        # noqa: E402
                               symbols_from_coeffs, generic_point,
                               fast_eval_c, rank_mod)
-from wk12_s74_sampler import random_filling_ones_first                   # noqa: E402
+from wk12_s74_sampler import random_filling_ones_first, mutate_filling   # noqa: E402
 from wk12_s74_dp import dp_eval_compact                                  # noqa: E402
 
 N, H, N2 = 4, 9, 15
@@ -61,7 +62,7 @@ _E = exps(N, H)
 IU = _E.index(tuple([N] + [0] * (H - 1)))     # u = c_(4,0,...,0); LAST in this ordering
 _A, _idx, _fact, TAB = sym_table(N, H)
 KSET = (5, 6, 7, 8, 9)
-ARMS = [(s, k) for s in ("house", "ones") for k in (6, 7, 8, 9)]
+ARMS = [(s, k) for s in ("house", "ones") for k in (6, 7, 8, 9)] + [("mutate", 0)]
 POINT_SEED = {P1: 61000, P2: 62000}
 OUT = os.environ.get("S74_OUT", os.path.join(ROOT, "results", "s74"))
 T0 = time.time()
@@ -214,6 +215,8 @@ def run_rung(delta, workers, max_draws, cap_secs, batch, stall, s1_candidates=No
         st["_pending"] = [(t, a, ph, x, y, F.to_json()) for t, a, ph, x, y, F in pending]
     rng = rng_load(st["rng_state"])
     brng = rng_load(st["bandit_state"])
+    for s_, k_ in ARMS:
+        st["arm_stats"].setdefault(f"{s_}:{k_}", [0, 0])
     rows = [r[:] for r in st["rows_P1"]]
     keep = [Filling.from_json(f) for f in st["fillings"]]
     hits = st["hits"]
@@ -251,8 +254,12 @@ def run_rung(delta, workers, max_draws, cap_secs, batch, stall, s1_candidates=No
         try:
             if s == "house":
                 F = random_filling(H, N, delta, N2, n1, brng, k=k)
-            else:
+            elif s == "ones":
                 F = random_filling_ones_first(H, N, delta, N2, n1, brng, k=k)
+            else:                                            # mutate a kept filling
+                if not keep:
+                    return None
+                F = mutate_filling(keep[brng.randrange(len(keep))], brng)
         except Exception:                                    # noqa: BLE001
             return None
         return f"{s}:{k}", "bandit", F

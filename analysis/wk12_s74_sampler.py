@@ -83,3 +83,32 @@ def random_filling_ones_first(h, n, delta, n2, n1, rng, k=None, max_tries=2000, 
         except AssertionError:
             continue
     raise RuntimeError("no filling found (ones-first)")
+
+
+def mutate_filling(F, rng, n_swaps=None, max_tries=200):
+    """A random local move on a filling: swap the letters of two cells in different
+    columns (keeping every column letter-distinct), n_swaps times.  Same shape,
+    same content (four legs per letter); a different filling, in general a
+    different class.  Used as a bandit arm once a rung has stalled: the rare
+    directions may sit near classes already found."""
+    if n_swaps is None:
+        n_swaps = rng.choice([1, 1, 2, 3])
+    cols = [list(F.C1), list(F.C2)] + [list(e) for e in F.two] + [[l] for l in F.one]
+    done = 0
+    for _ in range(max_tries):
+        if done >= n_swaps:
+            break
+        c1, c2 = rng.sample(range(len(cols)), 2)
+        i1 = rng.randrange(len(cols[c1]))
+        i2 = rng.randrange(len(cols[c2]))
+        a, b = cols[c1][i1], cols[c2][i2]
+        if a == b or b in cols[c1] or a in cols[c2]:
+            continue
+        cols[c1][i1], cols[c2][i2] = b, a
+        done += 1
+    if done == 0:
+        raise RuntimeError("no valid swap found")
+    C1, C2 = cols[0], cols[1]
+    two = [tuple(c) for c in cols[2:2 + F.n2]]
+    one = [c[0] for c in cols[2 + F.n2:]]
+    return Filling(F.h, F.n, F.delta, C1, C2, two, one)
