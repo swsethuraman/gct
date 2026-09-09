@@ -32,7 +32,7 @@ the first (a deterministic 274-dimensional source, not an evaluable one):
    `(T − I)((d−1)T + I) = 0` holds on it at the goal cell: spectrum
    `1^{274} ⊕ (−1/23)^{1894}` (§4.5).  The coefficients — not only the
    dimensions — of the stored bases were checked against the ambient
-   `H_d`-invariants at 20 small cells (§4.6).
+   `H_d`-invariants at 18 small cells (§4.6).
 3. **The four evaluation columns are not reached** — the pre-registered
    expectation, on the brief's first stopping rule.  The step and the
    quantities are named in §5, and so is what s77 needs from this session.
