@@ -14,3 +14,10 @@
 [2026-09-09T07:25:26Z] end rest_P2 (exit 0)
 [2026-09-09T07:25:26Z] start decide5: python3 analysis/wk12_s74_decide.py --prime 2147483629 --families gen,det,pad,red,per4
 [2026-09-09T07:25:27Z] end decide5 (exit 0)
+[2026-09-09T07:25:28Z] committed: s74: all five columns at both primes banked.
+[2026-09-09T07:25:28Z] start verify_pad_P2: python3 analysis/wk12_s74_verify.py --families pad --prime 2147483629 --K 294 --workers 2
+[2026-09-09T08:03:53Z] end verify_pad_P2 (exit 0)
+[2026-09-09T08:03:53Z] start countns: python3 analysis/wk12_s74_verify.py --count-ns 23,24
+[2026-09-09T08:05:30Z] end countns (exit 0)
+[2026-09-09T08:05:30Z] start spot: python3 analysis/wk12_s74_verify.py --spot 4
+[2026-09-09T08:11:46Z] end spot (exit 0)
