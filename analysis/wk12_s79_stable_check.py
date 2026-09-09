@@ -219,6 +219,45 @@ def check(path):
                 if val != base: cov_ok = False
         print(f"  [5] p={p}: covariance (A_{{i+1}} -> A_{{i+1}} + eps A_i, 4 raisings, eps {Acov['eps']}) on recomputed values: {'PASS' if cov_ok else 'FAIL'} (record {'PASS' if Acov['all_pass'] else 'FAIL'})")
         ok &= cov_ok and Acov['all_pass']
+    # 3b. (optional, --nullity) the load-bearing count nullity_p(E) = a_inf, re-derived: E rebuilt from the
+    #     checker's own raising rule on the recorded monomials, projected by the checker's own random matrix
+    #     (nc + 32 rows, a different seed) and its rank taken by python-flint; nullity_p(E) <= nc - rank(R E).
+    if '--nullity' in sys.argv:
+        import numpy as np
+        from flint import nmod_mat
+        idx = {m: i for i, m in enumerate(rec_mon)}
+        cols = []
+        for i in range(NV - 1):
+            tgt = {}
+            for ci, m in enumerate(rec_mon):
+                img = raising_apply({m: 1}, i)
+                for nm, c in img.items():
+                    r = tgt.setdefault(nm, len(tgt))
+                    cols.append((i, r, ci, c))
+            rec.setdefault('_targets', {})[i] = len(tgt)
+        nrows = 0; rows_l = []; cols_l = []; vals_l = []; off = {}
+        for i in range(NV - 1):
+            off[i] = nrows; nrows += rec['_targets'][i]
+        for (i, r, ci, c) in cols:
+            rows_l.append(off[i] + r); cols_l.append(ci); vals_l.append(c)
+        from scipy import sparse
+        E = sparse.csr_matrix((np.array(vals_l, dtype=np.int64), (np.array(rows_l), np.array(cols_l))), shape=(nrows, len(rec_mon)))
+        for p_str in rec['per_prime']:
+            p = int(p_str)
+            rng = np.random.default_rng(777 + p % 1000)
+            nc = len(rec_mon); m = nc + 32
+            Gt = np.zeros((nc, m), dtype=np.int64); Et = E.T.tocsr()
+            for r0 in range(0, nrows, 4096):
+                r1 = min(nrows, r0 + 4096)
+                Gt += Et[:, r0:r1] @ rng.integers(0, 1 << 20, size=(r1 - r0, m), dtype=np.int64); Gt %= p
+            A = nmod_mat(m, nc, p)
+            G = np.ascontiguousarray(Gt.T % p)
+            for i in range(m):
+                row = G[i]
+                for j in np.nonzero(row)[0]: A[i, int(j)] = int(row[j])
+            rk = A.rank()
+            print(f"  [3b] p={p}: own E ({nrows} x {nc}, nnz {E.nnz}), rank(R E) = {rk}, so nullity_p(E) <= {nc - rk} (a_inf {a_mine}): {nc - rk == a_mine}")
+            ok &= (nc - rk == a_mine)
     verdict = 'i_det^inf = 0 (PROVED: full rank)' if all(int(pr.get('mult_det_inf', -1)) == a_mine for pr in rec['per_prime'].values()) else 'not full rank'
     print(f"  [6] verdict recomputed: {verdict}; record i_det_inf = {rec['i_det_inf']}")
     print(f"  ==> {'ALL CHECKS PASS' if ok else 'CHECK FAILED'}")
@@ -226,5 +265,5 @@ def check(path):
 
 
 if __name__ == '__main__':
-    res = [check(pth) for pth in sys.argv[1:]]
+    res = [check(pth) for pth in sys.argv[1:] if not pth.startswith('--')]
     sys.exit(0 if all(res) else 1)

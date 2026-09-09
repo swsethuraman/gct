@@ -56,12 +56,16 @@ def per3_coeffs(pencil):
     return restrict(PER3, N_PER3, n3, R, As)
 
 
-def measure_weight(mu, delta, verbose=True, certs=None):
+def measure_weight(mu, delta, verbose=True, certs=None, a_given=None):
     mu = tuple(mu); assert len(mu) == R and sum(mu) == 3 * delta
     t0 = time.time()
-    a = a_of(mu, delta, n3, R)
     aw = a_weyl(mu, delta, n3, {})
-    assert a == aw, ('a: plethysm and Weyl alternation disagree', mu, delta, a, aw)
+    if a_given is None:
+        a = a_of(mu, delta, n3, R)                       # the plethysm (slow in a fresh process: the whole degree's character table)
+        assert a == aw, ('a: plethysm and Weyl alternation disagree', mu, delta, a, aw)
+    else:
+        a = int(a_given)                                 # the queue's plethysm value (results/s79_per6_queue.json, same a_of)
+        assert a == aw, ('a: queue value and Weyl alternation disagree', mu, delta, a, aw)
     out = dict(mu=list(mu), delta=delta, n=n3, r=R, a=int(a), route='hybrid (n=3, per_3 pencils)', seeds=dict(per3=SEED, recheck=SEED_RECHECK),
                bound=BOUND, primes=list(PRIMES))
     if a == 0:
@@ -144,9 +148,13 @@ if __name__ == '__main__':
     args = sys.argv[1:]
     def arg(name, default):
         return type(default)(args[args.index(name) + 1]) if name in args else default
-    pos = [int(x) for x in args if not x.startswith('--') and x.lstrip('-').isdigit() and args[max(0, args.index(x) - 1)] not in ('--out', '--certs')]
+    pos = []; i = 0
+    while i < len(args):
+        if args[i].startswith('--') and i + 1 < len(args) and not args[i + 1].startswith('--'): i += 2
+        elif args[i].startswith('--'): i += 1
+        else: pos.append(int(args[i])); i += 1
     delta, mu = pos[0], tuple(pos[1:7])
-    res = measure_weight(mu, delta, certs=arg('--certs', '') or None)
+    res = measure_weight(mu, delta, certs=arg('--certs', '') or None, a_given=(arg('--a', -1) if '--a' in args else None))
     print("RESULT " + json.dumps(res), flush=True)
     outp = arg('--out', '')
     if outp:
