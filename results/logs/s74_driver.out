@@ -82,3 +82,10 @@
 [2026-09-09T01:29:05Z] end pad_P1 (exit 0)
 [2026-09-09T01:29:05Z] start decide2: python3 analysis/wk12_s74_decide.py --prime 2147483647 --families det,pad
 [2026-09-09T01:29:05Z] end decide2 (exit 0)
+[2026-09-09T01:29:06Z] commit (ok): s74: padded-permanent column at P1 banked; decision at P1 read.
+[2026-09-09T01:29:06Z] start pad_P2: python3 analysis/wk12_s74_columns.py --family pad --prime 2147483629 --workers 2
+[2026-09-09T02:04:02Z] end pad_P2 (exit 0)
+[2026-09-09T02:04:02Z] start det_P2: python3 analysis/wk12_s74_columns.py --family det --prime 2147483629 --workers 2
+[2026-09-09T02:38:58Z] end det_P2 (exit 0)
+[2026-09-09T02:38:58Z] start decide4: python3 analysis/wk12_s74_decide.py --prime 2147483629 --families det,pad
+[2026-09-09T02:38:59Z] end decide4 (exit 0)
