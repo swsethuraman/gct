@@ -49,7 +49,9 @@ def main():
         cap(a.mib)
         print(json.dumps({'process_memory_cap_mib': a.mib, 'pid': os.getpid(), 'memory': memory()}), flush=True)
         import b13_02_structural
-        b13_02_structural.main(a.mode, a.arg)
+        cpu_start=time.process_time()
+        try: b13_02_structural.main(a.mode, a.arg)
+        finally: print(json.dumps({'cpu_seconds':time.process_time()-cpu_start,'utc_finished':datetime.datetime.now(datetime.timezone.utc).isoformat()}),flush=True)
         return
     LOG.mkdir(exist_ok=True)
     before = memory()
@@ -57,13 +59,21 @@ def main():
         raise RuntimeError('Insufficient available memory for conservative launch')
     cmd = [sys.executable, __file__, a.name, a.mode, '--child', '--mib', str(a.mib), '--arg', a.arg]
     start = time.time(); status = 'completed'
+    os.environ['B13_02_DEADLINE_UNIX']=str(start+a.seconds)
     with open(LOG / f'{a.name}.log', 'w', encoding='utf8') as f:
         proc = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT,
                                 creationflags=subprocess.CREATE_NO_WINDOW, cwd=ROOT)
         (LOG / f'{a.name}.pid').write_text(str(proc.pid))
-        try: code = proc.wait(timeout=a.seconds)
-        except subprocess.TimeoutExpired:
-            status = 'wall_time_bound'; proc.terminate(); code = proc.wait(timeout=10)
+        while True:
+            code=proc.poll()
+            elapsed=time.time()-start
+            if code is not None:
+                if elapsed>a.seconds:status='completed_after_wall_deadline'
+                break
+            if elapsed>=a.seconds:
+                status='wall_time_bound';proc.terminate();code=proc.wait(timeout=10);break
+            try:proc.wait(timeout=min(1,a.seconds-elapsed))
+            except subprocess.TimeoutExpired:pass
     meta = dict(board_numbering='batch13',session_id='B13-02',mode=a.mode,arg=a.arg,
                 command=cmd,pid=proc.pid,seconds=time.time()-start,wall_cap_seconds=a.seconds,
                 process_cap_mib=a.mib,memory_before=before,memory_after=memory(),exit_code=code,status=status,

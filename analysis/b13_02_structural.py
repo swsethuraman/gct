@@ -3,11 +3,15 @@
 No sampled zeros are used as rational identities. No numeric Pieri conversion
 or permanent-stage Q is implemented. All coefficient keys are lossless tuples.
 """
-import collections, datetime, functools, gzip, hashlib, itertools, json, math, pathlib, random, time
+import collections, datetime, functools, gzip, hashlib, itertools, json, math, os, pathlib, random, time
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/b13_02'
 PRIMES = (2147483647, 2147483629)
+
+def deadline():
+    if time.time()>=float(os.environ.get('B13_02_DEADLINE_UNIX','inf')):
+        raise RuntimeError('absolute_wall_deadline')
 
 def read(p): return json.loads((ROOT / p).read_text(encoding='utf-8-sig'))
 def write(name, obj):
@@ -122,6 +126,27 @@ def controls():
         tiny_exact_rank=1,tiny_coefficient_checks=checks,seconds=time.time()-start))
     print('Exact controls complete',len(fkeys),len(gkeys),time.time()-start,flush=True)
 
+def taller_controls():
+    controls=[
+        {'h':3,'n':4,'delta':3,'C1':[0,1,2],'C2':[0,1,2],'two':[[0,1],[0,2]],'one':[1,2]},
+        {'h':4,'n':4,'delta':4,'C1':[0,1,2,3],'C2':[2,0,3,1],'two':[[0,1],[1,2],[2,3]],'one':[0,3]}]
+    results=[]
+    for F in controls:
+        start=time.time();poly,ee=literal_polynomial(F);basis=sorted(poly);vec=[[poly[m] for m in basis]]
+        nr=raising(basis,ee,vec);full,fixed,e3=split_polynomial(vec[0],basis,ee)
+        tests=[]
+        for m,c in sorted(fixed.items()):
+            target=tuple(sorted(tuple(i for i,v in enumerate(e3[k]) for _ in range(v)) for k in m))
+            x,stats=extract(F,target);assert x==c,(F,target,x,c)
+            # The opposite contraction order must give the same integer coefficient.
+            G=dict(F);G['C1']=list(reversed(F['C1']));G['C2']=list(reversed(F['C2']))
+            y,_=extract(G,target);assert y==c
+            tests.append(dict(cubic_monomial=target,coefficient=x))
+        results.append(dict(filling=F,source_nonzero_terms=len(poly),raising_rows=nr,
+                            fixed_nonzero_terms=len(fixed),full_nonzero_terms=len(full),tests=tests,seconds=time.time()-start))
+        print('taller literal control',F['h'],len(poly),len(fixed),time.time()-start,flush=True)
+    write('taller_controls.json',dict(status='exact agreement with full literal expansions',controls=results))
+
 def order_filling(F):
     d=F['delta'];edges=F['two']; best=None
     for first in range(d):
@@ -183,6 +208,7 @@ def extract(F, target, seconds=120, states=250000):
         nonlocal visited
         visited+=1
         if visited>states:raise RuntimeError('state_cap')
+        if visited%1024==0:deadline()
         if visited%1024==0 and time.time()-started>seconds:raise RuntimeError('coefficient_time_cap')
         if t==d:
             assert ma==mb==(1<<h)-1 and short==0 and not any(remaining)
@@ -268,6 +294,7 @@ def pilot(arg):
     # Native controls first, then all remaining source rows if within the launch bound.
     row_order=list(dict.fromkeys([0,1,2,39,273]+list(range(274))))
     for j in row_order:
+        deadline()
         e=source[j];m=list(target);power=e['exponent'];stat={}
         if m.count((0,0,0))<power:value=0;stat={'reason':'transport monomial support exclusion','complete':True}
         else:
@@ -283,8 +310,82 @@ def pilot(arg):
         print('column',column,'row',j,'coefficient',value,'stats',stat,flush=True)
         if time.time()-start>550:break
 
+def dimensions():
+    """Fresh Weyl alternation using exact, guarded integer weight counts.
+
+    Symmetry sorts each shifted weight before its multiset DP, avoiding the
+    repeated DPs for permutations of the seven short tail coordinates.
+    """
+    import numpy as np
+    lam=(65,17)+(2,)*7;delta=24;cache={};records=[];start=time.time()
+    limit=(1<<63)-1
+    def weight(mu,n):
+        deadline()
+        mu=tuple(sorted(mu,reverse=True));key=(mu,n)
+        if key in cache:return cache[key]
+        if min(mu)<0 or sum(mu)!=delta*n:return 0
+        tail=mu[1:];shape=(delta+1,)+tuple(x+1 for x in tail)
+        entries=math.prod(shape)
+        if entries*8>64*1024**2:raise RuntimeError('weight DP 64 MiB allocation cap')
+        a=np.zeros(shape,dtype=np.int64);a[(0,)*len(shape)]=1
+        for beta in exps(n,len(mu)):
+            t=beta[1:]
+            if any(x>y for x,y in zip(t,tail)):continue
+            src=tuple(slice(0,y+1-x) for x,y in zip(t,tail))
+            dst=tuple(slice(x,y+1) for x,y in zip(t,tail))
+            for d in range(1,delta+1):
+                deadline()
+                old=a[(d,)+dst];add=a[(d-1,)+src]
+                # Checked BEFORE every addition, so no silent signed overflow.
+                if int(old.max())>limit-int(add.max()):raise OverflowError('exact weight counter int64 capacity')
+                old+=add
+        v=int(a[(delta,)+tail]);cache[key]=v;return v
+    def multiplicity(mu,n):
+        mu=tuple(x for x in mu if x);r=len(mu);rho=tuple(range(r-1,-1,-1));lr=tuple(x+y for x,y in zip(mu,rho))
+        alternatives=collections.defaultdict(int);perm=[0]*r;used=set()
+        def walk(i):
+            if i<0:
+                shifted=tuple(lr[j]-rho[perm[j]] for j in range(r))
+                alternatives[tuple(sorted(shifted,reverse=True))]+=sign(perm);return
+            for j in range(r):
+                if j not in used and rho[j]<=lr[i]:
+                    used.add(j);perm[i]=j;walk(i-1);used.remove(j)
+        walk(r-1)
+        return sum(c*weight(w,n) for w,c in alternatives.items() if c)
+    # The same elementary algorithm on small complete character controls.
+    # Run their fixed-delta adaptation through the original independent power-sum code.
+    from wk8_s30_pleth import pleth_p,chi
+    old_delta=delta
+    for d,n,mu in [(2,4,(4,4)),(6,4,(8,8,8)),(3,3,(7,2))]:
+        delta=d;cache.clear();a=multiplicity(mu,n)
+        b=sum(c*chi(mu,rho) for rho,c in pleth_p(d,n).items())
+        assert b.denominator==1 and a==int(b),(d,n,mu,a,b)
+        print('dimension control',d,n,mu,a,flush=True)
+    delta=old_delta;cache.clear()
+    shapes=[]
+    for mu in itertools.product(*(range((lam+(0,))[i+1],lam[i]+1) for i in range(9))):
+        if sum(mu)==72:shapes.append(tuple(x for x in mu if x))
+    assert len(shapes)==48
+    inherited=read('results/astra/S4/artifacts/48_block_ledger.json')
+    for i,mu in enumerate(shapes):
+        t=time.time();a=multiplicity(mu,3)
+        assert tuple(inherited[i]['mu'])==mu
+        records.append(dict(block=i+1,mu=mu,a3=a,inherited_a3=inherited[i]['inherited_dimension'],
+                            agrees=a==inherited[i]['inherited_dimension'],seconds=time.time()-t))
+        write('dimensions.json',dict(status='partial' if i<47 else 'complete',blocks=records,
+            partial_sum=sum(x['a3'] for x in records),exact_weight_counts_cached=len(cache),seconds=time.time()-start))
+        print('block',i+1,mu,a,'seconds',time.time()-t,flush=True)
+    h=sum(x['a3'] for x in records);assert h==521 and all(x['agrees'] for x in records)
+    cubic_weight=weight((41,17)+(2,)*7,3)
+    write('dimensions.json',dict(status='complete',blocks=records,h_pad=h,
+        fixed_factor_cubic_weight_monomials=cubic_weight,exact_weight_counts_cached=len(cache),seconds=time.time()-start,
+        verification='Weyl alternation; canonicalized weight multisets; pre-addition int64 overflow checks; independent power-sum small controls'))
+
 def main(mode,arg=''):
+    deadline()
     if mode=='audit':audit()
     elif mode=='controls':controls()
     elif mode=='pilot':pilot(arg)
+    elif mode=='dimensions':dimensions()
+    elif mode=='taller_controls':taller_controls()
     else:raise ValueError(mode)
