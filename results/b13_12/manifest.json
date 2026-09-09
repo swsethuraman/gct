@@ -1,0 +1,240 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-12",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "base": "00495110c62acfbbbc951e82cc218ed091563b3f",
+  "branch": "b13-12",
+  "created_utc": "2026-09-09T21:16:55.757979+00:00",
+  "bundle_parts": 1,
+  "part_names": [
+    "b13_12_five_variable_closure.part00"
+  ],
+  "evidence_status": "Global formulation and universal-support theorem proved; finite controls certified; global elimination unrun.",
+  "coefficient_checks": 69,
+  "triangular_checks": 70,
+  "primes": [
+    2147483647,
+    2147483629
+  ],
+  "inherited_lmr": {
+    "det_rank_exact": 273,
+    "padded_rank_floor": 269,
+    "D": "mult_pad-mult_det",
+    "unconditional_formula": "D=1-i_pad(24)",
+    "certified_interval": [
+      -4,
+      1
+    ]
+  },
+  "workers": 1,
+  "blas_threads": 1,
+  "process_memory_cap_bytes": 1073741824,
+  "dependencies": {
+    "python": "bundled CPython 3.12",
+    "numpy": "available; not used",
+    "flint": "unavailable",
+    "sympy": "unavailable",
+    "scipy": "unavailable",
+    "psutil": "unavailable",
+    "Singular": "not found on PATH",
+    "msolve": "not found on PATH",
+    "installation_attempt": "pip failed before download at network socket access WinError 10013",
+    "actual_arithmetic": "Python standard library, exact integers and Fraction"
+  },
+  "hashes_are": "Exact delivered worktree bytes. Git archives contain canonical Git bytes; see delivery manifest. This manifest excludes itself.",
+  "artifacts": [
+    {
+      "path": "analysis/b13_12_bounded.py",
+      "bytes": 5672,
+      "sha256": "c07951ccaa8f7f6262f4ddc78e9a55c3117a3335f6310b674b95c908cb25b0d7",
+      "md5": "aae4d6bb56c24ef53e97e46a84ad053f"
+    },
+    {
+      "path": "analysis/b13_12_exact.py",
+      "bytes": 17610,
+      "sha256": "6af4b3c18e6235f3127467c57499691fe18f67f6a0ac29c880216ea992849f73",
+      "md5": "951485efb58258322b3626e4f933242f"
+    },
+    {
+      "path": "analysis/b13_12_package.py",
+      "bytes": 8084,
+      "sha256": "56fb5dddcacfbf79c00ff20bb89602a2b990c2445e230627c05e290b5840ff67",
+      "md5": "f4040cf7fa4616ec74389b881a9429bb"
+    },
+    {
+      "path": "docs/b13_12_report.md",
+      "bytes": 22090,
+      "sha256": "6e155b7a1f1242393b5d07b52738360898a69ff71fbab84b4ccae9f3d41d671f",
+      "md5": "e34623dc984b046a42255f435c1d1e2d"
+    },
+    {
+      "path": "results/b13_12/boundary_control.json",
+      "bytes": 35929,
+      "sha256": "92dbbbffce9e11aefbfc52004da7419bc6e021072a50b3dd512586dcd2a6bd60",
+      "md5": "3d226d4381f36eab1d731b9a7696a3f2"
+    },
+    {
+      "path": "results/b13_12/cas/full_monic_Q.sing",
+      "bytes": 116785,
+      "sha256": "0cafcc30ace646cde914321bb16078055c4d1725a4ce373d8ac291c5330a726e",
+      "md5": "9736adfc85403e62098303ce165bac3b"
+    },
+    {
+      "path": "results/b13_12/cas/infinity_b3_Q.sing",
+      "bytes": 115271,
+      "sha256": "50172cc87230ab38ee8609363b327f532a4c469a25298513496f03d571c4bb12",
+      "md5": "175a0474eace9f3a79d23f1e90237d0b"
+    },
+    {
+      "path": "results/b13_12/cas/nilpotent_support_Q.sing",
+      "bytes": 114304,
+      "sha256": "635b75fd0a735f6db90e8f0385cfbb14f5781b59eab3925f0781efa9ad75577f",
+      "md5": "1cc6f687b629785d9176f90880fbd061"
+    },
+    {
+      "path": "results/b13_12/coefficient_audit.json",
+      "bytes": 31400,
+      "sha256": "6577eb651eb2ba84f86ce817378d85b4b04554f63d0cfd29477393624f9657bb",
+      "md5": "4c2d35997d29b3a72998281746512d83"
+    },
+    {
+      "path": "results/b13_12/input_manifest.json",
+      "bytes": 13457,
+      "sha256": "9b7906ef999c318cc4ed17cbeb6cf6671dc76912a94b76ae8c49ff62d74da0f8",
+      "md5": "19dfac64fe4c44aa4420c74ad1eef186"
+    },
+    {
+      "path": "results/b13_12/REPLAY.md",
+      "bytes": 3352,
+      "sha256": "8d42aa7cdcd1ab34a04afee88648cdc500dd7f5ab3df5a1ca34e74d01121df5e",
+      "md5": "3c34ab99af8a603f650b1dc72cc89235"
+    },
+    {
+      "path": "results/b13_12/residual_spec.json",
+      "bytes": 6359,
+      "sha256": "8566d85f3c4e0c6cdd260e8a42b28228f0d1efc2a721b50eede7670a98d40e59",
+      "md5": "f8d4740369a986d281d291678af07448"
+    },
+    {
+      "path": "results/b13_12/s2_replay/independent_jet_checks.json",
+      "bytes": 10426,
+      "sha256": "37ffbf12c8e58010bed3520a992a39f74d606bf68e360b404def5517aeee6e04",
+      "md5": "4369afeb9979b9c4e0f00abe94cf4218"
+    },
+    {
+      "path": "results/b13_12/s2_replay/intermediate_rank3_arc.json",
+      "bytes": 4505,
+      "sha256": "814adef8c1488bc6991f2310d8cb65f34f0f97719983e4f85e34d41ce74926d1",
+      "md5": "f1fc870537f7634fef60ad28b7dbd05b"
+    },
+    {
+      "path": "results/b13_12/s2_replay/ker_coker_certificates.json",
+      "bytes": 54506,
+      "sha256": "532d1ee73abac164d3bba1b25b98213191a09349b3fdc0058b3088acfe7055fa",
+      "md5": "1b2f2401879e47bb1a324077ac257d23"
+    },
+    {
+      "path": "results/b13_12/s2_replay/tangent_calibration.json",
+      "bytes": 339372,
+      "sha256": "189780fa4c5887d3d5543817d2ebc51a01e902dbc81d30e369b908797642031d",
+      "md5": "2b33b0851abecb20d5692cafcb9fdeb1"
+    },
+    {
+      "path": "results/b13_12/s2_replay/verification_summary.json",
+      "bytes": 610,
+      "sha256": "57e9d83c5c1b8c9071024114e0275f8da2b8fc56deb61564d643e0e093d2231d",
+      "md5": "0c9b914acbe26a0eca9bbd6b96f996a7"
+    },
+    {
+      "path": "results/b13_12/small_exact_controls.json",
+      "bytes": 803,
+      "sha256": "fc671959fadfa5b12857f0593de1206e6597535f57826fb952e04853cff40438",
+      "md5": "49c9c5585befbe133908ced6326a31d4"
+    },
+    {
+      "path": "results/b13_12/triangular_control.json",
+      "bytes": 748,
+      "sha256": "c4e8d7a3116356df51f9062f0668b0cf8b1df86a702847fba67e2fc41a541b77",
+      "md5": "3924317d04bda93fdb6a8456f5fce3d9"
+    },
+    {
+      "path": "results/logs/b13_12_boundary.log",
+      "bytes": 100,
+      "sha256": "b52d9f9087675aee22fbffd5a9d2f6b1ae10124ab490a28b9393c612fa62c1a3",
+      "md5": "2c9aee797eed33786473093ddde36362"
+    },
+    {
+      "path": "results/logs/b13_12_boundary.pid",
+      "bytes": 7,
+      "sha256": "3308fba8b82ed08b4e90487ab4b9b719e896aaaa3a28b2a661ab985f5e3f75ad",
+      "md5": "ec16ff8397af07f3f90b72fd881b9cfb"
+    },
+    {
+      "path": "results/logs/b13_12_boundary_resources.json",
+      "bytes": 1161,
+      "sha256": "2edc333fe39c9ed13551ca0becdc1b6f8f5afc36638128bade8cf1a11e3a5c3c",
+      "md5": "60cf42183f5b3a968eb98f6afd9d7008"
+    },
+    {
+      "path": "results/logs/b13_12_coefficients.log",
+      "bytes": 103,
+      "sha256": "6684c8482491ae031eb69c17e8aa6e862ee21910f6eff8a1d279bc3868f2aa2e",
+      "md5": "4020701bb4687642fd7f178eee900356"
+    },
+    {
+      "path": "results/logs/b13_12_coefficients.pid",
+      "bytes": 7,
+      "sha256": "c23aa3395f5910e5313c48d15c240db10e5c383a7748608e74ebea0215af488c",
+      "md5": "50e2673758dff690d18c8204e9405583"
+    },
+    {
+      "path": "results/logs/b13_12_coefficients_resources.json",
+      "bytes": 1169,
+      "sha256": "e9ad3c9b3fb767dadfb0364ce8ed3091961defb623a2964d4910ab8d6eddc21d",
+      "md5": "dc23aa615bc5cac6835631f847e8a4ea"
+    },
+    {
+      "path": "results/logs/b13_12_s2.log",
+      "bytes": 612,
+      "sha256": "9d0b493f48711f80695bb40eb52e6291a21a331167cf7d2523e1cc44248afaaf",
+      "md5": "fea9c7d3ae1396e7c54ae603f6de33a5"
+    },
+    {
+      "path": "results/logs/b13_12_s2.pid",
+      "bytes": 7,
+      "sha256": "3309fa42e867a72742071a495246adaaa4f9838fca8441e7baae66116281ad9b",
+      "md5": "c0711b4a9ee36ed7592535bb019063a1"
+    },
+    {
+      "path": "results/logs/b13_12_s2_resources.json",
+      "bytes": 1149,
+      "sha256": "58482eabb748014db638c86d3986101bbba90c4f1c9afe7b55dc8a3e99e8e820",
+      "md5": "910c58c95bf31ee6dfcde1427e7e9a34"
+    },
+    {
+      "path": "results/logs/b13_12_triangular.log",
+      "bytes": 107,
+      "sha256": "b396000a8ce0058b990d5d80dac6a0a8791a57ee5242c6b379b42752bfacaa13",
+      "md5": "a69a41ab9db875a99ffc7c4ef0ff8579"
+    },
+    {
+      "path": "results/logs/b13_12_triangular.pid",
+      "bytes": 7,
+      "sha256": "87e4a1c66136b51db626bde429c7a365e75a39fd347ddf9dbd779d28dd8f9f06",
+      "md5": "a6183f983a794b9dd8cb38deed1ce95e"
+    },
+    {
+      "path": "results/logs/b13_12_triangular_resources.json",
+      "bytes": 1165,
+      "sha256": "9a148dfd8f9f72577f35b49327172c6995bad3f42517405870f958386acb04bc",
+      "md5": "ea95ba4751dd2b8d3642e20f68576bbb"
+    },
+    {
+      "path": "results/PREREG_b13_12.md",
+      "bytes": 4721,
+      "sha256": "7e08741a53f8edd43d4436d3e2c257beaf27ca0504eb213e418a08fc5c76cb19",
+      "md5": "15d95075640474d77f48b29ddcdadfdc"
+    }
+  ]
+}
