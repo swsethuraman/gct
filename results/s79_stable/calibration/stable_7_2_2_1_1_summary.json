@@ -1,0 +1,168 @@
+{
+ "rho": [
+  7,
+  2,
+  2,
+  1,
+  1
+ ],
+ "weight": 13,
+ "a_inf": 1,
+ "raw_weight_space": 2182,
+ "targets": [
+  980,
+  1661,
+  1048,
+  1380
+ ],
+ "nnz": 11412,
+ "K_pts": 9,
+ "point_seed": 20260908,
+ "point_bound": 1000000,
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "conventions": {
+  "generators": "y_(d,alpha) = coefficient of s^alpha in the degree-d form, d in {2,3,4}, 5 variables",
+  "raising": "E_{i,i+1} y_(d,alpha) = (alpha_i + 1) y_(d, alpha + e_i - e_{i+1})  (0 if alpha_{i+1} = 0), extended as a derivation",
+  "point": "y_(2,.), y_(3,.), y_(4,.) = coefficients of e_2, e_3, e_4 of det(t I - A(s')), A(s') = sum_k s_k A_k traceless",
+  "source": "analysis/wk10_int_stable_hwv.py + wk10_int_stable_subst.py (batch-10 integrator instrument), unchanged conventions"
+ },
+ "mult_det_inf": 1,
+ "i_det_inf": 0,
+ "primes_agree": true,
+ "status": "PROVED: i_det^inf = 0 (full rank at both primes; one suffices)",
+ "covariance_all_pass": true,
+ "secs": 12.0,
+ "per_prime": {
+  "2147483647": {
+   "nullity": 1,
+   "nullity_eq_a_inf": true,
+   "kernel_rank": 1,
+   "kernel_verified_on_E": true,
+   "mult_det_inf": 1,
+   "i_det_inf": 0,
+   "covariance": {
+    "pencil_seed": 4242,
+    "eps": [
+     1,
+     7,
+     999
+    ],
+    "base": [
+     738620504
+    ],
+    "results": {
+     "E_12,eps=1": [
+      true
+     ],
+     "E_12,eps=7": [
+      true
+     ],
+     "E_12,eps=999": [
+      true
+     ],
+     "E_23,eps=1": [
+      true
+     ],
+     "E_23,eps=7": [
+      true
+     ],
+     "E_23,eps=999": [
+      true
+     ],
+     "E_34,eps=1": [
+      true
+     ],
+     "E_34,eps=7": [
+      true
+     ],
+     "E_34,eps=999": [
+      true
+     ],
+     "E_45,eps=1": [
+      true
+     ],
+     "E_45,eps=7": [
+      true
+     ],
+     "E_45,eps=999": [
+      true
+     ]
+    },
+    "all_pass": true
+   },
+   "negative_control_random": {
+    "raisings_failed": 4,
+    "of": 4,
+    "has_teeth": true
+   },
+   "secs": 5.9
+  },
+  "2147483629": {
+   "nullity": 1,
+   "nullity_eq_a_inf": true,
+   "kernel_rank": 1,
+   "kernel_verified_on_E": true,
+   "mult_det_inf": 1,
+   "i_det_inf": 0,
+   "covariance": {
+    "pencil_seed": 4242,
+    "eps": [
+     1,
+     7,
+     999
+    ],
+    "base": [
+     403032730
+    ],
+    "results": {
+     "E_12,eps=1": [
+      true
+     ],
+     "E_12,eps=7": [
+      true
+     ],
+     "E_12,eps=999": [
+      true
+     ],
+     "E_23,eps=1": [
+      true
+     ],
+     "E_23,eps=7": [
+      true
+     ],
+     "E_23,eps=999": [
+      true
+     ],
+     "E_34,eps=1": [
+      true
+     ],
+     "E_34,eps=7": [
+      true
+     ],
+     "E_34,eps=999": [
+      true
+     ],
+     "E_45,eps=1": [
+      true
+     ],
+     "E_45,eps=7": [
+      true
+     ],
+     "E_45,eps=999": [
+      true
+     ]
+    },
+    "all_pass": true
+   },
+   "negative_control_random": {
+    "raisings_failed": 4,
+    "of": 4,
+    "has_teeth": true
+   },
+   "secs": 5.4
+  }
+ }
+}
