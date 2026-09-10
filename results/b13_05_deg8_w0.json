@@ -1,0 +1,338 @@
+{
+"board_numbering": "batch13",
+"session": "B13-05",
+"purpose": "validation cells only -- B13-09 owns the numerical queue",
+"instrument": "wk9_s45_build.build_cell (n=3) + dense flint nullspace + per_3 pencil evaluation, both house primes",
+"cells": [
+{
+"mu": [
+11,
+3,
+2,
+2,
+2,
+2,
+2
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 138754,
+"stab": 120,
+"n_chi": 2140,
+"nrows": 87715,
+"nnz": 180478,
+"build_secs": 32.4,
+"build_hwm_gb": 0.19,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 87724,
+"nnz": 199738,
+"secs": 11.8,
+"diag": [
+"SEQ n=2140 nrows=87724 nnz=199738 k=0 len=4280 secs=5.6",
+"BM deg=2140 f0=226899401 secs=5.7"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 87724,
+"nnz": 199738,
+"secs": 12.3,
+"diag": [
+"SEQ n=2140 nrows=87724 nnz=199738 k=0 len=4280 secs=5.8",
+"BM deg=2140 f0=1831637357 secs=5.9"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 72.0,
+"hwm_gb": 0.19
+},
+{
+"mu": [
+9,
+5,
+2,
+2,
+2,
+2,
+2
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 361997,
+"stab": 120,
+"n_chi": 5180,
+"nrows": 220573,
+"nnz": 473704,
+"build_secs": 114.2,
+"build_hwm_gb": 0.25,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 220582,
+"nnz": 520324,
+"secs": 83.5,
+"diag": [
+"SEQ n=5180 nrows=220582 nnz=520324 k=0 len=10360 secs=41.0",
+"BM deg=5180 f0=1444164383 secs=41.6"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 220582,
+"nnz": 520324,
+"secs": 83.9,
+"diag": [
+"SEQ n=5180 nrows=220582 nnz=520324 k=0 len=10360 secs=40.6",
+"BM deg=5180 f0=1609913431 secs=41.2"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 283.2,
+"hwm_gb": 0.25
+},
+{
+"mu": [
+10,
+5,
+2,
+2,
+2,
+2,
+1
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 128905,
+"stab": 24,
+"n_chi": 7604,
+"nrows": 180706,
+"nnz": 399970,
+"build_secs": 10.0,
+"build_hwm_gb": 0.25,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 180715,
+"nnz": 468406,
+"secs": 96.4,
+"diag": [
+"SEQ n=7604 nrows=180715 nnz=468406 k=0 len=15208 secs=47.2",
+"BM deg=7604 f0=1228178984 secs=48.5"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 180715,
+"nnz": 468406,
+"secs": 96.8,
+"diag": [
+"SEQ n=7604 nrows=180715 nnz=468406 k=0 len=15208 secs=47.2",
+"BM deg=7604 f0=1470621138 secs=48.5"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 204.0,
+"hwm_gb": 0.25
+},
+{
+"mu": [
+8,
+7,
+2,
+2,
+2,
+2,
+1
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 192491,
+"stab": 24,
+"n_chi": 11160,
+"nrows": 267398,
+"nnz": 606809,
+"build_secs": 16.2,
+"build_hwm_gb": 0.25,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 267407,
+"nnz": 707249,
+"secs": 214.9,
+"diag": [
+"SEQ n=11160 nrows=267407 nnz=707249 k=0 len=22320 secs=106.4",
+"BM deg=11160 f0=1987382868 secs=109.1"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 267407,
+"nnz": 707249,
+"secs": 224.9,
+"diag": [
+"SEQ n=11160 nrows=267407 nnz=707249 k=0 len=22320 secs=109.8",
+"BM deg=11160 f0=1960310590 secs=112.6"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 457.0,
+"hwm_gb": 0.25
+},
+{
+"mu": [
+8,
+5,
+5,
+3,
+1,
+1,
+1
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 166125,
+"stab": 12,
+"n_chi": 7063,
+"nrows": 42251,
+"nnz": 136365,
+"build_secs": 8.9,
+"build_hwm_gb": 0.25,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 42260,
+"nnz": 199932,
+"secs": 34.4,
+"diag": [
+"SEQ n=7063 nrows=42260 nnz=199932 k=0 len=14126 secs=16.2",
+"BM deg=7063 f0=735432188 secs=17.3"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 42260,
+"nnz": 199932,
+"secs": 32.9,
+"diag": [
+"SEQ n=7063 nrows=42260 nnz=199932 k=0 len=14126 secs=16.1",
+"BM deg=7063 f0=641980963 secs=17.2"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 76.9,
+"hwm_gb": 0.25
+}
+]
+}

@@ -44,6 +44,70 @@ def per3_coeffs(pencil, R):
     return restrict(PER3, N_PER3, 3, R, As)
 
 
+def run_inject(B, rec, mu, delta, R, a, t0):
+    """s43's injectivity certificate (session 42's sparse Wiedemann tool), wired to the s45 lean build.
+
+        ker[E; Ev] = {weight-mu HWVs vanishing at the K points}, of dimension a - mult,
+        so  [E; Ev] injective  <=>  mult = a,  for every a.
+
+    NONSINGULAR is a Berlekamp-Massey minimal polynomial of degree exactly n_chi with f(0) != 0 --
+    it proves nonsingularity with no randomness in the implication, and rank_p <= rank_Q carries it
+    to Q.  A KERNEL vector proves only mult < a: it is verified against E, banked as a CANDIDATE,
+    and the run halts.  Memory is O(nnz), not O(n_chi^2)."""
+    from scipy import sparse
+    import wk9_s42_sparse as SP
+    SP.WORK = os.environ.get('WIED_WORK', '/home/claude/wied_work')
+    SP.WIED = os.environ.get('WIED_BIN', '/home/claude/wied_bin')
+    os.makedirs(SP.WORK, exist_ok=True)
+    SP.build_bin()
+    nc = B['n_chi']
+    pts = per3_pencils(a + 8, SEED, BOUND, R)
+    rec['route'] = 'inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)'
+    per_prime = {}
+    for p in (P1, P2):
+        tp = time.time()
+        EV = ev_rows_from_coeffs(B['arr'], [per3_coeffs(pt, R) for pt in pts], p, R, n=3)
+        Mp = B['E'].copy(); Mp.data = Mp.data % p
+        S = sparse.vstack([Mp, sparse.csr_matrix(np.asarray(EV, dtype=np.int64) % p)], format='csr')
+        S.eliminate_zeros()
+        path = os.path.join(SP.WORK, f'b13_05_{delta}_{"_".join(map(str, mu))}_{p}_{os.getpid()}.csr')
+        nrows, nnz = SP.write_csr_mat(S, p, path)
+        st, payload, diag = SP.run_wied(path, p, 1, 0)
+        tries = 0
+        while st == 'INCONCLUSIVE' and tries < 6:
+            tries += 1
+            st, payload, diag = SP.run_wied(path, p, 1 + tries, 0)
+        try: os.remove(path)
+        except OSError: pass
+        r2 = dict(status_wied=st, nrows=int(nrows), nnz=int(nnz), secs=round(time.time() - tp, 1),
+                  diag=diag[-2:] if diag else [])
+        if st == 'NONSINGULAR':
+            r2.update(mult=a, units=0)
+        elif st == 'KERNEL':
+            y = np.asarray(payload, dtype=np.int64)
+            assert len(y) == nc, ('kernel vector length', len(y), nc)
+            resid = (B['E'].dot(y % p)) % p
+            r2['kernel_verified_against_E'] = bool(not resid.any())
+            assert r2['kernel_verified_against_E'], 'reported kernel vector fails E y = 0'
+            r2.update(mult=None, units=None, ideal_chi=y.tolist())
+        else:
+            raise RuntimeError(('injectivity route inconclusive', mu, delta, p, diag[-3:]))
+        per_prime[str(p)] = r2
+        log(f"  {mu} d{delta} p={p}: a={a} n_chi={nc} {st}{'' if st=='NONSINGULAR' else '  *** CANDIDATE ONLY ***'} [{r2['secs']}s]")
+    rec['per_prime'] = per_prime
+    ms = {p: r['mult'] for p, r in per_prime.items()}
+    agree = len(set(str(v) for v in ms.values())) == 1
+    rec['primes_agree'] = agree
+    rec['mult'] = per_prime[str(P1)]['mult']
+    rec['units'] = per_prime[str(P1)]['units']
+    rec['status'] = ('PRIMES DISAGREE -- instrument defect' if not agree else
+                     'CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)' if rec['mult'] == a else
+                     'CANDIDATE: kernel vector found -- sampled ceiling on i, NOT a membership statement; verification protocol')
+    rec['secs'] = round(time.time() - t0, 1)
+    rec['hwm_gb'] = round(_rss_gb(), 2)
+    return rec
+
+
 def run_cell(mu, delta, nchi_cap):
     mu = tuple(mu); R = len(mu)
     t0 = time.time()
@@ -59,8 +123,7 @@ def run_cell(mu, delta, nchi_cap):
     rec.update(N_S=int(B['N_S']), stab=int(B['stab']), n_chi=int(nc), nrows=int(B['nrows']),
                nnz=int(B['nnz']), build_secs=round(B['build_secs'], 1), build_hwm_gb=round(B['hwm_gb'], 2))
     if nc > nchi_cap:
-        rec.update(status=f'SKIPPED: n_chi = {nc} above the cap {nchi_cap} (dense kernel route)', secs=round(time.time() - t0, 1))
-        return rec
+        return run_inject(B, rec, mu, delta, R, a, t0)
     E = B['E']
     Ed = np.asarray(E.todense(), dtype=np.int64) if hasattr(E, 'todense') else np.asarray(E, dtype=np.int64)
     pts = per3_pencils(a + 8, SEED, BOUND, R)
