@@ -1,0 +1,166 @@
+{
+"board_numbering": "batch13",
+"session": "B13-05",
+"purpose": "validation cells only -- B13-09 owns the numerical queue",
+"instrument": "wk9_s45_build.build_cell (n=3) + dense flint nullspace + per_3 pencil evaluation, both house primes",
+"cells": [
+{
+"mu": [
+17,
+2,
+2,
+2,
+2,
+2
+],
+"delta": 9,
+"r": 6,
+"ell": 6,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 4743,
+"stab": 120,
+"n_chi": 116,
+"nrows": 3307,
+"nnz": 6255,
+"build_secs": 0.4,
+"build_hwm_gb": 0.23,
+"per_prime": {
+"2147483647": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 0.2
+},
+"2147483629": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 0.1
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: mult = a at both primes (full rank mod p proves full rank over Q)",
+"secs": 14.8,
+"hwm_gb": 0.24
+},
+{
+"mu": [
+12,
+2,
+2,
+2,
+2,
+2,
+2
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 63711,
+"stab": 720,
+"n_chi": 284,
+"nrows": 15060,
+"nnz": 29447,
+"build_secs": 24.7,
+"build_hwm_gb": 0.29,
+"per_prime": {
+"2147483647": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 3.1
+},
+"2147483629": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 2.1
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: mult = a at both primes (full rank mod p proves full rank over Q)",
+"secs": 36.3,
+"hwm_gb": 0.45
+},
+{
+"mu": [
+15,
+2,
+2,
+2,
+2,
+2,
+2
+],
+"delta": 9,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 65416,
+"stab": 720,
+"n_chi": 301,
+"nrows": 15717,
+"nnz": 30537,
+"build_secs": 26.6,
+"build_hwm_gb": 0.45,
+"per_prime": {
+"2147483647": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 3.3
+},
+"2147483629": {
+"kernel_dim": 1,
+"mult": 1,
+"units": 0,
+"secs": 2.3
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: mult = a at both primes (full rank mod p proves full rank over Q)",
+"secs": 40.8,
+"hwm_gb": 0.54
+}
+]
+}

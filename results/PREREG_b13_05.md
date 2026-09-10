@@ -260,3 +260,47 @@ times one coefficient", not a census by the house instrument; the cells it
 certifies are reported cell by cell so B13-09 need not recompute them.
 
 board_numbering: batch13
+
+## Addendum C (2026-09-10 00:55 UTC / 2026-09-09 20:55 ET) — committed before the computations it governs
+
+The integrator extended the handoff by two hours.  Banked at this point:
+Theorem B (`I(D_r^{per₃})_δ = 0`, every `r`, `δ ≤ 7`), the 19 top cells, the
+ladder, Theorem F's 18 closures, and validation cells reproducing s79's
+`(17,2⁵)₉` and confirming two of Theorem F's predictions by direct measurement.
+
+**C1 — complete degree 8 at every length.**  After Theorem F, exactly **37**
+cells stand between the record and the statement `I(D_r^{per₃})_8 = 0` for every
+`r`: the open `(δ=8, ℓ=7)` cells, every one with `a = 1`, `Σ N_S = 1.156·10⁷`,
+`max N_S = 8.44·10⁵`.  I run all 37 on the instrument already validated in
+`results/b13_05_validate.json` — `wk9_s45_build.build_cell(μ, 8, n=3)`, exact
+dense flint kernel of the raising rows at **both** house primes with
+`dim ker = a` asserted and `E·K = 0` checked, evaluation at `a + 8 = 9` `per₃`
+pencils (seed 41, box ±40, session 41's family), `mult = rank_p(EV·K)`.
+
+Decision rule, unchanged from §4–5 of this pre-registration: `units = 0` at one
+prime **proves** `mult = a` over `Q` (`rank_p ≤ rank_Q`) and is banked as
+CERTIFIED.  A drop is a **CANDIDATE only** — a sampled deficiency is a ceiling
+on `i` and never a floor; the run re-checks at `3a + 24` fresh points (seed 907),
+banks the candidate with its vectors, and **halts**.  No drop is promoted to a
+membership statement, and no negative decision-table branch is entered on it.
+
+Two workers on disjoint, interleaved halves of the `N_S`-sorted list, **separate
+output files** `results/b13_05_deg8_w0.json` and `..._w1.json` (single writer
+each), `timeout 5400`, `ulimit -v 3000000` each, pid files
+`results/logs/b13_05_deg8_w{0,1}.pid`.  Banked per cell, so a partial run is a
+resumable prefix — the pre-registered fallback.
+
+**Scope, declared.**  These 37 cells sit inside the region the board gives
+B13-09 ("lengths seven and eight through degree nine").  I run them because they
+are exactly the remainder of *this* session's theorem — degree 8 at every length
+— and not as a census: I am not touching degree 9 at length 7 or 8, which is the
+bulk of B13-09's queue and stays theirs.  If the integrator reads the boundary
+more strictly, these 37 are B13-09's to re-derive; the structural results stand
+without them, and Theorem B at `δ ≤ 7` is unaffected.
+
+**C2 — cost model for the residual queue.**  Fit seconds-per-monomial for the
+orbit reduction from the measured builds (`N_S` from 4.7·10³ to 1.06·10⁶) and
+publish the fitted price of the remaining degree-9 queue, replacing the raw
+`Σ N_S·δ`.  Descriptive, no decision rides on it.
+
+board_numbering: batch13
