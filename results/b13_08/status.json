@@ -3,23 +3,23 @@
  "session": "B13-08",
  "delta": 10,
  "queue": 95,
- "reached": 22,
- "not_reached": 73,
- "sum_a_reached": 146,
- "sum_a_not_reached": 221,
+ "reached": 38,
+ "not_reached": 57,
+ "sum_a_reached": 210,
+ "sum_a_not_reached": 157,
  "completed_prefix_in_cost_order": 22,
  "prefix_last_rank": 318,
- "full_rank_at_both_primes": 22,
+ "full_rank_at_both_primes": 38,
  "drops": [],
  "primes_disagree": [],
  "max_secs": 547.5,
- "total_secs": 4232.9,
+ "total_secs": 7338.5,
  "max_hwm_gb": 3.84,
  "lean_engine_weights": [],
  "by_bucket": {
   "N_S<5e6": {
-   "reached": 22,
-   "not_reached": 47
+   "reached": 38,
+   "not_reached": 31
   },
   "5e6<=N_S<1e7": {
    "reached": 0,
@@ -40,264 +40,20 @@
    "a": 5,
    "N_S": 2422004,
    "pred_peak_gb": 2.47,
-   "attempts": [],
-   "reason": "not attempted",
+   "attempts": [
+    {
+     "engine": "unchanged",
+     "reason": "error",
+     "rc": 1,
+     "wall": 512.2,
+     "ulimit_kb": 7000000
+    }
+   ],
+   "reason": "error",
    "price": {
     "NS_delta": 24220040,
     "build_model_secs": 50.9,
     "rows_model_secs": 17.0
-   }
-  },
-  {
-   "rank": 320,
-   "mu": [
-    9,
-    6,
-    6,
-    4,
-    4,
-    1
-   ],
-   "a": 6,
-   "N_S": 2452773,
-   "pred_peak_gb": 2.29,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 24527730,
-    "build_model_secs": 51.5,
-    "rows_model_secs": 18.5
-   }
-  },
-  {
-   "rank": 321,
-   "mu": [
-    8,
-    8,
-    6,
-    4,
-    2,
-    2
-   ],
-   "a": 8,
-   "N_S": 2486029,
-   "pred_peak_gb": 2.42,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 24860290,
-    "build_model_secs": 52.2,
-    "rows_model_secs": 21.5
-   }
-  },
-  {
-   "rank": 322,
-   "mu": [
-    10,
-    7,
-    4,
-    4,
-    3,
-    2
-   ],
-   "a": 10,
-   "N_S": 2497176,
-   "pred_peak_gb": 3.47,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 24971760,
-    "build_model_secs": 52.4,
-    "rows_model_secs": 24.3
-   }
-  },
-  {
-   "rank": 323,
-   "mu": [
-    11,
-    5,
-    4,
-    4,
-    4,
-    2
-   ],
-   "a": 4,
-   "N_S": 2571001,
-   "pred_peak_gb": 2.32,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 25710010,
-    "build_model_secs": 54.0,
-    "rows_model_secs": 16.7
-   }
-  },
-  {
-   "rank": 324,
-   "mu": [
-    7,
-    7,
-    7,
-    5,
-    3,
-    1
-   ],
-   "a": 1,
-   "N_S": 2612751,
-   "pred_peak_gb": 2.33,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 26127510,
-    "build_model_secs": 54.9,
-    "rows_model_secs": 12.7
-   }
-  },
-  {
-   "rank": 325,
-   "mu": [
-    9,
-    7,
-    5,
-    5,
-    2,
-    2
-   ],
-   "a": 4,
-   "N_S": 2617854,
-   "pred_peak_gb": 2.34,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 26178540,
-    "build_model_secs": 55.0,
-    "rows_model_secs": 17.0
-   }
-  },
-  {
-   "rank": 326,
-   "mu": [
-    8,
-    6,
-    6,
-    6,
-    3,
-    1
-   ],
-   "a": 1,
-   "N_S": 2659758,
-   "pred_peak_gb": 2.35,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 26597580,
-    "build_model_secs": 55.9,
-    "rows_model_secs": 12.9
-   }
-  },
-  {
-   "rank": 327,
-   "mu": [
-    8,
-    7,
-    7,
-    4,
-    2,
-    2
-   ],
-   "a": 2,
-   "N_S": 2681277,
-   "pred_peak_gb": 2.35,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 26812770,
-    "build_model_secs": 56.3,
-    "rows_model_secs": 14.5
-   }
-  },
-  {
-   "rank": 328,
-   "mu": [
-    11,
-    5,
-    5,
-    3,
-    3,
-    3
-   ],
-   "a": 2,
-   "N_S": 2703004,
-   "pred_peak_gb": 2.36,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 27030040,
-    "build_model_secs": 56.8,
-    "rows_model_secs": 14.6
-   }
-  },
-  {
-   "rank": 329,
-   "mu": [
-    9,
-    6,
-    5,
-    5,
-    4,
-    1
-   ],
-   "a": 3,
-   "N_S": 2752707,
-   "pred_peak_gb": 2.38,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 27527070,
-    "build_model_secs": 57.8,
-    "rows_model_secs": 16.4
-   }
-  },
-  {
-   "rank": 330,
-   "mu": [
-    8,
-    8,
-    5,
-    5,
-    2,
-    2
-   ],
-   "a": 2,
-   "N_S": 2789125,
-   "pred_peak_gb": 2.39,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 27891250,
-    "build_model_secs": 58.6,
-    "rows_model_secs": 15.1
-   }
-  },
-  {
-   "rank": 331,
-   "mu": [
-    9,
-    8,
-    4,
-    4,
-    3,
-    2
-   ],
-   "a": 7,
-   "N_S": 2803928,
-   "pred_peak_gb": 3.04,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 28039280,
-    "build_model_secs": 58.9,
-    "rows_model_secs": 22.7
    }
   },
   {
@@ -319,90 +75,6 @@
     "NS_delta": 28192700,
     "build_model_secs": 59.2,
     "rows_model_secs": 18.3
-   }
-  },
-  {
-   "rank": 333,
-   "mu": [
-    9,
-    7,
-    6,
-    3,
-    3,
-    2
-   ],
-   "a": 6,
-   "N_S": 2854539,
-   "pred_peak_gb": 2.82,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 28545390,
-    "build_model_secs": 59.9,
-    "rows_model_secs": 21.6
-   }
-  },
-  {
-   "rank": 334,
-   "mu": [
-    7,
-    7,
-    6,
-    6,
-    3,
-    1
-   ],
-   "a": 1,
-   "N_S": 2869624,
-   "pred_peak_gb": 2.41,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 28696240,
-    "build_model_secs": 60.3,
-    "rows_model_secs": 13.9
-   }
-  },
-  {
-   "rank": 335,
-   "mu": [
-    9,
-    6,
-    6,
-    5,
-    2,
-    2
-   ],
-   "a": 6,
-   "N_S": 2874863,
-   "pred_peak_gb": 2.41,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 28748630,
-    "build_model_secs": 60.4,
-    "rows_model_secs": 21.7
-   }
-  },
-  {
-   "rank": 336,
-   "mu": [
-    8,
-    8,
-    6,
-    3,
-    3,
-    2
-   ],
-   "a": 1,
-   "N_S": 3041630,
-   "pred_peak_gb": 2.46,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 30416300,
-    "build_model_secs": 63.9,
-    "rows_model_secs": 14.8
    }
   },
   {
@@ -2219,6 +1891,486 @@
    "nU": {
     "2147483647": 260,
     "2147483629": 260
+   },
+   "certs": []
+  },
+  {
+   "rank": 320,
+   "mu": [
+    9,
+    6,
+    6,
+    4,
+    4,
+    1
+   ],
+   "a": 6,
+   "N_S": 2452773,
+   "stab": 4,
+   "n_chi": 624176,
+   "nrows": 5210674,
+   "nnz": 21335804,
+   "mult": 6,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 153.5,
+   "build_secs": 75.4,
+   "hwm_gb": 2.02,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 135,
+    "2147483629": 135
+   },
+   "certs": []
+  },
+  {
+   "rank": 321,
+   "mu": [
+    8,
+    8,
+    6,
+    4,
+    2,
+    2
+   ],
+   "a": 8,
+   "N_S": 2486029,
+   "stab": 4,
+   "n_chi": 655446,
+   "nrows": 4280793,
+   "nnz": 16774831,
+   "mult": 8,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 253.3,
+   "build_secs": 132.3,
+   "hwm_gb": 1.93,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 370,
+    "2147483629": 370
+   },
+   "certs": []
+  },
+  {
+   "rank": 322,
+   "mu": [
+    10,
+    7,
+    4,
+    4,
+    3,
+    2
+   ],
+   "a": 10,
+   "N_S": 2497176,
+   "stab": 2,
+   "n_chi": 1263713,
+   "nrows": 7285959,
+   "nnz": 27779700,
+   "mult": 10,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 198.1,
+   "build_secs": 65.6,
+   "hwm_gb": 3.5,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 174,
+    "2147483629": 174
+   },
+   "certs": []
+  },
+  {
+   "rank": 323,
+   "mu": [
+    11,
+    5,
+    4,
+    4,
+    4,
+    2
+   ],
+   "a": 4,
+   "N_S": 2571001,
+   "stab": 6,
+   "n_chi": 444217,
+   "nrows": 6372801,
+   "nnz": 22200315,
+   "mult": 4,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 132.9,
+   "build_secs": 93.4,
+   "hwm_gb": 1.73,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 39,
+    "2147483629": 39
+   },
+   "certs": []
+  },
+  {
+   "rank": 324,
+   "mu": [
+    7,
+    7,
+    7,
+    5,
+    3,
+    1
+   ],
+   "a": 1,
+   "N_S": 2612751,
+   "stab": 6,
+   "n_chi": 430901,
+   "nrows": 6242348,
+   "nnz": 27567767,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 154.5,
+   "build_secs": 93.8,
+   "hwm_gb": 1.99,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 113,
+    "2147483629": 113
+   },
+   "certs": []
+  },
+  {
+   "rank": 325,
+   "mu": [
+    9,
+    7,
+    5,
+    5,
+    2,
+    2
+   ],
+   "a": 4,
+   "N_S": 2617854,
+   "stab": 4,
+   "n_chi": 680100,
+   "nrows": 4981705,
+   "nnz": 18449888,
+   "mult": 4,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 146.6,
+   "build_secs": 85.5,
+   "hwm_gb": 1.96,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 141,
+    "2147483629": 141
+   },
+   "certs": []
+  },
+  {
+   "rank": 326,
+   "mu": [
+    8,
+    6,
+    6,
+    6,
+    3,
+    1
+   ],
+   "a": 1,
+   "N_S": 2659758,
+   "stab": 6,
+   "n_chi": 449876,
+   "nrows": 6826000,
+   "nnz": 29033072,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 139.4,
+   "build_secs": 85.2,
+   "hwm_gb": 1.93,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 95,
+    "2147483629": 95
+   },
+   "certs": []
+  },
+  {
+   "rank": 327,
+   "mu": [
+    8,
+    7,
+    7,
+    4,
+    2,
+    2
+   ],
+   "a": 2,
+   "N_S": 2681277,
+   "stab": 4,
+   "n_chi": 699583,
+   "nrows": 5111402,
+   "nnz": 20079427,
+   "mult": 2,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 165.3,
+   "build_secs": 86.1,
+   "hwm_gb": 2.04,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 212,
+    "2147483629": 212
+   },
+   "certs": []
+  },
+  {
+   "rank": 328,
+   "mu": [
+    11,
+    5,
+    5,
+    3,
+    3,
+    3
+   ],
+   "a": 2,
+   "N_S": 2703004,
+   "stab": 12,
+   "n_chi": 210265,
+   "nrows": 3645712,
+   "nnz": 11341528,
+   "mult": 2,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 155.0,
+   "build_secs": 136.1,
+   "hwm_gb": 0.87,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 7,
+    "2147483629": 7
+   },
+   "certs": []
+  },
+  {
+   "rank": 329,
+   "mu": [
+    9,
+    6,
+    5,
+    5,
+    4,
+    1
+   ],
+   "a": 3,
+   "N_S": 2752707,
+   "stab": 2,
+   "n_chi": 1366399,
+   "nrows": 8231040,
+   "nnz": 33072130,
+   "mult": 3,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 288.8,
+   "build_secs": 70.0,
+   "hwm_gb": 2.56,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 279,
+    "2147483629": 279
+   },
+   "certs": []
+  },
+  {
+   "rank": 330,
+   "mu": [
+    8,
+    8,
+    5,
+    5,
+    2,
+    2
+   ],
+   "a": 2,
+   "N_S": 2789125,
+   "stab": 8,
+   "n_chi": 363044,
+   "nrows": 3523398,
+   "nnz": 14022062,
+   "mult": 2,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 166.7,
+   "build_secs": 123.8,
+   "hwm_gb": 1.52,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 126,
+    "2147483629": 126
+   },
+   "certs": []
+  },
+  {
+   "rank": 331,
+   "mu": [
+    9,
+    8,
+    4,
+    4,
+    3,
+    2
+   ],
+   "a": 7,
+   "N_S": 2803928,
+   "stab": 2,
+   "n_chi": 1418611,
+   "nrows": 8205057,
+   "nnz": 31749735,
+   "mult": 7,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 290.5,
+   "build_secs": 97.2,
+   "hwm_gb": 3.21,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 245,
+    "2147483629": 245
+   },
+   "certs": []
+  },
+  {
+   "rank": 333,
+   "mu": [
+    9,
+    7,
+    6,
+    3,
+    3,
+    2
+   ],
+   "a": 6,
+   "N_S": 2854539,
+   "stab": 2,
+   "n_chi": 1396150,
+   "nrows": 7996779,
+   "nnz": 28885274,
+   "mult": 6,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 287.3,
+   "build_secs": 82.9,
+   "hwm_gb": 2.87,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 312,
+    "2147483629": 312
+   },
+   "certs": []
+  },
+  {
+   "rank": 334,
+   "mu": [
+    7,
+    7,
+    6,
+    6,
+    3,
+    1
+   ],
+   "a": 1,
+   "N_S": 2869624,
+   "stab": 4,
+   "n_chi": 717944,
+   "nrows": 6125750,
+   "nnz": 26594463,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 193.0,
+   "build_secs": 92.5,
+   "hwm_gb": 2.24,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 210,
+    "2147483629": 210
+   },
+   "certs": []
+  },
+  {
+   "rank": 335,
+   "mu": [
+    9,
+    6,
+    6,
+    5,
+    2,
+    2
+   ],
+   "a": 6,
+   "N_S": 2874863,
+   "stab": 4,
+   "n_chi": 758721,
+   "nrows": 5460208,
+   "nnz": 21265583,
+   "mult": 6,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 183.3,
+   "build_secs": 91.7,
+   "hwm_gb": 2.12,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 196,
+    "2147483629": 196
+   },
+   "certs": []
+  },
+  {
+   "rank": 336,
+   "mu": [
+    8,
+    8,
+    6,
+    3,
+    3,
+    2
+   ],
+   "a": 1,
+   "N_S": 3041630,
+   "stab": 4,
+   "n_chi": 745194,
+   "nrows": 5601185,
+   "nnz": 21869724,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 197.4,
+   "build_secs": 101.9,
+   "hwm_gb": 2.09,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 220,
+    "2147483629": 220
    },
    "certs": []
   }

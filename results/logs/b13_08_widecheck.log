@@ -1,0 +1,5 @@
+=== B13-08 addendum B validation, 2026-09-10T01:02:47Z ===
+(i) below the guard, kblk=997: engine == exact integers == wide, at both house primes
+(ii) inner dim 2098386 = 2^21+1234: engine asserts; wide == exact Python integer arithmetic
+(iii) kblk in {2^19, 2^20, 2^21-1, 300000, 7}: identical result
+(iv) end-to-end on banked rank 297 with the wide path forced into 11 blocks: all fields equal (run 21:02 EDT, see transcript)
