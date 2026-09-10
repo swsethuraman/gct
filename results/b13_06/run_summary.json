@@ -1,0 +1,284 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-06",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "completed_utc": "2026-09-09T21:20:10.264552+00:00",
+  "base": "00495110c62acfbbbc951e82cc218ed091563b3f",
+  "status": "finite component reduction completed; no positive gap claimed",
+  "census": {
+    "25": {
+      "components": 31,
+      "tensor_multiplicity_sum": 31,
+      "lengths": {
+        "9": 15,
+        "10": 16
+      },
+      "max_tensor_multiplicity": 1,
+      "cartan_components": 1
+    },
+    "26": {
+      "components": 305,
+      "tensor_multiplicity_sum": 799,
+      "lengths": {
+        "9": 89,
+        "10": 119,
+        "11": 97
+      },
+      "max_tensor_multiplicity": 10,
+      "cartan_components": 3
+    }
+  },
+  "lr_checks": 2196,
+  "non_ladder_unexcluded_candidates": 237,
+  "nine_variable_unexcluded_candidates": 102,
+  "ambient_counts": [
+    {
+      "partition": [
+        65,
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree": 24,
+      "a": 274,
+      "elapsed_seconds": 42.45299999997951,
+      "nonzero_aggregated_weights": 1262
+    },
+    {
+      "partition": [
+        69,
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree": 25,
+      "a": 274,
+      "elapsed_seconds": 41.406999999890104,
+      "nonzero_aggregated_weights": 1262
+    },
+    {
+      "partition": [
+        69,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree": 26,
+      "a": 531,
+      "elapsed_seconds": 52.42200000002049,
+      "nonzero_aggregated_weights": 1262
+    },
+    {
+      "partition": [
+        71,
+        19,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree": 26,
+      "a": 392,
+      "elapsed_seconds": 47.73400000017136,
+      "nonzero_aggregated_weights": 1262
+    },
+    {
+      "partition": [
+        73,
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree": 26,
+      "a": 274,
+      "elapsed_seconds": 43.438000000081956,
+      "nonzero_aggregated_weights": 1262
+    }
+  ],
+  "resources": [
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 39336,
+      "start_utc": "2026-09-09T18:07:21.312467+00:00",
+      "wall_limit_seconds": 1200,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 6219030528,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_ambient.py",
+        "--degree",
+        "24",
+        "--weight",
+        "65,17,2,2,2,2,2,2,2"
+      ],
+      "status": "completed",
+      "wall_seconds": 42.53099999995902,
+      "peak_process_memory_bytes": 67612672
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 21652,
+      "start_utc": "2026-09-09T21:13:11.805306+00:00",
+      "wall_limit_seconds": 1200,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 6613049344,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_ambient.py",
+        "--degree",
+        "25",
+        "--weight",
+        "69,17,2,2,2,2,2,2,2"
+      ],
+      "status": "completed",
+      "wall_seconds": 41.46900000004098,
+      "peak_process_memory_bytes": 66916352
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 10100,
+      "start_utc": "2026-09-09T21:13:53.567537+00:00",
+      "wall_limit_seconds": 1200,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 6638538752,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_ambient.py",
+        "--degree",
+        "26",
+        "--weight",
+        "73,17,2,2,2,2,2,2,2"
+      ],
+      "status": "completed",
+      "wall_seconds": 43.514999999897555,
+      "peak_process_memory_bytes": 67112960
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 45600,
+      "start_utc": "2026-09-09T21:15:25.419108+00:00",
+      "wall_limit_seconds": 1200,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 6518804480,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_ambient.py",
+        "--degree",
+        "26",
+        "--weight",
+        "69,21,2,2,2,2,2,2,2"
+      ],
+      "status": "completed",
+      "wall_seconds": 52.5,
+      "peak_process_memory_bytes": 69611520
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 50120,
+      "start_utc": "2026-09-09T21:14:37.373986+00:00",
+      "wall_limit_seconds": 1200,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 8422985728,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_ambient.py",
+        "--degree",
+        "26",
+        "--weight",
+        "71,19,2,2,2,2,2,2,2"
+      ],
+      "status": "completed",
+      "wall_seconds": 47.79700000002049,
+      "peak_process_memory_bytes": 68476928
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 45616,
+      "start_utc": "2026-09-09T21:16:18.316699+00:00",
+      "wall_limit_seconds": 300,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 6585880576,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_controls.py"
+      ],
+      "status": "completed",
+      "wall_seconds": 1.8899999998975545,
+      "peak_process_memory_bytes": 52731904
+    },
+    {
+      "board_numbering": "batch13",
+      "session_id": "B13-06",
+      "pid": 21172,
+      "start_utc": "2026-09-09T15:01:33.333046+00:00",
+      "wall_limit_seconds": 300,
+      "memory_limit_bytes": 805306368,
+      "available_physical_bytes": 7863877632,
+      "total_physical_bytes": 33752997888,
+      "worker_count": 1,
+      "blas_threads": 1,
+      "command": [
+        "analysis/b13_06_decompose.py"
+      ],
+      "status": "completed",
+      "wall_seconds": 0.11000000010244548,
+      "peak_process_memory_bytes": 20328448
+    }
+  ],
+  "total_worker_wall_seconds": 229.81199999991804,
+  "peak_worker_memory_bytes": 69611520,
+  "control_integer_determinant_full10": 97470349824540,
+  "original_rows_audited": 274,
+  "stored_point_columns_checked": 1692,
+  "rank_replay": "not run: python-flint unavailable, pip socket WinError 10013",
+  "control_status": "all exact polynomial and native-value arithmetic checks passed",
+  "adopted_det_rank": 273,
+  "adopted_padded_floor": 269,
+  "D_interval": [
+    -4,
+    1
+  ],
+  "D_measured": -4
+}
