@@ -3,17 +3,17 @@
  "session": "B13-08",
  "delta": 10,
  "queue": 95,
- "reached": 47,
- "not_reached": 48,
- "sum_a_reached": 232,
- "sum_a_not_reached": 135,
+ "reached": 48,
+ "not_reached": 47,
+ "sum_a_reached": 236,
+ "sum_a_not_reached": 131,
  "completed_prefix_in_cost_order": 42,
  "prefix_last_rank": 338,
- "full_rank_at_both_primes": 47,
+ "full_rank_at_both_primes": 48,
  "drops": [],
  "primes_disagree": [],
  "max_secs": 877.0,
- "total_secs": 10341.1,
+ "total_secs": 10902.2,
  "max_hwm_gb": 3.84,
  "lean_engine_weights": [
   319,
@@ -21,8 +21,8 @@
  ],
  "by_bucket": {
   "N_S<5e6": {
-   "reached": 47,
-   "not_reached": 22
+   "reached": 48,
+   "not_reached": 21
   },
   "5e6<=N_S<1e7": {
    "reached": 0,
@@ -49,27 +49,6 @@
     "NS_delta": 30763020,
     "build_model_secs": 64.6,
     "rows_model_secs": 31.6
-   }
-  },
-  {
-   "rank": 344,
-   "mu": [
-    8,
-    7,
-    6,
-    5,
-    2,
-    2
-   ],
-   "a": 4,
-   "N_S": 3305381,
-   "pred_peak_gb": 2.57,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 33053810,
-    "build_model_secs": 69.4,
-    "rows_model_secs": 21.4
    }
   },
   {
@@ -2425,6 +2404,36 @@
    "nU": {
     "2147483647": 158,
     "2147483629": 158
+   },
+   "certs": []
+  },
+  {
+   "rank": 344,
+   "mu": [
+    8,
+    7,
+    6,
+    5,
+    2,
+    2
+   ],
+   "a": 4,
+   "N_S": 3305381,
+   "stab": 2,
+   "n_chi": 1731806,
+   "nrows": 8318098,
+   "nnz": 30654973,
+   "mult": 4,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 561.1,
+   "build_secs": 101.0,
+   "hwm_gb": 2.59,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 801,
+    "2147483629": 801
    },
    "certs": []
   },

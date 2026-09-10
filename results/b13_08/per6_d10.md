@@ -1,6 +1,6 @@
 # `I(D_6^{per_3})_10` on the cubic side, the B13-08 remainder
 
-47 of the 95 frozen weights reached (`results/b13_08/queue.json`, session 79's cost order), points `per_3(Σ s_i A_i)` (seed 41, bound 40, `a + 8`), both house primes, hybrid route; `engine` = U for the unchanged `analysis/wk12_s79_per6.py`, L for the lean driver.
+48 of the 95 frozen weights reached (`results/b13_08/queue.json`, session 79's cost order), points `per_3(Σ s_i A_i)` (seed 41, bound 40, `a + 8`), both house primes, hybrid route; `engine` = U for the unchanged `analysis/wk12_s79_per6.py`, L for the lean driver.
 
 | rank | `μ` | `a` | `N_S` | Stab | `n_χ` | `mult` | units | secs | HWM GB | engine |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -50,6 +50,7 @@
 | 341 | `(11,5,4,4,3,3)` | 1 | 3143967 | 4 | 776625 | 1 | 0 | 137.6 | 1.7 | U |
 | 342 | `(8,7,5,5,4,1)` | 3 | 3165424 | 2 | 1571636 | 3 | 0 | 374.6 | 2.76 | U |
 | 343 | `(8,7,7,3,3,2)` | 2 | 3282047 | 4 | 801096 | 2 | 0 | 190.7 | 2.37 | U |
+| 344 | `(8,7,6,5,2,2)` | 4 | 3305381 | 2 | 1731806 | 4 | 0 | 561.1 | 2.59 | U |
 | 361 | `(9,6,5,5,3,2)` | 4 | 4606382 | 2 | 2287905 | 4 | 0 | 524.4 | 3.45 | L |
 
 Not reached:
@@ -57,7 +58,6 @@ Not reached:
 | rank | `μ` | `a` | `N_S` | `N_S·δ` | reason | attempts |
 |---|---|---|---|---|---|---|
 | 339 | `(10,6,5,4,3,2)` | 11 | 3076302 | 3.08e+07 | not attempted | — |
-| 344 | `(8,7,6,5,2,2)` | 4 | 3305381 | 3.31e+07 | not attempted | — |
 | 345 | `(10,5,5,5,3,2)` | 3 | 3453247 | 3.45e+07 | not attempted | — |
 | 346 | `(8,6,6,5,4,1)` | 2 | 3477991 | 3.48e+07 | not attempted | — |
 | 347 | `(10,6,4,4,4,2)` | 7 | 3581036 | 3.58e+07 | not attempted | — |

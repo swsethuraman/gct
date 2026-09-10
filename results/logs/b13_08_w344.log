@@ -20,3 +20,6 @@ $ ulimit -v 4400000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s7
   built (8, 7, 6, 5, 2, 2) d10: N_S=3305381 |Stab|=2 n_chi=1731806 rows=8318098 nnz=30654973 (101s: mono 5s orbits 11s rows 85s; HWM 1.20 GB)
     hybrid[per6 8_7_6_5_2_2d10] p=2147483647 attempt 0: |S|=1731005 |U|=801 (a=4, excess 797) m=865 blocks 23x36 projected nullity 4, verified=True, rank 4 [split 0.9s trisolve 108.5s schur 104.4s null 0.5s lift 6.3s rank 1.0s]
   per6 (8, 7, 6, 5, 2, 2) d10 p=2147483647: a=4 n_chi=1731806 mult=4 units=0 [234.8s]
+    hybrid[per6 8_7_6_5_2_2d10] p=2147483629 attempt 0: |S|=1731005 |U|=801 (a=4, excess 797) m=865 blocks 23x36 projected nullity 4, verified=True, rank 4 [split 1.3s trisolve 91.4s schur 103.2s null 0.4s lift 6.7s rank 0.7s]
+  per6 (8, 7, 6, 5, 2, 2) d10 p=2147483629: a=4 n_chi=1731806 mult=4 units=0 [215.4s]
+  PER6 RESULT (8, 7, 6, 5, 2, 2) d10: a=4 N_S=3305381 n_chi=1731806 mult=4 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (561.1s, HWM 2.59 GB)

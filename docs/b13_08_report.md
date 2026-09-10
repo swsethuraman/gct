@@ -38,17 +38,17 @@ not a characteristic-zero statement).
 
 ## 0. Verdict
 
-> **47 of the 95 weights are empty: `mult_per3(μ, 10) = a(μ, 10)` at both house
+> **48 of the 95 weights are empty: `mult_per3(μ, 10) = a(μ, 10)` at both house
 > primes, so `S_μ ∉ I(D_6^{per₃})_{10}` over `Q`.  PROVED at each, weight by
-> weight, by `rank_p ≤ rank_Q`.**  `Σa = 232` of 367.  **No drop, no prime
+> weight, by `rank_p ≤ rank_Q`.**  `Σa = 236` of 367.  **No drop, no prime
 > disagreement, no sampled kernel**, and therefore no decision-table branch
 > entered anywhere in this report.  The completed region is a **contiguous
 > prefix of 42 weights through rank 338** of session 79's 402-weight queue, plus
-> five taken above it — ranks **340, 341, 342, 343** (unchanged engine) and
+> six taken above it — ranks **340, 341, 342, 343, 344** (unchanged engine) and
 > **361** (lean driver, `n_χ = 2 287 905`) — so the boundary is one rank plus a
-> named five, not a scatter.  With session 79's 296, **343 of the 402 length-6
-> degree-10 weights are now empty and 59 are open** — 48 below `N_S = 10⁷` and
-> the 11 above it that are batch 14's.  Generated figures:
+> named six, not a scatter.  With session 79's 296, **344 of the 402 length-6
+> degree-10 weights are now empty and 58 are open** — 47 below `N_S = 10⁷` and
+> the 11 above it that are batch 14's (47 below `10⁷` remain).  Generated figures:
 > `results/b13_08/report_numbers.md`; §4 has the table.
 >
 > **This does not make `I(D_6^{per₃})_{10} = 0` a theorem**, and nothing here
@@ -308,14 +308,13 @@ stated by rank; `results/b13_08/report_numbers.md` and
 their `N_S·δ`.  Pricing, by **this session's measured throughput** rather than
 by session 79's model, since the model was fitted on a different box:
 
-- measured here: **6.9 s per `10⁶` of `N_S·δ`** (median over the 47 weights
+- measured here: **≈ 6.9 s per `10⁶` of `N_S·δ`** (median over the 48 weights
   reached, spanning `a` from 1 to 15, `|Stab|` from 1 to 24, `n_χ` to
-  2 422 004), against session 79's model of 2.1 + 2·2.7·10⁻²·(a+8) s on the same
-  quantity;
-- the **48 unreached weights of this list carry `Σ N_S·δ = 2.73·10⁹`**, so at
-  the measured median they cost **≈ 5.2 CPU-hours — about 3.1 h of wall clock on
-  a two-lane box of this size.**  A night, as session 79 predicted, and the
-  prediction survives contact with the box.  **Fifteen of the 48 are
+  2 422 004);
+- the **47 unreached weights of this list carry `Σ N_S·δ ≈ 2.69·10⁹`**, so at
+  the measured median they cost **≈ 5 CPU-hours — about 3 h of wall clock on a
+  two-lane box of this size.**  A night, as session 79 predicted, and the
+  prediction survives contact with the box.  **Fifteen of the 47 are
   addendum-B weights and must run on `--engine lean`**;
 - **memory is the binding constraint at the top of the list, and it is now
   measured rather than guessed.**  Least squares on this session's weights plus
@@ -445,7 +444,7 @@ batch 10 forbids them.  Recorded here rather than resolved silently.
   the model, and a lower bound on it rather than a confirmation.  One further
   failure, rank 332, was **my run parameter and not a limit**: a 2.6 GB cap
   against a 2.53 GB prediction.  Re-run at 4.4 GB it completed in 344 s at a
-  2.49 GB peak, and it is among the 47.
+  2.49 GB peak, and it is among the 48.
 - I did not touch the determinant side, the padded side, `mult_red`, or the LMR
   cell; none is in this assignment and nothing here bears on `D > 0`.
 
