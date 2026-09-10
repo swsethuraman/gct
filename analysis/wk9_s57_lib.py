@@ -294,7 +294,7 @@ def _cells_from_md(path, col_lam, col_delta, col_a, col_mdet, fixed_delta_from_l
         out.append((lam, delta, a, md))
     return out
 
-def negative_record():
+def legacy_negative_record():
     """every cell with a measured mult_det in the ledgers; returns dict
     (lam, delta) -> (a, mult_det, source).  Every row is checked mult_det == a
     by the caller."""
@@ -332,6 +332,17 @@ def negative_record():
             rows.append((tuple(r['lam']), r['delta'], r['a'], r['mult_det']))
     add(rows, 's54')
     return rec
+
+
+def negative_record():
+    """Reconciled full-rank quartic view through s79 (B13-11).
+
+    Old callers treat every key as an exclusion. Deficient records, including
+    LMR, and cubic controls therefore live in b13_11_ledger.load_record().
+    The original 326-cell snapshot is available as legacy_negative_record().
+    """
+    from b13_11_ledger import negative_record as reconciled
+    return reconciled()
 
 # --------------------------------------------------------------- the s39 table
 def load_s39():
