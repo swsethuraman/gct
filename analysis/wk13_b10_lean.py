@@ -46,7 +46,7 @@ import numpy as np
 from scipy import sparse
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import wk9_s45_build as S45                      # _codes looked up on the module at call time
-from wk9_s45_build import _dp_tables, log, _rss_gb
+from wk9_s45_build import log, _rss_gb
 from wk8_s30_core import exps
 from wk9_s36_stabred import stab_group, perm_tables
 
@@ -74,6 +74,52 @@ def codes(M, L):
     return S45._codes(np.asarray(M), L)
 
 
+def _dp_tables_lean(n, r, delta, lam):
+    """wk9_s45_build._dp_tables -- the same exact feasibility DP with the same
+    tables -- in narrow dtypes (residual weights int16, successor map int32,
+    feasibility bool), plus the suffix counts SC[k][t, s] = #{i >= s : G[k][t, i]}
+    as int32.  Values identical; only the width differs."""
+    A = np.array(exps(n, r), dtype=np.int16); L = A.shape[0]
+    base = int(max(lam)) + 1
+    pw = np.array([base ** c for c in range(r)], dtype=np.int64)
+    def keys(V): return (V.astype(np.int64) * pw).sum(1)
+    REM = [np.array([lam], dtype=np.int16)]
+    NID = []
+    for k in range(delta):
+        cur = REM[k]
+        d = cur[:, None, :] - A[None, :, :]                 # D x L x r int16
+        fit = (d >= 0).all(2)
+        nxt = d[fit]
+        kk = keys(nxt)
+        uk, inv = np.unique(kk, return_inverse=True)
+        first = np.zeros(len(uk), dtype=np.int64)
+        first[inv[::-1]] = np.arange(len(inv) - 1, -1, -1)
+        REM.append(nxt[first])
+        nid = np.full(fit.shape, -1, dtype=np.int32)
+        nid[fit] = inv
+        NID.append(nid)
+        del d, fit, nxt, kk, inv, first, uk
+    F = [None] * (delta + 1)
+    F[delta] = (REM[delta] == 0).all(1)[:, None] & np.ones((1, L + 1), dtype=bool)
+    G = [None] * delta
+    SC = [None] * delta
+    for k in range(delta - 1, -1, -1):
+        nid = NID[k]
+        ok = nid >= 0
+        g = np.zeros(nid.shape, dtype=bool)
+        ii = np.nonzero(ok)
+        g[ii] = F[k + 1][nid[ii], ii[1]]
+        G[k] = g
+        suf = np.zeros((g.shape[0], L + 1), dtype=bool)
+        suf[:, :L] = np.logical_or.accumulate(g[:, ::-1], axis=1)[:, ::-1]
+        F[k] = suf
+        sc = np.zeros((g.shape[0], L + 1), dtype=np.int32)
+        sc[:, :L] = np.cumsum(g[:, ::-1], axis=1, dtype=np.int32)[:, ::-1]
+        SC[k] = sc
+        F[k + 1] = None
+    return REM, NID, G, SC
+
+
 # --------------------------------------------------------------- monomials
 def monomials_array_lean(n, r, delta, lam, block=250000, verbose=False, dtype=None):
     """wk9_s45_build.monomials_array with exact per-level sizing: the same rows
@@ -84,14 +130,7 @@ def monomials_array_lean(n, r, delta, lam, block=250000, verbose=False, dtype=No
     dt = dtype or letter_dtype(L)
     if sum(lam) != delta * n:
         return np.zeros((0, delta), dtype=dt)
-    REM, NID, G = _dp_tables(n, r, delta, lam)
-    # suffix counts SC[k][t, s] = #{i >= s : G[k][t, i]}
-    SC = []
-    for k in range(delta):
-        g = G[k]
-        sc = np.zeros((g.shape[0], L + 1), dtype=np.int64)
-        sc[:, :L] = np.cumsum(g[:, ::-1], axis=1)[:, ::-1]
-        SC.append(sc)
+    REM, NID, G, SC = _dp_tables_lean(n, r, delta, lam)
     pref = np.zeros((1, 0), dtype=dt)
     tid = np.zeros(1, dtype=np.int32)
     last = np.zeros(1, dtype=dt)
@@ -499,6 +538,92 @@ def build_cell_lean(lam, delta, n=4, verbose=True, chunk=400000, triples='store'
     return out
 
 
+# --------------------------------------- the consumer's cover and check, chunked
+def column_orders_lean(F, nc, seed, rows_per=2_000_000):
+    """wk11_s71_hybrid.column_orders with the column fill counted in row chunks
+    (no intp copy of the whole index array).  Same five orders, same values."""
+    F = F.tocsr()
+    fill = np.zeros(nc, dtype=np.int64)
+    for r0 in range(0, F.shape[0], rows_per):
+        r1 = min(F.shape[0], r0 + rows_per)
+        fill += np.bincount(F.indices[F.indptr[r0]:F.indptr[r1]], minlength=nc)
+    out = [('natural', np.arange(nc, dtype=np.int64)),
+           ('reversed', np.arange(nc - 1, -1, -1, dtype=np.int64))]
+    o = np.argsort(fill, kind='stable'); pos = np.empty(nc, dtype=np.int64); pos[o] = np.arange(nc); out.append(('fill_asc', pos))
+    o = np.argsort(-fill, kind='stable'); pos = np.empty(nc, dtype=np.int64); pos[o] = np.arange(nc); out.append(('fill_desc', pos))
+    rng = np.random.default_rng(seed)
+    o = rng.permutation(nc); pos = np.empty(nc, dtype=np.int64); pos[o] = np.arange(nc); out.append(('random', pos))
+    return out
+
+
+def cover_lean(F, nc, pos, rows_per=2_000_000):
+    """wk11_s71_hybrid.cover with the per-row leading position computed in row
+    chunks.  The same rows are chosen: minpos and nnz_row are the same arrays,
+    the same stable lexsort follows."""
+    F = F.tocsr(); F.sort_indices()
+    rowlen = np.diff(F.indptr)
+    nz = rowlen > 0
+    if not nz.any():
+        return dict(rows=np.zeros(0, np.int64), S=np.zeros(0, np.int64), U=np.arange(nc), pos=pos, size=0)
+    rows = np.nonzero(nz)[0]
+    nnz_row = rowlen[nz].astype(np.int64)
+    minpos = np.empty(len(rows), dtype=np.int64)
+    k = 0
+    for r0 in range(0, F.shape[0], rows_per):
+        r1 = min(F.shape[0], r0 + rows_per)
+        e0, e1 = int(F.indptr[r0]), int(F.indptr[r1])
+        if e1 == e0: continue
+        p = pos[F.indices[e0:e1]]
+        nzl = nz[r0:r1]
+        st = (F.indptr[r0:r1][nzl].astype(np.int64) - e0)
+        mp = np.minimum.reduceat(p, st)
+        minpos[k:k + len(mp)] = mp; k += len(mp)
+        del p, st, mp
+    assert k == len(rows)
+    order = np.lexsort((nnz_row, minpos))
+    ms = minpos[order]
+    first = np.r_[True, ms[1:] != ms[:-1]]
+    chosen = rows[order[first]]
+    Spos = ms[first]
+    inv = np.empty(nc, dtype=np.int64); inv[pos] = np.arange(nc)
+    S = inv[Spos]
+    covered = np.zeros(nc, dtype=bool); covered[S] = True
+    Ucols = np.nonzero(~covered)[0]
+    Upos = pos[Ucols]; Ucols = Ucols[np.argsort(Upos)]
+    return dict(rows=chosen, S=S, U=Ucols, pos=pos, size=int(len(S)))
+
+
+def best_cover_lean(F, nc, seed=20260908, names=None, verbose=False, rows_per=2_000_000):
+    stats = {}
+    best = None
+    for name, pos in column_orders_lean(F, nc, seed, rows_per=rows_per):
+        if names and name not in names: continue
+        c = cover_lean(F, nc, pos, rows_per=rows_per)
+        stats[name] = c['size']
+        if verbose: log(f"    cover-lean {name}: {c['size']}/{nc} [HWM {_rss_gb():.2f} GB]")
+        if best is None or c['size'] > best['size']:
+            best = c; best['order'] = name
+    best['stats'] = stats
+    return best
+
+
+def check_kernel_mat_lean(E, K, p, chunk=16, rows_per=1_000_000):
+    """wk11_s71_hybrid.check_kernel_mat -- E K == 0 mod p -- in row blocks of E,
+    so the dense product never exceeds rows_per x chunk."""
+    assert int(np.abs(E.data.astype(np.int64)).max(initial=0)) < 65536
+    K = np.asarray(K, dtype=np.int64) % p
+    E = E.tocsr()
+    for c0 in range(0, K.shape[1], chunk):
+        Kc = K[:, c0:c0 + chunk]
+        lo = Kc & 0xFFFF; hi = Kc >> 16
+        for r0 in range(0, E.shape[0], rows_per):
+            Eb = E[r0:r0 + rows_per]
+            r = ((Eb @ lo) % p + ((Eb @ hi) % p) * 65536) % p
+            if np.any(r): return False
+            del Eb, r
+    return True
+
+
 # ------------------------------------------------ the consumer, dtype-safe
 def _split_rows_safe(F, rows, colS, colU, p):
     """wk11_s71_hybrid._split_rows with the data upcast before `% p` (NumPy 2
@@ -558,6 +683,18 @@ def hybrid_kernel_lean(E, nc, p, a_expect, cov, seed=20260908, extra=64, nproj=8
     TUc = TU.tocsc()
     t1 = time.time()
     mem_x = float(os.environ.get('S71_MEM_X', mem_x))
+    if nU == 0:
+        # the cover covers EVERY column, so the |S| x |S| triangular submatrix on the
+        # cover rows is invertible mod p and rank_p(E) = nc: nullity 0, certified, no
+        # residual to project.  (wk11_s71_hybrid.hybrid_kernel raises here instead --
+        # ublock = nU = 0 and range(0, 0, 0) -- an inherited defect that only shows
+        # when a = 0 and the cover is complete.  Reported, not patched there.)
+        assert a_expect == 0, ("cover complete but a > 0: rank nc leaves no kernel", a_expect)
+        return (np.zeros((nc, 0), dtype=np.uint32),
+                dict(nS=int(nS), nU=0, excess=0, nnzT=int(T.nnz), rows_other=int(E.shape[0] - len(rows)),
+                     order=cov.get('order'), cover_stats=cov.get('stats'), ublock=0, nblocks=0, attempts=[],
+                     certified='cover of size n_chi: rank_p(E) = n_chi, nullity 0',
+                     lean=dict(fo=fo, xblock=xblock, data_dtype=str(E.data.dtype)), secs=round(time.time() - t0, 1)))
     if ublock is None:
         ublock = nU if 4.0 * nS * nU <= mem_x else max(32, int(mem_x / (4.0 * nS)))
     nblocks = (nU + ublock - 1) // ublock if nU else 0
@@ -615,7 +752,7 @@ def hybrid_kernel_lean(E, nc, p, a_expect, cov, seed=20260908, extra=64, nproj=8
             w = np.ascontiguousarray(((p - w.astype(np.int64)) % p).astype(np.uint32))
             yS = HY.trisolve(T, dinv, w, p)
             Kc[S, v0:v1] = yS; Kc[U, v0:v1] = yUt
-            if not HY.check_kernel_mat(E, Kc[:, v0:v1].astype(np.int64), p): ok = False
+            if not check_kernel_mat_lean(E, Kc[:, v0:v1].astype(np.int64), p): ok = False
         t5 = time.time()
         rk = HY.rank_tall(Kc, p) if nul else 0
         info['attempts'].append(dict(attempt=attempt, m=int(m), nproj=int(nproj), projected_nullity=int(nul), verified=bool(ok),
