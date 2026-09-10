@@ -2,13 +2,20 @@
 
 board_numbering: batch13
 session: B13-04 (the board's "sharpen the cubic-to-quartic transfer")
-model: Claude Fable 5.1 — configured id `claude-fable-5-1`; the serving model is
-not observable from inside the session and is recorded as configured
+model: **two** — the session's first pass (everything through commit `2b89394`:
+§§1–12) ran as **Claude Fable 5.1** (`claude-fable-5-1`); at a model-availability
+limit the session was continued as **Claude Opus 5** (`claude-opus-5`), which
+produced §12 and this header.  The serving model is not observable from inside
+the session; each is recorded as configured at the time, and no result is
+attributed to the model that did not produce it.  Commit trailers carry the
+same split.
 base: `0049511` (`git rev-parse main` at clone); branch `b13_04`
 delivery: `b13_04_fable.bundle`, **one part** (`part00` is the whole file), with
 `b13_04_fable.bundle.md5` carrying a whole-file digest and the `part00` digest
 pre-registration: `results/PREREG_b13_04.md` (commit `35148d8`, before any
-computation); everything not listed there is marked exploratory below
+computation) with **addendum 1** (commit `b4c6a93`, committed before the
+measurements it governs — §12); everything not covered by either is marked
+exploratory below
 date: 2026-09-09
 
 ## 0. What this session delivers, in one paragraph
@@ -40,6 +47,22 @@ and the fifteen-cell predecessor screen — a targeted screen for one quartic
 cell, not a census of `I(D₉^{per₃})₁₃` — is sufficient but far from necessary
 for `mult_pad = mult_red` at `λ₁₃` (§8).  What was not reached, with prices, is
 in §9; defects in the assignment are in §10.
+
+**§12 (addendum 1, Claude Opus 5) settles the natural next question with a
+second counterexample.**  The swap identity is a candidate *sufficient*
+condition — it is cheap, exact, and in 432 of 433 cells across 23 `(r,δ)` pairs
+it cuts the channel space down to exactly the descending image, certified.  It
+is nevertheless **not sufficient**: at `r = 3`, `δ = 7`, `λ = (16,6,6)` there is
+an explicit 78-term integer polynomial that satisfies the swap identity **as a
+polynomial identity over `Z`**, satisfies the general two-factor consistency
+condition **as a polynomial identity over `Z`**, shows no boundary pole at any
+of fifteen specialisations, and is provably not `ρ(h)` for any quartic
+highest-weight vector `h`.  So no condition read off the affine slice
+`ℓ₁ ≠ 0` — swap, or full fibre-consistency — characterises descent.  The
+enlarged model census (199 transfer cells, 646 Pieri-compatible pairs, 13
+contributing alone) and a clean demonstration of the length quantifier at
+`λ = (7,7,1,1)`, where the only contributing channel is a **shorter**
+predecessor, are in §12 too.
 
 ## 1. Inputs, preflight, host
 
@@ -182,8 +205,9 @@ so `h ∉ I(P)` (Lemma B(2)), `mult_P((6,2),2) = mult_R((6,2),2) = 1`, and the
 Pieri-compatible constituent contributes nothing.  Directly: `h(x₂·x₁³) = −3 ≠ 0`
 at the padded point `x₂·x₁³` (`q₃₁ = 1`, every other coordinate 0).  For contrast, `λ = (4,4)` over the same `ν`:
 `h = 12q₄₀q₀₄ − 3q₃₁q₁₃ + q₂₂²` (the classical degree-2 invariant of binary
-quartics), `ρ(h) = 3c₂₁c₀₃ − c₁₂²`, which is the branching vector `g^{↓(4,4)}`
-(`= ½ E₂₁²g`), so the gap is 1: `mult_R = 1`, `mult_P = 0` (`I` vanishes on a
+quartics), `ρ(h) = c₁₂² − 3c₂₁c₀₃`, which is the branching vector `g^{↓(4,4)}`
+(a nonzero multiple of `E₂₁²g`; the stored witness is `−ρ(h)`, gcd-normalised),
+so the gap is 1: `mult_R = 1`, `mult_P = 0` (`I` vanishes on a
 quartic with a triple root).  Both cells are in `results/b13_04/model_A_d2.json`.
 
 **The models (CERTIFIED over `Q`; `analysis/wk13_b04_model.py`).**  Everything
@@ -407,7 +431,9 @@ expanded basis, is not available at the goal cell.
   monomials, both cheap to check once the vector is in hand).  This is
   B13-03's territory and is offered to it.
 - No sufficient condition beyond Corollary D's dimension count was found that
-  does not require computing the intersection.  The intrinsic question —
+  does not require computing the intersection.  **§12 explains why**: the swap
+  identity, the natural candidate, is not sufficient (Theorem H), and neither is
+  the full two-factor consistency condition.  The intrinsic question —
   which vectors of `B^λ` extend to quartic HWVs — is the question of which
   functions on the normalisation `P(V*) × P(Sym³V*)` descend to the
   non-normal `R`; the swap identity is the two-point part of the descent
@@ -452,13 +478,208 @@ expanded basis, is not available at the goal cell.
 | `results/logs/b13_04_model*.log` | run logs |
 | `analysis/wk13_b04_pred13.py`, `results/b13_04/pred13.json`, `results/logs/b13_04_pred13{,_reconcile}.log` | the audit and its reconciliation |
 | `analysis/wk13_b04_control888.py`, `results/b13_04/control_888_d6.json`, `results/logs/b13_04_control888.log` | the `(8,8,8)₆` support-test control (exploratory) |
+| `analysis/wk13_b04_descent.py` | addendum 1: the swap-identity subspace `T^λ`; `sweep <r> <delta>` runs it model-free |
+| `analysis/wk13_b04_swapwitness.py` | the `(16,6,6)` witness and its two symbolic identities |
+| `analysis/wk13_b04_fibre.py`, `analysis/wk13_b04_pole.py` | the general two-factor condition; the boundary/pole probe |
+| `results/b13_04/descent_*.json`, `swap_witness_r3_d7.json`, `fibre_*.json`, `pole_*.json`, `model_{D,E}_*.json` | addendum-1 data, one file per run |
 | `docs/b13_04_report.md` | this report |
 
 Replay of the criterion at any cell of the models is `run_model(...)` with the
 same seed; a different seed changes only the point families and must give the
 same ranks (they are exact statements about the ideal, not about the points).
 
-## 12. Ledger
+## 12. Addendum 1 (Claude Opus 5) — is the swap identity sufficient?
+
+Pre-registered in `results/PREREG_b13_04.md` addendum 1 (commit `b4c6a93`),
+committed before these measurements.  Q6 the sufficiency question, Q7 an `r = 4`
+model for the length quantifier, Q8 a larger census, Q9 an independent `a`-check.
+
+### 12.1 The question, and why the answer is worth a section
+
+§5 gives the swap identity as a cheap **necessary** condition for a channel
+vector to descend.  The board's primary success criterion is a *sufficient*
+condition, so the natural move is to ask whether it is also sufficient:
+
+    T^λ  :=  { F ∈ B_full : F(ℓ·q) = F( u_ℓ^{-1}(x₁·q) ) for all ℓ with ℓ₁ = 1,
+                                                          all quadrics q },
+    B_full := { F of weight λ⁻ : E_{i,i+1}F = 0 for i ≥ 2 }   ⊇ B^λ.
+
+`ρ(H_λ) ⊆ T^λ ⊆ B_full` by Lemma F.  `T^λ` is an exact kernel over `Q` of
+linear conditions, and — this is what makes the sweep possible — **the swap
+conditions and `B_full` involve only `(r, δ, λ)`, not the cubic `f`**.  So the
+descent question is a statement about the reducible locus alone and can be
+swept with no model attached (`analysis/wk13_b04_descent.py`, `sweep` mode).
+
+**One-sidedness, stated once (PROVED).**  Sampling can only *under*-constrain a
+kernel, so the computed `T^λ` always contains the true one.  Hence a computed
+`dim T^λ = mult_R` **certifies** `T^λ = ρ(H_λ)` at that cell — no saturation
+caveat.  A computed `dim T^λ > mult_R` is only a ceiling and needs a symbolic
+certificate.  Both directions are used below exactly this way.
+
+### 12.2 The sweep: 433 cells, 23 `(r,δ)` pairs, one exception
+
+| `r` | `δ` | cells | swap exact | `Σ mult_R` | `Σ dim B_full` |
+|---|---|---|---|---|---|
+| 2 | 2,3,4,5,6,7,8,10 | 3+5+6+9+11+13+15+19 = 81 | **81** | | |
+| 3 | 2,3,4,5,6,7 | 3+9+18+34+49+69 = 182 | **181** | | |
+| 4 | 2,3,4,5 | 3+9+28+72 = 112 | **112** | | |
+| 5 | 3,4 | 9+28 = 37 | **37** | | |
+| 6 | 3 | 9 | **9** | | |
+| 9 | 2,3 | 3+9 = 12 | **12** | | |
+| **total** | | **433** | **432** | 887 (sweeps) | 3461 (sweeps) |
+
+Across the twenty sweep files alone the swap identity cuts a total channel
+dimension of 3461 down to 887 — exactly `Σ mult_R` — so it is doing real work
+and is nowhere vacuous.  Every one of the 432 "exact" verdicts is CERTIFIED by
+the one-sidedness above.  (`r = 6, δ = 4` and `r = 5, δ = 5` were still running
+at the deadline and are not counted; the partial log shows no exception.)
+
+**The exception, and it is a real one.**
+
+    r = 3,  δ = 7,  λ = (16,6,6),  λ⁻ = (9,6,6):
+        a⁽⁴⁾ = 7,   mult_R = rank ρ = 7   (exact over Q),
+        dim B_full = 15,   dim T^λ = 8    (two primes agree; 307 points,
+                                           fresh seed, 300 stable).
+
+### 12.3 Theorem H — the swap identity is not sufficient (PROVED)
+
+**Theorem H.** There is an explicit integer polynomial `F` of weight `(9,6,6)`
+in `C[Sym³C³]₇`, 78 monomials, killed by `E₂₃`, such that
+
+1. `F(ℓ·q) − F(u_ℓ^{-1}(x₁·q))` is the **zero polynomial** in
+   `Z[ℓ₂, ℓ₃, q_{200}, …, q_{002}]` — the swap identity holds identically, not
+   at sampled points (expansion: 233 monomials on each side, cancelling);
+2. `F(u_ℓ^{-1}(ℓ'·q)) − F(u_{ℓ'}^{-1}(ℓ·q))` is likewise the **zero
+   polynomial**, now in ten variables (3152 monomials each side) — so `F` also
+   satisfies the **general two-factor consistency condition**, of which the
+   swap identity is only the `ℓ = x₁` slice;
+3. `rank_Q( ρ(H_λ) ∪ {F} ) = 8 > 7 = mult_R`, so `F ∉ ρ(H_λ)`: there is **no**
+   quartic highest-weight vector `h` of weight `(16,6,6)` with `h(x₁·c) = F(c)`.
+
+Hence `ρ(H_λ) ⊊ T^λ`, and the swap identity — and even the full two-factor
+condition — is necessary but **not** sufficient for descent.  ∎
+
+*Certificates.* `analysis/wk13_b04_swapwitness.py` →
+`results/b13_04/swap_witness_r3_d7.json` (the vector, both symbolic checks, the
+exact rank); `analysis/wk13_b04_fibre.py` → `results/b13_04/fibre_r3_d7_16-6-6.json`
+(the saturated fibre-condition kernel, `dim T_fib = dim T_swap = 8` at both
+primes).  Items 1–3 are proofs; the saturated kernels are ceilings and are not
+used in the theorem.
+
+**Why this is the right kind of answer.**  Every condition in Theorem H is read
+off the affine slice `ℓ₁ ≠ 0`, where the reconstruction `h(ℓ·c) = ℓ₁^δ ρ(h)(u_ℓ^{-1}c)`
+of Lemma B(1) is defined.  What Theorem H says is that no such condition can
+characterise descent: the obstruction lives at the boundary `ℓ₁ = 0`, where the
+reconstruction is a priori only rational.  Writing `ℓ(s) = (s, a₂, …, a_r)`,
+every coefficient of `u_{ℓ(s)}^{-1}c` is `N(s)/s^m` with `deg N ≤ 3`, `m ≤ 3`, so
+
+    P(s) := s^{3δ} F(u_{ℓ(s)}^{-1}c)  is a polynomial,  and  h(ℓ(s)·c) = P(s)/s^{2δ},
+
+and descent requires the boundary condition `(POLE)`: `ord_{s=0} P ≥ 2δ`.  A
+specialisation can only *raise* the order, so `ord < 2δ` at one integer
+`(a, c)` would be a proof of non-descent.  **It does not happen here**
+(`analysis/wk13_b04_pole.py`, `results/b13_04/pole_sweep_r3_d7.json`): at
+fifteen random specialisations the witness has `ord₀P = 15` or `18` against the
+threshold `2δ = 14`, the same profile as the genuine `ρ(h)` (15 to 17).
+**MEASURED**, therefore, and not proved: the witness appears to lift to a
+regular function on `V* × Sym³V*` that is constant on the fibres of the
+multiplication map, i.e. to lie in the seminormalisation of `R` and not in `R`
+itself — which would say `R₃ = {ℓ·c} ⊆ Sym⁴C³` is **not seminormal** in this
+graded piece.  Proving it needs the divisibility `s^{2δ} | P` with `(a, c)`
+symbolic rather than specialised: 2 + 10 further indeterminates on top of the
+ten already handled, a bounded but not free expansion, and the single most
+valuable follow-up here.  If it holds, the descent criterion is *strictly*
+finer than seminormality and no fibre-type condition will ever be enough.
+
+*What Theorem H does not say.*  It does not weaken §5: the swap identity
+remains an exact, two-evaluation **necessary** test, and it remains sufficient
+wherever `dim T^λ = mult_R` is computed — which is 432 of 433 cells, including
+every cell of every model in this report.  As a screen it is used the same way
+either direction: a violation certifies non-descent; equality of dimensions
+certifies the cell.
+
+### 12.4 The enlarged transfer census (Q8)
+
+`analysis/wk13_b04_model.py`, all cells exact over `Q` with certified cubic
+ideals as in §4:
+
+| model | `f`, `r` | `δ` | cells | pairs `(ν,λ)`, `i⁽³⁾ ≥ 1` | contribute alone | cells with gap | total gap | gap above Cor. D's floor |
+|---|---|---|---|---|---|---|---|---|
+| A | `x³`, 2 | 2 | 3 | 2 | 1 | 1 | 1 | 0 |
+| B | `x³+y³`, 3 | 3 | 9 | 5 | 1 | 1 | 1 | 0 |
+| B | | 4 | 18 | 28 | 0 | 1 | 1 | 0 |
+| B | | 5 | 34 | 115 | 2 | 10 | 14 | 5 |
+| B | | 6 | 49 | 318 | 1 | 29 | 53 | 17 |
+| C | `xyz`, 3 | 4 | 18 | 6 | 0 | 0 | 0 | 0 |
+| D | `x³`, 4 | 2 | 3 | 2 | 1 | 1 | 1 | 0 |
+| D | | 3 | 9 | 15 | 2 | 6 | 6 | 0 |
+| D | | 4 | 28 | 95 | 3 | 25 | 29 | 0 |
+| E | `x³+y³`, 4 | 4 | 28 | 60 | 2 | 11 | 11 | 0 |
+| **total** | | | **199** | **646** | **13** | **85** | **117** | **22** |
+
+Every consistency check of §4 held in all 199 cells: `mult_R` by `ρ` equals
+`mult_R` by reducible points; `mult_P` by padded points equals `mult_P` by
+fixed-factor points; the criterion equals the direct gap; the criterion equals
+`dim(ρ(H_λ) ∩ span of branching vectors)`.  **13 of 646** Pieri-compatible
+constituent/cell pairs contribute on their own — 2 % — which is the quantitative
+form of §4's headline, now on five cubics, two lengths and five degrees.  The
+22 cells whose gap exceeds Corollary D's dimension floor (all at `δ ≥ 5`) are
+the cells where the exact criterion is doing work no count can do.
+
+### 12.5 The length quantifier, demonstrated (Q7)
+
+Model D (`r = 4`, `f = x₁³`) at `δ = 4` is the first model in this report with
+quartic weights of full length 4, so a predecessor may have `μ₄ = 0` (length 3)
+or `μ₄ > 0` (length 4) in the same cell.  Both occur, and the shorter ones are
+not idle:
+
+- `λ = (7,7,1,1)`: `a⁽⁴⁾ = 1`, `mult_R = 1`, gap **1**.  Its length-4
+  predecessors carry `Σ a⁽³⁾ = 0`; the **only** channel is the length-3
+  predecessor `ν = (7,4,1)` (i.e. `(7,4,1,0)`), which has `i⁽³⁾ = 1` and
+  **contributes** (`branch_in_W = True`).  The additional padded equation at a
+  full-length weight comes entirely from a *shorter* predecessor.
+- `λ = (4,4,4,4)`: same shape, over the length-3 predecessor `(4,4,4,0)`.
+- Twenty-three further (cell, shorter-predecessor) pairs at `r = 4, δ = 4` have
+  `i⁽³⁾ ≥ 1`; twenty-one of them do not contribute alone, so the shorter
+  predecessors behave exactly like the full-length ones — live, and mostly
+  non-descending.
+
+This is the operational content of §7: a shorter `μ` pairs with `λ` and may be
+ignored **only** when its length-`k` value of `i⁽³⁾` is already known — for
+`k ≤ 5` by Theorem 2, and otherwise not at all.  At `λ₁₃` the five length-8
+predecessors sit at `k = 8 > 5` and are as live as the ten length-9 ones, which
+`(7,7,1,1)` shows is not a formality.
+
+### 12.6 Q9, the independent `a`-check
+
+Every `a⁽⁴⁾` and `a⁽³⁾` used anywhere in §12 — one per cell and per cubic shape,
+in every model and every sweep — was checked, as an assertion inside the run,
+against the Kostant alternation of `analysis/wk13_b04_pred13.kostant` (a
+different formula on a different data structure from the highest-weight
+kernel).  **No disagreement**, in any cell; a disagreement would have halted
+the run.  The same routine is the one that reproduced the fifteen predecessors'
+`a`-values in §6.
+
+### 12.7 What §12 adds to the prices of §8
+
+The swap identity's real value at the goal cell is unchanged by Theorem H, and
+is worth stating as a price.  Suppose a session obtains a candidate cubic-ideal
+highest-weight vector `g` at one of the fifteen predecessors of `λ₁₃` (B13-01's
+route, or the screen of §8).  Deciding whether that constituent contributes at
+`λ₁₃` — the question §4 shows is *not* answered by Pieri compatibility — then
+costs **two evaluations of a degree-13 polynomial per test point** on the
+branching vector `g^{↓λ₁₃}`, against the alternative of building the 39-row
+quartic system at a weight space of `8.09·10⁸` monomials.  A single violation
+certifies non-contribution outright.  What Theorem H removes is the hope of
+*certifying contribution* the same cheap way: for that, the exact intersection
+of §3 is still required.
+
+`r = 6, δ = 4` and `r = 5, δ = 5` were mid-run at the deadline; each is minutes
+of work and is the obvious first thing to finish.  A symbolic proof of the
+`(POLE)` divisibility for the §12.3 witness is the one open item this session
+would take next.
+
+## 13. Ledger
 
 | claim | label |
 |---|---|
@@ -477,6 +698,14 @@ same ranks (they are exact statements about the ideal, not about the points).
 | `mult_R(λ₁₃,13) = 36` | ADOPTED from `docs/rung13_reducible.md`: `≥ 36` certified, `= 36` measured |
 | Theorem 2 (`k ≤ 5`), the restriction lemma, Prop. 8 | ADOPTED (`docs/washout_lemma.md`, `docs/transfer_lemma.md`) |
 | nothing about `I(D₉^{per₃})₁₃` itself | not computed; priced in §8 |
+| **Addendum 1** | |
+| one-sidedness: a computed `dim T = mult_R` certifies `T = ρ(H_λ)` | PROVED |
+| 432 of 433 cells over 23 `(r,δ)` pairs: the swap identity cuts `B_full` to exactly `ρ(H_λ)` | CERTIFIED |
+| Theorem H: the swap identity, and the full two-factor condition, are **not sufficient** — the `(16,6,6)`, `δ = 7` witness | PROVED (two symbolic identities over `Z` + an exact rank over `Q`) |
+| the witness has no boundary pole at fifteen specialisations, so it appears to lie in the seminormalisation of `R` and not in `R` | MEASURED (specialisation is one-sided the wrong way); the symbolic divisibility is priced in §12.3 |
+| 199 model transfer cells; 13 of 646 Pieri-compatible pairs contribute alone; 22 gaps above Cor. D's floor | CERTIFIED over `Q` |
+| the length quantifier demonstrated at `λ = (7,7,1,1)`: the only contributing channel is a shorter predecessor | CERTIFIED |
+| every `a⁽⁴⁾`, `a⁽³⁾` in §12 agrees with the Kostant alternation | CERTIFIED (in-run assertion) |
 
 Author of record for this session: B13-04 (Claude Fable 5.1), for Swami
 Sethuraman, swsethuraman@beneficus.ai, Beneficus AI.

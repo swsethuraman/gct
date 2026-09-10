@@ -613,6 +613,13 @@ def run_model(tag, f, N, r, delta, seed=20260909, bound=7, out_dir=None):
             preds.append(pe)
         sum_i3 = sum((p['i3'] or 0) for p in preds)
         sum_a3 = sum(p['a3'] for p in preds)
+        by_len = {}
+        for p in preds:
+            L = len([x for x in p['nu'] if x])
+            e = by_len.setdefault(L, dict(count=0, a3=0, i3=0))
+            e['count'] += 1
+            e['a3'] += p['a3']
+            e['i3'] += (p['i3'] or 0)
         all_branch = []
         for p in preds:
             all_branch += p.pop('_branch', [])
@@ -648,7 +655,7 @@ def run_model(tag, f, N, r, delta, seed=20260909, bound=7, out_dir=None):
                     criterion_gap=crit, gap_direct=mR_ff - mP_ev,
                     predecessors=preds, sum_i3=sum_i3, sum_a3=sum_a3,
                     N_S_lam_minus=len(cols), dim_branch_total=dim_branch, W_meets_branch_span=meets_all,
-                    witnesses=witnesses)
+                    witnesses=witnesses, predecessors_by_length=by_len)
         cells.append(cell)
         log(f"[quartic] lam={lam} a4={a4} mult_R: ff={mR_ff} evQ={mR_ev} p={mR_p} | mult_P: evQ={mP_ev} p={mP_p} ffQ={mP_ff}"
             f" | dimJ={dimJ}({'cert' if Jcert else 'UNCERT'}) crit={crit} direct={mR_ff - mP_ev}"
@@ -682,8 +689,14 @@ def main():
         run_model('C', {(1, 1, 1): 1}, 3, 3, d, out_dir=out_dir)
     elif which == 'A2':   # Model A at delta 3 (exploratory)
         run_model('A', {(3,): 1}, 1, 2, 3, out_dir=out_dir)
+    elif which == 'D':    # addendum 1, Q7: r = 4, Veronese cone {m^3}
+        d = int(sys.argv[2])
+        run_model('D', {(3, 0, 0, 0): 1}, 4, 4, d, out_dir=out_dir)
+    elif which == 'E':    # addendum 1, Q7: r = 4, cubics in two variables
+        d = int(sys.argv[2])
+        run_model('E', {(3, 0, 0, 0): 1, (0, 3, 0, 0): 1}, 4, 4, d, out_dir=out_dir)
     else:
-        raise SystemExit("usage: A | B <delta> | C <delta> | A2")
+        raise SystemExit("usage: A | B <delta> | C <delta> | D <delta> | E <delta> | A2")
 
 
 if __name__ == '__main__':
