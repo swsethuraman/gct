@@ -112,11 +112,13 @@ def main():
              "operator:\n\n" + v +
              "\n**The tradeoff is not where the pre-registration expected it.**  P4′ predicted that `triples='recompute'` would "
              "halve the raising-phase peak at about twice the raising time; it **does not fire** — the peak barely moves (1.0×) "
-             "while the time rises by a third.  The reason is the design working: after the target-table and dtype changes the "
+             "while the time rises by a third to a half (`B6` 1.34×, `C6` 1.46×).  The reason is the design working: after the target-table and dtype changes the "
              "stored triples are no longer the largest live allocation, so not storing them buys nothing.  What does pay is "
-             "`blocks='disk'`, which streams each finished operator block out and cuts the lean peak by a further third at about "
-             "1.15× the time — a genuine memory-for-work exchange, and the setting a box-constrained production run should use.  "
-             "P4′ is therefore **recorded as falsified**, and the useful knob is the other one.")
+             "`blocks='disk'`, which streams each finished operator block out and cuts the lean peak by a further 17–36 % (`C6` 0.83×, `B6` 0.64×) at 1.02–1.14× the time — a genuine memory-for-work exchange, and the setting a box-constrained production run should use.  "
+             "P4′ is therefore **recorded as not fired** — and the wording matters, because the numbers above are whole-build peaks while P4′ named the "
+             "*raising-phase* peak.  The per-operator records answer that narrower question too and give the same verdict: the largest raising-phase HWM moves "
+             "from 0.375 to 0.390 GB at `B6` and from 0.331 to 0.318 GB at `C6`, by ±4 %, nowhere near halving.  In every variant the whole-build peak is set by "
+             "the final assembly step rather than by the raising phase, which is itself part of why the knob cannot pay.  The useful knob is the other one.")
     txt = txt.replace('VARIANTS_PLACEHOLDER', vhead)
     tbl, worst, best, big, ns_p, lp = rates(S, P)
     fit = ("Rather than a multivariate fit — whose split between `N_S·δ` and `nnz` is unstable, because the two are strongly "
@@ -141,7 +143,7 @@ def main():
         ag = ('**yes**' if s == (ph['rows'], ph['nnz']) else '**NO**') if s else '—'
         pt.append(f"| `{ph['op']}` | {ph['H']} | {ph['targets']:,} | {ph['rows']:,} | {ph['nnz']:,} | "
                   f"{(f'{s[0]:,} / {s[1]:,}') if s else '— (s79 ended here)'} | {ag} | {ph['secs_tables']} | {ph['secs_rows']} | {ph['hwm_gb']} |")
-    pt.append(f"\n**Build total: {b['secs']} s** (monomials {b['mono_secs']} s, orbit setup {b['orbit_secs']} s, rows {b['rows_secs']} s, assembly 1.5 s), "
+    pt.append(f"\n**Build total: {b['secs']} s** (monomials {b['mono_secs']} s, orbit setup {b['orbit_secs']} s, rows {b['rows_secs']} s, of which the final assembly is 1.5 s), "
               f"**peak {b['hwm_gb']} GB** ({b['hwm_above_baseline_gb']} GB above the post-import baseline).  "
               f"`N_S` = {b['N_S']:,}, `|Stab|` = {b['stab']}, `n_χ` = {b['n_chi']:,}, {b['nrows']:,} rows, {b['nnz']:,} nonzeros, "
               f"`E.data` int16 (the exact entry bound at this cell is {b['phases'][-1]['entry_bound']}, and the largest entry was re-checked after the build), "

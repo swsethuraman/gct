@@ -1,4 +1,3 @@
-bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
       level 1: 61 prefixes
       level 2: 1411 prefixes
       level 3: 18853 prefixes
@@ -7,11 +6,11 @@ bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitt
       level 6: 2017115 prefixes
       level 7: 2634255 prefixes
       level 8: 2634255 prefixes
-  lam=(11, 7, 6, 6, 1, 1): N_S=2634255 |Stab|=4 n_chi=553842 (orbits dropped: 214902) [lean-b10, 10s, HWM 0.23 GB]
-    E_01: |H|=4 targets 1999133 canonical rows 418276 nnz 2217190 (triples 2556864; obstructed fixed targets cancelled: 68101) [tables 9s rows 6s finish 0.0s; 14s, HWM 0.24 GB, RSS 0.18 GB]
-    E_12: |H|=2 targets 2235819 canonical rows 936352 nnz 4052573 (triples 4480216; obstructed fixed targets cancelled: 48985) [tables 8s rows 6s finish 0.1s; 28s, HWM 0.28 GB, RSS 0.25 GB]
-    E_23: |H|=2 targets 2407251 canonical rows 1009471 nnz 4035188 (triples 4475455; obstructed fixed targets cancelled: 44224) [tables 7s rows 5s finish 0.1s; 40s, HWM 0.34 GB, RSS 0.31 GB]
-    E_34: |H|=1 targets 666138 canonical rows 665583 nnz 2208138 (triples 2208138; obstructed fixed targets cancelled: 0) [tables 1s rows 1s finish 0.0s; 43s, HWM 0.34 GB, RSS 0.28 GB]
-    E_45: |H|=2 targets 1528742 canonical rows 0 nnz 0 (triples 1107684; obstructed fixed targets cancelled: 0) [tables 4s rows 1s finish 0.0s; 49s, HWM 0.35 GB, RSS 0.31 GB]
-  built-lean (11, 7, 6, 6, 1, 1) d8: N_S=2634255 |Stab|=4 n_chi=553842 rows=3029682 nnz=12513089 (64s: mono 5s orbits 10s rows 49s; HWM 0.35 GB; E.data int16)
-RUN {"builder": "lean", "lam": [11, 7, 6, 6, 1, 1], "delta": 8, "N_S": 2634255, "n_chi": 553842, "nrows": 3029682, "nnz": 12513089, "secs": {"total": 64.19, "mono": 4.8, "orbits": 10.11, "rows": 49.01}, "hwm_gb": 0.3475, "hwm_above_baseline_gb": 0.3118}
+  lam=(11, 7, 6, 6, 1, 1): N_S=2634255 |Stab|=4 n_chi=553842 (orbits dropped: 214902) [lean-b10, 7s, HWM 0.23 GB]
+    E_01: |H|=4 targets 1999133 canonical rows 418276 nnz 2217190 (triples 2556864; obstructed fixed targets cancelled: 68101) [tables 6s rows 4s finish 0.0s; 9s, HWM 0.24 GB, RSS 0.19 GB]
+    E_12: |H|=2 targets 2235819 canonical rows 936352 nnz 4052573 (triples 4480216; obstructed fixed targets cancelled: 48985) [tables 5s rows 4s finish 0.0s; 18s, HWM 0.28 GB, RSS 0.25 GB]
+    E_23: |H|=2 targets 2407251 canonical rows 1009471 nnz 4035188 (triples 4475455; obstructed fixed targets cancelled: 44224) [tables 5s rows 4s finish 0.1s; 27s, HWM 0.33 GB, RSS 0.31 GB]
+    E_34: |H|=1 targets 666138 canonical rows 665583 nnz 2208138 (triples 2208138; obstructed fixed targets cancelled: 0) [tables 1s rows 1s finish 0.0s; 29s, HWM 0.33 GB, RSS 0.28 GB]
+    E_45: |H|=2 targets 1528742 canonical rows 0 nnz 0 (triples 1107684; obstructed fixed targets cancelled: 0) [tables 3s rows 1s finish 0.0s; 33s, HWM 0.34 GB, RSS 0.29 GB]
+  built-lean (11, 7, 6, 6, 1, 1) d8: N_S=2634255 |Stab|=4 n_chi=553842 rows=3029682 nnz=12513089 (42s: mono 3s orbits 7s rows 33s; HWM 0.34 GB; E.data int16)
+RUN {"builder": "lean", "lam": [11, 7, 6, 6, 1, 1], "delta": 8, "N_S": 2634255, "n_chi": 553842, "nrows": 3029682, "nnz": 12513089, "secs": {"total": 42.4, "mono": 2.87, "orbits": 6.51, "rows": 32.85}, "hwm_gb": 0.3384, "hwm_above_baseline_gb": 0.3027}
