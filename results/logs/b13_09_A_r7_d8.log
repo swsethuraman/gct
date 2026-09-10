@@ -1,0 +1,966 @@
+
+=== rank 1/42 ((12, 2, 2, 2, 2, 2, 2), 8) N_S 63711 a 1 NS*delta 509688 2026-09-10T00:42:53.665608
+      level 1: 64 prefixes
+      level 2: 1505 prefixes
+      level 3: 15148 prefixes
+      level 4: 49300 prefixes
+      level 5: 63323 prefixes
+      level 6: 63711 prefixes
+      level 7: 63711 prefixes
+      level 8: 63711 prefixes
+  lam=(12, 2, 2, 2, 2, 2, 2): N_S=63711 |Stab|=720 n_chi=284 (orbits dropped: 0) [lean, 18s, HWM 0.08 GB]
+    E_01: |H|=120 targets 21893 canonical rows 395 nnz 1627 (obstructed fixed targets cancelled: 0) [1s, HWM 0.08 GB]
+    E_12: |H|=24 targets 47403 canonical rows 2933 nnz 5564 (obstructed fixed targets cancelled: 0) [1s, HWM 0.08 GB]
+    E_23: |H|=24 targets 47403 canonical rows 2933 nnz 5564 (obstructed fixed targets cancelled: 0) [2s, HWM 0.08 GB]
+    E_34: |H|=24 targets 47403 canonical rows 2933 nnz 5564 (obstructed fixed targets cancelled: 0) [3s, HWM 0.08 GB]
+    E_45: |H|=24 targets 47403 canonical rows 2933 nnz 5564 (obstructed fixed targets cancelled: 0) [3s, HWM 0.08 GB]
+    E_56: |H|=24 targets 47403 canonical rows 2933 nnz 5564 (obstructed fixed targets cancelled: 0) [4s, HWM 0.08 GB]
+  built (12, 2, 2, 2, 2, 2, 2) d8: N_S=63711 |Stab|=720 n_chi=284 rows=15060 nnz=29447 (22s: mono 0s orbits 18s rows 4s; HWM 0.08 GB)
+    hybrid[per7 12_2_2_2_2_2_2d8] p=2147483647 attempt 0: |S|=283 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (12, 2, 2, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=284 mult=1 units=0 [0.1s]
+    hybrid[per7 12_2_2_2_2_2_2d8] p=2147483629 attempt 0: |S|=283 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (12, 2, 2, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=284 mult=1 units=0 [0.1s]
+  PER7 RESULT (12, 2, 2, 2, 2, 2, 2) d8: a=1 N_S=63711 n_chi=284 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (22.2s, HWM 0.08 GB)
+
+=== rank 2/42 ((9, 5, 5, 2, 1, 1, 1), 8) N_S 84779 a 1 NS*delta 678232 2026-09-10T00:43:16.520324
+      level 1: 49 prefixes
+      level 2: 761 prefixes
+      level 3: 5905 prefixes
+      level 4: 25077 prefixes
+      level 5: 62507 prefixes
+      level 6: 83190 prefixes
+      level 7: 84779 prefixes
+      level 8: 84779 prefixes
+  lam=(9, 5, 5, 2, 1, 1, 1): N_S=84779 |Stab|=12 n_chi=3421 (orbits dropped: 8040) [lean, 0s, HWM 0.09 GB]
+    E_01: |H|=6 targets 58439 canonical rows 4479 nnz 19805 (obstructed fixed targets cancelled: 7686) [0s, HWM 0.09 GB]
+    E_12: |H|=6 targets 76030 canonical rows 5947 nnz 19949 (obstructed fixed targets cancelled: 5865) [1s, HWM 0.09 GB]
+    E_23: |H|=6 targets 40316 canonical rows 3031 nnz 10629 (obstructed fixed targets cancelled: 3381) [1s, HWM 0.09 GB]
+    E_34: |H|=4 targets 37274 canonical rows 6812 nnz 10097 (obstructed fixed targets cancelled: 70) [1s, HWM 0.09 GB]
+    E_45: |H|=2 targets 50239 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 131) [1s, HWM 0.09 GB]
+    E_56: |H|=2 targets 50239 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 131) [1s, HWM 0.09 GB]
+  built (9, 5, 5, 2, 1, 1, 1) d8: N_S=84779 |Stab|=12 n_chi=3421 rows=20269 nnz=60480 (2s: mono 0s orbits 0s rows 1s; HWM 0.09 GB)
+    hybrid[per7 9_5_5_2_1_1_1d8] p=2147483647 attempt 0: |S|=3420 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 5, 2, 1, 1, 1) d8 p=2147483647: a=1 n_chi=3421 mult=1 units=0 [0.1s]
+    hybrid[per7 9_5_5_2_1_1_1d8] p=2147483629 attempt 0: |S|=3420 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 5, 2, 1, 1, 1) d8 p=2147483629: a=1 n_chi=3421 mult=1 units=0 [0.0s]
+  PER7 RESULT (9, 5, 5, 2, 1, 1, 1) d8: a=1 N_S=84779 n_chi=3421 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (1.9s, HWM 0.09 GB)
+
+=== rank 3/42 ((11, 4, 2, 2, 2, 2, 1), 8) N_S 84997 a 1 NS*delta 679976 2026-09-10T00:43:19.384897
+      level 1: 60 prefixes
+      level 2: 1329 prefixes
+      level 3: 12295 prefixes
+      level 4: 49941 prefixes
+      level 5: 81630 prefixes
+      level 6: 84997 prefixes
+      level 7: 84997 prefixes
+      level 8: 84997 prefixes
+  lam=(11, 4, 2, 2, 2, 2, 1): N_S=84997 |Stab|=24 n_chi=5124 (orbits dropped: 0) [lean, 1s, HWM 0.09 GB]
+    E_01: |H|=24 targets 47403 canonical rows 2933 nnz 13439 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_12: |H|=6 targets 45307 canonical rows 9143 nnz 28242 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_23: |H|=2 targets 63092 canonical rows 33587 nnz 67447 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_34: |H|=2 targets 63092 canonical rows 33587 nnz 67447 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_45: |H|=2 targets 63092 canonical rows 33587 nnz 67447 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_56: |H|=6 targets 37634 canonical rows 7749 nnz 16977 (obstructed fixed targets cancelled: 0) [2s, HWM 0.09 GB]
+  built (11, 4, 2, 2, 2, 2, 1) d8: N_S=84997 |Stab|=24 n_chi=5124 rows=120586 nnz=260999 (3s: mono 0s orbits 1s rows 2s; HWM 0.09 GB)
+    hybrid[per7 11_4_2_2_2_2_1d8] p=2147483647 attempt 0: |S|=5123 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (11, 4, 2, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=5124 mult=1 units=0 [0.1s]
+    hybrid[per7 11_4_2_2_2_2_1d8] p=2147483629 attempt 0: |S|=5123 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (11, 4, 2, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=5124 mult=1 units=0 [0.1s]
+  PER7 RESULT (11, 4, 2, 2, 2, 2, 1) d8: a=1 N_S=84997 n_chi=5124 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.1s, HWM 0.09 GB)
+
+=== rank 4/42 ((9, 6, 3, 3, 1, 1, 1), 8) N_S 92166 a 1 NS*delta 737328 2026-09-10T00:43:23.386197
+      level 1: 50 prefixes
+      level 2: 886 prefixes
+      level 3: 6927 prefixes
+      level 4: 28589 prefixes
+      level 5: 68531 prefixes
+      level 6: 90499 prefixes
+      level 7: 92166 prefixes
+      level 8: 92166 prefixes
+  lam=(9, 6, 3, 3, 1, 1, 1): N_S=92166 |Stab|=12 n_chi=3758 (orbits dropped: 8959) [lean, 0s, HWM 0.09 GB]
+    E_01: |H|=12 targets 70701 canonical rows 2831 nnz 12368 (obstructed fixed targets cancelled: 8940) [0s, HWM 0.09 GB]
+    E_12: |H|=6 targets 54000 canonical rows 4119 nnz 15488 (obstructed fixed targets cancelled: 5160) [1s, HWM 0.09 GB]
+    E_23: |H|=6 targets 76030 canonical rows 5933 nnz 14703 (obstructed fixed targets cancelled: 3651) [1s, HWM 0.09 GB]
+    E_34: |H|=2 targets 33527 canonical rows 12893 nnz 21906 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_45: |H|=2 targets 54539 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 214) [1s, HWM 0.09 GB]
+    E_56: |H|=2 targets 54539 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 214) [1s, HWM 0.09 GB]
+  built (9, 6, 3, 3, 1, 1, 1) d8: N_S=92166 |Stab|=12 n_chi=3758 rows=25776 nnz=64465 (2s: mono 0s orbits 0s rows 1s; HWM 0.09 GB)
+    hybrid[per7 9_6_3_3_1_1_1d8] p=2147483647 attempt 0: |S|=3757 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 3, 3, 1, 1, 1) d8 p=2147483647: a=1 n_chi=3758 mult=1 units=0 [0.0s]
+    hybrid[per7 9_6_3_3_1_1_1d8] p=2147483629 attempt 0: |S|=3757 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 3, 3, 1, 1, 1) d8 p=2147483629: a=1 n_chi=3758 mult=1 units=0 [0.0s]
+  PER7 RESULT (9, 6, 3, 3, 1, 1, 1) d8: a=1 N_S=92166 n_chi=3758 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (2.2s, HWM 0.09 GB)
+
+=== rank 5/42 ((10, 5, 3, 2, 2, 1, 1), 8) N_S 95393 a 1 NS*delta 763144 2026-09-10T00:43:26.531958
+      level 1: 55 prefixes
+      level 2: 1095 prefixes
+      level 3: 9376 prefixes
+      level 4: 40037 prefixes
+      level 5: 83348 prefixes
+      level 6: 95135 prefixes
+      level 7: 95393 prefixes
+      level 8: 95393 prefixes
+  lam=(10, 5, 3, 2, 2, 1, 1): N_S=95393 |Stab|=4 n_chi=20315 (orbits dropped: 9973) [lean, 0s, HWM 0.09 GB]
+    E_01: |H|=4 targets 63092 canonical rows 13344 nnz 63730 (obstructed fixed targets cancelled: 4093) [0s, HWM 0.09 GB]
+    E_12: |H|=4 targets 61185 canonical rows 12899 nnz 45615 (obstructed fixed targets cancelled: 2226) [0s, HWM 0.09 GB]
+    E_23: |H|=2 targets 58439 canonical rows 23607 nnz 64949 (obstructed fixed targets cancelled: 1122) [1s, HWM 0.09 GB]
+    E_34: |H|=2 targets 70701 canonical rows 28124 nnz 57565 (obstructed fixed targets cancelled: 576) [1s, HWM 0.09 GB]
+    E_45: |H|=1 targets 41976 canonical rows 41089 nnz 77032 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+    E_56: |H|=2 targets 56564 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.09 GB]
+  built (10, 5, 3, 2, 2, 1, 1) d8: N_S=95393 |Stab|=4 n_chi=20315 rows=119063 nnz=308891 (1s: mono 0s orbits 0s rows 1s; HWM 0.09 GB)
+    hybrid[per7 10_5_3_2_2_1_1d8] p=2147483647 attempt 0: |S|=20314 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 5, 3, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=20315 mult=1 units=0 [0.1s]
+    hybrid[per7 10_5_3_2_2_1_1d8] p=2147483629 attempt 0: |S|=20314 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 5, 3, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=20315 mult=1 units=0 [0.1s]
+  PER7 RESULT (10, 5, 3, 2, 2, 1, 1) d8: a=1 N_S=95393 n_chi=20315 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (1.8s, HWM 0.09 GB)
+
+=== rank 6/42 ((8, 6, 5, 2, 1, 1, 1), 8) N_S 105462 a 1 NS*delta 843696 2026-09-10T00:43:29.294079
+      level 1: 49 prefixes
+      level 2: 746 prefixes
+      level 3: 5712 prefixes
+      level 4: 24267 prefixes
+      level 5: 63654 prefixes
+      level 6: 99338 prefixes
+      level 7: 105462 prefixes
+      level 8: 105462 prefixes
+  lam=(8, 6, 5, 2, 1, 1, 1): N_S=105462 |Stab|=6 n_chi=8504 (orbits dropped: 19208) [lean, 0s, HWM 0.09 GB]
+    E_01: |H|=6 targets 84779 canonical rows 6733 nnz 28726 (obstructed fixed targets cancelled: 9873) [0s, HWM 0.10 GB]
+    E_12: |H|=6 targets 86443 canonical rows 6839 nnz 25911 (obstructed fixed targets cancelled: 7905) [1s, HWM 0.10 GB]
+    E_23: |H|=6 targets 49914 canonical rows 3812 nnz 13542 (obstructed fixed targets cancelled: 4176) [1s, HWM 0.10 GB]
+    E_34: |H|=2 targets 46167 canonical rows 17014 nnz 25512 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_45: |H|=1 targets 62335 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_56: |H|=1 targets 62335 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+  built (8, 6, 5, 2, 1, 1, 1) d8: N_S=105462 |Stab|=6 n_chi=8504 rows=34398 nnz=93691 (2s: mono 0s orbits 0s rows 1s; HWM 0.10 GB)
+    hybrid[per7 8_6_5_2_1_1_1d8] p=2147483647 attempt 0: |S|=8503 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 5, 2, 1, 1, 1) d8 p=2147483647: a=1 n_chi=8504 mult=1 units=0 [0.1s]
+    hybrid[per7 8_6_5_2_1_1_1d8] p=2147483629 attempt 0: |S|=8503 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 5, 2, 1, 1, 1) d8 p=2147483629: a=1 n_chi=8504 mult=1 units=0 [0.1s]
+  PER7 RESULT (8, 6, 5, 2, 1, 1, 1) d8: a=1 N_S=105462 n_chi=8504 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (2.0s, HWM 0.1 GB)
+
+=== rank 7/42 ((9, 6, 3, 2, 2, 1, 1), 8) N_S 124622 a 1 NS*delta 996976 2026-09-10T00:43:32.946304
+      level 1: 55 prefixes
+      level 2: 1065 prefixes
+      level 3: 8927 prefixes
+      level 4: 38216 prefixes
+      level 5: 92610 prefixes
+      level 6: 122392 prefixes
+      level 7: 124622 prefixes
+      level 8: 124622 prefixes
+  lam=(9, 6, 3, 2, 2, 1, 1): N_S=124622 |Stab|=4 n_chi=26634 (orbits dropped: 12715) [lean, 0s, HWM 0.10 GB]
+    E_01: |H|=4 targets 95393 canonical rows 20315 nnz 94749 (obstructed fixed targets cancelled: 5509) [0s, HWM 0.10 GB]
+    E_12: |H|=4 targets 72809 canonical rows 15413 nnz 60067 (obstructed fixed targets cancelled: 3072) [1s, HWM 0.10 GB]
+    E_23: |H|=2 targets 76030 canonical rows 30867 nnz 85605 (obstructed fixed targets cancelled: 1433) [1s, HWM 0.10 GB]
+    E_34: |H|=2 targets 92166 canonical rows 36866 nnz 76011 (obstructed fixed targets cancelled: 740) [1s, HWM 0.10 GB]
+    E_45: |H|=1 targets 54539 canonical rows 53446 nnz 101168 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_56: |H|=2 targets 73647 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+  built (9, 6, 3, 2, 2, 1, 1) d8: N_S=124622 |Stab|=4 n_chi=26634 rows=156907 nnz=417600 (2s: mono 0s orbits 0s rows 1s; HWM 0.10 GB)
+    hybrid[per7 9_6_3_2_2_1_1d8] p=2147483647 attempt 0: |S|=26633 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 3, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=26634 mult=1 units=0 [0.1s]
+    hybrid[per7 9_6_3_2_2_1_1d8] p=2147483629 attempt 0: |S|=26633 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 3, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=26634 mult=1 units=0 [0.1s]
+  PER7 RESULT (9, 6, 3, 2, 2, 1, 1) d8: a=1 N_S=124622 n_chi=26634 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (2.4s, HWM 0.1 GB)
+
+=== rank 8/42 ((10, 5, 2, 2, 2, 2, 1), 8) N_S 128905 a 1 NS*delta 1031240 2026-09-10T00:43:37.455055
+      level 1: 60 prefixes
+      level 2: 1299 prefixes
+      level 3: 11959 prefixes
+      level 4: 53362 prefixes
+      level 5: 112532 prefixes
+      level 6: 128557 prefixes
+      level 7: 128905 prefixes
+      level 8: 128905 prefixes
+  lam=(10, 5, 2, 2, 2, 2, 1): N_S=128905 |Stab|=24 n_chi=7604 (orbits dropped: 0) [lean, 1s, HWM 0.10 GB]
+    E_01: |H|=24 targets 84997 canonical rows 5124 nnz 23468 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_12: |H|=6 targets 61185 canonical rows 12274 nnz 42685 (obstructed fixed targets cancelled: 0) [1s, HWM 0.10 GB]
+    E_23: |H|=2 targets 95393 canonical rows 50603 nnz 102779 (obstructed fixed targets cancelled: 0) [2s, HWM 0.10 GB]
+    E_34: |H|=2 targets 95393 canonical rows 50603 nnz 102779 (obstructed fixed targets cancelled: 0) [2s, HWM 0.10 GB]
+    E_45: |H|=2 targets 95393 canonical rows 50603 nnz 102779 (obstructed fixed targets cancelled: 0) [2s, HWM 0.10 GB]
+    E_56: |H|=6 targets 56564 canonical rows 11499 nnz 25480 (obstructed fixed targets cancelled: 0) [2s, HWM 0.10 GB]
+  built (10, 5, 2, 2, 2, 2, 1) d8: N_S=128905 |Stab|=24 n_chi=7604 rows=180706 nnz=399970 (4s: mono 0s orbits 1s rows 2s; HWM 0.10 GB)
+    hybrid[per7 10_5_2_2_2_2_1d8] p=2147483647 attempt 0: |S|=7603 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 5, 2, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=7604 mult=1 units=0 [0.1s]
+    hybrid[per7 10_5_2_2_2_2_1d8] p=2147483629 attempt 0: |S|=7603 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 5, 2, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=7604 mult=1 units=0 [0.1s]
+  PER7 RESULT (10, 5, 2, 2, 2, 2, 1) d8: a=1 N_S=128905 n_chi=7604 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (4.6s, HWM 0.1 GB)
+
+=== rank 9/42 ((11, 3, 2, 2, 2, 2, 2), 8) N_S 138754 a 1 NS*delta 1110032 2026-09-10T00:43:44.888817
+      level 1: 65 prefixes
+      level 2: 1593 prefixes
+      level 3: 17731 prefixes
+      level 4: 79944 prefixes
+      level 5: 133158 prefixes
+      level 6: 138754 prefixes
+      level 7: 138754 prefixes
+      level 8: 138754 prefixes
+  lam=(11, 3, 2, 2, 2, 2, 2): N_S=138754 |Stab|=120 n_chi=2140 (orbits dropped: 0) [lean, 7s, HWM 0.11 GB]
+    E_01: |H|=120 targets 63711 canonical rows 1067 nnz 4539 (obstructed fixed targets cancelled: 0) [3s, HWM 0.11 GB]
+    E_12: |H|=24 targets 84997 canonical rows 5124 nnz 13439 (obstructed fixed targets cancelled: 0) [4s, HWM 0.11 GB]
+    E_23: |H|=6 targets 102776 canonical rows 20381 nnz 40625 (obstructed fixed targets cancelled: 0) [5s, HWM 0.11 GB]
+    E_34: |H|=6 targets 102776 canonical rows 20381 nnz 40625 (obstructed fixed targets cancelled: 0) [5s, HWM 0.11 GB]
+    E_45: |H|=6 targets 102776 canonical rows 20381 nnz 40625 (obstructed fixed targets cancelled: 0) [5s, HWM 0.11 GB]
+    E_56: |H|=6 targets 102776 canonical rows 20381 nnz 40625 (obstructed fixed targets cancelled: 0) [6s, HWM 0.11 GB]
+  built (11, 3, 2, 2, 2, 2, 2) d8: N_S=138754 |Stab|=120 n_chi=2140 rows=87715 nnz=180478 (13s: mono 0s orbits 7s rows 6s; HWM 0.11 GB)
+    hybrid[per7 11_3_2_2_2_2_2d8] p=2147483647 attempt 0: |S|=2139 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (11, 3, 2, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=2140 mult=1 units=0 [0.1s]
+    hybrid[per7 11_3_2_2_2_2_2d8] p=2147483629 attempt 0: |S|=2139 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (11, 3, 2, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=2140 mult=1 units=0 [0.1s]
+  PER7 RESULT (11, 3, 2, 2, 2, 2, 2) d8: a=1 N_S=138754 n_chi=2140 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (13.9s, HWM 0.11 GB)
+
+=== rank 10/42 ((8, 7, 3, 2, 2, 1, 1), 8) N_S 141991 a 1 NS*delta 1135928 2026-09-10T00:44:00.945157
+      level 1: 55 prefixes
+      level 2: 1030 prefixes
+      level 3: 8274 prefixes
+      level 4: 34763 prefixes
+      level 5: 87680 prefixes
+      level 6: 134132 prefixes
+      level 7: 141991 prefixes
+      level 8: 141991 prefixes
+  lam=(8, 7, 3, 2, 2, 1, 1): N_S=141991 |Stab|=4 n_chi=30413 (orbits dropped: 14275) [lean, 0s, HWM 0.10 GB]
+    E_01: |H|=4 targets 124622 canonical rows 26634 nnz 119408 (obstructed fixed targets cancelled: 6415) [0s, HWM 0.11 GB]
+    E_12: |H|=4 targets 77138 canonical rows 16325 nnz 68627 (obstructed fixed targets cancelled: 3778) [1s, HWM 0.11 GB]
+    E_23: |H|=2 targets 86443 canonical rows 35192 nnz 98020 (obstructed fixed targets cancelled: 1607) [1s, HWM 0.11 GB]
+    E_34: |H|=2 targets 104896 canonical rows 42091 nnz 87112 (obstructed fixed targets cancelled: 836) [1s, HWM 0.11 GB]
+    E_45: |H|=1 targets 61958 canonical rows 60761 nnz 115620 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_56: |H|=2 targets 83752 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+  built (8, 7, 3, 2, 2, 1, 1) d8: N_S=141991 |Stab|=4 n_chi=30413 rows=181003 nnz=488787 (2s: mono 0s orbits 0s rows 2s; HWM 0.11 GB)
+    hybrid[per7 8_7_3_2_2_1_1d8] p=2147483647 attempt 0: |S|=30411 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 7, 3, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=30413 mult=1 units=0 [0.1s]
+    hybrid[per7 8_7_3_2_2_1_1d8] p=2147483629 attempt 0: |S|=30411 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 7, 3, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=30413 mult=1 units=0 [0.1s]
+  PER7 RESULT (8, 7, 3, 2, 2, 1, 1) d8: a=1 N_S=141991 n_chi=30413 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (2.7s, HWM 0.11 GB)
+
+=== rank 11/42 ((8, 6, 4, 3, 1, 1, 1), 8) N_S 148618 a 1 NS*delta 1188944 2026-09-10T00:44:06.256296
+      level 1: 50 prefixes
+      level 2: 849 prefixes
+      level 3: 7193 prefixes
+      level 4: 32758 prefixes
+      level 5: 89174 prefixes
+      level 6: 140126 prefixes
+      level 7: 148618 prefixes
+      level 8: 148618 prefixes
+  lam=(8, 6, 4, 3, 1, 1, 1): N_S=148618 |Stab|=6 n_chi=12350 (orbits dropped: 26246) [lean, 0s, HWM 0.11 GB]
+    E_01: |H|=6 targets 119203 canonical rows 9759 nnz 42239 (obstructed fixed targets cancelled: 13650) [1s, HWM 0.11 GB]
+    E_12: |H|=6 targets 104896 canonical rows 8508 nnz 32791 (obstructed fixed targets cancelled: 9480) [1s, HWM 0.11 GB]
+    E_23: |H|=6 targets 105462 canonical rows 8504 nnz 27154 (obstructed fixed targets cancelled: 6585) [1s, HWM 0.11 GB]
+    E_34: |H|=2 targets 53424 canonical rows 20814 nnz 37050 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+    E_45: |H|=1 targets 87432 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+    E_56: |H|=1 targets 87432 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+  built (8, 6, 4, 3, 1, 1, 1) d8: N_S=148618 |Stab|=6 n_chi=12350 rows=47585 nnz=139234 (3s: mono 0s orbits 0s rows 2s; HWM 0.11 GB)
+    hybrid[per7 8_6_4_3_1_1_1d8] p=2147483647 attempt 0: |S|=12349 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 4, 3, 1, 1, 1) d8 p=2147483647: a=1 n_chi=12350 mult=1 units=0 [0.1s]
+    hybrid[per7 8_6_4_3_1_1_1d8] p=2147483629 attempt 0: |S|=12349 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 4, 3, 1, 1, 1) d8 p=2147483629: a=1 n_chi=12350 mult=1 units=0 [0.1s]
+  PER7 RESULT (8, 6, 4, 3, 1, 1, 1) d8: a=1 N_S=148618 n_chi=12350 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (2.9s, HWM 0.11 GB)
+
+=== rank 12/42 ((9, 5, 4, 2, 2, 1, 1), 8) N_S 161406 a 1 NS*delta 1291248 2026-09-10T00:44:12.555193
+      level 1: 55 prefixes
+      level 2: 1040 prefixes
+      level 3: 9599 prefixes
+      level 4: 45770 prefixes
+      level 5: 118730 prefixes
+      level 6: 158507 prefixes
+      level 7: 161406 prefixes
+      level 8: 161406 prefixes
+  lam=(9, 5, 4, 2, 2, 1, 1): N_S=161406 |Stab|=4 n_chi=34615 (orbits dropped: 16069) [lean, 0s, HWM 0.11 GB]
+    E_01: |H|=4 targets 110450 canonical rows 23520 nnz 110654 (obstructed fixed targets cancelled: 6383) [0s, HWM 0.11 GB]
+    E_12: |H|=4 targets 124622 canonical rows 26634 nnz 96090 (obstructed fixed targets cancelled: 4137) [1s, HWM 0.11 GB]
+    E_23: |H|=2 targets 84779 canonical rows 34524 nnz 111507 (obstructed fixed targets cancelled: 2106) [1s, HWM 0.11 GB]
+    E_34: |H|=2 targets 119203 canonical rows 47945 nnz 99423 (obstructed fixed targets cancelled: 938) [2s, HWM 0.11 GB]
+    E_45: |H|=1 targets 70309 canonical rows 68978 nnz 131702 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+    E_56: |H|=2 targets 95075 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s, HWM 0.11 GB]
+  built (9, 5, 4, 2, 2, 1, 1) d8: N_S=161406 |Stab|=4 n_chi=34615 rows=201601 nnz=549376 (2s: mono 0s orbits 0s rows 2s; HWM 0.11 GB)
+    hybrid[per7 9_5_4_2_2_1_1d8] p=2147483647 attempt 0: |S|=34613 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 4, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=34615 mult=1 units=0 [0.2s]
+    hybrid[per7 9_5_4_2_2_1_1d8] p=2147483629 attempt 0: |S|=34613 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 4, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=34615 mult=1 units=0 [0.2s]
+  PER7 RESULT (9, 5, 4, 2, 2, 1, 1) d8: a=1 N_S=161406 n_chi=34615 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.1s, HWM 0.11 GB)
+
+=== rank 13/42 ((8, 5, 5, 3, 1, 1, 1), 8) N_S 166125 a 1 NS*delta 1329000 2026-09-10T00:44:20.027971
+      level 1: 49 prefixes
+      level 2: 809 prefixes
+      level 3: 6898 prefixes
+      level 4: 33250 prefixes
+      level 5: 96999 prefixes
+      level 6: 156337 prefixes
+      level 7: 166125 prefixes
+      level 8: 166125 prefixes
+  lam=(8, 5, 5, 3, 1, 1, 1): N_S=166125 |Stab|=12 n_chi=7063 (orbits dropped: 14768) [lean, 1s, HWM 0.11 GB]
+    E_01: |H|=6 targets 119203 canonical rows 9759 nnz 42520 (obstructed fixed targets cancelled: 13806) [1s, HWM 0.11 GB]
+    E_12: |H|=6 targets 148618 canonical rows 12347 nnz 42542 (obstructed fixed targets cancelled: 10986) [1s, HWM 0.12 GB]
+    E_23: |H|=6 targets 105462 canonical rows 8504 nnz 30390 (obstructed fixed targets cancelled: 8274) [2s, HWM 0.12 GB]
+    E_34: |H|=4 targets 59497 canonical rows 11641 nnz 20913 (obstructed fixed targets cancelled: 154) [2s, HWM 0.12 GB]
+    E_45: |H|=2 targets 97524 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 197) [2s, HWM 0.12 GB]
+    E_56: |H|=2 targets 97524 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 197) [3s, HWM 0.12 GB]
+  built (8, 5, 5, 3, 1, 1, 1) d8: N_S=166125 |Stab|=12 n_chi=7063 rows=42251 nnz=136365 (4s: mono 0s orbits 1s rows 3s; HWM 0.12 GB)
+    hybrid[per7 8_5_5_3_1_1_1d8] p=2147483647 attempt 0: |S|=7062 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 5, 5, 3, 1, 1, 1) d8 p=2147483647: a=1 n_chi=7063 mult=1 units=0 [0.1s]
+    hybrid[per7 8_5_5_3_1_1_1d8] p=2147483629 attempt 0: |S|=7062 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 5, 5, 3, 1, 1, 1) d8 p=2147483629: a=1 n_chi=7063 mult=1 units=0 [0.1s]
+  PER7 RESULT (8, 5, 5, 3, 1, 1, 1) d8: a=1 N_S=166125 n_chi=7063 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (4.0s, HWM 0.12 GB)
+
+=== rank 14/42 ((9, 6, 2, 2, 2, 2, 1), 8) N_S 168763 a 1 NS*delta 1350104 2026-09-10T00:44:29.108440
+      level 1: 60 prefixes
+      level 2: 1269 prefixes
+      level 3: 11298 prefixes
+      level 4: 50654 prefixes
+      level 5: 125164 prefixes
+      level 6: 165765 prefixes
+      level 7: 168763 prefixes
+      level 8: 168763 prefixes
+  lam=(9, 6, 2, 2, 2, 2, 1): N_S=168763 |Stab|=24 n_chi=9848 (orbits dropped: 0) [lean, 2s, HWM 0.12 GB]
+    E_01: |H|=24 targets 128905 canonical rows 7604 nnz 34208 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_12: |H|=6 targets 72809 canonical rows 14535 nnz 55791 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_23: |H|=2 targets 124622 canonical rows 65983 nnz 135005 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_34: |H|=2 targets 124622 canonical rows 65983 nnz 135005 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+    E_45: |H|=2 targets 124622 canonical rows 65983 nnz 135005 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+    E_56: |H|=6 targets 73647 canonical rows 14882 nnz 33179 (obstructed fixed targets cancelled: 0) [4s, HWM 0.12 GB]
+  built (9, 6, 2, 2, 2, 2, 1) d8: N_S=168763 |Stab|=24 n_chi=9848 rows=234970 nnz=528193 (6s: mono 0s orbits 2s rows 4s; HWM 0.12 GB)
+    hybrid[per7 9_6_2_2_2_2_1d8] p=2147483647 attempt 0: |S|=9846 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 2, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=9848 mult=1 units=0 [0.2s]
+    hybrid[per7 9_6_2_2_2_2_1d8] p=2147483629 attempt 0: |S|=9846 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 6, 2, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=9848 mult=1 units=0 [0.2s]
+  PER7 RESULT (9, 6, 2, 2, 2, 2, 1) d8: a=1 N_S=168763 n_chi=9848 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (6.5s, HWM 0.12 GB)
+
+=== rank 15/42 ((10, 4, 3, 2, 2, 2, 1), 8) N_S 181295 a 1 NS*delta 1450360 2026-09-10T00:44:41.146830
+      level 1: 60 prefixes
+      level 2: 1355 prefixes
+      level 3: 14316 prefixes
+      level 4: 72146 prefixes
+      level 5: 157921 prefixes
+      level 6: 180815 prefixes
+      level 7: 181295 prefixes
+      level 8: 181295 prefixes
+  lam=(10, 4, 3, 2, 2, 2, 1): N_S=181295 |Stab|=6 n_chi=35549 (orbits dropped: 0) [lean, 0s, HWM 0.11 GB]
+    E_01: |H|=6 targets 102776 canonical rows 20381 nnz 98416 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_12: |H|=6 targets 128905 canonical rows 25480 nnz 81064 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_23: |H|=2 targets 110450 canonical rows 58561 nnz 163275 (obstructed fixed targets cancelled: 0) [1s, HWM 0.11 GB]
+    E_34: |H|=1 targets 133971 canonical rows 133971 nnz 276578 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_45: |H|=1 targets 133971 canonical rows 133971 nnz 276578 (obstructed fixed targets cancelled: 0) [2s, HWM 0.13 GB]
+    E_56: |H|=2 targets 79066 canonical rows 42183 nnz 95841 (obstructed fixed targets cancelled: 0) [2s, HWM 0.13 GB]
+  built (10, 4, 3, 2, 2, 2, 1) d8: N_S=181295 |Stab|=6 n_chi=35549 rows=414547 nnz=991752 (3s: mono 0s orbits 0s rows 2s; HWM 0.13 GB)
+    hybrid[per7 10_4_3_2_2_2_1d8] p=2147483647 attempt 0: |S|=35547 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 4, 3, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=35549 mult=1 units=0 [0.2s]
+    hybrid[per7 10_4_3_2_2_2_1d8] p=2147483629 attempt 0: |S|=35547 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 4, 3, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=35549 mult=1 units=0 [0.2s]
+  PER7 RESULT (10, 4, 3, 2, 2, 2, 1) d8: a=1 N_S=181295 n_chi=35549 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.9s, HWM 0.13 GB)
+
+=== rank 16/42 ((8, 7, 2, 2, 2, 2, 1), 8) N_S 192491 a 1 NS*delta 1539928 2026-09-10T00:44:50.106981
+      level 1: 60 prefixes
+      level 2: 1237 prefixes
+      level 3: 10464 prefixes
+      level 4: 45708 prefixes
+      level 5: 118261 prefixes
+      level 6: 181880 prefixes
+      level 7: 192491 prefixes
+      level 8: 192491 prefixes
+  lam=(8, 7, 2, 2, 2, 2, 1): N_S=192491 |Stab|=24 n_chi=11160 (orbits dropped: 0) [lean, 2s, HWM 0.12 GB]
+    E_01: |H|=24 targets 168763 canonical rows 9848 nnz 42736 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_12: |H|=6 targets 77138 canonical rows 15390 nnz 63581 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+    E_23: |H|=2 targets 141991 canonical rows 75101 nnz 154255 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+    E_34: |H|=2 targets 141991 canonical rows 75101 nnz 154255 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+    E_45: |H|=2 targets 141991 canonical rows 75101 nnz 154255 (obstructed fixed targets cancelled: 0) [4s, HWM 0.12 GB]
+    E_56: |H|=6 targets 83752 canonical rows 16857 nnz 37727 (obstructed fixed targets cancelled: 0) [4s, HWM 0.12 GB]
+  built (8, 7, 2, 2, 2, 2, 1) d8: N_S=192491 |Stab|=24 n_chi=11160 rows=267398 nnz=606809 (7s: mono 0s orbits 2s rows 4s; HWM 0.12 GB)
+    hybrid[per7 8_7_2_2_2_2_1d8] p=2147483647 attempt 0: |S|=11157 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 7, 2, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=11160 mult=1 units=0 [0.2s]
+    hybrid[per7 8_7_2_2_2_2_1d8] p=2147483629 attempt 0: |S|=11157 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 7, 2, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=11160 mult=1 units=0 [0.2s]
+  PER7 RESULT (8, 7, 2, 2, 2, 2, 1) d8: a=1 N_S=192491 n_chi=11160 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (7.6s, HWM 0.12 GB)
+
+=== rank 17/42 ((7, 6, 5, 3, 1, 1, 1), 8) N_S 195449 a 1 NS*delta 1563592 2026-09-10T00:45:04.918084
+      level 1: 38 prefixes
+      level 2: 761 prefixes
+      level 3: 6623 prefixes
+      level 4: 32011 prefixes
+      level 5: 93487 prefixes
+      level 6: 171505 prefixes
+      level 7: 195449 prefixes
+      level 8: 195449 prefixes
+  lam=(7, 6, 5, 3, 1, 1, 1): N_S=195449 |Stab|=6 n_chi=16652 (orbits dropped: 33555) [lean, 1s, HWM 0.12 GB]
+    E_01: |H|=6 targets 166125 canonical rows 13983 nnz 57957 (obstructed fixed targets cancelled: 16719) [1s, HWM 0.12 GB]
+    E_12: |H|=6 targets 159683 canonical rows 13374 nnz 51890 (obstructed fixed targets cancelled: 14025) [1s, HWM 0.12 GB]
+    E_23: |H|=6 targets 123837 canonical rows 10116 nnz 36516 (obstructed fixed targets cancelled: 9648) [2s, HWM 0.12 GB]
+    E_34: |H|=2 targets 69707 canonical rows 27471 nnz 49956 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_45: |H|=1 targets 114502 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_56: |H|=1 targets 114502 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+  built (7, 6, 5, 3, 1, 1, 1) d8: N_S=195449 |Stab|=6 n_chi=16652 rows=64944 nnz=196319 (3s: mono 0s orbits 1s rows 3s; HWM 0.12 GB)
+    hybrid[per7 7_6_5_3_1_1_1d8] p=2147483647 attempt 0: |S|=16648 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 6, 5, 3, 1, 1, 1) d8 p=2147483647: a=1 n_chi=16652 mult=1 units=0 [0.1s]
+    hybrid[per7 7_6_5_3_1_1_1d8] p=2147483629 attempt 0: |S|=16648 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 6, 5, 3, 1, 1, 1) d8 p=2147483629: a=1 n_chi=16652 mult=1 units=0 [0.1s]
+  PER7 RESULT (7, 6, 5, 3, 1, 1, 1) d8: a=1 N_S=195449 n_chi=16652 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.8s, HWM 0.12 GB)
+
+=== rank 18/42 ((9, 5, 3, 3, 2, 1, 1), 8) N_S 196325 a 1 NS*delta 1570600 2026-09-10T00:45:14.379772
+      level 1: 55 prefixes
+      level 2: 1126 prefixes
+      level 3: 10933 prefixes
+      level 4: 54519 prefixes
+      level 5: 144156 prefixes
+      level 6: 192862 prefixes
+      level 7: 196325 prefixes
+      level 8: 196325 prefixes
+  lam=(9, 5, 3, 3, 2, 1, 1): N_S=196325 |Stab|=4 n_chi=39842 (orbits dropped: 19633) [lean, 0s, HWM 0.13 GB]
+    E_01: |H|=4 targets 133971 canonical rows 26962 nnz 128691 (obstructed fixed targets cancelled: 8024) [1s, HWM 0.13 GB]
+    E_12: |H|=2 targets 124622 canonical rows 50975 nnz 182604 (obstructed fixed targets cancelled: 3795) [1s, HWM 0.13 GB]
+    E_23: |H|=2 targets 161406 canonical rows 65919 nnz 170375 (obstructed fixed targets cancelled: 2810) [1s, HWM 0.13 GB]
+    E_34: |H|=2 targets 119203 canonical rows 48880 nnz 135146 (obstructed fixed targets cancelled: 2106) [2s, HWM 0.13 GB]
+    E_45: |H|=2 targets 85168 canonical rows 40679 nnz 78814 (obstructed fixed targets cancelled: 466) [2s, HWM 0.13 GB]
+    E_56: |H|=2 targets 115232 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 404) [2s, HWM 0.13 GB]
+  built (9, 5, 3, 3, 2, 1, 1) d8: N_S=196325 |Stab|=4 n_chi=39842 rows=233415 nnz=695630 (3s: mono 0s orbits 0s rows 2s; HWM 0.13 GB)
+    hybrid[per7 9_5_3_3_2_1_1d8] p=2147483647 attempt 0: |S|=39840 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 3, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=39842 mult=1 units=0 [0.2s]
+    hybrid[per7 9_5_3_3_2_1_1d8] p=2147483629 attempt 0: |S|=39840 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 3, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=39842 mult=1 units=0 [0.2s]
+  PER7 RESULT (9, 5, 3, 3, 2, 1, 1) d8: a=1 N_S=196325 n_chi=39842 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.8s, HWM 0.13 GB)
+
+=== rank 19/42 ((8, 6, 4, 2, 2, 1, 1), 8) N_S 201582 a 1 NS*delta 1612656 2026-09-10T00:45:24.474479
+      level 1: 55 prefixes
+      level 2: 1027 prefixes
+      level 3: 9215 prefixes
+      level 4: 43618 prefixes
+      level 5: 120735 prefixes
+      level 6: 190143 prefixes
+      level 7: 201582 prefixes
+      level 8: 201582 prefixes
+  lam=(8, 6, 4, 2, 2, 1, 1): N_S=201582 |Stab|=4 n_chi=43331 (orbits dropped: 19726) [lean, 0s, HWM 0.12 GB]
+    E_01: |H|=4 targets 161406 canonical rows 34615 nnz 157023 (obstructed fixed targets cancelled: 8112) [1s, HWM 0.12 GB]
+    E_12: |H|=4 targets 141991 canonical rows 30413 nnz 120836 (obstructed fixed targets cancelled: 5545) [1s, HWM 0.12 GB]
+    E_23: |H|=2 targets 105462 canonical rows 43107 nnz 140214 (obstructed fixed targets cancelled: 2588) [2s, HWM 0.12 GB]
+    E_34: |H|=2 targets 148618 canonical rows 60023 nnz 125232 (obstructed fixed targets cancelled: 1146) [2s, HWM 0.12 GB]
+    E_45: |H|=1 targets 87432 canonical rows 85823 nnz 165106 (obstructed fixed targets cancelled: 0) [2s, HWM 0.12 GB]
+    E_56: |H|=2 targets 118439 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [3s, HWM 0.12 GB]
+  built (8, 6, 4, 2, 2, 1, 1) d8: N_S=201582 |Stab|=4 n_chi=43331 rows=253981 nnz=708411 (3s: mono 0s orbits 0s rows 3s; HWM 0.12 GB)
+    hybrid[per7 8_6_4_2_2_1_1d8] p=2147483647 attempt 0: |S|=43328 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 4, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=43331 mult=1 units=0 [0.2s]
+    hybrid[per7 8_6_4_2_2_1_1d8] p=2147483629 attempt 0: |S|=43328 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 4, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=43331 mult=1 units=0 [0.2s]
+  PER7 RESULT (8, 6, 4, 2, 2, 1, 1) d8: a=1 N_S=201582 n_chi=43331 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (3.9s, HWM 0.13 GB)
+
+=== rank 20/42 ((7, 7, 4, 2, 2, 1, 1), 8) N_S 216701 a 1 NS*delta 1733608 2026-09-10T00:45:36.672596
+      level 1: 42 prefixes
+      level 2: 944 prefixes
+      level 3: 8461 prefixes
+      level 4: 39132 prefixes
+      level 5: 108471 prefixes
+      level 6: 191528 prefixes
+      level 7: 216701 prefixes
+      level 8: 216701 prefixes
+  lam=(7, 7, 4, 2, 2, 1, 1): N_S=216701 |Stab|=8 n_chi=23340 (orbits dropped: 10848) [lean, 1s, HWM 0.13 GB]
+    E_01: |H|=4 targets 201582 canonical rows 43331 nnz 183898 (obstructed fixed targets cancelled: 8914) [1s, HWM 0.13 GB]
+    E_12: |H|=4 targets 141991 canonical rows 30413 nnz 129573 (obstructed fixed targets cancelled: 6429) [1s, HWM 0.13 GB]
+    E_23: |H|=4 targets 113220 canonical rows 23139 nnz 75320 (obstructed fixed targets cancelled: 2888) [2s, HWM 0.13 GB]
+    E_34: |H|=4 targets 159683 canonical rows 32221 nnz 67320 (obstructed fixed targets cancelled: 1292) [2s, HWM 0.13 GB]
+    E_45: |H|=2 targets 93818 canonical rows 45765 nnz 88368 (obstructed fixed targets cancelled: 185) [3s, HWM 0.13 GB]
+    E_56: |H|=4 targets 127137 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 409) [3s, HWM 0.13 GB]
+  built (7, 7, 4, 2, 2, 1, 1) d8: N_S=216701 |Stab|=8 n_chi=23340 rows=174869 nnz=544479 (4s: mono 0s orbits 1s rows 3s; HWM 0.13 GB)
+    hybrid[per7 7_7_4_2_2_1_1d8] p=2147483647 attempt 0: |S|=23339 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 7, 4, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=23340 mult=1 units=0 [0.2s]
+    hybrid[per7 7_7_4_2_2_1_1d8] p=2147483629 attempt 0: |S|=23339 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 7, 4, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=23340 mult=1 units=0 [0.2s]
+  PER7 RESULT (7, 7, 4, 2, 2, 1, 1) d8: a=1 N_S=216701 n_chi=23340 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (5.1s, HWM 0.13 GB)
+
+=== rank 21/42 ((8, 5, 5, 2, 2, 1, 1), 8) N_S 225474 a 1 NS*delta 1803792 2026-09-10T00:45:49.138211
+      level 1: 54 prefixes
+      level 2: 981 prefixes
+      level 3: 8849 prefixes
+      level 4: 44272 prefixes
+      level 5: 131345 prefixes
+      level 6: 212269 prefixes
+      level 7: 225474 prefixes
+      level 8: 225474 prefixes
+  lam=(8, 5, 5, 2, 2, 1, 1): N_S=225474 |Stab|=8 n_chi=24238 (orbits dropped: 11510) [lean, 1s, HWM 0.13 GB]
+    E_01: |H|=4 targets 161406 canonical rows 34615 nnz 156178 (obstructed fixed targets cancelled: 8112) [1s, HWM 0.13 GB]
+    E_12: |H|=4 targets 201582 canonical rows 43316 nnz 154028 (obstructed fixed targets cancelled: 6441) [2s, HWM 0.14 GB]
+    E_23: |H|=2 targets 105462 canonical rows 43120 nnz 155973 (obstructed fixed targets cancelled: 3267) [2s, HWM 0.14 GB]
+    E_34: |H|=4 targets 166125 canonical rows 33445 nnz 69919 (obstructed fixed targets cancelled: 1408) [3s, HWM 0.14 GB]
+    E_45: |H|=2 targets 97524 canonical rows 47335 nnz 91603 (obstructed fixed targets cancelled: 298) [3s, HWM 0.14 GB]
+    E_56: |H|=4 targets 132174 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 513) [3s, HWM 0.14 GB]
+  built (8, 5, 5, 2, 2, 1, 1) d8: N_S=225474 |Stab|=8 n_chi=24238 rows=201831 nnz=627701 (4s: mono 0s orbits 1s rows 3s; HWM 0.14 GB)
+    hybrid[per7 8_5_5_2_2_1_1d8] p=2147483647 attempt 0: |S|=24235 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 5, 5, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=24238 mult=1 units=0 [0.2s]
+    hybrid[per7 8_5_5_2_2_1_1d8] p=2147483629 attempt 0: |S|=24235 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 5, 5, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=24238 mult=1 units=0 [0.2s]
+  PER7 RESULT (8, 5, 5, 2, 2, 1, 1) d8: a=1 N_S=225474 n_chi=24238 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (5.2s, HWM 0.14 GB)
+
+=== rank 22/42 ((8, 6, 3, 3, 2, 1, 1), 8) N_S 245532 a 1 NS*delta 1964256 2026-09-10T00:46:05.520065
+      level 1: 55 prefixes
+      level 2: 1112 prefixes
+      level 3: 10516 prefixes
+      level 4: 51558 prefixes
+      level 5: 146258 prefixes
+      level 6: 231674 prefixes
+      level 7: 245532 prefixes
+      level 8: 245532 prefixes
+  lam=(8, 6, 3, 3, 2, 1, 1): N_S=245532 |Stab|=4 n_chi=50050 (orbits dropped: 24089) [lean, 1s, HWM 0.14 GB]
+    E_01: |H|=4 targets 196325 canonical rows 39842 nnz 183268 (obstructed fixed targets cancelled: 10366) [1s, HWM 0.14 GB]
+    E_12: |H|=2 targets 141991 canonical rows 58229 nnz 230056 (obstructed fixed targets cancelled: 5123) [1s, HWM 0.14 GB]
+    E_23: |H|=2 targets 201582 canonical rows 82656 nnz 215327 (obstructed fixed targets cancelled: 3464) [2s, HWM 0.14 GB]
+    E_34: |H|=2 targets 148618 canonical rows 61172 nnz 170280 (obstructed fixed targets cancelled: 2588) [2s, HWM 0.14 GB]
+    E_45: |H|=2 targets 106055 canonical rows 50722 nnz 99029 (obstructed fixed targets cancelled: 568) [3s, HWM 0.14 GB]
+    E_56: |H|=2 targets 143741 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 503) [3s, HWM 0.14 GB]
+  built (8, 6, 3, 3, 2, 1, 1) d8: N_S=245532 |Stab|=4 n_chi=50050 rows=292621 nnz=897960 (4s: mono 0s orbits 1s rows 3s; HWM 0.14 GB)
+    hybrid[per7 8_6_3_3_2_1_1d8] p=2147483647 attempt 0: |S|=50047 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 3, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=50050 mult=1 units=0 [0.3s]
+    hybrid[per7 8_6_3_3_2_1_1d8] p=2147483629 attempt 0: |S|=50047 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 3, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=50050 mult=1 units=0 [0.3s]
+  PER7 RESULT (8, 6, 3, 3, 2, 1, 1) d8: a=1 N_S=245532 n_chi=50050 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (5.0s, HWM 0.14 GB)
+
+=== rank 23/42 ((10, 4, 2, 2, 2, 2, 2), 8) N_S 245689 a 1 NS*delta 1965512 2026-09-10T00:46:20.865406
+      level 1: 65 prefixes
+      level 2: 1606 prefixes
+      level 3: 18174 prefixes
+      level 4: 96131 prefixes
+      level 5: 213647 prefixes
+      level 6: 245026 prefixes
+      level 7: 245689 prefixes
+      level 8: 245689 prefixes
+  lam=(10, 4, 2, 2, 2, 2, 2): N_S=245689 |Stab|=120 n_chi=3649 (orbits dropped: 0) [lean, 14s, HWM 0.14 GB]
+    E_01: |H|=120 targets 138754 canonical rows 2140 nnz 9382 (obstructed fixed targets cancelled: 0) [7s, HWM 0.14 GB]
+    E_12: |H|=24 targets 128905 canonical rows 7604 nnz 23468 (obstructed fixed targets cancelled: 0) [9s, HWM 0.14 GB]
+    E_23: |H|=6 targets 181295 canonical rows 35549 nnz 71924 (obstructed fixed targets cancelled: 0) [10s, HWM 0.14 GB]
+    E_34: |H|=6 targets 181295 canonical rows 35549 nnz 71924 (obstructed fixed targets cancelled: 0) [11s, HWM 0.14 GB]
+    E_45: |H|=6 targets 181295 canonical rows 35549 nnz 71924 (obstructed fixed targets cancelled: 0) [12s, HWM 0.14 GB]
+    E_56: |H|=6 targets 181295 canonical rows 35549 nnz 71924 (obstructed fixed targets cancelled: 0) [13s, HWM 0.14 GB]
+  built (10, 4, 2, 2, 2, 2, 2) d8: N_S=245689 |Stab|=120 n_chi=3649 rows=151940 nnz=320546 (27s: mono 0s orbits 14s rows 13s; HWM 0.14 GB)
+    hybrid[per7 10_4_2_2_2_2_2d8] p=2147483647 attempt 0: |S|=3647 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 4, 2, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=3649 mult=1 units=0 [0.3s]
+    hybrid[per7 10_4_2_2_2_2_2d8] p=2147483629 attempt 0: |S|=3647 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (10, 4, 2, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=3649 mult=1 units=0 [0.2s]
+  PER7 RESULT (10, 4, 2, 2, 2, 2, 2) d8: a=1 N_S=245689 n_chi=3649 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (28.5s, HWM 0.14 GB)
+
+=== rank 24/42 ((7, 5, 5, 4, 1, 1, 1), 8) N_S 254060 a 1 NS*delta 2032480 2026-09-10T00:46:55.653545
+      level 1: 38 prefixes
+      level 2: 776 prefixes
+      level 3: 6946 prefixes
+      level 4: 36102 prefixes
+      level 5: 114417 prefixes
+      level 6: 221084 prefixes
+      level 7: 254060 prefixes
+      level 8: 254060 prefixes
+  lam=(7, 5, 5, 4, 1, 1, 1): N_S=254060 |Stab|=12 n_chi=11127 (orbits dropped: 21765) [lean, 2s, HWM 0.14 GB]
+    E_01: |H|=6 targets 192851 canonical rows 16337 nnz 68527 (obstructed fixed targets cancelled: 19644) [1s, HWM 0.14 GB]
+    E_12: |H|=6 targets 227008 canonical rows 19464 nnz 68206 (obstructed fixed targets cancelled: 16476) [2s, HWM 0.14 GB]
+    E_23: |H|=6 targets 195449 canonical rows 16652 nnz 59821 (obstructed fixed targets cancelled: 14361) [3s, HWM 0.14 GB]
+    E_34: |H|=4 targets 77713 canonical rows 15332 nnz 32972 (obstructed fixed targets cancelled: 252) [3s, HWM 0.14 GB]
+    E_45: |H|=2 targets 148371 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 277) [4s, HWM 0.14 GB]
+    E_56: |H|=2 targets 148371 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 277) [4s, HWM 0.14 GB]
+  built (7, 5, 5, 4, 1, 1, 1) d8: N_S=254060 |Stab|=12 n_chi=11127 rows=67785 nnz=229526 (6s: mono 0s orbits 2s rows 4s; HWM 0.14 GB)
+    hybrid[per7 7_5_5_4_1_1_1d8] p=2147483647 attempt 0: |S|=11123 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 5, 5, 4, 1, 1, 1) d8 p=2147483647: a=1 n_chi=11127 mult=1 units=0 [0.1s]
+    hybrid[per7 7_5_5_4_1_1_1d8] p=2147483629 attempt 0: |S|=11123 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 5, 5, 4, 1, 1, 1) d8 p=2147483629: a=1 n_chi=11127 mult=1 units=0 [0.1s]
+  PER7 RESULT (7, 5, 5, 4, 1, 1, 1) d8: a=1 N_S=254060 n_chi=11127 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (6.3s, HWM 0.14 GB)
+
+=== rank 25/42 ((7, 6, 5, 2, 2, 1, 1), 8) N_S 265576 a 1 NS*delta 2124608 2026-09-10T00:47:14.463074
+      level 1: 42 prefixes
+      level 2: 921 prefixes
+      level 3: 8479 prefixes
+      level 4: 42398 prefixes
+      level 5: 126388 prefixes
+      level 6: 233113 prefixes
+      level 7: 265576 prefixes
+      level 8: 265576 prefixes
+  lam=(7, 6, 5, 2, 2, 1, 1): N_S=265576 |Stab|=4 n_chi=57390 (orbits dropped: 25054) [lean, 1s, HWM 0.13 GB]
+    E_01: |H|=4 targets 225474 canonical rows 48617 nnz 210319 (obstructed fixed targets cancelled: 9741) [1s, HWM 0.14 GB]
+    E_12: |H|=4 targets 216701 canonical rows 46678 nnz 187632 (obstructed fixed targets cancelled: 8146) [2s, HWM 0.14 GB]
+    E_23: |H|=2 targets 123837 canonical rows 50796 nnz 186242 (obstructed fixed targets cancelled: 3796) [2s, HWM 0.14 GB]
+    E_34: |H|=2 targets 195449 canonical rows 79498 nnz 167042 (obstructed fixed targets cancelled: 1492) [3s, HWM 0.14 GB]
+    E_45: |H|=1 targets 114502 canonical rows 112538 nnz 219032 (obstructed fixed targets cancelled: 0) [3s, HWM 0.14 GB]
+    E_56: |H|=2 targets 155357 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [4s, HWM 0.14 GB]
+  built (7, 6, 5, 2, 2, 1, 1) d8: N_S=265576 |Stab|=4 n_chi=57390 rows=338127 nnz=970267 (4s: mono 0s orbits 1s rows 4s; HWM 0.14 GB)
+    hybrid[per7 7_6_5_2_2_1_1d8] p=2147483647 attempt 0: |S|=57383 |U|=7 (a=1, excess 6) m=71 blocks 1x7 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 6, 5, 2, 2, 1, 1) d8 p=2147483647: a=1 n_chi=57390 mult=1 units=0 [0.3s]
+    hybrid[per7 7_6_5_2_2_1_1d8] p=2147483629 attempt 0: |S|=57383 |U|=7 (a=1, excess 6) m=71 blocks 1x7 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 6, 5, 2, 2, 1, 1) d8 p=2147483629: a=1 n_chi=57390 mult=1 units=0 [0.3s]
+  PER7 RESULT (7, 6, 5, 2, 2, 1, 1) d8: a=1 N_S=265576 n_chi=57390 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (5.5s, HWM 0.14 GB)
+
+=== rank 26/42 ((9, 5, 3, 2, 2, 2, 1), 8) N_S 266409 a 1 NS*delta 2131272 2026-09-10T00:47:40.294543
+      level 1: 60 prefixes
+      level 2: 1344 prefixes
+      level 3: 13984 prefixes
+      level 4: 72758 prefixes
+      level 5: 195309 prefixes
+      level 6: 261734 prefixes
+      level 7: 266409 prefixes
+      level 8: 266409 prefixes
+  lam=(9, 5, 3, 2, 2, 2, 1): N_S=266409 |Stab|=6 n_chi=51769 (orbits dropped: 0) [lean, 1s, HWM 0.13 GB]
+    E_01: |H|=6 targets 181295 canonical rows 35549 nnz 168609 (obstructed fixed targets cancelled: 0) [2s, HWM 0.14 GB]
+    E_12: |H|=6 targets 168763 canonical rows 33179 nnz 119129 (obstructed fixed targets cancelled: 0) [3s, HWM 0.14 GB]
+    E_23: |H|=2 targets 161406 canonical rows 85299 nnz 240477 (obstructed fixed targets cancelled: 0) [4s, HWM 0.14 GB]
+    E_34: |H|=1 targets 196325 canonical rows 196325 nnz 409440 (obstructed fixed targets cancelled: 0) [5s, HWM 0.14 GB]
+    E_45: |H|=1 targets 196325 canonical rows 196325 nnz 409440 (obstructed fixed targets cancelled: 0) [5s, HWM 0.15 GB]
+    E_56: |H|=2 targets 115232 canonical rows 61238 nnz 140393 (obstructed fixed targets cancelled: 0) [6s, HWM 0.15 GB]
+  built (9, 5, 3, 2, 2, 2, 1) d8: N_S=266409 |Stab|=6 n_chi=51769 rows=607915 nnz=1487488 (8s: mono 1s orbits 1s rows 6s; HWM 0.15 GB)
+    hybrid[per7 9_5_3_2_2_2_1d8] p=2147483647 attempt 0: |S|=51766 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 3, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=51769 mult=1 units=0 [0.5s]
+    hybrid[per7 9_5_3_2_2_2_1d8] p=2147483629 attempt 0: |S|=51766 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 3, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=51769 mult=1 units=0 [0.5s]
+  PER7 RESULT (9, 5, 3, 2, 2, 2, 1) d8: a=1 N_S=266409 n_chi=51769 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (9.9s, HWM 0.17 GB)
+
+=== rank 27/42 ((9, 4, 4, 2, 2, 2, 1), 8) N_S 309494 a 1 NS*delta 2475952 2026-09-10T00:48:11.960684
+      level 1: 60 prefixes
+      level 2: 1303 prefixes
+      level 3: 14067 prefixes
+      level 4: 79237 prefixes
+      level 5: 224695 prefixes
+      level 6: 303961 prefixes
+      level 7: 309494 prefixes
+      level 8: 309494 prefixes
+  lam=(9, 4, 4, 2, 2, 2, 1): N_S=309494 |Stab|=12 n_chi=30704 (orbits dropped: 0) [lean, 3s, HWM 0.14 GB]
+    E_01: |H|=6 targets 181295 canonical rows 35549 nnz 168609 (obstructed fixed targets cancelled: 0) [1s, HWM 0.14 GB]
+    E_12: |H|=6 targets 266409 canonical rows 51769 nnz 164954 (obstructed fixed targets cancelled: 0) [4s, HWM 0.16 GB]
+    E_23: |H|=2 targets 161406 canonical rows 85299 nnz 279507 (obstructed fixed targets cancelled: 0) [5s, HWM 0.16 GB]
+    E_34: |H|=2 targets 227915 canonical rows 115609 nnz 240923 (obstructed fixed targets cancelled: 0) [6s, HWM 0.16 GB]
+    E_45: |H|=2 targets 227915 canonical rows 115609 nnz 240923 (obstructed fixed targets cancelled: 0) [7s, HWM 0.17 GB]
+    E_56: |H|=4 targets 133637 canonical rows 36326 nnz 82924 (obstructed fixed targets cancelled: 0) [8s, HWM 0.17 GB]
+  built (9, 4, 4, 2, 2, 2, 1) d8: N_S=309494 |Stab|=12 n_chi=30704 rows=440161 nnz=1177840 (12s: mono 1s orbits 3s rows 8s; HWM 0.17 GB)
+    hybrid[per7 9_4_4_2_2_2_1d8] p=2147483647 attempt 0: |S|=30702 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 4, 4, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=30704 mult=1 units=0 [0.5s]
+    hybrid[per7 9_4_4_2_2_2_1d8] p=2147483629 attempt 0: |S|=30702 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 4, 4, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=30704 mult=1 units=0 [0.6s]
+  PER7 RESULT (9, 4, 4, 2, 2, 2, 1) d8: a=1 N_S=309494 n_chi=30704 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (14.1s, HWM 0.17 GB)
+
+=== rank 28/42 ((6, 5, 5, 5, 1, 1, 1), 8) N_S 311618 a 1 NS*delta 2492944 2026-09-10T00:48:54.476522
+      level 1: 37 prefixes
+      level 2: 494 prefixes
+      level 3: 5915 prefixes
+      level 4: 33622 prefixes
+      level 5: 112423 prefixes
+      level 6: 243395 prefixes
+      level 7: 311618 prefixes
+      level 8: 311618 prefixes
+  lam=(6, 5, 5, 5, 1, 1, 1): N_S=311618 |Stab|=36 n_chi=4700 (orbits dropped: 9060) [lean, 9s, HWM 0.14 GB]
+    E_01: |H|=12 targets 254060 canonical rows 11127 nnz 43363 (obstructed fixed targets cancelled: 21864) [3s, HWM 0.15 GB]
+    E_12: |H|=6 targets 278277 canonical rows 24261 nnz 85061 (obstructed fixed targets cancelled: 19971) [5s, HWM 0.15 GB]
+    E_23: |H|=6 targets 278277 canonical rows 24261 nnz 85061 (obstructed fixed targets cancelled: 19971) [7s, HWM 0.15 GB]
+    E_34: |H|=4 targets 84944 canonical rows 16912 nnz 40794 (obstructed fixed targets cancelled: 324) [8s, HWM 0.15 GB]
+    E_45: |H|=6 targets 181478 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 951) [9s, HWM 0.15 GB]
+    E_56: |H|=6 targets 181478 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 951) [10s, HWM 0.15 GB]
+  built (6, 5, 5, 5, 1, 1, 1) d8: N_S=311618 |Stab|=36 n_chi=4700 rows=76561 nnz=254279 (20s: mono 1s orbits 9s rows 10s; HWM 0.15 GB)
+    hybrid[per7 6_5_5_5_1_1_1d8] p=2147483647 attempt 0: |S|=4696 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 5, 5, 5, 1, 1, 1) d8 p=2147483647: a=1 n_chi=4700 mult=1 units=0 [0.2s]
+    hybrid[per7 6_5_5_5_1_1_1d8] p=2147483629 attempt 0: |S|=4696 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 5, 5, 5, 1, 1, 1) d8 p=2147483629: a=1 n_chi=4700 mult=1 units=0 [0.3s]
+  PER7 RESULT (6, 5, 5, 5, 1, 1, 1) d8: a=1 N_S=311618 n_chi=4700 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (21.1s, HWM 0.15 GB)
+
+=== rank 29/42 ((8, 5, 4, 3, 2, 1, 1), 8) N_S 319440 a 1 NS*delta 2555520 2026-09-10T00:49:40.522739
+      level 1: 55 prefixes
+      level 2: 1090 prefixes
+      level 3: 11021 prefixes
+      level 4: 59744 prefixes
+      level 5: 184687 prefixes
+      level 6: 300859 prefixes
+      level 7: 319440 prefixes
+      level 8: 319440 prefixes
+  lam=(8, 5, 4, 3, 2, 1, 1): N_S=319440 |Stab|=2 n_chi=133014 (orbits dropped: 53412) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=2 targets 227915 canonical rows 94278 nnz 439238 (obstructed fixed targets cancelled: 10289) [2s, HWM 0.15 GB]
+    E_12: |H|=2 targets 245532 canonical rows 101791 nnz 379031 (obstructed fixed targets cancelled: 6959) [3s, HWM 0.16 GB]
+    E_23: |H|=2 targets 225474 canonical rows 93300 nnz 309804 (obstructed fixed targets cancelled: 5123) [3s, HWM 0.16 GB]
+    E_34: |H|=2 targets 192851 canonical rows 79760 nnz 227967 (obstructed fixed targets cancelled: 3267) [4s, HWM 0.16 GB]
+    E_45: |H|=1 targets 137362 canonical rows 135583 nnz 266028 (obstructed fixed targets cancelled: 0) [4s, HWM 0.16 GB]
+    E_56: |H|=1 targets 186426 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [5s, HWM 0.16 GB]
+  built (8, 5, 4, 3, 2, 1, 1) d8: N_S=319440 |Stab|=2 n_chi=133014 rows=504712 nnz=1622068 (6s: mono 1s orbits 1s rows 5s; HWM 0.16 GB)
+    hybrid[per7 8_5_4_3_2_1_1d8] p=2147483647 attempt 0: |S|=133005 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 5, 4, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=133014 mult=1 units=0 [0.5s]
+    hybrid[per7 8_5_4_3_2_1_1d8] p=2147483629 attempt 0: |S|=133005 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.1s]
+  per7 (8, 5, 4, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=133014 mult=1 units=0 [0.5s]
+  PER7 RESULT (8, 5, 4, 3, 2, 1, 1) d8: a=1 N_S=319440 n_chi=133014 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (8.2s, HWM 0.21 GB)
+
+=== rank 30/42 ((8, 6, 3, 2, 2, 2, 1), 8) N_S 333750 a 1 NS*delta 2670000 2026-09-10T00:50:10.314662
+      level 1: 60 prefixes
+      level 2: 1330 prefixes
+      level 3: 13372 prefixes
+      level 4: 68443 prefixes
+      level 5: 198190 prefixes
+      level 6: 315008 prefixes
+      level 7: 333750 prefixes
+      level 8: 333750 prefixes
+  lam=(8, 6, 3, 2, 2, 2, 1): N_S=333750 |Stab|=6 n_chi=64610 (orbits dropped: 0) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=6 targets 266409 canonical rows 51769 nnz 237452 (obstructed fixed targets cancelled: 0) [2s, HWM 0.16 GB]
+    E_12: |H|=6 targets 192491 canonical rows 37727 nnz 149344 (obstructed fixed targets cancelled: 0) [3s, HWM 0.16 GB]
+    E_23: |H|=2 targets 201582 canonical rows 106388 nnz 301651 (obstructed fixed targets cancelled: 0) [3s, HWM 0.16 GB]
+    E_34: |H|=1 targets 245532 canonical rows 245532 nnz 515040 (obstructed fixed targets cancelled: 0) [4s, HWM 0.16 GB]
+    E_45: |H|=1 targets 245532 canonical rows 245532 nnz 515040 (obstructed fixed targets cancelled: 0) [5s, HWM 0.16 GB]
+    E_56: |H|=2 targets 143741 canonical rows 76282 nnz 175650 (obstructed fixed targets cancelled: 0) [5s, HWM 0.16 GB]
+  built (8, 6, 3, 2, 2, 2, 1) d8: N_S=333750 |Stab|=6 n_chi=64610 rows=763230 nnz=1894177 (7s: mono 0s orbits 1s rows 5s; HWM 0.16 GB)
+    hybrid[per7 8_6_3_2_2_2_1d8] p=2147483647 attempt 0: |S|=64604 |U|=6 (a=1, excess 5) m=70 blocks 1x6 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s]
+  per7 (8, 6, 3, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=64610 mult=1 units=0 [0.5s]
+    hybrid[per7 8_6_3_2_2_2_1d8] p=2147483629 attempt 0: |S|=64604 |U|=6 (a=1, excess 5) m=70 blocks 1x6 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s]
+  per7 (8, 6, 3, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=64610 mult=1 units=0 [0.5s]
+  PER7 RESULT (8, 6, 3, 2, 2, 2, 1) d8: a=1 N_S=333750 n_chi=64610 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (8.6s, HWM 0.2 GB)
+
+=== rank 31/42 ((7, 7, 3, 2, 2, 2, 1), 8) N_S 359173 a 1 NS*delta 2873384 2026-09-10T00:50:40.313146
+      level 1: 47 prefixes
+      level 2: 1231 prefixes
+      level 3: 12386 prefixes
+      level 4: 60929 prefixes
+      level 5: 176778 prefixes
+      level 6: 317341 prefixes
+      level 7: 359173 prefixes
+      level 8: 359173 prefixes
+  lam=(7, 7, 3, 2, 2, 2, 1): N_S=359173 |Stab|=12 n_chi=34394 (orbits dropped: 600) [lean, 2s, HWM 0.15 GB]
+    E_01: |H|=6 targets 333750 canonical rows 64610 nnz 276123 (obstructed fixed targets cancelled: 0) [2s, HWM 0.17 GB]
+    E_12: |H|=6 targets 192491 canonical rows 37727 nnz 159420 (obstructed fixed targets cancelled: 0) [3s, HWM 0.17 GB]
+    E_23: |H|=4 targets 216701 canonical rows 56751 nnz 160814 (obstructed fixed targets cancelled: 556) [4s, HWM 0.17 GB]
+    E_34: |H|=2 targets 264100 canonical rows 131138 nnz 275127 (obstructed fixed targets cancelled: 166) [5s, HWM 0.17 GB]
+    E_45: |H|=2 targets 264100 canonical rows 131138 nnz 275127 (obstructed fixed targets cancelled: 166) [6s, HWM 0.17 GB]
+    E_56: |H|=4 targets 154413 canonical rows 40560 nnz 93434 (obstructed fixed targets cancelled: 427) [6s, HWM 0.17 GB]
+  built (7, 7, 3, 2, 2, 2, 1) d8: N_S=359173 |Stab|=12 n_chi=34394 rows=461924 nnz=1240045 (9s: mono 0s orbits 2s rows 6s; HWM 0.17 GB)
+    hybrid[per7 7_7_3_2_2_2_1d8] p=2147483647 attempt 0: |S|=34391 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 7, 3, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=34394 mult=1 units=0 [0.5s]
+    hybrid[per7 7_7_3_2_2_2_1d8] p=2147483629 attempt 0: |S|=34391 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 7, 3, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=34394 mult=1 units=0 [0.4s]
+  PER7 RESULT (7, 7, 3, 2, 2, 2, 1) d8: a=1 N_S=359173 n_chi=34394 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (10.4s, HWM 0.17 GB)
+
+=== rank 32/42 ((9, 5, 2, 2, 2, 2, 2), 8) N_S 361997 a 1 NS*delta 2895976 2026-09-10T00:51:29.336589
+      level 1: 65 prefixes
+      level 2: 1594 prefixes
+      level 3: 17622 prefixes
+      level 4: 96308 prefixes
+      level 5: 264477 prefixes
+      level 6: 355637 prefixes
+      level 7: 361997 prefixes
+      level 8: 361997 prefixes
+  lam=(9, 5, 2, 2, 2, 2, 2): N_S=361997 |Stab|=120 n_chi=5180 (orbits dropped: 0) [lean, 39s, HWM 0.14 GB]
+    E_01: |H|=120 targets 245689 canonical rows 3649 nnz 15776 (obstructed fixed targets cancelled: 0) [23s, HWM 0.16 GB]
+    E_12: |H|=24 targets 168763 canonical rows 9848 nnz 34208 (obstructed fixed targets cancelled: 0) [26s, HWM 0.16 GB]
+    E_23: |H|=6 targets 266409 canonical rows 51769 nnz 105930 (obstructed fixed targets cancelled: 0) [28s, HWM 0.16 GB]
+    E_34: |H|=6 targets 266409 canonical rows 51769 nnz 105930 (obstructed fixed targets cancelled: 0) [31s, HWM 0.16 GB]
+    E_45: |H|=6 targets 266409 canonical rows 51769 nnz 105930 (obstructed fixed targets cancelled: 0) [33s, HWM 0.16 GB]
+    E_56: |H|=6 targets 266409 canonical rows 51769 nnz 105930 (obstructed fixed targets cancelled: 0) [35s, HWM 0.17 GB]
+  built (9, 5, 2, 2, 2, 2, 2) d8: N_S=361997 |Stab|=120 n_chi=5180 rows=220573 nnz=473704 (74s: mono 1s orbits 39s rows 35s; HWM 0.17 GB)
+    hybrid[per7 9_5_2_2_2_2_2d8] p=2147483647 attempt 0: |S|=5177 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 2, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=5180 mult=1 units=0 [0.5s]
+    hybrid[per7 9_5_2_2_2_2_2d8] p=2147483629 attempt 0: |S|=5177 |U|=3 (a=1, excess 2) m=67 blocks 1x3 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (9, 5, 2, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=5180 mult=1 units=0 [0.5s]
+  PER7 RESULT (9, 5, 2, 2, 2, 2, 2) d8: a=1 N_S=361997 n_chi=5180 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (76.1s, HWM 0.17 GB)
+
+=== rank 33/42 ((7, 6, 4, 3, 2, 1, 1), 8) N_S 376796 a 1 NS*delta 3014368 2026-09-10T00:53:02.668692
+      level 1: 43 prefixes
+      level 2: 1030 prefixes
+      level 3: 10568 prefixes
+      level 4: 56810 prefixes
+      level 5: 176666 prefixes
+      level 6: 330581 prefixes
+      level 7: 376796 prefixes
+      level 8: 376796 prefixes
+  lam=(7, 6, 4, 3, 2, 1, 1): N_S=376796 |Stab|=2 n_chi=157347 (orbits dropped: 62102) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=2 targets 319440 canonical rows 133014 nnz 588130 (obstructed fixed targets cancelled: 12375) [2s, HWM 0.16 GB]
+    E_12: |H|=2 targets 264100 canonical rows 109687 nnz 449454 (obstructed fixed targets cancelled: 8914) [3s, HWM 0.16 GB]
+    E_23: |H|=2 targets 265576 canonical rows 110219 nnz 367694 (obstructed fixed targets cancelled: 5963) [5s, HWM 0.17 GB]
+    E_34: |H|=2 targets 227008 canonical rows 94162 nnz 270238 (obstructed fixed targets cancelled: 3796) [6s, HWM 0.17 GB]
+    E_45: |H|=1 targets 161514 canonical rows 159463 nnz 314694 (obstructed fixed targets cancelled: 0) [7s, HWM 0.17 GB]
+    E_56: |H|=1 targets 219449 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [7s, HWM 0.18 GB]
+  built (7, 6, 4, 3, 2, 1, 1) d8: N_S=376796 |Stab|=2 n_chi=157347 rows=606545 nnz=1990210 (9s: mono 1s orbits 1s rows 7s; HWM 0.18 GB)
+    hybrid[per7 7_6_4_3_2_1_1d8] p=2147483647 attempt 0: |S|=157330 |U|=17 (a=1, excess 16) m=81 blocks 1x17 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.2s schur 0.3s null 0.0s lift 0.0s rank 0.1s]
+  per7 (7, 6, 4, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=157347 mult=1 units=0 [1.3s]
+    hybrid[per7 7_6_4_3_2_1_1d8] p=2147483629 attempt 0: |S|=157330 |U|=17 (a=1, excess 16) m=81 blocks 1x17 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.1s schur 0.3s null 0.0s lift 0.0s rank 0.0s]
+  per7 (7, 6, 4, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=157347 mult=1 units=0 [1.0s]
+  PER7 RESULT (7, 6, 4, 3, 2, 1, 1) d8: a=1 N_S=376796 n_chi=157347 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (12.2s, HWM 0.24 GB)
+
+=== rank 34/42 ((7, 5, 5, 3, 2, 1, 1), 8) N_S 422268 a 1 NS*delta 3378144 2026-09-10T00:53:53.546820
+      level 1: 43 prefixes
+      level 2: 1020 prefixes
+      level 3: 10227 prefixes
+      level 4: 57163 prefixes
+      level 5: 188449 prefixes
+      level 6: 367723 prefixes
+      level 7: 422268 prefixes
+      level 8: 422268 prefixes
+  lam=(7, 5, 5, 3, 2, 1, 1): N_S=422268 |Stab|=4 n_chi=88035 (orbits dropped: 36013) [lean, 2s, HWM 0.15 GB]
+    E_01: |H|=2 targets 319440 canonical rows 132998 nnz 585773 (obstructed fixed targets cancelled: 12375) [2s, HWM 0.17 GB]
+    E_12: |H|=2 targets 376796 canonical rows 157314 nnz 577886 (obstructed fixed targets cancelled: 10289) [4s, HWM 0.18 GB]
+    E_23: |H|=2 targets 265576 canonical rows 110206 nnz 410471 (obstructed fixed targets cancelled: 7556) [5s, HWM 0.18 GB]
+    E_34: |H|=4 targets 254060 canonical rows 52597 nnz 151138 (obstructed fixed targets cancelled: 4544) [7s, HWM 0.18 GB]
+    E_45: |H|=2 targets 180545 canonical rows 88246 nnz 175196 (obstructed fixed targets cancelled: 446) [7s, HWM 0.18 GB]
+    E_56: |H|=2 targets 245446 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 428) [8s, HWM 0.18 GB]
+  built (7, 5, 5, 3, 2, 1, 1) d8: N_S=422268 |Stab|=4 n_chi=88035 rows=541361 nnz=1900464 (11s: mono 1s orbits 2s rows 8s; HWM 0.18 GB)
+    hybrid[per7 7_5_5_3_2_1_1d8] p=2147483647 attempt 0: |S|=88026 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s rank 0.0s]
+  per7 (7, 5, 5, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=88035 mult=1 units=0 [1.0s]
+    hybrid[per7 7_5_5_3_2_1_1d8] p=2147483629 attempt 0: |S|=88026 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s]
+  per7 (7, 5, 5, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=88035 mult=1 units=0 [0.9s]
+  PER7 RESULT (7, 5, 5, 3, 2, 1, 1) d8: a=1 N_S=422268 n_chi=88035 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (14.2s, HWM 0.2 GB)
+
+=== rank 35/42 ((8, 5, 4, 2, 2, 2, 1), 8) N_S 434774 a 1 NS*delta 3478192 2026-09-10T00:55:00.250790
+      level 1: 60 prefixes
+      level 2: 1308 prefixes
+      level 3: 14035 prefixes
+      level 4: 79361 prefixes
+      level 5: 250431 prefixes
+      level 6: 409559 prefixes
+      level 7: 434774 prefixes
+      level 8: 434774 prefixes
+  lam=(8, 5, 4, 2, 2, 2, 1): N_S=434774 |Stab|=6 n_chi=83749 (orbits dropped: 0) [lean, 3s, HWM 0.15 GB]
+    E_01: |H|=6 targets 309494 canonical rows 60056 nnz 276451 (obstructed fixed targets cancelled: 0) [3s, HWM 0.17 GB]
+    E_12: |H|=6 targets 333750 canonical rows 64610 nnz 237452 (obstructed fixed targets cancelled: 0) [6s, HWM 0.19 GB]
+    E_23: |H|=2 targets 225474 canonical rows 118846 nnz 393466 (obstructed fixed targets cancelled: 0) [8s, HWM 0.19 GB]
+    E_34: |H|=1 targets 319440 canonical rows 319440 nnz 673814 (obstructed fixed targets cancelled: 0) [9s, HWM 0.19 GB]
+    E_45: |H|=1 targets 319440 canonical rows 319440 nnz 673814 (obstructed fixed targets cancelled: 0) [10s, HWM 0.19 GB]
+    E_56: |H|=2 targets 186426 canonical rows 98732 nnz 228425 (obstructed fixed targets cancelled: 0) [11s, HWM 0.19 GB]
+  built (8, 5, 4, 2, 2, 2, 1) d8: N_S=434774 |Stab|=6 n_chi=83749 rows=981124 nnz=2483422 (14s: mono 1s orbits 3s rows 11s; HWM 0.19 GB)
+    hybrid[per7 8_5_4_2_2_2_1d8] p=2147483647 attempt 0: |S|=83740 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.0s schur 0.1s null 0.0s lift 0.2s rank 0.0s]
+  per7 (8, 5, 4, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=83749 mult=1 units=0 [1.1s]
+    hybrid[per7 8_5_4_2_2_2_1d8] p=2147483629 attempt 0: |S|=83740 |U|=9 (a=1, excess 8) m=73 blocks 1x9 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s rank 0.0s]
+  per7 (8, 5, 4, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=83749 mult=1 units=0 [0.9s]
+  PER7 RESULT (8, 5, 4, 2, 2, 2, 1) d8: a=1 N_S=434774 n_chi=83749 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (17.7s, HWM 0.24 GB)
+
+=== rank 36/42 ((8, 6, 2, 2, 2, 2, 2), 8) N_S 454272 a 1 NS*delta 3634176 2026-09-10T00:56:11.016592
+      level 1: 65 prefixes
+      level 2: 1573 prefixes
+      level 3: 16844 prefixes
+      level 4: 89800 prefixes
+      level 5: 267756 prefixes
+      level 6: 428699 prefixes
+      level 7: 454272 prefixes
+      level 8: 454272 prefixes
+  lam=(8, 6, 2, 2, 2, 2, 2): N_S=454272 |Stab|=120 n_chi=6430 (orbits dropped: 0) [lean, 53s, HWM 0.14 GB]
+    E_01: |H|=120 targets 361997 canonical rows 5180 nnz 21914 (obstructed fixed targets cancelled: 0) [38s, HWM 0.18 GB]
+    E_12: |H|=24 targets 192491 canonical rows 11160 nnz 42736 (obstructed fixed targets cancelled: 0) [42s, HWM 0.18 GB]
+    E_23: |H|=6 targets 333750 canonical rows 64610 nnz 133032 (obstructed fixed targets cancelled: 0) [45s, HWM 0.18 GB]
+    E_34: |H|=6 targets 333750 canonical rows 64610 nnz 133032 (obstructed fixed targets cancelled: 0) [48s, HWM 0.18 GB]
+    E_45: |H|=6 targets 333750 canonical rows 64610 nnz 133032 (obstructed fixed targets cancelled: 0) [50s, HWM 0.18 GB]
+    E_56: |H|=6 targets 333750 canonical rows 64610 nnz 133032 (obstructed fixed targets cancelled: 0) [53s, HWM 0.18 GB]
+  built (8, 6, 2, 2, 2, 2, 2) d8: N_S=454272 |Stab|=120 n_chi=6430 rows=274780 nnz=596778 (107s: mono 1s orbits 53s rows 53s; HWM 0.18 GB)
+    hybrid[per7 8_6_2_2_2_2_2d8] p=2147483647 attempt 0: |S|=6426 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 2, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=6430 mult=1 units=0 [0.4s]
+    hybrid[per7 8_6_2_2_2_2_2d8] p=2147483629 attempt 0: |S|=6426 |U|=4 (a=1, excess 3) m=68 blocks 1x4 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 6, 2, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=6430 mult=1 units=0 [0.4s]
+  PER7 RESULT (8, 6, 2, 2, 2, 2, 2) d8: a=1 N_S=454272 n_chi=6430 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (109.2s, HWM 0.18 GB)
+
+=== rank 37/42 ((6, 6, 5, 3, 2, 1, 1), 8) N_S 462973 a 1 NS*delta 3703784 2026-09-10T00:58:16.621495
+      level 1: 43 prefixes
+      level 2: 643 prefixes
+      level 3: 8838 prefixes
+      level 4: 53215 prefixes
+      level 5: 176613 prefixes
+      level 6: 367816 prefixes
+      level 7: 462973 prefixes
+      level 8: 462973 prefixes
+  lam=(6, 6, 5, 3, 2, 1, 1): N_S=462973 |Stab|=4 n_chi=97285 (orbits dropped: 38172) [lean, 1s, HWM 0.15 GB]
+    E_01: |H|=2 targets 422268 canonical rows 176816 nnz 724836 (obstructed fixed targets cancelled: 13422) [2s, HWM 0.18 GB]
+    E_12: |H|=2 targets 376796 canonical rows 157347 nnz 648499 (obstructed fixed targets cancelled: 12375) [4s, HWM 0.20 GB]
+    E_23: |H|=4 targets 290945 canonical rows 60574 nnz 227111 (obstructed fixed targets cancelled: 8738) [5s, HWM 0.20 GB]
+    E_34: |H|=4 targets 278277 canonical rows 58109 nnz 167239 (obstructed fixed targets cancelled: 4809) [6s, HWM 0.20 GB]
+    E_45: |H|=2 targets 197662 canonical rows 98246 nnz 194570 (obstructed fixed targets cancelled: 0) [6s, HWM 0.20 GB]
+    E_56: |H|=2 targets 268890 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 0) [7s, HWM 0.20 GB]
+  built (6, 6, 5, 3, 2, 1, 1) d8: N_S=462973 |Stab|=4 n_chi=97285 rows=551092 nnz=1962255 (9s: mono 1s orbits 1s rows 7s; HWM 0.20 GB)
+    hybrid[per7 6_6_5_3_2_1_1d8] p=2147483647 attempt 0: |S|=97266 |U|=19 (a=1, excess 18) m=83 blocks 1x19 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 6, 5, 3, 2, 1, 1) d8 p=2147483647: a=1 n_chi=97285 mult=1 units=0 [0.7s]
+    hybrid[per7 6_6_5_3_2_1_1d8] p=2147483629 attempt 0: |S|=97266 |U|=19 (a=1, excess 18) m=83 blocks 1x19 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.1s schur 0.2s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 6, 5, 3, 2, 1, 1) d8 p=2147483629: a=1 n_chi=97285 mult=1 units=0 [0.7s]
+  PER7 RESULT (6, 6, 5, 3, 2, 1, 1) d8: a=1 N_S=462973 n_chi=97285 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (11.1s, HWM 0.22 GB)
+
+=== rank 38/42 ((7, 6, 4, 2, 2, 2, 1), 8) N_S 513415 a 1 NS*delta 4107320 2026-09-10T00:58:48.542948
+      level 1: 47 prefixes
+      level 2: 1234 prefixes
+      level 3: 13451 prefixes
+      level 4: 75016 prefixes
+      level 5: 238945 prefixes
+      level 6: 450420 prefixes
+      level 7: 513415 prefixes
+      level 8: 513415 prefixes
+  lam=(7, 6, 4, 2, 2, 2, 1): N_S=513415 |Stab|=6 n_chi=98609 (orbits dropped: 0) [lean, 2s, HWM 0.17 GB]
+    E_01: |H|=6 targets 434774 canonical rows 83749 nnz 367025 (obstructed fixed targets cancelled: 0) [3s, HWM 0.17 GB]
+    E_12: |H|=6 targets 359173 canonical rows 69388 nnz 280791 (obstructed fixed targets cancelled: 0) [5s, HWM 0.18 GB]
+    E_23: |H|=2 targets 265576 canonical rows 139834 nnz 465105 (obstructed fixed targets cancelled: 0) [6s, HWM 0.18 GB]
+    E_34: |H|=1 targets 376796 canonical rows 376796 nnz 798129 (obstructed fixed targets cancelled: 0) [7s, HWM 0.19 GB]
+    E_45: |H|=1 targets 376796 canonical rows 376796 nnz 798129 (obstructed fixed targets cancelled: 0) [8s, HWM 0.21 GB]
+    E_56: |H|=2 targets 219449 canonical rows 116083 nnz 269465 (obstructed fixed targets cancelled: 0) [9s, HWM 0.21 GB]
+  built (7, 6, 4, 2, 2, 2, 1) d8: N_S=513415 |Stab|=6 n_chi=98609 rows=1162646 nnz=2978644 (12s: mono 1s orbits 2s rows 9s; HWM 0.21 GB)
+    hybrid[per7 7_6_4_2_2_2_1d8] p=2147483647 attempt 0: |S|=98595 |U|=14 (a=1, excess 13) m=78 blocks 1x14 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s rank 0.0s]
+  per7 (7, 6, 4, 2, 2, 2, 1) d8 p=2147483647: a=1 n_chi=98609 mult=1 units=0 [1.0s]
+    hybrid[per7 7_6_4_2_2_2_1d8] p=2147483629 attempt 0: |S|=98595 |U|=14 (a=1, excess 13) m=78 blocks 1x14 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.2s null 0.0s lift 0.1s rank 0.0s]
+  per7 (7, 6, 4, 2, 2, 2, 1) d8 p=2147483629: a=1 n_chi=98609 mult=1 units=0 [0.9s]
+  PER7 RESULT (7, 6, 4, 2, 2, 2, 1) d8: a=1 N_S=513415 n_chi=98609 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (14.7s, HWM 0.28 GB)
+
+=== rank 39/42 ((6, 5, 5, 4, 2, 1, 1), 8) N_S 604420 a 1 NS*delta 4835360 2026-09-10T00:59:44.090600
+      level 1: 42 prefixes
+      level 2: 668 prefixes
+      level 3: 9425 prefixes
+      level 4: 60092 prefixes
+      level 5: 213536 prefixes
+      level 6: 471586 prefixes
+      level 7: 604420 prefixes
+      level 8: 604420 prefixes
+  lam=(6, 5, 5, 4, 2, 1, 1): N_S=604420 |Stab|=4 n_chi=126738 (orbits dropped: 50069) [lean, 2s, HWM 0.16 GB]
+    E_01: |H|=2 targets 491385 canonical rows 206070 nnz 851942 (obstructed fixed targets cancelled: 15734) [2s, HWM 0.19 GB]
+    E_12: |H|=2 targets 538883 canonical rows 226206 nnz 839679 (obstructed fixed targets cancelled: 14303) [4s, HWM 0.22 GB]
+    E_23: |H|=2 targets 462973 canonical rows 194062 nnz 731298 (obstructed fixed targets cancelled: 12375) [6s, HWM 0.22 GB]
+    E_34: |H|=4 targets 311618 canonical rows 64774 nnz 217906 (obstructed fixed targets cancelled: 7404) [7s, HWM 0.22 GB]
+    E_45: |H|=2 targets 256941 canonical rows 125718 nnz 252246 (obstructed fixed targets cancelled: 614) [8s, HWM 0.22 GB]
+    E_56: |H|=2 targets 349985 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 616) [9s, HWM 0.22 GB]
+  built (6, 5, 5, 4, 2, 1, 1) d8: N_S=604420 |Stab|=4 n_chi=126738 rows=816830 nnz=2893071 (12s: mono 1s orbits 2s rows 9s; HWM 0.22 GB)
+    hybrid[per7 6_5_5_4_2_1_1d8] p=2147483647 attempt 0: |S|=126718 |U|=20 (a=1, excess 19) m=84 blocks 1x20 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.1s schur 0.3s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 5, 5, 4, 2, 1, 1) d8 p=2147483647: a=1 n_chi=126738 mult=1 units=0 [1.1s]
+    hybrid[per7 6_5_5_4_2_1_1d8] p=2147483629 attempt 0: |S|=126718 |U|=20 (a=1, excess 19) m=84 blocks 1x20 projected nullity 1, verified=True, rank 1 [split 0.1s trisolve 0.1s schur 0.3s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 5, 5, 4, 2, 1, 1) d8 p=2147483629: a=1 n_chi=126738 mult=1 units=0 [1.0s]
+  PER7 RESULT (6, 5, 5, 4, 2, 1, 1) d8: a=1 N_S=604420 n_chi=126738 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (14.5s, HWM 0.27 GB)
+
+=== rank 40/42 ((6, 6, 4, 3, 3, 1, 1), 8) N_S 659552 a 1 NS*delta 5276416 2026-09-10T01:00:13.141700
+      level 1: 44 prefixes
+      level 2: 720 prefixes
+      level 3: 10794 prefixes
+      level 4: 70292 prefixes
+      level 5: 244548 prefixes
+      level 6: 521919 prefixes
+      level 7: 659552 prefixes
+      level 8: 659552 prefixes
+  lam=(6, 6, 4, 3, 3, 1, 1): N_S=659552 |Stab|=8 n_chi=68717 (orbits dropped: 30013) [lean, 4s, HWM 0.17 GB]
+    E_01: |H|=4 targets 601197 canonical rows 124670 nnz 513426 (obstructed fixed targets cancelled: 21612) [3s, HWM 0.20 GB]
+    E_12: |H|=4 targets 460471 canonical rows 95040 nnz 393341 (obstructed fixed targets cancelled: 17226) [6s, HWM 0.22 GB]
+    E_23: |H|=4 targets 462973 canonical rows 97221 nnz 322274 (obstructed fixed targets cancelled: 10214) [8s, HWM 0.22 GB]
+    E_34: |H|=4 targets 538883 canonical rows 112834 nnz 301853 (obstructed fixed targets cancelled: 8812) [11s, HWM 0.22 GB]
+    E_45: |H|=2 targets 229656 canonical rows 115659 nnz 273456 (obstructed fixed targets cancelled: 0) [11s, HWM 0.22 GB]
+    E_56: |H|=4 targets 381489 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 1379) [13s, HWM 0.22 GB]
+  built (6, 6, 4, 3, 3, 1, 1) d8: N_S=659552 |Stab|=8 n_chi=68717 rows=545424 nnz=1804350 (18s: mono 1s orbits 4s rows 13s; HWM 0.22 GB)
+    hybrid[per7 6_6_4_3_3_1_1d8] p=2147483647 attempt 0: |S|=68706 |U|=11 (a=1, excess 10) m=75 blocks 1x11 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 6, 4, 3, 3, 1, 1) d8 p=2147483647: a=1 n_chi=68717 mult=1 units=0 [0.7s]
+    hybrid[per7 6_6_4_3_3_1_1d8] p=2147483629 attempt 0: |S|=68706 |U|=11 (a=1, excess 10) m=75 blocks 1x11 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (6, 6, 4, 3, 3, 1, 1) d8 p=2147483629: a=1 n_chi=68717 mult=1 units=0 [0.7s]
+  PER7 RESULT (6, 6, 4, 3, 3, 1, 1) d8: a=1 N_S=659552 n_chi=68717 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (20.2s, HWM 0.22 GB)
+
+=== rank 41/42 ((7, 5, 4, 3, 2, 2, 1), 8) N_S 820813 a 1 NS*delta 6566504 2026-09-10T01:00:44.965783
+      level 1: 48 prefixes
+      level 2: 1326 prefixes
+      level 3: 15863 prefixes
+      level 4: 100650 prefixes
+      level 5: 357442 prefixes
+      level 6: 714019 prefixes
+      level 7: 820813 prefixes
+      level 8: 820813 prefixes
+  lam=(7, 5, 4, 3, 2, 2, 1): N_S=820813 |Stab|=2 n_chi=429329 (orbits dropped: 0) [lean, 1s, HWM 0.21 GB]
+    E_01: |H|=2 targets 618408 canonical rows 324116 nnz 1461164 (obstructed fixed targets cancelled: 0) [3s, HWM 0.22 GB]
+    E_12: |H|=2 targets 627898 canonical rows 328941 nnz 1251797 (obstructed fixed targets cancelled: 0) [6s, HWM 0.24 GB]
+    E_23: |H|=2 targets 575716 canonical rows 301819 nnz 1019548 (obstructed fixed targets cancelled: 0) [8s, HWM 0.24 GB]
+    E_34: |H|=1 targets 491385 canonical rows 491385 nnz 1431607 (obstructed fixed targets cancelled: 0) [10s, HWM 0.27 GB]
+    E_45: |H|=1 targets 601197 canonical rows 601197 nnz 1285777 (obstructed fixed targets cancelled: 0) [12s, HWM 0.30 GB]
+    E_56: |H|=1 targets 348026 canonical rows 348026 nnz 820813 (obstructed fixed targets cancelled: 0) [12s, HWM 0.30 GB]
+  built (7, 5, 4, 3, 2, 2, 1) d8: N_S=820813 |Stab|=2 n_chi=429329 rows=2395484 nnz=7270706 (15s: mono 1s orbits 1s rows 13s; HWM 0.33 GB)
+    hybrid[per7 7_5_4_3_2_2_1d8] p=2147483647 attempt 0: |S|=429299 |U|=30 (a=1, excess 29) m=94 blocks 1x30 projected nullity 1, verified=True, rank 1 [split 0.2s trisolve 0.7s schur 1.0s null 0.0s lift 0.1s rank 0.1s]
+  per7 (7, 5, 4, 3, 2, 2, 1) d8 p=2147483647: a=1 n_chi=429329 mult=1 units=0 [3.7s]
+    hybrid[per7 7_5_4_3_2_2_1d8] p=2147483629 attempt 0: |S|=429299 |U|=30 (a=1, excess 29) m=94 blocks 1x30 projected nullity 1, verified=True, rank 1 [split 0.2s trisolve 0.9s schur 1.1s null 0.0s lift 0.1s rank 0.2s]
+  per7 (7, 5, 4, 3, 2, 2, 1) d8 p=2147483629: a=1 n_chi=429329 mult=1 units=0 [3.6s]
+  PER7 RESULT (7, 5, 4, 3, 2, 2, 1) d8: a=1 N_S=820813 n_chi=429329 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (24.9s, HWM 0.64 GB)
+
+=== rank 42/42 ((8, 4, 4, 2, 2, 2, 2), 8) N_S 843890 a 1 NS*delta 6751120 2026-09-10T01:01:10.273438
+      level 1: 65 prefixes
+      level 2: 1644 prefixes
+      level 3: 20116 prefixes
+      level 4: 131465 prefixes
+      level 5: 467442 prefixes
+      level 6: 793017 prefixes
+      level 7: 843890 prefixes
+      level 8: 843890 prefixes
+  lam=(8, 4, 4, 2, 2, 2, 2): N_S=843890 |Stab|=48 n_chi=23896 (orbits dropped: 0) [lean, 56s, HWM 0.19 GB]
+    E_01: |H|=24 targets 513478 canonical rows 28709 nnz 129950 (obstructed fixed targets cancelled: 0) [15s, HWM 0.19 GB]
+    E_12: |H|=24 targets 724458 canonical rows 39914 nnz 127100 (obstructed fixed targets cancelled: 0) [36s, HWM 0.24 GB]
+    E_23: |H|=6 targets 434774 canonical rows 83749 nnz 276451 (obstructed fixed targets cancelled: 0) [38s, HWM 0.24 GB]
+    E_34: |H|=4 targets 618408 canonical rows 164405 nnz 346730 (obstructed fixed targets cancelled: 0) [42s, HWM 0.24 GB]
+    E_45: |H|=4 targets 618408 canonical rows 164405 nnz 346730 (obstructed fixed targets cancelled: 0) [45s, HWM 0.24 GB]
+    E_56: |H|=4 targets 618408 canonical rows 164405 nnz 346730 (obstructed fixed targets cancelled: 0) [48s, HWM 0.24 GB]
+  built (8, 4, 4, 2, 2, 2, 2) d8: N_S=843890 |Stab|=48 n_chi=23896 rows=645587 nnz=1573691 (106s: mono 2s orbits 56s rows 48s; HWM 0.24 GB)
+    hybrid[per7 8_4_4_2_2_2_2d8] p=2147483647 attempt 0: |S|=23894 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 4, 4, 2, 2, 2, 2) d8 p=2147483647: a=1 n_chi=23896 mult=1 units=0 [0.9s]
+    hybrid[per7 8_4_4_2_2_2_2d8] p=2147483629 attempt 0: |S|=23894 |U|=2 (a=1, excess 1) m=66 blocks 1x2 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.0s rank 0.0s]
+  per7 (8, 4, 4, 2, 2, 2, 2) d8 p=2147483629: a=1 n_chi=23896 mult=1 units=0 [0.7s]
+  PER7 RESULT (8, 4, 4, 2, 2, 2, 2) d8: a=1 N_S=843890 n_chi=23896 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (109.3s, HWM 0.24 GB)

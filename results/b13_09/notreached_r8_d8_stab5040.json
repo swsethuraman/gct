@@ -1,0 +1,52 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-09",
+ "mu": [
+  10,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2
+ ],
+ "delta": 8,
+ "r": 8,
+ "a": 1,
+ "N_S": 951941,
+ "stab": 5040,
+ "NS_delta": 7615528,
+ "outcome": "NOT REACHED -- ended by its pre-registered timeout bound",
+ "attempts": [
+  {
+   "attempt": 1,
+   "launched_by": "analysis/b13_09_sweep.py 8 8 --order N_S",
+   "started": "2026-09-10T00:46:50Z",
+   "ended": "2026-09-10T01:00:54Z",
+   "ended_how": "by the process id recorded in results/logs/b13_09_B_r8_d8_child.pid (2605)",
+   "reason": "Addendum C.3: re-ordered by refitted cost; this is the dearest weight in its group and four cheaper weights were waiting",
+   "cpu_s_at_end": null,
+   "phase_at_end": "chi-isotypic orbit setup"
+  },
+  {
+   "attempt": 2,
+   "launched_by": "analysis/b13_09_per_r.py 8 10 2 2 2 2 2 2 2 (run alone, deliberately, to close the group)",
+   "started": "2026-09-10T01:17:48Z",
+   "ended": "2026-09-10T02:47:48Z",
+   "ended_how": "SIGTERM from its own launch-time `timeout 5400` bound (docs/brief_wording.md sec. 1)",
+   "wall_s": 5400,
+   "cpu_s_at_end": 2940,
+   "cpu_share_approx": 0.55,
+   "phase_at_end": "chi-isotypic orbit setup (_canon_acc), after the 8-level monomial enumeration completed at N_S = 951941",
+   "peak_rss_gb": 0.18
+  }
+ ],
+ "cost_measured": {
+  "cpu_s_consumed_without_completing": 2940,
+  "refitted_model_s": 3970,
+  "note": "a MEASURED LOWER BOUND on this weight's build: it consumed 2940 s of CPU in the orbit setup without finishing, which is consistent with the refitted estimate of about 3970 s and does not refute it.  The binding constraint was WALL CLOCK under contention, not the model: at the ~55% CPU share it was getting on a 2-vCPU box, 3970 s of CPU needs about 7200 s of wall clock, beyond the 5400 s per-weight timeout.",
+  "for_the_next_batch": "run this weight ALONE with a per-weight bound of at least 2.5 h, or after B13-10 removes the O(|Stab| * N_S) term in wk9_s45_build._canon_acc.  |Stab| = 5040 is the largest in the census."
+ },
+ "consequence": "I(D_8^{per_3})_8 = 0 is therefore a FIVE-of-six prefix, not a theorem.  mult_pad = mult_red at every eight-row weight of degree 8 is NOT established by this session.  By Prop. 8(2) a permanent-specific equation at an eight-row weight of degree 8 must sit at S_mu for mu = (10,2,2,2,2,2,2,2), a = 1 -- one explicitly named weight, which is a sharper open statement than the group was."
+}

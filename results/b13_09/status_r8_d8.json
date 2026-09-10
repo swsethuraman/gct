@@ -1,0 +1,164 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-09",
+ "r": 8,
+ "delta": 8,
+ "run": "b13_09_B_r8_d8",
+ "started": "2026-09-10T01:01:10.829421",
+ "weights": 6,
+ "bounds": {
+  "weight_timeout_s": 5400,
+  "ulimit_v_kb": 6500000,
+  "max_N_S": 1000000000000.0,
+  "max_NS_delta": 180000000.0,
+  "until_utc": null,
+  "order": "cost"
+ },
+ "reached": [
+  {
+   "rank": 1,
+   "mu": [
+    7,
+    6,
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 1092229,
+   "NS_delta": 8737832,
+   "n_chi": 51912,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 83.7,
+   "hwm_gb": 0.29,
+   "build_secs": 80.2,
+   "wall": 91.2,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+  },
+  {
+   "rank": 2,
+   "mu": [
+    8,
+    5,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 1259739,
+   "NS_delta": 10077912,
+   "n_chi": 98937,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 66.9,
+   "hwm_gb": 0.34,
+   "build_secs": 62.4,
+   "wall": 72.4,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+  },
+  {
+   "rank": 3,
+   "mu": [
+    7,
+    5,
+    5,
+    2,
+    2,
+    1,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 1000598,
+   "NS_delta": 8004784,
+   "n_chi": 24148,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 70.5,
+   "hwm_gb": 0.26,
+   "build_secs": 68.6,
+   "wall": 77.9,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+  },
+  {
+   "rank": 4,
+   "mu": [
+    6,
+    6,
+    5,
+    3,
+    1,
+    1,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 804050,
+   "NS_delta": 6432400,
+   "n_chi": 4257,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 90.0,
+   "hwm_gb": 0.25,
+   "status": "banked earlier"
+  },
+  {
+   "rank": 5,
+   "mu": [
+    9,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "a": 1,
+   "N_S": 1213003,
+   "NS_delta": 9704024,
+   "n_chi": 15776,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 413.0,
+   "hwm_gb": 0.31,
+   "build_secs": 406.2,
+   "wall": 420.5,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+  }
+ ],
+ "not_reached": [
+  {
+   "rank": 6,
+   "mu": [
+    10,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "a": 1,
+   "N_S": 951941,
+   "NS_delta": 7615528,
+   "cost_model_s": 3983.8,
+   "reason": "above the per-weight refitted-cost cap 900 s"
+  }
+ ],
+ "halted": null,
+ "updated": "2026-09-10T01:12:13.324965"
+}

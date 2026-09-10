@@ -1,0 +1,2474 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-09",
+ "route": "kernel-free: full column rank of [E; ev] (the s43/s47 inject criterion)",
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "nchi_cap": 5200,
+ "projection_seed": 20260910,
+ "sources": [
+  "results/b13_09/per_r7_d7.jsonl",
+  "results/b13_09/per_r7_d8.jsonl",
+  "results/b13_09/per_r7_d9.jsonl",
+  "results/b13_09/per_r8_d8.jsonl",
+  "results/b13_09/per_r8_d9.jsonl"
+ ],
+ "weights": [
+  {
+   "mu": [
+    9,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 239,
+   "N_S": 56316,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 239,
+     "n_chi": 239,
+     "full_column_rank": true,
+     "rank_E": 238,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 239,
+     "n_chi": 239,
+     "full_column_rank": true,
+     "rank_E": 238,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 47.2
+  },
+  {
+   "mu": [
+    12,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 284,
+   "N_S": 63711,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 284,
+     "n_chi": 284,
+     "full_column_rank": true,
+     "rank_E": 283,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 284,
+     "n_chi": 284,
+     "full_column_rank": true,
+     "rank_E": 283,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 45.9
+  },
+  {
+   "mu": [
+    15,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 301,
+   "N_S": 65416,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 301,
+     "n_chi": 301,
+     "full_column_rank": true,
+     "rank_E": 300,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 301,
+     "n_chi": 301,
+     "full_column_rank": true,
+     "rank_E": 300,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 48.4
+  },
+  {
+   "mu": [
+    6,
+    6,
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 1092,
+   "N_S": 52386,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 1092,
+     "n_chi": 1092,
+     "full_column_rank": true,
+     "rank_E": 1091,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 1092,
+     "n_chi": 1092,
+     "full_column_rank": true,
+     "rank_E": 1091,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 7.4
+  },
+  {
+   "mu": [
+    6,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 1973,
+   "N_S": 48122,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 1973,
+     "n_chi": 1973,
+     "full_column_rank": true,
+     "rank_E": 1972,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 1973,
+     "n_chi": 1973,
+     "full_column_rank": true,
+     "rank_E": 1972,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 19.1
+  },
+  {
+   "mu": [
+    11,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 2140,
+   "N_S": 138754,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 2140,
+     "n_chi": 2140,
+     "full_column_rank": true,
+     "rank_E": 2139,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 2140,
+     "n_chi": 2140,
+     "full_column_rank": true,
+     "rank_E": 2139,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 51.7
+  },
+  {
+   "mu": [
+    14,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 2344,
+   "N_S": 147819,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 2344,
+     "n_chi": 2344,
+     "full_column_rank": true,
+     "rank_E": 2343,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 2344,
+     "n_chi": 2344,
+     "full_column_rank": true,
+     "rank_E": 2343,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 58.7
+  },
+  {
+   "mu": [
+    9,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 3421,
+   "N_S": 84779,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 3421,
+     "n_chi": 3421,
+     "full_column_rank": true,
+     "rank_E": 3420,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 3421,
+     "n_chi": 3421,
+     "full_column_rank": true,
+     "rank_E": 3420,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 84.7
+  },
+  {
+   "mu": [
+    10,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 3649,
+   "N_S": 245689,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 3649,
+     "n_chi": 3649,
+     "full_column_rank": true,
+     "rank_E": 3648,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 3649,
+     "n_chi": 3649,
+     "full_column_rank": true,
+     "rank_E": 3648,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 149.7
+  },
+  {
+   "mu": [
+    9,
+    6,
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 3758,
+   "N_S": 92166,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 3758,
+     "n_chi": 3758,
+     "full_column_rank": true,
+     "rank_E": 3757,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 3758,
+     "n_chi": 3758,
+     "full_column_rank": true,
+     "rank_E": 3757,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 100.6
+  },
+  {
+   "mu": [
+    8,
+    4,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 3980,
+   "N_S": 67131,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 3980,
+     "n_chi": 3980,
+     "full_column_rank": true,
+     "rank_E": 3979,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 3980,
+     "n_chi": 3980,
+     "full_column_rank": true,
+     "rank_E": 3979,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 119.3
+  },
+  {
+   "mu": [
+    6,
+    6,
+    5,
+    3,
+    1,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 4257,
+   "N_S": 804050,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 4257,
+     "n_chi": 4257,
+     "full_column_rank": true,
+     "rank_E": 4256,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 4257,
+     "n_chi": 4257,
+     "full_column_rank": true,
+     "rank_E": 4256,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 319.0
+  },
+  {
+   "mu": [
+    12,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 4278,
+   "N_S": 108636,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 4278,
+     "n_chi": 4278,
+     "full_column_rank": true,
+     "rank_E": 4277,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 4278,
+     "n_chi": 4278,
+     "full_column_rank": true,
+     "rank_E": 4277,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 149.0
+  },
+  {
+   "mu": [
+    6,
+    5,
+    5,
+    5,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 4700,
+   "N_S": 311618,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 4700,
+     "n_chi": 4700,
+     "full_column_rank": true,
+     "rank_E": 4699,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 4700,
+     "n_chi": 4700,
+     "full_column_rank": true,
+     "rank_E": 4699,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 214.3
+  },
+  {
+   "mu": [
+    12,
+    6,
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 4703,
+   "N_S": 118048,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 4703,
+     "n_chi": 4703,
+     "full_column_rank": true,
+     "rank_E": 4702,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 4703,
+     "n_chi": 4703,
+     "full_column_rank": true,
+     "rank_E": 4702,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 188.0
+  },
+  {
+   "mu": [
+    11,
+    4,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 5124,
+   "N_S": 84997,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 5124,
+     "n_chi": 5124,
+     "full_column_rank": true,
+     "rank_E": 5123,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 5124,
+     "n_chi": 5124,
+     "full_column_rank": true,
+     "rank_E": 5123,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 214.8
+  },
+  {
+   "mu": [
+    9,
+    5,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 5180,
+   "N_S": 361997,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 5180,
+     "n_chi": 5180,
+     "full_column_rank": true,
+     "rank_E": 5179,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 5180,
+     "n_chi": 5180,
+     "full_column_rank": true,
+     "rank_E": 5179,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 257.1
+  },
+  {
+   "mu": [
+    14,
+    4,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 5597,
+   "N_S": 91274,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 5597 above this verifier's dense cap 5200",
+   "secs": 4.8
+  },
+  {
+   "mu": [
+    8,
+    6,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 6430,
+   "N_S": 454272,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 6430 above this verifier's dense cap 5200",
+   "secs": 109.1
+  },
+  {
+   "mu": [
+    8,
+    5,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 7063,
+   "N_S": 166125,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 7063 above this verifier's dense cap 5200",
+   "secs": 5.4
+  },
+  {
+   "mu": [
+    10,
+    8,
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 7158,
+   "N_S": 175861,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 7158 above this verifier's dense cap 5200",
+   "secs": 7.4
+  },
+  {
+   "mu": [
+    10,
+    5,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 7604,
+   "N_S": 128905,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 7604 above this verifier's dense cap 5200",
+   "secs": 6.2
+  },
+  {
+   "mu": [
+    8,
+    6,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 8504,
+   "N_S": 105462,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 8504 above this verifier's dense cap 5200",
+   "secs": 2.8
+  },
+  {
+   "mu": [
+    13,
+    5,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 8899,
+   "N_S": 148526,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 8899 above this verifier's dense cap 5200",
+   "secs": 8.3
+  },
+  {
+   "mu": [
+    9,
+    6,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 9848,
+   "N_S": 168763,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 9848 above this verifier's dense cap 5200",
+   "secs": 8.8
+  },
+  {
+   "mu": [
+    11,
+    5,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 9917,
+   "N_S": 238330,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 9917 above this verifier's dense cap 5200",
+   "secs": 8.2
+  },
+  {
+   "mu": [
+    7,
+    5,
+    5,
+    4,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 11127,
+   "N_S": 254060,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 11127 above this verifier's dense cap 5200",
+   "secs": 8.7
+  },
+  {
+   "mu": [
+    8,
+    7,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 11160,
+   "N_S": 192491,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 11160 above this verifier's dense cap 5200",
+   "secs": 9.9
+  },
+  {
+   "mu": [
+    11,
+    6,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 12074,
+   "N_S": 152466,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 12074 above this verifier's dense cap 5200",
+   "secs": 4.3
+  },
+  {
+   "mu": [
+    8,
+    6,
+    4,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 12350,
+   "N_S": 148618,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 12350 above this verifier's dense cap 5200",
+   "secs": 4.1
+  },
+  {
+   "mu": [
+    12,
+    6,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 12693,
+   "N_S": 214526,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 12693 above this verifier's dense cap 5200",
+   "secs": 11.7
+  },
+  {
+   "mu": [
+    7,
+    5,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 13898,
+   "N_S": 64945,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 13898 above this verifier's dense cap 5200",
+   "secs": 1.6
+  },
+  {
+   "mu": [
+    10,
+    7,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 15270,
+   "N_S": 189853,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 15270 above this verifier's dense cap 5200",
+   "secs": 5.4
+  },
+  {
+   "mu": [
+    9,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 15776,
+   "N_S": 1213003,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 15776 above this verifier's dense cap 5200",
+   "secs": 421.3
+  },
+  {
+   "mu": [
+    11,
+    7,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 16171,
+   "N_S": 276644,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 16171 above this verifier's dense cap 5200",
+   "secs": 16.8
+  },
+  {
+   "mu": [
+    7,
+    6,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 16652,
+   "N_S": 195449,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 16652 above this verifier's dense cap 5200",
+   "secs": 5.2
+  },
+  {
+   "mu": [
+    9,
+    8,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 17117,
+   "N_S": 211398,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 17117 above this verifier's dense cap 5200",
+   "secs": 6.0
+  },
+  {
+   "mu": [
+    11,
+    6,
+    4,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 17412,
+   "N_S": 213640,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 17412 above this verifier's dense cap 5200",
+   "secs": 6.4
+  },
+  {
+   "mu": [
+    8,
+    8,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 17651,
+   "N_S": 415764,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 17651 above this verifier's dense cap 5200",
+   "secs": 18.6
+  },
+  {
+   "mu": [
+    9,
+    6,
+    6,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 18200,
+   "N_S": 428628,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 18200 above this verifier's dense cap 5200",
+   "secs": 17.7
+  },
+  {
+   "mu": [
+    10,
+    5,
+    5,
+    4,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 18213,
+   "N_S": 422615,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 18213 above this verifier's dense cap 5200",
+   "secs": 17.1
+  },
+  {
+   "mu": [
+    10,
+    5,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 20315,
+   "N_S": 95393,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 20315 above this verifier's dense cap 5200",
+   "secs": 2.5
+  },
+  {
+   "mu": [
+    9,
+    7,
+    6,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 20355,
+   "N_S": 248457,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 20355 above this verifier's dense cap 5200",
+   "secs": 7.2
+  },
+  {
+   "mu": [
+    10,
+    7,
+    4,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 22062,
+   "N_S": 266743,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 22062 above this verifier's dense cap 5200",
+   "secs": 8.1
+  },
+  {
+   "mu": [
+    7,
+    7,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 23340,
+   "N_S": 216701,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 23340 above this verifier's dense cap 5200",
+   "secs": 6.7
+  },
+  {
+   "mu": [
+    13,
+    5,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 23406,
+   "N_S": 110345,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 23406 above this verifier's dense cap 5200",
+   "secs": 3.1
+  },
+  {
+   "mu": [
+    8,
+    4,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 23896,
+   "N_S": 843890,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 23896 above this verifier's dense cap 5200",
+   "secs": 116.3
+  },
+  {
+   "mu": [
+    7,
+    5,
+    5,
+    2,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 24148,
+   "N_S": 1000598,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 24148 above this verifier's dense cap 5200",
+   "secs": 100.1
+  },
+  {
+   "mu": [
+    8,
+    5,
+    5,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 24238,
+   "N_S": 225474,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 24238 above this verifier's dense cap 5200",
+   "secs": 6.7
+  },
+  {
+   "mu": [
+    9,
+    8,
+    4,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 24755,
+   "N_S": 297400,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 24755 above this verifier's dense cap 5200",
+   "secs": 9.1
+  },
+  {
+   "mu": [
+    9,
+    6,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 26634,
+   "N_S": 124622,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 26634 above this verifier's dense cap 5200",
+   "secs": 3.3
+  },
+  {
+   "mu": [
+    9,
+    9,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 26693,
+   "N_S": 249286,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 26693 above this verifier's dense cap 5200",
+   "secs": 8.8
+  },
+  {
+   "mu": [
+    10,
+    6,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 3,
+   "mult_banked": 3,
+   "a_weyl": 3,
+   "n_chi": 27387,
+   "N_S": 326036,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 27387 above this verifier's dense cap 5200",
+   "secs": 11.1
+  },
+  {
+   "mu": [
+    8,
+    7,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 30413,
+   "N_S": 141991,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 30413 above this verifier's dense cap 5200",
+   "secs": 3.7
+  },
+  {
+   "mu": [
+    9,
+    4,
+    4,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 30704,
+   "N_S": 309494,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 30704 above this verifier's dense cap 5200",
+   "secs": 11.8
+  },
+  {
+   "mu": [
+    9,
+    7,
+    5,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 33307,
+   "N_S": 391363,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 33307 above this verifier's dense cap 5200",
+   "secs": 12.7
+  },
+  {
+   "mu": [
+    12,
+    6,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 33842,
+   "N_S": 159017,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 33842 above this verifier's dense cap 5200",
+   "secs": 4.7
+  },
+  {
+   "mu": [
+    7,
+    7,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 34394,
+   "N_S": 359173,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 34394 above this verifier's dense cap 5200",
+   "secs": 13.9
+  },
+  {
+   "mu": [
+    11,
+    5,
+    5,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 34516,
+   "N_S": 322368,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 34516 above this verifier's dense cap 5200",
+   "secs": 10.9
+  },
+  {
+   "mu": [
+    9,
+    5,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 34615,
+   "N_S": 161406,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 34615 above this verifier's dense cap 5200",
+   "secs": 3.8
+  },
+  {
+   "mu": [
+    10,
+    4,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 35549,
+   "N_S": 181295,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 35549 above this verifier's dense cap 5200",
+   "secs": 5.5
+  },
+  {
+   "mu": [
+    12,
+    4,
+    4,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 38775,
+   "N_S": 387455,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 38775 above this verifier's dense cap 5200",
+   "secs": 15.9
+  },
+  {
+   "mu": [
+    9,
+    5,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 39842,
+   "N_S": 196325,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 39842 above this verifier's dense cap 5200",
+   "secs": 5.1
+  },
+  {
+   "mu": [
+    13,
+    4,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 40926,
+   "N_S": 206957,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 40926 above this verifier's dense cap 5200",
+   "secs": 6.6
+  },
+  {
+   "mu": [
+    8,
+    7,
+    6,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 42279,
+   "N_S": 490080,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 42279 above this verifier's dense cap 5200",
+   "secs": 17.4
+  },
+  {
+   "mu": [
+    8,
+    6,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 43331,
+   "N_S": 201582,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 43331 above this verifier's dense cap 5200",
+   "secs": 5.3
+  },
+  {
+   "mu": [
+    12,
+    5,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 43653,
+   "N_S": 204473,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 43653 above this verifier's dense cap 5200",
+   "secs": 5.9
+  },
+  {
+   "mu": [
+    11,
+    7,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 43733,
+   "N_S": 204731,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 43733 above this verifier's dense cap 5200",
+   "secs": 5.6
+  },
+  {
+   "mu": [
+    12,
+    5,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 49877,
+   "N_S": 247748,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 49877 above this verifier's dense cap 5200",
+   "secs": 6.7
+  },
+  {
+   "mu": [
+    8,
+    6,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 50050,
+   "N_S": 245532,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 50050 above this verifier's dense cap 5200",
+   "secs": 6.2
+  },
+  {
+   "mu": [
+    10,
+    8,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 50795,
+   "N_S": 237539,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 50795 above this verifier's dense cap 5200",
+   "secs": 6.4
+  },
+  {
+   "mu": [
+    9,
+    5,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 51769,
+   "N_S": 266409,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 51769 above this verifier's dense cap 5200",
+   "secs": 7.8
+  },
+  {
+   "mu": [
+    7,
+    6,
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 51912,
+   "N_S": 1092229,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 51912 above this verifier's dense cap 5200",
+   "secs": 77.5
+  },
+  {
+   "mu": [
+    7,
+    6,
+    5,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 57390,
+   "N_S": 265576,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 57390 above this verifier's dense cap 5200",
+   "secs": 6.6
+  },
+  {
+   "mu": [
+    11,
+    6,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 61888,
+   "N_S": 288796,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 61888 above this verifier's dense cap 5200",
+   "secs": 8.3
+  },
+  {
+   "mu": [
+    8,
+    6,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 64610,
+   "N_S": 333750,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 64610 above this verifier's dense cap 5200",
+   "secs": 9.5
+  },
+  {
+   "mu": [
+    12,
+    5,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 65577,
+   "N_S": 334864,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 65577 above this verifier's dense cap 5200",
+   "secs": 11.2
+  },
+  {
+   "mu": [
+    6,
+    6,
+    4,
+    3,
+    3,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 68717,
+   "N_S": 659552,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 68717 above this verifier's dense cap 5200",
+   "secs": 26.4
+  },
+  {
+   "mu": [
+    11,
+    6,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 71035,
+   "N_S": 350728,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 71035 above this verifier's dense cap 5200",
+   "secs": 10.3
+  },
+  {
+   "mu": [
+    10,
+    7,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 3,
+   "mult_banked": 3,
+   "a_weyl": 3,
+   "n_chi": 77615,
+   "N_S": 361116,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 77615 above this verifier's dense cap 5200",
+   "secs": 10.4
+  },
+  {
+   "mu": [
+    8,
+    5,
+    4,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 83749,
+   "N_S": 434774,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 83749 above this verifier's dense cap 5200",
+   "secs": 13.8
+  },
+  {
+   "mu": [
+    10,
+    6,
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 84046,
+   "N_S": 1796496,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 84046 above this verifier's dense cap 5200",
+   "secs": 165.0
+  },
+  {
+   "mu": [
+    9,
+    8,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 86709,
+   "N_S": 402941,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 86709 above this verifier's dense cap 5200",
+   "secs": 11.7
+  },
+  {
+   "mu": [
+    7,
+    5,
+    5,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 88035,
+   "N_S": 422268,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 88035 above this verifier's dense cap 5200",
+   "secs": 11.4
+  },
+  {
+   "mu": [
+    10,
+    7,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 89324,
+   "N_S": 439255,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 89324 above this verifier's dense cap 5200",
+   "secs": 12.1
+  },
+  {
+   "mu": [
+    11,
+    6,
+    3,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 3,
+   "mult_banked": 3,
+   "a_weyl": 3,
+   "n_chi": 92473,
+   "N_S": 475110,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 92473 above this verifier's dense cap 5200",
+   "secs": 15.9
+  },
+  {
+   "mu": [
+    10,
+    6,
+    5,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 3,
+   "mult_banked": 3,
+   "a_weyl": 3,
+   "n_chi": 95254,
+   "N_S": 441899,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 95254 above this verifier's dense cap 5200",
+   "secs": 12.6
+  },
+  {
+   "mu": [
+    6,
+    6,
+    5,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 97285,
+   "N_S": 462973,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 97285 above this verifier's dense cap 5200",
+   "secs": 13.6
+  },
+  {
+   "mu": [
+    7,
+    6,
+    4,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 98609,
+   "N_S": 513415,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 98609 above this verifier's dense cap 5200",
+   "secs": 18.0
+  },
+  {
+   "mu": [
+    8,
+    5,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 98937,
+   "N_S": 1259739,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 98937 above this verifier's dense cap 5200",
+   "secs": 93.7
+  },
+  {
+   "mu": [
+    9,
+    8,
+    3,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 99937,
+   "N_S": 490511,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 99937 above this verifier's dense cap 5200",
+   "secs": 14.8
+  },
+  {
+   "mu": [
+    9,
+    7,
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 102633,
+   "N_S": 2173277,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 102633 above this verifier's dense cap 5200",
+   "secs": 230.0
+  },
+  {
+   "mu": [
+    9,
+    7,
+    5,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 4,
+   "mult_banked": 4,
+   "a_weyl": 4,
+   "n_chi": 114804,
+   "N_S": 531093,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 114804 above this verifier's dense cap 5200",
+   "secs": 17.3
+  },
+  {
+   "mu": [
+    6,
+    5,
+    5,
+    4,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 126738,
+   "N_S": 604420,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 126738 above this verifier's dense cap 5200",
+   "secs": 17.2
+  },
+  {
+   "mu": [
+    8,
+    5,
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 133014,
+   "N_S": 319440,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 133014 above this verifier's dense cap 5200",
+   "secs": 7.0
+  },
+  {
+   "mu": [
+    11,
+    5,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 8,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 138630,
+   "N_S": 1765081,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 138630 above this verifier's dense cap 5200",
+   "secs": 163.3
+  },
+  {
+   "mu": [
+    7,
+    6,
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 157347,
+   "N_S": 376796,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 157347 above this verifier's dense cap 5200",
+   "secs": 8.5
+  },
+  {
+   "mu": [
+    11,
+    5,
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 2,
+   "mult_banked": 2,
+   "a_weyl": 2,
+   "n_chi": 187966,
+   "N_S": 454042,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 187966 above this verifier's dense cap 5200",
+   "secs": 11.6
+  },
+  {
+   "mu": [
+    10,
+    6,
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "delta": 9,
+   "r": 7,
+   "a_banked": 4,
+   "mult_banked": 4,
+   "a_weyl": 4,
+   "n_chi": 259737,
+   "N_S": 624541,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 259737 above this verifier's dense cap 5200",
+   "secs": 16.9
+  },
+  {
+   "mu": [
+    7,
+    5,
+    4,
+    3,
+    2,
+    2,
+    1
+   ],
+   "delta": 8,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 429329,
+   "N_S": 820813,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 429329 above this verifier's dense cap 5200",
+   "secs": 22.9
+  }
+ ],
+ "summary": {
+  "considered": 100,
+  "passed": 17,
+  "failed": 0,
+  "not_covered": 83
+ }
+}

@@ -1,0 +1,207 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-09",
+ "route": "kernel-free: full column rank of [E; ev] (the s43/s47 inject criterion)",
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "nchi_cap": 4200,
+ "projection_seed": 20260910,
+ "sources": [
+  "results/b13_09/per_r7_d7.jsonl"
+ ],
+ "weights": [
+  {
+   "mu": [
+    9,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 239,
+   "N_S": 56316,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 239,
+     "n_chi": 239,
+     "full_column_rank": true,
+     "rank_E": 238,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 239,
+     "n_chi": 239,
+     "full_column_rank": true,
+     "rank_E": 238,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 29.4
+  },
+  {
+   "mu": [
+    6,
+    6,
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 1092,
+   "N_S": 52386,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 1092,
+     "n_chi": 1092,
+     "full_column_rank": true,
+     "rank_E": 1091,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 1092,
+     "n_chi": 1092,
+     "full_column_rank": true,
+     "rank_E": 1091,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 5.4
+  },
+  {
+   "mu": [
+    6,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 1973,
+   "N_S": 48122,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 1973,
+     "n_chi": 1973,
+     "full_column_rank": true,
+     "rank_E": 1972,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 1973,
+     "n_chi": 1973,
+     "full_column_rank": true,
+     "rank_E": 1972,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 14.9
+  },
+  {
+   "mu": [
+    8,
+    4,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 3980,
+   "N_S": 67131,
+   "per_prime": {
+    "2147483647": {
+     "rank_stacked": 3980,
+     "n_chi": 3980,
+     "full_column_rank": true,
+     "rank_E": 3979,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    },
+    "2147483629": {
+     "rank_stacked": 3980,
+     "n_chi": 3980,
+     "full_column_rank": true,
+     "rank_E": 3979,
+     "a_from_operator": 1,
+     "a_agrees": true,
+     "implies_mult_eq_a": true
+    }
+   },
+   "verdict": "PASS",
+   "statement": "[E; ev] has full column rank n_chi at both primes, so mult = a: S_mu is NOT in I(D_r^{per_3})_delta -- proved over Q, kernel-free route",
+   "secs": 92.5
+  },
+  {
+   "mu": [
+    7,
+    5,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "delta": 7,
+   "r": 7,
+   "a_banked": 1,
+   "mult_banked": 1,
+   "a_weyl": 1,
+   "n_chi": 13898,
+   "N_S": 64945,
+   "verdict": "NOT COVERED",
+   "why": "n_chi 13898 above this verifier's dense cap 4200",
+   "secs": 1.4
+  }
+ ],
+ "summary": {
+  "considered": 5,
+  "passed": 4,
+  "failed": 0,
+  "not_covered": 1
+ }
+}
