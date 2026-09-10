@@ -1,0 +1,45 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-09",
+ "r": 7,
+ "delta": 7,
+ "run": "b13_09_A_r7_d7",
+ "started": "2026-09-10T00:42:24.251717",
+ "weights": 5,
+ "bounds": {
+  "weight_timeout_s": 5400,
+  "ulimit_v_kb": 6500000,
+  "max_N_S": 1000000000000.0,
+  "max_NS_delta": 180000000.0,
+  "until_utc": null
+ },
+ "reached": [
+  {
+   "rank": 1,
+   "mu": [
+    6,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 48122,
+   "NS_delta": 336854,
+   "n_chi": 1973,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 1.1,
+   "hwm_gb": 0.08,
+   "build_secs": 0.9,
+   "wall": 2.0,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+  }
+ ],
+ "not_reached": [],
+ "halted": null,
+ "updated": "2026-09-10T00:42:26.272175"
+}
