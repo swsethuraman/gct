@@ -86,6 +86,9 @@ def main(argv):
     sum_cap = float(arg(argv, '--sum-cap', '6.3'))
     engine = arg(argv, '--engine', 'unchanged'); assert engine in DRIVERS
     only_failed = '--only-failed' in argv
+    only_ranks = None
+    if '--only-ranks' in argv:
+        only_ranks = {int(x) for x in arg(argv, '--only-ranks', '').split(',') if x.strip()}
     ulimit_kb = arg(argv, '--ulimit-kb', 7000000)
     timeout_s = arg(argv, '--timeout', 7200)
     os.makedirs(CLAIMS, exist_ok=True); os.makedirs(LOGS, exist_ok=True); os.makedirs(CERTS, exist_ok=True)
@@ -122,6 +125,8 @@ def main(argv):
             claim = os.path.join(CLAIMS, f'w{rank}.rerun.claim')
         else:
             claim = os.path.join(CLAIMS, f'w{rank}.claim')
+        if only_ranks is not None and rank not in only_ranks:
+            continue
         if pred > max_pred:
             status['skipped'].append(dict(key, reason=f'predicted peak {pred} GB > lane cap {max_pred}')); continue
         if deadline and now() >= deadline:

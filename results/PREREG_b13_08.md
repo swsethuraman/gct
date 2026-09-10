@@ -366,3 +366,53 @@ lane 0 `--sched --sum-cap 6.8 --ulimit-kb 7000000`, lane 1 `--sched --max-pred
 
 Nothing above changes what counts as a negative, a candidate deficiency, or
 not-reached.
+
+---
+
+## Addendum B — 2026-09-10, the `n_χ ≥ 2²¹` engine boundary; committed before the measurements it governs
+
+**A hard limit in the engine, found by running into it, not predicted.**  Rank
+319 `(8,7,6,5,3,1)` (`a = 5`, `N_S = 2 422 004`, `|Stab| = 1`) ended after 512 s
+with `AssertionError` at `wk11_s71_hybrid.matmul_mod` line 171,
+`assert A.shape[1] < (1 << 21)`.  This is **not** a memory failure and §6's lean
+driver as pre-registered would not have helped.
+
+`matmul_mod` splits each entry into 16-bit limbs and accumulates the partial
+products in `float64`; a term is at most `2³²`, so a sum of `K` of them stays
+exact only while `K·2³² < 2⁵³`, i.e. `K < 2²¹`.  The evaluation step forms
+`G = ev·K` with inner dimension `n_χ`, and **17 of this session's 95 weights
+have `n_χ ≥ 2²¹ = 2 097 152`** — every weight with `N_S/|Stab|` above that:
+ranks 319, 339, 350, 361, 363, 367, 369, 371, 373, 375, 376, 382, 383, 387,
+389, 390, 391 — as do 4 of the 11 deferred (394, 395, 398, 399).  Session 79
+never reached one: its largest `n_χ` at this degree was 1 448 828.  **The
+assertion is correct and is not removed.**
+
+**The fix, and why it changes no value.**  `matmul_mod_wide` in
+`analysis/wk13_b08_per6_lean.py` cuts the inner dimension into blocks of
+`2¹⁹ < 2²¹`, passes each block to the engine's own `matmul_mod` — whose
+assertion is therefore still enforced, inside every block — and adds the block
+results mod `p`.  Matrix multiplication is bilinear and addition mod `p` is
+associative, so the result is exactly what an unbounded-precision `matmul_mod`
+would return; for `K < 2²¹` it delegates unchanged and is bit-identical.
+
+**Validated three ways before any weight was run under it** (log
+`results/logs/b13_08_widecheck.log`):
+
+1. below the guard, with the block size forced to 997: the engine's
+   `matmul_mod`, exact Python integer arithmetic, and the wide route agree
+   entrywise at both house primes;
+2. above the guard, inner dimension `2²¹ + 1234`: the engine asserts, and the
+   wide route agrees entrywise with exact Python integer arithmetic;
+3. block size is not special: `kblk ∈ {2¹⁹, 2²⁰, 2²¹−1, 300 000, 7}` all give
+   the identical matrix; and end-to-end, the banked weight rank 297 re-run
+   through the lean driver with the wide path forced into 11 blocks reproduces
+   the banked record in **every** field — `a`, `N_S`, `|Stab|`, `n_χ`, `nrows`,
+   `nnz`, cover size and order, and `mult` at both primes.
+
+**What runs where, for the remainder.**  The 17 blocked ranks run on the lean
+driver (`--engine lean --only-ranks …`), which now carries both the row-blocked
+kernel check of §6 and the inner-blocked product; every other weight stays on
+the unchanged engine.  Records written by the lean driver carry
+`engine: "lean (b13_08)"`, and §4 of the report says which weights they are.
+The mathematics, the seeds, the primes, the points and the stopping rules are
+unchanged.

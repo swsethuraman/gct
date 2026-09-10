@@ -36,7 +36,37 @@ from wk11_s71_hybrid import best_cover, hybrid_kernel, matmul_mod, rank_mod_p, n
 from wk12_s79_cell6 import ev_rows_from_coeffs, expand_vector
 
 ROWS_PER_BLOCK = 1_000_000
+INNER_BLOCK = 1 << 19          # < 2^21, the exactness bound of wk11_s71_hybrid.matmul_mod
 ENGINE_TAG = "lean (b13_08)"
+
+
+def matmul_mod_wide(A, B, p, blk=64, kblk=INNER_BLOCK):
+    """(A @ B) mod p with NO bound on the inner dimension.
+
+    wk11_s71_hybrid.matmul_mod splits each entry into 16-bit limbs and accumulates the
+    partial products in float64, so a term is at most 2^32 and a sum of K of them must
+    stay below 2^53: hence its assertion K = A.shape[1] < 2^21.  That assertion is
+    correct and is not removed.  Here the inner dimension is cut into blocks of kblk <
+    2^21, each block passed to the engine's own matmul_mod, and the block results added
+    mod p.  Matrix multiplication is bilinear and addition mod p is associative, so the
+    value is EXACTLY the value matmul_mod would return if float64 were unbounded --
+    identical output, not an approximation, and identical output to matmul_mod itself
+    whenever K < 2^21 (that case delegates unchanged).
+
+    Needed at delta = 10 because the evaluation step forms G = ev . K with inner
+    dimension n_chi, and 17 of this session's 95 weights have n_chi >= 2^21 = 2 097 152
+    (every weight with N_S / |Stab| above that); session 79 never reached one.
+    """
+    A = np.asarray(A, dtype=np.int64) % p
+    K = A.shape[1]
+    assert np.asarray(B).shape[0] == K, ('inner dimensions disagree', A.shape, np.asarray(B).shape)
+    if K < (1 << 21):
+        return wk11_s71_hybrid.matmul_mod(A, B, p, blk)
+    out = np.zeros((A.shape[0], np.asarray(B).shape[1]), dtype=np.int64)
+    for k0 in range(0, K, kblk):
+        k1 = min(K, k0 + kblk)
+        out = (out + wk11_s71_hybrid.matmul_mod(A[:, k0:k1], np.asarray(B)[k0:k1], p, blk)) % p
+    return out
 
 
 def check_kernel_mat_rowblocked(E, K, p, chunk=16, rows_per_block=ROWS_PER_BLOCK):
@@ -57,9 +87,13 @@ def check_kernel_mat_rowblocked(E, K, p, chunk=16, rows_per_block=ROWS_PER_BLOCK
 
 
 def install():
-    """route every kernel check of this process through the row-blocked predicate."""
+    """route this process's kernel check through the row-blocked predicate and its
+    matrix products through the inner-blocked one.  Both compute the identical value;
+    neither relaxes an exactness bound (matmul_mod's own assertion is untouched and is
+    still enforced inside every block)."""
     wk11_s71_hybrid.check_kernel_mat = check_kernel_mat_rowblocked
     ENGINE.check_kernel_mat = check_kernel_mat_rowblocked
+    ENGINE.matmul_mod = matmul_mod_wide
 
 
 def ev_times_K(arr, coeff_dicts, p, Kp_, block=8):
@@ -67,7 +101,7 @@ def ev_times_K(arr, coeff_dicts, p, Kp_, block=8):
     parts = []
     for c0 in range(0, len(coeff_dicts), block):
         EV = ev_rows_from_coeffs(arr, coeff_dicts[c0:c0 + block], p, R, n=n3)
-        parts.append(matmul_mod(EV % p, Kp_, p)); del EV
+        parts.append(matmul_mod_wide(EV % p, Kp_, p)); del EV
     return np.vstack(parts)
 
 
@@ -110,7 +144,7 @@ def measure_weight_lean(mu, delta, verbose=True, certs=None, a_given=None, want_
             m2 = int(rank_mod_p(np.vstack([G, G2]), p))
             rec['recheck'] = dict(points=3 * a + 24, seed=SEED_RECHECK, mult_with_all_points=m2)
             cs = nullspace_mod_p(np.vstack([G, G2]), p)
-            vecs = matmul_mod(np.asarray(cs, dtype=np.int64) % p, np.asarray(K.T, dtype=np.int64) % p, p)
+            vecs = matmul_mod_wide(np.asarray(cs, dtype=np.int64) % p, np.asarray(K.T, dtype=np.int64) % p, p)
             assert check_kernel_mat_rowblocked(E, vecs.T, p)
             rec['ideal_chi'] = vecs.tolist()
             rec['ideal_terms'] = [expand_vector(B['arr'], v, p, R, n=n3) for v in vecs] if B['N_S'] * len(vecs) <= 3_000_000 else None
