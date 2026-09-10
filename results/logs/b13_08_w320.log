@@ -1,0 +1,39 @@
+
+=== lane 1 rank 320 (9, 6, 6, 4, 4, 1) a 6 N_S 2452773 pred 2.29 GB engine unchanged ulimit_kb 3200000 2026-09-09T15:51:47.034096
+$ ulimit -v 3200000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 9 6 6 4 4 1 --out /home/claude/gct/results/b13_08/per6_d10_lane1.jsonl --a 6 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 612 prefixes
+      level 3: 6421 prefixes
+      level 4: 44194 prefixes
+      level 5: 210653 prefixes
+      level 6: 706766 prefixes
+      level 7: 1643577 prefixes
+      level 8: 2334522 prefixes
+      level 9: 2452773 prefixes
+      level 10: 2452773 prefixes
+  lam=(9, 6, 6, 4, 4, 1): N_S=2452773 |Stab|=4 n_chi=624176 (orbits dropped: 0) [lean, 19s, HWM 0.43 GB]
+
+=== lane 1 rank 320 (9, 6, 6, 4, 4, 1) a 6 N_S 2452773 pred 2.29 GB engine unchanged ulimit_kb 3200000 2026-09-10T00:40:20.740193
+$ ulimit -v 3200000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 9 6 6 4 4 1 --out /home/claude/gct/results/b13_08/per6_d10_lane1.jsonl --a 6 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 612 prefixes
+      level 3: 6421 prefixes
+      level 4: 44194 prefixes
+      level 5: 210653 prefixes
+      level 6: 706766 prefixes
+      level 7: 1643577 prefixes
+      level 8: 2334522 prefixes
+      level 9: 2452773 prefixes
+      level 10: 2452773 prefixes
+  lam=(9, 6, 6, 4, 4, 1): N_S=2452773 |Stab|=4 n_chi=624176 (orbits dropped: 0) [lean, 14s, HWM 0.43 GB]
+    E_01: |H|=2 targets 1845977 canonical rows 934535 nnz 4730323 (obstructed fixed targets cancelled: 0) [14s, HWM 0.62 GB]
+    E_12: |H|=2 targets 2233926 canonical rows 1130320 nnz 4702863 (obstructed fixed targets cancelled: 0) [29s, HWM 0.68 GB]
+    E_23: |H|=1 targets 1713081 canonical rows 1713081 nnz 7145570 (obstructed fixed targets cancelled: 0) [39s, HWM 0.73 GB]
+    E_34: |H|=2 targets 2108140 canonical rows 1059439 nnz 3524413 (obstructed fixed targets cancelled: 0) [54s, HWM 0.84 GB]
+    E_45: |H|=2 targets 740833 canonical rows 373299 nnz 1232635 (obstructed fixed targets cancelled: 0) [57s, HWM 0.84 GB]
+  built (9, 6, 6, 4, 4, 1) d10: N_S=2452773 |Stab|=4 n_chi=624176 rows=5210674 nnz=21335804 (75s: mono 4s orbits 14s rows 57s; HWM 0.86 GB)
+    hybrid[per6 9_6_6_4_4_1d10] p=2147483647 attempt 0: |S|=624041 |U|=135 (a=6, excess 129) m=199 blocks 2x100 projected nullity 6, verified=True, rank 6 [split 0.3s trisolve 5.0s schur 12.3s null 0.0s lift 2.0s rank 0.3s]
+  per6 (9, 6, 6, 4, 4, 1) d10 p=2147483647: a=6 n_chi=624176 mult=6 units=0 [27.5s]
+    hybrid[per6 9_6_6_4_4_1d10] p=2147483629 attempt 0: |S|=624041 |U|=135 (a=6, excess 129) m=199 blocks 2x100 projected nullity 6, verified=True, rank 6 [split 0.3s trisolve 2.1s schur 12.9s null 0.0s lift 5.9s rank 0.7s]
+  per6 (9, 6, 6, 4, 4, 1) d10 p=2147483629: a=6 n_chi=624176 mult=6 units=0 [41.7s]
+  PER6 RESULT (9, 6, 6, 4, 4, 1) d10: a=6 N_S=2452773 n_chi=624176 mult=6 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (153.5s, HWM 2.02 GB)
