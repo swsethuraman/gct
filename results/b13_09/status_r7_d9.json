@@ -4,7 +4,7 @@
  "r": 7,
  "delta": 9,
  "run": "b13_09_A_r7_d9",
- "started": "2026-09-10T01:03:05.861615",
+ "started": "2026-09-10T01:04:52.669363",
  "weights": 152,
  "bounds": {
   "weight_timeout_s": 5400,
@@ -12,83 +12,11 @@
   "max_N_S": 1000000000000.0,
   "max_NS_delta": 180000000.0,
   "until_utc": null,
-  "order": "N_S"
+  "order": "cost"
  },
  "reached": [
   {
    "rank": 1,
-   "mu": [
-    15,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ],
-   "a": 1,
-   "N_S": 65416,
-   "NS_delta": 588744,
-   "n_chi": 301,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 24.0,
-   "hwm_gb": 0.09,
-   "build_secs": 23.4,
-   "wall": 24.6,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 2,
-   "mu": [
-    14,
-    4,
-    2,
-    2,
-    2,
-    2,
-    1
-   ],
-   "a": 1,
-   "N_S": 91274,
-   "NS_delta": 821466,
-   "n_chi": 5597,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 3.6,
-   "hwm_gb": 0.09,
-   "build_secs": 3.0,
-   "wall": 4.4,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 3,
-   "mu": [
-    12,
-    5,
-    5,
-    2,
-    1,
-    1,
-    1
-   ],
-   "a": 1,
-   "N_S": 108636,
-   "NS_delta": 977724,
-   "n_chi": 4278,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 2.8,
-   "hwm_gb": 0.1,
-   "build_secs": 2.5,
-   "wall": 3.7,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 4,
    "mu": [
     13,
     5,
@@ -107,87 +35,13 @@
    "halt": false,
    "secs": 2.4,
    "hwm_gb": 0.1,
-   "build_secs": 1.9,
-   "wall": 3.3,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+   "status": "banked earlier"
   },
   {
-   "rank": 5,
+   "rank": 2,
    "mu": [
     12,
-    6,
-    3,
-    3,
-    1,
-    1,
-    1
-   ],
-   "a": 1,
-   "N_S": 118048,
-   "NS_delta": 1062432,
-   "n_chi": 4703,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 3.1,
-   "hwm_gb": 0.11,
-   "build_secs": 2.8,
-   "wall": 4.0,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 6,
-   "mu": [
-    14,
-    3,
-    2,
-    2,
-    2,
-    2,
-    2
-   ],
-   "a": 1,
-   "N_S": 147819,
-   "NS_delta": 1330371,
-   "n_chi": 2344,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 15.6,
-   "hwm_gb": 0.11,
-   "build_secs": 14.7,
-   "wall": 17.8,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 7,
-   "mu": [
-    13,
     5,
-    2,
-    2,
-    2,
-    2,
-    1
-   ],
-   "a": 1,
-   "N_S": 148526,
-   "NS_delta": 1336734,
-   "n_chi": 8899,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 5.8,
-   "hwm_gb": 0.12,
-   "build_secs": 5.1,
-   "wall": 8.7,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
-  },
-  {
-   "rank": 8,
-   "mu": [
-    11,
-    6,
     5,
     2,
     1,
@@ -195,20 +49,18 @@
     1
    ],
    "a": 1,
-   "N_S": 152466,
-   "NS_delta": 1372194,
-   "n_chi": 12074,
+   "N_S": 108636,
+   "NS_delta": 977724,
+   "n_chi": 4278,
    "mult": 1,
    "units": 0,
    "halt": false,
-   "secs": 3.4,
-   "hwm_gb": 0.11,
-   "build_secs": 3.1,
-   "wall": 5.0,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+   "secs": 2.8,
+   "hwm_gb": 0.1,
+   "status": "banked earlier"
   },
   {
-   "rank": 9,
+   "rank": 3,
    "mu": [
     12,
     6,
@@ -227,15 +79,13 @@
    "halt": false,
    "secs": 3.4,
    "hwm_gb": 0.11,
-   "build_secs": 2.7,
-   "wall": 5.2,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+   "status": "banked earlier"
   },
   {
-   "rank": 10,
+   "rank": 4,
    "mu": [
-    10,
-    8,
+    12,
+    6,
     3,
     3,
     1,
@@ -243,20 +93,62 @@
     1
    ],
    "a": 1,
-   "N_S": 175861,
-   "NS_delta": 1582749,
-   "n_chi": 7158,
+   "N_S": 118048,
+   "NS_delta": 1062432,
+   "n_chi": 4703,
    "mult": 1,
    "units": 0,
    "halt": false,
-   "secs": 5.0,
-   "hwm_gb": 0.13,
-   "build_secs": 4.6,
-   "wall": 6.6,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+   "secs": 3.1,
+   "hwm_gb": 0.11,
+   "status": "banked earlier"
   },
   {
-   "rank": 11,
+   "rank": 5,
+   "mu": [
+    11,
+    6,
+    5,
+    2,
+    1,
+    1,
+    1
+   ],
+   "a": 1,
+   "N_S": 152466,
+   "NS_delta": 1372194,
+   "n_chi": 12074,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 3.4,
+   "hwm_gb": 0.11,
+   "status": "banked earlier"
+  },
+  {
+   "rank": 6,
+   "mu": [
+    14,
+    4,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "a": 1,
+   "N_S": 91274,
+   "NS_delta": 821466,
+   "n_chi": 5597,
+   "mult": 1,
+   "units": 0,
+   "halt": false,
+   "secs": 3.6,
+   "hwm_gb": 0.09,
+   "status": "banked earlier"
+  },
+  {
+   "rank": 7,
    "mu": [
     10,
     7,
@@ -275,36 +167,34 @@
    "halt": false,
    "secs": 4.1,
    "hwm_gb": 0.13,
-   "build_secs": 3.6,
-   "wall": 5.7,
-   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
+   "status": "banked earlier"
   },
   {
-   "rank": 12,
+   "rank": 8,
    "mu": [
-    12,
-    5,
-    4,
+    11,
+    7,
+    3,
     2,
     2,
     1,
     1
    ],
-   "a": 1,
-   "N_S": 204473,
-   "NS_delta": 1840257,
-   "n_chi": 43653,
-   "mult": 1,
+   "a": 2,
+   "N_S": 204731,
+   "NS_delta": 1842579,
+   "n_chi": 43733,
+   "mult": 2,
    "units": 0,
    "halt": false,
-   "secs": 4.6,
+   "secs": 5.1,
    "hwm_gb": 0.13,
-   "build_secs": 3.7,
-   "wall": 9.0,
+   "build_secs": 4.1,
+   "wall": 9.4,
    "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)"
   }
  ],
  "not_reached": [],
  "halted": null,
- "updated": "2026-09-10T01:04:45.161811"
+ "updated": "2026-09-10T01:05:02.033769"
 }
