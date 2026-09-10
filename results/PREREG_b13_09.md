@@ -300,3 +300,63 @@ length-7 negative control at `(6,5,5,2,1,1,1)_7` and the length-8 one at
 family, `n_chi = 1973` and `4257` respectively, with the recheck and
 exhibit-and-verify path executed.  The `per_3`/`det_3` distinctness control at
 `R = 7` differs at 10 of 10 points.  F1 did not fire.
+
+---
+
+## Addendum C (committed 2026-09-10 01:02 UTC, before the measurements it governs)
+
+**C.1 The pre-registered queue order rests on a cost model that is wrong at these
+lengths.  Measured, and corrected.**  §3.3 orders each group by `N_S`, on the
+s79/s71 model `build_secs = 2.1·10⁻⁶ · N_S·delta`, which held at length 6 at a
+median 0.99×.  On this session's first 45 measured weights at lengths 7 and 8 it
+**underprices by up to 21.7×**, and the reason is structural, not statistical:
+`wk9_s45_build.orbit_setup_arr` makes two passes over the whole stabiliser group
+(`_canon_acc`, one for `canon` and one for `acc`), each an `O(N_S)` image-and-
+lookup, so the orbit setup is `O(|Stab| · N_S)`.  At length 6 that term is
+invisible — `|Stab|` is rarely above 120.  At lengths 7 and 8 repeated parts push
+it to 720 at `(9,2⁶)` and **5040** at `(10,2⁷)`.  Refitted by minimising relative
+error (`analysis/b13_09_costfit.py`):
+
+    build_secs  ~=  1.86e-6 * N_S*delta  +  8.27e-7 * |Stab| * N_S
+
+median predicted/actual **1.10** (p10 0.66, p90 1.23) against the s79 model's
+worst case of 21.7× low.  Re-pricing the census with it moves the totals a long
+way: `(8,8)` from 0.03 h to **1.18 h**, `(8,9)` from 1.98 h to **9.58 h**,
+`(7,9)` from 1.36 h to 1.85 h — the whole census from 3.4 h to about **12.7 h**.
+
+**C.2 What changes, and what does not.**  The **set** of weights in every group
+is unchanged, and so is every stopping rule, cap and bound.  What changes is the
+**order within a group**, from `N_S`-ascending to refitted-cost-ascending
+(`analysis/b13_09_sweep.py --order cost`), for every weight measured after this
+addendum.  The reason to change it is that the pre-registered order was chosen to
+make what is reached a *cheapest-first prefix*, and under the measured model
+`N_S` no longer is that order; keeping it would spend the remaining clock on the
+dearest weights by accident.  Recorded consequences:
+
+- `(7,7)` (complete), the first 37 weights of `(7,8)`, and the first weight of
+  `(8,8)` were measured in `N_S` order.  Their records stand; the group prefix
+  they form is stated in the report as `N_S`-ordered.
+- Everything after this addendum is measured in refitted-cost order, and the
+  report states each group's prefix in the order it was actually run.
+- A per-weight cap `--max-cost` is added, so one dear weight cannot consume the
+  remaining clock ahead of many cheap ones; a weight it excludes is *not reached*
+  with its refitted cost recorded, exactly like the `N_S·delta` cap.
+
+**C.3 One run ended early, by its recorded id.**  Stream B was 15 minutes into
+`(10,2,2,2,2,2,2,2)_8` — `|Stab| = 5040`, refitted cost about 3 970 s, the
+dearest weight in its group — while the four remaining `(8,8)` weights together
+price at about four minutes.  That run is ended by the process id recorded in
+`results/logs/b13_09_B_r8_d8_child.pid` (2605), never by name-pattern matching,
+and the weight is requeued at its correct position in cost order.  It is
+attempted again only if the rest of its group and the priority list of B.2 leave
+room, and if it is not reached it is reported as *not reached* with its cost.
+
+**C.4 This is a defect in the inherited cost model, reported as the board asks.**
+The model is quoted in `docs/s79_report.md` §2.1 and in `results/PREREG_s79.md`
+§2.2 without a length caveat, and `docs/stocktake_batch12.md` §7 prices the
+programme's open regions with it.  It is sound where it was fitted (length ≤ 6)
+and optimistic by up to 21.7× at lengths 7 and 8, always in the same direction
+and always on high-`|Stab|` weights.  Batch 14 should re-price any length-7 or
+length-8 plan with the two-term form above.  The remedy on the engineering side
+belongs to B13-10: `_canon_acc`'s two group passes are the target, and a weight
+with `|Stab| = 5040` is the case that shows it.

@@ -14,7 +14,7 @@ recorded id, never by name.
 usage: python3 analysis/b13_09_sweep.py r delta [--census results/b13_09_census.json]
           [--out results/b13_09/per_r7_d9.jsonl] [--certs results/certs/b13_09] [--no-certs]
           [--until HH:MM (UTC)] [--max-ns N] [--max-nsd N] [--weight-timeout S] [--ulimit-kb KB]
-          [--commit] [--run NAME]
+          [--commit] [--run NAME] [--order N_S|cost] [--max-cost SECONDS]
 """
 import json, os, subprocess, sys, time, datetime
 
@@ -37,8 +37,17 @@ def main(argv):
     timeout_s = int(arg(argv, '--weight-timeout', 5400))
     ulimit_kb = int(arg(argv, '--ulimit-kb', 6500000))
     do_commit = '--commit' in argv
+    max_cost = float(arg(argv, '--max-cost', '0'))
     Q = json.load(open(census))['cells'][f'r{r}_d{delta}']
-    Q = sorted(Q, key=lambda c: (c['N_S'], c['mu']))
+    # order: 'N_S' is the pre-registered order of PREREG sec. 3.3; 'cost' is the refitted
+    # c1*N_S*delta + c2*|Stab|*N_S of Addendum C, which at lengths 7-8 is a different order
+    # because the orbit setup costs O(|Stab| * N_S) and |Stab| reaches 5040 here.
+    order_by = arg(argv, '--order', 'N_S')
+    if order_by == 'cost':
+        assert all('cost_model_s' in c for c in Q), 'census not repriced: run analysis/b13_09_costfit.py --reprice'
+        Q = sorted(Q, key=lambda c: (c['cost_model_s'], c['mu']))
+    else:
+        Q = sorted(Q, key=lambda c: (c['N_S'], c['mu']))
     os.makedirs(os.path.dirname(out), exist_ok=True)
     os.makedirs(os.path.join(ROOT, 'results', 'logs'), exist_ok=True)
     with open(os.path.join(ROOT, 'results', 'logs', f'{run}.pid'), 'w') as f: f.write(str(os.getpid()) + '\n')
@@ -58,7 +67,7 @@ def main(argv):
     status_path = os.path.join(ROOT, 'results', 'b13_09', f'status_r{r}_d{delta}.json')
     status = dict(board_numbering='batch13', session='B13-09', r=r, delta=delta, run=run,
                   started=datetime.datetime.utcnow().isoformat(), weights=len(Q), bounds=dict(weight_timeout_s=timeout_s, ulimit_v_kb=ulimit_kb,
-                  max_N_S=max_ns, max_NS_delta=max_nsd, until_utc=until or None), reached=[], not_reached=[], halted=None)
+                  max_N_S=max_ns, max_NS_delta=max_nsd, until_utc=until or None, order=order_by), reached=[], not_reached=[], halted=None)
     log_path = os.path.join(ROOT, 'results', 'logs', f'{run}.log')
     child_pid_path = os.path.join(ROOT, 'results', 'logs', f'{run}_child.pid')
 
@@ -80,6 +89,9 @@ def main(argv):
             status['not_reached'].append(dict(base, reason='wall clock')); continue
         if c['N_S'] > max_ns:
             status['not_reached'].append(dict(base, reason=f'above the N_S cap {max_ns:g}')); continue
+        if max_cost and c.get('cost_model_s', 0) > max_cost:
+            status['not_reached'].append(dict(base, cost_model_s=c.get('cost_model_s'),
+                                              reason=f"above the per-weight refitted-cost cap {max_cost:g} s")); continue
         if c['NS_delta'] > max_nsd:
             status['not_reached'].append(dict(base, reason=f'above the N_S*delta cap {max_nsd:g} (the build wall)')); continue
         cmd = ['python3', os.path.join(HERE, 'b13_09_per_r.py'), str(delta)] + [str(x) for x in c['mu']] + ['--out', out, '--a', str(c['a'])] + \
