@@ -780,9 +780,27 @@ here, per the preamble.)
 
     git bundle create b13_09_higher_length.bundle 00495110..HEAD
 
-with `b13_09_higher_length.bundle.md5` carrying a digest for the **whole file**
-and one **per part**, naming **bare filenames** only, so `md5sum -c` works on
-another machine.  Branch history was **not** rewritten; nothing was dropped.
+— except that the command above is **not** the one that was used, and the
+difference is a delivery defect worth recording.  `git bundle create <base>..HEAD`
+records only `HEAD`, **not the branch name**, so
+`git fetch <bundle> b13-09-higher-length` fails with *couldn't find remote ref*.
+Caught by test-applying the bundle rather than by trusting it.  The bundle shipped
+was made with the ref instead:
+
+    git bundle create b13_09_higher_length.bundle \
+        00495110c62acfbbbc951e82cc218ed091563b3f..b13-09-higher-length
+
+so `git bundle list-heads` shows `refs/heads/b13-09-higher-length` and the fetch
+works by name.  **This bundle was verified by applying it**: a fresh clone reset to
+the base, `git bundle verify`, `git fetch <bundle> b13-09-higher-length:...`,
+checkout — 170 commits, 165 JSONL records, 84 certificates, every named deliverable
+present.
+
+`b13_09_higher_length.bundle.md5` carries a digest for the **whole file** and one
+**per part**, naming **bare filenames** only; `md5sum -c` was tested from a
+different directory and passes.  Since the bundle is unsplit the two digests
+coincide, and the file says so explicitly rather than leaving a reviewer to infer
+it.  Branch history was **not** rewritten; nothing was dropped.
 
 **Artefacts.**  `results/PREREG_b13_09.md` (with Addenda A–C);
 `results/b13_09_census.json` (267 weights, priced both ways);
