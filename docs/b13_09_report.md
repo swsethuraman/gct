@@ -5,8 +5,9 @@ Session **B13-09**.  Branch `b13-09-higher-length` off
 `main = 00495110c62acfbbbc951e82cc218ed091563b3f`.  Pre-registration
 `results/PREREG_b13_09.md`, committed at `61f8a07` before any queue weight was
 measured, with Addenda A, B and C each committed before the measurements they
-govern.  Delivery is by git bundle in **ONE PART** (`part00` only — see §8); no
-push was attempted.  Both house primes everywhere.
+govern.  Delivery is by git bundle in **TWO PARTS** — `part00` and `part01`,
+contiguous, reassembled by `cat` (see §8); no push was attempted.  Both house
+primes everywhere.
 
 **The model that ran this session, exactly.**  Two did, and the commits say
 which.  **Claude Fable 5.1** (`claude-fable-5-1`) ran the reading, the instrument,
@@ -775,8 +776,16 @@ answer apart from the two points above.
 
 ## 8. Delivery
 
-**This bundle has ONE part: `part00`.**  (Stated in the first paragraph and
-here, per the preamble.)
+**This bundle has TWO parts: `part00` and `part01`.**  (Stated in the first
+paragraph and here, per the preamble.)  The bundle is 30.8 MB, which exceeds the
+30 MiB single-file transfer limit of the delivery channel, so it is split — the
+repository's own 5 MB rule is a separate matter and no committed file approaches
+it.  Reassemble before verifying:
+
+    cat b13_09_higher_length.bundle.part00 \
+        b13_09_higher_length.bundle.part01 > b13_09_higher_length.bundle
+    md5sum -c b13_09_higher_length.bundle.md5
+    git bundle verify b13_09_higher_length.bundle
 
     git bundle create b13_09_higher_length.bundle 00495110..HEAD
 
@@ -796,11 +805,11 @@ the base, `git bundle verify`, `git fetch <bundle> b13-09-higher-length:...`,
 checkout — 170 commits, 165 JSONL records, 84 certificates, every named deliverable
 present.
 
-`b13_09_higher_length.bundle.md5` carries a digest for the **whole file** and one
-**per part**, naming **bare filenames** only; `md5sum -c` was tested from a
-different directory and passes.  Since the bundle is unsplit the two digests
-coincide, and the file says so explicitly rather than leaving a reviewer to infer
-it.  Branch history was **not** rewritten; nothing was dropped.
+`b13_09_higher_length.bundle.md5` carries a digest for the **whole reassembled
+file** and one **for each of the two parts**, naming **bare filenames** only;
+`md5sum -c` was tested from a different directory, on the parts and on the
+reassembled bundle, and passes.  So a mismatch names the part to resend, which is
+the point of the rule.  Branch history was **not** rewritten; nothing was dropped.
 
 **Artefacts.**  `results/PREREG_b13_09.md` (with Addenda A–C);
 `results/b13_09_census.json` (267 weights, priced both ways);
