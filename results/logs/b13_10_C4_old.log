@@ -1,0 +1,17 @@
+      level 1: 28 prefixes
+      level 2: 385 prefixes
+      level 3: 4250 prefixes
+      level 4: 30787 prefixes
+      level 5: 236691 prefixes
+      level 6: 896633 prefixes
+      level 7: 2068772 prefixes
+      level 8: 3020230 prefixes
+      level 9: 3020230 prefixes
+  lam=(5, 5, 5, 5, 5, 2): N_S=3020230 |Stab|=120 n_chi=23907 (orbits dropped: 3280) [lean, 328s, HWM 0.46 GB]
+    E_01: |H|=6 targets 2685948 canonical rows 438347 nnz 1611039 (obstructed fixed targets cancelled: 26169) [27s, HWM 0.63 GB]
+    E_12: |H|=6 targets 2685948 canonical rows 438347 nnz 1611039 (obstructed fixed targets cancelled: 26169) [48s, HWM 0.69 GB]
+    E_23: |H|=6 targets 2685948 canonical rows 438347 nnz 1611039 (obstructed fixed targets cancelled: 26169) [71s, HWM 0.73 GB]
+    E_34: |H|=6 targets 2685948 canonical rows 438347 nnz 1611039 (obstructed fixed targets cancelled: 26169) [96s, HWM 0.75 GB]
+    E_45: |H|=24 targets 1373369 canonical rows 54865 nnz 205326 (obstructed fixed targets cancelled: 27975) [122s, HWM 0.75 GB]
+  built (5, 5, 5, 5, 5, 2) d9: N_S=3020230 |Stab|=120 n_chi=23907 rows=1808253 nnz=6649482 (452s: mono 3s orbits 328s rows 122s; HWM 0.75 GB)
+RUN {"builder": "old", "lam": [5, 5, 5, 5, 5, 2], "delta": 9, "N_S": 3020230, "n_chi": 23907, "nrows": 1808253, "nnz": 6649482, "secs": {"total": 452.49, "mono": 2.87, "orbits": 327.78, "rows": 121.84}, "hwm_gb": 0.7463, "hwm_above_baseline_gb": 0.7107}

@@ -1,0 +1,19 @@
+bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
+      level 1: 42 prefixes
+      level 2: 735 prefixes
+      level 3: 6689 prefixes
+      level 4: 35849 prefixes
+      level 5: 122529 prefixes
+      level 6: 296175 prefixes
+      level 7: 473212 prefixes
+      level 8: 525860 prefixes
+      level 9: 528663 prefixes
+      level 10: 528663 prefixes
+  lam=(11, 8, 5, 2, 2, 2): N_S=528663 |Stab|=6 n_chi=104651 (orbits dropped: 0) [lean-b10, 1s, HWM 0.12 GB]
+    E_01: |H|=6 targets 438045 canonical rows 87017 nnz 437954 (triples 579168; obstructed fixed targets cancelled: 0) [tables 1s rows 1s finish 0.0s; 2s, HWM 0.12 GB, RSS 0.11 GB]
+    E_12: |H|=6 targets 379981 canonical rows 75818 nnz 332813 (triples 411292; obstructed fixed targets cancelled: 0) [tables 1s rows 1s finish 0.0s; 4s, HWM 0.12 GB, RSS 0.11 GB]
+    E_23: |H|=2 targets 250633 canonical rows 133639 nnz 475259 (triples 514356; obstructed fixed targets cancelled: 0) [tables 0s rows 0s finish 0.0s; 4s, HWM 0.12 GB, RSS 0.10 GB]
+    E_34: |H|=1 targets 390881 canonical rows 390881 nnz 802139 (triples 965367; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 5s, HWM 0.13 GB, RSS 0.12 GB]
+    E_45: |H|=1 targets 390881 canonical rows 390881 nnz 802139 (triples 965367; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 6s, HWM 0.14 GB, RSS 0.13 GB]
+  built-lean (11, 8, 5, 2, 2, 2) d10: N_S=528663 |Stab|=6 n_chi=104651 rows=1078236 nnz=2850304 (8s: mono 1s orbits 1s rows 6s; HWM 0.14 GB; E.data int16)
+RUN {"builder": "lean", "lam": [11, 8, 5, 2, 2, 2], "delta": 10, "N_S": 528663, "n_chi": 104651, "nrows": 1078236, "nnz": 2850304, "secs": {"total": 8.07, "mono": 0.54, "orbits": 1.14, "rows": 6.24}, "hwm_gb": 0.1382, "hwm_above_baseline_gb": 0.1024}

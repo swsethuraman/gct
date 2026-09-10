@@ -1,0 +1,28 @@
+      level 1: 87 prefixes
+      level 2: 2836 prefixes
+      level 3: 51915 prefixes
+      level 4: 608863 prefixes
+      level 5: 4098267 prefixes
+      level 6: 12478011 prefixes
+      level 7: 18337360 prefixes
+      level 8: 18337360 prefixes
+  lam=(10, 6, 6, 6, 2, 2): N_S=18337360 |Stab|=12 n_chi=1606104 (orbits dropped: 0) [lean-b10, 248s, HWM 0.96 GB]
+    E_01: |H|=4 targets 13110260 canonical rows 3423455 nnz 18038214 (triples 19284355; obstructed fixed targets cancelled: 0) [tables 57s rows 70s finish 0.3s; 127s, HWM 0.96 GB, RSS 0.82 GB]
+    E_12: |H|=2 targets 16720327 canonical rows 8688185 nnz 35847528 (triples 38379724; obstructed fixed targets cancelled: 0) [tables 56s rows 71s finish 0.5s; 255s, HWM 1.42 GB, RSS 1.23 GB]
+    E_23: |H|=2 targets 16720327 canonical rows 8688185 nnz 35847528 (triples 38379724; obstructed fixed targets cancelled: 0) [tables 55s rows 72s finish 0.4s; 383s, HWM 1.69 GB, RSS 1.50 GB]
+    E_34: |H|=2 targets 7796883 canonical rows 3911695 nnz 16114190 (triples 16520005; obstructed fixed targets cancelled: 0) [tables 21s rows 27s finish 0.2s; 432s, HWM 1.69 GB, RSS 1.54 GB]
+    E_45: |H|=6 targets 13508491 canonical rows 2271449 nnz 4847599 (triples 5536602; obstructed fixed targets cancelled: 0) [tables 83s rows 27s finish 0.1s; 542s, HWM 1.96 GB, RSS 1.61 GB]
+  built-lean (10, 6, 6, 6, 2, 2) d8: N_S=18337360 |Stab|=12 n_chi=1606104 rows=26982969 nnz=110695059 (812s: mono 21s orbits 248s rows 543s; HWM 1.96 GB; E.data int16)
+  PILOT BUILD DONE: {'secs': 812.1, 'mono_secs': 21.0, 'orbit_secs': 247.9, 'rows_secs': 543.2, 'N_S': 18337360, 'stab': 12, 'n_chi': 1606104, 'nrows': 26982969, 'nnz': 110695059, 'nfixed': 0, 'hwm_gb': 1.963, 'hwm_above_baseline_gb': 1.904, 'hwm_mono_gb': 0.765, 'hwm_orbit_gb': 0.96, 'phases': [{'op': 'E_01', 'H': 4, 'targets': 13110260, 'rows': 3423455, 'nnz': 18038214, 'triples': 19284355, 'obstructed_hit': 0, 'secs_tables': 57.4, 'secs_rows': 69.6, 'secs_finish': 0.3, 'hwm_gb': 0.96, 'rss_gb': 0.824}, {'op': 'E_12', 'H': 2, 'targets': 16720327, 'rows': 8688185, 'nnz': 35847528, 'triples': 38379724, 'obstructed_hit': 0, 'secs_tables': 55.9, 'secs_rows': 71.4, 'secs_finish': 0.5, 'hwm_gb': 1.423, 'rss_gb': 1.229}, {'op': 'E_23', 'H': 2, 'targets': 16720327, 'rows': 8688185, 'nnz': 35847528, 'triples': 38379724, 'obstructed_hit': 0, 'secs_tables': 55.3, 'secs_rows': 72.1, 'secs_finish': 0.4, 'hwm_gb': 1.685, 'rss_gb': 1.496}, {'op': 'E_34', 'H': 2, 'targets': 7796883, 'rows': 3911695, 'nnz': 16114190, 'triples': 16520005, 'obstructed_hit': 0, 'secs_tables': 21.4, 'secs_rows': 27.2, 'secs_finish': 0.2, 'hwm_gb': 1.685, 'rss_gb': 1.541}, {'op': 'E_45', 'H': 6, 'targets': 13508491, 'rows': 2271449, 'nnz': 4847599, 'triples': 5536602, 'obstructed_hit': 0, 'secs_tables': 83.4, 'secs_rows': 26.5, 'secs_finish': 0.1, 'hwm_gb': 1.963, 'rss_gb': 1.611}, {'op': 'assemble', 'rows': 26982969, 'nnz': 110695059, 'secs': 1.5, 'hwm_gb': 1.963, 'rss_gb': 1.423, 'data_dtype': 'int16', 'entry_bound': 480}], 'dtypes': {'M': 'int8', 'col_of': 'int32', 'sgn': 'int8', 'E_data': 'int16', 'E_indices': 'int32', 'E_indptr': 'int32'}, 'baseline_gb': 0.059, 'npz_bytes': 1010489632}
+    cover-lean natural: 1582075/1606104 [HWM 2.55 GB]
+    cover-lean reversed: 1605824/1606104 [HWM 2.57 GB]
+    cover-lean fill_asc: 1575882/1606104 [HWM 2.57 GB]
+    cover-lean fill_desc: 1564184/1606104 [HWM 2.60 GB]
+    cover-lean random: 1266053/1606104 [HWM 2.60 GB]
+  PILOT COVER: {'size': 1605824, 'order': 'reversed', 'stats': {'natural': 1582075, 'reversed': 1605824, 'fill_asc': 1575882, 'fill_desc': 1564184, 'random': 1266053}, 'n_chi': 1606104, 'a': 10, 'nU': 280, 'excess': 270, 'certified_rank_lb': 1605824, 'secs': 40.4, 'hwm_gb': 2.597}
+    hybrid-lean[pilot] p=2147483647 attempt 0: |S|=1605824 |U|=280 (a=10, excess 270) m=344 blocks 8x38 projected nullity 10, verified=True, rank 10 [split 1.0s trisolve 22.3s schur 154.6s null 0.1s lift 26.0s rank 1.5s; HWM 4.38 GB]
+  PILOT p=2147483647: nullity 10 verified True rank 10 mult_det 10 i_det 0 [307.8s, HWM 4.38 GB]
+    hybrid-lean[pilot] p=2147483629 attempt 0: |S|=1605824 |U|=280 (a=10, excess 270) m=344 blocks 8x38 projected nullity 10, verified=True, rank 10 [split 2.2s trisolve 19.5s schur 171.4s null 0.0s lift 15.9s rank 0.9s; HWM 4.53 GB]
+  PILOT p=2147483629: nullity 10 verified True rank 10 mult_det 10 i_det 0 [280.8s, HWM 4.53 GB]
+PILOT {"lam": [10, 6, 6, 6, 2, 2], "delta": 8, "a": 10, "mult_det": 10, "i_det": 0, "status": "proved: mult_det = a at both primes (i_det = 0 over Q)", "kernel_ok": true, "hwm_gb": 4.532}
+PILOT LOOP DONE Thu Sep 10 01:05:30 UTC 2026

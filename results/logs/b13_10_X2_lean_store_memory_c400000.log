@@ -1,0 +1,19 @@
+bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
+      level 1: 244 prefixes
+      level 2: 11651 prefixes
+      level 3: 139162 prefixes
+      level 4: 433064 prefixes
+      level 5: 553983 prefixes
+      level 6: 561010 prefixes
+      level 7: 561010 prefixes
+  lam=(15, 4, 2, 2, 1, 1, 1, 1, 1): N_S=561010 |Stab|=240 n_chi=66 (orbits dropped: 10150) [lean-b10, 37s, HWM 0.23 GB]
+    E_01: |H|=240 targets 276413 canonical rows 19 nnz 84 (triples 24929; obstructed fixed targets cancelled: 12300) [tables 17s rows 0s finish 0.0s; 17s, HWM 0.23 GB, RSS 0.12 GB]
+    E_12: |H|=120 targets 304541 canonical rows 64 nnz 154 (triples 9155; obstructed fixed targets cancelled: 4500) [tables 12s rows 0s finish 0.0s; 29s, HWM 0.23 GB, RSS 0.12 GB]
+    E_23: |H|=120 targets 421094 canonical rows 66 nnz 130 (triples 5466; obstructed fixed targets cancelled: 2640) [tables 17s rows 0s finish 0.0s; 46s, HWM 0.27 GB, RSS 0.11 GB]
+    E_34: |H|=24 targets 248236 canonical rows 620 nnz 630 (triples 630; obstructed fixed targets cancelled: 0) [tables 5s rows 0s finish 0.0s; 50s, HWM 0.27 GB, RSS 0.11 GB]
+    E_45: |H|=12 targets 330340 canonical rows 0 nnz 0 (triples 1380; obstructed fixed targets cancelled: 60) [tables 4s rows 0s finish 0.0s; 55s, HWM 0.27 GB, RSS 0.12 GB]
+    E_56: |H|=12 targets 330340 canonical rows 0 nnz 0 (triples 1380; obstructed fixed targets cancelled: 60) [tables 3s rows 0s finish 0.0s; 58s, HWM 0.27 GB, RSS 0.12 GB]
+    E_67: |H|=12 targets 330340 canonical rows 0 nnz 0 (triples 1380; obstructed fixed targets cancelled: 60) [tables 4s rows 0s finish 0.0s; 62s, HWM 0.27 GB, RSS 0.12 GB]
+    E_78: |H|=12 targets 330340 canonical rows 0 nnz 0 (triples 1380; obstructed fixed targets cancelled: 60) [tables 3s rows 0s finish 0.0s; 65s, HWM 0.27 GB, RSS 0.12 GB]
+  built-lean (15, 4, 2, 2, 1, 1, 1, 1, 1) d7: N_S=561010 |Stab|=240 n_chi=66 rows=769 nnz=998 (106s: mono 3s orbits 37s rows 65s; HWM 0.27 GB; E.data int16)
+RUN {"builder": "lean", "lam": [15, 4, 2, 2, 1, 1, 1, 1, 1], "delta": 7, "N_S": 561010, "n_chi": 66, "nrows": 769, "nnz": 998, "secs": {"total": 106.04, "mono": 3.14, "orbits": 37.33, "rows": 65.41}, "hwm_gb": 0.2745, "hwm_above_baseline_gb": 0.2385}

@@ -1,0 +1,22 @@
+bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
+      level 1: 70 prefixes
+      level 2: 1905 prefixes
+      level 3: 22820 prefixes
+      level 4: 145210 prefixes
+      level 5: 513992 prefixes
+      level 6: 981312 prefixes
+      level 7: 1145831 prefixes
+      level 8: 1155302 prefixes
+      level 9: 1155302 prefixes
+      level 10: 1155302 prefixes
+      level 11: 1155302 prefixes
+      level 12: 1155302 prefixes
+  lam=(19, 7, 2, 2, 2, 2, 2): N_S=1155302 |Stab|=120 n_chi=17047 (orbits dropped: 0) [lean-b10, 49s, HWM 0.16 GB]
+    E_01: |H|=120 targets 789136 canonical rows 11855 nnz 60713 (triples 91135; obstructed fixed targets cancelled: 0) [tables 33s rows 2s finish 0.0s; 35s, HWM 0.16 GB, RSS 0.13 GB]
+    E_12: |H|=24 targets 479682 canonical rows 28642 nnz 110858 (triples 125938; obstructed fixed targets cancelled: 0) [tables 5s rows 1s finish 0.0s; 40s, HWM 0.16 GB, RSS 0.11 GB]
+    E_23: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (triples 414840; obstructed fixed targets cancelled: 0) [tables 4s rows 1s finish 0.0s; 45s, HWM 0.17 GB, RSS 0.15 GB]
+    E_34: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (triples 414840; obstructed fixed targets cancelled: 0) [tables 4s rows 1s finish 0.0s; 49s, HWM 0.17 GB, RSS 0.15 GB]
+    E_45: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (triples 414840; obstructed fixed targets cancelled: 0) [tables 4s rows 1s finish 0.0s; 53s, HWM 0.18 GB, RSS 0.15 GB]
+    E_56: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (triples 414840; obstructed fixed targets cancelled: 0) [tables 4s rows 1s finish 0.0s; 58s, HWM 0.18 GB, RSS 0.16 GB]
+  built-lean (19, 7, 2, 2, 2, 2, 2) d12: N_S=1155302 |Stab|=120 n_chi=17047 rows=713677 nnz=1526091 (110s: mono 3s orbits 49s rows 58s; HWM 0.18 GB; E.data int16)
+RUN {"builder": "lean", "lam": [19, 7, 2, 2, 2, 2, 2], "delta": 12, "N_S": 1155302, "n_chi": 17047, "nrows": 713677, "nnz": 1526091, "secs": {"total": 109.9, "mono": 2.62, "orbits": 49.36, "rows": 57.76}, "hwm_gb": 0.179, "hwm_above_baseline_gb": 0.1431}
