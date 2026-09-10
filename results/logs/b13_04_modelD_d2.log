@@ -1,0 +1,8 @@
+[cubic] nu=(6, 0, 0, 0) a3=1 N_S=1 rank_Q=1 i3=0 certified=True
+[cubic] nu=(4, 2, 0, 0) a3=1 N_S=2 rank_Q=0 i3=1 certified=True
+[quartic] lam=(8, 0, 0, 0) a4=1 mult_R: ff=1 evQ=1 p=[1, 1] | mult_P: evQ=1 p=[1, 1] ffQ=1 | dimJ=0(cert) crit=0 direct=0 | sum_i3=0 sum_a3=1 | branch_total=0 W_meets_branch=0 witnesses=0
+[quartic] lam=(6, 2, 0, 0) a4=1 mult_R: ff=1 evQ=1 p=[1, 1] | mult_P: evQ=1 p=[1, 1] ffQ=1 | dimJ=1(cert) crit=0 direct=0 | sum_i3=1 sum_a3=2 | branch_total=1 W_meets_branch=0 witnesses=0
+      pred nu=(4, 2, 0, 0) a3=1 i3=1 branch_in_W=[False] meets=0 swap_detects_all_nondescents=True
+[quartic] lam=(4, 4, 0, 0) a4=1 mult_R: ff=1 evQ=1 p=[1, 1] | mult_P: evQ=0 p=[0, 0] ffQ=0 | dimJ=1(cert) crit=1 direct=1 | sum_i3=1 sum_a3=1 | branch_total=1 W_meets_branch=1 witnesses=1 cert=[True]
+      pred nu=(4, 2, 0, 0) a3=1 i3=1 branch_in_W=[True] meets=1 swap_detects_all_nondescents=True
+wrote /home/claude/gct/results/b13_04/model_D_d2.json (0.1s)

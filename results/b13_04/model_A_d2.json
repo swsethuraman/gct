@@ -1,0 +1,385 @@
+{
+ "board_numbering": "batch13",
+ "session": "B13-04",
+ "model": "A",
+ "f": {
+  "(3,)": 1
+ },
+ "N": 1,
+ "r": 2,
+ "delta": 2,
+ "seed": 20260909,
+ "bound": 7,
+ "primes": [
+  2147483647,
+  2147483629
+ ],
+ "conventions": "E_ij c_alpha = (alpha_i+1) c_{alpha+e_i-e_j}; fixed factor x_1 = index 0; ranks exact over Q (fmpz_mat), primes as cross-checks; all values native (values_are: none)",
+ "cubic": {
+  "(6, 0)": {
+   "nu": [
+    6,
+    0
+   ],
+   "a3": 1,
+   "N_S": 1,
+   "rank_eval_Q": 1,
+   "rank_p": [
+    1,
+    1
+   ],
+   "kernel_dim_sampled": 0,
+   "kernel_certified": true,
+   "i3": 0,
+   "kernel": []
+  },
+  "(4, 2)": {
+   "nu": [
+    4,
+    2
+   ],
+   "a3": 1,
+   "N_S": 2,
+   "rank_eval_Q": 0,
+   "rank_p": [
+    0,
+    0
+   ],
+   "kernel_dim_sampled": 1,
+   "kernel_certified": true,
+   "i3": 1,
+   "kernel": [
+    [
+     1
+    ]
+   ]
+  }
+ },
+ "cells": [
+  {
+   "lam": [
+    8,
+    0
+   ],
+   "a4": 1,
+   "N_S4": 1,
+   "lam_minus": [
+    6,
+    0
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 0,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    }
+   ],
+   "sum_i3": 0,
+   "sum_a3": 1,
+   "N_S_lam_minus": 1,
+   "dim_branch_total": 0,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    6,
+    2
+   ],
+   "a4": 1,
+   "N_S4": 2,
+   "lam_minus": [
+    4,
+    2
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 1,
+   "mult_P_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_fixedfactor_eval_Q": 1,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 2,
+   "criterion_gap": 0,
+   "gap_direct": 0,
+   "predecessors": [
+    {
+     "nu": [
+      6,
+      0
+     ],
+     "a3": 1,
+     "i3": 0,
+     "parts": 1
+    },
+    {
+     "nu": [
+      5,
+      1
+     ],
+     "a3": 0,
+     "i3": 0
+    },
+    {
+     "nu": [
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 2,
+     "branch_dim": 1,
+     "branch_in_W": [
+      false
+     ],
+     "branch_span_meets_W": 0,
+     "swap_certificates": [
+      {
+       "l": [
+        1,
+        5
+       ],
+       "q": {
+        "(2, 0)": -5,
+        "(1, 1)": -5,
+        "(0, 2)": 5
+       },
+       "lhs": -600,
+       "rhs": -100
+      }
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          3,
+          0
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        3
+       ]
+      ]
+     ]
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 2,
+   "N_S_lam_minus": 2,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 0,
+   "witnesses": []
+  },
+  {
+   "lam": [
+    4,
+    4
+   ],
+   "a4": 1,
+   "N_S4": 3,
+   "lam_minus": [
+    2,
+    4
+   ],
+   "mult_R_fixedfactor": 1,
+   "mult_R_eval_Q": 1,
+   "mult_R_eval_p": [
+    1,
+    1
+   ],
+   "mult_P_eval_Q": 0,
+   "mult_P_eval_p": [
+    0,
+    0
+   ],
+   "mult_P_fixedfactor_eval_Q": 0,
+   "dim_J_lam_minus": 1,
+   "J_certified": true,
+   "dim_W_plus_J": 1,
+   "criterion_gap": 1,
+   "gap_direct": 1,
+   "predecessors": [
+    {
+     "nu": [
+      4,
+      2
+     ],
+     "a3": 1,
+     "i3": 1,
+     "parts": 2,
+     "branch_dim": 1,
+     "branch_in_W": [
+      true
+     ],
+     "branch_span_meets_W": 1,
+     "swap_certificates": [
+      null
+     ],
+     "swap_detects_all": true,
+     "branch_vectors": [
+      [
+       [
+        [
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        -1
+       ],
+       [
+        [
+         [
+          2,
+          1
+         ],
+         [
+          0,
+          3
+         ]
+        ],
+        3
+       ]
+      ]
+     ]
+    }
+   ],
+   "sum_i3": 1,
+   "sum_a3": 1,
+   "N_S_lam_minus": 2,
+   "dim_branch_total": 1,
+   "W_meets_branch_span": 1,
+   "witnesses": [
+    {
+     "kappa": [
+      1
+     ],
+     "rho_h_in_J_certified": true,
+     "nonzero_on_reducible": true,
+     "h_terms": 3,
+     "rho_h_terms": 2,
+     "h": [
+      [
+       [
+        [
+         2,
+         2
+        ],
+        [
+         2,
+         2
+        ]
+       ],
+       -1
+      ],
+      [
+       [
+        [
+         3,
+         1
+        ],
+        [
+         1,
+         3
+        ]
+       ],
+       3
+      ],
+      [
+       [
+        [
+         4,
+         0
+        ],
+        [
+         0,
+         4
+        ]
+       ],
+       -12
+      ]
+     ],
+     "rho_h": [
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         1,
+         2
+        ]
+       ],
+       -1
+      ],
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         0,
+         3
+        ]
+       ],
+       3
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "seconds": 0.0
+}
