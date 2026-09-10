@@ -142,3 +142,61 @@ or full rank at one house prime) / MEASURED (sampled, two primes) / ADOPTED
 log without independent re-derivation).
 
 Anything not listed above is exploratory and will be labelled so.
+
+---
+
+## Addendum 1 — 2026-09-09, 20:50 America/New_York (committed before the measurements it governs)
+
+**Why.** The session deadline was extended by two hours.  Two things in the
+first pass are worth pushing on, and one is a check I owe the report.
+
+**Change of model, recorded.**  Sessions B13-04's first pass (everything
+committed through `2b89394`) ran as **Claude Fable 5.1**.  The session then
+reached a model-availability limit and was continued as **Claude Opus 5**
+(`claude-opus-5`).  Both are recorded in the report and in the commit
+trailers of the parts each produced; no earlier result is restated as Opus's
+or as Fable's.
+
+**Q6 — is the swap identity sufficient?**  Lemma F gives a necessary condition
+for a weight-`λ⁻` vector `F` to be `ρ(h)` for some quartic highest-weight
+vector `h`.  Define
+
+    T^λ  =  { F of weight λ⁻, killed by E_{i,i+1} for i ≥ 2  :
+              F(ℓ·q) = F( u_ℓ^{-1}(x₁·q) )  for every ℓ with ℓ₁ = 1
+              and every quadric q }.
+
+`ρ(H_λ) ⊆ T^λ` by Lemma F.  Question: is `T^λ = ρ(H_λ)`?  Instrument: the
+swap conditions are linear in `F`, so `T^λ` is computed as an exact kernel over
+`Q` (`fmpz_mat`) from integer `(ℓ,q)` pairs, saturated (conditions added until
+the kernel dimension is stable over at least 20 further pairs and confirmed at
+both house primes).  Reported quantities per cell: `dim T^λ`, `mult_R = dim
+ρ(H_λ)`, `dim B^λ = Σ_ν a⁽³⁾`, and the dimension of the full `GL_{r−1}`-highest
+weight-`λ⁻` space.  **A negative is a cell with `ρ(H_λ) ⊊ T^λ`** — the swap
+identity is then strictly weaker than descent, and the excess dimension is the
+result.  Equality in every cell is evidence for a conjecture and is labelled
+MEASURED, never PROVED; the conjecture is stated as such.
+
+**Q7 — Model D, `r = 4`, for the length quantifier.**  `f = x₁³`
+(`D = {m³}`, the Veronese cone) at `r = 4`, `δ = 2` and `δ = 3`, and
+`f = x₁³ + x₂³` at `r = 4`, `δ = 3` if it completes inside the bound.  Purpose:
+exercise predecessors of length `r − 1` (`μ_r = 0`) alongside length `r` ones
+in the same cell, and check operationally that a shorter predecessor carries a
+channel of the stated dimension and can contribute.  Same measurements as
+Models A–C, plus, per cell, the split of `Σ_ν a⁽³⁾` and `Σ_ν i⁽³⁾` by
+predecessor length.
+
+**Q8 — Model B at `δ = 6`,** if it completes inside the run bound.
+
+**Q9 — an independent `a` check.**  For every model cell, `a⁽⁴⁾` and `a⁽³⁾` as
+read from the exact highest-weight kernels are compared against the Kostant
+alternation of `analysis/wk13_b04_pred13.kostant` (a different formula on a
+different data structure).  A disagreement is an instrument defect and halts
+the affected model.
+
+**Stopping rules for the addendum.**  Each run bounded with `timeout 2400` and
+`ulimit -v 4000000`, pid recorded.  Model D at `δ = 3` and Model B at `δ = 6`
+are dropped, and priced, if they do not complete.  Nothing in this addendum
+touches the goal cell; the exclusion of the fifteen predecessor cells stands.
+
+**Labels.**  Unchanged.  Everything in this addendum is pre-registered from
+this point; results already committed are unaffected.
