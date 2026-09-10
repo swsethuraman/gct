@@ -1,0 +1,34 @@
+
+=== rank 1/6 ((6, 6, 5, 3, 1, 1, 1, 1), 8) N_S 804050 a 1 NS*delta 6432400 2026-09-10T00:45:14.487201
+      level 1: 56 prefixes
+      level 2: 956 prefixes
+      level 3: 14220 prefixes
+      level 4: 89342 prefixes
+      level 5: 304276 prefixes
+      level 6: 639610 prefixes
+      level 7: 804050 prefixes
+      level 8: 804050 prefixes
+  lam=(6, 6, 5, 3, 1, 1, 1, 1): N_S=804050 |Stab|=48 n_chi=4257 (orbits dropped: 31536) [lean, 32s, HWM 0.21 GB]
+    E_01: |H|=24 targets 732714 canonical rows 7694 nnz 27804 (obstructed fixed targets cancelled: 65304) [17s, HWM 0.24 GB]
+    E_12: |H|=24 targets 652771 canonical rows 6711 nnz 24975 (obstructed fixed targets cancelled: 60108) [31s, HWM 0.25 GB]
+    E_23: |H|=48 targets 502588 canonical rows 2438 nnz 8694 (obstructed fixed targets cancelled: 41784) [48s, HWM 0.25 GB]
+    E_34: |H|=12 targets 278277 canonical rows 10960 nnz 16914 (obstructed fixed targets cancelled: 372) [50s, HWM 0.25 GB]
+    E_45: |H|=4 targets 462973 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 104) [52s, HWM 0.25 GB]
+    E_56: |H|=4 targets 462973 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 104) [54s, HWM 0.25 GB]
+    E_67: |H|=4 targets 462973 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 104) [56s, HWM 0.25 GB]
+  built (6, 6, 5, 3, 1, 1, 1, 1) d8: N_S=804050 |Stab|=48 n_chi=4257 rows=27803 nnz=78387 (89s: mono 1s orbits 32s rows 56s; HWM 0.25 GB)
+    hybrid[per8 6_6_5_3_1_1_1_1d8] p=2147483647 attempt 0: |S|=4256 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per8 (6, 6, 5, 3, 1, 1, 1, 1) d8 p=2147483647: a=1 n_chi=4257 mult=1 units=0 [0.2s]
+    hybrid[per8 6_6_5_3_1_1_1_1d8] p=2147483629 attempt 0: |S|=4256 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s]
+  per8 (6, 6, 5, 3, 1, 1, 1, 1) d8 p=2147483629: a=1 n_chi=4257 mult=1 units=0 [0.2s]
+  PER8 RESULT (6, 6, 5, 3, 1, 1, 1, 1) d8: a=1 N_S=804050 n_chi=4257 mult=1 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (90.0s, HWM 0.25 GB)
+
+=== rank 2/6 ((10, 2, 2, 2, 2, 2, 2, 2), 8) N_S 951941 a 1 NS*delta 7615528 2026-09-10T00:46:50.536744
+      level 1: 91 prefixes
+      level 2: 3072 prefixes
+      level 3: 47362 prefixes
+      level 4: 337425 prefixes
+      level 5: 821838 prefixes
+      level 6: 949480 prefixes
+      level 7: 951941 prefixes
+      level 8: 951941 prefixes

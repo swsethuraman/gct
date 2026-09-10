@@ -150,7 +150,10 @@ def measure_weight(mu, delta, verbose=True, certs=None, a_given=None, control_di
             p = int(p_str)
             if 'kernel_chi' in r and r['mult'] == a and B['N_S'] * a <= 3_000_000:
                 basis_terms = [expand_vector(B['arr'], np.array(v, dtype=np.int64), p, R, n=n3) for v in r['kernel_chi']]
-                cert = {"format": "gct-cert/1", "kind": "full_rank", "board_numbering": "batch13",
+                # NO board_numbering here: gct-cert/1 is a CLOSED schema and tools/verify
+                # rejects an unknown top-level key (correctly).  The board number lives in
+                # the manifest and the report, which is what the preamble asks for.
+                cert = {"format": "gct-cert/1", "kind": "full_rank",
                         "title": f"cubic side: mult_per3({mu}, {delta}) = a = {a} mod {p} in Sym^{delta}(Sym^3 C^{R}) -- S_mu not in I(D_{R}^per3) ({SESSION})",
                         "produced_by": f"analysis/b13_09_per_r.py ({SESSION})",
                         "cell": {"n": n3, "r": R, "lambda": [int(x) for x in mu], "delta": int(delta), "a": int(a)},
