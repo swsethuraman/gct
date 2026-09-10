@@ -68,15 +68,22 @@ SUITE = [
 ]
 
 
+def _all_none(r):
+    return all(r.get(k) is None for k in ('det_rank', 'generic_rank', 'kernel_dim', 'mult', 'mult_det'))
+
+
 def banked(cell):
     """the record's values for this cell, read from the file named in the suite."""
     if not cell['src']: return dict(source=None)
     fn = os.path.join(ROOT, cell['src'])
     rows = [json.loads(l) for l in open(fn) if l.strip()]
     lam = list(cell['lam'])
-    for r in rows:
-        key = r.get('lam') or r.get('mu')
-        if key == lam and r.get('delta') == cell['delta']:
+    cands = [r for r in rows if (r.get('lam') or r.get('mu')) == lam and r.get('delta') == cell['delta']]
+    # prefer a record that actually carries measurements: s69_sizes.jsonl holds a
+    # SPANNING_FAILED first pass with every rank None before the run that succeeded
+    cands.sort(key=lambda r: 0 if (r.get('status') in (None, 'OK') and not _all_none(r)) else 1)
+    for r in cands:
+        if True:
             out = dict(source=cell['src'], a=r.get('a'), N_S=r.get('N_S'), n_chi=r.get('n_chi'), nrows=r.get('nrows'), nnz=r.get('nnz'),
                        build_secs=r.get('build_secs'), build_hwm_gb=r.get('build_hwm_gb', r.get('hwm_gb')))
             if 'mult' in r and 'mult_det' not in r:            # per6
@@ -248,7 +255,25 @@ def measure(cell, scratch, args):
         elif key == 'red_star' and 'red' in b:
             cmp[name] = dict(banked=b['red'], here=r['mult'], match=(b['red'] == r['mult']))
     rec['rank_compare'] = cmp
-    rec['ranks_ok'] = all(v['match'] for v in cmp.values()) if cmp else None
+    # a check that can silently drop its own targets is not a check: every banked
+    # multiplicity must have been placed against a computed family, or this fails
+    FAMILY_KEYS = ('det', 'pad', 'per4', 'red', 'red_star', 'red_pts', 'per3')
+    banked_families = {k: v for k, v in b.items() if k in FAMILY_KEYS and isinstance(v, int)}
+    placed = set()
+    for name in cmp:
+        placed.add(name)
+        if name == 'red_star' and 'red' in banked_families: placed.add('red')
+    unplaced = sorted(set(banked_families) - placed)
+    rec['banked_families'] = banked_families
+    rec['unplaced_banked'] = unplaced
+    if a and not cmp and banked_families:
+        rec['ranks_ok'] = False
+        rec['rank_compare_error'] = ('no banked multiplicity could be placed against a computed family', banked_families)
+    elif unplaced:
+        rec['ranks_ok'] = False
+        rec['rank_compare_error'] = ('banked multiplicities not placed', unplaced)
+    else:
+        rec['ranks_ok'] = all(v['match'] for v in cmp.values()) if cmp else (None if not banked_families else False)
     rec['status'] = ('PASS' if rec['agreement']['identical'] and rec['kernel_ok'] and rec['ranks_ok'] in (True, None) else 'FAIL')
     rec['secs'] = round(time.time() - t0, 1); rec['driver_hwm_gb'] = round(_rss_gb(), 3)
     return rec

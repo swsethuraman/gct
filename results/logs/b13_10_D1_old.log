@@ -1,0 +1,22 @@
+bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
+      level 1: 70 prefixes
+      level 2: 1905 prefixes
+      level 3: 22820 prefixes
+      level 4: 145210 prefixes
+      level 5: 513992 prefixes
+      level 6: 981312 prefixes
+      level 7: 1145831 prefixes
+      level 8: 1155302 prefixes
+      level 9: 1155302 prefixes
+      level 10: 1155302 prefixes
+      level 11: 1155302 prefixes
+      level 12: 1155302 prefixes
+  lam=(19, 7, 2, 2, 2, 2, 2): N_S=1155302 |Stab|=120 n_chi=17047 (orbits dropped: 0) [lean, 131s, HWM 0.27 GB]
+    E_01: |H|=120 targets 789136 canonical rows 11855 nnz 60713 (obstructed fixed targets cancelled: 0) [87s, HWM 0.31 GB]
+    E_12: |H|=24 targets 479682 canonical rows 28642 nnz 110858 (obstructed fixed targets cancelled: 0) [97s, HWM 0.31 GB]
+    E_23: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [104s, HWM 0.33 GB]
+    E_34: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [112s, HWM 0.35 GB]
+    E_45: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [120s, HWM 0.35 GB]
+    E_56: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [127s, HWM 0.35 GB]
+  built (19, 7, 2, 2, 2, 2, 2) d12: N_S=1155302 |Stab|=120 n_chi=17047 rows=713677 nnz=1526091 (261s: mono 3s orbits 131s rows 127s; HWM 0.35 GB)
+RUN {"builder": "old", "lam": [19, 7, 2, 2, 2, 2, 2], "delta": 12, "N_S": 1155302, "n_chi": 17047, "nrows": 713677, "nnz": 1526091, "secs": {"total": 260.77, "mono": 2.94, "orbits": 130.7, "rows": 127.13}, "hwm_gb": 0.3536, "hwm_above_baseline_gb": 0.3178}

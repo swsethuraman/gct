@@ -1,0 +1,20 @@
+bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitted
+      level 1: 101 prefixes
+      level 2: 3044 prefixes
+      level 3: 32986 prefixes
+      level 4: 143576 prefixes
+      level 5: 238001 prefixes
+      level 6: 247436 prefixes
+      level 7: 247436 prefixes
+      level 8: 247436 prefixes
+  lam=(11, 4, 2, 2, 1, 1, 1, 1, 1): N_S=247436 |Stab|=240 n_chi=33 (orbits dropped: 4242) [lean, 28s, HWM 0.16 GB]
+    E_01: |H|=240 targets 136299 canonical rows 12 nnz 37 (obstructed fixed targets cancelled: 7320) [14s, HWM 0.16 GB]
+    E_12: |H|=120 targets 130498 canonical rows 27 nnz 65 (obstructed fixed targets cancelled: 3000) [21s, HWM 0.16 GB]
+    E_23: |H|=120 targets 183147 canonical rows 27 nnz 54 (obstructed fixed targets cancelled: 1800) [32s, HWM 0.18 GB]
+    E_34: |H|=24 targets 107019 canonical rows 300 nnz 310 (obstructed fixed targets cancelled: 0) [33s, HWM 0.18 GB]
+    E_45: |H|=12 targets 144366 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 48) [35s, HWM 0.18 GB]
+    E_56: |H|=12 targets 144366 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 48) [36s, HWM 0.18 GB]
+    E_67: |H|=12 targets 144366 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 48) [37s, HWM 0.18 GB]
+    E_78: |H|=12 targets 144366 canonical rows 0 nnz 0 (obstructed fixed targets cancelled: 48) [38s, HWM 0.18 GB]
+  built (11, 4, 2, 2, 1, 1, 1, 1, 1) d8: N_S=247436 |Stab|=240 n_chi=33 rows=366 nnz=466 (67s: mono 1s orbits 28s rows 38s; HWM 0.18 GB)
+RUN {"builder": "old", "lam": [11, 4, 2, 2, 1, 1, 1, 1, 1], "delta": 8, "N_S": 247436, "n_chi": 33, "nrows": 366, "nnz": 466, "secs": {"total": 67.24, "mono": 0.64, "orbits": 28.42, "rows": 38.19}, "hwm_gb": 0.1848, "hwm_above_baseline_gb": 0.1491}

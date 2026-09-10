@@ -1,0 +1,53 @@
+=== D1 (19, 7, 2, 2, 2, 2, 2) d12 n=3 01:13:19
+    hybrid-lean[D1] p=2147483647 attempt 0: |S|=17041 |U|=6 (a=6, excess 0) m=70 blocks 1x6 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s; HWM 0.40 GB]
+    hybrid-lean[D1] p=2147483629 attempt 0: |S|=17041 |U|=6 (a=6, excess 0) m=70 blocks 1x6 projected nullity 6, verified=True, rank 6 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s; HWM 0.40 GB]
+  D1: PASS identical=True kernel_ok=True ranks={'det': {'banked': 5, 'here': 5, 'match': True}} old 0.318GB/260.77s lean 0.143GB/109.9s (385.7s)
+=== A1 (13, 5, 2, 2, 2) d6 n=4 01:19:45
+    hybrid-lean[A1] p=2147483647 attempt 0: |S|=821 |U|=4 (a=2, excess 2) m=68 blocks 1x4 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+    hybrid-lean[A1] p=2147483629 attempt 0: |S|=821 |U|=4 (a=2, excess 2) m=68 blocks 1x4 projected nullity 2, verified=True, rank 2 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+  A1: PASS identical=True kernel_ok=True ranks={'det': {'banked': 2, 'here': 2, 'match': True}, 'red_pts': {'banked': 2, 'here': 2, 'match': True}, 'red_star': {'banked': 2, 'here': 2, 'match': True}} old 0.026GB/0.23s lean 0.026GB/0.21s (1.0s)
+=== A2 (37, 13, 4, 1, 1) d14 n=4 01:19:46
+    hybrid-lean[A2] p=2147483647 attempt 0: |S|=13173 |U|=79 (a=71, excess 8) m=143 blocks 1x79 projected nullity 71, verified=True, rank 71 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.1s rank 0.0s; HWM 0.10 GB]
+    hybrid-lean[A2] p=2147483629 attempt 0: |S|=13173 |U|=79 (a=71, excess 8) m=143 blocks 1x79 projected nullity 71, verified=True, rank 71 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.1s rank 0.0s; HWM 0.11 GB]
+  A2: PASS identical=True kernel_ok=True ranks={'det': {'banked': 71, 'here': 71, 'match': True}, 'per4': {'banked': 71, 'here': 71, 'match': True}, 'red_pts': {'banked': 71, 'here': 71, 'match': True}, 'red_star': {'banked': 71, 'here': 71, 'match': True}} old 0.037GB/0.8s lean 0.032GB/0.68s (7.1s)
+=== A3 (28, 8, 5, 2, 1) d11 n=4 01:19:54
+    hybrid-lean[A3] p=2147483647 attempt 0: |S|=51850 |U|=183 (a=99, excess 84) m=247 blocks 1x183 projected nullity 99, verified=True, rank 99 [split 0.0s trisolve 0.6s schur 0.3s null 0.0s lift 0.5s rank 0.1s; HWM 0.22 GB]
+    hybrid-lean[A3] p=2147483629 attempt 0: |S|=51850 |U|=183 (a=99, excess 84) m=247 blocks 1x183 projected nullity 99, verified=True, rank 99 [split 0.0s trisolve 0.1s schur 0.3s null 0.0s lift 0.5s rank 0.1s; HWM 0.23 GB]
+  A3: PASS identical=True kernel_ok=True ranks={'det': {'banked': 99, 'here': 99, 'match': True}, 'per4': {'banked': 99, 'here': 99, 'match': True}, 'red_pts': {'banked': 99, 'here': 99, 'match': True}, 'red_star': {'banked': 99, 'here': 99, 'match': True}} old 0.045GB/0.83s lean 0.036GB/0.73s (26.0s)
+=== A4 (26, 7, 5, 5, 1) d11 n=4 01:20:20
+    hybrid-lean[A4] p=2147483647 attempt 0: |S|=193034 |U|=296 (a=64, excess 232) m=360 blocks 1x296 projected nullity 64, verified=True, rank 64 [split 0.1s trisolve 4.4s schur 3.6s null 0.0s lift 3.5s rank 0.4s; HWM 0.92 GB]
+    hybrid-lean[A4] p=2147483629 attempt 0: |S|=193034 |U|=296 (a=64, excess 232) m=360 blocks 1x296 projected nullity 64, verified=True, rank 64 [split 0.1s trisolve 1.5s schur 3.6s null 0.0s lift 3.5s rank 0.3s; HWM 0.97 GB]
+  A4: PASS identical=True kernel_ok=True ranks={'det': {'banked': 64, 'here': 64, 'match': True}, 'per4': {'banked': 64, 'here': 64, 'match': True}, 'red_pts': {'banked': 63, 'here': 63, 'match': True}, 'red_star': {'banked': 63, 'here': 63, 'match': True}} old 0.174GB/5.95s lean 0.101GB/4.92s (113.8s)
+=== B1 (38, 2, 2, 2, 2, 2) d12 n=4 01:22:14
+    hybrid-lean[B1] p=2147483647 attempt 0: |S|=199 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+    hybrid-lean[B1] p=2147483629 attempt 0: |S|=199 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+  B1: PASS identical=True kernel_ok=True ranks={'det': {'banked': 1, 'here': 1, 'match': True}, 'per4': {'banked': 1, 'here': 1, 'match': True}, 'red_pts': {'banked': 1, 'here': 1, 'match': True}, 'pad': {'banked': 1, 'here': 1, 'match': True}, 'red_star': {'banked': 1, 'here': 1, 'match': True}} old 0.031GB/1.02s lean 0.030GB/0.83s (3.1s)
+=== B2 (29, 9, 3, 1, 1, 1) d11 n=4 01:22:18
+    hybrid-lean[B2] p=2147483647 attempt 0: |S|=1815 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+    hybrid-lean[B2] p=2147483629 attempt 0: |S|=1815 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+  B2: PASS identical=True kernel_ok=True ranks={'det': {'banked': 1, 'here': 1, 'match': True}, 'per4': {'banked': 1, 'here': 1, 'match': True}, 'red_pts': {'banked': 1, 'here': 1, 'match': True}, 'pad': {'banked': 1, 'here': 1, 'match': True}, 'red_star': {'banked': 1, 'here': 1, 'match': True}} old 0.038GB/0.92s lean 0.035GB/0.8s (2.6s)
+=== B3 (33, 7, 2, 2, 2, 2) d12 n=4 01:22:21
+    hybrid-lean[B3] p=2147483647 attempt 0: |S|=13506 |U|=12 (a=12, excess 0) m=76 blocks 1x12 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s; HWM 0.19 GB]
+    hybrid-lean[B3] p=2147483629 attempt 0: |S|=13506 |U|=12 (a=12, excess 0) m=76 blocks 1x12 projected nullity 12, verified=True, rank 12 [split 0.0s trisolve 0.0s schur 0.1s null 0.0s lift 0.1s rank 0.0s; HWM 0.19 GB]
+  B3: PASS identical=True kernel_ok=True ranks={'det': {'banked': 12, 'here': 12, 'match': True}, 'per4': {'banked': 12, 'here': 12, 'match': True}, 'red_pts': {'banked': 12, 'here': 12, 'match': True}, 'pad': {'banked': 12, 'here': 12, 'match': True}, 'red_star': {'banked': 12, 'here': 12, 'match': True}} old 0.127GB/10.32s lean 0.093GB/6.82s (23.7s)
+=== B4 (24, 13, 3, 2, 1, 1) d11 n=4 01:22:45
+    hybrid-lean[B4] p=2147483647 attempt 0: |S|=108203 |U|=64 (a=45, excess 19) m=128 blocks 1x64 projected nullity 45, verified=True, rank 45 [split 0.1s trisolve 0.3s schur 0.2s null 0.0s lift 1.2s rank 0.1s; HWM 0.37 GB]
+    hybrid-lean[B4] p=2147483629 attempt 0: |S|=108203 |U|=64 (a=45, excess 19) m=128 blocks 1x64 projected nullity 45, verified=True, rank 45 [split 0.0s trisolve 0.1s schur 0.3s null 0.0s lift 0.7s rank 0.2s; HWM 0.38 GB]
+  B4: PASS identical=True kernel_ok=True ranks={'det': {'banked': 45, 'here': 45, 'match': True}, 'per4': {'banked': 45, 'here': 45, 'match': True}, 'red_pts': {'banked': 45, 'here': 45, 'match': True}, 'pad': {'banked': 45, 'here': 45, 'match': True}, 'red_star': {'banked': 45, 'here': 45, 'match': True}} old 0.143GB/5.64s lean 0.101GB/4.25s (36.9s)
+=== C1 (17, 2, 2, 2, 2, 2) d9 n=3 01:23:22
+    hybrid-lean[C1] p=2147483647 attempt 0: |S|=115 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+    hybrid-lean[C1] p=2147483629 attempt 0: |S|=115 |U|=1 (a=1, excess 0) m=65 blocks 1x1 projected nullity 1, verified=True, rank 1 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.07 GB]
+  C1: PASS identical=True kernel_ok=True ranks={'per3': {'banked': 1, 'here': 1, 'match': True}} old 0.027GB/0.53s lean 0.027GB/0.41s (1.7s)
+=== C2 (12, 5, 5, 3, 1, 1) d9 n=3 01:23:24
+    hybrid-lean[C2] p=2147483647 attempt 0: |S|=9466 |U|=6 (a=4, excess 2) m=70 blocks 1x6 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.08 GB]
+    hybrid-lean[C2] p=2147483629 attempt 0: |S|=9466 |U|=6 (a=4, excess 2) m=70 blocks 1x6 projected nullity 4, verified=True, rank 4 [split 0.0s trisolve 0.0s schur 0.0s null 0.0s lift 0.0s rank 0.0s; HWM 0.08 GB]
+  C2: PASS identical=True kernel_ok=True ranks={'per3': {'banked': 4, 'here': 4, 'match': True}} old 0.040GB/0.86s lean 0.034GB/0.68s (2.5s)
+=== C3 (11, 8, 5, 2, 2, 2) d10 n=3 01:23:27
+    hybrid-lean[C3] p=2147483647 attempt 0: |S|=104592 |U|=59 (a=14, excess 45) m=123 blocks 1x59 projected nullity 14, verified=True, rank 14 [split 0.0s trisolve 0.3s schur 0.7s null 0.0s lift 1.3s rank 0.0s; HWM 0.61 GB]
+    hybrid-lean[C3] p=2147483629 attempt 0: |S|=104592 |U|=59 (a=14, excess 45) m=123 blocks 1x59 projected nullity 14, verified=True, rank 14 [split 0.0s trisolve 0.1s schur 0.8s null 0.0s lift 0.7s rank 0.0s; HWM 0.62 GB]
+  C3: PASS identical=True kernel_ok=True ranks={'per3': {'banked': 14, 'here': 14, 'match': True}} old 0.174GB/12.43s lean 0.102GB/8.07s (34.8s)
+=== X1 (11, 4, 2, 2, 1, 1, 1, 1, 1) d8 n=3 01:24:02
+  X1: PASS identical=True kernel_ok=True ranks={} old 0.149GB/67.24s lean 0.128GB/33.58s (104.0s)
+=== X2 (15, 4, 2, 2, 1, 1, 1, 1, 1) d7 n=4 01:25:46
+  X2: PASS identical=True kernel_ok=True ranks={} old 0.405GB/190.17s lean 0.238GB/106.04s (302.3s)
+RECHECK DONE Thu Sep 10 01:30:49 UTC 2026
