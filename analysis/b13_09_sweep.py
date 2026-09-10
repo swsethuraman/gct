@@ -106,11 +106,16 @@ def main(argv):
         status['reached'].append(rec); save()
         print(f"[{rank}/{len(Q)}] r{r} d{delta} {key[0]} a={res['a']} N_S={res.get('N_S')} n_chi={res.get('n_chi')} mult={res['mult']} units={res['units']} ({wall}s, HWM {res.get('hwm_gb')} GB)", flush=True)
         if do_commit:
-            subprocess.run(['git', '-C', ROOT, 'add', out, status_path], check=False)
-            subprocess.run(['git', '-C', ROOT, 'commit', '-q', '-m',
-                            f"B13-09: bank r={r} d={delta} {tuple(c['mu'])} a={res['a']} mult={res['mult']} units={res['units']}\n\n"
-                            f"Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\n"
-                            f"Claude-Session: https://claude.ai/code/session_013ve5BGfjw3LprynbCx15J6"], check=False)
+            # two streams and the session both commit into one repository: serialise on a
+            # lock file so a concurrent write can never leave a half-staged index (the
+            # 'cannot lock ref HEAD' race, seen once here before this was added).
+            msg = (f"B13-09: bank r={r} d={delta} {tuple(c['mu'])} a={res['a']} mult={res['mult']} units={res['units']}\n\n"
+                   f"Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>\n"
+                   f"Claude-Session: https://claude.ai/code/session_013ve5BGfjw3LprynbCx15J6")
+            lock = os.path.join(ROOT, 'results', 'logs', 'b13_09_git.lock')
+            subprocess.run(['flock', lock, 'sh', '-c',
+                            f'cd {ROOT} && git add {out} {status_path} && git commit -q -F -'],
+                           input=msg, text=True, check=False)
         if res['halt']:
             status['halted'] = rec; save()
             print("HALT: a drop on the cubic side -- the verification protocol takes over", flush=True)
