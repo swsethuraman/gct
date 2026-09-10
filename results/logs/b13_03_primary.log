@@ -1,0 +1,18 @@
+{"board_numbering": "batch13", "session_id": "B13-03", "pid": 30712, "memory_before": {"total_physical": 33752997888, "available_physical": 7624212480, "load": 77}, "memory_cap_mb": 768, "wall_cap_seconds": 600, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "started_utc": "2026-09-09T15:03:17Z"}
+{"stage": "raising_matrix", "cell": {"n": 4, "r": 3, "degree": 6, "lambda": [8, 8, 8]}, "shape": [1056, 561]}
+{"stage": "exact_source", "rank": 559, "nullity": 2, "seconds": 0.19614929985255003}
+{"wall_seconds": 0.49917680001817644}
+Traceback (most recent call last):
+  File "C:\Users\swami\Projects\gct-gpt\work\batch13_astra\B13-03\analysis\b13_03_bound.py", line 110, in <module>
+    main()
+  File "C:\Users\swami\Projects\gct-gpt\work\batch13_astra\B13-03\analysis\b13_03_bound.py", line 100, in main
+    runpy.run_path(args.script, run_name="__main__")
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "analysis/b13_03_controls.py", line 296, in <module>
+    {"primary": primary, "tiny": tiny, "r5": extension}[a.unit]()
+  File "analysis/b13_03_controls.py", line 123, in primary
+    assert witness[0] == 0 and witness[1] != 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
