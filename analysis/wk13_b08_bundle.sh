@@ -13,7 +13,7 @@ BASE=00495110c62acfbbbc951e82cc218ed091563b3f
 OUT=b13_08_cubic_remainder.bundle
 SPLIT_AT=$((45 * 1024 * 1024))     # bytes; above this the bundle is split into part00, part01, ...
 
-git bundle create "$OUT" "$BASE"..HEAD
+git bundle create "$OUT" "$BASE"..b13_08 b13_08
 git bundle verify "$OUT" >/dev/null
 SZ=$(stat -c%s "$OUT")
 rm -f "$OUT.md5"

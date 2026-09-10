@@ -10,6 +10,14 @@ bundle in ONE part — `b13_08_cubic_remainder.bundle`, not split, with
 total part count is one; there are no `part00…` files to reassemble.**  No push.
 Both house primes everywhere.
 
+The bundle carries the **named branch ref**, not just `HEAD`, so it is taken
+with `git fetch <bundle> b13_08:b13_08` on a clone at the recorded base — my
+first build recorded only `HEAD` and a receiver would have got `couldn't find
+remote ref b13_08`.  Caught by replaying the bundle into a fresh clone of
+`main` at `0049511` before delivering, which is the check batch 12's two lost
+round trips argue for; the replay is in the transcript and reports the seven
+commits and every deliverable present.
+
 **Two models ran this session**, and each commit carries the one that made it:
 **Claude Fable 5.1** through the pre-registration, the controls and the first 22
 weights; **Claude Opus 5** from the container restart onward (the session's
