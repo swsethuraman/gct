@@ -1,0 +1,33 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-07",
+  "tag": "b13_07_stable_07_00",
+  "start_utc": "2026-09-09T18:07:16.375527+00:00",
+  "wall_limit_seconds": 900,
+  "memory_limit_bytes": 1610612736,
+  "preflight": {
+    "length": 64,
+    "load": 81,
+    "total_phys": 33752997888,
+    "available_phys": 6294847488,
+    "total_page": 44490416128,
+    "available_page": 7471407104,
+    "total_virtual": 140737488224256,
+    "available_virtual": 140733078298624,
+    "extended": 0
+  },
+  "command": [
+    "analysis/b13_07_audit.py",
+    "stable",
+    "results/s79_stable/calibration/stable_6_3_2_1_1.json"
+  ],
+  "numerical_workers": 1,
+  "blas_threads": 1,
+  "pid": 6364,
+  "exit_code": 0,
+  "status": "completed",
+  "seconds": 0.797,
+  "peak_job_bytes": 54906880,
+  "peak_process_bytes": 54906880,
+  "end_utc": "2026-09-09T18:07:17.170254+00:00"
+}

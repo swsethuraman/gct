@@ -1,0 +1,32 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-07",
+  "tag": "b13_07_inventory_retry",
+  "start_utc": "2026-09-09T15:03:19.914925+00:00",
+  "wall_limit_seconds": 300,
+  "memory_limit_bytes": 1610612736,
+  "preflight": {
+    "length": 64,
+    "load": 77,
+    "total_phys": 33752997888,
+    "available_phys": 7706460160,
+    "total_page": 44490416128,
+    "available_page": 8295837696,
+    "total_virtual": 140737488224256,
+    "available_virtual": 140733078298624,
+    "extended": 0
+  },
+  "command": [
+    "analysis/b13_07_audit.py",
+    "inventory"
+  ],
+  "numerical_workers": 1,
+  "blas_threads": 1,
+  "pid": 46260,
+  "exit_code": 0,
+  "status": "completed",
+  "seconds": 1.282,
+  "peak_job_bytes": 35241984,
+  "peak_process_bytes": 35241984,
+  "end_utc": "2026-09-09T15:03:21.191809+00:00"
+}

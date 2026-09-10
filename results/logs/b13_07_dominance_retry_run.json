@@ -1,0 +1,32 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-07",
+  "tag": "b13_07_dominance_retry",
+  "start_utc": "2026-09-09T15:02:28.600718+00:00",
+  "wall_limit_seconds": 300,
+  "memory_limit_bytes": 1610612736,
+  "preflight": {
+    "length": 64,
+    "load": 76,
+    "total_phys": 33752997888,
+    "available_phys": 7778021376,
+    "total_page": 44490416128,
+    "available_page": 8388771840,
+    "total_virtual": 140737488224256,
+    "available_virtual": 140733078298624,
+    "extended": 0
+  },
+  "command": [
+    "analysis/b13_07_audit.py",
+    "dominance"
+  ],
+  "numerical_workers": 1,
+  "blas_threads": 1,
+  "pid": 47404,
+  "exit_code": 0,
+  "status": "completed",
+  "seconds": 0.094,
+  "peak_job_bytes": 10747904,
+  "peak_process_bytes": 10747904,
+  "end_utc": "2026-09-09T15:02:28.701821+00:00"
+}

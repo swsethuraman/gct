@@ -1,0 +1,32 @@
+{
+  "board_numbering": "batch13",
+  "session_id": "B13-07",
+  "tag": "b13_07_stable_census",
+  "start_utc": "2026-09-09T21:12:36.790839+00:00",
+  "wall_limit_seconds": 900,
+  "memory_limit_bytes": 1610612736,
+  "preflight": {
+    "length": 64,
+    "load": 81,
+    "total_phys": 33752997888,
+    "available_phys": 6399651840,
+    "total_page": 44490416128,
+    "available_page": 7585554432,
+    "total_virtual": 140737488224256,
+    "available_virtual": 140733078298624,
+    "extended": 0
+  },
+  "command": [
+    "analysis/b13_07_audit.py",
+    "stable_census"
+  ],
+  "numerical_workers": 1,
+  "blas_threads": 1,
+  "pid": 41104,
+  "exit_code": 0,
+  "status": "completed",
+  "seconds": 0.438,
+  "peak_job_bytes": 52555776,
+  "peak_process_bytes": 52555776,
+  "end_utc": "2026-09-09T21:12:37.223482+00:00"
+}
