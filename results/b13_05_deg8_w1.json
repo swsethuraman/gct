@@ -399,6 +399,72 @@
 "status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
 "secs": 197.1,
 "hwm_gb": 0.26
+},
+{
+"mu": [
+9,
+4,
+4,
+2,
+2,
+2,
+1
+],
+"delta": 8,
+"r": 7,
+"ell": 7,
+"a": 1,
+"primes": [
+2147483647,
+2147483629
+],
+"points": {
+"family": "per_3 pencils",
+"seed": 41,
+"bound": 40,
+"count": 9
+},
+"values_are": "raw evaluation rows over the isotypic-reduced chi basis, no transform",
+"N_S": 309494,
+"stab": 12,
+"n_chi": 30704,
+"nrows": 440161,
+"nnz": 1177840,
+"build_secs": 19.9,
+"build_hwm_gb": 0.26,
+"route": "inject (sparse Wiedemann on [E; Ev], s42/s43 tool, s45 lean build)",
+"per_prime": {
+"2147483647": {
+"status_wied": "NONSINGULAR",
+"nrows": 440170,
+"nnz": 1454176,
+"secs": 1200.8,
+"diag": [
+"SEQ n=30704 nrows=440170 nnz=1454176 k=0 len=61408 secs=586.5",
+"BM deg=30704 f0=1794080264 secs=607.9"
+],
+"mult": 1,
+"units": 0
+},
+"2147483629": {
+"status_wied": "NONSINGULAR",
+"nrows": 440170,
+"nnz": 1454176,
+"secs": 1197.8,
+"diag": [
+"SEQ n=30704 nrows=440170 nnz=1454176 k=0 len=61408 secs=582.2",
+"BM deg=30704 f0=2096561952 secs=603.5"
+],
+"mult": 1,
+"units": 0
+}
+},
+"primes_agree": true,
+"mult": 1,
+"units": 0,
+"status": "CERTIFIED i = 0: [E; Ev] NONSINGULAR at both primes (proves mult = a over Q)",
+"secs": 2419.6,
+"hwm_gb": 0.26
 }
 ]
 }

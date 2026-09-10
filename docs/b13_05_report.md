@@ -51,19 +51,19 @@ actually ran the session, and the honest answer is both, in that order.
 > `C[X]` being a domain, and together they are the pruning engine.
 >
 > **Degree 8 is one campaign from closing.**  42 cells stand between the record
-> and `I(D_r^{per₃})_8 = 0` for every `r`; **16 are now closed** — 5 by Theorem F
-> and 11 more measured here on the validated instrument, every one CERTIFIED,
+> and `I(D_r^{per₃})_8 = 0` for every `r`; **17 are now closed** — 5 by Theorem F
+> and 12 more measured here on the validated instrument, every one CERTIFIED,
 > **no candidate drops at any cell at either prime** — leaving **26**, a
 > completed and resumable prefix (§7).  Degree 8 is *not* closed and is not
 > claimed; Theorem B stands at `δ ≤ 7`.
 >
-> **The residual set is 197 cells at degree 9** plus those 26 at degree 8, and
-> the 26 are subordinate: each is closed by the degree-9 cell `μ + 3e₁`.  Against
-> a naive census of **1329** constituents over `δ = 7, 8, 9`, **223** are left.
+> **The residual set is 197 cells at degree 9** plus those 25 at degree 8, and
+> the 25 are subordinate: each is closed by the degree-9 cell `μ + 3e₁`.  Against
+> a naive census of **1329** constituents over `δ = 7, 8, 9`, **222** are left.
 >
 > **The residual is expensive, and this is the number batch 14 should plan
-> against**: fitted from 14 measured builds and 11 Wiedemann certificates on
-> this host, deciding the 197 degree-9 cells costs **at least ~770 CPU-hours**,
+> against**: fitted from 15 measured builds and 12 Wiedemann certificates on
+> this host, deciding the 197 degree-9 cells costs **at least ~1 100 CPU-hours**,
 > dominated by the kernel and not by the build (§5.2).  That is a new fact — the
 > earlier `Σ N_S·δ` framing understated it — and it is the strongest argument in
 > this report for B13-10's leaner builder.
@@ -336,13 +336,13 @@ After Theorem B, the top cells, Theorems D and F, and the degree-8 campaign of
 | | cells | closed | **open** |
 |---|---|---|---|
 | `δ = 7`, `ℓ = 7` | 5 | 5 | **0** |
-| `δ = 8`, `ℓ = 7` | 42 | 16 | **26** |
+| `δ = 8`, `ℓ = 7` | 42 | 17 | **25** |
 | `δ = 8`, `ℓ = 8` | 6 | 6 | **0** |
 | `δ = 9`, `ℓ = 7` | 152 | 11 | **141** |
 | `δ = 9`, `ℓ = 8` | 62 | 6 | **56** |
 | `δ = 9`, `ℓ = 9` (exploratory) | 8 | 8 | **0** |
 
-**223 open, of which 197 are at degree 9 and 26 at degree 8** — and the 26 are
+**222 open, of which 197 are at degree 9 and 25 at degree 8** — and the 26 are
 subordinate: each has its ladder successor `μ + 3e₁` among the 141, so a
 B13-09 run that clears the right subset of degree 9 clears degree 8 for free.
 The irreducible residual is therefore **197 cells, all at degree 9**, against a
@@ -351,24 +351,42 @@ naive census of 797 constituents at that degree and 1329 over `δ = 7, 8, 9`.
 `results/b13_05_final.json` carries every open cell with `a`, `N_S`,
 `|Stab_W(μ)|` and `n_χ ≥ N_S/|Stab|`, and every closed one with the reason —
 inherited, top cell, Theorem F witness, Theorem D successor, or measured here.
-**145 of the 197 have `a = 1`**, where the injectivity certificate of §7 applies
-directly.
+**123 of the 197 have `a = 1`**, where the injectivity certificate of §7 applies
+directly; the other 74 have `a` from 2 to 6, and the same certificate decides
+them too (`[E; Ev]` injective ⟺ `mult = a` for every `a`).
 
 ### 5.2 What it costs — the number batch 14 should plan against
 
-Fitted from this session's own measurements on the declared host (14 builds,
-`N_S` from 4 743 to 454 272; 11 Wiedemann certificates, `n_χ` from 2 140 to
-11 160), both at **MEASURED**:
+Fitted from this session's own measurements on the declared host (15 builds,
+`N_S` from 4 743 to 454 272; 12 Wiedemann certificates, `n_χ` from 2 140 to
+30 704), both at **MEASURED**:
 
 | stage | fitted rate | cost over the 197 |
 |---|---|---|
-| lean build (`wk9_s45_build.build_cell`) | ~198 s per 10⁶ monomials | `Σ N_S = 6.25·10⁸` → **~34 CPU-hours** |
-| decision (sparse Wiedemann on `[E; Ev]`, both primes) | ~31 s per 10³ of `n_χ` | **≥ ~770 CPU-hours** |
+| lean build (`wk9_s45_build.build_cell`) | ~184 s per 10⁶ monomials | `Σ N_S = 6.25·10⁸` → **~32 CPU-hours** |
+| decision (sparse Wiedemann on `[E; Ev]`, both primes) | ~45 s per 10³ of `n_χ` | **≥ ~1 100 CPU-hours** |
 
 **The kernel, not the builder, is what this queue costs** — by a factor of
-twenty — and the 770 hours is a *lower* bound twice over: it uses the `n_χ`
-lower bound `N_S/|Stab|` rather than the true `n_χ` (measured overshoots ran 5 %
-to 20 % high), and Wiedemann is superlinear in `n_χ` while the fit is linear.
+twenty — and the 1 100 hours is a *lower* bound three times over: it uses the
+`n_χ` lower bound `N_S/|Stab|` rather than the true `n_χ` (measured overshoots
+ran 5 % to 20 % high); the linear fit comes from the cells that finished, which
+are the cheap ones; and Wiedemann is superlinear in `n_χ` while the fit is not.
+
+The superlinearity is now measured rather than assumed, and it is steep.  Two
+points from the campaign's dear end, both at one prime:
+
+| `μ` | `n_χ` | nnz | seconds | linear fit predicts |
+|---|---|---|---|---|
+| `(8,6,5,2,1,1,1)₈` | 8 504 | 93 691 | **19** | 132 |
+| `(8,4,4,2,2,2,2)₈` | 23 896 | 1 573 691 | **1 409** | 371 |
+| `(9,4,4,2,2,2,1)₈` | 30 704 | 1 177 840 | **1 201** | 476 |
+
+A 2.8× rise in `n_χ` bought a 74× rise in time, because `nnz` grows with it and
+the Wiedemann cost is `O(n_χ · nnz)`.  **So read the 1 100 hours as the optimistic
+end of a range whose realistic value is several times larger**, and note that the
+residual's `n_χ` lower bounds reach `4.1·10⁵` — seventeen times the dearest cell
+measured here.  A handful of cells at the top of that queue could each cost more
+than everything this session ran.
 
 This inverts the batch-12 stock-take's reading of where the wall is.  §7 of
 `docs/stocktake_batch12.md` puts the raising-row builder in front — correctly,
@@ -506,8 +524,8 @@ on the theorem, and both agree.
 With Theorem F's 5, exactly **37** cells stood between the record and
 `I(D_r^{per₃})_8 = 0` for every `r` — the open `(δ=8, ℓ=7)` cells, every one
 with `a = 1`.  Pre-registered in addendum C and run on two workers with separate
-output files.  **11 of the 37 are newly CERTIFIED here**, all by the sparse
-injectivity certificate.  The table lists twelve: the extra row is `(12,2⁶)`,
+output files.  **12 of the 37 are newly CERTIFIED here**, all by the sparse
+injectivity certificate.  The table lists 13: the extra row is `(12,2⁶)`,
 which Theorem F had already closed and which is included as the §7.1 check.
 
 | `μ` | `N_S` | `|Stab|` | `n_χ` | time | verdict |
@@ -524,6 +542,7 @@ which Theorem F had already closed and which is included as the §7.1 check.
 | `(9, 6, 2, 2, 2, 2, 1)` | 168 763 | — | 9 848 | 341 s | CERTIFIED |
 | `(7, 5, 5, 4, 1, 1, 1)` | 254 060 | — | 11 127 | 197 s | CERTIFIED |
 | `(8, 7, 2, 2, 2, 2, 1)` | 192 491 | — | 11 160 | 457 s | CERTIFIED |
+| `(9, 4, 4, 2, 2, 2, 1)` | 309 494 | — | 30 704 | 2420 s | CERTIFIED |
 
 **No candidate drops, at any cell, at either prime.**  Every verdict is
 `[E; Ev]` NONSINGULAR — a Berlekamp–Massey minimal polynomial of degree exactly
@@ -538,16 +557,16 @@ lean build; `analysis/wk9_s43_inject.py` itself is hardcoded to `r = 6` and
 could not be used directly, which is why the wiring lives in
 `analysis/wk13_b13_05_validate.py::run_inject`.
 
-**Where it stands: 16 of 42 closed, 26 open.**  That is a completed, resumable
+**Where it stands: 17 of 42 closed, 25 open.**  That is a completed, resumable
 prefix — the pre-registered fallback — and the boundary is exactly the cost
-curve of §5.2: the cells done have `n_χ` from 284 to 11 160, and the 26 left run
+curve of §5.2: the cells done have `n_χ` from 284 to 30 704, and the 25 left run
 from `n_χ ≈ 12 000` to `4.1·10⁵`.  **Degree 8 is not closed, and I do not claim
 it.**  Theorem B stands at `δ ≤ 7`.
 
 *What closing it would buy:* `I(D_r^{per₃})_8 = 0` for every `r`, hence
 `mult_pad = mult_red` at every weight of every length through degree 8 — and, by
 Theorem F with `ν = (3)₁`, it would close a further 9 cells at `(δ=9, ℓ=7)` for
-nothing.  On the fitted curve the 26 are roughly **60–100 CPU-hours**, most of it
+nothing.  On the fitted curve the 25 are roughly **60–100 CPU-hours**, most of it
 in the three dearest cells.
 
 ## 8. Two further results, both exact
@@ -635,7 +654,7 @@ The board asked for these, so here they are.
    preamble's toolchain paragraph beside `python-flint`.
 
 6. **The scope boundary has no rule for a cell that is cheap for me and dear for
-   B13-09.**  The 12 cells I decided at degree 8 (§7) are inside B13-09's stated
+   B13-09.**  The 13 cells I decided at degree 8 (§7) are inside B13-09's stated
    region.  I ran them because they are the remainder of *this* session's
    theorem, and I declare it; but "B13-05 owns the structural proofs and computes
    only to validate a claim" and "B13-09 owns the numerical queue" do not
@@ -647,17 +666,17 @@ The board asked for these, so here they are.
 
 | not done | why | price |
 |---|---|---|
-| **The 197-cell degree-9 residual** | B13-09 owns the numerical queue | §5.2 prices it from this session's own fits: **≥ ~770 CPU-hours** for the decisions plus ~34 for the builds. This is the headline cost of the whole cubic programme at these lengths and it is a *lower* bound |
-| **The last 26 cells of degree 8** | the two-hour extension ran out mid-campaign; the workers were ended at the handoff by their recorded pids | ~**60–100 CPU-hours** on the fitted curve, most of it in the three dearest. Closing them gives `I(D_r^{per₃})_8 = 0` for every `r`, upgrades Theorem B to `δ ≤ 8`, and closes 9 degree-9 cells free by Theorem F. **This is the cheapest theorem left on the board** and it is fully set up: the cell list, the driver and the compiled tool are all in the bundle |
-| **Instrument I6** — the `ℓ = δ−1` cells via the Pieri image of a top cell | pre-registered in addendum B, **not reached** | half a session. Its value fell once §5.2 showed the decision, not the construction, is the cost: I6 would still need an evaluation per cell. I no longer think it is the best next instrument, and I would put that half-session into a **faster kernel** (block Wiedemann, or a better cover) instead — which is what actually unblocks the 770 hours |
+| **The 197-cell degree-9 residual** | B13-09 owns the numerical queue | §5.2 prices it from this session's own fits: **≥ ~1 100 CPU-hours** for the decisions plus ~32 for the builds. This is the headline cost of the whole cubic programme at these lengths and it is a *lower* bound |
+| **The last 25 cells of degree 8** | the two-hour extension ran out mid-campaign; the workers were ended at the handoff by their recorded pids | ~**60–100 CPU-hours** on the fitted curve, most of it in the three dearest. Closing them gives `I(D_r^{per₃})_8 = 0` for every `r`, upgrades Theorem B to `δ ≤ 8`, and closes 9 degree-9 cells free by Theorem F. **This is the cheapest theorem left on the board** and it is fully set up: the cell list, the driver and the compiled tool are all in the bundle |
+| **Instrument I6** — the `ℓ = δ−1` cells via the Pieri image of a top cell | pre-registered in addendum B, **not reached** | half a session. Its value fell once §5.2 showed the decision, not the construction, is the cost: I6 would still need an evaluation per cell. I no longer think it is the best next instrument, and I would put that half-session into a **faster kernel** (block Wiedemann, or a better cover) instead — which is what actually unblocks the 1 100 hours |
 | **Raising the I3.3 cap** to cover the 7 skipped weights | all have `a = 0`; nothing depends on them | minutes |
 | **Length 9 beyond the top cells** | outside the assignment | the 8 top cells at `δ = 9` are closed here; `δ ≥ 10` is unpriced and unenumerated |
 | **Anything on the quartic/padded side** | not this assignment; and `D > 0` is governed by `i_det`, not by this ideal (`docs/batch13_corrections.md` §1) | — |
 
 **The honest boundary of the negatives.**  §6 is a negative over a stated
 region: every cell with `a ≥ 1` at `δ ≤ 9`, `ℓ ≤ 9`.  It says the
-orbit-stabiliser bound is silent there.  §7 is a *prefix*, not a theorem: 16 of
-42 degree-8 cells closed, and **the remaining 26 could still contain the first
+orbit-stabiliser bound is silent there.  §7 is a *prefix*, not a theorem: 17 of
+42 degree-8 cells closed, and **the remaining 25 could still contain the first
 permanent-specific equation the programme has ever seen**.  Nothing in this
 report excludes that, and no measurement here even hints at it — every cell
 decided came back full rank, with no candidate drop at either prime.
@@ -670,7 +689,7 @@ nothing here bears on `D > 0`: the binding constraint on the obstruction is
 `i_det`, and this session touched neither the determinant side nor any padded
 cell.  Theorem B is a statement that the permanent is *invisible* through degree
 7 — it moves the frontier of a negative, and the programme should read it that
-way.  If the 223 open cells come back empty too, the honest summary will be that
+way.  If the 222 open cells come back empty too, the honest summary will be that
 `mult_pad = mult_red` through degree 9 at every length, and the cubic screen will
 have found nothing at four lengths on five instruments.
 
@@ -679,11 +698,11 @@ this session's numbers bear on batch 14's choices.  The cubic screen was adopted
 (`docs/stocktake_batch12.md` §5) because it is "one computation per
 `(length, degree)`" instead of one per weight.  That is true of the *statement*
 but §5.2 shows it is not true of the *cost*: one `(length, degree)` at `r = 7, 8`
-and `δ = 9` is 197 weights and at least 770 CPU-hours, and the expense is in the
+and `δ = 9` is 197 weights and at least 1 100 CPU-hours, and the expense is in the
 kernel, where no instrument in this programme is currently strong.  Set against
 the correction in `docs/batch13_corrections.md` §1 — that objective 2 is not on
 the path to `D > 0` at all — the honest question for the evening stock-take is
-whether degree 9 is worth 770 hours to close a negative that does not gate the
+whether degree 9 is worth 1 100 hours to close a negative that does not gate the
 obstruction.  **Degree 8, at 60–100 hours, closes a clean theorem and is a
 different proposition**; I would fund that and defer degree 9 behind a faster
 kernel.  That is a recommendation, not a result, and it is the integrator's
