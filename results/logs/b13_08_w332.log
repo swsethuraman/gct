@@ -1,0 +1,87 @@
+
+=== lane 1 rank 332 (8, 7, 6, 4, 4, 1) a 4 N_S 2819270 pred 2.4 GB engine unchanged ulimit_kb 3200000 2026-09-10T00:59:57.628353
+$ ulimit -v 3200000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 8 7 6 4 4 1 --out /home/claude/gct/results/b13_08/per6_d10_lane1.jsonl --a 4 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 400 prefixes
+      level 3: 5653 prefixes
+      level 4: 42090 prefixes
+      level 5: 202716 prefixes
+      level 6: 668727 prefixes
+      level 7: 1597686 prefixes
+      level 8: 2554259 prefixes
+      level 9: 2819270 prefixes
+      level 10: 2819270 prefixes
+  lam=(8, 7, 6, 4, 4, 1): N_S=2819270 |Stab|=2 n_chi=1425932 (orbits dropped: 0) [lean, 20s, HWM 0.48 GB]
+    E_01: |H|=2 targets 2452773 canonical rows 1240983 nnz 6005835 (obstructed fixed targets cancelled: 0) [18s, HWM 0.69 GB]
+    E_12: |H|=2 targets 2379720 canonical rows 1204035 nnz 5456439 (obstructed fixed targets cancelled: 0) [51s, HWM 0.75 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [74s, HWM 0.80 GB]
+    E_34: |H|=1 targets 2422004 canonical rows 2422004 nnz 8100787 (obstructed fixed targets cancelled: 0) [104s, HWM 0.97 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2819270 (obstructed fixed targets cancelled: 0) [108s, HWM 0.97 GB]
+  built (8, 7, 6, 4, 4, 1) d10: N_S=2819270 |Stab|=2 n_chi=1425932 rows=7682120 nnz=30619385 (133s: mono 3s orbits 20s rows 111s; HWM 1.08 GB)
+    hybrid[per6 8_7_6_4_4_1d10] p=2147483647 attempt 0: |S|=1425421 |U|=511 (a=4, excess 507) m=575 blocks 12x43 projected nullity 4, verified=True, rank 4 [split 1.1s trisolve 60.9s schur 77.8s null 0.2s lift 4.9s rank 0.5s]
+  per6 (8, 7, 6, 4, 4, 1) d10 p=2147483647: a=4 n_chi=1425932 mult=4 units=0 [159.7s]
+    hybrid[per6 8_7_6_4_4_1d10] p=2147483629 attempt 0: |S|=1425421 |U|=511 (a=4, excess 507) m=575 blocks 12x43 projected nullity 4, verified=True, rank 4 [split 1.0s trisolve 55.1s schur 72.5s null 0.2s lift 5.8s rank 0.6s]
+  per6 (8, 7, 6, 4, 4, 1) d10 p=2147483629: a=4 n_chi=1425932 mult=4 units=0 [146.5s]
+  PER6 RESULT (8, 7, 6, 4, 4, 1) d10: a=4 N_S=2819270 n_chi=1425932 mult=4 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (449.7s, HWM 2.48 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk12_s79_per6.py", line 158, in <module>
+    print("RESULT " + json.dumps(res), flush=True)
+BrokenPipeError: [Errno 32] Broken pipe
+
+=== lane 3 rank 332 (8, 7, 6, 4, 4, 1) a 4 N_S 2819270 pred 2.53 GB engine unchanged ulimit_kb 2600000 2026-09-10T01:46:52.576470
+$ ulimit -v 2600000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 8 7 6 4 4 1 --out /home/claude/gct/results/b13_08/per6_d10_lane3.jsonl --a 4 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 400 prefixes
+      level 3: 5653 prefixes
+      level 4: 42090 prefixes
+      level 5: 202716 prefixes
+      level 6: 668727 prefixes
+      level 7: 1597686 prefixes
+      level 8: 2554259 prefixes
+      level 9: 2819270 prefixes
+      level 10: 2819270 prefixes
+  lam=(8, 7, 6, 4, 4, 1): N_S=2819270 |Stab|=2 n_chi=1425932 (orbits dropped: 0) [lean, 10s, HWM 0.48 GB]
+    E_01: |H|=2 targets 2452773 canonical rows 1240983 nnz 6005835 (obstructed fixed targets cancelled: 0) [19s, HWM 0.69 GB]
+    E_12: |H|=2 targets 2379720 canonical rows 1204035 nnz 5456439 (obstructed fixed targets cancelled: 0) [38s, HWM 0.75 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [49s, HWM 0.79 GB]
+    E_34: |H|=1 targets 2422004 canonical rows 2422004 nnz 8100787 (obstructed fixed targets cancelled: 0) [64s, HWM 0.95 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2819270 (obstructed fixed targets cancelled: 0) [68s, HWM 0.95 GB]
+  built (8, 7, 6, 4, 4, 1) d10: N_S=2819270 |Stab|=2 n_chi=1425932 rows=7682120 nnz=30619385 (82s: mono 3s orbits 10s rows 70s; HWM 1.09 GB)
+    hybrid[per6 8_7_6_4_4_1d10] p=2147483647 attempt 0: |S|=1425421 |U|=511 (a=4, excess 507) m=575 blocks 12x43 projected nullity 4, verified=True, rank 4 [split 0.9s trisolve 44.3s schur 71.1s null 0.2s lift 5.7s rank 0.6s]
+  per6 (8, 7, 6, 4, 4, 1) d10 p=2147483647: a=4 n_chi=1425932 mult=4 units=0 [135.2s]
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk12_s79_per6.py", line 157, in <module>
+    res = measure_weight(mu, delta, certs=arg('--certs', '') or None, a_given=(arg('--a', -1) if '--a' in args else None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk12_s79_per6.py", line 84, in measure_weight
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6 {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 282, in hybrid_kernel
+    Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 468. MiB for an array with shape (1425421, 43) and data type int64
+
+=== lane 3 rank 332 (8, 7, 6, 4, 4, 1) a 4 N_S 2819270 pred 2.53 GB engine unchanged ulimit_kb 4059999 2026-09-10T01:57:25.606899
+$ ulimit -v 4059999; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 8 7 6 4 4 1 --out /home/claude/gct/results/b13_08/per6_d10_lane3.jsonl --a 4 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 400 prefixes
+      level 3: 5653 prefixes
+      level 4: 42090 prefixes
+      level 5: 202716 prefixes
+      level 6: 668727 prefixes
+      level 7: 1597686 prefixes
+      level 8: 2554259 prefixes
+      level 9: 2819270 prefixes
+      level 10: 2819270 prefixes
+  lam=(8, 7, 6, 4, 4, 1): N_S=2819270 |Stab|=2 n_chi=1425932 (orbits dropped: 0) [lean, 8s, HWM 0.48 GB]
+    E_01: |H|=2 targets 2452773 canonical rows 1240983 nnz 6005835 (obstructed fixed targets cancelled: 0) [16s, HWM 0.69 GB]
+    E_12: |H|=2 targets 2379720 canonical rows 1204035 nnz 5456439 (obstructed fixed targets cancelled: 0) [32s, HWM 0.79 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [42s, HWM 0.83 GB]
+    E_34: |H|=1 targets 2422004 canonical rows 2422004 nnz 8100787 (obstructed fixed targets cancelled: 0) [55s, HWM 0.97 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2819270 (obstructed fixed targets cancelled: 0) [58s, HWM 0.97 GB]
+  built (8, 7, 6, 4, 4, 1) d10: N_S=2819270 |Stab|=2 n_chi=1425932 rows=7682120 nnz=30619385 (70s: mono 3s orbits 8s rows 59s; HWM 1.08 GB)
+    hybrid[per6 8_7_6_4_4_1d10] p=2147483647 attempt 0: |S|=1425421 |U|=511 (a=4, excess 507) m=575 blocks 12x43 projected nullity 4, verified=True, rank 4 [split 0.9s trisolve 49.6s schur 67.9s null 0.1s lift 5.0s rank 0.5s]
+  per6 (8, 7, 6, 4, 4, 1) d10 p=2147483647: a=4 n_chi=1425932 mult=4 units=0 [133.5s]
+    hybrid[per6 8_7_6_4_4_1d10] p=2147483629 attempt 0: |S|=1425421 |U|=511 (a=4, excess 507) m=575 blocks 12x43 projected nullity 4, verified=True, rank 4 [split 1.1s trisolve 44.2s schur 68.8s null 0.1s lift 5.8s rank 0.5s]
+  per6 (8, 7, 6, 4, 4, 1) d10 p=2147483629: a=4 n_chi=1425932 mult=4 units=0 [130.6s]
+  PER6 RESULT (8, 7, 6, 4, 4, 1) d10: a=4 N_S=2819270 n_chi=1425932 mult=4 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (343.8s, HWM 2.49 GB)

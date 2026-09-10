@@ -1,0 +1,77 @@
+
+=== lane 0 rank 319 (8, 7, 6, 5, 3, 1) a 5 N_S 2422004 pred 2.47 GB engine unchanged ulimit_kb 4330000 2026-09-09T15:51:00.143456
+$ ulimit -v 4330000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 8 7 6 5 3 1 --out /home/claude/gct/results/b13_08/per6_d10_lane0.jsonl --a 5 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 386 prefixes
+      level 3: 5262 prefixes
+      level 4: 37954 prefixes
+      level 5: 178944 prefixes
+      level 6: 581009 prefixes
+      level 7: 1375523 prefixes
+      level 8: 2193920 prefixes
+      level 9: 2422004 prefixes
+      level 10: 2422004 prefixes
+  lam=(8, 7, 6, 5, 3, 1): N_S=2422004 |Stab|=1 n_chi=2422004 (orbits dropped: 0) [lean, 4s, HWM 0.42 GB]
+    E_01: |H|=1 targets 2108140 canonical rows 2108140 nnz 10202712 (obstructed fixed targets cancelled: 0) [15s, HWM 0.69 GB]
+    E_12: |H|=1 targets 2045486 canonical rows 2045486 nnz 9271136 (obstructed fixed targets cancelled: 0) [28s, HWM 0.76 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [42s, HWM 0.87 GB]
+    E_34: |H|=1 targets 1519087 canonical rows 1519087 nnz 5749597 (obstructed fixed targets cancelled: 0) [51s, HWM 0.92 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2422004 (obstructed fixed targets cancelled: 0) [54s, HWM 0.92 GB]
+  built (8, 7, 6, 5, 3, 1) d10: N_S=2422004 |Stab|=1 n_chi=2422004 rows=8487811 nnz=35882503 (63s: mono 3s orbits 4s rows 57s; HWM 1.16 GB)
+
+=== lane 0 rank 319 (8, 7, 6, 5, 3, 1) a 5 N_S 2422004 pred 2.47 GB engine unchanged ulimit_kb 7000000 2026-09-10T00:40:19.759333
+$ ulimit -v 7000000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 8 7 6 5 3 1 --out /home/claude/gct/results/b13_08/per6_d10_lane0.jsonl --a 5 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 386 prefixes
+      level 3: 5262 prefixes
+      level 4: 37954 prefixes
+      level 5: 178944 prefixes
+      level 6: 581009 prefixes
+      level 7: 1375523 prefixes
+      level 8: 2193920 prefixes
+      level 9: 2422004 prefixes
+      level 10: 2422004 prefixes
+  lam=(8, 7, 6, 5, 3, 1): N_S=2422004 |Stab|=1 n_chi=2422004 (orbits dropped: 0) [lean, 5s, HWM 0.42 GB]
+    E_01: |H|=1 targets 2108140 canonical rows 2108140 nnz 10202712 (obstructed fixed targets cancelled: 0) [13s, HWM 0.69 GB]
+    E_12: |H|=1 targets 2045486 canonical rows 2045486 nnz 9271136 (obstructed fixed targets cancelled: 0) [27s, HWM 0.78 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [39s, HWM 0.88 GB]
+    E_34: |H|=1 targets 1519087 canonical rows 1519087 nnz 5749597 (obstructed fixed targets cancelled: 0) [48s, HWM 0.96 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2422004 (obstructed fixed targets cancelled: 0) [51s, HWM 0.96 GB]
+  built (8, 7, 6, 5, 3, 1) d10: N_S=2422004 |Stab|=1 n_chi=2422004 rows=8487811 nnz=35882503 (62s: mono 4s orbits 5s rows 53s; HWM 1.16 GB)
+    hybrid[per6 8_7_6_5_3_1d10] p=2147483647 attempt 0: |S|=2420785 |U|=1219 (a=5, excess 1214) m=1283 blocks 39x32 projected nullity 5, verified=True, rank 5 [split 1.4s trisolve 213.2s schur 201.3s null 0.9s lift 7.9s rank 1.0s]
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk12_s79_per6.py", line 157, in <module>
+    res = measure_weight(mu, delta, certs=arg('--certs', '') or None, a_given=(arg('--a', -1) if '--a' in args else None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk12_s79_per6.py", line 86, in measure_weight
+    G = matmul_mod(EV % p, K % p, p)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 171, in matmul_mod
+    assert A.shape[1] < (1 << 21)
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+=== lane 2 rank 319 (8, 7, 6, 5, 3, 1) a 5 N_S 2422004 pred 3.22 GB engine lean ulimit_kb 4189999 2026-09-10T01:15:02.667347
+$ ulimit -v 4189999; exec timeout 7200 python3 /home/claude/gct/analysis/wk13_b08_per6_lean.py 10 8 7 6 5 3 1 --out /home/claude/gct/results/b13_08/per6_d10_lane2.jsonl --a 5 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 30 prefixes
+      level 2: 386 prefixes
+      level 3: 5262 prefixes
+      level 4: 37954 prefixes
+      level 5: 178944 prefixes
+      level 6: 581009 prefixes
+      level 7: 1375523 prefixes
+      level 8: 2193920 prefixes
+      level 9: 2422004 prefixes
+      level 10: 2422004 prefixes
+  lam=(8, 7, 6, 5, 3, 1): N_S=2422004 |Stab|=1 n_chi=2422004 (orbits dropped: 0) [lean, 4s, HWM 0.42 GB]
+    E_01: |H|=1 targets 2108140 canonical rows 2108140 nnz 10202712 (obstructed fixed targets cancelled: 0) [14s, HWM 0.69 GB]
+    E_12: |H|=1 targets 2045486 canonical rows 2045486 nnz 9271136 (obstructed fixed targets cancelled: 0) [25s, HWM 0.76 GB]
+    E_23: |H|=1 targets 1966669 canonical rows 1966669 nnz 8237054 (obstructed fixed targets cancelled: 0) [36s, HWM 0.88 GB]
+    E_34: |H|=1 targets 1519087 canonical rows 1519087 nnz 5749597 (obstructed fixed targets cancelled: 0) [43s, HWM 0.92 GB]
+    E_45: |H|=1 targets 848429 canonical rows 848429 nnz 2422004 (obstructed fixed targets cancelled: 0) [47s, HWM 0.92 GB]
+  built (8, 7, 6, 5, 3, 1) d10: N_S=2422004 |Stab|=1 n_chi=2422004 rows=8487811 nnz=35882503 (56s: mono 4s orbits 4s rows 48s; HWM 1.15 GB)
+    hybrid[per6-lean 8_7_6_5_3_1d10] p=2147483647 attempt 0: |S|=2420785 |U|=1219 (a=5, excess 1214) m=1283 blocks 39x32 projected nullity 5, verified=True, rank 5 [split 1.5s trisolve 191.6s schur 182.3s null 0.9s lift 4.6s rank 3.2s]
+  per6-lean (8, 7, 6, 5, 3, 1) d10 p=2147483647: a=5 n_chi=2422004 mult=5 units=0 [395.5s]
+    hybrid[per6-lean 8_7_6_5_3_1d10] p=2147483629 attempt 0: |S|=2420785 |U|=1219 (a=5, excess 1214) m=1283 blocks 39x32 projected nullity 5, verified=True, rank 5 [split 2.1s trisolve 206.6s schur 181.7s null 0.9s lift 6.0s rank 3.2s]
+  per6-lean (8, 7, 6, 5, 3, 1) d10 p=2147483629: a=5 n_chi=2422004 mult=5 units=0 [413.6s]
+  PER6-LEAN RESULT (8, 7, 6, 5, 3, 1) d10: a=5 N_S=2422004 n_chi=2422004 mult=5 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (877.0s, HWM 2.79 GB)

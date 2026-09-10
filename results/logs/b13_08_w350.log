@@ -1,0 +1,33 @@
+
+=== lane 2 rank 350 (9, 7, 5, 4, 3, 2) a 12 N_S 3730858 pred 7.19 GB engine lean ulimit_kb 4600000 2026-09-10T01:29:40.055037
+$ ulimit -v 4600000; exec timeout 7200 python3 /home/claude/gct/analysis/wk13_b08_per6_lean.py 10 9 7 5 4 3 2 --out /home/claude/gct/results/b13_08/per6_d10_lane2.jsonl --a 12 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 34 prefixes
+      level 2: 799 prefixes
+      level 3: 9474 prefixes
+      level 4: 71146 prefixes
+      level 5: 345657 prefixes
+      level 6: 1133645 prefixes
+      level 7: 2542674 prefixes
+      level 8: 3560341 prefixes
+      level 9: 3730858 prefixes
+      level 10: 3730858 prefixes
+  lam=(9, 7, 5, 4, 3, 2): N_S=3730858 |Stab|=1 n_chi=3730858 (orbits dropped: 0) [lean, 7s, HWM 0.62 GB]
+    E_01: |H|=1 targets 3076302 canonical rows 3076302 nnz 15828598 (obstructed fixed targets cancelled: 0) [23s, HWM 0.96 GB]
+    E_12: |H|=1 targets 2803928 canonical rows 2803928 nnz 12761894 (obstructed fixed targets cancelled: 0) [42s, HWM 1.07 GB]
+    E_23: |H|=1 targets 2854539 canonical rows 2854539 nnz 10932925 (obstructed fixed targets cancelled: 0) [59s, HWM 1.20 GB]
+    E_34: |H|=1 targets 2617854 canonical rows 2617854 nnz 8893200 (obstructed fixed targets cancelled: 0) [73s, HWM 1.29 GB]
+    E_45: |H|=1 targets 2233926 canonical rows 2233926 nnz 6497727 (obstructed fixed targets cancelled: 0) [83s, HWM 1.34 GB]
+  built (9, 7, 5, 4, 3, 2) d10: N_S=3730858 |Stab|=1 n_chi=3730858 rows=13586549 nnz=54914344 (98s: mono 5s orbits 7s rows 86s; HWM 1.74 GB)
+    hybrid[per6-lean 9_7_5_4_3_2d10] p=2147483647 attempt 0: |S|=3729955 |U|=903 (a=12, excess 891) m=967 blocks 29x32 projected nullity 12, verified=True, rank 12 [split 2.2s trisolve 244.5s schur 202.1s null 0.5s lift 17.9s rank 4.5s]
+  per6-lean (9, 7, 5, 4, 3, 2) d10 p=2147483647: a=12 n_chi=3730858 mult=12 units=0 [502.2s]
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 213, in <module>
+    res = measure_weight_lean(mu, delta, certs=arg('--certs', '') or None, a_given=(arg('--a', -1) if '--a' in args else None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 282, in hybrid_kernel
+    Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 911. MiB for an array with shape (3729955, 32) and data type int64

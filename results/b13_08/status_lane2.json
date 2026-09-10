@@ -1,119 +1,297 @@
 {
  "board_numbering": "batch13",
- "lane": 0,
- "engine": "unchanged",
- "started": "2026-09-10T01:47:47.725800",
+ "lane": 2,
+ "engine": "lean",
+ "started": "2026-09-10T01:15:02.648438",
  "reached": [
   {
-   "rank": 340,
+   "rank": 319,
+   "mu": [
+    8,
+    7,
+    6,
+    5,
+    3,
+    1
+   ],
+   "a": 5,
+   "N_S": 2422004,
+   "NS_delta": 24220040,
+   "pred_peak_gb": 3.22,
+   "engine": "lean",
+   "lane": 2,
+   "n_chi": 2422004,
+   "mult": 5,
+   "units": 0,
+   "halt": false,
+   "secs": 877.0,
+   "wall": 877.4,
+   "waited": 0,
+   "hwm_gb": 2.79,
+   "ulimit_kb": 4189999,
+   "when": "2026-09-10T01:29:40.025467"
+  },
+  {
+   "rank": 361,
+   "mu": [
+    9,
+    6,
+    5,
+    5,
+    3,
+    2
+   ],
+   "a": 4,
+   "N_S": 4606382,
+   "NS_delta": 46063820,
+   "pred_peak_gb": 3.51,
+   "engine": "lean",
+   "lane": 2,
+   "n_chi": 2287905,
+   "mult": 4,
+   "units": 0,
+   "halt": false,
+   "secs": 524.4,
+   "wall": 524.8,
+   "waited": 0,
+   "hwm_gb": 3.45,
+   "ulimit_kb": 4600000,
+   "when": "2026-09-10T01:48:59.231043"
+  }
+ ],
+ "not_reached": [
+  {
+   "rank": 350,
+   "mu": [
+    9,
+    7,
+    5,
+    4,
+    3,
+    2
+   ],
+   "a": 12,
+   "N_S": 3730858,
+   "NS_delta": 37308580,
+   "pred_peak_gb": 7.19,
+   "engine": "lean",
+   "lane": 2,
+   "rc": 1,
+   "reason": "memory",
+   "wall": 634.3,
+   "waited": 0,
+   "ulimit_kb": 4600000,
+   "when": "2026-09-10T01:40:14.403011"
+  },
+  {
+   "rank": 363,
+   "mu": [
+    8,
+    7,
+    6,
+    4,
+    3,
+    2
+   ],
+   "a": 7,
+   "N_S": 4719476,
+   "NS_delta": 47194760,
+   "pred_peak_gb": 6.34,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 367,
+   "mu": [
+    8,
+    7,
+    5,
+    5,
+    3,
+    2
+   ],
+   "a": 4,
+   "N_S": 5304916,
+   "NS_delta": 53049160,
+   "pred_peak_gb": 3.89,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 369,
+   "mu": [
+    9,
+    6,
+    5,
+    4,
+    4,
+    2
+   ],
+   "a": 6,
+   "N_S": 5369144,
+   "NS_delta": 53691440,
+   "pred_peak_gb": 4.53,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 371,
+   "mu": [
+    8,
+    6,
+    6,
+    5,
+    3,
+    2
+   ],
+   "a": 2,
+   "N_S": 5833614,
+   "NS_delta": 58336140,
+   "pred_peak_gb": 3.52,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 373,
+   "mu": [
+    8,
+    7,
+    5,
+    4,
+    4,
+    2
+   ],
+   "a": 4,
+   "N_S": 6186200,
+   "NS_delta": 61862000,
+   "pred_peak_gb": 4.37,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 375,
+   "mu": [
+    7,
+    7,
+    6,
+    5,
+    3,
+    2
+   ],
+   "a": 2,
+   "N_S": 6302047,
+   "NS_delta": 63020470,
+   "pred_peak_gb": 3.72,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 376,
+   "mu": [
+    9,
+    6,
+    5,
+    4,
+    3,
+    3
+   ],
+   "a": 3,
+   "N_S": 6590439,
+   "NS_delta": 65904390,
+   "pred_peak_gb": 4.22,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 382,
+   "mu": [
+    8,
+    7,
+    5,
+    4,
+    3,
+    3
+   ],
+   "a": 3,
+   "N_S": 7598805,
+   "NS_delta": 75988050,
+   "pred_peak_gb": 4.71,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 383,
+   "mu": [
+    8,
+    6,
+    5,
+    5,
+    4,
+    2
+   ],
+   "a": 2,
+   "N_S": 7655836,
+   "NS_delta": 76558360,
+   "pred_peak_gb": 4.31,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 387,
    "mu": [
     9,
     5,
     5,
-    5,
-    5,
-    1
+    4,
+    4,
+    3
    ],
    "a": 1,
-   "N_S": 3090597,
-   "NS_delta": 30905970,
-   "pred_peak_gb": 1.48,
-   "engine": "unchanged",
-   "lane": 0,
-   "n_chi": 123841,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 213.3,
-   "wall": 213.7,
-   "waited": 80,
-   "hwm_gb": 1.06,
-   "ulimit_kb": 4070000,
-   "when": "2026-09-10T01:52:41.510038"
+   "N_S": 8652131,
+   "NS_delta": 86521310,
+   "pred_peak_gb": 3.11,
+   "reason": "wall clock"
   },
   {
-   "rank": 341,
+   "rank": 389,
    "mu": [
-    11,
-    5,
-    4,
+    7,
+    7,
+    6,
     4,
     3,
     3
    ],
    "a": 1,
-   "N_S": 3143967,
-   "NS_delta": 31439670,
-   "pred_peak_gb": 1.76,
-   "engine": "unchanged",
-   "lane": 0,
-   "n_chi": 776625,
-   "mult": 1,
-   "units": 0,
-   "halt": false,
-   "secs": 137.6,
-   "wall": 138.0,
-   "waited": 0,
-   "hwm_gb": 1.7,
-   "ulimit_kb": 4400000,
-   "when": "2026-09-10T01:54:59.483894"
+   "N_S": 9038623,
+   "NS_delta": 90386230,
+   "pred_peak_gb": 3.2,
+   "reason": "wall clock"
   },
   {
-   "rank": 342,
+   "rank": 390,
    "mu": [
-    8,
     7,
-    5,
+    6,
+    6,
     5,
     4,
-    1
-   ],
-   "a": 3,
-   "N_S": 3165424,
-   "NS_delta": 31654240,
-   "pred_peak_gb": 2.54,
-   "engine": "unchanged",
-   "lane": 0,
-   "n_chi": 1571636,
-   "mult": 3,
-   "units": 0,
-   "halt": false,
-   "secs": 374.6,
-   "wall": 375.0,
-   "waited": 0,
-   "hwm_gb": 2.76,
-   "ulimit_kb": 4400000,
-   "when": "2026-09-10T02:01:14.459986"
-  },
-  {
-   "rank": 343,
-   "mu": [
-    8,
-    7,
-    7,
-    3,
-    3,
     2
    ],
+   "a": 1,
+   "N_S": 9106420,
+   "NS_delta": 91064200,
+   "pred_peak_gb": 4.42,
+   "reason": "wall clock"
+  },
+  {
+   "rank": 391,
+   "mu": [
+    8,
+    6,
+    5,
+    5,
+    3,
+    3
+   ],
    "a": 2,
-   "N_S": 3282047,
-   "NS_delta": 32820470,
-   "pred_peak_gb": 1.88,
-   "engine": "unchanged",
-   "lane": 0,
-   "n_chi": 801096,
-   "mult": 2,
-   "units": 0,
-   "halt": false,
-   "secs": 190.7,
-   "wall": 191.0,
-   "waited": 0,
-   "hwm_gb": 2.37,
-   "ulimit_kb": 4070000,
-   "when": "2026-09-10T02:04:25.486323"
+   "N_S": 9412742,
+   "NS_delta": 94127420,
+   "pred_peak_gb": 3.56,
+   "reason": "wall clock"
   }
  ],
- "not_reached": [],
  "skipped": [
   {
    "rank": 297,
@@ -468,22 +646,6 @@
    "reason": "banked"
   },
   {
-   "rank": 319,
-   "mu": [
-    8,
-    7,
-    6,
-    5,
-    3,
-    1
-   ],
-   "a": 5,
-   "N_S": 2422004,
-   "NS_delta": 24220040,
-   "pred_peak_gb": 3.22,
-   "reason": "banked"
-  },
-  {
    "rank": 320,
    "mu": [
     9,
@@ -676,22 +838,6 @@
    "reason": "banked"
   },
   {
-   "rank": 332,
-   "mu": [
-    8,
-    7,
-    6,
-    4,
-    4,
-    1
-   ],
-   "a": 4,
-   "N_S": 2819270,
-   "NS_delta": 28192700,
-   "pred_peak_gb": 2.53,
-   "reason": "claimed by another lane"
-  },
-  {
    "rank": 333,
    "mu": [
     9,
@@ -801,8 +947,9 @@
    "N_S": 3076302,
    "NS_delta": 30763020,
    "pred_peak_gb": 5.77,
-   "reason": "predicted peak 5.77 GB > lane cap 4.4"
+   "reason": "claimed by another lane"
   }
  ],
- "halted": null
+ "halted": null,
+ "finished": "2026-09-10T02:10:19.335523"
 }

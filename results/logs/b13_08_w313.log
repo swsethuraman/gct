@@ -1,0 +1,25 @@
+
+=== lane 1 rank 313 (11, 5, 5, 4, 3, 2) a 5 N_S 2211400 pred 2.21 GB engine unchanged ulimit_kb 3200000 2026-09-09T15:36:48.989276
+$ ulimit -v 3200000; exec timeout 7200 python3 /home/claude/gct/analysis/wk12_s79_per6.py 10 11 5 5 4 3 2 --out /home/claude/gct/results/b13_08/per6_d10_lane1.jsonl --a 5 --certs /home/claude/gct/results/certs/b13_08_per6
+      level 1: 43 prefixes
+      level 2: 838 prefixes
+      level 3: 9648 prefixes
+      level 4: 73615 prefixes
+      level 5: 366840 prefixes
+      level 6: 1155688 prefixes
+      level 7: 1980034 prefixes
+      level 8: 2201687 prefixes
+      level 9: 2211400 prefixes
+      level 10: 2211400 prefixes
+  lam=(11, 5, 5, 4, 3, 2): N_S=2211400 |Stab|=2 n_chi=1097069 (orbits dropped: 17262) [lean, 6s, HWM 0.44 GB]
+    E_01: |H|=1 targets 1372181 canonical rows 1372181 nnz 7416306 (obstructed fixed targets cancelled: 0) [9s, HWM 0.58 GB]
+    E_12: |H|=1 targets 1973175 canonical rows 1972632 nnz 7302154 (obstructed fixed targets cancelled: 0) [20s, HWM 0.71 GB]
+    E_23: |H|=1 targets 1698457 canonical rows 1698240 nnz 6365596 (obstructed fixed targets cancelled: 0) [31s, HWM 0.79 GB]
+    E_34: |H|=2 targets 1559133 canonical rows 772875 nnz 2590142 (obstructed fixed targets cancelled: 5294) [40s, HWM 0.79 GB]
+    E_45: |H|=2 targets 1331666 canonical rows 660181 nnz 1898581 (obstructed fixed targets cancelled: 3529) [48s, HWM 0.79 GB]
+  built (11, 5, 5, 4, 3, 2) d10: N_S=2211400 |Stab|=2 n_chi=1097069 rows=6476109 nnz=25572779 (59s: mono 3s orbits 6s rows 50s; HWM 0.93 GB)
+    hybrid[per6 11_5_5_4_3_2d10] p=2147483647 attempt 0: |S|=1096949 |U|=120 (a=5, excess 115) m=184 blocks 3x56 projected nullity 5, verified=True, rank 5 [split 1.1s trisolve 10.3s schur 13.6s null 0.0s lift 4.8s rank 0.4s]
+  per6 (11, 5, 5, 4, 3, 2) d10 p=2147483647: a=5 n_chi=1097069 mult=5 units=0 [39.1s]
+    hybrid[per6 11_5_5_4_3_2d10] p=2147483629 attempt 0: |S|=1096949 |U|=120 (a=5, excess 115) m=184 blocks 3x56 projected nullity 5, verified=True, rank 5 [split 1.0s trisolve 11.9s schur 13.5s null 0.0s lift 2.9s rank 0.5s]
+  per6 (11, 5, 5, 4, 3, 2) d10 p=2147483629: a=5 n_chi=1097069 mult=5 units=0 [38.4s]
+  PER6 RESULT (11, 5, 5, 4, 3, 2) d10: a=5 N_S=2211400 n_chi=1097069 mult=5 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (145.5s, HWM 2.25 GB)

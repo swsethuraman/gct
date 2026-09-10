@@ -3,23 +3,26 @@
  "session": "B13-08",
  "delta": 10,
  "queue": 95,
- "reached": 38,
- "not_reached": 57,
- "sum_a_reached": 210,
- "sum_a_not_reached": 157,
- "completed_prefix_in_cost_order": 22,
- "prefix_last_rank": 318,
- "full_rank_at_both_primes": 38,
+ "reached": 47,
+ "not_reached": 48,
+ "sum_a_reached": 232,
+ "sum_a_not_reached": 135,
+ "completed_prefix_in_cost_order": 42,
+ "prefix_last_rank": 338,
+ "full_rank_at_both_primes": 47,
  "drops": [],
  "primes_disagree": [],
- "max_secs": 547.5,
- "total_secs": 7338.5,
+ "max_secs": 877.0,
+ "total_secs": 10341.1,
  "max_hwm_gb": 3.84,
- "lean_engine_weights": [],
+ "lean_engine_weights": [
+  319,
+  361
+ ],
  "by_bucket": {
   "N_S<5e6": {
-   "reached": 38,
-   "not_reached": 31
+   "reached": 47,
+   "not_reached": 22
   },
   "5e6<=N_S<1e7": {
    "reached": 0,
@@ -27,98 +30,6 @@
   }
  },
  "not_reached_list": [
-  {
-   "rank": 319,
-   "mu": [
-    8,
-    7,
-    6,
-    5,
-    3,
-    1
-   ],
-   "a": 5,
-   "N_S": 2422004,
-   "pred_peak_gb": 2.47,
-   "attempts": [
-    {
-     "engine": "unchanged",
-     "reason": "error",
-     "rc": 1,
-     "wall": 512.2,
-     "ulimit_kb": 7000000
-    }
-   ],
-   "reason": "error",
-   "price": {
-    "NS_delta": 24220040,
-    "build_model_secs": 50.9,
-    "rows_model_secs": 17.0
-   }
-  },
-  {
-   "rank": 332,
-   "mu": [
-    8,
-    7,
-    6,
-    4,
-    4,
-    1
-   ],
-   "a": 4,
-   "N_S": 2819270,
-   "pred_peak_gb": 2.4,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 28192700,
-    "build_model_secs": 59.2,
-    "rows_model_secs": 18.3
-   }
-  },
-  {
-   "rank": 337,
-   "mu": [
-    7,
-    7,
-    7,
-    4,
-    4,
-    1
-   ],
-   "a": 1,
-   "N_S": 3042013,
-   "pred_peak_gb": 2.46,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 30420130,
-    "build_model_secs": 63.9,
-    "rows_model_secs": 14.8
-   }
-  },
-  {
-   "rank": 338,
-   "mu": [
-    10,
-    7,
-    4,
-    3,
-    3,
-    3
-   ],
-   "a": 1,
-   "N_S": 3054521,
-   "pred_peak_gb": 2.47,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 30545210,
-    "build_model_secs": 64.1,
-    "rows_model_secs": 14.8
-   }
-  },
   {
    "rank": 339,
    "mu": [
@@ -138,90 +49,6 @@
     "NS_delta": 30763020,
     "build_model_secs": 64.6,
     "rows_model_secs": 31.6
-   }
-  },
-  {
-   "rank": 340,
-   "mu": [
-    9,
-    5,
-    5,
-    5,
-    5,
-    1
-   ],
-   "a": 1,
-   "N_S": 3090597,
-   "pred_peak_gb": 2.48,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 30905970,
-    "build_model_secs": 64.9,
-    "rows_model_secs": 15.0
-   }
-  },
-  {
-   "rank": 341,
-   "mu": [
-    11,
-    5,
-    4,
-    4,
-    3,
-    3
-   ],
-   "a": 1,
-   "N_S": 3143967,
-   "pred_peak_gb": 2.49,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 31439670,
-    "build_model_secs": 66.0,
-    "rows_model_secs": 15.3
-   }
-  },
-  {
-   "rank": 342,
-   "mu": [
-    8,
-    7,
-    5,
-    5,
-    4,
-    1
-   ],
-   "a": 3,
-   "N_S": 3165424,
-   "pred_peak_gb": 2.5,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 31654240,
-    "build_model_secs": 66.5,
-    "rows_model_secs": 18.8
-   }
-  },
-  {
-   "rank": 343,
-   "mu": [
-    8,
-    7,
-    7,
-    3,
-    3,
-    2
-   ],
-   "a": 2,
-   "N_S": 3282047,
-   "pred_peak_gb": 2.53,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 32820470,
-    "build_model_secs": 68.9,
-    "rows_model_secs": 17.7
    }
   },
   {
@@ -363,8 +190,16 @@
    "a": 12,
    "N_S": 3730858,
    "pred_peak_gb": 6.75,
-   "attempts": [],
-   "reason": "not attempted",
+   "attempts": [
+    {
+     "engine": "lean",
+     "reason": "memory",
+     "rc": 1,
+     "wall": 634.3,
+     "ulimit_kb": 4600000
+    }
+   ],
+   "reason": "memory",
    "price": {
     "NS_delta": 37308580,
     "build_model_secs": 78.3,
@@ -579,27 +414,6 @@
     "NS_delta": 45730230,
     "build_model_secs": 96.0,
     "rows_model_secs": 24.7
-   }
-  },
-  {
-   "rank": 361,
-   "mu": [
-    9,
-    6,
-    5,
-    5,
-    3,
-    2
-   ],
-   "a": 4,
-   "N_S": 4606382,
-   "pred_peak_gb": 3.47,
-   "attempts": [],
-   "reason": "not attempted",
-   "price": {
-    "NS_delta": 46063820,
-    "build_model_secs": 96.7,
-    "rows_model_secs": 29.8
    }
   },
   {
@@ -1895,6 +1709,36 @@
    "certs": []
   },
   {
+   "rank": 319,
+   "mu": [
+    8,
+    7,
+    6,
+    5,
+    3,
+    1
+   ],
+   "a": 5,
+   "N_S": 2422004,
+   "stab": 1,
+   "n_chi": 2422004,
+   "nrows": 8487811,
+   "nnz": 35882503,
+   "mult": 5,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 877.0,
+   "build_secs": 56.2,
+   "hwm_gb": 2.79,
+   "engine": "lean (b13_08)",
+   "nU": {
+    "2147483647": 1219,
+    "2147483629": 1219
+   },
+   "certs": []
+  },
+  {
    "rank": 320,
    "mu": [
     9,
@@ -2255,6 +2099,36 @@
    "certs": []
   },
   {
+   "rank": 332,
+   "mu": [
+    8,
+    7,
+    6,
+    4,
+    4,
+    1
+   ],
+   "a": 4,
+   "N_S": 2819270,
+   "stab": 2,
+   "n_chi": 1425932,
+   "nrows": 7682120,
+   "nnz": 30619385,
+   "mult": 4,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 343.8,
+   "build_secs": 69.7,
+   "hwm_gb": 2.49,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 511,
+    "2147483629": 511
+   },
+   "certs": []
+  },
+  {
    "rank": 333,
    "mu": [
     9,
@@ -2371,6 +2245,216 @@
    "nU": {
     "2147483647": 220,
     "2147483629": 220
+   },
+   "certs": []
+  },
+  {
+   "rank": 337,
+   "mu": [
+    7,
+    7,
+    7,
+    4,
+    4,
+    1
+   ],
+   "a": 1,
+   "N_S": 3042013,
+   "stab": 12,
+   "n_chi": 253166,
+   "nrows": 4411509,
+   "nnz": 19089476,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 190.3,
+   "build_secs": 153.0,
+   "hwm_gb": 1.22,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 55,
+    "2147483629": 55
+   },
+   "certs": []
+  },
+  {
+   "rank": 338,
+   "mu": [
+    10,
+    7,
+    4,
+    3,
+    3,
+    3
+   ],
+   "a": 1,
+   "N_S": 3054521,
+   "stab": 6,
+   "n_chi": 476914,
+   "nrows": 6696849,
+   "nnz": 19498177,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 150.9,
+   "build_secs": 123.9,
+   "hwm_gb": 1.21,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 19,
+    "2147483629": 19
+   },
+   "certs": []
+  },
+  {
+   "rank": 340,
+   "mu": [
+    9,
+    5,
+    5,
+    5,
+    5,
+    1
+   ],
+   "a": 1,
+   "N_S": 3090597,
+   "stab": 24,
+   "n_chi": 123841,
+   "nrows": 4568446,
+   "nnz": 17146520,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 213.3,
+   "build_secs": 193.2,
+   "hwm_gb": 1.06,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 6,
+    "2147483629": 6
+   },
+   "certs": []
+  },
+  {
+   "rank": 341,
+   "mu": [
+    11,
+    5,
+    4,
+    4,
+    3,
+    3
+   ],
+   "a": 1,
+   "N_S": 3143967,
+   "stab": 4,
+   "n_chi": 776625,
+   "nrows": 6483707,
+   "nnz": 22236225,
+   "mult": 1,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 137.6,
+   "build_secs": 100.2,
+   "hwm_gb": 1.7,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 42,
+    "2147483629": 42
+   },
+   "certs": []
+  },
+  {
+   "rank": 342,
+   "mu": [
+    8,
+    7,
+    5,
+    5,
+    4,
+    1
+   ],
+   "a": 3,
+   "N_S": 3165424,
+   "stab": 2,
+   "n_chi": 1571636,
+   "nrows": 9456483,
+   "nnz": 38773065,
+   "mult": 3,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 374.6,
+   "build_secs": 82.4,
+   "hwm_gb": 2.76,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 439,
+    "2147483629": 439
+   },
+   "certs": []
+  },
+  {
+   "rank": 343,
+   "mu": [
+    8,
+    7,
+    7,
+    3,
+    3,
+    2
+   ],
+   "a": 2,
+   "N_S": 3282047,
+   "stab": 4,
+   "n_chi": 801096,
+   "nrows": 6929472,
+   "nnz": 27436946,
+   "mult": 2,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 190.7,
+   "build_secs": 105.0,
+   "hwm_gb": 2.37,
+   "engine": "analysis/wk12_s79_per6.py (unchanged)",
+   "nU": {
+    "2147483647": 158,
+    "2147483629": 158
+   },
+   "certs": []
+  },
+  {
+   "rank": 361,
+   "mu": [
+    9,
+    6,
+    5,
+    5,
+    3,
+    2
+   ],
+   "a": 4,
+   "N_S": 4606382,
+   "stab": 2,
+   "n_chi": 2287905,
+   "nrows": 13785457,
+   "nnz": 55014836,
+   "mult": 4,
+   "units": 0,
+   "primes_agree": true,
+   "status": "proved: mult = a at both primes (S_mu not in the ideal over Q)",
+   "secs": 524.4,
+   "build_secs": 161.7,
+   "hwm_gb": 3.45,
+   "engine": "lean (b13_08)",
+   "nU": {
+    "2147483647": 344,
+    "2147483629": 344
    },
    "certs": []
   }
