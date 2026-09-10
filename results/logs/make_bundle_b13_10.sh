@@ -6,8 +6,8 @@ BASE=00495110c62acfbbbc951e82cc218ed091563b3f
 OUT=/home/claude/b13_10_delivery
 rm -rf "$OUT"; mkdir -p "$OUT"
 git bundle create "$OUT/b13_10_lean_rows.bundle" $BASE..HEAD
+git -C /home/claude/gct bundle verify "$OUT/b13_10_lean_rows.bundle"
 cd "$OUT"
-git bundle verify b13_10_lean_rows.bundle
 SZ=$(stat -c%s b13_10_lean_rows.bundle)
 echo "bundle bytes: $SZ"
 {
