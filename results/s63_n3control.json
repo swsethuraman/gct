@@ -38,5 +38,6 @@
  "mult_det": 5,
  "rank_drop": true,
  "verdict": "POSITIVE CONTROL PASSED: rank drop, i_det=1 >= 1, mult_det=5 <= 5, both house primes agree",
- "note": "rank_p <= rank_Q so mult_det <= 5 over Q at both primes; rank G = 5 gives mult_det >= 5; hence mult_det = 5 exactly, i_det = 1. First rank drop exhibited by the HWV/evaluation instrument. U_D (1 ideal HWV) in results/artefacts/s63_n3_ideal_vectors.npz"
+ "note": "CORRECTED (batch-13 integration): the modular rank is a FLOOR. rank_p <= rank_Q gives mult_det >= 5, NOT <= 5; the previous note used the same inequality in both directions. The upper bound comes from LMR, as docs/s63_report.md section 3 correctly explains. Conclusion mult_det = 5, i_det = 1 is unchanged; only the derivation banked here was wrong. Found by B13-11. U_D (1 ideal HWV) in results/artefacts/s63_n3_ideal_vectors.npz",
+ "note_superseded": "rank_p <= rank_Q so mult_det <= 5 over Q at both primes; rank G = 5 gives mult_det >= 5; hence mult_det = 5 exactly, i_det = 1. First rank drop exhibited by the HWV/evaluation instrument. U_D (1 ideal HWV) in results/artefacts/s63_n3_ideal_vectors.npz"
 }

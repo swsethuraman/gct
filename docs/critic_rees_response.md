@@ -1,3 +1,10 @@
+> **RETIRED, batch-13 integration.**  B13-12 section 4 proves that the
+> exceptional image of a parameter-space blowup must NOT be identified with
+> the target's closure-minus-actual-image boundary: an explicit arc of
+> determinant order eight has a nonzero rank-one source limit and constant
+> projective target.  Any wording below that makes that identification is
+> superseded.  See docs/PROVED.md `exceptional_image_warning`.
+
 # Response to the Rees-algebra proposal for Track B
 
 Integrator, 2026-09-04.  Checked before responding.

@@ -1,0 +1,29 @@
+{
+ "note": "data artefacts (json/jsonl/npz/gz/csv/ps1) named in a staged astra report but absent from the tree. Scripts excluded: a report may legitimately name a producer script that lived only on the delivering host.",
+ "missing": [
+  {
+   "report": "results/astra/S3/degree13_conversion/S76_COMPATIBILITY.md",
+   "referenced": "s76_dag/level_DD_pP.npz"
+  },
+  {
+   "report": "results/astra/S3/degree13_conversion/REPORT.md",
+   "referenced": "gram_spherical.json"
+  },
+  {
+   "report": "results/astra/S4/REPLAY.md",
+   "referenced": "input_manifest.json"
+  },
+  {
+   "report": "results/astra/S4/REPLAY.md",
+   "referenced": "preflight.json"
+  },
+  {
+   "report": "results/astra/S6/REPLAY.md",
+   "referenced": "n3_independent_minors.json"
+  },
+  {
+   "report": "results/astra/S6/S6_report.md",
+   "referenced": "input_manifest.json"
+  }
+ ]
+}

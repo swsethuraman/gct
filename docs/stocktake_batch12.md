@@ -1,3 +1,9 @@
+> **SUPERSEDED by `docs/stocktake_batch13.md`.  Do not quote this file.**
+> It took four separate corrections during batch 13: the truncated `N_S`
+> range (B13-04), the builder-first framing (B13-05, B13-08), the cost model
+> with no length caveat (B13-09), and the object description behind the
+> `N_S*delta = 1.47e8` wall (B13-10).  Retained for provenance only.
+
 # Stock-take, batch 12
 
 **2026-09-09, integrator.**  Twelve sessions: six worker sessions (s74–s79) and

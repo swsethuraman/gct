@@ -397,7 +397,7 @@ raising rows, not the kernel, are the wall).
   every `mult_red < a` and `mult_pad < a` value (59 cells) — a mod-`p` kernel
   bounds the ideal codimension from below only (`i ≥ 1` needs an integer
   vector, which was not lifted here); and the equalities `mult_pad = mult_red`
-  at the 31 drop cells with `δ ≥ 10`, where no theorem covers them.
+  at the 35 drop cells with `δ ≥ 10` [CORRECTED: 31 counted Q2 alone; Q1 contributes four more — 15 at degree 10, 12 at 11, 8 at 12. B13-07], where no theorem covers them.
 - **Certificates.**  `full_rank` (verifier PASS) for det / pad / per4 at the
   calibration cells and for the cubic side; `hybrid_kernel` recorded
   certificates (points, cover, attempts, and the kernel in χ-coordinates where

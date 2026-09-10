@@ -1,3 +1,11 @@
+> **CORRECTED, batch-13 integration.**  The claimed *equivalence* between
+> `W subset D5` and dominance of the restricted map G does not hold: only
+> `closure(G(S)) subset Z cap {y_bad=0}` is established, and equality is an
+> additional statement.  Dominance still gives containment; FAILURE of
+> dominance gives nothing.  The 149->98 reduction stands for the restricted
+> actual-image problem.  B13-12 section 2; see docs/PROVED.md
+> `dominance_not_equivalent`.
+
 # Session 78 — r = 5 by bounded elimination
 
 Branch `s78-elimination`, base `main = afb8c3319d3d1f3afc3d2578c8cb322f2b8a3b92`.

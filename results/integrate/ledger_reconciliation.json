@@ -1,0 +1,66 @@
+{
+ "board_numbering": "batch14-prep",
+ "note": "B13-11's reconciliation table was correct at its cutoff and stale on arrival: B13-08 and B13-10 delivered after it. These are the corrected rows. Source of truth for cell counts is tools/integrate/reconcile_cells.py over the merged tree.",
+ "rows": [
+  {
+   "queue": "s79 Q1",
+   "cells": 123,
+   "b13_11_said": {
+    "closed": 121,
+    "open": 2
+   },
+   "corrected": {
+    "closed": 122,
+    "open": 1
+   },
+   "why": "B13-10's pilot closed (10,6,6,6,2,2)_8 with mult_det = a = 10, i_det = 0. The one remaining is (12,4,4,4,4,4)_8 at N_S*delta = 2.16e8."
+  },
+  {
+   "queue": "s79 Q2",
+   "cells": 10513,
+   "b13_11_said": {
+    "closed": 635,
+    "open": 9878
+   },
+   "corrected": {
+    "closed": 635,
+    "open": 9878
+   },
+   "why": "unchanged."
+  },
+  {
+   "queue": "cubic degree 10, length six",
+   "cells": 402,
+   "b13_11_said": {
+    "closed": 296,
+    "open": 106
+   },
+   "corrected": {
+    "closed": 344,
+    "open": 58
+   },
+   "why": "B13-08 closed 48 more. Remainder splits 47 with N_S < 1e7 and 11 at or above."
+  },
+  {
+   "queue": "cubic degree 9, lengths seven and eight",
+   "cells": 214,
+   "b13_11_said": {
+    "note": "not a B13-11 row"
+   },
+   "corrected": {
+    "closed": 115,
+    "open": 99,
+    "split": {
+     "r7": 47,
+     "r8": 52
+    }
+   },
+   "why": "UNION of B13-05's structural closures and B13-09's measurements, which no single session states. r=7: 152 cells, 105 closed. r=8: 62 cells, 10 closed (8 measured by B13-09, 2 more by B13-05's Theorem F)."
+  }
+ ],
+ "theorem_added_at_integration": {
+  "id": "degree8_global",
+  "statement": "I(D_r^{per_3})_delta = 0 for every r and every delta <= 8; hence mult_pad = mult_red at every weight of every length in every degree <= 8.",
+  "why_new": "Stated by no single session. B13-05 proves delta <= 7 and separately certifies the six length-8 top cells at delta = 8; B13-09 completes all 42 length-7 cells at delta = 8; the inherited record covers length 6; washout Thm 2 covers length <= 5; B13-05's Theorem A bounds the length at min(r, delta, 9) so the list is complete."
+ }
+}

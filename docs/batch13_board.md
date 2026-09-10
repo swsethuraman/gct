@@ -320,7 +320,7 @@ Reduce peak memory in the raising-row construction, preserving mathematical
 semantics, and expose the real memory/work tradeoff.
 
 *The wall, measured.*  s79 abandoned `(10,6,6,6,2,2)₈` at `N_S·δ = 1.47·10⁸`
-with the rows exceeding 4 GB, killed at `E_45`, while its kernels were never the
+with the transients exceeding 4 GB (the operator itself is 664 MB compact -- B13-10), killed at `E_45`, while its kernels were never the
 constraint — the largest hybrid phase in 682 cells was 202 s at
 `n_χ = 732 815`.
 

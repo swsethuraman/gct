@@ -122,8 +122,10 @@ def main(argv):
             # lock file so a concurrent write can never leave a half-staged index (the
             # 'cannot lock ref HEAD' race, seen once here before this was added).
             msg = (f"B13-09: bank r={r} d={delta} {tuple(c['mu'])} a={res['a']} mult={res['mult']} units={res['units']}\n\n"
-                   f"Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>\n"
-                   f"Claude-Session: https://claude.ai/code/session_013ve5BGfjw3LprynbCx15J6")
+                   f"Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>")
+            # NO session-link trailer.  Removed at batch-13 integration: this line
+            # re-emitted it on every banked weight, and a history rewrite does not
+            # fix a script.  Same defect class as analysis/wk9_s41_sweep.py:117.
             lock = os.path.join(ROOT, 'results', 'logs', 'b13_09_git.lock')
             subprocess.run(['flock', lock, 'sh', '-c',
                             f'cd {ROOT} && git add {out} {status_path} && git commit -q -F -'],
