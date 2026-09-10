@@ -20,6 +20,11 @@ date: 2026-09-09
 
 ## 0. What this session delivers, in one paragraph
 
+**Delivery: the bundle `b13_04_fable.bundle` is ONE part** — `part00` is the
+whole file — and `b13_04_fable.bundle.md5` carries a digest for the whole file
+and one for `part00`, under bare filenames.
+
+
 Proposition 8 of `docs/transfer_lemma.md` says a permanent-specific equation at
 a quartic weight `λ` needs a cubic-ideal constituent `S_ν ⊆ I(D_r^{per₃})_δ`
 with `λ/ν` a horizontal `δ`-strip.  This report states the **exact** form of
@@ -30,11 +35,15 @@ multiplication pullback's image with the cubic ideal, read in one weight space
 of the cubic coordinate ring.  The image sits inside the direct sum of the Pieri
 predecessor channels, of dimension `Σ_ν a⁽³⁾(ν,δ)`, and the gap is pinned
 between `max(0, Σ_ν i⁽³⁾ + mult_R − Σ_ν a⁽³⁾)` and `min(mult_R, Σ_ν i⁽³⁾)`.
-**The converse of Prop. 8(2) is false** (§4, PROVED): a Pieri-compatible cubic
-constituent need not contribute; the smallest instance is two lines in a
+**The converse of Prop. 8(2) is false** — for a general `GL_r`-stable cone `D`,
+which is the form in which §4 states and refutes it; nothing here refutes it for
+`D = D_r^{per₃}`, and nothing could, since every measured `I(D_r^{per₃})_δ` in
+the tree is zero (§9).  (§4, PROVED): a Pieri-compatible cubic constituent need
+not contribute; the smallest instance is two lines in a
 two-dimensional weight space that fail to coincide, `8c₃₀c₁₂ − 3c₂₁²` against
 `3c₃₀c₁₂ − c₂₁²`.  Across 82 exactly computed model cells (CERTIFIED over `Q`),
-only 4 of 156 Pieri-compatible constituent/cell pairs contribute on their own,
+only 4 of 156 Pieri channel lines — 4 of 142 Pieri-compatible constituent/cell
+pairs — contribute on their own,
 the criterion agrees with direct measurement everywhere, and one cell's
 additional padded equation restricts to a combination of three cubic channels
 none of which descends alone.  A cheap, exact certificate of non-descent (the
@@ -59,8 +68,8 @@ condition **as a polynomial identity over `Z`**, shows no boundary pole at any
 of fifteen specialisations, and is provably not `ρ(h)` for any quartic
 highest-weight vector `h`.  So no condition read off the affine slice
 `ℓ₁ ≠ 0` — swap, or full fibre-consistency — characterises descent.  The
-enlarged model census (199 transfer cells, 646 Pieri-compatible pairs, 13
-contributing alone) and a clean demonstration of the length quantifier at
+enlarged model census (199 transfer cells, 541 Pieri-compatible constituent/cell
+pairs carrying 646 channel lines, 13 of those lines contributing alone) and a clean demonstration of the length quantifier at
 `λ = (7,7,1,1)`, where the only contributing channel is a **shorter**
 predecessor, are in §12 too.
 
@@ -221,7 +230,7 @@ with **every** basis vector certified by symbolic substitution `c = f(A·s)`,
 `dim ρ(H_λ) + dim J_{λ⁻} − dim(ρ(H_λ) + J_{λ⁻})`; branching vectors are computed
 by lowering operators and intersected with the `GL_{r−1}`-highest condition.
 
-| model | `f`, `r` | `δ` | cells | cubic ideal `I(D_r^f)_δ` | pairs `(ν,λ)` with `i⁽³⁾ ≥ 1` | contribute alone | cells with gap (total gap) | gap = lower bound of Cor. D |
+| model | `f`, `r` | `δ` | cells | cubic ideal `I(D_r^f)_δ` | channel lines over pairs `(ν,λ)` with `i⁽³⁾ ≥ 1` | contribute alone | cells with gap (total gap) | gap = lower bound of Cor. D |
 |---|---|---|---|---|---|---|---|---|
 | A | `x³`, 2 | 2 | 3 | `S_{42}` | 2 | 1 | 1 (1) | 3/3 |
 | B | `x³+y³`, 3 (`D = Sub₂`) | 3 | 9 | `S_{522} ⊕ S_{441}` | 5 | 1 | 1 (1) | 9/9 |
@@ -232,14 +241,25 @@ by lowering operators and intersected with the `GL_{r−1}`-highest condition.
 Consistency checks that held in all 82 cells: `mult_R` by `ρ` = `mult_R` by
 reducible points; `mult_P` by padded points = by fixed-factor points;
 criterion = `mult_R − mult_P`; criterion = `dim(ρ(H_λ) ∩ span of branching
-vectors)`.  Every additional padded equation found is shipped as an explicit
-integer combination of the HWV basis with `ρ(h)` certified in the ideal and
-`h` nonzero at a reducible point (`witnesses` in the JSON).
+vectors)`.  Additional padded equations are shipped as explicit integer combinations of the
+HWV basis with `ρ(h)` certified in the ideal and `h` nonzero at a reducible
+point (`witnesses` in the JSON).  **One caveat, found by the audit and stated
+here rather than repaired:** the witness list is the kernel of `[RH | J]ᵀ`, which
+at a cell with `i_R ≥ 1` also contains the linear relations among the `ρ(h)`
+themselves; those give `ρ(h) = 0`, which passes the ideal test vacuously.  One
+stored witness of 118 is of this kind — `model_B_d6.json` at `λ = (8,8,8)`,
+where `rho_h_terms = 0` and `nonzero_on_reducible = false`, the two fields that
+identify it.  It affects no reported number: `criterion_gap` is computed
+independently as `dim ρ(H_λ) + dim J − dim(ρ(H_λ) + J)`, and the other 117
+witnesses carry `nonzero_on_reducible = true`.
 
 Three things the models show:
 
-- **Pieri compatibility is far from sufficient.**  4 of 156 compatible pairs
-  contribute alone; in Model B at `δ = 4` all 28 fail.
+- **Pieri compatibility is far from sufficient.**  4 of 156 channel lines,
+  spread over 142 compatible `(ν,λ)` pairs, contribute alone; in Model B at
+  `δ = 4` all 28 fail.  (The table's column counts *lines*, `Σ_ν i⁽³⁾` over the
+  predecessors of the cell, not pairs; the two differ where a shape carries
+  `i⁽³⁾ ≥ 2`.)
 - **The gap is not channel-by-channel.**  At `((8,4,4), δ=4)` in Model B the
   gap is 1 (`mult_R = 2`, `mult_P = 1`), no branching vector lies in
   `ρ(H_λ)`, and the witness (`q₄₀₀ · I₃`, `I₃` the degree-3 invariant of
@@ -529,8 +549,9 @@ certificate.  Both directions are used below exactly this way.
 | **total** | | **433** | **432** | 887 (sweeps) | 3461 (sweeps) |
 
 Across the twenty sweep files alone the swap identity cuts a total channel
-dimension of 3461 down to 887 — exactly `Σ mult_R` — so it is doing real work
-and is nowhere vacuous.  Every one of the 432 "exact" verdicts is CERTIFIED by
+dimension of 3461 down to **888**, against `Σ mult_R = 887` — so it is doing
+real work, is nowhere vacuous, and the whole discrepancy over four hundred
+cells is the single excess dimension of the exception below.  Every one of the 432 "exact" verdicts is CERTIFIED by
 the one-sidedness above.  (`r = 6, δ = 4` and `r = 5, δ = 5` were still running
 at the deadline and are not counted; the partial log shows no exception.)
 
@@ -560,8 +581,13 @@ Hence `ρ(H_λ) ⊊ T^λ`, and the swap identity — and even the full two-facto
 condition — is necessary but **not** sufficient for descent.  ∎
 
 *Certificates.* `analysis/wk13_b04_swapwitness.py` →
-`results/b13_04/swap_witness_r3_d7.json` (the vector, both symbolic checks, the
-exact rank); `analysis/wk13_b04_fibre.py` → `results/b13_04/fibre_r3_d7_16-6-6.json`
+`results/b13_04/swap_witness_r3_d7.json`, which records the vector, the exact
+rank, and **both** symbolic verdicts as `witness_symbolic_swap_zero` and
+`witness_symbolic_fibre_zero` with their monomial counts.  (In the first draft
+of that script `symbolic_fibre_zero` sat below the `__main__` guard and was
+never called, so item 2 was asserted with no artefact behind it; the audit
+caught it, the function was moved above `main`, called, and the run repeated —
+this paragraph describes the repeated run.) `analysis/wk13_b04_fibre.py` → `results/b13_04/fibre_r3_d7_16-6-6.json`
 (the saturated fibre-condition kernel, `dim T_fib = dim T_swap = 8` at both
 primes).  Items 1–3 are proofs; the saturated kernels are ceilings and are not
 used in the theorem.
@@ -603,7 +629,7 @@ certifies the cell.
 `analysis/wk13_b04_model.py`, all cells exact over `Q` with certified cubic
 ideals as in §4:
 
-| model | `f`, `r` | `δ` | cells | pairs `(ν,λ)`, `i⁽³⁾ ≥ 1` | contribute alone | cells with gap | total gap | gap above Cor. D's floor |
+| model | `f`, `r` | `δ` | cells | channel lines over pairs with `i⁽³⁾ ≥ 1` | contribute alone | cells with gap | total gap | gap above Cor. D's floor |
 |---|---|---|---|---|---|---|---|---|
 | A | `x³`, 2 | 2 | 3 | 2 | 1 | 1 | 1 | 0 |
 | B | `x³+y³`, 3 | 3 | 9 | 5 | 1 | 1 | 1 | 0 |
@@ -615,13 +641,13 @@ ideals as in §4:
 | D | | 3 | 9 | 15 | 2 | 6 | 6 | 0 |
 | D | | 4 | 28 | 95 | 3 | 25 | 29 | 0 |
 | E | `x³+y³`, 4 | 4 | 28 | 60 | 2 | 11 | 11 | 0 |
-| **total** | | | **199** | **646** | **13** | **85** | **117** | **22** |
+| **total** | | | **199** | **646** (over **541** pairs) | **13** | **85** | **117** | **22** |
 
 Every consistency check of §4 held in all 199 cells: `mult_R` by `ρ` equals
 `mult_R` by reducible points; `mult_P` by padded points equals `mult_P` by
 fixed-factor points; the criterion equals the direct gap; the criterion equals
-`dim(ρ(H_λ) ∩ span of branching vectors)`.  **13 of 646** Pieri-compatible
-constituent/cell pairs contribute on their own — 2 % — which is the quantitative
+`dim(ρ(H_λ) ∩ span of branching vectors)`.  **13 of 646** channel lines, spread over **541** Pieri-compatible
+constituent/cell pairs, contribute on their own — 2.4 % of the pairs — the quantitative
 form of §4's headline, now on five cubics, two lengths and five degrees.  The
 22 cells whose gap exceeds Corollary D's dimension floor (all at `δ ≥ 5`) are
 the cells where the exact criterion is doing work no count can do.
@@ -639,9 +665,11 @@ not idle:
   **contributes** (`branch_in_W = True`).  The additional padded equation at a
   full-length weight comes entirely from a *shorter* predecessor.
 - `λ = (4,4,4,4)`: same shape, over the length-3 predecessor `(4,4,4,0)`.
-- Twenty-three further (cell, shorter-predecessor) pairs at `r = 4, δ = 4` have
-  `i⁽³⁾ ≥ 1`; twenty-one of them do not contribute alone, so the shorter
-  predecessors behave exactly like the full-length ones — live, and mostly
+- At `r = 4, δ = 4` there are twenty-three (cell, shorter-predecessor) pairs
+  with `i⁽³⁾ ≥ 1` at a **full-length** `λ` — the two above among them — of which
+  twenty-one do not contribute alone; over all cells of that census, including
+  the `λ` of length `< 4`, there are forty-seven such pairs.  So the shorter
+  predecessors behave exactly like the full-length ones: live, and mostly
   non-descending.
 
 This is the operational content of §7: a shorter `μ` pairs with `λ` and may be
@@ -703,7 +731,8 @@ would take next.
 | 432 of 433 cells over 23 `(r,δ)` pairs: the swap identity cuts `B_full` to exactly `ρ(H_λ)` | CERTIFIED |
 | Theorem H: the swap identity, and the full two-factor condition, are **not sufficient** — the `(16,6,6)`, `δ = 7` witness | PROVED (two symbolic identities over `Z` + an exact rank over `Q`) |
 | the witness has no boundary pole at fifteen specialisations, so it appears to lie in the seminormalisation of `R` and not in `R` | MEASURED (specialisation is one-sided the wrong way); the symbolic divisibility is priced in §12.3 |
-| 199 model transfer cells; 13 of 646 Pieri-compatible pairs contribute alone; 22 gaps above Cor. D's floor | CERTIFIED over `Q` |
+| 199 model transfer cells; 13 of 646 channel lines (over 541 pairs) contribute alone; 22 gaps above Cor. D's floor | CERTIFIED over `Q` |
+| the report was audited adversarially by an independent agent that re-derived Theorem E by hand and by its own code, re-verified Theorem H on its own highest-weight kernel and its own polynomial arithmetic (3152/3152 monomials, difference zero), and checked the convention traps | RECORDED — six defects found, all six fixed above (§12.3 certificate, the pair/line unit, the 888, the vacuous witness, §0's scope, §12.5's count); no mathematical claim changed |
 | the length quantifier demonstrated at `λ = (7,7,1,1)`: the only contributing channel is a shorter predecessor | CERTIFIED |
 | every `a⁽⁴⁾`, `a⁽³⁾` in §12 agrees with the Kostant alternation | CERTIFIED (in-run assertion) |
 

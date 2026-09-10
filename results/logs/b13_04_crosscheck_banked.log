@@ -1,0 +1,14 @@
+B13-04 verification: mult_red from this session's instrument (rank of the
+fixed-factor map rho, exact over Q) against the repository's banked values
+(sessions 62/63/64, a different engine and different points).
+
+  lam=(4, 4) delta=2 r=2: a mine=1 banked=1 | mult_red mine=1 banked=1  OK
+  lam=(4, 4, 4) delta=3 r=3: a mine=1 banked=1 | mult_red mine=1 banked=1  OK
+  lam=(8, 6, 2) delta=4 r=3: a mine=2 banked=2 | mult_red mine=2 banked=2  OK
+  lam=(12, 6, 2) delta=5 r=3: a mine=4 banked=4 | mult_red mine=4 banked=4  OK
+  lam=(10, 6, 4) delta=5 r=3: a mine=4 banked=4 | mult_red mine=4 banked=4  OK
+  lam=(8, 8, 8) delta=6 r=3: a mine=2 banked=2 | mult_red mine=1 banked=1  OK
+  lam=(6, 6, 2, 2) delta=4 r=4: a mine=1 banked=1 | mult_red mine=1 banked=1  OK
+  lam=(8, 6, 4, 2) delta=5 r=4: a mine=3 banked=3 | mult_red mine=3 banked=3  OK
+FLINT exception (General error):
+    Unable to allocate memory (8).

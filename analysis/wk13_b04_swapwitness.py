@@ -13,7 +13,8 @@ not by itself certify the excess.  This script closes that gap:
   * it recomputes T at the cell exactly over Q from a saturated point set;
   * it produces an explicit integer vector F in T with F not in rho(H_lam)
     (an exact rank statement over Q -- certified);
-  * it verifies the swap identity for that F **symbolically**: the difference
+  * it verifies BOTH the swap identity and the general two-factor fibre
+    condition for that F **symbolically**: the difference
     F(l.q) - F(u_l^{-1}(x_1.q)) is expanded as a polynomial in the r-1 free
     coordinates of l and the C(r+1,2) coefficients of q over Z, and shown to be
     the zero polynomial.  That is a proof, not a sample.
@@ -101,62 +102,6 @@ def symbolic_swap_zero(F, r, delta):
     return d.is_zero(), (len(lhs.monoms()), len(rhs.monoms()))
 
 
-def main():
-    t0 = time.time()
-    rnd = random.Random(4242)
-    basis4, H = hwv_space(4, R, DELTA, LAM)
-    a4 = len(H)
-    lam_minus = (LAM[0] - DELTA,) + LAM[1:]
-    cols = weight_monomials(3, R, DELTA, lam_minus)
-    RH = [rho(h, R) for h in H]
-    mR = rank_Q(RH, cols)
-    _, Bfull = hwv_space(3, R, DELTA, lam_minus, first=1)
-    nB = len(Bfull)
-    print(f"lam={LAM} delta={DELTA} r={R}: a4={a4} mult_R={mR} lam^-={lam_minus} "
-          f"N_S(lam^-)={len(cols)} dim B_full={nB}")
-    rows, dim, stable = [], nB, 0
-    while stable < EXTRA:
-        l = [1] + [rnd.randint(-9, 9) for _ in range(R - 1)]
-        q = {al: rnd.randint(-9, 9) for al in exps(2, R)}
-        rows.append(swap_row(Bfull, cols, l, q, R))
-        K = kernel_rows(rows, nB)
-        if len(K) == dim:
-            stable += 1
-        else:
-            dim, stable = len(K), 0
-    T = [normalise(combine(Bfull, k)) for k in kernel_rows(rows, nB)]
-    print(f"dim T = {len(T)} after {len(rows)} points (fresh seed 4242, bound 9, "
-          f"{EXTRA} stable), mod p: {[nB - rank_mod(rows, nB, p) for p in (P1, P2)]}")
-    wit = None
-    for v in T:
-        if rank_Q(RH + [v], cols) > mR:
-            wit = v
-            break
-    assert wit is not None, "no excess vector: the sweep's reading does not reproduce"
-    indep = rank_Q(RH + [wit], cols) - mR
-    print(f"witness: {len(wit)} monomials, rank(rho(H) + F) - mult_R = {indep} "
-          f"(exact over Q: F is NOT a rho(h))")
-    ok, sizes = symbolic_swap_zero(wit, R, DELTA)
-    print(f"symbolic swap identity for the witness: difference is zero = {ok} "
-          f"(sides had {sizes[0]} and {sizes[1]} monomials)")
-    out = dict(board_numbering='batch13', session='B13-04', addendum=1, values_are='none',
-               lam=list(LAM), delta=DELTA, r=R, a4=a4, mult_R=mR, dim_B_full=nB, dim_T=len(T),
-               swap_points_used=len(rows), seed=4242, bound=9, stable_required=EXTRA,
-               witness_terms=len(wit), witness_independent_of_rho_H=bool(indep == 1),
-               witness_symbolic_swap_zero=bool(ok),
-               witness=[[list(map(list, m)), c] for m, c in sorted(wit.items())],
-               seconds=round(time.time() - t0, 1))
-    os.makedirs(os.path.join(ROOT, 'results', 'b13_04'), exist_ok=True)
-    fn = os.path.join(ROOT, 'results', 'b13_04', 'swap_witness_r3_d7.json')
-    with open(fn, 'w') as fh:
-        json.dump(out, fh, indent=1)
-    print(f"wrote {fn} ({out['seconds']}s)")
-
-
-if __name__ == '__main__':
-    main()
-
-
 def symbolic_fibre_zero(F, r, delta):
     """expand  F(u_l^{-1}(l'.q)) - F(u_{l'}^{-1}(l.q))  over Z in l_2..l_r,
     l'_2..l'_r (both first coordinates 1) and the coefficients of a general
@@ -228,3 +173,63 @@ def symbolic_fibre_zero(F, r, delta):
     lhs, rhs = evaluate(A), evaluate(B)
     d = lhs - rhs
     return d.is_zero(), (len(lhs.monoms()), len(rhs.monoms()))
+
+
+def main():
+    t0 = time.time()
+    rnd = random.Random(4242)
+    basis4, H = hwv_space(4, R, DELTA, LAM)
+    a4 = len(H)
+    lam_minus = (LAM[0] - DELTA,) + LAM[1:]
+    cols = weight_monomials(3, R, DELTA, lam_minus)
+    RH = [rho(h, R) for h in H]
+    mR = rank_Q(RH, cols)
+    _, Bfull = hwv_space(3, R, DELTA, lam_minus, first=1)
+    nB = len(Bfull)
+    print(f"lam={LAM} delta={DELTA} r={R}: a4={a4} mult_R={mR} lam^-={lam_minus} "
+          f"N_S(lam^-)={len(cols)} dim B_full={nB}")
+    rows, dim, stable = [], nB, 0
+    while stable < EXTRA:
+        l = [1] + [rnd.randint(-9, 9) for _ in range(R - 1)]
+        q = {al: rnd.randint(-9, 9) for al in exps(2, R)}
+        rows.append(swap_row(Bfull, cols, l, q, R))
+        K = kernel_rows(rows, nB)
+        if len(K) == dim:
+            stable += 1
+        else:
+            dim, stable = len(K), 0
+    T = [normalise(combine(Bfull, k)) for k in kernel_rows(rows, nB)]
+    print(f"dim T = {len(T)} after {len(rows)} points (fresh seed 4242, bound 9, "
+          f"{EXTRA} stable), mod p: {[nB - rank_mod(rows, nB, p) for p in (P1, P2)]}")
+    wit = None
+    for v in T:
+        if rank_Q(RH + [v], cols) > mR:
+            wit = v
+            break
+    assert wit is not None, "no excess vector: the sweep's reading does not reproduce"
+    indep = rank_Q(RH + [wit], cols) - mR
+    print(f"witness: {len(wit)} monomials, rank(rho(H) + F) - mult_R = {indep} "
+          f"(exact over Q: F is NOT a rho(h))")
+    ok, sizes = symbolic_swap_zero(wit, R, DELTA)
+    print(f"symbolic swap identity for the witness: difference is zero = {ok} "
+          f"(sides had {sizes[0]} and {sizes[1]} monomials)")
+    okf, sizesf = symbolic_fibre_zero(wit, R, DELTA)
+    print(f"symbolic GENERAL two-factor fibre condition for the witness: difference is "
+          f"zero = {okf} (sides had {sizesf[0]} and {sizesf[1]} monomials)")
+    out = dict(board_numbering='batch13', session='B13-04', addendum=1, values_are='none',
+               lam=list(LAM), delta=DELTA, r=R, a4=a4, mult_R=mR, dim_B_full=nB, dim_T=len(T),
+               swap_points_used=len(rows), seed=4242, bound=9, stable_required=EXTRA,
+               witness_terms=len(wit), witness_independent_of_rho_H=bool(indep == 1),
+               witness_symbolic_swap_zero=bool(ok), swap_sides_monomials=list(sizes),
+               witness_symbolic_fibre_zero=bool(okf), fibre_sides_monomials=list(sizesf),
+               witness=[[list(map(list, m)), c] for m, c in sorted(wit.items())],
+               seconds=round(time.time() - t0, 1))
+    os.makedirs(os.path.join(ROOT, 'results', 'b13_04'), exist_ok=True)
+    fn = os.path.join(ROOT, 'results', 'b13_04', 'swap_witness_r3_d7.json')
+    with open(fn, 'w') as fh:
+        json.dump(out, fh, indent=1)
+    print(f"wrote {fn} ({out['seconds']}s)")
+
+
+if __name__ == '__main__':
+    main()
