@@ -271,3 +271,32 @@ with `a ≥ 1` in the plethysm is missing from the census and none is extra
 (`analysis/b13_09_census_merge.py`).  So `a` now has two independent sources at
 every weight of all five groups, and the hybrid's mod-`p` nullity is the third
 at run time.
+
+---
+
+## Addendum B (committed 2026-09-10 00:58 UTC, before the measurements it governs)
+
+**B.1 The wall clock, extended.**  The session owner extended the deadline by two
+hours.  Addendum A.1's bound of 02:30 UTC is replaced by **04:30 UTC 2026-09-10**
+for the queues, with the report written after.  Nothing else changes: the
+per-weight `timeout` and `ulimit -v`, the `N_S·delta` caps, the `N_S`-ascending
+order within each group, the halt-on-drop rule and the "no degree extension
+beyond 9" bound all stand as pre-registered.  The extension is recorded here
+rather than applied silently, because a stopping rule that moves after the
+numbers are seen is not a stopping rule.
+
+**B.2 What the extension is spent on, in order.**  It does not change the queue
+order of A.2.  It buys, in this priority: (i) the remainder of `(7,8)` and
+`(8,8)`, completing prediction **P1**; (ii) as much of `(7,9)` as the clock
+allows, in `N_S` order, banked per weight; (iii) as much of `(8,9)` as the second
+stream allows under its `5·10⁷` cap; (iv) if and only if (i)–(iii) leave time,
+the three `(8,9)` weights above s79's `1.5·10⁸` wall, attempted last, one at a
+time, with the failure recorded as the boundary and its `N_S·delta` — not as a
+result.  No new group and no new degree is added.
+
+**B.3 Controls, both lengths, before their queues (MEASURED, PASS).**  The
+length-7 negative control at `(6,5,5,2,1,1,1)_7` and the length-8 one at
+`(6,6,5,3,1,1,1,1)_8` both read `mult = 0` at both primes on the split-cubic
+family, `n_chi = 1973` and `4257` respectively, with the recheck and
+exhibit-and-verify path executed.  The `per_3`/`det_3` distinctness control at
+`R = 7` differs at 10 of 10 points.  F1 did not fire.
