@@ -96,6 +96,14 @@ def main(argv):
         deadline = now().replace(hour=hh, minute=mm, second=0, microsecond=0)
         if deadline <= now(): deadline += datetime.timedelta(days=1)
     Q = json.load(open(os.path.join(RES, 'queue.json')))['queue']
+    # scheduling estimate: the frozen queue's a-priori pred_peak_gb, or the recalibrated
+    # results/b13_08/schedule.json (pre-registration addendum A) when --sched is given.
+    # Scheduling only -- no result depends on either.
+    sched = None
+    if '--sched' in argv:
+        sp = arg(argv, '--sched', os.path.join(RES, 'schedule.json'))
+        sched = json.load(open(sp))['sched']
+        print(f"[lane {lane}] scheduling from {os.path.relpath(sp, ROOT)} (addendum A), not the frozen pred_peak_gb", flush=True)
     out_path = os.path.join(RES, f'per6_d10_lane{lane}.jsonl')
     fail_path = os.path.join(RES, f'failed_lane{lane}.jsonl')
     status_path = os.path.join(RES, f'status_lane{lane}.json')
@@ -103,7 +111,8 @@ def main(argv):
     status = dict(board_numbering='batch13', lane=lane, engine=engine, started=now().isoformat(), reached=[], not_reached=[], skipped=[], halted=None)
     env = dict(os.environ); env.setdefault('S71_SCHUR_SO', '/home/claude/b13_08/schur.so'); env.setdefault('S71_MEM_X', '250000000')
     for w in Q:
-        mu = tuple(w['mu']); rank = w['rank']; a = w['a']; pred = float(w['pred_peak_gb'])
+        mu = tuple(w['mu']); rank = w['rank']; a = w['a']
+        pred = float(sched[str(rank)]) if sched and str(rank) in sched else float(w['pred_peak_gb'])
         key = dict(rank=rank, mu=list(mu), a=a, N_S=w['N_S'], NS_delta=w['NS_delta'], pred_peak_gb=pred)
         if mu in done_set():
             status['skipped'].append(dict(key, reason='banked')); continue
@@ -121,9 +130,11 @@ def main(argv):
             fd = os.open(claim, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, f"lane {lane} {now().isoformat()}\n".encode()); os.close(fd)
         except FileExistsError:
             status['skipped'].append(dict(key, reason='claimed by another lane')); continue
-        # concurrency rule: wait while the other lane's running weight plus this one exceed the cap
+        # concurrency rule: wait while ANOTHER lane is running and the two together exceed the cap.
+        # A weight whose own estimate exceeds the cap is not made unrunnable by it -- it waits for the
+        # other lanes to be idle and then runs solo, bounded by its own ulimit.
         waited = 0
-        while other_lanes_pred(lane) + pred > sum_cap:
+        while (o := other_lanes_pred(lane)) > 0 and o + pred > sum_cap:
             time.sleep(20); waited += 20
             if deadline and now() >= deadline: break
         if deadline and now() >= deadline:

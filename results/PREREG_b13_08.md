@@ -321,3 +321,48 @@ Deferred to batch 14, not run (`N_S ≥ 10^7`): ranks 392–402,
 
 Author: Swami Sethuraman, swsethuraman@beneficus.ai, Beneficus AI.
 board_numbering: batch13
+
+---
+
+## Addendum A — 2026-09-10, recalibrated scheduling; committed before the measurements it governs
+
+Two changes, both to **scheduling only**.  `results/b13_08/queue.json` stays
+frozen: the list, its order, the seeds, the primes, the stopping rules and the
+drop protocol of §§2–7 are unchanged, and no result depends on anything here.
+
+**A.1  The peak-memory estimate is recalibrated on this session's own
+measurements.**  The `pred_peak_gb` of §3 was an a-priori model fitted by eye on
+session 79's records; on this box it is wrong by up to 2.0 GB, in both
+directions.  Least squares on the 22 weights measured here plus the two control
+weights, all on the unchanged engine at `S71_MEM_X = 2.5·10⁸`:
+
+    peak_GB  =  0.986  +  0.0277·(nnz/10⁶)  +  0.1057·(n_χ·min(a,16)/10⁶)
+
+max residual **0.36 GB**, mean 0.09 GB.  The three terms are the interpreter
+plus build transients, `E` held as CSR with the hybrid's working copy (~28 bytes
+per nonzero), and the kernel `K` with its `int64` image and the 16-column blocks
+of the kernel check.  For an unrun weight `nnz` and `n_χ` are estimated from
+`N_S` and `|Stab|` by ratios measured over session 79's 506 cubic-scan records
+and this session's 22, taken at **p90** so the estimate errs high.
+`analysis/wk13_b08_schedule.py` writes `results/b13_08/schedule.json`; the sweep
+reads it with `--sched`.  It predicts 10 of the 95 above 4 GB and 3 above 5 GB,
+where the frozen model said 16 above 4 GB.
+
+**A.2  A weight whose own estimate exceeds the concurrency cap runs solo rather
+than never.**  The §3 rule ("a weight starts only if the predicted peaks of the
+two running weights sum to `≤ 6.3 GB`") makes any weight predicted above the cap
+unrunnable even on an idle box — a defect in my own pre-registration, found when
+the recalibration put one weight at 7.19 GB.  The rule now reads: **wait while
+another lane is running and the two together exceed the cap; then run, bounded
+by the weight's own `ulimit -v`.**  Concurrency is still capped; solvability no
+longer depends on the cap.
+
+**A.3  The wall-clock stop of §5 moves from 19:30 to 22:20 America/New_York.**
+The container was suspended 15:51–00:39 UTC, 8¾ hours, which consumed the
+delivery window the 19:30 stop existed to protect; the deadline was extended by
+two hours and the stop moves with it.  Lane parameters for the remainder:
+lane 0 `--sched --sum-cap 6.8 --ulimit-kb 7000000`, lane 1 `--sched --max-pred
+2.7 --sum-cap 6.8 --ulimit-kb 3000000`.
+
+Nothing above changes what counts as a negative, a candidate deficiency, or
+not-reached.
