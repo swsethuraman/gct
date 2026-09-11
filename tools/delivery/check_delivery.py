@@ -17,8 +17,35 @@ SINGLE_WRITER = ["paper/det3-conductor.tex", "paper/det4-onset.tex",
                  "PROJECT_NOTES.md", "docs/boundary_deficit.html"]
 MAX_BYTES = 5 * 1024 * 1024
 
-def git(*a):
-    return subprocess.run(["git", *a], capture_output=True, text=True).stdout
+def git(*a, allow_fail=False):
+    # Returning "" on a nonzero exit is what made this tool useless exactly when
+    # it mattered: given a --base that no longer resolves (after a history
+    # rewrite, say), every check read an empty string, passed vacuously, and the
+    # tool printed "(0 files)" plus a bogus "no Co-Authored-By" defect instead of
+    # saying the base was wrong.  A check that cannot fail loudly is not a check.
+    r = subprocess.run(["git", *a], capture_output=True, text=True)
+    if r.returncode and not allow_fail:
+        sys.exit(f"git {' '.join(a)}\n  exit {r.returncode}: {r.stderr.strip()}")
+    return r.stdout
+
+
+def require_ancestor(base, branch):
+    """--base must resolve, --branch must resolve, and base must be an ancestor.
+
+    Without this a rewritten base silently yields an empty diff and an empty
+    log, and the gate reports on nothing at all."""
+    for name, rev in (("--base", base), ("--branch", branch)):
+        r = subprocess.run(["git", "rev-parse", "--verify", f"{rev}^{{commit}}"],
+                           capture_output=True, text=True)
+        if r.returncode:
+            sys.exit(f"{name} {rev!r} does not resolve to a commit in this repository.\n"
+                     f"  after a history rewrite the old hashes are gone: look the new one up in\n"
+                     f"  .git/filter-repo/commit-map (or results/integrate/*_commit_map.txt)")
+    r = subprocess.run(["git", "merge-base", "--is-ancestor", base, branch],
+                       capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f"--base {base} is not an ancestor of --branch {branch}; "
+                 f"the range {base}..{branch} would not describe this delivery")
 
 def main():
     ap = argparse.ArgumentParser()
@@ -26,6 +53,7 @@ def main():
     ap.add_argument("--base", required=True)
     ap.add_argument("--bundle")
     args = ap.parse_args()
+    require_ancestor(args.base, args.branch)
     rng = f"{args.base}..{args.branch}"
     fail = []
 
@@ -69,7 +97,7 @@ def main():
 
     # 5 -- the bundle must carry the NAMED ref, not just HEAD
     if args.bundle:
-        heads = git("bundle", "list-heads", args.bundle)
+        heads = git("bundle", "list-heads", args.bundle, allow_fail=True)
         if f"refs/heads/{args.branch}" not in heads:
             fail.append((f"bundle carries only: {heads.strip() or '(nothing)'}",
                          f"rebuild with:  git bundle create <file> "
