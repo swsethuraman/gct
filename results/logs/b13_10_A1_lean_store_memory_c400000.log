@@ -11,4 +11,4 @@ bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitt
     E_23: |H|=1 targets 2800 canonical rows 2800 nnz 5112 (triples 6275; obstructed fixed targets cancelled: 0) [tables 0s rows 0s finish 0.0s; 0s, HWM 0.06 GB, RSS 0.06 GB]
     E_34: |H|=1 targets 2800 canonical rows 2800 nnz 5112 (triples 6275; obstructed fixed targets cancelled: 0) [tables 0s rows 0s finish 0.0s; 0s, HWM 0.06 GB, RSS 0.06 GB]
   built-lean (13, 5, 2, 2, 2) d6: N_S=3672 |Stab|=6 n_chi=825 rows=7214 nnz=15678 (0s: mono 0s orbits 0s rows 0s; HWM 0.06 GB; E.data int16)
-RUN {"builder": "lean", "lam": [13, 5, 2, 2, 2], "delta": 6, "N_S": 3672, "n_chi": 825, "nrows": 7214, "nnz": 15678, "secs": {"total": 0.21, "mono": 0.01, "orbits": 0.01, "rows": 0.04}, "hwm_gb": 0.0616, "hwm_above_baseline_gb": 0.0257}
+RUN {"builder": "lean", "lam": [13, 5, 2, 2, 2], "delta": 6, "N_S": 3672, "n_chi": 825, "nrows": 7214, "nnz": 15678, "secs": {"total": 0.22, "mono": 0.01, "orbits": 0.0, "rows": 0.03}, "hwm_gb": 0.0615, "hwm_above_baseline_gb": 0.0257}

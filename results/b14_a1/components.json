@@ -1,0 +1,153 @@
+{
+ "generated": "2026-09-11T16:21:54Z",
+ "reference": "python-flint fmpz_mat, exact integer matmul",
+ "inner_block": 524288,
+ "ceiling": 2097152,
+ "all_ok": true,
+ "checks": [
+  {
+   "tag": "K=< 2^21",
+   "K": 1000,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "exact",
+   "narrow_raised": false,
+   "wide_identical_to_narrow": true,
+   "ok": true
+  },
+  {
+   "tag": "K=< 2^21",
+   "K": 524287,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "exact",
+   "narrow_raised": false,
+   "wide_identical_to_narrow": true,
+   "ok": true
+  },
+  {
+   "tag": "K=< 2^21",
+   "K": 524288,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "exact",
+   "narrow_raised": false,
+   "wide_identical_to_narrow": true,
+   "ok": true
+  },
+  {
+   "tag": "K=< 2^21",
+   "K": 524289,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "exact",
+   "narrow_raised": false,
+   "wide_identical_to_narrow": true,
+   "ok": true
+  },
+  {
+   "tag": "K=< 2^21",
+   "K": 2097151,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "exact",
+   "narrow_raised": false,
+   "wide_identical_to_narrow": true,
+   "ok": true
+  },
+  {
+   "tag": "K=>=2^21",
+   "K": 2097152,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "raised AssertionError",
+   "narrow_raised": true,
+   "ok": true
+  },
+  {
+   "tag": "K=>=2^21",
+   "K": 2097153,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "raised AssertionError",
+   "narrow_raised": true,
+   "ok": true
+  },
+  {
+   "tag": "K=>=2^21",
+   "K": 3000000,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "raised AssertionError",
+   "narrow_raised": true,
+   "ok": true
+  },
+  {
+   "tag": "both primes",
+   "K": 2097159,
+   "p": 2147483647,
+   "wide_exact": true,
+   "narrow": "raised AssertionError",
+   "narrow_raised": true,
+   "ok": true
+  },
+  {
+   "tag": "both primes",
+   "K": 2097159,
+   "p": 2147483629,
+   "wide_exact": true,
+   "narrow": "raised AssertionError",
+   "narrow_raised": true,
+   "ok": true
+  },
+  {
+   "tag": "dtype: int64 contiguous (baseline)",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: int32 inputs",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: uint32 inputs",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: object inputs",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: non-contiguous (transposed view)",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: unreduced: entries shifted by +p",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  },
+  {
+   "tag": "dtype: negative representatives",
+   "K": 4000,
+   "p": 2147483647,
+   "ok": true,
+   "note": "matches the int64 baseline exactly"
+  }
+ ]
+}

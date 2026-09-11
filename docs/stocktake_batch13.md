@@ -253,10 +253,10 @@ reallocated here.
 
 | # | job | cost / constraint |
 |---|---|---|
-| A1 | **Shared production-path acceptance**: lean builder + `matmul_mod_wide` + dtype-safe consumer + the `a = 0` zero-multiplicity case, tested *together* on a small shared benchmark set. A clean merge is not a working numerical path, and neither Astra's runtime nor mine currently has both SciPy and `python-flint`. | must run where flint and gcc exist |
+| A1 | **Shared production-path acceptance**: lean builder + `matmul_mod_wide` + dtype-safe consumer + the `a = 0` zero-multiplicity case, tested *together* on a small shared benchmark set. A clean merge is not a working numerical path. ~~neither Astra's runtime nor mine currently has both SciPy and `python-flint`~~ — **that was wrong**: the integrator container has scipy 1.17.1, python-flint 0.9.0, numpy 2.4.4 and gcc 13.3.0, and `wk11_s71_schur.c` compiles and loads there. The claim was inherited from B13-07's container and from Astra's and never tested here. **DONE before batch 14** — see `results/PREREG_b14_a1.md` and `results/b14_a1/`. | ran on the integrator container |
 | A2 | **Evidence recovery and research memory**: B13-09's generated-but-undelivered certificates, B13-08's absent standalone certificates, `PROVED.md` (§6.3), and the 874 result files Astra's catalog has not semantically interpreted. | Claude- or Astra-side |
 | A3 | A chosen portion of the **99 degree-9 cells** (47 seven-row, 52 eight-row) — the union of B13-05's and B13-09's remainders — on deduplicated inputs and the integrated engine, with a phase-measured cost record rather than a universal curve. | 15 of B13-08's class need `--engine lean` |
-| A4 | `(12,4,4,4,4,4)₈` — the last Q1 cell, determinant-first pilot on the integrated engine. ≈2.8 GB, ≈20 min build; `\|Stab\| = 120` compresses `n_χ` sevenfold, so it is **cheaper downstream** than B13-10's pilot. | needs A1 |
+| A4 | `(12,4,4,4,4,4)₈` — the last Q1 cell, determinant-first pilot on the integrated engine. ≈2.8 GB, ≈20 min build; `\|Stab\| = 120` compresses `n_χ` sevenfold, so it is **cheaper downstream** than B13-10's pilot. | A1 is done, so no in-batch dependency remains — that `needs A1` was a same-batch dependency of exactly the kind batch 13 was told to carry none of, and satisfying A1 in advance is how it is removed |
 
 The remaining bounded cubic frontier after this batch is **99 cells at degree 9
 (lengths 7–8)** and **58 six-row cells at degree 10 (47 moderate, 11 larger)**.

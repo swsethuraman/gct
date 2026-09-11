@@ -7,14 +7,14 @@ bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitt
       level 6: 247436 prefixes
       level 7: 247436 prefixes
       level 8: 247436 prefixes
-  lam=(11, 4, 2, 2, 1, 1, 1, 1, 1): N_S=247436 |Stab|=240 n_chi=33 (orbits dropped: 4242) [lean-b10, 14s, HWM 0.16 GB]
-    E_01: |H|=240 targets 136299 canonical rows 12 nnz 37 (triples 14921; obstructed fixed targets cancelled: 7320) [tables 7s rows 0s finish 0.0s; 7s, HWM 0.16 GB, RSS 0.07 GB]
-    E_12: |H|=120 targets 130498 canonical rows 27 nnz 65 (triples 6066; obstructed fixed targets cancelled: 3000) [tables 3s rows 0s finish 0.0s; 10s, HWM 0.16 GB, RSS 0.08 GB]
+  lam=(11, 4, 2, 2, 1, 1, 1, 1, 1): N_S=247436 |Stab|=240 n_chi=33 (orbits dropped: 4242) [lean-b10, 13s, HWM 0.16 GB]
+    E_01: |H|=240 targets 136299 canonical rows 12 nnz 37 (triples 14921; obstructed fixed targets cancelled: 7320) [tables 6s rows 0s finish 0.0s; 6s, HWM 0.16 GB, RSS 0.12 GB]
+    E_12: |H|=120 targets 130498 canonical rows 27 nnz 65 (triples 6066; obstructed fixed targets cancelled: 3000) [tables 3s rows 0s finish 0.0s; 10s, HWM 0.16 GB, RSS 0.12 GB]
     E_23: |H|=120 targets 183147 canonical rows 27 nnz 54 (triples 3686; obstructed fixed targets cancelled: 1800) [tables 5s rows 0s finish 0.0s; 15s, HWM 0.16 GB, RSS 0.09 GB]
     E_34: |H|=24 targets 107019 canonical rows 300 nnz 310 (triples 310; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 16s, HWM 0.16 GB, RSS 0.11 GB]
-    E_45: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 17s, HWM 0.16 GB, RSS 0.13 GB]
-    E_56: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 18s, HWM 0.16 GB, RSS 0.13 GB]
+    E_45: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 16s, HWM 0.16 GB, RSS 0.13 GB]
+    E_56: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 17s, HWM 0.16 GB, RSS 0.13 GB]
     E_67: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 18s, HWM 0.16 GB, RSS 0.13 GB]
     E_78: |H|=12 targets 144366 canonical rows 0 nnz 0 (triples 708; obstructed fixed targets cancelled: 48) [tables 1s rows 0s finish 0.0s; 19s, HWM 0.16 GB, RSS 0.13 GB]
-  built-lean (11, 4, 2, 2, 1, 1, 1, 1, 1) d8: N_S=247436 |Stab|=240 n_chi=33 rows=366 nnz=466 (33s: mono 1s orbits 14s rows 19s; HWM 0.16 GB; E.data int16)
-RUN {"builder": "lean", "lam": [11, 4, 2, 2, 1, 1, 1, 1, 1], "delta": 8, "N_S": 247436, "n_chi": 33, "nrows": 366, "nnz": 466, "secs": {"total": 33.58, "mono": 0.64, "orbits": 13.62, "rows": 19.17}, "hwm_gb": 0.1641, "hwm_above_baseline_gb": 0.1282}
+  built-lean (11, 4, 2, 2, 1, 1, 1, 1, 1) d8: N_S=247436 |Stab|=240 n_chi=33 rows=366 nnz=466 (32s: mono 1s orbits 13s rows 19s; HWM 0.16 GB; E.data int16)
+RUN {"builder": "lean", "lam": [11, 4, 2, 2, 1, 1, 1, 1, 1], "delta": 8, "N_S": 247436, "n_chi": 33, "nrows": 366, "nnz": 466, "secs": {"total": 31.78, "mono": 0.57, "orbits": 12.56, "rows": 18.52}, "hwm_gb": 0.1638, "hwm_above_baseline_gb": 0.128}

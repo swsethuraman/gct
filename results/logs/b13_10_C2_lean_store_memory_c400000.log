@@ -14,5 +14,5 @@ bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitt
     E_23: |H|=2 targets 31444 canonical rows 12259 nnz 41651 (triples 48941; obstructed fixed targets cancelled: 1174) [tables 0s rows 0s finish 0.0s; 0s, HWM 0.07 GB, RSS 0.07 GB]
     E_34: |H|=2 targets 18195 canonical rows 8870 nnz 18657 (triples 18987; obstructed fixed targets cancelled: 159) [tables 0s rows 0s finish 0.0s; 0s, HWM 0.07 GB, RSS 0.07 GB]
     E_45: |H|=2 targets 29120 canonical rows 0 nnz 0 (triples 18944; obstructed fixed targets cancelled: 122) [tables 0s rows 0s finish 0.0s; 0s, HWM 0.07 GB, RSS 0.07 GB]
-  built-lean (12, 5, 5, 3, 1, 1) d9: N_S=48161 |Stab|=4 n_chi=9472 rows=50139 nnz=174557 (1s: mono 0s orbits 0s rows 0s; HWM 0.07 GB; E.data int16)
-RUN {"builder": "lean", "lam": [12, 5, 5, 3, 1, 1], "delta": 9, "N_S": 48161, "n_chi": 9472, "nrows": 50139, "nnz": 174557, "secs": {"total": 0.68, "mono": 0.07, "orbits": 0.05, "rows": 0.39}, "hwm_gb": 0.0697, "hwm_above_baseline_gb": 0.0339}
+  built-lean (12, 5, 5, 3, 1, 1) d9: N_S=48161 |Stab|=4 n_chi=9472 rows=50139 nnz=174557 (0s: mono 0s orbits 0s rows 0s; HWM 0.07 GB; E.data int16)
+RUN {"builder": "lean", "lam": [12, 5, 5, 3, 1, 1], "delta": 9, "N_S": 48161, "n_chi": 9472, "nrows": 50139, "nnz": 174557, "secs": {"total": 0.62, "mono": 0.07, "orbits": 0.05, "rows": 0.36}, "hwm_gb": 0.0698, "hwm_above_baseline_gb": 0.0341}
