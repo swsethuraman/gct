@@ -11,12 +11,12 @@ bash: line 1: ulimit: virtual memory: cannot modify limit: Operation not permitt
       level 10: 1155302 prefixes
       level 11: 1155302 prefixes
       level 12: 1155302 prefixes
-  lam=(19, 7, 2, 2, 2, 2, 2): N_S=1155302 |Stab|=120 n_chi=17047 (orbits dropped: 0) [lean, 131s, HWM 0.27 GB]
-    E_01: |H|=120 targets 789136 canonical rows 11855 nnz 60713 (obstructed fixed targets cancelled: 0) [87s, HWM 0.31 GB]
-    E_12: |H|=24 targets 479682 canonical rows 28642 nnz 110858 (obstructed fixed targets cancelled: 0) [97s, HWM 0.31 GB]
-    E_23: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [104s, HWM 0.33 GB]
-    E_34: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [112s, HWM 0.35 GB]
-    E_45: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [120s, HWM 0.35 GB]
-    E_56: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [127s, HWM 0.35 GB]
-  built (19, 7, 2, 2, 2, 2, 2) d12: N_S=1155302 |Stab|=120 n_chi=17047 rows=713677 nnz=1526091 (261s: mono 3s orbits 131s rows 127s; HWM 0.35 GB)
-RUN {"builder": "old", "lam": [19, 7, 2, 2, 2, 2, 2], "delta": 12, "N_S": 1155302, "n_chi": 17047, "nrows": 713677, "nnz": 1526091, "secs": {"total": 260.77, "mono": 2.94, "orbits": 130.7, "rows": 127.13}, "hwm_gb": 0.3536, "hwm_above_baseline_gb": 0.3178}
+  lam=(19, 7, 2, 2, 2, 2, 2): N_S=1155302 |Stab|=120 n_chi=17047 (orbits dropped: 0) [lean, 159s, HWM 0.27 GB]
+    E_01: |H|=120 targets 789136 canonical rows 11855 nnz 60713 (obstructed fixed targets cancelled: 0) [93s, HWM 0.31 GB]
+    E_12: |H|=24 targets 479682 canonical rows 28642 nnz 110858 (obstructed fixed targets cancelled: 0) [103s, HWM 0.31 GB]
+    E_23: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [111s, HWM 0.33 GB]
+    E_34: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [120s, HWM 0.34 GB]
+    E_45: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [128s, HWM 0.35 GB]
+    E_56: |H|=6 targets 856219 canonical rows 168295 nnz 338630 (obstructed fixed targets cancelled: 0) [137s, HWM 0.36 GB]
+  built (19, 7, 2, 2, 2, 2, 2) d12: N_S=1155302 |Stab|=120 n_chi=17047 rows=713677 nnz=1526091 (299s: mono 4s orbits 159s rows 137s; HWM 0.36 GB)
+RUN {"builder": "old", "lam": [19, 7, 2, 2, 2, 2, 2], "delta": 12, "N_S": 1155302, "n_chi": 17047, "nrows": 713677, "nnz": 1526091, "secs": {"total": 299.13, "mono": 3.54, "orbits": 158.77, "rows": 136.82}, "hwm_gb": 0.365, "hwm_above_baseline_gb": 0.3293}

@@ -1,11 +1,13 @@
 # A1 — shared production-path acceptance: PASS
 
+Revision 2 — two gaps closed after Astra's `interoperability.md` was read.
+
 Run on the frozen batch-14 base `7a47e2b0`, integrator container, 7 GB / 2 cores.
 Pre-registered at `results/PREREG_b14_a1.md` before any measurement.
 
 ## Result
 
-**All eleven cells PASS.** Every one: operator-identical between the old and the
+**All twelve cells PASS.** Every one: operator-identical between the old and the
 lean builder, kernel verified at both house primes with every null vector
 re-checked against the uncompressed int64 operator, and every evaluation rank
 equal to B13-10's banked value.
@@ -23,10 +25,43 @@ equal to B13-10's banked value.
 | C5 | True | True | True | 0.3953→0.2087 | 1.89 | 13.65→9.89 | 0.72 | 10,925,235 |
 | X1 | True | True | — | 0.1513→0.1280 | 1.18 | 60.67→31.78 | 0.52 | 466 |
 | X2 | True | True | — | 0.4051→0.2378 | 1.70 | 187.52→97.45 | 0.52 | 998 |
+| D1 | True | True | True | 0.3290→0.1430 | 2.30 | 299.13→133.52 | 0.45 | 1,526,091 |
 
 C3 and C5 are `ℓ = 6, δ = 10` — the family batch-14 A3 targets. X1 and X2 are
 the length-9 `a = 0` cells: zero multiplicity reported as zero multiplicity with
-certified full rank, not an empty kernel mistaken for a failure.
+certified full rank, not an empty kernel mistaken for a failure. D1 is `ℓ = 7`.
+
+## The two gaps revision 1 had, and why they existed
+
+Astra's `results/integrate/astra_reconciliation/review_only/docs/interoperability.md`
+specifies a production integration gate of five items, written independently of
+this run. Revision 1 covered three of them. It missed:
+
+- **a length-7/8 positive cell** — the eleven cells covered lengths 5, 6 and 9
+  only, and length 7 is where B13-09 did its degree-8 work and where half the
+  remaining degree-9 frontier sits;
+- **a known deficient control** — every cell in the set returned rank `= a`, so
+  nothing in the run would have detected a path that *always* reports full rank.
+
+A suite of twelve all-positive cells cannot distinguish a working rank
+computation from one that has stopped computing. That is the gap Astra's
+independently written spec caught and my own pre-registration did not.
+
+**Both are now closed.** D1 above is the length-7 cell. The deficient control is
+B13-08's Control C, re-run here in full:
+
+| control | result |
+|---|---|
+| A — s43's two `a = 2` degree-8 records | `mult = a = 2`, both |
+| B — two banked degree-10 records, field by field | `all_equal = True`, both |
+| **C — diagonal pencils, both weights, both primes** | **`rank_diagonal_pencils = 0`**, `diag_all_rows_zero = true`; `det₃` rank `= a`; `per₃` rank `= a` |
+| D — lean driver on the same weights | bit-identical, both |
+
+Control C is the one that matters: diagonal pencils make `per₃` a product of
+three linear forms, whose coordinate ring carries no constituent of more than
+three rows, so a length-6 weight **must** read rank 0. It does, at both primes,
+for `(11,6,5,3,3,2)` at `a = 5` and `(9,8,5,4,3,1)` at `a = 13` — while the same
+kernels read exactly `a` on `per₃` pencils. The path can tell the difference.
 
 ## Components the suite does not reach — 17/17
 
@@ -49,25 +84,26 @@ The ratios reproduce B13-10's own measurements cell by cell across two different
 containers — 1.00/1.00, 1.24/1.25, 1.07/1.09, 1.37/1.33, 1.42/1.45, 1.00/1.01,
 1.19/1.21, 1.70/1.68, 1.75/1.89, 1.16/1.18, 1.70/1.70. The instrument is stable.
 
-But B13-10's headline — **1.77–2.64× less memory** — holds on **one of these
-eleven cells**. On its own numbers for these same cells the range is 1.00–1.75×,
-and on two of them the lean builder saves *nothing at all* (A1 1.00×, C1 1.01×).
-The headline was computed over B13-10's larger cells and is accurate there; as a
-stated property of the builder it is not. Correlation with `log₁₀ nnz` is only
-+0.50 — X2 gets 1.70× at 998 nnz while A1 gets 1.00× at 15,678 — so cell size
-does not predict it either.
+But B13-10's headline — **1.77–2.64× less memory** — holds on **two of these
+twelve cells** (C5 at 1.89×, D1 at 2.30×). On two others the lean builder saves
+*nothing at all* (A1 1.00×, C1 1.01×). The headline was computed over B13-10's
+larger cells and is accurate there; as a stated property of the builder it is
+not. Cell size does not predict it either: X2 gets 1.70× at 998 nnz while A1
+gets 1.00× at 15,678.
 
 **A batch-14 session sizing memory from "1.77–2.64×" will under-provision.** The
-honest figure is 1.00–1.89× on this set, cell-dependent, and the lean builder's
-reliable advantage is *time*: faster on all eleven, 0.52–0.97×.
+honest figure is 1.00–2.30× across these twelve, cell-dependent, and the lean
+builder's reliable advantage is *time*: faster on all twelve, 0.45–0.97×.
 
 ## What this does and does not establish
 
-It says the merged production path reproduces the banked numbers on these eleven
-cells, and that the wide matmul is exact where the narrow one refuses to run. It
+It says the merged production path reproduces the banked numbers on these twelve
+cells, distinguishes a deficient evaluation from a full one, and that the wide
+matmul is exact where the narrow one refuses to run. It
 re-derives no mathematical result. It is not evidence about the 58 open
 `ℓ = 6, δ = 10` cells, whose `n_χ` has never been measured because they were
 never built — B13-08 reports 17 of its 95 degree-10 weights exceed `2²¹`, so
 some of the 58 will need the wide path, and which ones is unknown.
 
-**Batch 14 may launch on this path.**
+**Batch 14 may launch on this path** — now against all five items of Astra's
+gate, not the three revision 1 happened to cover.
