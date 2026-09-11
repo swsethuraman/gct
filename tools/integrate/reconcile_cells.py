@@ -5,7 +5,7 @@ The integrator's own check.  Batch 13 closed the same cells twice and left the
 combined theorem unstated, because twelve reports were read one at a time and
 nobody joined their cell lists.  This joins them.
 
-A cell is keyed  (n, r, delta, lambda)  -- polynomial degree, ambient length,
+A cell is keyed  (n, ell, delta, lambda)  -- polynomial degree, PARTITION LENGTH,
 coefficient degree, weight -- and every source contributes a verdict:
 
     CLOSED   mult == a at both primes, or an exact-determinant certificate
@@ -54,6 +54,18 @@ def collect():
     rec = collections.defaultdict(list)
 
     def add(src, verdict, n, r, delta, lam, note=""):
+        # The third slot is ell(lambda), the partition length -- NOT the ambient
+        # dimension r of D_r, which the theory side also calls r.  Five sources
+        # fill it with len(mu) and three with their own "r" field, so the two
+        # readings sit in one slot and nothing was checking they agree.  They do,
+        # in all 1846 cells; this asserts it so that the first source which means
+        # ambient dimension fails here instead of silently mis-joining.
+        ell = len([x for x in lam if x])
+        if int(r) != ell:
+            raise SystemExit(
+                f"{src}: cell key slot is ell(lambda), but this row gives r={r} "
+                f"with lambda={lam} (length {ell}). If this source means the "
+                f"ambient dimension of D_r, it must be converted before joining.")
         rec[key(n, r, delta, lam)].append((src, verdict, note))
 
     # ---- census / queue enumeration (every cell starts OPEN) --------------
@@ -157,7 +169,7 @@ def collect():
 
 def frontier(k):
     n, r, delta, lam = k
-    return f"n={n} r={r} delta={delta}"
+    return f"n={n} ell={r} delta={delta}"
 
 
 def main():

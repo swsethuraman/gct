@@ -113,7 +113,15 @@ minutes, and the lesson is the one §5.3 states: **on this queue `n_χ`, not
 **Theorem A.**  For every `r ≥ 1` and every `δ ≥ 1`, the constituents `S_μ` that
 can appear in `I(D_r^{per₃})_δ ⊂ C[Sym³Cʳ]_δ` satisfy
 
-    6  ≤  ℓ(μ)  ≤  min(r, δ, 9).
+    6  ≤  ℓ(μ)  ≤  min(r, δ).
+
+> **Corrected in place at the batch-13 reconciliation.**  As delivered this line
+> read `min(r, δ, 9)`.  The proof immediately below establishes `ℓ(μ) ≤ δ` by
+> Pieri, `ℓ(μ) ≤ r` because `S_μ(Cʳ) = 0` for `ℓ(μ) > r`, and `ℓ(μ) ≥ 6` by
+> washout Theorem 2 with the restriction lemma.  It argues nothing whatever
+> about 9.  The clamp is withdrawn; the theorem as proved is the one now stated,
+> and every use made of it stands, because no catalogued cell has `ℓ > 9` and
+> the degree-8 conclusion caps at `min(r, 8) ≤ 8` regardless.  Caught by Astra.
 
 *Proof.*  `ℓ(μ) ≤ δ` because every constituent of `Sym^δ(Sym³Cʳ)` has at most
 `δ` rows (Pieri).  `ℓ(μ) ≤ r` because `S_μ(Cʳ) = 0` for `ℓ(μ) > r`.

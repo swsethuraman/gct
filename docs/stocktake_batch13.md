@@ -44,7 +44,7 @@ promoted anywhere**. Concretely:
   The chain: length ≤ 5 by Theorem 2; length 6 through δ = 8 inherited from
   s41/s43/s47; length 7 at δ = 8 — **all 42 cells** — by B13-09; length 8 at
   δ = 8 — **all six**, which are top cells — by B13-05's catalecticant
-  determinants. Theorem A bounds the length at `min(r, δ, 9)`, so those are all
+  determinants. Theorem A bounds the length at `min(r, δ)`, so those are all
   of them. **Neither session states this; it is a reconciliation result.**
 - 344 of the 402 length-6 degree-10 weights are empty (B13-08);
 - **zero blocks of the weight-13 stable census remain open for `D > 0`**
@@ -468,7 +468,7 @@ against the delivered branches rather than accepted on assertion.
 
 **The consequence is larger than the correction.** With length ≤ 5 by Theorem 2,
 length 6 at δ = 8 inherited, length 7 at δ = 8 by B13-09 and length 8 at δ = 8
-by B13-05 — and Theorem A bounding the length at `min(r, δ, 9)` — the degree is
+by B13-05 — and Theorem A bounding the length at `min(r, δ)` — the degree is
 **complete**:
 
     I(D_r^{per₃})_8 = 0  for every r,  hence

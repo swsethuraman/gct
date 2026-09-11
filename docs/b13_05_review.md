@@ -66,7 +66,8 @@ cannot be felt below degree 8, at any length.**
 
 The proof is short because the structure does the work:
 
-- **Theorem A** stratifies the whole problem by length: `6 ≤ ℓ(μ) ≤ min(r,δ,9)`.
+- **Theorem A** stratifies the whole problem by length: `6 ≤ ℓ(μ) ≤ min(r,δ)`.
+  *(Corrected at the batch-13 reconciliation: this review wrote `min(r,δ,9)`. The `9` does not follow from the argument below and is withdrawn — see `docs/PROVED.md` `length_bound`. It never bound on any catalogued cell.)*
   Below 6 the ideal is empty by Theorem 2 and the restriction lemma; above 9 there
   is nothing new because the family pulls back along `Cʳ → C⁹`. So the cubic
   equation problem is *one finite object* stratified by length, and a length-7
