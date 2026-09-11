@@ -1,0 +1,353 @@
+{
+ "commit": "99852a406be2ec46f8d063354129db38226e053c",
+ "bundle_path": "C:/Users/swami/Projects/gct/s76_scale24.bundle",
+ "bundle_sha256": "1408b02dcb197ac68fe319aad7dfa60c4ab246019db2678a4fb643e5e82e009c",
+ "exported": [
+  {
+   "path": "analysis/wk12_s76_seminormal.py",
+   "bytes": 19350,
+   "sha256": "6b1abb71e4338f8e89a4f618a75906898585c83710c0e073fba2347cac94d291"
+  },
+  {
+   "path": "analysis/wk12_s76_recursion.py",
+   "bytes": 14348,
+   "sha256": "2b5987b07f79f7edd3dd2ab4ee2aa9358cf420e2c33f4b7d488cfe223f1f6a9b"
+  },
+  {
+   "path": "analysis/wk12_s76_gram.py",
+   "bytes": 10988,
+   "sha256": "630520385a869ab34ba5e5167ed878f5b01c25e7b49eeee9873544fa5c252890"
+  },
+  {
+   "path": "docs/s76_report.md",
+   "bytes": 35210,
+   "sha256": "04f05824d0bc58e2728ac9e49124b0a1ea9eb229a0f10e3f6c1f042bfa17bb13"
+  },
+  {
+   "path": "results/s76_recursion_summary.json",
+   "bytes": 16314,
+   "sha256": "bd8799c7a3ace9f245158387f25095bd81ecdc0ee9b75b7fcceedb8efc3ec27c"
+  },
+  {
+   "path": "results/s76_source24_p2147483647.npz",
+   "bytes": 912316,
+   "sha256": "28ce7622bad848ac9f67769094d296c93020886538b4e3e6df39f89fa3a68b98"
+  },
+  {
+   "path": "results/s76_gram24_p2147483647.npz",
+   "bytes": 362690,
+   "sha256": "399a45f4365adf54f212a3afe1b4bff2e9b1c747dd2ebaf0e1e7f8240099e0e8"
+  },
+  {
+   "path": "results/s76_dag_dims_p2147483647.json",
+   "bytes": 250141,
+   "sha256": "80b4f1548813f96fee20fc25abd84890de1e1b6cc8c72ad5956977ba4421bd6e"
+  },
+  {
+   "path": "results/s76_source24_p2147483629.npz",
+   "bytes": 912060,
+   "sha256": "0f487ec111d9de9b70c544e4b244aa1a94ee9ab8e2a252b43a507015ce3892cc"
+  },
+  {
+   "path": "results/s76_gram24_p2147483629.npz",
+   "bytes": 362713,
+   "sha256": "d6e66e09e3bdf671249315d6bde272008c15da0f89c256f70def02b92013ea58"
+  },
+  {
+   "path": "results/s76_dag_dims_p2147483629.json",
+   "bytes": 250141,
+   "sha256": "277d2a27947032909ec9c9be88919610b8b231ba5e9305007e25bedad6935c80"
+  }
+ ],
+ "level_npz_files_in_bundle": [],
+ "saved_arrays": [
+  {
+   "prime": 2147483647,
+   "arrays": {
+    "source": [
+     {
+      "key": "E24",
+      "shape": [
+       274,
+       2168
+      ],
+      "dtype": "uint32",
+      "entries": 594032
+     },
+     {
+      "key": "predecessors",
+      "shape": [
+       12
+      ],
+      "dtype": "<U29",
+      "entries": 12
+     },
+     {
+      "key": "block_widths",
+      "shape": [
+       12
+      ],
+      "dtype": "int64",
+      "entries": 12
+     }
+    ],
+    "gram": [
+     {
+      "key": "G24",
+      "shape": [
+       274,
+       274
+      ],
+      "dtype": "int64",
+      "entries": 75076
+     }
+    ]
+   }
+  },
+  {
+   "prime": 2147483629,
+   "arrays": {
+    "source": [
+     {
+      "key": "E24",
+      "shape": [
+       274,
+       2168
+      ],
+      "dtype": "uint32",
+      "entries": 594032
+     },
+     {
+      "key": "predecessors",
+      "shape": [
+       12
+      ],
+      "dtype": "<U29",
+      "entries": 12
+     },
+     {
+      "key": "block_widths",
+      "shape": [
+       12
+      ],
+      "dtype": "int64",
+      "entries": 12
+     }
+    ],
+    "gram": [
+     {
+      "key": "G24",
+      "shape": [
+       274,
+       274
+      ],
+      "dtype": "int64",
+      "entries": 75076
+     }
+    ]
+   }
+  }
+ ],
+ "exact_degree13_strip_gauge_diagnostics": [
+  {
+   "predecessor": [
+    21,
+    15,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 6,
+   "S3_relative_Gram_first": "1500037/108800",
+   "s76_to_S3_strip_scalar": "108800/1500037"
+  },
+  {
+   "predecessor": [
+    21,
+    14,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "fillings": 4,
+   "S3_relative_Gram_first": "13377881/176800",
+   "s76_to_S3_strip_scalar": "176800/13377881"
+  },
+  {
+   "predecessor": [
+    21,
+    13,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 1,
+   "S3_relative_Gram_first": "3384603893/5975840",
+   "s76_to_S3_strip_scalar": "5975840/3384603893"
+  },
+  {
+   "predecessor": [
+    20,
+    16,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 12,
+   "S3_relative_Gram_first": "20513493/136000",
+   "s76_to_S3_strip_scalar": "136000/20513493"
+  },
+  {
+   "predecessor": [
+    20,
+    15,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "fillings": 12,
+   "S3_relative_Gram_first": "72394179/136000",
+   "s76_to_S3_strip_scalar": "136000/72394179"
+  },
+  {
+   "predecessor": [
+    20,
+    14,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 4,
+   "S3_relative_Gram_first": "46493769267/17680000",
+   "s76_to_S3_strip_scalar": "17680000/46493769267"
+  },
+  {
+   "predecessor": [
+    19,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 6,
+   "S3_relative_Gram_first": "4804839/760",
+   "s76_to_S3_strip_scalar": "760/4804839"
+  },
+  {
+   "predecessor": [
+    19,
+    16,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "fillings": 12,
+   "S3_relative_Gram_first": "14764120371/1292000",
+   "s76_to_S3_strip_scalar": "1292000/14764120371"
+  },
+  {
+   "predecessor": [
+    19,
+    15,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 6,
+   "S3_relative_Gram_first": "10385017371729/323000000",
+   "s76_to_S3_strip_scalar": "323000000/10385017371729"
+  },
+  {
+   "predecessor": [
+    18,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "fillings": 4,
+   "S3_relative_Gram_first": "541879065/361",
+   "s76_to_S3_strip_scalar": "361/541879065"
+  },
+  {
+   "predecessor": [
+    18,
+    16,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 4,
+   "S3_relative_Gram_first": "39730247918361/24548000",
+   "s76_to_S3_strip_scalar": "24548000/39730247918361"
+  },
+  {
+   "predecessor": [
+    17,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "fillings": 1,
+   "S3_relative_Gram_first": "7396649237250/6137",
+   "s76_to_S3_strip_scalar": "6137/7396649237250"
+  }
+ ],
+ "qualification": "Top source/Gram and dimension tables inspected. Full predecessor inclusion levels are absent from the bundle; no degree24 conversion or source regeneration performed.",
+ "seconds": 1.0150000001303852,
+ "memory_peak_bytes": {
+  "WorkingSetSize": 50307072,
+  "PeakWorkingSetSize": 58703872,
+  "PrivateUsage": 73965568,
+  "PeakPagefileUsage": 81649664
+ },
+ "last_context": {},
+ "cap_bytes": 268435456,
+ "limit_seconds": 180
+}

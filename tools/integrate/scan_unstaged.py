@@ -19,7 +19,8 @@ usage:  python3 tools/integrate/scan_unstaged.py [--json results/integrate/unsta
 import argparse, json, os, pathlib, re, signal, subprocess, sys
 
 # `scan_unstaged.py | head` should print and stop, not traceback.
-signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+if hasattr(signal, "SIGPIPE"):
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
 DATA_EXT = r'\.(?:json|jsonl|npz|npy|csv|gz|txt|dat|pkl|h5|parquet)'
 

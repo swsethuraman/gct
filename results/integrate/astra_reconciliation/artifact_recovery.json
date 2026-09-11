@@ -1,0 +1,39 @@
+[
+  {
+    "source": "Batch12_Results\\S3\\degree13_conversion_20260908\\artifacts\\gram_spherical.json",
+    "destination": "results/astra/S3/degree13_conversion/artifacts/gram_spherical.json.gz",
+    "bytes": 7917718,
+    "sha256": "28acff2c79d9172c683ab5dbe7dccca96b83cf0ceec6f7291875c6ec8024ab6e",
+    "encoding": "gzip; decompress to original JSON for replay",
+    "compressed_bytes": 2060580,
+    "compressed_sha256": "8b44c470c66f2904456ec90a6aee761f1015847e0585a89f73279cb1a2f1f150"
+  },
+  {
+    "source": "Batch12_Results\\S4\\input_manifest.json",
+    "destination": "results/astra/S4/input_manifest.json",
+    "bytes": 7251,
+    "sha256": "d8a0fd5a97ccd6feffbed2d96ffae2b84243d9bb7ea31282577e08b7c746d97a"
+  },
+  {
+    "source": "Batch12_Results\\S4\\preflight.json",
+    "destination": "results/astra/S4/preflight.json",
+    "bytes": 1346,
+    "sha256": "ff531b72e35a1311f8d2ae0d52d79b6b985aa935b21950433546a645d0d1d5e1"
+  },
+  {
+    "source": "Batch12_Results\\S6\\input_manifest.json",
+    "destination": "results/astra/S6/input_manifest.json",
+    "bytes": 3903,
+    "sha256": "4d96b66f38e12c2eb74f2f53f0e6036410215360cff558f00f76ea6efa8ad158"
+  },
+  {
+    "reference": "S6/n3_independent_minors.json",
+    "status": "S6 describes replay of S1 artifact, not an S6 output",
+    "actual_path": "results/astra/S1/n3_independent_minors.json",
+    "sha256": "0d51ff68f9fcc32c1cdb9dac19cd8df25670e8eb8ec5069d44a522a30ba93f69"
+  },
+  {
+    "reference": "s76_dag/level_DD_pP.npz",
+    "status": "Explicitly absent in S3 compatibility report and uncommitted in s76 report; not recovered. Regeneration required for full recursive pairing."
+  }
+]

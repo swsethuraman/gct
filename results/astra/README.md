@@ -6,12 +6,7 @@ had none of it** — and `docs/s78_prompt.md` tells its session to reproduce S2'
 rank-3 arc and run S2's generated chart jobs, neither of which existed here.
 Staged 2026-09-08 by the integrator, before the briefs went out.
 
-Provenance: `C:\Users\swami\Projects\gct-gpt\Batch12_Results\{S1,S2}` on
-`swamilaptop`, verbatim.  Multi-megabyte scratch (`S1/scratch/*`,
-`S1/benchmark_design.json`, `S1/birth13_design.json`, `S1/control_design.json`,
-`S2/tangent_calibration.json`, `S2/input_manifest.json`) was **not** copied — it
-is regenerable from the scripts and would breach the 5 MB rule.  Ask if a session
-needs one of those.
+Provenance: original Batch12_Results deliveries on swamilaptop. The S2 input_manifest.json (66,788 bytes) and tangent_calibration.json (339,372 bytes) are now retained beside the S2 report, along with artifact_manifest.json and preflight.json. The earlier claim that these S2 files would exceed 5 MB was incorrect. S1 scratch and design files were not copied; this recovery does not change their status.
 
 **These are session deliverables, not integrator-verified results.**  Treat every
 number in them as MEASURED-by-that-session until this repository's own code has

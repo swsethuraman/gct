@@ -25,7 +25,7 @@ Both source constructions finish with 1,362 DAG nodes and 349,974 inclusion entr
 
 At every node, lift the first-prime inclusion entries to integers in [0,p1), combine recursively common child vectors, then apply the rational H_d average. This defines actual rational vectors; all averaging denominators are invertible at both primes. At the second prime compute the exact transport L from this common source into the native modular source. All 1,362 transports are nonsingular; det L at the root is 895536430. Matching dimensions or pivot patterns alone are never used to identify rational vectors. This is a specified rational-source convention, not rational reconstruction from two residues.
 
-The invariant Gram forms are nonsingular throughout. At the root, the actual spherical average (I+12T)/13 equals the Gram orthogonal projector, is idempotent, and has trace 39. The transport and these checks are retained in [common_source_transport.json](C:/Users/swami/Projects/gct-gpt/Batch12_Results/S3/degree13_conversion_20260908/artifacts/common_source_transport.json), `gram_spherical.json`, and `independent_source_audit.json`.
+The invariant Gram forms are nonsingular throughout. At the root, the actual spherical average (I+12T)/13 equals the Gram orthogonal projector, is idempotent, and has trace 39. The transport and these checks are retained in [common_source_transport.json](C:/Users/swami/Projects/gct-gpt/Batch12_Results/S3/degree13_conversion_20260908/artifacts/common_source_transport.json), `gram_spherical.json.gz` (lossless recovery; decompress to the original JSON name using `artifacts/README_gram_spherical.md`), and `independent_source_audit.json`.
 
 ## Pairings, conversion and normalization
 
