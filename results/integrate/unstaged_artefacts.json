@@ -1,81 +1,12 @@
 {
  "note": "Data artefacts named by a staged report and absent from the tree. References resolved by PATH: an absolute host path maps through Batch12_Results/<rest> -> results/astra/<rest>; a bare name resolves beside its report or in that report's artifacts/. Nothing is dropped silently: a reference whose own sentence says the file is absent, or one that resolves under another path, is reported in its own list with the evidence.",
  "generated_by": "tools/integrate/scan_unstaged.py",
- "reports_scanned": 22,
- "missing": [
-  {
-   "report": "results/astra/S2/REPLAY.md",
-   "line": 31,
-   "expected_path": "results/astra/S2/input_manifest.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S2/REPLAY.md",
-   "line": 43,
-   "expected_path": "results/astra/S2/tangent_calibration.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S2/REPLAY.md",
-   "line": 43,
-   "expected_path": "results/astra/S2/artifact_manifest.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S2/S2_report.md",
-   "line": 27,
-   "expected_path": "results/astra/S2/input_manifest.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S2/S2_report.md",
-   "line": 27,
-   "expected_path": "results/astra/S2/preflight.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S3/degree13_conversion/REPORT.md",
-   "line": 28,
-   "referenced": "gram_spherical.json",
-   "how": "bare name, not beside the report"
-  },
-  {
-   "report": "results/astra/S3/degree13_conversion/S76_COMPATIBILITY.md",
-   "line": 3,
-   "expected_path": "results/astra/S3/degree13_conversion/artifacts/s76_compatibility_inspection.json",
-   "how": "absolute host path"
-  },
-  {
-   "report": "results/astra/S4/REPLAY.md",
-   "line": 21,
-   "referenced": "input_manifest.json",
-   "how": "bare name, not beside the report",
-   "same_name_outside_workstream": [
-    "results/b13_02/input_manifest.json",
-    "results/b13_12/input_manifest.json"
-   ]
-  },
-  {
-   "report": "results/astra/S4/REPLAY.md",
-   "line": 21,
-   "referenced": "preflight.json",
-   "how": "bare name, not beside the report"
-  },
-  {
-   "report": "results/astra/S6/S6_report.md",
-   "line": 25,
-   "referenced": "input_manifest.json",
-   "how": "bare name, not beside the report",
-   "same_name_outside_workstream": [
-    "results/b13_02/input_manifest.json",
-    "results/b13_12/input_manifest.json"
-   ]
-  }
- ],
+ "reports_scanned": 23,
+ "missing": [],
  "resolved_elsewhere": [
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "partial_source_10.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -85,7 +16,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "birth13_checks.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -95,7 +26,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "n3_independent_minors.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -105,7 +36,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "control_matrices.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -115,7 +46,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "relations.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -125,7 +56,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 24,
+   "line": 19,
    "referenced": "transported_det_lower_bound_2.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -135,7 +66,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "chart_manifest.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -145,7 +76,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "intermediate_rank3_arc.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -155,7 +86,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "ker_coker_certificates.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -165,7 +96,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "verification_summary.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -175,7 +106,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "chart_coefficient_checks.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -185,7 +116,7 @@
   },
   {
    "report": "results/astra/README.md",
-   "line": 37,
+   "line": 32,
    "referenced": "independent_jet_checks.json",
    "how": "bare name, not beside the report",
    "found_at": [
@@ -206,41 +137,6 @@
  ],
  "reported_absent_by_the_report_itself": [
   {
-   "report": "results/astra/README.md",
-   "line": 9,
-   "referenced": "S1/benchmark_design.json",
-   "how": "bare name, not beside the report",
-   "reported_absent_by": "would breach"
-  },
-  {
-   "report": "results/astra/README.md",
-   "line": 9,
-   "referenced": "S1/birth13_design.json",
-   "how": "bare name, not beside the report",
-   "reported_absent_by": "would breach"
-  },
-  {
-   "report": "results/astra/README.md",
-   "line": 9,
-   "referenced": "S1/control_design.json",
-   "how": "bare name, not beside the report",
-   "reported_absent_by": "would breach"
-  },
-  {
-   "report": "results/astra/README.md",
-   "line": 9,
-   "referenced": "S2/tangent_calibration.json",
-   "how": "bare name, not beside the report",
-   "reported_absent_by": "would breach"
-  },
-  {
-   "report": "results/astra/README.md",
-   "line": 9,
-   "referenced": "S2/input_manifest.json",
-   "how": "bare name, not beside the report",
-   "reported_absent_by": "would breach"
-  },
-  {
    "report": "results/astra/S3/degree13_conversion/S76_COMPATIBILITY.md",
    "line": 5,
    "referenced": "s76_dag/level_DD_pP.npz",
@@ -248,5 +144,5 @@
    "reported_absent_by": "contains **no**"
   }
  ],
- "distinct_missing_files": 9
+ "distinct_missing_files": 0
 }

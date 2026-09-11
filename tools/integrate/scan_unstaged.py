@@ -16,11 +16,24 @@ quietly passes is worse than no check.
 
 usage:  python3 tools/integrate/scan_unstaged.py [--json results/integrate/unstaged_artefacts.json]
 """
-import argparse, json, os, pathlib, re, signal, subprocess, sys
+import argparse, json, os, pathlib, posixpath, re, signal, subprocess, sys
 
-# `scan_unstaged.py | head` should print and stop, not traceback.
+# `scan_unstaged.py | head` should print and stop, not traceback.  The hasattr
+# guard is not decoration: Windows has no SIGPIPE, so the bare call raised
+# AttributeError at import and the tool would not start on the machine it is
+# actually run on.  Added by Astra, after I broke it fixing a cosmetic traceback.
 if hasattr(signal, "SIGPIPE"):
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+
+# Git speaks forward slashes on every platform.  os.path.join is ntpath.join on
+# Windows and yields "results/astra/S1\\name.json", which matches nothing in
+# `git ls-files`, so every "is it beside its report" test failed there and the
+# reference fell through to the basename lookup.  Astra's Windows run recorded 48
+# resolved-elsewhere against 13 here on the identical tree; that gap is this bug.
+# Repo paths are posixpath, always -- never os.path.
+rjoin = posixpath.join
+rdirname = posixpath.dirname
+rbasename = posixpath.basename
 
 DATA_EXT = r'\.(?:json|jsonl|npz|npy|csv|gz|txt|dat|pkl|h5|parquet)'
 
@@ -90,7 +103,7 @@ def main():
     tracked = set(git("ls-files").split())
     by_base = {}
     for p in tracked:
-        by_base.setdefault(os.path.basename(p), []).append(p)
+        by_base.setdefault(rbasename(p), []).append(p)
 
     reports = [p for p in tracked
                if p.startswith(args.root + "/") and p.endswith(".md")]
@@ -99,7 +112,7 @@ def main():
     seen = set()
 
     for rep in sorted(reports):
-        repdir = os.path.dirname(rep)
+        repdir = rdirname(rep)
         for lineno, line in paragraphs(pathlib.Path(rep).read_text(errors="replace")):
             marker = next((m for m in ABSENCE if m in line), None)
 
@@ -121,8 +134,8 @@ def main():
             for name in BARE.findall(line):
                 if "/" in name and name.startswith("results/"):
                     continue                       # already a repo path
-                for cand in (os.path.join(repdir, name),
-                             os.path.join(repdir, "artifacts", name)):
+                for cand in (rjoin(repdir, name),
+                             rjoin(repdir, "artifacts", name)):
                     if cand in tracked:
                         break
                 else:
@@ -135,7 +148,7 @@ def main():
                     if marker:
                         explained_absent.append(dict(rec, reported_absent_by=marker))
                     else:
-                        found = sorted(by_base.get(os.path.basename(name), []))
+                        found = sorted(by_base.get(rbasename(name), []))
                         inside = [f for f in found if f.startswith(ASTRA_ROOT)]
                         if inside:
                             resolved_elsewhere.append(
@@ -167,8 +180,8 @@ def main():
     # S6's are two different files that happen to share a basename, and the
     # whole point of this tool is not to conflate those.
     def ident(m):
-        return m.get("expected_path") or os.path.join(
-            os.path.dirname(m["report"]), m["referenced"])
+        return m.get("expected_path") or rjoin(
+            rdirname(m["report"]), m["referenced"])
 
     out["distinct_missing_files"] = len({ident(m) for m in missing})
     pathlib.Path(args.json).write_text(json.dumps(out, indent=1) + "\n")

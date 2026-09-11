@@ -1,0 +1,107 @@
+{
+ "note": "Astra's recovery records give each file's SHA-256 as it was on swamilaptop, where these JSON files have CRLF line endings.  Git normalised them to LF on commit, so every declared hash fails against the blob in the repository -- not corruption, but a recovery record that cannot be checked against the thing it documents.  Both hashes are recorded here.  The one file that verifies against its declared hash untouched is gram_spherical.json.gz, because gzip made it binary and git left it alone: the lesson is that a recovery checksum must be taken after the file is in the repository, or the file must be shipped binary.",
+ "verified_by": "integrator, independently of the delivering session",
+ "files": [
+  {
+   "path": "results/astra/S3/degree13_conversion/artifacts/gram_spherical.json.gz",
+   "record": "results/integrate/astra_reconciliation/artifact_recovery.json",
+   "mode": "binary, untouched by git",
+   "declared_sha256": "8b44c470c66f2904456ec90a6aee761f1015847e0585a89f73279cb1a2f1f150",
+   "in_repo_sha256": "8b44c470c66f2904456ec90a6aee761f1015847e0585a89f73279cb1a2f1f150",
+   "declared_bytes": 2060580,
+   "in_repo_bytes": 2060580,
+   "decompressed_sha256": "28acff2c79d9172c683ab5dbe7dccca96b83cf0ceec6f7291875c6ec8024ab6e",
+   "decompressed_bytes": 7917718,
+   "verifies_as_declared": true
+  },
+  {
+   "path": "results/astra/S4/input_manifest.json",
+   "record": "results/integrate/astra_reconciliation/artifact_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "d8a0fd5a97ccd6feffbed2d96ffae2b84243d9bb7ea31282577e08b7c746d97a",
+   "declared_bytes_crlf": 7251,
+   "in_repo_sha256_lf": "b783064df78fc7f1a08b71370a87b92784821e8a8f6e1445a51dae9f9c78e27c",
+   "in_repo_bytes_lf": 7033,
+   "recomputed_crlf_sha256": "d8a0fd5a97ccd6feffbed2d96ffae2b84243d9bb7ea31282577e08b7c746d97a",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S4/preflight.json",
+   "record": "results/integrate/astra_reconciliation/artifact_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "ff531b72e35a1311f8d2ae0d52d79b6b985aa935b21950433546a645d0d1d5e1",
+   "declared_bytes_crlf": 1346,
+   "in_repo_sha256_lf": "58d31a55ef3a3bc2609f4543fa4bc7803c9e61e87abad7fbfcf853758942c25e",
+   "in_repo_bytes_lf": 1325,
+   "recomputed_crlf_sha256": "ff531b72e35a1311f8d2ae0d52d79b6b985aa935b21950433546a645d0d1d5e1",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S6/input_manifest.json",
+   "record": "results/integrate/astra_reconciliation/artifact_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "4d96b66f38e12c2eb74f2f53f0e6036410215360cff558f00f76ea6efa8ad158",
+   "declared_bytes_crlf": 3903,
+   "in_repo_sha256_lf": "3f09311e83ba4fe1b3636305022a1be7ef58cfd09f0e9af04ea7b4a71fe5f353",
+   "in_repo_bytes_lf": 3802,
+   "recomputed_crlf_sha256": "4d96b66f38e12c2eb74f2f53f0e6036410215360cff558f00f76ea6efa8ad158",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S2/artifact_manifest.json",
+   "record": "results/integrate/astra_reconciliation/additional_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "63fb701f60082391a87d53266a5fb7644b579c9ed2f8f31a43f3550e5d308c12",
+   "declared_bytes_crlf": 41478,
+   "in_repo_sha256_lf": "365bff6a6f278cffd48949b17fdea8845a724ee76595700b1ad76d7630b68557",
+   "in_repo_bytes_lf": 40378,
+   "recomputed_crlf_sha256": "63fb701f60082391a87d53266a5fb7644b579c9ed2f8f31a43f3550e5d308c12",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S2/preflight.json",
+   "record": "results/integrate/astra_reconciliation/additional_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "1bf1b9666afc122b093daec69057c9832f17e56cf4b7e6442788972ad2e9f642",
+   "declared_bytes_crlf": 703,
+   "in_repo_sha256_lf": "0a55dcd63e6047f805fa0c7517c76ef58f5fc65148a433e94076ecfa9af537a7",
+   "in_repo_bytes_lf": 688,
+   "recomputed_crlf_sha256": "1bf1b9666afc122b093daec69057c9832f17e56cf4b7e6442788972ad2e9f642",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S2/input_manifest.json",
+   "record": "results/integrate/astra_reconciliation/additional_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "e38aaa3d1526295f17e6c8d6008dc3b808d2720ccf4390bcacf2f1a33f681484",
+   "declared_bytes_crlf": 66788,
+   "in_repo_sha256_lf": "55945f368b410ce4ce71a07625c63dee73caa5992d6df946e7a667dfcbeb46b2",
+   "in_repo_bytes_lf": 65428,
+   "recomputed_crlf_sha256": "e38aaa3d1526295f17e6c8d6008dc3b808d2720ccf4390bcacf2f1a33f681484",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S2/tangent_calibration.json",
+   "record": "results/integrate/astra_reconciliation/additional_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "189780fa4c5887d3d5543817d2ebc51a01e902dbc81d30e369b908797642031d",
+   "declared_bytes_crlf": 339372,
+   "in_repo_sha256_lf": "b7f15954ab83778fc5096a1c5d25890b37a01f6b7d0cb21fd89e9efa7a692143",
+   "in_repo_bytes_lf": 308742,
+   "recomputed_crlf_sha256": "189780fa4c5887d3d5543817d2ebc51a01e902dbc81d30e369b908797642031d",
+   "crlf_round_trip_matches_declared": true
+  },
+  {
+   "path": "results/astra/S3/degree13_conversion/artifacts/s76_compatibility_inspection.json",
+   "record": "results/integrate/astra_reconciliation/additional_recovery.json",
+   "mode": "text, CRLF on the delivering host, LF in the repository",
+   "declared_sha256_crlf": "d6aff2ddf5ba1b5242fef59d982708a5da03b325ed8809437568439da6c4a0a9",
+   "declared_bytes_crlf": 6623,
+   "in_repo_sha256_lf": "640f338df4f5b83abb4b3d7ce4e33623d55182ecf1a95a62128931606b7d3e2e",
+   "in_repo_bytes_lf": 6271,
+   "recomputed_crlf_sha256": "d6aff2ddf5ba1b5242fef59d982708a5da03b325ed8809437568439da6c4a0a9",
+   "crlf_round_trip_matches_declared": true
+  }
+ ],
+ "all_text_files_reconcile_via_crlf": true
+}
