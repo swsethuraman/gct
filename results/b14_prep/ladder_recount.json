@@ -1,0 +1,18 @@
+{
+ "note": "Reproduction of the ladder ambient multiplicities reported in the other Claude session's batch-14 strategy memo. Run by the integrator on the house wk9_s42_census.a_weyl.",
+ "important": "This is a REPRODUCTION, not method diversity. The memo's 390, 391 and 532 came from the same house a_weyl. Agreement here rules out a scratch or transcription error; it does NOT rule out a systematic error in a_weyl itself. 392, 531 and 274 are banked from other routes and calibrate the instrument.",
+ "values": [
+  {"cell": "(63,19,2^7)", "delta": 24, "a": 390, "secs": 285, "memo": 390, "banked": null, "status": "reproduced"},
+  {"cell": "(67,19,2^7)", "delta": 25, "a": 391, "secs": 298, "memo": 391, "banked": null, "status": "reproduced"},
+  {"cell": "(71,19,2^7)", "delta": 26, "a": 392, "secs": 312, "memo": 392, "banked": 392, "status": "calibration, matches banked"},
+  {"cell": "(69,21,2^7)", "delta": 26, "a": 531, "secs": 335, "memo": 531, "banked": 531, "status": "calibration, matches banked"},
+  {"cell": "(73,21,2^7)", "delta": 27, "a": 532, "secs": 342, "memo": 532, "banked": null, "status": "reproduced"},
+  {"cell": "(65,17,2^7)", "delta": 24, "a": 274, "secs": 260, "memo": 274, "banked": 274, "status": "calibration, matches banked (LMR)"}
+ ],
+ "still_single_method": [
+  {"quantity": "a_inf(19,2^7)", "value": 392, "route": "memo's own stable-slice code"},
+  {"quantity": "a_inf(21,2^7)", "value": 533, "route": "memo's own stable-slice code"},
+  {"quantity": "h_pad((25,17,2^7),14)", "value": 159, "route": "B13-01's counter, degree generalised; self-validates by reproducing 73 at rung 13"},
+  {"quantity": "dim N13", "value": 73, "route": "Weyl alternation only -- the memo flags this itself"}
+ ]
+}
