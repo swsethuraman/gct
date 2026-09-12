@@ -456,6 +456,9 @@ reports its core artifact rather than idling or promoting a conditional.
   pre-bundle check cannot inspect a file that does not yet exist — that was a
   defect in this rule.
 - **Bundle carries the named ref**, with the other workers' tips as negatives.
+  Cut it as `batch14-base..<your-branch>`, **not** `..HEAD`: the `HEAD` form
+  stores the ref as `HEAD` and the bundle then carries no named ref at all.
+  Batch 13's packets had the `..HEAD` form throughout.
 - **Checksums after the file is in the repository, or ship binary.** Blob ids for
   contracts.
 - `Co-Authored-By:` only, in messages and in any script that writes commits.

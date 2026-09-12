@@ -56,19 +56,41 @@ def check(repo, bundle, slot=None):
         fails.append(f'1  bundle requires {req or "nothing"}, not the dispatch base {base[:8]}'
                      f' -- the session used the wrong base; do NOT relabel, ask it to re-cut')
 
-    # 2  exactly one branch ref
+    # 2  exactly one delivered ref.
+    # A bundle cut as `batch14-base..HEAD` -- which is what the packets and the
+    # board's delivery rule told sessions to run, and what batch 13's packets said
+    # before them -- stores the ref as `HEAD`, not `refs/heads/<branch>`.  That is
+    # a defect in the brief, not in the delivery: the objects are all there and
+    # `HEAD:refs/...` fetches them.  Accept it, name it, and take the slot from
+    # --slot or the bundle filename.
     heads = [l.split() for l in git('bundle', 'list-heads', bundle, repo=repo).splitlines()]
     branches = [(h, r) for h, r in heads if r.startswith('refs/heads/')]
-    if len(branches) != 1:
+    headonly = [(h, r) for h, r in heads if r == 'HEAD']
+    if len(branches) > 1:
         fails.append(f'2  bundle carries {len(branches)} branch refs, want exactly 1: '
                      f'{[r for _, r in branches]}')
         return fails, notes
-    tip, ref = branches[0]
-    name = ref.rsplit('/', 1)[-1]
+    if branches:
+        tip, ref = branches[0]
+        name = ref.rsplit('/', 1)[-1]
+    elif headonly:
+        tip, ref = headonly[0]
+        name = slot or os.path.basename(bundle)
+        notes.append('2  bundle carries HEAD rather than a named branch -- the brief '
+                     'said `batch14-base..HEAD`, which does that. Not the session\'s '
+                     'fault and not a rejection; slot taken from the filename.')
+    else:
+        fails.append('2  bundle carries no usable ref')
+        return fails, notes
     m = re.search(r'b14[-_]?(\d{2})', name, re.I)
-    if not m:
-        fails.append(f'2  branch {name!r} does not name a batch-14 slot')
-    nn = m.group(1) if m else (slot or '??')
+    if m:
+        nn = m.group(1)
+    elif slot:
+        nn = slot.zfill(2)
+        notes.append(f'2  slot {nn} taken from --slot; the ref name did not carry it')
+    else:
+        fails.append(f'2  {name!r} does not name a batch-14 slot -- pass --slot NN')
+        return fails, notes
     if slot and m and m.group(1) != slot:
         fails.append(f'2  branch says slot {m.group(1)}, --slot says {slot}')
 

@@ -154,7 +154,14 @@ zero.
 
 Branch named for this session; bundle against the tag:
 
-    git bundle create b14_08_<name>.bundle batch14-base..HEAD
+    git bundle create b14_08_<name>.bundle batch14-base..<your-branch>
+
+**Name the branch in that range, not `HEAD`.** `batch14-base..HEAD` stores the
+ref inside the bundle as `HEAD` rather than `refs/heads/<your-branch>`, so the
+bundle then carries no named ref at all — which is what the delivery rule asks
+for. Batch 13's packets said `..HEAD` and so did the first cut of this one. The
+intake gate accepts either and will not reject you for it; the named form is
+correct.
 
 with a `.md5`. Parts are numbered from `part00`, contiguously; your report states
 the total part count in its first paragraph; the `.md5` names bare filenames and
