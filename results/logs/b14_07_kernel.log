@@ -1,0 +1,15 @@
+[    0.0s] C7 primality: all 7 primes verified in-house
+[    0.0s] H_14 = 41752117405971316170471859365816782308304944383288095539200  (195 bits); 2H = 196 bits; M = 217 bits; margin M/(2H) = 2.5223e+06
+[    0.0s] complete primes: 7/7 -> [2147483647, 2147483629, 2147483587, 2147483579, 2147483563, 2147483549, 2147483543]
+[    0.0s] 93 rows x 212 points (192 primary, 20 holdout)
+[    0.0s] C4 u-nonvanishing: 0 u-zeros (none)
+[    0.0s] transported row values formed at every prime
+[    0.3s] signed CRT done in 0.2s; max |entry| = 12748387236690687032750705948209061560320 (134 bits)
+[    0.3s] bound check PASS: max |entry| / H_14 = 3.053351e-19
+[    0.3s] mod-p ranks on primary columns: {2147483647: 88, 2147483629: 88, 2147483587: 88, 2147483579: 88, 2147483563: 88, 2147483549: 88, 2147483543: 88}
+[    3.9s] rank_Q(A14) on 192 primary columns = 88  (3.6s)
+[    3.9s] LEFT kernel dimension k = 5; 93 - rank = 5
+[    3.9s] verify A14^T . K14 = 0 : True;  rank(K14) = 5 (want 5);  rank(A14) = 88 = 93 - 5
+[    3.9s] C8 holdout: K14 annihilates the 20 held-out columns: True
+[    3.9s] C8 failure arm (random vector must fail): True
+[    4.0s] wrote results/b14_07/K14.json and A14_exact.json.gz

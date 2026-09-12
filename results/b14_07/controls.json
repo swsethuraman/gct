@@ -1,0 +1,85 @@
+{
+ "session": "B14-07",
+ "_note": "every control has a true arm and a failure arm; void=true means the failure arm did NOT fail and the control is therefore not a check at all",
+ "C1": {
+  "rows": 93,
+  "points": 4,
+  "agree": 372,
+  "disagree": 0,
+  "true_arm_pass": true,
+  "nonzero_banked_values": 372,
+  "total_compared": 372,
+  "failure_arm_detected": true,
+  "void": false
+ },
+ "C2": {
+  "sample": 5,
+  "agree": 5,
+  "disagree": 0,
+  "true_arm_pass": true,
+  "failure_arm_detected": true,
+  "void": false
+ },
+ "C3": {
+  "sample": 2,
+  "agree": 2,
+  "disagree": 0,
+  "true_arm_pass": true,
+  "values_nonzero": true,
+  "failure_arm_perturbed_used_symbol": true,
+  "failure_arm_wrong_normalisation": true,
+  "failure_arm_detected": true,
+  "void": false,
+  "note": "first version was VOID: it perturbed symbol index 7, which this filling never reads, so the arm could not fail.  Recorded rather than quietly replaced."
+ },
+ "C5": {
+  "true_arm_pass": true,
+  "failure_arm_detected": true,
+  "void": false,
+  "note": "round trip exact on |x| <= H_14; an integer of size M-1 wraps, which is what the |x| <= H_14 check in the kernel stage exists to catch"
+ },
+ "C9": {
+  "span": 3,
+  "weight_length": 9,
+  "rows": 93,
+  "all_zero_on_low_span": true,
+  "nonzero_count_on_low_span": 0,
+  "true_arm_pass": true,
+  "failure_arm_detected": true,
+  "void": false
+ },
+ "C6": {
+  "entries": [
+   {
+    "row": 0,
+    "point": "P14-000",
+    "rung": 12,
+    "exact": "2987150143434821999318203681996800",
+    "reconstructed": "2987150143434821999318203681996800",
+    "agree": true,
+    "secs": 486.0
+   },
+   {
+    "row": 2,
+    "point": "P14-001",
+    "rung": 13,
+    "exact": "46899756296168423620687776621527040",
+    "reconstructed": "46899756296168423620687776621527040",
+    "agree": true,
+    "secs": 310.6
+   },
+   {
+    "row": 92,
+    "point": "P14-002",
+    "rung": 14,
+    "exact": "-4355584619767984529907311522193408",
+    "reconstructed": "-4355584619767984529907311522193408",
+    "agree": true,
+    "secs": 502.6
+   }
+  ],
+  "true_arm_pass": true,
+  "failure_arm_detected": true,
+  "void": false
+ }
+}
