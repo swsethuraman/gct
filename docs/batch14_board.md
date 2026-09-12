@@ -223,28 +223,33 @@ part still open: take the degree-33 and degree-35 parts of
 `∏_{j∈{2,3,4}} (Σ_{k≥0} h_k[h_j])` and a character scalar product with the tail.
 That runtime is unmeasured — bound it.
 
-Four quantities are load-bearing and each rests on **one method and one
-implementation**:
+Four quantities are load-bearing. Two now have a second route; two do not:
 
-| quantity | value | current route |
-|---|---|---|
-| `dim N₁₃` | 73 | Weyl alternation only |
-| `h_pad((25,17,2⁷),14)` | **159** | B13-01's counter, degree generalised |
-| `a_∞(19,2⁷)`, `a_∞(21,2⁷)` | 392, 533 | one stable-slice implementation |
+| quantity | value | routes | status |
+|---|---|---|---|
+| `dim N₁₃` | 73 | Weyl alternation **and** power-sum/MN characters | **two methods agree, channel by channel** |
+| `h_pad((25,17,2⁷),14)` | **159** | Weyl alternation **and** power-sum/MN characters | **two methods agree, channel by channel** |
+| `a_∞(19,2⁷)` | 392 | one stable-slice implementation | **single method — your priority** |
+| `a_∞(21,2⁷)` | 533 | one stable-slice implementation | **single method — your priority** |
 
-Recount each by a **genuinely different** method — character inner products,
+So the priority has moved. 73 and 159 need formalising and controlling, not
+discovering; **392 and 533 are the open ones.** Recount those by a **genuinely
+different** method — character inner products,
 cycle-index plethysm, or another explicitly justified route. A second
 implementation of the same Weyl formula is cross-checking, not method diversity,
 and does not discharge this.
 
-**159 is the priority**: it is the target dimension at rung 14, where `D = −4`
-would be decided. **Already done, do not repeat**: the integrator reproduced
+**159 was the priority and no longer is** — Astra's pilot settled it before
+dispatch. It remains the target dimension at rung 14, where `D = −4` would be
+decided, so formalise it properly; but the open single-method values are 392 and
+533. **Already done, do not repeat**: the integrator reproduced
 390, 391 and 532 on the house `a_weyl`, calibrated against three banked values
 (`results/b14_prep/ladder_recount.json`), and re-ran `b14_claude_hpad.py` on the
 integration machine — control `h_pad(21,17,2⁷;13) = 73` PASS with B13-01's
 fifteen per-strip `a3`, then `h_pad((25,17,2⁷),14) = 159` over 27 strips
 (`results/logs/b14_claude_hpad_verify.log`). Both are reproduction, not method
-diversity, and are recorded as such. 159 still has exactly one lineage.
+diversity, and are recorded as such — the character pilot above is what gave 159
+its second lineage, not these.
 
 ### 5 — stdlib — Lemma T, Lemma CI, and bracket adjunction
 
