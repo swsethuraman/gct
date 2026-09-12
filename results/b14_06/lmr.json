@@ -1,0 +1,131 @@
+{
+ "controls": [
+  {
+   "control": "C9 empty-input guard",
+   "detail": "rank_of([]) raised=True; all([]) is True, which is why every control here asserts cardinality first",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C2 formula == brute-force eps.eps",
+   "detail": "38 brackets, 4 random points, exact equality; twins: non-symmetric N differs=True, c!-dropped differs=True",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C1 Theorem P at tail (2^8)",
+   "detail": "count=1, value=8!.det(N_2) on 8/8 DET points, all nonzero; twin: count at (17,2^7) = 638",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C10 Euler relations on real points",
+   "detail": "35 points across 6 families, 0 violated relations; twin: independent random data has 30 violations",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C4 a_inf vs Weyl alternation",
+   "detail": "12 tails, rank == a_inf everywhere -> (2, 2, 2):1v1; (3, 2, 2):1v1; (4, 2, 2):3v3; (5, 2, 2):4v4; (6, 2, 2):8v8; (7, 2, 2):9v9; (2, 2, 2, 2):1v1; (3, 2, 2, 2):1v1; (4, 2, 2, 2):3v3; (5, 2, 2, 2):4v4; (6, 2, 2, 2):9v9; (7, 2, 2, 2):11v11; twins: inconsistent (s,u,N) inflates=True, a deleted (a,b) class drops the rank=True",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C3 covariance and weight",
+   "detail": "det(g)^2 law on 3 points (638 brackets); torus reads weight (15+2, 2^7); twins: non-unimodular g not invariant=True, wrong weight rejected=True",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C7 both house primes agree",
+   "detail": "{'GEN': 274, 'DET': 273, 'PAD': 269, 'RED': 269, 'NEG': 0, 'DET_corrupted': 274} vs {'GEN': 274, 'DET': 273, 'PAD': 269, 'RED': 269, 'NEG': 0, 'DET_corrupted': 274}",
+   "must_fail_twin_failed_as_required": null,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C5 negative_control_forced",
+   "detail": "NEG rank 0; twin: DET rank 273",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C6 corrupted determinantal family",
+   "detail": "273 -> 274",
+   "must_fail_twin_failed_as_required": null,
+   "passed": true,
+   "vacuous": false
+  },
+  {
+   "control": "C8 DET == DETQ (normalise+depress)",
+   "detail": "identical on 6 pencils, g_0 eta-parts zero; twin: unrelated pencil differs",
+   "must_fail_twin_failed_as_required": true,
+   "passed": true,
+   "vacuous": false
+  }
+ ],
+ "conventions": {
+  "bracket": "(a_d,b_d,c_d,z_d): copies of Q_d in eps1 only / eps2 only / both / neither",
+  "independence": "no code, data structure or mechanism shared with s69/s74/s79",
+  "letters": "Q_d in Sym^d V', T_d symmetric with f_d(s) = sum T_d[i_1..i_d] s_{i_1}..s_{i_d}",
+  "picture": "Proposition S stable picture; Z = Sym^2+Sym^3+Sym^4 of V'^*, V' = C^col",
+  "reduced": "s_d = f_d(e_1); u_d[i] = T_d[i,1^(d-1)]; N_d[i][j] = T_d[i,j,1^(d-2)]",
+  "shape": "lam_bar' = (col,col,1^k); two height-col eps columns and k singletons",
+  "value": "c!.[y^c] det BigM(y) . prod s_d^{z_d}; see module docstring",
+  "values_are": "exact residues mod p of the bracket values at the stored integer points; no transform, no normalisation, no scaling applied"
+ },
+ "elapsed_s": 116.2,
+ "measurements": [
+  {
+   "W": 31,
+   "col": 8,
+   "dropped": {
+    "DET": 0,
+    "GEN": 0,
+    "NEG": 12,
+    "PAD": 5,
+    "RED": 10
+   },
+   "n_brackets": 638,
+   "npts_requested": 340,
+   "ranks": {
+    "2147483629": {
+     "DET": 273,
+     "DET_corrupted": 274,
+     "GEN": 274,
+     "NEG": 0,
+     "PAD": 269,
+     "RED": 269
+    },
+    "2147483647": {
+     "DET": 273,
+     "DET_corrupted": 274,
+     "GEN": 274,
+     "NEG": 0,
+     "PAD": 269,
+     "RED": 269
+    }
+   },
+   "seed": 20260912,
+   "tail": [
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "values_are": "exact residues mod p of the bracket values at the stored integer points; no transform, no normalisation, no scaling applied"
+  }
+ ],
+ "ok": true
+}

@@ -1,0 +1,27 @@
+controls (each with an input that must make it fail):
+  [PASS] C9 empty-input guard               (twin failed as required)  rank_of([]) raised=True; all([]) is True, which is why every control here asserts cardinality first
+  [PASS] C2 formula == brute-force eps.eps  (twin failed as required)  38 brackets, 4 random points, exact equality; twins: non-symmetric N differs=True, c!-dropped differs=True
+  [PASS] C1 Theorem P at tail (2^8)         (twin failed as required)  count=1, value=8!.det(N_2) on 8/8 DET points, all nonzero; twin: count at (17,2^7) = 638
+  [PASS] C10 Euler relations on real points (twin failed as required)  35 points across 6 families, 0 violated relations; twin: independent random data has 30 violations
+  [PASS] C4 a_inf vs Weyl alternation       (twin failed as required)  12 tails, rank == a_inf everywhere -> (2, 2, 2):1v1; (3, 2, 2):1v1; (4, 2, 2):3v3; (5, 2, 2):4v4; (6, 2, 2):8v8; (7, 2, 2):9v9; (2, 2, 2, 2):1v1; (3, 2, 2, 2):1v1; (4, 2, 2, 2):3v3; (5, 2, 2, 2):4v4; (6, 2, 2, 2):9v9; (7, 2, 2, 2):11v11; twins: inconsistent (s,u,N) inflates=True, a deleted (a,b) class drops the rank=True
+  [PASS] C3 covariance and weight           (twin failed as required)  det(g)^2 law on 3 points (638 brackets); torus reads weight (15+2, 2^7); twins: non-unimodular g not invariant=True, wrong weight rejected=True
+
+  tail (17, 2, 2, 2, 2, 2, 2, 2)  |lam_bar|=31  brackets=638  points=340
+    p=2147483647  GEN   rank  274   (340 pts, 0 dropped, 9.6s)
+    p=2147483647  DET   rank  273   (340 pts, 0 dropped, 9.7s)
+    p=2147483647  PAD   rank  269   (335 pts, 5 dropped, 9.5s)
+    p=2147483647  RED   rank  269   (330 pts, 10 dropped, 9.8s)
+    p=2147483647  NEG   rank    0   (328 pts, 12 dropped, 8.8s)
+    p=2147483647  DET*  rank  274   (C6: perturbed off M_ell; must rise)
+    p=2147483629  GEN   rank  274   (340 pts, 0 dropped, 9.6s)
+    p=2147483629  DET   rank  273   (340 pts, 0 dropped, 9.5s)
+    p=2147483629  PAD   rank  269   (335 pts, 5 dropped, 9.4s)
+    p=2147483629  RED   rank  269   (330 pts, 10 dropped, 10.0s)
+    p=2147483629  NEG   rank    0   (328 pts, 12 dropped, 8.8s)
+    p=2147483629  DET*  rank  274   (C6: perturbed off M_ell; must rise)
+  [PASS] C7 both house primes agree         (no twin)  {'GEN': 274, 'DET': 273, 'PAD': 269, 'RED': 269, 'NEG': 0, 'DET_corrupted': 274} vs {'GEN': 274, 'DET': 273, 'PAD': 269, 'RED': 269, 'NEG': 0, 'DET_corrupted': 274}
+  [PASS] C5 negative_control_forced         (twin failed as required)  NEG rank 0; twin: DET rank 273
+  [PASS] C6 corrupted determinantal family  (no twin)  273 -> 274
+  [PASS] C8 DET == DETQ (normalise+depress) (twin failed as required)  identical on 6 pencils, g_0 eta-parts zero; twin: unrelated pencil differs
+
+wrote results/b14_06/lmr.json   ok=True   116.2s
