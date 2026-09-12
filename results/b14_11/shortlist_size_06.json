@@ -1,0 +1,96 @@
+{
+  "n": 4,
+  "delta": 7,
+  "lam": [
+    14,
+    5,
+    3,
+    2,
+    2,
+    1,
+    1
+  ],
+  "N_S": 252433,
+  "stabilizer_order": 4,
+  "n_chi": 53827,
+  "signed_trace_sum": 215308,
+  "classes": [
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        6,
+        5
+      ],
+      "class_size": 1,
+      "character": -1,
+      "fixed_monomials": 4807
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+      ],
+      "class_size": 1,
+      "character": 1,
+      "fixed_monomials": 14893
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        5
+      ],
+      "class_size": 1,
+      "character": -1,
+      "fixed_monomials": 47211
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "class_size": 1,
+      "character": 1,
+      "fixed_monomials": 252433
+    }
+  ],
+  "arithmetic": "Z; exact final division by group order",
+  "wall_seconds": 0.012,
+  "a": 1,
+  "h_pad": 6,
+  "selection_index": 6,
+  "peak_working_set_bytes": 35651584,
+  "status": "CERTIFIED_EXACT_COMBINATORICS",
+  "gap_status": "OPEN",
+  "recorded_evidence": [],
+  "costs": {
+    "dense_square_int64_bytes": 23178767432,
+    "dense_square_status": "storage for one square only; not a process peak",
+    "reduced_HWB_int64_bytes": 430616,
+    "expanded_monomial_int32_bytes": 7068124,
+    "build_seconds_model": 6.4875,
+    "build_model_status": "EXTRAPOLATED s79/B13-09 builder only; not measured here; kernel/evaluation excluded",
+    "source": "docs/PROVED.md:cost_model",
+    "next_run_wall_limit_seconds": 300,
+    "next_run_memory_limit_bytes": 1610612736,
+    "kernel_runtime": "UNMEASURED"
+  }
+}

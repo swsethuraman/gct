@@ -79,6 +79,35 @@
       "status": "PROVED",
       "source": "B13-11 section 'The n=3 control'",
       "note": "Promoted from a documented assumption. Consequence: the unpadded +1 example at (19,7,2^5) supplies NO padded test at that weight."
+    },
+    {
+      "id": "quartic_length_and_eligibility",
+      "predicate": {
+        "n": 4,
+        "any_of": [
+          {
+            "lambda_length_gt_delta": true
+          },
+          {
+            "lambda_1_lt_delta": true
+          }
+        ]
+      },
+      "statement": "Length above delta is absent from the quartic ambient; first row below delta is absent from the padded coordinate ring. Either gives D<=0.",
+      "status": "PROVED",
+      "source": "docs/b14_11_proofs.md section 1",
+      "application": "Relational partition predicate; the legacy range-only reconcile_cells consumer skips this entry. The session exact matcher enforces it."
+    },
+    {
+      "id": "quartic_pullback_zero",
+      "predicate": {
+        "n": 4,
+        "explicit_cell_keys": "results/b14_11/exact_exclusions.json"
+      },
+      "statement": "The 153 explicitly keyed positive-ambient quartic labels have exact h_pad=0, hence mult_pad=0 and D<=0.",
+      "status": "CERTIFIED",
+      "source": "docs/b14_11_proofs.md section 2; analysis/b14_11_finish.py verify",
+      "application": "Exact-key predicate, not every n=4 cell. The legacy range-only join skips this entry; consume the named certificate catalog."
     }
   ]
 }

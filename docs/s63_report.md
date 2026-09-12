@@ -174,7 +174,9 @@ Relatedly (integrator note 1 to s64): `h_pad(LMR) = 521 > 274 = a`, so the
 pad-side ceiling `mult_pad ≤ h_pad` is vacuous at LMR and no cheap screen can
 settle the cell — a rank is genuinely required, which is what makes this
 determinant-side rank the load-bearing number. `D_LMR` further needs `i_pad`
-(session 64); `i_det = 1` alone is an occurrence statement (Ikenmeyer–Panova).
+(session 64). B14-11 correction: `i_det=1` is an ideal multiplicity
+statement; with `a=274` it gives `mult_det=273`, so it is not an occurrence
+obstruction. The positive padded gap still requires a certified comparison.
 
 ## 5. Prediction ledger
 

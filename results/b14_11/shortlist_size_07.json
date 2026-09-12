@@ -1,0 +1,124 @@
+{
+  "n": 4,
+  "delta": 7,
+  "lam": [
+    13,
+    5,
+    5,
+    2,
+    1,
+    1,
+    1
+  ],
+  "N_S": 263947,
+  "stabilizer_order": 12,
+  "n_chi": 10923,
+  "signed_trace_sum": 131076,
+  "classes": [
+    {
+      "permutation": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        6,
+        4
+      ],
+      "class_size": 2,
+      "character": -1,
+      "fixed_monomials": 185
+    },
+    {
+      "permutation": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4,
+        6
+      ],
+      "class_size": 3,
+      "character": 1,
+      "fixed_monomials": 1315
+    },
+    {
+      "permutation": [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "class_size": 1,
+      "character": -1,
+      "fixed_monomials": 2339
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        4
+      ],
+      "class_size": 2,
+      "character": 1,
+      "fixed_monomials": 5461
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4,
+        6
+      ],
+      "class_size": 3,
+      "character": -1,
+      "fixed_monomials": 48343
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "class_size": 1,
+      "character": 1,
+      "fixed_monomials": 263947
+    }
+  ],
+  "arithmetic": "Z; exact final division by group order",
+  "wall_seconds": 0.012,
+  "a": 1,
+  "h_pad": 5,
+  "selection_index": 7,
+  "peak_working_set_bytes": 35627008,
+  "status": "CERTIFIED_EXACT_COMBINATORICS",
+  "gap_status": "OPEN",
+  "recorded_evidence": [],
+  "costs": {
+    "dense_square_int64_bytes": 954495432,
+    "dense_square_status": "storage for one square only; not a process peak",
+    "reduced_HWB_int64_bytes": 87384,
+    "expanded_monomial_int32_bytes": 7390516,
+    "build_seconds_model": 9.0428,
+    "build_model_status": "EXTRAPOLATED s79/B13-09 builder only; not measured here; kernel/evaluation excluded",
+    "source": "docs/PROVED.md:cost_model",
+    "next_run_wall_limit_seconds": 300,
+    "next_run_memory_limit_bytes": 1610612736,
+    "kernel_runtime": "UNMEASURED"
+  }
+}

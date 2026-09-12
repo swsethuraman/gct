@@ -69,10 +69,10 @@ Came back, in one line each:
   17 (and 31 for `n = 4`); the correct values for the *vector* stabiliser,
   which is what Peter–Weyl requires, are 16 and 30.  17 is the dimension of
   the stabiliser of the *point* `[det_3]`.
-* **A free statement about the permanent, from BIP**: at every weight where
-  `m_det(lam) = 0` — 14 of the 19 live weights at `(n,m,delta) = (4,3,2)` —
-  Bürgisser–Ikenmeyer–Panova's theorem forces
-  `def_{per^pad}(lam) = m_{per^pad}(lam)`, a *full* deficit.
+* **B14-11 erratum to the BIP inference:** the historical claim that
+  `m_det(lam)=0` forces a full padded deficit at `(n,m,delta)=(4,3,2)`
+  does not follow from BIP. Its hypothesis `n >= m^25` fails here.
+  Use a label-specific ambient-zero proof or exact certificate instead.
 
 ## 2. Pre-registration outcomes
 

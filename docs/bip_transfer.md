@@ -40,8 +40,8 @@ arXiv versions named:
 > Sharply: every determinant-side point BIP's argument supplies at `n = 4` is a
 > padded power sum with `s·k ≤ 4`, of which there are exactly **eight**; every
 > one of them is a **product of four linear forms** and has **linear span at
-> most 3**; and a weight vector of weight `λ` vanishes identically at every
-> point whose span has dimension `< ℓ(λ)` (Lemma B, one line).  So the
+> most 3**; and a highest-weight vector of highest weight `λ` vanishes at every
+> point whose span has dimension `< ℓ(λ)` (Lemma B, corrected below).  So the
 > mechanism's entire supply of evaluation points is **blind, identically, to
 > every weight of the census**.  Verified in-house at three six-row cells: the
 > highest weight vector vanishes at all eight, and is non-zero at a determinant
@@ -96,8 +96,8 @@ permanent.  **Theorem 2.1 [v3] = Prop. 4.1 [v1]**, attributed in the text to
 > padded to degree `n`, is contained in `Ω_n`.*
 
 and **Proposition 2.3 [v3]:** *"Let `n ≥ kℓ` and `ℓ` be even. Then
-`(k × ℓ)^{♯nk}` occurs in `C[Ω_n]_k`."*  (The weight is a body of `k` rows of
-length `ℓ` under one long first row, so `ℓ(λ) = k+1`.)
+`(k × ℓ)^{♯nk}` occurs in `C[Ω_n]_k`."*  (B14-11 correction: v3 defines `sharp` by extending the existing first
+row, so this weight has `k` rows. It does not append a `(k+1)`st row.)
 
 **(c) The semigroup property** (Lemma 2.2): occurrences add.
 
@@ -139,13 +139,12 @@ Corollary B bounds `mult_pad` in the length-reduced model at `r` variables — a
 they arrive at the same inequality.  **This is an independent confirmation of
 the eligibility gate from outside the programme.**
 
-*A note for the `ℓ ≥ 7` sessions, flagged not claimed.*  [KL]'s companion bound
-is `ℓ(λ) ≤ m² = 9`, whereas `docs/sixrow_frontier.md` §1 records the
-permanent-visible window as `6 ≤ ℓ(λ) ≤ 10`.  The `10` is the support count
-`1 + m²` of `x_0·per_3(x_1..x_9)`; [KL]'s `9` is sharper.  If [KL]'s bound
-transfers to the length-reduced model, `ℓ = 10` is empty and the window closes
-one row earlier.  This session does not settle it — it does not arise at
-`ℓ = 6` — but it is worth one paragraph of a later session.
+**B14-11 model audit.** The v3 paper defines padding with `X11` already
+inside the `m x m` permanent (page 2), so its support bound is `m^2`.
+This project uses an independent `x0`, giving ten essential variables.
+Thus the cited nine-row bound supplies no ten-row exclusion for this model.
+The first-row eligibility condition is justified independently by the reducible
+pullback and Pieri; see `quartic_length_and_eligibility` in `PROVED.md`.
 
 ### (b) the supply of points collapses
 
@@ -159,15 +158,17 @@ one row earlier.  This session does not settle it — it does not arise at
 | (3,1) | `X·φ³` | 2 |
 | (4,1) | `φ⁴` | 1 |
 
-**Maximum linear span 3.**  And over `C` every one of the eight is a *product of
-four linear forms* — `φ_1²+φ_2² = (φ_1+iφ_2)(φ_1−iφ_2)` — so the whole supply
-lies inside the Chow variety `Ch^4`, which sits in a 3-dimensional subspace:
-dimension at most `4·3 − 3 = 9`, against `dim D_6^{det_4} = 66`.
+**Maximum essential span 3 for each point.** Over `C` all eight
+are products of four linear forms, using the factorisation of a binary
+quadratic. Their supply lies in `Ch^4` intersected with `Sub_3`.
+B14-11 withdraws the former dimension-nine comparison: the support subspace
+varies, and the full Chow variety need not have essential span at most three.
 
 Proposition 2.3 collapses the same way: `n ≥ kℓ` with `ℓ` even forces `k ≤ 2`,
-so `ℓ(λ) = k+1 ≤ 3`, and the two surviving generators are `(2,2)` at degree 1
-and `(4,2,2)` at degree 2.  Sums of partitions of length `≤ 3` have length
-`≤ 3`, so the semigroup route (c) never leaves `ℓ(λ) ≤ 3` either.
+so `ℓ(λ) = k ≤ 2`. The distinct generators are `(4)` at degree 1
+and `(6,2)` at degree 2. Sums of partitions of length at most two retain
+that length bound. The former degree-one `(2,2)` claim was impossible:
+`Sym^1(Sym^4 V)` contains only `(4)`. This strengthens blindness here.
 
 ### (c) the evaluation engines
 
@@ -180,6 +181,12 @@ and `(4,2,2)` at degree 2.  Sums of partitions of length `≤ 3` have length
 * **Prop. 5.5** needs `n ≥ 24m^6 ≥ 24·2^6 = 1536`.  **Vacuous.**
 
 ### The reach, as a function of `n`
+
+**B14-11 erratum.** The historical table's Prop. 2.3 column and the `best`
+column based on it used the incorrect extra-row convention and are
+WITHDRAWN for inference. A direct rectangle of length `L` requires at least
+`n=2L`; the corrected `n=4` generators above have length at most two.
+The Prop. 5.2 and Prop. 5.5 hypothesis checks are unaffected.
 
 The least `n` at which some engine reaches a weight of length `ℓ` with
 `λ_2 = L` (`analysis/wk9_s52_bipreach.py`; the Prop. 2.3 column is optimistic —
@@ -209,15 +216,23 @@ are at `n = 4`.
 
 ## 4. Lemma B, which makes the collapse decisive rather than merely tight
 
-**Lemma B (proved).**  Let `f` be a weight vector of weight `λ` in
-`C[Sym^n V]_δ` and let `p ∈ Sym^n V` have linear span of dimension `u < ℓ(λ)`.
-Then `f(p) = 0`.
+**Lemma B (PROVED; hypothesis corrected by B14-11).** Every vector in
+the irreducible isotypic component labelled by `λ`, in particular every HWV
+of highest weight `λ`, vanishes on forms of essential-variable dimension
+`u < ℓ(λ)`. Use the consistent polynomial-label convention
+`C[Sym^n V*]_δ = Sym^δ(Sym^n V)`.
 
-*Proof.*  Choose coordinates so the span is `⟨e_1,…,e_u⟩` and take the torus
-element `t = diag(1,…,1,c,…,c)` with `c` in positions `u+1,…`.  Then `t·p = p`,
-while `f(t·q) = t^λ f(q)` with `t^λ = c^{λ_{u+1}+···+λ_N}`.  Since `ℓ(λ) > u`,
-`λ_{u+1} ≥ 1`, so the exponent is positive; choosing `c ≠ 1` forces
-`f(p) = 0`. ∎
+*Proof.* For a form `p` supported on a subspace `U` of dimension `u`,
+`p^δ` lies in `Sym^δ(Sym^n U*)`. The Schur functor `S_λ U*` is zero
+when `ℓ(λ)>u`. The natural Schur isotypic projection of `p^δ` is therefore
+zero, and pairing with the `λ`-component gives zero. This argument is
+functorial under `U -> V`, so it covers every position of the support. ∎
+
+The original torus proof changed coordinates while retaining the old weight
+character, which is invalid for an arbitrary torus weight vector. Explicit
+counterexample: the coefficient functional of `x^3 y` has weight `(3,1)`
+but takes value `4` on `(x+y)^4`, a form of essential span one. The corrected
+HWV statement retains the BIP blindness conclusion.
 
 Combined with §3(b): **at `n = 4`, every highest weight vector of weight `λ`
 with `ℓ(λ) ≥ 4` vanishes at every point BIP's Theorem 2.5 supplies.**  This is
@@ -239,11 +254,11 @@ both house primes, one exhibited highest weight vector each:
 `N_S` and `n_χ` reproduce `results/s36_aone.md` exactly at all three, and the
 `det`/`pad` columns reproduce its `mult_det = mult_pad = 1` verdicts.
 
-Two readings, both worth recording.  The eight zeros are Lemma B, as predicted.
-The `chow6` zero is *not* Lemma B — that point has full support 6 — and says
-that at these three cells the highest weight vector vanishes on the whole Chow
-variety of products of four linear forms, so BIP's supply at `n = 4` fails for a
-second, independent reason.  The `ℓ·c` column being non-zero while `chow6`
+The eight zeros agree with Lemma B. B14-11 correction: a product of
+four linear forms has essential span at most four, even when all six ambient
+coordinates appear. Thus its six-row HWV vanishing also follows from the
+corrected support lemma. The sampled `chow6` zero is not an independent
+proof of vanishing on an entire variety.  The `ℓ·c` column being non-zero while `chow6`
 vanishes is the expected ordering `Ch^4 ⊂ R_6` (so `I(R_6) ⊆ I(Ch^4)`) and is
 the `docs/brief_wording.md` §5 degeneracy-direction control: the statistic is
 *less* degenerate at the reducible point than at the Chow point, in the
@@ -336,4 +351,5 @@ probability that a cell fires; it raises what a firing cell would be worth.
   §3, which are evaluations of quoted hypotheses at `n = 4`; the identity
   `|λ̄| ≤ mδ ⟺ λ_1 ≥ δ` at `(n,m) = (4,3)`.
 * **measured:** the table in §4.
-* **flagged, not claimed:** the `ℓ(λ) ≤ m² = 9` versus `ℓ ≤ 10` question in §3(a).
+* **B14-11 resolved convention:** the cited nine-variable padding model differs
+  from the independent ten-variable padding here; no nine-row exclusion is imported.

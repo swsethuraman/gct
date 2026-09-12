@@ -275,7 +275,8 @@ the threshold, and it is a statement about *this* family of test functions, not
 about GCT.  It is **not** a natural-proofs barrier: natural proofs is
 constructivity plus largeness, neither of which appears anywhere above.  The
 known GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence obstructions
-(no occurrence obstructions for `det` vs padded `per`), which is a different
+(no occurrence obstructions in their range `n >= m^25`, silent at
+`(4,3)`), which is a different
 statement again — about *occurrence*, where this is about a dimension count
 that makes the permanent literally absent from the equations.  Pre-registered
 as **C5**.

@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "independent_counts": [
+    {
+      "n": 4,
+      "delta": 2,
+      "lam": [
+        8
+      ],
+      "character": 1,
+      "weyl": 1,
+      "corruption_rejected": true
+    },
+    {
+      "n": 4,
+      "delta": 2,
+      "lam": [
+        6,
+        2
+      ],
+      "character": 1,
+      "weyl": 1,
+      "corruption_rejected": true
+    },
+    {
+      "n": 4,
+      "delta": 2,
+      "lam": [
+        5,
+        3
+      ],
+      "character": 0,
+      "weyl": 0,
+      "corruption_rejected": true
+    },
+    {
+      "n": 4,
+      "delta": 3,
+      "lam": [
+        4,
+        4,
+        4
+      ],
+      "character": 1,
+      "weyl": 1,
+      "corruption_rejected": true
+    },
+    {
+      "n": 4,
+      "delta": 3,
+      "lam": [
+        6,
+        4,
+        2
+      ],
+      "character": 1,
+      "weyl": 1,
+      "corruption_rejected": true
+    }
+  ],
+  "A1_preserved": true,
+  "rejected_mutations": [
+    "empty",
+    "duplicate",
+    "A0",
+    "short",
+    "wrong_sum",
+    "long",
+    "first_row",
+    "nonpartition",
+    "occurrence_rule",
+    "missing_rules"
+  ],
+  "span_counterexample": {
+    "form": "(x+y)^4",
+    "ordinary_weight": [
+      3,
+      1
+    ],
+    "span": 1,
+    "value": 4,
+    "false_arbitrary_weight_lemma_rejected": true
+  },
+  "rectangle_generators": [
+    {
+      "k": 1,
+      "l": 2,
+      "delta": 1,
+      "lam": [
+        4
+      ],
+      "a": 1
+    },
+    {
+      "k": 1,
+      "l": 4,
+      "delta": 1,
+      "lam": [
+        4
+      ],
+      "a": 1
+    },
+    {
+      "k": 2,
+      "l": 2,
+      "delta": 2,
+      "lam": [
+        6,
+        2
+      ],
+      "a": 1
+    }
+  ],
+  "wrong_s52_generator_rejected": true,
+  "peak_working_set_bytes": 21516288
+}

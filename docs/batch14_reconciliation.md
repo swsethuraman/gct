@@ -74,7 +74,7 @@ reasoning is right. The house already has a **stronger** answer, twice:
   hypothesis: its reach is measured in weight **length**, which at `n = 4` is
   `ℓ(λ) ≤ 4`, while permanent-sensitivity begins at `ℓ(λ) = 6`. Every
   determinant-side point it supplies at `n = 4` is a product of four linear forms
-  with span `≤ 3`, and a weight vector of weight `λ` vanishes at every point of
+  with span `≤ 3`, and an HWV of highest weight `λ` vanishes at every point of
   span `< ℓ(λ)`. Verified in-house at three six-row cells.
 
 **Neither was cited in `PROVED.md`.** That is the gap in the index I built, and

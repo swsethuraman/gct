@@ -42,10 +42,11 @@ only evaluates them at small `n`, which the paper never does):
   sums `X^{n−s}(φ_1^s+···+φ_k^s)` with `n ≥ sk`.  At `n = 4` there are exactly
   **eight**, every one a **product of four linear forms** over `C`, every one of
   **linear span ≤ 3**.
-* **Lemma B (proved, one line):** a weight vector of weight `λ` vanishes at every
+* **Lemma B (PROVED, corrected B14-11):** a highest-weight vector of
+  highest weight `λ` vanishes at every
   point of linear span `< ℓ(λ)`.  So at `n = 4` the whole supply is *identically*
   blind to every weight of the census, which is at `ℓ(λ) = 6`.
-* Prop. 2.3 + semigroup reaches `ℓ(λ) ≤ 3`; Prop. 2.4/5.1 needs `md² ≤ n`, vacuous
+* Prop. 2.3 + semigroup reaches `ℓ(λ) ≤ 2` (B14-11 corrected row extension); Prop. 2.4/5.1 needs `md² ≤ n`, vacuous
   for `δ ≥ 3`; Prop. 5.2 reaches `ℓ(λ) ≤ 4`, hooks only; Prop. 5.5 needs
   `n ≥ 24m^6 = 1536`.  Best reach at `n = 4`: **`ℓ(λ) ≤ 4`**.
 * Least `n` reaching a six-row weight: **9**, hooks only — and **not one of the

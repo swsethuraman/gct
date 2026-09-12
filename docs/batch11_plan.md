@@ -127,8 +127,8 @@ and here `mult_det = 5` and `mult_per = 6` are **both nonzero**, so `S_λ` occur
 in both coordinate rings and no occurrence obstruction is present.  The
 distinction matters beyond bookkeeping: in the padded permanent-versus-
 determinant setting Bürgisser–Ikenmeyer–Panova rule out occurrence obstructions
-over the range of `n` the programme cares about, while multiplicity obstructions
-remain open — which is why `D = mult_pad − mult_det` is the programme's chosen
+in their asymptotic range `n >= m^25`; that theorem is silent at
+`(n,m)=(4,3)`. Multiplicity obstructions remain open — which is why `D = mult_pad − mult_det` is the programme's chosen
 quantity in the first place.  The programme's first `D > 0` is therefore of the kind the literature
 leaves open, which is the kind it needs to be.
 
@@ -588,8 +588,9 @@ Recorded here so the change is visible rather than silently absorbed.
 an exhibited *occurrence* obstruction.  It is not one: `mult_det = 5` and
 `mult_per = 6` are both nonzero, so `S_λ` occurs in both coordinate rings.  It
 is a **multiplicity obstruction**, which is both the correct term and the
-stronger claim, since occurrence obstructions are ruled out in the padded regime
-and multiplicity obstructions are not.  Fixed in §1.1 and in
+claim of a strict multiplicity gap despite occurrence on both sides.
+BIP rules out occurrence obstructions only in its `n >= m^25` regime; it
+does not exclude them for the programme's small padded pair.  Fixed in §1.1 and in
 `analysis/wk11_int_p0a.py`, and the run was repeated so the banked verdict in
 `results/wk11_int_p0a.json` carries the corrected reading rather than a
 hand-edited one.  The numbers are unchanged.

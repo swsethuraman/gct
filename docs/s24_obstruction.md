@@ -46,8 +46,9 @@ mult_λ(A) - mult_λ(B)  =  [ m_A(λ) - m_B(λ) ]  -  [ def_A(λ,δ) - def_B(λ,
 
 **The Peter–Weyl part is the classical, well-studied side.** Bürgisser,
 Ikenmeyer and Panova proved that occurrence obstructions — the special case where
-one multiplicity is zero — cannot separate the padded permanent from the
-determinant. **The deficit part is the side nobody has quantified.**
+the determinant multiplicity is zero and the padded multiplicity is
+positive — cannot separate their padded model from the determinant when
+`n >= m^25`. This does not exclude A1 at `(n,m)=(4,3)`. **The deficit part is the side nobody has quantified.**
 
 So the question, sharply: **can the deficit difference ever exceed the
 Peter–Weyl difference, and thereby produce an obstruction that the classical
