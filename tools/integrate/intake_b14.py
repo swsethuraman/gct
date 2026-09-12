@@ -122,7 +122,17 @@ def check(repo, bundle, slot=None):
         size = int(git('cat-file', '-s', blob, repo=repo).strip())
         if size > MAXBYTES:
             fails.append(f'4  {f} is {size/1048576:.1f} MB, over the 5 MB limit')
-        content = git('cat-file', '-p', blob, repo=repo, check=False)
+        # read BYTES, not text: a delivery may ship gzip, images or any binary,
+        # and an earlier version of this gate crashed with UnicodeDecodeError on
+        # the first .gz it was handed (B14-03's control.json.gz).  A gate that
+        # dies on a legitimate delivery is worse than no gate.
+        raw = subprocess.run(['git', '-C', repo, 'cat-file', '-p', blob],
+                             capture_output=True).stdout
+        try:
+            content = raw.decode('utf-8')
+        except UnicodeDecodeError:
+            notes.append(f'9  {f} is binary ({len(raw)} bytes); text checks skipped')
+            continue
         if re.search(r'claude\.ai', content, re.I):
             fails.append(f'9  {f} contains a session-link URL')
         if f.endswith('.md'):
