@@ -1,0 +1,46 @@
+{
+ "note": "Astra's v0.2 companion point sets, staged INTO the tree so the contract is a git blob rather than a working-tree checksum. That is the fix for the mismatch found on receipt: the manifest's source_sha256 is of the CRLF working-tree copy on swamilaptop, and the repository blob is LF. Same bytes of content, different hash, and a contract whose whole purpose is for both sides to confirm one source cannot be stated that way.",
+ "verified_on_receipt": {
+  "P13.json": {
+   "sha256_matches_manifest": true,
+   "bytes": 269478
+  },
+  "P14.json": {
+   "sha256_matches_manifest": true,
+   "bytes": 478794
+  },
+  "claude_strategy_memo": {
+   "sha256_matches_manifest": true
+  },
+  "results/s74/source.json": {
+   "manifest_sha256": "0f925e0e113dad94f8a35b19eb64a4e50b8badb29959673554a49ef1f2f8ce45",
+   "repository_lf_sha256": "96b07aae08cf60d2291685c3c60f3ec4c547944dd89823b55723f66aeb67d204",
+   "resolution": "CRLF round-trip of the LF blob reproduces the manifest hash exactly (893,682 -> 997,034 bytes, 103,352 newlines). Same content.",
+   "same_content": true
+  }
+ },
+ "git_blob_contract": {
+  "results/b14_prep/points/P13.json": "76e1f2ed7be8ba85e14ba74cae5be76504f67072",
+  "results/b14_prep/points/P14.json": "ebb595c0e61b85bbb1d380caa58d90d80ad133f2",
+  "results/s74/source.json": "ca17e74393228d9c3d9729e7839f0157cb1e21eb"
+ },
+ "crt": {
+  "primes_all_prime": true,
+  "method": "deterministic Miller-Rabin, bases 2..37, valid below 2^64",
+  "degree_13": {
+   "H_bits": 185,
+   "two_H_bits": 186,
+   "six_prime_product_bits": 186,
+   "sufficient": true,
+   "margin": 1.38,
+   "finding": "TIGHT. 1.38x headroom. A single overlooked factor of 2 anywhere in the height derivation breaks signed reconstruction. Recommend a seventh prime at degree 13: about 13 minutes of source evaluation, and the margin becomes ~3e9x."
+  },
+  "degree_14": {
+   "H_bits": 195,
+   "two_H_bits": 196,
+   "seven_prime_product_bits": 217,
+   "sufficient": true,
+   "margin": 2522321.7
+  }
+ }
+}

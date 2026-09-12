@@ -1,0 +1,39 @@
+{
+  "status": "planning preparation only; no new mathematical rank computation",
+  "records": [
+    {
+      "path": "P13.json",
+      "bytes": 269478,
+      "sha256": "d0dd79d734c6b787890e5a800b2895adb72861c6e3a9c62b9a79d5ecbbe4ba17",
+      "degree": 13,
+      "primary_points": 96,
+      "source_dimension": 39,
+      "height_bits": 185,
+      "crt_primes_needed": 6
+    },
+    {
+      "path": "P14.json",
+      "bytes": 478794,
+      "sha256": "7b069072f12dfcca6ba033178091adc9f0aaff34fc52d0d7f1f475b02c4e69b5",
+      "degree": 14,
+      "primary_points": 192,
+      "source_dimension": 93,
+      "height_bits": 195,
+      "crt_primes_needed": 7
+    }
+  ],
+  "claude_memo_sha256": "df2e1b74b97eb1b868bb7af4bf95ff43ffdebe093f7963a2f9b1aa9f7dd47f98",
+  "source_file": "results/s74/source.json",
+  "source_sha256": "0f925e0e113dad94f8a35b19eb64a4e50b8badb29959673554a49ef1f2f8ce45",
+  "proposed_primes": [
+    2147483647,
+    2147483629,
+    2147483587,
+    2147483579,
+    2147483563,
+    2147483549,
+    2147483543
+  ],
+  "prime_validation": "deterministic trial division through integer square root",
+  "readiness": "point/source contract exists; mixed target evaluator and spanning certificates remain unbuilt"
+}
