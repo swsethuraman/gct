@@ -68,8 +68,13 @@ kernels read exactly `a` on `per₃` pencils. The path can tell the difference.
 `analysis/a1_acceptance.py`, checked against **python-flint** as an independent
 exact reference rather than against numpy, which is the thing under test.
 
-- `matmul_mod_wide` exact at every seam: `K` = 1,000, `INNER_BLOCK ± 1`,
-  `INNER_BLOCK`, `2²¹ − 1`, `2²¹`, `2²¹ + 1`, 3,000,000, at both house primes.
+- `matmul_mod_wide` exact at every seam — `K` = 1,000, `INNER_BLOCK ± 1`,
+  `INNER_BLOCK`, `2²¹ − 1`, `2²¹`, `2²¹ + 1`, 3,000,000 — **at `p₁` only**, plus
+  both house primes at a single `K = 2²¹ + 7`. Revision 1 said "at every seam …
+  at both house primes", which overstates the recorded coverage: the seams were
+  run at one prime and both primes at one `K`. Caught by Astra. The
+  `wide_identical_to_narrow` flag belongs in the acceptance condition and was
+  recorded but not asserted — a future-check gap, not a failed result.
 - Below the ceiling it **delegates bit-identically** to `matmul_mod`, as its
   docstring claims — verified at 524,287 / 524,288 / 524,289 and at 2,097,151.
 - At and above `2²¹ = 2,097,152`, `matmul_mod` **raises AssertionError**. It

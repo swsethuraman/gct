@@ -208,9 +208,12 @@ that. I also concede most of the memo's case against my slot 1: a
 permanent-specific cubic equation *raises* `i_pad` and therefore *lowers* `D`, so
 the degree-10 frontier does not advance either objective. My "nearest completable
 frontier" justification was weaker than I presented it. I would keep it, demoted:
-the expected outcome — all 58 empty, given 344 of 402 already are — extends
-`degree8_global` to degree 10, which is a real theorem and the *good* direction
-for `D`.
+the expected outcome — all 58 empty, given 344 of 402 already are — gives
+`I(D_6^{per₃})_10 = 0`, the *six-variable* record through degree 10. **Corrected
+after Astra's review of v0.3: it does not extend `degree8_global`**, which is
+"every `r`, every `δ ≤ 8`"; lengths seven and above at `δ = 9` and `δ = 10`
+remain open. Still a real theorem, and still the good direction for `D`, but a
+narrower one than I claimed.
 
 **Where Astra is right against the memo.** Its v0.2 §1 makes two corrections I
 endorse. The memo's board has **five slots waiting on other slots** (07 after

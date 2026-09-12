@@ -4,7 +4,7 @@
 v0.1 and v0.2, and the strategy memo at `docs/b14_strategy_memo.md`. Where those
 disagree with this file, this file governs. Change log in §6.
 
-Base: **`2ef766cd`** on `main` = `integration/batch13`. Every session branches
+Base: **`c87f986a`** on `main` = `integration/batch13`. Every session branches
 from it and delivers by bundle against it.
 
 ---
@@ -108,7 +108,7 @@ split nine-for-nine. Allocate on that line first.
 
 **Inputs** `analysis/wk11_s69_circuit.py`, `analysis/wk12_s74_dpc.c`,
 `analysis/wk12_s74_dp.py`, `docs/b13_01_report.md`, `results/b13_01_hpad.json`,
-`P13.json` by blob.
+`P13.json` and `P14.json` by blob.
 
 Implement initial-column bracket contraction with two letter types — `ℓ` of
 valence 1 and `c` of valence 3 — on shape `(9,9,2¹⁵,1⁴)`, which is already in the
@@ -120,11 +120,20 @@ compatible, not if it merely runs.
 house primes, with every input definition saved and independently checked.
 **Controls that can fail** exact small in-class expansions; weight and raising
 checks; a deliberately wrong tensor normalisation must be rejected; multiple
-independent directions — a one-dimensional test cannot fail and does not count.
+independent directions — a one-dimensional test can catch a wrong *value* but
+cannot validate mixing between independent basis directions, so it does not
+discharge this.
 **Budget stop** after the pre-registered directed search plus one deterministic
 semistandard pass, record the partial rank without claiming the target complete.
 **Fallback** a validated mixed evaluator, the brackets found, and the measured
 cost of further spanning directions.
+
+**This slot owns the degree-14 target, as an explicit stretch.** After the
+degree-13 core: mixed target members on shape `(9,9,2¹⁵,1⁸)` and a nonzero
+`159 × 159` minor at `P14`, with the same membership and replay data. **Nobody
+else produces it** — slot 7 is the degree-14 *source* only, and slot 7's matrix
+alone does not certify `i_red(14)`. If the stretch is not reached, say so
+explicitly; `D = −4` is then not reached either.
 
 ### 2 — flint — exact degree-13 source matrix at `P13`
 
@@ -138,7 +147,13 @@ only once the modulus exceeds twice your own bound, then compute an exact
 rational kernel.
 
 **Success** the exact matrix, rank witnesses, and exact annihilation identities
-`A·K = 0` over `ℚ`. **This is a source-matrix result** until slot 1's target
+**`Aᵀ·K = 0`** over `ℚ`, with `K` of size `39 × k`, `rank(K) = k`, and
+`rank(A) = 39 − k` proved over the rationals. **Source vectors are rows and
+points are columns, so the ideal relations live in the LEFT kernel** — a
+combination `Σ cᵢFᵢ` is in the ideal iff `cᵀA = 0`. `A·K = 0` is the right
+kernel, of dimension `≥ 57`, and is not the object wanted. Until the target
+certificate is accepted this is the left kernel of a *sampled* matrix, not
+automatically an ideal relation. **This is a source-matrix result** until slot 1's target
 minor and slot 4's recount are accepted; do not label it `i_red(13)`.
 **Controls that can fail** a small exact integer evaluator independent of the
 fast modular path, agreeing on selected entries; a fresh modular check alone is
@@ -159,8 +174,10 @@ Start on B13-03's exact `(8,8,8)₆` control where `h = 1`.
 points, wrong source scaling, invalid target membership, a rank-deficient target,
 an insufficient CRT modulus, and a single altered integer entry. It must
 reconstruct target entries from bracket specifications, not trust a delivered
-matrix. **Fallback** the proved format and a working control checker. No `PASS`
-when a required input is absent.
+matrix. **Record the matrix orientation explicitly**: for source rows and point
+columns, relation vectors are the columns of `K` with `Aᵀ·K = 0`. **Fallback**
+the proved format and a working control checker. No `PASS` when a required
+input is absent.
 
 ### 4 — stdlib — second-method recounts
 
@@ -198,14 +215,17 @@ to `PROVED.md` — they are currently one session's prose and the batch is built
 them. Then prove **bracket adjunction**: for a horizontal strip `ν/λ`, adjoining
 one letter in the strip boxes gives `F_{T′} = Φ_ν(F_T)`.
 
-**The two existing hand checks cannot fail** — both land in one-dimensional
-spaces. Validation needs a case where **both spaces have dimension ≥ 2**
-(s62/s73's exact `n = 3` determinant vector). Also produce the reachability and
-Lemma B bound table over B13-06's 239 components with at most ten rows.
+**The two existing hand checks do not test mixing between basis directions** —
+both land in one-dimensional spaces, where a wrong value is still catchable but
+an adjunction error between directions is not. Validation also needs a case
+where **both spaces have dimension ≥ 2** (s62/s73's exact `n = 3` determinant
+vector). Also state the target-membership and spanning conventions for mixed
+brackets at **both** degrees 13 and 14, which slot 1 depends on. **Slot 8 owns
+the 239-component census** — do not duplicate it.
 
 **Success** both lemmas stated and indexed; adjunction proved and validated at
-dimension `≥ 2`; the closure table. **Fallback** the lemmas and the combinatorial
-table, with adjunction's exact obstruction named.
+dimension `≥ 2`; mixed-target conventions for both degrees. **Fallback** the
+lemmas and the conventions, with adjunction's exact obstruction named.
 
 ### 6 — flint — stable bracket evaluator; reproduce 274 / 273 / 269
 
@@ -229,6 +249,11 @@ reproduction fails. **Stretch** the determinant rank on `(19,2⁷)`; a floor of
 
 The `93 × 192` integer matrix from rows born by degree 14, transport exponent
 `14 − native_degree`, seven-prime signed CRT on a bound you re-derive.
+
+**Left kernel, as in slot 2**: `K14` of size `93 × k`, verify `A14ᵀ·K14 = 0`,
+`rank(K14) = k`, `rank(A14) = 93 − k` over `ℚ`. It becomes an ideal kernel only
+after the degree-14 target certificate, the recount and the interpolation check
+all pass.
 
 **This does not wait on slots 1 or 2.** The source half is independent of the
 target half; begin with one exact block and measure it. The memo's indicative
@@ -262,15 +287,24 @@ closures, `results/integrate/batch13_reconciliation.json`.
 
 **Demoted, and honestly so.** A permanent-specific equation *raises* `i_pad` and
 therefore *lowers* `D`, so a hit here does not advance either objective. The
-value is the expected outcome: all 58 empty extends `degree8_global` to degree
-10, which is a real theorem and the good direction for `D`. 344 of 402 are
-already closed.
+value is what completing all 402 six-row cells would give: **`I(D_6^{per₃})_10 = 0`**,
+the *six-variable* record through degree 10, together with the inherited
+shorter-length result. **It does not extend `degree8_global` to degree 10** —
+that entry is "every `r`, every `δ ≤ 8`", and lengths seven and above at `δ = 9`
+and `δ = 10` stay open, including the 99 degree-9 cells this board itself lists.
+344 of the 402 are already closed.
 
 **Size before you build.** These 58 have never been built and no `n_χ` is
 recorded. B13-08 reports 17 of its 95 degree-10 weights exceed `2²¹`, and two
 measured cells in this family sit at 2,422,004 and 2,287,905. At or above the
-ceiling you must use `matmul_mod_wide`. `n_χ = N_S/|Stab|` is a lower bound, not
-the exact reduced dimension. **Fallback** the sizing table alone is worth the
+ceiling the multiplication must use `matmul_mod_wide`, and the guard applies to
+the **actual inner dimension of each multiplication**. **`N_S/|Stab|` is NOT a
+lower bound for `n_χ`**: the reduced space counts character-twisted orbits and
+incompatible ones are discarded. `tools/verify/FORMAT.md` records a certificate
+with `N_S = 211636`, `|Stab| = 2`, `n_χ = 82004` — below `105818`. The invariant
+that does hold is `n_χ ≤ N_S`. Use a twisted-orbit count, a justified bound for
+the representation, or a measured reduced dimension; never size, route or reject
+a cell on `N_S/|Stab|` alone. **Fallback** the sizing table alone is worth the
 slot; nobody has one.
 
 ### 10 — any — the evidence base
@@ -337,16 +371,19 @@ of the batch's research capacity.
 
 The final mathematical decisions *do* have genuine dependencies, and those are
 integration's problem, not a session's: exact `i_red(13)` combines slots 2, 1, 4
-and 3. Exact `i_red(14)` combines slot 7 with a target-14 certificate, the
-recount and the verifier. A session that does not receive a handoff finishes and
+and 3. Exact `i_red(14)` combines slot 7 with **slot 1's degree-14 stretch**, the
+recount and the verifier; if that stretch does not finish, `D = −4` is not
+reached. A session that does not receive a handoff finishes and
 reports its core artifact rather than idling or promoting a conditional.
 
 ## 5. Delivery rules
 
 - **Pre-register before computing** — question, instrument, decision table,
   falsifiers, stopping rules, labelled expectations, committed first.
-- **`python3 tools/delivery/check_delivery.py --branch … --base 2ef766cd
-  --bundle …` before building the bundle.**
+- **`python3 tools/delivery/check_delivery.py --branch … --base c87f986a`
+  before creating the bundle; rerun **with** `--bundle …` once it exists. The
+  pre-bundle check cannot inspect a file that does not yet exist — that was a
+  defect in this rule.
 - **Bundle carries the named ref**, with the other workers' tips as negatives.
 - **Checksums after the file is in the repository, or ship binary.** Blob ids for
   contracts.
@@ -374,11 +411,16 @@ Two of these four would change the position more than another broad collection o
 partial searches:
 
 1. **A certified `i_red(13)`** — slots 1, 2, 3, 4 together. `≥ 1` gives `D ≤ 0`.
-2. **A certified `i_red(14)` = 5** — adds slot 7, and gives `D_LMR = −4` exactly.
+2. **A certified `i_red(14)` = 5** — needs slot 7 *and* slot 1's degree-14
+   stretch, plus the recount and verifier; then `D_LMR = −4` exactly. **A stretch
+   outcome in this allocation, not a core deliverable.** Making it core means
+   giving the degree-14 target its own numerical slot.
 3. **A reproduction of 274 / 273 / 269 by independent code** — slot 6. It is the
    only check that could falsify the stable reformulation the programme leans on.
-4. **An independently checkable certificate for a large result** — slot 3, then
-   applied. Without it every result above `N_S·a = 3×10⁶` stays producer-attested.
+4. **An independently checkable complete-interpolation result** — slot 3, applied
+   to a completed target/source pair. It does **not** by itself upgrade the
+   historical `hybrid_kernel` records or lift the `full_rank` size ceiling; that
+   is separate work.
 
 **There is no justified promise of a positive obstruction in this batch.** The
 strongest likely outcome is a certified negative at LMR. That is progress: it
