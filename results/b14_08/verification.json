@@ -1,0 +1,2696 @@
+{
+  "board_numbering": "batch14",
+  "session_id": "B14-08",
+  "status": "PASS: complete finite transport audit; no ideal-membership or D-exclusion claim",
+  "tests": 717,
+  "positive_pairs": 66,
+  "certified_factor_witnesses": 61,
+  "dominance_inversion_certificates": 600,
+  "independent_monomial_count_checks": 694,
+  "input_checks": [
+    {
+      "path": "docs/dispatch/B14-08_packet.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/batch14_board.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/PROVED.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/brief_wording.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/batch14_reconciliation.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/b14_claude_scratch_code.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/b14_strategy_memo.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/s57_report.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "docs/b13_06_report.md",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "results/b13_06/components.json",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "analysis/b14_claude_reach.py",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "results/b14_claude_reach.json",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "results/b14_prep/ladder_recount.json",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "results/b13_06/run_summary.json",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "analysis/b13_06_bound.py",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "tools/delivery/check_delivery.py",
+      "status": "frozen Git blob verified"
+    },
+    {
+      "path": "C:/Users/swami/Projects/gct-gpt/Batch14_Launch/B14-08_astra_prompt.md",
+      "status": "external dispatch hash verified"
+    },
+    {
+      "path": "C:/Users/swami/Projects/gct-gpt/Batch14_Launch/packets/B14-08_packet.md",
+      "status": "external dispatch hash verified"
+    }
+  ],
+  "witness_checks": [
+    {
+      "id": "w_11_40_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_11_40_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_11_41_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_11_42_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 2,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_11_44",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 1,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_4_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 86,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 86,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 86,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_4_3_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 74,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 74,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 74,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_4_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 23,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_5_2_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 44,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 44,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 44,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_5_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 46,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 46,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 46,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_6_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 25,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 25,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 25,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_7_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 19,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 19,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 19,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_40_8",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 6,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_3_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 50,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 50,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 50,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_4_2_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 23,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_4_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 35,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 35,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 35,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_5_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 24,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 24,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 24,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_6_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 16,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 16,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 16,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_41_7",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 9,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 9,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 9,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_42_2_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 17,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 17,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 17,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_42_4_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 15,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 15,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 15,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_42_5_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 11,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_42_6",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_43_3_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 11,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_43_4_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 6,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_43_5",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_44_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_44_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_45_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_46_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 2,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_12_48",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 1,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_4_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 86,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 86,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 86,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_4_3_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 74,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 74,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 74,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_4_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 23,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_5_2_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 44,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 44,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 44,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_5_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 46,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 46,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 46,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_6_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 25,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 25,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 25,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_7_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 19,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 19,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 19,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_44_8",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 6,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_3_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 50,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 50,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 50,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_4_2_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 23,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 23,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_4_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 35,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 35,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 35,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_5_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 24,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 24,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 24,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_6_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 16,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 16,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 16,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_45_7",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 9,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 9,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 9,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_46_2_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 17,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            4,
+            5
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 17,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 17,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_46_4_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 15,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 15,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 15,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_46_5_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 11,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_46_6",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_47_3_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 11,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 11,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_47_4_1",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 6,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 6,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_47_5",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_48_2_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 5,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            3,
+            4
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 5,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_48_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_49_3",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_50_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 2,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_13_52",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 1,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_1_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 1,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_2_4_4",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 3,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 3,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_2_6_2",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 2,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        },
+        {
+          "root": [
+            2,
+            3
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 2,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    },
+    {
+      "id": "w_2_8",
+      "status": "CERTIFIED factor HWV over Z; not ideal membership",
+      "terms": 1,
+      "root_checks": [
+        {
+          "root": [
+            1,
+            2
+          ],
+          "integer_nonzero_terms": 0
+        }
+      ],
+      "house_primes": [
+        {
+          "prime": 2147483647,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        },
+        {
+          "prime": 2147483629,
+          "nonzero_coefficients": 1,
+          "raising_zero": true
+        }
+      ],
+      "verified_exactly_over_Z": true
+    }
+  ],
+  "controls": [
+    {
+      "name": "empty census",
+      "status": "PASS: rejected",
+      "reason": "incomplete target counts"
+    },
+    {
+      "name": "missing named control (25, (69, 17, 2, 2, 2, 2, 2, 2, 2))",
+      "status": "PASS: rejected",
+      "reason": "missing named control"
+    },
+    {
+      "name": "missing named control (26, (69, 21, 2, 2, 2, 2, 2, 2, 2))",
+      "status": "PASS: rejected",
+      "reason": "missing named control"
+    },
+    {
+      "name": "missing named control (26, (71, 19, 2, 2, 2, 2, 2, 2, 2))",
+      "status": "PASS: rejected",
+      "reason": "missing named control"
+    },
+    {
+      "name": "missing named control (26, (73, 17, 2, 2, 2, 2, 2, 2, 2))",
+      "status": "PASS: rejected",
+      "reason": "missing named control"
+    },
+    {
+      "name": "duplicate census key",
+      "status": "PASS: rejected",
+      "reason": "duplicated census key"
+    },
+    {
+      "name": "wrong total weight",
+      "status": "PASS: rejected",
+      "reason": "partition shape/weight"
+    },
+    {
+      "name": "missing reference source",
+      "status": "PASS: rejected",
+      "reason": "wrong/missing reference source"
+    },
+    {
+      "name": "missing reference target",
+      "status": "PASS: rejected",
+      "reason": "missing/duplicate reference target"
+    },
+    {
+      "name": "wrong reference source",
+      "status": "PASS: rejected",
+      "reason": "wrong/missing reference source"
+    },
+    {
+      "name": "wrong LMR source masked by rung13",
+      "status": "PASS: rejected",
+      "reason": "LMR-specific control"
+    },
+    {
+      "name": "forced ten-row positive",
+      "status": "PASS: rejected",
+      "reason": "ten-row source scope control"
+    },
+    {
+      "name": "altered HWV coefficient",
+      "status": "PASS: rejected",
+      "reason": "nonprimitive normalization"
+    },
+    {
+      "name": "wrong tensor normalization",
+      "status": "PASS: rejected",
+      "reason": "wrong normalization convention"
+    },
+    {
+      "name": "missing positive witness artifact",
+      "status": "PASS: rejected",
+      "reason": "missing required positive witness"
+    },
+    {
+      "name": "wrong source attached to witness ID",
+      "status": "PASS: rejected",
+      "reason": "wrong-source witness"
+    },
+    {
+      "name": "normalization denominator hits house prime",
+      "status": "PASS: rejected",
+      "reason": "house-prime denominator"
+    },
+    {
+      "name": "missing padded certificate",
+      "status": "PASS",
+      "scope": "synthetic arithmetic policy only",
+      "result": "OPEN"
+    },
+    {
+      "name": "missing determinant certificate",
+      "status": "PASS",
+      "scope": "synthetic arithmetic policy only",
+      "result": "OPEN"
+    },
+    {
+      "name": "insufficient upper bound",
+      "status": "PASS",
+      "scope": "synthetic arithmetic policy only",
+      "result": "OPEN"
+    },
+    {
+      "name": "tensor image bound mislabelled",
+      "status": "PASS",
+      "scope": "synthetic arithmetic policy only",
+      "result": "OPEN"
+    },
+    {
+      "name": "sufficient synthetic bounds",
+      "status": "PASS",
+      "scope": "synthetic arithmetic policy only",
+      "result": "EXCLUDED"
+    },
+    {
+      "name": "small character (1, (4,))",
+      "status": "PASS",
+      "multiplicity": 1
+    },
+    {
+      "name": "small character (1, (3, 1))",
+      "status": "PASS",
+      "multiplicity": 0
+    },
+    {
+      "name": "small character (2, (8,))",
+      "status": "PASS",
+      "multiplicity": 1
+    },
+    {
+      "name": "small character (2, (7, 1))",
+      "status": "PASS",
+      "multiplicity": 0
+    },
+    {
+      "name": "small character (2, (6, 2))",
+      "status": "PASS",
+      "multiplicity": 1
+    },
+    {
+      "name": "small character (2, (5, 3))",
+      "status": "PASS",
+      "multiplicity": 0
+    },
+    {
+      "name": "small character (2, (4, 4))",
+      "status": "PASS",
+      "multiplicity": 1
+    }
+  ],
+  "historical_script_checks": [
+    {
+      "name": "valid replay",
+      "actual_exit": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "stdout": "degree 25: 31 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 5, of which 1 are the LMR Cartan products themselves -> 4 of the 30 non-Cartan components reached, 26 not\ndegree 26: 208 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 26, of which 3 are the LMR Cartan products themselves -> 23 of the 205 non-Cartan components reached, 182 not\nCONTROL Cartan products of LMR all reached: PASS\nCONTROL no ten-row target reached from a nine-row source: PASS\n239 targets -> C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch14\\B14-08\\results\\b14_08\\historical_00.json, 0.1s\n",
+      "stderr": "",
+      "output": "results\\b14_08\\historical_00.json"
+    },
+    {
+      "name": "empty census",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "FAIL: incomplete, duplicated, or unexpected target census\n",
+      "output": null
+    },
+    {
+      "name": "missing control (25, (69, 17, 2, 2, 2, 2, 2, 2, 2))",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "FAIL: incomplete, duplicated, or unexpected target census\n",
+      "output": null
+    },
+    {
+      "name": "missing control (26, (69, 21, 2, 2, 2, 2, 2, 2, 2))",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "FAIL: incomplete, duplicated, or unexpected target census\n",
+      "output": null
+    },
+    {
+      "name": "missing control (26, (71, 19, 2, 2, 2, 2, 2, 2, 2))",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "FAIL: incomplete, duplicated, or unexpected target census\n",
+      "output": null
+    },
+    {
+      "name": "missing control (26, (73, 17, 2, 2, 2, 2, 2, 2, 2))",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "FAIL: incomplete, duplicated, or unexpected target census\n",
+      "output": null
+    },
+    {
+      "name": "wrong-source control",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "degree 25: 31 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 5, of which 1 are the LMR Cartan products themselves -> 4 of the 30 non-Cartan components reached, 26 not\ndegree 26: 208 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 26, of which 3 are the LMR Cartan products themselves -> 23 of the 205 non-Cartan components reached, 182 not\nCONTROL Cartan products of LMR all reached: FAIL\nCONTROL no ten-row target reached from a nine-row source: PASS\n239 targets -> C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch14\\B14-08\\results\\b14_08\\historical_06.json, 0.0s\n",
+      "stderr": "",
+      "output": "results\\b14_08\\historical_06.json"
+    },
+    {
+      "name": "forced ten-row positive",
+      "actual_exit": 1,
+      "expected_exit": 1,
+      "status": "PASS",
+      "stdout": "degree 25: 31 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 21, of which 1 are the LMR Cartan products themselves -> 20 of the 30 non-Cartan components reached, 10 not\ndegree 26: 208 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 145, of which 3 are the LMR Cartan products themselves -> 142 of the 205 non-Cartan components reached, 63 not\nCONTROL Cartan products of LMR all reached: PASS\nCONTROL no ten-row target reached from a nine-row source: FAIL\n239 targets -> C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch14\\B14-08\\results\\b14_08\\historical_07.json, 0.0s\n",
+      "stderr": "",
+      "output": "results\\b14_08\\historical_07.json"
+    }
+  ],
+  "birth_bounds_checked": 239,
+  "certified_exclusions": 0
+}
