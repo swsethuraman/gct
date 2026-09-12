@@ -58,3 +58,9 @@ results/logs/*.pid
 results/s76_dag/
 s76_scale24.bundle
 s76_scale24.bundle.md5
+
+# split delivery bundles: b14_01 left a *.bundle.part00 untracked because the
+# *.bundle rule above does not match the split parts, though they are the same
+# class of artefact -- delivered, not tracked.  Appended, nothing removed.
+*.bundle.part*
+*.bundle_*.part*
