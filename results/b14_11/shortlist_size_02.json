@@ -1,0 +1,110 @@
+{
+  "n": 4,
+  "delta": 7,
+  "lam": [
+    11,
+    8,
+    5,
+    1,
+    1,
+    1,
+    1
+  ],
+  "N_S": 209487,
+  "stabilizer_order": 24,
+  "n_chi": 1576,
+  "signed_trace_sum": 37824,
+  "classes": [
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        3
+      ],
+      "class_size": 6,
+      "character": -1,
+      "fixed_monomials": 1035
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        3,
+        6
+      ],
+      "class_size": 8,
+      "character": 1,
+      "fixed_monomials": 4275
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        6,
+        5
+      ],
+      "class_size": 3,
+      "character": 1,
+      "fixed_monomials": 9695
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+      ],
+      "class_size": 6,
+      "character": -1,
+      "fixed_monomials": 38123
+    },
+    {
+      "permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "class_size": 1,
+      "character": 1,
+      "fixed_monomials": 209487
+    }
+  ],
+  "arithmetic": "Z; exact final division by group order",
+  "wall_seconds": 0.009,
+  "a": 1,
+  "h_pad": 1,
+  "selection_index": 2,
+  "peak_working_set_bytes": 35409920,
+  "status": "CERTIFIED_EXACT_COMBINATORICS",
+  "gap_status": "OPEN",
+  "recorded_evidence": [],
+  "costs": {
+    "dense_square_int64_bytes": 19870208,
+    "dense_square_status": "storage for one square only; not a process peak",
+    "reduced_HWB_int64_bytes": 12608,
+    "expanded_monomial_int32_bytes": 5865636,
+    "build_seconds_model": 9.8668,
+    "build_model_status": "EXTRAPOLATED s79/B13-09 builder only; not measured here; kernel/evaluation excluded",
+    "source": "docs/PROVED.md:cost_model",
+    "next_run_wall_limit_seconds": 300,
+    "next_run_memory_limit_bytes": 1610612736,
+    "kernel_runtime": "UNMEASURED"
+  }
+}

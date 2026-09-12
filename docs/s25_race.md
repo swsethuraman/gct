@@ -49,8 +49,10 @@ Consequences the programme must absorb:
   24's flagship "uncanny cancellation" (`P = Def = 3`) at that weight is a
   tautology.
 - Where `a = 1`, both counts are 0 or 1, so any obstruction is an *occurrence*
-  obstruction — closed by Bürgisser–Ikenmeyer–Panova. **Multiplicity
-  obstructions require `a >= 2`.**
+  obstruction. B14-11 correction: BIP is silent at these small
+  parameters. A multiplicity gap with both multiplicities positive requires
+  `a >= 2`; the definition of multiplicity obstruction also includes A1
+  occurrence obstructions, which need an applicable exclusion of their own.
 
 Verified stratification for the `det_3` ambient, `lam` with at most 9 rows:
 

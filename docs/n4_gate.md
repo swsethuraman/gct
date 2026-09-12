@@ -26,7 +26,7 @@ every `lam` with `ell(lam) <= 4` and every `delta`, so `D <= 0` there.
 `per_3`.  `per_3` is dense in the 4-ary cubics (Jacobian rank 20 of 20,
 re-measured below), so `D_4^pad` is the whole reducible locus
 `closure{ell . c}`, of dimension `4 + C(6,3) - 1 = 23` — exactly the measured
-rank.  Every 4-ary cubic is `3x3` linear-determinantal (classical for smooth
+rank.  A generic 4-ary cubic is `3x3` linear-determinantal (classical for smooth
 cubic surfaces; density re-measured below as rank 20 of 20), so for generic `c`
 write `c = det_3 M(s)` and then
 
@@ -46,8 +46,13 @@ block trick reaches only `closure{ell . det_3 M}`, of dimension
 
 ## 2. The gate, reproduced
 
-Two conditions must both hold: ambient room `a >= 2` (below that any
-obstruction is an occurrence obstruction, closed by BIP) and length
+**B14-11 correction.** The table below records the historical `a >= 2`
+selection. It is not an exclusion of `a = 1`: BIP is silent at `(n,m)=(4,3)`.
+The current ambient gate is `a > 0`, including A1; after the containment
+exclusion of section 1 the length gate is `ell >= 5`. See `bip_blind_at_n4`
+and `docs/b14_11_report.md`. Historical counts and measurements are unchanged.
+
+Historical selection used ambient room `a >= 2` and length
 `ell(lam) >= 4` (at `ell <= 3`, `det_4` restricted to any 3-plane is every
 ternary quartic — rank 15 of 15 — so `mult_det = a`, the maximum possible, and
 `mult_per^pad <= mult_det` trivially).

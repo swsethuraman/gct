@@ -11,7 +11,7 @@ Checks, in order, stopping at the first that cannot be evaluated:
   5  no single-writer file is touched
   6  a pre-registration exists and lands BEFORE the first non-prereg commit
   7  a report exists for the slot
-  8  the house wording list is clean in every added .md
+  8  no added .md line uses a house wording-list word (pre-existing text is noted)
   9  no claude.ai URL anywhere in the delivered tree
 
 Exit 0 only if every check passes.  Every failure prints the slot, the check and
@@ -150,9 +150,25 @@ def check(repo, bundle, slot=None):
             notes.append(f'9  {f} names the session-link string in prose '
                          f'(placeholder, not a live URL) -- allowed')
         if f.endswith('.md'):
-            hits = [w for w in BANNED if re.search(rf'\b{w}\b', content, re.I)]
+            # Scan what the delivery ADDS, not what the file already carried.
+            # An earlier version scanned the whole new content, so any slot that
+            # edited a historical document inherited that document's wording debt
+            # and was failed for text it never wrote: B14-11's prose audit tripped
+            # seven of these, having added none.  The gate must fail the slot that
+            # writes a banned word and pass the slot that merely touches a file
+            # containing one -- both directions are in --selftest.
+            added = [l[1:] for l in git('diff', rng, '--', f, repo=repo).splitlines()
+                     if l.startswith('+') and not l.startswith('+++')]
+            hits = sorted({w for w in BANNED for l in added
+                           if re.search(rf'\b{w}\b', l, re.I)})
             if hits:
-                fails.append(f'8  {f} uses {hits} -- see docs/brief_wording.md section 2')
+                fails.append(f'8  {f} adds {hits} -- see docs/brief_wording.md section 2')
+            else:
+                pre = sorted({w for w in BANNED
+                              if re.search(rf'\b{w}\b', content, re.I)})
+                if pre:
+                    notes.append(f'8  {f} carries pre-existing {pre} that this '
+                                 f'delivery did not add -- integrator debt, not a failure')
 
     # 6  pre-registration lands first
     prereg = [f for f in files if re.search(rf'PREREG_b14_{nn}', f)]
@@ -246,6 +262,16 @@ def selftest(repo):
         open(os.path.join(w, 'docs', 'b14_01_report.md'), 'a').write('\nkill criteria: none.\n')
         commit(w, 'wording')
 
+    def inherited_wording(w):
+        # The other direction of check 8, and the one B14-11 exposed: a prose
+        # audit that EDITS a historical document which already contains a
+        # wording-list word, while adding no such word itself, must come back
+        # clean.  docs/n4_gate.md carries a list word at the base.
+        good(w)
+        with open(os.path.join(w, 'docs', 'n4_gate.md'), 'a') as fh:
+            fh.write('\n**B14 correction.** The gate is stated in full above.\n')
+        commit(w, 'prose audit of a historical document')
+
     def session_link(w):
         good(w)
         open(os.path.join(w, 'docs', 'b14_01_report.md'), 'a').write('\nsee https://claude.ai/x\n')
@@ -277,7 +303,9 @@ def selftest(repo):
 
     cases = [('b14-01-good', good, 0), ('b14-01-noprereg', no_prereg, 1),
              ('b14-01-preregL', prereg_late, 1), ('b14-01-singlew', single_writer, 1),
-             ('b14-01-wording', banned_word, 1), ('b14-01-link', session_link, 1)]
+             ('b14-01-wording', banned_word, 1),
+             ('b14-01-inherited', inherited_wording, 0),
+             ('b14-01-link', session_link, 1)]
     results.extend(results_pre)
     for name, fn, want_fail in cases:
         b = build(name, fn)

@@ -1,0 +1,216 @@
+{
+  "produced_by": "integrator, B14-11 intake",
+  "question": "which cells that B14-11 leaves OPEN does the banked ledger already close?",
+  "ledger_state": "results/integrate/inherited_exclusions.json as of this commit",
+  "census": "results/b14_11/census_d*_l*.jsonl, 4198 labels, 2734 with a>0",
+  "pre_b14_11_rules_only": true,
+  "positive_labels": 2734,
+  "closed_by_banked_ledger": 10,
+  "closed_in_b14_11_candidate_queue": 3,
+  "candidate_queue_size": 1715,
+  "b14_11_exclusions_already_closed": 0,
+  "b14_11_exclusions_net_new": 153,
+  "note": "All ten are the peaked quartic ladder shapes (4*delta-2*(ell-1), 2^(ell-1)) with 5<=ell<=delta<=8, closed by peaked_quartic_ladders (B14-10, s57 Theorem P). That rule was banked AFTER B14-11 dispatch base 9898e569, so B14-11 could not see it and correctly reports using no concurrent session result. Consequence for the launch order: shortlist entry 1 (16,2^6)_7 is closed and needs no determinant evaluation; entry 3 (11,8,5,1,1,1,1)_7, n_chi=1576, is the smallest open carrier.",
+  "cells": [
+    {
+      "delta": 5,
+      "lam": [
+        12,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 6,
+      "lam": [
+        16,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 6,
+      "lam": [
+        14,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 7,
+      "lam": [
+        20,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 7,
+      "lam": [
+        18,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 7,
+      "lam": [
+        16,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": true,
+      "in_b14_11_candidate_queue": true
+    },
+    {
+      "delta": 8,
+      "lam": [
+        24,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 8,
+      "lam": [
+        22,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": false
+    },
+    {
+      "delta": 8,
+      "lam": [
+        20,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": true
+    },
+    {
+      "delta": 8,
+      "lam": [
+        18,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "a": 1,
+      "rules": [
+        "peaked_quartic_ladders"
+      ],
+      "conclusions": [
+        "D<=0"
+      ],
+      "in_b14_11_shortlist": false,
+      "in_b14_11_candidate_queue": true
+    }
+  ]
+}

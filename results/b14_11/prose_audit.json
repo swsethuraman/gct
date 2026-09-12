@@ -1,0 +1,1334 @@
+{
+  "status": "AUDIT_COMPLETE_WITH_PROTECTED_ERRATA",
+  "base": "9898e56941a7665f231873481dae956f08509995",
+  "extensions": [
+    ".md",
+    ".tex",
+    ".html"
+  ],
+  "scanned_files": 546,
+  "matching_files": 55,
+  "hits": 180,
+  "patterns": "\\bBIP\\b|Panova|occurrence\\s+obstruction|closed by.*occurrence|excluded by convention",
+  "matched_files": [
+    "PROJECT_NOTES.md",
+    "docs/PROVED.md",
+    "docs/ambient_audit.md",
+    "docs/batch11_plan.md",
+    "docs/batch14_board.md",
+    "docs/batch14_reconciliation.md",
+    "docs/batch_s49_s55.md",
+    "docs/bip_transfer.md",
+    "docs/boundary_deficit.html",
+    "docs/conductor.html",
+    "docs/det_onset.md",
+    "docs/dip_transfer.md",
+    "docs/easy_counts.md",
+    "docs/equation_census.md",
+    "docs/housekeeping_batch10.md",
+    "docs/lmr_cell.md",
+    "docs/longweight_hunt.md",
+    "docs/n4_gate.md",
+    "docs/obstruction_power.md",
+    "docs/s24_obstruction.md",
+    "docs/s25_race.md",
+    "docs/s25_review.md",
+    "docs/s35_prompt.md",
+    "docs/s36_review.md",
+    "docs/s37_prompt.md",
+    "docs/s37_review.md",
+    "docs/s39_prompt.md",
+    "docs/s39_review.md",
+    "docs/s41_prompt.md",
+    "docs/s48_prompt.md",
+    "docs/s52_prompt.md",
+    "docs/s52_report.md",
+    "docs/s55_report.md",
+    "docs/s73_prompt.md",
+    "docs/s73_report.md",
+    "docs/screen_results.md",
+    "docs/session_24b.md",
+    "docs/session_25.md",
+    "docs/session_37.md",
+    "docs/session_39.md",
+    "docs/session_52.md",
+    "docs/sixrow_frontier.md",
+    "docs/theory_directions.md",
+    "docs/washout_threshold.md",
+    "paper/det3-conductor.tex",
+    "paper/det4-onset.tex",
+    "results/PREREG_s24.md",
+    "results/PREREG_s25.md",
+    "results/PREREG_s39.md",
+    "results/PREREG_s41.md",
+    "results/PREREG_s48.md",
+    "results/PREREG_s52.md",
+    "results/PREREG_s55.md",
+    "results/PREREG_s73.md",
+    "results/longweight_screen.md"
+  ],
+  "entries": [
+    {
+      "path": "PROJECT_NOTES.md",
+      "line": 145,
+      "text": "    MULTIPLICITY obstruction and not an occurrence obstruction -- the reading",
+      "context": "    the UNPADDED comparison gives mult_det = 5 and mult_per = 6 at both house\n    primes, so D = +1.  Both multiplicities are nonzero, so it is a\n    MULTIPLICITY obstruction and not an occurrence obstruction -- the reading\n    the literature leaves open.  Rigorous: mult_per = a is a modular rank and\n    rank_p <= rank_Q <= a; the determinant side is LMR's own lower bound.  The\n    separation it certifies is available by a dimension count (59 > 47), so the",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/PROVED.md",
+      "line": 30,
+      "text": "| `bip_blind_at_n4` | the BIP mechanism does **not** reach `n = 4`, and not because its constants are small: its reach is measured in weight **length**, which at `n = 4` is `ℓ(λ) ≤ 4`, while permanent-sensitivity begins at `ℓ(λ) = 6`. Every determinant-side point the argument supplies at `n = 4` is a product of four linear forms with span `≤ 3`, and the irreducible component with highest weight `λ` vanishes on forms of essential span `< ℓ(λ)` (B14-11 repairs the overbroad arbitrary-weight assertion). So its whole supply of evaluation points is identically blind to every weight of the census | PROVED + MEASURED | `docs/bip_transfer.md` (s52), verified in-house at three six-row cells — the HWV vanishes at all eight points and is nonzero at a determinant pencil in the same run. **Historically `a = 1` cells were \"excluded by convention, not by theorem\"; the batch14 shortlist retains eligible A1 cells** (`docs/dip_transfer.md` §3, s37). `inherited_exclusions.json` carries no occurrence predicate, so the machine ledger never depended on it. The one piece that does transfer is Kadish–Landsberg `\\|λ̄\\| ≤ md`, which at `(n,m) = (4,3)` reads `λ₁ ≥ δ` — numerically identical to the programme's own eligibility gate |",
+      "context": "| **`degree8_global`** | **`I(D_r^{per₃})_δ = 0` for every `r` and every `δ ≤ 8`; hence `mult_pad = mult_red` at every weight of every length in every degree ≤ 8** | PROVED | **RECONCILIATION RESULT — stated by no single session.** ℓ≤5 `washout_thm2`; ℓ=6 `length6_record`; ℓ=7 at δ=8 B13-09 (all 42); ℓ=8 at δ=8 B13-05 top cells (all 6); `length_bound` closes the list |\n| `length_bound` | constituents of `I(D_r^{per₃})_δ` satisfy `6 ≤ ℓ(μ) ≤ min(r, δ)` | PROVED | B13-05 Theorem A. **The `, 9` clamp recorded here until now is WITHDRAWN.** The justification given for it — above 9 nothing new appears, the family pulls back along `Cʳ → C⁹` — yields that no *new* constituent of length ≤ 9 appears above `r = 9`. That is not the statement that no constituent of length > 9 exists; the equations of \"supported on ≤ 9 variables\" are the obvious candidate at `r, δ ≥ 10`. Nothing depended on it: all 1,846 catalogued cells have `ℓ ≤ 9`, so the clamp never bound. Caught by Astra, batch-13 reconciliation |\n| `bip_blind_at_n4` | the BIP mechanism does **not** reach `n = 4`, and not because its constants are small: its reach is measured in weight **length**, which at `n = 4` is `ℓ(λ) ≤ 4`, while permanent-sensitivity begins at `ℓ(λ) = 6`. Every determinant-side point the argument supplies at `n = 4` is a product of four linear forms with span `≤ 3`, and the irreducible component with highest weight `λ` vanishes on forms of essential span `< ℓ(λ)` (B14-11 repairs the overbroad arbitrary-weight assertion). So its whole supply of evaluation points is identically blind to every weight of the census | PROVED + MEASURED | `docs/bip_transfer.md` (s52), verified in-house at three six-row cells — the HWV vanishes at all eight points and is nonzero at a determinant pencil in the same run. **Historically `a = 1` cells were \"excluded by convention, not by theorem\"; the batch14 shortlist retains eligible A1 cells** (`docs/dip_transfer.md` §3, s37). `inherited_exclusions.json` carries no occurrence predicate, so the machine ledger never depended on it. The one piece that does transfer is Kadish–Landsberg `\\|λ̄\\| ≤ md`, which at `(n,m) = (4,3)` reads `λ₁ ≥ δ` — numerically identical to the programme's own eligibility gate |\n| `top_cells_catalecticant` | cells with `ℓ(μ) = δ` are indexed by strict partitions, have `a = 1`, and their HWV space is spanned by a `δ×δ` **maximal minor of the second catalecticant**. So `i(μ,δ) = 0` iff one exact integer determinant is nonzero. | PROVED | B13-05 Theorem C, via Littlewood `e_δ[h₂] = Σ_{ν strict} s_{(ν\\|ν−1)}`. **Replaces an `N_S`-sized rank with a 0.01 s determinant.** |\n| `ideal_ladder` | `i(μ,δ) ≥ 1 ⟹ i(μ+ν, δ+δ′) ≥ 1`; contrapositively `i(μ+ν, δ+δ′) = 0 ⟹ i(μ,δ) = 0` | PROVED | B13-05 Theorem D. **Ordering tool, not a pruning tool** at these degrees |\n| `ladder_converse` | **`a(κ,p) ≥ 1` and `a(ν,q) ≥ 1`** and `i(κ,p) = i(ν,q) = 0` `⟹ mult(κ+ν, p+q) ≥ 1`; with `a = 1` this closes the cell | PROVED | B13-05 Theorem F. **The two `a ≥ 1` hypotheses were missing here until now** — the proof takes highest-weight vectors `h_κ`, `h_ν` and multiplies them, which presupposes they exist; when `a(κ,p) = 0` the hypothesis `i(κ,p) = 0` holds *vacuously* and there is no `h_κ` to take. Caught by Astra. **All 18 derived closures stand**: all 92 witness factors were checked here on the house census and every one has `a ≥ 1`; **16 of the 18** use `κ = (3)` at `δ = 1` where `a = 1`; the other two — `(10,7,5,2,1,1,1)₉` and `(10,8,3,3,1,1,1)₉` — use `(4,2)` at `δ = 2`. I wrote \"every\" and it is 16 of 18; caught by Astra. No closure reopens: all 92 factor occurrences were checked and every one has `a ≥ 1` |",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/ambient_audit.md",
+      "line": 173,
+      "text": "## 8. The BIP claim in `docs/easy_counts.md`",
+      "context": "so where it introduces the datum.\n\n## 8. The BIP claim in `docs/easy_counts.md`\n\nThat document states that the 34 live weights at `(n, delta) = (5,2)` with\n`m_det = 0 < m_per` are \"exactly the weights where BIP forces",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/ambient_audit.md",
+      "line": 176,
+      "text": "`m_det = 0 < m_per` are \"exactly the weights where BIP forces",
+      "context": "\nThat document states that the 34 live weights at `(n, delta) = (5,2)` with\n`m_det = 0 < m_per` are \"exactly the weights where BIP forces\n`def_per = m_per`\".  Audited: the ambient `Sym^2(Sym^5 C^25)` has just three\nconstituents, `(10)`, `(8,2)`, `(6,4)`, and `m_det = 1` on all three.  So of\nthe 36 weights with `m_det = 0`, **all 36 have `a = 0`** and none has",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/ambient_audit.md",
+      "line": 180,
+      "text": "`a >= 1`.  `def_per = m_per` there is ambient arithmetic; BIP is not needed and",
+      "context": "constituents, `(10)`, `(8,2)`, `(6,4)`, and `m_det = 1` on all three.  So of\nthe 36 weights with `m_det = 0`, **all 36 have `a = 0`** and none has\n`a >= 1`.  `def_per = m_per` there is ambient arithmetic; BIP is not needed and\nis not doing the work.  The sentence overstates the finding and should be\ncorrected to say so.",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/batch11_plan.md",
+      "line": 120,
+      "text": "**It is a multiplicity obstruction, not an occurrence obstruction** — Sol's",
+      "context": "multiplicity obstruction with `D = +1`.**\n\n**It is a multiplicity obstruction, not an occurrence obstruction** — Sol's\ncorrection, and it is the stronger reading.  The standard distinction is\n\n    occurrence obstruction    mult_pad(λ) > 0 = mult_det(λ)",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch11_plan.md",
+      "line": 123,
+      "text": "    occurrence obstruction    mult_pad(λ) > 0 = mult_det(λ)",
+      "context": "correction, and it is the stronger reading.  The standard distinction is\n\n    occurrence obstruction    mult_pad(λ) > 0 = mult_det(λ)\n    multiplicity obstruction  mult_pad(λ) > mult_det(λ), both possibly positive\n\nand here `mult_det = 5` and `mult_per = 6` are **both nonzero**, so `S_λ` occurs",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch11_plan.md",
+      "line": 127,
+      "text": "in both coordinate rings and no occurrence obstruction is present.  The",
+      "context": "\nand here `mult_det = 5` and `mult_per = 6` are **both nonzero**, so `S_λ` occurs\nin both coordinate rings and no occurrence obstruction is present.  The\ndistinction matters beyond bookkeeping: in the padded permanent-versus-\ndeterminant setting Bürgisser–Ikenmeyer–Panova rule out occurrence obstructions\nin their asymptotic range `n >= m^25`; that theorem is silent at",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch11_plan.md",
+      "line": 129,
+      "text": "determinant setting Bürgisser–Ikenmeyer–Panova rule out occurrence obstructions",
+      "context": "in both coordinate rings and no occurrence obstruction is present.  The\ndistinction matters beyond bookkeeping: in the padded permanent-versus-\ndeterminant setting Bürgisser–Ikenmeyer–Panova rule out occurrence obstructions\nin their asymptotic range `n >= m^25`; that theorem is silent at\n`(n,m)=(4,3)`. Multiplicity obstructions remain open — which is why `D = mult_pad − mult_det` is the programme's chosen\nquantity in the first place.  The programme's first `D > 0` is therefore of the kind the literature",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch11_plan.md",
+      "line": 592,
+      "text": "BIP rules out occurrence obstructions only in its `n >= m^25` regime; it",
+      "context": "is a **multiplicity obstruction**, which is both the correct term and the\nclaim of a strict multiplicity gap despite occurrence on both sides.\nBIP rules out occurrence obstructions only in its `n >= m^25` regime; it\ndoes not exclude them for the programme's small padded pair.  Fixed in §1.1 and in\n`analysis/wk11_int_p0a.py`, and the run was repeated so the banked verdict in\n`results/wk11_int_p0a.json` carries the corrected reading rather than a",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch14_board.md",
+      "line": 37,
+      "text": "| \"`a = 1` cells are closed by BIP\" | **excluded by convention, not by theorem** — `bip_blind_at_n4` |",
+      "context": "| \"≥ 1,100 CPU-hours\" for the degree-9 remainder | **no figure** |\n| 197 degree-9 cells | **99** (47 at `ℓ=7`, 52 at `ℓ=8`) |\n| \"`a = 1` cells are closed by BIP\" | **excluded by convention, not by theorem** — `bip_blind_at_n4` |\n\n### `PROVED.md` entries that changed status\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/batch14_board.md",
+      "line": 51,
+      "text": "- **`bip_blind_at_n4`** is new, and it is why slot 11 is small: the BIP mechanism",
+      "context": "  already used, so **there is no larger group to extend to**. Conditional on an\n  adopted theorem. **Do not fund at any length.**\n- **`bip_blind_at_n4`** is new, and it is why slot 11 is small: the BIP mechanism\n  is blind at `n = 4` because its reach is in weight *length* (`≤ 4`) while\n  permanent-sensitivity begins at `ℓ = 6`.\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/batch14_board.md",
+      "line": 477,
+      "text": "| Astra v0.1 / v0.2 | The BIP audit shrinks to prose-checking now that `bip_blind_at_n4` is indexed. The five-variable elimination and the boundary-regularity slot stay parked. The point contract moves into the tree as blob ids. A seventh prime is added at degree 13. |",
+      "context": "| my `325bf521` board | Tier C was over-built: C1's 521-conversion is not a prerequisite and C2's Pieri coupling is replaced by mixed brackets. The degree-10 frontier drops from slot 1 to slot 9, demoted on the memo's argument. The product-image job is dropped — Lemma T makes its thresholds conditional on the number slots 1–4 certify. |\n| strategy memo | Five in-batch dependencies removed. The integrator slot removed. `(12,4,4,4,4,4)₈` restored — its abandonment was an absence of mechanism treated as a bound. The recount widened from 73 to 73, 159, 533 and `a_∞`, since all four are single-method. |\n| Astra v0.1 / v0.2 | The BIP audit shrinks to prose-checking now that `bip_blind_at_n4` is indexed. The five-variable elimination and the boundary-regularity slot stay parked. The point contract moves into the tree as blob ids. A seventh prime is added at degree 13. |\n| v0.3 + Astra's review → **v0.4** | The base stops being a hash. v0.3 named `c87f986a` in two places — the commit *before* the one containing the board — and stamping `4d19b8fd` instead only moved the same error forward one commit, since the board is always edited by the commit it then has to name. It now names the ref and tells the reader how to resolve it. The degree-14 allocation is settled as a stretch on slot 1 rather than left as a live alternative. The batch-14 strategy session's scratch code is banked (`docs/b14_claude_scratch_code.md`), and slots 4 and 8 are told what it does and does not discharge. |\n\n## 7. What would make this batch a success",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/batch14_reconciliation.md",
+      "line": 67,
+      "text": "\"`a = 1` closed by BIP\" convention, because Theorem 1.5 assumes `n ≥ m^25`. The",
+      "context": "\nv0.1/v0.2 give a slot to auditing exclusions that relied on the blanket\n\"`a = 1` closed by BIP\" convention, because Theorem 1.5 assumes `n ≥ m^25`. The\nreasoning is right. The house already has a **stronger** answer, twice:\n\n- `docs/dip_transfer.md` §3 (s37) relabelled the convention *\"excluded by",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch14_reconciliation.md",
+      "line": 86,
+      "text": "occurrence, BIP or `a == 1` predicate — its predicates are length and",
+      "context": "\nAlso checked: `results/integrate/inherited_exclusions.json` carries **no**\noccurrence, BIP or `a == 1` predicate — its predicates are length and\ncontainment. The machine ledger never depended on the convention, so the exposure\nwas always in prose. B14-01 shrinks accordingly: confirm the s37/s52 relabelling\nwas applied everywhere in prose, then build the quartic shortlist. That is a",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch14_reconciliation.md",
+      "line": 133,
+      "text": "parked items; shrink the BIP audit.",
+      "context": "\nKeep the interpolation chain, at five slots rather than eight; restore the two\nparked items; shrink the BIP audit.\n\n| # | job | from |\n|---|---|---|",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch14_reconciliation.md",
+      "line": 258,
+      "text": "also confirming that the s37/s52 BIP relabelling was applied everywhere in prose.",
+      "context": "\n**The pre-flight items stay mine**: the full-stabiliser probe at `ℓ = 9`, and now\nalso confirming that the s37/s52 BIP relabelling was applied everywhere in prose.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/batch_s49_s55.md",
+      "line": 10,
+      "text": "| 52 | The `a = 1` census, BIP gate first | GCT / multiplicities | — | yes |",
+      "context": "| 50 | LMR equation: derive, then evaluate | GCT / equations | — | yes |\n| 51 | `Λ^5` from the Gulliksen–Négård resolution | GCT / caps | — | yes |\n| 52 | The `a = 1` census, BIP gate first | GCT / multiplicities | — | yes |\n| 53 | Border degenerations of `det_4`, first layer | border complexity | — | yes |\n| 54 | Is `R_5 ⊆ D_5`? | border complexity | shares method with 53 | yes |\n| 55 | Equations below degree 24 | literature census | — | yes |",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 1,
+      "text": "# The BIP mechanism, tested against our pair at `n = 4`",
+      "context": "# The BIP mechanism, tested against our pair at `n = 4`\n\nSession 52, Task 0.  Companion to `docs/dip_transfer.md`, which did the same\njob for Dörfler–Ikenmeyer–Panova and left this question open: session 37 flagged",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 4,
+      "text": "job for Dörfler–Ikenmeyer–Panova and left this question open: session 37 flagged",
+      "context": "\nSession 52, Task 0.  Companion to `docs/dip_transfer.md`, which did the same\njob for Dörfler–Ikenmeyer–Panova and left this question open: session 37 flagged\nthat the house convention \"`a = 1` cells are closed by BIP\" is *\"an extrapolation\noutside the theorem's regime\"* and should be re-labelled **\"excluded by\nconvention, not by theorem\"** (`docs/dip_transfer.md` §3), but it did not ask",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 5,
+      "text": "that the house convention \"`a = 1` cells are closed by BIP\" is *\"an extrapolation",
+      "context": "Session 52, Task 0.  Companion to `docs/dip_transfer.md`, which did the same\njob for Dörfler–Ikenmeyer–Panova and left this question open: session 37 flagged\nthat the house convention \"`a = 1` cells are closed by BIP\" is *\"an extrapolation\noutside the theorem's regime\"* and should be re-labelled **\"excluded by\nconvention, not by theorem\"** (`docs/dip_transfer.md` §3), but it did not ask\nwhether the **mechanism** reaches `n = 4` even though the theorem does not.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 14,
+      "text": "* Bürgisser, Ikenmeyer, Panova, *No occurrence obstructions in geometric",
+      "context": "arXiv versions named:\n\n* Bürgisser, Ikenmeyer, Panova, *No occurrence obstructions in geometric\n  complexity theory*, arXiv:1604.06431; FOCS 2016; **J. Amer. Math. Soc. 32\n  (2019), 163–193** [BIP].  arXiv has three versions (v1 2016-04-21,\n  v2 2017-03-14, v3 2018-09-17) and the numbering differs: the main theorem is",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 16,
+      "text": "  (2019), 163–193** [BIP].  arXiv has three versions (v1 2016-04-21,",
+      "context": "* Bürgisser, Ikenmeyer, Panova, *No occurrence obstructions in geometric\n  complexity theory*, arXiv:1604.06431; FOCS 2016; **J. Amer. Math. Soc. 32\n  (2019), 163–193** [BIP].  arXiv has three versions (v1 2016-04-21,\n  v2 2017-03-14, v3 2018-09-17) and the numbering differs: the main theorem is\n  **Theorem 1.4 in v3** and **Theorem 1.5 in v1**; the three positive\n  propositions are **2.4, and §6** in v3 and **5.1, 5.2, 5.5** in v1 and in the",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 23,
+      "text": "* Ikenmeyer, Panova, *Rectangular Kronecker coefficients and plethysms in",
+      "context": "* Kadish, Landsberg, *Padded polynomials, their cousins, and geometric\n  complexity theory*, **Comm. Algebra 42 (2014), no. 5, 2171–2180** [KL].\n* Ikenmeyer, Panova, *Rectangular Kronecker coefficients and plethysms in\n  geometric complexity theory*, **Adv. Math. 319 (2017), 40–66**;\n  arXiv:1512.03798 [IP].\n* Dörfler, Ikenmeyer, Panova, *On geometric complexity theory: multiplicity",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 26,
+      "text": "* Dörfler, Ikenmeyer, Panova, *On geometric complexity theory: multiplicity",
+      "context": "  geometric complexity theory*, **Adv. Math. 319 (2017), 40–66**;\n  arXiv:1512.03798 [IP].\n* Dörfler, Ikenmeyer, Panova, *On geometric complexity theory: multiplicity\n  obstructions are stronger than occurrence obstructions*, ICALP 2019,\n  LIPIcs 132, art. 51; **SIAM J. Appl. Algebra Geom. 4 (2020), no. 2, 354–376**;\n  arXiv:1901.04576 [DIP].",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 27,
+      "text": "  obstructions are stronger than occurrence obstructions*, ICALP 2019,",
+      "context": "  arXiv:1512.03798 [IP].\n* Dörfler, Ikenmeyer, Panova, *On geometric complexity theory: multiplicity\n  obstructions are stronger than occurrence obstructions*, ICALP 2019,\n  LIPIcs 132, art. 51; **SIAM J. Appl. Algebra Geom. 4 (2020), no. 2, 354–376**;\n  arXiv:1901.04576 [DIP].\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 40,
+      "text": "> Sharply: every determinant-side point BIP's argument supplies at `n = 4` is a",
+      "context": "> permanent-sensitivity at `n = 4` begins at `ℓ(λ) = 6`.**\n>\n> Sharply: every determinant-side point BIP's argument supplies at `n = 4` is a\n> padded power sum with `s·k ≤ 4`, of which there are exactly **eight**; every\n> one of them is a **product of four linear forms** and has **linear span at\n> most 3**; and a highest-weight vector of highest weight `λ` vanishes at every",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 51,
+      "text": "> name.**  BIP's only input about the padded permanent is Kadish–Landsberg's",
+      "context": ">\n> **One piece does transfer, and it is already in the house under another\n> name.**  BIP's only input about the padded permanent is Kadish–Landsberg's\n> necessary condition `|λ̄| ≤ md`, which at `(n,m) = (4,3)` reads `λ_1 ≥ δ` —\n> numerically identical to the programme's own obstruction-eligibility gate.\n>",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 83,
+      "text": "**(a) The necessary condition** — the *only* thing BIP use about the padded",
+      "context": "The proof has one negative input and three positive engines.\n\n**(a) The necessary condition** — the *only* thing BIP use about the padded\npermanent.  **Theorem 2.1 [v3] = Prop. 4.1 [v1]**, attributed in the text to\n*\"an insight due to Kadish and Landsberg\"*:\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 235,
+      "text": "HWV statement retains the BIP blindness conclusion.",
+      "context": "counterexample: the coefficient functional of `x^3 y` has weight `(3,1)`\nbut takes value `4` on `(x+y)^4`, a form of essential span one. The corrected\nHWV statement retains the BIP blindness conclusion.\n\nCombined with §3(b): **at `n = 4`, every highest weight vector of weight `λ`\nwith `ℓ(λ) ≥ 4` vanishes at every point BIP's Theorem 2.5 supplies.**  This is",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 238,
+      "text": "with `ℓ(λ) ≥ 4` vanishes at every point BIP's Theorem 2.5 supplies.**  This is",
+      "context": "\nCombined with §3(b): **at `n = 4`, every highest weight vector of weight `λ`\nwith `ℓ(λ) ≥ 4` vanishes at every point BIP's Theorem 2.5 supplies.**  This is\nnot a statement about constants that a sharper analysis could improve — the\nevaluation the mechanism performs is identically zero on the region the\nprogramme measures.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 248,
+      "text": "| `λ` (`δ = 7`) | `N_S` | `n_χ` | eight BIP points | `chow3` | `chow6` | `ℓ·c` | `det_4` pencil | true pad |",
+      "context": "both house primes, one exhibited highest weight vector each:\n\n| `λ` (`δ = 7`) | `N_S` | `n_χ` | eight BIP points | `chow3` | `chow6` | `ℓ·c` | `det_4` pencil | true pad |\n|---|---|---|---|---|---|---|---|---|\n| `(18,2,2,2,2,2)` | 8128 | 190 | **0** | 0 | 0 | ≠0 | **≠0** | ≠0 |\n| `(15,5,5,1,1,1)` | 17091 | 576 | **0** | 0 | 0 | ≠0 | **≠0** | ≠0 |",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 273,
+      "text": "1. **The padding exponent is 1.**  BIP's object is `X_{11}^{n−m}per_m`; at",
+      "context": "Three ways of saying the same thing.\n\n1. **The padding exponent is 1.**  BIP's object is `X_{11}^{n−m}per_m`; at\n   `(4,3)` the padding is a single variable.  The entire method is \"peel the\n   long first row off `λ`, reduce to the body, evaluate the body at a power sum\n   under a large padding exponent\".  At `n − m = 1` there is nothing to peel and",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 279,
+      "text": "   `|λ̄|/|λ| ≤ m/n`.  BIP work at `n ≥ m^25`, where that ratio is at most",
+      "context": "   nothing to pad with.\n2. **The body is three quarters of the partition.**  [KL] allows\n   `|λ̄|/|λ| ≤ m/n`.  BIP work at `n ≥ m^25`, where that ratio is at most\n   `m^{−24} ≤ 3^{−24} ≈ 1.2·10^{−12}`: `λ` is one very long row with a\n   negligible body.  At `(4,3)` the ratio is `3/4`.  The regime the argument\n   describes is absent.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 294,
+      "text": "`det_4` pencils — from the mere fact that `λ` is eligible.  BIP have no such",
+      "context": "A transferred mechanism would be an argument, valid at `n = 4`, concluding\n`i_det = 0` — that the weight-`λ` highest weight vector cannot vanish on all\n`det_4` pencils — from the mere fact that `λ` is eligible.  BIP have no such\nargument: their entire positive half runs through points of one special shape,\nand §3–§4 show that shape is degenerate here.\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 321,
+      "text": "an occurrence obstruction.  The `a = 1` restriction therefore gives up the whole",
+      "context": "At `a = 1` the highest weight space is a line, so `mult_det ∈ {0,1}` and a\nmultiplicity obstruction (`mult_pad > mult_det`) forces `mult_det = 0`: it **is**\nan occurrence obstruction.  The `a = 1` restriction therefore gives up the whole\nstrength gap between the two notions.\n\n[DIP] is the paper that establishes that gap is real, and it should be cited for",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/bip_transfer.md",
+      "line": 348,
+      "text": "* **adopted-from-literature:** every quoted statement of [BIP], [KL], [IP],",
+      "context": "## 8. Labels\n\n* **adopted-from-literature:** every quoted statement of [BIP], [KL], [IP],\n  [DIP] in §§1–2 and §7.\n* **proved:** Lemma B; the eight-point enumeration and the length reaches of\n  §3, which are evaluations of quoted hypotheses at `n = 4`; the identity",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/boundary_deficit.html",
+      "line": 96,
+      "text": "<td class=\"l\">Vanishing-ideal occurrence obstructions are a named category; Mulmuley–Sohoni",
+      "context": "separate orbit closures by comparing <i>both</i> stabilizers</td></tr>\n<tr><td class=\"l\">\"The ring structure / ideal is the unexplored nonabelian layer\"</td><td class=\"v\">refuted as stated</td>\n<td class=\"l\">Vanishing-ideal occurrence obstructions are a named category; Mulmuley–Sohoni\nGCT II is subtitled \"towards explicit obstructions… ideals of class varieties.\"\nThe <i>information</i> version is contradicted by the completeness above; only the <i>access</i>\nversion survives (§2)</td></tr>",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/boundary_deficit.html",
+      "line": 115,
+      "text": "<tr><td class=\"l\">Occurrence obstructions = abelianized information; BIP = \"abelianization fails\"</td><td class=\"v\">accurate framing</td>",
+      "context": "Drinfeld's GT on braided towers, Brown's MT(ℤ) ⊂ GT. Untouched this weekend;\nabsorbed the repaired item above</td></tr>\n<tr><td class=\"l\">Occurrence obstructions = abelianized information; BIP = \"abelianization fails\"</td><td class=\"v\">accurate framing</td>\n<td class=\"l\">Bürgisser–Ikenmeyer–Panova (no occurrence obstructions); Ikenmeyer–Panova\n(rectangular Kroneckers); NP-hardness of Kronecker positivity (Ikenmeyer–Mulmuley–Walter)</td></tr>\n</table></div>",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/boundary_deficit.html",
+      "line": 116,
+      "text": "<td class=\"l\">Bürgisser–Ikenmeyer–Panova (no occurrence obstructions); Ikenmeyer–Panova",
+      "context": "absorbed the repaired item above</td></tr>\n<tr><td class=\"l\">Occurrence obstructions = abelianized information; BIP = \"abelianization fails\"</td><td class=\"v\">accurate framing</td>\n<td class=\"l\">Bürgisser–Ikenmeyer–Panova (no occurrence obstructions); Ikenmeyer–Panova\n(rectangular Kroneckers); NP-hardness of Kronecker positivity (Ikenmeyer–Mulmuley–Walter)</td></tr>\n</table></div>\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/boundary_deficit.html",
+      "line": 1838,
+      "text": "BIP type should reappear as conductor-growth statements. This does not",
+      "context": "are exactly as hard as bounding it. Conductor-0 weights have group-computable\nclosure multiplicities (the accessible sector); barrier results of\nBIP type should reappear as conductor-growth statements. This does not\nroute around the difficulty — it proposes to <i>measure where access dies</i>, in\nsmall cases, as a number. The first such number now exists: the determinant's\naccess wall at its first deficit weight is exactly one discriminant-multiplication",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/boundary_deficit.html",
+      "line": 1868,
+      "text": "<li>P. Bürgisser, C. Ikenmeyer, G. Panova, <i>No occurrence obstructions in geometric",
+      "context": "<h2><span class=\"no\">§7</span>References</h2>\n<ol class=\"refs\">\n<li>P. Bürgisser, C. Ikenmeyer, G. Panova, <i>No occurrence obstructions in geometric\ncomplexity theory</i> — <a href=\"https://arxiv.org/abs/1604.06431\">arXiv:1604.06431</a>.</li>\n<li>C. Ikenmeyer, U. Kandasamy, <i>Implementing geometric complexity theory: on the\nseparation of orbit closures via symmetries</i>, STOC 2020 — <a href=\"https://arxiv.org/abs/1911.03990\">arXiv:1911.03990</a>.</li>",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "docs/conductor.html",
+      "line": 534,
+      "text": "<li>P. Bürgisser, C. Ikenmeyer, G. Panova, <i>No occurrence obstructions in GCT</i> —",
+      "context": "<li>M. Aprodu, G. Farkas, Ş. Papadima, C. Raicu, J. Weyman, <i>Koszul modules and Green's\nconjecture</i>, Invent. Math. — <a href=\"https://arxiv.org/abs/1810.11635\">arXiv:1810.11635</a>.</li>\n<li>P. Bürgisser, C. Ikenmeyer, G. Panova, <i>No occurrence obstructions in GCT</i> —\n<a href=\"https://arxiv.org/abs/1604.06431\">arXiv:1604.06431</a>.</li>\n<li>J. M. Landsberg, <i>GCT: an introduction for geometers</i> — survey, §2.7.</li>\n<li>H. Kraft, <i>Geometrische Methoden in der Invariantentheorie</i>.</li>",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/det_onset.md",
+      "line": 44,
+      "text": "occurrence obstruction, but a multiplicity drop.",
+      "context": "an unreached cell. The ceiling (405, the discriminant; s35's labelled ~300) is\nuntouched. What the session *does* pin is the **character** of the onset: not an\noccurrence obstruction, but a multiplicity drop.\n\n---\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 12,
+      "text": "Dörfler–Ikenmeyer–Panova, *On geometric complexity theory: multiplicity",
+      "context": "Literature read this session (all **adopted-from-literature**, verified to\nthe statements quoted; lemma numbers are those of the arXiv versions):\nDörfler–Ikenmeyer–Panova, *On geometric complexity theory: multiplicity\nobstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM\nJ. Appl. Algebra Geom. 4 (2020), arXiv:1901.04576 [DIP];\nBürgisser–Ikenmeyer–Panova, *No occurrence obstructions in geometric",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 13,
+      "text": "obstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM",
+      "context": "the statements quoted; lemma numbers are those of the arXiv versions):\nDörfler–Ikenmeyer–Panova, *On geometric complexity theory: multiplicity\nobstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM\nJ. Appl. Algebra Geom. 4 (2020), arXiv:1901.04576 [DIP];\nBürgisser–Ikenmeyer–Panova, *No occurrence obstructions in geometric\ncomplexity theory*, J. AMS 32 (2019), arXiv:1604.06431 [BIP];",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 15,
+      "text": "Bürgisser–Ikenmeyer–Panova, *No occurrence obstructions in geometric",
+      "context": "obstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM\nJ. Appl. Algebra Geom. 4 (2020), arXiv:1901.04576 [DIP];\nBürgisser–Ikenmeyer–Panova, *No occurrence obstructions in geometric\ncomplexity theory*, J. AMS 32 (2019), arXiv:1604.06431 [BIP];\nBürgisser–Ikenmeyer, *Explicit lower bounds via geometric complexity\ntheory*, STOC 2013, arXiv:1210.8368, and *Fundamental invariants of orbit",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 16,
+      "text": "complexity theory*, J. AMS 32 (2019), arXiv:1604.06431 [BIP];",
+      "context": "J. Appl. Algebra Geom. 4 (2020), arXiv:1901.04576 [DIP];\nBürgisser–Ikenmeyer–Panova, *No occurrence obstructions in geometric\ncomplexity theory*, J. AMS 32 (2019), arXiv:1604.06431 [BIP];\nBürgisser–Ikenmeyer, *Explicit lower bounds via geometric complexity\ntheory*, STOC 2013, arXiv:1210.8368, and *Fundamental invariants of orbit\nclosures*, J. Algebra 477 (2017) [BI]; Landsberg–Manivel–Ressayre,",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 85,
+      "text": "1. **Large side is ambient** (DIP Prop. 3.3, citing BIP Prop. 3.2): for",
+      "context": "three steps and **no evaluation of any highest-weight vector**:\n\n1. **Large side is ambient** (DIP Prop. 3.3, citing BIP Prop. 3.2): for\n   `k >= d`, `mult_lam(C[Pow^n_{m,k}]_d) = a_lam(d[n])`, the plethysm\n   coefficient of `Sym^d(Sym^n)`.  Reason: a degree-`d` form vanishing on\n   all sums of `d` `n`-th powers vanishes identically (polarise",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 124,
+      "text": "DIP prove there are no occurrence obstructions in two finite cases",
+      "context": "## 3. (ii) The occurrence no-go: what is `(1^n)`-specific\n\nDIP prove there are no occurrence obstructions in two finite cases\n(`(m, n, d, k) = (3, 6, 7, 4)` and `(4, 7, 8, 4)`): every `mu` with\n`a_mu(d[n]) > 0` has `mult_mu(C[Ch^n_m]_d) > 0`.  Structure of the\nargument, and what survives splitting type `(1, 3)`:",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 143,
+      "text": "Note also that [BIP]'s theorem (Thm. 1.4, quoted: \"`n >= m^25` and",
+      "context": "generators of the `a > 0` semigroup at `ell(lam) = 5` (cheap), then\n`mult_det > 0` at each generator (expensive), then semigroup closure.\nNote also that [BIP]'s theorem (Thm. 1.4, quoted: \"`n >= m^25` and\n`lam ⊢ nd`: if `lam` occurs in `C[Z_{n,m}]` then `lam` occurs in\n`C[Omega_n]`\") is asymptotic and **silent at `(m, n) = (3, 4)`**.  The\nhouse convention that `a = 1` cells are \"closed by BIP\"",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 146,
+      "text": "house convention that `a = 1` cells are \"closed by BIP\"",
+      "context": "`lam ⊢ nd`: if `lam` occurs in `C[Z_{n,m}]` then `lam` occurs in\n`C[Omega_n]`\") is asymptotic and **silent at `(m, n) = (3, 4)`**.  The\nhouse convention that `a = 1` cells are \"closed by BIP\"\n(`docs/n4_gate.md` §2) is therefore an extrapolation outside the theorem's\nregime — the *regime transfer* failure class of the ledger — and should be\nre-labelled \"excluded by convention, not by theorem\".  This session does",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 149,
+      "text": "re-labelled \"excluded by convention, not by theorem\".  This session does",
+      "context": "(`docs/n4_gate.md` §2) is therefore an extrapolation outside the theorem's\nregime — the *regime transfer* failure class of the ledger — and should be\nre-labelled \"excluded by convention, not by theorem\".  This session does\nnot change the convention; it flags it.\n\n## 4. (iii) The honest transfer verdict at `ell = 6`",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 189,
+      "text": "  occurrence obstruction for `(R_6, det)` with `m_det = 0`; the s28 mirror",
+      "context": "  `(13,4,2,2,2,1)` at `10486`, … — the first two are inside the pipeline's\n  reach, the rest at or beyond the ~10^4 wall.  An `a = 1` hit would be an\n  occurrence obstruction for `(R_6, det)` with `m_det = 0`; the s28 mirror\n  says such cells appear at `delta ≈ 10` for `n = 3` and at lengths above\n  the balanced ones.  **Expectation:** at `n = 4` the first `a > m_det`\n  cells at `ell = 6` sit at `delta >= 8`, beyond the pipeline, so the pad",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 235,
+      "text": "   obstruction, permanent-insensitive by Theorem 2 and outside [BIP]'s",
+      "context": "   automatically) and `mult_pad` by the pipeline (both reachable); a hit\n   is the programme's first `D > 0`, an `(R_6, det)` occurrence\n   obstruction, permanent-insensitive by Theorem 2 and outside [BIP]'s\n   regime.\n2. **The first weight of `I(D_6^{per_3}) ⊂ C[Sym^3 C^6]`** — degree\n   `>= 7` now (`delta = 6` measured empty this session, all four `a > 0`",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 262,
+      "text": "  §§3–5 of DIP; BIP Thm. 1.4 and Prop. 3.2; the LMR quadratic bound; the",
+      "context": "- **Adopted from literature (read this session, to the statements\n  quoted):** DIP Thm. 2.3, Prop. 3.3, Lemma 3.4, Thm. 3.5, the structure of\n  §§3–5 of DIP; BIP Thm. 1.4 and Prop. 3.2; the LMR quadratic bound; the\n  BI tableau-evaluation technique (read at the level of the technique;\n  lemma numbers not verified).\n- **Measured:** the `delta = 6`, length-6 `(a, N_S)` list; `I(D_6^{per_3})_6 = 0`.",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/dip_transfer.md",
+      "line": 269,
+      "text": "- **Flagged, not changed:** the `a >= 2` gate's attribution to [BIP].",
+      "context": "  the BI-style pad evaluation); the guess `delta >= 8` for the first\n  `a > m_det` cell at `ell = 6`.\n- **Flagged, not changed:** the `a >= 2` gate's attribution to [BIP].",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/easy_counts.md",
+      "line": 83,
+      "text": "   BIP application. BIP supplies no exclusion at the small parameters here.",
+      "context": "   where the ambient coefficient is zero (s25, `docs/ambient_audit.md`\n   section 8), hence `def_per = m_per`. This is ambient arithmetic, not a\n   BIP application. BIP supplies no exclusion at the small parameters here.\n\n5. **Structurally this is forced, and the gap is quadratic.**\n   `dim H_det - dim H_per = (2n^2-2) - (2n-2) = 2n(n-1)`.  A bigger stabiliser",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/easy_counts.md",
+      "line": 99,
+      "text": "At other parameters, `m_det = 0` alone supplies no BIP exclusion; retain",
+      "context": "and the ambient-zero portion is settled by the ambient coefficient.\nAt `(5,2)` all 36 determinant-unsupported weights have `a = 0` (s25).\nAt other parameters, `m_det = 0` alone supplies no BIP exclusion; retain\nany `a > 0` label until an applicable theorem or certificate closes it.\n\n## Files",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/equation_census.md",
+      "line": 480,
+      "text": "| BIP needs `n >= m^25` | **quoted**; it does not apply at `n=4, m=3` |",
+      "context": "| 300, 661, 1148 | `rho_d` **re-derived**; the drops quoted (see §8) |\n| 320112 | **quoted**, one source (Leal et al.); `docs/e4_hunt.md` adopts the same value and labels it \"adopted, not certified\" — it is **not** an independent confirmation |\n| BIP needs `n >= m^25` | **quoted**; it does not apply at `n=4, m=3` |",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/housekeeping_batch10.md",
+      "line": 85,
+      "text": "correct (a *multiplicity* obstruction, not an occurrence obstruction, since both",
+      "context": "of its own size, with the two halves of the rigour separated (a modular rank on\nthe permanent side, `LMR`'s own bound on the determinant side), the terminology\ncorrect (a *multiplicity* obstruction, not an occurrence obstruction, since both\nmultiplicities are nonzero — the reading `BIP` leaves open), and the honest\nstatement that `59 > 47` already gives the separation by a dimension count so\nthe content is the certificate.  Second, session 63's drafted paragraph on what",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/housekeeping_batch10.md",
+      "line": 86,
+      "text": "multiplicities are nonzero — the reading `BIP` leaves open), and the honest",
+      "context": "the permanent side, `LMR`'s own bound on the determinant side), the terminology\ncorrect (a *multiplicity* obstruction, not an occurrence obstruction, since both\nmultiplicities are nonzero — the reading `BIP` leaves open), and the honest\nstatement that `59 > 47` already gives the separation by a dimension count so\nthe content is the certificate.  Second, session 63's drafted paragraph on what\nthe length-nine cell reduces to: a single rank lower bound `rank Θ⁺ ≥ 273`, in",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/lmr_cell.md",
+      "line": 156,
+      "text": "cell.  Ikenmeyer–Panova is the relevant caution: multiplicity obstructions are",
+      "context": "the LMR vector shows only `I(D_9) ⊄ I(P_9)`, which is an occurrence statement.\nWhether the multiplicities also separate needs `i_pad` measured at the same\ncell.  Ikenmeyer–Panova is the relevant caution: multiplicity obstructions are\nstrictly stronger than occurrence obstructions, so the second measurement is not\nimplied by the first.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/lmr_cell.md",
+      "line": 157,
+      "text": "strictly stronger than occurrence obstructions, so the second measurement is not",
+      "context": "Whether the multiplicities also separate needs `i_pad` measured at the same\ncell.  Ikenmeyer–Panova is the relevant caution: multiplicity obstructions are\nstrictly stronger than occurrence obstructions, so the second measurement is not\nimplied by the first.\n\n## 5. Provenance",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/longweight_hunt.md",
+      "line": 29,
+      "text": "   *permanent-specific* occurrence obstruction (`mult_det = 0 < mult_pad`) or",
+      "context": "\n1. **The permanent-sensitive region is bounded on all four sides.**  A\n   *permanent-specific* occurrence obstruction (`mult_det = 0 < mult_pad`) or\n   forced multiplicity drop can live only at a weight with `a ≥ 1`, `λ_1 ≥ δ`,\n   and **`6 ≤ ℓ(λ) ≤ 10`**.  The upper bound `ℓ ≤ 10` is new this session\n   (§1): the padded permanent is concise in ten variables, so its orbit",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/n4_gate.md",
+      "line": 50,
+      "text": "selection. It is not an exclusion of `a = 1`: BIP is silent at `(n,m)=(4,3)`.",
+      "context": "\n**B14-11 correction.** The table below records the historical `a >= 2`\nselection. It is not an exclusion of `a = 1`: BIP is silent at `(n,m)=(4,3)`.\nThe current ambient gate is `a > 0`, including A1; after the containment\nexclusion of section 1 the length gate is `ell >= 5`. See `bip_blind_at_n4`\nand `docs/b14_11_report.md`. Historical counts and measurements are unchanged.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/obstruction_power.md",
+      "line": 89,
+      "text": "Call it a **deficit-driven occurrence obstruction** if moreover",
+      "context": "this certifies `B ⊄ A`.  Call it **deficit-driven** if in addition\n`P(lam) <= 0`: the classical side, on its own, sees nothing there.\nCall it a **deficit-driven occurrence obstruction** if moreover\n`mult_lam C[A] = 0`; that forces `def_A(lam) = m_A(lam)` exactly — *full\ndeficit*, the entire isotypic component living on the orbit and none of it\nextending to the closure.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/obstruction_power.md",
+      "line": 340,
+      "text": "   occurrence obstruction, and Bürgisser–Ikenmeyer–Panova rule those out for",
+      "context": "   *occurrence* obstruction needs `def_{det}(lam) = m_{det}(lam)` (full\n   deficit) together with `mult_{per^pad}(lam) > 0`; that is exactly an\n   occurrence obstruction, and Bürgisser–Ikenmeyer–Panova rule those out for\n   their padded permanent against the determinant when `n >= m^25`.\n   This leaves `(n,m)=(4,3)` open; A1 is excluded only by an applicable\n   theorem or certificate, never by that asymptotic citation alone.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/obstruction_power.md",
+      "line": 370,
+      "text": "Bürgisser–Ikenmeyer–Panova.  Against that, the honest counterweight is",
+      "context": "a window of width `max(c_A, c_B)`, and the only determinant conductor measured\nis 1; and the occurrence sub-case is already closed by\nBürgisser–Ikenmeyer–Panova.  Against that, the honest counterweight is\nProposition 4: the two worlds with closed-form data are *hypersurface* worlds,\nwhere a deficit-driven separation is structurally impossible, so the census is\nweaker evidence than its size suggests, and the real case has the high",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s24_obstruction.md",
+      "line": 48,
+      "text": "Ikenmeyer and Panova proved that occurrence obstructions — the special case where",
+      "context": "\n**The Peter–Weyl part is the classical, well-studied side.** Bürgisser,\nIkenmeyer and Panova proved that occurrence obstructions — the special case where\nthe determinant multiplicity is zero and the padded multiplicity is\npositive — cannot separate their padded model from the determinant when\n`n >= m^25`. This does not exclude A1 at `(n,m)=(4,3)`. **The deficit part is the side nobody has quantified.**",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s25_race.md",
+      "line": 52,
+      "text": "  obstruction. B14-11 correction: BIP is silent at these small",
+      "context": "  tautology.\n- Where `a = 1`, both counts are 0 or 1, so any obstruction is an *occurrence*\n  obstruction. B14-11 correction: BIP is silent at these small\n  parameters. A multiplicity gap with both multiplicities positive requires\n  `a >= 2`; the definition of multiplicity obstruction also includes A1\n  occurrence obstructions, which need an applicable exclusion of their own.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s25_race.md",
+      "line": 55,
+      "text": "  occurrence obstructions, which need an applicable exclusion of their own.",
+      "context": "  parameters. A multiplicity gap with both multiplicities positive requires\n  `a >= 2`; the definition of multiplicity obstruction also includes A1\n  occurrence obstructions, which need an applicable exclusion of their own.\n\nVerified stratification for the `det_3` ambient, `lam` with at most 9 rows:\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s25_review.md",
+      "line": 32,
+      "text": "2. **The BIP attribution in `docs/easy_counts.md`.** All 36 weights at `(5,2)`",
+      "context": "   `mult_det` but gives no lower bound on `mult_per`; the deficit still has to\n   work on the permanent side. Session 25's \"half-free\" is the correct term.\n2. **The BIP attribution in `docs/easy_counts.md`.** All 36 weights at `(5,2)`\n   with `m_det = 0` have `a = 0`. It is ambient arithmetic; BIP is not doing the\n   work. Confirmed independently: `Sym^2(Sym^5)` has exactly three\n   constituents and `m_det = 1` on all three.",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s25_review.md",
+      "line": 33,
+      "text": "   with `m_det = 0` have `a = 0`. It is ambient arithmetic; BIP is not doing the",
+      "context": "   work on the permanent side. Session 25's \"half-free\" is the correct term.\n2. **The BIP attribution in `docs/easy_counts.md`.** All 36 weights at `(5,2)`\n   with `m_det = 0` have `a = 0`. It is ambient arithmetic; BIP is not doing the\n   work. Confirmed independently: `Sym^2(Sym^5)` has exactly three\n   constituents and `m_det = 1` on all three.\n3. **My prior that `m_det / a` falls with `n`.** It rises, at every `delta`.",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s35_prompt.md",
+      "line": 73,
+      "text": "  Bürgisser–Ikenmeyer–Panova.  Proving blindness over a degree range is as",
+      "context": "  `det_units <= pad_units` at every weight in the window — call this\n  *multiplicity blindness*, the padded-small-scale shadow of\n  Bürgisser–Ikenmeyer–Panova.  Proving blindness over a degree range is as\n  valuable as finding a witness; treat the two as rival hypotheses, not as\n  hope versus failure.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s35_prompt.md",
+      "line": 111,
+      "text": "(Bürgisser–Ikenmeyer on matrix multiplication; Ikenmeyer–Panova's vanishing",
+      "context": "**(D) Mine the matmul-obstruction literature.**  Multiplicity and occurrence\nobstructions have actually been exhibited in neighbouring settings\n(Bürgisser–Ikenmeyer on matrix multiplication; Ikenmeyer–Panova's vanishing\ntechnology; obstruction designs).  What transfers is technique — explicit\nHWV evaluation at structured points, Young-tableau combinatorics for\nvanishing — not conclusions.  A genuine pass over that literature with our",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s36_review.md",
+      "line": 79,
+      "text": "  (BIP silent at (3,4)), `ℓ ≥ 5` (≥ 6 to be permanent-flavoured),",
+      "context": "  direction, and are not obstructions — stated correctly throughout.\n- The obstruction-eligible region is now sharply characterised: `a ≥ 1`\n  (BIP silent at (3,4)), `ℓ ≥ 5` (≥ 6 to be permanent-flavoured),\n  `λ_1 ≥ δ` (KL via (★)), and `δ ≥ 8` (det ideal empty below on every\n  measured cell).\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s37_prompt.md",
+      "line": 68,
+      "text": "Read Dörfler–Ikenmeyer–Panova (*On geometric complexity theory: multiplicity",
+      "context": "## Deliverable 3 — `docs/dip_transfer.md`: the technique, tested against our pair\n\nRead Dörfler–Ikenmeyer–Panova (*On geometric complexity theory: multiplicity\nobstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM J.\nAppl. Alg. Geom.) with the two varieties `D_6^det` and `P_6` in hand, and\nextract: (i) the exact mechanism by which their multiplicity obstruction is",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s37_prompt.md",
+      "line": 69,
+      "text": "obstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM J.",
+      "context": "\nRead Dörfler–Ikenmeyer–Panova (*On geometric complexity theory: multiplicity\nobstructions are stronger than occurrence obstructions*, ICALP 2019 / SIAM J.\nAppl. Alg. Geom.) with the two varieties `D_6^det` and `P_6` in hand, and\nextract: (i) the exact mechanism by which their multiplicity obstruction is\nexhibited — which HWVs, evaluated where, and what makes the evaluation",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s37_review.md",
+      "line": 34,
+      "text": "- **BIP's threshold.**  Bürgisser–Ikenmeyer–Panova's no-occurrence-obstruction",
+      "context": "  here (the det side is ambient at length 3 by the codimension-0 row, so only\n  the pad vanishing carries the claim).\n- **BIP's threshold.**  Bürgisser–Ikenmeyer–Panova's no-occurrence-obstruction\n  theorem needs `n ≥ m^25`; at `(m, n) = (3, 4)` it is silent.  Correct, and\n  consequential (§2b).\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s37_review.md",
+      "line": 50,
+      "text": "not apply here.**  We excluded `a = 1` cells because occurrence obstructions",
+      "context": "\n**(b) The `a ≥ 2` gate is a convention we inherited from a theorem that does\nnot apply here.**  We excluded `a = 1` cells because occurrence obstructions\n\"are closed by BIP\" — but BIP needs `n ≥ m^25`.  At `(3, 4)` an occurrence\nobstruction (`a = 1`, `mult_det = 0 < mult_pad = 1`) is not ruled out by\nanything.  Two actions: future sweeps use the gate `a ≥ 1`; and the",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s37_review.md",
+      "line": 51,
+      "text": "\"are closed by BIP\" — but BIP needs `n ≥ m^25`.  At `(3, 4)` an occurrence",
+      "context": "**(b) The `a ≥ 2` gate is a convention we inherited from a theorem that does\nnot apply here.**  We excluded `a = 1` cells because occurrence obstructions\n\"are closed by BIP\" — but BIP needs `n ≥ m^25`.  At `(3, 4)` an occurrence\nobstruction (`a = 1`, `mult_det = 0 < mult_pad = 1`) is not ruled out by\nanything.  Two actions: future sweeps use the gate `a ≥ 1`; and the\n\"det-side empty through 7\" record, which rests on `a ≥ 2` sweeps at δ = 6, 7,",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s39_prompt.md",
+      "line": 46,
+      "text": "An occurrence obstruction is a weight with `mult_det = 0 < mult_pad`.",
+      "context": "been screened at `n = 4`.\n\nAn occurrence obstruction is a weight with `mult_det = 0 < mult_pad`.\nBürgisser–Ikenmeyer–Panova prove none exist for `n ≥ m^25`; at `(3, 4)` their\ntheorem is silent and their constructions do not exist.  Nobody knows.  A hit\nwould be the first representation-theoretic separation of a padded permanent",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s39_prompt.md",
+      "line": 47,
+      "text": "Bürgisser–Ikenmeyer–Panova prove none exist for `n ≥ m^25`; at `(3, 4)` their",
+      "context": "\nAn occurrence obstruction is a weight with `mult_det = 0 < mult_pad`.\nBürgisser–Ikenmeyer–Panova prove none exist for `n ≥ m^25`; at `(3, 4)` their\ntheorem is silent and their constructions do not exist.  Nobody knows.  A hit\nwould be the first representation-theoretic separation of a padded permanent\nfrom a determinant at any size (the known separation, Landsberg–Manivel–",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s39_prompt.md",
+      "line": 123,
+      "text": "permanent (BIP's asymptotic phenomenon says yes; state your prior and its",
+      "context": "witness.  P2: whether one-bit or forced cells exist by δ = 12 (with regime).\nP3: if they exist, whether the one-bit vector vanishes at the padded\npermanent (BIP's asymptotic phenomenon says yes; state your prior and its\nbasis).  Kill criteria: any det-side non-vanishing at a one-bit cell → stop;\ncharacter budget → honest table of what was reached.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s39_review.md",
+      "line": 45,
+      "text": "`a ≥ 1` (BIP silent at (3,4)).  Rows 11–16 carry `mult_pad = 0 ≤ mult_det` — the",
+      "context": "\\]\n`ℓ ≤ 10` (this session), `ℓ ≤ δ` (Pieri), `λ_1 ≥ δ` (Kadish–Landsberg via (★)),\n`a ≥ 1` (BIP silent at (3,4)).  Rows 11–16 carry `mult_pad = 0 ≤ mult_det` — the\nwrong sign, never an obstruction.  **On the lower bound (corrected s49):**\n`ℓ ≥ 6` is where the permanent first *enters* (`docs/washout_lemma.md` Thm 6),\n**not** a proof that no obstruction exists at `ℓ ≤ 5`; washout (`P_r = R_r`,",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s41_prompt.md",
+      "line": 50,
+      "text": "gate (BIP is silent at (3,4)).  Pad points must be true padded-permanent",
+      "context": "via (★)); `6 ≤ ℓ(λ) ≤ 10` (permanent-visible, and `mult_pad = 0` for ℓ ≥ 11\nsince the padded permanent lives in 10 variables); `a ≥ 1` is the correct\ngate (BIP is silent at (3,4)).  Pad points must be true padded-permanent\nrestrictions `l(s)·per_3(A(s))`, never `l·(random cubic)` — at r=6 the two\ndiffer and the wrong one manufactures false obstructions.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s41_prompt.md",
+      "line": 104,
+      "text": "on `D > 0`, and its basis — BIP's asymptotic blindness says no).  Kill",
+      "context": "reasoning and its regime (note: nothing forces it low; the five-row onset was\n≥ 8).  P3: if `mult_det < a` appears, whether `mult_pad` beats it (your prior\non `D > 0`, and its basis — BIP's asymptotic blindness says no).  Kill\ncriteria: validation failure → stop; `D > 0` → the protocol; memory → the\ncensus bounds honesty.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s48_prompt.md",
+      "line": 113,
+      "text": "are Bürgisser–Ikenmeyer–Panova on occurrence obstructions).  Search the",
+      "context": "something stronger; do **not** describe it as a natural-proofs barrier, which it\nis not (natural proofs is constructivity plus largeness; the known GCT barriers\nare Bürgisser–Ikenmeyer–Panova on occurrence obstructions).  Search the\nliterature for the threshold and for the density of permanental pencils, and\nreport per claim whether it is known.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 45,
+      "text": "determinant side.  That is exactly an **occurrence obstruction**.",
+      "context": "At `a = 1`, `D > 0` requires `i_det = 1`, `i_pad = 0`, that is `mult_pad = 1`\nand `mult_det = 0`: the weight occurs on the pad side and not at all on the\ndeterminant side.  That is exactly an **occurrence obstruction**.\n\nTwo facts from the literature, to be recorded in the report before any compute:\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 49,
+      "text": "1. **Bürgisser–Ikenmeyer–Panova** (arXiv:1604.06431; FOCS 2016; *J. Amer. Math.",
+      "context": "Two facts from the literature, to be recorded in the report before any compute:\n\n1. **Bürgisser–Ikenmeyer–Panova** (arXiv:1604.06431; FOCS 2016; *J. Amer. Math.\n   Soc.* **32** (2019), 163–193) prove occurrence obstructions do not exist — but\n   Theorem 1.4 requires `n ≥ m^25`.  At `n = 4`, `m = 3` that hypothesis is not\n   remotely met and the theorem says nothing about our regime.  Confirm this",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 50,
+      "text": "   Soc.* **32** (2019), 163–193) prove occurrence obstructions do not exist — but",
+      "context": "\n1. **Bürgisser–Ikenmeyer–Panova** (arXiv:1604.06431; FOCS 2016; *J. Amer. Math.\n   Soc.* **32** (2019), 163–193) prove occurrence obstructions do not exist — but\n   Theorem 1.4 requires `n ≥ m^25`.  At `n = 4`, `m = 3` that hypothesis is not\n   remotely met and the theorem says nothing about our regime.  Confirm this\n   reading against the paper.  Then the harder question: does their **mechanism**",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 57,
+      "text": "2. **Ikenmeyer–Panova**, *Multiplicity obstructions are stronger than occurrence",
+      "context": "   weight — depend essentially on heavy padding, or does some form survive at\n   `n = 4`?  A short argument either way is worth more than the census below.\n2. **Ikenmeyer–Panova**, *Multiplicity obstructions are stronger than occurrence\n   obstructions* (ICALP 2019).  At `a = 1` a multiplicity obstruction *is* an\n   occurrence obstruction, so restricting to `a = 1` gives up precisely the\n   strength gap between the two notions.  That is the real cost of the `a = 1`",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 59,
+      "text": "   occurrence obstruction, so restricting to `a = 1` gives up precisely the",
+      "context": "2. **Ikenmeyer–Panova**, *Multiplicity obstructions are stronger than occurrence\n   obstructions* (ICALP 2019).  At `a = 1` a multiplicity obstruction *is* an\n   occurrence obstruction, so restricting to `a = 1` gives up precisely the\n   strength gap between the two notions.  That is the real cost of the `a = 1`\n   prior and it should be stated plainly: we buy losslessness against orientation\n   by giving up the strictly stronger of the two obstruction notions.",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 113,
+      "text": "That is an occurrence obstruction at `n = 4`; verify it twice — once by the",
+      "context": "\n**Surprise worth stopping the batch for:** any `a = 1` cell with `i_det = 1`.\nThat is an occurrence obstruction at `n = 4`; verify it twice — once by the\nsession-49 verifier and once by exact arithmetic over `ℤ` — before writing it\ndown as a claim.\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_prompt.md",
+      "line": 117,
+      "text": "**Negative worth having:** a demonstration that the BIP mechanism transfers to",
+      "context": "down as a claim.\n\n**Negative worth having:** a demonstration that the BIP mechanism transfers to\nsmall `n`.  That closes the occurrence route on grounds better than measurement.\n\n## 7. Report",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 14,
+      "text": "> **Task 0 is resolved: the BIP mechanism does not transfer to `n = 4`, and the",
+      "context": "## 0. Verdict\n\n> **Task 0 is resolved: the BIP mechanism does not transfer to `n = 4`, and the\n> reason is structural rather than numerical.**  Its entire supply of\n> determinant-side evaluation points at `n = 4` is eight padded power sums, every\n> one a product of four linear forms with essential span at most 3; an HWV",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 45,
+      "text": "## 1. Task 0 — the BIP determination",
+      "context": "---\n\n## 1. Task 0 — the BIP determination\n\nFull argument, with every quoted hypothesis and its version numbering, in\n**`docs/bip_transfer.md`**.  In brief:",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 57,
+      "text": "**(b) The mechanism does not transfer.**  BIP's positive half is three",
+      "context": "bound on `n` by a more careful analysis\"*; it says nothing about small `n`.\n\n**(b) The mechanism does not transfer.**  BIP's positive half is three\npropositions, each of which certifies non-vanishing of a highest weight vector\non `Ω_n` by evaluating it at a point supplied by their Theorem 2.5, the padded\npower sums `X^{n−s}(φ_1^s + ··· + φ_k^s)` with `n ≥ sk`.  At `n = 4`:",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 62,
+      "text": "| BIP tool | hypothesis | at `n = 4` |",
+      "context": "power sums `X^{n−s}(φ_1^s + ··· + φ_k^s)` with `n ≥ sk`.  At `n = 4`:\n\n| BIP tool | hypothesis | at `n = 4` |\n|---|---|---|\n| Thm 2.5 (the point supply) | `n ≥ sk` | 8 shapes, **linear span ≤ 3**, all products of four linear forms |\n| Prop. 2.3 + semigroup | `n ≥ kℓ`, `ℓ` even | `ℓ(λ) ≤ 2` (B14-11 corrected row extension) |",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 81,
+      "text": "at **every** point BIP's Theorem 2.5 supplies.  **Measured** at three banked",
+      "context": "\nSo at `n = 4` every highest weight vector of weight `λ` with `ℓ(λ) ≥ 4` vanishes\nat **every** point BIP's Theorem 2.5 supplies.  **Measured** at three banked\nsix-row `a = 1` cells, both primes (`analysis/wk9_s52_bippoints.py`): the\nexhibited highest weight vector is zero at all eight BIP points and at a generic\nproduct of four linear forms, and non-zero at a `det_4` pencil, at `ℓ·c` and at",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 83,
+      "text": "exhibited highest weight vector is zero at all eight BIP points and at a generic",
+      "context": "at **every** point BIP's Theorem 2.5 supplies.  **Measured** at three banked\nsix-row `a = 1` cells, both primes (`analysis/wk9_s52_bippoints.py`): the\nexhibited highest weight vector is zero at all eight BIP points and at a generic\nproduct of four linear forms, and non-zero at a `det_4` pencil, at `ℓ·c` and at\nthe true padded permanent, in the same run.  `N_S` and `n_χ` reproduce\n`results/s36_aone.md` exactly at all three.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 90,
+      "text": "BIP work where it is `≤ m^{−24} ≈ 10^{−12}`.  And `n = 4 < 9 = m²`, so the",
+      "context": "**(c) Why this is essential and not technical.**  The padding exponent `n − m`\nis 1 at `(4,3)`.  Kadish–Landsberg allow a body of relative size `m/n = 3/4`;\nBIP work where it is `≤ m^{−24} ≈ 10^{−12}`.  And `n = 4 < 9 = m²`, so the\npermitted length already exceeds the determinant's own size, while every engine\nneeds `n` to *exceed* the length it must see.\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 94,
+      "text": "**(d) One piece does transfer, and it is already ours.**  BIP's only input about",
+      "context": "needs `n` to *exceed* the length it must see.\n\n**(d) One piece does transfer, and it is already ours.**  BIP's only input about\nthe padded permanent is Kadish–Landsberg's `|λ̄| ≤ md`, which at `(n,m) = (4,3)`\nreads `λ_1 ≥ δ` — numerically identical to the programme's own\nobstruction-eligibility gate (Corollary B of `docs/reducible_ideal.md`), derived",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 102,
+      "text": "obstruction *is* an occurrence obstruction, so the restriction gives up exactly",
+      "context": "\n**(e) The cost, stated plainly (brief §2.2).**  At `a = 1` a multiplicity\nobstruction *is* an occurrence obstruction, so the restriction gives up exactly\nthe strength gap Dörfler–Ikenmeyer–Panova established.  Their setting is the\nChow variety against bounded border Waring rank, not determinant against padded\npermanent, and **they do not state the multiplicity-one observation** — it is",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 103,
+      "text": "the strength gap Dörfler–Ikenmeyer–Panova established.  Their setting is the",
+      "context": "**(e) The cost, stated plainly (brief §2.2).**  At `a = 1` a multiplicity\nobstruction *is* an occurrence obstruction, so the restriction gives up exactly\nthe strength gap Dörfler–Ikenmeyer–Panova established.  Their setting is the\nChow variety against bounded border Waring rank, not determinant against padded\npermanent, and **they do not state the multiplicity-one observation** — it is\none line from their definitions and is claimed here as ours, not attributed to",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s52_report.md",
+      "line": 266,
+      "text": "| **P1** | the BIP mechanism does not transfer to `n = 4` | 0.85 | **confirmed**, and more sharply than logged — the failure is a length gap (`ℓ(λ) ≤ 4` reachable at `n = 4`, census at `ℓ(λ) = 6`), not a constant |",
+      "context": "| | prediction | prior | outcome |\n|---|---|---|---|\n| **P1** | the BIP mechanism does not transfer to `n = 4` | 0.85 | **confirmed**, and more sharply than logged — the failure is a length gap (`ℓ(λ) ≤ 4` reachable at `n = 4`, census at `ℓ(λ) = 6`), not a constant |\n| **P2** | `δ = 7`: 258 eligible, 64 with `a = 1` | 0.80 | **confirmed exactly** |\n| **P3** | `δ = 8`: 591 eligible, 45 with `a = 1` | 0.80 | **confirmed exactly** |\n| **P4** | `δ = 9` census completes within 30 min | 0.85 | **confirmed**, 273 s by the plethysm route; reproduces s43's 1,079 / 86,363 |",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/s55_report.md",
+      "line": 259,
+      "text": "  Bürgisser–Ikenmeyer–Panova's `n >= m^25` is quoted.",
+      "context": "  `docs/e4_hunt.md` labels its own value \"adopted, not certified\" and adopts it\n  from the same literature, so this is one source, not two.\n  Bürgisser–Ikenmeyer–Panova's `n >= m^25` is quoted.\n- **Not established, and not claimed:** that 24 is a lower bound on the onset of\n  `I(D_r)`. §2 of the census bounds *one family* from below. A search for a\n  theorem of the form \"no equation of degree `< X` exists\" for the",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s73_prompt.md",
+      "line": 26,
+      "text": "obstruction, not an occurrence obstruction**; use that term.  The separation it",
+      "context": "`rank_p ≤ rank_Q ≤ a` — and `i_det ≥ 1` is LMR's theorem at this cell, so `D = 1`\nholds over `Q`.  Both multiplicities are nonzero, so this is a **multiplicity\nobstruction, not an occurrence obstruction**; use that term.  The separation it\ncertifies is also visible from `dim P₇ = 59 > 47 = dim D₇`, so the content is the\ncertificate, not the statement.  It is the comparison at the *unpadded* `per₃`,\nwhich is a different pair of varieties from the programme's padded model —",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/s73_report.md",
+      "line": 70,
+      "text": "obstruction**, not an occurrence obstruction.  The refutation itself is not",
+      "context": "finer `U_D ⊄ U_P`.  Both multiplicities are nonzero at every rung with `a > 0`\n(`mult_det ≥ 5`, `mult_per = a`), so every `D > 0` here is a **multiplicity\nobstruction**, not an occurrence obstruction.  The refutation itself is not\nnews (`dim P_7 = 59 > 47 = dim D_7`); the certificate is.\n\nCoordinates: the `χ_λ`-isotypic reduction `V_χ` of the weight-`λ` monomial",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 149,
+      "text": "kill is self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova, and",
+      "context": "`Sym^3(Sym^4 C^16)` is **0**, so `mult_lam C[X]_3 = 0` for *every* orbit\nclosure in the ambient, both closures included, and `D = 0`.  Note that this\nkill is self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova, and\ndoes not depend on whether their hypotheses cover `(n,m) = (4,3)`.  It is\nrecorded here rather than quietly dropped because it is the only moment in the\nsession when a candidate existed.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 165,
+      "text": "determinant deficit.  Occurrence obstructions are exactly the sub-case",
+      "context": "There `mult_B <= 1`, so an obstruction requires `mult_A = 0 < mult_B = 1`: an\n**occurrence** obstruction, and simultaneously `def_A(lam) = m_A(lam)`, a *full*\ndeterminant deficit.  Occurrence obstructions are exactly the sub-case\nBürgisser–Ikenmeyer–Panova close in their range `n >= m^25`. That\nhypothesis fails here. The two screened labels close by the ambient and\ndegree-one arguments above; the occurrence observation gives no extra closure.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 166,
+      "text": "Bürgisser–Ikenmeyer–Panova close in their range `n >= m^25`. That",
+      "context": "**occurrence** obstruction, and simultaneously `def_A(lam) = m_A(lam)`, a *full*\ndeterminant deficit.  Occurrence obstructions are exactly the sub-case\nBürgisser–Ikenmeyer–Panova close in their range `n >= m^25`. That\nhypothesis fails here. The two screened labels close by the ambient and\ndegree-one arguments above; the occurrence observation gives no extra closure.\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 195,
+      "text": "Bürgisser–Ikenmeyer–Panova do not rule out at these parameters.",
+      "context": "`m_{per^pad}(lam) > 0`.  If `mult_lam C[closure(per^pad)]` were also positive\nat any of those, that would be an *occurrence* obstruction — which\nBürgisser–Ikenmeyer–Panova do not rule out at these parameters.\n**B14-11: the following historical inference is withdrawn as a BIP claim:**\n\n> at every weight where the determinant's Peter–Weyl count vanishes, the padded",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 196,
+      "text": "**B14-11: the following historical inference is withdrawn as a BIP claim:**",
+      "context": "at any of those, that would be an *occurrence* obstruction — which\nBürgisser–Ikenmeyer–Panova do not rule out at these parameters.\n**B14-11: the following historical inference is withdrawn as a BIP claim:**\n\n> at every weight where the determinant's Peter–Weyl count vanishes, the padded\n> permanent's deficit is **full**: `def_{per^pad}(lam) = m_{per^pad}(lam)`.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 202,
+      "text": "at each label. The cited BIP theorem does not supply it at `(4,3)`.",
+      "context": "\nThis needs an applicable ambient-zero result or a separate certificate\nat each label. The cited BIP theorem does not supply it at `(4,3)`.\n\n## 5. STEP 2 — the permanent's deficit at `n = m = 3`\n",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 282,
+      "text": "Bürgisser–Ikenmeyer–Panova and so does not depend on whether their hypotheses",
+      "context": "coefficient is zero, so *every* orbit closure in `Sym^4 C^16` has multiplicity\nzero there and `D = 0` — a self-contained kill that does not invoke\nBürgisser–Ikenmeyer–Panova and so does not depend on whether their hypotheses\nreach `(n,m) = (4,3)`.  Both passing weights, moreover, have\n`m_{per^pad} = m_det = 1`, where the only obstruction the arithmetic leaves\nroom for is an occurrence obstruction. BIP does not close that sub-case",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/screen_results.md",
+      "line": 285,
+      "text": "room for is an occurrence obstruction. BIP does not close that sub-case",
+      "context": "reach `(n,m) = (4,3)`.  Both passing weights, moreover, have\n`m_{per^pad} = m_det = 1`, where the only obstruction the arithmetic leaves\nroom for is an occurrence obstruction. BIP does not close that sub-case\nat `(4,3)`; the two labels above close by their separate ambient arguments.  For the\nline to reopen, the symmetric rectangular Kronecker coefficient `m_det` would\nhave to overtake the ten-variable monomial count `m_{per^pad}` at some larger",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_24b.md",
+      "line": 54,
+      "text": "  self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova and so does",
+      "context": "  coefficient of that `S_lam` in `Sym^3(Sym^4 C^16)` is **0**, so every orbit\n  closure in the ambient has multiplicity 0 there and `D = 0`.  That kill is\n  self-contained — it does not invoke Bürgisser–Ikenmeyer–Panova and so does\n  not depend on whether their hypotheses reach `(n,m) = (4,3)`.\n* **Both passing weights have `m_{per^pad} = m_det = 1`**, where `mult_B <= 1`\n  and an obstruction would have to be an *occurrence* obstruction — the",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_24b.md",
+      "line": 72,
+      "text": "* **B14-11 erratum to the BIP inference:** the historical claim that",
+      "context": "  which is what Peter–Weyl requires, are 16 and 30.  17 is the dimension of\n  the stabiliser of the *point* `[det_3]`.\n* **B14-11 erratum to the BIP inference:** the historical claim that\n  `m_det(lam)=0` forces a full padded deficit at `(n,m,delta)=(4,3,2)`\n  does not follow from BIP. Its hypothesis `n >= m^25` fails here.\n  Use a label-specific ambient-zero proof or exact certificate instead.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_24b.md",
+      "line": 74,
+      "text": "  does not follow from BIP. Its hypothesis `n >= m^25` fails here.",
+      "context": "* **B14-11 erratum to the BIP inference:** the historical claim that\n  `m_det(lam)=0` forces a full padded deficit at `(n,m,delta)=(4,3,2)`\n  does not follow from BIP. Its hypothesis `n >= m^25` fails here.\n  Use a label-specific ambient-zero proof or exact certificate instead.\n\n## 2. Pre-registration outcomes",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_25.md",
+      "line": 43,
+      "text": "  not BIP.",
+      "context": "* **A correction to `docs/easy_counts.md`**: all 36 weights at `(5,2)` with\n  `m_det = 0` have `a = 0`, so `def_per = m_per` there is ambient arithmetic,\n  not BIP.\n\n## 2. Prediction ledger\n",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/session_25.md",
+      "line": 55,
+      "text": "| S7 | most of the 34 `(5,2)` weights have `a = 0`, so BIP is not doing the work | **CONFIRMED, unanimously** — 36 of 36 |",
+      "context": "| S5 | `delta = 2` is `m_det = a = 1`, a tie, for every `n` | **CONFIRMED** at `n = 3, 4, 5` |\n| S6 | paper audit 100% forced at `delta = 2`, above 80% at all three | **CONFIRMED** — 100.0, 83.3, 80.6 |\n| S7 | most of the 34 `(5,2)` weights have `a = 0`, so BIP is not doing the work | **CONFIRMED, unanimously** — 36 of 36 |\n\nThree refutations (S1, S2, S3), all kept.  S2 is the instructive one: I\npredicted the zeros were vacuous because nothing was there, and the data says",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/session_25.md",
+      "line": 93,
+      "text": "3. **Correct `docs/easy_counts.md`** on the BIP attribution (§8 of the audit).",
+      "context": "   claim that its base point is evidence about the determinant's boundary.  The\n   paper should say where it introduces the datum that `a((2,2,2),2) = 0`.\n3. **Correct `docs/easy_counts.md`** on the BIP attribution (§8 of the audit).\n4. **State the no-go with its range.**  `docs/race.md` §4.  An unqualified\n   no-go would repeat exactly the error the audit is correcting.\n5. **The screen should record `a >= 2` as the live gate and `mult = a` as a",
+      "disposition": "HISTORICAL_QUOTATION_OR_REGIME_WARNING"
+    },
+    {
+      "path": "docs/session_37.md",
+      "line": 16,
+      "text": "| `docs/dip_transfer.md` | D3 | DIP's mechanism is ambient-vs-stabiliser (no HWV evaluation) = the house's `a > m_det` screen; any DIP-type cell is permanent-insensitive (theorem); their no-go does not transfer as a theorem but blindness is promoted in precise form; `x_0·per_3 ∉ closure(GL_16·det_4)` proved in-house from Theorem 5; BIP's `n >= m^25` is silent at `(3,4)` — the `a >= 2` gate flagged; three candidates |",
+      "context": "| `docs/washout_lemma.md` | D1 | `P_r = R_r` for `r <= 5` (one-point Jacobian ⇒ dominance, re-verified at a fresh point); the finite-generic-stabiliser page for `per_3` (all `r >= 1`) and `det_4` (`r >= 3`, `r = 2` explained); `dim D_6^{per_3} = 50` exact; all dimension tables unconditional; **no cell below length 6 can be permanent-sensitive** |\n| `docs/transfer_lemma.md` | D2 | `D_P <= D_R`: `D < 0` transfers, `D > 0` does not, `R_r`-computations are a complete screen; the pipeline computes `P_r`; **the permanent only erases**; Prop. 8: the permanent can be felt only where `I(D_r^{per_3})_delta != 0` — at `r = 6` not below `delta = 7` (Pieri through 5, measured empty at 6) |\n| `docs/dip_transfer.md` | D3 | DIP's mechanism is ambient-vs-stabiliser (no HWV evaluation) = the house's `a > m_det` screen; any DIP-type cell is permanent-insensitive (theorem); their no-go does not transfer as a theorem but blindness is promoted in precise form; `x_0·per_3 ∉ closure(GL_16·det_4)` proved in-house from Theorem 5; BIP's `n >= m^25` is silent at `(3,4)` — the `a >= 2` gate flagged; three candidates |\n| `docs/blindness_slab.md` | D4 | Theorem A with proof; strict cells `D((8,8,8),6) = D((12,8,8),7) = −1`; pad onset `5` or `6` (two named cells decide, see below); the `lam_5 = 1` sub-slab: pad jets 34-dim, all actual reducible det jets `<= 33`-dim (every s32 stratum 29/30 at first order, S-Z certified), generic block limit negative — open as a border question; Dimca Thm 3.1 + Koszul bookkeeping pins `dim M(f)_{3d−5} = smooth + def_{2d−5}`; the s35 cap `<= 300` is a theorem modulo Kleiman |\n\nExact checks (`analysis/wk9_s37_*.py`, outputs in `results/s37_*.log`):",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/session_39.md",
+      "line": 11,
+      "text": "weights of six or more rows — for an occurrence obstruction",
+      "context": "\nThe programme's first direct screen of the long-weight region at `n = 4` —\nweights of six or more rows — for an occurrence obstruction\n(`mult_det = 0 < mult_pad`) or a forced multiplicity drop (`a > m_det ≥ 1`),\nthe two things arithmetic alone can certify.  It extends s38's length-5\noccurrence screen (`results/occurrence_screen.md`) upward in length, into the",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/session_39.md",
+      "line": 40,
+      "text": "   closing).  So no occurrence obstruction and no forced multiplicity drop lives",
+      "context": "   `a=87,405` vs `m_det=4.8×10⁸`), and the tightest cell anywhere is the peaked\n   `(4δ−10, 2^5)` (ℓ=6, `a=1, m_det=13`, **margin 12 at every δ**, never\n   closing).  So no occurrence obstruction and no forced multiplicity drop lives\n   at lengths 6–10; any separation there would be a genuine multiplicity\n   phenomenon (`mult_det < a ≤ m_det`), invisible to arithmetic — exactly s38's\n   length-5 finding, now extended to 6–10 with the gap *wider* (margin grew from",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 1,
+      "text": "# Session 52 — the `a = 1` census: the BIP gate resolved, and the prior's benefit shown void",
+      "context": "# Session 52 — the `a = 1` census: the BIP gate resolved, and the prior's benefit shown void\n\n2026-09-05.  Branch `s52-aone` off `eb8cecb` (`work/`'s `main`, which no bundle in\n`Projects\\gct` contained — the three newest bundles `s47-exactness 4b8047d`,",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 17,
+      "text": "> **Task 0 resolved: the BIP mechanism does not transfer to `n = 4`, and the",
+      "context": "## Verdict\n\n> **Task 0 resolved: the BIP mechanism does not transfer to `n = 4`, and the\n> failure is a gap in the *length* of weight the argument can see, not a gap in\n> constants.**  Deliverable `docs/bip_transfer.md`, the companion to\n> `docs/dip_transfer.md`.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 33,
+      "text": "## 1. Task 0 — BIP at `n = 4`",
+      "context": "> This is the finding that should change what a later session does.\n\n## 1. Task 0 — BIP at `n = 4`\n\nTheorem 1.4 (arXiv v3) = 1.5 (v1) needs `n ≥ m^25`; `3^25 = 847,288,609,443`\nagainst `n = 4`, so the theorem is silent.  Reading confirmed against the paper.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 56,
+      "text": "  eight BIP points and at a generic product of four linear forms, non-zero at a",
+      "context": "  covers nothing here; the real requirement is `n ≥ 9λ_2² ∈ [36, 1296]`.\n* **Measured** at three banked six-row cells, both primes: the HWV is zero at all\n  eight BIP points and at a generic product of four linear forms, non-zero at a\n  `det_4` pencil, at `ℓ·c` and at the true padded permanent, in one run.\n* **One piece transfers and is already ours:** Kadish–Landsberg's `|λ̄| ≤ mδ` is,\n  at `(4,3)`, exactly `λ_1 ≥ δ` — our obstruction-eligibility gate, confirmed",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 96,
+      "text": "stronger of the two obstruction notions, per Dörfler–Ikenmeyer–Panova) is paid",
+      "context": "against — `dim U_D = dim U_P` with `U_D ≠ U_P` — **is not instantiable anywhere\nin the record**.  The protection is void; the cost (giving up the strictly\nstronger of the two obstruction notions, per Dörfler–Ikenmeyer–Panova) is paid\nimmediately.\n\n**Recommendation.**  Retire `a = 1` as a selection principle until a cell with",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/session_52.md",
+      "line": 140,
+      "text": "P1 (BIP does not transfer, 0.85) **confirmed**, more sharply than logged.",
+      "context": "## 5. Pre-registration scorecard\n\nP1 (BIP does not transfer, 0.85) **confirmed**, more sharply than logged.\nP2, P3 (258/64, 591/45, 0.80 each) **confirmed exactly**.\nP4 (`δ = 9` inside 30 min, 0.85) **confirmed**, 273 s.\nP5 (`δ = 10` completes, 0.55) **confirmed, but not by the assumed route**.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/sixrow_frontier.md",
+      "line": 64,
+      "text": "*The permanent-sensitive region is sharp* (all proved): `a ≥ 1` (BIP silent at",
+      "context": "the obstruction hunt rides on top of it.**\n\n*The permanent-sensitive region is sharp* (all proved): `a ≥ 1` (BIP silent at\n`(3,4)`, `docs/s37_review.md` §2b — the gate is `a ≥ 1`, not `a ≥ 2`); `λ_1 ≥ δ`\nfor an obstruction (Corollary B of `docs/reducible_ideal.md`:\n`λ_1 < δ ⇒ mult_pad = 0`); `6 ≤ ℓ(λ) ≤ 10` (permanent-visible — `ℓ ≥ 6` is where",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/theory_directions.md",
+      "line": 292,
+      "text": "multiplicity-obstruction exhibit — Dörfler–Ikenmeyer–Panova (ICALP 2019 /",
+      "context": "**3. Mine the GCT-obstruction literature with the two varieties in hand**\n*(seed D, reading half; partially run).*  (i) Claim: the existing\nmultiplicity-obstruction exhibit — Dörfler–Ikenmeyer–Panova (ICALP 2019 /\nSIAM J. Appl. Alg. Geom.), Chow variety vs powers-of-linear-forms — is\nstructurally the closest thing to our pair: their `Ch^n_m` is the fully\nsplit cousin of our `D_5^pad` (splitting type `(1,3)` instead of",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/theory_directions.md",
+      "line": 297,
+      "text": "occurrence obstructions provably do not.  (ii) Mechanism: their Lemma-3.4-",
+      "context": "split cousin of our `D_5^pad` (splitting type `(1,3)` instead of\n`(1,1,1,1)`), and they prove multiplicity obstructions exist where\noccurrence obstructions provably do not.  (ii) Mechanism: their Lemma-3.4-\nstyle GIT reduction of `mult(C[Ch])` and their plethysm bookkeeping port to\nsplitting type `(1,3)` — which is exactly the `h_pad`/collapsing object of\nDirection 1; their λ = (n²-2, n, 2) is a 3-row partition, encouraging for",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/theory_directions.md",
+      "line": 301,
+      "text": "our forced-`ell = 5` regime.  Also to mine: Ikenmeyer–Panova rectangular-",
+      "context": "splitting type `(1,3)` — which is exactly the `h_pad`/collapsing object of\nDirection 1; their λ = (n²-2, n, 2) is a 3-row partition, encouraging for\nour forced-`ell = 5` regime.  Also to mine: Ikenmeyer–Panova rectangular-\nKronecker positivity (arXiv:1512.03798) for Direction 4's feasibility map,\nand Bürgisser–Ikenmeyer HWV-evaluation for Direction 7.  (iii) First test\n(<= 1 day, half done): the DIP setting/technique match was verified today",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "docs/washout_threshold.md",
+      "line": 277,
+      "text": "known GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence obstructions",
+      "context": "about GCT.  It is **not** a natural-proofs barrier: natural proofs is\nconstructivity plus largeness, neither of which appears anywhere above.  The\nknown GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence obstructions\n(no occurrence obstructions in their range `n >= m^25`, silent at\n`(4,3)`), which is a different\nstatement again — about *occurrence*, where this is about a dimension count",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/washout_threshold.md",
+      "line": 278,
+      "text": "(no occurrence obstructions in their range `n >= m^25`, silent at",
+      "context": "constructivity plus largeness, neither of which appears anywhere above.  The\nknown GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence obstructions\n(no occurrence obstructions in their range `n >= m^25`, silent at\n`(4,3)`), which is a different\nstatement again — about *occurrence*, where this is about a dimension count\nthat makes the permanent literally absent from the equations.  Pre-registered",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "docs/washout_threshold.md",
+      "line": 294,
+      "text": "| Bürgisser–Ikenmeyer–Panova, no occurrence obstructions | **known**; cited above only to say what this result is *not* |",
+      "context": "| `per_2` is a nondegenerate quadric, so `D_r^{per_2}` is the rank-`<=4` locus | elementary and surely folklore, but **not found stated** as a washout threshold |\n| \"permanental varieties\" of arXiv:2402.17839 (Laubenbacher–Swanson lineage, improving von zur Gathen 1987) | a **different object** — the locus where permanental *minors* vanish, not `closure{per_m(A(s))}`.  No overlap with the threshold above |\n| Bürgisser–Ikenmeyer–Panova, no occurrence obstructions | **known**; cited above only to say what this result is *not* |\n\nPre-registered **C5** put `P(unknown) = 0.6`; the verdict is unknown for the\nthreshold itself and known for the two classical inputs it uses.",
+      "disposition": "CORRECTED_AND_REVIEWED"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 96,
+      "text": "of geometric complexity theory \\cite{MS,BIP,IK}.  Landsberg's book",
+      "context": "a purely group-theoretic quantity.  The multiplicities of the \\emph{closure}\nare the hard side, and they are the side that carries the obstruction theory\nof geometric complexity theory \\cite{MS,BIP,IK}.  Landsberg's book\n\\cite{Lands} is the standard account of the geometry involved, and the\nprogramme it describes --- separating $\\overline{\\GL\\cdot\\per_m}$ from\n$\\overline{\\GL\\cdot\\det_n}$ by representation-theoretic data --- is what makes",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 100,
+      "text": "the closure multiplicities worth the trouble; the occurrence obstructions",
+      "context": "programme it describes --- separating $\\overline{\\GL\\cdot\\per_m}$ from\n$\\overline{\\GL\\cdot\\det_n}$ by representation-theoretic data --- is what makes\nthe closure multiplicities worth the trouble; the occurrence obstructions\noriginally proposed for the task are now known not to suffice \\cite{BIP}, which\nsharpens rather than removes the interest in computing the closure side\nexactly.",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 101,
+      "text": "originally proposed for the task are now known not to suffice \\cite{BIP}, which",
+      "context": "$\\overline{\\GL\\cdot\\det_n}$ by representation-theoretic data --- is what makes\nthe closure multiplicities worth the trouble; the occurrence obstructions\noriginally proposed for the task are now known not to suffice \\cite{BIP}, which\nsharpens rather than removes the interest in computing the closure side\nexactly.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 1934,
+      "text": "\\bibitem{BIP}",
+      "context": "J. Algebra \\textbf{477} (2017), 390--434.\n\n\\bibitem{BIP}\nP.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova,\n\\emph{No occurrence obstructions in geometric complexity theory},\nJ. Amer. Math. Soc. \\textbf{32} (2019), 163--193.",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 1935,
+      "text": "P.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova,",
+      "context": "\n\\bibitem{BIP}\nP.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova,\n\\emph{No occurrence obstructions in geometric complexity theory},\nJ. Amer. Math. Soc. \\textbf{32} (2019), 163--193.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det3-conductor.tex",
+      "line": 1936,
+      "text": "\\emph{No occurrence obstructions in geometric complexity theory},",
+      "context": "\\bibitem{BIP}\nP.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova,\n\\emph{No occurrence obstructions in geometric complexity theory},\nJ. Amer. Math. Soc. \\textbf{32} (2019), 163--193.\n\n\\bibitem{Dimca13}",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 78,
+      "text": "the no-occurrence-obstruction phenomenon of B\\\"urgisser--Ikenmeyer--Panova.",
+      "context": "far beyond a naive sweep.  Across the entire computed range we find no\nmultiplicity obstruction, in agreement with, and extending to small parameters,\nthe no-occurrence-obstruction phenomenon of B\\\"urgisser--Ikenmeyer--Panova.\n\\end{abstract}\n\n\\maketitle",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 96,
+      "text": "multiplicity strictly exceeds the determinant's.  Occurrence obstructions --- the",
+      "context": "irreducible $\\SL$-module $S_\\lambda$ in the two coordinate rings; a\n\\emph{multiplicity obstruction} is a $\\lambda$ at which the padded permanent's\nmultiplicity strictly exceeds the determinant's.  Occurrence obstructions --- the\nspecial case where the determinant's multiplicity is zero --- were shown by\nB\\\"urgisser, Ikenmeyer and Panova \\cite{BIP} to be insufficient in the padded,\npolynomial-$n$ regime; multiplicity obstructions remain the live hope, and are",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 98,
+      "text": "B\\\"urgisser, Ikenmeyer and Panova \\cite{BIP} to be insufficient in the padded,",
+      "context": "multiplicity strictly exceeds the determinant's.  Occurrence obstructions --- the\nspecial case where the determinant's multiplicity is zero --- were shown by\nB\\\"urgisser, Ikenmeyer and Panova \\cite{BIP} to be insufficient in the padded,\npolynomial-$n$ regime; multiplicity obstructions remain the live hope, and are\nstrictly stronger \\cite{DIP}.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 204,
+      "text": "no-occurrence phenomenon of \\cite{BIP}; and no multiplicity obstruction was",
+      "context": "cells, where the ambient bound already exceeds the stabiliser bound --- is silent\nacross the entire computed range at $n=4$, extending to small parameters the\nno-occurrence phenomenon of \\cite{BIP}; and no multiplicity obstruction was\nfound in any measured cell.  The set-theoretic non-containment\n$x_0\\per_3\\notin\\overline{\\GL_{16}\\cdot\\det_4}$ holds independently\n\\cite{LMR,Companion}, so, as in \\cite{DIP}, the programme exhibits the",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 715,
+      "text": "and no occurrence obstruction is arithmetically available at $n=4$.",
+      "context": "of $I(\\Ddet_5)$ is a genuine multiplicity phenomenon\n$\\mult<a\\le m_{\\det}$, invisible to the arithmetic that pinned the $n=3$ ideal,\nand no occurrence obstruction is arithmetically available at $n=4$.\n\\end{theorem}\n\nThe contrast with $n=3$ is regime, not accident: at $n=3$ the ideal was first",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 731,
+      "text": "occurrence obstructions ($a=1$, $m_{\\det}=0$) are closed by \\cite{BIP}.  That",
+      "context": "\\begin{remark}[The gate]\\label{rem:gate}\nEarlier sweeps in this programme used the gate $a\\ge2$, on the ground that\noccurrence obstructions ($a=1$, $m_{\\det}=0$) are closed by \\cite{BIP}.  That\ntheorem requires $n\\ge m^{25}$ and is silent at $(m,n)=(3,4)$; the correct gate\nat small parameters is $a\\ge1$, and the $a=1$ cells --- one of which is the\ndegree-five reducible invariant of \\S\\ref{sec:reducible} --- must be screened.",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 774,
+      "text": "obstruction and not an occurrence obstruction --- which is the stronger reading,",
+      "context": "$\\mult_{\\det}=5$ exactly.  Both multiplicities are nonzero, so\n$S_\\lambda$ occurs in both coordinate rings: this is a \\emph{multiplicity}\nobstruction and not an occurrence obstruction --- which is the stronger reading,\nsince \\cite{BIP} closes the occurrence route in the padded regime and leaves the\nmultiplicity route open.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 775,
+      "text": "since \\cite{BIP} closes the occurrence route in the padded regime and leaves the",
+      "context": "$S_\\lambda$ occurs in both coordinate rings: this is a \\emph{multiplicity}\nobstruction and not an occurrence obstruction --- which is the stronger reading,\nsince \\cite{BIP} closes the occurrence route in the padded regime and leaves the\nmultiplicity route open.\n\nWe claim nothing new for the separation itself: $\\dim\\Pp_7=59>47=\\dim\\Ddet_7$",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 910,
+      "text": "\\bibitem{BIP} P.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova, \\emph{No occurrence",
+      "context": "orbit closures}, J. Algebra \\textbf{477} (2017), 390--434.\n\n\\bibitem{BIP} P.~B\\\"urgisser, C.~Ikenmeyer, G.~Panova, \\emph{No occurrence\nobstructions in geometric complexity theory}, J. Amer. Math. Soc. \\textbf{32}\n(2019), 163--193.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "paper/det4-onset.tex",
+      "line": 924,
+      "text": "\\bibitem{DIP} J.~D\\\"orfler, C.~Ikenmeyer, G.~Panova, \\emph{On geometric",
+      "context": "191--203; arXiv:1210.1795.\n\n\\bibitem{DIP} J.~D\\\"orfler, C.~Ikenmeyer, G.~Panova, \\emph{On geometric\ncomplexity theory: multiplicity obstructions are stronger than occurrence\nobstructions}, ICALP 2019 / SIAM J. Appl. Algebra Geom.\n",
+      "disposition": "PROTECTED_REVIEW_SEE_B14_11_PROTECTED_ERRATA"
+    },
+    {
+      "path": "results/PREREG_s24.md",
+      "line": 29,
+      "text": "Sub-case worth naming separately: a **deficit-driven occurrence obstruction**",
+      "context": "not see.  Equivalently `def_A - def_B > m_A - m_B >= 0`.\n\nSub-case worth naming separately: a **deficit-driven occurrence obstruction**\nis one with `mult_A(lam)=0`; it requires `def_A(lam) = m_A(lam)` exactly\n(\"full deficit\": the whole isotypic component lives on the orbit and none of\nit extends to the closure).",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s25.md",
+      "line": 96,
+      "text": "**S7 — the `easy_counts.md` claim about BIP.**  `docs/easy_counts.md` says the",
+      "context": "below 80%, or the `delta = 2` value not being 100%.\n\n**S7 — the `easy_counts.md` claim about BIP.**  `docs/easy_counts.md` says the\n34 live weights at `(n,delta) = (5,2)` with `m_det = 0 < m_per` are \"exactly\nthe weights where BIP forces `def_per = m_per`\".  I predict **most of them have\n`a = 0`**, so that `def_per = m_per` there is ambient arithmetic and BIP is not",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s25.md",
+      "line": 98,
+      "text": "the weights where BIP forces `def_per = m_per`\".  I predict **most of them have",
+      "context": "**S7 — the `easy_counts.md` claim about BIP.**  `docs/easy_counts.md` says the\n34 live weights at `(n,delta) = (5,2)` with `m_det = 0 < m_per` are \"exactly\nthe weights where BIP forces `def_per = m_per`\".  I predict **most of them have\n`a = 0`**, so that `def_per = m_per` there is ambient arithmetic and BIP is not\nneeded — meaning that sentence overstates what the data shows and should be\ncorrected.  *Falsifier:* most of the 34 having `a >= 1`.",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s25.md",
+      "line": 99,
+      "text": "`a = 0`**, so that `def_per = m_per` there is ambient arithmetic and BIP is not",
+      "context": "34 live weights at `(n,delta) = (5,2)` with `m_det = 0 < m_per` are \"exactly\nthe weights where BIP forces `def_per = m_per`\".  I predict **most of them have\n`a = 0`**, so that `def_per = m_per` there is ambient arithmetic and BIP is not\nneeded — meaning that sentence overstates what the data shows and should be\ncorrected.  *Falsifier:* most of the 34 having `a >= 1`.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s39.md",
+      "line": 13,
+      "text": "An **occurrence obstruction** is a cell with `mult_det = 0 < mult_pad`.",
+      "context": "Convention (stated so it cannot drift): `D := mult_pad − mult_det`; only\n`D > 0` is an obstruction; `D < 0` is the expected direction and is not one.\nAn **occurrence obstruction** is a cell with `mult_det = 0 < mult_pad`.\n\n## 0. The integrator's addendum — a proved constraint, banked\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s39.md",
+      "line": 165,
+      "text": "  the object BIP's positivity theorems cover only for `n ≥ m^25`.  Nobody",
+      "context": "- What would make P2 wrong: a genuinely new vanishing of the two-rectangle\n  Kronecker coefficient at a 6–10-row weight with plethysm room — exactly\n  the object BIP's positivity theorems cover only for `n ≥ m^25`.  Nobody\n  knows; that is why the screen is run.\n\n**P3 — if a one-bit cell exists, does its vector vanish at the padded",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s39.md",
+      "line": 169,
+      "text": "permanent?**  The brief reads BIP's asymptotic phenomenon as \"yes\".  My",
+      "context": "\n**P3 — if a one-bit cell exists, does its vector vanish at the padded\npermanent?**  The brief reads BIP's asymptotic phenomenon as \"yes\".  My\nprior, with its basis: BIP's non-existence of occurrence obstructions at\n`n ≥ m^25` is achieved by *positivity of the Kronecker side* (`m_det > 0`\nwherever `a > 0` in the relevant range), i.e. by one-bit cells not existing",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s39.md",
+      "line": 170,
+      "text": "prior, with its basis: BIP's non-existence of occurrence obstructions at",
+      "context": "**P3 — if a one-bit cell exists, does its vector vanish at the padded\npermanent?**  The brief reads BIP's asymptotic phenomenon as \"yes\".  My\nprior, with its basis: BIP's non-existence of occurrence obstructions at\n`n ≥ m^25` is achieved by *positivity of the Kronecker side* (`m_det > 0`\nwherever `a > 0` in the relevant range), i.e. by one-bit cells not existing\nat all — it says nothing about the pad side of a one-bit cell that does",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s39.md",
+      "line": 183,
+      "text": "extrapolated; BIP's regime is not this one.",
+      "context": "Falsifier of the prior: the vector vanishes at all 20 points at both primes\nand (★) is checked to explain it.  Regime: house data at `ℓ ≤ 6`, `δ ≤ 7`\nextrapolated; BIP's regime is not this one.\n\n**P4 — coverage honesty.**  The table states, by `δ` and by `ℓ`, exactly\nwhat was computed; every `m_det` is exact (two primes, CRT, bound checks);",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s41.md",
+      "line": 38,
+      "text": "  `6 ≤ ℓ(λ) ≤ 10`, and `a ≥ 1` (BIP is silent at `(3,4)`, `docs/s37_review.md`",
+      "context": "  `mult_det(λ, δ) < a(λ, δ)`.\n- Obstruction cells need `λ_1 ≥ δ` (Corollary B of `docs/reducible_ideal.md`),\n  `6 ≤ ℓ(λ) ≤ 10`, and `a ≥ 1` (BIP is silent at `(3,4)`, `docs/s37_review.md`\n  §2b).  The onset itself is not restricted by `λ_1 ≥ δ`; the census lists the\n  `λ_1 < δ` cells separately (they are balanced and, as will be seen, out of\n  reach).",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s41.md",
+      "line": 194,
+      "text": "equation pushes `D` down; (c) BIP's theorem does not apply at `(3, 4)` but",
+      "context": "side has never bitten; (b) the transfer lemma: passing from `{l·c}` to the\ntrue padded permanent can only lower `mult_pad`, so every permanent-specific\nequation pushes `D` down; (c) BIP's theorem does not apply at `(3, 4)` but\nits mechanism — orbit-closure coordinate rings of padded forms are\nmultiplicity-poor at the relevant weights — is the reason occurrence\nobstructions are asymptotically absent, and nothing at `ℓ = 6` suggests the",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s48.md",
+      "line": 157,
+      "text": "largeness; the known GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence",
+      "context": "bounded length can see — and not a barrier theorem about GCT.  It will **not**\nbe described as a natural-proofs barrier (natural proofs is constructivity plus\nlargeness; the known GCT barriers are Bürgisser–Ikenmeyer–Panova on occurrence\nobstructions).  I predict the threshold itself is **not** in the literature in\nthis form.  **Prior 0.6 unknown, 0.4 known** (the density of permanental\npencils / dimension of `D_r^{per_m}` is close to published work on",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 72,
+      "text": "## 3. Task 0 — the BIP question",
+      "context": "---\n\n## 3. Task 0 — the BIP question\n\nTwo determinations, in order.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 76,
+      "text": "**T0a (reading).**  Confirm from the paper that Bürgisser–Ikenmeyer–Panova,",
+      "context": "Two determinations, in order.\n\n**T0a (reading).**  Confirm from the paper that Bürgisser–Ikenmeyer–Panova,\n*No occurrence obstructions in geometric complexity theory* (arXiv:1604.06431;\nFOCS 2016; J. Amer. Math. Soc. **32** (2019), 163–193), Theorem 1.4 carries the\nhypothesis `n ≥ m^25`, and that `(n,m) = (4,3)` fails it.",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 77,
+      "text": "*No occurrence obstructions in geometric complexity theory* (arXiv:1604.06431;",
+      "context": "\n**T0a (reading).**  Confirm from the paper that Bürgisser–Ikenmeyer–Panova,\n*No occurrence obstructions in geometric complexity theory* (arXiv:1604.06431;\nFOCS 2016; J. Amer. Math. Soc. **32** (2019), 163–193), Theorem 1.4 carries the\nhypothesis `n ≥ m^25`, and that `(n,m) = (4,3)` fails it.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 104,
+      "text": "**T0c (the cost, stated whether or not P1 holds).**  Ikenmeyer–Panova /",
+      "context": "brief's \"negative worth having\" and would close the occurrence route outright.\n\n**T0c (the cost, stated whether or not P1 holds).**  Ikenmeyer–Panova /\nDörfler–Ikenmeyer–Panova, *Multiplicity obstructions are stronger than occurrence\nobstructions* (ICALP 2019; SIAM J. Appl. Algebra Geom. **4** (2020);\narXiv:1901.04576).  At `a = 1` a multiplicity obstruction **is** an occurrence",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 105,
+      "text": "Dörfler–Ikenmeyer–Panova, *Multiplicity obstructions are stronger than occurrence",
+      "context": "\n**T0c (the cost, stated whether or not P1 holds).**  Ikenmeyer–Panova /\nDörfler–Ikenmeyer–Panova, *Multiplicity obstructions are stronger than occurrence\nobstructions* (ICALP 2019; SIAM J. Appl. Algebra Geom. **4** (2020);\narXiv:1901.04576).  At `a = 1` a multiplicity obstruction **is** an occurrence\nobstruction, so the `a = 1` restriction gives up exactly the strength gap that",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s52.md",
+      "line": 184,
+      "text": "cell, because `D > 0` here requires an occurrence obstruction, the strictly",
+      "context": "be worth more if one appears.  Stated plainly so the report cannot drift: the\nprior on a separation at these cells is *lower*, not higher, than at a generic\ncell, because `D > 0` here requires an occurrence obstruction, the strictly\nweaker notion.\n\n**Re-measurement gate.**  Three cells already banked in `results/s36_aone.md`",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s55.md",
+      "line": 41,
+      "text": "- Bürgisser–Ikenmeyer–Panova, arXiv:1604.06431, JAMS 32 (2019), Thm 1.5:",
+      "context": "- Farnsworth, arXiv:1505.05079: symmetric border rank `R_S(det_4) >= 38`,\n  improving a previous bound of 36.\n- Bürgisser–Ikenmeyer–Panova, arXiv:1604.06431, JAMS 32 (2019), Thm 1.5:\n  no occurrence obstructions **for `n >= m^25`**.\n\n## 1. What this session will and will not do",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s55.md",
+      "line": 42,
+      "text": "  no occurrence obstructions **for `n >= m^25`**.",
+      "context": "  improving a previous bound of 36.\n- Bürgisser–Ikenmeyer–Panova, arXiv:1604.06431, JAMS 32 (2019), Thm 1.5:\n  no occurrence obstructions **for `n >= m^25`**.\n\n## 1. What this session will and will not do\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/PREREG_s73.md",
+      "line": 48,
+      "text": "obstruction**, not an occurrence obstruction.  The separation itself is not",
+      "context": "`P ⊆ D ⟹ I(D) ⊆ I(P) ⟹ U_D ⊆ U_P ⟹ i_det ≤ i_per`).  Both multiplicities are\nnonzero at every rung with `a > 0`, so any `D > 0` here is a **multiplicity\nobstruction**, not an occurrence obstruction.  The separation itself is not\nnews (`dim P_7 = 59 > 47 = dim D_7`); the content is the certificate and the\nladder behaviour.\n",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/longweight_screen.md",
+      "line": 19,
+      "text": "The region for a **permanent-specific** occurrence obstruction",
+      "context": "  `= (1/2)[g(λ,(δ^4),(δ^4)) + T(λ)]` (`mult_det ≤ m_det`), computed only when `a ≥ 1`.\n\nThe region for a **permanent-specific** occurrence obstruction\n(`mult_det = 0 < mult_pad`) or forced multiplicity drop is bounded: `a ≥ 1`\n(BIP silent at `(3,4)`); `λ_1 ≥ δ` (Kadish–Landsberg via (★),\n`docs/stabiliser_reduction.md`); `ℓ ≥ 6` — where the permanent *enters*",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/longweight_screen.md",
+      "line": 21,
+      "text": "(BIP silent at `(3,4)`); `λ_1 ≥ δ` (Kadish–Landsberg via (★),",
+      "context": "The region for a **permanent-specific** occurrence obstruction\n(`mult_det = 0 < mult_pad`) or forced multiplicity drop is bounded: `a ≥ 1`\n(BIP silent at `(3,4)`); `λ_1 ≥ δ` (Kadish–Landsberg via (★),\n`docs/stabiliser_reduction.md`); `ℓ ≥ 6` — where the permanent *enters*\n(`docs/washout_lemma.md` Thm 6), **not** a proof that no obstruction exists at\n`ℓ ≤ 5` (corrected s49: washout `P_r = R_r` makes any `D > 0` at `ℓ ≤ 5` a",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    },
+    {
+      "path": "results/longweight_screen.md",
+      "line": 43,
+      "text": "s38 found at length 5.  So no occurrence obstruction and no forced",
+      "context": "with `a ≥ 1` has `a ≤ m_det` — the determinant's symmetric rectangular\nKronecker room dominates the ambient plethysm room at lengths 6–10 just as\ns38 found at length 5.  So no occurrence obstruction and no forced\nmultiplicity drop lives at `6 ≤ ℓ ≤ 10` in the region screened; any\nseparation here would have to be a genuine multiplicity phenomenon\n(`mult_det < a ≤ m_det`), invisible to arithmetic.",
+      "disposition": "CONTEXT_REVIEWED_NO_A1_EXCLUSION"
+    }
+  ],
+  "protected_files_modified": false,
+  "interpretation": "Every matched context reviewed; search is a reproducible lexical scope, not a proof about arbitrary unrecognised paraphrases. Historical quotes retain explicit corrections."
+}

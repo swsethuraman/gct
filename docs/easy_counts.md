@@ -78,10 +78,9 @@ Calibration, all passed:
 4. **The support asymmetry is the visible form of it.**  At `(5,2)` the
    determinant is supported on 6 of 42 weights and the permanent on 40 —
    34 live weights have `m_det = 0 < m_per`.  Those are exactly the weights
-   where Buergisser-Ikenmeyer-Panova forces `def_per = m_per`, a full deficit.
-   So on the `m_det = 0` locus — 85% of live weights at `(5,2)` — the
-   cancellation `D = 0` is not a coincidence at all, it is BIP's theorem.
-   The unexplained saturation is confined to the `m_det > 0` locus.
+   where the ambient coefficient is zero (s25, `docs/ambient_audit.md`
+   section 8), hence `def_per = m_per`. This is ambient arithmetic, not a
+   BIP application. BIP supplies no exclusion at the small parameters here.
 
 5. **Structurally this is forced, and the gap is quadratic.**
    `dim H_det - dim H_per = (2n^2-2) - (2n-2) = 2n(n-1)`.  A bigger stabiliser
@@ -95,10 +94,10 @@ Calibration, all passed:
 The easy count is not the bottleneck, and it is not close: it favours the
 obstruction by two orders of magnitude at `n = 5, delta = 2` and grows.
 Everything that stands between us and an obstruction is on the deficit side,
-and on most of the weight space (`m_det = 0`) that side is already settled
-against us by BIP.  Any future search should be confined to `m_det > 0` — 6 of
-42 weights at `(5,2)` — which is also exactly where the deficit is hardest to
-compute.
+and the ambient-zero portion is settled by the ambient coefficient.
+At `(5,2)` all 36 determinant-unsupported weights have `a = 0` (s25).
+At other parameters, `m_det = 0` alone supplies no BIP exclusion; retain
+any `a > 0` label until an applicable theorem or certificate closes it.
 
 ## Files
 

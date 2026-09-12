@@ -163,9 +163,9 @@ passed — the vacuous one and the killed one alike — `m_{per^pad} = m_det = 1
 There `mult_B <= 1`, so an obstruction requires `mult_A = 0 < mult_B = 1`: an
 **occurrence** obstruction, and simultaneously `def_A(lam) = m_A(lam)`, a *full*
 determinant deficit.  Occurrence obstructions are exactly the sub-case
-Bürgisser–Ikenmeyer–Panova close.  So even where the Peter–Weyl side goes
-neutral, the only obstruction the arithmetic leaves room for is the one already
-known to be unavailable.
+Bürgisser–Ikenmeyer–Panova close in their range `n >= m^25`. That
+hypothesis fails here. The two screened labels close by the ambient and
+degree-one arguments above; the occurrence observation gives no extra closure.
 
 ## 4. Why the screen fails — and why I predicted the opposite
 
@@ -192,15 +192,14 @@ the effective group after the row reduction is the right one.
 `m_det(lam) = 0`, hence `mult_lam C[closure(det_4)] = 0`, while
 `m_{per^pad}(lam) > 0`.  If `mult_lam C[closure(per^pad)]` were also positive
 at any of those, that would be an *occurrence* obstruction — which
-Bürgisser–Ikenmeyer–Panova rule out.  So BIP's theorem, translated into this
-programme's language, says exactly:
+Bürgisser–Ikenmeyer–Panova do not rule out at these parameters.
+**B14-11: the following historical inference is withdrawn as a BIP claim:**
 
 > at every weight where the determinant's Peter–Weyl count vanishes, the padded
 > permanent's deficit is **full**: `def_{per^pad}(lam) = m_{per^pad}(lam)`.
 
-That is a nontrivial statement about the permanent's deficit obtained for free
-from a known theorem, and it is the first thing this programme's vocabulary has
-said about the permanent side.
+This needs an applicable ambient-zero result or a separate certificate
+at each label. The cited BIP theorem does not supply it at `(4,3)`.
 
 ## 5. STEP 2 — the permanent's deficit at `n = m = 3`
 
@@ -283,7 +282,8 @@ zero there and `D = 0` — a self-contained kill that does not invoke
 Bürgisser–Ikenmeyer–Panova and so does not depend on whether their hypotheses
 reach `(n,m) = (4,3)`.  Both passing weights, moreover, have
 `m_{per^pad} = m_det = 1`, where the only obstruction the arithmetic leaves
-room for is an occurrence obstruction — the sub-case already closed.  For the
+room for is an occurrence obstruction. BIP does not close that sub-case
+at `(4,3)`; the two labels above close by their separate ambient arguments.  For the
 line to reopen, the symmetric rectangular Kronecker coefficient `m_det` would
 have to overtake the ten-variable monomial count `m_{per^pad}` at some larger
 `delta`, and the measured trend runs hard the other way; the unpadded `n = m =

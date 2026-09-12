@@ -14,8 +14,8 @@ Delivered as a bundle; nothing pushed.
 > **Task 0 is resolved: the BIP mechanism does not transfer to `n = 4`, and the
 > reason is structural rather than numerical.**  Its entire supply of
 > determinant-side evaluation points at `n = 4` is eight padded power sums, every
-> one a product of four linear forms with linear span at most 3; a weight vector
-> of weight `λ` vanishes identically at every point of span `< ℓ(λ)`; the census
+> one a product of four linear forms with essential span at most 3; an HWV
+> of highest weight `λ` vanishes at every point of span `< ℓ(λ)`; the census
 > is at `ℓ(λ) = 6`.  The machinery's length reach at `n = 4` is `ℓ(λ) ≤ 4`, and
 > the least `n` at which it reaches a six-row weight is `n = 9` — for hooks only.
 > The census therefore proceeds, as the brief directs.
@@ -62,7 +62,7 @@ power sums `X^{n−s}(φ_1^s + ··· + φ_k^s)` with `n ≥ sk`.  At `n = 4`:
 | BIP tool | hypothesis | at `n = 4` |
 |---|---|---|
 | Thm 2.5 (the point supply) | `n ≥ sk` | 8 shapes, **linear span ≤ 3**, all products of four linear forms |
-| Prop. 2.3 + semigroup | `n ≥ kℓ`, `ℓ` even | `ℓ(λ) ≤ 3` |
+| Prop. 2.3 + semigroup | `n ≥ kℓ`, `ℓ` even | `ℓ(λ) ≤ 2` (B14-11 corrected row extension) |
 | Prop. 2.4 / 5.1 | `md² ≤ n` | **vacuous for `δ ≥ 3`** |
 | Prop. 5.2 | `m²s² ≤ n` | `ℓ(λ) ≤ 4`, hooks only |
 | Prop. 5.5 | `n ≥ 24m^6 ≥ 1536` | **vacuous** |
@@ -72,9 +72,10 @@ And the `n = 9` hook case of Prop. 5.2 — the machinery's best reach at length 
 `λ_2` runs from 2 to 12 and not one is a hook, so the requirement for the cells
 actually measured is `n ≥ 9λ_2² ∈ [36, 1296]`.
 
-**Lemma B (proved, one line).**  A weight vector of weight `λ` vanishes at every
-point whose linear span has dimension `< ℓ(λ)`.  *(Torus element trivial on the
-span; the weight character is a positive power of the scaling.)*
+**Lemma B (PROVED, corrected B14-11).** The irreducible isotypic
+component with highest weight `λ` vanishes on forms of essential span
+`< ℓ(λ)`, by functorial Schur restriction. The original arbitrary-weight
+wording is false; see the explicit counterexample in `docs/bip_transfer.md`.
 
 So at `n = 4` every highest weight vector of weight `λ` with `ℓ(λ) ≥ 4` vanishes
 at **every** point BIP's Theorem 2.5 supplies.  **Measured** at three banked

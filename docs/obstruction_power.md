@@ -334,12 +334,13 @@ Stated as a checklist, cheapest first.
    the accessible range, the question is moot and no closure computation is
    needed.  **This screen has not been run and should be, before anything
    else.**
-3. **The occurrence sub-case is already closed.**  A deficit-driven
+3. **The occurrence sub-case needs a regime check.**  A deficit-driven
    *occurrence* obstruction needs `def_{det}(lam) = m_{det}(lam)` (full
    deficit) together with `mult_{per^pad}(lam) > 0`; that is exactly an
    occurrence obstruction, and Bürgisser–Ikenmeyer–Panova rule those out for
-   the padded permanent against the determinant.  So the deficit cannot help
-   in the sub-case where it would be easiest to detect.
+   their padded permanent against the determinant when `n >= m^25`.
+   This leaves `(n,m)=(4,3)` open; A1 is excluded only by an applicable
+   theorem or certificate, never by that asymptotic citation alone.
 4. **Search inside the conductor window.**  By Theorem 2 the search space is
    `k < max(c_det, c_per)` on each ray.  The one determinant conductor measured
    is `c((2,2,2),2) = 1`, ray-complete: a window of width one.
