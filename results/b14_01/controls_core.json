@@ -1,0 +1,48 @@
+{
+ "C1_brute_vs_core": {
+  "control": "C1",
+  "honest_agree": 48,
+  "honest_total": 48,
+  "honest_nonzero": 11,
+  "negative_detected": 65,
+  "negative_total": 144,
+  "passed": true,
+  "negative_has_teeth": true
+ },
+ "real_shape": {
+  "C2_torus_weight": {
+   "pass_count": 2,
+   "fail_count": 0,
+   "n_live": 1,
+   "negative_detected": 2,
+   "negative_total": 2,
+   "passed": true,
+   "has_teeth": true
+  },
+  "C3_raising": {
+   "n_tested": 1,
+   "constant_in_raising_dir": 0,
+   "constant_in_lowering_dir": 1,
+   "passed": true,
+   "has_teeth": true
+  },
+  "C4_wrong_normalisation": {
+   "n_tested": 1,
+   "wrongnorm_constant_in_raising_dir": 0,
+   "wrongnorm_constant_in_lowering_dir": 0,
+   "rejected": true,
+   "note": "dropping alpha! is a DIAGONAL rescaling, so it commutes with the torus and C2 cannot see it (wk8_s30_core docstring: same kernel DIMENSION, different kernel VECTORS). C3 is the control that rejects it."
+  },
+  "C5_span_forced_zero": {
+   "n_restricted_evals": 3,
+   "n_zero": 3,
+   "all_zero": true,
+   "n_generic_nonzero": 1,
+   "n_live": 1,
+   "passed": true,
+   "has_teeth": true,
+   "note": "lambda has 9 parts; a weight vector of weight lambda vanishes at every point of span < l(lambda) (PROVED.md: bip_blind_at_n4 mechanism). The anti-vacuity half is n_generic_nonzero > 0: without it the evaluator could be returning 0 identically."
+  }
+ },
+ "elapsed_s": 3.2
+}

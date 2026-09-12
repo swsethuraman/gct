@@ -1,0 +1,234 @@
+{
+ "control": "C1b_directed",
+ "n_shapes": 10,
+ "n_agree": 10,
+ "n_with_dim_ge_2": 1,
+ "n_agree_dim_ge_2": 1,
+ "max_predicted": 2,
+ "passed": false,
+ "C1c_forced_zero": {
+  "a3_zero_blocks": 12,
+  "a3_zero_blocks_all_zero": 9,
+  "a3_positive_blocks": 9,
+  "a3_positive_blocks_nonzero": 9,
+  "passed": false,
+  "has_teeth": true,
+  "note": "a_3(mu)=0 blocks must be identically zero and a_3(mu)>0 blocks must not be: the anti-vacuity half is what stops 'all zero' passing trivially."
+ },
+ "rows": [
+  {
+   "shape": [
+    3,
+    1,
+    1,
+    3,
+    2
+   ],
+   "lam": [
+    4,
+    3,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(3, 2, 1)": 0,
+    "(3, 3, 0)": 0,
+    "(4, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    3,
+    2,
+    0,
+    4,
+    2
+   ],
+   "lam": [
+    4,
+    4,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(4, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    3,
+    2,
+    1,
+    5,
+    2
+   ],
+   "lam": [
+    5,
+    4,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(4, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    4,
+    1,
+    2,
+    3,
+    3
+   ],
+   "lam": [
+    5,
+    3,
+    2,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(3, 2, 2, 2)": 0,
+    "(3, 3, 2, 1)": 0,
+    "(4, 2, 2, 1)": 0,
+    "(4, 3, 2, 0)": 0,
+    "(5, 2, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    4,
+    2,
+    1,
+    4,
+    3
+   ],
+   "lam": [
+    5,
+    4,
+    2,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(4, 2, 2, 1)": 0,
+    "(4, 3, 2, 0)": 0,
+    "(5, 2, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    3,
+    3,
+    1,
+    4,
+    3
+   ],
+   "lam": [
+    6,
+    5,
+    2
+   ],
+   "predicted": 2,
+   "measured": 2,
+   "agree": true,
+   "blocks": {
+    "(5, 2, 2)": 1,
+    "(5, 3, 1)": 0,
+    "(5, 4, 0)": 0,
+    "(6, 2, 1)": 0,
+    "(6, 3, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    4,
+    3,
+    0,
+    5,
+    3
+   ],
+   "lam": [
+    5,
+    5,
+    2,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(5, 2, 2, 0)": 1
+   }
+  },
+  {
+   "shape": [
+    3,
+    2,
+    0,
+    1,
+    3
+   ],
+   "lam": [
+    4,
+    4,
+    2
+   ],
+   "predicted": 1,
+   "measured": 1,
+   "agree": true,
+   "blocks": {
+    "(4, 3, 2)": 0,
+    "(4, 4, 1)": 1
+   }
+  },
+  {
+   "shape": [
+    4,
+    1,
+    1,
+    5,
+    2
+   ],
+   "lam": [
+    4,
+    3,
+    2,
+    2
+   ],
+   "predicted": 0,
+   "measured": 0,
+   "agree": true,
+   "blocks": {}
+  },
+  {
+   "shape": [
+    4,
+    2,
+    0,
+    6,
+    2
+   ],
+   "lam": [
+    4,
+    4,
+    2,
+    2
+   ],
+   "predicted": 0,
+   "measured": 0,
+   "agree": true,
+   "blocks": {}
+  }
+ ]
+}

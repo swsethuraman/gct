@@ -1,0 +1,28 @@
+{
+ "control": "C1b_directed",
+ "n_shapes": 10,
+ "n_agree": 10,
+ "n_with_dim_ge_2": 1,
+ "n_agree_dim_ge_2": 1,
+ "max_predicted": 2,
+ "passed": false,
+ "C1c_forced_zero": {
+  "a3_zero_blocks": 12,
+  "a3_zero_blocks_all_zero": 9,
+  "a3_positive_blocks": 9,
+  "a3_positive_blocks_nonzero": 9,
+  "passed": false,
+  "has_teeth": true,
+  "note": "a_3(mu)=0 blocks must be identically zero and a_3(mu)>0 blocks must not be: the anti-vacuity half is what stops 'all zero' passing trivially."
+ }
+}
+  lam=(4, 3, 2)          pred=1   meas=1   OK
+  lam=(4, 4, 2)          pred=1   meas=1   OK
+  lam=(5, 4, 2)          pred=1   meas=1   OK
+  lam=(5, 3, 2, 2)       pred=1   meas=1   OK
+  lam=(5, 4, 2, 2)       pred=1   meas=1   OK
+  lam=(6, 5, 2)          pred=2   meas=2   OK
+  lam=(5, 5, 2, 2)       pred=1   meas=1   OK
+  lam=(4, 4, 2)          pred=1   meas=1   OK
+  lam=(4, 3, 2, 2)       pred=0   meas=0   OK
+  lam=(4, 4, 2, 2)       pred=0   meas=0   OK
