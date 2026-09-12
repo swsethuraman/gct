@@ -190,3 +190,39 @@ numpy._core._exceptions._ArrayMemoryError: Unable to allocate 473. MiB for an ar
       level 9: 5096493 prefixes
       level 10: 5096493 prefixes
   lam=(7, 7, 7, 4, 3, 2): N_S=5096493 |Stab|=6 n_chi=841318 (orbits dropped: 16299) [lean, 44s, HWM 0.84 GB]
+    E_01: |H|=1 targets 4719476 canonical rows 4719176 nnz 21497930 (obstructed fixed targets cancelled: 0) [37s, HWM 1.27 GB]
+    E_12: |H|=1 targets 4719476 canonical rows 4719176 nnz 21497930 (obstructed fixed targets cancelled: 0) [71s, HWM 1.54 GB]
+    E_23: |H|=2 targets 3282047 canonical rows 1635199 nnz 7435756 (obstructed fixed targets cancelled: 7426) [95s, HWM 1.54 GB]
+    E_34: |H|=6 targets 3567027 canonical rows 588130 nnz 2009142 (obstructed fixed targets cancelled: 17574) [134s, HWM 1.62 GB]
+    E_45: |H|=6 targets 3042013 canonical rows 501678 nnz 1466429 (obstructed fixed targets cancelled: 11757) [165s, HWM 1.62 GB]
+  built (7, 7, 7, 4, 3, 2) d10: N_S=5096493 |Stab|=6 n_chi=841318 rows=12163359 nnz=53907187 (218s: mono 5s orbits 44s rows 169s; HWM 1.78 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 282, in hybrid_kernel
+    Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 475. MiB for an array with shape (841152, 74) and data type int64
+=== lane A rank 366 exit 1 ===
+=== lane A starting rank 364 at 04:18:36 ===
+== rank 364 mu=(8, 8, 5, 3, 3, 3) a=1  PRE-REGISTERED n_chi = 382731 (N_S=4876249, |Stab|=12, wide=False) ==
+      level 1: 35 prefixes
+      level 2: 554 prefixes
+      level 3: 9248 prefixes
+      level 4: 75686 prefixes
+      level 5: 373962 prefixes
+      level 6: 1224482 prefixes
+      level 7: 2841128 prefixes
+      level 8: 4444064 prefixes
+      level 9: 4876249 prefixes
+      level 10: 4876249 prefixes
