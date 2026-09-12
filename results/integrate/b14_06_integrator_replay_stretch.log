@@ -1,0 +1,25 @@
+controls (each with an input that must make it fail):
+  [PASS] C9 empty-input guard               (twin failed as required)  rank_of([]) raised=True; all([]) is True, which is why every control here asserts cardinality first
+  [PASS] C2 formula == brute-force eps.eps  (twin failed as required)  38 brackets, 4 random points, exact equality; twins: non-symmetric N differs=True, c!-dropped differs=True
+  [PASS] C1 Theorem P at tail (2^8)         (twin failed as required)  count=1, value=8!.det(N_2) on 8/8 DET points, all nonzero; twin: count at (17,2^7) = 638
+  [PASS] C10 Euler relations on real points (twin failed as required)  35 points across 6 families, 0 violated relations; twin: independent random data has 30 violations
+  [PASS] C4 a_inf vs Weyl alternation       (twin failed as required)  12 tails, rank == a_inf everywhere -> (2, 2, 2):1v1; (3, 2, 2):1v1; (4, 2, 2):3v3; (5, 2, 2):4v4; (6, 2, 2):8v8; (7, 2, 2):9v9; (2, 2, 2, 2):1v1; (3, 2, 2, 2):1v1; (4, 2, 2, 2):3v3; (5, 2, 2, 2):4v4; (6, 2, 2, 2):9v9; (7, 2, 2, 2):11v11; twins: inconsistent (s,u,N) inflates=True, a deleted (a,b) class drops the rank=True
+  [PASS] C3 covariance and weight           (twin failed as required)  det(g)^2 law on 3 points (638 brackets); torus reads weight (15+2, 2^7); twins: non-unimodular g not invariant=True, wrong weight rejected=True
+
+  tail (19, 2, 2, 2, 2, 2, 2, 2)  |lam_bar|=33  brackets=950  points=460
+    p=2147483647  GEN   rank  392   (460 pts, 0 dropped, 9.7s)
+    p=2147483647  DET   rank  390   (460 pts, 0 dropped, 9.8s)
+    p=2147483647  PAD   rank  377   (457 pts, 3 dropped, 8.6s)
+    p=2147483647  DET*  rank  392   (C6: perturbed off M_ell; must rise)
+    p=2147483629  GEN   rank  392   (460 pts, 0 dropped, 9.2s)
+    p=2147483629  DET   rank  390   (460 pts, 0 dropped, 9.6s)
+    p=2147483629  PAD   rank  377   (457 pts, 3 dropped, 9.4s)
+    p=2147483629  DET*  rank  392   (C6: perturbed off M_ell; must rise)
+
+  tail (21, 2, 2, 2, 2, 2, 2, 2)  |lam_bar|=35  brackets=1337  points=610
+    p=2147483647  GEN   rank  533   (610 pts, 0 dropped, 13.6s)
+    p=2147483629  GEN   rank  533   (610 pts, 0 dropped, 13.8s)
+  [PASS] C7 both house primes agree at (19, 2, 2, 2, 2, 2, 2, 2) (no twin)  {'GEN': 392, 'DET': 390, 'PAD': 377, 'DET_corrupted': 392} vs {'GEN': 392, 'DET': 390, 'PAD': 377, 'DET_corrupted': 392}
+  [PASS] C7 both house primes agree at (21, 2, 2, 2, 2, 2, 2, 2) (no twin)  {'GEN': 533} vs {'GEN': 533}
+
+wrote /root/work/gct10/results/b14_06/run.json   ok=True   103.8s

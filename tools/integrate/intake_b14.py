@@ -133,8 +133,22 @@ def check(repo, bundle, slot=None):
         except UnicodeDecodeError:
             notes.append(f'9  {f} is binary ({len(raw)} bytes); text checks skipped')
             continue
-        if re.search(r'claude\.ai', content, re.I):
-            fails.append(f'9  {f} contains a session-link URL')
+        # Distinguish a LIVE session link from a quoted placeholder.  The rule
+        # itself cannot be written down without naming the string, so a report
+        # that says 'I declined to add Claude-Session: https://claude.ai/...' is
+        # complying, not violating.  B14-06 was flagged for exactly that, and the
+        # integrator had hit the same false positive in its own note a day
+        # earlier.  A real link has a path that is not an ellipsis.
+        # NOTE: do not put '.' in the strip set -- an earlier version did, and it
+        # ate the very ellipsis it was testing for, so every placeholder read as
+        # a live link.  Strip only quotes and brackets.
+        live = [m.group(0) for m in re.finditer(r'claude\.ai/\S+', content, re.I)
+                if not m.group(0).rstrip('`\'")],;').endswith(('/...', '/…'))]
+        if live:
+            fails.append(f'9  {f} contains a live session-link URL: {live[0][:60]}')
+        elif re.search(r'claude\.ai', content, re.I):
+            notes.append(f'9  {f} names the session-link string in prose '
+                         f'(placeholder, not a live URL) -- allowed')
         if f.endswith('.md'):
             hits = [w for w in BANNED if re.search(rf'\b{w}\b', content, re.I)]
             if hits:
