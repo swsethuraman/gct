@@ -1,0 +1,648 @@
+{
+ "instrument": "analysis/b14_09_sizing.py  n_chi = (1/|G|) sum_g chi(g) |Fix_X(g)|",
+ "group_and_character_check": [
+  [
+   [
+    4,
+    3,
+    3,
+    2
+   ],
+   2
+  ],
+  [
+   [
+    5,
+    4,
+    3,
+    3,
+    3
+   ],
+   6
+  ],
+  [
+   [
+    6,
+    4,
+    4,
+    2,
+    2
+   ],
+   4
+  ],
+  [
+   [
+    4,
+    4,
+    4,
+    4,
+    2,
+    0
+   ],
+   24
+  ],
+  [
+   [
+    5,
+    5,
+    4,
+    2,
+    2,
+    0
+   ],
+   4
+  ],
+  [
+   [
+    6,
+    5,
+    3,
+    3,
+    2,
+    2
+   ],
+   4
+  ],
+  [
+   [
+    5,
+    5,
+    5,
+    3,
+    3,
+    3
+   ],
+   36
+  ],
+  [
+   [
+    7,
+    4,
+    4,
+    4,
+    3,
+    2
+   ],
+   6
+  ],
+  [
+   [
+    6,
+    6,
+    4,
+    4,
+    4,
+    3
+   ],
+   12
+  ],
+  [
+   [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   720
+  ]
+ ],
+ "perm_action_matches_engine": true,
+ "c1_c2": {
+  "records": 730,
+  "secs": 9.3,
+  "sources": [
+   "results/b13_08/per6_d10.jsonl",
+   "results/b13_09/calibration_r6.jsonl",
+   "results/b13_09/controls.jsonl",
+   "results/b13_09/per_r7_d7.jsonl",
+   "results/b13_09/per_r7_d8.jsonl",
+   "results/b13_09/per_r7_d9.jsonl",
+   "results/b13_09/per_r8_d8.jsonl",
+   "results/b13_09/per_r8_d9.jsonl",
+   "results/s62_n3_control.json",
+   "results/s69_n3_d12.json",
+   "results/s69_n3_d14.json",
+   "results/s73_dladder.jsonl",
+   "results/s79_per6.jsonl",
+   "results/s79_per6_control.json"
+  ],
+  "by_nr": {
+   "n=3,r=7": 160,
+   "n=3,r=8": 13,
+   "n=3,r=6": 557
+  },
+  "C1_N_S_mismatches": [],
+  "C2_n_chi_mismatches": [],
+  "stab_mismatches": [],
+  "C1": "PASS",
+  "C2": "PASS"
+ },
+ "c3a_chi_dropped": {
+  "tested": 696,
+  "still_agreeing": 281,
+  "disagreeing": 415,
+  "examples": [
+   [
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     2
+    ],
+    9,
+    {
+     "wrong": 27187,
+     "banked": 23907
+    }
+   ],
+   [
+    [
+     6,
+     5,
+     5,
+     5,
+     3,
+     3
+    ],
+    9,
+    {
+     "wrong": 286452,
+     "banked": 265724
+    }
+   ],
+   [
+    [
+     7,
+     5,
+     5,
+     4,
+     3,
+     3
+    ],
+    9,
+    {
+     "wrong": 685579,
+     "banked": 650515
+    }
+   ],
+   [
+    [
+     7,
+     5,
+     5,
+     5,
+     3,
+     2
+    ],
+    9,
+    {
+     "wrong": 317668,
+     "banked": 304186
+    }
+   ],
+   [
+    [
+     7,
+     5,
+     5,
+     5,
+     4,
+     1
+    ],
+    9,
+    {
+     "wrong": 190228,
+     "banked": 181424
+    }
+   ]
+  ],
+  "note": "the sign twist is what chi is; dropping it must change the answer",
+  "C3a": "PASS"
+ },
+ "c3b_group_widened": {
+  "tested": 24,
+  "still_agreeing": 0,
+  "disagreeing": 24,
+  "examples": [
+   [
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     2
+    ],
+    9,
+    {
+     "wrong": null,
+     "banked": 23907
+    }
+   ],
+   [
+    [
+     6,
+     5,
+     5,
+     5,
+     3,
+     3
+    ],
+    9,
+    {
+     "wrong": null,
+     "banked": 265724
+    }
+   ],
+   [
+    [
+     6,
+     6,
+     5,
+     4,
+     4,
+     2
+    ],
+    9,
+    {
+     "wrong": null,
+     "banked": 607598
+    }
+   ],
+   [
+    [
+     6,
+     6,
+     6,
+     4,
+     4,
+     1
+    ],
+    9,
+    {
+     "wrong": null,
+     "banked": 93937
+    }
+   ],
+   [
+    [
+     6,
+     6,
+     6,
+     5,
+     2,
+     2
+    ],
+    9,
+    {
+     "wrong": null,
+     "banked": 114417
+    }
+   ]
+  ],
+  "C3b": "PASS"
+ },
+ "c3c_weight_perturbed": {
+  "tested": 3,
+  "refused": 3,
+  "cases": [
+   [
+    [
+     10,
+     9,
+     4,
+     3,
+     3,
+     2
+    ],
+    10,
+    {
+     "refused": "weight (10, 9, 4, 3, 3, 2) sums to 31, not n*delta = 30"
+    }
+   ],
+   [
+    [
+     11,
+     6,
+     5,
+     4,
+     3,
+     2
+    ],
+    10,
+    {
+     "refused": "weight (11, 6, 5, 4, 3, 2) sums to 31, not n*delta = 30"
+    }
+   ],
+   [
+    [
+     6,
+     5,
+     5,
+     5,
+     5,
+     5
+    ],
+    10,
+    {
+     "refused": "weight (6, 5, 5, 5, 5, 5) sums to 31, not n*delta = 30"
+    }
+   ]
+  ],
+  "C3c": "PASS"
+ },
+ "c4_independent_implementations": {
+  "tested": 10,
+  "rows": [
+   {
+    "mu": [
+     4,
+     3,
+     3,
+     2
+    ],
+    "delta": 4,
+    "n": 3,
+    "r": 4,
+    "s45": {
+     "N_S": 80,
+     "stab": 2,
+     "n_chi": 33,
+     "secs": 0.0
+    },
+    "char_sum": {
+     "N_S": 80,
+     "stab": 2,
+     "n_chi": 33
+    },
+    "s36": {
+     "N_S": 80,
+     "stab": 2,
+     "n_chi": 33,
+     "secs": 0.0
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     5,
+     4,
+     3,
+     3,
+     3
+    ],
+    "delta": 6,
+    "n": 3,
+    "r": 5,
+    "s45": {
+     "N_S": 5152,
+     "stab": 6,
+     "n_chi": 729,
+     "secs": 0.01
+    },
+    "char_sum": {
+     "N_S": 5152,
+     "stab": 6,
+     "n_chi": 729
+    },
+    "s36": {
+     "N_S": 5152,
+     "stab": 6,
+     "n_chi": 729,
+     "secs": 0.19
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     6,
+     4,
+     4,
+     2,
+     2
+    ],
+    "delta": 6,
+    "n": 3,
+    "r": 5,
+    "s45": {
+     "N_S": 2829,
+     "stab": 4,
+     "n_chi": 838,
+     "secs": 0.01
+    },
+    "char_sum": {
+     "N_S": 2829,
+     "stab": 4,
+     "n_chi": 838
+    },
+    "s36": {
+     "N_S": 2829,
+     "stab": 4,
+     "n_chi": 838,
+     "secs": 0.1
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     4,
+     4,
+     4,
+     4,
+     2,
+     0
+    ],
+    "delta": 6,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 4975,
+     "stab": 24,
+     "n_chi": 273,
+     "secs": 0.04
+    },
+    "char_sum": {
+     "N_S": 4975,
+     "stab": 24,
+     "n_chi": 273
+    },
+    "s36": {
+     "N_S": 4975,
+     "stab": 24,
+     "n_chi": 273,
+     "secs": 0.23
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     5,
+     5,
+     4,
+     2,
+     2,
+     0
+    ],
+    "delta": 6,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 3111,
+     "stab": 4,
+     "n_chi": 808,
+     "secs": 0.01
+    },
+    "char_sum": {
+     "N_S": 3111,
+     "stab": 4,
+     "n_chi": 808
+    },
+    "s36": {
+     "N_S": 3111,
+     "stab": 4,
+     "n_chi": 808,
+     "secs": 0.13
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     6,
+     5,
+     3,
+     3,
+     2,
+     2
+    ],
+    "delta": 7,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 65673,
+     "stab": 4,
+     "n_chi": 16735,
+     "secs": 0.15
+    },
+    "char_sum": {
+     "N_S": 65673,
+     "stab": 4,
+     "n_chi": 16735
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     5,
+     5,
+     5,
+     3,
+     3,
+     3
+    ],
+    "delta": 8,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 682588,
+     "stab": 36,
+     "n_chi": 17600,
+     "secs": 14.79
+    },
+    "char_sum": {
+     "N_S": 682588,
+     "stab": 36,
+     "n_chi": 17600
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     7,
+     4,
+     4,
+     4,
+     3,
+     2
+    ],
+    "delta": 8,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 404883,
+     "stab": 6,
+     "n_chi": 70458,
+     "secs": 1.75
+    },
+    "char_sum": {
+     "N_S": 404883,
+     "stab": 6,
+     "n_chi": 70458
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     6,
+     6,
+     4,
+     4,
+     4,
+     3
+    ],
+    "delta": 9,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 3423156,
+     "stab": 12,
+     "n_chi": 296113,
+     "secs": 57.77
+    },
+    "char_sum": {
+     "N_S": 3423156,
+     "stab": 12,
+     "n_chi": 296113
+    },
+    "agree": true
+   },
+   {
+    "mu": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "delta": 8,
+    "n": 3,
+    "r": 6,
+    "s45": {
+     "N_S": 1080580,
+     "stab": 720,
+     "n_chi": 1969,
+     "secs": 427.63
+    },
+    "char_sum": {
+     "N_S": 1080580,
+     "stab": 720,
+     "n_chi": 1969
+    },
+    "agree": true
+   }
+  ],
+  "C4": "PASS"
+ },
+ "verdict": {
+  "C1": "PASS",
+  "C2": "PASS",
+  "C3a": "PASS",
+  "C3b": "PASS",
+  "C3c": "PASS",
+  "C4": "PASS"
+ }
+}
