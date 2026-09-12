@@ -278,3 +278,10 @@ hashes, prerequisite refs and results of the repository's checks before and
 after creation of the actual named-branch bundle. Whole/part checksum sidecars
 name bare filenames. The input manifest records both canonical Git blob IDs
 and local SHA256 values, accounting for line-ending differences on replay.
+
+**RECORDED — Resolved packaging issue.** The first temporary receiver setup
+failed because Windows text-mode CRLF left a carriage return in Git's alternates
+object path. The file is now written as bytes with explicit LF, and the named
+fetch is rerun by the final packaging script. Both repository delivery-checker
+runs had already passed; no mathematical artifact depended on this receiver
+setup. The final manifest records this resolved issue and the final fetch result.

@@ -74,7 +74,8 @@ def main():
         objects = Path(run(['git', 'rev-parse', '--git-path', 'objects']))
         if not objects.is_absolute():
             objects = (ROOT/objects).resolve()
-        (receiver/'objects/info/alternates').write_text(objects.as_posix()+'\n', encoding='utf-8')
+        # Git's alternates parser retains CR on this Windows build; use literal LF.
+        (receiver/'objects/info/alternates').write_bytes((objects.as_posix()+'\n').encode('utf-8'))
         run(['git', '--git-dir='+str(receiver), 'update-ref', 'refs/heads/frozen-prerequisite', BASE])
         run(['git', '--git-dir='+str(receiver), 'fetch', '--no-tags', str(bundle),
              BRANCH+':refs/heads/'+BRANCH], log='named_branch_fetch.log')
@@ -138,6 +139,10 @@ def main():
                 'repository_precheck': 'CLEAN', 'repository_postcheck': 'CLEAN',
                 'bundle_verify': 'PASS', 'named_branch_fetch': 'PASS, source object alternates used read-only',
                 'working_tree': 'clean', 'delivery_failures': [],
+                'resolved_delivery_issues': [{'stage': 'initial temporary receiver setup',
+                  'cause': 'Windows text-mode CRLF left a CR in the Git alternates object path',
+                  'resolution': 'write alternates as UTF-8 bytes with literal LF; rerun named fetch',
+                  'repository_delivery_checker_failed': False}],
                 'result': {'targets': 239, 'tests': 717, 'positive_pairs': 66, 'factor_witnesses': 61,
                            'local_controls': 29, 'historical_checks': 8, 'new_exclusions': 0,
                            'LMR_D_interval_unchanged': [-4, 1], 'exact_birth_increments_still_open': 235},
