@@ -19,6 +19,7 @@ one that would have caught B13-05's 25 open cells being B13-09's completed 42.
 usage: python3 tools/integrate/reconcile_cells.py [--json OUT]
 """
 import json, os, sys, glob, collections
+from exclusion_predicates import conclusions_for
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 
@@ -148,21 +149,15 @@ def collect():
 
     # ---- theorem-level exclusions (the PROVED-index join) -----------------
     inh = jload("results/integrate/inherited_exclusions.json")
-    for ex in (inh or {}).get("exclusions", []):
-        pr = ex.get("predicate", {})
-        if not any(k in pr for k in ("r_max", "delta_max", "r")):
-            continue
-        for k in list(rec):
-            n_, r_, d_, _ = k
-            if "n" in pr and n_ != pr["n"]:
-                continue
-            if "r" in pr and r_ != pr["r"]:
-                continue
-            if "r_max" in pr and r_ > pr["r_max"]:
-                continue
-            if "delta_max" in pr and d_ > pr["delta_max"]:
-                continue
-            rec[k].append((f"PROVED:{ex['id']}", "CLOSED", ex["source"]))
+    if inh is None:
+        raise ValueError("required inherited theorem index missing")
+    for k in list(rec):
+        n_, ell_, d_, lam_ = k
+        cell = dict(n=n_, ell=ell_, delta=d_, **{"lambda": list(lam_)})
+        for conclusion in conclusions_for(inh, cell, "cubic_per3_ideal"):
+            if conclusion["conclusion"] != "i_per3=0":
+                raise ValueError("unexpected conclusion in cubic ideal census")
+            rec[k].append((f"PROVED:{conclusion['id']}", "CLOSED", conclusion["source"]))
 
     return rec
 

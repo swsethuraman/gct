@@ -1,0 +1,82 @@
+warning: unable to access 'C:\Users\swami/.config/git/ignore': Permission denied
+warning: in the working copy of 'docs/PROVED.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/integrate/inherited_exclusions.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/integrate/reconcile_cells.py', LF will be replaced by CRLF the next time Git touches it
+{
+  "board_numbering": "batch14",
+  "base": "9898e56941a7665f231873481dae956f08509995",
+  "tree": "cb688cd3fe454d638f3202e759e2eaa0c629739f",
+  "actual_model": "gpt-6-astra",
+  "files": {
+    "historical_listed": 874,
+    "historical_present": 874,
+    "historical_classes": {
+      "result": 699,
+      "metadata": 175
+    },
+    "historical_cell_key_status": {
+      "resolved": 429,
+      "unknown_no_complete_cell_schema": 223,
+      "not_applicable_geometry": 16,
+      "not_applicable_metadata": 149,
+      "family_only": 57
+    },
+    "current_frozen_json_jsonl_scope": 937,
+    "current_classes": {
+      "result": 756,
+      "metadata": 181
+    },
+    "newly_encountered_since_old_lists": 33,
+    "current_without_old_observation_parser": 907,
+    "scope_excludes": "the review-only integration mirror itself, compressed certificates (counted separately), non-JSON/JSONL files",
+    "parse_failures": [],
+    "meaning": "File/role registration complete; unknown cell identities and proof/replay backlog remain explicit."
+  },
+  "certificates": {
+    "results/s79_cert_manifest.json": {
+      "listed": 2066,
+      "present": 1229,
+      "missing": 837,
+      "missing_reasons": {
+        "size_guard": 837
+      },
+      "present_md5_matches": 1200,
+      "present_md5_mismatches": 29,
+      "present_kinds": {
+        "full_rank": 113,
+        "hybrid_kernel": 1116
+      }
+    },
+    "results/b13_09/cert_manifest.json": {
+      "listed": 252,
+      "present": 84,
+      "missing": 168,
+      "missing_reasons": {
+        "unknown": 168
+      },
+      "present_md5_matches": 84,
+      "present_md5_mismatches": 0,
+      "present_kinds": {
+        "full_rank": 84
+      }
+    }
+  },
+  "controls": [
+    {
+      "control": "wrong_cell_degree",
+      "rejected": true
+    },
+    {
+      "control": "bad_partition_order",
+      "rejected": true
+    },
+    {
+      "control": "empty_inventory",
+      "rejected": true
+    },
+    {
+      "control": "missing_certificate",
+      "rejected": true
+    }
+  ]
+}

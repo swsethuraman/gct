@@ -1,0 +1,66 @@
+==============================================================================
+CROSS-SESSION CELL RECONCILIATION
+==============================================================================
+cells seen: 1846   sources: ['B13-05', 'B13-05:thmF', 'B13-05:topcell', 'B13-08', 'B13-09', 'PROVED:b14_10_four_cubic_top_replacements', 'PROVED:degree8_global', 'PROVED:length6_record', 'PROVED:washout_thm2', 'census:b13_05', 'census:b13_09', 'census:s79_per6', 's79']
+
+--- frontiers: union of closures across all sources ---
+frontier                  cells  closed   open  drop
+n=3 ell=1 delta=1             1       1      0     0
+n=3 ell=1 delta=2             1       1      0     0
+n=3 ell=1 delta=3             1       1      0     0
+n=3 ell=1 delta=4             1       1      0     0
+n=3 ell=1 delta=5             1       1      0     0
+n=3 ell=1 delta=6             1       1      0     0
+n=3 ell=1 delta=7             1       1      0     0
+n=3 ell=1 delta=8             1       1      0     0
+n=3 ell=1 delta=9             1       1      0     0
+n=3 ell=2 delta=2             1       1      0     0
+n=3 ell=2 delta=3             2       2      0     0
+n=3 ell=2 delta=4             4       4      0     0
+n=3 ell=2 delta=5             5       5      0     0
+n=3 ell=2 delta=6             6       6      0     0
+n=3 ell=2 delta=7             8       8      0     0
+n=3 ell=2 delta=8            10      10      0     0
+n=3 ell=2 delta=9            11      11      0     0
+n=3 ell=3 delta=3             2       2      0     0
+n=3 ell=3 delta=4             5       5      0     0
+n=3 ell=3 delta=5            10      10      0     0
+n=3 ell=3 delta=6            16      16      0     0
+n=3 ell=3 delta=7            26      26      0     0
+n=3 ell=3 delta=8            37      37      0     0
+n=3 ell=3 delta=9            48      48      0     0
+n=3 ell=4 delta=4             2       2      0     0
+n=3 ell=4 delta=5             9       9      0     0
+n=3 ell=4 delta=6            24      24      0     0
+n=3 ell=4 delta=7            45      45      0     0
+n=3 ell=4 delta=8            77      77      0     0
+n=3 ell=4 delta=9           117     117      0     0
+n=3 ell=5 delta=5             3       3      0     0
+n=3 ell=5 delta=6            16      16      0     0
+n=3 ell=5 delta=7            49      49      0     0
+n=3 ell=5 delta=8           107     107      0     0
+n=3 ell=5 delta=9           188     188      0     0
+n=3 ell=6 delta=10          402     344     58     0
+n=3 ell=6 delta=6             4       4      0     0
+n=3 ell=6 delta=7            27      27      0     0
+n=3 ell=6 delta=8            91      91      0     0
+n=3 ell=6 delta=9           210     210      0     0
+n=3 ell=7 delta=7             5       5      0     0
+n=3 ell=7 delta=8            42      42      0     0
+n=3 ell=7 delta=9           152     105     47     0
+n=3 ell=8 delta=8             6       6      0     0
+n=3 ell=8 delta=9            62      10     52     0
+n=3 ell=9 delta=9             8       8      0     0
+
+--- OPEN-vs-CLOSED conflicts: 124 ---
+    (one source calls the cell open, another has already closed it;
+     every one of these is work that must not be re-dispatched)
+      94 cells at n=3 ell=7 delta=9:  OPEN per B13-05,census:b13_05,census:b13_09  ->  CLOSED by B13-09
+      25 cells at n=3 ell=7 delta=8:  OPEN per B13-05,census:b13_05,census:b13_09  ->  CLOSED by B13-09,PROVED:degree8_global
+       4 cells at n=3 ell=8 delta=9:  OPEN per B13-05,census:b13_05,census:b13_09  ->  CLOSED by B13-09
+       1 cells at n=3 ell=8 delta=8:  OPEN per B13-09,census:b13_05,census:b13_09  ->  CLOSED by B13-05:topcell,PROVED:degree8_global
+
+--- DROPS (candidate permanent-specific equations): 0 ---
+    none.
+
+written: results/b14_10/reconciliation.json

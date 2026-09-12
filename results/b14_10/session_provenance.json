@@ -1,0 +1,35 @@
+{
+  "board_numbering": "batch14",
+  "actual_model": "gpt-6-astra",
+  "requested_reasoning": "xhigh",
+  "base_commit": "9898e56941a7665f231873481dae956f08509995",
+  "base_tree": "cb688cd3fe454d638f3202e759e2eaa0c629739f",
+  "branch": "b14-10-astra",
+  "launch_inputs": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch14_Launch\\B14-10_astra_prompt.md",
+      "bytes": 5091,
+      "sha256": "de5d2dbc73571de76eebb3dc8862540a59b4aba056a20199a11bbb522ee16bb8"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch14_Launch\\packets\\B14-10_packet.md",
+      "bytes": 8699,
+      "sha256": "4b59da12e224cb0444da72fbc5b7bd9f5763b7c05b7506c6a206b31f5e56aba0"
+    }
+  ],
+  "toolchain": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "flint": false,
+    "scipy": false,
+    "psutil": false,
+    "installed_this_run": []
+  },
+  "host": {
+    "logical_cpus": 20,
+    "physical_memory_bytes": 33752997888,
+    "available_memory_at_preflight_bytes": 12627238912,
+    "shared_host": true
+  },
+  "timing_note": "Use actual UTC log timestamps and monotonic process durations; wall gaps are not charged as computation."
+}
