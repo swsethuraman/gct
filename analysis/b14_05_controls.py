@@ -273,9 +273,39 @@ def mixed_control():
     require(matrix_rank(coefficient_matrix(polys)[1]) == 2, 'mixed directions')
     rejects('mixed factorial normalization error', lambda: require(bracket(a, types, False) == polys[0], 'alpha factorials omitted'))
     rejects('mixed wrong valence', lambda: bracket(a, ['c']*4))
+    # Pullback of a quartic bracket: choose one linear slot in each old letter.
+    old = [[0, 1], [0, 1], [0], [0], [1], [1]]
+    source = bracket(old, ['f', 'f'])
+    pullback = {}
+    for mon, coefficient in source.items():
+        term = {(): coefficient}
+        for _, j in mon:
+            factors = {}
+            if j <= 3:
+                factors = add(factors, mul(var('l', 0), var('c', j)))
+            if j >= 1:
+                factors = add(factors, mul(var('l', 1), var('c', j-1)))
+            term = mul(term, factors)
+        pullback = add(pullback, term)
+    occurrences = [[(j, k) for j, col in enumerate(old) for k, x in enumerate(col) if x == i]
+                   for i in range(2)]
+    split_sum = {}
+    split_fillings = []
+    for chosen in product(*occurrences):
+        split = [[x+2 for x in col] for col in old]
+        for i, (j, k) in enumerate(chosen):
+            split[j][k] = i
+        split_sum = add(split_sum, bracket(split, types))
+        split_fillings.append(split)
+    require(pullback == split_sum and bool(pullback), 'quartic-to-mixed pullback normalization')
+    rejects('extra factor in mixed slot splitting',
+            lambda: require(pullback == scale(split_sum, Q(1, 16)), 'slot splitting is a sum, not an average in m normalization'))
     return {'status': 'CERTIFIED small mixed membership control', 'weight': [6, 2],
             'bidegree': [2, 2], 'types': types, 'fillings': [a, b],
             'coefficient_rank_Q': 2, 'polynomials': [encode_poly(p) for p in polys],
+            'pullback_control': {'quartic_filling': old, 'mixed_splits': split_fillings,
+                                 'split_count': 16, 'identity': 'mu_star(F_T)=sum_of_all_4^2_slot_splits',
+                                 'exact_pullback': encode_poly(pullback)},
             'values_are': 'ordinary l and cubic coefficients; cubic m_alpha=alpha! c_alpha'}
 
 

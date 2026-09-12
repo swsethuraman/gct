@@ -127,3 +127,11 @@ filling-to-coordinate expansions remain adopted; the new replay proves identitie
 of those supplied integer coordinate vectors. Extra input hashes are appended
 to the manifest. The 600-second / 512-MiB n=3 bound remains. Record failure if
 coordinate order compatibility cannot be justified; never assume identical indices.
+
+## Addendum 2026-09-12 03:44 UTC, before mixed pullback slot-splitting control
+
+Formal derivation predicts mu*(m4_alpha)=sum over four slots of l_i*m3_(alpha-e_i),
+with repeated slot choices counted, so a degree-d quartic bracket pulls back to
+the sum of 4^d mixed fillings (no averaging factor). Verify the 16 terms at a
+binary degree-two control against independent ordinary coefficient substitution.
+Reject a spurious 1/16 factor. This refines the registered source-inclusion audit.
