@@ -1,0 +1,174 @@
+{
+  "status": "CERTIFIED integer-coordinate identities; banked bracket expansions ADOPTED",
+  "operator": "first-row adjunction only: Phi(F)=6uF, not non-Cartan adjunction",
+  "source_weight": [
+    19,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "target_weight": [
+    22,
+    7,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "source_rows": 6,
+  "target_rows": 6,
+  "ambient_multiplicity": "6 at both rungs, ADOPTED from s73_aladder.json; independent ranks rechecked",
+  "source_chi_dimension": 17047,
+  "target_chi_dimension": 17306,
+  "source_rank_minor_columns_zero_based": [
+    8924,
+    8974,
+    9199,
+    10054,
+    10565,
+    16117
+  ],
+  "target_rank_minor_columns_zero_based": [
+    8996,
+    9046,
+    9271,
+    10128,
+    10641,
+    16272
+  ],
+  "source_minor_det": "-8779435499335343064814326515289854539846385664000",
+  "target_minor_det": "-983072022376775438476745322953672288186575126895001600",
+  "conversion": {
+    "values_are": "rational coefficients: transported source row i = sum_j C_ij target row j",
+    "matrix": [
+      [
+        "1/21",
+        "1",
+        "8/21",
+        "0",
+        "5",
+        "0"
+      ],
+      [
+        "1/42",
+        "0",
+        "1/42",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-1/126",
+        "-1/6",
+        "-17/84",
+        "7/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "10",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1/42",
+        "1/2",
+        "-11/28",
+        "-21/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "0",
+        "7/6",
+        "0",
+        "-1",
+        "0"
+      ]
+    ],
+    "determinant": "5/12",
+    "identity": "J(S)=C*T checked at all 6*17306 integer coordinates",
+    "denominators": [
+      1,
+      2,
+      6,
+      21,
+      28,
+      42,
+      84,
+      126
+    ],
+    "both_house_prime_ranks": [
+      6,
+      6
+    ]
+  },
+  "line": {
+    "source_coefficients": [
+      66,
+      -972,
+      12,
+      -37,
+      4,
+      320
+    ],
+    "source_combination_equals_scalar_times_s62": "-29859840",
+    "s62_support": 3900,
+    "u_times_s62_equals_scalar_times_s73_d13": "1",
+    "ideal_membership": "not inferred here from sampled vanishing; LMR theorem is adopted separately"
+  },
+  "exponents": {
+    "ordering": "wk8_s30_core.exps ascending recursively, reimplemented without flint import",
+    "u_exponent": [
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "resolved_u_index": 83
+  },
+  "negative_controls": [
+    {
+      "name": "n3 altered target coordinate",
+      "rejected": true,
+      "reason": "altered coordinate"
+    },
+    {
+      "name": "n3 omitted factorial",
+      "rejected": true,
+      "reason": "3! factor omitted"
+    },
+    {
+      "name": "n3 incorrectly unmixed target basis",
+      "rejected": true,
+      "reason": "basis directions differ"
+    },
+    {
+      "name": "n3 empty source data",
+      "rejected": true,
+      "reason": "required six source rows missing"
+    },
+    {
+      "name": "n3 wrong source line coefficient",
+      "rejected": true,
+      "reason": "line coefficient altered"
+    },
+    {
+      "name": "n3 dependent rank witness",
+      "rejected": true,
+      "reason": "duplicated minor row"
+    }
+  ],
+  "replay_boundary": "No fresh filling expansions, raising matrix build, or determinant rank computation."
+}
