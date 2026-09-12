@@ -407,3 +407,31 @@ specifications; delivered matrices are comparisons, not authorities. Missing
 inputs, unknown fields, empty controls and unsupported profiles never PASS.
 A sampled modular kernel alone cannot satisfy this kind. Other certificate
 kinds and their verification ceilings are unchanged.
+
+### Profile `quartic_lmr_degree13_ci73`
+
+`results/ci73/certificate.json` is the portable degree-13 instance, with exact
+definitions and the complete proof in `docs/ci73_proof.md`. The independent
+checker `ci73.py` uses explicit mixed-bracket and quartic-source-pullback members.
+It rebuilds dimensions 39 and 73 from complete power-sum/character calculations,
+freshly evaluates all polynomial entries needed for the 73-point CI witness and
+39-source independence minor, and proves exact rank 36 with a three-column
+rational left kernel. The reference artifact carries all source definitions,
+point IDs/order, raw integer values, seven residue blocks, explicit minor indices,
+normalizations and invertible rational source scales. References must stay under
+the certificate directory and pass canonical JSON SHA256 checks.
+
+The default path compiles a source-hashed C#5 backend and freshly evaluates the
+polynomials. Saved backend output is never an acceptance shortcut. The backend
+source, literal reference controls, bounds and Windows replay instructions ship
+in the repository. Positive in-process controls may share only freshly computed,
+fully content-keyed values. The 20 holdouts are additional exact controls; only
+primary indices 0–72 are used in the target witness. The other 23 primary columns
+are stored-arithmetic replay only. The degree-24 LMR consequence explicitly uses
+the separately identified inherited S74 dimension and rank facts.
+
+The common dispatcher now bounds raw/compressed input at 5,000,000 bytes and
+expanded JSON at 16,000,000 bytes, and rejects duplicate keys and nonfinite
+numbers before parsing for any profile or legacy kind. The old h=1 profile is
+retained. This is a loader hardening change; a replay of its 97 tests is not a
+claim to have rerun every legacy numerical certificate.

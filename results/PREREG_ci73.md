@@ -85,3 +85,19 @@ The full run will also evaluate all 39 source members on all 20 holdouts.
 Adversarial controls may reuse only values computed by their own live process,
 keyed by every filling, coefficient/exponent and modulus. Default standalone
 verification starts empty and never accepts saved DP output as fresh values.
+
+## Interrupted run and idle-sleep handling
+
+The first complete control run was interrupted by Windows idle sleep. The System
+Power-Troubleshooter event records sleep at 12:40:47 UTC and wake at 13:43:51 UTC
+on 2026-09-12. It matched all first-prime target entries before interruption;
+second-prime target member 7, offset 48 then reported a backend deadline. The
+run returned no PASS. Its measured elapsed 4305.8 s exceeded the 1800 s bound
+while the system was asleep. The failed run and event evidence are retained.
+
+The bounded runner now requests prevention of idle system sleep only during the
+calculation, clears the request on completion, kills its job children on exit,
+and checks elapsed limits again before acceptance and on finalization. Manual
+sleep still causes an overrun rejection. Per-batch 120 s and overall 1800 s,
+one evaluation worker and aggregate 768 MiB limits are unchanged. The next run
+starts all polynomial evaluations fresh; it does not promote interrupted caches.

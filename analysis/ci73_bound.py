@@ -52,14 +52,20 @@ def cap_memory(megabytes):
     if not job:
         raise C.WinError(C.get_last_error())
     info = Extended()
-    info.basic.flags = 0x100 | 0x200  # JOB_OBJECT_LIMIT_PROCESS_MEMORY
+    info.basic.flags = 0x100 | 0x200 | 0x2000  # process/job memory and kill on close
     info.process_memory = megabytes * 1024**2
     info.job_memory = megabytes * 1024**2
     if not kernel.SetInformationJobObject(job, 9, C.byref(info), C.sizeof(info)):
         raise C.WinError(C.get_last_error())
     if not kernel.AssignProcessToJobObject(job, kernel.GetCurrentProcess()):
         raise C.WinError(C.get_last_error())
-    return job  # keep handle alive for this process
+    def statistics():
+        final=Extended()
+        kernel.QueryInformationJobObject.argtypes=[W.HANDLE,C.c_int,C.c_void_p,W.DWORD,C.c_void_p]
+        if not kernel.QueryInformationJobObject(job,9,C.byref(final),C.sizeof(final),None):
+            raise C.WinError(C.get_last_error())
+        return dict(peak_job_memory=final.peak_job,peak_process_memory=final.peak_process)
+    return job,statistics  # keep handle alive for this process
 
 
 def process_memory():
@@ -94,7 +100,11 @@ def main():
     before = memory()
     if before["available_physical"] < 2 * args.memory_mb * 1024**2:
         raise RuntimeError("Insufficient available RAM for conservative cap")
-    job = cap_memory(args.memory_mb)
+    job,job_statistics = cap_memory(args.memory_mb)
+    # Hold an idle-sleep request only while this bounded calculation is active.
+    # Manual sleep is still possible; deadline checks reject an overrun on wake.
+    awake=C.windll.kernel32.SetThreadExecutionState(0x80000001)
+    if not awake:raise C.WinError()
     logs = Path("results/logs")
     logs.mkdir(parents=True, exist_ok=True)
     (logs / (args.name + ".pid")).write_text(str(os.getpid()) + "\n")
@@ -102,6 +112,7 @@ def main():
             "pid": os.getpid(), "memory_before": before,
             "memory_cap_mb": args.memory_mb, "wall_cap_seconds": args.seconds,
             "workers": 1, "blas_threads": 1, "job_object_enforced": bool(job),
+            "idle_sleep_inhibited_during_run":True,
             "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     meta_path = logs / (args.name + "_resources.json")
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
@@ -113,17 +124,30 @@ def main():
     timer.daemon = True
     timer.start()
     start = time.perf_counter()
+    os.environ['CI73_DEADLINE']=str(time.monotonic()+args.seconds)
     sys.path[:0] = [str(Path("analysis").resolve())]
     sys.argv = [args.script] + args.args
+    meta['exit_code']=0
     try:
         runpy.run_path(args.script, run_name="__main__")
+    except SystemExit as exc:
+        meta['exit_code']=exc.code if isinstance(exc.code,int) else (0 if exc.code is None else 1)
+        raise
+    except BaseException:
+        meta['exit_code']=1
+        raise
     finally:
         timer.cancel()
         meta["wall_seconds"] = time.perf_counter() - start
+        overrun=meta['wall_seconds']>args.seconds
+        if overrun:meta['exit_code']=124
         meta["memory_after"] = memory()
         meta["process_memory"] = process_memory()
+        meta['job_memory']=job_statistics()
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         print(json.dumps({"wall_seconds": meta["wall_seconds"]}), flush=True)
+        C.windll.kernel32.SetThreadExecutionState(0x80000000)
+        if overrun:raise SystemExit(124)
 
 
 if __name__ == "__main__":

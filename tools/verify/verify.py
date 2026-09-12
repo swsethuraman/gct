@@ -111,7 +111,11 @@ def validate(cert):
     if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
         from complete_interpolation import schema, Rejected
         try:
-            schema(cert)
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from ci73 import schema as ci73_schema
+                ci73_schema(cert)
+            else:
+                schema(cert)
         except (Rejected, KeyError, TypeError, ValueError) as exc:
             raise Unparseable(str(exc)) from exc
         return "complete_interpolation"
@@ -443,7 +447,7 @@ def _rec_sr(log, name, ok, detail=""):
     return bool(ok)
 
 
-def verify_file(path):
+def verify_file(path, ci73_session=None):
     """Returns (status, log): status in PASS / FAIL / UNPARSEABLE / ERROR."""
     log = []
     try:
@@ -455,7 +459,7 @@ def verify_file(path):
             if cert.get('profile') == 'quartic_lmr_degree13_ci73':
                 from pathlib import Path
                 from ci73 import verify as ci73_verify
-                result = ci73_verify(cert, Path(path).resolve().parent)
+                result = ci73_verify(cert, Path(path).resolve().parent, session=ci73_session)
             else:
                 from complete_interpolation import verify as ci_verify
                 result = ci_verify(cert)

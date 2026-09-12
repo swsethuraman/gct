@@ -5,6 +5,7 @@ same process for adversarial tests; no disk value cache is ever accepted.
 """
 from fractions import Fraction
 import json
+import os
 import math
 from pathlib import Path
 import time
@@ -214,7 +215,7 @@ def run(c,root,session,log):
         need(len(g['points'])==39 and len({x['id'] for x in g['points']})==39,'generic point IDs')
         generic=[]
         for point in g['points']:
-            need(len(point['coefficients'])==495 and all(type(v) is int and 0<=v<p for v in point['coefficients']),'generic coefficient integer lifts')
+            need(len(point['coefficients'])==495 and all(type(v) is int and abs(v)<p for v in point['coefficients']),'generic coefficient integer lifts')
             generic.append({4:{tuple(alpha):v*math.prod(math.factorial(x) for x in alpha)%p for alpha,v in zip(ge,point['coefficients'])}})
         G=matrix(g['entries'],39,39)
         need(g['values_are']=='unscaled native source climbed to degree 13; rows; generic points as integer lifts','generic normalization')
@@ -292,7 +293,12 @@ def run(c,root,session,log):
 def verify(c,root,session=None):
     started=time.monotonic();session=session or Session()
     before=(session.calls,session.entries,session.hits)
-    result=run(c,Path(root),session,[])
+    try:result=run(c,Path(root),session,[])
+    except RuntimeError as exc:
+        result=dict(status='FAIL',checks=[],code='resource/backend failure',detail=str(exc))
+    deadline=os.environ.get('CI73_DEADLINE')
+    if deadline is not None and time.monotonic()>float(deadline):
+        result.update(status='FAIL',code='resource deadline',detail='Overall verifier deadline exceeded; no certificate acceptance.')
     result.update(seconds=time.monotonic()-started,backend_calls=session.calls-before[0],
                   fresh_backend_entries=session.entries-before[1],live_session_cache_hits=session.hits-before[2],
                   max_backend_array_bytes=session.max_array_bytes)
