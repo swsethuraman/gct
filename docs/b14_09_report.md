@@ -1,4 +1,4 @@
-# B14-09 — the 58 six-row degree-10 cells: a measured `n_chi` for every one, and the first of them decided
+# B14-09 — the 58 six-row degree-10 cells: a measured `n_chi` for every one, and 32 of them decided
 
 `board_numbering: batch14`, slot 9 of `docs/batch14_board.md` v0.4.
 Branch `b14_09_sixrow_d10`.
@@ -45,10 +45,6 @@ is transcribed by hand**; every number is printed by
 > `n_chi` is recorded... **Fallback** the sizing table alone is worth the slot;
 > nobody has one."* The table was banked and committed inside the first hour,
 > and the rest of the session spent it.
->
-> The board's fallback for this slot was *the sizing table alone*. That was
-> delivered inside the first hour and is `results/b14_09/sizing.json` and
-> `sizing.md`. The rest of the session went on deciding cells with it.
 >
 > **32 of the 58 were decided**, every one `mult = a` at both house primes.
 > That takes the degree-10 length-6 record from **344 of 402 empty to 376 of
@@ -130,9 +126,12 @@ Two of the four required imports were missing, exactly as the preamble warns;
 the two installs. Nothing was downgraded to a sampled route for want of a
 library.
 
-Every run was bounded at launch with `timeout` and `ulimit -v`, its process id
-written to `results/logs/<run>.pid`, and the one run that had to be ended early
-was ended by that recorded id.
+Every run was bounded at launch with `timeout` and `ulimit -v` and had its
+process id written to `results/logs/<run>.pid`. Three runs had to be ended early
+— the first two lanes, to restart them with a larger address-space bound, and
+the last lane at the delivery cutoff — and each was ended by its recorded id.
+The lane logs carry a dated note at each of those points saying so, because an
+`exit 143` in a log otherwise reads as a failure.
 
 ## 2. The instrument
 
@@ -311,9 +310,11 @@ plainly and demotes the slot on it; this report agrees with the board.
 `PROVED.md: nchi_2_21_guard` says the quotient is neither an upper nor a lower
 bound for `n_chi`. That is now a number rather than a caution.
 
-Over every banked record in the tree carrying both (**732**), the ratio
-`n_chi / (N_S/|Stab|)` runs **0.2521 to 3.3130** — 370 below one, 328 above, 34
-equal. Both directions have a clean mechanism:
+Over every banked record in the tree carrying both (**732** — 730 that predate
+this session, plus the first two cells this session itself decided, which are
+banked records like any other), the ratio `n_chi / (N_S/|Stab|)` runs **0.2521
+to 3.3130** — 370 below one, 328 above, 34 equal. Both directions have a clean
+mechanism:
 
 * **below**, when `chi_mu` is nontrivial on many point stabilisers — those
   orbits are discarded, and a quotient that counts them over-states;
@@ -340,14 +341,27 @@ equal. Both directions have a clean mechanism:
    of this session's 95 weights have `n_chi >= 2^21` (**every weight with
    `N_S / |Stab|` above that**)" — and `docs/b13_08_report.md` §0 the same. The
    **17 is correct**; I measured all 95 and 17 is exactly right, with zero
-   disagreements. The *rule* is not. On these 402 cells the ratio happens to
-   stay inside 0.84–1.35, so the quotient routes all 21 wide cells correctly. It
-   got the right answer; that is not the same as being a rule, and the code
-   comment is where the next session will read it.
+   disagreements. The *rule* is not. Across the 402 the ratio runs **0.355 to
+   2.9595** — the quotient is out by nearly a factor of three at cells in this
+   very set — and it still routes all 21 wide cells correctly, because no cell's
+   error happens to straddle `2^21`. It got the right answer; that is not the
+   same as being a rule, and the code comment is where the next session will
+   read it.
+
+   **A correction to my own commit message, since the culture here is to own
+   these rather than let a reader find them.** The commit that banked
+   `extended.json` says the ratios over the 402 "stay in 0.84–1.35". That was
+   hand-typed and it is wrong: 0.9391–1.1218 is the spread over the **58**, and
+   the figure over all 402 is **0.355–2.9595**, as `extended.json` and §6 of
+   `report_numbers.md` have said all along. `analysis/b14_09_report.py` exists so
+   that a hand-typed figure gets caught against the artefact, and this is the one
+   it caught.
 
 **The honest summary**, because the distinction is the whole point: on the cells
-this slot owns, the quotient would have routed every one correctly. Across the
-tree it is wrong by a factor of three. Neither fact licenses using it.
+this slot owns, the quotient would have routed every one correctly, while still
+missing `n_chi` itself by up to a factor of nearly three inside that same set of
+402. Across the tree it is wrong by 3.3x one way and 4x the other. Neither fact
+licenses using it, and the cost of not using it is milliseconds.
 
 ## 7. What was not reached, and what it costs
 
