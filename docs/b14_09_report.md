@@ -359,14 +359,34 @@ ordered by `N_S`, which is the wrong variable. Two illustrations from the 58:
 and decide cost and its predicted peak memory** in `results/b14_09/sizing.md`,
 so the next session can plan against it rather than rediscover it.
 
-**The one cell that hit a bound and is recorded as such.** Rank 356,
-`(7,6,6,6,4,1)`: `mult = 1 = a` at `p = 2147483647`, then the process exceeded
-its lane's `ulimit -v` of 3.2 GB while allocating a 473 MiB block at the second
-prime. Its resident high-water mark at that moment was 1.59 GB — **`ulimit -v`
-bounds address space, and numpy with a BLAS reserves far more of that than it
-residents**, which is worth knowing before choosing a bound. This is a bound,
-not a failure and not a drop; the cell is retried at a larger bound and its
-outcome is in the generated table.
+**The cells that hit a bound, and the bound that hit them.**
+`results/b14_09/notreached.json` carries every attempt: which lane, which
+bound, which stage it reached, whether the build completed, and which primes (if
+any) had already returned. None of them is a drop and none is a control
+failure — every one is an address-space or memory bound on an 8 GB box, and the
+record says which.
+
+**And the lesson is a use of the sizing table.** `ulimit -v` bounds **address
+space**, not resident memory, and the hybrid kernel's peak address space is set
+by `n_chi`: it materialises dense blocks of shape `n_chi x 32` in `int64`, which
+is 751 MiB at `n_chi = 3 076 302` and 911 MiB at `3 729 955`, several live at
+once, on top of `E` (`nnz` ints in CSR) and the monomial array. Running two
+lanes at `ulimit -v` 3.0 GB cost seven cells that had all **built successfully**
+— ranks 367, 369, 371, 339, 373, 350 — each dying in the kernel phase after 74
+to 260 seconds of good build work. Ranks 384 and 378, near `N_S = 7` million,
+were ended by the cgroup out-of-memory limit with two lanes running, and 384 was
+then decided single-lane at 6.8 GB.
+
+That is avoidable with one line, and the line needs a number nobody had until
+this session: **set the per-cell bound from the measured `n_chi`, not from
+`N_S`.** A rule that fits every observation here is
+
+> `ulimit -v >= 1.2 GB + 8 * 32 * n_chi * 4` (address space), i.e. about
+> `1.2 + 1.0e-6 * n_chi` GB,
+
+which would have given rank 350 a 5.0 GB bound instead of 3.0 and cost nothing.
+The `N_S`-based prediction the queue ships with gets this exactly backwards at
+the high-`|Stab|` cells, where `N_S` is largest and `n_chi` smallest.
 
 **What this slot does not deliver, stated plainly.**
 

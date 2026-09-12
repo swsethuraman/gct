@@ -1,0 +1,49 @@
+=== lane G starting rank 384 at 05:23:17 ===
+== rank 384 mu=(9, 6, 4, 4, 4, 3) a=2  PRE-REGISTERED n_chi = 1318866 (N_S=7688193, |Stab|=6, wide=False) ==
+      level 1: 35 prefixes
+      level 2: 851 prefixes
+      level 3: 11381 prefixes
+      level 4: 98377 prefixes
+      level 5: 554872 prefixes
+      level 6: 2087962 prefixes
+      level 7: 5115974 prefixes
+      level 8: 7329503 prefixes
+      level 9: 7688193 prefixes
+      level 10: 7688193 prefixes
+  lam=(9, 6, 4, 4, 4, 3): N_S=7688193 |Stab|=6 n_chi=1318866 (orbits dropped: 0) [lean, 99s, HWM 1.24 GB]
+    E_01: |H|=6 targets 5744084 canonical rows 986838 nnz 5119024 (obstructed fixed targets cancelled: 0) [94s, HWM 1.43 GB]
+    E_12: |H|=2 targets 5329441 canonical rows 2691985 nnz 11481941 (obstructed fixed targets cancelled: 0) [137s, HWM 1.54 GB]
+    E_23: |H|=1 targets 6590439 canonical rows 6590439 nnz 22456176 (obstructed fixed targets cancelled: 0) [184s, HWM 1.83 GB]
+    E_34: |H|=1 targets 6590439 canonical rows 6590439 nnz 22456176 (obstructed fixed targets cancelled: 0) [231s, HWM 2.11 GB]
+    E_45: |H|=2 targets 5369144 canonical rows 2712723 nnz 9319468 (obstructed fixed targets cancelled: 0) [274s, HWM 2.22 GB]
+  built (9, 6, 4, 4, 4, 3) d10: N_S=7688193 |Stab|=6 n_chi=1318866 rows=19572424 nnz=70832785 (386s: mono 11s orbits 99s rows 276s; HWM 2.40 GB)
+    hybrid[per6-lean 9_6_4_4_4_3d10] p=2147483647 attempt 0: |S|=1318773 |U|=93 (a=2, excess 91) m=157 blocks 2x47 projected nullity 2, verified=True, rank 2 [split 1.0s trisolve 6.6s schur 30.3s null 0.0s lift 3.6s rank 0.3s]
+  per6-lean (9, 6, 4, 4, 4, 3) d10 p=2147483647: a=2 n_chi=1318866 mult=2 units=0 [61.0s]
+    hybrid[per6-lean 9_6_4_4_4_3d10] p=2147483629 attempt 0: |S|=1318773 |U|=93 (a=2, excess 91) m=157 blocks 2x47 projected nullity 2, verified=True, rank 2 [split 1.5s trisolve 5.5s schur 31.3s null 0.0s lift 4.3s rank 1.2s]
+  per6-lean (9, 6, 4, 4, 4, 3) d10 p=2147483629: a=2 n_chi=1318866 mult=2 units=0 [67.9s]
+  PER6-LEAN RESULT (9, 6, 4, 4, 4, 3) d10: a=2 N_S=7688193 n_chi=1318866 mult=2 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (539.0s, HWM 4.09 GB)
+  C6 (9, 6, 4, 4, 4, 3) p=2147483647: diagonal rank 0 (must be 0, rows all zero=True); per_3 rank 2 (must be 2); det_3 rank 2 (must be <= 2)
+  C6 (9, 6, 4, 4, 4, 3) p=2147483629: diagonal rank 0 (must be 0, rows all zero=True); per_3 rank 2 (must be 2); det_3 rank 2 (must be <= 2)
+== rank 384 (9, 6, 4, 4, 4, 3): mult=2 units=0 C5=PASS C6=PASS [616.2s, HWM 4.09 GB] ==
+=== lane G rank 384 exit 0 ===
+=== lane G starting rank 378 at 05:33:34 ===
+== rank 378 mu=(8, 6, 6, 4, 4, 2) a=5  PRE-REGISTERED n_chi = 1726993 (N_S=6804680, |Stab|=4, wide=False) ==
+      level 1: 34 prefixes
+      level 2: 535 prefixes
+      level 3: 8628 prefixes
+      level 4: 72059 prefixes
+      level 5: 389633 prefixes
+      level 6: 1427415 prefixes
+      level 7: 3709587 prefixes
+      level 8: 6141897 prefixes
+      level 9: 6804680 prefixes
+      level 10: 6804680 prefixes
+  lam=(8, 6, 6, 4, 4, 2): N_S=6804680 |Stab|=4 n_chi=1726993 (orbits dropped: 0) [lean, 56s, HWM 1.10 GB]
+    E_01: |H|=2 targets 5369144 canonical rows 2712723 nnz 13384243 (obstructed fixed targets cancelled: 0) [52s, HWM 1.32 GB]
+    E_12: |H|=2 targets 6186200 canonical rows 3124594 nnz 13317802 (obstructed fixed targets cancelled: 0) [105s, HWM 1.68 GB]
+    E_23: |H|=1 targets 4719476 canonical rows 4719476 nnz 20148056 (obstructed fixed targets cancelled: 0) [138s, HWM 1.68 GB]
+    E_34: |H|=2 targets 5833614 canonical rows 2929130 nnz 9949636 (obstructed fixed targets cancelled: 0) [183s, HWM 2.03 GB]
+    E_45: |H|=2 targets 3477991 canonical rows 1747057 nnz 5975640 (obstructed fixed targets cancelled: 0) [207s, HWM 2.03 GB]
+  built (8, 6, 6, 4, 4, 2) d10: N_S=6804680 |Stab|=4 n_chi=1726993 rows=15232980 nnz=62775377 (273s: mono 8s orbits 56s rows 210s; HWM 2.19 GB)
+    hybrid[per6-lean 8_6_6_4_4_2d10] p=2147483647 attempt 0: |S|=1726718 |U|=275 (a=5, excess 270) m=339 blocks 8x36 projected nullity 5, verified=True, rank 5 [split 1.3s trisolve 25.0s schur 78.2s null 0.0s lift 6.0s rank 1.7s]
+  per6-lean (8, 6, 6, 4, 4, 2) d10 p=2147483647: a=5 n_chi=1726993 mult=5 units=0 [137.8s]
