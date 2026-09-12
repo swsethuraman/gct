@@ -104,8 +104,8 @@ targets** — not three of five. Two consequences:
 **Be clear about what this buys.** The route's best outcome is `i_red(14) = 5`,
 giving `D_LMR = −4` exactly — a **negative** decision that closes the only cell
 with an established determinant equation. `i_red(13) = 0` leaves LMR open. We are
-spending the batch's centre of mass on killing our own main candidate, because
-killing it cheaply is worth more than sampling around it indefinitely, and
+spending the batch's centre of mass on closing our own main candidate, because
+closing it cheaply is worth more than sampling around it indefinitely, and
 because Lemma T makes the alternatives conditional on the same number.
 
 ---
@@ -168,7 +168,7 @@ automatically an ideal relation. **This is a source-matrix result** until slot 1
 minor and slot 4's recount are accepted; do not label it `i_red(13)`.
 **Controls that can fail** a small exact integer evaluator independent of the
 fast modular path, agreeing on selected entries; a fresh modular check alone is
-not an integer identity proof. **Kill** wrong transport, failed signed
+not an integer identity proof. **Stopping rule** wrong transport, failed signed
 reconstruction, or a failed independent entry check stops that calculation.
 
 ### 3 — any — the `complete_interpolation` certificate kind, and a verifier
@@ -258,7 +258,7 @@ and no `u`-tower, letters `Q₂, Q₃, Q₄` of valence 2, 3, 4.
 **The decisive step is the reproduction, and it must be able to fail.**
 Reproduce generic rank 274, determinant floor 273 and padded floor 269 at the
 LMR tail `(17,2⁷)` — **sharing no code with s69/s74**. New code on the same
-reformulation is not independent verification of the reformulation. **Kill** the
+reformulation is not independent verification of the reformulation. **Stopping rule** the
 reproduction fails. **Stretch** the determinant rank on `(19,2⁷)`; a floor of
 `392 − p` closes B13-06's best target, `p` being the certified lower bound on
 `i_pad(24)`. **Fallback** the evaluator and a complete small control.
@@ -279,7 +279,7 @@ all pass.
 target half; begin with one exact block and measure it. The memo's indicative
 seven hours across seven primes is *not* a validated timing and the rung-13 rate
 is not a rung-14 rate. **Success** the exact matrix and rational kernel, or a
-certified prefix with a reproducible completion plan. **Kill** a bound violation
+certified prefix with a reproducible completion plan. **Stopping rule** a bound violation
 or a source-control inconsistency stops the arithmetic. A partial matrix's
 nullity remains a **ceiling**.
 
@@ -302,7 +302,7 @@ Start with the 16 ten-row components at `δ = 25`, which no Cartan product from 
 nine-row source reaches.
 
 **Success** the complete combinatorial table. **Stretch**, only if adjunction is
-validated: rank comparisons on `U_D ⊕ U_P` at `δ = 25`. **Kill for the stretch**
+validated: rank comparisons on `U_D ⊕ U_P` at `δ = 25`. **Stopping rule for the stretch**
 at every target where the `f`-image survives, a padded image of at least equal
 rank survives too. **Zero images from ten sampled points are unresolved**, not
 zero.
@@ -363,8 +363,8 @@ So: confirm the s37/s52 relabelling reached every prose claim, then build the
 deduplicated quartic shortlist at `δ ≤ 8`, `a > 0`, `5 ≤ ℓ ≤ δ`, `λ₁ ≥ δ`, at
 most ten survivors with costs. Justify the length bound directly from the
 embedding in `(Sym⁴V)^{⊗δ}` and Pieri — **not** by importing a cubic-side
-theorem. **Kill** a cell dies only by a valid theorem or certificate; *no known
-family lives there* is a funding preference, never an exclusion.
+theorem. **Stopping rule** a cell closes only by a valid theorem or certificate; *no
+known family lives there* is a funding preference, never an exclusion.
 
 ### 12 — flint — `(12,4,4,4,4,4)₈`, the last Q1 cell
 
