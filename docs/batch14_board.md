@@ -28,10 +28,13 @@ A session quoting any of these is working from a withdrawn number.
 - **`ladder_converse`** now carries `a(κ,p) ≥ 1` and `a(ν,q) ≥ 1`. Without them
   `i(κ,p) = 0` holds vacuously and the product argument has no vectors. All 18
   existing closures stand; a new closure must check the hypothesis.
-- **`orbit_stabiliser_silent`** dropped to **MEASURED**. The measurement stands;
-  *"not rescued by the full stabiliser"* is withdrawn, because invariants under a
-  larger group are an intersection of eigenspaces and a finite extension can
-  annihilate them.
+- **`orbit_stabiliser_silent`** is **MEASURED + ADOPTED**. Its stated argument
+  was wrong — *finite factors, so `b` falls by at most a bounded factor* is false,
+  since a `Z₂` acting by `−1` on a line takes `d = 1` to `0`. Its conclusion is
+  right for another reason: `washout_lemma.md` Prop. 5 records the stabiliser as
+  `(T_eff ⋊ (S₃ × S₃)) ⋊ Z₂` from Marcus–May / Botta, which is exactly the `H′`
+  already used, so **there is no larger group to extend to**. Conditional on an
+  adopted theorem. **Do not fund at any length.**
 - **`bip_blind_at_n4`** is new, and it is why slot 11 is small: the BIP mechanism
   is blind at `n = 4` because its reach is in weight *length* (`≤ 4`) while
   permanent-sensitivity begins at `ℓ = 6`.

@@ -1,0 +1,24 @@
+{
+ "note": "The two pre-flight items the integrator owed before batch-14 dispatch. Both closed without the computation they were scoped for, and both shrink a slot rather than adding one.",
+ "item_1_full_stabiliser_probe": {
+  "scoped_as": "run the Burnside computation of analysis/wk13_b13_05_bound.py over the full Marcus-May stabiliser at the eight measured ell=9 delta=9 cells",
+  "outcome": "NOT RUN -- unnecessary, and the premise was false",
+  "finding": "docs/washout_lemma.md Prop. 5 records Stab(per_3) = (T_eff |x (S_3 x S_3)) |x Z_2, adopted from Marcus-May / Botta. analysis/wk13_b13_05_bound.py lines 6-7 use exactly H' = T |x F with F = (S_3 x S_3) |x Z_2, |F| = 72, and re-verify F's containment exactly on per_3's monomial dictionary at every run. H' IS the full stabiliser. There is no larger group to extend to.",
+  "consequence": "B13-05's ARGUMENT for 'not rescued by the full stabiliser' is false, as Astra said and as I confirmed -- invariants under a larger group are an intersection of eigenspaces, not an average. But its CONCLUSION is correct for a reason neither B13-05 nor I gave. Withdrawing a false argument does not falsify its conclusion, and I proposed a slot to test something already settled by an adopted theorem sitting in the tree.",
+  "status_change": "orbit_stabiliser_silent restored to its conclusion as MEASURED + ADOPTED, with the correct justification and an explicit note that it is conditional on Marcus-May. A2c withdrawn from the roadmap.",
+  "cost_of_checking_first": "one grep of washout_lemma.md, against an estimated multi-hour Burnside run over 4,517 weights"
+ },
+ "item_2_bip_prose_audit": {
+  "scoped_as": "confirm the s37/s52 relabelling of 'a = 1 cells are closed by BIP' reached every prose claim",
+  "outcome": "CLEAN -- no live unqualified exclusion anywhere",
+  "method": "scanned every tracked .md in docs/ and results/ for a claim combining a=1 / multiplicity-one with closure, exclusion, BIP or occurrence; 30 candidates, each read in context",
+  "findings": [
+   "docs/s37_review.md:49-56 IS the relabelling: 'the a >= 2 gate is a convention we inherited from a theorem that does not apply here... future sweeps use the gate a >= 1'. The gate was corrected at the time.",
+   "docs/s52_report.md:119 concerns h_pad = 0 cells, a separate and valid exclusion (mult_red <= h_pad = 0 forces equality with no computation). Not the BIP convention.",
+   "docs/external_reviews_round3.md:169 is a funding recommendation ('retire the direction -- closed from three sides'), not an exclusion predicate.",
+   "The remaining 27 are a=1 in cell records, witness rows, session titles and historical indexes -- not exclusions.",
+   "results/integrate/inherited_exclusions.json carries no occurrence, BIP or a==1 predicate at all; its predicates are length and containment."
+  ],
+  "consequence": "Slot 11 shrinks again. The exposure I described as 'in prose only' is not there either: s37 corrected the gate, s52 resolved the mechanism, and the machine ledger never used it. Slot 11 is now the quartic shortlist plus a confirmation pass, not an audit."
+ }
+}
