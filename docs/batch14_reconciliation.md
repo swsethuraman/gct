@@ -110,7 +110,10 @@ it is parked, the verification backlog keeps growing faster than the mathematics
 Both versions use `7e69506a`, three commits stale. They miss A1 revision 2 (the
 deficient-control gap, D1 at `ℓ = 7`, A2 re-scoped, A2b), the two `PROVED.md`
 corrections (Theorem F's missing hypothesis, Theorem E's withdrawn dismissal),
-and the board itself. Current base is **`736e5cf0`**.
+and the board itself. **Base: resolve it, do not quote it** — `git fetch origin &&
+git rev-parse origin/main`. The hash written here when this document was drafted
+(`736e5cf0`) went stale within the day, which is the same failure the board's own
+header had twice; `docs/batch14_board.md` governs and now names the ref.
 
 Credit where due: v0.1 §3 independently carries the corrected length bound
 `6 ≤ ℓ ≤ min(r,δ)`, the ladder-product qualification *"only with nonzero
@@ -121,7 +124,8 @@ reached it.
 
 Astra also works from `C:/Users/swami/Projects/gct-gpt/work/batch13_rewritten`,
 a different clone from `C:/Users/swami/Projects/gct/work`. Both should be pinned
-to the same base hash before dispatch.
+to the same base before dispatch — same command, same answer, checked in both
+clones rather than assumed.
 
 ## 6. Recommended shape for v0.3
 

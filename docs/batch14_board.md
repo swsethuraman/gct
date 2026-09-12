@@ -4,8 +4,19 @@
 v0.1 and v0.2, and the strategy memo at `docs/b14_strategy_memo.md`. Where those
 disagree with this file, this file governs. Change log in §6.
 
-Base: **`4d19b8fd`** on `main` = `integration/batch13`. Every session branches
-from it and delivers by bundle against it.
+Base: **the tip of `main` = `integration/batch13` at dispatch — the commit that
+contains this file.** Every session branches from it and delivers by bundle
+against it. The hash is not written here on purpose: v0.3 named the commit
+*before* the one it lived in, and stamping it would put the board one commit
+behind itself again every time it is edited. Resolve it:
+
+```
+git fetch origin && git rev-parse origin/main
+```
+
+and the integrator repeats that hash in the dispatch message. Slots 4 and 8 cite
+`analysis/b14_claude_*`, which exist only from this commit forward, so a session
+branching from anything earlier is working from the wrong tree.
 
 ---
 
@@ -396,7 +407,7 @@ reports its core artifact rather than idling or promoting a conditional.
 
 - **Pre-register before computing** — question, instrument, decision table,
   falsifiers, stopping rules, labelled expectations, committed first.
-- **`python3 tools/delivery/check_delivery.py --branch … --base 4d19b8fd`
+- **`python3 tools/delivery/check_delivery.py --branch … --base $(git rev-parse origin/main)`
   before creating the bundle; rerun **with** `--bundle …` once it exists. The
   pre-bundle check cannot inspect a file that does not yet exist — that was a
   defect in this rule.
@@ -420,7 +431,7 @@ reports its core artifact rather than idling or promoting a conditional.
 | my `325bf521` board | Tier C was over-built: C1's 521-conversion is not a prerequisite and C2's Pieri coupling is replaced by mixed brackets. The degree-10 frontier drops from slot 1 to slot 9, demoted on the memo's argument. The product-image job is dropped — Lemma T makes its thresholds conditional on the number slots 1–4 certify. |
 | strategy memo | Five in-batch dependencies removed. The integrator slot removed. `(12,4,4,4,4,4)₈` restored — its abandonment was an absence of mechanism treated as a bound. The recount widened from 73 to 73, 159, 533 and `a_∞`, since all four are single-method. |
 | Astra v0.1 / v0.2 | The BIP audit shrinks to prose-checking now that `bip_blind_at_n4` is indexed. The five-variable elimination and the boundary-regularity slot stay parked. The point contract moves into the tree as blob ids. A seventh prime is added at degree 13. |
-| v0.3 + Astra's review → **v0.4** | Base corrected to `4d19b8fd` in both places it appears — v0.3's header still named the commit *before* the one that contains it. The degree-14 allocation is settled as a stretch on slot 1 rather than left as a live alternative. The batch-14 strategy session's scratch code is banked (`docs/b14_claude_scratch_code.md`), and slots 4 and 8 are told what it does and does not discharge. |
+| v0.3 + Astra's review → **v0.4** | The base stops being a hash. v0.3 named `c87f986a` in two places — the commit *before* the one containing the board — and stamping `4d19b8fd` instead only moved the same error forward one commit, since the board is always edited by the commit it then has to name. It now names the ref and tells the reader how to resolve it. The degree-14 allocation is settled as a stretch on slot 1 rather than left as a live alternative. The batch-14 strategy session's scratch code is banked (`docs/b14_claude_scratch_code.md`), and slots 4 and 8 are told what it does and does not discharge. |
 
 ## 7. What would make this batch a success
 
