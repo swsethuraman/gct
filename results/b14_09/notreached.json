@@ -24,14 +24,20 @@
   370,
   372,
   374,
+  378,
   379,
+  380,
   381,
-  384
+  384,
+  385,
+  386,
+  388,
+  393
  ],
- "banked_count": 26,
- "not_reached_count": 32,
- "attempted_not_reached": 9,
- "never_started": 23,
+ "banked_count": 32,
+ "not_reached_count": 26,
+ "attempted_not_reached": 7,
+ "never_started": 19,
  "partial_prime_evidence": [],
  "cells": [
   {
@@ -357,75 +363,6 @@
    "status": "never started in this session"
   },
   {
-   "rank": 378,
-   "mu": [
-    8,
-    6,
-    6,
-    4,
-    4,
-    2
-   ],
-   "a": 5,
-   "N_S": 6804680,
-   "stab": 4,
-   "n_chi": 1726993,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 237.3,
-   "pred_decide_secs": 354.2,
-   "pred_peak_gb": 5.23,
-   "attempts": [
-    {
-     "lane": "B",
-     "exit": 137,
-     "meaning": "ended by the cgroup out-of-memory limit while two lanes ran concurrently \u2014 NOT REACHED",
-     "reached": "built, stopped in the kernel/evaluation phase",
-     "built": {
-      "N_S": 6804680,
-      "stab": 4,
-      "n_chi": 1726993,
-      "nrows": 15232980,
-      "nnz": 62775377,
-      "build_secs": 261
-     },
-     "primes_done": [],
-     "mem_error": null
-    }
-   ],
-   "status": "attempted and NOT REACHED \u2014 see attempts"
-  },
-  {
-   "rank": 380,
-   "mu": [
-    7,
-    7,
-    6,
-    4,
-    4,
-    2
-   ],
-   "a": 1,
-   "N_S": 7352720,
-   "stab": 4,
-   "n_chi": 1849543,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 256.5,
-   "pred_decide_secs": 269.9,
-   "pred_peak_gb": 4.73,
-   "attempts": [
-    {
-     "lane": "B",
-     "exit": 143,
-     "meaning": "ended by this session, by recorded pid, to restart the lane with a different bound",
-     "reached": "stopped during the build",
-     "built": null,
-     "primes_done": [],
-     "mem_error": null
-    }
-   ],
-   "status": "attempted and NOT REACHED \u2014 see attempts"
-  },
-  {
    "rank": 382,
    "mu": [
     8,
@@ -468,48 +405,6 @@
    "status": "never started in this session"
   },
   {
-   "rank": 385,
-   "mu": [
-    7,
-    7,
-    5,
-    5,
-    4,
-    2
-   ],
-   "a": 1,
-   "N_S": 8274441,
-   "stab": 4,
-   "n_chi": 2051735,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 288.6,
-   "pred_decide_secs": 303.3,
-   "pred_peak_gb": 5.32,
-   "attempts": [],
-   "status": "never started in this session"
-  },
-  {
-   "rank": 386,
-   "mu": [
-    8,
-    5,
-    5,
-    5,
-    5,
-    2
-   ],
-   "a": 1,
-   "N_S": 8616678,
-   "stab": 24,
-   "n_chi": 347490,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 484.9,
-   "pred_decide_secs": 288.9,
-   "pred_peak_gb": 5.32,
-   "attempts": [],
-   "status": "never started in this session"
-  },
-  {
    "rank": 387,
    "mu": [
     9,
@@ -527,27 +422,6 @@
    "pred_build_secs": 301.8,
    "pred_decide_secs": 317.5,
    "pred_peak_gb": 5.57,
-   "attempts": [],
-   "status": "never started in this session"
-  },
-  {
-   "rank": 388,
-   "mu": [
-    8,
-    7,
-    4,
-    4,
-    4,
-    3
-   ],
-   "a": 1,
-   "N_S": 8868581,
-   "stab": 6,
-   "n_chi": 1520081,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 328.3,
-   "pred_decide_secs": 314.9,
-   "pred_peak_gb": 5.62,
    "attempts": [],
    "status": "never started in this session"
   },
@@ -632,27 +506,6 @@
    "pred_build_secs": 564.1,
    "pred_decide_secs": 336.4,
    "pred_peak_gb": 6.19,
-   "attempts": [],
-   "status": "never started in this session"
-  },
-  {
-   "rank": 393,
-   "mu": [
-    7,
-    7,
-    5,
-    5,
-    3,
-    3
-   ],
-   "a": 1,
-   "N_S": 10177435,
-   "stab": 8,
-   "n_chi": 1241957,
-   "needs_matmul_mod_wide": false,
-   "pred_build_secs": 398.5,
-   "pred_decide_secs": 353.8,
-   "pred_peak_gb": 6.39,
    "attempts": [],
    "status": "never started in this session"
   },

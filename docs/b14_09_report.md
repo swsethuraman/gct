@@ -41,9 +41,19 @@ is transcribed by hand**; every number is printed by
 > and 22.8 for the 402, against the minutes-to-hours and gigabytes per cell that
 > the only previously available route costs.**
 >
+> The board's line for this slot was *"these 58 have never been built and no
+> `n_chi` is recorded... **Fallback** the sizing table alone is worth the slot;
+> nobody has one."* The table was banked and committed inside the first hour,
+> and the rest of the session spent it.
+>
 > The board's fallback for this slot was *the sizing table alone*. That was
 > delivered inside the first hour and is `results/b14_09/sizing.json` and
 > `sizing.md`. The rest of the session went on deciding cells with it.
+>
+> **32 of the 58 were decided**, every one `mult = a` at both house primes.
+> That takes the degree-10 length-6 record from **344 of 402 empty to 376 of
+> 402**, with all 26 that remain sized, routed and priced. No drop, no prime
+> disagreement, no control failure anywhere in the session.
 >
 > **The instrument.** `n_chi` is the number of `Stab_W(mu)`-orbits on the
 > weight-`mu` monomials whose point stabiliser lies in `ker chi_mu`. `chi_mu` is
@@ -66,8 +76,9 @@ is transcribed by hand**; every number is printed by
 > house engine, unchanged, at both house primes. **Every cell reached reads
 > `mult = a`**, so `S_mu` is not in `I(D_6^{per_3})_{10}` over `Q` at each of
 > them, **PROVED** by `rank_p <= rank_Q`. No drop, no prime disagreement, so no
-> branch of the decision table was entered. §4 has the table and §7 prices what
-> was not reached.
+> branch of the decision table was entered, and the verification protocol was
+> never invoked. §5 of `results/b14_09/report_numbers.md` carries the count and
+> §7 here prices what was not reached, cell by cell, with the bound each hit.
 >
 > **C5 is the control this slot turns on, and it is the sharpest one available
 > here.** `results/b14_09/sizing.json` was committed *before any build*, so
@@ -272,6 +283,14 @@ For each decided cell, `units = a - mult = 0` at both house primes. By
 Both primes were run at every cell anyway, and they agree everywhere, so no
 decision-table branch was entered and the verification protocol was never
 invoked.
+
+**No cell requiring `matmul_mod_wide` was decided, and that is not a
+coincidence.** The 19 cells of the 58 with `n_chi >= 2^21` are, by the measured
+cost law below, the dearest in the queue — the decision cost is superlinear in
+exactly the quantity that puts them over the guard. They are sized, routed and
+priced here and they are open. The wide path itself is not exercised by any
+decision in this session; B13-08 exercised it at two cells and
+`analysis/a1_acceptance.py` tests it at the seams, and nothing here adds to that.
 
 **This does not make `I(D_6^{per_3})_{10} = 0` a theorem, and nothing here
 claims it.** What is missing is stated by rank and priced in §7. Until the whole
