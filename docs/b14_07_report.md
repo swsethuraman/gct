@@ -1,7 +1,16 @@
 # B14-07 — exact degree-14 source matrix at `P14`
 
-**Delivery: one part (`part00`); the bundle needed no split.** Branch
-`b14-07-deg14-source`, cut against `batch14-base`.
+**Delivery: total part count 1.** The bundle is 1,145,784 bytes — far below the
+threshold at which this batch has split anything (13–24 MB) — so no `.partNN`
+files exist and the `.md5` carries the single whole-file digest, following the
+`gct_topup.bundle.md5` precedent. Branch `b14-07-deg14-source`, cut against
+`batch14-base` and carrying the named ref, not `HEAD` (see D2 in §7).
+
+`check_delivery.py` reports **CLEAN** both before and after the bundle exists.
+The bundle was additionally verified by applying it: a fresh `git init`, a fetch
+of the base commit, then `git fetch <bundle> b14-07-deg14-source:b14-07-deg14-source`
+— the branch lands, the artefacts arrive, and the exact matrix reads back as
+93 × 212 with `k = 5`, `rank = 88`.
 
 **Model that actually ran this session: `claude-opus-5` (Claude Opus 5).** The
 packet names "Claude"; this is the serving configuration, recorded per the
