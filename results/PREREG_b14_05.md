@@ -112,3 +112,18 @@ repository checker before/after a named-branch bundle against the frozen base.
 Deliver report, replay, bundle, part00 onward (all <=5 MB), bare-filename MD5 and
 SHA256, manifest, verification logs in Batch14_Results/B14-05 outside the worktree.
 Protected files and configuration stay untouched. No new positive D is expected.
+
+## Addendum 2026-09-12 03:42 UTC, before n=3 arithmetic
+
+The small control certified failure of raw adjunction at (12,4)_4 -> (14,6)_5,
+with both dimensions two. The corrected binary average passed all coefficient
+identities and basis mixing. This is now observed, not a new prediction.
+For the banked n=3 check use s69 degree-12 and independently selected degree-13
+integral chi matrices; use s73 representative arrays to multiply by 6u and solve
+the exact 6x6 change of basis, verifying every coordinate, plus the s62 integer
+line and s73 degree-13 integer line. Load NPZ using installed numpy only as an
+array reader. No old build or fresh 812-million-term expansion will run. Banked
+filling-to-coordinate expansions remain adopted; the new replay proves identities
+of those supplied integer coordinate vectors. Extra input hashes are appended
+to the manifest. The 600-second / 512-MiB n=3 bound remains. Record failure if
+coordinate order compatibility cannot be justified; never assume identical indices.
