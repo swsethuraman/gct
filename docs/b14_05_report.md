@@ -162,6 +162,13 @@ The package includes a named refs/heads/b14-05-astra bundle, part00, report,
 proof note, replay instructions, exact JSON certificates and resource logs.
 No push, integration merge, external message or recurring work was performed.
 
+**RECORDED packaging correction.** The first export passed the repository's
+pre/post bundle checks but then stopped while decoding `git show` output using
+Windows cp1252. The exporter now requests UTF-8 explicitly. The initial exception
+is recorded in package_first_attempt.log; final verification logs and hashes
+refer to the corrected export. This was a packaging failure, not a mathematical
+or delivery-check failure.
+
 **RECORDED — Absolute delivery directory:**
 `C:\Users\swami\Projects\gct-gpt\Batch14_Results\B14-05`.
 The committed proof and replay files are `docs/b14_05_transport.md` and

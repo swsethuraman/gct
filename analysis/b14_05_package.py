@@ -19,7 +19,7 @@ MAX_BYTES = 5_000_000
 
 
 def run(argv, log=None):
-    result = subprocess.run(argv, capture_output=True, text=True, timeout=120)
+    result = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', timeout=120)
     if log:
         (OUT/log).write_text('COMMAND: '+json.dumps(argv)+'\nEXIT: '+str(result.returncode)
                              +'\nSTDOUT:\n'+result.stdout+'\nSTDERR:\n'+result.stderr, encoding='utf-8')
