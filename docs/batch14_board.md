@@ -1,10 +1,10 @@
-# Batch 14 — the board, v0.3
+# Batch 14 — the board, v0.4
 
 **Supersedes the twelve-slot board committed at `325bf521`**, Astra's proposal
 v0.1 and v0.2, and the strategy memo at `docs/b14_strategy_memo.md`. Where those
 disagree with this file, this file governs. Change log in §6.
 
-Base: **`c87f986a`** on `main` = `integration/batch13`. Every session branches
+Base: **`4d19b8fd`** on `main` = `integration/batch13`. Every session branches
 from it and delivers by bundle against it.
 
 ---
@@ -183,7 +183,13 @@ input is absent.
 
 **Inputs** `results/b13_01_hpad.json`, `analysis/wk13_b13_01_hpad.py`,
 `analysis/wk9_s42_census.py`, `docs/s57_report.md`, `docs/b14_strategy_memo.md`,
-`results/b14_prep/ladder_recount.json`.
+`results/b14_prep/ladder_recount.json`, `docs/b14_claude_scratch_code.md` and the
+`analysis/b14_claude_*` scripts it indexes.
+
+**The scratch code is the thing you must not reuse.** `b14_claude_hpad.py` and
+`b14_claude_stable_count.py` are where 159, 533 and the `a_∞` values came from;
+they are banked so the numbers can be replayed, not so they can be confirmed.
+Replaying them is not a recount.
 
 Four quantities are load-bearing and each rests on **one method and one
 implementation**:
@@ -202,8 +208,11 @@ and does not discharge this.
 **159 is the priority**: it is the target dimension at rung 14, where `D = −4`
 would be decided. **Already done, do not repeat**: the integrator reproduced
 390, 391 and 532 on the house `a_weyl`, calibrated against three banked values
-(`results/b14_prep/ladder_recount.json`) — but that is reproduction, not method
-diversity, and is recorded as such.
+(`results/b14_prep/ladder_recount.json`), and re-ran `b14_claude_hpad.py` on the
+integration machine — control `h_pad(21,17,2⁷;13) = 73` PASS with B13-01's
+fifteen per-strip `a3`, then `h_pad((25,17,2⁷),14) = 159` over 27 strips
+(`results/logs/b14_claude_hpad_verify.log`). Both are reproduction, not method
+diversity, and are recorded as such. 159 still has exactly one lineage.
 
 ### 5 — stdlib — Lemma T, Lemma CI, and bracket adjunction
 
@@ -265,9 +274,16 @@ nullity remains a **ceiling**.
 
 ### 8 — stdlib — transport census, the combinatorial half
 
-**Inputs** `results/b13_06/components.json`, `docs/b13_06_report.md`, Lemma T and
+**Inputs** `results/b13_06/components.json`, `docs/b13_06_report.md`,
+`analysis/b14_claude_reach.py` and `results/b14_claude_reach.json`, Lemma T and
 Lemma B as slot 5 states them (use the memo's statements if slot 5 has not
 delivered — **do not wait**).
+
+The Lemma T reachability column is **already computed** for all 239 and replays
+in under a second — 5 of 31 reached at `δ = 25`, 26 of 208 at `δ = 26`, both
+controls PASS on the integration machine, output bit-identical to the delivered
+file. Check it, do not rebuild it; your work is the Lemma B bounds and the
+exclusions.
 
 All 239 components with at most ten rows: 31 at `δ = 25` and 208 at `δ = 26`.
 Deliver reachability, Lemma T exclusions and Lemma B bounds for every one.
@@ -380,7 +396,7 @@ reports its core artifact rather than idling or promoting a conditional.
 
 - **Pre-register before computing** — question, instrument, decision table,
   falsifiers, stopping rules, labelled expectations, committed first.
-- **`python3 tools/delivery/check_delivery.py --branch … --base c87f986a`
+- **`python3 tools/delivery/check_delivery.py --branch … --base 4d19b8fd`
   before creating the bundle; rerun **with** `--bundle …` once it exists. The
   pre-bundle check cannot inspect a file that does not yet exist — that was a
   defect in this rule.
@@ -404,6 +420,7 @@ reports its core artifact rather than idling or promoting a conditional.
 | my `325bf521` board | Tier C was over-built: C1's 521-conversion is not a prerequisite and C2's Pieri coupling is replaced by mixed brackets. The degree-10 frontier drops from slot 1 to slot 9, demoted on the memo's argument. The product-image job is dropped — Lemma T makes its thresholds conditional on the number slots 1–4 certify. |
 | strategy memo | Five in-batch dependencies removed. The integrator slot removed. `(12,4,4,4,4,4)₈` restored — its abandonment was an absence of mechanism treated as a bound. The recount widened from 73 to 73, 159, 533 and `a_∞`, since all four are single-method. |
 | Astra v0.1 / v0.2 | The BIP audit shrinks to prose-checking now that `bip_blind_at_n4` is indexed. The five-variable elimination and the boundary-regularity slot stay parked. The point contract moves into the tree as blob ids. A seventh prime is added at degree 13. |
+| v0.3 + Astra's review → **v0.4** | Base corrected to `4d19b8fd` in both places it appears — v0.3's header still named the commit *before* the one that contains it. The degree-14 allocation is settled as a stretch on slot 1 rather than left as a live alternative. The batch-14 strategy session's scratch code is banked (`docs/b14_claude_scratch_code.md`), and slots 4 and 8 are told what it does and does not discharge. |
 
 ## 7. What would make this batch a success
 
@@ -412,9 +429,12 @@ partial searches:
 
 1. **A certified `i_red(13)`** — slots 1, 2, 3, 4 together. `≥ 1` gives `D ≤ 0`.
 2. **A certified `i_red(14)` = 5** — needs slot 7 *and* slot 1's degree-14
-   stretch, plus the recount and verifier; then `D_LMR = −4` exactly. **A stretch
-   outcome in this allocation, not a core deliverable.** Making it core means
-   giving the degree-14 target its own numerical slot.
+   stretch, plus the recount and verifier; then `D_LMR = −4` exactly. **Settled:
+   a stretch outcome in this allocation, not a core deliverable.** The
+   alternative — a thirteenth numerical slot, or demoting slot 9 or 12 to fund
+   one — was considered and declined: the degree-13 certificate is what changes
+   the position, and one slot doing it well beats two doing both halves thinly.
+   Reversible until the batch is dispatched; after dispatch it is fixed.
 3. **A reproduction of 274 / 273 / 269 by independent code** — slot 6. It is the
    only check that could falsify the stable reformulation the programme leans on.
 4. **An independently checkable complete-interpolation result** — slot 3, applied
