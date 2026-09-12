@@ -1,9 +1,12 @@
 # B14-07 — exact degree-14 source matrix at `P14`
 
-**Delivery: total part count 1.** The bundle is 1,145,784 bytes — far below the
-threshold at which this batch has split anything (13–24 MB) — so no `.partNN`
-files exist and the `.md5` carries the single whole-file digest, following the
-`gct_topup.bundle.md5` precedent. Branch `b14-07-deg14-source`, cut against
+**Delivery: total part count 1.** The bundle is ≈1.1 MB — far below the threshold
+at which this batch has split anything (13–24 MB) — so no `.partNN` files exist
+and the `.md5` carries the single whole-file digest, following the
+`gct_topup.bundle.md5` precedent. (The size is given approximately on purpose: an
+exact byte count written *inside* the bundle changes the bundle, which is the
+board's own stamped-hash problem in miniature. The `.md5` shipped beside the
+bundle carries the exact digest, and it is outside it.) Branch `b14-07-deg14-source`, cut against
 `batch14-base` and carrying the named ref, not `HEAD` (see D2 in §7).
 
 `check_delivery.py` reports **CLEAN** both before and after the bundle exists.
