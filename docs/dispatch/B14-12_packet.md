@@ -9,18 +9,34 @@ Host class: **flint**. You need `gcc`, `python-flint` and SciPy together. Six of
 ## Your base — one commit, and it does not move
 
     git fetch origin --tags
-    git rev-parse batch14-base
+    git log -1 --format=%H batch14-base      (the commit)
+    git log -1 --format=%T batch14-base      (the tree)
+    git checkout batch14-base
 
-**`batch14-base` is an annotated tag, not a branch.** Check out that exact
-commit, run the delivery check against it, and cut your bundle against it. Do not
+**`batch14-base` is an annotated tag, not a branch.** Check out that exact commit,
+run the delivery check against it, and cut your bundle against it. Do not
 substitute `origin/main`: it can advance while you are running, and a base that
 moves under a session is how a worker delivers against a tree it never read. Two
 earlier versions of this rule were wrong — a stamped hash that named the commit
 before the board, then a moving ref — and the tag is the third and last answer.
 
-Record `git rev-parse batch14-base` and `git show -s --format=%T batch14-base` in
-your pre-registration. If the tag is absent, your clone predates the freeze:
-stop and say so rather than guessing a base.
+**Use the two commands above exactly.** `git rev-parse batch14-base` returns the
+**tag object**, not the commit — an annotated tag is its own object,
+and feeding that hash to `check_delivery.py --base` or to a diff will not do what
+you expect. `git log -1 --format=%H` peels it for you and contains no `^` or `{}`,
+which some shells treat specially. The integrator shipped a draft of this packet
+telling you to run the wrong one.
+
+**Your dispatch message states the expected commit and tree.** Record both values
+in your pre-registration and check they match what the tag resolves to. They are
+deliberately not written into this file: a packet that names its own commit's
+hash cannot exist, because committing the packet changes the hash. That mistake
+has now been made three times on this batch — in the board header, in the
+delivery rule, and in a draft of this packet — so the tag is the name and the
+message carries the value.
+
+If the tag is absent, your clone predates the freeze: stop and say so rather than
+guessing a base.
 
 ## Before anything else
 
@@ -122,8 +138,9 @@ the total part count in its first paragraph; the `.md5` names bare filenames and
 carries a digest for the whole file and one per part.
 
 Run `python3 tools/delivery/check_delivery.py --branch <your branch> --base
-$(git rev-parse batch14-base)` before creating the bundle, then rerun it **with**
-`--bundle <file>` once the file exists.
+<the commit from `git log -1 --format=%H batch14-base`>` before creating the
+bundle, then rerun it **with** `--bundle <file>` once the file exists. Use that
+command, **not** `git rev-parse batch14-base`, which returns the tag object.
 
 ## Report
 
