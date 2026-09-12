@@ -1,0 +1,252 @@
+=== lane S starting rank 367 at 05:23:20 ===
+== rank 367 mu=(8, 7, 5, 5, 3, 2) a=4  PRE-REGISTERED n_chi = 2635431 (N_S=5304916, |Stab|=2, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 518 prefixes
+      level 3: 8151 prefixes
+      level 4: 67142 prefixes
+      level 5: 350116 prefixes
+      level 6: 1216043 prefixes
+      level 7: 2987317 prefixes
+      level 8: 4809799 prefixes
+      level 9: 5304916 prefixes
+      level 10: 5304916 prefixes
+  lam=(8, 7, 5, 5, 3, 2): N_S=5304916 |Stab|=2 n_chi=2635431 (orbits dropped: 34054) [lean, 20s, HWM 0.88 GB]
+    E_01: |H|=2 targets 4606382 canonical rows 2287905 nnz 11266398 (obstructed fixed targets cancelled: 19064) [40s, HWM 1.11 GB]
+    E_12: |H|=1 targets 3977057 canonical rows 3976761 nnz 18179639 (obstructed fixed targets cancelled: 0) [68s, HWM 1.33 GB]
+    E_23: |H|=1 targets 4719476 canonical rows 4718828 nnz 17927857 (obstructed fixed targets cancelled: 0) [99s, HWM 1.58 GB]
+    E_34: |H|=1 targets 3305381 canonical rows 3305212 nnz 12633172 (obstructed fixed targets cancelled: 0) [119s, HWM 1.58 GB]
+    E_45: |H|=2 targets 3165424 canonical rows 1571636 nnz 4600595 (obstructed fixed targets cancelled: 6851) [138s, HWM 1.65 GB]
+  built (8, 7, 5, 5, 3, 2) d10: N_S=5304916 |Stab|=2 n_chi=2635431 rows=15860342 nnz=64607661 (168s: mono 7s orbits 20s rows 141s; HWM 2.12 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 270, in hybrid_kernel
+    indptr = Fo.indptr.astype(np.int64); indices = Fo.indices.astype(np.int32); data = (Fo.data % p).astype(np.uint32)
+                                                                                        ~~~~~~~~^~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 435. MiB for an array with shape (56976742,) and data type int64
+=== lane S rank 367 exit 1 ===
+=== lane S starting rank 369 at 05:26:35 ===
+== rank 369 mu=(9, 6, 5, 4, 4, 2) a=6  PRE-REGISTERED n_chi = 2712723 (N_S=5369144, |Stab|=2, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 795 prefixes
+      level 3: 9829 prefixes
+      level 4: 78112 prefixes
+      level 5: 414999 prefixes
+      level 6: 1494899 prefixes
+      level 7: 3585772 prefixes
+      level 8: 5116674 prefixes
+      level 9: 5369144 prefixes
+      level 10: 5369144 prefixes
+  lam=(9, 6, 5, 4, 4, 2): N_S=5369144 |Stab|=2 n_chi=2712723 (orbits dropped: 0) [lean, 19s, HWM 0.88 GB]
+    E_01: |H|=2 targets 4021114 canonical rows 2032743 nnz 10503796 (obstructed fixed targets cancelled: 0) [30s, HWM 1.02 GB]
+    E_12: |H|=2 targets 4345969 canonical rows 2196841 nnz 9319519 (obstructed fixed targets cancelled: 0) [64s, HWM 1.28 GB]
+    E_23: |H|=1 targets 4099812 canonical rows 4099812 nnz 15828598 (obstructed fixed targets cancelled: 0) [88s, HWM 1.38 GB]
+    E_34: |H|=1 targets 4606382 canonical rows 4606382 nnz 15583671 (obstructed fixed targets cancelled: 0) [117s, HWM 1.62 GB]
+    E_45: |H|=1 targets 2752707 canonical rows 2752707 nnz 9380165 (obstructed fixed targets cancelled: 0) [132s, HWM 1.62 GB]
+  built (9, 6, 5, 4, 4, 2) d10: N_S=5369144 |Stab|=2 n_chi=2712723 rows=15688485 nnz=60615749 (160s: mono 6s orbits 19s rows 135s; HWM 2.03 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 270, in hybrid_kernel
+    indptr = Fo.indptr.astype(np.int64); indices = Fo.indices.astype(np.int32); data = (Fo.data % p).astype(np.uint32)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 202. MiB for an array with shape (52898750,) and data type uint32
+=== lane S rank 369 exit 1 ===
+=== lane S starting rank 371 at 05:29:43 ===
+== rank 371 mu=(8, 6, 6, 5, 3, 2) a=2  PRE-REGISTERED n_chi = 2929130 (N_S=5833614, |Stab|=2, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 519 prefixes
+      level 3: 8105 prefixes
+      level 4: 65352 prefixes
+      level 5: 344216 prefixes
+      level 6: 1239002 prefixes
+      level 7: 3188619 prefixes
+      level 8: 5265127 prefixes
+      level 9: 5833614 prefixes
+      level 10: 5833614 prefixes
+  lam=(8, 6, 6, 5, 3, 2): N_S=5833614 |Stab|=2 n_chi=2929130 (orbits dropped: 0) [lean, 23s, HWM 0.95 GB]
+    E_01: |H|=1 targets 4606382 canonical rows 4606382 nnz 22720892 (obstructed fixed targets cancelled: 0) [34s, HWM 1.33 GB]
+    E_12: |H|=1 targets 5304916 canonical rows 5304916 nnz 22609936 (obstructed fixed targets cancelled: 0) [71s, HWM 1.69 GB]
+    E_23: |H|=1 targets 4719476 canonical rows 4719476 nnz 20148056 (obstructed fixed targets cancelled: 0) [106s, HWM 1.84 GB]
+    E_34: |H|=2 targets 3631655 canonical rows 1824920 nnz 7019632 (obstructed fixed targets cancelled: 0) [134s, HWM 1.84 GB]
+    E_45: |H|=2 targets 3477991 canonical rows 1747057 nnz 5117886 (obstructed fixed targets cancelled: 0) [156s, HWM 1.95 GB]
+  built (8, 6, 6, 5, 3, 2) d10: N_S=5833614 |Stab|=2 n_chi=2929130 rows=18202751 nnz=77616402 (189s: mono 6s orbits 23s rows 161s; HWM 2.54 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 130, in measure_weight_lean
+    cov = best_cover(E, nc, seed=HYB_SEED)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 116, in best_cover
+    c = cover(F, nc, pos)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 99, in cover
+    ms = minpos[order]
+         ~~~~~~^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 139. MiB for an array with shape (18202751,) and data type int64
+=== lane S rank 371 exit 1 ===
+=== lane S starting rank 339 at 05:32:58 ===
+== rank 339 mu=(10, 6, 5, 4, 3, 2) a=11  PRE-REGISTERED n_chi = 3076302 (N_S=3076302, |Stab|=1, wide=True) ==
+      level 1: 43 prefixes
+      level 2: 839 prefixes
+      level 3: 9668 prefixes
+      level 4: 73407 prefixes
+      level 5: 363048 prefixes
+      level 6: 1201764 prefixes
+      level 7: 2444526 prefixes
+      level 8: 3022483 prefixes
+      level 9: 3076302 prefixes
+      level 10: 3076302 prefixes
+  lam=(10, 6, 5, 4, 3, 2): N_S=3076302 |Stab|=1 n_chi=3076302 (orbits dropped: 0) [lean, 5s, HWM 0.52 GB]
+    E_01: |H|=1 targets 2211400 canonical rows 2211400 nnz 11788761 (obstructed fixed targets cancelled: 0) [15s, HWM 0.74 GB]
+    E_12: |H|=1 targets 2497176 canonical rows 2497176 nnz 10473030 (obstructed fixed targets cancelled: 0) [30s, HWM 0.91 GB]
+    E_23: |H|=1 targets 2357000 canonical rows 2357000 nnz 8978432 (obstructed fixed targets cancelled: 0) [43s, HWM 0.96 GB]
+    E_34: |H|=1 targets 2162479 canonical rows 2162479 nnz 7310887 (obstructed fixed targets cancelled: 0) [54s, HWM 1.06 GB]
+    E_45: |H|=1 targets 1845977 canonical rows 1845977 nnz 5347288 (obstructed fixed targets cancelled: 0) [62s, HWM 1.14 GB]
+  built (10, 6, 5, 4, 3, 2) d10: N_S=3076302 |Stab|=1 n_chi=3076302 rows=11074032 nnz=43898398 (74s: mono 3s orbits 5s rows 65s; HWM 1.47 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 282, in hybrid_kernel
+    Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 751. MiB for an array with shape (3075696, 32) and data type int64
+=== lane S rank 339 exit 1 ===
+=== lane S starting rank 373 at 05:34:35 ===
+== rank 373 mu=(8, 7, 5, 4, 4, 2) a=4  PRE-REGISTERED n_chi = 3124594 (N_S=6186200, |Stab|=2, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 534 prefixes
+      level 3: 8699 prefixes
+      level 4: 74218 prefixes
+      level 5: 396427 prefixes
+      level 6: 1400264 prefixes
+      level 7: 3474446 prefixes
+      level 8: 5609364 prefixes
+      level 9: 6186200 prefixes
+      level 10: 6186200 prefixes
+  lam=(8, 7, 5, 4, 4, 2): N_S=6186200 |Stab|=2 n_chi=3124594 (orbits dropped: 0) [lean, 23s, HWM 1.01 GB]
+    E_01: |H|=2 targets 5369144 canonical rows 2712723 nnz 13384243 (obstructed fixed targets cancelled: 0) [49s, HWM 1.28 GB]
+    E_12: |H|=2 targets 4633877 canonical rows 2342320 nnz 10770615 (obstructed fixed targets cancelled: 0) [89s, HWM 1.40 GB]
+    E_23: |H|=1 targets 4719476 canonical rows 4719476 nnz 18288713 (obstructed fixed targets cancelled: 0) [122s, HWM 1.58 GB]
+    E_34: |H|=1 targets 5304916 canonical rows 5304916 nnz 18010466 (obstructed fixed targets cancelled: 0) [157s, HWM 1.85 GB]
+    E_45: |H|=1 targets 3165424 canonical rows 3165424 nnz 10822506 (obstructed fixed targets cancelled: 0) [174s, HWM 1.85 GB]
+  built (8, 7, 5, 4, 4, 2) d10: N_S=6186200 |Stab|=2 n_chi=3124594 rows=18244859 nnz=71276543 (207s: mono 6s orbits 23s rows 178s; HWM 2.37 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 130, in measure_weight_lean
+    cov = best_cover(E, nc, seed=HYB_SEED)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 116, in best_cover
+    c = cover(F, nc, pos)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 101, in cover
+    chosen = rows[order[first]]
+             ~~~~^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 23.8 MiB for an array with shape (3123975,) and data type int64
+=== lane S rank 373 exit 1 ===
+=== lane S starting rank 350 at 05:38:11 ===
+== rank 350 mu=(9, 7, 5, 4, 3, 2) a=12  PRE-REGISTERED n_chi = 3730858 (N_S=3730858, |Stab|=1, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 799 prefixes
+      level 3: 9474 prefixes
+      level 4: 71146 prefixes
+      level 5: 345657 prefixes
+      level 6: 1133645 prefixes
+      level 7: 2542674 prefixes
+      level 8: 3560341 prefixes
+      level 9: 3730858 prefixes
+      level 10: 3730858 prefixes
+  lam=(9, 7, 5, 4, 3, 2): N_S=3730858 |Stab|=1 n_chi=3730858 (orbits dropped: 0) [lean, 6s, HWM 0.62 GB]
+    E_01: |H|=1 targets 3076302 canonical rows 3076302 nnz 15828598 (obstructed fixed targets cancelled: 0) [21s, HWM 0.96 GB]
+    E_12: |H|=1 targets 2803928 canonical rows 2803928 nnz 12761894 (obstructed fixed targets cancelled: 0) [39s, HWM 1.07 GB]
+    E_23: |H|=1 targets 2854539 canonical rows 2854539 nnz 10932925 (obstructed fixed targets cancelled: 0) [56s, HWM 1.20 GB]
+    E_34: |H|=1 targets 2617854 canonical rows 2617854 nnz 8893200 (obstructed fixed targets cancelled: 0) [71s, HWM 1.27 GB]
+    E_45: |H|=1 targets 2233926 canonical rows 2233926 nnz 6497727 (obstructed fixed targets cancelled: 0) [83s, HWM 1.30 GB]
+  built (9, 7, 5, 4, 3, 2) d10: N_S=3730858 |Stab|=1 n_chi=3730858 rows=13586549 nnz=54914344 (94s: mono 4s orbits 6s rows 85s; HWM 1.78 GB)
+Traceback (most recent call last):
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 168, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 164, in main
+    return run(rank, os.path.join(ROOT, outp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/b14_09_sweep.py", line 127, in run
+    res, Ks, B = measure_weight_lean(mu, 10, verbose=True, a_given=a, want_K=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk13_b08_per6_lean.py", line 136, in measure_weight_lean
+    K, info = hybrid_kernel(E, nc, p, a, cov, seed=HYB_SEED, tag=f"[per6-lean {'_'.join(map(str, mu))}d{delta}]", verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gct/analysis/wk11_s71_hybrid.py", line 282, in hybrid_kernel
+    Bb = np.ascontiguousarray((TUc[:, b0:b1].toarray().astype(np.int64) % p).astype(np.uint32))   # nS x blk
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 911. MiB for an array with shape (3729955, 32) and data type int64
+=== lane S rank 350 exit 1 ===
+=== lane S starting rank 363 at 05:40:09 ===
+== rank 363 mu=(8, 7, 6, 4, 3, 2) a=7  PRE-REGISTERED n_chi = 4719476 (N_S=4719476, |Stab|=1, wide=True) ==
+      level 1: 34 prefixes
+      level 2: 515 prefixes
+      level 3: 8073 prefixes
+      level 4: 64331 prefixes
+      level 5: 325162 prefixes
+      level 6: 1105416 prefixes
+      level 7: 2672963 prefixes
+      level 8: 4280996 prefixes
+      level 9: 4719476 prefixes
+      level 10: 4719476 prefixes
+  lam=(8, 7, 6, 4, 3, 2): N_S=4719476 |Stab|=1 n_chi=4719476 (orbits dropped: 0) [lean, 9s, HWM 0.75 GB]
+    E_01: |H|=1 targets 4099812 canonical rows 4099812 nnz 20148056 (obstructed fixed targets cancelled: 0) [31s, HWM 1.18 GB]
+=== lane S rank 363 exit 143 ===
+=== lane S HALT on rank 363 (exit 143) ===
+=== NOTE: lane S is ended here by its recorded pids.  It was the lighter of two
+=== concurrent lanes and ran at `ulimit -v` 3.0 GB; ranks 339, 373 and 350 --
+=== the |Stab| = 1 and 2 cells whose n_chi is 3.08, 3.12 and 3.73 million, all
+=== of which route through matmul_mod_wide -- exceeded that address-space bound.
+=== They are NOT REACHED at 3.0 GB, not failures and not drops.  The remaining
+=== time goes to a single lane at 6.8 GB, because two concurrent lanes had
+=== already cost ranks 384 and 378 an OOM kill at the cgroup limit (both have
+=== N_S near 7 million); 384 was then decided single-lane.

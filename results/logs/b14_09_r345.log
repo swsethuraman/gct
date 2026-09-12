@@ -1,0 +1,26 @@
+== rank 345 mu=(10, 5, 5, 5, 3, 2) a=3  PRE-REGISTERED n_chi = 563519 (N_S=3453247, |Stab|=6, wide=False) ==
+      level 1: 43 prefixes
+      level 2: 816 prefixes
+      level 3: 9248 prefixes
+      level 4: 70036 prefixes
+      level 5: 362806 prefixes
+      level 6: 1291027 prefixes
+      level 7: 2724224 prefixes
+      level 8: 3391707 prefixes
+      level 9: 3453247 prefixes
+      level 10: 3453247 prefixes
+  lam=(10, 5, 5, 5, 3, 2): N_S=3453247 |Stab|=6 n_chi=563519 (orbits dropped: 24223) [lean, 28s, HWM 0.58 GB]
+    E_01: |H|=2 targets 2211400 canonical rows 1096900 nnz 5762401 (obstructed fixed targets cancelled: 11924) [14s, HWM 0.71 GB]
+    E_12: |H|=1 targets 3076302 canonical rows 3075274 nnz 11387199 (obstructed fixed targets cancelled: 0) [32s, HWM 0.90 GB]
+    E_23: |H|=1 targets 3076302 canonical rows 3075274 nnz 11387199 (obstructed fixed targets cancelled: 0) [50s, HWM 1.05 GB]
+    E_34: |H|=2 targets 2162479 canonical rows 1072252 nnz 4019675 (obstructed fixed targets cancelled: 8246) [64s, HWM 1.07 GB]
+    E_45: |H|=6 targets 2069786 canonical rows 337125 nnz 977149 (obstructed fixed targets cancelled: 14460) [88s, HWM 1.12 GB]
+  built (10, 5, 5, 5, 3, 2) d10: N_S=3453247 |Stab|=6 n_chi=563519 rows=8656825 nnz=33533623 (123s: mono 5s orbits 28s rows 90s; HWM 1.20 GB)
+    hybrid[per6-lean 10_5_5_5_3_2d10] p=2147483647 attempt 0: |S|=563476 |U|=43 (a=3, excess 40) m=107 blocks 1x43 projected nullity 3, verified=True, rank 3 [split 0.6s trisolve 1.0s schur 6.3s null 0.0s lift 1.5s rank 0.1s]
+  per6-lean (10, 5, 5, 5, 3, 2) d10 p=2147483647: a=3 n_chi=563519 mult=3 units=0 [19.1s]
+    hybrid[per6-lean 10_5_5_5_3_2d10] p=2147483629 attempt 0: |S|=563476 |U|=43 (a=3, excess 40) m=107 blocks 1x43 projected nullity 3, verified=True, rank 3 [split 0.7s trisolve 0.4s schur 7.0s null 0.0s lift 3.8s rank 0.1s]
+  per6-lean (10, 5, 5, 5, 3, 2) d10 p=2147483629: a=3 n_chi=563519 mult=3 units=0 [23.1s]
+  PER6-LEAN RESULT (10, 5, 5, 5, 3, 2) d10: a=3 N_S=3453247 n_chi=563519 mult=3 units=0 proved: mult = a at both primes (S_mu not in the ideal over Q) (177.8s, HWM 1.9 GB)
+  C6 (10, 5, 5, 5, 3, 2) p=2147483647: diagonal rank 0 (must be 0, rows all zero=True); per_3 rank 3 (must be 3); det_3 rank 3 (must be <= 3)
+  C6 (10, 5, 5, 5, 3, 2) p=2147483629: diagonal rank 0 (must be 0, rows all zero=True); per_3 rank 3 (must be 3); det_3 rank 3 (must be <= 3)
+== rank 345 (10, 5, 5, 5, 3, 2): mult=3 units=0 C5=PASS C6=PASS [213.3s, HWM 1.9 GB] ==

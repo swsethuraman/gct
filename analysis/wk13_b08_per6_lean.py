@@ -54,8 +54,14 @@ def matmul_mod_wide(A, B, p, blk=64, kblk=INNER_BLOCK):
     whenever K < 2^21 (that case delegates unchanged).
 
     Needed at delta = 10 because the evaluation step forms G = ev . K with inner
-    dimension n_chi, and 17 of this session's 95 weights have n_chi >= 2^21 = 2 097 152
-    (every weight with N_S / |Stab| above that); session 79 never reached one.
+    dimension n_chi, and 17 of this session's 95 weights have n_chi >= 2^21 = 2 097 152;
+    session 79 never reached one.  The 17 is right; the parenthetical that used to
+    stand here -- "every weight with N_S / |Stab| above that" -- is NOT a rule and
+    was removed in batch 14.  MEASURE n_chi; see PROVED.md: nchi_2_21_guard.  Over
+    the 402 degree-10 six-row weights the ratio n_chi / (N_S/|Stab|) runs 0.355 to
+    2.9595, so the quotient is out by nearly a factor of three inside this very
+    set; it happened to route all 21 wide cells correctly because no cell's error
+    straddles 2^21, which is luck and not a criterion.  (B14-09)
     """
     A = np.asarray(A, dtype=np.int64) % p
     K = A.shape[1]
