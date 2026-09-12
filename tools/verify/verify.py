@@ -361,11 +361,9 @@ def validate(cert):
 
 
 def load(path):
-    if path.endswith(".gz"):
-        with gzip.open(path, "rt", encoding="utf-8") as f:
-            return json.load(f)
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    # Bound bytes and reject duplicate keys BEFORE any profile or legacy parse.
+    from ci73_io import load as bounded_load
+    return bounded_load(path)
 
 
 def _check_split_rank(cert, log):
@@ -453,9 +451,14 @@ def verify_file(path):
     except Exception as e:                       # noqa: BLE001
         return "UNPARSEABLE", [("read/parse JSON", False, str(e))]
     if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
-        from complete_interpolation import load as ci_load, verify as ci_verify
         try:
-            result = ci_verify(ci_load(path))
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from pathlib import Path
+                from ci73 import verify as ci73_verify
+                result = ci73_verify(cert, Path(path).resolve().parent)
+            else:
+                from complete_interpolation import verify as ci_verify
+                result = ci_verify(cert)
         except Exception as exc:
             return "UNPARSEABLE", [("CI input", False, str(exc))]
         log = [(item["check"], item["ok"], json.dumps(item.get("detail", {})))

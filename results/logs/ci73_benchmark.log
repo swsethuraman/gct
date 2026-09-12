@@ -1,0 +1,28 @@
+{"board_numbering": "batch14", "session_id": "B14-03-ci73", "pid": 33804, "memory_before": {"total_physical": 33752997888, "available_physical": 12575637504, "load": 62}, "memory_cap_mb": 768, "wall_cap_seconds": 120, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "started_utc": "2026-09-12T12:09:14Z"}
+{"wall_seconds": 0.15579309999884572}
+Traceback (most recent call last):
+  File "C:\Users\swami\Projects\gct-gpt\work\batch14\B14-03-ci73\analysis\ci73_bound.py", line 130, in <module>
+    main()
+  File "C:\Users\swami\Projects\gct-gpt\work\batch14\B14-03-ci73\analysis\ci73_bound.py", line 119, in main
+    runpy.run_path(args.script, run_name="__main__")
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "analysis/ci73_benchmark.py", line 39, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "analysis/ci73_benchmark.py", line 18, in main
+    vals,record=v.evaluate(f,[table],p,name=f'ci73_small_{n}_{p}')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swami\Projects\gct-gpt\work\batch14\B14-03-ci73\tools\verify\ci73_eval.py", line 148, in evaluate
+    need(p.returncode==0,'backend failure: '+err.decode(errors='replace'))
+  File "C:\Users\swami\Projects\gct-gpt\work\batch14\B14-03-ci73\tools\verify\ci73_eval.py", line 24, in need
+    if not c: raise ValueError(why)
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: backend failure: System.InvalidCastException: Unable to cast object of type 'System.Collections.ArrayList' to type 'System.Object[]'.
+
+   at CI73Backend.Ints(Object x)
+
+   at CI73Backend.Main(String[] args)
+
+

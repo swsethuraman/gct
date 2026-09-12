@@ -73,3 +73,15 @@ replay and rejection evidence, report, named-ref bundle and before/after deliver
 gates against the frozen base. No degree 14, integration merge, remote publish,
 or unrelated recurrence. Original PROVED entries remain historical; append only
 discharged continuation statements with explicit dependency provenance.
+
+## Pricing addendum, before the full witness run
+
+The corrected independent backend passed eight literal checks and fresh four-point
+source/mixed comparisons. Source15 batch4 used 0.294 s; mixed0 batch4 0.127 s.
+Independent target and ambient dimensions replayed in 6.27 s under 768 MiB.
+Full orchestration cap is now 1800 s, retaining 120 s per backend batch, at most
+16 points per batch, 450 MB planned live arrays and 768 MiB aggregate Job Object.
+The full run will also evaluate all 39 source members on all 20 holdouts.
+Adversarial controls may reuse only values computed by their own live process,
+keyed by every filling, coefficient/exponent and modulus. Default standalone
+verification starts empty and never accepts saved DP output as fresh values.
