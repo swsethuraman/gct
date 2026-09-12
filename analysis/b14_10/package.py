@@ -48,6 +48,7 @@ def main():
         if result.returncode:raise RuntimeError(name+' failed; see delivered log')
         return result.stdout+result.stderr
     checker=[sys.executable,'tools/delivery/check_delivery.py','--branch',BRANCH,'--base',BASE]
+    logged('git_whitespace_check.log',['git','diff','--check',BASE,BRANCH])
     logged('delivery_check_before.log',checker)
     bundle=output/'b14_10_astra.bundle'
     logged('bundle_create.log',['git','bundle','create',str(bundle),BASE+'..'+BRANCH,BRANCH])

@@ -201,6 +201,9 @@ streaming payload hashes and a materialization ceiling corrected it. The first
 bounded reconciliation failed in 0.047 s because runpy had not added the
 script directory to sys.path; the wrapper was fixed and reconciliation then
 completed in 0.109 s. Neither failed run produced a mathematical PASS.
+The initial Git whitespace check also flagged CRLF in byte-preserved Windows
+JSON; a session-scoped whitespace attribute fixes that check while retaining
+the exact artifact bytes and their hashes.
 
 ## Assignment defects and remaining work
 

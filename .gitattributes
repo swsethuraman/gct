@@ -1,3 +1,5 @@
 # B14-10: preserve checksum-bearing session artifacts across Windows checkout.
 results/b14_10/** -text
 analysis/b14_10/** text eol=lf
+# JSON written on Windows retains CRLF bytes; CR is not trailing whitespace.
+results/b14_10/** whitespace=cr-at-eol
