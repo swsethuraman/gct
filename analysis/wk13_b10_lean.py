@@ -356,8 +356,11 @@ def raising_rows_lean(n, r, delta, lam, arr, chunk=400000, triples='store', bloc
     out_blocks = []          # (Ek) or (path, shape, nnz)
     nfixed = 0
     phases = []
+    scratch_is_ours = False
     if blocks == 'disk':
-        scratch = scratch or tempfile.mkdtemp(prefix='b13_10_rows_')
+        if not scratch:
+            scratch = tempfile.mkdtemp(prefix='b13_10_rows_')
+            scratch_is_ours = True
         os.makedirs(scratch, exist_ok=True)
     for i in range(r - 1):
         j = i + 1
@@ -496,8 +499,18 @@ def raising_rows_lean(n, r, delta, lam, arr, chunk=400000, triples='store', bloc
         del ip, ix, dv
         if blocks != 'disk': out_blocks[bi] = None
     assert r0 == nrows and e0 == nnz
-    del out_blocks
+    # Remove what this function WROTE, not the directory it was handed.  This used
+    # to be shutil.rmtree(scratch): a caller that passed its own directory lost
+    # that directory and everything else in it, and B14-12 lost a completed
+    # 47-minute build that way (results/logs/b14_12_build_attempt1.log).  B13-10
+    # never met it because its own runs passed scratch=None, taking the mkdtemp
+    # branch above -- which this function does own, and still removes.
     if blocks == 'disk':
+        for _b in out_blocks:
+            try: os.remove(_b[0])
+            except OSError: pass
+    del out_blocks
+    if blocks == 'disk' and scratch_is_ours:
         shutil.rmtree(scratch, ignore_errors=True)
     E = sparse.csr_matrix((data, indices, indptr), shape=(nrows, n_chi), dtype=edt)
     E.has_sorted_indices = True

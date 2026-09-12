@@ -1,0 +1,389 @@
+{
+ "session": "B14-12",
+ "board_numbering": "batch14",
+ "stamp": "2026-09-12T03:36:41Z",
+ "pid": 2694,
+ "host": {
+  "cpus": 2
+ },
+ "pidfile": "/home/claude/gctrepo/results/logs/b14_12_controls.pid",
+ "rule": "every control is run on an input that MUST make it fail, and that run is recorded",
+ "T": {
+  "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "flint": "0.9.0",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "sympy": "1.14.0",
+  "preinstalled": {
+   "gcc": true,
+   "python_flint": false,
+   "numpy": false,
+   "scipy": false,
+   "sympy": false
+  },
+  "queue_entry": {
+   "lam": [
+    12,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "delta": 8,
+   "a": 4,
+   "a_inf": 13,
+   "nchi_est": 225081,
+   "N_S": 27009659,
+   "stab": 120,
+   "NS_delta": 216077272,
+   "pools": [
+    "T1"
+   ]
+  },
+  "a_weyl": 4,
+  "a_weyl_secs": 1.7,
+  "a_matches_queue": true,
+  "L_exps": 126,
+  "entry_bound": 4800,
+  "queue_nchi_est_is_NS_over_stab": {
+   "n_entries": 123,
+   "n_equal_to_quotient": 123
+  },
+  "pilot_quotient_vs_measured": {
+   "queue_est": 1528114,
+   "measured": 1606104,
+   "ratio": 1.051
+  },
+  "status": "PASS"
+ },
+ "Nc": {
+  "checks": [
+   {
+    "prime": 2147483647,
+    "rank_of_rank7_product": 7,
+    "rank_of_zero": 0,
+    "rank_of_I31": 31
+   },
+   {
+    "prime": 2147483629,
+    "rank_of_rank7_product": 7,
+    "rank_of_zero": 0,
+    "rank_of_I31": 31
+   }
+  ],
+  "status": "PASS",
+  "note": "rank_mod_p separates 0, 7 and 31 at both primes; a zero matrix does not read full and a rank-7 product does not read 0"
+ },
+ "S": [
+  {
+   "id": "B1",
+   "lam": [
+    38,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "delta": 12,
+   "n": 4,
+   "a": 1,
+   "compare": {
+    "fields": {
+     "a": {
+      "here": 1,
+      "banked": 1,
+      "placed": true,
+      "equal": true
+     },
+     "N_S": {
+      "here": 8269,
+      "banked": 8269,
+      "placed": true,
+      "equal": true
+     },
+     "stab": {
+      "here": 120,
+      "banked": 120,
+      "placed": true,
+      "equal": true
+     },
+     "n_chi": {
+      "here": 200,
+      "banked": 200,
+      "placed": true,
+      "equal": true
+     },
+     "nrows": {
+      "here": 5826,
+      "banked": 5826,
+      "placed": true,
+      "equal": true
+     },
+     "nnz": {
+      "here": 10858,
+      "banked": 10858,
+      "placed": true,
+      "equal": true
+     },
+     "cover_size": {
+      "here": 199,
+      "banked": 199,
+      "placed": true,
+      "equal": true
+     }
+    },
+    "placed": 7,
+    "all_equal": true
+   },
+   "per_prime": {
+    "2147483647": {
+     "mult_det_here": 1,
+     "mult_det_banked": 1,
+     "nullity_here": 1,
+     "nullity_banked": 1,
+     "nU_here": 1,
+     "nU_banked": 1,
+     "diag_rank": 0,
+     "equal": true
+    },
+    "2147483629": {
+     "mult_det_here": 1,
+     "mult_det_banked": 1,
+     "nullity_here": 1,
+     "nullity_banked": 1,
+     "nU_here": 1,
+     "nU_banked": 1,
+     "diag_rank": 0,
+     "equal": true
+    }
+   },
+   "all_equal": true,
+   "fails_on_mutated_banked_nchi": true,
+   "control_N": {
+    "kind": "diagonal pencils, forced rank 0 at length > n",
+    "identity_on_diagonal_all_true": true,
+    "identity_on_generic_any_true": false,
+    "npoints": 9,
+    "rank_zero_both_primes": true,
+    "status": "PASS"
+   },
+   "wall_secs": 0.7,
+   "hwm_gb": 0.101,
+   "knobs": {
+    "build": {
+     "chunk": 400000,
+     "triples": "store",
+     "blocks": "disk"
+    },
+    "fo": "inplace"
+   }
+  },
+  {
+   "id": "A1",
+   "lam": [
+    13,
+    5,
+    2,
+    2,
+    2
+   ],
+   "delta": 6,
+   "n": 4,
+   "a": 2,
+   "compare": {
+    "fields": {
+     "a": {
+      "here": 2,
+      "banked": 2,
+      "placed": true,
+      "equal": true
+     },
+     "N_S": {
+      "here": 3672,
+      "banked": 3672,
+      "placed": true,
+      "equal": true
+     },
+     "stab": {
+      "here": 6,
+      "banked": 6,
+      "placed": true,
+      "equal": true
+     },
+     "n_chi": {
+      "here": 825,
+      "banked": 825,
+      "placed": true,
+      "equal": true
+     },
+     "nrows": {
+      "here": 7214,
+      "banked": 7214,
+      "placed": true,
+      "equal": true
+     },
+     "nnz": {
+      "here": 15678,
+      "banked": 15678,
+      "placed": true,
+      "equal": true
+     },
+     "cover_size": {
+      "here": 821,
+      "banked": 821,
+      "placed": true,
+      "equal": true
+     }
+    },
+    "placed": 7,
+    "all_equal": true
+   },
+   "per_prime": {
+    "2147483647": {
+     "mult_det_here": 2,
+     "mult_det_banked": 2,
+     "nullity_here": 2,
+     "nullity_banked": 2,
+     "nU_here": 4,
+     "nU_banked": 4,
+     "diag_rank": 0,
+     "equal": true
+    },
+    "2147483629": {
+     "mult_det_here": 2,
+     "mult_det_banked": 2,
+     "nullity_here": 2,
+     "nullity_banked": 2,
+     "nU_here": 4,
+     "nU_banked": 4,
+     "diag_rank": 0,
+     "equal": true
+    }
+   },
+   "all_equal": true,
+   "fails_on_mutated_banked_nchi": true,
+   "control_N": {
+    "kind": "diagonal pencils, forced rank 0 at length > n",
+    "identity_on_diagonal_all_true": true,
+    "identity_on_generic_any_true": false,
+    "npoints": 10,
+    "rank_zero_both_primes": true,
+    "status": "PASS"
+   },
+   "wall_secs": 0.1,
+   "hwm_gb": 0.101,
+   "knobs": {
+    "build": {
+     "chunk": 400000,
+     "triples": "store",
+     "blocks": "disk"
+    },
+    "fo": "inplace"
+   }
+  }
+ ],
+ "K": {
+  "cell": [
+   13,
+   5,
+   2,
+   2,
+   2
+  ],
+  "delta": 6,
+  "prime": 2147483647,
+  "verified": true,
+  "verified_on_perturbed_kernel": false,
+  "status": "PASS"
+ },
+ "F": {
+  "cell": [
+   13,
+   5,
+   2,
+   2,
+   2
+  ],
+  "delta": 6,
+  "prime": 2147483647,
+  "fo_inplace": {
+   "nullity": 2,
+   "mult_det": 2
+  },
+  "fo_copy": {
+   "nullity": 2,
+   "mult_det": 2
+  },
+  "agree": {
+   "nullity": true,
+   "mult_det": true,
+   "verified_both": true
+  },
+  "all_agree": true,
+  "fails_on_mutated_copy": true,
+  "status": "PASS"
+ },
+ "S_status": "PASS",
+ "R": {
+  "cell": [
+   10,
+   6,
+   6,
+   6,
+   2,
+   2
+  ],
+  "delta": 8,
+  "n": 4,
+  "measured": {
+   "N_S": 18337360,
+   "stab": 12,
+   "n_chi": 1606104
+  },
+  "banked": {
+   "N_S": 18337360,
+   "stab": 12,
+   "n_chi": 1606104
+  },
+  "compare": {
+   "fields": {
+    "N_S": {
+     "here": 18337360,
+     "banked": 18337360,
+     "placed": true,
+     "equal": true
+    },
+    "stab": {
+     "here": 12,
+     "banked": 12,
+     "placed": true,
+     "equal": true
+    },
+    "n_chi": {
+     "here": 1606104,
+     "banked": 1606104,
+     "placed": true,
+     "equal": true
+    }
+   },
+   "placed": 3,
+   "all_equal": true
+  },
+  "mono_secs": 16.0,
+  "orbit_secs": 136.4,
+  "hwm_gb": 0.998,
+  "fails_on_queue_estimate": {
+   "estimate": 1528114,
+   "all_equal": false
+  },
+  "empty_comparison_is_failure": {
+   "placed": 0,
+   "all_equal": false
+  },
+  "status": "PASS"
+ },
+ "status": "PASS",
+ "hwm_gb": 0.998
+}

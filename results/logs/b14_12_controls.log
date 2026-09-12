@@ -1,0 +1,30 @@
+T PASS: a_weyl(12, 4, 4, 4, 4, 4) d8 = 4 (queue 4), L = 126, entry bound 4800 < 32768; queue nchi_est = ceil(N_S/|Stab|) on 123/123 entries; at the pilot that quotient is 1.051x the measured n_chi
+Nc PASS: rank_mod_p returns 0, 7 and 31 on matrices of those ranks, both primes
+  [ctl-B1] COVER: {'size': 199, 'order': 'reversed', 'stats': {'natural': 191, 'reversed': 199, 'fill_asc': 199, 'fill_desc': 180, 'random': 186}, 'n_chi': 200, 'a': 1, 'nU': 1, 'excess': 0, 'certified_rank_lb': 199, 'secs': 0.0, 'hwm_gb': 0.1}
+  [ctl-B1] N.a: identity holds on all 9 diagonal pencils and on 0 of 9 generic pencils (must be 0)
+  [ctl-B1] N.b p=2147483647: diagonal rank 0 (must be 0, all-zero=True); generic det rank 1 (must be > 0 for the control to have teeth)
+  [ctl-B1] p=2147483647: nullity 1 verified True rank 1 mult_det 1 i_det 0 [0.0s, HWM 0.10 GB]
+  [ctl-B1] N.b p=2147483629: diagonal rank 0 (must be 0, all-zero=True); generic det rank 1 (must be > 0 for the control to have teeth)
+  [ctl-B1] p=2147483629: nullity 1 verified True rank 1 mult_det 1 i_det 0 [0.0s, HWM 0.10 GB]
+  S B1 (38, 2, 2, 2, 2, 2) d12: 7 fields placed, all equal = True; diagonal rank 0 at both primes = True; mutated-banked comparison fails = True (0.7s)
+  [ctl-A1] COVER: {'size': 821, 'order': 'reversed', 'stats': {'natural': 792, 'reversed': 821, 'fill_asc': 760, 'fill_desc': 704, 'random': 701}, 'n_chi': 825, 'a': 2, 'nU': 4, 'excess': 2, 'certified_rank_lb': 821, 'secs': 0.0, 'hwm_gb': 0.101}
+  [ctl-A1] N.a: identity holds on all 10 diagonal pencils and on 0 of 10 generic pencils (must be 0)
+  [ctl-A1] N.b p=2147483647: diagonal rank 0 (must be 0, all-zero=True); generic det rank 2 (must be > 0 for the control to have teeth)
+  [ctl-A1] p=2147483647: nullity 2 verified True rank 2 mult_det 2 i_det 0 [0.0s, HWM 0.10 GB]
+  [ctl-A1] N.b p=2147483629: diagonal rank 0 (must be 0, all-zero=True); generic det rank 2 (must be > 0 for the control to have teeth)
+  [ctl-A1] p=2147483629: nullity 2 verified True rank 2 mult_det 2 i_det 0 [0.0s, HWM 0.10 GB]
+  S A1 (13, 5, 2, 2, 2) d6: 7 fields placed, all equal = True; diagonal rank 0 at both primes = True; mutated-banked comparison fails = True (0.1s)
+  K PASS: kernel verifies on E, and a one-entry perturbation does NOT verify
+  F PASS: fo='inplace' and fo='copy' agree (nullity 2, mult_det 2); the comparison fails against a mutated copy result
+S PASS
+      level 1: 87 prefixes
+      level 2: 2836 prefixes
+      level 3: 51915 prefixes
+      level 4: 608863 prefixes
+      level 5: 4098267 prefixes
+      level 6: 12478011 prefixes
+      level 7: 18337360 prefixes
+      level 8: 18337360 prefixes
+  lam=(10, 6, 6, 6, 2, 2): N_S=18337360 |Stab|=12 n_chi=1606104 (orbits dropped: 0) [lean-b10, 136s, HWM 1.00 GB]
+R PASS: n_chi measured 1606104 = banked 1606104; the same comparison against the queue estimate 1528114 FAILS, and an empty comparison FAILS (16.0s + 136.4s, HWM 0.998 GB)
+ALL CONTROLS PASS (HWM 0.998 GB) -> results/b14_12/controls.json

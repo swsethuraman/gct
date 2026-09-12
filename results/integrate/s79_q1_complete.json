@@ -1,0 +1,85 @@
+{
+  "produced_by": "integrator, B14-12 intake",
+  "question": "is session 79's frozen Q1 queue complete, and does every cell carry i_det = 0?",
+  "queue": "results/s79_queue.json, frozen before the first cell (PREREG_s79 section 2.4)",
+  "queue_size": 123,
+  "resolved": 123,
+  "unresolved": 0,
+  "unresolved_cells": [],
+  "by_source": {
+    "results/s79_cells.jsonl": 121,
+    "results/b13_10/pilot.json": 1,
+    "results/b14_12/b14_12.json": 1
+  },
+  "delta_histogram": {
+    "7": 2,
+    "8": 25,
+    "9": 27,
+    "10": 62,
+    "11": 6,
+    "12": 1
+  },
+  "cost_ordered": true,
+  "first": {
+    "lam": [
+      13,
+      7,
+      4,
+      2,
+      1,
+      1
+    ],
+    "delta": 7,
+    "NS_delta": 445641
+  },
+  "last": {
+    "lam": [
+      12,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "delta": 8,
+    "NS_delta": 216077272
+  },
+  "nchi_est_is_the_forbidden_quotient": {
+    "entries": 123,
+    "equal_to_ceil_NS_over_stab": 123,
+    "note": "PROVED.md: nchi_2_21_guard -- N_S/|Stab| is neither an upper nor a lower bound on n_chi"
+  },
+  "conclusion": "every cell of the frozen Q1 queue carries i_det = 0: there is no six-row determinant equation anywhere in Q1",
+  "cells_not_in_session_79s_own_delivery": [
+    {
+      "lam": [
+        10,
+        6,
+        6,
+        6,
+        2,
+        2
+      ],
+      "delta": 8,
+      "i_det": 0,
+      "a": 10,
+      "mult_det": 10,
+      "source": "results/b13_10/pilot.json"
+    },
+    {
+      "lam": [
+        12,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "delta": 8,
+      "i_det": 0,
+      "a": 4,
+      "mult_det": 4,
+      "source": "results/b14_12/b14_12.json"
+    }
+  ]
+}

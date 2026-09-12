@@ -1,0 +1,141 @@
+{
+  "produced_by": "integrator, B14-12 intake",
+  "question": "does (12,4,4,4,4,4) at delta=8 give i_det = 0 on an independent run?",
+  "deviation": "fo='copy', the OPPOSITE of the delivered fo='inplace' -- the one pre-registered deviation that could silently corrupt a 27-million-monomial build, which B14-12's Control F tested only on the small A1 cell.  blocks='disk' as delivered.",
+  "host": "a second cloud container, same class (2 cpus, 7.84 GB); 1.55x slower on orbit setup",
+  "sizes_identical": {
+    "N_S": [
+      27009659,
+      27009659
+    ],
+    "stab": [
+      120,
+      120
+    ],
+    "n_chi": [
+      244454,
+      244454
+    ],
+    "nrows": [
+      16480713,
+      16480713
+    ],
+    "nnz": [
+      56094024,
+      56094024
+    ],
+    "nfixed": [
+      0,
+      0
+    ]
+  },
+  "per_phase_rows_nnz_identical": true,
+  "cover": {
+    "size": [
+      244444,
+      244444
+    ],
+    "order": [
+      "reversed",
+      "reversed"
+    ],
+    "nU": [
+      10,
+      10
+    ],
+    "excess": [
+      6,
+      6
+    ],
+    "certified_rank_lb": [
+      244444,
+      244444
+    ]
+  },
+  "per_prime_mine": {
+    "2147483647": {
+      "nullity": 4,
+      "verified_on_E": true,
+      "kernel_rank": 4,
+      "mult_det": 4,
+      "i_det": 0,
+      "rank_diagonal_pencils": 0,
+      "diag_all_rows_zero": true,
+      "Nb_zero_assertion_fails_on_generic_det": true,
+      "ev_rank_secs": 58.4,
+      "hwm_gb": 2.354
+    },
+    "2147483629": {
+      "nullity": 4,
+      "verified_on_E": true,
+      "kernel_rank": 4,
+      "mult_det": 4,
+      "i_det": 0,
+      "rank_diagonal_pencils": 0,
+      "diag_all_rows_zero": true,
+      "Nb_zero_assertion_fails_on_generic_det": true,
+      "ev_rank_secs": 59.2,
+      "hwm_gb": 2.54
+    }
+  },
+  "per_prime_theirs": {
+    "2147483647": {
+      "nullity": 4,
+      "verified_on_E": true,
+      "kernel_rank": 4,
+      "mult_det": 4,
+      "i_det": 0,
+      "rank_diagonal_pencils": 0,
+      "diag_all_rows_zero": true,
+      "Nb_zero_assertion_fails_on_generic_det": true,
+      "ev_rank_secs": 50.9,
+      "hwm_gb": 1.986
+    },
+    "2147483629": {
+      "nullity": 4,
+      "verified_on_E": true,
+      "kernel_rank": 4,
+      "mult_det": 4,
+      "i_det": 0,
+      "rank_diagonal_pencils": 0,
+      "diag_all_rows_zero": true,
+      "Nb_zero_assertion_fails_on_generic_det": true,
+      "ev_rank_secs": 48.5,
+      "hwm_gb": 2.225
+    }
+  },
+  "per_prime_identical": true,
+  "a_three_ways": {
+    "my_own_exact_weyl_alternation": 4,
+    "house_a_weyl_mod": 4,
+    "census_a_weyl": 4
+  },
+  "n_chi_two_lineages": {
+    "builder_canon_acc": 244454,
+    "my_own_signed_burnside_orbit_count": 244454
+  },
+  "wall_and_peak": {
+    "build_secs": [
+      4396.5,
+      2838.1
+    ],
+    "build_hwm_gb": [
+      1.489,
+      1.483
+    ],
+    "whole_cell_hwm_gb": [
+      2.54,
+      2.225
+    ],
+    "note": "only the clock and the kernel peak differ; fo=copy keeps a copy, so 2.54 against 2.225"
+  },
+  "result": "mult_det = 4 = a and i_det = 0 at both house primes, independently reproduced",
+  "control_N": {
+    "kind": "diagonal pencils, forced rank 0 at length > n",
+    "identity_on_diagonal_all_true": true,
+    "identity_on_generic_any_true": false,
+    "npoints": 12,
+    "rank_zero_both_primes": true,
+    "status": "PASS"
+  }
+}

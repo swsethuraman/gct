@@ -1,0 +1,15 @@
+  [b14_12] (12, 4, 4, 4, 4, 4) d8 n=4: a_weyl = 4 (1.6s)
+    cover-lean natural: 239170/244454 [HWM 1.50 GB]
+    cover-lean reversed: 244444/244454 [HWM 1.50 GB]
+    cover-lean fill_asc: 242045/244454 [HWM 1.51 GB]
+    cover-lean fill_desc: 235588/244454 [HWM 1.51 GB]
+    cover-lean random: 213480/244454 [HWM 1.51 GB]
+  [b14_12] COVER: {'size': 244444, 'order': 'reversed', 'stats': {'natural': 239170, 'reversed': 244444, 'fill_asc': 242045, 'fill_desc': 235588, 'random': 213480}, 'n_chi': 244454, 'a': 4, 'nU': 10, 'excess': 6, 'certified_rank_lb': 244444, 'secs': 15.0, 'hwm_gb': 1.51}
+  [b14_12] N.a: identity holds on all 12 diagonal pencils and on 0 of 12 generic pencils (must be 0)
+    hybrid-lean[b14_12] p=2147483647 attempt 0: |S|=244444 |U|=10 (a=4, excess 6) m=74 blocks 1x10 projected nullity 4, verified=True, rank 4 [split 0.1s trisolve 0.0s schur 3.1s null 0.0s lift 4.1s rank 0.0s; HWM 1.99 GB]
+  [b14_12] N.b p=2147483647: diagonal rank 0 (must be 0, all-zero=True); generic det rank 4 (must be > 0 for the control to have teeth)
+  [b14_12] p=2147483647: nullity 4 verified True rank 4 mult_det 4 i_det 0 [60.7s, HWM 1.99 GB]
+    hybrid-lean[b14_12] p=2147483629 attempt 0: |S|=244444 |U|=10 (a=4, excess 6) m=74 blocks 1x10 projected nullity 4, verified=True, rank 4 [split 0.1s trisolve 0.0s schur 3.1s null 0.0s lift 4.0s rank 0.0s; HWM 2.23 GB]
+  [b14_12] N.b p=2147483629: diagonal rank 0 (must be 0, all-zero=True); generic det rank 4 (must be > 0 for the control to have teeth)
+  [b14_12] p=2147483629: nullity 4 verified True rank 4 mult_det 4 i_det 0 [59.7s, HWM 2.23 GB]
+B14_12 {"lam": [12, 4, 4, 4, 4, 4], "delta": 8, "n": 4, "a": 4, "mult_det": 4, "i_det": 0, "status": "proved: mult_det = a at both primes (i_det = 0 over Q)", "kernel_ok": true, "hwm_gb": 2.225}
