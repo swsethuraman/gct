@@ -1,0 +1,18 @@
+  [b14_12] (12, 4, 4, 4, 4, 4) d8 n=4: a_weyl = 4 (1.6s)
+      level 1: 99 prefixes
+      level 2: 4485 prefixes
+      level 3: 119398 prefixes
+      level 4: 1574293 prefixes
+      level 5: 8822711 prefixes
+      level 6: 21558765 prefixes
+      level 7: 27009659 prefixes
+      level 8: 27009659 prefixes
+  lam=(12, 4, 4, 4, 4, 4): N_S=27009659 |Stab|=120 n_chi=244454 (orbits dropped: 0) [lean-b10, 1959s, HWM 1.31 GB]
+    E_01: |H|=24 targets 13751747 canonical rows 602685 nnz 3400880 (triples 3610450; obstructed fixed targets cancelled: 0) [tables 184s rows 37s finish 0.1s; 221s, HWM 1.31 GB, RSS 0.66 GB]
+    E_12: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 110s rows 48s finish 0.1s; 378s, HWM 1.37 GB, RSS 1.00 GB]
+    E_23: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 109s rows 49s finish 0.2s; 536s, HWM 1.48 GB, RSS 1.01 GB]
+    E_34: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 110s rows 50s finish 0.1s; 696s, HWM 1.48 GB, RSS 1.03 GB]
+    E_45: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 107s rows 49s finish 0.1s; 853s, HWM 1.48 GB, RSS 1.03 GB]
+  built-lean (12, 4, 4, 4, 4, 4) d8: N_S=27009659 |Stab|=120 n_chi=244454 rows=16480713 nnz=56094024 (2838s: mono 25s orbits 1959s rows 854s; HWM 1.48 GB; E.data int16)
+  [b14_12] BUILD DONE: {"secs": 2838.1, "N_S": 27009659, "stab": 120, "n_chi": 244454, "nrows": 16480713, "nnz": 56094024, "hwm_gb": 1.483, "entry_max": 16}
+B14_12_BUILD {"secs": 2838.1, "mono_secs": 25.5, "orbit_secs": 1958.9, "rows_secs": 853.8, "N_S": 27009659, "stab": 120, "n_chi": 244454, "nrows": 16480713, "nnz": 56094024, "nfixed": 0, "hwm_gb": 1.483, "hwm_above_baseline_gb": 1.422, "hwm_mono_gb": 1.065, "hwm_orbit_gb": 1.306, "baseline_gb": 0.06, "phases": [{"op": "E_01", "H": 24, "targets": 13751747, "rows": 602685, "nnz": 3400880, "triples": 3610450, "obstructed_hit": 0, "secs_tables": 183.6, "secs_rows": 36.8, "secs_finish": 0.1, "hwm_gb": 1.306, "rss_gb": 0.659}, {"op": "E_12", "H": 6, "targets": 23300172, "rows": 3969507, "nnz": 13173286, "triples": 14038922, "obstructed_hit": 0, "secs_tables": 109.6, "secs_rows": 47.5, "secs_finish": 0.1, "hwm_gb": 1.369, "rss_gb": 1.0}, {"op": "E_23", "H": 6, "targets": 23300172, "rows": 3969507, "nnz": 13173286, "triples": 14038922, "obstructed_hit": 0, "secs_tables": 108.7, "secs_rows": 49.1, "secs_finish": 0.2, "hwm_gb": 1.483, "rss_gb": 1.012}, {"op": "E_34", "H": 6, "targets": 23300172, "rows": 3969507, "nnz": 13173286, "triples": 14038922, "obstructed_hit": 0, "secs_tables": 109.6, "secs_rows": 50.1, "secs_finish": 0.1, "hwm_gb": 1.483, "rss_gb": 1.033}, {"op": "E_45", "H": 6, "targets": 23300172, "rows": 3969507, "nnz": 13173286, "triples": 14038922, "obstructed_hit": 0, "secs_tables": 107.4, "secs_rows": 48.8, "secs_finish": 0.1, "hwm_gb": 1.483, "rss_gb": 1.033}], "dtypes": {"M": "int8", "col_of": "int32", "sgn": "int8", "E_data": "int16", "E_indices": "int32", "E_indptr": "int32"}, "knobs": {"chunk": 400000, "triples": "store", "blocks": "disk"}, "entry_max": 16, "npz_bytes": 753614285}
