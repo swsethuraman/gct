@@ -107,3 +107,27 @@ Delivery: intentional commits with actual model Co-Authored-By trailers;
 report, replay scripts, exact artifacts, manifest, checker logs and named-ref
 bundle against the captured base. No protected-file edits, pushes, integration
 merge, other session worktree modifications or further automation.
+
+## Addendum — 2026-09-12 03:50 UTC, before reduced-space measurements
+
+Observed exact census: 4,198 partitions; 2,734 positive labels, 667 A1;
+153 exact zero pullback bounds. Reconciled historical records defer 701 full
+determinant ranks and 165 additional stable-tail records as RECORDED, leaving
+1,715 candidates. The preliminary cost queue is known, not a blind choice.
+
+Select ten distinct tails by the frozen N_S cost order (unknown sizes sort
+last), retaining other rungs in the full inventory; this is a funding preference,
+not an equivalence theorem. Recompute N_S with exact integer tail DP. Measure
+n_chi by the signed Burnside trace: for each conjugacy class of the product of
+symmetric groups on equal parts of lambda, count fixed coefficient monomials
+using exponent-letter orbit generating functions, multiply by the HWV character
+chi(g)=product sign(g_block)^(lambda_block), then divide by the full group size.
+This is not N_S/|Stab|. Record class representatives, sizes, traces and signs.
+
+Before accepting sizes: compare signed Burnside to explicit small monomial
+orbit enumeration, including odd repeated parts; reject a deliberately flipped
+sign or changed fixed count. Reproduce the banked n4,d6,(14,2,2,2,2,2) values
+N_S=7508,n_chi=171 (known inputs, not predictions). One 120-second/1.5-GiB
+worker per size calculation; stop on nonintegrality, mismatch, negative count
+or n_chi>N_S. No rank matrices will be built. Report storage formula bounds
+and extrapolated builder seconds separately from measured sizing time.
