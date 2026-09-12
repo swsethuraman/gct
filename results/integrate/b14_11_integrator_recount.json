@@ -1,0 +1,74 @@
+{
+  "produced_by": "integrator, B14-11 intake",
+  "question": "do the 4198 census a-values reproduce on a second, independent lineage?",
+  "my_route": "house a_weyl: Weyl alternation over S_r, weight-space DP mod 2147483647 and 2147483629, CRT (analysis/wk9_s57_lib.py)",
+  "their_route": "B14-11: h_delta[h_4] in power sums, Murnaghan-Nakayama characters, exact Fraction arithmetic",
+  "labels": 4198,
+  "mismatches": 0,
+  "mismatch_rows": [],
+  "positive": 2734,
+  "a1": 667,
+  "by_degree": {
+    "5": {
+      "labels": 83,
+      "positive": 22,
+      "a1": 22
+    },
+    "6": {
+      "labels": 353,
+      "positive": 163,
+      "a1": 92
+    },
+    "7": {
+      "labels": 1057,
+      "positive": 636,
+      "a1": 203
+    },
+    "8": {
+      "labels": 2705,
+      "positive": 1913,
+      "a1": 350
+    }
+  },
+  "note": "full-region recount, not a sample; per-row values are in the delivered census files",
+  "hpad": {
+    "exclusions_recomputed": 153,
+    "exclusions_nonzero_under_my_route": 0,
+    "shortlist_hpad_mismatches": 0,
+    "my_route": "own horizontal-strip enumeration plus house cubic plethysm a_weyl(nu,delta,n=3)"
+  },
+  "denominators_reproduced": {
+    "cubic": {
+      "5": "933120",
+      "6": "33592320",
+      "7": "1410877440",
+      "8": "67722117120"
+    },
+    "quartic": {
+      "5": "955514880",
+      "6": "137594142720",
+      "7": "23115815976960",
+      "8": "4438236667576320"
+    },
+    "unit_at_both_house_primes": true
+  },
+  "burnside": {
+    "cells": 10,
+    "route": "direct enumeration of the weight-lambda monomial basis; Fix(g) by elementwise comparison over every group element",
+    "N_S_mismatches": 0,
+    "group_order_mismatches": 0,
+    "signed_sum_mismatches": 0,
+    "n_chi_mismatches": 0,
+    "class_representative_mismatches": 0,
+    "controls": {
+      "(3,3,1,1)_2": {
+        "signed": 2,
+        "unsigned_wrong_character": 4
+      },
+      "(14,2,2,2,2,2)_6": {
+        "N_S": 7508,
+        "n_chi": 171
+      }
+    }
+  }
+}
