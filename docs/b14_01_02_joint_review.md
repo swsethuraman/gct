@@ -31,7 +31,7 @@ All 96 primary point definitions agree across the two deliveries. Append B14-02'
 | 2147483647 | 72 | 73 | 1832982837 |
 | 2147483629 | 72 | 73 | 1811606566 |
 
-Exact column indices and point IDs are in `joint_certificate.json`. Replacing the added row with a duplicate of an existing target row leaves rank 72, as it must.
+Exact column indices and point IDs are in `results/b14_01/certificate_d13.json` under `minor_certificate` (`point_ids`, `point_index_in_primary`, `u_symbols`). *Corrected at the batch-14 close: this sentence named `joint_certificate.json`, a file that was never written — the content is in the certificate above. Found by `tools/integrate/scan_unstaged.py --root docs`.* Replacing the added row with a duplicate of an existing target row leaves rank 72, as it must.
 
 Using a source pullback to complete the target is not circular: its membership follows from the polynomial restriction map before knowing any source kernel. Its nonzero target minor is an independently checkable numerical statement. Neither step assumes that the three candidate equations vanish identically.
 
@@ -51,7 +51,7 @@ The actual three equations are compactly explicit:
 
     Q_j = sum_(i=0..38) K[i,j] F_i^up13,  j=0,1,2.
 
-`exact_relations.json` records their coefficient matrix and every source filling definition. These are integer representatives of a rational basis; no assertion of a saturated integral-lattice basis is made. The same three vectors from B14-02 can now be certified as equations, rather than merely saying that some two combinations must exist.
+`results/b14_02/kernel_primary.json` records their coefficient matrix as `left_kernel_K` (39 x 3, with `A_transpose_K_is_zero`), and the source filling definitions are in `results/b14_01/members_d13_merged.json`. *Corrected at the batch-14 close: this sentence named `exact_relations.json`, a file that was never written.* These are integer representatives of a rational basis; no assertion of a saturated integral-lattice basis is made. The same three vectors from B14-02 can now be certified as equations, rather than merely saying that some two combinations must exist.
 
 ## Consequence at degree 24
 

@@ -56,6 +56,12 @@ ABSENCE = [
     "were not located", "not recovered", "remain a dependency gap",
     "is absent", "are absent", "not delivered", "not present",
     "not copied", "would breach", "regenerable",
+    # A correction that names the wrong filename in order to say it was wrong is
+    # the same case: the sentence's whole point is that the file does not exist.
+    # Added at the batch-14 close, after this scanner found two such names in the
+    # integrator's own joint review and the corrections still read as misses.
+    "was never written", "were never written", "never existed",
+    "no such file exists", "does not exist yet",
 ]
 
 # results/astra/S<n>/ is one workstream.  A same-named file found OUTSIDE it --

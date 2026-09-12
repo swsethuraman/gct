@@ -1,5 +1,12 @@
 # Batch 14 strategy — Claude: exact feasibility and reuse of banked work
 
+> **SUPERSEDED at the batch-14 close.** `docs/batch14_board.md` v0.4 governs and
+> says so in its own header; the batch ran to that board, not to this memo. Kept
+> as the record of the planning that preceded it. Its schedule table names
+> releasing artifacts that were proposals, not deliveries — `recounts.json` at
+> line 198 is one, and no such file exists or was meant to. Read
+> `docs/batch14_close.md` for what the batch actually did.
+
 **Baseline.** All claims are made against commit `7a47e2b`. `main` has since moved to `7e69506`, which records the A1 pass. Two capability facts below are quoted from it and are flagged *post-baseline*. No mathematical claim depends on it.
 
 **Labels.** PROVED, CERTIFIED, ADOPTED as in `PROVED.md`; MEASURED = sampled; EXACT-here = a bounded exact computation run in this session (scratch, uncommitted, one implementation unless stated).

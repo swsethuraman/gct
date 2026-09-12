@@ -1,5 +1,13 @@
 # Batch 14 — the board, v0.4
 
+> **CLOSED.** All twelve slots delivered, merged and reviewed. This file is the
+> record of what was dispatched, not live instruction — its cost figures for
+> slot 12 were wrong in three of four numbers (see `docs/b14_12_review.md` §5)
+> and its `n_χ` sizing rested on a quotient the index forbids. Read
+> `docs/batch14_close.md` for what the batch established and
+> `docs/batch15_carry_forward.md` for what it owes the next one. The dispatch
+> base `batch14-base` at `9898e569` is unmoved and stays as the anchor.
+
 **Supersedes the twelve-slot board committed at `325bf521`**, Astra's proposal
 v0.1 and v0.2, and the strategy memo at `docs/b14_strategy_memo.md`. Where those
 disagree with this file, this file governs. Change log in §6.
@@ -205,7 +213,7 @@ they are banked so the numbers can be replayed, not so they can be confirmed.
 Replaying them is not a recount.
 
 **The independent route exists and is cheap — it is not yours to invent.** Astra
-piloted it before dispatch: `analysis/wk8_s30_pleth`'s `pleth_p` and `chi`
+piloted it before dispatch: `analysis/wk8_s30_pleth.py`'s `pleth_p` and `chi`
 (power-sum plethysm and Murnaghan–Nakayama characters, banked at s30), with a
 fresh interlacing enumeration of the horizontal strips and
 `p_r[h₃] = (p_r³ + 3·p_r·p_{2r} + 2·p_{3r})/6`. Do **not** call `amb`, which
