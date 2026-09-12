@@ -427,3 +427,61 @@ def strip_ell_cells(lam, mu, h, n2, n1, rng=None):
     cells += [(c, 1) for c in twocols[:n_two]]
     cells += [(c, h - 1) for c in tallcols[:n_tall]]
     return cells
+
+
+def strip_filling_k(h, n2, n1, delta, ell_cells, k, rng, max_tries=120):
+    """Strip-directed mixed filling with the tall-column OVERLAP controlled.
+
+    k = number of valence-3 letters appearing in BOTH tall columns.  s74 used
+    exactly this parameter on the uniform side (random_filling(..., k=...)) and
+    B13-01 recorded that undirected sampling under-spans each block ("span 1/2,
+    4/9, 3/7, 2/5 in a few hundred draws"), so the overlap is the directed
+    dimension that matters.  Returns None if this (k, strip) combination is
+    infeasible rather than raising."""
+    val = [1] * delta + [3] * delta
+    assert 2 * h + 2 * n2 + n1 == delta + 3 * delta
+    C = list(range(delta, 2 * delta))            # the valence-3 letters
+    pin = {c: i for i, c in enumerate(ell_cells)}
+    c1rows = [rw for rw in range(h) if (0, rw) not in pin]
+    c2rows = [rw for rw in range(h) if (1, rw) not in pin]
+    n1c, n2c = len(c1rows), len(c2rows)
+    if k > min(n1c, n2c) or n1c + n2c - k > delta: return None
+    for _try in range(max_tries):
+        rem = list(val)
+        cell_letter = dict(pin)
+        for cell, li in pin.items(): rem[li] -= 1
+        pool = list(C); rng.shuffle(pool)
+        shared = pool[:k]
+        rest = pool[k:]
+        if len(rest) < (n1c - k) + (n2c - k): continue
+        only1 = rest[:n1c - k]
+        only2 = rest[n1c - k: n1c - k + n2c - k]
+        S1 = shared + only1; S2 = shared + only2
+        rng.shuffle(S1); rng.shuffle(S2)
+        ok = True
+        for rw, l in zip(c1rows, S1):
+            cell_letter[(0, rw)] = l; rem[l] -= 1
+        for rw, l in zip(c2rows, S2):
+            cell_letter[(1, rw)] = l; rem[l] -= 1
+        if min(rem) < 0: continue
+        cols = [(2 + e, [0, 1]) for e in range(n2)] + [(2 + n2 + c, [0]) for c in range(n1)]
+        for col, rows in cols:
+            used = {cell_letter[(col, rw)] for rw in rows if (col, rw) in cell_letter}
+            for rw in rows:
+                if (col, rw) in cell_letter: continue
+                avail = [l for l in range(len(val)) if rem[l] > 0 and l not in used]
+                if not avail: ok = False; break
+                w = [rem[l] for l in avail]
+                l = rng.choices(avail, weights=w)[0]
+                cell_letter[(col, rw)] = l; rem[l] -= 1; used.add(l)
+            if not ok: break
+        if not ok or any(rem): continue
+        try:
+            return MixedFilling(h, n2, n1, val,
+                                [cell_letter[(0, q)] for q in range(h)],
+                                [cell_letter[(1, q)] for q in range(h)],
+                                [(cell_letter[(2 + e, 0)], cell_letter[(2 + e, 1)]) for e in range(n2)],
+                                [cell_letter[(2 + n2 + c, 0)] for c in range(n1)])
+        except AssertionError:
+            continue
+    return None
