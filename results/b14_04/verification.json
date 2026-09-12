@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "complete": true,
+  "input_hashes_verified": 24,
+  "line_ending_only_variants": [],
+  "frozen_prefix_preserved_with_session_append": [
+    "docs/PROVED.md"
+  ],
+  "stable": [
+    {
+      "degree": 31,
+      "value": 274,
+      "classes": 3522
+    },
+    {
+      "degree": 33,
+      "value": 392,
+      "classes": 5126
+    },
+    {
+      "degree": 35,
+      "value": 533,
+      "classes": 7365
+    }
+  ],
+  "hpad": [
+    {
+      "degree": 13,
+      "h": 73
+    },
+    {
+      "degree": 14,
+      "h": 159
+    }
+  ],
+  "mutations": [
+    {
+      "mutation": "empty",
+      "rejected": true,
+      "reason": "missing rows"
+    },
+    {
+      "mutation": "missing",
+      "rejected": true,
+      "reason": "missing nonzero power-sum class"
+    },
+    {
+      "mutation": "duplicate",
+      "rejected": true,
+      "reason": "duplicate class"
+    },
+    {
+      "mutation": "coefficient",
+      "rejected": true,
+      "reason": "coefficient differs from independent exact expansion"
+    },
+    {
+      "mutation": "character",
+      "rejected": true,
+      "reason": "character differs from diagram MN"
+    },
+    {
+      "mutation": "value",
+      "rejected": true,
+      "reason": "altered total"
+    },
+    {
+      "mutation": "tail",
+      "rejected": true,
+      "reason": "wrong tail or degree"
+    },
+    {
+      "mutation": "generators",
+      "rejected": true,
+      "reason": "wrong generators"
+    },
+    {
+      "mutation": "complete",
+      "rejected": true,
+      "reason": "incomplete certificate"
+    },
+    {
+      "mutation": "normalization",
+      "rejected": true,
+      "reason": "wrong normalization"
+    },
+    {
+      "mutation": "subtotal",
+      "rejected": true,
+      "reason": "altered subtotals"
+    },
+    {
+      "mutation": "missing required file",
+      "rejected": true
+    },
+    {
+      "mutation": "hpad empty",
+      "rejected": true,
+      "reason": "missing or repeated strip"
+    },
+    {
+      "mutation": "hpad missing",
+      "rejected": true,
+      "reason": "missing or repeated strip"
+    },
+    {
+      "mutation": "hpad duplicate",
+      "rejected": true,
+      "reason": "missing or repeated strip"
+    },
+    {
+      "mutation": "hpad value",
+      "rejected": true,
+      "reason": "hpad character sum"
+    },
+    {
+      "mutation": "hpad normalization",
+      "rejected": true,
+      "reason": "wrong hpad normalization"
+    },
+    {
+      "mutation": "hpad power coefficient",
+      "rejected": true,
+      "reason": "hpad expansion disagrees"
+    },
+    {
+      "mutation": "hpad power normalization",
+      "rejected": true,
+      "reason": "wrong hpad power normalization"
+    }
+  ],
+  "exact_coefficient_method": "product of scalar exponential factors; separate cubic Newton recurrence",
+  "character_method": "outer-rim Young-diagram segment removal, no beta numbers",
+  "modular_checks": [
+    2147483647,
+    2147483629
+  ],
+  "seconds": 14.952999999994063,
+  "values_are": "exact rational identities and explicit rejected mutations"
+}

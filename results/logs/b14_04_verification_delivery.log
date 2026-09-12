@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "analysis/b14_04/verify.py", line 331, in <module>
+    main()
+  File "analysis/b14_04/verify.py", line 254, in main
+    need(raw.replace(b"\r\n", b"\n") == canonical.replace(b"\r\n", b"\n"), "input content changed: " + item["path"])
+  File "analysis/b14_04/verify.py", line 24, in need
+    raise ValueError(why)
+ValueError: input content changed: docs/PROVED.md
