@@ -239,7 +239,9 @@ def binary_control():
     q44 = add(scale(mul(var('f', 0), var('f', 4)), 12),
               scale(mul(var('f', 1), var('f', 3)), -3), mul(var('f', 2), var('f', 2)))
     weight(h, (6, 2)); weight(q44, (4, 4))
-    point = {'f': [1, 2, 3, 4, 5]}
+    rejects('q44 incorrect raising cancellation',
+            lambda: weight(add(q44, scale(mul(var('f', 1), var('f', 3)), 6)), (4, 4)))
+    rejects('wrong highest weight label', lambda: weight(h, (5, 3)))
     # Retain the whole symbolic difference even if this first point is a zero.
     witness = next((list(v) for v in product(range(3), repeat=5)
                     if evaluate(difference, {'f': v})), None)
@@ -363,6 +365,10 @@ def ci_control():
         rejects(name, lambda mutant=mutant: ci_check(mutant))
     for prime in PRIMES:
         rejects('denominator divisible by '+str(prime), lambda prime=prime: matrix_rank([[Q(1, prime)]], prime))
+    for prime in PRIMES:
+        require(matrix_rank([[1]], prime) == 1, 'rank control positive failed')
+        rejects('rank control duplicate rows '+str(prime),
+                lambda prime=prime: require(matrix_rank([[1, 2], [1, 2]], prime) == 2, 'duplicate rows are dependent'))
     c['status'] = 'CERTIFIED abstract CI control, not an LMR interpolation certificate'
     c['rank_Q'] = 2; c['nullity_Q'] = 1
     return c
