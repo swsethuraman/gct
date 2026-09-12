@@ -84,3 +84,18 @@ record or the literature, cited).
 | `build_no_longer_binding` | the raising-row build is not the wall: the pilot at `N_S·δ = 1.47×10⁸` builds at **1.96 GB**; the rows are 664 MB and the old "4 GB" was transients. Ceiling now `N_S·δ ≈ 2.8–5.4×10⁸`; **the consumer binds first** | B13-10 |
 | `negative_control_forced` | diagonal pencils make `per₃` a product of three linear forms, whose coordinate ring carries no constituent of more than three rows — so any length-6 weight **must** read rank 0. Forced by representation theory, works at weights with no banked history | B13-08 Control C. **Required on every evaluation-rank sweep** |
 | `check_must_be_able_to_fail` | a check that cannot fail is not a check. Six instances in batch 13 alone: a lookup that skipped missing targets; a function below a `__main__` guard; a support condition with no teeth; a comparator matching an all-`None` record; a join comparing padded to unpadded keys; and two **direction-of-inference** errors | mine, B13-03, B13-04, B13-08, B13-10, B13-11, B13-12 |
+
+## F. Banked rules recovered by B14-10
+
+The entries above retain their frozen status. These additions were written by
+gpt-6-astra (board_numbering: batch14). Proofs and exact scopes are in
+`docs/b14_10_indexed_proofs.md`; machine counterparts and typed contexts are in
+`results/integrate/inherited_exclusions.json`. Classification and hash agreement
+alone never promote a banked result to a proof.
+
+| id | statement | status | source |
+|---|---|---|---|
+| `first_row_transport_bounds` | For a GL-stable irreducible quartic cone X with c=[s_1^4] nonzero on X, multiplication by c gives a+>=a, mult_X+>=mult_X and i_X<=i_X+<=i_X+(a+-a). Equal ambient dimensions preserve both multiplicities. | PROVED | `docs/s57_report.md` Lemma L; recovered proof in `docs/b14_10_indexed_proofs.md` |
+| `stable_dimension_full_rank_closure` | A justified stable dimension a_inf and an exact witness mult_X=a=a_inf at one rung imply i_X=0 at every valid rung of that tail ladder. Both inputs and the transport hypotheses are required; no automatic promotion of sampled records. | PROVED implication | `docs/b14_10_indexed_proofs.md`; s57 stable filtration plus Lemma L |
+| `peaked_quartic_ladders` | For 2<=ell<=16, delta>=ell and lambda=(4delta-2(ell-1),2^(ell-1)), a=mult_det=1 and i_det=0, hence D<=0. This does not assert an empty padded ideal. | PROVED | s57 Theorem P with its length bound explicit; `docs/b14_10_indexed_proofs.md`; exact integral trace-form witnesses in `results/b14_10/trace_form_validation.json` |
+| `b14_10_four_cubic_top_replacements` | At n=3, delta=ell=8 and lambda in {(7,5,5,2,2,1,1,1),(7,6,3,3,2,1,1,1),(8,5,3,2,2,2,1,1),(9,4,2,2,2,2,2,1)}, mult_per3=a=1 and i_per3=0 over Q. | CERTIFIED | `results/b14_10/recovered/`; `analysis/b14_10/recover.py` reconstructs points, integral HWVs, all raising derivatives and exact determinants. Replacement evidence for eight absent B13-09 files, already within degree8_global; original bytes remain missing |

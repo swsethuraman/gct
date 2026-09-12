@@ -37,7 +37,7 @@ def main():
         raise C.WinError(C.get_last_error())
     env = dict(os.environ, PYTHONUTF8='1', PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS='1',
                OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', NUMEXPR_NUM_THREADS='1')
-    bootstrap = "import sys,runpy; assert sys.stdin.readline().strip()=='GO'; p=sys.argv[1]; sys.argv=sys.argv[1:]; runpy.run_path(p,run_name='__main__')"
+    bootstrap = "import sys,runpy,pathlib; assert sys.stdin.readline().strip()=='GO'; p=sys.argv[1]; sys.argv=sys.argv[1:]; sys.path.insert(0,str(pathlib.Path(p).resolve().parent)); runpy.run_path(p,run_name='__main__')"
     start = time.monotonic(); utc = datetime.datetime.now(datetime.timezone.utc).isoformat()
     status = 'completed'
     with (logs / (a.name + '.log')).open('w', encoding='utf-8') as log:

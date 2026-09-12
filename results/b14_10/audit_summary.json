@@ -1,0 +1,85 @@
+{
+  "board_numbering": "batch14",
+  "actual_model": "gpt-6-astra",
+  "outcome": "SUBSTANTIVE_FALLBACK: complete file/certificate accounting; four exact replacements and indexed proof rules; partial semantic keys and historical replay remain open",
+  "file_classifications": {
+    "result": 756,
+    "metadata": 181
+  },
+  "whole_file_supersessions": 0,
+  "unresolved_historical_cell_keys": 223,
+  "certificate_entries": 2318,
+  "original_files_missing": 1005,
+  "new_exact_replacement_files": 4,
+  "original_manifest_entries_with_replacement": 8,
+  "present_digest_mismatches": 29,
+  "payload_parse_status": {
+    "DEFERRED_SIZE_LIMIT": 99,
+    "missing": 1005,
+    "json_decoded": 1214
+  },
+  "producer_wrong_direction_field_notes": 1116,
+  "hybrid_verifier_scope": "hybrid_kernel is recognized but native verifier records consistency only; it does not rederive ranks",
+  "missing_s79_rows_without_matching_producer_record": 17,
+  "frontier_comparison": {
+    "status": "PASS",
+    "normalization": "legacy r label -> ell; same integer cell keys",
+    "cells": 1846,
+    "all_frontier_sets_identical": true,
+    "open_degree9_length7": 47,
+    "open_degree9_length8": 52,
+    "open_degree10_length6": 58
+  },
+  "resource_log_statuses": {
+    "b14_10_inventory.resource": "failed",
+    "b14_10_inventory_final.resource": "completed",
+    "b14_10_inventory_release.resource": "completed",
+    "b14_10_inventory_v2.resource": "completed",
+    "b14_10_inventory_v3.resource": "completed",
+    "b14_10_reconcile.resource": "failed",
+    "b14_10_reconcile_v2.resource": "completed",
+    "b14_10_recover0.resource": "completed",
+    "b14_10_recover1.resource": "completed",
+    "b14_10_recover2.resource": "completed",
+    "b14_10_recover3.resource": "completed",
+    "b14_10_scan.resource": "completed",
+    "b14_10_validation.resource": "completed",
+    "b14_10_validation_release.resource": "completed"
+  },
+  "resource_limit_events": [
+    {
+      "log": "b14_10_inventory.resource",
+      "start_utc": "2026-09-12T03:40:36.391347+00:00",
+      "elapsed_seconds": 19.594,
+      "pid": 24028,
+      "command": [
+        "analysis/b14_10/inventory.py"
+      ],
+      "wall_limit_seconds": 120,
+      "process_memory_limit_bytes": 1073741824,
+      "peak_process_commit_bytes": 1073741824,
+      "status": "failed",
+      "exit_code": 1,
+      "enforcement": "Windows Job process-memory limit before calculation; subprocess timeout; thread env=1"
+    },
+    {
+      "log": "b14_10_reconcile.resource",
+      "start_utc": "2026-09-12T03:55:41.228519+00:00",
+      "elapsed_seconds": 0.047,
+      "pid": 22992,
+      "command": [
+        "tools/integrate/reconcile_cells.py",
+        "--json",
+        "results/b14_10/reconciliation.json"
+      ],
+      "wall_limit_seconds": 120,
+      "process_memory_limit_bytes": 1073741824,
+      "peak_process_commit_bytes": 8847360,
+      "status": "failed",
+      "exit_code": 1,
+      "enforcement": "Windows Job process-memory limit before calculation; subprocess timeout; thread env=1"
+    }
+  ],
+  "current_run_resource_seconds": 106.84400000000001,
+  "note": "Summed instrument wall seconds exclude agent/read/packaging time and any scheduler pause; not CPU-hours."
+}

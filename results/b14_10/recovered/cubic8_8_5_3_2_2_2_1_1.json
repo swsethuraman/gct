@@ -1,0 +1,230 @@
+{
+  "format": "b14-10-catalecticant/1",
+  "kind": "integral_nonvanishing",
+  "board_numbering": "batch14",
+  "actual_model": "gpt-6-astra",
+  "cell": {
+    "n": 3,
+    "ell": 8,
+    "delta": 8,
+    "lambda": [
+      8,
+      5,
+      3,
+      2,
+      2,
+      2,
+      1,
+      1
+    ]
+  },
+  "nu": [
+    6,
+    2
+  ],
+  "point": {
+    "type": "permanent_pencil",
+    "pencil": [
+      [
+        14,
+        -38,
+        -5,
+        8,
+        -31,
+        -23,
+        -28,
+        -26,
+        40
+      ],
+      [
+        -39,
+        -39,
+        25,
+        37,
+        6,
+        -18,
+        3,
+        -10,
+        14
+      ],
+      [
+        -38,
+        -31,
+        -40,
+        9,
+        15,
+        26,
+        -30,
+        34,
+        35
+      ],
+      [
+        -11,
+        -7,
+        -3,
+        38,
+        14,
+        -26,
+        -17,
+        -38,
+        -16
+      ],
+      [
+        0,
+        -11,
+        6,
+        -3,
+        -36,
+        10,
+        36,
+        16,
+        -29
+      ],
+      [
+        -37,
+        34,
+        35,
+        19,
+        -26,
+        -18,
+        -10,
+        23,
+        -5
+      ],
+      [
+        10,
+        30,
+        11,
+        -35,
+        -34,
+        -22,
+        38,
+        -5,
+        -39
+      ],
+      [
+        18,
+        0,
+        7,
+        -32,
+        -23,
+        -26,
+        28,
+        24,
+        -11
+      ]
+    ]
+  },
+  "matrix": {
+    "values_are": "integer catalecticant entries alpha! * c_alpha(per3(pencil))",
+    "shape": [
+      8,
+      8
+    ],
+    "values": [
+      [
+        -293520,
+        -119026,
+        -169412,
+        -109630,
+        63960,
+        14988,
+        217808,
+        62972
+      ],
+      [
+        -119026,
+        -286920,
+        -52845,
+        -226850,
+        122146,
+        -16220,
+        218442,
+        128003
+      ],
+      [
+        -169412,
+        -52845,
+        142736,
+        -197069,
+        50712,
+        17692,
+        -22053,
+        -35436
+      ],
+      [
+        -109630,
+        -226850,
+        -197069,
+        -34716,
+        52348,
+        -52457,
+        155239,
+        51235
+      ],
+      [
+        63960,
+        122146,
+        50712,
+        52348,
+        46476,
+        48178,
+        -12721,
+        11496
+      ],
+      [
+        14988,
+        -16220,
+        17692,
+        -52457,
+        48178,
+        198454,
+        35528,
+        -4535
+      ],
+      [
+        -286920,
+        -223152,
+        -92808,
+        -197028,
+        240390,
+        46364,
+        280400,
+        225692
+      ],
+      [
+        -52845,
+        -92808,
+        -255538,
+        27257,
+        116441,
+        159668,
+        264280,
+        55291
+      ]
+    ]
+  },
+  "values_are": "integer catalecticant entries alpha! * c_alpha(per3(pencil))",
+  "determinant_Z": "1105949999331333175190459850541410093664",
+  "determinants_mod_p": {
+    "2147483647": 1806018227,
+    "2147483629": 574436005
+  },
+  "normalization": "alpha! times plain cubic coefficient",
+  "coefficient_denominators": [
+    1
+  ],
+  "tensor_coordinate_scale_factors": [
+    1,
+    2,
+    6
+  ],
+  "matrix_orientation": "rows: shifted quadratic diagram; columns: s_1,...,s_8",
+  "proof_dependency": "PROVED:top_cells_catalecticant",
+  "polynomial_terms_sha256": "0475ccf5768442a548ada4c088f004ab38cb00f7d29802e11a346acad174eaa1",
+  "polynomial_nonzero_terms": 36190,
+  "source": "results/b13_05_topcells.json",
+  "source_sha256": "e732a6a158f18a955f37d7f388a5b09f02ea89fee6a7226e2794419db53f02cc",
+  "recovery_semantics": "new exact replacement for two absent B13-09 prime certificates; original bytes remain missing",
+  "conclusion": "mult_per3(lambda,8)=a=1; i_per3(lambda,8)=0 over Q; no new frontier closure"
+}

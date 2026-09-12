@@ -7,11 +7,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 OLD = 'results/integrate/astra_reconciliation/review_only/results/integration/'
 OUT = ROOT / 'results/b14_10'
 MANIFESTS = ['results/s79_cert_manifest.json', 'results/b13_09/cert_manifest.json']
+BASE_OVERRIDES = {}
 
 def git(*args):
     return subprocess.check_output(['git', *args], cwd=ROOT).decode('utf-8')
 
 def read(path):
+    if path in BASE_OVERRIDES:
+        text=BASE_OVERRIDES[path].decode('utf-8-sig')
+        return [json.loads(s) for s in text.splitlines() if s.strip()] if path.endswith('.jsonl') else json.loads(text)
     p = ROOT / path
     if path.endswith('.gz'):
         with gzip.open(p, 'rt', encoding='utf-8') as f: return json.load(f)
@@ -44,6 +48,9 @@ def jsonl(name, rows):
 
 def sha(data): return hashlib.sha256(data).hexdigest()
 
+def require_unique_paths(paths):
+    if not paths or len(paths)!=len(set(paths)): raise ValueError('empty or duplicate path inventory')
+
 def frozen():
     assert git('log','-1','--format=%H','batch14-base').strip() == BASE
     assert git('log','-1','--format=%T','batch14-base').strip() == TREE
@@ -51,9 +58,17 @@ def frozen():
     for line in git('ls-tree','-r','-l',BASE).splitlines():
         meta, path = line.split('\t',1); mode, kind, blob, size = meta.split()
         if kind == 'blob': records[path] = {'git_blob': blob, 'git_bytes': int(size)}
+    for path in git('diff','--name-only',BASE,'--').splitlines():
+        if path in records:
+            BASE_OVERRIDES[path]=subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
     return records
 
 def capture(blobs, historical):
+    snapshot=OUT/'input_manifest.json'
+    if snapshot.exists():
+        previous=json.loads(snapshot.read_text())
+        assert previous['base_commit']==BASE and previous['base_tree']==TREE
+        return {r['path']:r for r in previous['files']}
     # Hash all frozen machine-readable results and all source code/docs used by replay.
     paths = {p for p in blobs if p.startswith('results/') and p.endswith(('.json','.jsonl','.json.gz'))}
     paths |= {p for p in blobs if p.startswith(('tools/verify/', OLD))}
@@ -67,7 +82,8 @@ def capture(blobs, historical):
     for p in sorted(paths):
         row = dict(path=p, **blobs.get(p, {}), present=(ROOT/p).is_file())
         if row['present']:
-            data=(ROOT/p).read_bytes(); row.update(bytes=len(data), sha256=sha(data))
+            data=BASE_OVERRIDES.get(p,(ROOT/p).read_bytes()); row.update(bytes=len(data), sha256=sha(data),
+                bytes_origin='frozen Git blob' if p in BASE_OVERRIDES else 'working bytes at first input capture')
         rows.append(row)
     write('input_manifest.json', dict(board_numbering='batch14', actual_model='gpt-6-astra',
          base_commit=BASE, base_tree=TREE, files=rows,
@@ -97,7 +113,9 @@ def keys_in(obj, path=''):
                 for alias in ('d','degree'):
                     if type(x.get(alias)) is int: ctx['delta']=x[alias]; break
             # 'mu' is cubic weight; a simultaneous 'lam' often indexes its quadratic diagram.
-            k=next((k for k in ('mu','lambda','lambda_','lam','weight') if isinstance(x.get(k),list)
+            names=('mu','lambda','lambda_','lam','weight','partition')
+            if path.startswith('results/s76_c24/shape_'): names=names+('nu',)
+            k=next((k for k in names if isinstance(x.get(k),list)
                     and x[k] and all(type(v) is int for v in x[k])), None)
             if k:
                 lam=x[k]; n=ctx.get('n'); d=ctx.get('delta'); method='explicit'
@@ -121,6 +139,10 @@ def keys_in(obj, path=''):
                         families.setdefault(json.dumps([ctx.get('n'),tail]),fam)
             for k,v in x.items():
                 if isinstance(v,(dict,list)):
+                    if k=='degrees' and isinstance(v,dict):
+                        for degree,contents in v.items():
+                            if str(degree).isdigit(): walk(contents,ptr+'/degrees/'+str(degree),dict(ctx,delta=int(degree)))
+                        continue
                     # Skip coefficient tensors, points and term arrays; they contain no cell objects.
                     if k not in ('terms','matrix','basis','kernel_chi','pencil','points','coefficients','entries','values','vectors'):
                         walk(v,ptr+'/'+str(k).replace('~','~0').replace('/','~1'),ctx)
@@ -147,7 +169,7 @@ RESULT_FIELDS = {'rank','rank_Q','rank_mod_p','mult','mult_det','mult_pad','D','
                  'passed','pass','ok','verified','nonzero','checks','claims','identity','identities','proof','conclusion','verdict'}
 
 def classify(path,obj,known_keys):
-    if path.startswith('results/logs/') or pathlib.PurePosixPath(path).name in ('cert_manifest.json','s79_cert_manifest.json'):
+    if path.startswith('results/logs/') or pathlib.PurePosixPath(path).name in ('cert_manifest.json','s79_cert_manifest.json','s79_certificate_availability.part00.jsonl'):
         return 'metadata','process/resource log or certificate inventory; not a rank replay'
     result_fields=set()
     def walk(x):
@@ -165,9 +187,28 @@ def classify(path,obj,known_keys):
         return 'metadata','support/input/census/manifest role; no recognized result assertion'
     return 'result','banked data artifact; numerical/proof semantics not independently replayed'
 
+def recorded_claims(obj):
+    claims=[];references=[]
+    def walk(x,ptr=''):
+        if isinstance(x,dict):
+            for k,v in x.items():
+                pointer=ptr+'/'+str(k)
+                if k in ('status','conclusion','claim','field_note','field','instrument','meaning','verdict') and isinstance(v,(str,int,bool)):
+                    claims.append(dict(pointer=pointer,source_text=str(v)[:700],validation='RECORDED_ONLY'))
+                if k in ('source','source_path','certificate','path','file','input') and isinstance(v,str) and v.startswith('results/'):
+                    candidate=v.split(':',1)[0]
+                    references.append(dict(pointer=pointer,path=candidate,present=(ROOT/candidate).is_file(),status='reference only'))
+                if isinstance(v,(dict,list)) and k not in ('points','basis','terms','vectors','matrix','values','entries','kernel_chi','R','G','A','E'):
+                    walk(v,pointer)
+        elif isinstance(x,list):
+            for i,v in enumerate(x):
+                if isinstance(v,dict):walk(v,ptr+'/'+str(i))
+    walk(obj)
+    return claims[:40],references[:40],len(claims),len(references)
+
 def inventories(blobs, inputs, historical):
     parsed=read(OLD+'parsed_sources.json')
-    assert historical and len(historical)==len(set(historical)), 'empty or duplicate old source inventory'
+    require_unique_paths(historical)
     # Old parser joined source rows; use these as attributed key hints, never as verification.
     catalog=collections.defaultdict(dict)
     for p in sorted(q for q in blobs if q.startswith(OLD+'cells.part') and q.endswith('.jsonl')):
@@ -194,7 +235,9 @@ def inventories(blobs, inputs, historical):
                 unique={json.dumps(v['key'],sort_keys=True):v for v in keys}
                 for ck,value in catalog.get(p,{}).items(): unique.setdefault(ck,value)
                 cls,why=classify(p,obj,list(unique.values()))
+                claims,refs,claimcount,refcount=recorded_claims(obj)
                 row.update(classification=cls,classification_reason=why,presence='present',parse_status='parsed',family_keys=families,
+                           recorded_claim_samples=claims,recorded_claim_count=claimcount,explicit_reference_samples=refs,explicit_reference_count=refcount,
                            cell_keys=list(unique.values()),cell_key_status='resolved' if unique else
                            ('family_only' if families else 'not_applicable_metadata' if cls=='metadata' else
                             'not_applicable_geometry' if p.startswith(('results/astra/S2/','results/b13_12/')) else 'unknown_no_complete_cell_schema'),
@@ -205,6 +248,12 @@ def inventories(blobs, inputs, historical):
                 row.update(classification='result',classification_reason='unreadable banked result',presence='present',
                            cell_keys=[],cell_key_status='unknown_parse_failure',parse_status='failed',error=str(e))
         rows.append(row)
+    # Byte-identical duplicates are provenance links, never automatic supersession.
+    groups=collections.defaultdict(list)
+    for r in rows:
+        if r.get('frozen_blob'):groups[r['frozen_blob']].append(r['path'])
+    for r in rows:
+        r['identical_frozen_blob_paths']=[p for p in groups.get(r.get('frozen_blob'),[]) if p!=r['path']]
     jsonl('file_register.jsonl',rows); write('schema_profiles.json',profiles)
     oldrows=[r for r in rows if r['historical_unparsed']]
     assert {r['path'] for r in oldrows}==set(historical)
@@ -213,6 +262,8 @@ def inventories(blobs, inputs, historical):
                 historical_cell_key_status=dict(collections.Counter(r['cell_key_status'] for r in oldrows)),
                 current_frozen_json_jsonl_scope=len(rows),current_classes=dict(collections.Counter(r['classification'] for r in rows)),
                 newly_encountered_since_old_lists=sum(not r['historical_unparsed'] and not r['previously_parsed'] for r in rows),
+                current_without_old_observation_parser=sum(not r['previously_parsed'] for r in rows),
+                scope_excludes='the review-only integration mirror itself, compressed certificates (counted separately), non-JSON/JSONL files',
                 parse_failures=[r['path'] for r in rows if r['parse_status']!='parsed'],
                 meaning='File/role registration complete; unknown cell identities and proof/replay backlog remain explicit.')
 
@@ -235,7 +286,7 @@ def certs(blobs):
                                   hwm_gb=r.get('hwm_gb'),seeds=r.get('seeds'),bound=r.get('bound'))
     for manpath in MANIFESTS:
         man=read(manpath); entries=man.get('files',man.get('cert_files'))
-        assert entries and len({x['path'] for x in entries})==len(entries)
+        require_unique_paths([x['path'] for x in entries])
         group=[]
         for idx,entry in enumerate(entries):
             path=entry['path']; c,kind,prime=certificate_key(path)
@@ -266,6 +317,9 @@ def certs(blobs):
                             h.update(block); payload_bytes+=len(block)
                             if len(head)<1024*1024+1: head.extend(block[:1024*1024+1-len(head)])
                     row.update(payload_sha256=h.hexdigest(),payload_bytes=payload_bytes)
+                    row['native_verifier_capability']='record consistency only; no rank re-derivation' if kind=='hybrid' else 'full-rank re-derivation supported; not run here'
+                    wrong_direction=b'a kernel mod p bounds i from below only' in head
+                    row['semantic_cautions']=['producer field_note reverses ideal-nullity inequality; correct direction is i_Q<=nullity_p, not a lower bound'] if wrong_direction else []
                     if payload_bytes>1024*1024:
                         row.update(parse_status='DEFERRED_SIZE_LIMIT',payload_kind=('hybrid_kernel' if kind=='hybrid' else 'full_rank' if 'fullrank' in kind else 'unknown'),
                                    payload_kind_provenance='filename inference only; full payload not decoded',
@@ -275,7 +329,7 @@ def certs(blobs):
                     obj=json.loads(head)
                     row.update(canonical_json_sha256=sha(json.dumps(obj,sort_keys=True,separators=(',',':')).encode()),
                                payload_kind=obj.get('kind'),parse_status='json_decoded',payload_cell=obj.get('cell'),
-                               replay_status='UNSUPPORTED_KIND' if obj.get('kind')=='hybrid_kernel' else 'NOT_REPLAYED')
+                               replay_status='NOT_REPLAYED_RECORD_ONLY_KIND' if obj.get('kind')=='hybrid_kernel' else 'NOT_REPLAYED')
                     row['payload_cell_matches']=obj.get('cell') is not None and all(obj['cell'].get(k)==v for k,v in
                          [('n',c['n']),('r',c['ell']),('delta',c['delta']),('lambda',c['lambda'])])
                     if not row['md5_match']:
@@ -300,11 +354,11 @@ def controls():
     for name,fn in [
         ('wrong_cell_degree',lambda:cell(4,8,[3,3,3])),
         ('bad_partition_order',lambda:cell(3,2,[2,4])),
+        ('empty_inventory',lambda:require_unique_paths([])),
         ('missing_certificate',lambda:read('results/b14_10/definitely_missing_certificate.json'))]:
         try: fn()
         except (ValueError,FileNotFoundError): results.append(dict(control=name,rejected=True))
         else: raise AssertionError(name+' incorrectly accepted')
-    results.append(dict(control='nonempty_frozen_old_list',rejected_empty=(bool([]) is False)))
     return results
 
 def main():

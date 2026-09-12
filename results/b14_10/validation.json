@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "meaning": "inventory accounting, exact replacement proofs and typed predicate controls; not historical rank replay",
+  "file_rows": 937,
+  "historical_rows": 874,
+  "certificate_rows": 2318,
+  "replacements": 8,
+  "mutation_controls": [
+    {
+      "name": "empty_inventory",
+      "rejected": true
+    },
+    {
+      "name": "removed_source_row",
+      "rejected": true
+    },
+    {
+      "name": "missing_required_source",
+      "rejected": true
+    },
+    {
+      "name": "unsupported_supersession",
+      "rejected": true
+    },
+    {
+      "name": "altered_digest",
+      "rejected": true
+    },
+    {
+      "name": "empty_certificate_list",
+      "rejected": true
+    },
+    {
+      "name": "empty_predicate",
+      "rejected": true
+    },
+    {
+      "name": "unknown_predicate",
+      "rejected": true
+    },
+    {
+      "name": "missing_application_contract",
+      "rejected": true
+    }
+  ],
+  "rule_controls": [
+    {
+      "rule": "washout_thm2",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "length6_record",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "degree8_global",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "n4_gate_containment",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "cartan_ladder_invariance",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "eleven_row_padded_zero",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "n3_padded_seven_row",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "peaked_quartic_ladders",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    },
+    {
+      "rule": "b14_10_four_cubic_top_replacements",
+      "positive": true,
+      "deliberate_bad_cell_rejected": true,
+      "wrong_context_rejected": true
+    }
+  ],
+  "trace_form_nonzero_minors": 15,
+  "exact_recovery_process_seconds": 10.36,
+  "unchanged_lmr": {
+    "a": 274,
+    "mult_det": 273,
+    "mult_pad_lower_bound": 269,
+    "D_interval": [
+      -4,
+      1
+    ]
+  }
+}

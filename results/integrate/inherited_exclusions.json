@@ -80,5 +80,59 @@
       "source": "B13-11 section 'The n=3 control'",
       "note": "Promoted from a documented assumption. Consequence: the unpadded +1 example at (19,7,2^5) supplies NO padded test at that weight."
     }
+    ,{
+      "id": "peaked_quartic_ladders",
+      "predicate": {"n": 4, "family": "quartic_peaked_ladder"},
+      "statement": "For 2<=ell<=16, delta>=ell, lambda=(4delta-2(ell-1),2^(ell-1)): a=mult_det=1, i_det=0 and D<=0.",
+      "status": "PROVED",
+      "source": "docs/b14_10_indexed_proofs.md, recovered from docs/s57_report.md Theorem P",
+      "witness": "results/b14_10/trace_form_validation.json; explicit integral sl4 trace pairing",
+      "note": "No claim of empty padded ideal. Predicate checks shape, degree and length; not a blanket a=1 convention."
+    },
+    {
+      "id": "b14_10_four_cubic_top_replacements",
+      "predicate": {
+        "n": 3, "r": 8, "delta": 8, "context": "cubic_per3_ideal",
+        "lambda_in": [[7,5,5,2,2,1,1,1],[7,6,3,3,2,1,1,1],[8,5,3,2,2,2,1,1],[9,4,2,2,2,2,2,1]]
+      },
+      "statement": "Four exact integral catalecticant witnesses give mult_per3=a=1 and i_per3=0.",
+      "status": "CERTIFIED",
+      "source": "docs/b14_10_indexed_proofs.md; results/b14_10/recovered/; analysis/b14_10/recover.py",
+      "note": "New replacement evidence for eight absent B13-09 files; original bytes remain missing, no new frontier closure."
+    }
+  ],
+  "application_contract": {
+    "added_by": "B14-10, board_numbering batch14, gpt-6-astra",
+    "cell_key": "n, ell=partition length (legacy predicate r), delta, lambda; sum(lambda)=n*delta",
+    "consumer": "tools/integrate/exclusion_predicates.py",
+    "policy": "Return typed conclusions for explicit context. Reject unknown predicates. Never infer empty ideal from containment, stability or missing certificates.",
+    "conclusions_by_id": {
+      "washout_thm2": {"cubic_per3_ideal": "i_per3=0"},
+      "length6_record": {"cubic_per3_ideal": "i_per3=0"},
+      "degree8_global": {"cubic_per3_ideal": "i_per3=0"},
+      "n4_gate_containment": {"quartic_padded_gap": "D<=0"},
+      "cartan_ladder_invariance": {"quartic_ladder_identity": "i_X preserved; D unresolved"},
+      "eleven_row_padded_zero": {"quartic_padded_gap": "mult_pad=0; D<=0"},
+      "n3_padded_seven_row": {"padded_gap_at_l_per2": "mult_pad=0; D<=0"},
+      "peaked_quartic_ladders": {"quartic_padded_gap": "D<=0", "quartic_det_ideal": "i_det=0; mult_det=a=1"},
+      "b14_10_four_cubic_top_replacements": {"cubic_per3_ideal": "i_per3=0"}
+    }
+  },
+  "proof_rules": [
+    {
+      "id": "first_row_transport_bounds", "status": "PROVED", "kind": "identity_and_inequality",
+      "hypotheses": ["characteristic zero", "X irreducible GL-stable closed quartic cone", "X not contained in c=0", "lambda valid"],
+      "conclusion": "a+>=a, mult_X+>=mult_X, i_X<=i_X+<=i_X+(a+-a); equal ambient dimensions preserve both multiplicities",
+      "source": "docs/b14_10_indexed_proofs.md; docs/s57_report.md Lemma L",
+      "automatic_exclusion": false
+    },
+    {
+      "id": "stable_dimension_full_rank_closure", "status": "PROVED", "kind": "conditional_exclusion_rule",
+      "hypotheses": ["first_row_transport_bounds hypotheses", "justified stable ambient a_inf", "exact full-rank witness mult_X=a=a_inf at one valid rung"],
+      "conclusion": "i_X=0 on every valid rung of that tail ladder",
+      "source": "docs/b14_10_indexed_proofs.md; docs/s57_report.md Proposition S and Lemma L",
+      "consumer": "tools/integrate/exclusion_predicates.py:stable_full_rank_closure",
+      "automatic_exclusion": false
+    }
   ]
 }
