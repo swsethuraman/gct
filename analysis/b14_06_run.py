@@ -381,8 +381,22 @@ def main():
                         f"{r1['DET']} -> {r1['DET_corrupted']}")
         allok &= record("C8 DET == DETQ (normalise+depress)", *_c8(P1))
     if a.stretch:
-        for tl in ((19,) + (2,) * 7, (21,) + (2,) * 7):
-            measure(tl, a.npts, families=("GEN", "DET"), with_C6=False)
+        # (19,2^7): the packet's named stretch.  a_inf = 392 is expected, and the
+        # first stable cell of this ladder is (71,19,2^7)_26 -- B13-06's best
+        # target, where offladder_targets PROVES a new determinant equation, so
+        # mult_det <= 391 there.  PAD is measured too: containment P subset D
+        # forces mult_pad <= mult_det <= 391, so a padded floor of 392 would
+        # refute containment.  That makes PAD here a falsification test, not a
+        # confirmation, which is why it is run.
+        m19 = measure((19,) + (2,) * 7, 460, families=("GEN", "DET", "PAD"), with_C6=True)
+        # (21,2^7): a_inf only.  Board sec.3 slot 4 lists 533 as single-method and
+        # open; the bracket route is neither the Weyl alternation nor the
+        # stable-slice counter, so this is an independent lower bound.
+        m21 = measure((21,) + (2,) * 7, 610, families=("GEN",), with_C6=False)
+        for m in (m19, m21):
+            r1 = m["ranks"][str(P1)]; r2 = m["ranks"][str(P2)]
+            record(f"C7 both house primes agree at {tuple(m['tail'])}", r1 == r2, None,
+                   f"{r1} vs {r2}")
     RESULTS["ok"] = bool(allok)
     RESULTS["elapsed_s"] = round(time.time() - t0, 1)
     path = a.out or os.path.join(OUT, "run.json")
