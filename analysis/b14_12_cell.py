@@ -39,9 +39,16 @@ for _v in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMEXP
     os.environ.setdefault(_v, '1')
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
-os.environ.setdefault('S71_SCHUR_SO', os.path.join(os.path.expanduser('~'), 'b14_12_scratch', 'schur.so'))
+# NOTE (defect found here, reported not patched): wk13_b10_lean.raising_rows_lean
+# ends a blocks='disk' run with shutil.rmtree(scratch) on the directory the CALLER
+# passed, not just on the block files it created there.  So the blocks scratch must
+# be a directory this driver owns nothing else in -- the .npz and schur.so live in a
+# separate output directory.  A first build of the target cell was lost this way
+# after 2832 s (results/logs/b14_12_build_attempt1.log).
+OUTDIR = os.path.join(os.path.expanduser('~'), 'b14_12_out')
+os.makedirs(OUTDIR, exist_ok=True)
+os.environ.setdefault('S71_SCHUR_SO', os.path.join(OUTDIR, 'schur.so'))
 os.environ.setdefault('S71_MEM_X', '250000000')
-os.makedirs(os.path.dirname(os.environ['S71_SCHUR_SO']), exist_ok=True)
 import numpy as np
 
 def _write_pidfile(name):
@@ -265,13 +272,14 @@ def main(argv):
     delta = int(arg('--delta')); n = int(arg('--n', '4'))
     stage = arg('--stage', 'all')
     tag = arg('--tag', 'b14_12')
-    scratch = arg('--scratch', os.path.join(os.path.expanduser('~'), 'b14_12_scratch'))
+    scratch = arg('--scratch', os.path.join(os.path.expanduser('~'), 'b14_12_blocks', tag))
     out = arg('--out', os.path.join(ROOT, 'results', 'b14_12', f'{tag}.json'))
     blocks = arg('--blocks', 'disk'); fo = arg('--fo', 'inplace')
     verbose = '--quiet' not in argv
     control = '--no-control' not in argv
     os.makedirs(scratch, exist_ok=True); os.makedirs(os.path.dirname(out), exist_ok=True)
-    npz = os.path.join(scratch, f'{tag}_E.npz')
+    npz = arg('--npz', os.path.join(OUTDIR, f'{tag}_E.npz'))   # NOT under `scratch`: see the note at the top
+    os.makedirs(os.path.dirname(npz), exist_ok=True)
     pidfile = _write_pidfile(f'{tag}_{stage}')
 
     t_a = time.time()

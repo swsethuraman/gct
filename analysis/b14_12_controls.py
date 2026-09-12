@@ -34,7 +34,7 @@ for _v in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMEXP
     os.environ.setdefault(_v, '1')
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
-os.environ.setdefault('S71_SCHUR_SO', os.path.join(os.path.expanduser('~'), 'b14_12_scratch', 'schur.so'))
+os.environ.setdefault('S71_SCHUR_SO', os.path.join(os.path.expanduser('~'), 'b14_12_out', 'schur.so'))
 os.environ.setdefault('S71_MEM_X', '250000000')
 os.makedirs(os.path.dirname(os.environ['S71_SCHUR_SO']), exist_ok=True)
 import numpy as np
@@ -198,7 +198,7 @@ def control_S(res, ids=('B1', 'A1')):
         rec = dict(control_N=dict(kind='diagonal pencils, forced rank 0 at length > n'))
         t = time.time()
         B = DRV.stage_build(lam, delta, n, None, rec, blocks='disk',
-                            scratch=os.path.join(os.path.expanduser('~'), 'b14_12_scratch', cid), verbose=False)
+                            scratch=os.path.join(os.path.expanduser('~'), 'b14_12_blocks', 'ctl_' + cid), verbose=False)
         rec = DRV.stage_kernel(B, lam, delta, n, a, rec, fo='inplace', verbose=False, tag=f'ctl-{cid}', control=True)
         wall = round(time.time() - t, 1)
         flat = dict(a=a, N_S=rec['build']['N_S'], stab=rec['build']['stab'], n_chi=rec['build']['n_chi'],

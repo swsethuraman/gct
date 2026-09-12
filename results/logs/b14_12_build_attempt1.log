@@ -1,0 +1,37 @@
+  [b14_12] (12, 4, 4, 4, 4, 4) d8 n=4: a_weyl = 4 (1.6s)
+      level 1: 99 prefixes
+      level 2: 4485 prefixes
+      level 3: 119398 prefixes
+      level 4: 1574293 prefixes
+      level 5: 8822711 prefixes
+      level 6: 21558765 prefixes
+      level 7: 27009659 prefixes
+      level 8: 27009659 prefixes
+  lam=(12, 4, 4, 4, 4, 4): N_S=27009659 |Stab|=120 n_chi=244454 (orbits dropped: 0) [lean-b10, 1967s, HWM 1.30 GB]
+    E_01: |H|=24 targets 13751747 canonical rows 602685 nnz 3400880 (triples 3610450; obstructed fixed targets cancelled: 0) [tables 185s rows 37s finish 0.1s; 223s, HWM 1.30 GB, RSS 0.65 GB]
+    E_12: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 107s rows 46s finish 0.1s; 377s, HWM 1.36 GB, RSS 1.00 GB]
+    E_23: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 104s rows 47s finish 0.1s; 529s, HWM 1.48 GB, RSS 1.03 GB]
+    E_34: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 105s rows 47s finish 0.1s; 682s, HWM 1.48 GB, RSS 1.02 GB]
+    E_45: |H|=6 targets 23300172 canonical rows 3969507 nnz 13173286 (triples 14038922; obstructed fixed targets cancelled: 0) [tables 106s rows 49s finish 0.1s; 837s, HWM 1.48 GB, RSS 1.02 GB]
+  built-lean (12, 4, 4, 4, 4, 4) d8: N_S=27009659 |Stab|=120 n_chi=244454 rows=16480713 nnz=56094024 (2832s: mono 26s orbits 1967s rows 838s; HWM 1.48 GB; E.data int16)
+Traceback (most recent call last):
+  File "/home/claude/gctrepo/analysis/b14_12_cell.py", line 307, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gctrepo/analysis/b14_12_cell.py", line 290, in main
+    B = stage_build(lam, delta, n, npz if stage == 'build' else None, rec,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/gctrepo/analysis/b14_12_cell.py", line 161, in stage_build
+    np.savez(npz, indptr=E.indptr, indices=E.indices, data=E.data, M=arr['M'],
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_npyio_impl.py", line 673, in savez
+    _savez(file, args, kwds, False, allow_pickle=allow_pickle)
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_npyio_impl.py", line 779, in _savez
+    zipf = zipfile_factory(file, mode="w", compression=compression)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_npyio_impl.py", line 112, in zipfile_factory
+    return zipfile.ZipFile(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/zipfile.py", line 1311, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/b14_12_scratch/b14_12_E.npz'
