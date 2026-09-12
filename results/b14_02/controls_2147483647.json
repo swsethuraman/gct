@@ -1,0 +1,169 @@
+{
+ "prime": 2147483647,
+ "values_are": "raw evaluator outputs mod the stated prime; no transform",
+ "C1": [
+  {
+   "name": "N1_missing_x8",
+   "why": "coordinate-supported on 8 of 9 variables",
+   "expect": "all zero",
+   "nonzero_rows": 0,
+   "pass_": true
+  },
+  {
+   "name": "N2_four_linear_forms_4vars",
+   "why": "product of four linear forms in x_0..x_3; coordinate-supported on 4 of 9",
+   "expect": "all zero",
+   "nonzero_rows": 0,
+   "pass_": true
+  },
+  {
+   "name": "N3_reducible_8vars",
+   "why": "l * (three linear forms), coordinate-supported on 8 of 9",
+   "expect": "all zero",
+   "nonzero_rows": 0,
+   "pass_": true
+  }
+ ],
+ "C1_must_fail": {
+  "point": "P13-000",
+  "nonzero_rows": 39,
+  "control_can_fail": true
+ },
+ "C2": [
+  {
+   "row": 0,
+   "rung": 12,
+   "col": "P13-000",
+   "exponent": 1,
+   "literal": 865895518,
+   "scaled_native": 865895518,
+   "ok": true
+  },
+  {
+   "row": 0,
+   "rung": 12,
+   "col": "P13-001",
+   "exponent": 1,
+   "literal": 574680853,
+   "scaled_native": 574680853,
+   "ok": true
+  },
+  {
+   "row": 0,
+   "rung": 12,
+   "col": "P13-002",
+   "exponent": 1,
+   "literal": 677812137,
+   "scaled_native": 677812137,
+   "ok": true
+  },
+  {
+   "row": 0,
+   "rung": 12,
+   "col": "P13-003",
+   "exponent": 1,
+   "literal": 1429591168,
+   "scaled_native": 1429591168,
+   "ok": true
+  },
+  {
+   "row": 1,
+   "rung": 12,
+   "col": "P13-000",
+   "exponent": 1,
+   "literal": 1948605725,
+   "scaled_native": 1948605725,
+   "ok": true
+  },
+  {
+   "row": 1,
+   "rung": 12,
+   "col": "P13-001",
+   "exponent": 1,
+   "literal": 1363847635,
+   "scaled_native": 1363847635,
+   "ok": true
+  },
+  {
+   "row": 1,
+   "rung": 12,
+   "col": "P13-002",
+   "exponent": 1,
+   "literal": 1612321930,
+   "scaled_native": 1612321930,
+   "ok": true
+  },
+  {
+   "row": 1,
+   "rung": 12,
+   "col": "P13-003",
+   "exponent": 1,
+   "literal": 1749467800,
+   "scaled_native": 1749467800,
+   "ok": true
+  }
+ ],
+ "C2_must_fail": [
+  {
+   "row": 0,
+   "col": "P13-000",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 0,
+   "col": "P13-001",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 0,
+   "col": "P13-002",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 0,
+   "col": "P13-003",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 1,
+   "col": "P13-000",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 1,
+   "col": "P13-001",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 1,
+   "col": "P13-002",
+   "wrong_exponent": 12,
+   "differs": true
+  },
+  {
+   "row": 1,
+   "col": "P13-003",
+   "wrong_exponent": 12,
+   "differs": true
+  }
+ ],
+ "C5": {
+  "integer_zero": [],
+  "mod_zero": {
+   "2147483647": [],
+   "2147483629": [],
+   "2147483587": [],
+   "2147483579": [],
+   "2147483563": [],
+   "2147483549": [],
+   "2147483543": []
+  },
+  "pass_": true
+ }
+}
