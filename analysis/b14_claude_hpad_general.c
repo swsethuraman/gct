@@ -19,6 +19,9 @@
  * in results/b13_01_hpad.json).  At DELTA = 14 it gives h_pad(25,17,2^7; 14) = 159
  * over 27 strips -- the batch-14 rung-14 target dimension.
  *
+ * STATUS: scratch, planning computation; not pre-registered.
+ * Provenance: docs/b14_claude_scratch_code.md.
+ *
  * Batch interface, unchanged: reads "N\n" then N lines of 9 ints; prints N counts.
  * Counts fit in int64.  Build:  gcc -O2 -o mcount_general b14_claude_hpad_general.c
  */

@@ -55,6 +55,11 @@ def check(tag, A, B, p, expect_mod_fails):
 
     row["ok"] = row["wide_exact"] and (
         row["narrow_raised"] if expect_mod_fails else row["narrow"] == "exact")
+    # the delegation flag must GATE, not merely be printed: below the ceiling a wide
+    # path that is not bit-identical to the narrow one is a failure, and until batch 14
+    # a False here passed silently.  Astra caught it.
+    if "wide_identical_to_narrow" in row:
+        row["ok"] = row["ok"] and row["wide_identical_to_narrow"]
     results.append(row)
     print(f"  {'OK  ' if row['ok'] else 'FAIL'} {tag:34s} K={row['K']:>9,} p={p}  "
           f"wide_exact={row['wide_exact']} narrow={row['narrow']}"

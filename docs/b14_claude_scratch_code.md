@@ -135,12 +135,21 @@ was produced on this machine before the scratch code arrived and gives 390, 391,
 one routine: this rules out transcription error, not method error. Caveat 3 stands.
 
 **What the replay does and does not buy.** Re-running the author's code on another
-machine is replay, not method diversity. 159 still rests on one lineage, and
-caveat 1 is unchanged — it is exactly why slot 4 exists, and slot 4 has been told
-not to treat these scripts as the second method. The reach census is a different
-case: it is a finite combinatorial enumeration with two controls that can fail,
-both pass, and the output is reproducible bit-for-bit, so slot 8 is told to check
-it rather than rebuild it.
+machine is replay, not method diversity — which is why slot 4 exists, and why it
+is told not to treat these scripts as its second method. **159 no longer rests on
+one lineage:** Astra piloted the power-sum / Murnaghan–Nakayama route through the
+banked `wk8_s30_pleth` before dispatch, and it returns 73 and 159 with every
+channel matching the Weyl route partition by partition, importing nothing from
+here. That is the recount, and it cost under a minute. Caveat 1 is discharged for
+73 and 159; it still stands for 533 and the `a_∞` values.
+
+The reach census is a finite enumeration reproducible bit-for-bit, which is worth
+something — but on the strength of it I told slot 8 to check rather than rebuild,
+and that instruction rested on controls that could not fail. Slot 8 is now told
+to reconstruct all 717 target/source difference tests independently and compare
+every flag. **And a reachability flag is not an exclusion**: it says
+multiplication can carry a relation *if the source relation is certified*, so
+every reached cell stays CONDITIONAL until slots 1, 2 and 7 deliver.
 
 **Caveat 5 does not collide with slot 6.** The stable counter counts and
 alternates; it does not evaluate. The stable bracket evaluator slot 6 asks for,

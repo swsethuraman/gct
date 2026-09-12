@@ -4,19 +4,21 @@
 v0.1 and v0.2, and the strategy memo at `docs/b14_strategy_memo.md`. Where those
 disagree with this file, this file governs. Change log in §6.
 
-Base: **the tip of `main` = `integration/batch13` at dispatch — the commit that
-contains this file.** Every session branches from it and delivers by bundle
-against it. The hash is not written here on purpose: v0.3 named the commit
-*before* the one it lived in, and stamping it would put the board one commit
-behind itself again every time it is edited. Resolve it:
+Base: **the commit and tree named in your session packet.** It is captured once
+at dispatch and does not move for the life of the batch. Check out that exact
+commit, run `check_delivery.py --base` against it, and cut your bundle against it.
 
-```
-git fetch origin && git rev-parse origin/main
-```
+Two wrong answers were tried before this one. v0.3 stamped a hash into this
+header and named the commit *before* the one it lived in — any commit that edits
+the board is the commit the board then has to name, so a stamped hash is stale
+when written. Replacing it with `git rev-parse origin/main` fixed the
+self-reference and introduced a worse fault: `origin/main` can advance while a
+session is running, so resolving it at delivery silently changes the base under
+a worker mid-flight. Astra caught that. **Do not resolve a moving ref, and do not
+relabel a newer tip as the base you started from.**
 
-and the integrator repeats that hash in the dispatch message. Slots 4 and 8 cite
-`analysis/b14_claude_*`, which exist only from this commit forward, so a session
-branching from anything earlier is working from the wrong tree.
+Slots 4 and 8 cite `analysis/b14_claude_*`, which do not exist before this board
+was committed; a session on an earlier tree is missing its own inputs.
 
 ---
 
@@ -202,6 +204,25 @@ input is absent.
 they are banked so the numbers can be replayed, not so they can be confirmed.
 Replaying them is not a recount.
 
+**The independent route exists and is cheap — it is not yours to invent.** Astra
+piloted it before dispatch: `analysis/wk8_s30_pleth`'s `pleth_p` and `chi`
+(power-sum plethysm and Murnaghan–Nakayama characters, banked at s30), with a
+fresh interlacing enumeration of the horizontal strips and
+`p_r[h₃] = (p_r³ + 3·p_r·p_{2r} + 2·p_{3r})/6`. Do **not** call `amb`, which
+decomposes the whole ambient degree for nothing. On the integration machine this
+returned **73 in 11.8 s and 159 in 38.4 s**, with all 15 and all 27 channels
+matching the Weyl route *partition by partition*, importing neither `a_weyl` nor
+any `b14_claude_*` counter. Astra's pilot script and outputs are banked at
+`results/b14_prep/astra_slot04_pilot/`.
+
+That is method diversity and it discharges the 73/159 half at a cost of under a
+minute. **The values are therefore already observed — do not present them as
+blind predictions.** Your core is to formalise the route, state and control its
+conventions, and pre-register it properly. The two stable coefficients are the
+part still open: take the degree-33 and degree-35 parts of
+`∏_{j∈{2,3,4}} (Σ_{k≥0} h_k[h_j])` and a character scalar product with the tail.
+That runtime is unmeasured — bound it.
+
 Four quantities are load-bearing and each rests on **one method and one
 implementation**:
 
@@ -290,11 +311,29 @@ nullity remains a **ceiling**.
 Lemma B as slot 5 states them (use the memo's statements if slot 5 has not
 delivered — **do not wait**).
 
-The Lemma T reachability column is **already computed** for all 239 and replays
-in under a second — 5 of 31 reached at `δ = 25`, 26 of 208 at `δ = 26`, both
-controls PASS on the integration machine, output bit-identical to the delivered
-file. Check it, do not rebuild it; your work is the Lemma B bounds and the
-exclusions.
+The Lemma T reachability column is already computed for all 239 and replays in
+under a second — 5 of 31 reached at `δ = 25`, 26 of 208 at `δ = 26`. **Rebuild
+the comparison anyway.** Reconstruct the target keys and all 717 target/source
+difference tests independently, compare every flag, and keep a witness for each
+positive one. That is bounded finite work and it is the check that matters; an
+earlier draft of this slot told you to check rather than rebuild, on the strength
+of a replay whose controls could not fail (see below). A fresh expensive tensor
+decomposition is not wanted unless your comparison disagrees.
+
+**The controls in the delivered script were vacuous and are now fixed.** On an
+empty census both reported PASS and the script exited 0, because `all()` and
+`not any()` over nothing are true; the Cartan control also accepted reach from
+*any* source rather than from LMR. Astra found this and supplied the correction
+now in the tree: the census must carry 31 and 208 distinct records including the
+four named controls, and each control is checked from LMR itself. The integrator
+replayed the script and reported "both controls PASS" without ever testing that
+they could fail — `PROVED.md: check_must_be_able_to_fail`, seventh instance.
+
+**A reachability flag is not an exclusion.** A true flag says multiplication
+*can* carry a relation **if the source relation is certified**. Concluding
+`D ≤ 0` at the destination needs that certificate *and* a sufficient certified
+upper bound on the determinant ideal. Keep every reached cell CONDITIONAL until
+the membership certificates from slots 1, 2 and 7 arrive.
 
 All 239 components with at most ten rows: 31 at `δ = 25` and 208 at `δ = 26`.
 Deliver reachability, Lemma T exclusions and Lemma B bounds for every one.
@@ -407,7 +446,7 @@ reports its core artifact rather than idling or promoting a conditional.
 
 - **Pre-register before computing** — question, instrument, decision table,
   falsifiers, stopping rules, labelled expectations, committed first.
-- **`python3 tools/delivery/check_delivery.py --branch … --base $(git rev-parse origin/main)`
+- **`python3 tools/delivery/check_delivery.py --branch … --base <the commit in your packet>`
   before creating the bundle; rerun **with** `--bundle …` once it exists. The
   pre-bundle check cannot inspect a file that does not yet exist — that was a
   defect in this rule.

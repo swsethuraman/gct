@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Batch-14 strategy session (Claude) -- a thin driver for the house a_weyl.
 
+STATUS: scratch, planning computation; not pre-registered.
+Provenance: docs/b14_claude_scratch_code.md.
+
 `analysis/wk9_s42_census.a_weyl(lam, delta, n)` is the programme's ambient
 multiplicity (plethysm) routine.  This script only runs it at a named cell with
 a timer and a banked control, so that a single number can be reproduced from one

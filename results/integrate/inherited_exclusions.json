@@ -1,62 +1,84 @@
 {
- "board_numbering": "batch14-prep",
- "purpose": "Machine-applicable form of the theorem-level exclusions. B13-11's results/b13_11/inherited_rules.json names the rules in prose; this gives each one a predicate over (n, r, delta) so a cell catalog can be joined against it. This file is the PROVED-index-to-catalog join; keeping them apart is what let batch 13 close the same cells twice.",
- "exclusions": [
-  {
-   "id": "washout_thm2",
-   "predicate": {"n": 3, "r_max": 5},
-   "statement": "D_k^{per_3} = Sym^3 C^k for k <= 5, so I(D_k^{per_3})_delta = 0 at every degree.",
-   "status": "PROVED",
-   "source": "docs/washout_lemma.md Theorem 2 + Theorem 3(1) restriction lemma",
-   "witness": "exact full-Jacobian rank 35 at both house primes; re-derived from its generator by B13-07"
-  },
-  {
-   "id": "length6_record",
-   "predicate": {"n": 3, "r": 6, "delta_max": 9},
-   "statement": "I(D_6^{per_3})_delta = 0 for delta <= 9.",
-   "status": "PROVED",
-   "source": "delta<=6 Pieri + s37 (docs/transfer_lemma.md sec 4); delta=7 s41+s43 (27 weights); delta=8 s41+s43+s47 (91); delta=9 s79 (210)",
-   "witness": "full ranks at both primes; counts independently reproduced by B13-05, B13-07, B13-09 and B13-11"
-  },
-  {
-   "id": "degree8_global",
-   "predicate": {"n": 3, "delta_max": 8},
-   "statement": "I(D_r^{per_3})_delta = 0 for EVERY r and every delta <= 8; hence mult_pad = mult_red at every weight of every length in every degree <= 8.",
-   "status": "PROVED",
-   "source": "RECONCILIATION RESULT, stated by no single session. length<=5 washout_thm2; length 6 length6_record; length 7 at delta=8 B13-09 (all 42); length 8 at delta=8 B13-05 top cells (all 6). Theorem A of B13-05 bounds the length at min(r, delta, 9), so those are all of them.",
-   "witness": "tools/integrate/reconcile_cells.py frontier table: r=7 d=8 42/42, r=8 d=8 6/6",
-   "note": "B13-05 alone proves delta <= 7. The extension to 8 needs B13-09's length-7 group AND B13-05's length-8 top cells together."
-  },
-  {
-   "id": "n4_gate_containment",
-   "predicate": {"n": 4, "r_max": 4},
-   "statement": "Generic four-variable cubics have a 3x3 determinantal representation, so l*c = det diag(l,M) puts the reducible - hence padded - locus inside the determinant closure: no positive padded gap at quartic length <= 4.",
-   "status": "ADOPTED",
-   "source": "docs/n4_gate.md section 1",
-   "note": "A containment exclusion, NOT an empty-determinant-ideal assertion. The board never cited this; B13-11 had to find it, and without it would have reported 19 false open candidates."
-  },
-  {
-   "id": "cartan_ladder_invariance",
-   "predicate": {"family": "LMR_u_ladder"},
-   "statement": "i_X((65+4k,17,2^7), 24+k) = i_X((65,17,2^7), 24) for every k >= 0 and X in {D,P,R}.",
-   "status": "PROVED",
-   "source": "B13-06 section 'Why the two ladder products cannot improve the gap'",
-   "note": "PRESERVES an unresolved D; does NOT establish D <= 0. Later rungs are not independent opportunities and must not be re-dispatched as such."
-  },
-  {
-   "id": "eleven_row_padded_zero",
-   "predicate": {"n": 4, "r_min": 11},
-   "statement": "l*per_3 has ten essential variables, so its orbit closure lies in the ten-variable subspace variety and carries no constituent of length > 10: mult_pad = 0, hence D <= 0.",
-   "status": "PROVED",
-   "source": "B13-06 section 'Length exclusion'"
-  },
-  {
-   "id": "n3_padded_seven_row",
-   "predicate": {"n": 3, "r_min": 6, "context": "padded_gap_at_l_per2"},
-   "statement": "l*per_2 = z(ad+bc) has exactly five essential variables (five derivatives with pairwise disjoint supports), so every pullback lies in Sub_5: mult_pad = 0 at a seven-row weight, i_pad = a, padded gap -5.",
-   "status": "PROVED",
-   "source": "B13-11 section 'The n=3 control'",
-   "note": "Promoted from a documented assumption. Consequence: the unpadded +1 example at (19,7,2^5) supplies NO padded test at that weight."
-  }
- ]
+  "board_numbering": "batch14-prep",
+  "purpose": "Machine-applicable form of the theorem-level exclusions. B13-11's results/b13_11/inherited_rules.json names the rules in prose; this gives each one a predicate over (n, r, delta) so a cell catalog can be joined against it. This file is the PROVED-index-to-catalog join; keeping them apart is what let batch 13 close the same cells twice.",
+  "exclusions": [
+    {
+      "id": "washout_thm2",
+      "predicate": {
+        "n": 3,
+        "r_max": 5
+      },
+      "statement": "D_k^{per_3} = Sym^3 C^k for k <= 5, so I(D_k^{per_3})_delta = 0 at every degree.",
+      "status": "PROVED",
+      "source": "docs/washout_lemma.md Theorem 2 + Theorem 3(1) restriction lemma",
+      "witness": "exact full-Jacobian rank 35 at both house primes; re-derived from its generator by B13-07"
+    },
+    {
+      "id": "length6_record",
+      "predicate": {
+        "n": 3,
+        "r": 6,
+        "delta_max": 9
+      },
+      "statement": "I(D_6^{per_3})_delta = 0 for delta <= 9.",
+      "status": "PROVED",
+      "source": "delta<=6 Pieri + s37 (docs/transfer_lemma.md sec 4); delta=7 s41+s43 (27 weights); delta=8 s41+s43+s47 (91); delta=9 s79 (210)",
+      "witness": "full ranks at both primes; counts independently reproduced by B13-05, B13-07, B13-09 and B13-11"
+    },
+    {
+      "id": "degree8_global",
+      "predicate": {
+        "n": 3,
+        "delta_max": 8
+      },
+      "statement": "I(D_r^{per_3})_delta = 0 for EVERY r and every delta <= 8; hence mult_pad = mult_red at every weight of every length in every degree <= 8.",
+      "status": "PROVED",
+      "source": "RECONCILIATION RESULT, stated by no single session. length<=5 washout_thm2; length 6 length6_record; length 7 at delta=8 B13-09 (all 42); length 8 at delta=8 B13-05 top cells (all 6). Theorem A of B13-05 bounds the length at min(r, delta) -- the 9 was withdrawn, it was never proved. The exclusion is unaffected: at delta=8 the bound already reads min(r,8) <= 8, so no length above 8 occurs there and the four cases listed are exhaustive for this degree. Corrected batch 14; Astra caught the stale wording.",
+      "witness": "tools/integrate/reconcile_cells.py frontier table: r=7 d=8 42/42, r=8 d=8 6/6",
+      "note": "B13-05 alone proves delta <= 7. The extension to 8 needs B13-09's length-7 group AND B13-05's length-8 top cells together."
+    },
+    {
+      "id": "n4_gate_containment",
+      "predicate": {
+        "n": 4,
+        "r_max": 4
+      },
+      "statement": "Generic four-variable cubics have a 3x3 determinantal representation, so l*c = det diag(l,M) puts the reducible - hence padded - locus inside the determinant closure: no positive padded gap at quartic length <= 4.",
+      "status": "ADOPTED",
+      "source": "docs/n4_gate.md section 1",
+      "note": "A containment exclusion, NOT an empty-determinant-ideal assertion. The board never cited this; B13-11 had to find it, and without it would have reported 19 false open candidates."
+    },
+    {
+      "id": "cartan_ladder_invariance",
+      "predicate": {
+        "family": "LMR_u_ladder"
+      },
+      "statement": "i_X((65+4k,17,2^7), 24+k) = i_X((65,17,2^7), 24) for every k >= 0 and X in {D,P,R}.",
+      "status": "PROVED",
+      "source": "B13-06 section 'Why the two ladder products cannot improve the gap'",
+      "note": "PRESERVES an unresolved D; does NOT establish D <= 0. Later rungs are not independent opportunities and must not be re-dispatched as such."
+    },
+    {
+      "id": "eleven_row_padded_zero",
+      "predicate": {
+        "n": 4,
+        "r_min": 11
+      },
+      "statement": "l*per_3 has ten essential variables, so its orbit closure lies in the ten-variable subspace variety and carries no constituent of length > 10: mult_pad = 0, hence D <= 0.",
+      "status": "PROVED",
+      "source": "B13-06 section 'Length exclusion'"
+    },
+    {
+      "id": "n3_padded_seven_row",
+      "predicate": {
+        "n": 3,
+        "r_min": 6,
+        "context": "padded_gap_at_l_per2"
+      },
+      "statement": "l*per_2 = z(ad+bc) has exactly five essential variables (five derivatives with pairwise disjoint supports), so every pullback lies in Sub_5: mult_pad = 0 at a seven-row weight, i_pad = a, padded gap -5.",
+      "status": "PROVED",
+      "source": "B13-11 section 'The n=3 control'",
+      "note": "Promoted from a documented assumption. Consequence: the unpadded +1 example at (19,7,2^5) supplies NO padded test at that weight."
+    }
+  ]
 }

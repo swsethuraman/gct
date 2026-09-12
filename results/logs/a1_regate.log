@@ -1,0 +1,24 @@
+== matmul_mod_wide vs flint, at the seams ==
+  OK   K=< 2^21                           K=    1,000 p=2147483647  wide_exact=True narrow=exact delegates=True
+  OK   K=< 2^21                           K=  524,287 p=2147483647  wide_exact=True narrow=exact delegates=True
+  OK   K=< 2^21                           K=  524,288 p=2147483647  wide_exact=True narrow=exact delegates=True
+  OK   K=< 2^21                           K=  524,289 p=2147483647  wide_exact=True narrow=exact delegates=True
+  OK   K=< 2^21                           K=2,097,151 p=2147483647  wide_exact=True narrow=exact delegates=True
+  OK   K=>=2^21                           K=2,097,152 p=2147483647  wide_exact=True narrow=raised AssertionError
+  OK   K=>=2^21                           K=2,097,153 p=2147483647  wide_exact=True narrow=raised AssertionError
+  OK   K=>=2^21                           K=3,000,000 p=2147483647  wide_exact=True narrow=raised AssertionError
+
+== both house primes, above the ceiling ==
+  OK   both primes                        K=2,097,159 p=2147483647  wide_exact=True narrow=raised AssertionError
+  OK   both primes                        K=2,097,159 p=2147483629  wide_exact=True narrow=raised AssertionError
+
+== dtype discipline at the consumer boundary ==
+  OK   int64 contiguous (baseline)          matches the int64 baseline exactly
+  OK   int32 inputs                         matches the int64 baseline exactly
+  OK   uint32 inputs                        matches the int64 baseline exactly
+  OK   object inputs                        matches the int64 baseline exactly
+  OK   non-contiguous (transposed view)     matches the int64 baseline exactly
+  OK   unreduced: entries shifted by +p     matches the int64 baseline exactly
+  OK   negative representatives             matches the int64 baseline exactly
+
+  17/17 checks pass -> results/b14_a1/components.json

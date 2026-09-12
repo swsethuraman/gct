@@ -1,0 +1,16 @@
+{
+  "valid": {
+    "exit": 0,
+    "log": "degree 25: 31 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 5, of which 1 are the LMR Cartan products themselves -> 4 of the 30 non-Cartan components reached, 26 not\ndegree 26: 208 components (<=10 rows); reached by a Cartan product of the rung-13/14 relations: 26, of which 3 are the LMR Cartan products themselves -> 23 of the 205 non-Cartan components reached, 182 not\nCONTROL Cartan products of LMR all reached: PASS\nCONTROL no ten-row target reached from a nine-row source: PASS\n239 targets -> C:\\Users\\swami\\Projects\\gct-gpt\\Batch14_Planning\\reach_proposed_valid.json, 0.1s\n",
+    "matches_delivered_json": true
+  },
+  "empty": {
+    "exit": 1,
+    "log": "FAIL: incomplete, duplicated, or unexpected target census\n"
+  },
+  "missing_control": {
+    "exit": 1,
+    "log": "FAIL: incomplete, duplicated, or unexpected target census\n"
+  },
+  "scope": "Coverage controls hardened; target arithmetic unchanged. Not an independent reconstruction of the reachability census."
+}

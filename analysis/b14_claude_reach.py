@@ -2,6 +2,9 @@
 """Batch-14 strategy session (Claude) -- which LMR product targets are reached by a
 single Cartan product of the rung-13/14 padded relations.
 
+STATUS: scratch, planning computation. See docs/b14_claude_scratch_code.md.
+A reachability flag is not a D exclusion; certified ideal bounds are also needed.
+
 Lemma T (batch-14 memo; s57's Lemma L argument with any highest-weight vector w
 of weight mu in A_k in place of u): multiplication by w injects I(X) cap M_{lam,delta}
 into I(X) cap M_{lam+mu,delta+k}.  So if
@@ -9,8 +12,9 @@ into I(X) cap M_{lam+mu,delta+k}.  So if
     nu - lam_source  is dominant   and   a(nu - lam_source, delta_nu - delta_source) >= 1,
 
 then every relation of I(P) at the source cell transports to nu, and
-i_pad(nu) >= i_pad(source).  Those targets are decided by Lemma T alone; the rest
-need the transport ranks that avenue 2 of the memo computes.
+i_pad(nu) >= i_pad(source).  Those targets admit this transport. A positive lower bound still needs a
+certified source ideal dimension. Excluding D > 0 additionally requires a
+compatible certified upper bound for the determinant ideal.
 
 Sources checked: the rung-13 cell (21,17,2^7) at delta 13, the rung-14 cell
 (25,17,2^7) at delta 14, and the LMR cell (65,17,2^7) at delta 24.
@@ -81,6 +85,18 @@ def main():
     rows = [r for r in json.load(open(CENSUS))['rows']
             if r['degree'] in (25, 26) and len(r['partition']) <= 10]
 
+    keys = [(r['degree'], tuple(r['partition'])) for r in rows]
+    expected_counts = {25: 31, 26: 208}
+    expected_controls = {(25, (69, 17, 2, 2, 2, 2, 2, 2, 2)),
+                         (26, (73, 17, 2, 2, 2, 2, 2, 2, 2)),
+                         (26, (71, 19, 2, 2, 2, 2, 2, 2, 2)),
+                         (26, (69, 21, 2, 2, 2, 2, 2, 2, 2))}
+    if (dict(Counter(d for d, _ in keys)) != expected_counts
+            or len(set(keys)) != len(keys)
+            or not expected_controls.issubset(set(keys))):
+        print('FAIL: incomplete, duplicated, or unexpected target census', file=sys.stderr)
+        return 1
+
     out, counts = [], Counter()
     for r in rows:
         nu = tuple(r['partition'])
@@ -98,8 +114,8 @@ def main():
               f'products themselves -> {hit - cartan} of the {tot - cartan} non-Cartan '
               f'components reached, {tot - hit} not')
 
-    ctrl_cartan = all(any(o['reached_by'].values()) for o in out
-                      if tuple(o['nu']) in CARTAN_CONTROL)
+    by_key = {(o['degree'], tuple(o['nu'])): o for o in out}
+    ctrl_cartan = all(by_key[key]['reached_by']['lmr'] for key in expected_controls)
     ctrl_ten = not any(any(o['reached_by'].values()) for o in out if o['length'] == 10)
     print(f'CONTROL Cartan products of LMR all reached: {"PASS" if ctrl_cartan else "FAIL"}')
     print(f'CONTROL no ten-row target reached from a nine-row source: '
