@@ -1,0 +1,49 @@
+{
+ "what": "integrator replay of the B14-01 + B14-02 joint 73-minor",
+ "target_dim_adopted": 73,
+ "lineages_for_73": [
+  "Weyl alternation (B13-01)",
+  "power-sum/MN characters (Astra pilot)"
+ ],
+ "completing_member": {
+  "source_row_index": 15,
+  "rung": 13,
+  "transport_exponent": 0,
+  "why_it_is_a_target_member": "phi(F_15)(l,c) = F_15(l.c); restriction is GL-equivariant so it carries weight-lambda HWVs to weight-lambda HWVs; bidegree (13,13); transport exponent 0 so the matrix row is the restriction itself"
+ },
+ "join_validated_by": [
+  "col_id == P13 primary ids in file order",
+  "col_u_symbol == P13 primary u_symbols",
+  "B14-01 minor u_symbols == file at its indices"
+ ],
+ "ranks": {
+  "2147483647": {
+   "rank_72": 72,
+   "rank_73_with_row15": 73,
+   "control_duplicate_row": 72
+  },
+  "2147483629": {
+   "rank_72": 72,
+   "rank_73_with_row15": 73,
+   "control_duplicate_row": 72
+  }
+ },
+ "a_rung13": 39,
+ "rank_A": 36,
+ "i_red_13": 3,
+ "conclusion": {
+  "i_pad_24_floor": 3,
+  "i_pad_24_ceiling_banked": 5,
+  "D_interval": [
+   -4,
+   -2
+  ],
+  "excluded": [
+   1,
+   0,
+   -1
+  ],
+  "open": "whether D = -4 exactly"
+ },
+ "values_are": "ranks over F_p of evaluation matrices on the 96 P13 primary points; no transform"
+}
