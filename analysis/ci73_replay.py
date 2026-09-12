@@ -8,11 +8,11 @@ def main():
         ('literal',120,0,['analysis/ci73_literal_controls.py'],True),
         ('benchmark',120,0,['analysis/ci73_benchmark.py'],True),
         ('chow',300,0,['analysis/ci73_chow_control.py'],True),
-        ('standard',1800,0,['tools/verify/verify.py','results/ci73/certificate.json','--report','results/ci73/receiver_report.md'],True),
         ('controls',1800,0,['analysis/ci73_controls.py'],True),
         ('inherited',120,0,['analysis/ci73_inherited_run.py'],True),
         ('equations',120,0,['analysis/ci73_export.py'],True)]
     outcomes=[]
+    Path('results/ci73/replay_results.json').write_text('[]\n')
     for name,seconds,expected,args,bounded in jobs:
         stem='ci73_replay_'+name
         command=[sys.executable]+(['analysis/ci73_bound.py','--seconds',str(seconds),'--memory-mb','768','--name',stem] if bounded else [])+args

@@ -4,20 +4,30 @@ from fractions import Fraction
 from pathlib import Path
 sys.path.insert(0,str(Path('tools/verify').resolve()))
 import ci73,ci73_io as io,ci73_linear as la
-from verify import verify_file
+from verify import verify_file,main as standard_main
 
 OUT=Path('results/ci73')
 
 def write(path,data):path.write_text(json.dumps(data,indent=1)+'\n',encoding='utf-8')
 
 def main():
+    write(OUT/'controls_summary.json',{'status':'RUNNING'})
+    write(OUT/'controls.json',[])
     base=io.load(OUT/'certificate.json');session=ci73.Session();results=[]
     active=OUT/'control_active.json'
-    def check(name,c,expected='FAIL',gate=None):
+    def check(name,c,expected='FAIL',gate=None,cli=False):
         write(active,c);before=(session.calls,session.entries,session.hits);start=time.monotonic()
-        status,log=verify_file(str(active),ci73_session=session)
+        if cli:
+            if io.digest(io.load(OUT/'certificate.json'))!=io.digest(c):raise RuntimeError('CLI fixture differs from authentic certificate')
+            exit_code=standard_main([str(OUT/'certificate.json'),'--report',str(OUT/'receiver_report.md'),
+                '--json-report',str(OUT/'verification.json')],ci73_session=session)
+            receipt=io.load(OUT/'verification.json')['results'][0]
+            status,log=receipt['status'],receipt['checks']
+            if exit_code!=0:raise RuntimeError('normal verifier CLI returned nonzero')
+        else:status,log=verify_file(str(active),ci73_session=session)
         passed=status==expected and (gate is None or log[-1][0]==gate)
         item=dict(name=name,status=status,expected=expected,passed=passed,seconds=time.monotonic()-start,
+            certificate_canonical_sha256=io.digest(c),
             fresh_calls=session.calls-before[0],fresh_entries=session.entries-before[1],
             live_session_cache_hits=session.hits-before[2],checks=log)
         results.append(item);write(OUT/'controls.json',results)
@@ -25,11 +35,12 @@ def main():
         if not passed:raise RuntimeError('control failed: '+name+' '+str(log[-1]))
     def dep(c,name,mutator):
         value=io.read_reference(c['dependencies'][name],OUT);mutator(value)
-        path=OUT/'cache'/('control_'+name+'.json');write(path,value)
+        path=OUT/'cache'/('control_'+name+'.json.gz')
+        path.write_bytes(gzip.compress(json.dumps(value,separators=(',',':')).encode(),mtime=0))
         c['dependencies'][name]=io.reference(path,OUT)
     def mutant(name,fn,gate=None):
         c=copy.deepcopy(base);fn(c);check(name,c,gate=gate)
-    check('fresh standard-dispatcher positive',base,'PASS')
+    check('fresh standard-dispatcher positive',base,'PASS',cli=True)
     write(OUT/'dispatcher_positive.json',results[-1])
     def duplicate(c):
         c['target_members'][72]=copy.deepcopy(c['target_members'][0])

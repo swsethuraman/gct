@@ -53,6 +53,9 @@ pullback has bidegree (13,13), so this member also belongs to N13. Its membershi
 uses its source definition, not any kernel equation. The schema also permits
 other verified source pullbacks; any proposed replacement must pass fresh value
 and full target minor checks.
+For such a reference, `basis: native_unscaled` selects the validated native
+representation with its registered transport to degree 13 and without the
+optional rational source-row scale. Source 15 needs no transport.
 
 ## 2. Dimensions independent of point ranks
 

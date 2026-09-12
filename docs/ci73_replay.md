@@ -31,7 +31,7 @@ alternative compatible compiler if necessary. Compilation is automatic, with
 the executable named by the backend source hash under `results/ci73/cache`.
 
 ```powershell
-python analysis/ci73_bound.py --seconds 1800 --memory-mb 768 --name ci73_receiver tools/verify/verify.py results/ci73/certificate.json --report results/ci73/receiver_report.md
+python analysis/ci73_bound.py --seconds 1800 --memory-mb 768 --name ci73_receiver tools/verify/verify.py results/ci73/certificate.json --report results/ci73/receiver_report.md --json-report results/ci73/verification.json
 ```
 
 Expected: standard verifier **PASS**, exit 0, dimension 39/73, exact source
@@ -39,6 +39,8 @@ rank 36, three polynomial kernel equations. Any missing dependency, disagreement
 compiler error or resource failure gives no acceptance. The run starts empty
 and freshly evaluates all required source, target and generic witness entries.
 It never accepts the stored backend output as an evaluation oracle.
+The optional JSON report starts in RUNNING state and records the digest of the
+certificate actually consumed; the equation exporter requires that binding.
 
 The checker also works as the direct standard command
 `python tools/verify/verify.py results/ci73/certificate.json`; the bounded wrapper
@@ -63,12 +65,12 @@ exit codes enforced and stdout/stderr retained in `results/logs`:
    verification, and normal-dispatcher positive and negative tests.
 2. Literal mixed tests (192 comparisons spanning three independent directions),
    the source15 benchmark, and the forced Chow rank-zero control.
-3. The standard degree-13 verifier on the authentic certificate, including a
-   complete fresh polynomial replay.
-4. New degree-13 adversarial tests and positive rational-rescaling and alternate
-   completing-source controls. This stage computes its own fresh authentic
-   baseline once and then memoizes only values computed in that live process.
-5. Separate inherited S74 minor arithmetic replay, and explicit equation export.
+3. The standard degree-13 verifier CLI path on the authentic certificate,
+   including a complete fresh polynomial replay and JSON report. The same
+   process then runs the new adversarial tests and positive rational-rescaling
+   and alternate-completing-source controls. It memoizes only polynomial values
+   freshly computed during that process's authentic verification.
+4. Separate inherited S74 minor arithmetic replay, and explicit equation export.
 
 The new control script records each rejected mathematical gate. It updates
 dependency digests when deliberately changing definitions, so rejection is not

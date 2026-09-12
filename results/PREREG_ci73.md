@@ -101,3 +101,21 @@ and checks elapsed limits again before acceptance and on finalization. Manual
 sleep still causes an overrun rejection. Per-batch 120 s and overall 1800 s,
 one evaluation worker and aggregate 768 MiB limits are unchanged. The next run
 starts all polynomial evaluations fresh; it does not promote interrupted caches.
+
+## Control packaging correction and final validation schedule
+
+The complete standard-dispatcher polynomial baseline passed in 818.782 s with
+15,660 fresh entries. Its control runner then rejected 20 corruptions before
+fixture construction stopped: the uncompressed ambient power mutation exceeded
+the 5,000,000-byte input ceiling. This was not a mathematical disagreement.
+Mutated reference fixtures are now compressed JSON, retaining the same expanded
+limit and checked content hashes. The final combined run calls the normal
+verifier CLI path on an empty live session and continues all mutations in that
+same session; no disk value cache is trusted.
+
+Remaining serial checks: original 97-control/dispatcher replay (existing
+120/600-second per-job limits), the forced Chow zero control (300 s), inherited
+S74 minor arithmetic (120 s), and equation export (120 s). Resource probes use
+a 32 MiB job against a 128 MiB allocation (60 s, expected exit 77), a one-microsecond
+backend deadline (60 s supervisor, expected exit 78), and a one-second wall cap
+(expected exit 124). These probes are isolated from the proof calculation.

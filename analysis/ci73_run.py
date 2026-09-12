@@ -1,14 +1,11 @@
-"""Full fresh CI73 verifier run with a machine-readable result."""
-import json,sys
+"""Full fresh CI73 replay through the repository's normal verifier CLI."""
+import sys
 from pathlib import Path
 sys.path.insert(0,str(Path('tools/verify').resolve()))
-import ci73,ci73_io
+from verify import main as standard_main
 
 def main():
-    path=Path('results/ci73/certificate.json')
-    result=ci73.verify(ci73_io.load(path),path.parent)
-    Path('results/ci73/verification.json').write_text(json.dumps(result,indent=2)+'\n')
-    print(json.dumps({k:v for k,v in result.items() if k!='checks'}),flush=True)
-    raise SystemExit(0 if result['status']=='PASS' else 1)
+    raise SystemExit(standard_main(['results/ci73/certificate.json',
+        '--report','results/ci73/receiver_report.md','--json-report','results/ci73/verification.json']))
 
 if __name__=='__main__':main()

@@ -8,9 +8,12 @@ import ci73_io as io,ci73_eval as ev
 OUT=Path('results/ci73')
 
 def main():
-    receipt=io.load(OUT/'dispatcher_positive.json')
-    if receipt['status']!='PASS' or not receipt['passed']:raise RuntimeError('full polynomial verification absent')
+    receipt=io.load(OUT/'verification.json')
+    if receipt['status']!='PASS' or len(receipt['results'])!=1:raise RuntimeError('full polynomial verification absent')
     c=io.load(OUT/'certificate.json');s=io.read_reference(c['dependencies']['source'],OUT)
+    identity=[json.loads(detail)['canonical_sha256'] for name,ok,detail in receipt['results'][0]['checks']
+              if name=='consumed certificate identity' and ok]
+    if identity!=[io.digest(c)]:raise RuntimeError('verified certificate identity differs from equation input')
     K=[[str(Fraction(c['source_rows'][i]['scale'])*Fraction(x)) for x in row] for i,row in enumerate(c['kernel']['entries'])]
     equations={'format':'ci73-explicit-equations/1','field':'Q','lambda':[21,17]+[2]*7,'degree':13,
         'coefficient_convention':c['conventions'],'indexing':'zero-based source rows; equation columns j=1,2,3',
