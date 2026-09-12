@@ -84,3 +84,10 @@ record or the literature, cited).
 | `build_no_longer_binding` | the raising-row build is not the wall: the pilot at `N_S·δ = 1.47×10⁸` builds at **1.96 GB**; the rows are 664 MB and the old "4 GB" was transients. Ceiling now `N_S·δ ≈ 2.8–5.4×10⁸`; **the consumer binds first** | B13-10 |
 | `negative_control_forced` | diagonal pencils make `per₃` a product of three linear forms, whose coordinate ring carries no constituent of more than three rows — so any length-6 weight **must** read rank 0. Forced by representation theory, works at weights with no banked history | B13-08 Control C. **Required on every evaluation-rank sweep** |
 | `check_must_be_able_to_fail` | a check that cannot fail is not a check. Six instances in batch 13 alone: a lookup that skipped missing targets; a function below a `__main__` guard; a support condition with no teeth; a comparator matching an all-`None` record; a join comparing padded to unpadded keys; and two **direction-of-inference** errors | mine, B13-03, B13-04, B13-08, B13-10, B13-11, B13-12 |
+
+## F. Batch-14 complete interpolation
+
+| id | statement | status | source |
+|---|---|---|---|
+| `complete_interpolation_kernel` | For a verified source basis, S(M) subset N, dim N=h, h genuine members with a nonzero h-minor at P, and exact A_ij=(SF_i)(P_j), ker S is precisely the LEFT kernel of source-row A: A^T K=0. A proved dimension upper bound h plus that minor also suffices. | PROVED | `docs/b14_03_complete_interpolation.md` sections 1-2 |
+| `complete_interpolation_888_control` | The ternary quartic degree-6 weight (8,8,8) has source dimension 2, target dimension 1, reducible rank 1 and i_red=1; now certified by reconstructed mixed brackets and CI. All 97 control cases pass, including 95 rejected corruptions/missing inputs. | CERTIFIED | `results/b14_03/control.json`, `results/b14_03/control_results.json`, independent `tools/verify/complete_interpolation.py`; mathematical result agrees with B13-03, certification route is new |

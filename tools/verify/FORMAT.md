@@ -389,3 +389,21 @@ asserted the opposite and fired on a correct certificate.
 self-test passes.  What remains for session 78 is not validity but *unification*:
 one dialect of `sparse_nullity` instead of two, and a decision on whether
 `split_rank` and `hybrid_kernel` can be made re-derivable rather than recorded.
+
+## Kind `complete_interpolation` (B14-03)
+
+The exact specification and proof are in `docs/b14_03_complete_interpolation.md`;
+canonical examples are `results/b14_03/control.json` and
+`results/b14_03/rational_control.json`. The kind uses `gct-cert/1`, field `Q`,
+with the strict profile `ternary_quartic_888_d6`. `tools/verify/verify.py`
+dispatches to the independent `complete_interpolation.py` checker without
+loading legacy numerical backends.
+
+PASS requires a complete source, a proved target dimension, reconstructed mixed
+bracket members, a full nonzero target minor, exact source arithmetic (including
+checked denominator/CRT bounds), and the exact **left** kernel: source rows and
+point columns mean `A^T K=0`. Every target entry is reconstructed from bracket
+specifications; delivered matrices are comparisons, not authorities. Missing
+inputs, unknown fields, empty controls and unsupported profiles never PASS.
+A sampled modular kernel alone cannot satisfy this kind. Other certificate
+kinds and their verification ceilings are unchanged.

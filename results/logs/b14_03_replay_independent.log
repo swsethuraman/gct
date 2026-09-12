@@ -1,0 +1,94 @@
+{"board_numbering": "batch14", "session_id": "B14-03", "pid": 35180, "memory_before": {"total_physical": 33752997888, "available_physical": 13631098880, "load": 59}, "memory_cap_mb": 768, "wall_cap_seconds": 600, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "started_utc": "2026-09-12T03:51:02Z"}
+{
+  "status": "PASS",
+  "claim": {
+    "source_dimension": 2,
+    "target_dimension": 1,
+    "rank_Q": 1,
+    "i_red": 1
+  },
+  "checks": [
+    {
+      "check": "strict required inputs and profile",
+      "ok": true
+    },
+    {
+      "check": "complete source over Q",
+      "ok": true,
+      "detail": {
+        "weight_dimension": 561,
+        "raising_rows": 1056,
+        "ranks_mod_p": [
+          559,
+          559
+        ],
+        "dimension_Q": 2,
+        "independent_exact_HWs": 2
+      }
+    },
+    {
+      "check": "target dimension, bracket membership and full minor",
+      "ok": true,
+      "detail": {
+        "upper_bound_proof": [
+          {
+            "nu": [
+              8,
+              8,
+              2
+            ],
+            "weight_dimension": 38,
+            "raising_rows": 54,
+            "ranks_mod_p": [
+              37,
+              37
+            ]
+          }
+        ],
+        "dimension_Q": 1,
+        "polynomial_terms": 1720,
+        "minor_determinant": 209952,
+        "entries": [
+          [
+            209952,
+            1143072
+          ]
+        ]
+      }
+    },
+    {
+      "check": "exact source arithmetic and left kernel",
+      "ok": true,
+      "detail": {
+        "A_Z": [
+          [
+            729,
+            3969
+          ],
+          [
+            729,
+            3969
+          ]
+        ],
+        "row_denominators": [
+          1,
+          1
+        ],
+        "height_bounds": [
+          7494539904,
+          7541849088
+        ],
+        "CRT_modulus": 4611685975477714963,
+        "ranks_mod_p": {
+          "2147483647": 1,
+          "2147483629": 1
+        },
+        "rank_Q": 1,
+        "left_nullity": 1
+      }
+    }
+  ],
+  "wall_seconds": 5.199284000002081
+}
+
+{"wall_seconds": 5.212196899999981}

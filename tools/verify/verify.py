@@ -31,10 +31,9 @@ sys.set_int_max_str_digits(2_000_000)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from layer1 import check_matrix_certificate          # noqa: E402
-from layer2 import check_hwv_certificate, check_full_rank_certificate  # noqa: E402
+# Load legacy numerical backends only for kinds that use them. The CI profile
+# has an independent exact checker and does not require flint or scipy.
 from points import FAMILIES                          # noqa: E402
-from layer3 import check_sparse_nullity_certificate, parse_field  # noqa: E402
 
 FORMAT = "gct-cert/1"
 CONVENTIONS = {
@@ -98,6 +97,7 @@ def _check_field(cert, where="field"):
     the pre-session-67 kinds it is optional and, when present, must be consistent
     with modulus/prime; on the new kinds it is required and enforced by their
     schema.  A finite field never certifies a characteristic-zero *kernel*."""
+    from layer3 import parse_field
     f = cert["field"]
     try:
         knd, p = parse_field(f)
@@ -108,6 +108,13 @@ def _check_field(cert, where="field"):
 
 def validate(cert):
     """Strict schema check; raises Unparseable."""
+    if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
+        from complete_interpolation import schema, Rejected
+        try:
+            schema(cert)
+        except (Rejected, KeyError, TypeError, ValueError) as exc:
+            raise Unparseable(str(exc)) from exc
+        return "complete_interpolation"
     _need(cert, ["format", "kind", "title", "produced_by"],
           allowed=["format", "kind", "title", "produced_by", "notes", "cell", "conventions",
                    "modulus", "vectors", "claims", "matrix", "matrix_source", "claimed_rank_Q",
@@ -445,22 +452,37 @@ def verify_file(path):
         cert = load(path)
     except Exception as e:                       # noqa: BLE001
         return "UNPARSEABLE", [("read/parse JSON", False, str(e))]
+    if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
+        from complete_interpolation import load as ci_load, verify as ci_verify
+        try:
+            result = ci_verify(ci_load(path))
+        except Exception as exc:
+            return "UNPARSEABLE", [("CI input", False, str(exc))]
+        log = [(item["check"], item["ok"], json.dumps(item.get("detail", {})))
+               for item in result["checks"]]
+        if result["status"] != "PASS":
+            log.append((result["code"], False, result["detail"]))
+        return result["status"], log
     try:
         kind = validate(cert)
     except Unparseable as e:
         return "UNPARSEABLE", [("schema", False, str(e))]
     try:
         if kind == "hwv":
+            from layer2 import check_hwv_certificate
             ok = check_hwv_certificate(cert, log)
         elif kind == "matrix":
+            from layer1 import check_matrix_certificate
             ok = check_matrix_certificate(cert, log)
         elif kind == "sparse_nullity":
+            from layer3 import check_sparse_nullity_certificate
             ok = check_sparse_nullity_certificate(cert, log)
         elif kind == "split_rank":
             ok = _check_split_rank(cert, log)
         elif kind == "hybrid_kernel":
             ok = _check_hybrid_kernel(cert, log)
         else:
+            from layer2 import check_full_rank_certificate
             ok = check_full_rank_certificate(cert, log)
     except ValueError as e:                      # malformed content found while checking
         return "UNPARSEABLE", log + [("content", False, str(e))]

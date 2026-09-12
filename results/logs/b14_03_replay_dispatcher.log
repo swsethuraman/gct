@@ -1,0 +1,18 @@
+{"board_numbering": "batch14", "session_id": "B14-03", "pid": 36668, "memory_before": {"total_physical": 33752997888, "available_physical": 13625884672, "load": 59}, "memory_cap_mb": 768, "wall_cap_seconds": 600, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "started_utc": "2026-09-12T03:51:07Z"}
+PASS        results\b14_03\control.json  (5.0s)  Complete h=1 interpolation with mixed source basis
+    [ok  ] strict required inputs and profile — {}
+    [ok  ] complete source over Q — {"weight_dimension": 561, "raising_rows": 1056, "ranks_mod_p": [559, 559], "dimension_Q": 2, "independent_exact_HWs": 2}
+    [ok  ] target dimension, bracket membership and full minor — {"upper_bound_proof": [{"nu": [8, 8, 2], "weight_dimension": 38, "raising_rows": 54, "ranks_mod_p": [37, 37]}], "dimension_Q": 1, "polynomial_terms": 1720, "minor_determinant": 209952, "entries": [[209952, 1143072]]}
+    [ok  ] exact source arithmetic and left kernel — {"A_Z": [[729, 3969], [729, 3969]], "row_denominators": [1, 1], "height_bounds": [7494539904, 7541849088], "CRT_modulus": 4611685975477714963, "ranks_mod_p": {"2147483647": 1, "2147483629": 1}, "rank_Q": 1, "left_nullity": 1}
+PASS        results\b14_03\rational_control.json  (0.0s)  Complete h=1 interpolation with mixed source basis
+    [ok  ] strict required inputs and profile — {}
+    [ok  ] complete source over Q — {"weight_dimension": 561, "raising_rows": 1056, "ranks_mod_p": [559, 559], "dimension_Q": 2, "independent_exact_HWs": 2}
+    [ok  ] target dimension, bracket membership and full minor — {"upper_bound_proof": [{"nu": [8, 8, 2], "weight_dimension": 38, "raising_rows": 54, "ranks_mod_p": [37, 37]}], "dimension_Q": 1, "polynomial_terms": 1720, "minor_determinant": 209952, "entries": [[209952, 1143072]]}
+    [ok  ] exact source arithmetic and left kernel — {"A_Z": [[729, 3969], [729, 3969]], "row_denominators": [2, 3], "height_bounds": [7494539904, 7541849088], "CRT_modulus": 4611685975477714963, "ranks_mod_p": {"2147483647": 1, "2147483629": 1}, "rank_Q": 1, "left_nullity": 1}
+PASS        results\b14_03\control.json.gz  (0.0s)  Complete h=1 interpolation with mixed source basis
+    [ok  ] strict required inputs and profile — {}
+    [ok  ] complete source over Q — {"weight_dimension": 561, "raising_rows": 1056, "ranks_mod_p": [559, 559], "dimension_Q": 2, "independent_exact_HWs": 2}
+    [ok  ] target dimension, bracket membership and full minor — {"upper_bound_proof": [{"nu": [8, 8, 2], "weight_dimension": 38, "raising_rows": 54, "ranks_mod_p": [37, 37]}], "dimension_Q": 1, "polynomial_terms": 1720, "minor_determinant": 209952, "entries": [[209952, 1143072]]}
+    [ok  ] exact source arithmetic and left kernel — {"A_Z": [[729, 3969], [729, 3969]], "row_denominators": [1, 1], "height_bounds": [7494539904, 7541849088], "CRT_modulus": 4611685975477714963, "ranks_mod_p": {"2147483647": 1, "2147483629": 1}, "rank_Q": 1, "left_nullity": 1}
+PASS 3, RECORDED 0, FAIL 0, UNPARSEABLE 0, ERROR 0
+{"wall_seconds": 5.017304299995885}

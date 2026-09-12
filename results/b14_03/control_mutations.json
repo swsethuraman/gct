@@ -1,0 +1,1628 @@
+[
+  {
+    "name": "complete_control",
+    "edits": [],
+    "expected_status": "PASS",
+    "expected_code": null
+  },
+  {
+    "name": "wrong_points",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "l"
+        ],
+        "value": [
+          2,
+          0,
+          0
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "target_entries"
+  },
+  {
+    "name": "wrong_source_scaling",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "row_denominators"
+        ],
+        "value": [
+          2,
+          1
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_scaling"
+  },
+  {
+    "name": "invalid_target_membership",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members",
+          0,
+          "columns"
+        ],
+        "value": [
+          [
+            0,
+            6,
+            6
+          ],
+          [
+            1,
+            7,
+            8
+          ],
+          [
+            2,
+            8,
+            9
+          ],
+          [
+            3,
+            9,
+            10
+          ],
+          [
+            4,
+            10,
+            11
+          ],
+          [
+            5,
+            11,
+            7
+          ],
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            9,
+            10,
+            11
+          ]
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "target_membership"
+  },
+  {
+    "name": "rank_deficient_target",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members",
+          0,
+          "columns"
+        ],
+        "value": [
+          [
+            0,
+            6,
+            6
+          ],
+          [
+            1,
+            7,
+            8
+          ],
+          [
+            2,
+            8,
+            9
+          ],
+          [
+            3,
+            9,
+            10
+          ],
+          [
+            4,
+            10,
+            11
+          ],
+          [
+            5,
+            11,
+            7
+          ],
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            9,
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "path": [
+          "target",
+          "evaluation",
+          "entries"
+        ],
+        "value": [
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "path": [
+          "target",
+          "minor",
+          "determinant"
+        ],
+        "value": 0
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "target_rank"
+  },
+  {
+    "name": "insufficient_CRT_modulus",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "primes"
+        ],
+        "value": [
+          2147483647
+        ]
+      },
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "modulus"
+        ],
+        "value": 2147483647
+      },
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "residues"
+        ],
+        "value": {
+          "2147483647": [
+            [
+              729,
+              3969
+            ],
+            [
+              729,
+              3969
+            ]
+          ]
+        }
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "crt_insufficient"
+  },
+  {
+    "name": "one_altered_integer_entry",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "entries",
+          0,
+          0
+        ],
+        "value": 730
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_entries"
+  },
+  {
+    "name": "congruent_wrong_integer_lift",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "entries",
+          0,
+          0
+        ],
+        "value": 4611685975477715692
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_entries"
+  },
+  {
+    "name": "bad_CRT_residue",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "residues",
+          "2147483647",
+          0,
+          0
+        ],
+        "value": 730
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "crt_residues"
+  },
+  {
+    "name": "wrong_target_dimension",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "dimension"
+        ],
+        "value": 2
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "target_dimension"
+  },
+  {
+    "name": "wrong_source_dimension",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof",
+          "dimension"
+        ],
+        "value": 3
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_dimension"
+  },
+  {
+    "name": "empty_points",
+    "edits": [
+      {
+        "path": [
+          "points"
+        ],
+        "value": []
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "points"
+  },
+  {
+    "name": "empty_target_members",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members"
+        ],
+        "value": []
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "members"
+  },
+  {
+    "name": "empty_source_basis",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "basis"
+        ],
+        "value": []
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "source_basis"
+  },
+  {
+    "name": "missing_cubic_coordinate",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "cubic",
+          0
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "points"
+  },
+  {
+    "name": "duplicate_cubic_coordinate",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "cubic",
+          0
+        ],
+        "value": [
+          [
+            2,
+            1,
+            0
+          ],
+          -1
+        ]
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "points"
+  },
+  {
+    "name": "wrong_values_are",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "values_are"
+        ],
+        "value": "normalized values"
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "values_are"
+  },
+  {
+    "name": "wrong_orientation",
+    "edits": [
+      {
+        "path": [
+          "conventions",
+          "orientation"
+        ],
+        "value": "A K=0"
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "conventions"
+  },
+  {
+    "name": "unknown_member_key",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members",
+          0,
+          "untrusted_proof"
+        ],
+        "value": "proved"
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "schema"
+  },
+  {
+    "name": "unsupported_large_profile",
+    "edits": [
+      {
+        "path": [
+          "profile"
+        ],
+        "value": "degree13"
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": "unsupported_profile"
+  },
+  {
+    "name": "wrong_source_polynomial",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "basis",
+          0,
+          0,
+          1
+        ],
+        "value": "289"
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_membership"
+  },
+  {
+    "name": "source_rank_loss",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "change_of_basis"
+        ],
+        "value": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "source_scaling"
+  },
+  {
+    "name": "wrong_left_kernel",
+    "edits": [
+      {
+        "path": [
+          "kernel",
+          "entries"
+        ],
+        "value": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "left_kernel"
+  },
+  {
+    "name": "right_kernel_in_source_coordinates",
+    "edits": [
+      {
+        "path": [
+          "kernel",
+          "entries"
+        ],
+        "value": [
+          [
+            49
+          ],
+          [
+            -9
+          ]
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "left_kernel"
+  },
+  {
+    "name": "consistent_rational_rescaling",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "change_of_basis"
+        ],
+        "value": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            0,
+            "1/3"
+          ]
+        ]
+      },
+      {
+        "path": [
+          "source_arithmetic",
+          "row_denominators"
+        ],
+        "value": [
+          2,
+          3
+        ]
+      },
+      {
+        "path": [
+          "kernel",
+          "entries"
+        ],
+        "value": [
+          [
+            2
+          ],
+          [
+            -3
+          ]
+        ]
+      }
+    ],
+    "expected_status": "PASS",
+    "expected_code": null
+  },
+  {
+    "name": "prime_divides_denominator",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "change_of_basis"
+        ],
+        "value": [
+          [
+            "1/2147483647",
+            "1/2147483647"
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "path": [
+          "source_arithmetic",
+          "row_denominators"
+        ],
+        "value": [
+          2147483647,
+          1
+        ]
+      },
+      {
+        "path": [
+          "kernel",
+          "entries"
+        ],
+        "value": [
+          [
+            2147483647
+          ],
+          [
+            -1
+          ]
+        ]
+      }
+    ],
+    "expected_status": "FAIL",
+    "expected_code": "denominator_prime"
+  },
+  {
+    "name": "missing:format",
+    "edits": [
+      {
+        "path": [
+          "format"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:kind",
+    "edits": [
+      {
+        "path": [
+          "kind"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:profile",
+    "edits": [
+      {
+        "path": [
+          "profile"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:title",
+    "edits": [
+      {
+        "path": [
+          "title"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:produced_by",
+    "edits": [
+      {
+        "path": [
+          "produced_by"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:field",
+    "edits": [
+      {
+        "path": [
+          "field"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:cell",
+    "edits": [
+      {
+        "path": [
+          "cell"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:cell.n",
+    "edits": [
+      {
+        "path": [
+          "cell",
+          "n"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:cell.r",
+    "edits": [
+      {
+        "path": [
+          "cell",
+          "r"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:cell.delta",
+    "edits": [
+      {
+        "path": [
+          "cell",
+          "delta"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:cell.lambda",
+    "edits": [
+      {
+        "path": [
+          "cell",
+          "lambda"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:conventions",
+    "edits": [
+      {
+        "path": [
+          "conventions"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:conventions.coefficient",
+    "edits": [
+      {
+        "path": [
+          "conventions",
+          "coefficient"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:conventions.raising",
+    "edits": [
+      {
+        "path": [
+          "conventions",
+          "raising"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:conventions.bracket",
+    "edits": [
+      {
+        "path": [
+          "conventions",
+          "bracket"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:conventions.orientation",
+    "edits": [
+      {
+        "path": [
+          "conventions",
+          "orientation"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points",
+    "edits": [
+      {
+        "path": [
+          "points"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.0.type",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "type"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.0.l",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "l"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.0.cubic",
+    "edits": [
+      {
+        "path": [
+          "points",
+          0,
+          "cubic"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.1.type",
+    "edits": [
+      {
+        "path": [
+          "points",
+          1,
+          "type"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.1.l",
+    "edits": [
+      {
+        "path": [
+          "points",
+          1,
+          "l"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:points.1.cubic",
+    "edits": [
+      {
+        "path": [
+          "points",
+          1,
+          "cubic"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source",
+    "edits": [
+      {
+        "path": [
+          "source"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.exponents",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "exponents"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.basis",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "basis"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.change_of_basis",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "change_of_basis"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.provenance_sha256",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "provenance_sha256"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.dimension_proof",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.dimension_proof.method",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof",
+          "method"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.dimension_proof.weight_dimension",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof",
+          "weight_dimension"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.dimension_proof.raising_rank",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof",
+          "raising_rank"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source.dimension_proof.dimension",
+    "edits": [
+      {
+        "path": [
+          "source",
+          "dimension_proof",
+          "dimension"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target",
+    "edits": [
+      {
+        "path": [
+          "target"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof.method",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "method"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof.predecessors",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "predecessors"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof.weight_dimensions",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "weight_dimensions"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof.raising_ranks",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "raising_ranks"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.dimension_proof.dimension",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "dimension_proof",
+          "dimension"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.members",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.members.0.letter_types",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members",
+          0,
+          "letter_types"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.members.0.columns",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "members",
+          0,
+          "columns"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.evaluation",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "evaluation"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.evaluation.values_are",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "evaluation",
+          "values_are"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.evaluation.entries",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "evaluation",
+          "entries"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.minor",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "minor"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.minor.rows",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "minor",
+          "rows"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.minor.columns",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "minor",
+          "columns"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:target.minor.determinant",
+    "edits": [
+      {
+        "path": [
+          "target",
+          "minor",
+          "determinant"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.values_are",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "values_are"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.row_denominators",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "row_denominators"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.entries",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "entries"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.height_bounds",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "height_bounds"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.values_are",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "values_are"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.primes",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "primes"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.modulus",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "modulus"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.residues",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "residues"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.residues.2147483647",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "residues",
+          "2147483647"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:source_arithmetic.crt.residues.2147483629",
+    "edits": [
+      {
+        "path": [
+          "source_arithmetic",
+          "crt",
+          "residues",
+          "2147483629"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:kernel",
+    "edits": [
+      {
+        "path": [
+          "kernel"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:kernel.values_are",
+    "edits": [
+      {
+        "path": [
+          "kernel",
+          "values_are"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:kernel.entries",
+    "edits": [
+      {
+        "path": [
+          "kernel",
+          "entries"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:kernel.rank",
+    "edits": [
+      {
+        "path": [
+          "kernel",
+          "rank"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:claim",
+    "edits": [
+      {
+        "path": [
+          "claim"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:claim.source_dimension",
+    "edits": [
+      {
+        "path": [
+          "claim",
+          "source_dimension"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:claim.target_dimension",
+    "edits": [
+      {
+        "path": [
+          "claim",
+          "target_dimension"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:claim.rank_Q",
+    "edits": [
+      {
+        "path": [
+          "claim",
+          "rank_Q"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  },
+  {
+    "name": "missing:claim.i_red",
+    "edits": [
+      {
+        "path": [
+          "claim",
+          "i_red"
+        ],
+        "delete": true
+      }
+    ],
+    "expected_status": "UNPARSEABLE",
+    "expected_code": null
+  }
+]

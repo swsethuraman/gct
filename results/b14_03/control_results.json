@@ -1,0 +1,1953 @@
+{
+  "status": "PASS",
+  "test_count": 97,
+  "negative_count": 95,
+  "required_key_deletions": 71,
+  "cases": [
+    {
+      "name": "complete_control",
+      "test_passed": true,
+      "result": {
+        "status": "PASS",
+        "claim": {
+          "source_dimension": 2,
+          "target_dimension": 1,
+          "rank_Q": 1,
+          "i_red": 1
+        },
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          },
+          {
+            "check": "exact source arithmetic and left kernel",
+            "ok": true,
+            "detail": {
+              "A_Z": [
+                [
+                  729,
+                  3969
+                ],
+                [
+                  729,
+                  3969
+                ]
+              ],
+              "row_denominators": [
+                1,
+                1
+              ],
+              "height_bounds": [
+                7494539904,
+                7541849088
+              ],
+              "CRT_modulus": 4611685975477714963,
+              "ranks_mod_p": {
+                "2147483647": 1,
+                "2147483629": 1
+              },
+              "rank_Q": 1,
+              "left_nullity": 1
+            }
+          }
+        ],
+        "wall_seconds": 4.9861932000058005
+      }
+    },
+    {
+      "name": "wrong_points",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "target_entries",
+        "detail": "target entries disagree with reconstructed brackets/points",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.004185199999483302
+      }
+    },
+    {
+      "name": "wrong_source_scaling",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_scaling",
+        "detail": "row denominator is not the exact coefficient-denominator lcm",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.004097500001080334
+      }
+    },
+    {
+      "name": "invalid_target_membership",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "target_membership",
+        "detail": "each linear/cubic letter must have valence 1/3",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.002486700002918951
+      }
+    },
+    {
+      "name": "rank_deficient_target",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "target_rank",
+        "detail": "target minor is zero: evaluation not proved injective",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.002461400013999082
+      }
+    },
+    {
+      "name": "insufficient_CRT_modulus",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "crt_insufficient",
+        "detail": "CRT modulus must exceed twice each independently derived height bound",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.004836600011913106
+      }
+    },
+    {
+      "name": "one_altered_integer_entry",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_entries",
+        "detail": "integer source entry differs from exact polynomial evaluation",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.005358700000215322
+      }
+    },
+    {
+      "name": "congruent_wrong_integer_lift",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_entries",
+        "detail": "integer source entry differs from exact polynomial evaluation",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.005513699987204745
+      }
+    },
+    {
+      "name": "bad_CRT_residue",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "crt_residues",
+        "detail": "residue differs from independently reduced source evaluation",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.005590999993728474
+      }
+    },
+    {
+      "name": "wrong_target_dimension",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "target_dimension",
+        "detail": "incorrect target dimension proof",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.002424400008749217
+      }
+    },
+    {
+      "name": "wrong_source_dimension",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_dimension",
+        "detail": "wrong source dimension witness",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 0.0184919000021182
+      }
+    },
+    {
+      "name": "empty_points",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "points",
+        "detail": "need 1..16 explicit points",
+        "checks": [],
+        "wall_seconds": 4.1100007365457714e-05
+      }
+    },
+    {
+      "name": "empty_target_members",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "members",
+        "detail": "need exactly h=1 target members",
+        "checks": [],
+        "wall_seconds": 3.3200005418621004e-05
+      }
+    },
+    {
+      "name": "empty_source_basis",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "source_basis",
+        "detail": "need two source vectors",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 9.359999967273325e-05
+      }
+    },
+    {
+      "name": "missing_cubic_coordinate",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "points",
+        "detail": "every cubic coefficient, including zero, is required",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 3.199999628122896e-05
+      }
+    },
+    {
+      "name": "duplicate_cubic_coordinate",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "points",
+        "detail": "bad or repeated cubic coordinate",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 3.229999856557697e-05
+      }
+    },
+    {
+      "name": "wrong_values_are",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "values_are",
+        "detail": "wrong source value convention",
+        "checks": [],
+        "wall_seconds": 2.5200002710334957e-05
+      }
+    },
+    {
+      "name": "wrong_orientation",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "conventions",
+        "detail": "unknown normalization/orientation",
+        "checks": [],
+        "wall_seconds": 1.0099989594891667e-05
+      }
+    },
+    {
+      "name": "unknown_member_key",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.member: missing=[], unknown=['untrusted_proof']",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.002427500003250316
+      }
+    },
+    {
+      "name": "unsupported_large_profile",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "unsupported_profile",
+        "detail": "NOT VERIFIED: only the exact h=1 profile is implemented",
+        "checks": [],
+        "wall_seconds": 7.399998139590025e-06
+      }
+    },
+    {
+      "name": "wrong_source_polynomial",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_membership",
+        "detail": "source raising residual at 0",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 0.005556200005230494
+      }
+    },
+    {
+      "name": "source_rank_loss",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "source_scaling",
+        "detail": "change of source basis must be invertible",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.018349600009969436
+      }
+    },
+    {
+      "name": "wrong_left_kernel",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "left_kernel",
+        "detail": "A^T K is nonzero in rational source coordinates",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.007178100000601262
+      }
+    },
+    {
+      "name": "right_kernel_in_source_coordinates",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "left_kernel",
+        "detail": "A^T K is nonzero in rational source coordinates",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.006809300000895746
+      }
+    },
+    {
+      "name": "consistent_rational_rescaling",
+      "test_passed": true,
+      "result": {
+        "status": "PASS",
+        "claim": {
+          "source_dimension": 2,
+          "target_dimension": 1,
+          "rank_Q": 1,
+          "i_red": 1
+        },
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          },
+          {
+            "check": "exact source arithmetic and left kernel",
+            "ok": true,
+            "detail": {
+              "A_Z": [
+                [
+                  729,
+                  3969
+                ],
+                [
+                  729,
+                  3969
+                ]
+              ],
+              "row_denominators": [
+                2,
+                3
+              ],
+              "height_bounds": [
+                7494539904,
+                7541849088
+              ],
+              "CRT_modulus": 4611685975477714963,
+              "ranks_mod_p": {
+                "2147483647": 1,
+                "2147483629": 1
+              },
+              "rank_Q": 1,
+              "left_nullity": 1
+            }
+          }
+        ],
+        "wall_seconds": 0.025028000003658235
+      }
+    },
+    {
+      "name": "prime_divides_denominator",
+      "test_passed": true,
+      "result": {
+        "status": "FAIL",
+        "code": "denominator_prime",
+        "detail": "prime divides a source denominator; no common specialization",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.02331360000243876
+      }
+    },
+    {
+      "name": "missing:format",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['format'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.1800002539530396e-05
+      }
+    },
+    {
+      "name": "missing:kind",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['kind'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 8.799994247965515e-06
+      }
+    },
+    {
+      "name": "missing:profile",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['profile'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 7.000009645707905e-06
+      }
+    },
+    {
+      "name": "missing:title",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['title'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.599998985417187e-06
+      }
+    },
+    {
+      "name": "missing:produced_by",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['produced_by'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.999987479299307e-06
+      }
+    },
+    {
+      "name": "missing:field",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['field'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.699999746866524e-06
+      }
+    },
+    {
+      "name": "missing:cell",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['cell'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.900001269765198e-06
+      }
+    },
+    {
+      "name": "missing:cell.n",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "cell: missing=['n'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.060000795405358e-05
+      }
+    },
+    {
+      "name": "missing:cell.r",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "cell: missing=['r'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.0599993402138352e-05
+      }
+    },
+    {
+      "name": "missing:cell.delta",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "cell: missing=['delta'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 9.60000033956021e-06
+      }
+    },
+    {
+      "name": "missing:cell.lambda",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "cell: missing=['lambda'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 8.500006515532732e-06
+      }
+    },
+    {
+      "name": "missing:conventions",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['conventions'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 6.200003554113209e-06
+      }
+    },
+    {
+      "name": "missing:conventions.coefficient",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "conventions: missing=['coefficient'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.4099990949034691e-05
+      }
+    },
+    {
+      "name": "missing:conventions.raising",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "conventions: missing=['raising'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.1599986464716494e-05
+      }
+    },
+    {
+      "name": "missing:conventions.bracket",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "conventions: missing=['bracket'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.0500007192604244e-05
+      }
+    },
+    {
+      "name": "missing:conventions.orientation",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "conventions: missing=['orientation'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.0499992640689015e-05
+      }
+    },
+    {
+      "name": "missing:points",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['points'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 6.200003554113209e-06
+      }
+    },
+    {
+      "name": "missing:points.0.type",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['type'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 4.600000102072954e-05
+      }
+    },
+    {
+      "name": "missing:points.0.l",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['l'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 3.329999162815511e-05
+      }
+    },
+    {
+      "name": "missing:points.0.cubic",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['cubic'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 2.989999484270811e-05
+      }
+    },
+    {
+      "name": "missing:points.1.type",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['type'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 4.430000262800604e-05
+      }
+    },
+    {
+      "name": "missing:points.1.l",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['l'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 4.389999958220869e-05
+      }
+    },
+    {
+      "name": "missing:points.1.cubic",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "point: missing=['cubic'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          }
+        ],
+        "wall_seconds": 3.979999746661633e-05
+      }
+    },
+    {
+      "name": "missing:source",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['source'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.900001269765198e-06
+      }
+    },
+    {
+      "name": "missing:source.exponents",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source: missing=['exponents'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.2899996363557875e-05
+      }
+    },
+    {
+      "name": "missing:source.basis",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source: missing=['basis'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.300001167692244e-05
+      }
+    },
+    {
+      "name": "missing:source.change_of_basis",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source: missing=['change_of_basis'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.2699994840659201e-05
+      }
+    },
+    {
+      "name": "missing:source.provenance_sha256",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source: missing=['provenance_sha256'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.2200005585327744e-05
+      }
+    },
+    {
+      "name": "missing:source.dimension_proof",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source: missing=['dimension_proof'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.2899996363557875e-05
+      }
+    },
+    {
+      "name": "missing:source.dimension_proof.method",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source.dimension_proof: missing=['method'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.3699987903237343e-05
+      }
+    },
+    {
+      "name": "missing:source.dimension_proof.weight_dimension",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source.dimension_proof: missing=['weight_dimension'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.3299999409355223e-05
+      }
+    },
+    {
+      "name": "missing:source.dimension_proof.raising_rank",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source.dimension_proof: missing=['raising_rank'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.3800003216601908e-05
+      }
+    },
+    {
+      "name": "missing:source.dimension_proof.dimension",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source.dimension_proof: missing=['dimension'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.4099990949034691e-05
+      }
+    },
+    {
+      "name": "missing:target",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['target'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.599998985417187e-06
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target: missing=['dimension_proof'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.5000012353993952e-05
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof.method",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.dimension_proof: missing=['method'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.619999238755554e-05
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof.predecessors",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.dimension_proof: missing=['predecessors'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.6999998479150236e-05
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof.weight_dimensions",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.dimension_proof: missing=['weight_dimensions'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.6000005416572094e-05
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof.raising_ranks",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.dimension_proof: missing=['raising_ranks'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.6099991626106203e-05
+      }
+    },
+    {
+      "name": "missing:target.dimension_proof.dimension",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.dimension_proof: missing=['dimension'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 7.970001024659723e-05
+      }
+    },
+    {
+      "name": "missing:target.members",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target: missing=['members'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.580000727903098e-05
+      }
+    },
+    {
+      "name": "missing:target.members.0.letter_types",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.member: missing=['letter_types'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.0018822000129148364
+      }
+    },
+    {
+      "name": "missing:target.members.0.columns",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.member: missing=['columns'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          }
+        ],
+        "wall_seconds": 0.0017309000104432926
+      }
+    },
+    {
+      "name": "missing:target.evaluation",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target: missing=['evaluation'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.960000372491777e-05
+      }
+    },
+    {
+      "name": "missing:target.evaluation.values_are",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.evaluation: missing=['values_are'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.9500002963468432e-05
+      }
+    },
+    {
+      "name": "missing:target.evaluation.entries",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.evaluation: missing=['entries'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 1.930000144056976e-05
+      }
+    },
+    {
+      "name": "missing:target.minor",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target: missing=['minor'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.5599991204217076e-05
+      }
+    },
+    {
+      "name": "missing:target.minor.rows",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.minor: missing=['rows'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.4500011932104826e-05
+      }
+    },
+    {
+      "name": "missing:target.minor.columns",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.minor: missing=['columns'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.1100000594742596e-05
+      }
+    },
+    {
+      "name": "missing:target.minor.determinant",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "target.minor: missing=['determinant'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 7.759999425616115e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['source_arithmetic'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.900001269765198e-06
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.values_are",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source_arithmetic: missing=['values_are'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.239999594166875e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.row_denominators",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source_arithmetic: missing=['row_denominators'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.5600005756132305e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.entries",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source_arithmetic: missing=['entries'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 4.1799998143687844e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.height_bounds",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source_arithmetic: missing=['height_bounds'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.169999061152339e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "source_arithmetic: missing=['crt'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.1299987565726042e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.values_are",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "crt: missing=['values_are'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.200000744778663e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.primes",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "crt: missing=['primes'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.1499989088624716e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.modulus",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "crt: missing=['modulus'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.0899999071843922e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.residues",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "crt: missing=['residues'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.9799994081258774e-05
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.residues.2147483647",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "CRT residues: missing=['2147483647'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.004492299995035864
+      }
+    },
+    {
+      "name": "missing:source_arithmetic.crt.residues.2147483629",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "CRT residues: missing=['2147483629'], unknown=[]",
+        "checks": [
+          {
+            "check": "strict required inputs and profile",
+            "ok": true
+          },
+          {
+            "check": "complete source over Q",
+            "ok": true,
+            "detail": {
+              "weight_dimension": 561,
+              "raising_rows": 1056,
+              "ranks_mod_p": [
+                559,
+                559
+              ],
+              "dimension_Q": 2,
+              "independent_exact_HWs": 2
+            }
+          },
+          {
+            "check": "target dimension, bracket membership and full minor",
+            "ok": true,
+            "detail": {
+              "upper_bound_proof": [
+                {
+                  "nu": [
+                    8,
+                    8,
+                    2
+                  ],
+                  "weight_dimension": 38,
+                  "raising_rows": 54,
+                  "ranks_mod_p": [
+                    37,
+                    37
+                  ]
+                }
+              ],
+              "dimension_Q": 1,
+              "polynomial_terms": 1720,
+              "minor_determinant": 209952,
+              "entries": [
+                [
+                  209952,
+                  1143072
+                ]
+              ]
+            }
+          }
+        ],
+        "wall_seconds": 0.004230899998219684
+      }
+    },
+    {
+      "name": "missing:kernel",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['kernel'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 7.299997378140688e-06
+      }
+    },
+    {
+      "name": "missing:kernel.values_are",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "kernel: missing=['values_are'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.7400004910305142e-05
+      }
+    },
+    {
+      "name": "missing:kernel.entries",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "kernel: missing=['entries'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.5000001187436283e-05
+      }
+    },
+    {
+      "name": "missing:kernel.rank",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "kernel: missing=['rank'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.4200009647756815e-05
+      }
+    },
+    {
+      "name": "missing:claim",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "certificate: missing=['claim'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 5.699999746866524e-06
+      }
+    },
+    {
+      "name": "missing:claim.source_dimension",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "claim: missing=['source_dimension'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.549999044276774e-05
+      }
+    },
+    {
+      "name": "missing:claim.target_dimension",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "claim: missing=['target_dimension'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.3100001271814108e-05
+      }
+    },
+    {
+      "name": "missing:claim.rank_Q",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "claim: missing=['rank_Q'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 3.0199997127056122e-05
+      }
+    },
+    {
+      "name": "missing:claim.i_red",
+      "test_passed": true,
+      "result": {
+        "status": "UNPARSEABLE",
+        "code": "schema",
+        "detail": "claim: missing=['i_red'], unknown=[]",
+        "checks": [],
+        "wall_seconds": 2.680000034160912e-05
+      }
+    }
+  ],
+  "extra_symbolic_oracle": {
+    "mu_star_F0_zero": true,
+    "G_equals_288_mu_star_F1": true,
+    "all_coefficients_compared": 1720,
+    "producer_expansion_counts": {
+      "source_terms": 788,
+      "branch_accumulations": 106969,
+      "peak_monomial_terms": 216,
+      "peak_polynomial_terms": 1723
+    }
+  },
+  "duplicate_json_key_rejected": true,
+  "wall_seconds": 5.423167900007684
+}
