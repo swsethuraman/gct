@@ -1,0 +1,70 @@
+{
+  "slot": "09",
+  "branch": "b15-09-global-det",
+  "base_commit": "f365568d80d5f66fea2dd9342ff1998e1d866915",
+  "base_tree": "aff6ca0921ec964cc8b7fcbd64bd5e5e9de9fbbd",
+  "preregistration_commit": "6a737f7ab5eab75de28629f82b2f49a7674287d7",
+  "workdir": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09",
+  "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09\\.venv\\python.exe",
+  "models": [
+    {"phase": "proof, implementation, controls, sizing, review, delivery", "model": "gpt-6-astra", "requested_reasoning": "xhigh"}
+  ],
+  "runs": [
+    {
+      "name": "b15_09_control01",
+      "phase": "controls",
+      "outcome": "EXACT",
+      "certificate": "results/b15_09/control01/certificate.json",
+      "resource_receipt": "results/logs/b15_09_control01_resources.json",
+      "source_snapshot": "results/b15_09/control01/analysis_b15_09_global.py.txt",
+      "source_sha256": "38e3ec76dbfc523948605357c7d7daef3f899cebb24ffc44599ac838b76fab24",
+      "return_code": 0,
+      "wall_seconds": 0.6781249000050593,
+      "aggregate_peak_bytes": 27684864,
+      "wall_cap_seconds": 60,
+      "memory_cap_mib": 512
+    },
+    {
+      "name": "b15_09_sizing01",
+      "phase": "sizing",
+      "outcome": "RESOURCE_STOP",
+      "reason": "Exact count rejected the dense quartic representation before allocation; the bounded sizing calculation completed successfully.",
+      "certificate": "results/b15_09/sizing01/certificate.json",
+      "resource_receipt": "results/logs/b15_09_sizing01_resources.json",
+      "source_snapshot": "results/b15_09/sizing01/analysis_b15_09_global.py.txt",
+      "source_sha256": "5273a57f373f0b3356bb34f873280858a70ed37a57cf8c947fe382854062fe54",
+      "return_code": 0,
+      "wall_seconds": 0.11199229999328963,
+      "aggregate_peak_bytes": 25640960,
+      "wall_cap_seconds": 30,
+      "memory_cap_mib": 256
+    },
+    {
+      "name": "b15_09_final01",
+      "phase": "all",
+      "outcome": "EXACT",
+      "quartic_dense_method_outcome": "RESOURCE_STOP",
+      "certificate": "results/b15_09/final01/certificate.json",
+      "resource_receipt": "results/logs/b15_09_final01_resources.json",
+      "source": "analysis/b15_09_global.py",
+      "source_hash_location": "certificate.inputs entry for analysis/b15_09_global.py",
+      "return_code": 0,
+      "wall_seconds": 0.6762636000057682,
+      "aggregate_peak_bytes": 27869184,
+      "wall_cap_seconds": 60,
+      "memory_cap_mib": 512
+    }
+  ],
+  "current_replay_argv_after_python": [
+    "analysis/b15_bound.py", "--slot", "09", "--name", "b15_09_receiver01",
+    "--seconds", "60", "--memory-mb", "512", "analysis/b15_09_global.py",
+    "--phase", "all", "--output",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09\\results\\b15_09\\receiver01"
+  ],
+  "replay_requires_fresh_output": true,
+  "source_snapshots": "Exact earlier file bytes, archived as text. Current replay uses the final analysis script.",
+  "setup_receipts": "Pre-existing b15_09_runtime_native_20260913 PID and resource JSON remain untracked and untouched.",
+  "heavy_lease": "None held or requested. Dense allocation failed the preregistered gate; no heavy job started.",
+  "shared_records_modified": false,
+  "pushed": false
+}

@@ -1,0 +1,454 @@
+"""Exact determinant pullback control and complete interpolation over Q.
+
+New implementation by gpt-6-astra. No stored matrix supplies acceptance.
+Sparse polynomials map exponent tuples to Python integers. All file paths are
+resolved from this script; run under analysis/b15_bound.py on Windows.
+"""
+from __future__ import annotations
+
+import argparse
+from fractions import Fraction
+from functools import reduce
+import hashlib
+import itertools as it
+import json
+from math import comb, factorial, gcd, lcm, prod
+from pathlib import Path
+import sys
+import time
+
+import flint
+import numpy
+from flint import fmpq_mat, fmpz_mat
+
+ROOT = Path(__file__).resolve().parents[1]
+INPUTS = [
+    "docs/batch15/WORKER_PREAMBLE.md", "docs/batch15/ACCEPTED_STATE.md",
+    "docs/batch15/briefs/B15-09.md", "docs/brief_wording.md",
+    "docs/s57_report.md", "analysis/b14_06_bracket.py", "analysis/ci73_replay.py",
+    "docs/ci73_proof.md", "results/ci73/certificate.json",
+    "results/b15_prep/candidate_preflight.json", "results/b15_prep/transport_overlay.json",
+    "results/b15_prep/shortlist_overlay.json", "results/integrate/inherited_exclusions.json",
+    "tools/integrate/exclusion_predicates.py",
+]
+NODES = [(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0, 1), (0, 1, 1)]
+LOCAL_MONOMIALS = [(2, 0, 0), (0, 2, 0), (0, 0, 2), (1, 1, 0), (1, 0, 1), (0, 1, 1)]
+
+
+def add(*polys):
+    out = {}
+    for p in polys:
+        for e, c in p.items():
+            out[e] = out.get(e, 0) + c
+    return {e: c for e, c in out.items() if c}
+
+
+def scale(p, c):
+    return {e: v * c for e, v in p.items() if v * c}
+
+
+def mul(p, q):
+    out = {}
+    for a, x in p.items():
+        for b, y in q.items():
+            e = tuple(u + v for u, v in zip(a, b))
+            out[e] = out.get(e, 0) + x * y
+    return {e: c for e, c in out.items() if c}
+
+
+def variable(n, j):
+    return {tuple(int(k == j) for k in range(n)): 1}
+
+
+def const(n, c):
+    return {(0,) * n: c} if c else {}
+
+
+def sign(p):
+    return (-1) ** sum(p[i] > p[j] for i in range(len(p)) for j in range(i + 1, len(p)))
+
+
+def determinant_polynomial(matrix, nvars):
+    n = len(matrix)
+    return add(*(scale(reduce(mul, (matrix[i][p[i]] for i in range(n)), const(nvars, 1)), sign(p))
+                 for p in it.permutations(range(n))))
+
+
+def monomial_at(e, point):
+    return prod(v ** d for v, d in zip(point, e))
+
+
+def evaluate(p, point):
+    return sum(c * monomial_at(e, point) for e, c in p.items())
+
+
+def weighted_monomials(weights, goal):
+    """Enumerate the ENTIRE source weight space, with a fixed variable order."""
+    out = []
+
+    def walk(j, left, current):
+        if j == len(weights):
+            if not any(left):
+                out.append(tuple(current))
+            return
+        w = weights[j]
+        limit = min(left[k] // w[k] for k in range(len(left)) if w[k])
+        for power in range(limit + 1):
+            walk(j + 1, tuple(left[k] - power * w[k] for k in range(len(left))), current + [power])
+
+    walk(0, tuple(goal), [])
+    return out
+
+
+def primitive(values):
+    values = [Fraction(str(x)) for x in values]
+    denominator = lcm(*(x.denominator for x in values))
+    integers = [int(x * denominator) for x in values]
+    divisor = gcd(*integers)
+    integers = [x // divisor for x in integers]
+    first = next(x for x in integers if x)
+    return [-x for x in integers] if first < 0 else integers
+
+
+def exact_kernel(source_rows):
+    """Kernel columns in source coordinates: A^T K=0. RREF is over Q."""
+    rref, rank = fmpq_mat(source_rows).transpose().rref()
+    n = len(source_rows)
+    pivots = [next(j for j in range(n) if rref[i, j]) for i in range(rank)]
+    vectors = []
+    for free in sorted(set(range(n)) - set(pivots)):
+        v = [Fraction(0)] * n
+        v[free] = Fraction(1)
+        for row, pivot in enumerate(pivots):
+            v[pivot] = -Fraction(str(rref[row, free]))
+        vectors.append(primitive(v))
+    return rank, vectors
+
+
+def nonzero_minor(source_rows, rank):
+    matrix = fmpq_mat(source_rows)
+    row_rref, row_rank = matrix.transpose().rref()
+    rows = [next(j for j in range(len(source_rows)) if row_rref[i, j]) for i in range(row_rank)]
+    rr, col_rank = fmpq_mat([source_rows[i] for i in rows]).rref()
+    cols = [next(j for j in range(len(source_rows[0])) if rr[i, j]) for i in range(col_rank)]
+    assert row_rank == col_rank == rank
+    minor = [[source_rows[i][j] for j in cols] for i in rows]
+    d = int(fmpz_mat(minor).det())
+    assert d != 0
+    return dict(source_rows=rows, columns=cols, determinant=str(d))
+
+
+def require_complete(local_nodes):
+    v = [[monomial_at(e, node) for e in LOCAL_MONOMIALS] for node in local_nodes]
+    d = int(fmpz_mat(v).det())
+    if d == 0:
+        raise ValueError("The full containing-space evaluation is not injective")
+    return v, d
+
+
+def image_upper_bound(source_dimension, evaluation_rank, containing_dimension, target_evaluation_rank):
+    """Given proven membership and exact ranks: dim image <= r + H - t."""
+    assert 0 <= evaluation_rank <= min(source_dimension, target_evaluation_rank)
+    assert 0 <= target_evaluation_rank <= containing_dimension
+    return min(source_dimension, evaluation_rank + containing_dimension - target_evaluation_rank)
+
+
+def qmap(blocks):
+    """M_ij=-tr(A_i A_j), A_i=(a_i,b_i;c_i,-a_i), so q=y^T M y/2."""
+    nvars = 3 * blocks
+    triples = [[variable(nvars, 3 * i + j) for j in range(3)] for i in range(blocks)]
+    entries = {}
+    for i in range(blocks):
+        for j in range(i, blocks):
+            a, b, c = triples[i]
+            d, e, f = triples[j]
+            entries[i, j] = add(scale(mul(a, d), -2), scale(mul(b, f), -1), scale(mul(c, e), -1))
+    return entries
+
+
+def direct_matrix(blocks, triples):
+    """Independent numeric construction via actual 2x2 matrix products."""
+    matrices = [fmpz_mat([[a, b], [c, -a]]) for a, b, c in triples]
+    return [[-int(sum((matrices[i] * matrices[j])[k, k] for k in range(2)))
+             for j in range(blocks)] for i in range(blocks)]
+
+
+def minor_controls():
+    a, b, c = [variable(3, i) for i in range(3)]
+    A = [[a, b], [c, scale(a, -1)]]
+    aa = [[add(*(mul(A[i][k], A[k][j]) for k in range(2))) for j in range(2)] for i in range(2)]
+    detA = add(scale(mul(a, a), -1), scale(mul(b, c), -1))
+    residual = [[add(aa[i][j], detA if i == j else {}) for j in range(2)] for i in range(2)]
+    assert all(not p for row in residual for p in row)
+    bad_det = add(scale(mul(a, a), -1), mul(b, c))
+    assert add(aa[0][0], bad_det)
+    live_points = [(1, 0, 0), (0, 1, 0), (0, 0, 1)]
+    live_matrix = direct_matrix(3, live_points)
+    live_det = int(fmpz_mat(live_matrix).det())
+    assert live_det == 2
+    ambient = 2 * fmpz_mat([[int(i == j) for j in range(5)] for i in range(5)])
+    assert int(ambient.det()) == 32
+    # c=2 and a nonzero linear term force the correct Schur normalization.
+    S = fmpq_mat([[2, 1, 0, 0, 0], [1, 3, 0, 0, 0], [0, 0, 1, 0, 0],
+                  [0, 0, 0, 1, 0], [0, 0, 0, 0, 1]])
+    leading = S[0, 0]
+    g = [2 * S[0, j] for j in range(1, 5)]
+    M = fmpq_mat([[2 * S[i + 1, j + 1] / leading - g[i] * g[j] / (2 * leading ** 2)
+                   for j in range(4)] for i in range(4)])
+    badM = fmpq_mat([[2 * S[i + 1, j + 1] / leading - g[i] * g[j] / leading ** 2
+                     for j in range(4)] for i in range(4)])
+    homogeneous = (2 * S).det()
+    assert homogeneous == 2 * leading ** 5 * M.det()
+    assert homogeneous != 2 * leading ** 5 * badM.det()
+    return dict(cayley_hamilton_residual_terms=0, altered_determinant_sign_rejected=True,
+                trace_gram_point=live_points, trace_gram_matrix=live_matrix,
+                trace_gram_determinant=live_det, ambient_discriminant_value=32,
+                schur_input_S=[[str(S[i, j]) for j in range(5)] for i in range(5)],
+                schur_identity_value=str(homogeneous), altered_normalization_rejected=True)
+
+
+def finite_pencil_control():
+    matrices = [fmpq_mat(m) for m in [
+        [[2, 1], [1, 2]], [[1, 2], [3, -1]], [[0, 1], [1, 2]],
+        [[2, 0], [1, 1]], [[1, -1], [0, 3]],
+    ]]
+    S = fmpq_mat([[matrices[i].det() if i == j else
+                   ((matrices[i] + matrices[j]).det() - matrices[i].det() - matrices[j].det()) / 2
+                   for j in range(5)] for i in range(5)])
+    c = matrices[0].det()
+    assert c == 3
+    inverse = matrices[0].inv()
+    normalized = [inverse * A for A in matrices[1:]]
+    identity = fmpq_mat([[1, 0], [0, 1]])
+    traces = [sum(A[i, i] for i in range(2)) for A in normalized]
+    traceless = [A - identity * (tr / 2) for A, tr in zip(normalized, traces)]
+    chart = fmpq_mat([[-sum((A * B)[k, k] for k in range(2)) for B in traceless] for A in traceless])
+    schur = fmpq_mat([[2 * S[i + 1, j + 1] / c - traces[i] * traces[j] / 2
+                      for j in range(4)] for i in range(4)])
+    assert chart == schur and chart.det() == 0 and S.det() == 0
+    assert chart.rank() == 3 and S.rank() == 4
+    return dict(matrices=[[[str(A[i, j]) for j in range(2)] for i in range(2)] for A in matrices],
+                leading_coefficient=str(c), normalized_traces=[str(v) for v in traces],
+                full_coefficient_rank=4, chart_rank=3, discriminant_value="0",
+                trace_chart_equals_schur=True)
+
+
+def quartic_control():
+    # Explicit traceless integral pencil. Check its whole binary polynomial,
+    # not just individual characteristic-polynomial values.
+    B = [[1, 2, 0, 1], [0, -2, 1, 0], [1, 0, 3, 2], [2, 1, 0, -2]]
+    C = [[0, 1, 2, 0], [1, 1, 0, 2], [0, 2, -1, 1], [1, 0, 1, 0]]
+    # x,y,t are three ordinary polynomial variables, with A=B*x+C*y.
+    x, y, t = [variable(3, i) for i in range(3)]
+    A = [[add(scale(x, B[i][j]), scale(y, C[i][j])) for j in range(4)] for i in range(4)]
+    power = [[const(3, int(i == j)) for j in range(4)] for i in range(4)]
+    traces = {}
+    for k in range(1, 5):
+        power = [[add(*(mul(power[i][h], A[h][j]) for h in range(4))) for j in range(4)] for i in range(4)]
+        traces[k] = add(*(power[i][i] for i in range(4)))
+    assert traces[1] == {}
+    determinant = determinant_polynomial([[add(A[i][j], t if i == j else {}) for j in range(4)] for i in range(4)], 3)
+    rhs24 = add(scale(reduce(mul, [t] * 4, const(3, 1)), 24),
+                scale(mul(mul(t, t), traces[2]), -12),
+                scale(mul(t, traces[3]), 8), scale(mul(traces[2], traces[2]), 3),
+                scale(traces[4], -6))
+    assert scale(determinant, 24) == rhs24
+    bad = add(rhs24, scale(mul(t, traces[3]), -16))
+    assert bad != scale(determinant, 24)
+    # Replace t by s+g1/(4c) on the normalized chart. An explicit rational
+    # scalar/translation verifies all ordinary coefficient formulas in Q.
+    poly = {k: Fraction(v) for k, v in [(0, 7), (1, -5), (2, 3), (3, 6), (4, 2)]}
+    c0, g1 = poly[4], poly[3]
+    shift = -g1 / (4 * c0)
+    shifted = {k: sum(poly[j] / c0 * comb(j, k) * shift ** (j - k) for j in range(k, 5)) for k in range(5)}
+    formula = {4: Fraction(1), 3: Fraction(0),
+               2: poly[2] / c0 - 3 * g1 ** 2 / (8 * c0 ** 2),
+               1: poly[1] / c0 - g1 * poly[2] / (2 * c0 ** 2) + g1 ** 3 / (8 * c0 ** 3),
+               0: poly[0] / c0 - g1 * poly[1] / (4 * c0 ** 2) + g1 ** 2 * poly[2] / (16 * c0 ** 3) - 3 * g1 ** 4 / (256 * c0 ** 4)}
+    assert formula == shifted
+    return dict(matrices=[B, C], residual_terms=0, trace_sign_defect_rejected=True,
+                ordinary_quartic=[str(poly[i]) for i in range(5)],
+                shifted_coefficients=[str(shifted[i]) for i in range(5)], u_equals_24c=True)
+
+
+def coefficient_control():
+    started = time.perf_counter()
+    pairs = list(it.combinations_with_replacement(range(4), 2))
+    weights = [tuple(int(k == i) + int(k == j) for k in range(4)) for i, j in pairs]
+    source = weighted_monomials(weights, (2, 2, 2, 2))
+    assert len(source) == 17  # enumerated before the coefficient array
+    mappings = qmap(4)
+    source_pullbacks = []
+    for e in source:
+        source_pullbacks.append(reduce(mul, (mappings[p] for p, power in zip(pairs, e) for _ in range(power)), const(12, 1)))
+    monomials = [sum(block, ()) for block in it.product(LOCAL_MONOMIALS, repeat=4)]
+    assert len(monomials) == len(set(monomials)) == 1296
+    mset = set(monomials)
+    assert all(set(p) <= mset for p in source_pullbacks)
+    coefficient_rows = [[p.get(e, 0) for e in monomials] for p in source_pullbacks]
+    construction_seconds = time.perf_counter() - started
+    reduction_start = time.perf_counter()
+    rank, kernel = exact_kernel(coefficient_rows)
+    assert rank == 16 and len(kernel) == 1
+    # Independently construct det of the abstract symmetric source matrix.
+    index = {p: i for i, p in enumerate(pairs)}
+    abstract = [[variable(10, index[min(i, j), max(i, j)]) for j in range(4)] for i in range(4)]
+    discriminant = determinant_polynomial(abstract, 10)
+    assert set(discriminant) == set(source)
+    discriminant_vector = [discriminant[e] for e in source]
+    assert primitive(discriminant_vector) == kernel[0]
+    assert not add(*(scale(p, c) for p, c in zip(source_pullbacks, kernel[0])))
+    coeff_minor = nonzero_minor(coefficient_rows, 16)
+    reduction_seconds = time.perf_counter() - reduction_start
+
+    evaluation_start = time.perf_counter()
+    local_v, local_det = require_complete(NODES)
+    evaluation_rows = [[] for _ in source]
+    all_points = list(it.product(NODES, repeat=4))
+    # Independent evaluation uses small integer matrices, not symbolic values.
+    for block_point in all_points:
+        matrix = direct_matrix(4, block_point)
+        values = [matrix[i][j] for i, j in pairs]
+        for row, e in zip(evaluation_rows, source):
+            row.append(monomial_at(e, values))
+    erank, ekernel = exact_kernel(evaluation_rows)
+    assert erank == rank and ekernel == kernel
+    upper = image_upper_bound(len(source), erank, len(monomials), len(monomials))
+    assert upper == 16
+    eval_minor = nonzero_minor(evaluation_rows, 16)
+    # Compare direct expansion with all independently evaluated values.
+    for column, point in enumerate(all_points):
+        flat = sum(point, ())
+        assert all(evaluate(p, flat) == row[column] for p, row in zip(source_pullbacks, evaluation_rows))
+    assert all(sum(kernel[0][i] * evaluation_rows[i][j] for i in range(17)) == 0 for j in range(1296))
+    changed = kernel[0][:]
+    changed[0] += 1
+    residuals = [sum(changed[i] * evaluation_rows[i][j] for i in range(17)) for j in range(1296)]
+    assert any(residuals)
+    damaged = NODES[:-1] + [NODES[0]]
+    try:
+        require_complete(damaged)
+    except ValueError:
+        incomplete_rejected = True
+    else:
+        raise AssertionError("A repeated node was accepted as complete")
+    evaluation_seconds = time.perf_counter() - evaluation_start
+    def matrix_digest(rows):
+        return hashlib.sha256(json.dumps(rows, separators=(",", ":")).encode()).hexdigest()
+    return dict(status="EXACT", source_kind="full weight space, not a highest-weight multiplicity space",
+                parameter_map="M_ij=-2*a_i*a_j-b_i*c_j-c_i*b_j; q=y^T M y/2",
+                parameter_order=[f"{v}{i}" for i in range(4) for v in "abc"],
+                source_entry_order=pairs, source_monomials=source,
+                source_weight=[2, 2, 2, 2], source_dimension=17,
+                full_containing_space_dimension=1296, containing_space_degree_per_block=[2] * 4,
+                pullback_image_dimension=rank, kernel_dimension=1, kernel_columns=kernel,
+                image_dimension_ub=upper, kernel_dimension_lb=len(source) - upper,
+                abstract_discriminant_coefficients=discriminant_vector,
+                local_nodes=NODES, local_monomial_order=LOCAL_MONOMIALS, local_vandermonde=local_v,
+                local_vandermonde_determinant=local_det,
+                tensor_vandermonde_determinant=str(local_det ** (4 * 6 ** 3)),
+                all_points_definition="itertools.product(local_nodes, repeat=4); last block varies fastest",
+                full_monomial_order="itertools.product(local_monomial_order, repeat=4), concatenate tuples",
+                coefficient_nonzero_entries=sum(v != 0 for row in coefficient_rows for v in row),
+                coefficient_max_abs=max(abs(v) for row in coefficient_rows for v in row),
+                coefficient_minor=coeff_minor, evaluation_minor=eval_minor,
+                matrices_orientation="source rows; parameter monomial / point columns; A^T K=0",
+                coefficient_matrix_sha256=matrix_digest(coefficient_rows),
+                evaluation_matrix_sha256=matrix_digest(evaluation_rows),
+                altered_kernel_rejected=any(residuals), incomplete_nodes_rejected=incomplete_rejected,
+                construction_seconds=construction_seconds, reduction_seconds=reduction_seconds,
+                evaluation_seconds=evaluation_seconds, wall_seconds=time.perf_counter() - started)
+
+
+def sizing():
+    sys.path.insert(0, str(ROOT / "tools/integrate"))
+    from exclusion_predicates import conclusions_for
+    index = json.loads((ROOT / "results/integrate/inherited_exclusions.json").read_text(encoding="utf-8"))
+    candidates = json.loads((ROOT / "results/b15_prep/candidate_preflight.json").read_text(encoding="utf-8"))
+    lam = [13, 11, 3, 2, 1, 1, 1]
+    record = next(x for x in candidates["small_multiplicity_panel"] if x["lam"] == lam)
+    cell = dict(n=4, ell=7, delta=8, **{"lambda": lam})
+    context = "quartic_padded_gap"
+    # Do not silently select an unsupported application context.
+    contexts = sorted({c for row in index["application_contract"]["conclusions_by_id"].values() for c in row})
+    assert context in contexts, contexts
+    conclusions = conclusions_for(index, cell, context)
+    assert not conclusions, conclusions
+    overlay_hits = []
+    for name, array in [("transport_overlay.json", "targets"), ("shortlist_overlay.json", "removed_queue_entries")]:
+        overlay = json.loads((ROOT / "results/b15_prep" / name).read_text(encoding="utf-8"))
+        for entry in overlay[array]:
+            if entry.get("lam") == lam and entry.get("degree", entry.get("delta")) == 8:
+                overlay_hits.append(dict(path=name, entry=entry))
+    assert not overlay_hits
+    tail = lam[1:]
+    normalized_blocks = [comb(14 + w, 14) for w in tail]
+    raw_blocks = [comb(15 + w, 15) for w in lam]
+    h = prod(normalized_blocks)
+    raw_h = prod(raw_blocks)
+    cap = 1536 * 1024 ** 2
+    assert 8 * h > cap
+    return dict(status="RESOURCE_STOP", stopped_before_allocation=True,
+                scope="dense complete monomial representation only; actual pullback image dimension is not inferred",
+                cell=cell, ledger_context=context, ledger_conclusions=conclusions,
+                accepted_overlay_hits=overlay_hits, inherited_proposal=record,
+                a_inherited=record["a"], h_pad_ub_inherited=record["h_pad"], L_pad_lb=0,
+                U_pad_ub=min(record["a"], record["h_pad"]),
+                true_padding="GL orbit closure of z*per3 with ten independent variables",
+                inherited_padding_premise="degree<=8 cubic closure/transfer gives m_pad=m_red under the accepted hypotheses",
+                raw_parameter_count=16 * 7, raw_multidegree=lam, raw_blocks=raw_blocks,
+                raw_containing_space_dimension=raw_h, normalized_parameter_count=15 * 6,
+                normalized_multidegree=tail, normalized_blocks=normalized_blocks,
+                normalized_containing_space_dimension=h, one_int64_row_bytes=8 * h,
+                two_int64_rows_bytes=16 * h, square_int64_matrix_bytes=8 * h ** 2,
+                cap_bytes=cap, allocation_refused_by_factor=str(Fraction(8 * h, cap)),
+                assumed_one_microsecond_per_point_seconds=str(Fraction(h, 1000000)),
+                time_estimate_method="illustrative lower runtime at an assumed one microsecond per point; no measured throughput claim",
+                heavy_lease_requested=False, heavy_lease_reason="dense representation fails the preregistered preallocation gate",
+                next_witness="two explicit independent rational HW sources, exact sparse pullback kernel or a proven smaller complete invariant space, and a padded rank floor above U_det")
+
+
+def input_hashes():
+    result = []
+    for path in INPUTS + ["analysis/b15_09_global.py", "results/PREREG_b15_09.md"]:
+        raw = (ROOT / path).read_bytes()
+        result.append(dict(path=path, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest(),
+                           normalized_text_sha256=hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()))
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--phase", choices=["controls", "sizing", "all"], default="all")
+    args = parser.parse_args()
+    started = time.perf_counter()
+    out = Path(args.output).resolve()
+    assert out.is_relative_to(ROOT / "results/b15_09"), out
+    if out.exists():
+        raise FileExistsError("Choose a fresh output directory")
+    out.mkdir(parents=True)
+    result = dict(model="gpt-6-astra", requested_reasoning="xhigh", python=sys.version,
+                  executable=sys.executable, numpy_version=numpy.__version__, flint_version=flint.__version__,
+                  arithmetic="exact integers and Q; no finite-field identity inference", inputs=input_hashes())
+    if args.phase in ("controls", "all"):
+        result["small_controls"] = minor_controls()
+        result["finite_pencil_control"] = finite_pencil_control()
+        result["quartic_control"] = quartic_control()
+        print("Liveness, sign, and normalization controls PASS", flush=True)
+        result["complete_pullback"] = coefficient_control()
+        result["multiplicity_claim"] = dict(status="EXACT", n=2, degree=5, ambient_variables=5,
+                                             partition=[2] * 5, a=1, i_det_lb=1, i_det_ub=1,
+                                             m_det_lb=0, m_det_ub=0,
+                                             proof="docs/b15_09_proved.md; chart density and unique relative invariant")
+        print("Complete coefficient and interpolation kernels PASS", flush=True)
+    if args.phase in ("sizing", "all"):
+        result["quartic_sizing"] = sizing()
+        print("Quartic sizing and exclusion overlay PASS", flush=True)
+    result["wall_seconds"] = time.perf_counter() - started
+    (out / "certificate.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(dict(status="EXACT", output=str(out), wall_seconds=result["wall_seconds"])), flush=True)
+
+
+if __name__ == "__main__":
+    main()

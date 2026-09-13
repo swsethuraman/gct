@@ -1,0 +1,809 @@
+{
+  "model": "gpt-6-astra",
+  "requested_reasoning": "xhigh",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09\\.venv\\python.exe",
+  "numpy_version": "2.4.6",
+  "flint_version": "0.9.0",
+  "arithmetic": "exact integers and Q; no finite-field identity inference",
+  "inputs": [
+    {
+      "path": "docs/batch15/WORKER_PREAMBLE.md",
+      "bytes": 7559,
+      "sha256": "9946cbeba95c3b53e0da6322b92b874c3e69ab8c5314d98c27d70a7285778703",
+      "normalized_text_sha256": "b41ab684785ad4be1fa91ec491c25c10fa463c0bdf2d5bb69b3e59e2abf6797d"
+    },
+    {
+      "path": "docs/batch15/ACCEPTED_STATE.md",
+      "bytes": 4234,
+      "sha256": "9805ecc550bae5dbdfe845e280f42a0c2b03e0b6989e819e5a3d93e62f59148c",
+      "normalized_text_sha256": "97b07d5f50c21fc6a3a6bba267339ba385dcda0b6bad7a067c5905b1351352df"
+    },
+    {
+      "path": "docs/batch15/briefs/B15-09.md",
+      "bytes": 1622,
+      "sha256": "e30ba60a71d8278b21214834af6e69b48f2155b4a5d111cc46703f7a34a3b685",
+      "normalized_text_sha256": "e8245d3040df3b1fe65d6906362b42bcfb0b0c0888d7a6c2e17d2bb1b49c856e"
+    },
+    {
+      "path": "docs/brief_wording.md",
+      "bytes": 5841,
+      "sha256": "0f3c6dbb15920aa25d52676cb638004d7bc989c22f9d88fe584ff36a5317cf5a",
+      "normalized_text_sha256": "f5ca5b747543254bca82f74daf0088e443400922c9a216768175be399218e0b8"
+    },
+    {
+      "path": "docs/s57_report.md",
+      "bytes": 54729,
+      "sha256": "21e0a591844fde1375426306cb331d13f273cbe6d42ea7945158b11338551e46",
+      "normalized_text_sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9"
+    },
+    {
+      "path": "analysis/b14_06_bracket.py",
+      "bytes": 14432,
+      "sha256": "d67a78c39694b1d4229970fd1bec46213913935030afcfae5165d2697d68b493",
+      "normalized_text_sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea"
+    },
+    {
+      "path": "analysis/ci73_replay.py",
+      "bytes": 1818,
+      "sha256": "2d2a27be1224b60333d5f9df8542f284607366025a09d3b5cefdebb0070df4bb",
+      "normalized_text_sha256": "b96d5354faa5fc65aaaf0f574f1bfdf2452709e15f724cc465bbefc0348d1507"
+    },
+    {
+      "path": "docs/ci73_proof.md",
+      "bytes": 11709,
+      "sha256": "644acd3aaf603e1200e77c5be9b0ccb73b8b312d4f63cff7ed6205fc25475b81",
+      "normalized_text_sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da"
+    },
+    {
+      "path": "results/ci73/certificate.json",
+      "bytes": 408213,
+      "sha256": "8f4d168ecfb922213b5baee66ac6250dd99dcf2ace669eebc2426c782e9b231d",
+      "normalized_text_sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6"
+    },
+    {
+      "path": "results/b15_prep/candidate_preflight.json",
+      "bytes": 42587,
+      "sha256": "6535761f3a1413239cbb5009707b4de65116e8061f3154f02b9d8c974146b5b4",
+      "normalized_text_sha256": "1bbb7009392b2bba9192b0e62f5a5ac31f5ac27ad062f0a00f550cdee642060e"
+    },
+    {
+      "path": "results/b15_prep/transport_overlay.json",
+      "bytes": 114348,
+      "sha256": "b594dcdae7b4b448039d705d6f15f319e245a0d2cf3636f8b08b15cbfc42b4df",
+      "normalized_text_sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007"
+    },
+    {
+      "path": "results/b15_prep/shortlist_overlay.json",
+      "bytes": 7973,
+      "sha256": "e60ebf6dcc2c4c19b0fc317fa5f7907b1525e23dcdec37e6179c5bb5322192b0",
+      "normalized_text_sha256": "93f0bd43549038dfb29d1cad4fecbe9e97b2ff95365632bd2e455c1cf6dc00c4"
+    },
+    {
+      "path": "results/integrate/inherited_exclusions.json",
+      "bytes": 10401,
+      "sha256": "b71469d2d3db97e4d16f6b9b4be6f77ac1cfc00ea286b2e9cedefcec43b1458b",
+      "normalized_text_sha256": "bfdf6bf971e192723bb48c9c9be4cf00f32ecb0f05647f4df790858145edb338"
+    },
+    {
+      "path": "tools/integrate/exclusion_predicates.py",
+      "bytes": 7792,
+      "sha256": "432ff7e06f90cffbf056a52ea25233527b1e3648b48f6a43888a1555a2fd2d3f",
+      "normalized_text_sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f"
+    },
+    {
+      "path": "analysis/b15_09_global.py",
+      "bytes": 20633,
+      "sha256": "38e3ec76dbfc523948605357c7d7daef3f899cebb24ffc44599ac838b76fab24",
+      "normalized_text_sha256": "38e3ec76dbfc523948605357c7d7daef3f899cebb24ffc44599ac838b76fab24"
+    },
+    {
+      "path": "results/PREREG_b15_09.md",
+      "bytes": 8301,
+      "sha256": "1cbe088bd1a6f498134bd70ca0a4f2b6e9b7118d8c6a423c2f8eba5fd3995358",
+      "normalized_text_sha256": "1cbe088bd1a6f498134bd70ca0a4f2b6e9b7118d8c6a423c2f8eba5fd3995358"
+    }
+  ],
+  "small_controls": {
+    "cayley_hamilton_residual_terms": 0,
+    "altered_determinant_sign_rejected": true,
+    "trace_gram_point": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "trace_gram_matrix": [
+      [
+        -2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "trace_gram_determinant": 2,
+    "ambient_discriminant_value": 32,
+    "schur_input_S": [
+      [
+        "2",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "3",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "schur_identity_value": "160",
+    "altered_normalization_rejected": true
+  },
+  "quartic_control": {
+    "matrices": [
+      [
+        [
+          1,
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          -2,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          -2
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          -1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ]
+    ],
+    "residual_terms": 0,
+    "trace_sign_defect_rejected": true,
+    "ordinary_quartic": [
+      "7",
+      "-5",
+      "3",
+      "6",
+      "2"
+    ],
+    "shifted_coefficients": [
+      "1349/256",
+      "-11/8",
+      "-15/8",
+      "0",
+      "1"
+    ],
+    "u_equals_24c": true
+  },
+  "complete_pullback": {
+    "status": "EXACT",
+    "source_kind": "full weight space, not a highest-weight multiplicity space",
+    "parameter_map": "M_ij=-2*a_i*a_j-b_i*c_j-c_i*b_j; q=y^T M y/2",
+    "parameter_order": [
+      "a0",
+      "b0",
+      "c0",
+      "a1",
+      "b1",
+      "c1",
+      "a2",
+      "b2",
+      "c2",
+      "a3",
+      "b3",
+      "c3"
+    ],
+    "source_entry_order": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "source_monomials": [
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    "source_weight": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "source_dimension": 17,
+    "full_containing_space_dimension": 1296,
+    "containing_space_degree_per_block": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "pullback_image_dimension": 16,
+    "kernel_dimension": 1,
+    "kernel_columns": [
+      [
+        1,
+        -1,
+        -2,
+        2,
+        1,
+        -1,
+        2,
+        -2,
+        -2,
+        2,
+        1,
+        -1,
+        -1,
+        2,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "abstract_discriminant_coefficients": [
+      1,
+      -1,
+      -2,
+      2,
+      1,
+      -1,
+      2,
+      -2,
+      -2,
+      2,
+      1,
+      -1,
+      -1,
+      2,
+      -1,
+      -1,
+      1
+    ],
+    "local_nodes": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "local_monomial_order": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "local_vandermonde": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "local_vandermonde_determinant": 1,
+    "tensor_vandermonde_determinant": "1",
+    "all_points_definition": "itertools.product(local_nodes, repeat=4); last block varies fastest",
+    "full_monomial_order": "itertools.product(local_monomial_order, repeat=4), concatenate tuples",
+    "coefficient_nonzero_entries": 710,
+    "coefficient_max_abs": 16,
+    "coefficient_minor": {
+      "source_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "columns": [
+        0,
+        5,
+        8,
+        22,
+        30,
+        35,
+        38,
+        48,
+        53,
+        64,
+        112,
+        123,
+        128,
+        132,
+        180,
+        185
+      ],
+      "determinant": "70368744177664"
+    },
+    "evaluation_minor": {
+      "source_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "columns": [
+        0,
+        5,
+        8,
+        22,
+        30,
+        35,
+        38,
+        48,
+        53,
+        64,
+        112,
+        123,
+        128,
+        132,
+        180,
+        185
+      ],
+      "determinant": "70368744177664"
+    },
+    "matrices_orientation": "source rows; parameter monomial / point columns; A^T K=0",
+    "coefficient_matrix_sha256": "c7124ba2b2615b522a4e00e5db660a5c33c128e84ed484fc83abc598b525054b",
+    "evaluation_matrix_sha256": "6d230b86113903bb42ca99156d3f24f8fe98a336c1b8a6160a5c45c4f59ac1ad",
+    "altered_kernel_rejected": true,
+    "incomplete_nodes_rejected": true,
+    "construction_seconds": 0.002573300007497892,
+    "reduction_seconds": 0.012188799999421462,
+    "evaluation_seconds": 0.5514763999963179,
+    "wall_seconds": 0.5682902999978978
+  },
+  "multiplicity_claim": {
+    "status": "EXACT",
+    "n": 2,
+    "degree": 5,
+    "ambient_variables": 5,
+    "partition": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "a": 1,
+    "i_det_lb": 1,
+    "i_det_ub": 1,
+    "m_det_lb": 0,
+    "m_det_ub": 0,
+    "proof": "docs/b15_09_proved.md; chart density and unique relative invariant"
+  },
+  "wall_seconds": 0.5767338000005111
+}

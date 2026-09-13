@@ -1,0 +1,19 @@
+{
+  "slot": "09",
+  "status": "EXACT",
+  "proposed_exclusions": [],
+  "reason": "The exact n=2 redundant-variable control certifies the instrument. No new quartic exclusion or positive padded multiplicity gap is established.",
+  "proved_fragment": "docs/b15_09_proved.md",
+  "control_cell": {
+    "n": 2,
+    "degree": 5,
+    "ambient_variables": 5,
+    "lambda": [2, 2, 2, 2, 2],
+    "a": 1,
+    "i_det_lb": 1,
+    "i_det_ub": 1,
+    "m_det_lb": 0,
+    "m_det_ub": 0
+  },
+  "correction_proposed": "S57's image dimension 15*(ell-1)-15 needs a scope and generic-fiber proof; it fails at ell=2 and ell=3. The traceless polynomial parameter map is valid independently of that dimension formula."
+}

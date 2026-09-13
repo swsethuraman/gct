@@ -1,0 +1,210 @@
+{
+  "model": "gpt-6-astra",
+  "requested_reasoning": "xhigh",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09\\.venv\\python.exe",
+  "numpy_version": "2.4.6",
+  "flint_version": "0.9.0",
+  "arithmetic": "exact integers and Q; no finite-field identity inference",
+  "inputs": [
+    {
+      "path": "docs/batch15/WORKER_PREAMBLE.md",
+      "bytes": 7559,
+      "sha256": "9946cbeba95c3b53e0da6322b92b874c3e69ab8c5314d98c27d70a7285778703",
+      "normalized_text_sha256": "b41ab684785ad4be1fa91ec491c25c10fa463c0bdf2d5bb69b3e59e2abf6797d"
+    },
+    {
+      "path": "docs/batch15/ACCEPTED_STATE.md",
+      "bytes": 4234,
+      "sha256": "9805ecc550bae5dbdfe845e280f42a0c2b03e0b6989e819e5a3d93e62f59148c",
+      "normalized_text_sha256": "97b07d5f50c21fc6a3a6bba267339ba385dcda0b6bad7a067c5905b1351352df"
+    },
+    {
+      "path": "docs/batch15/briefs/B15-09.md",
+      "bytes": 1622,
+      "sha256": "e30ba60a71d8278b21214834af6e69b48f2155b4a5d111cc46703f7a34a3b685",
+      "normalized_text_sha256": "e8245d3040df3b1fe65d6906362b42bcfb0b0c0888d7a6c2e17d2bb1b49c856e"
+    },
+    {
+      "path": "docs/brief_wording.md",
+      "bytes": 5841,
+      "sha256": "0f3c6dbb15920aa25d52676cb638004d7bc989c22f9d88fe584ff36a5317cf5a",
+      "normalized_text_sha256": "f5ca5b747543254bca82f74daf0088e443400922c9a216768175be399218e0b8"
+    },
+    {
+      "path": "docs/s57_report.md",
+      "bytes": 54729,
+      "sha256": "21e0a591844fde1375426306cb331d13f273cbe6d42ea7945158b11338551e46",
+      "normalized_text_sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9"
+    },
+    {
+      "path": "analysis/b14_06_bracket.py",
+      "bytes": 14432,
+      "sha256": "d67a78c39694b1d4229970fd1bec46213913935030afcfae5165d2697d68b493",
+      "normalized_text_sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea"
+    },
+    {
+      "path": "analysis/ci73_replay.py",
+      "bytes": 1818,
+      "sha256": "2d2a27be1224b60333d5f9df8542f284607366025a09d3b5cefdebb0070df4bb",
+      "normalized_text_sha256": "b96d5354faa5fc65aaaf0f574f1bfdf2452709e15f724cc465bbefc0348d1507"
+    },
+    {
+      "path": "docs/ci73_proof.md",
+      "bytes": 11709,
+      "sha256": "644acd3aaf603e1200e77c5be9b0ccb73b8b312d4f63cff7ed6205fc25475b81",
+      "normalized_text_sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da"
+    },
+    {
+      "path": "results/ci73/certificate.json",
+      "bytes": 408213,
+      "sha256": "8f4d168ecfb922213b5baee66ac6250dd99dcf2ace669eebc2426c782e9b231d",
+      "normalized_text_sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6"
+    },
+    {
+      "path": "results/b15_prep/candidate_preflight.json",
+      "bytes": 42587,
+      "sha256": "6535761f3a1413239cbb5009707b4de65116e8061f3154f02b9d8c974146b5b4",
+      "normalized_text_sha256": "1bbb7009392b2bba9192b0e62f5a5ac31f5ac27ad062f0a00f550cdee642060e"
+    },
+    {
+      "path": "results/b15_prep/transport_overlay.json",
+      "bytes": 114348,
+      "sha256": "b594dcdae7b4b448039d705d6f15f319e245a0d2cf3636f8b08b15cbfc42b4df",
+      "normalized_text_sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007"
+    },
+    {
+      "path": "results/b15_prep/shortlist_overlay.json",
+      "bytes": 7973,
+      "sha256": "e60ebf6dcc2c4c19b0fc317fa5f7907b1525e23dcdec37e6179c5bb5322192b0",
+      "normalized_text_sha256": "93f0bd43549038dfb29d1cad4fecbe9e97b2ff95365632bd2e455c1cf6dc00c4"
+    },
+    {
+      "path": "results/integrate/inherited_exclusions.json",
+      "bytes": 10401,
+      "sha256": "b71469d2d3db97e4d16f6b9b4be6f77ac1cfc00ea286b2e9cedefcec43b1458b",
+      "normalized_text_sha256": "bfdf6bf971e192723bb48c9c9be4cf00f32ecb0f05647f4df790858145edb338"
+    },
+    {
+      "path": "tools/integrate/exclusion_predicates.py",
+      "bytes": 7792,
+      "sha256": "432ff7e06f90cffbf056a52ea25233527b1e3648b48f6a43888a1555a2fd2d3f",
+      "normalized_text_sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f"
+    },
+    {
+      "path": "analysis/b15_09_global.py",
+      "bytes": 20641,
+      "sha256": "5273a57f373f0b3356bb34f873280858a70ed37a57cf8c947fe382854062fe54",
+      "normalized_text_sha256": "5273a57f373f0b3356bb34f873280858a70ed37a57cf8c947fe382854062fe54"
+    },
+    {
+      "path": "results/PREREG_b15_09.md",
+      "bytes": 8301,
+      "sha256": "1cbe088bd1a6f498134bd70ca0a4f2b6e9b7118d8c6a423c2f8eba5fd3995358",
+      "normalized_text_sha256": "1cbe088bd1a6f498134bd70ca0a4f2b6e9b7118d8c6a423c2f8eba5fd3995358"
+    }
+  ],
+  "quartic_sizing": {
+    "status": "RESOURCE_STOP",
+    "stopped_before_allocation": true,
+    "scope": "dense complete monomial representation only; actual pullback image dimension is not inferred",
+    "cell": {
+      "n": 4,
+      "ell": 7,
+      "delta": 8,
+      "lambda": [
+        13,
+        11,
+        3,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    "ledger_context": "quartic_padded_gap",
+    "ledger_conclusions": [],
+    "accepted_overlay_hits": [],
+    "inherited_proposal": {
+      "n": 4,
+      "delta": 8,
+      "lam": [
+        13,
+        11,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "a": 2,
+      "h_pad": 2,
+      "recorded_N_S": 519879,
+      "tail_box": 10368,
+      "historical_rank_status": "NOT_FOUND",
+      "determinant_rank_sufficient_to_exclude": 2,
+      "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+      "historical_sizes": [
+        {
+          "path": "results/s42_census.json",
+          "N_S": 519879
+        }
+      ]
+    },
+    "a_inherited": 2,
+    "h_pad_ub_inherited": 2,
+    "L_pad_lb": 0,
+    "U_pad_ub": 2,
+    "true_padding": "GL orbit closure of z*per3 with ten independent variables",
+    "inherited_padding_premise": "degree<=8 cubic closure/transfer gives m_pad=m_red under the accepted hypotheses",
+    "raw_parameter_count": 112,
+    "raw_multidegree": [
+      13,
+      11,
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "raw_blocks": [
+      37442160,
+      7726160,
+      816,
+      136,
+      16,
+      16,
+      16
+    ],
+    "raw_containing_space_dimension": 131496322579119577497600,
+    "normalized_parameter_count": 90,
+    "normalized_multidegree": [
+      11,
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "normalized_blocks": [
+      4457400,
+      680,
+      120,
+      15,
+      15,
+      15
+    ],
+    "normalized_containing_space_dimension": 1227567960000000,
+    "one_int64_row_bytes": 9820543680000000,
+    "two_int64_rows_bytes": 19641087360000000,
+    "square_int64_matrix_bytes": 12055384771348492800000000000000,
+    "cap_bytes": 1610612736,
+    "allocation_refused_by_factor": "799197890625/131072",
+    "minimum_one_microsecond_per_point_seconds": "1227567960",
+    "time_estimate_method": "illustrative lower runtime at an assumed one microsecond per point; no measured throughput claim",
+    "heavy_lease_requested": false,
+    "heavy_lease_reason": "dense representation fails the preregistered preallocation gate",
+    "next_witness": "two explicit independent rational HW sources, exact sparse pullback kernel or a proven smaller complete invariant space, and a padded rank floor above U_det"
+  },
+  "wall_seconds": 0.01966359998914413
+}
