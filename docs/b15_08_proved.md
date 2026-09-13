@@ -65,7 +65,7 @@ For the quartic stable interpretation, Proposition S of `docs/s57_report.md` is 
 
 ## Claim B15-08-E: a two-point exact full-height ambient witness
 
-Status: EXACT (algebraic derivation; evaluator replay is separately recorded). For every h>=2 define two sources of weight (4,3,2^(h-2)):
+Status: EXACT (algebraic derivation and full-height integer evaluator replay). For every h>=2 define two sources of weight (4,3,2^(h-2)):
 
     B = [(2,AB) repeated h-1 times, (2,C), (3,ABC)],
     H = [(2,AB) repeated h-2 times, (3,ABC), (4,ABC)].
@@ -89,4 +89,4 @@ At Q the corresponding T3 slice in direction 1 is zero, so B(Q)=0. Also H(P)=0 b
 
 There are no tall-column reorderings or border vectors in these two sources, and the listed source order is also the short-column order. The evaluation matrix with rows (B,H) and columns (P,Q) is therefore diag((h-1)!,(h-2)!). At h=8 it is diag(5040,720), with integer determinant 3,628,800. The exact character count a_inf((4,3,2^6))=2 supplies the upper bound. This proves ambient completeness for that full-height cell without a sampled saturation assertion or an assumed bracket spanning theorem. The points are generic-family controls (points of unrestricted Z); they are not asserted to be determinant or padded points, so this witness alone gives no geometric multiplicity comparison.
 
-The formula is independent of any numerical lease. Running the full-height evaluator against it is a separate operational check, whose status must be taken from the session report and receipt. This separation prevents an unexecuted test from being described as a replay.
+The full-height check and fresh replay were authorized by the integrator as bounded small controls. Both regenerated the matrix over the integers, checked rank 2 modulo each prime, and recomputed the exact ambient count. Evidence is in results/b15_08/analytic_fullheight.json and analytic_replay.json, with the corresponding native resource receipts. Both invocations construct the points and sources afresh; neither reads a stored evaluation matrix.

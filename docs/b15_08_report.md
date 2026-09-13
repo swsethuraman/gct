@@ -6,11 +6,11 @@ Model: gpt-6-astra, xhigh reasoning as dispatched, for all new proof, code, cont
 
 The evaluator now supports tails with conjugate (h,h,2,1^k), including the requested (t,3,2^6) at h=8. It expands the short column into two signed terms and evaluates each by finite differences of a bordered determinant. It uses actual symmetric tensors, including the third derivatives needed by a letter meeting all three columns. It does not build a weight-space carrier.
 
-The algebraic proof and small controls are complete. A compact exact ambient witness is derived for the full-height tail (4,3,2^6): two sources at two explicit integral points have evaluation matrix diag(5040,720), determinant 3,628,800. The freshly computed exact ambient dimension is 2. Thus the proof establishes ambient completeness for this cell without a spanning assumption. The evaluator has reproduced the general witness at heights two and three. The full-height evaluator invocation is pending the integrator's resource ruling; the derived height-eight values are not described as a numerical replay.
+The assignment's success criterion is met. For the full-height tail (4,3,2^6), two explicit brackets at two integral points give the integer evaluation matrix diag(5040,720), determinant 3,628,800. The full-height evaluator and a fresh replay both reproduced this matrix, checked rank 2 at both primes, and recomputed the exact ambient dimension as 2. This certifies ambient completeness for this cell without a spanning assumption. The general witness was also checked against direct contraction at heights two and three.
 
-No heavy job has run. Slot08's initial lease request was received and queued behind 04,05,06; the current holders remain 01 and 03. A smaller control request was prepared, but automatic approval review rejected sending it to the integrator task. Explicit authorization for that message was requested in this task. The existing lease queue is unaffected. No shared lease or theorem record was edited.
+No heavy job ran. The initial lease request entered the integrator's queue, and the first delivery recorded an availability stop. Automatic approval review rejected a later outbound request for a smaller control. The integrator then read the report and witness code directly and explicitly authorized the full-height check and fresh replay as sequential small controls, each capped at 30 seconds and 128 MiB, without consuming a heavy lease. Those two runs completed successfully. No rejected outbound request was retried after that ruling, and no shared lease or theorem record was edited.
 
-Delivery status: RESOURCE_STOP for the remaining full-height execution check because its resource ruling is pending, with the algebraic and small-control results preserved. This is an availability stop, not a contraction-width obstruction or a numerical limit. The reduced witness needs no larger carrier, and its prepared command is below. No slot08 numerical process remains running.
+Delivery status: EXACT for the proved formula, counted ambient dimension and complete integer full-height witness, with fresh evaluator receipts. The earlier RESOURCE_STOP is resolved and retained in the commit history and prior delivery directory. No slot08 numerical process remains running. Larger production modes remain unapproved and unexecuted.
 
 ## Checked evidence
 
@@ -26,7 +26,7 @@ Delivery status: RESOURCE_STOP for the remaining full-height execution check bec
 | Independent padding | Full ten-variable z*per3 construction checked with invertible integer 10 by 10 L; nine-variable restriction is identified explicitly | EXACT |
 | Polynomial normalization | Direct native and depressed polynomial values agree for DET, PAD and RED; zero-c inputs rejected; altered depressed coefficient detected | EXACT |
 | Small ambient dimensions | Nine shapes reach their exact counted dimensions at both primes | REPLAYED_RANK_FLOOR plus exact upper bounds |
-| Full-height analytic witness | Rank 2 from the proved two-point formula and exact character count; evaluator execution pending | EXACT algebraic proof |
+| Full-height analytic witness | Integer matrix diag(5040,720), determinant 3,628,800; full regeneration twice; rank 2 at both primes; exact ambient 2 | EXACT |
 
 The two primes are 2147483647 and 2147483629. The nine small generic ranks, in shape order, are (3,3):0; (4,3):2; (5,3):2; (6,3):6; (3,3,2):0; (4,3,2):2; (5,3,2):4; (6,3,2):10; (7,3,2):15. Both primes agree with the exact characteristic-zero ambient counts.
 
@@ -48,7 +48,9 @@ For h=8 the stable algebra is C[Z]=Sym(Sym^2 C^8 + Sym^3 C^8 + Sym^4 C^8), in th
 
 The counts are exact rational power-sum inner products using the banked B14-04 recurrence and Murnaghan-Nakayama routine. Small character orthogonality and known multiplicities were freshly checked. Source-row counts are not dimensions, and no stabilizer quotient replaces a signed count. The first prototype t=3 has zero ambient multiplicity and cannot be used as a nonzero liveness goal.
 
-A direct full-height contraction has 8!^2*2=3,251,404,800 terms per source. The derived evaluator avoids that width. Its construction lists only explicit signatures and matrices of order at most the tabled size. Point construction, source evaluation and matrix reduction are separately timed by the prepared production runner. It has not run, so no production timing estimate is reported as a measurement. The smaller analytic replay is prepared independently.
+A direct full-height contraction has 8!^2*2=3,251,404,800 terms per source. The derived evaluator avoids that width. Its construction lists only explicit signatures and matrices of order at most the tabled size. Point construction, source evaluation and matrix reduction are separately timed by the prepared larger production runner. That runner has not run, so no larger production timing estimate is reported as a measurement. The executed compact witness has two source rows and two sparse integral points; it needs only small determinants and a 2 by 2 rank check. Its total runtime is recorded below.
+
+For the executed witness, construction stores 972 tensor entries across two points and 17 letter occurrences across two sources. Evaluation is bounded by 528 determinants of order eight across the integer calculation and both primes; scalar zeros reduce actual work. The four integer source values took 0.0111 seconds on the first run and 0.00370 seconds on replay. Reduction consists of one integer 2 by 2 determinant and two modular 2 by 2 rank calculations. The independent ambient recount has 289 power-sum terms. Construction and reduction were not timed separately in this compact runner; these are exact operation/storage counts, and only the recorded evaluation and overall times are measurements.
 
 All three scalar/gradient/Hessian data and the third-order slices come from full polynomial tensors. Ordinary coefficient alpha equals d!/product(alpha_i!) times the tensor entry. Native generic points are integral. Geometric points come from integer matrices and forms, with rational normalization by nonzero c and small factorial denominators; those denominators are invertible at the selected primes. This supplies rational lifting of modular rank floors.
 
@@ -68,6 +70,8 @@ All runs used the assigned local Python executable, the Windows Job Object wrapp
 | b15_08_point_controls_v3 | 0 | 0.284 | 26.07 | 60 s / 512 MiB |
 | b15_08_small_ranks | 0 | 0.473 | 19.89 | 60 s / 512 MiB |
 | b15_08_analytic_small | 0 | 0.042 | 16.24 | 30 s / 128 MiB |
+| b15_08_fullheight | 0 | 0.082 | 19.18 | 30 s / 128 MiB |
+| b15_08_fresh_replay | 0 | 0.072 | 19.30 | 30 s / 128 MiB |
 
 Return codes above are the wrapper's recorded Python return codes. The first control run used fewer sources than its own minimum sample threshold and stopped; the sample was expanded without changing the identity check. The first point-control run encountered a c=0 random point and stopped correctly, but its harness did not yet collect and resample chart rejections. The corrected harness records them explicitly. The third point-control version added a changed-normalization control. All original failure logs and resource receipts are preserved. No wall or memory limit was reached. Clock timestamps reflect the host; wall durations are the wrapper's monotonic measurements.
 
@@ -84,11 +88,11 @@ Small verified replays:
     & $b15Python analysis/b15_bound.py --slot 08 --name b15_08_receiver_small --seconds 60 --memory-mb 512 analysis/b15_08_run.py small_ranks
     & $b15Python analysis/b15_bound.py --slot 08 --name b15_08_receiver_analytic_small --seconds 30 --memory-mb 128 analysis/b15_08_witness.py small
 
-The sufficient remaining operational witness is the full-height evaluation of the proved 2 by 2 matrix, after the integrator's resource ruling:
+The following full-height commands were executed sequentially under the integrator's explicit small-control ruling. Each reconstructs the source list, both full integral points, all integer and modular values, and the exact character count. The replay does not read a stored evaluation matrix:
 
     & $b15Python analysis/b15_bound.py --slot 08 --name b15_08_fullheight --seconds 30 --memory-mb 128 analysis/b15_08_witness.py full
     & $b15Python analysis/b15_bound.py --slot 08 --name b15_08_fresh_replay --seconds 30 --memory-mb 128 analysis/b15_08_witness.py replay
 
-The prepared larger `production` and `replay` modes remain gated by the shared lease record and were not executed. They cover three full-height tails with exact counts, explicit native parameters, full regenerated polynomial values and nonzero minors. They are optional follow-on work after the smaller completion check, not evidence for this report.
+The prepared larger `production` and `replay` modes remain gated by the shared lease record and were not executed. They are designed to cover three full-height tails with exact counts, explicit native parameters, regenerated polynomial values and nonzero minors. They are optional follow-on work, not evidence for this report. No further witness is needed for this assignment's stated success criterion. The next sufficient witness for a new geometric conclusion would be a valid determinant evaluation minor of rank 2 in this same cell; together with a=2 it would imply U_pad<=2<=r_det and exclude positive D in the inherited stable range. No such geometric minor is claimed here.
 
-Input SHA-256 hashes are in the preregistration and machine receipts. Full small inputs, sources and values are retained in results/b15_08; the analytic full-height recipe is in analytic_witness.json. The proof fragment names inherited premises separately. Final committed head/tree and delivery-check results will be recorded by the external packaging manifest after the final commit. A packaging PASS does not verify the mathematical claims.
+Input SHA-256 hashes are in the preregistration and machine receipts. Full small inputs, sources and values are retained in results/b15_08; the analytic recipe is in analytic_witness.json, and the complete height-eight tensors, source rows, exact character terms and values are in analytic_fullheight.json and analytic_replay.json. The proof fragment names inherited premises separately. The completed delivery supersedes the preserved availability-stop delivery at delivery/b15_08_final. Final committed head/tree and delivery-check results are recorded by the external manifest in delivery/b15_08_completed, created after the last commit. A packaging PASS does not verify the mathematical claims.

@@ -1,0 +1,66 @@
+{
+  "status": "EXACT",
+  "assignment_success_criterion_met": true,
+  "model": "gpt-6-astra",
+  "integrator_task": "01a0997b-79c2-7a91-a9e3-cdfcc8f636e3",
+  "execution_authorization": "Explicit incoming integrator ruling: two sequential small controls, each <=30 seconds/128 MiB; no heavy lease",
+  "tail": [
+    4,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "weighted_degree": 19,
+  "h": 8,
+  "a_inf_lb": 2,
+  "a_inf_ub": 2,
+  "generic_rank_lb": 2,
+  "integer_minor_determinant": 3628800,
+  "prime_ranks": [
+    {
+      "prime": 2147483647,
+      "rank_lb": 2
+    },
+    {
+      "prime": 2147483629,
+      "rank_lb": 2
+    }
+  ],
+  "input_sha256_exact_local_bytes": {
+    "analysis/b15_08_witness.py": "45dd127c594db2bffa9bf2bc0905673de1b84a4c65a774a0fcb6e2e733e515b5",
+    "analysis/b15_08_bracket.py": "57638c7d4e3d3c5374cf9d4fe5420a31720043eb97e18fef200285ac757bbe6f",
+    "analysis/b14_04/recount.py": "b6493216beebe4487691cdc0a1e12d01d779673bbaf3f0e0c952d64ce40efe83",
+    "analysis/wk8_s30_pleth.py": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166",
+    "analysis/b15_bound.py": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+  },
+  "runs": [
+    {
+      "name": "b15_08_fullheight",
+      "exit_code": 0,
+      "wall_seconds": 0.08218230001511984,
+      "aggregate_peak_bytes": 20107264,
+      "memory_cap_mb": 128,
+      "wall_cap_seconds": 30,
+      "pid": 42452,
+      "started_utc": "2026-09-13T14:09:17Z"
+    },
+    {
+      "name": "b15_08_fresh_replay",
+      "exit_code": 0,
+      "wall_seconds": 0.07231439999304712,
+      "aggregate_peak_bytes": 20238336,
+      "memory_cap_mb": 128,
+      "wall_cap_seconds": 30,
+      "pid": 30460,
+      "started_utc": "2026-09-13T14:09:23Z"
+    }
+  ],
+  "heavy_jobs_started": 0,
+  "larger_production_executed": false,
+  "new_geometric_exclusion": false,
+  "next_sufficient_geometric_witness": "A rank-2 determinant evaluation minor for this same tail would exclude positive D under the inherited stable identification."
+}
