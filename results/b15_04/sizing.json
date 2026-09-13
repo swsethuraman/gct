@@ -1,0 +1,883 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "input_hashes": {
+    "docs/batch15/WORKER_PREAMBLE.md": {
+      "sha256_exact": "9946cbeba95c3b53e0da6322b92b874c3e69ab8c5314d98c27d70a7285778703",
+      "sha256_utf8_lf": "b41ab684785ad4be1fa91ec491c25c10fa463c0bdf2d5bb69b3e59e2abf6797d"
+    },
+    "docs/batch15/ACCEPTED_STATE.md": {
+      "sha256_exact": "9805ecc550bae5dbdfe845e280f42a0c2b03e0b6989e819e5a3d93e62f59148c",
+      "sha256_utf8_lf": "97b07d5f50c21fc6a3a6bba267339ba385dcda0b6bad7a067c5905b1351352df"
+    },
+    "docs/batch15/briefs/B15-04.md": {
+      "sha256_exact": "428e5bc15ccab583260c4b50f4d1383a80ab8ce8534d536eddea117b79db7280",
+      "sha256_utf8_lf": "bf21868685b84085b6ff5467c10752acd3afccde44053b5431edda733aff713c"
+    },
+    "results/b15_prep/small_panel_sizing.json": {
+      "sha256_exact": "6a441a32bf891a53cd0fa56cb32912c862d2a862edb61bf5779a031c5b53c903",
+      "sha256_utf8_lf": "372d54e76a6f45c84c0833955422e15cc4c8cfd7a877127e0df17e2e5cbe7e04"
+    },
+    "analysis/b14_11_work.py": {
+      "sha256_exact": "b6e0621c8ffeb02a7f16a4c28b78c8bb2fa57c463278a6997cd42462ce7dba1b",
+      "sha256_utf8_lf": "e450476147cb826ccbbfb6d3faff34deb4d8e6c6407dad33ab7bfe5ab37dcc43"
+    },
+    "analysis/b14_12_cell.py": {
+      "sha256_exact": "87270f2417fd40cabab9e64ff6e272b3a44ca21c333d49a23122affb1f9c783f",
+      "sha256_utf8_lf": "ce55b0e7c6233a2b27f53bee85c69f651e5725566376c354fefabc2d53854af4"
+    },
+    "analysis/b14_12_families.py": {
+      "sha256_exact": "fa2a8c229ea61440ad57d0a451546c26b0483dce220dec70f8518317770cd1c4",
+      "sha256_utf8_lf": "45b0f859aa5dc64f05dffdfc47eaff7e4e22a64bcdfd1a77b3dc3ac7f55c8298"
+    },
+    "analysis/b14_11_sizes.py": {
+      "sha256_exact": "072501b587e7514d7167289b34a0bd52312f815eb3a04d953404c0de4b7830a2",
+      "sha256_utf8_lf": "adc9e3bc5a5fac3e618eaf7f9f50c5f142176b207307d8b068225bbbbf4ba887"
+    },
+    "analysis/wk13_b10_lean.py": {
+      "sha256_exact": "7b7cca6d95f9454e94a771137cd4fe4d4917d29a589e87e7c67c6ac4764bf46f",
+      "sha256_utf8_lf": "f612ead043c9b0f2db59345e1265d2eff4905a725e2e3c3e27ce456f2e179231"
+    },
+    "analysis/wk11_s71_codes.py": {
+      "sha256_exact": "039a7ac7746653b6c5ba9058cafdeceeeb3e4e9c33820061c0771e1961bfdd5c",
+      "sha256_utf8_lf": "2e46e351e4b9f512be36b20f0b05ee83e26b29a3fd953d4d580cc1ab6bed4bd0"
+    },
+    "analysis/wk9_s45_build.py": {
+      "sha256_exact": "8be37bfb30032f7507283198cccf992bc381aff08dad2af91f7dbbf3cf987075",
+      "sha256_utf8_lf": "7a6b2e280d2e214430ad35f5f0edc596d04a856561b5a70a4413674a4f3ad1d3"
+    },
+    "analysis/wk8_s30_core.py": {
+      "sha256_exact": "9b40e885fd5d7c501fd3c4db2ce36b6bd944a101e41d92d7bd31669066423d8d",
+      "sha256_utf8_lf": "4cca6f67127d7435fe24c6413d1f39c139184905fbcc25bcfd9323cdb058f304"
+    },
+    "analysis/wk8_s30_pleth.py": {
+      "sha256_exact": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166",
+      "sha256_utf8_lf": "55ae352881aa9447a9b29e89300105530764ca251c8e571602bc55186f547f41"
+    },
+    "results/integrate/inherited_exclusions.json": {
+      "sha256_exact": "b71469d2d3db97e4d16f6b9b4be6f77ac1cfc00ea286b2e9cedefcec43b1458b",
+      "sha256_utf8_lf": "bfdf6bf971e192723bb48c9c9be4cf00f32ecb0f05647f4df790858145edb338"
+    },
+    "results/b15_prep/transport_overlay.json": {
+      "sha256_exact": "b594dcdae7b4b448039d705d6f15f319e245a0d2cf3636f8b08b15cbfc42b4df",
+      "sha256_utf8_lf": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007"
+    },
+    "results/b15_prep/shortlist_overlay.json": {
+      "sha256_exact": "e60ebf6dcc2c4c19b0fc317fa5f7907b1525e23dcdec37e6179c5bb5322192b0",
+      "sha256_utf8_lf": "93f0bd43549038dfb29d1cad4fecbe9e97b2ff95365632bd2e455c1cf6dc00c4"
+    },
+    "analysis/b15_bound.py": {
+      "sha256_exact": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "sha256_utf8_lf": "1f73ad8de393238165443862d028057a2dd75e4b5753afd6bf3192a71b7d5df2"
+    }
+  },
+  "controls": {
+    "status": "PASS",
+    "explicit_orbit_controls": [
+      {
+        "lam": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "delta": 2,
+        "N_S": 10,
+        "n_chi": 3,
+        "mutation_rejected": true
+      },
+      {
+        "lam": [
+          3,
+          3,
+          1,
+          1
+        ],
+        "delta": 2,
+        "N_S": 7,
+        "n_chi": 2,
+        "mutation_rejected": true
+      },
+      {
+        "lam": [
+          4,
+          2,
+          2
+        ],
+        "delta": 2,
+        "N_S": 5,
+        "n_chi": 4,
+        "mutation_rejected": true
+      },
+      {
+        "lam": [
+          4,
+          4
+        ],
+        "delta": 2,
+        "N_S": 3,
+        "n_chi": 3,
+        "mutation_rejected": true
+      }
+    ],
+    "wrong_trivial_character": 4,
+    "correct_odd_character": 2,
+    "wrong_character_rejected": true,
+    "banked_s36": {
+      "n": 4,
+      "delta": 6,
+      "lam": [
+        14,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "N_S": 7508,
+      "stabilizer_order": 120,
+      "n_chi": 171,
+      "signed_trace_sum": 20520,
+      "classes": [
+        {
+          "permutation": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "class_size": 24,
+          "character": 1,
+          "fixed_monomials": 3
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            3,
+            4,
+            1,
+            5
+          ],
+          "class_size": 30,
+          "character": 1,
+          "fixed_monomials": 16
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            3,
+            1,
+            5,
+            4
+          ],
+          "class_size": 20,
+          "character": 1,
+          "fixed_monomials": 18
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            3,
+            1,
+            4,
+            5
+          ],
+          "class_size": 20,
+          "character": 1,
+          "fixed_monomials": 50
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            1,
+            4,
+            3,
+            5
+          ],
+          "class_size": 15,
+          "character": 1,
+          "fixed_monomials": 240
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "class_size": 10,
+          "character": 1,
+          "fixed_monomials": 750
+        },
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "class_size": 1,
+          "character": 1,
+          "fixed_monomials": 7508
+        }
+      ],
+      "arithmetic": "Z; exact final division by group order",
+      "wall_seconds": 0.005
+    }
+  },
+  "cells": [
+    {
+      "lam": [
+        11,
+        11,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "delta": 8,
+      "ambient_variables": 16,
+      "restriction_variables": 7,
+      "a": 4,
+      "h_pad": 3,
+      "L_pad_lb": 0,
+      "U_pad_ub": 3,
+      "signed_burnside": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          11,
+          5,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 1577460,
+        "stabilizer_order": 12,
+        "n_chi": 70438,
+        "signed_trace_sum": 845256,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 211
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 1626
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 2014
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 25539
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 261908
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1577460
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.017
+      },
+      "channels": [
+        {
+          "nu": [
+            11,
+            5,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            5,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            5,
+            4,
+            2,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            11,
+            5,
+            5,
+            1,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            11,
+            6,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            6,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            6,
+            3,
+            2,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            11,
+            6,
+            4,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            2,
+            2,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            3,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            8,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        }
+      ],
+      "ledger": {
+        "typed_ledger_hits": {
+          "cubic_per3_ideal": [],
+          "padded_gap_at_l_per2": [],
+          "quartic_det_ideal": [],
+          "quartic_ladder_identity": [],
+          "quartic_padded_gap": []
+        },
+        "transport_overlay_matches": [],
+        "shortlist_removals": []
+      },
+      "wall_seconds": 0.266031600011047,
+      "dense_square_uint32_bytes": 19846047376,
+      "dense_square_int64_bytes": 39692094752,
+      "raw_monomials_int16_bytes": 25239360,
+      "naive_stabilizer_quotient": "131455"
+    },
+    {
+      "lam": [
+        12,
+        11,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "delta": 8,
+      "ambient_variables": 16,
+      "restriction_variables": 7,
+      "a": 3,
+      "h_pad": 3,
+      "L_pad_lb": 0,
+      "U_pad_ub": 3,
+      "signed_burnside": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          12,
+          11,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 986119,
+        "stabilizer_order": 6,
+        "n_chi": 85325,
+        "signed_trace_sum": 511950,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 17149
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 169489
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 986119
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.012
+      },
+      "channels": [
+        {
+          "nu": [
+            11,
+            4,
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            5,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            5,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            5,
+            4,
+            2,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            11,
+            6,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            6,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            6,
+            3,
+            2,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            11,
+            6,
+            4,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            2,
+            2,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            7,
+            3,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            11,
+            8,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "a3": 1
+        },
+        {
+          "nu": [
+            12,
+            5,
+            4,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            6,
+            2,
+            2,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            6,
+            3,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        },
+        {
+          "nu": [
+            12,
+            7,
+            2,
+            1,
+            1,
+            1
+          ],
+          "a3": 0
+        }
+      ],
+      "ledger": {
+        "typed_ledger_hits": {
+          "cubic_per3_ideal": [],
+          "padded_gap_at_l_per2": [],
+          "quartic_det_ideal": [],
+          "quartic_ladder_identity": [],
+          "quartic_padded_gap": []
+        },
+        "transport_overlay_matches": [],
+        "shortlist_removals": []
+      },
+      "wall_seconds": 0.2876031000050716,
+      "dense_square_uint32_bytes": 29121422500,
+      "dense_square_int64_bytes": 58242845000,
+      "raw_monomials_int16_bytes": 15777904,
+      "naive_stabilizer_quotient": "986119/6"
+    }
+  ]
+}

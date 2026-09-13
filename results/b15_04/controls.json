@@ -1,0 +1,212 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "constructors": [
+    {
+      "lam": [
+        6,
+        2
+      ],
+      "N_S": 2,
+      "n_chi": 2,
+      "rows": 1,
+      "nnz": 2,
+      "exact_constructor_match": true
+    },
+    {
+      "lam": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "N_S": 7,
+      "n_chi": 2,
+      "rows": 5,
+      "nnz": 6,
+      "exact_constructor_match": true
+    }
+  ],
+  "source": {
+    "lam": [
+      6,
+      2
+    ],
+    "delta": 2,
+    "n": 4,
+    "ambient_variables": 16,
+    "convention": "ordinary coefficient c_alpha; raising multiplier alpha_i+1",
+    "terms": [
+      [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        -8
+      ],
+      [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        3
+      ]
+    ],
+    "integral_kernel_coordinates": [
+      -8,
+      3
+    ],
+    "full_uncompressed_raising_verified": true
+  },
+  "point": {
+    "type": "det_pencil",
+    "pencil": [
+      [
+        [
+          0,
+          1,
+          3,
+          1
+        ],
+        [
+          -2,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          -3,
+          -1,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          -2
+        ],
+        [
+          0,
+          -2,
+          2,
+          -2
+        ],
+        [
+          -2,
+          -3,
+          -2,
+          1
+        ]
+      ]
+    ]
+  },
+  "exact_value": -1597,
+  "primes": [
+    2147483647,
+    2147483629
+  ],
+  "independent_homogeneous_quartic_grid": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "padded_frame": [
+    [
+      0,
+      1,
+      3,
+      1,
+      -2,
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      -1,
+      1,
+      1,
+      0,
+      -3,
+      -1,
+      0,
+      3
+    ]
+  ],
+  "liveness": true,
+  "fourth_power_zero": true,
+  "altered_point_rejected": true,
+  "factorial_normalization_defect_rejected": true,
+  "altered_source_sign_rejected": true,
+  "independently_padded_evaluator_checked": true,
+  "triangular_solver_flint_control": true,
+  "tiny_residual_probe": {
+    "status": "EXACT",
+    "purpose": "reduction cost and identity control; no geometric rank",
+    "prime": 2147483647,
+    "nS": 1,
+    "nU": 1,
+    "measured_columns": 1,
+    "split_seconds": 0.00021650001872330904,
+    "triangular_solve_seconds": 4.8299989430233836e-05,
+    "residual_multiply_seconds": 0.0017772999999579042,
+    "residual_nonzero_entries": 0,
+    "residual_sha256_little_endian_int64": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+    "cover_rows_residual_zero": true,
+    "full_residual_blocked_seconds_estimate": 0.001825599989388138,
+    "estimate_method": "linear extrapolation from first width columns; excludes projection and elimination",
+    "uncompressed_residual_uint32_bytes": 4
+  }
+}
