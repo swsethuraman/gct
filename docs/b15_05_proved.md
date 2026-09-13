@@ -129,3 +129,31 @@ regenerates all selected minor values from the explicit point files using
 a different interpolation seed and compares entries and determinants.
 The inherited mathematical source construction is B14-06; new code
 orchestration is not an independent reimplementation of its evaluator.
+
+## Claim 4: completed rank floor and its finite consequence
+
+**Status: REPLAYED_RANK_FLOOR.** The pilot produced nonzero determinant
+minors of size 529 at primes 2147483647 and 2147483629. Their determinants
+are respectively 1967323645 and 262406295. Generic minors of size 533
+have determinants 1828515817 and 1852112970. All four minors were
+regenerated from the explicit geometric points with a changed
+interpolation seed, checking 1,127,860 entries and all four determinants.
+
+By Claim 3 these give m_det_inf>=529 and a_inf>=533 over Q. With the
+inherited exact a_inf=533, i_det_inf<=4. Claim 1 then gives
+i_det(d)<=4 and D(d)<=1 for every d>=15. The sufficient threshold 530
+was not attained. At d=26, m_det>=527 and m_pad<=528 use a(26)=531.
+
+**Verifier and artifacts.** `analysis/b15_05_tail21.py replay`;
+results/b15_05/replay.json, pilot.json, the four actual minor NPZ files,
+their certificate JSON row/column indices, det_points.npz, gen_points.npz
+and source.json. The generic pivot columns form the ambient basis for
+the four modular sampled kernel candidates at each prime. Their
+sampled vanishing is freshly checked; global ideal membership is
+**CANDIDATE**, not a proved equation. No positive gap or exclusion follows.
+
+**Dependencies.** Claims 1 and 3, with their inherited premises; the new
+minor replay is fresh. The research stopped at the preregistered fixed
+sample cap, with no resource limit or extension. The next sufficient
+witness is a 530-dimensional determinant floor or a fourth independent
+global padded direction at degree 15 that persists along this family.

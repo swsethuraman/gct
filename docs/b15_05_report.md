@@ -5,9 +5,46 @@ bracket and point implementations retain their Claude Opus 5 attribution.
 No additional agents were used. The worktree and branch are the assigned
 existing B15-05 / b15-05-tail21. No worktree was created or replaced.
 
-Current evidence status: **RECORDED**, awaiting the requested heavy
-lease. Proof, source construction, sizing and small controls are complete.
-No new family exclusion or positive D is claimed at this checkpoint.
+**REPLAYED_RANK_FLOOR: determinant rank at least 529 at both house
+primes.** The generic control rank is 533. The fixed-cap pilot and fresh
+geometric replay completed; the sufficient threshold 530 was not reached.
+The resulting bound is i_det(d)<=4 and D(d)<=1 for all d>=15, with the
+inherited premises below. This is neither a family exclusion nor a
+positive D result. Four modular sampled kernel candidates per prime are
+retained. The heavy lease was explicitly released after both jobs exited.
+
+## Checked numerical findings
+
+| Prime | Family | Points | Sample rank | Actual minor determinant |
+|---|---|---|---|---|
+| 2147483647 | GEN | 560 | 533 | 1828515817 |
+| 2147483647 | DET | 600 | 529 | 1967323645 |
+| 2147483629 | GEN | 560 | 533 | 1852112970 |
+| 2147483629 | DET | 600 | 529 | 262406295 |
+
+At both primes DET ranks at 520, 560 and 600 points were 520, 529 and
+529. GEN reached 533 at 560 points. The run stopped at the preregistered
+sample cap; no production extension or further resampling was requested.
+
+The exported minors have sizes 533x533 (GEN) and 529x529 (DET). Fresh
+replay regenerated **1,127,860 entries** from the explicit integral points
+using a changed interpolation seed, matched every stored entry, and
+reproduced the four displayed nonzero determinants. This certifies the
+rank floors over Q via good modular reduction. It does not prove the
+determinant rank is globally at most 529. Kernel candidates are checked
+against all 600 sampled determinant points, in the 533-column ambient
+basis defined by the generic pivots; none is asserted to vanish globally.
+
+| Run | Exit | Wall seconds | Aggregate peak MiB |
+|---|---|---|---|
+| Fixed-cap pilot | 0 | 49.72475 | 119.1992 |
+| Fresh geometric replay | 0 | 14.35940 | 53.6719 |
+
+Combined numerical wall time was 64.08415 seconds. Replay used an
+800-second cap after the pilot, within the original 900-second granted
+window. No resource limit was reached. The final process checks found
+neither recorded heavy PID present; the release and both start/exit
+receipts are preserved in `results/b15_05/lease_release.json`.
 
 ## Question and sufficient bound
 
@@ -23,10 +60,12 @@ transported padded equations give
 
     i_det(d) <= 533-r,   i_pad(d) >= 3,   D(d) <= 530-r.
 
-A floor of 530 suffices. A floor of at most 529 is not a positive result.
+A floor of 530 suffices. The attained floor 529 is not a positive result.
 At degree 26 the inherited ambient multiplicity is 531, and the padded
 coordinate upper bound supplied by three ideal vectors is 528. A stable
 coordinate rank is never substituted into this finite calculation.
+With the actual stable floor 529, the finite degree-26 statements are
+m_det>=531-4=527 and m_pad<=531-3=528, hence D<=1.
 `docs/b15_05_proved.md` contains the conditional all-degree proof and
 separates its inherited premises from fresh arithmetic checks.
 
@@ -73,7 +112,7 @@ explicit integral points. Every point passes Euler and symmetry checks.
 Generic control points have a complete integral homogeneous-form
 construction, rather than independent inconsistent scalar/gradient data.
 
-The pilot is fixed at 600 determinant and 560 generic points per prime,
+The completed pilot used 600 determinant and 560 generic points per prime,
 using 2147483647 and 2147483629. It exports actual nonzero square minors,
 not just rank totals. The generic rank-533 columns define a basis for
 sampled kernel candidates. Those finite-field candidates carry no global
@@ -83,11 +122,12 @@ points with a different interpolation seed, compares every minor entry,
 then checks its determinant. It shares B14-06's evaluator; it is a fresh
 geometric replay, not an independent mathematical implementation.
 
-The preregistered maximum is 900 seconds and 1536 MiB per heavy job,
-with one process and one BLAS thread. No production extension has been
-requested. The integrator owns the two-job host limit and the external
+The preregistered maximum was 900 seconds and 1536 MiB per heavy job,
+with one process and one BLAS thread. The grant placed pilot plus replay
+within one 900-second window, which was respected. No production extension
+was requested. The integrator owns the two-job host limit and the external
 lease record. The driver refuses a heavy launch without slot 05 in that
-record. The request, queue confirmation and later resource decisions
+record. The request, queue confirmation, grant, completion and release decisions
 are recorded in `results/b15_05/resource_decisions.json`.
 
 ## Provenance and replay
@@ -110,13 +150,28 @@ Inherited rather than freshly evaluated here: the 533 stable ambient
 dimension, degree-26 ambient 531, three degree-13 global equations and
 their complete interpolation proof, and the S57 stable-slice theorem.
 Freshly checked: all controls above, source enumeration, point
-construction, finite weight/degree transport, q44's exact derivative and
-the scoped exclusion predicates. No protected paper, shared theorem
+construction, finite weight/degree transport, q44's exact derivative,
+the scoped exclusion predicates and all four geometric minors. No protected paper, shared theorem
 index or canonical exclusion ledger was edited.
 
 ## Outstanding witness
 
 The next sufficient missing witness is a rationally valid stable
 determinant minor of size at least 530 at tail (21,2^7), with its explicit
-points and source definitions. The bounded pilot and geometric replay
-are prepared to check that witness after the integrator grants a lease.
+points and source definitions. Alternatively, a fourth independent
+global padded ideal vector already at degree 15 would give i_pad>=4
+throughout the family by u-multiplication and combine with this floor
+to exclude positive D. A fourth degree-13 reducible equation in the
+accepted 39-dimensional source is impossible under the complete rank-36
+result. The accepted receipt states i_red13=3; here its padded consequence
+is only the lower bound i_pad13>=3. No padded upper bound is inferred from
+the reducible interpolation. The alternative needs an independently
+proved fourth padded direction at degree 15. The four sampled
+determinant kernel candidates do not supply this padded witness.
+
+Actual pencils, generic points, source definitions, complete sampled
+matrices, minors and candidate kernels are retained in results/b15_05.
+The proposed-exclusions file contains no proposals. Delivery helpers are run after
+the final commit; their external manifest gives the exact head, tree,
+bundle prerequisites and checksums. A packaging PASS checks delivery
+integrity, not the inherited mathematical premises.

@@ -1,0 +1,27 @@
+{
+  "slot": "05",
+  "released_utc": "2026-09-13T14:37:45.549799+00:00",
+  "status": "RELEASED",
+  "no_further_heavy_work": true,
+  "reason": "Fixed-cap pilot and fresh geometric replay completed; determinant rank 529 at both primes; stop rule reached.",
+  "jobs": [
+    {
+      "name": "b15_05_pilot",
+      "pid": 31376,
+      "started_utc": "2026-09-13T14:34:51Z",
+      "exit_code": 0,
+      "wall_seconds": 49.724747500004014,
+      "aggregate_peak_bytes": 124989440
+    },
+    {
+      "name": "b15_05_geometric_replay",
+      "pid": 32760,
+      "started_utc": "2026-09-13T14:36:03Z",
+      "exit_code": 0,
+      "wall_seconds": 14.359404499991797,
+      "aggregate_peak_bytes": 56279040
+    }
+  ],
+  "combined_numerical_wall_seconds": 64.08415199999581,
+  "process_exit_check": "Fresh Get-Process -Id 31376,32760 returned no processes after both exec sessions reported exit 0; no process was ended manually."
+}

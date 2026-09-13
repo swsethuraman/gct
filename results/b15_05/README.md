@@ -22,7 +22,14 @@ The following are heavy jobs and require a currently granted integrator
 lease. The script checks the external lease record before either mode.
 
     PY analysis/b15_bound.py --slot 05 --name b15_05_pilot --seconds 900 --memory-mb 1536 analysis/b15_05_tail21.py pilot
-    PY analysis/b15_bound.py --slot 05 --name b15_05_geometric_replay --seconds 900 --memory-mb 1536 analysis/b15_05_tail21.py replay
+    PY analysis/b15_bound.py --slot 05 --name b15_05_geometric_replay --seconds 800 --memory-mb 1536 analysis/b15_05_tail21.py replay
+
+The completed pilot took 49.725 seconds, and replay took 14.359 seconds.
+The replay cap was reduced to 800 seconds to fit the same granted
+900-second window. Both exited 0. The lease is now released; a future
+heavy replay requires a new explicit integrator grant. Results: GEN533
+and DET529 at both primes; the sufficient determinant threshold530 was
+not reached. No additional sample batches are part of this delivery.
 
 The pilot saves the ordered bracket definitions, complete integral pencil
 and generic point data, residue matrices, actual square minors, row and

@@ -1,0 +1,28 @@
+{
+  "status": "RECORDED",
+  "proposed_exclusions": [],
+  "reason": "Rank floor 529 is below sufficient threshold 530. The bound D<=1 excludes no positive gap.",
+  "scope": {
+    "n": 4,
+    "ambient_variables": 16,
+    "restriction_variables": 9,
+    "stable_variables": 8,
+    "tail": [
+      21,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "from_degree": 15,
+    "partition": "(4d-35,21,2^7)"
+  },
+  "determinant_coordinate_stable_lb": 529,
+  "determinant_ideal_stable_ub": 4,
+  "padded_ideal_lb": 3,
+  "D_ub": 1,
+  "next_sufficient_witness": "One further independent stable determinant evaluation direction, giving a nonzero 530x530 minor; alternatively a fourth global padded ideal direction at degree15 that persists by u-multiplication."
+}

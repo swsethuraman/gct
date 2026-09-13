@@ -21,6 +21,27 @@
     {
       "event": "integrator_queue_confirmation",
       "detail": "Integrator confirmed holders 01/03 and queue 04,05,06,08. Slot 05 has no grant yet; proof, code and report work continues."
+    },
+    {
+      "event": "heavy_lease_granted",
+      "detail": "Integrator explicitly granted 05 after verified release by 04; lease snapshot retained."
+    },
+    {
+      "event": "pilot_complete",
+      "wall_seconds": 49.724747500004014,
+      "aggregate_peak_bytes": 124989440,
+      "det_rank_lb": 529,
+      "detail": "Fixed 600 DET and 560 GEN points per prime; no resampling beyond cap."
+    },
+    {
+      "event": "replay_complete",
+      "wall_seconds": 14.359404499991797,
+      "aggregate_peak_bytes": 56279040,
+      "detail": "All four actual minors freshly evaluated with a changed interpolation seed; exit 0. Replay cap reduced to 800 seconds to stay inside the same 900-second window."
+    },
+    {
+      "event": "lease_released",
+      "detail": "Both heavy processes exited; no extension requested; no further heavy work."
     }
   ]
 }
