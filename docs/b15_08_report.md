@@ -10,6 +10,8 @@ The algebraic proof and small controls are complete. A compact exact ambient wit
 
 No heavy job has run. Slot08's initial lease request was received and queued behind 04,05,06; the current holders remain 01 and 03. A smaller control request was prepared, but automatic approval review rejected sending it to the integrator task. Explicit authorization for that message was requested in this task. The existing lease queue is unaffected. No shared lease or theorem record was edited.
 
+Delivery status: RESOURCE_STOP for the remaining full-height execution check because its resource ruling is pending, with the algebraic and small-control results preserved. This is an availability stop, not a contraction-width obstruction or a numerical limit. The reduced witness needs no larger carrier, and its prepared command is below. No slot08 numerical process remains running.
+
 ## Checked evidence
 
 | Check | Fresh result | Evidence status |
