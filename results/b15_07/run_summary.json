@@ -1,0 +1,129 @@
+{
+  "status": "RECORDED",
+  "actual_model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "phases": [
+    "preregistration",
+    "proof",
+    "implementation",
+    "exact small controls",
+    "independent verification",
+    "delivery"
+  ],
+  "preregistration_commit": "ebd6e6d8",
+  "heavy_lease_requested": false,
+  "heavy_lease_acquired": false,
+  "heavy_jobs_run": 0,
+  "resource_stops": 0,
+  "runs": [
+    {
+      "name": "b15_07_exact_controls_final",
+      "resource_file": "results/logs/b15_07_exact_controls_final_resources.json",
+      "log_file": "results/logs/b15_07_exact_controls_final.log",
+      "pid": 38204,
+      "started_utc": "2026-09-13T06:55:43Z",
+      "exit_code": 0,
+      "wall_seconds": 0.33087060000980273,
+      "aggregate_peak_committed_bytes": 28004352,
+      "process_peak_working_set_bytes": 41177088,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_exact_controls_v1",
+      "resource_file": "results/logs/b15_07_exact_controls_v1_resources.json",
+      "log_file": "results/logs/b15_07_exact_controls_v1.log",
+      "pid": 38728,
+      "started_utc": "2026-09-13T06:51:24Z",
+      "exit_code": 0,
+      "wall_seconds": 0.3066751000005752,
+      "aggregate_peak_committed_bytes": 28082176,
+      "process_peak_working_set_bytes": 40910848,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_exact_controls_v2",
+      "resource_file": "results/logs/b15_07_exact_controls_v2_resources.json",
+      "log_file": "results/logs/b15_07_exact_controls_v2.log",
+      "pid": 35864,
+      "started_utc": "2026-09-13T06:52:42Z",
+      "exit_code": 0,
+      "wall_seconds": 0.30270269999164157,
+      "aggregate_peak_committed_bytes": 27697152,
+      "process_peak_working_set_bytes": 40775680,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_exact_controls_v3",
+      "resource_file": "results/logs/b15_07_exact_controls_v3_resources.json",
+      "log_file": "results/logs/b15_07_exact_controls_v3.log",
+      "pid": 34352,
+      "started_utc": "2026-09-13T06:54:07Z",
+      "exit_code": 0,
+      "wall_seconds": 0.33166769999661483,
+      "aggregate_peak_committed_bytes": 28119040,
+      "process_peak_working_set_bytes": 41369600,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_independent_verify_final",
+      "resource_file": "results/logs/b15_07_independent_verify_final_resources.json",
+      "log_file": "results/logs/b15_07_independent_verify_final.log",
+      "pid": 36192,
+      "started_utc": "2026-09-13T06:55:43Z",
+      "exit_code": 0,
+      "wall_seconds": 0.3035729000112042,
+      "aggregate_peak_committed_bytes": 21848064,
+      "process_peak_working_set_bytes": 33591296,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_independent_verify_v1",
+      "resource_file": "results/logs/b15_07_independent_verify_v1_resources.json",
+      "log_file": "results/logs/b15_07_independent_verify_v1.log",
+      "pid": 38268,
+      "started_utc": "2026-09-13T06:53:38Z",
+      "exit_code": 0,
+      "wall_seconds": 0.2938092999975197,
+      "aggregate_peak_committed_bytes": 20983808,
+      "process_peak_working_set_bytes": 32768000,
+      "wall_cap_seconds": 60,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_next_sizing_v1",
+      "resource_file": "results/logs/b15_07_next_sizing_v1_resources.json",
+      "log_file": "results/logs/b15_07_next_sizing_v1.log",
+      "pid": 40344,
+      "started_utc": "2026-09-13T06:55:07Z",
+      "exit_code": 0,
+      "wall_seconds": 0.7384913999994751,
+      "aggregate_peak_committed_bytes": 71061504,
+      "process_peak_working_set_bytes": 86523904,
+      "wall_cap_seconds": 30,
+      "memory_cap_mb": 512
+    },
+    {
+      "name": "b15_07_resource_control",
+      "resource_file": "results/logs/b15_07_resource_control_resources.json",
+      "log_file": "results/logs/b15_07_resource_control.log",
+      "pid": 32008,
+      "started_utc": "2026-09-13T06:49:22Z",
+      "exit_code": 0,
+      "wall_seconds": 0.060377800022251904,
+      "aggregate_peak_committed_bytes": 18874368,
+      "process_peak_working_set_bytes": 29151232,
+      "wall_cap_seconds": 30,
+      "memory_cap_mb": 512
+    }
+  ],
+  "preserved_uncommitted_setup": [
+    "results/logs/b15_07_runtime_native_20260913.pid",
+    "results/logs/b15_07_runtime_native_20260913_resources.json"
+  ],
+  "completion": "Bounded operator assignment complete; no geometric production attempt."
+}

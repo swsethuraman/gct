@@ -1,0 +1,44 @@
+{
+  "status": "EXACT",
+  "stable_ideal": "ideal of fourth powers in Sym^4(V*)",
+  "parametrization": "c_alpha=4!/alpha! times t^alpha",
+  "source_vectors": 60,
+  "projected_monomials": 680,
+  "source_pullbacks_zero": true,
+  "projected_pullbacks_zero": true,
+  "proof_of_global_zero": "Each tested polynomial is weight homogeneous, so its pullback is one t^weight monomial times the checked exact scalar.",
+  "nonstable_counterexample": {
+    "ideal": "(c_(4,0,0))",
+    "input": [
+      [
+        [
+          0,
+          3
+        ],
+        "1"
+      ]
+    ],
+    "projection_partition": [
+      6,
+      2,
+      0
+    ],
+    "image": [
+      [
+        [
+          0,
+          3
+        ],
+        "4/7"
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        "-3/14"
+      ]
+    ]
+  },
+  "distinction": "Image of a known ideal submodule is not the full ideal. No padded ideal multiplicity is computed."
+}

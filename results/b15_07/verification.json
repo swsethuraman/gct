@@ -1,0 +1,42 @@
+{
+  "status": "EXACT",
+  "checks": "PASS",
+  "independent_representation": "15-entry power monomials",
+  "fresh_checks": {
+    "source_dimension": 60,
+    "projector_dimension": 27,
+    "product_dimension": 27,
+    "repeated_multiplicity": 2,
+    "coefficient_Lie_brackets": 1215,
+    "finite_shear_checked": true,
+    "tensor_checks": {
+      "pieri_domain_hw_dimension": 1,
+      "repeated_tensor_hw_dimension": 3,
+      "repeated_product_hw_rank": 2,
+      "repeated_multiplication_kernel_dimension": 1
+    }
+  },
+  "negative_controls": [
+    {
+      "name": "changed projector entry",
+      "rejected": true,
+      "reason": "projection entries"
+    },
+    {
+      "name": "changed polynomial source",
+      "rejected": true,
+      "reason": "lowering word source definition"
+    },
+    {
+      "name": "changed point",
+      "rejected": true,
+      "reason": "fresh exact evaluation"
+    },
+    {
+      "name": "changed product coefficient",
+      "rejected": true,
+      "reason": "fresh product values"
+    }
+  ],
+  "scope": "Fresh polynomial and operator replay; no determinant/padded geometric evaluation"
+}

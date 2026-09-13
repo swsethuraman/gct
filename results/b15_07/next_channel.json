@@ -1,0 +1,176 @@
+{
+  "status": "EXACT",
+  "purpose": "costed next question, not a geometric run",
+  "n": 4,
+  "degree": 25,
+  "ambient_variables_for_full_geometry": 16,
+  "partition": [
+    68,
+    17,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "source_degree": 24,
+  "source_partition": [
+    65,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "multiplier_partition": [
+    4
+  ],
+  "tensor_multiplicity": 1,
+  "image_hw_rank_lb": 0,
+  "image_hw_rank_ub": 1,
+  "a": null,
+  "i_det_lb": null,
+  "i_pad_lb": null,
+  "m_det_ub": null,
+  "m_pad_lb": null,
+  "h_pad_ub": null,
+  "inherited_channel_entry": {
+    "partition": [
+      68,
+      17,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "degree": 25,
+    "length": 9,
+    "tensor_multiplicity": 1,
+    "channels": {
+      "(4,)": 1
+    },
+    "product_image_rank_lower_bound": 0,
+    "product_image_rank_upper_bound": 1,
+    "cartan_factors": [],
+    "ambient_multiplicity": "[s_nu] h_25[h_4]",
+    "image_matrix_shape": [
+      "a_nu",
+      1
+    ],
+    "intrinsic_rank_question": "j_nu = rank_Q(B_nu); 0 <= j_nu <= tensor_multiplicity",
+    "sufficient_gap_question": "certify rank(T_pad,nu) >= a_nu-j_nu+1",
+    "necessary_reducible_gate": "i_det,nu > i_red,nu; j_nu > i_red,nu suffices for this gate only",
+    "gap_deciding_question": "D_nu = rank(T_pad,nu)-rank(T_det,nu); establish both ranks or separated bounds",
+    "specialization": "present for r>=9",
+    "padded_length_exclusion": false,
+    "cartan_u_ladder": false,
+    "naive_tail_dp_entries": 1364688,
+    "one_uint64_tail_dp_bytes": 10917504,
+    "schur_dimensions": {
+      "9": 12898996945990155,
+      "10": 13794760622795026875,
+      "11": 5128891999555190992125,
+      "16": 31295206505297734590335874129000
+    }
+  },
+  "scoped_ledger": [],
+  "accepted_transport_overlay": {
+    "degree": 25,
+    "lam": [
+      68,
+      17,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "reached_sources": [],
+    "padded_ideal_floor": 0,
+    "determinant_ideal_upper": null,
+    "D_upper": null,
+    "status": "OPEN",
+    "source_floor_basis": "three exact degree13 reducible equations and injective multiplication; overlapping images not added"
+  },
+  "independent_pieri_count": 31,
+  "casimir_eigenvalue": 6268,
+  "same_eigenvalue_other_domain_channels": [],
+  "formula": "T(F)=F*c_301 -(E32 F)*c_310/15 -(E31 F)*c_400/16 +(E21 E32 F)*c_400/240",
+  "indices": "Only first three coordinates are displayed; other coefficient exponents are zero. E21 E32 means E32 first.",
+  "normalization": "coefficient of F tensor c_301 is 1 before multiplication",
+  "formula_coefficients": [
+    "1",
+    "-1/15",
+    "-1/16",
+    "1/240"
+  ],
+  "symbolic_raising_equations": [
+    "1+15*(-1/15)=0",
+    "-1/16+15*(1/240)=0",
+    "4*(-1/15)-(-1/16)+49*(1/240)=0"
+  ],
+  "full_carrier_counts": [
+    {
+      "ambient_variables": 9,
+      "quartic_coefficient_variables": 495,
+      "source_module_dimension": 1389179892410310,
+      "tensor_module_dimension": 687644046743103450,
+      "output_irrep_dimension": 12898996945990155,
+      "full_A25_monomials": 2713031924272366196390247184512608616813120,
+      "method": "Weyl dimension product and stars-and-bars; exact integer counts only"
+    },
+    {
+      "ambient_variables": 10,
+      "quartic_coefficient_variables": 715,
+      "source_module_dimension": 1284991400479536750,
+      "tensor_module_dimension": 918768851342868776250,
+      "output_irrep_dimension": 13794760622795026875,
+      "full_A25_monomials": 22242338083180920067202727732359235758450897484,
+      "method": "Weyl dimension product and stars-and-bars; exact integer counts only"
+    },
+    {
+      "ambient_variables": 16,
+      "quartic_coefficient_variables": 3876,
+      "source_module_dimension": 1450549350002862467049479287500,
+      "tensor_module_dimension": 5622329280611094922283781718350000,
+      "output_irrep_dimension": 31295206505297734590335874129000,
+      "full_A25_monomials": 35685521936216330737374552875389148985899884003905739529485605156,
+      "method": "Weyl dimension product and stars-and-bars; exact integer counts only"
+    }
+  ],
+  "compact_cost": {
+    "method": "five simultaneous derivation values per arithmetic circuit node",
+    "slots": [
+      "F",
+      "E21 F",
+      "E32 F",
+      "E31 F",
+      "E21 E32 F"
+    ],
+    "construction": "Reuse the complete rational source circuit; extend each coefficient leaf by its exact root values.",
+    "multiplication_node_field_multiplications_ub": 11,
+    "multiplication_node_field_additions_ub": 6,
+    "addition_node_field_additions": 5,
+    "live_field_elements": "5 times the original circuit live-node count",
+    "final_linear_combination_field_multiplications_ub": 7,
+    "final_linear_combination_field_additions_ub": 3,
+    "reduction": "One candidate HW column. Test exact coefficient nonzeroness or a nonzero rational evaluation. No full Schur module or carrier.",
+    "evaluation": "For s points and a circuit with M product nodes and A sum nodes: at most s*(11M+7) field multiplications and s*(6M+5A+3) field additions, plus leaf construction. Bit complexity depends on source/point heights.",
+    "wall_time_estimate": null,
+    "reason": "No complete source circuit cost or point height measured here; not inferred from small controls."
+  },
+  "next_sufficient_witness": "A complete rational LMR HW circuit F with its global determinant-ideal provenance, and an exact nonzero T(F) value. This proves one product equation only. A positive gap would additionally need padded rank a, or stronger independently proved determinant and padded bounds.",
+  "padded_point_family": "z*per3 in ten independent essential variables, with GL16 substitutions for full geometry",
+  "resource_decision": "No heavy job; no lease requested or acquired. Production remains subject to integrator lease and measured pilot.",
+  "no_full_padded_ideal_inference": true
+}
