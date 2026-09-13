@@ -1,0 +1,35 @@
+{
+  "status": "EXACT",
+  "portable_files": [
+    {
+      "path": "receiver_01/b15_10_witness.py",
+      "bytes": 8591,
+      "sha256": "3a7049e8a05c24372486f288384ce81ac34f8426c381d890ad985b3abf3fa4f4"
+    },
+    {
+      "path": "receiver_01/b15_10_extend.py",
+      "bytes": 3896,
+      "sha256": "5057db2529e260cd2c716796ac92ebba24b76c1f54dbe8dd9c7798bc8481330a"
+    },
+    {
+      "path": "receiver_01/b15_10_full.py",
+      "bytes": 12204,
+      "sha256": "2e4cb06ad3772505b490086afc7936f5999998973700bb9a737c1567a14f51cd"
+    },
+    {
+      "path": "receiver_01/full_certificate.json",
+      "bytes": 93809,
+      "sha256": "163b1c762f33895bbc6f4a23fb971f4de1141f7b5d1d131a79b47e6884f237ea"
+    }
+  ],
+  "source_modules_equal": true,
+  "certificate_equal": true,
+  "receiver_process_fresh": true,
+  "corruption": {
+    "path": "receiver_01/corrupted_point.json",
+    "mutation": "A0[0,1] increased by 1",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1
+  },
+  "cleanup": "No directory removed; all caller outputs and receiver inputs retained."
+}

@@ -1,0 +1,42 @@
+{
+  "status": "EXACT",
+  "geometric_replay": true,
+  "determinant_minor_Z": "525876952903928530201627329192414396439263877926189997328382842540874792960",
+  "determinant_minor_mod_p": {
+    "2147483647": 1261539314,
+    "2147483629": 635991447
+  },
+  "padded_minor_Z": "-493414004913340416",
+  "padded_minor_column": 2,
+  "conclusion": {
+    "r_det_lb": 4,
+    "r_pad_lb": 1,
+    "m_det_lb": 4,
+    "m_det_ub": 4,
+    "m_pad_lb": 1,
+    "m_pad_ub": 1,
+    "i_det_lb": 0,
+    "i_det_ub": 0,
+    "i_pad_lb": 3,
+    "i_pad_ub": 3,
+    "D_lb": -3,
+    "D_ub": -3
+  },
+  "inherited_premises": {
+    "a_ub": 4,
+    "h_pad_ub": 1
+  },
+  "source_lifting": "not needed: all four polynomials are integral before evaluation",
+  "resource_sizing": {
+    "method": "exact subset dynamic-programming state count",
+    "states_ub": 15184,
+    "live_layer_states_ub": 8000,
+    "transitions_ub": 486432,
+    "tensor_entries": 1296,
+    "naive_terms": 373248000,
+    "series_degree_max": 2,
+    "integer_entries_per_live_state_max": 3,
+    "symbolic_permutation_expansion_allocated": false
+  },
+  "wall_seconds": 4.579937200003769
+}

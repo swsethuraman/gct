@@ -1,0 +1,36 @@
+{
+  "board_numbering": "batch15",
+  "slot": "10",
+  "status": "EXACT",
+  "purpose": "Evidence upgrade for an already closed cell; no new frontier closure",
+  "proposals": [
+    {
+      "id": "b15_10_portable_Q1_exact",
+      "cell": {"n": 4, "delta": 8, "ell": 6, "ambient_variables": 16, "lambda": [12, 4, 4, 4, 4, 4]},
+      "r_det_lb": 4,
+      "r_pad_lb": 1,
+      "a_ub": 4,
+      "h_pad_ub": 1,
+      "U_pad_ub": 1,
+      "m_det_lb": 4,
+      "m_det_ub": 4,
+      "m_pad_lb": 1,
+      "m_pad_ub": 1,
+      "D_lb": -3,
+      "D_ub": -3,
+      "fresh_evidence_status": "EXACT",
+      "fresh_geometric_replay": true,
+      "source_construction": "Four integral epsilon/flag contractions; global HWV proof in per-slot fragment",
+      "certificate": "results/b15_10/full_certificate.json",
+      "rank_one_certificate": "results/b15_10/exclusion.json",
+      "verifier": "analysis/b15_10_full.py verify --certificate results/b15_10/full_certificate.json",
+      "proof": "docs/b15_10_proved.md",
+      "inherited_premises": [
+        {"source": "results/b15_prep/Q1_combined_bound.json", "bound": "a_ub=4", "recount_replayed_here": false},
+        {"source": "results/b15_prep/Q1_combined_bound.json", "bound": "h_pad_ub=1", "recount_replayed_here": false}
+      ],
+      "scope": "This single n=4, degree-8 weight; not all six-row cells",
+      "integrator_action": "Attach portable source and receiver evidence to the existing Q1 record"
+    }
+  ]
+}

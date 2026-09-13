@@ -1,0 +1,54 @@
+{
+  "status": "EXACT",
+  "geometric_replay": true,
+  "minor_Z": "5284823040",
+  "r_det_lb": 1,
+  "inherited_bounds": {
+    "a_ub": 4,
+    "h_pad_ub": 1,
+    "U_pad_ub": 1,
+    "r_det_lb": 1,
+    "D_ub": 0
+  },
+  "sizing": {
+    "method": "exact subset dynamic-programming state count",
+    "states_ub": 15184,
+    "live_layer_states_ub": 8000,
+    "transitions_ub": 486432,
+    "tensor_entries": 1296,
+    "naive_terms": 373248000
+  },
+  "contraction_layers": [
+    {
+      "layer": 1,
+      "states": 16,
+      "nonzero_transitions": 16
+    },
+    {
+      "layer": 2,
+      "states": 115,
+      "nonzero_transitions": 160
+    },
+    {
+      "layer": 3,
+      "states": 256,
+      "nonzero_transitions": 592
+    },
+    {
+      "layer": 4,
+      "states": 115,
+      "nonzero_transitions": 592
+    },
+    {
+      "layer": 5,
+      "states": 16,
+      "nonzero_transitions": 160
+    },
+    {
+      "layer": 6,
+      "states": 1,
+      "nonzero_transitions": 16
+    }
+  ],
+  "wall_seconds": 0.006434800015995279
+}

@@ -1,0 +1,80 @@
+{
+  "status": "EXACT",
+  "runs": [
+    {
+      "name": "small_banked",
+      "path": "results/logs/b15_10_small_banked_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 1.3387661000015214,
+      "peak_job_memory_bytes": 70262784,
+      "peak_working_set_bytes": 78499840,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "direct_small",
+      "path": "results/logs/b15_10_direct_small_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 0.014999500010162592,
+      "peak_job_memory_bytes": 13455360,
+      "peak_working_set_bytes": 20971520,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "extension_small",
+      "path": "results/logs/b15_10_extension_small_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 1.6971194999932777,
+      "peak_job_memory_bytes": 16904192,
+      "peak_working_set_bytes": 25464832,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "full_small",
+      "path": "results/logs/b15_10_full_small_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 4.593471100000897,
+      "peak_job_memory_bytes": 17403904,
+      "peak_working_set_bytes": 25841664,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "controls_small",
+      "path": "results/logs/b15_10_controls_small_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 12.52423720000661,
+      "peak_job_memory_bytes": 18771968,
+      "peak_working_set_bytes": 26079232,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "receiver_small",
+      "path": "results/logs/b15_10_receiver_small_resources.json",
+      "exit_code": 0,
+      "wall_seconds": 2.233828199998243,
+      "peak_job_memory_bytes": 17342464,
+      "peak_working_set_bytes": 25952256,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    },
+    {
+      "name": "corrupted_receiver_small",
+      "path": "results/logs/b15_10_corrupted_receiver_small_resources.json",
+      "exit_code": 1,
+      "wall_seconds": 0.015671999979531392,
+      "peak_job_memory_bytes": 13320192,
+      "peak_working_set_bytes": 21004288,
+      "cap_mb": 512,
+      "cap_seconds": 60
+    }
+  ],
+  "resource_decision": "All research and receiver runs fit small controls: 60 seconds/512 MiB; no heavy numerical job or lease was needed.",
+  "setup_logs_preserved_separately": [
+    "results/logs/b15_10_runtime_native_20260913.pid",
+    "results/logs/b15_10_runtime_native_20260913_resources.json"
+  ]
+}
