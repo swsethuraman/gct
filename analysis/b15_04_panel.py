@@ -334,6 +334,15 @@ def pilot(which):
         record['residual_probe'] = residual_probe(b['E'], c, PRIMES[0])
         record['stage'] = 'reduction cost gate'
         record['reason'] = 'Pilot completed construction and cover; reduction requires a priced, controlled backend.'
+        # This pilot is scoped to construction and measured reduction pricing.
+        # A compact carrier permits a separately authorized, justified follow-up.
+        if nU <= 3000:
+            carrier = OUT/(tag+'_native.npz')
+            np.savez_compressed(carrier, E_data=b['E'].data, E_indices=b['E'].indices,
+                                E_indptr=b['E'].indptr, E_shape=b['E'].shape,
+                                M=b['arr']['M'], col_of=b['arr']['col_of'], sgn=b['arr']['sgn'])
+            record['local_native_carrier'] = dict(path=str(carrier.relative_to(ROOT)), bytes=carrier.stat().st_size,
+                                                  delivery='compact construction retained; local cache staged only if size-compliant')
         record['wall_seconds'] = time.perf_counter()-t
         save(tag+'.json', record)
         print(json.dumps(clean(record['cover'])), flush=True)
