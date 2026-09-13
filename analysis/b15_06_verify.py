@@ -91,9 +91,56 @@ def geometry(r,t):
     save(f'geometric_replay_r{r}_t{t}.json',{'status':'REPLAYED_RANK_FLOOR','complete':True,'checks':checks})
 
 
+def scope():
+    """Exact multiplier/weight predicates and evidence joins; no geometry run."""
+    from collections import defaultdict
+    def raising(poly):
+        out=defaultdict(int)
+        for exp,coefficient in poly.items():
+            for j,factor in ((1,4),(2,3)):
+                if exp[j]:
+                    ee=list(exp);ee[j]-=1;ee[j-1]+=1
+                    out[tuple(ee)]+=coefficient*exp[j]*factor
+        return {x:y for x,y in out.items() if y}
+    q={(1,0,1):8,(0,2,0):-3}
+    assert raising(q)=={} and raising({(1,0,1):8,(0,2,0):3})!={}
+    for exp in q:
+        assert sum(exp)==2
+        assert tuple(sum(exp[j]*((4,0),(3,1),(2,2))[j][i] for j in range(3)) for i in range(2))==(6,2)
+    proposals=read(OUT/'proposed_exclusions.json')['proposals']
+    assert len(proposals)==20
+    assert {(x['r'],x['tail'][0]) for x in proposals}=={(r,t) for r in (7,8) for t in range(3,22,2)}
+    rows=read(OUT/'ranked_census.json')['rows']
+    checks=[]
+    for x in proposals:
+        r,t=x['r'],x['tail'][0];W=sum(x['tail']);d=x['nontrivial_ambient_degree_min']
+        assert d==max(r,(t+r-1)//2) and 4*d-W>=t
+        k=x['multiplier_s2_power'];assert t+2*k==21
+        assert x['finite_degree_increment']==2*k
+        assert x['finite_weight_increment']==[6*k,2*k]+[0]*(r-2)
+        assert [4*d-W+6*k,t+2*k]+[2]*(r-2)==[4*(d+2*k)-sum(x['witness_tail'])]+x['witness_tail']
+        assert x['a_inf']==next(v['a_inf'] for v in rows if (v['r'],v['t'])==(r,t))
+        data=read(OUT/f'pilot_r{r}_t21_summary.json');assert data['complete']
+        replay=read(OUT/f'geometric_replay_r{r}_t21.json');assert replay['complete']
+        for p in PRIMES:
+            rank=next(y['rank_lb'] for y in data['records'] if y['prime']==p and y['family']=='DET')
+            check=next(y for y in replay['checks'] if y['prime']==p and y['family']=='DET')
+            assert rank==x['witness_a_inf']==check['rank_lb']
+            assert check['fresh_geometric_replay'] and check['determinant_mod_p']
+        checks.append({'r':r,'t':t,'delta_min':d,'multiplier_power':k,'status':'EXACT'})
+    for row in rows:
+        if row['r']==10 and row['t']<=19:
+            assert row['i_det_inf_ub']==min(row['a_inf'],11)
+    save('scope_verification.json',{'status':'EXACT','checks':checks,
+         'q62_raising_zero':True,'q62_weight':[6,2],'q62_degree':2,
+         'wrong_sign_detected':True,'no_new_geometric_evaluation':True})
+    print('SCOPE VERIFICATION PASS',len(checks),flush=True)
+
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['counts','geometry'])
+    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['counts','geometry','scope'])
     parser.add_argument('--r',type=int);parser.add_argument('--t',type=int)
     a=parser.parse_args()
     if a.mode=='counts':counts()
-    else:geometry(a.r,a.t)
+    elif a.mode=='geometry':geometry(a.r,a.t)
+    else:scope()

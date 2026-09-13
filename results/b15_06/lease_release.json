@@ -1,0 +1,55 @@
+{
+  "slot": "06",
+  "status": "RELEASED",
+  "release_utc": "2026-09-13T14:53:08.134936+00:00",
+  "last_heavy_job": "b15_06_pilot3_native",
+  "last_pid": 22796,
+  "jobs": [
+    {
+      "name": "b15_06_pilot1_native",
+      "pid": 40836,
+      "started_utc": "2026-09-13T14:43:25Z",
+      "exit_code": 0,
+      "wall_seconds": 125.60208549999516,
+      "peak_job_memory_bytes": 125177856
+    },
+    {
+      "name": "b15_06_pilot2_native",
+      "pid": 39856,
+      "started_utc": "2026-09-13T14:47:27Z",
+      "exit_code": 0,
+      "wall_seconds": 69.06518949999008,
+      "peak_job_memory_bytes": 146198528
+    },
+    {
+      "name": "b15_06_pilot3_native",
+      "pid": 22796,
+      "started_utc": "2026-09-13T14:51:55Z",
+      "exit_code": 0,
+      "wall_seconds": 35.88484009998501,
+      "peak_job_memory_bytes": 107241472
+    }
+  ],
+  "fresh_process_check": "PIDs40836,39856,22796 all absent in Get-Process immediately before this receipt",
+  "no_heavy_process_remains": true,
+  "no_further_heavy_work_without_new_grant": true,
+  "remaining_work": "Proof/report finalization, delivery checks and bundle packaging only",
+  "ranks_both_primes": {
+    "r10_t19": {
+      "GEN": 429,
+      "DET": 418,
+      "PAD": 243
+    },
+    "r8_t21": {
+      "GEN": 460,
+      "DET": 460,
+      "PAD": 443
+    },
+    "r7_t21": {
+      "GEN": 378,
+      "DET": 378,
+      "PAD": 372
+    }
+  },
+  "all_18_native_geometric_minor_replays_passed": true
+}

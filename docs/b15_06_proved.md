@@ -173,6 +173,30 @@ t=3,5,...,21 at that same r. C4 then gives i_det(delta)=0 at every valid finite
 rung, and D=-i_pad<=0. In particular, a single fully checked source can close
 ten families in this census. No count of product channels enters this proof.
 
+The finite-degree injection can also be written explicitly. Use ordinary
+quartic coefficients c0=[x0^4]F, c1=[x0^3 x1]F, c2=[x0^2 x1^2]F, and
+
+    q62=8 c0 c2-3 c1^2.
+
+This is a nonzero polynomial of coefficient degree2 and highest weight
+(6,2,0,...,0): E01(c1)=4c0, E01(c2)=3c1, so E01(q62)=0, and every other
+simple raising operator also gives zero. These are ordinary coefficients;
+c0 is not the historical factorial symbol 24c0. On the monic depressed chart,
+s2=q62/(8c0^2).
+
+Set k=(21-t)/2 and lambda_t(delta)=(4delta-t-2(r-2),t,2^(r-2)). Then
+multiplication by q62^k injects
+
+    I(D)_delta,lambda_t(delta) ->
+    I(D)_(delta+2k),lambda_21(delta+2k).
+
+The weight increment is (6k,2k,0,...,0), which is exactly the difference of
+the displayed partitions. The receiving space is zero by full stable rank
+and C4, so the original space is zero. The explicit nontrivial-ambient scope
+is every integer delta>=max(r,ceil((t+r-2)/2)); lower degrees with a valid
+partition but delta<r have zero quartic ambient multiplicity anyway. This
+specifies every finite rung without presuming an early stabilization degree.
+
 Verifier: the displayed injection and C4, plus the nonzero minors and exact
 counts named in each proposed_exclusions.json record. The records retain
 the actual witness tail and multiplier exponent, rather than describing a
@@ -182,3 +206,19 @@ The same injection transfers an upper bound without requiring fullness:
 i_det_inf(t)<=i_det_inf(T). Thus the ten-row T=19 floor418 also gives
 i_det_inf(t)<=min(a_inf(t),11) for each lower requested odd tail. These are
 derived ideal upper bounds, not new evaluations or ideal lower bounds.
+
+## B15-06-C7: checked seven- and eight-variable exclusions
+
+Status: EXACT conclusion from REPLAYED_RANK_FLOOR witnesses and C1/C4/C6.
+At r=8, tau=(21,2^6), delta=33 and lambda=(99,21,2^6), both primes give
+GEN=460, DET=460, PAD>=443. At r=7, tau=(21,2^5), delta=31 and
+lambda=(93,21,2^5), both primes give GEN=378, DET=378, PAD>=372.
+All twelve native geometric minor replays pass. The determinant ranks equal
+the exact ambient counts, so i_det_inf=0 at both witness tails. C6 proves
+twenty requested family exclusions, one for each r=7,8 and t=3,5,...,21.
+Every record specifies its witness, multiplier exponent, and finite scope.
+
+Verifier: analysis/b15_06_verify.py geometry --r 8 --t 21 and the analogous
+--r 7 command. Native integer points, source brackets and explicit nonzero
+minors remain in their six files per family. No determinant or padded global
+kernel was reconstructed or inferred from a deficient sample.

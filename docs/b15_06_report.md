@@ -2,11 +2,11 @@
 
 Model for all new work: gpt-6-astra, xhigh. Banked B14-06 code and mathematics retain Claude Opus 5 attribution.
 
-The exact census covers all 40 requested families. A fresh recomputation using the same character methods agrees on all 80 ambient/normalization counts. The dimension-explicit evaluator passes both-prime controls at r=7,8,9,10, including full ten-variable independent padding. No positive multiplicity gap is claimed.
+The three checked pilots yield 20 new family exclusions: every requested odd tail at r=7 or r=8 has i_det=0 at every valid rung. The ten-row tail 19 remains a candidate, with i_det_inf<=11. The exact census covers all 40 requested families. A fresh recomputation using the same character methods agrees on all 80 ambient/normalization counts. The dimension-explicit evaluator passes both-prime controls at r=7,8,9,10, including full ten-variable independent padding. No positive multiplicity gap is claimed.
 
 ## Exact census
 
-Each entry below is a_inf for tail (t,2^(r-2)). Use n=4, comparison ambient dimension16, stable coefficient degree delta=t+2(r-2), and lambda=(3delta,t,2^(r-2)). S57 Proposition S is inherited; the rational character arithmetic is newly computed.
+Each entry below is a_inf for tail (t,2^(r-2)). Use n=4, comparison ambient dimension 16, stable coefficient degree delta=t+2(r-2), and lambda=(3delta,t,2^(r-2)). S57 Proposition S is inherited; the rational character arithmetic is newly computed.
 
 | t | r=7 | r=8 | r=9 | r=10 |
 |---|---:|---:|---:|---:|
@@ -35,9 +35,13 @@ selection.json was written before geometry: (r,t)=(10,19),(8,21),(7,21), with am
 |---|---|---:|---:|---:|---:|---|
 | 10 | 19 | 429 | 429 | 418 | 243 | CANDIDATE; i_det_inf<=11 |
 | 8 | 21 | 460 | 460 | 460 | 443 | EXACT family exclusion, via full rank and C4 |
-| 7 | 21 | 378 | pending | pending | pending | Heavy lease requested |
+| 7 | 21 | 378 | 378 | 378 | 372 | EXACT family exclusion, via full rank and C4 |
 
-New proposed family exclusions after the checked pilots: 10. For a full-rank t=21 source, multiplication by s2^((21-t)/2) injects each lower odd-tail stable ideal into the zero tail-21 ideal. The ideal filtration then excludes every valid finite rung of each such tail. These are theorem implications, not extra sampled pilots; proof C6 records the argument.
+New proposed family exclusions after the checked pilots: 20. For a full-rank t=21 source, multiplication by s2^((21-t)/2) injects each lower odd-tail stable ideal into the zero tail-21 ideal. The ideal filtration then excludes every valid finite rung of each such tail. These are theorem implications, not extra sampled pilots; proof C6 records the argument.
+
+The final queue contains 20 new exclusions, two inherited overlay exclusions, one family reserved to B15-05, one over-cap family, and 16 open families. The ten-row tail 19 pilot gives i_det_inf<=11, and ideal multiplication transfers that upper bound to lower odd tails at r=10.
+
+For independent review, the finite multiplier is q62=8c0c2-3c1^2 in ordinary quartic coefficients. It is nonzero, has coefficient degree 2 and highest weight (6,2); multiplication by q62^k injects the lower-tail ideal at delta into the tail-21 ideal at delta+2k, k=(21-t)/2. The nontrivial-ambient scope is delta>=max(r,ceil((t+r-2)/2)); smaller valid degrees with delta<r have zero ambient multiplicity. The proposals specify these predicates and actual witness tails.
 
 All ranks, when present, agree at 2147483647 and 2147483629 and are backed by explicit nonzero square minors. The replay reconstructs jets from integer pencils or independent padded linear forms, reevaluates the selected source brackets, and checks every entry of the minor before recomputing its determinant. This is a fresh geometric replay, not stored-matrix elimination. Generic source matrices attaining a_inf also certify source completeness without a separate spanning premise.
 
@@ -56,9 +60,11 @@ The original B14-06 point module fixes NV=8 and AMB=9, and the evaluator factori
 | b15_06_extension_small_resources | 0 | 1.179 | 25.23 | 60 / 512 |
 | b15_06_pilot1_native_resources | 0 | 125.602 | 119.38 | 900 / 1536 |
 | b15_06_pilot2_native_resources | 0 | 69.065 | 139.43 | 300 / 512 |
+| b15_06_pilot3_native_resources | 0 | 35.885 | 102.27 | 300 / 512 |
+| b15_06_scope_final_resources | 0 | 0.107 | 23.84 | 30 / 128 |
 | b15_06_timing_small_resources | 0 | 0.882 | 26.95 | 60 / 512 |
 
-Completed pilot/replay pairs: 2/3. Completed runs have exited. The integrator granted the first selected family; later families await a measured-cost checkpoint and extension authorization.
+Completed pilot/replay pairs: 3/3. The selected pilots are complete. Heavy process exit and lease release are recorded for the integrator.
 
 One process and one BLAS thread were used under the native Windows Job Object wrapper. Four-point timing controls price construction, point generation and evaluation separately; extrapolations are labeled estimates and exclude matrix reduction/replay. No weight carrier or stabilizer quotient was allocated. Every tracked artifact is checked below 5,000,000 bytes; large delivery bundles are split by the supplied helper.
 
@@ -75,6 +81,7 @@ Use the same executable and wrapper for the following entry points, with unique 
 - analysis/b15_06_census.py: regenerate the 40-row census (60 seconds,512 MiB).
 - analysis/b15_06_verify.py counts: independently recompute and compare 80 certificates (60 seconds,512 MiB).
 - analysis/b15_06_geometry.py controls: dimension and liveness controls (60 seconds,512 MiB).
+- analysis/b15_06_verify.py scope: exact q62 raising, weight, degree, finite-rung predicates and evidence joins (30 seconds,128 MiB).
 - analysis/b15_06_heavy.py --rank K: one selected production and native geometric replay, requiring an integrator lease for that family (900 seconds,1536 MiB).
 - analysis/b15_06_verify.py geometry --r R --t T: replay saved native minors under a lease.
 

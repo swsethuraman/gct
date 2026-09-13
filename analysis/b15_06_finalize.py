@@ -70,9 +70,15 @@ def main():
                 exclusions.append({'id':f'b15_06_r{r}_t{tt}_stable_full_transport', 'status':'EXACT',
                     'claim':'i_det=0 at every valid rung; D<=0',
                     'n':4,'r':r,'tail':[tt]+[2]*(r-2),'degree_scope':'every valid rung',
+                    'nontrivial_ambient_degree_min':max(r,(tt+r-1)//2),
+                    'partition_template':'(4*delta-t-2*(r-2),t,2^(r-2))',
+                    'smaller_valid_degrees':'delta<r has zero quartic ambient multiplicity',
                     'a_inf':lower['a_inf'],'m_det_stable_lb':lower['a_inf'],
                     'witness_a_inf':a,'witness_m_det_stable_lb':ranks['DET'],
                     'witness_tail':[t]+[2]*(r-2),'multiplier_s2_power':(t-tt)//2,
+                    'finite_multiplier':'(8*c0*c2-3*c1^2)^k, k=(witness_t-t)/2; ordinary coefficients',
+                    'finite_degree_increment':t-tt,
+                    'finite_weight_increment':[3*(t-tt),t-tt]+[0]*(r-2),
                     'inherited_premises':['S57 Proposition S ideal filtration','polynomial-functor inheritance'],
                     'fresh_evidence':[f'results/b15_06/pilot_r{r}_t{t}_summary.json',
                                       f'results/b15_06/geometric_replay_r{r}_t{t}.json'],
@@ -99,6 +105,8 @@ def main():
             row['next_sufficient_negative_witness']=f"global padded ideal floor {a-ranks['DET']} at a stated stable rung"
     report += ['',
         f'New proposed family exclusions after the checked pilots: {len(exclusions)}. For a full-rank t=21 source, multiplication by s2^((21-t)/2) injects each lower odd-tail stable ideal into the zero tail-21 ideal. The ideal filtration then excludes every valid finite rung of each such tail. These are theorem implications, not extra sampled pilots; proof C6 records the argument.', '',
+        ('The final queue contains 20 new exclusions, two inherited overlay exclusions, one family reserved to B15-05, one over-cap family, and 16 open families. The ten-row tail19 pilot gives i_det_inf<=11, and ideal multiplication transfers that upper bound to lower odd tails at r=10.' if completed==3 else 'The final queue will be updated after the remaining authorized pilots.'), '',
+        'For independent review, the finite multiplier is q62=8c0c2-3c1^2 in ordinary quartic coefficients. It is nonzero, has coefficient degree2 and highest weight(6,2); multiplication by q62^k injects the lower-tail ideal at delta into the tail-21 ideal at delta+2k, k=(21-t)/2. The nontrivial-ambient scope is delta>=max(r,ceil((t+r-2)/2)); smaller valid degrees with delta<r have zero ambient multiplicity. The proposals specify these predicates and actual witness tails.', '',
         'All ranks, when present, agree at2147483647 and2147483629 and are backed by explicit nonzero square minors. The replay reconstructs jets from integer pencils or independent padded linear forms, reevaluates the selected source brackets, and checks every entry of the minor before recomputing its determinant. This is a fresh geometric replay, not stored-matrix elimination. Generic source matrices attaining a_inf also certify source completeness without a separate spanning premise.', '',
         'A deficient DET rank is a floor, and bounds the ideal from above. A deficient PAD sample cannot produce an ideal lower bound. For a remaining candidate, the next sufficient positive witness is a global determinant ideal floor q and a padded minor r_pad satisfying q+r_pad>a at one fixed cell. A sufficient negative witness is a padded ideal floor at least a_inf-r_det, combined with the stable ideal filtration. No finite degree27 ambient value is asserted from the stable ten-row count429.', '',
         '## Validation and resource decisions', '',
@@ -126,11 +134,15 @@ def main():
         '- analysis/b15_06_census.py: regenerate the40-row census (60seconds,512MiB).',
         '- analysis/b15_06_verify.py counts: independently recompute and compare80 certificates (60seconds,512MiB).',
         '- analysis/b15_06_geometry.py controls: dimension and liveness controls (60seconds,512MiB).',
+        '- analysis/b15_06_verify.py scope: exact q62 raising, weight, degree, finite-rung predicates and evidence joins (30 seconds,128 MiB).',
         '- analysis/b15_06_heavy.py --rank K: one selected production and native geometric replay, requiring an integrator lease for that family (900seconds,1536MiB).',
         '- analysis/b15_06_verify.py geometry --r R --t T: replay saved native minors under a lease.', '',
         'Input hashes are in preregistration and input_hashes.json. Source constructions, integer points, primes, interpolation seed, bracket-by-point orientation, minors, and resource logs are retained. The chart uses ordinary c=[s0^4]F, with c=1 for DET; it does not silently substitute the historical factorial symbol u=24c.', '',
         'Final packaging, after the last commit: tools/delivery/check_batch15.py --branch b15-06-fresh-tails --base f365568d80d5f66fea2dd9342ff1998e1d866915 --slot 06, then tools/delivery/package_batch15.py --branch b15-06-fresh-tails --slot 06 --model gpt-6-astra --output delivery/b15_06_final. The external manifest carries head/tree and bundle checksums without self-reference. A packaging PASS is not mathematical verification.', '']
     prose='\n'.join(report)
+    if completed==3:
+        prose=prose.replace('The exact census covers all 40 requested families.',
+            'The three checked pilots yield 20 new family exclusions: every requested odd tail at r=7 or r=8 has i_det=0 at every valid rung. The ten-row tail19 remains a candidate, with i_det_inf<=11. The exact census covers all 40 requested families.')
     for old,new in [('all40','all 40'),('All40','All 40'),('the40','the 40'),('compare80','compare 80'),
                     ('degree13','degree 13'),('degree15','degree 15'),('degree27','degree 27'),
                     ('the533','the 533'),('Thus36','Thus 36'),('multiplicities429','multiplicities 429'),
@@ -139,7 +151,8 @@ def main():
                     ('at8!','at 8!'),('rank10','rank 10'),('NumPy2.4.6','NumPy 2.4.6'),
                     ('python-flint0.9.0','python-flint 0.9.0'),('below5,','below 5,'),
                     ('60seconds','60 seconds'),('512MiB','512 MiB'),('900seconds','900 seconds'),
-                    ('1536MiB','1536 MiB')]:
+                    ('1536MiB','1536 MiB'),('dimension16','dimension 16'),
+                    ('degree2','degree 2'),('weight(6,2)','weight (6,2)'),('tail19','tail 19')]:
         prose=prose.replace(old,new)
     (ROOT/'docs/b15_06_report.md').write_text(prose,encoding='utf-8')
     ordered.sort(key=lambda x:(x['queue_status']!='OPEN',x['pilot_priority'] or 100,
