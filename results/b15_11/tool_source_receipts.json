@@ -1,0 +1,242 @@
+[
+  {
+    "tool": "ambient_and_target_character_counts",
+    "path": "analysis/b14_04/recount.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Ambient, stable and pullback dimensions; not geometric image ranks.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "ambient_and_target_character_counts",
+    "path": "analysis/b14_04/verify.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Ambient, stable and pullback dimensions; not geometric image ranks.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "ambient_and_target_character_counts",
+    "path": "analysis/b14_11_work.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Ambient, stable and pullback dimensions; not geometric image ranks.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "exact_signed_burnside_sizing",
+    "path": "analysis/b14_11_sizes.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Use signed character traces; audit arithmetic range before applying fixed-width DP to new shapes.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "exact_signed_burnside_sizing",
+    "path": "analysis/b14_09_sizing.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Use signed character traces; audit arithmetic range before applying fixed-width DP to new shapes.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "mixed_target_brackets",
+    "path": "analysis/b14_01_mixed.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "The original degree-13 search spans 72; its probe pruning does not prove completeness.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "degree13_exact_source",
+    "path": "analysis/b14_02_source13.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "39 rows, exact rank36; use current CI73 acceptance for global membership.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "degree13_exact_source",
+    "path": "analysis/b14_02_kernel.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "39 rows, exact rank36; use current CI73 acceptance for global membership.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "degree14_exact_source",
+    "path": "analysis/b14_07_source14.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "93 source directions, five sampled relations, target seed88 of159; three relations global by transport.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "degree14_exact_source",
+    "path": "analysis/b14_07_kernel.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "93 source directions, five sampled relations, target seed88 of159; three relations global by transport.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "degree14_exact_source",
+    "path": "results/b15_prep/degree14_target_seed88.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "93 source directions, five sampled relations, target seed88 of159; three relations global by transport.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "complete_interpolation",
+    "path": "tools/verify/verify.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Exact source + independently counted target + complete target minor. See ci73_acceptance.json for this receiver run.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "complete_interpolation",
+    "path": "results/ci73/certificate.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Exact source + independently counted target + complete target minor. See ci73_acceptance.json for this receiver run.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "complete_interpolation",
+    "path": "docs/ci73_proof.md",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Exact source + independently counted target + complete target minor. See ci73_acceptance.json for this receiver run.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "stable_bracket_evaluation",
+    "path": "analysis/b14_06_bracket.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Two equal tall columns and singletons; review NumPy adapter avoids unavailable flint locally. Broader shapes and point dimensions need controls.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "stable_bracket_evaluation",
+    "path": "analysis/b14_06_points.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Two equal tall columns and singletons; review NumPy adapter avoids unavailable flint locally. Broader shapes and point dimensions need controls.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "stable_bracket_evaluation",
+    "path": "tools/verify/b15_modular.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Two equal tall columns and singletons; review NumPy adapter avoids unavailable flint locally. Broader shapes and point dimensions need controls.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "transport_and_bound_join",
+    "path": "analysis/b14_08_verify.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Known ideal images cannot be summed without independence; finite ideal upper bounds may use stable limits.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "transport_and_bound_join",
+    "path": "results/b15_prep/transport_overlay.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Known ideal images cannot be summed without independence; finite ideal upper bounds may use stable limits.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "executable_exclusions",
+    "path": "tools/integrate/exclusion_predicates.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Scope-aware theorem exclusions; recorded historical ranks remain a separate evidence class.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "executable_exclusions",
+    "path": "results/b15_prep/explicit_peak_witness.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Scope-aware theorem exclusions; recorded historical ranks remain a separate evidence class.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "recursive_source24",
+    "path": "analysis/wk12_s76_recursion.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Dimension274 is constructed; saved nested coordinates are not a completed polynomial-evaluation interface.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "recursive_source24",
+    "path": "analysis/wk12_s76_seminormal.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Dimension274 is constructed; saved nested coordinates are not a completed polynomial-evaluation interface.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "recursive_source24",
+    "path": "analysis/wk12_s77_bridge.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Dimension274 is constructed; saved nested coordinates are not a completed polynomial-evaluation interface.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "exact_Q1_bounds_and_records",
+    "path": "results/b15_prep/Q1_combined_bound.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "123-label record closure; no claim of all six-row cells or fresh large native replay. Claude close additionally records a full second-host native replay; that is separate from Astra receiver scope.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "exact_Q1_bounds_and_records",
+    "path": "results/b15_prep/Q1_coverage.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "123-label record closure; no claim of all six-row cells or fresh large native replay. Claude close additionally records a full second-host native replay; that is separate from Astra receiver scope.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "new_candidate_preflight",
+    "path": "results/b15_prep/small_panel_sizing.json",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "71 selected cells sized; operational queue1710, with old recorded deferrals retained.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "fixed_factor_and_cubic_transfer",
+    "path": "analysis/b13_02_structural.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "For HWVs, restriction to x1*c tests reducible membership by coefficient support. The banked cubic degree<=8 closure gives m_pad=m_red in that range. Full coefficient expansion can still be expensive; later PROVED entries require the Batch14 corrections.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "fixed_factor_and_cubic_transfer",
+    "path": "docs/PROVED.md",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "For HWVs, restriction to x1*c tests reducible membership by coefficient support. The banked cubic degree<=8 closure gives m_pad=m_red in that range. Full coefficient expansion can still be expensive; later PROVED entries require the Batch14 corrections.",
+    "native_replayed_here": false
+  },
+  {
+    "tool": "permanent_stabilizer_upper_bound",
+    "path": "analysis/wk13_b13_05_bound.py",
+    "hash_match": true,
+    "evidence_status": "RECORDED",
+    "boundary": "Already tested at all4517 cubic weights through degree9 without a useful bound. Do not repeat that range or confuse this permanent-side result with the proposed determinant-side upper-bound pilot.",
+    "native_replayed_here": false
+  }
+]

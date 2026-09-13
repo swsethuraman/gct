@@ -1,0 +1,414 @@
+[
+  {
+    "schema": "b15-evidence/1",
+    "cell": {
+      "n": 4,
+      "delta": 24,
+      "ell": 9,
+      "lambda": [
+        65,
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "ambient_variables": 16,
+      "representation": "polynomial_GL_covariant_Schur_label",
+      "geometry": "orbit_closure",
+      "context": "quartic_padded_gap",
+      "point_family": "det4_vs_independent_z_per3"
+    },
+    "producer_model": "gpt-6-astra",
+    "source": "results/astra/S1/transported_det_lower_bound_2.json",
+    "status": "RECORDED",
+    "raw": [
+      {
+        "prime": 2147483647,
+        "normalization": "u^12 F_seed; literal target F has coefficient 1/24^12",
+        "seed_point_indices": [
+          0,
+          1
+        ],
+        "u_values": [
+          1193,
+          196
+        ],
+        "matrix": [
+          [
+            1941405902,
+            1971507558
+          ],
+          [
+            2070394199,
+            1789875459
+          ]
+        ],
+        "determinant": 1633168943
+      },
+      {
+        "prime": 2147483629,
+        "normalization": "u^12 F_seed; literal target F has coefficient 1/24^12",
+        "seed_point_indices": [
+          0,
+          1
+        ],
+        "u_values": [
+          1193,
+          196
+        ],
+        "matrix": [
+          [
+            443522590,
+            2118319763
+          ],
+          [
+            1452868369,
+            748858587
+          ]
+        ],
+        "determinant": 2005871687
+      }
+    ],
+    "raw_sha256": "47e41257278af42ef1eb927280ab2565e06810cd0985fab60cae8bead8fefe1e",
+    "usable_for_bounds": false
+  },
+  {
+    "schema": "b15-evidence/1",
+    "cell": {
+      "n": 4,
+      "delta": 8,
+      "ell": 6,
+      "lambda": [
+        12,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "ambient_variables": 16,
+      "representation": "polynomial_GL_covariant_Schur_label",
+      "geometry": "orbit_closure",
+      "context": "quartic_padded_gap",
+      "point_family": "det4_vs_independent_z_per3"
+    },
+    "producer_model": "claude-opus-5",
+    "source": "results/b14_12/s79_schema_rows.jsonl#1",
+    "status": "RECORDED",
+    "raw": {
+      "D": -3,
+      "D_R": -3,
+      "K": 12,
+      "NS_delta": 216077272,
+      "N_S": 27009659,
+      "a": 4,
+      "bound": 40,
+      "build_hwm_gb": 1.48,
+      "build_secs": 2838.1,
+      "certs": null,
+      "cost_model": "PROVED.md: cost_model (B13-09 sec 4): build_secs ~ 3.06e-6*N_S*delta + 1.07e-6*|Stab|*N_S",
+      "cover_E": {
+        "size": 244444,
+        "order": "reversed",
+        "n_chi": 244454,
+        "a": 4,
+        "excess": 6,
+        "certified_rank_lb": 244444
+      },
+      "cover_Ered": {
+        "size": 234056,
+        "order": "reversed",
+        "n_red": 234064,
+        "certified": false
+      },
+      "delta": 8,
+      "ell": 6,
+      "halt": false,
+      "hwm_gb": 2.231,
+      "i_det": 0,
+      "i_pad": 3,
+      "i_per4": 0,
+      "i_red": 3,
+      "lam": [
+        12,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "monotone_ok": true,
+      "mult_det": 4,
+      "mult_pad": 1,
+      "mult_per4": 4,
+      "mult_red": 1,
+      "mult_red_pts": 1,
+      "mult_red_star": 1,
+      "n_chi": 244454,
+      "n_red": 234064,
+      "nfixed": 0,
+      "nnz": 56094024,
+      "nrows": 16480713,
+      "ok": true,
+      "pad_lt_red": false,
+      "per_prime": {
+        "2147483647": {
+          "nullity": 4,
+          "hybrid": {
+            "nS": 244444,
+            "nU": 10,
+            "excess": 6,
+            "nnzT": 533918,
+            "rows_other": 16480713,
+            "order": "reversed",
+            "cover_stats": {
+              "natural": 239170,
+              "reversed": 244444,
+              "fill_asc": 242045,
+              "fill_desc": 235588,
+              "random": 213480
+            },
+            "ublock": 10,
+            "nblocks": 1,
+            "attempts": [
+              {
+                "attempt": 0,
+                "m": 74,
+                "nproj": 8,
+                "projected_nullity": 4,
+                "verified": true,
+                "rank": 4,
+                "secs": {
+                  "split": 0.1,
+                  "trisolve": 0.0,
+                  "schur": 3.2,
+                  "nullspace": 0.0,
+                  "lift_verify": 4.0,
+                  "rank": 0.0
+                },
+                "hwm_gb": 2.015
+              }
+            ],
+            "lean": {
+              "fo": "inplace",
+              "xblock": "lean",
+              "data_dtype": "int16"
+            },
+            "secs": 7.9
+          },
+          "sides": {
+            "det": {
+              "mult": 4,
+              "nullity": 0,
+              "all_rows_zero": false
+            },
+            "pad": {
+              "mult": 1,
+              "nullity": 3,
+              "all_rows_zero": false
+            },
+            "per4": {
+              "mult": 4,
+              "nullity": 0,
+              "all_rows_zero": false
+            },
+            "red_pts": {
+              "mult": 1,
+              "nullity": 3,
+              "all_rows_zero": false
+            },
+            "diag_control": {
+              "mult": 0,
+              "nullity": 4,
+              "all_rows_zero": true
+            },
+            "red_star": {
+              "mult": 1,
+              "nullity": 3,
+              "instrument": "hybrid kernel + (star)"
+            }
+          },
+          "secs": 132.8,
+          "hwm_gb": 2.015
+        },
+        "2147483629": {
+          "nullity": 4,
+          "hybrid": {
+            "nS": 244444,
+            "nU": 10,
+            "excess": 6,
+            "nnzT": 533918,
+            "rows_other": 16480713,
+            "order": "reversed",
+            "cover_stats": {
+              "natural": 239170,
+              "reversed": 244444,
+              "fill_asc": 242045,
+              "fill_desc": 235588,
+              "random": 213480
+            },
+            "ublock": 10,
+            "nblocks": 1,
+            "attempts": [
+              {
+                "attempt": 0,
+                "m": 74,
+                "nproj": 8,
+                "projected_nullity": 4,
+                "verified": true,
+                "rank": 4,
+                "secs": {
+                  "split": 0.1,
+                  "trisolve": 0.0,
+                  "schur": 3.2,
+                  "nullspace": 0.0,
+                  "lift_verify": 4.1,
+                  "rank": 0.0
+                },
+                "hwm_gb": 2.231
+              }
+            ],
+            "lean": {
+              "fo": "inplace",
+              "xblock": "lean",
+              "data_dtype": "int16"
+            },
+            "secs": 9.3
+          },
+          "sides": {
+            "det": {
+              "mult": 4,
+              "nullity": 0,
+              "all_rows_zero": false
+            },
+            "pad": {
+              "mult": 1,
+              "nullity": 3,
+              "all_rows_zero": false
+            },
+            "per4": {
+              "mult": 4,
+              "nullity": 0,
+              "all_rows_zero": false
+            },
+            "red_pts": {
+              "mult": 1,
+              "nullity": 3,
+              "all_rows_zero": false
+            },
+            "diag_control": {
+              "mult": 0,
+              "nullity": 4,
+              "all_rows_zero": true
+            },
+            "red_star": {
+              "mult": 1,
+              "nullity": 3,
+              "instrument": "hybrid kernel + (star)"
+            }
+          },
+          "secs": 130.0,
+          "hwm_gb": 2.231
+        }
+      },
+      "pred_mem_x_bytes": null,
+      "primes": [
+        2147483647,
+        2147483629
+      ],
+      "primes_concurrent": false,
+      "refute": false,
+      "route": "hybrid, lean builder (wk13_b10_lean) driven by analysis/b14_12_cell.py",
+      "secs": null,
+      "seeds": {
+        "det": 11,
+        "red": 29,
+        "pad": 37,
+        "per4": 47
+      },
+      "sides": {
+        "det": {
+          "mult": 4,
+          "per_prime": {
+            "2147483647": 4,
+            "2147483629": 4
+          },
+          "primes_agree": true,
+          "status": "proved (full rank at both primes: mult = a over Q)"
+        },
+        "pad": {
+          "mult": 1,
+          "per_prime": {
+            "2147483647": 1,
+            "2147483629": 1
+          },
+          "primes_agree": true,
+          "status": "measured (exact mod both primes): mult = 1 -- a CEILING on i, never read downward"
+        },
+        "per4": {
+          "mult": 4,
+          "per_prime": {
+            "2147483647": 4,
+            "2147483629": 4
+          },
+          "primes_agree": true,
+          "status": "proved (full rank at both primes: mult = a over Q)"
+        },
+        "red_star": {
+          "mult": 1,
+          "per_prime": {
+            "2147483647": 1,
+            "2147483629": 1
+          },
+          "primes_agree": true,
+          "status": "measured (exact mod both primes): mult = 1 -- a CEILING on i, never read downward"
+        },
+        "red_pts": {
+          "mult": 1,
+          "per_prime": {
+            "2147483647": 1,
+            "2147483629": 1
+          },
+          "primes_agree": true,
+          "status": "measured (exact mod both primes): mult = 1 -- a CEILING on i, never read downward"
+        }
+      },
+      "sieve_secs": 37.2,
+      "stab": 120,
+      "star_eq_pts": true,
+      "_provenance": "B14-12: results/b14_12/b14_12.json (determinant column) + results/b14_12/b14_12_families.json (the other three families)",
+      "_absent_fields": [
+        "certs -- no tools/verify certificate exists: N_S*a = 1.08e8 is far above the full_rank gate of 3e6 (PROVED.md: certificate_ceiling), so this tree can PROVE this result and cannot CERTIFY it in the present formats",
+        "pred_mem_x_bytes -- the lean hybrid sizes its X blocks from S71_MEM_X directly",
+        "secs -- build and the two family passes were separate bounded processes; no single wall time covers the cell",
+        "refute -- recorded: D = -3 <= 0, so False"
+      ],
+      "_queue_entry": {
+        "lam": [
+          12,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "delta": 8,
+        "a": 4,
+        "a_inf": 13,
+        "nchi_est": 225081,
+        "N_S": 27009659,
+        "stab": 120,
+        "NS_delta": 216077272,
+        "pools": [
+          "T1"
+        ]
+      }
+    },
+    "raw_sha256": "1d8fd3a12394f971827dce3968c71461071a63161dbe27fd569f4d088b89868f",
+    "usable_for_bounds": false
+  }
+]

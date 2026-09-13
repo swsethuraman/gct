@@ -1,0 +1,726 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "checks": [
+    {
+      "name": "LMR accepted arithmetic [-4,-2]",
+      "passed": true
+    },
+    {
+      "name": "tail19 reviewed D<=-1",
+      "passed": true
+    },
+    {
+      "name": "tail21 unresolved finite U_pad528",
+      "passed": true
+    },
+    {
+      "name": "peaked applies",
+      "passed": true
+    },
+    {
+      "name": "session12 missing portable witness stays recorded",
+      "passed": true
+    },
+    {
+      "name": "historical pilot missing portable witness stays recorded",
+      "passed": true
+    },
+    {
+      "name": "open_a1 no inferred determinant rank",
+      "passed": true
+    },
+    {
+      "name": "open_a_gt1 no inferred determinant rank",
+      "passed": true
+    },
+    {
+      "name": "wrong key refuses bounds",
+      "passed": true
+    },
+    {
+      "name": "incomplete key refuses bounds",
+      "passed": true
+    },
+    {
+      "name": "independent padding convention required",
+      "passed": true
+    },
+    {
+      "name": "orbit not silently closure",
+      "passed": true
+    },
+    {
+      "name": "four native replacements present",
+      "passed": true
+    },
+    {
+      "name": "native polynomial liveness cubic8_7_5_5_2_2_1_1_1",
+      "passed": true
+    },
+    {
+      "name": "native polynomial liveness cubic8_7_6_3_3_2_1_1_1",
+      "passed": true
+    },
+    {
+      "name": "native polynomial liveness cubic8_8_5_3_2_2_2_1_1",
+      "passed": true
+    },
+    {
+      "name": "native polynomial liveness cubic8_9_4_2_2_2_2_2_1",
+      "passed": true
+    },
+    {
+      "name": "consumer admits fresh native floor",
+      "passed": true
+    },
+    {
+      "name": "transpose square matrix with determinant unchanged",
+      "passed": true
+    },
+    {
+      "name": "swap factorial coefficient convention",
+      "passed": true
+    },
+    {
+      "name": "changed point and updated checksum",
+      "passed": true
+    },
+    {
+      "name": "altered source polynomial",
+      "passed": true
+    },
+    {
+      "name": "changed determinant sign",
+      "passed": true
+    },
+    {
+      "name": "mutated theorem scope refused",
+      "passed": true
+    },
+    {
+      "name": "gpt-6-astra recorded rank cannot exclude",
+      "passed": true
+    },
+    {
+      "name": "claude-opus-5 recorded rank cannot exclude",
+      "passed": true
+    },
+    {
+      "name": "both native model envelopes load",
+      "passed": true
+    },
+    {
+      "name": "record cannot self-authorize",
+      "passed": true
+    },
+    {
+      "name": "record content digest enforced",
+      "passed": true
+    },
+    {
+      "name": "strict positive implication synthetic",
+      "passed": true
+    },
+    {
+      "name": "equality not positive",
+      "passed": true
+    },
+    {
+      "name": "inconsistent bounds rejected",
+      "passed": true
+    },
+    {
+      "name": "coordinate transport nonzero native u",
+      "passed": true
+    },
+    {
+      "name": "transport refuses no irreducibility",
+      "passed": true
+    },
+    {
+      "name": "transport refuses zero on variety",
+      "passed": true
+    },
+    {
+      "name": "transport refuses nonzero metadata without point",
+      "passed": true
+    },
+    {
+      "name": "transport refuses wrong variety",
+      "passed": true
+    }
+  ],
+  "count": 37,
+  "fixtures": {
+    "LMR": {
+      "cell": {
+        "n": 4,
+        "delta": 24,
+        "ell": 9,
+        "lambda": [
+          65,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 273,
+        "i_det_lb": 1,
+        "m_pad_lb": 269,
+        "i_pad_lb": 3,
+        "a_lb": 274,
+        "a_ub": 274,
+        "m_det_ub": 273,
+        "D_ub": -2,
+        "i_det_ub": 1,
+        "m_pad_ub": 271,
+        "i_pad_ub": 5,
+        "D_lb": -4,
+        "U_pad_ub": 271
+      },
+      "decision": "EXCLUDED_D_POSITIVE",
+      "status": "EXACT",
+      "exclusion_reason": [
+        "reviewed_tail_transport"
+      ],
+      "inherited_premises": [
+        {
+          "id": "accepted_LMR",
+          "source": "docs/batch15/ACCEPTED_STATE.md",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "reviewed_tail_transport",
+          "source": "results/b15_prep/transport_overlay.json",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "To obtain D=-4, prove two further independent global padded equations, raising i_pad_lb from 3 to 5."
+    },
+    "tail19": {
+      "cell": {
+        "n": 4,
+        "delta": 25,
+        "ell": 9,
+        "lambda": [
+          67,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 3,
+        "a_lb": 0,
+        "D_ub": -1,
+        "i_det_ub": 2
+      },
+      "decision": "EXCLUDED_D_POSITIVE",
+      "status": "EXACT",
+      "exclusion_reason": [
+        "reviewed_tail_transport"
+      ],
+      "inherited_premises": [
+        {
+          "id": "reviewed_tail_transport",
+          "source": "results/b15_prep/transport_overlay.json",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "reviewed_ideal_products",
+          "source": "results/b15_prep/transport_overlay.json",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "reviewed_finite_ideal_upper",
+          "source": "results/b15_prep/transport_overlay.json",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "No positive-gap witness is possible under the listed premises."
+    },
+    "tail21": {
+      "cell": {
+        "n": 4,
+        "delta": 26,
+        "ell": 9,
+        "lambda": [
+          69,
+          21,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 3,
+        "a_lb": 531,
+        "a_ub": 531,
+        "m_det_ub": 531,
+        "i_det_ub": 531,
+        "m_pad_ub": 528,
+        "i_pad_ub": 531,
+        "D_ub": 528,
+        "D_lb": -531,
+        "U_pad_ub": 528
+      },
+      "decision": "UNRESOLVED",
+      "status": "CANDIDATE",
+      "exclusion_reason": null,
+      "inherited_premises": [
+        {
+          "id": "reviewed_ideal_products",
+          "source": "results/b15_prep/transport_overlay.json",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "accepted_tail21_transport",
+          "source": "docs/batch15/ACCEPTED_STATE.md",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "Stable determinant rank floor 530 with native witness and stable ambient 533 excludes every rung from degree 15; at degree 26, native rank 528 suffices with a=531 and i_pad_lb=3."
+    },
+    "peaked": {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "ell": 7,
+        "lambda": [
+          16,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 1,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 0,
+        "a_lb": 1,
+        "D_ub": 0,
+        "a_ub": 1,
+        "m_det_ub": 1,
+        "h_pad_ub": 2,
+        "i_det_ub": 0,
+        "m_pad_ub": 1,
+        "i_pad_ub": 1,
+        "D_lb": -1,
+        "U_pad_ub": 1
+      },
+      "decision": "EXCLUDED_D_POSITIVE",
+      "status": "EXACT",
+      "exclusion_reason": [
+        "peaked_quartic_ladders"
+      ],
+      "inherited_premises": [
+        {
+          "id": "peaked_quartic_ladders",
+          "source": "results/integrate/inherited_exclusions.json",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "reviewed_exact_census",
+          "source": "docs/b14_11_review.md",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "No positive-gap witness is possible under the listed premises."
+    },
+    "session12": {
+      "cell": {
+        "n": 4,
+        "delta": 8,
+        "ell": 6,
+        "lambda": [
+          12,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 3,
+        "a_lb": 4,
+        "a_ub": 4,
+        "h_pad_ub": 1,
+        "m_det_ub": 4,
+        "i_det_ub": 4,
+        "m_pad_ub": 1,
+        "i_pad_ub": 4,
+        "D_ub": 1,
+        "D_lb": -4,
+        "U_pad_ub": 1
+      },
+      "decision": "UNRESOLVED",
+      "status": "RECORDED",
+      "exclusion_reason": null,
+      "inherited_premises": [
+        {
+          "id": "reviewed_exact_census",
+          "source": "docs/b14_11_review.md",
+          "scope": "inherited; no native evaluation replay here"
+        },
+        {
+          "id": "Q1_recount_hpad",
+          "source": "results/b15_prep/Q1_combined_bound.json",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [
+        {
+          "kind": "accepted_Q1_record_closure",
+          "record": {
+            "n": 4,
+            "lam": [
+              12,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "delta": 8,
+            "a": 4,
+            "mult_det": 4,
+            "i_det": 0,
+            "D_upper": 0,
+            "source": "results/b14_12/b14_12.json",
+            "status": "REPORTED_FULL_RANK_Q_CLOSURE",
+            "independently_replayed_geometric_rank_in_this_review": false
+          },
+          "native_witness_replayed": false
+        }
+      ],
+      "rejected": [],
+      "next_sufficient_witness": "Supply a native determinant rank floor at least U_pad, or a global determinant ideal floor q and native padded rank r with q+r>a."
+    },
+    "historical_pilot": {
+      "cell": {
+        "n": 4,
+        "delta": 8,
+        "ell": 6,
+        "lambda": [
+          10,
+          6,
+          6,
+          6,
+          2,
+          2
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 3,
+        "a_lb": 10,
+        "a_ub": 10,
+        "h_pad_ub": 7,
+        "m_det_ub": 10,
+        "i_det_ub": 10,
+        "m_pad_ub": 7,
+        "i_pad_ub": 10,
+        "D_ub": 7,
+        "D_lb": -10,
+        "U_pad_ub": 7
+      },
+      "decision": "UNRESOLVED",
+      "status": "RECORDED",
+      "exclusion_reason": null,
+      "inherited_premises": [
+        {
+          "id": "reviewed_exact_census",
+          "source": "docs/b14_11_review.md",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [
+        {
+          "kind": "accepted_Q1_record_closure",
+          "record": {
+            "n": 4,
+            "lam": [
+              10,
+              6,
+              6,
+              6,
+              2,
+              2
+            ],
+            "delta": 8,
+            "a": 10,
+            "mult_det": 10,
+            "i_det": 0,
+            "D_upper": 0,
+            "source": "results/b13_10/pilot.json",
+            "status": "REPORTED_FULL_RANK_Q_CLOSURE",
+            "independently_replayed_geometric_rank_in_this_review": false
+          },
+          "native_witness_replayed": false
+        }
+      ],
+      "rejected": [],
+      "next_sufficient_witness": "Supply a native determinant rank floor at least U_pad, or a global determinant ideal floor q and native padded rank r with q+r>a."
+    },
+    "open_a1": {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "ell": 7,
+        "lambda": [
+          11,
+          8,
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 0,
+        "a_lb": 1,
+        "a_ub": 1,
+        "h_pad_ub": 1,
+        "m_det_ub": 1,
+        "i_det_ub": 1,
+        "m_pad_ub": 1,
+        "i_pad_ub": 1,
+        "D_ub": 1,
+        "D_lb": -1,
+        "U_pad_ub": 1
+      },
+      "decision": "UNRESOLVED",
+      "status": "CANDIDATE",
+      "exclusion_reason": null,
+      "inherited_premises": [
+        {
+          "id": "reviewed_exact_census",
+          "source": "docs/b14_11_review.md",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "Supply a native determinant rank floor at least U_pad, or a global determinant ideal floor q and native padded rank r with q+r>a."
+    },
+    "open_a_gt1": {
+      "cell": {
+        "n": 4,
+        "delta": 8,
+        "ell": 7,
+        "lambda": [
+          13,
+          11,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ambient_variables": 16,
+        "representation": "polynomial_GL_covariant_Schur_label",
+        "geometry": "orbit_closure",
+        "context": "quartic_padded_gap",
+        "point_family": "det4_vs_independent_z_per3"
+      },
+      "bounds": {
+        "m_det_lb": 0,
+        "i_det_lb": 0,
+        "m_pad_lb": 0,
+        "i_pad_lb": 0,
+        "a_lb": 2,
+        "a_ub": 2,
+        "h_pad_ub": 2,
+        "m_det_ub": 2,
+        "i_det_ub": 2,
+        "m_pad_ub": 2,
+        "i_pad_ub": 2,
+        "D_ub": 2,
+        "D_lb": -2,
+        "U_pad_ub": 2
+      },
+      "decision": "UNRESOLVED",
+      "status": "CANDIDATE",
+      "exclusion_reason": null,
+      "inherited_premises": [
+        {
+          "id": "reviewed_exact_census",
+          "source": "docs/b14_11_review.md",
+          "scope": "inherited; no native evaluation replay here"
+        }
+      ],
+      "replayed": [],
+      "recorded": [],
+      "rejected": [],
+      "next_sufficient_witness": "Supply a native determinant rank floor at least U_pad, or a global determinant ideal floor q and native padded rank r with q+r>a."
+    }
+  },
+  "native_replay": {
+    "cell": {
+      "n": 3,
+      "delta": 8,
+      "ell": 8,
+      "lambda": [
+        7,
+        5,
+        5,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_variables": 9,
+      "representation": "polynomial_GL_covariant_Schur_label",
+      "geometry": "orbit_closure",
+      "context": "cubic_per3_ideal",
+      "point_family": "per3"
+    },
+    "bounds": {
+      "m_per3_lb": 1,
+      "i_per3_lb": 0,
+      "a_lb": 1,
+      "i_per3_ub": 0,
+      "a_ub": 1,
+      "m_per3_ub": 1
+    },
+    "decision": "IDEAL_ZERO",
+    "status": "REPLAYED_RANK_FLOOR",
+    "exclusion_reason": null,
+    "inherited_premises": [
+      {
+        "id": "degree8_global",
+        "source": "results/integrate/inherited_exclusions.json",
+        "scope": "inherited; no native evaluation replay here"
+      },
+      {
+        "id": "b14_10_four_cubic_top_replacements",
+        "source": "results/integrate/inherited_exclusions.json",
+        "scope": "inherited; no native evaluation replay here"
+      }
+    ],
+    "replayed": [
+      {
+        "status": "REPLAYED_RANK_FLOOR",
+        "m_per3_lb": 1,
+        "source_integral": true,
+        "fresh": "per3 pencil, coefficient matrix, integer HWV and nonzero determinant",
+        "inherited": "top_cells_catalecticant ambient dimension theorem"
+      }
+    ],
+    "recorded": [],
+    "rejected": [],
+    "next_sufficient_witness": "No positive-gap witness is possible under the listed premises."
+  },
+  "synthetic_positive": {
+    "a_lb": 4,
+    "a_ub": 4,
+    "i_det_lb": 3,
+    "m_det_lb": 0,
+    "i_pad_lb": 0,
+    "m_pad_lb": 2,
+    "m_det_ub": 1,
+    "i_det_ub": 4,
+    "m_pad_ub": 4,
+    "i_pad_ub": 2,
+    "D_ub": 4,
+    "D_lb": 1,
+    "U_pad_ub": 4
+  },
+  "input_sha256_lf": {
+    "results/b14_10/recovered/cubic8_7_5_5_2_2_1_1_1.json": "6e73454a98679b366a61ab5ec214b675814cfb2f666307efd2ba91920b3d00ec",
+    "results/b14_10/recovered/cubic8_7_6_3_3_2_1_1_1.json": "69fc98e22cc42333d3f21ce7061cdd2103bc33dbb027ad8b00fdccf5a0b47426",
+    "results/b14_10/recovered/cubic8_8_5_3_2_2_2_1_1.json": "b168ad9794702aef2fc9199161e9dadbfa20c8cbf399633162a3fc2af0170928",
+    "results/b14_10/recovered/cubic8_9_4_2_2_2_2_2_1.json": "aa0efff007ce71e9c7a77353fa319caee3a12b29e8df4a8e1bc934af13f9aaf9",
+    "analysis/b14_10/recover.py": "55426a1f71a9ee95bfe4b325c57c35ad167df3240d054108c888d66d11123969",
+    "results/astra/S1/transported_det_lower_bound_2.json": "72b5f3584bf80dfc6ce410508b68395859b35e1495ce6e792e597e65d66b442a",
+    "results/b14_12/s79_schema_rows.jsonl": "eb72561a73d3e5ff51e77ac66007082390c8947b1ec4c55a062a2068b52a6013"
+  },
+  "wall_seconds": 7.193290199997136
+}
