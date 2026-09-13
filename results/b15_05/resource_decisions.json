@@ -1,0 +1,26 @@
+{
+  "slot": "05",
+  "model": "gpt-6-astra",
+  "reasoning": "xhigh",
+  "preregistration_commit": "58ca7a69e320064de8272f9cee6c6230fcad2f05",
+  "events": [
+    {
+      "event": "readiness",
+      "detail": "Existing assigned worktree, branch, frozen commit, tree and tag verified. Native READINESS and LEASES records read. No initial heavy lease."
+    },
+    {
+      "event": "small_controls_complete",
+      "detail": "Resource smoke and 18 algorithm controls passed; finite transport passed; deliberate altered-value control exited 1 as required.",
+      "largest_aggregate_peak_bytes": 71434240,
+      "largest_cap_mib": 512
+    },
+    {
+      "event": "heavy_lease_requested",
+      "detail": "Requested one 900-second, 1536-MiB, one-process and one-BLAS-thread pilot. Counts and measured 3-point costs supplied to integrator. No heavy launch before grant."
+    },
+    {
+      "event": "integrator_queue_confirmation",
+      "detail": "Integrator confirmed holders 01/03 and queue 04,05,06,08. Slot 05 has no grant yet; proof, code and report work continues."
+    }
+  ]
+}

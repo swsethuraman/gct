@@ -1,0 +1,68 @@
+{
+  "status": "EXACT",
+  "controls": [
+    "2147483647: independent liveness",
+    "2147483647: brute formula and factorial/nonsymmetry defects",
+    "2147483647: DETQ shifted jets and changed pencil",
+    "2147483647: Euler defect",
+    "2147483647: sign defect",
+    "2147483629: independent liveness",
+    "2147483629: brute formula and factorial/nonsymmetry defects",
+    "2147483629: DETQ shifted jets and changed pencil",
+    "2147483629: Euler defect",
+    "2147483629: sign defect",
+    "empty matrix",
+    "ambient rank defect",
+    "research zero rank is allowed",
+    "fixed seed repeats",
+    "family seeds differ",
+    "q44 exact raising derivative",
+    "q44 altered coefficient detected",
+    "q44 banked terms"
+  ],
+  "versions": {
+    "numpy": "2.4.6",
+    "flint": "0.9.0"
+  },
+  "counts": {
+    "brackets": 1337,
+    "before_swap_dedupe": 1887,
+    "patterns": 14,
+    "matrix_bytes_per_prime_600_points_uint32": 3208800,
+    "pencil_bytes_600_points_int64": 614400
+  },
+  "timing": {
+    "construction_3_points": 0.02261059999000281,
+    "evaluation_3_points": 0.04709279999951832,
+    "reduction_3_points": 0.002816699998220429
+  },
+  "small_rank_lb": 3,
+  "wall_seconds": 0.986873200017726,
+  "source_conventions": {
+    "picture": "Proposition S stable picture; Z = Sym^2+Sym^3+Sym^4 of V'^*, V' = C^col",
+    "letters": "Q_d in Sym^d V', T_d symmetric with f_d(s) = sum T_d[i_1..i_d] s_{i_1}..s_{i_d}",
+    "reduced": "s_d = f_d(e_1); u_d[i] = T_d[i,1^(d-1)]; N_d[i][j] = T_d[i,j,1^(d-2)]",
+    "bracket": "(a_d,b_d,c_d,z_d): copies of Q_d in eps1 only / eps2 only / both / neither",
+    "shape": "lam_bar' = (col,col,1^k); two height-col eps columns and k singletons",
+    "value": "c!.[y^c] det BigM(y) . prod s_d^{z_d}; see module docstring",
+    "values_are": "exact residues mod p of the bracket values at the stored integer points; no transform, no normalisation, no scaling applied",
+    "independence": "no code, data structure or mechanism shared with s69/s74/s79"
+  },
+  "input_sha256": {
+    "analysis/b14_06_bracket.py": "d67a78c39694b1d4229970fd1bec46213913935030afcfae5165d2697d68b493",
+    "analysis/b14_06_points.py": "17f7b435ffe6dc796ed709c6fa554a43e804957e0b4986cb6361d20a41901aaf",
+    "results/b14_04/stable_summary.json": "41b24f86a738735387a2faf3a74973e86da4f4a92096c16ca4de945c04ad32f8",
+    "results/b14_08/witnesses.json": "bf69c9bfec4f71426fd30fa4fce2347cc276182affe9945393dfb8974468e7ff",
+    "results/b15_prep/transport_overlay.json": "b594dcdae7b4b448039d705d6f15f319e245a0d2cf3636f8b08b15cbfc42b4df",
+    "results/integrate/inherited_exclusions.json": "b71469d2d3db97e4d16f6b9b4be6f77ac1cfc00ea286b2e9cedefcec43b1458b",
+    "results/b15_prep/ci73_acceptance.json": "7b081074cd8f46cc5ae5baa4f5f562495a6a07d5c5567d6eaeaa0a57f0c04aac",
+    "docs/s57_report.md": "21e0a591844fde1375426306cb331d13f273cbe6d42ea7945158b11338551e46",
+    "docs/b14_05_transport.md": "76ebc43771082b8afac20840a12af1595ee2c6f3cde2666967635193031765db",
+    "docs/b14_06_review.md": "73621316d62ecf31e53872d5f600d3b8bf716b006c9efc224fe7f7bb3d47e39f"
+  },
+  "seed_method": "first eight SHA256 bytes of B15-05-v1:FAMILY, little endian",
+  "seeds": {
+    "DET": 8357947748109027773,
+    "GEN": 8343886089422373410
+  }
+}

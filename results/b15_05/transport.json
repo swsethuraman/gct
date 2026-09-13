@@ -1,0 +1,199 @@
+{
+  "status": "EXACT",
+  "scope": "arithmetic, ledger predicates and symbolic q44 only",
+  "checks": [
+    {
+      "degree": 15,
+      "partition": [
+        25,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 16,
+      "partition": [
+        29,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 24,
+      "partition": [
+        61,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 25,
+      "partition": [
+        65,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 26,
+      "partition": [
+        69,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 35,
+      "partition": [
+        105,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    },
+    {
+      "degree": 100,
+      "partition": [
+        365,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "matched_exclusions": [],
+      "padded_ideal_lb": 3
+    }
+  ],
+  "overlay_records": [
+    {
+      "degree": 25,
+      "lam": [
+        65,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "reached_sources": [
+        "rung13",
+        "rung14"
+      ],
+      "padded_ideal_floor": 3,
+      "determinant_ideal_upper": null,
+      "D_upper": null,
+      "status": "OPEN",
+      "source_floor_basis": "three exact degree13 reducible equations and injective multiplication; overlapping images not added"
+    },
+    {
+      "degree": 26,
+      "lam": [
+        69,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "reached_sources": [
+        "rung13",
+        "rung14",
+        "lmr"
+      ],
+      "padded_ideal_floor": 3,
+      "determinant_ideal_upper": null,
+      "D_upper": null,
+      "status": "OPEN",
+      "source_floor_basis": "three exact degree13 reducible equations and injective multiplication; overlapping images not added"
+    }
+  ],
+  "source_weight": [
+    21,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "multiplier_weight": [
+    4,
+    4
+  ],
+  "multiplier_degree": 2,
+  "formula": "q44*u^(d-15); u=24*c0; 12*c0*c4-3*c1*c3+c2^2",
+  "generic_parameter_argument": "For all integers d>=15, degree=d, partition=(4d-35,21,2^7), ordered with nine rows.",
+  "finite_ideal_argument": "Restriction to c=1 followed by depression injects each finite highest-weight ideal into the stable ideal; this does not require a(d)=a_inf.",
+  "inherited_premises": [
+    "three exact degree13 reducible equations, hence padded equations",
+    "polynomial ring is an integral domain; product preserves highest weight and ideal membership",
+    "S57 Proposition S identifies determinant stable locus with traceless-pencil coefficients",
+    "a_inf=533 and a26=531"
+  ],
+  "bound_formula": "i_det(d)<=533-r_det_inf; i_pad(d)>=3; D(d)<=530-r_det_inf",
+  "finite26": {
+    "a": 531,
+    "padded_ideal_lb": 3,
+    "padded_coordinate_ub": 528
+  },
+  "no_finite_coordinate_rank_substitution": true
+}
