@@ -29,7 +29,9 @@ Work with quartics (n=4), polynomial degree delta=8, ambient variable count 16, 
 
 The supplied ambient multiplicities are a=4 and 3; both pullback bounds are h_pad=3. Apply the scoped exclusion ledger and accepted overlay before evaluation. With only the trivial padded ideal lower bound L_pad=0, U_pad=min(a,h_pad,a-L_pad)=3 for both cells. Define D=m_pad-m_det=i_det-i_pad. Determinant rank at least three suffices to exclude D>0. At the first cell, global i_det>=2 plus padded rank at least three proves D>=1; at the second, global i_det>=1 plus padded rank at least three suffices. A sampled kernel never supplies these global lower bounds.
 
-Retain wk8_s30_core.exps letter order, integral factorial symbols alpha! c_alpha, degree-eight source orientation, stabilizer character, and modular primes 2147483647 and 2147483629. No u transport or change of basis is planned. Monomial evaluation includes the factorial normalization and signed orbit coefficients. Record exact points, source construction, and all source-to-polynomial conventions.
+Retain wk8_s30_core.exps letter order, degree-eight source orientation, stabilizer character, and modular primes 2147483647 and 2147483629. No u transport or change of basis is planned. Record exact points, source construction, and all source-to-polynomial conventions.
+
+Pre-run correction after inspecting wk8_s30_core and wk12_s79_cell6: this pipeline uses ordinary coefficient functionals c_alpha, with raising rule (alpha_i+1)c_(alpha+e_i-e_j). Its evaluator uses ordinary coefficients without factorial multiplication. The earlier preregistration sentence naming alpha! c_alpha was incorrect for this input pipeline. We retain the banked ordinary convention; a deliberately factorial-rescaled evaluation is a defect control, not a new basis.
 
 ## Algorithm and gates
 
