@@ -265,6 +265,11 @@ def pilot(r,t,npts,families):
         for family in families:
             stamp=time.perf_counter()
             reds,src=generate(family,r,p,npts,15060000+100*r+t)
+            if family=='PAD' and r==10:
+                L=np.array(src['L'],dtype=np.int64)
+                full_support_dets=[det_mod(L[:,:,k].tolist(),p) for k in range(npts)]
+                assert all(full_support_dets), 'ten-variable padding requires full substitution rank'
+                src['full_support_determinants_mod_p']=full_support_dets
             point_seconds=time.perf_counter()-stamp
             stamp=time.perf_counter()
             # Rows are explicit bracket constructions, columns are geometric points.

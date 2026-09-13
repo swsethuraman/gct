@@ -74,6 +74,11 @@ def main():
         row['pilot_ranks_lb']=ranks
         row['i_det_inf_ub']=a-ranks['DET']
         if ranks['DET']==a:row['queue_status']='NEW_FAMILY_EXCLUSION'
+        else:
+            row['i_pad_inf_ub']=a-ranks['PAD']
+            row['D_stable_lb']=ranks['PAD']-a
+            row['D_stable_ub']=a-ranks['DET']
+            row['next_sufficient_negative_witness']=f"global padded ideal floor {a-ranks['DET']} at a stated stable rung"
     report += ['',
         'All ranks, when present, agree at2147483647 and2147483629 and are backed by explicit nonzero square minors. The replay reconstructs jets from integer pencils or independent padded linear forms, reevaluates the selected source brackets, and checks every entry of the minor before recomputing its determinant. This is a fresh geometric replay, not stored-matrix elimination. Generic source matrices attaining a_inf also certify source completeness without a separate spanning premise.', '',
         'A deficient DET rank is a floor, and bounds the ideal from above. A deficient PAD sample cannot produce an ideal lower bound. For a remaining candidate, the next sufficient positive witness is a global determinant ideal floor q and a padded minor r_pad satisfying q+r_pad>a at one fixed cell. A sufficient negative witness is a padded ideal floor at least a_inf-r_det, combined with the stable ideal filtration. No finite degree27 ambient value is asserted from the stable ten-row count429.', '',
@@ -87,7 +92,13 @@ def main():
         if 'runtime_native' in path.name:continue
         meta=read(path);logs.append(str(path.relative_to(ROOT)))
         report.append(f'| {path.stem} | {meta.get("exit_code","unfinished")} | {meta.get("wall_seconds",0):.3f} | {meta.get("job_memory",{}).get("peak_job_memory",0)/1024**2:.2f} | {meta["wall_cap_seconds"]} / {meta["memory_cap_mb"]} |')
-    report += ['',f'Completed pilot/replay pairs: {completed}/3. '+('The heavy process has exited; release is recorded for the integrator.' if completed==3 else 'No heavy lease is held; the request is recorded in lease_request.json. Independent census and extension work is complete.'), '',
+    if completed==3:
+        phase='The selected pilots are complete. Heavy process exit and lease release are recorded for the integrator.'
+    elif completed:
+        phase='Completed runs have exited. The integrator granted the first selected family; later families await a measured-cost checkpoint and extension authorization.'
+    else:
+        phase='The initial lease request is recorded in lease_request.json. Independent census and extension work is complete.'
+    report += ['',f'Completed pilot/replay pairs: {completed}/3. '+phase, '',
         'One process and one BLAS thread were used under the native Windows Job Object wrapper. Four-point timing controls price construction, point generation and evaluation separately; extrapolations are labeled estimates and exclude matrix reduction/replay. No weight carrier or stabilizer quotient was allocated. Every tracked artifact is checked below5,000,000 bytes; large delivery bundles are split by the supplied helper.', '',
         '## Replay and delivery', '',
         'All commands run from C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-06. A concise exact-count replay is:', '',
@@ -96,7 +107,7 @@ def main():
         '- analysis/b15_06_census.py: regenerate the40-row census (60seconds,512MiB).',
         '- analysis/b15_06_verify.py counts: independently recompute and compare80 certificates (60seconds,512MiB).',
         '- analysis/b15_06_geometry.py controls: dimension and liveness controls (60seconds,512MiB).',
-        '- analysis/b15_06_heavy.py: selected production and native geometric replay, requiring an integrator lease (900seconds,1536MiB).',
+        '- analysis/b15_06_heavy.py --rank K: one selected production and native geometric replay, requiring an integrator lease for that family (900seconds,1536MiB).',
         '- analysis/b15_06_verify.py geometry --r R --t T: replay saved native minors under a lease.', '',
         'Input hashes are in preregistration and input_hashes.json. Source constructions, integer points, primes, interpolation seed, bracket-by-point orientation, minors, and resource logs are retained. The chart uses ordinary c=[s0^4]F, with c=1 for DET; it does not silently substitute the historical factorial symbol u=24c.', '',
         'Final packaging, after the last commit: tools/delivery/check_batch15.py --branch b15-06-fresh-tails --base f365568d80d5f66fea2dd9342ff1998e1d866915 --slot 06, then tools/delivery/package_batch15.py --branch b15-06-fresh-tails --slot 06 --model gpt-6-astra --output delivery/b15_06_final. The external manifest carries head/tree and bundle checksums without self-reference. A packaging PASS is not mathematical verification.', '']

@@ -33,7 +33,7 @@ selection.json was written before geometry: (r,t)=(10,19),(8,21),(7,21), with am
 
 | r | t | a_inf | GEN rank_lb | DET rank_lb | PAD rank_lb | Interpretation |
 |---|---|---:|---:|---:|---:|---|
-| 10 | 19 | 429 | pending | pending | pending | Heavy lease requested |
+| 10 | 19 | 429 | 429 | 418 | 243 | CANDIDATE; i_det_inf<=11 |
 | 8 | 21 | 460 | pending | pending | pending | Heavy lease requested |
 | 7 | 21 | 378 | pending | pending | pending | Heavy lease requested |
 
@@ -52,9 +52,10 @@ The original B14-06 point module fixes NV=8 and AMB=9, and the evaluator factori
 | b15_06_census_small_resources | 0 | 14.465 | 118.70 | 60 / 512 |
 | b15_06_count_replay_small_resources | 0 | 12.078 | 109.14 | 60 / 512 |
 | b15_06_extension_small_resources | 0 | 1.179 | 25.23 | 60 / 512 |
+| b15_06_pilot1_native_resources | 0 | 125.602 | 119.38 | 900 / 1536 |
 | b15_06_timing_small_resources | 0 | 0.882 | 26.95 | 60 / 512 |
 
-Completed pilot/replay pairs: 0/3. No heavy lease is held; the request is recorded in lease_request.json. Independent census and extension work is complete.
+Completed pilot/replay pairs: 1/3. Completed runs have exited. The integrator granted the first selected family; later families await a measured-cost checkpoint and extension authorization.
 
 One process and one BLAS thread were used under the native Windows Job Object wrapper. Four-point timing controls price construction, point generation and evaluation separately; extrapolations are labeled estimates and exclude matrix reduction/replay. No weight carrier or stabilizer quotient was allocated. Every tracked artifact is checked below 5,000,000 bytes; large delivery bundles are split by the supplied helper.
 
@@ -71,7 +72,7 @@ Use the same executable and wrapper for the following entry points, with unique 
 - analysis/b15_06_census.py: regenerate the 40-row census (60 seconds,512 MiB).
 - analysis/b15_06_verify.py counts: independently recompute and compare 80 certificates (60 seconds,512 MiB).
 - analysis/b15_06_geometry.py controls: dimension and liveness controls (60 seconds,512 MiB).
-- analysis/b15_06_heavy.py: selected production and native geometric replay, requiring an integrator lease (900 seconds,1536 MiB).
+- analysis/b15_06_heavy.py --rank K: one selected production and native geometric replay, requiring an integrator lease for that family (900 seconds,1536 MiB).
 - analysis/b15_06_verify.py geometry --r R --t T: replay saved native minors under a lease.
 
 Input hashes are in preregistration and input_hashes.json. Source constructions, integer points, primes, interpolation seed, bracket-by-point orientation, minors, and resource logs are retained. The chart uses ordinary c=[s0^4]F, with c=1 for DET; it does not silently substitute the historical factorial symbol u=24c.

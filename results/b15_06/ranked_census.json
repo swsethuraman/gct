@@ -85,7 +85,17 @@
         2
       ],
       "pilot_priority": 1,
-      "queue_status": "OPEN"
+      "queue_status": "OPEN",
+      "pilot_ranks_lb": {
+        "GEN": 429,
+        "DET": 418,
+        "PAD": 243
+      },
+      "i_det_inf_ub": 11,
+      "i_pad_inf_ub": 186,
+      "D_stable_lb": -186,
+      "D_stable_ub": 11,
+      "next_sufficient_negative_witness": "global padded ideal floor 11 at a stated stable rung"
     },
     {
       "W": 33,

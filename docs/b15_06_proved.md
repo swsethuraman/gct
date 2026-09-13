@@ -120,3 +120,31 @@ ideal floor q and padded rank r_pad with q+r_pad>a_delta.
 
 Verifier: elementary linear algebra of the displayed filtration. Dependencies:
 inherited S57 Proposition S and rational rank-floor validity in C3.
+
+## B15-06-C5: first fresh ten-variable pilot
+
+Status: REPLAYED_RANK_FLOOR. Here n=4, r=10, col=9, tau=(19,2^8),
+delta=35, lambda=(105,19,2^8), and a_inf=429. At each house prime, the
+1,019 explicit source brackets evaluated on 480 points give the floors
+
+    m_GEN=429, m_det>=418, m_pad>=243.
+
+All six displayed minors were rebuilt from their native point constructions
+and source indices. The determinant of every ten-by-ten padded substitution
+was also checked nonzero modulo the relevant prime, so every padded sample
+has full ten-variable support. The GEN minor and exact count certify source
+completeness. DET and PAD numbers remain floors; their sampled deficiencies
+are not global equations.
+
+Consequently i_det_inf<=11, i_pad_inf<=186, and the certified stable gap
+interval from these floors alone is [-186,11]. By C4, i_det(delta)<=11 also
+holds at every valid finite rung. No stabilization at degree27 is assumed.
+At delta35, eleven independent global padded equations would suffice for
+D<=0. For positive D, a global determinant ideal floor q and padded minor of
+size at least430-q would suffice; this requires q<=11 by the new upper bound.
+
+Verifier: analysis/b15_06_verify.py geometry --r 10 --t 19. Evidence:
+results/b15_06/pilot_r10_t19_summary.json and geometric_replay_r10_t19.json,
+with the six complete native source/point files. Hypotheses and inherited
+dependencies are precisely C1, C3, and C4. The inherited LMR framework motivated
+selection but is not used to turn the observed deficiency11 into an equality.

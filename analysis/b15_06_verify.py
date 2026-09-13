@@ -54,6 +54,10 @@ def native_reds(cert):
         return jet_point_list(*determinant(r,p,np.array(native['A'],dtype=np.int64)))
     J,jets,c,valid=product_point(r,p,np.array(native['L'],dtype=np.int64),record['family']=='PAD')
     assert c.tolist()==native['c'] and valid.tolist()==native['valid']
+    if r==10 and record['family']=='PAD':
+        L=np.array(native['L'],dtype=np.int64)
+        dets=[det_mod(L[:,:,k].tolist(),p) for k in range(L.shape[-1])]
+        assert all(dets) and dets==native['full_support_determinants_mod_p']
     return [red for red,ok in zip(jet_point_list(J,jets),valid) if ok]
 
 
