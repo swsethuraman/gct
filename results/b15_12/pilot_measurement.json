@@ -1,0 +1,139 @@
+{
+  "slot": "12",
+  "status": "EXACT",
+  "recorded_utc": "2026-09-13T14:55:10.176098+00:00",
+  "pilot_exit_code": 0,
+  "pilot_pid": 37452,
+  "pilot_wall_seconds": 1.9464678000076674,
+  "pilot_aggregate_peak_bytes": 93327360,
+  "cells": [
+    {
+      "delta": 8,
+      "lam": [
+        13,
+        11,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 2,
+      "U_pad_ub": 2,
+      "rectangular_orbit_ub": 4866,
+      "symmetric_orbit_ub": 2442,
+      "U_det_ub": 2
+    },
+    {
+      "delta": 8,
+      "lam": [
+        12,
+        11,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 3,
+      "U_pad_ub": 3,
+      "rectangular_orbit_ub": 9155,
+      "symmetric_orbit_ub": 4545,
+      "U_det_ub": 3
+    },
+    {
+      "delta": 8,
+      "lam": [
+        11,
+        11,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 4,
+      "U_pad_ub": 3,
+      "rectangular_orbit_ub": 8636,
+      "symmetric_orbit_ub": 4347,
+      "U_det_ub": 4
+    },
+    {
+      "delta": 8,
+      "lam": [
+        11,
+        10,
+        6,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 7,
+      "U_pad_ub": 4,
+      "rectangular_orbit_ub": 21023,
+      "symmetric_orbit_ub": 10463,
+      "U_det_ub": 7
+    },
+    {
+      "delta": 7,
+      "lam": [
+        11,
+        8,
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 1,
+      "U_pad_ub": 1,
+      "rectangular_orbit_ub": 2269,
+      "symmetric_orbit_ub": 1168,
+      "U_det_ub": 1
+    },
+    {
+      "delta": 7,
+      "lam": [
+        13,
+        5,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_multiplicity": 1,
+      "U_pad_ub": 1,
+      "rectangular_orbit_ub": 2394,
+      "symmetric_orbit_ub": 1227,
+      "U_det_ub": 1
+    },
+    {
+      "delta": 8,
+      "lam": [
+        12,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "ambient_multiplicity": 4,
+      "U_pad_ub": 1,
+      "rectangular_orbit_ub": 1373,
+      "symmetric_orbit_ub": 804,
+      "U_det_ub": 4
+    }
+  ],
+  "broad_sweep_stopped": true,
+  "next_resource_decision": {
+    "operation": "same seven-cell receiver character reconstruction",
+    "wall_cap_seconds": 60,
+    "aggregate_memory_mb": 512,
+    "one_process": true,
+    "one_blas_thread": true,
+    "justification": "Pilot1.95seconds/89MiB. Small receiver fixture already passed. Replay same classes using banked independent engine; no expanded cells or production extension."
+  },
+  "message_delivery": "Recorded locally for integrator polling; no outbound retry"
+}

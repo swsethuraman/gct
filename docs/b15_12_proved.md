@@ -73,3 +73,23 @@ For cycle type rho, put z_rho=product_j j^{m_j} m_j!. If rho^(2) is the cycle ty
 The second formula is the trace of the flip on the multiplicity space; the symmetric-square character identity follows by tracing the flip on A tensor A. All sums can be evaluated as integers divided by N!, using exact class sizes N!/z_rho. Conjugating R tensors [R] with sign, whose tensor square is trivial; hence conjugating both rectangular factors leaves both g and sk unchanged. Conjugating lambda alone is a different operation and is not made.
 
 **Verifier:** `analysis/b15_12_orbit_bounds.py`; seven predeclared cells only. Small controls compare two character constructions for all 209 pairs (lambda,rho) through S_6, prove full weighted row orthogonality there, test hook dimensions and conjugate signs, and test nonnegative integral symmetric/exterior decompositions. Complete pilot status, measured costs and inherited rank-floor comparisons belong in the report. No numerical pilot result is implied by this formula record.
+
+## P4. Exact pilot coefficients give no improvement over the ambient ceiling
+
+**Status: EXACT.** Under the conventions of P3, the seven preregistered cells have the following character coefficients. Each g is a rectangular Kronecker coefficient and an orbit upper bound; sk is its symmetric refinement and an orbit upper bound. Neither is asserted to be the closure multiplicity.
+
+| delta | lambda | a, freshly recounted | g | flip trace t | sk=(g+t)/2 | U_det=min(a,sk) |
+|---|---|---:|---:|---:|---:|---:|
+|8|(13,11,3,2,1,1,1)|2|4866|18|2442|2|
+|8|(12,11,4,2,1,1,1)|3|9155|-65|4545|3|
+|8|(11,11,5,2,1,1,1)|4|8636|58|4347|4|
+|8|(11,10,6,2,1,1,1)|7|21023|-97|10463|7|
+|7|(11,8,5,1,1,1,1)|1|2269|67|1168|1|
+|7|(13,5,5,2,1,1,1)|1|2394|60|1227|1|
+|8|(12,4,4,4,4,4)|4|1373|235|804|4|
+
+Every row satisfies sk>a. Consequently these orbit bounds add no information beyond m_det<=a at these cells. Since U_pad<=a, none can certify r_pad>U_det. The broad sweep stops; no assertion about all cells or asymptotic competitiveness follows.
+
+**Verifier:** `analysis/b15_12_verify.py --output results/b15_12/receiver_pilot.json` under the bounded wrapper; receipt `results/b15_12/receiver_pilot.json`. The receiver reconstructs all complete character rows from the original banked Murnaghan--Nakayama routine, checks every saved value and class size against the original formula, and recomputes g/sk. Its implementation is separate from the pilot's bounded-cache adaptation; both use the same character rule. The independent small Jacobi--Trudi controls remain part of the receiver. Integer divisibility, symmetric/exterior nonnegativity, complete class coverage, weighted character norms and pairwise row orthogonality were checked by the pilot. Exact ambient plethysm coefficients were recounted at all seven shapes. The files record the full numerator sums and N! denominators; no modular lifting is used.
+
+**Dependencies and evidence limits:** P3 supplies the orbit-to-closure inequality. The nontrivial determinant floor 4 for the Q1 control is inherited from B14-12, not geometrically replayed here; it agrees with U_det=4. Other floor checks use the trivial zero. h_pad bounds and Q1 padded facts remain inherited. No other worker's live rank claim was consumed. The full character certificate consists of the 13 hashed `classes_d*.json` shards listed in `pilot.json`, plus the committed source construction and receiver.

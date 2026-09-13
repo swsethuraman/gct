@@ -1,6 +1,6 @@
 {
   "slot": "12",
-  "status": "REQUEST_RECORDED_NO_LEASE_GRANTED",
+  "status": "COMPLETED_AND_RELEASED",
   "integrator_task": "01a0997b-79c2-7a91-a9e3-cdfcc8f636e3",
   "preregistration_commit": "3b263bd5ab1106b52ea61149943abc3e2f60a35e",
   "requested_job": "b15_12_pilot",
@@ -10,10 +10,15 @@
   "processes": 1,
   "blas_threads": 1,
   "fixed_cells": 7,
-  "conjugacy_class_counts": {"28": 3718, "32": 8349},
+  "conjugacy_class_counts": {
+    "28": 3718,
+    "32": 8349
+  },
   "small_controls_exit_code": 0,
   "small_controls_wall_seconds": 1.5276293999922927,
   "small_controls_aggregate_peak_bytes": 25706496,
-  "pilot_started": false,
-  "communication": "Two task-message requests rejected by automatic approval review. No message sent; explicit user authorization for destination requested asynchronously. Continue proof and small-control fallback while pending."
+  "pilot_started": true,
+  "communication": "Historical outbound attempts were rejected. Integrator read this local request, queued slot12, then granted the lease. Pilot and full receiver complete; local release record supplies exit/resource evidence.",
+  "lease_grant": "results/b15_12/lease_grant.json",
+  "lease_release": "results/b15_12/lease_release.json"
 }
