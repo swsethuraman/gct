@@ -1,0 +1,24 @@
+{
+  "status": "EXACT",
+  "evidence": "algebraic derivation in docs/b15_08_proved.md Claim B15-08-E; evaluator replay is recorded separately",
+  "h": 8,
+  "weighted_degree": 19,
+  "tail": [4, 3, 2, 2, 2, 2, 2, 2],
+  "point_construction": {
+    "both": "T2(i,i)=1 for i=0..7, T2(i,j)=0 for i!=j",
+    "P": "T3(1,1,1)=1; all other T3 and all T4 entries zero",
+    "Q": "T3(0,0,0)=1; symmetric T4(0,1,1,1)=1; all other T3 and T4 entries zero",
+    "normalization": "f_d=sum over ordered indices T_d(i_1,...,i_d) x_i1 ... x_id; f4(Q)=4*x0*x1^3"
+  },
+  "sources": {
+    "B": "seven (2,AB) letters, one (2,C) letter, one (3,ABC) letter, in that order",
+    "H": "six (2,AB) letters, one (3,ABC) letter, one (4,ABC) letter, in that order"
+  },
+  "matrix_orientation": "rows B,H; columns P,Q",
+  "derived_integer_matrix": [[5040, 0], [0, 720]],
+  "derived_integer_determinant": 3628800,
+  "a_inf_lb": 2,
+  "a_inf_ub": 2,
+  "generic_rank_lb": 2,
+  "geometric_rank_claim": null
+}
