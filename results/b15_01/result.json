@@ -1,0 +1,45 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "field": "Q",
+  "n": 4,
+  "variables": 9,
+  "degree": 14,
+  "partition": [
+    25,
+    17,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "source_dimension": 93,
+  "normalization_dimension": 159,
+  "normalization_evaluation_rank_lb": 158,
+  "sampled_source_rank_Q": 88,
+  "i_red14_lb": 4,
+  "i_red14_ub": 5,
+  "extracted_new_global_relation": false,
+  "complete_interpolation": false,
+  "certificate": "certificate.json",
+  "inherited_degree24": {
+    "ambient": 274,
+    "m_det": 273,
+    "m_pad_lb": 269
+  },
+  "transport": {
+    "polynomial": "u^10",
+    "u": "24*c_(4,0^8)",
+    "source_coordinates": 93,
+    "extension_zero_rows": 181
+  },
+  "i_pad24_lb": 4,
+  "i_pad24_ub": 5,
+  "D_LMR_lb": -4,
+  "D_LMR_ub": -3,
+  "degree24_scope": "Conditional on the explicitly inherited accepted premises",
+  "next_witness": "one additional independent genuine N14 member and full replay, or exact symbolic proofs of both remaining sampled relations"
+}

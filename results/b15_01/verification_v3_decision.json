@@ -1,0 +1,23 @@
+{
+  "status": "RECORDED",
+  "model": "gpt-6-astra",
+  "previous_run": "b15_01_verification_v2",
+  "previous_exit_code": 1,
+  "previous_wall_seconds": 1268.569845799997,
+  "previous_checked_minor": {"rank_lb":158,"prime":2147483647,"determinant":823506578},
+  "previous_dimensions_checked": {"source":93,"normalization":159},
+  "failure": "Generic input shape: S74 stores only nonzero coefficient pairs; the exporter had retained the sparse representation while the verifier required all 495 coefficients",
+  "source_convention_evidence": "analysis/wk12_s74_columns.py sample_one: records coefficients only if nonzero and evaluates cv with co.get(alpha,0)",
+  "export_fix": "Insert explicit zero coefficients; all 93 ordinary forms checked unchanged; 23 zeros added",
+  "controls": "export_and_batch_controls.json: 192 fresh integer/modular entries on source indices0,39, points0..47; unchanged values",
+  "control_wall_seconds":14.505810600006953,
+  "evaluation_change": "Validate generic input before expensive evaluation; batch up to48 points under the unchanged 380000000-byte array limit",
+  "acceptance": "Restart all fresh evaluations. No value receipt from an earlier run grants acceptance",
+  "lease": "Latest LEASES.json lists only holder01 and no waiting requests; previous numerical job exited before launch",
+  "next_run": "b15_01_verification_v3",
+  "wall_cap_seconds":5400,
+  "aggregate_memory_cap_mb":1536,
+  "blas_threads":1,
+  "simultaneous_heavy_jobs_in_slot":1,
+  "archived_inputs": "certificate_verification_v2.json retains the original certificate bytes; its former generic.json.gz bytes are archived as ci159_inputs/generic_verification_v2.json.gz"
+}

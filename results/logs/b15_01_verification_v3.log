@@ -1,0 +1,39 @@
+{"board_numbering": "batch15", "session_id": "B15-01", "pid": 42420, "memory_before": {"total_physical": 33752997888, "available_physical": 10614362112, "load": 68}, "memory_cap_mb": 1536, "wall_cap_seconds": 5400, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "idle_sleep_inhibited_during_run": true, "started_utc": "2026-09-13T15:18:49Z"}
+[18.02s] fresh member rows 1/158
+[112.33s] fresh member rows 11/158
+[198.23s] fresh member rows 21/158
+[274.81s] fresh member rows 31/158
+[373.44s] fresh member rows 41/158
+[459.75s] fresh member rows 51/158
+[529.36s] fresh member rows 61/158
+[598.58s] fresh member rows 71/158
+[668.83s] fresh member rows 81/158
+[743.81s] fresh member rows 91/158
+[791.19s] fresh member rows 101/158
+[834.89s] fresh member rows 111/158
+[914.73s] fresh member rows 121/158
+[967.92s] fresh member rows 131/158
+[999.94s] fresh member rows 141/158
+[1047.50s] fresh member rows 151/158
+[1079.23s] fresh member rows 158/158
+[1079.23s] fresh 158-minor determinant 823506578 modulo 2147483647
+[1091.72s] fresh source and target dimensions93/159 PASS
+[1102.41s] fresh generic source rows 1/93
+[1181.91s] fresh generic source rows 16/93
+[1255.17s] fresh generic source rows 31/93
+[1341.27s] fresh generic source rows 46/93
+[1409.27s] fresh generic source rows 61/93
+[1466.72s] fresh generic source rows 76/93
+[1538.73s] fresh generic source rows 91/93
+[1548.77s] fresh source completeness determinant 702376822
+[1565.62s] fresh exact source rows 1/93
+[1700.52s] fresh exact source rows 16/93
+[1823.19s] fresh exact source rows 31/93
+[1954.08s] fresh exact source rows 46/93
+[2061.03s] fresh exact source rows 61/93
+[2155.83s] fresh exact source rows 76/93
+[2277.38s] fresh exact source rows 91/93
+[2294.91s] {"status": "EXACT", "model": "gpt-6-astra", "profile": "b15_01_partial_N14", "target_rank_lb": 158, "target_dimension_ub": 159, "target_minor": 823506578, "source_basis": "fresh rank93 plus independently recomputed ambient93", "complete_interpolation": false, "ambient_dimension": 93, "target_dimension": 159, "literal_u10_transport_checked": true, "degree24_coordinate_extension_zero_rows": 181, "generic_determinant": 702376822, "fresh_exact_source_entries": 14694, "global_kernel_lb": 4, "stats": {"backend_wall_seconds": 2239.6810000002733, "entries": 48307, "max_array_bytes": 379330560}, "wall_seconds": 2294.905999999988, "input_hashes": {"results/b15_01/pilot.json": "6b7fa92d479dc0120b9ebe183b48bfc71b4e91222de595a6c364dbd9d896fbd7", "results/s74/source.json": "0f925e0e113dad94f8a35b19eb64a4e50b8badb29959673554a49ef1f2f8ce45", "results/b14_prep/points/P14.json": "241ec80ba43cc58a0f7c6eec609ebdbea46600a8126795ef9df2f64abccd50a8", "results/s74/columns_gen_2147483647.json.gz": "ba06a3ddefbd2bbdd2fb2bd1b0428e51507feb750d020fe8a69be7d34fd09437", "analysis/b15_01_verify.py": "a41846276b7a8cc98d32eb1d0bb9ac539f6411f02d17c3436e7f9b63e7c2c5c3", "tools/verify/ci73_eval.py": "222f6245d0534b3aaa3294ea38ff5e857cf790fea8a3d7fab53d74995430fb57", "tools/verify/ci73_backend.cs": "32660c445bbd03551261fdc2868a2ceb1858675c27bb5e0fe262d91848b429e2", "tools/verify/ci73_dimension.py": "978130f696aec2a119f647f2086d17c6084f430b733b7dbf88506f4c0eb1679f"}}
+PASS        results\b15_01\certificate.json  (2295.1s)  Degree14 partial interpolation proves a fourth reducible equation
+PASS 1, RECORDED 0, FAIL 0, UNPARSEABLE 0, ERROR 0
+{"wall_seconds": 2295.0759089000057}

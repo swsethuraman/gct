@@ -1,0 +1,76 @@
+{
+  "format": "gct-cert/1",
+  "kind": "partial_interpolation",
+  "profile": "quartic_lmr_degree14_ci158",
+  "title": "Degree14 partial interpolation proves a fourth reducible equation",
+  "produced_by": "B15-01, gpt-6-astra; S74/B14-07 inputs retain original attribution",
+  "field": "Q",
+  "cell": {
+    "n": 4,
+    "r": 9,
+    "delta": 14,
+    "lambda": [
+      25,
+      17,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "conventions": {
+    "coefficient": "ordinary c_alpha; symbol alpha! c_alpha",
+    "bracket": "initial-column Leibniz sum; no orbit averaging",
+    "orientation": "source rows; point columns; A^T K=0",
+    "transport": "u=24*c_(4,0^8); native to degree14"
+  },
+  "dependencies": {
+    "members": {
+      "path": "ci159_inputs/members.json.gz",
+      "canonical_sha256": "4f241d88975f0283aeb19c494cbeb7c8d37ceb717d62456007249326c76c04b6"
+    },
+    "points": {
+      "path": "ci159_inputs/points.json.gz",
+      "canonical_sha256": "27796df925dce53c949786cf73fdd0d0079893b9666184e47f393423c14a0a28"
+    },
+    "source": {
+      "path": "ci159_inputs/source.json.gz",
+      "canonical_sha256": "e8e3cd6d8550c8cc7ff25e50a6dc2296ac6c4c1f946e11b5d32d47346d007d02"
+    },
+    "source_values": {
+      "path": "ci159_inputs/source_values.json.gz",
+      "canonical_sha256": "ce048ea3058ea86fb19f0e25918d7e71c819dedf0498a9bc2c409bd5f263d041"
+    },
+    "kernel": {
+      "path": "ci159_inputs/kernel.json.gz",
+      "canonical_sha256": "9bd531e0a4ff2919d4213b8f3a336a3f7c51682a769d0337acd78dda9fa05855"
+    },
+    "degree13": {
+      "path": "ci159_inputs/degree13.json.gz",
+      "canonical_sha256": "16fcaf8bf1387f6a957cd29eb63af9c7030f2361318b64603f329add6e70a5cb"
+    },
+    "dimension": {
+      "path": "ci159_inputs/dimension.json.gz",
+      "canonical_sha256": "d09e461b0bd0750b4ebedaf68adddd381d459f93c546e67d62338f29de50c199"
+    },
+    "power": {
+      "path": "ci159_inputs/power.json.gz",
+      "canonical_sha256": "1f0e2740125788434ffe542a8693e2135fdd6d3dcba3b84a5de6c5ffdec186fe"
+    },
+    "generic": {
+      "path": "ci159_inputs/generic.json.gz",
+      "canonical_sha256": "e8a0b9ab6d517a55deebce186e0b621b9cca7824c43cfd17b695331f0afe46b3"
+    }
+  },
+  "claim": {
+    "source_dimension": 93,
+    "target_dimension": 159,
+    "target_rank_lb": 158,
+    "sampled_source_rank_Q": 88,
+    "i_red14_lb": 4,
+    "i_red14_ub": 5
+  }
+}

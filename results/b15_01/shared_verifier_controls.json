@@ -1,0 +1,50 @@
+{
+  "status": "EXACT",
+  "controls": [
+    {
+      "control": "wrong claim",
+      "status": "FAIL",
+      "reason": "CI14 claim"
+    },
+    {
+      "control": "wrong degree",
+      "status": "FAIL",
+      "reason": "CI159 field/cell"
+    },
+    {
+      "control": "wrong normalization",
+      "status": "FAIL",
+      "reason": "CI159 conventions"
+    },
+    {
+      "control": "unknown field",
+      "status": "FAIL",
+      "reason": "CI159 certificate keys"
+    },
+    {
+      "control": "changed input digest",
+      "status": "FAIL",
+      "reason": "dependency digest mismatch: ci159_inputs/members.json.gz"
+    },
+    {
+      "control": "escaping reference",
+      "status": "FAIL",
+      "reason": "dependency escapes certificate directory"
+    },
+    {
+      "control": "rank158 cannot certify all five equations",
+      "status": "FAIL",
+      "reason": "target rank required by interpolation profile"
+    },
+    {
+      "control": "rank157 cannot certify four equations",
+      "status": "FAIL",
+      "reason": "target rank required by interpolation profile"
+    },
+    {
+      "control": "altered value with recomputed digest",
+      "status": "FAIL",
+      "reason": "fresh member mismatch"
+    }
+  ]
+}

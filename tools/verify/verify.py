@@ -108,17 +108,20 @@ def _check_field(cert, where="field"):
 
 def validate(cert):
     """Strict schema check; raises Unparseable."""
-    if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
+    if isinstance(cert, dict) and cert.get("kind") in ("complete_interpolation", "partial_interpolation"):
         from complete_interpolation import schema, Rejected
         try:
             if cert.get('profile') == 'quartic_lmr_degree13_ci73':
                 from ci73 import schema as ci73_schema
                 ci73_schema(cert)
+            elif cert.get('profile') in ('quartic_lmr_degree14_ci159', 'quartic_lmr_degree14_ci158'):
+                from b15_01_ci159 import schema as ci159_schema
+                ci159_schema(cert)
             else:
                 schema(cert)
         except (Rejected, KeyError, TypeError, ValueError) as exc:
             raise Unparseable(str(exc)) from exc
-        return "complete_interpolation"
+        return cert["kind"]
     _need(cert, ["format", "kind", "title", "produced_by"],
           allowed=["format", "kind", "title", "produced_by", "notes", "cell", "conventions",
                    "modulus", "vectors", "claims", "matrix", "matrix_source", "claimed_rank_Q",
@@ -454,7 +457,7 @@ def verify_file(path, ci73_session=None):
         cert = load(path)
     except Exception as e:                       # noqa: BLE001
         return "UNPARSEABLE", [("read/parse JSON", False, str(e))]
-    if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
+    if isinstance(cert, dict) and cert.get("kind") in ("complete_interpolation", "partial_interpolation"):
         try:
             from ci73_io import digest
             input_identity = digest(cert)
@@ -462,6 +465,10 @@ def verify_file(path, ci73_session=None):
                 from pathlib import Path
                 from ci73 import verify as ci73_verify
                 result = ci73_verify(cert, Path(path).resolve().parent, session=ci73_session)
+            elif cert.get('profile') in ('quartic_lmr_degree14_ci159', 'quartic_lmr_degree14_ci158'):
+                from pathlib import Path
+                from b15_01_ci159 import verify as ci159_verify
+                result = ci159_verify(cert, Path(path).resolve().parent)
             else:
                 from complete_interpolation import verify as ci_verify
                 result = ci_verify(cert)
