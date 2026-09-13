@@ -111,7 +111,11 @@ def validate(cert):
     if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
         from complete_interpolation import schema, Rejected
         try:
-            schema(cert)
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from ci73 import schema as ci73_schema
+                ci73_schema(cert)
+            else:
+                schema(cert)
         except (Rejected, KeyError, TypeError, ValueError) as exc:
             raise Unparseable(str(exc)) from exc
         return "complete_interpolation"
@@ -361,11 +365,9 @@ def validate(cert):
 
 
 def load(path):
-    if path.endswith(".gz"):
-        with gzip.open(path, "rt", encoding="utf-8") as f:
-            return json.load(f)
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    # Bound bytes and reject duplicate keys BEFORE any profile or legacy parse.
+    from ci73_io import load as bounded_load
+    return bounded_load(path)
 
 
 def _check_split_rank(cert, log):
@@ -445,7 +447,7 @@ def _rec_sr(log, name, ok, detail=""):
     return bool(ok)
 
 
-def verify_file(path):
+def verify_file(path, ci73_session=None):
     """Returns (status, log): status in PASS / FAIL / UNPARSEABLE / ERROR."""
     log = []
     try:
@@ -453,13 +455,21 @@ def verify_file(path):
     except Exception as e:                       # noqa: BLE001
         return "UNPARSEABLE", [("read/parse JSON", False, str(e))]
     if isinstance(cert, dict) and cert.get("kind") == "complete_interpolation":
-        from complete_interpolation import load as ci_load, verify as ci_verify
         try:
-            result = ci_verify(ci_load(path))
+            from ci73_io import digest
+            input_identity = digest(cert)
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from pathlib import Path
+                from ci73 import verify as ci73_verify
+                result = ci73_verify(cert, Path(path).resolve().parent, session=ci73_session)
+            else:
+                from complete_interpolation import verify as ci_verify
+                result = ci_verify(cert)
         except Exception as exc:
             return "UNPARSEABLE", [("CI input", False, str(exc))]
         log = [(item["check"], item["ok"], json.dumps(item.get("detail", {})))
                for item in result["checks"]]
+        log.insert(0, ('consumed certificate identity', True, json.dumps({'canonical_sha256':input_identity})))
         if result["status"] != "PASS":
             log.append((result["code"], False, result["detail"]))
         return result["status"], log
@@ -511,14 +521,18 @@ def collect(paths):
     return out
 
 
-def main(argv):
+def main(argv, ci73_session=None):
     report = None
+    json_report = None
     quiet = False
     paths = []
     i = 0
     while i < len(argv):
         if argv[i] == "--report":
             report = argv[i + 1]
+            i += 2
+        elif argv[i] == "--json-report":
+            json_report = argv[i + 1]
             i += 2
         elif argv[i] == "--quiet":
             quiet = True
@@ -533,9 +547,14 @@ def main(argv):
     lines = ["# Verifier report", "", f"{len(files)} certificate file(s); verifier tools/verify at "
              f"{time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}", ""]
     summary = {"PASS": 0, "RECORDED": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
+    results = []
+    if json_report:
+        with open(json_report,'w',encoding='utf-8') as stream:
+            json.dump({'status':'RUNNING','results':[]},stream)
     for path in files:
         t0 = time.time()
-        status, log = verify_file(path)
+        status, log = verify_file(path, ci73_session=ci73_session)
+        results.append({'path':path,'status':status,'checks':log,'seconds':time.time()-t0})
         summary[status] += 1
         title = ""
         try:
@@ -564,6 +583,11 @@ def main(argv):
     if report:
         with open(report, "w", encoding="utf-8") as f:
             f.write("\n".join(lines) + "\n")
+    if json_report:
+        with open(json_report,'w',encoding='utf-8') as stream:
+            json.dump({'status':'PASS' if summary['PASS']==len(files) else 'NOT_ALL_PASS',
+                       'summary':summary,'results':results},stream,indent=2)
+            stream.write('\n')
     return 0 if (summary["FAIL"] == summary["UNPARSEABLE"] == summary["ERROR"] == 0) else 1
 
 

@@ -1,0 +1,71 @@
+{
+  "status": "OK",
+  "mode": "modular",
+  "values": [
+    "195552",
+    "2147135167",
+    "2147415439",
+    "2147415607",
+    "2147460607",
+    "2147481991",
+    "2147320603",
+    "2147050747"
+  ],
+  "transitions": 72,
+  "peak_array_bytes": 960,
+  "seconds": 0.0451159,
+  "stages": [
+    {
+      "step": 0,
+      "letter": 0,
+      "states": 1,
+      "frontier": 0
+    },
+    {
+      "step": 1,
+      "letter": 1,
+      "states": 2,
+      "frontier": 1
+    },
+    {
+      "step": 2,
+      "letter": 3,
+      "states": 6,
+      "frontier": 1
+    },
+    {
+      "step": 3,
+      "letter": 5,
+      "states": 9,
+      "frontier": 0
+    },
+    {
+      "step": 4,
+      "letter": 4,
+      "states": 3,
+      "frontier": 0
+    },
+    {
+      "step": 5,
+      "letter": 2,
+      "states": 1,
+      "frontier": 0
+    }
+  ],
+  "pid": 2280,
+  "exit": 0,
+  "wall_seconds": 0.11000000000058208,
+  "plan": {
+    "order": [
+      0,
+      1,
+      3,
+      5,
+      4,
+      2
+    ],
+    "transitions": 72,
+    "peak_states_pair": 15,
+    "frontier": 1
+  }
+}
