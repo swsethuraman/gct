@@ -59,16 +59,34 @@ def main():
         completed+=1
         if ranks['DET']==a:
             interpretation='EXACT family exclusion, via full rank and C4'
-            exclusions.append({'id':f'b15_06_r{r}_t{t}_stable_full', 'status':'EXACT',
-                'claim':'i_det=0 at every valid rung; D<=0',
-                'n':4,'r':r,'tail':[t]+[2]*(r-2),'degree_scope':'every valid rung',
-                'a_inf':a,'m_det_stable_lb':ranks['DET'],
-                'inherited_premises':['S57 Proposition S ideal filtration','polynomial-functor inheritance'],
-                'fresh_evidence':[f'results/b15_06/pilot_r{r}_t{t}_summary.json',
-                                  f'results/b15_06/geometric_replay_r{r}_t{t}.json'],
-                'proof':'docs/b15_06_proved.md C3/C4; exact ambient count plus nonzero determinant minor'})
+            for lower in ordered:
+                tt=lower['t']
+                if lower['r']!=r or tt>t or (t-tt)%2:continue
+                lower['queue_status']='NEW_FAMILY_EXCLUSION'
+                lower['i_det_inf_ub']=0
+                lower['m_det_stable_lb']=lower['a_inf']
+                lower['transport_source_tail']=[t]+[2]*(r-2)
+                lower['transport_multiplier_s2_power']=(t-tt)//2
+                exclusions.append({'id':f'b15_06_r{r}_t{tt}_stable_full_transport', 'status':'EXACT',
+                    'claim':'i_det=0 at every valid rung; D<=0',
+                    'n':4,'r':r,'tail':[tt]+[2]*(r-2),'degree_scope':'every valid rung',
+                    'a_inf':lower['a_inf'],'m_det_stable_lb':lower['a_inf'],
+                    'witness_a_inf':a,'witness_m_det_stable_lb':ranks['DET'],
+                    'witness_tail':[t]+[2]*(r-2),'multiplier_s2_power':(t-tt)//2,
+                    'inherited_premises':['S57 Proposition S ideal filtration','polynomial-functor inheritance'],
+                    'fresh_evidence':[f'results/b15_06/pilot_r{r}_t{t}_summary.json',
+                                      f'results/b15_06/geometric_replay_r{r}_t{t}.json'],
+                    'proof':'docs/b15_06_proved.md C3/C4/C6; full stable rank and injective multiplication by s2'})
         else:
             interpretation=f'CANDIDATE; i_det_inf<={a-ranks["DET"]}'
+            for lower in ordered:
+                tt=lower['t']
+                if lower['r']!=r or tt>t or (t-tt)%2:continue
+                lower['i_det_inf_ub']=min(lower['a_inf'],a-ranks['DET'])
+                lower['m_det_stable_lb']=lower['a_inf']-lower['i_det_inf_ub']
+                lower['bound_method']='stable ideal multiplication; lower tails not sampled'
+                lower['transport_source_tail']=[t]+[2]*(r-2)
+                lower['transport_multiplier_s2_power']=(t-tt)//2
         report.append(f'| {r} | {t} | {a} | {ranks["GEN"]} | {ranks["DET"]} | {ranks["PAD"]} | {interpretation} |')
         row=next(x for x in ordered if (x['r'],x['t'])==(r,t))
         row['pilot_ranks_lb']=ranks
@@ -80,6 +98,7 @@ def main():
             row['D_stable_ub']=a-ranks['DET']
             row['next_sufficient_negative_witness']=f"global padded ideal floor {a-ranks['DET']} at a stated stable rung"
     report += ['',
+        f'New proposed family exclusions after the checked pilots: {len(exclusions)}. For a full-rank t=21 source, multiplication by s2^((21-t)/2) injects each lower odd-tail stable ideal into the zero tail-21 ideal. The ideal filtration then excludes every valid finite rung of each such tail. These are theorem implications, not extra sampled pilots; proof C6 records the argument.', '',
         'All ranks, when present, agree at2147483647 and2147483629 and are backed by explicit nonzero square minors. The replay reconstructs jets from integer pencils or independent padded linear forms, reevaluates the selected source brackets, and checks every entry of the minor before recomputing its determinant. This is a fresh geometric replay, not stored-matrix elimination. Generic source matrices attaining a_inf also certify source completeness without a separate spanning premise.', '',
         'A deficient DET rank is a floor, and bounds the ideal from above. A deficient PAD sample cannot produce an ideal lower bound. For a remaining candidate, the next sufficient positive witness is a global determinant ideal floor q and a padded minor r_pad satisfying q+r_pad>a at one fixed cell. A sufficient negative witness is a padded ideal floor at least a_inf-r_det, combined with the stable ideal filtration. No finite degree27 ambient value is asserted from the stable ten-row count429.', '',
         '## Validation and resource decisions', '',
@@ -123,7 +142,12 @@ def main():
                     ('1536MiB','1536 MiB')]:
         prose=prose.replace(old,new)
     (ROOT/'docs/b15_06_report.md').write_text(prose,encoding='utf-8')
-    (OUT/'ranked_census.json').write_text(json.dumps({'status':'EXACT','rows':ordered},indent=2)+'\n',encoding='utf-8')
+    ordered.sort(key=lambda x:(x['queue_status']!='OPEN',x['pilot_priority'] or 100,
+                              -x['a_inf'],-x['r'],-x['t']))
+    (OUT/'ranked_census.json').write_text(json.dumps({'status':'RECORDED',
+        'count_status':'EXACT','rank_status':'REPLAYED_RANK_FLOOR',
+        'derived_bound_method':'C4 ideal filtration and C6 injective stable-ideal multiplication',
+        'rows':ordered},indent=2)+'\n',encoding='utf-8')
     (OUT/'proposed_exclusions.json').write_text(json.dumps({'slot':'06','single_writer':'integrator',
         'proposals':exclusions,'no_shared_index_written':True},indent=2)+'\n',encoding='utf-8')
     sources=['docs/s57_report.md','analysis/b14_04/recount.py','analysis/b14_06_bracket.py',

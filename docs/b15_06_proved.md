@@ -148,3 +148,37 @@ results/b15_06/pilot_r10_t19_summary.json and geometric_replay_r10_t19.json,
 with the six complete native source/point files. Hypotheses and inherited
 dependencies are precisely C1, C3, and C4. The inherited LMR framework motivated
 selection but is not used to turn the observed deficiency11 into an equality.
+
+## B15-06-C6: lower-tail exclusion from one full stable source
+
+Status: EXACT implication; applied only to a fully replayed determinant rank
+equal to the corresponding exact ambient count. This extension of the pilot
+conclusion was derived after the eight-variable full rank was observed.
+
+Fix r, set col=r-1, and work in the polynomial ring A=Q[Z] of S57's slice.
+The coordinate s2=g2(e0) is a nonzero highest-weight polynomial of weight
+(2,0,...,0) for GL(col). If t<=T and T-t is a nonnegative even integer, then
+
+    f -> s2^((T-t)/2) f
+
+is an injection from the highest-weight part of I(Z_D) of weight
+(t,2^(r-2)) into that of weight (T,2^(r-2)). It preserves ideal membership
+because I(Z_D) is an ideal; it is injective because A is a polynomial domain
+and the multiplier is nonzero. Highest weights add under multiplication.
+The argument does not presume that source coordinate multiplicities have
+already stabilized at any specific finite degree.
+
+Thus a full stable determinant rank at T=21 forces i_det_inf=0 for every
+t=3,5,...,21 at that same r. C4 then gives i_det(delta)=0 at every valid finite
+rung, and D=-i_pad<=0. In particular, a single fully checked source can close
+ten families in this census. No count of product channels enters this proof.
+
+Verifier: the displayed injection and C4, plus the nonzero minors and exact
+counts named in each proposed_exclusions.json record. The records retain
+the actual witness tail and multiplier exponent, rather than describing a
+lower-tail conclusion as a newly measured rank.
+
+The same injection transfers an upper bound without requiring fullness:
+i_det_inf(t)<=i_det_inf(T). Thus the ten-row T=19 floor418 also gives
+i_det_inf(t)<=min(a_inf(t),11) for each lower requested odd tail. These are
+derived ideal upper bounds, not new evaluations or ideal lower bounds.

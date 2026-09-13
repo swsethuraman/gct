@@ -34,8 +34,10 @@ selection.json was written before geometry: (r,t)=(10,19),(8,21),(7,21), with am
 | r | t | a_inf | GEN rank_lb | DET rank_lb | PAD rank_lb | Interpretation |
 |---|---|---:|---:|---:|---:|---|
 | 10 | 19 | 429 | 429 | 418 | 243 | CANDIDATE; i_det_inf<=11 |
-| 8 | 21 | 460 | pending | pending | pending | Heavy lease requested |
+| 8 | 21 | 460 | 460 | 460 | 443 | EXACT family exclusion, via full rank and C4 |
 | 7 | 21 | 378 | pending | pending | pending | Heavy lease requested |
+
+New proposed family exclusions after the checked pilots: 10. For a full-rank t=21 source, multiplication by s2^((21-t)/2) injects each lower odd-tail stable ideal into the zero tail-21 ideal. The ideal filtration then excludes every valid finite rung of each such tail. These are theorem implications, not extra sampled pilots; proof C6 records the argument.
 
 All ranks, when present, agree at 2147483647 and 2147483629 and are backed by explicit nonzero square minors. The replay reconstructs jets from integer pencils or independent padded linear forms, reevaluates the selected source brackets, and checks every entry of the minor before recomputing its determinant. This is a fresh geometric replay, not stored-matrix elimination. Generic source matrices attaining a_inf also certify source completeness without a separate spanning premise.
 
@@ -53,9 +55,10 @@ The original B14-06 point module fixes NV=8 and AMB=9, and the evaluator factori
 | b15_06_count_replay_small_resources | 0 | 12.078 | 109.14 | 60 / 512 |
 | b15_06_extension_small_resources | 0 | 1.179 | 25.23 | 60 / 512 |
 | b15_06_pilot1_native_resources | 0 | 125.602 | 119.38 | 900 / 1536 |
+| b15_06_pilot2_native_resources | 0 | 69.065 | 139.43 | 300 / 512 |
 | b15_06_timing_small_resources | 0 | 0.882 | 26.95 | 60 / 512 |
 
-Completed pilot/replay pairs: 1/3. Completed runs have exited. The integrator granted the first selected family; later families await a measured-cost checkpoint and extension authorization.
+Completed pilot/replay pairs: 2/3. Completed runs have exited. The integrator granted the first selected family; later families await a measured-cost checkpoint and extension authorization.
 
 One process and one BLAS thread were used under the native Windows Job Object wrapper. Four-point timing controls price construction, point generation and evaluation separately; extrapolations are labeled estimates and exclude matrix reduction/replay. No weight carrier or stabilizer quotient was allocated. Every tracked artifact is checked below 5,000,000 bytes; large delivery bundles are split by the supplied helper.
 
