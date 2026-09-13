@@ -1,7 +1,7 @@
 {
  "note": "Data artefacts named by a staged report and absent from the tree. References resolved by PATH: an absolute host path maps through Batch12_Results/<rest> -> results/astra/<rest>; a bare name resolves beside its report or in that report's artifacts/. Nothing is dropped silently: a reference whose own sentence says the file is absent, or one that resolves under another path, is reported in its own list with the evidence.",
  "generated_by": "tools/integrate/scan_unstaged.py",
- "reports_scanned": 340,
+ "reports_scanned": 342,
  "missing": [
   {
    "report": "docs/PROVED.md",
@@ -75,7 +75,10 @@
    "report": "docs/PROVED.md",
    "line": 170,
    "referenced": "P13_seven_prime.json",
-   "how": "bare name, not beside the report"
+   "how": "bare name, not beside the report",
+   "same_name_outside_workstream": [
+    "results/b14_prep/points/P13_seven_prime.json"
+   ]
   },
   {
    "report": "docs/b13_01_review.md",
@@ -716,6 +719,33 @@
    ]
   },
   {
+   "report": "docs/batch14_close.md",
+   "line": 141,
+   "referenced": "P13.json",
+   "how": "bare name, not beside the report",
+   "same_name_outside_workstream": [
+    "results/b14_prep/points/P13.json"
+   ]
+  },
+  {
+   "report": "docs/batch15_carry_forward.md",
+   "line": 60,
+   "referenced": "P13.json",
+   "how": "bare name, not beside the report",
+   "same_name_outside_workstream": [
+    "results/b14_prep/points/P13.json"
+   ]
+  },
+  {
+   "report": "docs/batch15_carry_forward.md",
+   "line": 60,
+   "referenced": "inherited_exclusions.json",
+   "how": "bare name, not beside the report",
+   "same_name_outside_workstream": [
+    "results/integrate/inherited_exclusions.json"
+   ]
+  },
+  {
    "report": "docs/dispatch/B13-01_packet.md",
    "line": 50,
    "referenced": "gram_spherical.json",
@@ -1077,6 +1107,16 @@
     "results/astra/S2/input_manifest.json",
     "results/astra/S4/input_manifest.json",
     "results/astra/S6/input_manifest.json"
+   ],
+   "caveat": "cross-session within results/astra: confirm by hash before treating as resolved"
+  },
+  {
+   "report": "docs/batch15_carry_forward.md",
+   "line": 60,
+   "referenced": "source.json",
+   "how": "bare name, not beside the report",
+   "found_at": [
+    "results/astra/S4/artifacts/source.json"
    ],
    "caveat": "cross-session within results/astra: confirm by hash before treating as resolved"
   },

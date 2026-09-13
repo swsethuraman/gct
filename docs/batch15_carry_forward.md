@@ -7,6 +7,11 @@ it. Nothing here is a mathematical result; `docs/PROVED.md` carries those.
 **This is a list, not a board.** It says what to fix in the machinery and what the
 open mathematics is. What batch 15 should *aim* at is a separate decision.
 
+**For a worker session, `docs/delivery_contract.md` is the readable form of §1–§4
+below**, with the check that catches each item and the one command to run. Items
+1.4, 1.5, 1.8 and the whole of §2 are now enforced by
+`tools/delivery/check_delivery.py`, so a session catches them itself.
+
 ---
 
 ## 1. Dispatch and delivery machinery
