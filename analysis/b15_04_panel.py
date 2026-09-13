@@ -333,7 +333,8 @@ def pilot(which):
         save(tag+'.json', record)
         record['residual_probe'] = residual_probe(b['E'], c, PRIMES[0])
         record['stage'] = 'reduction cost gate'
-        record['reason'] = 'Pilot completed construction and cover; reduction requires a priced, controlled backend.'
+        record['status'] = 'EXACT'
+        record['reason'] = 'Construction, cover, and narrow reduction measurements complete; rank phase is recorded separately.'
         # This pilot is scoped to construction and measured reduction pricing.
         # A compact carrier permits a separately authorized, justified follow-up.
         if nU <= 3000:

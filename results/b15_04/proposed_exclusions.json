@@ -1,0 +1,100 @@
+{
+  "slot": "04",
+  "status": "PROPOSED",
+  "exclusions": [
+    {
+      "id": "b15_04_cell1_rank3",
+      "status": "REPLAYED_RANK_FLOOR",
+      "n": 4,
+      "delta": 8,
+      "lam": [
+        11,
+        11,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_variables": 16,
+      "predicate": {
+        "n": 4,
+        "delta": 8,
+        "lambda_in": [
+          [
+            11,
+            11,
+            5,
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "m_det_lb": 3,
+      "h_pad": 3,
+      "U_pad_ub": 3,
+      "D_ub": 0,
+      "conclusion": "D<=0",
+      "source": "results/b15_04/cell1_integral_certificate.json",
+      "proof": "docs/b15_04_proved.md",
+      "verifier": "analysis/b15_04_replay.py",
+      "prime": 2147483647,
+      "determinant_minor_mod_p": 2044407607,
+      "inherited_premises": [
+        "ordinary coefficient HWV evaluation convention",
+        "ambient16/restriction7 representation identification",
+        "Pad inclusion in linear-times-cubic locus and Pieri pullback bound"
+      ],
+      "integration_status": "PROPOSED_PENDING_REVIEW"
+    },
+    {
+      "id": "b15_04_cell2_rank3",
+      "status": "REPLAYED_RANK_FLOOR",
+      "n": 4,
+      "delta": 8,
+      "lam": [
+        12,
+        11,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "ambient_variables": 16,
+      "predicate": {
+        "n": 4,
+        "delta": 8,
+        "lambda_in": [
+          [
+            12,
+            11,
+            4,
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "m_det_lb": 3,
+      "h_pad": 3,
+      "U_pad_ub": 3,
+      "D_ub": 0,
+      "conclusion": "D<=0",
+      "source": "results/b15_04/cell2_integral_certificate.json",
+      "proof": "docs/b15_04_proved.md",
+      "verifier": "analysis/b15_04_replay.py",
+      "prime": 2147483647,
+      "determinant_minor_mod_p": 1601498597,
+      "inherited_premises": [
+        "ordinary coefficient HWV evaluation convention",
+        "ambient16/restriction7 representation identification",
+        "Pad inclusion in linear-times-cubic locus and Pieri pullback bound"
+      ],
+      "integration_status": "PROPOSED_PENDING_REVIEW"
+    }
+  ]
+}

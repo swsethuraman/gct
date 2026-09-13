@@ -2,16 +2,64 @@
   "slot": "04",
   "model": "gpt-6-astra",
   "python": "C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-04/.venv/python.exe",
-  "small_control_envelope": {"seconds": 60, "aggregate_memory_mib": 512, "processes": 1, "blas_threads": 1},
-  "requested_pilot_envelope": {"seconds_per_cell": 900, "aggregate_memory_mib": 1536, "processes": 1, "blas_threads": 1, "schedule": "sequential"},
-  "heavy_lease_status": "REQUESTED_NOT_GRANTED",
+  "small_control_envelope": {
+    "seconds": 60,
+    "aggregate_memory_mib": 512,
+    "processes": 1,
+    "blas_threads": 1
+  },
+  "requested_pilot_envelope": {
+    "seconds_per_cell": 900,
+    "aggregate_memory_mib": 1536,
+    "processes": 1,
+    "blas_threads": 1,
+    "schedule": "sequential"
+  },
+  "heavy_lease_status": "RELEASED_NUMERICAL_WORK_COMPLETE",
   "events": [
-    {"event": "readiness", "details": "Verified frozen HEAD, tree, and annotated tag in assigned existing worktree. Preserved pre-existing runtime logs."},
-    {"event": "preregistration", "commit": "8eb873192fe2121c8a4c6c4286bfede359cf6fce"},
-    {"event": "pre_run_correction", "details": "Ordinary coefficient convention corrected after inspecting inherited source/evaluator; no factorial rescaling applied."},
-    {"event": "small_controls", "details": "Exact source liveness, source-sign/point/normalization defects, constructor agreement, and signed orbit controls passed under native Job Object limits."},
-    {"event": "lease_request", "details": "Integrator request for two sequential 900-second sparse construction and reduction-cost pilots. Integrator acknowledged slot 04 next after holders 01 and 03; no grant yet."},
-    {"event": "backend_control", "details": "Added signed-int64 triangular solve and narrow residual benchmark; independent FLINT solve agreement at both primes passed. Full dense projected matrix is priced before allocation."},
-    {"event": "independent_replay", "details": "Separate verifier reconstructed the control polynomial by exact Vandermonde interpolation of integer determinant values, verified complete raising identity, and checked 17 input hashes."}
+    {
+      "event": "readiness",
+      "details": "Verified frozen HEAD, tree, and annotated tag in assigned existing worktree. Preserved pre-existing runtime logs."
+    },
+    {
+      "event": "preregistration",
+      "commit": "8eb873192fe2121c8a4c6c4286bfede359cf6fce"
+    },
+    {
+      "event": "pre_run_correction",
+      "details": "Ordinary coefficient convention corrected after inspecting inherited source/evaluator; no factorial rescaling applied."
+    },
+    {
+      "event": "small_controls",
+      "details": "Exact source liveness, source-sign/point/normalization defects, constructor agreement, and signed orbit controls passed under native Job Object limits."
+    },
+    {
+      "event": "lease_request",
+      "details": "Integrator request for two sequential 900-second sparse construction and reduction-cost pilots. Integrator acknowledged slot 04 next after holders 01 and 03; no grant yet."
+    },
+    {
+      "event": "backend_control",
+      "details": "Added signed-int64 triangular solve and narrow residual benchmark; independent FLINT solve agreement at both primes passed. Full dense projected matrix is priced before allocation."
+    },
+    {
+      "event": "independent_replay",
+      "details": "Separate verifier reconstructed the control polynomial by exact Vandermonde interpolation of integer determinant values, verified complete raising identity, and checked 17 input hashes."
+    },
+    {
+      "event": "lease_grant",
+      "details": "Integrator transferred released slot03 lease to04 after verifying all seven recorded jobs absent. Scope: one first-cell pilot <=900 seconds,1536 MiB, one process/BLAS thread. Report before second-cell run."
+    },
+    {
+      "event": "measured_followups",
+      "details": "Integrator reviewed36.052s first pilot and20.266s second pilot, then authorized sequential rank and integral followups. Both ranks reached3 after3 points; all lifting gates passed."
+    },
+    {
+      "event": "verification_method_change",
+      "details": "Initial integral attempt exit1 at150000-term script gate after296730 terms reconstructed. Precomputed210-letter replacement maps replaced per-term lists; expanded gate400000 terms with unchanged60s/512MiB cap. Both integral sources and independent polynomial raising passed."
+    },
+    {
+      "event": "completion",
+      "details": "Both cells exclude positiveD. Integral source certificates and independent compact replay passed. No90-minute production attempt; no more heavy work. Local native caches retained untracked; complete compact integral sources delivered."
+    }
   ]
 }

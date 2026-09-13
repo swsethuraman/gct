@@ -1,0 +1,25 @@
+{"board_numbering": "batch15", "session_id": "B15-04", "pid": 25372, "memory_before": {"total_physical": 33752997888, "available_physical": 10626445312, "load": 68}, "memory_cap_mb": 1536, "wall_cap_seconds": 900, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "idle_sleep_inhibited_during_run": true, "started_utc": "2026-09-13T14:24:00Z"}
+      level 1: 96 prefixes
+      level 2: 2260 prefixes
+      level 3: 21311 prefixes
+      level 4: 130800 prefixes
+      level 5: 447243 prefixes
+      level 6: 845254 prefixes
+      level 7: 986119 prefixes
+      level 8: 986119 prefixes
+  lam=(12, 11, 4, 2, 1, 1, 1): N_S=986119 |Stab|=6 n_chi=85325 (orbits dropped: 169489) [lean-b10, 3s, HWM nan GB]
+    E_01: |H|=6 targets 916123 canonical rows 78866 nnz 407284 (triples 629189; obstructed fixed targets cancelled: 84516) [tables 4s rows 1s finish 0.0s; 5s, HWM nan GB, RSS nan GB]
+    E_12: |H|=6 targets 537864 canonical rows 44942 nnz 226691 (triples 341709; obstructed fixed targets cancelled: 49941) [tables 2s rows 1s finish 0.0s; 7s, HWM nan GB, RSS nan GB]
+    E_23: |H|=6 targets 527508 canonical rows 44558 nnz 142183 (triples 187149; obstructed fixed targets cancelled: 20496) [tables 2s rows 0s finish 0.0s; 9s, HWM nan GB, RSS nan GB]
+    E_34: |H|=2 targets 430828 canonical rows 164147 nnz 255975 (triples 255975; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 10s, HWM nan GB, RSS nan GB]
+    E_45: |H|=1 targets 577804 canonical rows 0 nnz 0 (triples 511950; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 12s, HWM nan GB, RSS nan GB]
+    E_56: |H|=1 targets 577804 canonical rows 0 nnz 0 (triples 511950; obstructed fixed targets cancelled: 0) [tables 1s rows 0s finish 0.0s; 14s, HWM nan GB, RSS nan GB]
+  built-lean (12, 11, 4, 2, 1, 1, 1) d8: N_S=986119 |Stab|=6 n_chi=85325 rows=332513 nnz=1032133 (18s: mono 1s orbits 3s rows 14s; HWM nan GB; E.data int16)
+    cover-lean natural: 84567/85325 [HWM nan GB]
+    cover-lean reversed: 85304/85325 [HWM nan GB]
+    cover-lean fill_asc: 78123/85325 [HWM nan GB]
+    cover-lean fill_desc: 79030/85325 [HWM nan GB]
+    cover-lean random: 71863/85325 [HWM nan GB]
+{"size": 85304, "nU": 21, "stats": {"natural": 84567, "reversed": 85304, "fill_asc": 78123, "fill_desc": 79030, "random": 71863}, "order": "reversed", "cover_seconds": 0.16189897592994384}
+{"projected_uint32_bytes": 7140, "projected_int64_copy_bytes": 14280, "flint_word_matrix_bytes": 14280, "dense_X_uint32_bytes": 7165536, "method": "exact array sizes; excludes Python lists, sparse arrays, and solver workspace"}
+{"wall_seconds": 20.266404300025897}
