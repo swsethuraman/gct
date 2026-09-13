@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "valid custom-tag b15, spaced path, inherited wording",
+      "expected_pass": true,
+      "actual_pass": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "valid pre-bundle check",
+      "expected_pass": true,
+      "actual_pass": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "missing base tag",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "fatal: Not a valid object name refs/tags/absent-base"
+      ]
+    },
+    {
+      "name": "empty object manifest",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest must be a nonempty object"
+      ]
+    },
+    {
+      "name": "empty array manifest",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest must be a nonempty object"
+      ]
+    },
+    {
+      "name": "missing manifest",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "[Errno 2] No such file or directory: 'C:\\\\Users\\\\swami\\\\Projects\\\\gct-gpt\\\\work\\\\batch15\\\\results\\\\b15_prep\\\\checks\\\\fixtures\\\\no-manifest.json'"
+      ]
+    },
+    {
+      "name": "post-bundle without manifest",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "post-bundle check requires a manifest"
+      ]
+    },
+    {
+      "name": "wrong base_commit aaaaaaaaaaaaaaaaaa",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest base_commit mismatch"
+      ]
+    },
+    {
+      "name": "wrong head aaaaaaaaaaaaaaaaaa",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest head mismatch"
+      ]
+    },
+    {
+      "name": "wrong head_tree aaaaaaaaaaaaaaaaaa",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest head_tree mismatch"
+      ]
+    },
+    {
+      "name": "wrong bundle_prerequisites ['68643bdf9e852a4d",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest prerequisites must be the one-element list of the actual base hash"
+      ]
+    },
+    {
+      "name": "wrong bundle_prerequisites [12]",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest prerequisites must be the one-element list of the actual base hash"
+      ]
+    },
+    {
+      "name": "wrong sha256 000000000000000000",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest sha256 mismatch"
+      ]
+    },
+    {
+      "name": "wrong bundle_bytes 1101",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest byte count mismatch"
+      ]
+    },
+    {
+      "name": "wrong models []",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "manifest must record actual model/phase entries"
+      ]
+    },
+    {
+      "name": "bad uncommitted working file does not taint named commit",
+      "expected_pass": true,
+      "actual_pass": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "bad committed spaced file rejected despite clean working copy",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "docs/name with spaces.md adds disallowed operational wording: ['hunt']"
+      ]
+    },
+    {
+      "name": "stale bundle rejected after new commit",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "docs/name with spaces.md adds disallowed operational wording: ['hunt']",
+        "bundle must contain exactly the named branch at its current head",
+        "manifest head mismatch",
+        "manifest head_tree mismatch"
+      ]
+    },
+    {
+      "name": "full-history bundle without required prerequisite",
+      "expected_pass": false,
+      "actual_pass": false,
+      "passed": true,
+      "errors": [
+        "docs/name with spaces.md adds disallowed operational wording: ['hunt']",
+        "bundle must require exactly the dispatch base",
+        "manifest head mismatch",
+        "manifest head_tree mismatch",
+        "manifest byte count mismatch",
+        "manifest sha256 mismatch",
+        "manifest md5 mismatch"
+      ]
+    },
+    {
+      "name": "invalid predicate {'any_of': [{'n': 4}, {'unknown': True}]}",
+      "passed": true
+    },
+    {
+      "name": "invalid predicate {'n': True}",
+      "passed": true
+    },
+    {
+      "name": "invalid predicate {'delta_min': 8, 'delta_max': 7}",
+      "passed": true
+    },
+    {
+      "name": "invalid predicate {'lambda_in': [[1, 3]]}",
+      "passed": true
+    },
+    {
+      "name": "invalid predicate {'any_of': []}",
+      "passed": true
+    },
+    {
+      "name": "all current ledger predicates accepted",
+      "passed": true,
+      "count": 11
+    }
+  ],
+  "cases_passed": 25,
+  "cases_total": 25,
+  "fixture": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15\\results\\b15_prep\\checks\\fixtures\\delivery_hv7pgm34"
+}

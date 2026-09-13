@@ -1,0 +1,42 @@
+{
+  "status": "RECONCILED_WITH_B14_12_AND_B13_10",
+  "before": 1712,
+  "after": 1710,
+  "removed": [
+    {
+      "n": 4,
+      "lam": [
+        12,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "delta": 8,
+      "a": 4,
+      "h_pad": 1,
+      "D_upper": -3,
+      "rank_evidence": "B14-12",
+      "reason": "Delivered full determinant multiplicity plus exact h_pad upper bound"
+    },
+    {
+      "n": 4,
+      "lam": [
+        10,
+        6,
+        6,
+        6,
+        2,
+        2
+      ],
+      "delta": 8,
+      "a": 10,
+      "h_pad": 7,
+      "D_upper": -3,
+      "rank_evidence": "B13-10 pilot",
+      "reason": "Delivered full determinant multiplicity plus exact h_pad upper bound"
+    }
+  ],
+  "note": "The B13-10 pilot was already banked but omitted by this inventory parser. Neither removed cell is among the previous nine surviving sized shortlist entries."
+}

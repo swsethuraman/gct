@@ -1,0 +1,278 @@
+{
+  "status": "CERTIFIED exact nonvanishing, with B14-10 highest-weight/dimension theorem",
+  "cell": {
+    "n": 4,
+    "delta": 7,
+    "ell": 7,
+    "lam": [
+      16,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "pencil_coefficients_s1_through_s7": [
+    [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "determinant_polynomial_terms": [
+    {
+      "exponents": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": 1
+    }
+  ],
+  "determinant_polynomial": "s1^4+s1^2*(-s2^2+s3^2-s4^2+s5^2-s6^2+s7^2)",
+  "H_definition": "H=c*det(G2)-(3/8)*g1^T*adj(G2)*g1; G2 is the symmetric matrix of the s1^2 coefficient",
+  "c": 1,
+  "g1": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "G2_diagonal": [
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "H_value": -1,
+  "conclusion": "a=mult_det=1; i_det=0; D<=0. Candidate #1 is excluded, independently of padded evaluations."
+}

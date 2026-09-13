@@ -1,0 +1,77 @@
+{
+  "status": "PASS_FRESH_AUTHENTIC_PRODUCTION_REPLAY",
+  "date": "2026-09-12",
+  "reviewed_head": "62369e75e606fc6ac59e1d249a5871a57035b918",
+  "checkout": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\reviews\\b14-03-ci73",
+  "canonical_certificate_sha256": "16fcaf8bf1387f6a957cd29eb63af9c7030f2361318b64603f329add6e70a5cb",
+  "wall_seconds": 810.0181068999955,
+  "peak_job_memory_bytes": 484462592,
+  "peak_job_memory_mib": 462.02,
+  "source_values": {
+    "exact_entries": 2847,
+    "residue_comparisons": 19929,
+    "unused_primary_columns_arithmetic_only": 23
+  },
+  "generic_control": {
+    "entries": 1521,
+    "prime": 2147483647,
+    "determinant": 1497446691
+  },
+  "target": {
+    "members": 73,
+    "entries": 10658,
+    "mixed_entries": 10512,
+    "completing_entry_reuses_fresh_source": true
+  },
+  "target_minor": {
+    "dimension": 73,
+    "determinants": {
+      "2147483647": 1832982837,
+      "2147483629": 1811606566
+    }
+  },
+  "holdouts": {
+    "exact_entries": 780,
+    "identities": 60,
+    "used_for_target_minor": false
+  },
+  "conclusion": {
+    "source_dimension": 39,
+    "target_dimension": 73,
+    "rank_Q": 36,
+    "i_red13": 3,
+    "i_pad24_lower_bound": 3,
+    "transport": "u^11, same effective coefficients then 235 zeros",
+    "D_interval_with_inherited_S74": [
+      -4,
+      -2
+    ],
+    "D_equals_minus4": "OPEN"
+  },
+  "inherited_dependencies": {
+    "status": "INHERITED; degree24 polynomial matrices not freshly evaluated here",
+    "a24": 274,
+    "det_rank": 273,
+    "pad_rank_floor": 269,
+    "dependency": "frozen S74 certified.json; separate inherited-minor arithmetic replay in delivery"
+  },
+  "acceptance_scope": "Fresh authentic standard-verifier polynomial replay in a separate detached checkout. The producer's additional 48-control suite was not rerun by this receiver. Historical degree24 polynomial evaluations were not regenerated.",
+  "files": [
+    {
+      "path": "work\\reviews\\b14-03-ci73\\results\\ci73\\integrator_stocktake_verification.json",
+      "sha256": "32d22c78251f93e5bb858c92798d43a754d18f131d50237f10ebb9465b2d34b3"
+    },
+    {
+      "path": "work\\reviews\\b14-03-ci73\\results\\logs\\ci73_integrator_stocktake_resources.json",
+      "sha256": "ada1e7e59afe5234ef8f3cd59222c429c3b6a7057dd65663903438baa2583630"
+    },
+    {
+      "path": "work\\reviews\\b14-03-ci73\\results\\ci73\\certificate.json",
+      "sha256": "8f4d168ecfb922213b5baee66ac6250dd99dcf2ace669eebc2426c782e9b231d"
+    },
+    {
+      "path": "work\\reviews\\b14-03-ci73\\docs\\ci73_proof.md",
+      "sha256": "644acd3aaf603e1200e77c5be9b0ccb73b8b312d4f63cff7ed6205fc25475b81"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "EXACT_CONSEQUENCE_OF_RECOUNT_PLUS_DELIVERED_RANK_FLOORS",
+  "n": 4,
+  "lam": [
+    12,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "delta": 8,
+  "a": 4,
+  "h_pad": 1,
+  "freshly_verified_hpad_upper": true,
+  "freshly_replayed_geometric_rank": false,
+  "inequality": "1 <= mult_pad <= mult_red <= h_pad = 1",
+  "mult_pad": 1,
+  "mult_red": 1,
+  "mult_det": 4,
+  "mult_per4": 4,
+  "i_pad": 3,
+  "i_red": 3,
+  "i_det": 0,
+  "i_per4": 0,
+  "D": -3,
+  "D_R": -3,
+  "equal_ideal_subspaces": "I(red)_lambda,8 = I(pad)_lambda,8 by containment and equal dimension 3",
+  "evidence_boundary": "Nonzero pad evaluation and full determinant/per4 ranks are B14-12 delivered outcomes, not compact certificate replays here.",
+  "LMR": "Different weight/degree: D_LMR remains [-4,-2]",
+  "cover_correction": {
+    "n_red": 234064,
+    "delivered_cover": 234056,
+    "kernel_dimension": 3,
+    "rank_Ered_mod_p": 234061,
+    "possible_extra_independent_pivots": 5,
+    "full_column_rank_impossible_over_Q": true,
+    "reason": "Exact h_pad=1,a=4 implies i_red>=3; no cover order can make the red operator injective."
+  }
+}

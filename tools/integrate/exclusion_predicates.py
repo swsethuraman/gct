@@ -11,6 +11,45 @@ def validate_cell(c):
 
 _KEYCAT={}
 
+# The consumer owns its predicate schema. Delivery tools must call this function
+# rather than maintain a second list that can drift away from the implementation.
+PREDICATE_KEYS={'n','r','r_min','r_max','delta','delta_min','delta_max','family','context',
+                'lambda_in','any_of','lambda_length_gt_delta','lambda_1_lt_delta',
+                'explicit_cell_keys'}
+
+
+def validate_predicate(pr):
+    if not isinstance(pr,dict) or not pr or set(pr)-PREDICATE_KEYS:
+        raise ValueError('empty or unsupported predicate')
+    for key in ('n','r','r_min','r_max','delta','delta_min','delta_max'):
+        if key in pr and (type(pr[key]) is not int or pr[key]<1):
+            raise ValueError('invalid positive integer in predicate: '+key)
+    for key in ('r','delta'):
+        if key+'_min' in pr and key+'_max' in pr and pr[key+'_min']>pr[key+'_max']:
+            raise ValueError('reversed predicate range: '+key)
+    if 'family' in pr and pr['family'] not in ('LMR_u_ladder','quartic_peaked_ladder'):
+        raise ValueError('unknown family')
+    if 'context' in pr and (not isinstance(pr['context'],str) or not pr['context']):
+        raise ValueError('invalid predicate context')
+    for key in ('lambda_length_gt_delta','lambda_1_lt_delta'):
+        if key in pr and pr[key] is not True:
+            raise ValueError(key+' must be true')
+    if 'lambda_in' in pr:
+        values=pr['lambda_in']
+        if not isinstance(values,list) or not values:
+            raise ValueError('empty lambda_in')
+        for lam in values:
+            if not isinstance(lam,list) or not lam or any(type(x) is not int or x<1 for x in lam) or lam!=sorted(lam,reverse=True):
+                raise ValueError('invalid lambda_in partition')
+    if 'explicit_cell_keys' in pr:
+        _explicit_keys(pr['explicit_cell_keys'])
+    if 'any_of' in pr:
+        if not isinstance(pr['any_of'],list) or not pr['any_of']:
+            raise ValueError('empty any_of')
+        for alternative in pr['any_of']:
+            validate_predicate(alternative)
+    return True
+
 def _explicit_keys(path):
     """(n,delta,tuple(lambda)) set from a named certificate catalog.  Fails closed:
     a missing or malformed catalog raises rather than matching nothing silently."""
@@ -31,15 +70,14 @@ def _explicit_keys(path):
 
 def matches(pr,c,context):
     validate_cell(c)
+    validate_predicate(pr)
     # B14-11 appended two predicate SHAPES the range-only matcher did not know:
     # a relational partition bound (any_of over length/first-row conditions) and an
     # explicit-key certificate catalog.  It expected the legacy join to skip them;
     # in fact the unsupported-key branch RAISED, so after that merge every query
     # failed.  Implemented here rather than skipped, keeping the fail-closed policy:
     # an unknown key is still an error, never a silent match and never "all n=4".
-    allowed={'n','r','r_min','r_max','delta','delta_min','delta_max','family','context',
-             'lambda_in','any_of','lambda_length_gt_delta','lambda_1_lt_delta',
-             'explicit_cell_keys'}
+    allowed=PREDICATE_KEYS
     if not isinstance(pr,dict) or not pr or set(pr)-allowed: raise ValueError('empty or unsupported predicate')
     if 'family' in pr and pr['family'] not in ('LMR_u_ladder','quartic_peaked_ladder'): raise ValueError('unknown family')
     if 'any_of' in pr:

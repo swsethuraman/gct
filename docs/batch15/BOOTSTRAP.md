@@ -1,0 +1,9 @@
+# Open the new GCT project
+
+The prepared independent project folder is `C:\Users\swami\Projects\gct-gpt\work\batch15`. Add this existing folder as a Codex project and start a fresh integrator task in it. It is a complete Git checkout, not a folder of prompts. The local `batch15-launch` branch and annotated `batch15-base` tag contain the accepted code, proof records and all twelve briefs. Nothing has been pushed to the shared remote.
+
+The external handoff folder is `C:\Users\swami\Projects\gct-gpt\Batch15_Launch`. Read its `DISPATCH_MANIFEST.json` for exact hashes and `NEW_GCT_PROMPT.md` for the prompt to paste. That manifest is created after the launch commit so it does not contain a circular self-hash. The dispatch files under `prompts/` repeat the exact commit/tree/tag in every worker message.
+
+If starting on another machine, clone the project repository, obtain the verified `contract_fixes.bundle` if the remote lacks housekeeping commit1e61cfb1, then fetch the supplied Batch15 launch bundle. Its prerequisite is the exact housekeeping commit. Read `git bundle list-heads` and `git bundle verify` before importing; verify the external SHA256 and base/tree. Import both `refs/heads/batch15-launch` and `refs/tags/batch15-base` from the launch bundle, then check out the launch branch. The launch/bootstrap bundle has those two refs deliberately; subsequent worker delivery bundles each have exactly one worker branch ref. Do not apply the worker-only one-ref check to the bootstrap bundle.
+
+On this machine use the existing prepared project directly. Do not replace it with a remote clone of moving main. Workers should use isolated worktrees created from `batch15-base`; preserve the original canonical project and old results. If a worktree cannot access a required runtime, create an environment in that worktree and run the brief's small control before any production work.

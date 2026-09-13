@@ -1,0 +1,8937 @@
+{
+  "status": "EXACT_SIZING_ONLY",
+  "control": {
+    "n": 4,
+    "delta": 7,
+    "lam": [
+      11,
+      8,
+      5,
+      1,
+      1,
+      1,
+      1
+    ],
+    "N_S": 209487,
+    "stabilizer_order": 24,
+    "n_chi": 1576,
+    "signed_trace_sum": 37824,
+    "classes": [
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          3
+        ],
+        "class_size": 6,
+        "character": -1,
+        "fixed_monomials": 1035
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3,
+          6
+        ],
+        "class_size": 8,
+        "character": 1,
+        "fixed_monomials": 4275
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          6,
+          5
+        ],
+        "class_size": 3,
+        "character": 1,
+        "fixed_monomials": 9695
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          5,
+          6
+        ],
+        "class_size": 6,
+        "character": -1,
+        "fixed_monomials": 38123
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "class_size": 1,
+        "character": 1,
+        "fixed_monomials": 209487
+      }
+    ],
+    "arithmetic": "Z; exact final division by group order",
+    "wall_seconds": 0.009
+  },
+  "cells": [
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          13,
+          11,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 519879,
+        "tail_box": 10368,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 519879
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          13,
+          11,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 519879,
+        "stabilizer_order": 6,
+        "n_chi": 43364,
+        "signed_trace_sum": 260184,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 9903
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 93167
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 519879
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.009
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 14346.59,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          12,
+          11,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 3,
+        "recorded_N_S": 986119,
+        "tail_box": 12960,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 986119
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          12,
+          11,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 986119,
+        "stabilizer_order": 6,
+        "n_chi": 85325,
+        "signed_trace_sum": 511950,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 17149
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 169489
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 986119
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.011
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 55544.71,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          11,
+          5,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 4,
+        "h_pad": 3,
+        "recorded_N_S": 1577460,
+        "tail_box": 15552,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 1577460
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          11,
+          5,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 1577460,
+        "stabilizer_order": 12,
+        "n_chi": 70438,
+        "signed_trace_sum": 845256,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 211
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 1626
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 2014
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 25539
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 261908
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1577460
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.018
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 37853.33,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          10,
+          6,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 7,
+        "h_pad": 4,
+        "recorded_N_S": 2181208,
+        "tail_box": 16632,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 2181208
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          10,
+          6,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 2181208,
+        "stabilizer_order": 6,
+        "n_chi": 197598,
+        "signed_trace_sum": 1185588,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 33793
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 354402
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 2181208
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.013
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 297889.48,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          8,
+          8,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 2806818,
+        "tail_box": 17496,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 2806818
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          8,
+          8,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 2806818,
+        "stabilizer_order": 12,
+        "n_chi": 128559,
+        "signed_trace_sum": 1542708,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 450
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 3682
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 5616
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 41922
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 447808
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 2806818
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.019
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 126094.18,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          10,
+          4,
+          4,
+          1,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 5,
+        "recorded_N_S": 3950523,
+        "tail_box": 19800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 3950523
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          10,
+          4,
+          4,
+          1,
+          1,
+          1
+        ],
+        "N_S": 3950523,
+        "stabilizer_order": 12,
+        "n_chi": 183168,
+        "signed_trace_sum": 2198016,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1551
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 14257
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 36153
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 57843
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 621559
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 3950523
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.023
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 255970.12,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          6,
+          3,
+          1,
+          1,
+          1
+        ],
+        "a": 8,
+        "h_pad": 4,
+        "recorded_N_S": 4746924,
+        "tail_box": 22176,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 4746924
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          6,
+          3,
+          1,
+          1,
+          1
+        ],
+        "N_S": 4746924,
+        "stabilizer_order": 12,
+        "n_chi": 222688,
+        "signed_trace_sum": 2672256,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 433
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 3568
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 5110
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 67305
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 734850
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 4746924
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.024
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 378341.26,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          8,
+          3,
+          1,
+          1,
+          1
+        ],
+        "a": 7,
+        "h_pad": 3,
+        "recorded_N_S": 6130206,
+        "tail_box": 23328,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 6130206
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          8,
+          3,
+          1,
+          1,
+          1
+        ],
+        "N_S": 6130206,
+        "stabilizer_order": 12,
+        "n_chi": 291223,
+        "signed_trace_sum": 3494676,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 680
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 5868
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 9806
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 83982
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 932352
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 6130206
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0257
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 647055.33,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "a": 7,
+        "h_pad": 6,
+        "recorded_N_S": 6140412,
+        "tail_box": 23760,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 6,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 6140412
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "N_S": 6140412,
+        "stabilizer_order": 12,
+        "n_chi": 290793,
+        "signed_trace_sum": 3489516,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 515
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 4336
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 6248
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 85035
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 938412
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 6140412
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.025
+      },
+      "threshold": 6,
+      "single_dense_int64_square_mib": 645145.94,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          8,
+          2,
+          2,
+          1,
+          1
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 8763387,
+        "tail_box": 29160,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 8763387
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          8,
+          2,
+          2,
+          1,
+          1
+        ],
+        "N_S": 8763387,
+        "stabilizer_order": 8,
+        "n_chi": 964633,
+        "signed_trace_sum": 7717064,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 8047
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 3791
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 9115
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 10867
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 91035
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 358487
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 1316279
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 8763387
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.041
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 7099279.97,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          7,
+          4,
+          1,
+          1,
+          1
+        ],
+        "a": 6,
+        "h_pad": 3,
+        "recorded_N_S": 9906591,
+        "tail_box": 28800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 9906591
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          7,
+          4,
+          1,
+          1,
+          1
+        ],
+        "N_S": 9906591,
+        "stabilizer_order": 12,
+        "n_chi": 481116,
+        "signed_trace_sum": 5773392,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 789
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 6983
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 10989
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 129405
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 1466797
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 9906591
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.031
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 1765995.83,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          5,
+          1,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 3,
+        "recorded_N_S": 12157504,
+        "tail_box": 30240,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 12157504
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          5,
+          1,
+          1,
+          1
+        ],
+        "N_S": 12157504,
+        "stabilizer_order": 12,
+        "n_chi": 594943,
+        "signed_trace_sum": 7139316,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 885
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 7890
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 12708
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 155581
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 1779514
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 12157504
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.032
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 2700478.92,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          7,
+          5,
+          1,
+          1,
+          1
+        ],
+        "a": 6,
+        "h_pad": 5,
+        "recorded_N_S": 12415954,
+        "tail_box": 27648,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 12415954
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          7,
+          5,
+          1,
+          1,
+          1
+        ],
+        "N_S": 12415954,
+        "stabilizer_order": 12,
+        "n_chi": 608127,
+        "signed_trace_sum": 7297524,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 1295
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 12054
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 22982
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 158773
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 1815522
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 12415954
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.03
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 2821490.85,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          7,
+          5,
+          1,
+          1,
+          1
+        ],
+        "a": 7,
+        "h_pad": 3,
+        "recorded_N_S": 13988249,
+        "tail_box": 31104,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 13988249
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          7,
+          5,
+          1,
+          1,
+          1
+        ],
+        "N_S": 13988249,
+        "stabilizer_order": 6,
+        "n_chi": 1375599,
+        "signed_trace_sum": 8253594,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 176159
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 2028991
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 13988249
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.023
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 14436894.29,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          4,
+          3,
+          3,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 5,
+        "recorded_N_S": 14286122,
+        "tail_box": 31680,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 14286122
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          10,
+          4,
+          3,
+          3,
+          1,
+          1
+        ],
+        "N_S": 14286122,
+        "stabilizer_order": 8,
+        "n_chi": 1505319,
+        "signed_trace_sum": 12042552,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 9804
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 3398
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 7786
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 11764
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 68282
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 218976
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 2103260
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 14286122
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.045
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 17288095.79,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          9,
+          5,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 16856320,
+        "tail_box": 34560,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 16856320
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          9,
+          5,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "N_S": 16856320,
+        "stabilizer_order": 24,
+        "n_chi": 210490,
+        "signed_trace_sum": 5051760,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              7,
+              4
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 37758
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4,
+              7
+            ],
+            "class_size": 8,
+            "character": 1,
+            "fixed_monomials": 217573
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 452912
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 2446222
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 16856320
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.042
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 338028.26,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          8,
+          3,
+          2,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 4,
+        "recorded_N_S": 17475531,
+        "tail_box": 34992,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 17475531
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          8,
+          3,
+          2,
+          1,
+          1
+        ],
+        "N_S": 17475531,
+        "stabilizer_order": 4,
+        "n_chi": 3739361,
+        "signed_trace_sum": 14957444,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 13201
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 22487
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 2527373
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 17475531
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0313
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 106680455.69,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          8,
+          6,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 3,
+        "recorded_N_S": 21275196,
+        "tail_box": 36288,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 21275196
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          8,
+          6,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "N_S": 21275196,
+        "stabilizer_order": 24,
+        "n_chi": 271841,
+        "signed_trace_sum": 6524184,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              7,
+              4
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 46126
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4,
+              7
+            ],
+            "class_size": 8,
+            "character": 1,
+            "fixed_monomials": 268320
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 556632
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 3048452
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 21275196
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.045
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 563793.41,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          7,
+          7,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 31166614,
+        "tail_box": 41472,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 31166614
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          7,
+          7,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 31166614,
+        "stabilizer_order": 24,
+        "n_chi": 798359,
+        "signed_trace_sum": 19160616,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 1053
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 9172
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 10008
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 2205
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 21678
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 45834
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 22105
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 250012
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1132336
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 382777
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 4409418
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 31166614
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.089
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 4862801.31,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          13,
+          4,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 32565584,
+        "tail_box": 33750,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 32565584
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          13,
+          4,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 32565584,
+        "stabilizer_order": 24,
+        "n_chi": 1414908,
+        "signed_trace_sum": 33957792,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              4,
+              1,
+              5,
+              6
+            ],
+            "class_size": 6,
+            "character": 1,
+            "fixed_monomials": 122
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              1,
+              4,
+              5,
+              6
+            ],
+            "class_size": 8,
+            "character": 1,
+            "fixed_monomials": 1835
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 14984
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 6,
+            "character": 1,
+            "fixed_monomials": 221974
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 32565584
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.031
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 15273778.14,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          7,
+          3,
+          3,
+          1,
+          1
+        ],
+        "a": 7,
+        "h_pad": 5,
+        "recorded_N_S": 32843257,
+        "tail_box": 41472,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 32843257
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          7,
+          3,
+          3,
+          1,
+          1
+        ],
+        "N_S": 32843257,
+        "stabilizer_order": 4,
+        "n_chi": 6981320,
+        "signed_trace_sum": 27925280,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 126409
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 444263
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 4600123
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 32843257
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.039
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 371847754.99,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          5,
+          2,
+          1,
+          1
+        ],
+        "a": 8,
+        "h_pad": 5,
+        "recorded_N_S": 35708211,
+        "tail_box": 41472,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 35708211
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          5,
+          2,
+          1,
+          1
+        ],
+        "N_S": 35708211,
+        "stabilizer_order": 4,
+        "n_chi": 7676576,
+        "signed_trace_sum": 30706304,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 27421
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 53673
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 4975655
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 35708211
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.037
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 449598839.45,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          5,
+          2,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 38115225,
+        "tail_box": 46656,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 38115225
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          5,
+          2,
+          1,
+          1
+        ],
+        "N_S": 38115225,
+        "stabilizer_order": 4,
+        "n_chi": 8210419,
+        "signed_trace_sum": 32841676,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 22629
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 40575
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 5291495
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 38115225
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.041
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 514304963.35,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          6,
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 38768409,
+        "tail_box": 45360,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 38768409
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          6,
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "N_S": 38768409,
+        "stabilizer_order": 24,
+        "n_chi": 522319,
+        "signed_trace_sum": 12535656,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              7,
+              4
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 77231
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4,
+              7
+            ],
+            "class_size": 8,
+            "character": 1,
+            "fixed_monomials": 462795
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 948409
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 6,
+            "character": -1,
+            "fixed_monomials": 5386159
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 38768409
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.054
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 2081429.58,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          6,
+          6,
+          2,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 39190675,
+        "tail_box": 42336,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 39190675
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          6,
+          6,
+          2,
+          1,
+          1
+        ],
+        "N_S": 39190675,
+        "stabilizer_order": 4,
+        "n_chi": 8449747,
+        "signed_trace_sum": 33798988,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 38829
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 85523
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 5438381
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 39190675
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.038
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 544725222.5,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          4,
+          4,
+          4,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 5,
+        "recorded_N_S": 40659073,
+        "tail_box": 40500,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 40659073
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          4,
+          4,
+          4,
+          1,
+          1
+        ],
+        "N_S": 40659073,
+        "stabilizer_order": 12,
+        "n_chi": 2957483,
+        "signed_trace_sum": 35489796,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 771
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 2071
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 89097
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 256461
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 5673969
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 40659073
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.043
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 66732068.6,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          4,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 42995954,
+        "tail_box": 45000,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 42995954
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          4,
+          1,
+          1
+        ],
+        "N_S": 42995954,
+        "stabilizer_order": 24,
+        "n_chi": 1565877,
+        "signed_trace_sum": 37581048,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 158
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 58
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 17340
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 5942
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 24206
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 34732
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 790
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 2174
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 89870
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 267664
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 5974924
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 42995954
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0705
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 18707052.45,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          4,
+          3,
+          1,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 54100318,
+        "tail_box": 51840,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 54100318
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          4,
+          3,
+          1,
+          1
+        ],
+        "N_S": 54100318,
+        "stabilizer_order": 4,
+        "n_chi": 11681922,
+        "signed_trace_sum": 46727688,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 27894
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 52384
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 7397120
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 54100318
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0472
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 1041162884.63,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          12,
+          5,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 6,
+        "h_pad": 6,
+        "recorded_N_S": 55507121,
+        "tail_box": 40500,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 6,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 55507121
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          12,
+          5,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 55507121,
+        "stabilizer_order": 6,
+        "n_chi": 9423722,
+        "signed_trace_sum": 56542332,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 2546
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 343373
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 55507121
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.03
+      },
+      "threshold": 6,
+      "single_dense_int64_square_mib": 677540102.64,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          5,
+          3,
+          1,
+          1
+        ],
+        "a": 6,
+        "h_pad": 2,
+        "recorded_N_S": 66660206,
+        "tail_box": 54432,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 66660206
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          5,
+          3,
+          1,
+          1
+        ],
+        "N_S": 66660206,
+        "stabilizer_order": 4,
+        "n_chi": 14417095,
+        "signed_trace_sum": 57668380,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 31812
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 61134
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 9021148
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 66660206
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.05
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 1585789705.19,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 68182652,
+        "tail_box": 60480,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 68182652
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 68182652,
+        "stabilizer_order": 12,
+        "n_chi": 3494854,
+        "signed_trace_sum": 41938248,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 2282
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 22524
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 44006
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 783620
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 9276882
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 68182652
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.081
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 93185458.99,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          4,
+          2,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 7,
+        "recorded_N_S": 68961261,
+        "tail_box": 51840,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 7,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 68961261
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          4,
+          2,
+          2,
+          1
+        ],
+        "N_S": 68961261,
+        "stabilizer_order": 4,
+        "n_chi": 17797941,
+        "signed_trace_sum": 71191764,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 23211
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 94119
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 2347833
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 68961261
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.048
+      },
+      "threshold": 7,
+      "single_dense_int64_square_mib": 2416738157.96,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          7,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 69643933,
+        "tail_box": 55296,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 69643933
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          7,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 69643933,
+        "stabilizer_order": 12,
+        "n_chi": 3571231,
+        "signed_trace_sum": 42854772,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 3588
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 36875
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 84591
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 800146
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 9469437
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 69643933
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0768
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 97302939.27,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "a": 5,
+        "h_pad": 5,
+        "recorded_N_S": 71543069,
+        "tail_box": 54000,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 5,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 71543069
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "N_S": 71543069,
+        "stabilizer_order": 4,
+        "n_chi": 17974793,
+        "signed_trace_sum": 71899172,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 8849
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 52295
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 417247
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 71543069
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.048
+      },
+      "threshold": 5,
+      "single_dense_int64_square_mib": 2465005366.46,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          4,
+          2,
+          2,
+          1
+        ],
+        "a": 5,
+        "h_pad": 3,
+        "recorded_N_S": 73648065,
+        "tail_box": 58320,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 73648065
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          7,
+          4,
+          2,
+          2,
+          1
+        ],
+        "N_S": 73648065,
+        "stabilizer_order": 4,
+        "n_chi": 19057553,
+        "signed_trace_sum": 76230212,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 19567
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 71029
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 2491551
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 73648065
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.053
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 2770922289.64,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          6,
+          3,
+          3,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 6,
+        "recorded_N_S": 78101048,
+        "tail_box": 54432,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 6,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 78101048
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          6,
+          3,
+          3,
+          2,
+          1
+        ],
+        "N_S": 78101048,
+        "stabilizer_order": 2,
+        "n_chi": 38568793,
+        "signed_trace_sum": 77137586,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 963462
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 78101048
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.035
+      },
+      "threshold": 6,
+      "single_dense_int64_square_mib": 11349119518.1,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          3,
+          3,
+          2,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 84409691,
+        "tail_box": 55296,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 84409691
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          7,
+          3,
+          3,
+          2,
+          1
+        ],
+        "N_S": 84409691,
+        "stabilizer_order": 4,
+        "n_chi": 20823643,
+        "signed_trace_sum": 83294572,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 18355
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 106205
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 1027269
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 84409691
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.051
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 3308289396.6,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          5,
+          4,
+          1,
+          1
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 86890417,
+        "tail_box": 58320,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 86890417
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          5,
+          4,
+          1,
+          1
+        ],
+        "N_S": 86890417,
+        "stabilizer_order": 8,
+        "n_chi": 9393825,
+        "signed_trace_sum": 75150600,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 24939
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 8489
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 38969
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 75443
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 101933
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 263883
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 11630791
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 86890417
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0815
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 673247895.28,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          5,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 88826427,
+        "tail_box": 64800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 88826427
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          5,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 88826427,
+        "stabilizer_order": 12,
+        "n_chi": 4581666,
+        "signed_trace_sum": 54979992,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 2756
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 27571
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 54209
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1003722
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 11958957
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 88826427
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.087
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 160153681.45,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          4,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 89351840,
+        "tail_box": 52920,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 89351840
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          4,
+          1,
+          1
+        ],
+        "N_S": 89351840,
+        "stabilizer_order": 4,
+        "n_chi": 19372940,
+        "signed_trace_sum": 77491760,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 68988
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 164084
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 11955176
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 89351840
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.053
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 2863394197.42,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          5,
+          2,
+          2,
+          1
+        ],
+        "a": 5,
+        "h_pad": 3,
+        "recorded_N_S": 90792819,
+        "tail_box": 61236,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 90792819
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          5,
+          2,
+          2,
+          1
+        ],
+        "N_S": 90792819,
+        "stabilizer_order": 4,
+        "n_chi": 23477460,
+        "signed_trace_sum": 93909840,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 22129
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 82743
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 3012149
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 90792819
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0553
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 4205254578.03,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 92785882,
+        "tail_box": 68040,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 92785882
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          6,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "N_S": 92785882,
+        "stabilizer_order": 24,
+        "n_chi": 3653761,
+        "signed_trace_sum": 87690264,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              5,
+              3,
+              7,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 590
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              5,
+              3,
+              6,
+              7
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 388
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              5,
+              7,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 24456
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 15574
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 36362
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 59296
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              3,
+              7,
+              6
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 13204
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              3,
+              6,
+              7
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 60118
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              7,
+              6
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 643050
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 3088884
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 12531064
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 92785882
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.137
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 101852183.88,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          6,
+          2,
+          2,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 93363223,
+        "tail_box": 55566,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 93363223
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          6,
+          2,
+          2,
+          1
+        ],
+        "N_S": 93363223,
+        "stabilizer_order": 12,
+        "n_chi": 8091663,
+        "signed_trace_sum": 97099956,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              1,
+              5,
+              4,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 150
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              1,
+              4,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 742
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 36389
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 177055
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 3094617
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 93363223
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.057
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 499534684.03,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          6,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 3,
+        "recorded_N_S": 112653274,
+        "tail_box": 68040,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 112653274
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          6,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "N_S": 112653274,
+        "stabilizer_order": 6,
+        "n_chi": 11698302,
+        "signed_trace_sum": 70189812,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1248277
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 14986672
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 112653274
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.067
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 1044084699.12,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 8,
+        "h_pad": 4,
+        "recorded_N_S": 118253447,
+        "tail_box": 60750,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 118253447
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          4,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 118253447,
+        "stabilizer_order": 6,
+        "n_chi": 20030617,
+        "signed_trace_sum": 120183702,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 4163
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 640643
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 118253447
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.044
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 3061108531.19,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          4,
+          4,
+          3,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 119343821,
+        "tail_box": 64800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 119343821
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          8,
+          4,
+          4,
+          3,
+          1,
+          1,
+          1
+        ],
+        "N_S": 119343821,
+        "stabilizer_order": 12,
+        "n_chi": 6198429,
+        "signed_trace_sum": 74381148,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 15810
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 179673
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 619497
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1329416
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 15911201
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 119343821
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.094
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 293125320.95,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          4,
+          4,
+          3,
+          3,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 128101438,
+        "tail_box": 57600,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 128101438
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          7,
+          4,
+          4,
+          3,
+          3,
+          1
+        ],
+        "N_S": 128101438,
+        "stabilizer_order": 4,
+        "n_chi": 31808272,
+        "signed_trace_sum": 127233088,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 53716
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 679534
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 1494168
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 128101438
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.055
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 7719163266.19,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          4,
+          3,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 3,
+        "recorded_N_S": 129185967,
+        "tail_box": 68040,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 129185967
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          4,
+          3,
+          2,
+          1
+        ],
+        "N_S": 129185967,
+        "stabilizer_order": 2,
+        "n_chi": 64646467,
+        "signed_trace_sum": 129292934,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 106967
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 129185967
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0412
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 31884503903.06,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          6,
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "a": 8,
+        "h_pad": 8,
+        "recorded_N_S": 134774409,
+        "tail_box": 59535,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 8,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 134774409
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          6,
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "N_S": 134774409,
+        "stabilizer_order": 12,
+        "n_chi": 12382880,
+        "signed_trace_sum": 148594560,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1293
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 57783
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 250107
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 80085
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 4411313
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 134774409
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.075
+      },
+      "threshold": 8,
+      "single_dense_int64_square_mib": 1169858681.45,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          5,
+          3,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 7,
+        "recorded_N_S": 135785081,
+        "tail_box": 62208,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 7,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 135785081
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          5,
+          3,
+          2,
+          1
+        ],
+        "N_S": 135785081,
+        "stabilizer_order": 2,
+        "n_chi": 67699556,
+        "signed_trace_sum": 135399112,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 385969
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 135785081
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.039
+      },
+      "threshold": 7,
+      "single_dense_int64_square_mib": 34967269001.75,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          5,
+          3,
+          2,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 145092134,
+        "tail_box": 69984,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 145092134
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          5,
+          3,
+          2,
+          1
+        ],
+        "N_S": 145092134,
+        "stabilizer_order": 4,
+        "n_chi": 36196275,
+        "signed_trace_sum": 144785100,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 12682
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 114440
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 408792
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 145092134
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.062
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 9995806303.98,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          3,
+          2,
+          1
+        ],
+        "a": 6,
+        "h_pad": 4,
+        "recorded_N_S": 149207894,
+        "tail_box": 63504,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 149207894
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          3,
+          2,
+          1
+        ],
+        "N_S": 149207894,
+        "stabilizer_order": 2,
+        "n_chi": 74730013,
+        "signed_trace_sum": 149460026,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 252132
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 149207894
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.041
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 42606924766.39,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          5,
+          5,
+          4,
+          4,
+          1,
+          1,
+          1
+        ],
+        "a": 2,
+        "h_pad": 2,
+        "recorded_N_S": 161612564,
+        "tail_box": 64800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 161612564
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          5,
+          5,
+          4,
+          4,
+          1,
+          1,
+          1
+        ],
+        "N_S": 161612564,
+        "stabilizer_order": 24,
+        "n_chi": 4219911,
+        "signed_trace_sum": 101277864,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 2230
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 21444
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 23218
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": -1,
+            "fixed_monomials": 12744
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 142006
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 430104
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 19788
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 227724
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 805950
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1776194
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 21352174
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 161612564
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.1424
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 135861578.73,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 168614008,
+        "tail_box": 72900,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 168614008
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          5,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 168614008,
+        "stabilizer_order": 4,
+        "n_chi": 42405891,
+        "signed_trace_sum": 169623564,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 17734
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 132140
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 859682
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 168614008
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.0674
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 13719631893.19,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          2,
+          2,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 172090679,
+        "tail_box": 81000,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 172090679
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          9,
+          4,
+          4,
+          2,
+          2,
+          1,
+          1
+        ],
+        "N_S": 172090679,
+        "stabilizer_order": 16,
+        "n_chi": 9652983,
+        "signed_trace_sum": 154447728,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 45659
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 8235
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 30381
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 12345
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 34031
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 23259
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 54185
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 94409
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 59681
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 101173
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 252383
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 862391
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 1090309
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 5465709
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 22695859
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 172090679
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.2713
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 710907598.86,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          7,
+          6,
+          5,
+          3,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 2,
+        "recorded_N_S": 172440358,
+        "tail_box": 72576,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 172440358
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          7,
+          6,
+          5,
+          3,
+          2,
+          1
+        ],
+        "N_S": 172440358,
+        "stabilizer_order": 1,
+        "n_chi": 172440358,
+        "signed_trace_sum": 172440358,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 172440358
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.046
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 226865211999.27,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 4,
+        "recorded_N_S": 173400061,
+        "tail_box": 66150,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 173400061
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 173400061,
+        "stabilizer_order": 4,
+        "n_chi": 43649800,
+        "signed_trace_sum": 174599200,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 26607
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 289667
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 882865
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 173400061
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.088
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 14536323852.84,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "a": 5,
+        "h_pad": 3,
+        "recorded_N_S": 176146132,
+        "tail_box": 76545,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 176146132
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          8,
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "N_S": 176146132,
+        "stabilizer_order": 12,
+        "n_chi": 16120204,
+        "signed_trace_sum": 193442448,
+        "classes": [
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1027
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 46840
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 148456
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 98317
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 5602884
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 176146132
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.13
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 1982581916.82,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          5,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 177220731,
+        "tail_box": 60750,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 177220731
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          11,
+          5,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "N_S": 177220731,
+        "stabilizer_order": 12,
+        "n_chi": 15508559,
+        "signed_trace_sum": 186102708,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 820
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 5508
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 122937
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 927931
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 5716717
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 177220731
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.109
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 1834986894.66,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          5,
+          4,
+          3,
+          1,
+          1,
+          1
+        ],
+        "a": 3,
+        "h_pad": 3,
+        "recorded_N_S": 180095350,
+        "tail_box": 77760,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 180095350
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          5,
+          4,
+          3,
+          1,
+          1,
+          1
+        ],
+        "N_S": 180095350,
+        "stabilizer_order": 6,
+        "n_chi": 18903128,
+        "signed_trace_sum": 113418768,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1940005
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5,
+              7
+            ],
+            "class_size": 3,
+            "character": -1,
+            "fixed_monomials": 23518864
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 180095350
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.108
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 2726198182.56,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          4,
+          3,
+          3,
+          1
+        ],
+        "a": 5,
+        "h_pad": 3,
+        "recorded_N_S": 193418209,
+        "tail_box": 69120,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 193418209
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          4,
+          3,
+          3,
+          1
+        ],
+        "N_S": 193418209,
+        "stabilizer_order": 2,
+        "n_chi": 95644643,
+        "signed_trace_sum": 191289286,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 2128923
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 193418209
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.065
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 69792920948.77,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          4,
+          4,
+          3,
+          2,
+          2
+        ],
+        "a": 3,
+        "h_pad": 3,
+        "recorded_N_S": 197531438,
+        "tail_box": 72900,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 197531438
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          8,
+          4,
+          4,
+          3,
+          2,
+          2
+        ],
+        "N_S": 197531438,
+        "stabilizer_order": 4,
+        "n_chi": 51227787,
+        "signed_trace_sum": 204911148,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 130214
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1004114
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 6245382
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 197531438
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.114
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 20021714484.54,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          7,
+          6,
+          4,
+          4,
+          2,
+          1
+        ],
+        "a": 7,
+        "h_pad": 2,
+        "recorded_N_S": 200443071,
+        "tail_box": 75600,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 200443071
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          8,
+          7,
+          6,
+          4,
+          4,
+          2,
+          1
+        ],
+        "N_S": 200443071,
+        "stabilizer_order": 2,
+        "n_chi": 100718802,
+        "signed_trace_sum": 201437604,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 994533
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 200443071
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.069
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 77394692049.52,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          2,
+          2,
+          2
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 203499270,
+        "tail_box": 71442,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 203499270
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          5,
+          2,
+          2,
+          2
+        ],
+        "N_S": 203499270,
+        "stabilizer_order": 12,
+        "n_chi": 18619598,
+        "signed_trace_sum": 223435176,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1459
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 67152
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 338344
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              4
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 110847
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 6390498
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 203499270
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.1303
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 2645030438.86,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          5,
+          5,
+          4,
+          4,
+          3,
+          1
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 206368805,
+        "tail_box": 64800,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 206368805
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          5,
+          5,
+          4,
+          4,
+          3,
+          1
+        ],
+        "N_S": 206368805,
+        "stabilizer_order": 4,
+        "n_chi": 51700668,
+        "signed_trace_sum": 206802672,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 35869
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": -1,
+            "fixed_monomials": 550111
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1019847
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 206368805
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.088
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 20393059323.47,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          6,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "a": 7,
+        "h_pad": 3,
+        "recorded_N_S": 250539239,
+        "tail_box": 70875,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 3,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 250539239
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          10,
+          6,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "N_S": 250539239,
+        "stabilizer_order": 12,
+        "n_chi": 21883144,
+        "signed_trace_sum": 262597728,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1058
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 7040
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 166465
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 1243543
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 7812269
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 250539239
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.1292
+      },
+      "threshold": 3,
+      "single_dense_int64_square_mib": 3653503351.78,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          4,
+          3,
+          2,
+          2
+        ],
+        "a": 4,
+        "h_pad": 4,
+        "recorded_N_S": 263896396,
+        "tail_box": 77760,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 4,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 263896396
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          5,
+          4,
+          3,
+          2,
+          2
+        ],
+        "N_S": 263896396,
+        "stabilizer_order": 2,
+        "n_chi": 136009280,
+        "signed_trace_sum": 272018560,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 8122164
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 263896396
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.084
+      },
+      "threshold": 4,
+      "single_dense_int64_square_mib": 141132539719.53,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          5,
+          4,
+          4,
+          3,
+          1
+        ],
+        "a": 5,
+        "h_pad": 2,
+        "recorded_N_S": 277786582,
+        "tail_box": 75600,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 277786582
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          5,
+          4,
+          4,
+          3,
+          1
+        ],
+        "N_S": 277786582,
+        "stabilizer_order": 2,
+        "n_chi": 139547457,
+        "signed_trace_sum": 279094914,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1308332
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 277786582
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.071
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 148570959130.61,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          4,
+          3,
+          2,
+          2
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 290135016,
+        "tail_box": 79380,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 290135016
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          6,
+          4,
+          3,
+          2,
+          2
+        ],
+        "N_S": 290135016,
+        "stabilizer_order": 4,
+        "n_chi": 74882777,
+        "signed_trace_sum": 299531108,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 83546
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 446356
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 8866190
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 290135016
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.126
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 42781297998.29,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "a": 3,
+        "h_pad": 2,
+        "recorded_N_S": 306840286,
+        "tail_box": 81000,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 306840286
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          7,
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "N_S": 306840286,
+        "stabilizer_order": 12,
+        "n_chi": 26763055,
+        "signed_trace_sum": 321156660,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              6,
+              5
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 1134
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              4,
+              2,
+              5,
+              6
+            ],
+            "class_size": 2,
+            "character": 1,
+            "fixed_monomials": 8020
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              6,
+              5
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 183078
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "class_size": 3,
+            "character": 1,
+            "fixed_monomials": 1462660
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 9360852
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 306840286
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.148
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 5464638617.96,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    },
+    {
+      "target": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          5,
+          4,
+          4,
+          2,
+          2
+        ],
+        "a": 4,
+        "h_pad": 2,
+        "recorded_N_S": 379277315,
+        "tail_box": 85050,
+        "historical_rank_status": "NOT_FOUND",
+        "determinant_rank_sufficient_to_exclude": 2,
+        "geometric_status": "UNMEASURED_IN_REVIEWED_INVENTORY",
+        "historical_sizes": [
+          {
+            "path": "results/s42_census.json",
+            "N_S": 379277315
+          }
+        ]
+      },
+      "sizing": {
+        "n": 4,
+        "delta": 8,
+        "lam": [
+          9,
+          6,
+          5,
+          4,
+          4,
+          2,
+          2
+        ],
+        "N_S": 379277315,
+        "stabilizer_order": 4,
+        "n_chi": 98150080,
+        "signed_trace_sum": 392600320,
+        "classes": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 212339
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 1747429
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              5
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 11363237
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "class_size": 1,
+            "character": 1,
+            "fixed_monomials": 379277315
+          }
+        ],
+        "arithmetic": "Z; exact final division by group order",
+        "wall_seconds": 0.141
+      },
+      "threshold": 2,
+      "single_dense_int64_square_mib": 73497300750.78,
+      "caveat": "Single square allocation only, not a total memory estimate. No target rank measured."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "case": "missing_manifest",
+    "exit_code": 0,
+    "accepted": true,
+    "output": "delivery check: b15-01-fixture over 68643bdf9e852a4d1eb91216a86b983f3f3904d6  (6 files)\n  CLEAN\n"
+  },
+  {
+    "case": "empty_manifest",
+    "exit_code": 0,
+    "accepted": true,
+    "output": "delivery check: b15-01-fixture over 68643bdf9e852a4d1eb91216a86b983f3f3904d6  (6 files)\n  CLEAN\n"
+  },
+  {
+    "case": "missing_tag",
+    "exit_code": 0,
+    "accepted": true,
+    "output": "delivery check: b15-01-fixture over 68643bdf9e852a4d1eb91216a86b983f3f3904d6  (6 files)\n  note: the absent-base tag is not in this clone, so the base could not be checked against it -- fetch it: git fetch origin refs/tags/absent-base:refs/tags/absent-base\n  CLEAN\n"
+  },
+  {
+    "case": "wrong_base_hash_manifest",
+    "exit_code": 0,
+    "accepted": true,
+    "output": "delivery check: b15-01-fixture over 68643bdf9e852a4d1eb91216a86b983f3f3904d6  (6 files)\n  CLEAN\n"
+  },
+  {
+    "case": "stale_bundle_head",
+    "exit_code": 0,
+    "accepted": true,
+    "output": "delivery check: b15-01-fixture over 68643bdf9e852a4d1eb91216a86b983f3f3904d6  (6 files)\n  CLEAN\n"
+  }
+]

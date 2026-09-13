@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "summary": {
+    "PASS": 1,
+    "RECORDED": 0,
+    "FAIL": 0,
+    "UNPARSEABLE": 0,
+    "ERROR": 0
+  },
+  "results": [
+    {
+      "path": "results/ci73/certificate.json",
+      "status": "PASS",
+      "checks": [
+        [
+          "consumed certificate identity",
+          true,
+          "{\"canonical_sha256\": \"16fcaf8bf1387f6a957cd29eb63af9c7030f2361318b64603f329add6e70a5cb\"}"
+        ],
+        [
+          "source definitions and degree13 transport",
+          true,
+          "{\"rows\": 39, \"native12\": 2, \"native13\": 37, \"degree24_polynomial_identity\": true}"
+        ],
+        [
+          "points and ordinary/factorial symbols",
+          true,
+          "{\"primary\": 96, \"selected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72], \"holdouts\": 20}"
+        ],
+        [
+          "dimension proofs",
+          true,
+          "{\"source\": 39, \"target\": 73, \"Pieri_channels\": 15}"
+        ],
+        [
+          "exact arithmetic bound",
+          true,
+          "{\"height_bound\": \"35503501195553840281013485855286379513864748625244979200\", \"integer_ring_bits\": 256, \"CRT_modulus\": \"210624540280123215664455028101579518916489513913592524753702238459\"}"
+        ],
+        [
+          "fresh exact source values and signed CRT",
+          true,
+          "{\"exact_entries\": 2847, \"residue_comparisons\": 19929, \"unused_primary_columns_arithmetic_only\": 23}"
+        ],
+        [
+          "source independence on fresh generic quartics",
+          true,
+          "{\"entries\": 1521, \"prime\": 2147483647, \"determinant\": 1497446691}"
+        ],
+        [
+          "target membership and fresh evaluations",
+          true,
+          "{\"members\": 73, \"entries\": 10658, \"mixed_entries\": 10512, \"completing_entry_reuses_fresh_source\": true}"
+        ],
+        [
+          "full target minor",
+          true,
+          "{\"dimension\": 73, \"determinants\": {\"2147483647\": 1832982837, \"2147483629\": 1811606566}}"
+        ],
+        [
+          "exact source rank and kernel",
+          true,
+          "{\"rank_Q\": 36, \"kernel_rank\": 3, \"exact_identities\": 219, \"minor_determinant\": \"216748708563257707426709352686055943992499842853182297254925194095502832345009783663055666339604869338155869789033977061146481579657502949276592581104161603103658650003839897878196924348707134370757085602787151879203444046410370808298517573323041328900772329527148971168911573253893725424580113756934412940958369144393783787507293204869953778062030479185100976347135211917961296665942004388616542303894913992349544325392132648167656053360592747832662491283906716205814081124094318212360480069946628484173505951954311210639117788425146076682080465062634669668524502423355344636103157791796687955575413650401202952769750795119258310833918200668257087072563099974859314102710335358541127932527857169087254822554352922305041163041594917003342920570576972026391319925407000688646594899536652764997973316080357428349005871122352198042715271571904422174037888754132854087589496704591310412550700566427816960066513741696773936502954449619223265213032586494154536110823915735967081088134670934597493319077760035267631893212358375408087733543626584836443292564667894667366522463624294825984000000000000000000000000000000000000000\"}"
+        ],
+        [
+          "fresh holdout relation controls",
+          true,
+          "{\"exact_entries\": 780, \"identities\": 60, \"used_for_target_minor\": false}"
+        ],
+        [
+          "inherited LMR dependency identification",
+          true,
+          "{\"status\": \"INHERITED; degree24 polynomial matrices not freshly evaluated here\", \"a24\": 274, \"det_rank\": 273, \"pad_rank_floor\": 269, \"dependency\": \"frozen S74 certified.json; separate inherited-minor arithmetic replay in delivery\"}"
+        ],
+        [
+          "complete interpolation",
+          true,
+          "{\"source_dimension\": 39, \"target_dimension\": 73, \"rank_Q\": 36, \"i_red13\": 3, \"i_pad24_lower_bound\": 3, \"transport\": \"u^11, same effective coefficients then 235 zeros\", \"D_interval_with_inherited_S74\": [-4, -2], \"D_equals_minus4\": \"OPEN\"}"
+        ]
+      ],
+      "seconds": 809.9787077903748
+    }
+  ]
+}

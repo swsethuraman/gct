@@ -297,6 +297,8 @@ def main():
     ap.add_argument('--out', type=Path, default=ROOT/'results/b14_08/verification.json')
     ap.add_argument('--data', type=Path, default=ROOT/'results/b14_08')
     args = ap.parse_args()
+    args.data = args.data.resolve()
+    args.out = args.out.resolve()
     input_checks = verify_input_blobs()
     document = json.loads((ROOT/'results/b13_06/components.json').read_text())
     reference = json.loads((ROOT/'results/b14_claude_reach.json').read_text())

@@ -1,0 +1,337 @@
+{
+  "status": "PORTABLE_CURRENT_PATHS",
+  "tools": [
+    {
+      "name": "ambient_and_target_character_counts",
+      "readiness": "READY_IN_REVIEWED_SCOPE",
+      "boundary": "Ambient, stable and pullback dimensions; not geometric image ranks.",
+      "sources": [
+        {
+          "path": "analysis/b14_04/recount.py",
+          "sha256": "884586a57411c53ff2e3f8992642be85976bf7907f33acd05ea5cf405394e0b3",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 12302
+        },
+        {
+          "path": "analysis/b14_04/verify.py",
+          "sha256": "da4c1eaf11393ada59b1f07a1c197b01e87cb6a5871117c012b5be6fa242c44f",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 16095
+        },
+        {
+          "path": "analysis/b14_11_work.py",
+          "sha256": "e450476147cb826ccbbfb6d3faff34deb4d8e6c6407dad33ab7bfe5ab37dcc43",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 19289
+        }
+      ]
+    },
+    {
+      "name": "exact_signed_burnside_sizing",
+      "readiness": "READY_IN_REVIEWED_SCOPE",
+      "boundary": "Use signed character traces; audit arithmetic range before applying fixed-width DP to new shapes.",
+      "sources": [
+        {
+          "path": "analysis/b14_11_sizes.py",
+          "sha256": "adc9e3bc5a5fac3e618eaf7f9f50c5f142176b207307d8b068225bbbbf4ba887",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 5128
+        },
+        {
+          "path": "analysis/b14_09_sizing.py",
+          "sha256": "294982f6c26d6b2a72dc1e3845a0cc7706aaf30be89dd68f3ee5b137d60f9239",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 12954
+        }
+      ]
+    },
+    {
+      "name": "mixed_target_brackets",
+      "readiness": "PARTIAL_SPAN_PLUS_VALID_EVALUATOR",
+      "boundary": "The original degree-13 search spans 72; its probe pruning does not prove completeness.",
+      "sources": [
+        {
+          "path": "analysis/b14_01_mixed.py",
+          "sha256": "49425282ea6dd70b5fe3c5926d61ee6596b43d23c2f8407fb00618877e149f63",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 21087
+        }
+      ]
+    },
+    {
+      "name": "degree13_exact_source",
+      "readiness": "EXACT_ARITHMETIC_WITH_CI73_FRESH_REPLAY",
+      "boundary": "39 rows, exact rank36; use current CI73 acceptance for global membership.",
+      "sources": [
+        {
+          "path": "analysis/b14_02_source13.py",
+          "sha256": "efe85e0d012f998d22409f3a4f193e3de4dbceb9d690c8d4bd95697b5cbbb5be",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 11620
+        },
+        {
+          "path": "analysis/b14_02_kernel.py",
+          "sha256": "892e24f030b61b5e764eb2603f0190a3aca19b1bfc309582c38435b4858ac2ce",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 7415
+        }
+      ]
+    },
+    {
+      "name": "degree14_exact_source",
+      "readiness": "SAMPLED_KERNEL_NOT_GLOBAL_COMPLETENESS",
+      "boundary": "93 source directions, five sampled relations, target seed88 of159; three relations global by transport.",
+      "sources": [
+        {
+          "path": "analysis/b14_07_source14.py",
+          "sha256": "bc5717e86bc58f3a817c94360ce8bc58d306e195c365264b2ea2f96530a6010c",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 7596
+        },
+        {
+          "path": "analysis/b14_07_kernel.py",
+          "sha256": "7edad16c8154fea758affd9777b7792145178d8311c7c9cc6fa0cab6a02632d4",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 11198
+        },
+        {
+          "path": "results/b15_prep/degree14_target_seed88.json",
+          "sha256": "d349911f9a0cc5abcfc6362a1eab0f40b07ec9ce0cb2995f9a7025a728d30b2d",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 888788
+        }
+      ]
+    },
+    {
+      "name": "complete_interpolation",
+      "readiness": "PRODUCTION_FRESHLY_REPLAYED_AT_PINNED_HEAD",
+      "boundary": "Exact source + independently counted target + complete target minor. See ci73_acceptance.json for this receiver run.",
+      "sources": [
+        {
+          "path": "tools/verify/verify.py",
+          "sha256": "d1dd3e0530dbcee3e836673d047475eb1e5f2fa0dd0e3aa4fedd5c202e9756b6",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 32189
+        },
+        {
+          "path": "results/ci73/certificate.json",
+          "sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 408213
+        },
+        {
+          "path": "docs/ci73_proof.md",
+          "sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 11709
+        }
+      ]
+    },
+    {
+      "name": "stable_bracket_evaluation",
+      "readiness": "FRESHLY_REPLAYED_SUPPORTED_TWO_COLUMN_FAMILY",
+      "boundary": "Two equal tall columns and singletons; review NumPy adapter avoids unavailable flint locally. Broader shapes and point dimensions need controls.",
+      "sources": [
+        {
+          "path": "analysis/b14_06_bracket.py",
+          "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 14432
+        },
+        {
+          "path": "analysis/b14_06_points.py",
+          "sha256": "78fbacf60394ecd8696d7e38a8cfbdcef92c662524e487ef23b46be084bb9398",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 11103
+        },
+        {
+          "path": "tools/verify/b15_modular.py",
+          "sha256": "b4a719e8352cfad8ba2aabd239a76d776a309d9bad25536fcf9944b27127e783",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 2209
+        }
+      ]
+    },
+    {
+      "name": "transport_and_bound_join",
+      "readiness": "EXACT_SCOPED_DEDUCTIONS",
+      "boundary": "Known ideal images cannot be summed without independence; finite ideal upper bounds may use stable limits.",
+      "sources": [
+        {
+          "path": "analysis/b14_08_verify.py",
+          "sha256": "3e1788ffc13c1802a1f8b2feb9fdcee85017a0778a79473a3761e5e4fc8e7603",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 22186
+        },
+        {
+          "path": "results/b15_prep/transport_overlay.json",
+          "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 114348
+        }
+      ]
+    },
+    {
+      "name": "executable_exclusions",
+      "readiness": "MERGED_SCHEMA_AND_VALIDATOR_TESTED",
+      "boundary": "Scope-aware theorem exclusions; recorded historical ranks remain a separate evidence class.",
+      "sources": [
+        {
+          "path": "tools/integrate/exclusion_predicates.py",
+          "sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 7748
+        },
+        {
+          "path": "results/b15_prep/explicit_peak_witness.json",
+          "sha256": "745040494594aa766a1bd0a0b658f3f191acdb6f6a0142936bfab881746646ad",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 3576
+        }
+      ]
+    },
+    {
+      "name": "recursive_source24",
+      "readiness": "BANKED_SOURCE_EVALUATION_BRIDGE_INCOMPLETE",
+      "boundary": "Dimension274 is constructed; saved nested coordinates are not a completed polynomial-evaluation interface.",
+      "sources": [
+        {
+          "path": "analysis/wk12_s76_recursion.py",
+          "sha256": "2b5987b07f79f7edd3dd2ab4ee2aa9358cf420e2c33f4b7d488cfe223f1f6a9b",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 14705
+        },
+        {
+          "path": "analysis/wk12_s76_seminormal.py",
+          "sha256": "6b1abb71e4338f8e89a4f618a75906898585c83710c0e073fba2347cac94d291",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 19896
+        },
+        {
+          "path": "analysis/wk12_s77_bridge.py",
+          "sha256": "7427cbdbb1bd731ed5315a6646272bf920a1c0e30de9e6f329bb87701dbbb899",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 13494
+        }
+      ]
+    },
+    {
+      "name": "exact_Q1_bounds_and_records",
+      "readiness": "FRESH_COUNTS_INHERITED_GEOMETRIC_RANKS",
+      "boundary": "123-label record closure; no claim of all six-row cells or fresh large native replay. Claude close additionally records a full second-host native replay; that is separate from Astra receiver scope.",
+      "sources": [
+        {
+          "path": "results/b15_prep/Q1_combined_bound.json",
+          "sha256": "56b21175e8c263eaa1b6a1285c471cea752dde3d625c1c606c47b734e07f9c62",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 1156
+        },
+        {
+          "path": "results/b15_prep/Q1_coverage.json",
+          "sha256": "ca7783ac69b7c7d494df2065f60a1c16f1d0fabe8e74dc6d223dc4f32fba989e",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 48070
+        }
+      ]
+    },
+    {
+      "name": "new_candidate_preflight",
+      "readiness": "FRESH_EXACT_SIZING_NO_GEOMETRIC_MEASUREMENTS",
+      "boundary": "71 selected cells sized; operational queue1710, with old recorded deferrals retained.",
+      "sources": [
+        {
+          "path": "results/b15_prep/small_panel_sizing.json",
+          "sha256": "372d54e76a6f45c84c0833955422e15cc4c8cfd7a877127e0df17e2e5cbe7e04",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 199022
+        }
+      ]
+    },
+    {
+      "name": "fixed_factor_and_cubic_transfer",
+      "readiness": "BANKED_SCOPED_THEOREMS_AND_IMPLEMENTATION",
+      "boundary": "For HWVs, restriction to x1*c tests reducible membership by coefficient support. The banked cubic degree<=8 closure gives m_pad=m_red in that range. Full coefficient expansion can still be expensive; later PROVED entries require the Batch14 corrections.",
+      "sources": [
+        {
+          "path": "analysis/b13_02_structural.py",
+          "sha256": "fe8e397ca1ada7d4b8ff38b4f2af302f7ad37b541cbe3b414c8f7e29dbfa27d5",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 26485
+        },
+        {
+          "path": "docs/PROVED.md",
+          "sha256": "86b7aaae23e874728e1f2aefef666d976add940b852968f589e3c1bd83f82970",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 50504
+        }
+      ]
+    },
+    {
+      "name": "permanent_stabilizer_upper_bound",
+      "readiness": "BANKED_ENGINE_UNHELPFUL_IN_TESTED_RANGE",
+      "boundary": "Already tested at all4517 cubic weights through degree9 without a useful bound. Do not repeat that range or confuse this permanent-side result with the proposed determinant-side upper-bound pilot.",
+      "sources": [
+        {
+          "path": "analysis/wk13_b13_05_bound.py",
+          "sha256": "764217020a0d5fc88f7db486309a7dc7f0972a3fc75a7ad8c51f7e2acaedc858",
+          "hash_convention": "UTF8_LF_OR_BINARY",
+          "bytes_at_preparation": 13487
+        }
+      ]
+    }
+  ],
+  "bound_rules": [
+    {
+      "id": "exclude_positive",
+      "premises": [
+        "m_pad<=U_pad",
+        "m_det>=r_det",
+        "r_det>=U_pad"
+      ],
+      "conclusion": "D<=0"
+    },
+    {
+      "id": "certify_positive",
+      "premises": [
+        "i_det>=q_det globally",
+        "m_pad>=r_pad",
+        "ambient=a",
+        "q_det+r_pad>a"
+      ],
+      "conclusion": "D>=q_det+r_pad-a>0"
+    },
+    {
+      "id": "normalization_upper",
+      "premises": [
+        "Pad subset Red",
+        "valid pullback target dimension h_pad"
+      ],
+      "conclusion": "m_pad<=m_red<=h_pad"
+    },
+    {
+      "id": "partial_target_completeness",
+      "premises": [
+        "target dimension h",
+        "target evaluation rank r",
+        "rational sampled source kernel dimension k"
+      ],
+      "conclusion": "max(0,k-h+r)<=global source pullback kernel dimension<=k"
+    },
+    {
+      "id": "ideal_transport",
+      "premises": [
+        "f nonzero ambient HWV",
+        "I_X stable homogeneous ideal"
+      ],
+      "conclusion": "multiplication by f preserves ideal membership and independence"
+    },
+    {
+      "id": "coordinate_transport",
+      "premises": [
+        "X irreducible",
+        "f is nonzero on X"
+      ],
+      "conclusion": "multiplication by f injects coordinate-ring source images; do not add overlapping product images"
+    }
+  ]
+}

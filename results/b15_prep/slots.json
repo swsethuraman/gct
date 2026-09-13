@@ -1,0 +1,439 @@
+[
+  {
+    "id": "B15-01",
+    "slot": "01",
+    "branch": "b15-01-ci159",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-01.md",
+    "initial_numerical_lease": true,
+    "inputs": [
+      {
+        "path": "analysis/b14_07_source14.py",
+        "sha256": "bc5717e86bc58f3a817c94360ce8bc58d306e195c365264b2ea2f96530a6010c",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_07_kernel.py",
+        "sha256": "7edad16c8154fea758affd9777b7792145178d8311c7c9cc6fa0cab6a02632d4",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_07/K14.json",
+        "sha256": "5d3ad1055871bf64a2cc565fce47bbc6d7ebaf5b49d72a51fd57475c43bf1bfd",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_07/A14_exact.json.gz",
+        "sha256": "68a555cd11c566a8ed8dfe0fe87dff1bb1427a96165d8f493684b3bcea7a241d",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_04/hpad14.json",
+        "sha256": "7f61e328af2b66060fdad8d50dfb69a252992b91657ec5bc637a17cfaa4f7a84",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/degree14_target_seed88.json",
+        "sha256": "d349911f9a0cc5abcfc6362a1eab0f40b07ec9ce0cb2995f9a7025a728d30b2d",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/ci73/certificate.json",
+        "sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "docs/ci73_proof.md",
+        "sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-02",
+    "slot": "02",
+    "branch": "b15-02-a1-probes",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-02.md",
+    "initial_numerical_lease": true,
+    "inputs": [
+      {
+        "path": "results/b15_prep/candidate_preflight.json",
+        "sha256": "1bbb7009392b2bba9192b0e62f5a5ac31f5ac27ad062f0a00f550cdee642060e",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_11/shortlist.json",
+        "sha256": "2d4ec31171f2387c8368c3a93da94824f77721dd597ec8bf288cb292a460412a",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_11_sizes.py",
+        "sha256": "adc9e3bc5a5fac3e618eaf7f9f50c5f142176b207307d8b068225bbbbf4ba887",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "tools/integrate/exclusion_predicates.py",
+        "sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-03",
+    "slot": "03",
+    "branch": "b15-03-two-dimensional",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-03.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "results/b15_prep/small_panel_sizing.json",
+        "sha256": "372d54e76a6f45c84c0833955422e15cc4c8cfd7a877127e0df17e2e5cbe7e04",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_11_work.py",
+        "sha256": "e450476147cb826ccbbfb6d3faff34deb4d8e6c6407dad33ab7bfe5ab37dcc43",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_12_cell.py",
+        "sha256": "ce55b0e7c6233a2b27f53bee85c69f651e5725566376c354fefabc2d53854af4",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_12_families.py",
+        "sha256": "45b0f859aa5dc64f05dffdfc47eaff7e4e22a64bcdfd1a77b3dc3ac7f55c8298",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-04",
+    "slot": "04",
+    "branch": "b15-04-small-panel",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-04.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "results/b15_prep/small_panel_sizing.json",
+        "sha256": "372d54e76a6f45c84c0833955422e15cc4c8cfd7a877127e0df17e2e5cbe7e04",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_11_work.py",
+        "sha256": "e450476147cb826ccbbfb6d3faff34deb4d8e6c6407dad33ab7bfe5ab37dcc43",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_12_cell.py",
+        "sha256": "ce55b0e7c6233a2b27f53bee85c69f651e5725566376c354fefabc2d53854af4",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_12_families.py",
+        "sha256": "45b0f859aa5dc64f05dffdfc47eaff7e4e22a64bcdfd1a77b3dc3ac7f55c8298",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-05",
+    "slot": "05",
+    "branch": "b15-05-tail21",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-05.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "analysis/b14_06_bracket.py",
+        "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_06_points.py",
+        "sha256": "78fbacf60394ecd8696d7e38a8cfbdcef92c662524e487ef23b46be084bb9398",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_04/stable_summary.json",
+        "sha256": "692ff9711b04fd29efa1a6305ab8515b2234a72ff6c1bd3c01e74271aff91e1d",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_08/witnesses.json",
+        "sha256": "b6cc144273c1112522b3e0121ce7f70ae4615641b85e6a24098db490b8621aa6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/transport_overlay.json",
+        "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-06",
+    "slot": "06",
+    "branch": "b15-06-fresh-tails",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-06.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "docs/s57_report.md",
+        "sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_04/recount.py",
+        "sha256": "884586a57411c53ff2e3f8992642be85976bf7907f33acd05ea5cf405394e0b3",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_06_bracket.py",
+        "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_06_points.py",
+        "sha256": "78fbacf60394ecd8696d7e38a8cfbdcef92c662524e487ef23b46be084bb9398",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/transport_overlay.json",
+        "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-07",
+    "slot": "07",
+    "branch": "b15-07-projected-product",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-07.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "analysis/b14_05_controls.py",
+        "sha256": "30336fea93dc9e1b55fc87e085c7129c29d18764f137fd82762d112bcda60b66",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_05_n3.py",
+        "sha256": "5940bacfa612d93140c51c463160a35dcc4a8ca8eae229cac759b6b2dd7bab58",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_05/controls.json",
+        "sha256": "c5156d0bd95481116722a5620947c1d19918cac0c3da7c5ec3208e8d6c64be7e",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_08_verify.py",
+        "sha256": "3e1788ffc13c1802a1f8b2feb9fdcee85017a0778a79473a3761e5e4fc8e7603",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_08/witnesses.json",
+        "sha256": "b6cc144273c1112522b3e0121ce7f70ae4615641b85e6a24098db490b8621aa6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-08",
+    "slot": "08",
+    "branch": "b15-08-new-brackets",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-08.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "analysis/b14_06_bracket.py",
+        "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_06_points.py",
+        "sha256": "78fbacf60394ecd8696d7e38a8cfbdcef92c662524e487ef23b46be084bb9398",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_04/recount.py",
+        "sha256": "884586a57411c53ff2e3f8992642be85976bf7907f33acd05ea5cf405394e0b3",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_06/selftest.json",
+        "sha256": "c2159aaee4288a6c74bf3da78d62574abae6386923f68ba85286eb65c8699e9e",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-09",
+    "slot": "09",
+    "branch": "b15-09-global-det",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-09.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "docs/s57_report.md",
+        "sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_06_bracket.py",
+        "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/ci73_replay.py",
+        "sha256": "b96d5354faa5fc65aaaf0f574f1bfdf2452709e15f724cc465bbefc0348d1507",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "docs/ci73_proof.md",
+        "sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/ci73/certificate.json",
+        "sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-10",
+    "slot": "10",
+    "branch": "b15-10-portable-witness",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-10.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "analysis/b14_12_cell.py",
+        "sha256": "ce55b0e7c6233a2b27f53bee85c69f651e5725566376c354fefabc2d53854af4",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/b14_12_families.py",
+        "sha256": "45b0f859aa5dc64f05dffdfc47eaff7e4e22a64bcdfd1a77b3dc3ac7f55c8298",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_12/b14_12.json",
+        "sha256": "47c876deaf5b7f2851f49d07d1f61a64d4b25a69c40da1f823e0c7ceb3e7f06b",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/Q1_combined_bound.json",
+        "sha256": "56b21175e8c263eaa1b6a1285c471cea752dde3d625c1c606c47b734e07f9c62",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_10/replacement_map.json",
+        "sha256": "87eac7b7d975ae85e1375952b69576f41713f8177133a48c60525d5e6efd4a5c",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-11",
+    "slot": "11",
+    "branch": "b15-11-executable-memory",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-11.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "results/b14_10/recovery_queue.json",
+        "sha256": "5b0c7fa3e6fe8ee4dc8940d2308b906b82c35c0581f649d2708de1898d52f082",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_10/reconciliation.json",
+        "sha256": "e97ae8a3f5fd587e25eabc4129df32a6a070145c580f6a5dbd50eaa841689ecd",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_11/inventory_summary.json",
+        "sha256": "f441d09c4c6be875c090f6ad1d2c48500a6c828edda22b7f45dfbdf3af93e3b6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b14_11/cost_queue.json",
+        "sha256": "35ac09cb0aa46574a2603fe93f0a623ddc368cc12d3cb2901ce3b73fac8d7bb6",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/TOOL_INDEX.json",
+        "sha256": "bdc223d9ccf18565eb4468d4b99c059c091fc331fe3a80f92d5e2449f608a4e8",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/transport_overlay.json",
+        "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "tools/integrate/exclusion_predicates.py",
+        "sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  },
+  {
+    "id": "B15-12",
+    "slot": "12",
+    "branch": "b15-12-padding-orbit-bounds",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "brief": "docs/batch15/briefs/B15-12.md",
+    "initial_numerical_lease": false,
+    "inputs": [
+      {
+        "path": "docs/batch15_carry_forward.md",
+        "sha256": "930d856fc75ffc496c16cbe83a19aeaa1d41d9514d955eadeb2d0ae6ded83d40",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/candidate_preflight.json",
+        "sha256": "1bbb7009392b2bba9192b0e62f5a5ac31f5ac27ad062f0a00f550cdee642060e",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "results/b15_prep/small_panel_sizing.json",
+        "sha256": "372d54e76a6f45c84c0833955422e15cc4c8cfd7a877127e0df17e2e5cbe7e04",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "analysis/wk13_b13_05_bound.py",
+        "sha256": "764217020a0d5fc88f7db486309a7dc7f0972a3fc75a7ad8c51f7e2acaedc858",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      },
+      {
+        "path": "docs/b14_11_protected_errata.md",
+        "sha256": "3addcd2cc1ebc2406c32326fc7d69fbadd849fbbd0c9dbbd88b954d8951e2555",
+        "hash_convention": "UTF8_LF_OR_BINARY"
+      }
+    ]
+  }
+]
