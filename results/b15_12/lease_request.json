@@ -1,0 +1,19 @@
+{
+  "slot": "12",
+  "status": "REQUEST_RECORDED_NO_LEASE_GRANTED",
+  "integrator_task": "01a0997b-79c2-7a91-a9e3-cdfcc8f636e3",
+  "preregistration_commit": "3b263bd5ab1106b52ea61149943abc3e2f60a35e",
+  "requested_job": "b15_12_pilot",
+  "command": ".venv/python.exe analysis/b15_bound.py --slot 12 --name b15_12_pilot --seconds 900 --memory-mb 1536 analysis/b15_12_orbit_bounds.py pilot",
+  "wall_cap_seconds": 900,
+  "aggregate_memory_cap_mb": 1536,
+  "processes": 1,
+  "blas_threads": 1,
+  "fixed_cells": 7,
+  "conjugacy_class_counts": {"28": 3718, "32": 8349},
+  "small_controls_exit_code": 0,
+  "small_controls_wall_seconds": 1.5276293999922927,
+  "small_controls_aggregate_peak_bytes": 25706496,
+  "pilot_started": false,
+  "communication": "Two task-message requests rejected by automatic approval review. No message sent; explicit user authorization for destination requested asynchronously. Continue proof and small-control fallback while pending."
+}
