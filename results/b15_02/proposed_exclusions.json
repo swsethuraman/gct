@@ -1,0 +1,275 @@
+{
+  "status": "EXACT",
+  "acceptance": "PROPOSED_TO_INTEGRATOR",
+  "slot": "02",
+  "id": "b15_02_degree7_nine_a1_determinant_nonzeros",
+  "predicate": {
+    "n": 4,
+    "delta": 7,
+    "lambda_in": [
+      [
+        11,
+        8,
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        13,
+        5,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        15,
+        4,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      [
+        13,
+        6,
+        3,
+        3,
+        1,
+        1,
+        1
+      ],
+      [
+        12,
+        8,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        13,
+        7,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      [
+        11,
+        9,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        12,
+        7,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        14,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    ]
+  },
+  "statement": "For these nine cells, m_det=1=a, i_det=0, m_pad<=1, and D<=0.",
+  "bounds": {
+    "a_lb": 1,
+    "a_ub": 1,
+    "m_det_lb": 1,
+    "m_det_ub": 1,
+    "i_det_lb": 0,
+    "i_det_ub": 0,
+    "m_pad_ub": 1,
+    "D_ub": 0
+  },
+  "source": "docs/b15_02_proved.md",
+  "witnesses": [
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          11,
+          8,
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_01_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          13,
+          5,
+          5,
+          2,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_02_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          15,
+          4,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_03_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          13,
+          6,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_04_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          12,
+          8,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_05_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          13,
+          7,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_06_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          11,
+          9,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_07_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          12,
+          7,
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_08_polynomial.json"
+    },
+    {
+      "cell": {
+        "n": 4,
+        "delta": 7,
+        "lam": [
+          14,
+          5,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "working_variables": 7,
+        "ambient_variables": 16
+      },
+      "file": "results/b15_02/cell_09_polynomial.json"
+    }
+  ],
+  "verifier": "analysis/b15_02_replay.py",
+  "conclusions_by_context": {
+    "quartic_det_ideal": "i_det=0; mult_det=a=1",
+    "quartic_padded_gap": "D<=0"
+  },
+  "canonical_files_modified": false
+}

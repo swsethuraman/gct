@@ -1,0 +1,84 @@
+{
+  "status": "EXACT",
+  "jobs": [
+    {
+      "name": "controls",
+      "wall_seconds": 2.0321680999768432,
+      "return_code": 0,
+      "aggregate_peak_bytes": 47390720,
+      "peak_working_set_bytes": 67502080,
+      "pid": 39236,
+      "resource_log": "results/logs/b15_02_controls_resources.json"
+    },
+    {
+      "name": "pilot",
+      "wall_seconds": 6.992015800002264,
+      "return_code": 0,
+      "aggregate_peak_bytes": 191229952,
+      "peak_working_set_bytes": 211861504,
+      "pid": 32092,
+      "resource_log": "results/logs/b15_02_pilot_resources.json"
+    },
+    {
+      "name": "production",
+      "wall_seconds": 42.697864199988544,
+      "return_code": 0,
+      "aggregate_peak_bytes": 232030208,
+      "peak_working_set_bytes": 253517824,
+      "pid": 41092,
+      "resource_log": "results/logs/b15_02_production_resources.json"
+    },
+    {
+      "name": "integral_verify",
+      "wall_seconds": 48.09158460001345,
+      "return_code": 0,
+      "aggregate_peak_bytes": 235040768,
+      "peak_working_set_bytes": 256139264,
+      "pid": 36948,
+      "resource_log": "results/logs/b15_02_integral_verify_resources.json"
+    },
+    {
+      "name": "standalone_replay",
+      "wall_seconds": 14.78938339999877,
+      "return_code": 0,
+      "aggregate_peak_bytes": 209170432,
+      "peak_working_set_bytes": 223961088,
+      "pid": 8096,
+      "resource_log": "results/logs/b15_02_standalone_replay_resources.json"
+    },
+    {
+      "name": "receiver_control",
+      "wall_seconds": 1.008390299975872,
+      "return_code": 0,
+      "aggregate_peak_bytes": 32227328,
+      "peak_working_set_bytes": 45318144,
+      "pid": 30680,
+      "resource_log": "results/logs/b15_02_receiver_control_resources.json"
+    }
+  ],
+  "all_return_codes_zero": true,
+  "aggregate_memory_method": "Windows Job Object peak_job_memory",
+  "seconds_total": 115.61140639995574,
+  "models": [
+    {
+      "model": "gpt-6-astra",
+      "phase": "preregistration"
+    },
+    {
+      "model": "gpt-6-astra",
+      "phase": "implementation"
+    },
+    {
+      "model": "gpt-6-astra",
+      "phase": "research"
+    },
+    {
+      "model": "gpt-6-astra",
+      "phase": "verification"
+    },
+    {
+      "model": "gpt-6-astra",
+      "phase": "delivery"
+    }
+  ]
+}

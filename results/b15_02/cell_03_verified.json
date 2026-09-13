@@ -1,0 +1,233 @@
+{
+  "status": "EXACT",
+  "cell": {
+    "n": 4,
+    "delta": 7,
+    "lam": [
+      15,
+      4,
+      2,
+      2,
+      2,
+      2,
+      1
+    ],
+    "working_variables": 7,
+    "ambient_variables": 16
+  },
+  "a": 1,
+  "m_det_lb": 1,
+  "m_det_ub": 1,
+  "m_pad_ub": 1,
+  "D_ub": 0,
+  "integral_source": "results/b15_02/cell_03_integral_source.json",
+  "integral_source_sha256": "427c388869eb210fa428f0d9961907b38dd1c7dad237bc1402adcf4720582ea6",
+  "nonzero_expanded_terms": 4096,
+  "all_term_weights_checked": true,
+  "direct_integer_raising_residual_sizes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "altered_monomial_sign_rejected": true,
+  "modular_source_matches_integral_reduction": true,
+  "det_evaluations": [
+    {
+      "exact_integer_value": "-248721493564035661188",
+      "value_mod_p": 29133,
+      "old_normalized_value_mod_p": 50904,
+      "point": {
+        "type": "det_pencil",
+        "pencil": [
+          [
+            [
+              3,
+              4,
+              3,
+              3
+            ],
+            [
+              4,
+              -1,
+              -2,
+              4
+            ],
+            [
+              3,
+              -2,
+              -3,
+              3
+            ],
+            [
+              0,
+              -2,
+              -3,
+              4
+            ]
+          ],
+          [
+            [
+              -4,
+              2,
+              3,
+              -2
+            ],
+            [
+              -4,
+              4,
+              -3,
+              -4
+            ],
+            [
+              -4,
+              -1,
+              -1,
+              -4
+            ],
+            [
+              3,
+              1,
+              3,
+              -1
+            ]
+          ],
+          [
+            [
+              4,
+              -1,
+              0,
+              3
+            ],
+            [
+              -4,
+              -3,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              -3,
+              0
+            ],
+            [
+              1,
+              -1,
+              4,
+              0
+            ]
+          ],
+          [
+            [
+              -4,
+              -3,
+              -3,
+              2
+            ],
+            [
+              -3,
+              0,
+              2,
+              -3
+            ],
+            [
+              -4,
+              -4,
+              -1,
+              -1
+            ],
+            [
+              -4,
+              3,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              2,
+              -3,
+              -1,
+              0
+            ],
+            [
+              1,
+              -3,
+              0,
+              1
+            ],
+            [
+              -4,
+              2,
+              -3,
+              -2
+            ],
+            [
+              -1,
+              -3,
+              -4,
+              -4
+            ]
+          ],
+          [
+            [
+              3,
+              3,
+              -2,
+              4
+            ],
+            [
+              -1,
+              3,
+              4,
+              -1
+            ],
+            [
+              -2,
+              2,
+              2,
+              -3
+            ],
+            [
+              2,
+              2,
+              -1,
+              -4
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              -4,
+              -1
+            ],
+            [
+              -2,
+              2,
+              -3,
+              -4
+            ],
+            [
+              -2,
+              -1,
+              3,
+              0
+            ],
+            [
+              -4,
+              1,
+              0,
+              2
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "model": "gpt-6-astra",
+  "seconds": 5.782110400003148
+}
