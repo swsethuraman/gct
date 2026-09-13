@@ -1,0 +1,21 @@
+{
+  "status": "RECORDED",
+  "selection_precedes_geometry": true,
+  "selected": [
+    {"rank":1,"r":10,"t":19,"a_inf":429,"m_pad_ub":429,"brackets":1019,"points":480,
+     "reason":"First supported ten-row LMR family: k=7, degree27, tail(19,2^8). Banked LMR framework supplies a structural determinant-deficit premise; no padded comparison follows. Tests the full ten-variable convention."},
+    {"rank":2,"r":8,"t":21,"a_inf":460,"m_pad_ub":460,"brackets":1185,"points":520,
+     "reason":"Largest stable source within the cap at r=8. The LMR mechanism is absent at this length, so a deficit would identify a different mechanism. Samples a different dimension from the closed nine-row families."},
+    {"rank":3,"r":7,"t":21,"a_inf":378,"m_pad_ub":378,"brackets":1005,"points":430,
+     "reason":"Largest tail and source in the requested r=7 census. Paired with r=8 at fixed t to compare ideal behavior across dimension, with potential whole-ladder exclusion by full determinant rank."}
+  ],
+  "policy_for_remaining": "Order open families after selected entries by decreasing a_inf, then decreasing r, then t; this is a resource order without a predicted positive gap. Overlay-closed, reserved and over-cap rows are listed separately.",
+  "excluded_from_pilots": [
+    {"r":9,"t":17,"reason":"Accepted overlay D<=-2 from degree13"},
+    {"r":9,"t":19,"reason":"Accepted overlay D<=-1 from degree15"},
+    {"r":9,"t":21,"reason":"Reserved to B15-05"},
+    {"r":10,"t":21,"reason":"a_inf=594 exceeds533"}
+  ],
+  "sizing_note": "Largest planned dense matrix is1185 by520, 616200 entries; int64 payload4,929,600 bytes before Python objects and flint reduction. Compressed artifacts are checked against the5,000,000-byte delivery limit. No signed carrier or stabilizer quotient is allocated.",
+  "pilot_decisions": "Generic full rank validates source completeness. Determinant full rank excludes every rung by the ideal filtration. Deficient ranks remain candidates; padded sampled ranks are only floors."
+}
