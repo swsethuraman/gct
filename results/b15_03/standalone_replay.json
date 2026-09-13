@@ -1,0 +1,139 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "lambda": [
+    13,
+    11,
+    3,
+    2,
+    1,
+    1,
+    1
+  ],
+  "n": 4,
+  "degree": 8,
+  "source_membership": {
+    "status": "EXACT",
+    "arithmetic": "Z; int64 accumulation proved safe by absolute sum bound",
+    "absolute_accumulation_bound": 72534720,
+    "int64_signed_margin": 9223372036782241087,
+    "active_native_monomials": 36630,
+    "operators": [
+      {
+        "i": 0,
+        "j": 1,
+        "terms": 216570,
+        "image_monomials": 73278,
+        "exact_zero": true
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "terms": 98982,
+        "image_monomials": 37950,
+        "exact_zero": true
+      },
+      {
+        "i": 2,
+        "j": 3,
+        "terms": 67752,
+        "image_monomials": 27414,
+        "exact_zero": true
+      },
+      {
+        "i": 3,
+        "j": 4,
+        "terms": 36630,
+        "image_monomials": 17760,
+        "exact_zero": true
+      },
+      {
+        "i": 4,
+        "j": 5,
+        "terms": 36630,
+        "image_monomials": 18315,
+        "exact_zero": true
+      },
+      {
+        "i": 5,
+        "j": 6,
+        "terms": 36630,
+        "image_monomials": 18315,
+        "exact_zero": true
+      }
+    ],
+    "seconds": 0.1880947000172455
+  },
+  "source_independence": "nonzero determinant 2x2 minor over Z",
+  "values_Z": {
+    "det": [
+      [
+        -209240041026114257696,
+        105105215636725381024
+      ],
+      [
+        323482128062169539664,
+        -107464023673882496136
+      ]
+    ],
+    "pad": [
+      [
+        -17641872916969840,
+        35728228008240944
+      ],
+      [
+        30743196993792,
+        434564738567424
+      ]
+    ],
+    "diagonal": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "minors_Z": {
+    "det": -11513882102246656749727216917727852673280,
+    "pad": -8764935843899184496923422711808,
+    "diagonal": 0
+  },
+  "r_det_lb": 2,
+  "r_pad_lb": 2,
+  "a_lb": 2,
+  "a_ub": 2,
+  "m_det_lb": 2,
+  "m_det_ub": 2,
+  "m_pad_lb": 2,
+  "m_pad_ub": 2,
+  "i_det_lb": 0,
+  "i_det_ub": 0,
+  "i_pad_lb": 0,
+  "i_pad_ub": 0,
+  "D_lb": 0,
+  "D_ub": 0,
+  "source_mutation_rejected": true,
+  "point_coefficient_mutation_detected": true,
+  "altered_point_alpha": [
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "arithmetic": "Python integers for geometric evaluation and minors; no lifting premise needed",
+  "seconds": 0.7346304000238888,
+  "input_sha256": {
+    "integral_source.json": "b54b3ecbb0f10061e61beea838b0934777a902b222e89fdda6270c971a6e9834",
+    "native_carrier.npz": "7f81aa647098e45650b2f53355b20349d913320fda397e7ce339d52618e89213",
+    "points.json": "a9b6065aa4d96507ab89fbfc7838bf9c1325fcf3f6c35e1c7af04a6dcfabac41",
+    "counts_primary.json": "5ea8e602da9d6fbdea2bb6c691b584b936132caa29bebb1c8e59d69b023aa91b"
+  },
+  "verifier_sha256": "21b640dd8c2901c2371c44491fdfaae7d8f1dd38819a6e77d0705e1b971f172d"
+}

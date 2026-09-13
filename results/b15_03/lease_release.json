@@ -1,0 +1,85 @@
+{
+  "status": "RELEASED",
+  "slot": "03",
+  "released_utc": "2026-09-13T13:56:38.4781960Z",
+  "last_job": "b15_03_exact_followup",
+  "last_pid": 19960,
+  "last_exit_code": 0,
+  "jobs": [
+    {
+      "name": "b15_03_smoke",
+      "pid": 41792,
+      "started_utc": "2026-09-13T06:49:08Z",
+      "exit_code": 0,
+      "wall_seconds": 0.06648199999472126,
+      "peak_job_memory_bytes": 19300352,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_smoke_resources.json"
+    },
+    {
+      "name": "b15_03_count_controls",
+      "pid": 37712,
+      "started_utc": "2026-09-13T06:50:01Z",
+      "exit_code": 0,
+      "wall_seconds": 0.08905270000104792,
+      "peak_job_memory_bytes": 21966848,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_count_controls_resources.json"
+    },
+    {
+      "name": "b15_03_counts_primary",
+      "pid": 19840,
+      "started_utc": "2026-09-13T06:50:06Z",
+      "exit_code": 0,
+      "wall_seconds": 0.7389825999853201,
+      "peak_job_memory_bytes": 37801984,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_counts_primary_resources.json"
+    },
+    {
+      "name": "b15_03_counts_secondary",
+      "pid": 544,
+      "started_utc": "2026-09-13T06:50:19Z",
+      "exit_code": 0,
+      "wall_seconds": 0.7256978000223171,
+      "peak_job_memory_bytes": 36409344,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_counts_secondary_resources.json"
+    },
+    {
+      "name": "b15_03_engine_controls",
+      "pid": 41952,
+      "started_utc": "2026-09-13T06:51:27Z",
+      "exit_code": 0,
+      "wall_seconds": 5.216232800012222,
+      "peak_job_memory_bytes": 96739328,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_engine_controls_resources.json"
+    },
+    {
+      "name": "b15_03_primary_pilot",
+      "pid": 40644,
+      "started_utc": "2026-09-13T13:51:06Z",
+      "exit_code": 0,
+      "wall_seconds": 17.3973625000217,
+      "peak_job_memory_bytes": 260816896,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_primary_pilot_resources.json"
+    },
+    {
+      "name": "b15_03_exact_followup",
+      "pid": 19960,
+      "started_utc": "2026-09-13T13:55:58Z",
+      "exit_code": 0,
+      "wall_seconds": 1.6876055000175256,
+      "peak_job_memory_bytes": 124542976,
+      "process_absent": true,
+      "resource_record": "results/logs/b15_03_exact_followup_resources.json"
+    }
+  ],
+  "result": "EXACT: m_det=m_pad=2, i_det=i_pad=0, D=0",
+  "report": "docs/b15_03_report.md",
+  "certificate": "results/b15_03/exact_certificate.json",
+  "native_source": "results/b15_03/integral_source.json",
+  "further_heavy_work_planned": false
+}

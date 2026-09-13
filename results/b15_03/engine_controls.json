@@ -1,0 +1,91 @@
+{
+  "status": "EXACT",
+  "model": "gpt-6-astra",
+  "prime": 2147483647,
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "flint": "0.9.0",
+    "numba": "0.66.0"
+  },
+  "known_binary_quartic_HVW": "8*c40*c22-3*c31^2",
+  "source_mutation_rejected": true,
+  "point_mutation_rejected": true,
+  "normalization_checked_against_integral_formula": true,
+  "direct_polynomial_evaluation_agrees": true,
+  "overflow_control_passed": true,
+  "triangular_solve_control_passed": true,
+  "binary_control": {
+    "cover_rank_lb": 1,
+    "uncovered_columns": 1,
+    "order": "natural",
+    "cover_stats": {
+      "natural": 1,
+      "reversed": 1,
+      "fill_asc": 1,
+      "fill_desc": 1,
+      "random": 1
+    },
+    "estimated_dense_and_operator_bytes": 3344,
+    "estimate_method": "24*nS*nU + 100*(nU+32)*nU + CSR bytes; excludes baseline",
+    "triangular_seconds": 3.125064200023189,
+    "modular_nullity_exact": 1,
+    "verified_full_E": true,
+    "source_rank_lb": 1,
+    "projection_attempt": 0,
+    "projection_seed": 1503,
+    "projection_rows": 33,
+    "reduction_seconds": 3.3989605999959167
+  },
+  "binary_det_values": [
+    [
+      2404
+    ],
+    [
+      1431731267
+    ],
+    [
+      715814117
+    ]
+  ],
+  "separate_six_row_control": {
+    "cover_rank_lb": 170,
+    "uncovered_columns": 1,
+    "order": "reversed",
+    "cover_stats": {
+      "natural": 162,
+      "reversed": 170,
+      "fill_asc": 170,
+      "fill_desc": 153,
+      "random": 163
+    },
+    "estimated_dense_and_operator_bytes": 86570,
+    "estimate_method": "24*nS*nU + 100*(nU+32)*nU + CSR bytes; excludes baseline",
+    "triangular_seconds": 0.0017512000049464405,
+    "modular_nullity_exact": 1,
+    "verified_full_E": true,
+    "source_rank_lb": 1,
+    "projection_attempt": 0,
+    "projection_seed": 1503,
+    "projection_rows": 33,
+    "reduction_seconds": 0.002581600012490526
+  },
+  "six_row_det_values": [
+    [
+      924938805
+    ],
+    [
+      986670474
+    ]
+  ],
+  "six_row_diagonal_values": [
+    [
+      0
+    ],
+    [
+      0
+    ]
+  ],
+  "six_row_source_mutation_rejected": true,
+  "wall_seconds": 3.580363299988676
+}

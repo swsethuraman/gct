@@ -1,0 +1,28 @@
+{
+  "integrator_task": "01a0997b-79c2-7a91-a9e3-cdfcc8f636e3",
+  "single_writer": "integrator",
+  "heavy_job_limit": 2,
+  "holders": [
+    "01",
+    "03"
+  ],
+  "status": "LEASE_02_RELEASED_AND_TRANSFERRED_TO_03",
+  "waiting_requests": [
+    "04",
+    "06"
+  ],
+  "next_priority_after_04": "05 when ready, then later pilots",
+  "history": [
+    {
+      "released_slot": "02",
+      "release_utc": "2026-09-13T06:55:11.3455603Z",
+      "release_record": "work/batch15_workers/B15-02/results/b15_02/lease_release.json",
+      "last_job": "b15_02_standalone_replay",
+      "last_pid": 8096,
+      "integrator_check": "All five recorded research PIDs absent from fresh Get-Process python snapshot; only three old diagnostic Python processes remain",
+      "granted_slot": "03",
+      "grant_scope": "One primary-cell 900-second pilot, aggregate 1536 MiB, one BLAS thread; measure before extensions"
+    }
+  ],
+  "rules": "One heavy process/job per holder, one BLAS thread, 1536 MiB aggregate cap, 900-second pilot; 5400-second production only after measured pilot. No transfer without integrator confirmation that previous heavy job has ended. Other slots perform proof, code, exact sizing and small controls, then request a lease in their task."
+}

@@ -1,0 +1,40 @@
+{
+  "slot": "03",
+  "model": "gpt-6-astra",
+  "status": "EXACT",
+  "canonical_records_modified": false,
+  "cells": [
+    {
+      "n": 4,
+      "degree": 8,
+      "delta": 8,
+      "lam": [13, 11, 3, 2, 1, 1, 1],
+      "ambient_variable_count": 16,
+      "restriction_variable_count": 7,
+      "padding": "independent z*per_3 with ten essential variables",
+      "a_lb": 2,
+      "a_ub": 2,
+      "h_pad_lb": 2,
+      "h_pad_ub": 2,
+      "m_det_lb": 2,
+      "m_det_ub": 2,
+      "m_pad_lb": 2,
+      "m_pad_ub": 2,
+      "i_det_lb": 0,
+      "i_det_ub": 0,
+      "i_pad_lb": 0,
+      "i_pad_ub": 0,
+      "D_lb": 0,
+      "D_ub": 0,
+      "status": "EXACT",
+      "conclusion": "Positive D excluded; exact equality D=0",
+      "source": "docs/b15_03_proved.md",
+      "certificate": "results/b15_03/exact_certificate.json",
+      "replay": "analysis/b15_03_exact.py replay",
+      "inherited_numerical_ranks_used": [],
+      "modular_lifting_required": false,
+      "cubic_transfer_required": false,
+      "family_extension_claimed": false
+    }
+  ]
+}
