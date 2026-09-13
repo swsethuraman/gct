@@ -17,10 +17,15 @@ python3 tools/delivery/check_delivery.py --branch <your-branch> \
 ```
 
 It now holds thirteen checks, which is the integrator's nine plus four the
-integrator used to do by eye. `--selftest` shows every one of them rejected by a
-constructed bad input, next to two good deliveries that must come back clean —
-including the awkward one, a session that edits a historical document and adds
-nothing wrong to it.
+integrator used to do by eye. `--selftest` runs nineteen cases: every check
+rejected by a constructed bad input, next to two good deliveries that must come
+back clean — including the awkward one, a session that edits a historical document
+and adds nothing wrong to it.
+
+The tag name and the batch prefix are parameters, `--base-tag` and `--batch`
+(default `batch14-base` and `b14`). Pass them in the next batch: hardcoded, check 7
+would degrade to a note and check 9 would find no slot number, and **both would
+stop checking without saying so**.
 
 ---
 
@@ -70,6 +75,12 @@ Capture only the hash.
 to match the branch as committed, and any checksum or byte count to match the
 bundle as built. Regenerate the manifest **after** the last commit and **after**
 building the bundle — a stale head is the second most common shape.
+
+It reads named fields, so **it will tell you if it recognises none of yours** and
+fail rather than reporting clean. That is deliberate: a manifest with different
+field names was checked against nothing and passed, which is the same species of
+defect this whole document is about. If your manifest uses other names, say so and
+the gate will learn them — do not rename your manifest to satisfy a tool.
 
 ## 4. Pre-registration lands first, always
 

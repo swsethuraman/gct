@@ -38,7 +38,11 @@ import argparse, hashlib, json, os, re, shutil, subprocess, sys, tempfile
 SINGLE_WRITER = ["paper/det3-conductor.tex", "paper/det4-onset.tex",
                  "PROJECT_NOTES.md", "docs/boundary_deficit.html"]
 MAX_BYTES = 5 * 1024 * 1024
-BASE_TAG = "batch14-base"
+# Parameterised, because hardcoding "batch14" meant that in the next batch check 7
+# would degrade to a note and check 9 would find no slot number -- both would stop
+# checking without saying so.  Override with --base-tag / --batch.
+BASE_TAG = os.environ.get("GCT_BASE_TAG", "batch14-base")
+BATCH = os.environ.get("GCT_BATCH", "b14")
 BANNED = ["kill", "pkill", "hunt", "brutal", "attack", "exploit",
           "proxy", "bypass", "circumvent", "STOP-EVERYTHING"]
 # The consumer, tools/integrate/exclusion_predicates.py, FAILS CLOSED: an
@@ -88,7 +92,13 @@ def main():
     ap.add_argument("--slot", help="NN, so prereg/report names can be checked")
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--base-tag", default=BASE_TAG,
+                    help="the annotated tag naming the dispatch base (default %(default)s)")
+    ap.add_argument("--batch", default=BATCH,
+                    help="branch/prereg/report prefix, e.g. b15 (default %(default)s)")
     args = ap.parse_args()
+    globals()["BASE_TAG"] = args.base_tag
+    globals()["BATCH"] = args.batch
     if args.selftest:
         return selftest(os.path.abspath(args.repo))
     if not args.branch or not args.base:
@@ -193,11 +203,11 @@ def main():
                          "you branched from the wrong commit; rebase onto the base and re-cut"))
 
     # 9 -- pre-registration exists and is the FIRST commit
-    nn = args.slot or (re.search(r"b14[-_](\d\d)", args.branch or "") or [None, None])[1]
+    nn = args.slot or (re.search(rf"{re.escape(BATCH)}[-_](\d\d)", args.branch or "") or [None, None])[1]
     if nn:
-        pre = [f for f in files if re.search(rf"PREREG_b14_{nn}", f)]
+        pre = [f for f in files if re.search(rf"PREREG_{BATCH}_{nn}", f)]
         if not pre:
-            fail.append((f"no results/PREREG_b14_{nn}.md in the delivery",
+            fail.append((f"no results/PREREG_{BATCH}_{nn}.md in the delivery",
                          "pre-registration is a deliverable, not a note"))
         else:
             order = list(reversed(git("log", "--format=%H", rng).split()))
@@ -207,8 +217,8 @@ def main():
                              f"of {len(order)}, not first",
                              "everything committed before it is exploratory; commit the "
                              "pre-registration before any measurement"))
-        if not any(re.search(rf"b14_{nn}_report", f) for f in files):
-            fail.append((f"no docs/b14_{nn}_report.md in the delivery", "the report is a deliverable"))
+        if not any(re.search(rf"{BATCH}_{nn}_report", f) for f in files):
+            fail.append((f"no docs/{BATCH}_{nn}_report.md in the delivery", "the report is a deliverable"))
 
     # 10 -- the house wording list, on ADDED lines only.  Scanning whole files
     # makes a prose audit inherit the wording debt of every document it edits:
@@ -274,6 +284,22 @@ def main():
             man = None
             fail.append((f"manifest does not parse: {exc}", "fix the JSON"))
         if man:
+            # A check that cannot fail is not a check.  This one reads named fields,
+            # so a manifest using different names was silently checked against
+            # NOTHING and passed -- the same species of defect this tool exists to
+            # catch.  Recognise something, or say so.
+            KNOWN = {"head", "head_tree", "bundle_prerequisites", "base", "base_commit",
+                     "md5", "sha256", "bundle_md5", "bundle_sha256", "bundle_bytes"}
+            seen = KNOWN & set(man)
+            if not seen:
+                fail.append((f"manifest carries none of the fields this gate knows how to "
+                             f"check ({sorted(KNOWN)}); it was checked against nothing",
+                             "name the fields as above, or tell the integrator which names "
+                             "you use so the gate learns them -- an unchecked manifest that "
+                             "reports CLEAN is worse than no manifest"))
+            elif not ({"head", "head_tree"} & seen):
+                notes.append(f"manifest has no head/head_tree field, so the tip and tree were "
+                             f"not checked (it does carry {sorted(seen)})")
             tip = git("rev-parse", f"{args.branch}^{{commit}}").strip()
             tree = git("show", "-s", "--format=%T", args.branch).strip()
             for key, want, what in (("head", tip, "branch tip"), ("head_tree", tree, "branch tree")):
@@ -421,6 +447,10 @@ def selftest(repo):
         "manifest-stale-head": {"head": base, "head_tree": tree, "bundle_prerequisites": [base]},
         "manifest-wrong-sha": {"head": tip, "head_tree": tree, "bundle_prerequisites": [base],
                                "sha256": "0" * 64},
+        # the silent-pass case: a manifest whose field names this gate does not know
+        # was previously checked against nothing and reported CLEAN
+        "manifest-unknown-fields": {"head_commit": tip, "tree_sha": tree,
+                                    "prerequisite": base, "digest": "0" * 64},
     }
     extra = [("bundle-named-ref", ["--bundle", okb], 0, "a bundle carrying the named ref"),
              ("bundle-head-only", ["--bundle", headonly], 1, "a HEAD-only bundle"),
