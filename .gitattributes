@@ -3,3 +3,14 @@ results/b14_10/** -text
 analysis/b14_10/** text eol=lf
 # JSON written on Windows retains CRLF bytes; CR is not trailing whitespace.
 results/b14_10/** whitespace=cr-at-eol
+# B16/B17 slot 03: manifest SHA256 values bind the bytes as written on disk (CRLF included).
+results/b16_03/** -text whitespace=cr-at-eol
+delivery/b16_03/** -text whitespace=cr-at-eol
+results/logs/b16_03_* -text whitespace=cr-at-eol
+results/b17_03/** -text whitespace=cr-at-eol
+delivery/b17_03/** -text whitespace=cr-at-eol
+results/logs/b17_03_* -text whitespace=cr-at-eol
+docs/b16_03_* text eol=lf
+analysis/b16_03_* text eol=lf
+docs/b17_03_* text eol=lf
+analysis/b17_03_* text eol=lf
