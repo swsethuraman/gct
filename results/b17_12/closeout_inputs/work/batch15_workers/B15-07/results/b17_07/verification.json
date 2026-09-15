@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": [
+    "A: dual(gradient F) = 4t F",
+    "B: dual(gradient F) = 4t^2 F",
+    "A: Euler incidence = 2F",
+    "B: Euler incidence = 2F",
+    "A dual-sign mutation rejected",
+    "A: quadratic determinant = -2t^2",
+    "B: quadratic determinant = 8t^3",
+    "det5 seventh coefficient arithmetic: (9-5)*binom(8,4)=280"
+  ],
+  "input_hashes_checked": 22,
+  "maximum_polynomial_support_allowed": 16,
+  "scope": "Exact displayed algebra and pinned input bytes only; not a computational proof of conormal specialization, cycle multiplicities, or padding polar degrees.",
+  "uncomputed": [
+    "delta_7(per3)",
+    "coordinate-multiplicity bridge",
+    "all new padding coordinate ranks"
+  ]
+}

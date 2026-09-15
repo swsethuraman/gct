@@ -1,0 +1,26 @@
+{
+  "schema": "b17_12_closeout_operations_v1",
+  "scientific_computations": 0,
+  "python_invocations": 0,
+  "git_operations": 0,
+  "approval_rejections": [],
+  "current_operational_block": null,
+  "metadata_check": {"inputs": 132, "declared_bindings": 146, "missing": 0, "mismatches": 0},
+  "historical_run": {
+    "command": ".venv/python.exe -B analysis/b15_bound.py --seconds 60 --memory-mb 512 --name b17_12_verify --slot 12 analysis/b17_12_verify.py",
+    "error": "KeyError: 'files' at for entry in sealed['files']",
+    "exit_code": 1,
+    "receipt": "results/logs/b17_12_verify_resources.json",
+    "partial_checks_saved": false,
+    "repeated": false,
+    "cap_hit": false
+  },
+  "observed_missing_file": {
+    "action": "Get-Content -LiteralPath C:/Users/swami/Projects/gct-gpt/Batch17/INTAKE.json -Raw",
+    "reason": "Cannot find path because it does not exist.",
+    "resolution": "Use original reviewed reports and supplement02 as accepted by the user; instruct integrator to create the final intake. No common file written."
+  },
+  "final04_08_review": "Absent from one observed B15-11 docs inventory. No polling or waiting; explicitly pending.",
+  "initial_report": "Preserved without edits. Its intended verification/ledger outputs were not successfully generated before interruption; the current closeout records this limitation.",
+  "supplementary_repair": "Pinned producer report and artifacts only; no independent acceptance or replay by12."
+}

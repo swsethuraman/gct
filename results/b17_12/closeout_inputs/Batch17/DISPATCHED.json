@@ -1,0 +1,705 @@
+{
+  "status": "FIRST_STAGE_DISPATCHED",
+  "model": "gpt-6-astra",
+  "reasoning": "xhigh",
+  "tasks": [
+    {
+      "slot": "03",
+      "title": "B17-03 Astra \u2014 Audit and extend the short-row exclusion",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-03.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\.venv\\python.exe",
+      "sha256": "0d95b9454a5cb265f1ac41c3b86ab36a059e00e75303ce262fb71631b1cd0a74",
+      "status": "READY",
+      "pid": 46000,
+      "launched_utc": "2026-09-14T01:39:25.827079+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-03.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-03.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-03.stderr.txt",
+      "state": "TURN_COMPLETE_REVIEW_PENDING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d91-b097-7533-afb7-2f1d4f759c1f",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "COMPLETE \u2014 proved \\(m_{\\rm pad}\\le m_{\\rm det}\\) in every degree for all partitions of length \u22644. This is a new deduction awaiting independent review.\n\n- [Report and proofs](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-03/docs/b17_03_report.md)\n- [Manifest, resources, and input hashes](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-03/delivery/b17_03/MANIFEST.json)\n\nVerified 20 input hashes and two original delivery bindings. No mathematical computation ran. The report records the PDF archival denial and the next sufficient five-variable test."
+    },
+    {
+      "slot": "01",
+      "title": "B17-01 Astra \u2014 Five-variable padding versus determinant restrictions",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-01.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\.venv\\python.exe",
+      "sha256": "f2c7ac22e8c960411c2a5d73678b36ef19faae4fcf7b7057e5d0b85d50d3a3c9",
+      "status": "READY",
+      "pid": 34700,
+      "launched_utc": "2026-09-14T01:39:52.362299+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-01.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-01.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-01.stderr.txt",
+      "state": "TURN_COMPLETE_REVIEW_PENDING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-183b-7253-b36d-711483ee695d",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "COMPLETE. Proved that \\(lC\\), with \\(C\\) a smooth five-variable cubic, lies outside the det4 pencil closure. Certified an explicit actual-per3 witness. No explicit equation module or multiplicity gap is claimed.\n\n- [Report](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-01/docs/b17_01_report.md)\n- [Manifest, hashes, resources, and access limitations](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-01/delivery/b17_01/MANIFEST.json)\n\nSingle bounded verification passed: 0.273 seconds, 13.1 MiB peak committed memory."
+    },
+    {
+      "slot": "02",
+      "title": "B17-02 Astra \u2014 One boundary-extension mechanism from shared matrix blocks",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\.venv\\python.exe",
+      "sha256": "01dd60a2db5a9f7dd4faa6263b3391b3d941f094929dfd502ca7129ccf068397",
+      "status": "READY",
+      "pid": 35392,
+      "launched_utc": "2026-09-14T01:39:52.373321+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.retry1.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.retry1.stderr.txt",
+      "state": "RESUME_BLOCKED_ACTIVE_WRITER",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-1843-7051-af10-08dc68398309",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "The arc has a provable boundary point: its cubic tangent cone at a triple point is reducible, whereas determinant quartics have an irreducible determinant cubic there. I\u2019ve written the support-priced verifier. The resulting criterion removes stabilizer vectors with weights outside \\(0,\\ldots,2d\\), giving a global upper bound once the rank of those forbidden projections is certified.",
+      "previous_runs": [
+        {
+          "pid": 37196,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.stderr.txt",
+          "state": "ERROR",
+          "error": {
+            "type": "turn.failed",
+            "error": {
+              "message": "Selected model is at capacity. Please try a different model."
+            }
+          }
+        }
+      ],
+      "retries": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T02:19:19.267224+00:00",
+          "pid": 35392,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09d92-1843-7051-af10-08dc68398309",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-02.final.md"
+          ]
+        }
+      ],
+      "resume_error": "Existing session has an active writer; no lock was modified and no duplicate was created."
+    },
+    {
+      "slot": "04",
+      "title": "B17-04 Astra \u2014 Full eleven-equation restriction map",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\.venv\\python.exe",
+      "sha256": "885f61d0da8c9a9979c3213d0a842bcd7ace8e7fa37d605a3fc40c38af8d5864",
+      "status": "READY",
+      "pid": 41944,
+      "launched_utc": "2026-09-14T01:39:52.383340+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.continuation1.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.continuation1.stderr.txt",
+      "state": "RUNNING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-1843-7ed1-8cfa-ea7c859de02b",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "All 49 saved input, artifact, and runtime hashes match. The repaired source is unchanged, the initial delivery is archived, and 37 current inputs are pinned. I\u2019m starting the authorized retry with the new log prefix.\n",
+      "previous_runs": [
+        {
+          "pid": 45376,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.stderr.txt",
+          "state": "TURN_COMPLETE_REVIEW_PENDING",
+          "error": null
+        }
+      ],
+      "continuations": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T11:51:05.282068+00:00",
+          "pid": 41944,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.exe",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09d92-1843-7ed1-8cfa-ea7c859de02b",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.continuation1.final.md"
+          ],
+          "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-04.continuation1.md"
+        }
+      ]
+    },
+    {
+      "slot": "05",
+      "title": "B17-05 Astra \u2014 Complete specified LMR multiplication images",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-05.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\.venv\\python.exe",
+      "sha256": "1e72c5dae372d70475e745c15056fe1c6e6b214776ff70c804cf22df1cafe2cd",
+      "status": "READY",
+      "pid": 45760,
+      "launched_utc": "2026-09-14T01:39:52.392364+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-05.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-05.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-05.stderr.txt",
+      "state": "TURN_COMPLETE_REVIEW_PENDING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-187f-7450-a5e0-b59380e0b1f9",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "COMPLETE \u2014 degree-26 Jflag image has exact dimension **5**, with a **5-dimensional quotient** and explicit representatives. One bounded run passed in 0.401 seconds. Full J24 and saturation remain uncomputed.\n\n[Report](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-05/docs/b17_05_report.md) \u00b7 [Manifest](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-05/delivery/b17_05/MANIFEST.json)"
+    },
+    {
+      "slot": "06",
+      "title": "B17-06 Astra \u2014 A permanent coefficient-independence lemma",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\.venv\\python.exe",
+      "sha256": "54e3604d2bc14101c296301386e637222798356de95504201da74a66e6bca607",
+      "status": "READY",
+      "pid": 32696,
+      "launched_utc": "2026-09-14T01:39:52.402384+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.retry1.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.retry1.stderr.txt",
+      "state": "TURN_COMPLETE_REVIEW_PENDING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-18a3-72e1-95aa-918a33def59c",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "COMPLETE. Proved the full-entry independence criterion and support bound; exact controls passed. No positive multiplicity gap is claimed. Finalization reused the successful computation.\n\n- [Report and proofs](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-06/docs/b17_06_report.md)\n- [Input hashes and resource manifest](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-06/delivery/b17_06/MANIFEST.json)\n\nThe next test requires a reviewed finite cell with \\(B<U\\).",
+      "previous_runs": [
+        {
+          "pid": 25740,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.stderr.txt",
+          "state": "ERROR",
+          "error": {
+            "type": "turn.failed",
+            "error": {
+              "message": "Selected model is at capacity. Please try a different model."
+            }
+          }
+        }
+      ],
+      "retries": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T02:19:19.278731+00:00",
+          "pid": 32696,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09d92-18a3-72e1-95aa-918a33def59c",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-06.final.md"
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "07",
+      "title": "B17-07 Astra \u2014 Conormal feasibility audit",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-07.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\.venv\\python.exe",
+      "sha256": "190fede6b8df2779b0b8943f2c030e6dbd1d41893cbf2c0705ef7083ec6c4d3b",
+      "status": "READY",
+      "pid": 23356,
+      "launched_utc": "2026-09-14T01:39:52.412901+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-07.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-07.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-07.stderr.txt",
+      "state": "TURN_COMPLETE_REVIEW_PENDING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-1908-7f52-bc74-d29758a1cb33",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "COMPLETE \u2014 [Report](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-07/docs/b17_07_report.md).\n\nDefined the invariant, proved its specialization direction, and supplied a counterexample to degeneration-independent limiting cycles. No coordinate-multiplicity bridge was established; stopped there.\n\nBounded verification passed. Input hashes and resources: [MANIFEST.json](C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-07/delivery/b17_07/MANIFEST.json)."
+    },
+    {
+      "slot": "12",
+      "title": "B17-12 Astra \u2014 Evidence ledger, stocktake and next gate",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\.venv\\python.exe",
+      "sha256": "e30fbc81e1f882b0012d0d6b28edd41775c532427296f03fc27fa45db9387426",
+      "status": "READY",
+      "pid": 19588,
+      "launched_utc": "2026-09-14T01:39:52.426808+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.continuation1.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.continuation1.stderr.txt",
+      "state": "CONTINUATION_STARTED",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09d92-18a4-7091-ba64-88daff21a66d",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "The pinned launch records show no active heavy lease; slots 01/02 are eligible only after measured preflight, and 08\u201311 remain held. I\u2019ll use this slot\u2019s single bounded computation to check the ledger\u2019s hashes and arithmetic. It will not rerun the historical geometry or accept any new Batch17 result.",
+      "previous_runs": [
+        {
+          "pid": 39576,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.stderr.txt",
+          "state": "ERROR",
+          "error": {
+            "type": "turn.failed",
+            "error": {
+              "message": "Selected model is at capacity. Please try a different model."
+            }
+          }
+        },
+        {
+          "pid": 14688,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.retry1.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.retry1.stderr.txt",
+          "state": "ERROR",
+          "error": {
+            "type": "turn.failed",
+            "error": {
+              "message": "Selected model is at capacity. Please try a different model."
+            }
+          }
+        }
+      ],
+      "retries": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T02:19:19.288732+00:00",
+          "pid": 14688,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09d92-18a4-7091-ba64-88daff21a66d",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.final.md"
+          ]
+        }
+      ],
+      "continuations": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T12:18:42.416386+00:00",
+          "pid": 19588,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.exe",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09d92-18a4-7091-ba64-88daff21a66d",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.continuation1.final.md"
+          ],
+          "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-12.continuation1.md"
+        }
+      ]
+    },
+    {
+      "slot": "11",
+      "title": "B17-11 Astra \u2014 Independent mathematical and arithmetic review",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\.venv\\python.exe",
+      "sha256": "01db590916cd89734c77e62d3387dd7b0c7a102ba478b8505ee45929f316b1e2",
+      "status": "READY",
+      "pid": 40216,
+      "launched_utc": "2026-09-14T03:31:57.804392+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation2.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation2.stderr.txt",
+      "state": "CONTINUATION_STARTED",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09df8-b74d-7cf2-b4df-00e0988cfeed",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "The extension bound has the correct orientation: closure functions sit inside the full stabilizer-invariant orbit multiplicity space, and the degree-two polynomial arc restricts degree-d functions to weights 0 through 2d. The clipping threshold also matters\u2014a nonzero forbidden projection may leave the ambient upper bound unchanged. I\u2019m checking the arc arithmetic and the all-degree entry-diagonal argument next.",
+      "previous_runs": [
+        {
+          "pid": 31656,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.stderr.txt",
+          "state": "RUNNING",
+          "error": null
+        },
+        {
+          "pid": 37524,
+          "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation1.jsonl",
+          "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation1.stderr.txt",
+          "state": "RUNNING",
+          "error": null
+        }
+      ],
+      "continuations": [
+        {
+          "attempt": 1,
+          "utc": "2026-09-14T11:51:05.296061+00:00",
+          "pid": 37524,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.exe",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09df8-b74d-7cf2-b4df-00e0988cfeed",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation1.final.md"
+          ],
+          "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation1.md"
+        },
+        {
+          "attempt": 2,
+          "utc": "2026-09-14T12:18:42.402804+00:00",
+          "pid": 40216,
+          "argv": [
+            "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.exe",
+            "--search",
+            "exec",
+            "--approve-for-me",
+            "-C",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+            "-m",
+            "gpt-6-astra",
+            "-c",
+            "model_reasoning_effort=\"xhigh\"",
+            "resume",
+            "01a09df8-b74d-7cf2-b4df-00e0988cfeed",
+            "-",
+            "--json",
+            "-o",
+            "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation2.final.md"
+          ],
+          "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-11.continuation2.md"
+        }
+      ]
+    },
+    {
+      "slot": "08",
+      "title": "B17-08 Astra \u2014 Integrate new-family selection",
+      "brief": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-08.md",
+      "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08",
+      "python": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\.venv\\python.exe",
+      "sha256": "b3f2a10b87c310e2835bb8539039b1c79af58c94d0df6be6e406f2f88e5e6bf4",
+      "status": "READY",
+      "pid": 26388,
+      "launched_utc": "2026-09-14T11:53:03.258222+00:00",
+      "argv": [
+        "C:\\Users\\swami\\AppData\\Local\\OpenAI\\Codex\\bin\\bffc5354119c8421\\codex.EXE",
+        "--search",
+        "exec",
+        "--approve-for-me",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"xhigh\"",
+        "-C",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08",
+        "--json",
+        "--color",
+        "never",
+        "-o",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-08.final.md",
+        "-"
+      ],
+      "stdout": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-08.jsonl",
+      "stderr": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\launch\\B17-08.stderr.txt",
+      "state": "RUNNING",
+      "transport": "codex exec; workspace-write with operation-specific automatic review",
+      "threadId": "01a09fc3-7aaa-7932-ac11-cd4fe300c462",
+      "verified_runtime": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "approval_mode": "on-request",
+        "cwd": "\\\\?\\C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08",
+        "sandbox_type": "managed",
+        "filesystem": "restricted",
+        "network": "restricted"
+      },
+      "latest_message": "I\u2019ll read the accepted reports and original evidence, then write a theory-only selection report and pin the input hashes. I\u2019ll assess the five-row route with Slot02 explicitly marked provisional; I won\u2019t run a rank search or numerical evaluation.\n"
+    }
+  ],
+  "checked_utc": "2026-09-14T11:53:20.112662+00:00"
+}

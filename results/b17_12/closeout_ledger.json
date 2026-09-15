@@ -1,0 +1,245 @@
+{
+  "schema": "b17_12_closure_ready_ledger_v1",
+  "date": "2026-09-14",
+  "status": "COMPLETE_SCOPED_CLOSURE_READY_LEDGER",
+  "decision": "STOP_CURRENT_EVALUATION_BRANCH_NO_FINITE_FAMILY",
+  "batch_final_acceptance": "PENDING_FINAL_04_08_REVIEW_AND_INTEGRATOR_INTEGRATION",
+  "claims": [
+    {
+      "slot": "01",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_report.md",
+      "statement": "Five-variable per3 restriction map is dominant; every component of a reduced quartic in the det4 five-pencil coefficient closure is ruled; lC with C a smooth cubic threefold lies outside that closure.",
+      "certificate": "Density rank35 minor; gradient rank210 minor modulo65521; frame minor2562; componentwise ruledness proof.",
+      "limit": "No finite degree, partition, numerical determinant bound or multiplicity gap.",
+      "original_report": "work/batch15_workers/B15-01/docs/b17_01_report.md",
+      "original_manifest": "work/batch15_workers/B15-01/delivery/b17_01/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "02",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_supplement02.md",
+      "statement": "Explicit polynomial det4 boundary arc Q0+tQ1+t^2Q2; m_det<=min(a,s-rank C) for full-H forbidden-weight projection outside[0,2d]. Original-entry diagonal polynomial arcs have zero corresponding projection in every degree.",
+      "certificate": "Division-free skew/adjugate identities; tangent-cone endpoint proof; matrix-coefficient extension proof; independent coefficient receiver.",
+      "limit": "No useful rank b or finite representation basis. Necessary extension condition, not equality.",
+      "original_report": "work/batch15_workers/B15-02/docs/b17_02_report.md",
+      "original_manifest": "work/batch15_workers/B15-02/delivery/b17_02/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "03",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_report.md",
+      "statement": "For all degrees and length(lambda)<=4, K_det is contained in K_pad and D<=0. Padding support gives m_pad=0 for length>10.",
+      "certificate": "Raw-coefficient highest-weight restriction; Beauville smooth cubic-surface theorem; density and polynomial block determinant extension.",
+      "limit": "Positive gaps remain possible only at lengths5..10; no exclusion of all degrees in those lengths.",
+      "original_report": "work/batch15_workers/B15-03/docs/b17_03_report.md",
+      "original_manifest": "work/batch15_workers/B15-03/delivery/b17_03/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "04",
+      "status": "PRODUCER_COMPLETE_PENDING_FINAL_REVIEW",
+      "review": null,
+      "statement": "C=M E with exact invertible rational M; genuine padding restriction rank of E lies in[9,10].",
+      "certificate": "det M=-1610167840460004934900135107421875; eleven universal residuals zero; nonzero integer9-minor; global shared kappa=(12,-10,4,3,0,0,0,0,0,0,0).",
+      "limit": "Exact rank9 and second global kernel w=(216,-212,64,0,0,-1,1,1,13,4,2) are unproved. Old full padding multiplicity remains243..288.",
+      "original_report": "work/batch15_workers/B15-04/docs/b17_04_report.md",
+      "original_manifest": "work/batch15_workers/B15-04/delivery/b17_04/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "05",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_report.md",
+      "statement": "At d26,lambda=(69,19,2^8), full specified E24*A2 image has multiplicity5, split1/3/1; quotient I_det/Jflag has multiplicity5 under inherited complete ideal10.",
+      "certificate": "LR upper5; minor5=77620181 and augmented minor10=1583314678 modulo2147483647; explicit product circuits and quotient representatives.",
+      "limit": "Full unrestricted J24, saturation and full degree27 flag image unresolved; this cell has D<=-130.",
+      "original_report": "work/batch15_workers/B15-05/docs/b17_05_report.md",
+      "original_manifest": "work/batch15_workers/B15-05/delivery/b17_05/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "06",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_report.md",
+      "statement": "Matching-binomial normal form and complete signed coefficient fibers certify actual full-entry padding independence; four scalar parameters and a unit arc preserve fixed-family rank.",
+      "certificate": "K_d=binom(d+5,5)-binom(d+2,5); degree5 control minors -184926 and32286015, with a=m_det=m_pad=2.",
+      "limit": "K_d is capacity, not padding multiplicity; a deficient chosen base is not a global upper bound.",
+      "original_report": "work/batch15_workers/B15-06/docs/b17_06_report.md",
+      "original_manifest": "work/batch15_workers/B15-06/delivery/b17_06/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "07",
+      "status": "ACCEPTED_SCOPED",
+      "review": "work/batch15_workers/B15-11/docs/b17_11_report.md",
+      "statement": "Reduced-support conormal multidegrees decrease under the stated integral-generic-fiber specialization; padding adds the hyperplane contribution; delta7(det5)=280.",
+      "certificate": "Effective conormal specialization; cone rule; two different limiting cycles over x^2; Segre jet-bundle proof of280.",
+      "limit": "delta7(per3) uncomputed. No coefficient-module/multiplicity bridge or improved asymptotic growth.",
+      "original_report": "work/batch15_workers/B15-07/docs/b17_07_report.md",
+      "original_manifest": "work/batch15_workers/B15-07/delivery/b17_07/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    },
+    {
+      "slot": "08",
+      "status": "PRODUCER_COMPLETE_PENDING_FINAL_REVIEW",
+      "review": null,
+      "statement": "No finite family nominated. Product-map rank reduction for five-row padding; clipping threshold; Jflag has no types of length<=8.",
+      "certificate": "Theory-only deduction from reviewed01/03/05/06 and then-provisional02; no numerical production.",
+      "limit": "Final08 review absent from observed inputs. Slot02 is now separately accepted, superseding08's provisional label but not automatically accepting08's deductions.",
+      "original_report": "work/batch15_workers/B15-08/docs/b17_08_report.md",
+      "original_manifest": "work/batch15_workers/B15-08/delivery/b17_08/MANIFEST.json",
+      "fresh_to_batch17": true,
+      "fresh_to_b17_12_closeout": false
+    }
+  ],
+  "combined_accepted_result": "Exactly five rows is the first possible separating-equation length; any positive multiplicity gap must have length5..10. No labeled positive finite gap.",
+  "stage_b": {
+    "10": "NOT_TRIGGERED",
+    "09": "NOT_TRIGGERED",
+    "reason": "08 nominated no finite family; not failed computations or mathematical exclusions."
+  },
+  "supplementary": {
+    "report": "work/capelli_cayley_investigation/expanded_repair/report.md",
+    "status": "PRODUCER_VERIFIED_NOT_INDEPENDENTLY_ACCEPTED",
+    "linear_system": "83x345 coefficient rank81, augmented rank81, affine solution dimension264; explicit A=0 diagonal T rank28.",
+    "scope": "Expanded linear relaxation survives; explicit operator proof works for every positive s on row-multidegree(1,1,1) g.",
+    "unresolved": "Total block rank<=6 within stated residue ansatz; lift to full arc; saturation I3877([T_f|c_f]):I3876(T_f)^infinity.",
+    "negative_control": "Balanced-only system remains inconsistent (36 versus37); raw maximal minors vanish on ten-variable padding.",
+    "no_global_obstruction": true
+  },
+  "input_inventory": "results/b17_12/closeout_input_inventory.json",
+  "bound_conventions": {
+    "field": "C",
+    "group": "GL16",
+    "forms": "det4 versus independent z*per3",
+    "coordinates": "Sym^d(Sym^4 V), positive ordinary coefficient convention;02 uses W=V* and contragredient identification",
+    "D": "m_pad-m_det=i_det-i_pad",
+    "positive": "global m_det<=B and actual m_pad>=r>B",
+    "exclusion": "i_det<=Q and m_pad<=U imply D<=Q+U-a; determinant coordinate lower L>=U also suffices",
+    "failed_method": "U<=B with B only an upper, or q+U<=a with q only an ideal floor, does not exclude the cell"
+  },
+  "unresolved": [
+    "One explicit finite five-row(d,lambda), certified a,s,U and sparse exact full-H invariant basis in02 adapted coordinates; projection rank sufficient to cross U.",
+    "Actual padding lower bound r>B in the same cell;06's capacity does not supply independence.",
+    "04's second global kernel/Psi identity or a padding point disproving it; present rank interval9..10 pending final review.",
+    "08 product-map/clipping/flag row deductions pending final review; no concrete finite nomination.",
+    "Full unrestricted degree26 J24 multiplication image and Q0 membership; full degree27 Jflag and saturation separate.",
+    "Permanent conormal delta7 versus280, and a separate coefficient-module bridge.",
+    "Supplementary expanded-repair independent review, rank<=6 feasibility, higher Laurent compatibility and saturation."
+  ],
+  "next_sufficient_test": "Given one finite cell with1<=U<=a, full-H source dimension s and a certified forbidden projection rank floor b>=max(0,s-U+1), obtain B=min(a,s-b)<U; then a separately authorized nonzero actual-padding(B+1)-minor proves D>=1.",
+  "final_integration_steps": [
+    "Receive the final B17-11 review of04/08 once delivered; verify its exact reviewed report/certificate hashes against this inventory. Promote only explicit scoped passes; otherwise retain pending/rejected clauses and exact reasons. Do not rerun science in this closeout.",
+    "Integrator creates or updates Batch17/INTAKE.json with accepted01/02/03/05/06/07 and the separately received04/08 decisions, named inherited premises, original paths and SHA256. No Batch17 intake file was present at this snapshot.",
+    "Integrator updates Batch17/SESSIONS.md and COORDINATION.json from saved completed reports:02 accepted,04 producer-complete with its final review status,08 complete/no family,12 closure-ready. Preserve capacity/retry events as history; mark09/10 NOT_TRIGGERED and leave heavy leases empty.",
+    "Integrator writes Batch17/STOCKTAKE.md and CLOSEOUT.json with STOP_CURRENT_EVALUATION_BRANCH_NO_FINITE_FAMILY, the exact structural gains and unresolved gates; record supplementary expanded repair as producer-verified only. Do not infer an all-family impossibility.",
+    "Bind final report, intake, review supplements and filesystem deliveries by hashes, leaving closed Batch15/16 evidence untouched. Final batch acceptance follows receipt of remaining reviews; no commit, push, publication or automatic research release is part of this handoff.",
+    "Any later scientific continuation requires a concrete finite object, relevant proof/basis inputs, a priced support and bit-size contract, and explicit resource authorization. This ledger issues no lease."
+  ],
+  "resources": [
+    {
+      "source": "01 pilot",
+      "wall_seconds": 0.2731305,
+      "peak_job_bytes": 13733888,
+      "exit_code": 0
+    },
+    {
+      "source": "02 pilot",
+      "wall_seconds": 0.06988429999910295,
+      "peak_job_bytes": 13692928,
+      "exit_code": 0
+    },
+    {
+      "source": "03",
+      "scientific_computations": 0
+    },
+    {
+      "source": "04 initial failed adapter",
+      "wall_seconds": 0.3681186999892816,
+      "peak_job_bytes": 24670208,
+      "exit_code": 1,
+      "cap_hit": false
+    },
+    {
+      "source": "04 separately authorized corrected invocation",
+      "wall_seconds": 0.6656898999935947,
+      "peak_job_bytes": 27930624,
+      "exit_code": 0
+    },
+    {
+      "source": "05",
+      "wall_seconds": 0.4007313,
+      "peak_job_bytes": 21037056,
+      "exit_code": 0
+    },
+    {
+      "source": "06",
+      "wall_seconds": 0.0740545,
+      "peak_job_bytes": 13541376,
+      "exit_code": 0
+    },
+    {
+      "source": "07",
+      "wall_seconds": 0.068739,
+      "peak_job_bytes": 12861440,
+      "exit_code": 0
+    },
+    {
+      "source": "08",
+      "scientific_computations": 0
+    },
+    {
+      "source": "11 first-stage review",
+      "wall_seconds": 0.4829064,
+      "peak_job_bytes": 20176896,
+      "exit_code": 0
+    },
+    {
+      "source": "11 supplement02",
+      "wall_seconds": 0.0226015,
+      "peak_job_bytes": 13914112,
+      "exit_code": 0
+    },
+    {
+      "source": "supplementary expanded repair",
+      "wall_seconds": 0.452152,
+      "peak_job_bytes": 21028864,
+      "exit_code": 0,
+      "independently_accepted": false
+    }
+  ],
+  "resource_scope": "All listed executions are inherited receipts, not repeated by12;60s/512MiB one-process/one-BLAS controls. Current12 continuation executes no Python/scientific computation.",
+  "own_historical_audit": {
+    "status": "FAILED_NOT_RERUN",
+    "error": "KeyError: 'files' at sealed['files']",
+    "exit_code": 1,
+    "wall_seconds": 0.08928269997704774,
+    "peak_job_bytes": 13701120,
+    "cap_hit": false,
+    "partial_checks_persisted": false
+  },
+  "supersessions": [
+    {
+      "old": "Initial12 report current launch/running/held descriptions and future verification links",
+      "new": "Preserved as history. Current report completes ledger; original Python audit failed before saving ledger/verification."
+    },
+    {
+      "old": "First-stage11 says02 unfinished;08 calls02 provisional",
+      "new": "11 supplement02 accepts02 scoped extension theorem.08 deductions still await final review."
+    },
+    {
+      "old": "SESSIONS describes12 capacity retry,04 resumed,08 undelivered,11 supplement02 running",
+      "new": "Current saved reports show12 closeout resumed,04 complete producer continuation,08 complete no family,11 supplement02 complete. No present capacity blocker inferred."
+    }
+  ]
+}

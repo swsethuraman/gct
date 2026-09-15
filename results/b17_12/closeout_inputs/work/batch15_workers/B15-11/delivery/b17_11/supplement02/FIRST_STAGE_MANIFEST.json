@@ -1,0 +1,728 @@
+{
+  "task": "B17-11",
+  "status": "COMPLETE",
+  "scope": "First-stage independent review of released 01/03/05/06/07; no 09/10 candidates supplied",
+  "workspace": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11",
+  "created_utc": "2026-09-14T03:40:50.5492414Z",
+  "report": "docs/b17_11_report.md",
+  "model": "gpt-6-astra",
+  "reasoning": "xhigh",
+  "mathematical_computations": 1,
+  "run": {
+    "board_numbering": "batch15",
+    "session_id": "B15-11",
+    "pid": 2276,
+    "memory_before": {
+      "total_physical": 33752997888,
+      "available_physical": 10103668736,
+      "load": 70
+    },
+    "memory_cap_mb": 512,
+    "wall_cap_seconds": 60,
+    "workers": 1,
+    "blas_threads": 1,
+    "job_object_enforced": true,
+    "idle_sleep_inhibited_during_run": true,
+    "started_utc": "2026-09-14T03:37:39Z",
+    "exit_code": 0,
+    "wall_seconds": 0.48290639999322593,
+    "memory_after": {
+      "total_physical": 33752997888,
+      "available_physical": 10079698944,
+      "load": 70
+    },
+    "process_memory": {
+      "peak_working_set": 31907840,
+      "working_set": 31031296,
+      "peak_pagefile": 20176896
+    },
+    "job_memory": {
+      "peak_job_memory": 20176896,
+      "peak_process_memory": 20176896
+    }
+  },
+  "verification": {
+    "status": "PASS",
+    "checks": {
+      "01": {
+        "density_minor_integer": "-61071160773612186548546419365012063050944242060048644997120",
+        "density_minor_mod": 17609,
+        "smoothness_minor_mod": 61614,
+        "frame_minor": 2562,
+        "all_1575_jacobian_entries_constructed": true,
+        "controls": [
+          "duplicate Jacobian row",
+          "singular x0^3",
+          "permanent sign mutation"
+        ],
+        "independent_of_worker_arithmetic": true
+      },
+      "05": {
+        "source_counts": [
+          1,
+          3,
+          1
+        ],
+        "LR_tableaux": [
+          [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "minor5": 77620181,
+        "minor10": 1583314678,
+        "fixed_points_replayed": 10,
+        "inherited_formula_controls": 30,
+        "independent": [
+          "LR enumeration",
+          "modular elimination",
+          "quotient reconstruction",
+          "duplicate/image-column controls"
+        ],
+        "shared": [
+          "05 point circuit implementation",
+          "historical Hessian candidates"
+        ],
+        "not_replayed": [
+          "B16 stable completeness",
+          "B16 universal pole proof",
+          "last four unused saved points"
+        ]
+      },
+      "06": {
+        "simple_minor": -184926,
+        "encoded_minor": 32286015,
+        "supports": [
+          1,
+          6,
+          21,
+          55,
+          120,
+          231
+        ],
+        "old_base_rank_one_control": true,
+        "signed_collision_image": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "independent_dual_number_arithmetic": true
+      },
+      "07": {
+        "universal_dual_identities": 2,
+        "wrong_sign_rejected": true,
+        "delta7_det5": 280,
+        "delta7_per3": "UNCOMPUTED"
+      }
+    },
+    "input_hashes_checked": 43,
+    "seconds": 0.3912684000097215,
+    "scope": "Fixed-input receiver only; theorem review in report, no candidate search",
+    "mathematical_processes": 1,
+    "positive_gap": false
+  },
+  "input_files": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\DREAM_REPORT.md",
+      "bytes": 38026,
+      "sha256": "3ecc896a0bf30cc7566f2cb83d9a4401ceb0a111ba3d131a906455e1d026bd2a",
+      "snapshot": "delivery/b17_11/inputs/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/DREAM_REPORT.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\integrator_review.json",
+      "bytes": 2102,
+      "sha256": "1da55ae5c85d214a3f05442226aebde363ebbe0405760bb0d8aaed80c7005242",
+      "snapshot": "delivery/b17_11/inputs/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/integrator_review.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\verify_small.py",
+      "bytes": 15886,
+      "sha256": "1ab5a43e97f8aa479f3f5f2b96967bab53d5e80b079150f394a641ad3a1821ab",
+      "snapshot": "delivery/b17_11/inputs/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/verify_small.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\INTAKE.json",
+      "bytes": 11451,
+      "sha256": "90e0e6dc7b41a666d465f4de02544e4e2c8edc01278a5b7319fe504fb9867695",
+      "snapshot": "delivery/b17_11/inputs/Batch16/INTAKE.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\b16_12_receive04_05_06_08.md",
+      "bytes": 16011,
+      "sha256": "62389899613d63b0f9b53fa52e83ebca0aedb51a2500ebba7450696c6f9381b6",
+      "snapshot": "delivery/b17_11/inputs/Batch16/reviews/12_milestone/b16_12_receive04_05_06_08.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\STOCKTAKE.md",
+      "bytes": 6382,
+      "sha256": "0a5ee25d2537429e45cae2ec25e35699da145939fb4a837c69379e6898f89fe2",
+      "snapshot": "delivery/b17_11/inputs/Batch16/STOCKTAKE.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\SCREEN_REPORT.md",
+      "bytes": 3808,
+      "sha256": "16e4980be0463e9202dd0991cca8558afcca746ec40b89ec8bf6c86316d71306",
+      "snapshot": "delivery/b17_11/inputs/Batch17_Planning/SCREEN_REPORT.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\symmetry_dream\\COMMON_CONTEXT.md",
+      "bytes": 5935,
+      "sha256": "416b883b0d9301c2c5b3876efbd263c4e4f17329597e90cecb7e8fb187ee331c",
+      "snapshot": "delivery/b17_11/inputs/Batch17_Planning/symmetry_dream/COMMON_CONTEXT.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\BOARD.md",
+      "bytes": 8000,
+      "sha256": "b9b97fc17f867c645a599ca596404b2ea1eba3744e62d0aa131adcf2df5cd2d8",
+      "snapshot": "delivery/b17_11/inputs/Batch17/BOARD.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\analysis\\b17_01_verify.py",
+      "bytes": 9084,
+      "sha256": "bcc6d3c624bd4c684bda14b4e13ac437a49a4f6c2a5689476a48ef48aae432d8",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/analysis/b17_01_verify.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\delivery\\b16_01\\MANIFEST.json",
+      "bytes": 6194,
+      "sha256": "967ecadf8dba512878b8624c33353647d9d35bdb800aa351077eda1f779bf429",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/delivery/b16_01/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\delivery\\b17_01\\MANIFEST.json",
+      "bytes": 12966,
+      "sha256": "cb971e20e2ec1ef1d7f0fec15ca535b898097fa25550d2fd74234cafcfdbcc2f",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/delivery/b17_01/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\docs\\b16_01_proof.md",
+      "bytes": 12042,
+      "sha256": "7ff0d994e0b9bd7c88f86ca079cfad391313ec248a3a8a192aec506e6ce5ca01",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/docs/b16_01_proof.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\docs\\b16_01_report.md",
+      "bytes": 6354,
+      "sha256": "357cf95d3cb7fa3d340fe157d349f37eb840f4d1af54d3578f4511a3919738e5",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/docs/b16_01_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\docs\\b17_01_report.md",
+      "bytes": 15609,
+      "sha256": "8812eeef2b454cfa256c6fb0f304a29a9a85b052e4b1fcd8238b437eb7f6f2c0",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/docs/b17_01_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\results\\b17_01\\certificate.json",
+      "bytes": 49530,
+      "sha256": "03585015180e0724bb7d8f1a6264a64e9a6fc877d191dc13cab0187c49f58e9c",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/results/b17_01/certificate.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\results\\b17_01\\input_hashes.json",
+      "bytes": 4650,
+      "sha256": "977dca57defb979d797867b7512d69b756e991c9201842d0295e79c951ae013b",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-01/results/b17_01/input_hashes.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\delivery\\b17_03\\MANIFEST.json",
+      "bytes": 10494,
+      "sha256": "9f0529590dd1afe5b615ad8976228c6d7a17be04d093dba995d6f845d4374b66",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-03/delivery/b17_03/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\b17_03_report.md",
+      "bytes": 20187,
+      "sha256": "bcb38b5f2682f69c86c39fbf04250cb7729cd9a749ea185c228b6e75234da43e",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-03/docs/b17_03_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\delivery\\b16_04\\MANIFEST.json",
+      "bytes": 7345,
+      "sha256": "9dd554c4e8d11059a9e68de5cbfd908a0c6a9ee8458f530874b490629778e62d",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-04/delivery/b16_04/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\docs\\b16_04_proof.md",
+      "bytes": 15430,
+      "sha256": "29a5754742cbd480f8069d45e597ee40055538452a5784d5e11852a6c8ac4570",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-04/docs/b16_04_proof.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\docs\\b16_04_report.md",
+      "bytes": 2874,
+      "sha256": "71c47610de951a152e12f312efedb14b902e7cc81fc3381ca85c786a7d8ac936",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-04/docs/b16_04_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\b16_04\\universal_pole_certificate.json",
+      "bytes": 537028,
+      "sha256": "562c798085a0b00a260e3d929486e0a4afbaa44657eb1424b145b8bebb41e762",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-04/results/b16_04/universal_pole_certificate.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\analysis\\b17_05_verify.py",
+      "bytes": 11654,
+      "sha256": "45857e557351b45f424f68ac488de5394331b8443151e5e791145662303ef966",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-05/analysis/b17_05_verify.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\delivery\\b17_05\\MANIFEST.json",
+      "bytes": 15406,
+      "sha256": "424d6693d960093e25f7f28497cec17126b726d3dfa1c4a7efa63938c9427de7",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-05/delivery/b17_05/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\docs\\b17_05_report.md",
+      "bytes": 16236,
+      "sha256": "f65fadb3914d824e067283d70453e47654607f6dfccb32c9569472f4ab03f54d",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-05/docs/b17_05_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\results\\b17_05\\image_certificate.json",
+      "bytes": 76264,
+      "sha256": "3182ebc95c5ba1115c34f75434c50be4734a968f496d8b3abd4ee4e9a4f27fe4",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-05/results/b17_05/image_certificate.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\results\\b17_05\\input_hashes.json",
+      "bytes": 7418,
+      "sha256": "5a86affb21369b3f1fa18168652e455a69f89db3465acb141c8df1f001f5677a",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-05/results/b17_05/input_hashes.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\analysis\\b17_06_verify.py",
+      "bytes": 13590,
+      "sha256": "d3433a1420f28d6e804ab71bcb2dfaf90d649f609a7351deb8b33c6dbc830728",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/analysis/b17_06_verify.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\delivery\\b16_06\\MANIFEST.json",
+      "bytes": 4388,
+      "sha256": "c0391edf2f51e2b31fd07d87a139a8935bbc154425b2fa25ad94deb4ca152d30",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/delivery/b16_06/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\delivery\\b17_06\\MANIFEST.json",
+      "bytes": 13878,
+      "sha256": "ea0dd2579085b504071288b91e0755ff6115c7cbeb8007d578702aa19eb6e21c",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/delivery/b17_06/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\docs\\b16_06_proof.md",
+      "bytes": 11436,
+      "sha256": "a2f7341f95ba97aa8e734fe1b40495a3889e0fb944c97a14022cdc7f133a9664",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/docs/b16_06_proof.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\docs\\b17_06_report.md",
+      "bytes": 25219,
+      "sha256": "b61dcc287d8c818c65d0e3b907a857b0b99fac8d3bef007dea26a092f4182b7c",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/docs/b17_06_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\results\\b17_06\\control_01.json",
+      "bytes": 13341,
+      "sha256": "fdb505616e6c6734bc54532e8c4497c9263cf2a05065330aeb44173bcebaf3cd",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-06/results/b17_06/control_01.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\analysis\\b17_07_verify.py",
+      "bytes": 4238,
+      "sha256": "6340e1fffe76913f25ba9d75a0fedde6e16adcfc081ad692de5f2546c87b820e",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-07/analysis/b17_07_verify.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\delivery\\b17_07\\MANIFEST.json",
+      "bytes": 11716,
+      "sha256": "c219c64c19dec12656c7baf44134d1fca5fdf97c602eecdcfc269bdc67527a5a",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-07/delivery/b17_07/MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\docs\\b17_07_report.md",
+      "bytes": 19045,
+      "sha256": "471b48f3e32446d63082f0cefb272a525ed626846f0bdecaf65f94122dae26a1",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-07/docs/b17_07_report.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\results\\b17_07\\verification.json",
+      "bytes": 739,
+      "sha256": "3a94bc0f4450a72cffd3ecb8af149cae1b170b4fc0eb10f63e2fe2bb93f951a7",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-07/results/b17_07/verification.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\delivery\\b16_10\\SHA256_MANIFEST.json",
+      "bytes": 9075,
+      "sha256": "f8b6e0dfc1aed425941067bc7b33c841affd7ab47fe603d17b9135c0c5282cc5",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-10/delivery/b16_10/SHA256_MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\docs\\b16_10_proof.md",
+      "bytes": 10494,
+      "sha256": "881fd6901a99731105da8df33577c43d30450c207365a3a8958a9daca7f416ec",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-10/docs/b16_10_proof.md"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\.venv\\python.exe",
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\analysis\\b15_bound.py",
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "snapshot": "delivery/b17_11/inputs/work/batch15_workers/B15-11/analysis/b15_bound.py"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\analysis\\b17_11_verify.py",
+      "bytes": 13364,
+      "sha256": "2da2e95dfa02b5e184fe44a431f6dfd6a16c600596181594506a99aeb8315a49"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\analysis\\b17_11_metadata.ps1",
+      "bytes": 7508,
+      "sha256": "ef9e22cf19168d78f067b0732ae1de4f6ee527d74f97ff21988cbd858d124fdb"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\analysis\\b17_11_verify.py",
+      "bytes": 13364,
+      "sha256": "2da2e95dfa02b5e184fe44a431f6dfd6a16c600596181594506a99aeb8315a49"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\docs\\b17_11_preflight.md",
+      "bytes": 1996,
+      "sha256": "fffdb95ac8838cf421c2739f02f751a3fbbd5f49118457b9e12fe0a8b9004478"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\docs\\b17_11_report.md",
+      "bytes": 29561,
+      "sha256": "fca9aac3d7b5a1cd7b2a7066ed4233466372fa034b96a9ed0fb4bda434e2fea6"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\access_record.json",
+      "bytes": 623,
+      "sha256": "88a77c3248eb96cfcfcf8ab43df55e3d18b9ca472796f59f27fde82203159b01"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\claim_decisions.json",
+      "bytes": 2547,
+      "sha256": "17fe6ad56e0bbfb6da0176fb0b2c6adea1ff2dc58cc8b9573d87901a1be81df5"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\delivery_bindings.json",
+      "bytes": 18556,
+      "sha256": "6caecfd4a754559a572bbd360c64f79b061e5f2c73da9661790cd3862e4cc926"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\final_integrity.json",
+      "bytes": 6692,
+      "sha256": "53217f88e3a2ba42dc96f77ba32369a6c67ab362e4fb9ed182bb67effb70b3ac"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\input_hashes.json",
+      "bytes": 14254,
+      "sha256": "7878694409ff53097b24a077f0900de6bea9a480fea2444a22ad2670d059f85f"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\primary_sources.json",
+      "bytes": 3973,
+      "sha256": "cceaf2da8569a4549d67ca802847583ed2b01cd88bfef4166e976d0b258c0131"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b17_11\\verification.json",
+      "bytes": 2830,
+      "sha256": "db93bde3edbe8e87dca9c0fd5024c2a967c4c5dcf4f8550658e9bded93275c13"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\logs\\b17_11_review_resources.json",
+      "bytes": 809,
+      "sha256": "37c2b6fc39dd65bbefeda54df69949dff59364b330f6636f57914481e51d5f51"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\logs\\b17_11_review.pid",
+      "bytes": 6,
+      "sha256": "cd0691ef4ade624dd15ec1c3fd1a02ec2f16c69a12365ff0b085ff154114dcfc"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\DREAM_REPORT.md",
+      "bytes": 38026,
+      "sha256": "3ecc896a0bf30cc7566f2cb83d9a4401ceb0a111ba3d131a906455e1d026bd2a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\integrator_review.json",
+      "bytes": 2102,
+      "sha256": "1da55ae5c85d214a3f05442226aebde363ebbe0405760bb0d8aaed80c7005242"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\verify_small.py",
+      "bytes": 15886,
+      "sha256": "1ab5a43e97f8aa479f3f5f2b96967bab53d5e80b079150f394a641ad3a1821ab"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch16\\INTAKE.json",
+      "bytes": 11451,
+      "sha256": "90e0e6dc7b41a666d465f4de02544e4e2c8edc01278a5b7319fe504fb9867695"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch16\\STOCKTAKE.md",
+      "bytes": 6382,
+      "sha256": "0a5ee25d2537429e45cae2ec25e35699da145939fb4a837c69379e6898f89fe2"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch16\\reviews\\12_milestone\\b16_12_receive04_05_06_08.md",
+      "bytes": 16011,
+      "sha256": "62389899613d63b0f9b53fa52e83ebca0aedb51a2500ebba7450696c6f9381b6"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch17\\BOARD.md",
+      "bytes": 8000,
+      "sha256": "b9b97fc17f867c645a599ca596404b2ea1eba3744e62d0aa131adcf2df5cd2d8"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch17_Planning\\SCREEN_REPORT.md",
+      "bytes": 3808,
+      "sha256": "16e4980be0463e9202dd0991cca8558afcca746ec40b89ec8bf6c86316d71306"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\Batch17_Planning\\symmetry_dream\\COMMON_CONTEXT.md",
+      "bytes": 5935,
+      "sha256": "416b883b0d9301c2c5b3876efbd263c4e4f17329597e90cecb7e8fb187ee331c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\analysis\\b17_01_verify.py",
+      "bytes": 9084,
+      "sha256": "bcc6d3c624bd4c684bda14b4e13ac437a49a4f6c2a5689476a48ef48aae432d8"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\delivery\\b16_01\\MANIFEST.json",
+      "bytes": 6194,
+      "sha256": "967ecadf8dba512878b8624c33353647d9d35bdb800aa351077eda1f779bf429"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\delivery\\b17_01\\MANIFEST.json",
+      "bytes": 12966,
+      "sha256": "cb971e20e2ec1ef1d7f0fec15ca535b898097fa25550d2fd74234cafcfdbcc2f"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\docs\\b16_01_proof.md",
+      "bytes": 12042,
+      "sha256": "7ff0d994e0b9bd7c88f86ca079cfad391313ec248a3a8a192aec506e6ce5ca01"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\docs\\b16_01_report.md",
+      "bytes": 6354,
+      "sha256": "357cf95d3cb7fa3d340fe157d349f37eb840f4d1af54d3578f4511a3919738e5"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\docs\\b17_01_report.md",
+      "bytes": 15609,
+      "sha256": "8812eeef2b454cfa256c6fb0f304a29a9a85b052e4b1fcd8238b437eb7f6f2c0"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\results\\b17_01\\certificate.json",
+      "bytes": 49530,
+      "sha256": "03585015180e0724bb7d8f1a6264a64e9a6fc877d191dc13cab0187c49f58e9c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-01\\results\\b17_01\\input_hashes.json",
+      "bytes": 4650,
+      "sha256": "977dca57defb979d797867b7512d69b756e991c9201842d0295e79c951ae013b"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-03\\delivery\\b17_03\\MANIFEST.json",
+      "bytes": 10494,
+      "sha256": "9f0529590dd1afe5b615ad8976228c6d7a17be04d093dba995d6f845d4374b66"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-03\\docs\\b17_03_report.md",
+      "bytes": 20187,
+      "sha256": "bcb38b5f2682f69c86c39fbf04250cb7729cd9a749ea185c228b6e75234da43e"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-04\\delivery\\b16_04\\MANIFEST.json",
+      "bytes": 7345,
+      "sha256": "9dd554c4e8d11059a9e68de5cbfd908a0c6a9ee8458f530874b490629778e62d"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-04\\docs\\b16_04_proof.md",
+      "bytes": 15430,
+      "sha256": "29a5754742cbd480f8069d45e597ee40055538452a5784d5e11852a6c8ac4570"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-04\\docs\\b16_04_report.md",
+      "bytes": 2874,
+      "sha256": "71c47610de951a152e12f312efedb14b902e7cc81fc3381ca85c786a7d8ac936"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-04\\results\\b16_04\\universal_pole_certificate.json",
+      "bytes": 537028,
+      "sha256": "562c798085a0b00a260e3d929486e0a4afbaa44657eb1424b145b8bebb41e762"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-05\\analysis\\b17_05_verify.py",
+      "bytes": 11654,
+      "sha256": "45857e557351b45f424f68ac488de5394331b8443151e5e791145662303ef966"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-05\\delivery\\b17_05\\MANIFEST.json",
+      "bytes": 15406,
+      "sha256": "424d6693d960093e25f7f28497cec17126b726d3dfa1c4a7efa63938c9427de7"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-05\\docs\\b17_05_report.md",
+      "bytes": 16236,
+      "sha256": "f65fadb3914d824e067283d70453e47654607f6dfccb32c9569472f4ab03f54d"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-05\\results\\b17_05\\image_certificate.json",
+      "bytes": 76264,
+      "sha256": "3182ebc95c5ba1115c34f75434c50be4734a968f496d8b3abd4ee4e9a4f27fe4"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-05\\results\\b17_05\\input_hashes.json",
+      "bytes": 7418,
+      "sha256": "5a86affb21369b3f1fa18168652e455a69f89db3465acb141c8df1f001f5677a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\analysis\\b17_06_verify.py",
+      "bytes": 13590,
+      "sha256": "d3433a1420f28d6e804ab71bcb2dfaf90d649f609a7351deb8b33c6dbc830728"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\delivery\\b16_06\\MANIFEST.json",
+      "bytes": 4388,
+      "sha256": "c0391edf2f51e2b31fd07d87a139a8935bbc154425b2fa25ad94deb4ca152d30"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\delivery\\b17_06\\MANIFEST.json",
+      "bytes": 13878,
+      "sha256": "ea0dd2579085b504071288b91e0755ff6115c7cbeb8007d578702aa19eb6e21c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\docs\\b16_06_proof.md",
+      "bytes": 11436,
+      "sha256": "a2f7341f95ba97aa8e734fe1b40495a3889e0fb944c97a14022cdc7f133a9664"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\docs\\b17_06_report.md",
+      "bytes": 25219,
+      "sha256": "b61dcc287d8c818c65d0e3b907a857b0b99fac8d3bef007dea26a092f4182b7c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-06\\results\\b17_06\\control_01.json",
+      "bytes": 13341,
+      "sha256": "fdb505616e6c6734bc54532e8c4497c9263cf2a05065330aeb44173bcebaf3cd"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-07\\analysis\\b17_07_verify.py",
+      "bytes": 4238,
+      "sha256": "6340e1fffe76913f25ba9d75a0fedde6e16adcfc081ad692de5f2546c87b820e"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-07\\delivery\\b17_07\\MANIFEST.json",
+      "bytes": 11716,
+      "sha256": "c219c64c19dec12656c7baf44134d1fca5fdf97c602eecdcfc269bdc67527a5a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-07\\docs\\b17_07_report.md",
+      "bytes": 19045,
+      "sha256": "471b48f3e32446d63082f0cefb272a525ed626846f0bdecaf65f94122dae26a1"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-07\\results\\b17_07\\verification.json",
+      "bytes": 739,
+      "sha256": "3a94bc0f4450a72cffd3ecb8af149cae1b170b4fc0eb10f63e2fe2bb93f951a7"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-10\\delivery\\b16_10\\SHA256_MANIFEST.json",
+      "bytes": 9075,
+      "sha256": "f8b6e0dfc1aed425941067bc7b33c841affd7ab47fe603d17b9135c0c5282cc5"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-10\\docs\\b16_10_proof.md",
+      "bytes": 10494,
+      "sha256": "881fd6901a99731105da8df33577c43d30450c207365a3a8958a9daca7f416ec"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b17_11\\inputs\\work\\batch15_workers\\B15-11\\analysis\\b15_bound.py",
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+    }
+  ],
+  "fresh": "Proof audit, source checks, independent arithmetic and controls; explicitly identified 05 circuit replay",
+  "inherited": "B16 complete ideals, stable rank and source bounds; no character census replay",
+  "unverified": [
+    "02/04/12 unfinished outputs",
+    "Full unrestricted J24 and saturation",
+    "Any positive new cell or beyond-occurrence witness",
+    "delta7(per3)>280"
+  ],
+  "slot08_gate": "No finite (d,lambda), global B and U>B supplied; theory priority exactly five rows",
+  "heavy_lease": false,
+  "subagents": 0,
+  "prohibited_actions_performed": false,
+  "remote_bytes_hash_pinned": false,
+  "source_notes": "results/b17_11/primary_sources.json",
+  "blocked_actions": "results/b17_11/access_record.json",
+  "manifest_self_hash": false
+}

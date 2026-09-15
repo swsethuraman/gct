@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "checks": {
+    "01": {
+      "density_minor_integer": "-61071160773612186548546419365012063050944242060048644997120",
+      "density_minor_mod": 17609,
+      "smoothness_minor_mod": 61614,
+      "frame_minor": 2562,
+      "all_1575_jacobian_entries_constructed": true,
+      "controls": [
+        "duplicate Jacobian row",
+        "singular x0^3",
+        "permanent sign mutation"
+      ],
+      "independent_of_worker_arithmetic": true
+    },
+    "05": {
+      "source_counts": [
+        1,
+        3,
+        1
+      ],
+      "LR_tableaux": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "minor5": 77620181,
+      "minor10": 1583314678,
+      "fixed_points_replayed": 10,
+      "inherited_formula_controls": 30,
+      "independent": [
+        "LR enumeration",
+        "modular elimination",
+        "quotient reconstruction",
+        "duplicate/image-column controls"
+      ],
+      "shared": [
+        "05 point circuit implementation",
+        "historical Hessian candidates"
+      ],
+      "not_replayed": [
+        "B16 stable completeness",
+        "B16 universal pole proof",
+        "last four unused saved points"
+      ]
+    },
+    "06": {
+      "simple_minor": -184926,
+      "encoded_minor": 32286015,
+      "supports": [
+        1,
+        6,
+        21,
+        55,
+        120,
+        231
+      ],
+      "old_base_rank_one_control": true,
+      "signed_collision_image": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "independent_dual_number_arithmetic": true
+    },
+    "07": {
+      "universal_dual_identities": 2,
+      "wrong_sign_rejected": true,
+      "delta7_det5": 280,
+      "delta7_per3": "UNCOMPUTED"
+    }
+  },
+  "input_hashes_checked": 43,
+  "seconds": 0.3912684000097215,
+  "scope": "Fixed-input receiver only; theorem review in report, no candidate search",
+  "mathematical_processes": 1,
+  "positive_gap": false
+}

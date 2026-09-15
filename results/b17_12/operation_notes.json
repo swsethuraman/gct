@@ -1,0 +1,28 @@
+{
+  "schema": "b17_12_operation_notes_v1",
+  "approval_rejections_this_session": [],
+  "blocked_actions": [],
+  "resolved_file_operations": [
+    {
+      "action": "PowerShell analysis/b17_12_snapshot.ps1, initial execution",
+      "exit_code": 1,
+      "reason": "Get-Content could not find results/b17_12/inputs/work/batch15_workers/B15-08/delivery/b16_08/MANIFEST.json. Original slot08 uses ARTIFACT_HASHES.json; slots09/10/11 also use distinct manifest names.",
+      "resolution": "Inspected original directories, corrected manifest-name mapping, retained previously copied bytes, and completed the metadata snapshot. No mathematical computation or approval refusal occurred."
+    }
+  ],
+  "nonblocking_diagnostics": [
+    {
+      "action": "git status --short",
+      "exit_code": 0,
+      "reason": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+      "resolution": "Preserved warning; no trust, ownership, ignore configuration or sandbox change. Existing untracked B16 and historical receipt files were left untouched."
+    },
+    {
+      "action": "Read-only AGENTS.md discovery",
+      "reason": "No AGENTS.md found on the workspace ancestry or in searched owned output directories; .agents and .codex directories absent.",
+      "resolution": "Followed session instructions."
+    }
+  ],
+  "historical_refusals": "B16 reports retain earlier rejected integrator notifications. These are inherited history, not current authorization or a current-session rejection.",
+  "communications": "No messages sent to integrator or other agents; the report is the local handoff."
+}

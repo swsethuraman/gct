@@ -1,0 +1,18 @@
+{
+  "kind": "single metadata and saved-arithmetic audit, not research production",
+  "computation_index": 1,
+  "heavy_lease_requested_or_held": false,
+  "input_bound": {"files_max": 300, "total_bytes_max": 16777216, "hash_chunk_bytes": 65536},
+  "work": "Read selected snapshots, compare SHA256 against accepted manifests, check ten scalar cell inequalities and 31 saved symmetry rows, write ledger and receipt.",
+  "estimated_wall_seconds": 5,
+  "estimated_peak_bytes": 67108864,
+  "estimate_is_measurement_or_proven_memory_bound": false,
+  "enforced_wall_seconds": 60,
+  "enforced_job_memory_mib": 512,
+  "processes": 1,
+  "blas_threads": 1,
+  "subprocesses": 0,
+  "imports_research_producers": false,
+  "command": ".venv/python.exe -B analysis/b15_bound.py --seconds 60 --memory-mb 512 --name b17_12_verify --slot 12 analysis/b17_12_verify.py",
+  "cap_hit": "UNCOMPUTED; no larger run or retry self-authorized"
+}

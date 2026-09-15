@@ -1,0 +1,1542 @@
+{
+  "status": "PASS_PROOF_CONTROLS_AND_INHERITED_ARITHMETIC",
+  "controls": {
+    "chart": {
+      "A_3cQ_minus_L2": [
+        [
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          -1,
+          1
+        ],
+        [
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          3,
+          1
+        ]
+      ],
+      "B_27c2R_minus_9cLQ_plus_2L3": [
+        [
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          2,
+          1
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          -9,
+          1
+        ],
+        [
+          [
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          27,
+          1
+        ]
+      ],
+      "shear_invariance": true,
+      "wrong_cubic_sign_rejected": true
+    },
+    "tiny_hessian": {
+      "variables": [
+        "z",
+        "x",
+        "y"
+      ],
+      "C": [
+        [
+          [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ],
+        [
+          [
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ],
+        [
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ]
+      ],
+      "two_det_H_zC": [
+        [
+          [
+            1,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          1
+        ],
+        [
+          [
+            1,
+            1,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          -96,
+          1
+        ],
+        [
+          [
+            1,
+            2,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          -144,
+          1
+        ],
+        [
+          [
+            1,
+            3,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          -24,
+          1
+        ],
+        [
+          [
+            1,
+            4,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          -108,
+          1
+        ],
+        [
+          [
+            1,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          -36,
+          1
+        ]
+      ],
+      "negative_sign_checked": true,
+      "scope": "Instrument control in three variables; general proof separate"
+    },
+    "shared_remainder": {
+      "five_expression_relation": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "expression_order": [
+        "S3",
+        "s2*S5",
+        "s3*S6",
+        "s4*S7",
+        "s2^2*S7"
+      ],
+      "identity": true,
+      "wrong_sign_rejected": true
+    }
+  },
+  "arithmetic": {
+    "rows": [
+      {
+        "b": 2,
+        "sum": 1,
+        "terms": 144
+      },
+      {
+        "b": 3,
+        "sum": 1,
+        "terms": 175
+      },
+      {
+        "b": 4,
+        "sum": 2,
+        "terms": 239
+      },
+      {
+        "b": 5,
+        "sum": 3,
+        "terms": 278
+      },
+      {
+        "b": 6,
+        "sum": 5,
+        "terms": 369
+      },
+      {
+        "b": 7,
+        "sum": 6,
+        "terms": 447
+      },
+      {
+        "b": 8,
+        "sum": 9,
+        "terms": 568
+      },
+      {
+        "b": 9,
+        "sum": 11,
+        "terms": 683
+      },
+      {
+        "b": 10,
+        "sum": 14,
+        "terms": 880
+      },
+      {
+        "b": 11,
+        "sum": 16,
+        "terms": 1035
+      },
+      {
+        "b": 12,
+        "sum": 19,
+        "terms": 1313
+      },
+      {
+        "b": 13,
+        "sum": 21,
+        "terms": 1572
+      },
+      {
+        "b": 14,
+        "sum": 24,
+        "terms": 1945
+      },
+      {
+        "b": 15,
+        "sum": 26,
+        "terms": 2316
+      },
+      {
+        "b": 16,
+        "sum": 29,
+        "terms": 2879
+      },
+      {
+        "b": 17,
+        "sum": 31,
+        "terms": 3388
+      },
+      {
+        "b": 18,
+        "sum": 34,
+        "terms": 4170
+      },
+      {
+        "b": 19,
+        "sum": 36,
+        "terms": 4945
+      }
+    ],
+    "cells": [
+      {
+        "degree": 23,
+        "lambda": [
+          61,
+          15,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            53,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            46,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            45,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            44,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            43,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            42,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            41,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            40,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 158
+      },
+      {
+        "degree": 25,
+        "lambda": [
+          67,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            59,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            46,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            45,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            44,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 218
+      },
+      {
+        "degree": 26,
+        "lambda": [
+          71,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            62,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            61,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            60,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            59,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 218
+      },
+      {
+        "degree": 27,
+        "lambda": [
+          73,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            65,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            64,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            63,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            62,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            61,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            60,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            59,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            18,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 288
+      },
+      {
+        "degree": 35,
+        "lambda": [
+          105,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            89,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            88,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            87,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            86,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            85,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            84,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            83,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            82,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            81,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            80,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            79,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            78,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            77,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            76,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            75,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            74,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            73,
+            18,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            72,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 288
+      }
+    ],
+    "fresh": "Exact rational sums of saved complete terms; degree/strip checks",
+    "inherited": "Completeness and correctness of power sums and characters; no regenerated census",
+    "stable": {
+      "a": 429,
+      "m_det": 418,
+      "m_pad_lower": 243,
+      "m_pad_upper": 288,
+      "D_interval": [
+        -175,
+        -130
+      ],
+      "i_pad_interval": [
+        141,
+        186
+      ]
+    }
+  },
+  "acceptance_gate": {
+    "status": "PASS",
+    "examples_are_synthetic": true,
+    "mathematical_premises_are_not_machine_certified_by_this_gate": true
+  },
+  "received_03_through_08": {
+    "status": "AWAITING_INTEGRATOR_DELIVERIES",
+    "entries": [
+      {
+        "slot": "03",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "04",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "05",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "06",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "07",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "08",
+        "status": "NOT_DELIVERED"
+      }
+    ],
+    "scope": "Initial independent proof review complete; no acceptance of undelivered B16 worker claims."
+  },
+  "heavy_lease": "Never acquired; no heavy job launched",
+  "wall_seconds": 0.07800000000861473,
+  "input_hashes": {
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b16_12\\input_paths.json": {
+      "bytes": 1765,
+      "sha256": "911be22e19cc55c768a44ee5ba9650c3211211c58619e7f030f13582cf58991a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\BOARD.md": {
+      "bytes": 6994,
+      "sha256": "951a22332aeb2cf603dd62b682ab74a7655805e71f3ee4f8e35fc6ed9a0fabf0"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\launch\\INPUT_MANIFEST.json": {
+      "bytes": 5162,
+      "sha256": "5ebb174b31867b8f5ecfb773099a6867d2020faa2b4ee0be60a6fd5921839822"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\launch\\B16-12.md": {
+      "bytes": 3055,
+      "sha256": "ff43797af6e40547757eeeea8cdd640b21b7ccbdc73ba2900abee9d7ddc42957"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\INTAKE.json": {
+      "bytes": 100200,
+      "sha256": "18444677e2ba4ad3169456d0bc6dcd5d9ac32267d9e71d6fa9ad9b6347d488a2"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\integrator_review.json": {
+      "bytes": 2102,
+      "sha256": "1da55ae5c85d214a3f05442226aebde363ebbe0405760bb0d8aaed80c7005242"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\DREAM_REPORT.md": {
+      "bytes": 38026,
+      "sha256": "3ecc896a0bf30cc7566f2cb83d9a4401ceb0a111ba3d131a906455e1d026bd2a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_bound.py": {
+      "bytes": 4986,
+      "sha256": "b37383daf05a5c6eb6a3c22f339b55ec2f42851caca100bf4cc9c8c45b76527e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\verify_cubic_and_lift.py": {
+      "bytes": 6473,
+      "sha256": "2eac2a78713e89d6abf5d0b8306f99c9b97bd64bfb309f3e871e1fdf0e470254"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\REPORT.md": {
+      "bytes": 26318,
+      "sha256": "54b0b4ddd5e7e98879e7f74219d081b4ee58dce124fecfd03675ed08c81b6f68"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\input_receipt.json": {
+      "bytes": 13887,
+      "sha256": "13f1a07e2c58ed3eeb8fcc320e287356ba55437613e7c6a99881822f7e35a52b"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\integrator_review.json": {
+      "bytes": 3629,
+      "sha256": "f15ccb5e7455e962005aae38a28654cf9d3b0c6e07ad19374085235665035155"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\astra\\REVIEW.md": {
+      "bytes": 24922,
+      "sha256": "fda083fc7c763b09c684baaca88afab6d3191eb6a2ff1a261fe63f37d84c4532"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\astra\\hessian_relations.py": {
+      "bytes": 4766,
+      "sha256": "c16e04b1d111bdfb0d608a90ecf56962ef194e267f313e111312825550726c38"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\docs\\b15_06_report.md": {
+      "bytes": 9459,
+      "sha256": "ae416411caad4302ddf6b6377f96405a41322afc7ebe17b79f712e04337a57ba"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\analysis\\wk8_s30_pleth.py": {
+      "bytes": 2470,
+      "sha256": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b15_12_report.md": {
+      "bytes": 13065,
+      "sha256": "04567ed32462da638663f266d4604a27f825850ed93cc03cbb76fb91d5ca6db4"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b15_12_proved.md": {
+      "bytes": 13003,
+      "sha256": "9afabb3e25ff9078fa3c0195be69d5bddd68affe9db34e76bacc756295b92135"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\analysis\\b15_bound.py": {
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\.venv\\python.exe": {
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b16_12_proof.md": {
+      "bytes": 14325,
+      "sha256": "c9623b673011ca14635b3fe470882e9502e4beda26166039906cdcaf777dd608"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-01_full_replay\\integrator_review.json": {
+      "bytes": 13909,
+      "sha256": "de996a178d549a713538d18575a3eda15d1efcf4c84423375c99452c668db7b9"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\analysis\\b16_12_receive.py": {
+      "bytes": 9408,
+      "sha256": "330a230fb236ddd1dbfef8e9f5bf7bdbf515b5ab3b159ae9a5a8d70fcaef6cbd"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_bound.json": {
+      "bytes": 5258,
+      "sha256": "67d2f01dedc9b71862681a336a2f160e4cbe9d43c79d7931c31fa7bcff7c1574"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_2.json.gz": {
+      "bytes": 1183,
+      "sha256": "700f2f5ecfe3d1d230bd9e5bc8e09a9138e5678adb42462e592db5967b9fbe6d"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_3.json.gz": {
+      "bytes": 1417,
+      "sha256": "8d81e79cf1bc7bad93239525948459c215fc5ed024045bfd28418bfc7124eaae"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_4.json.gz": {
+      "bytes": 1938,
+      "sha256": "9b6f176b312879c559cad73f14d737ecf8855478623bab8bdb65881702ad3ced"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_5.json.gz": {
+      "bytes": 2156,
+      "sha256": "c599f8ca7bed5ccd9f94d6cee05eaae92f4f533cc9ee443a330cb1818e567f9f"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_6.json.gz": {
+      "bytes": 2899,
+      "sha256": "1b6105dc13327b36a68e2e7448fc238254109d950eda1e304cd6fb6dea6d70f6"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_7.json.gz": {
+      "bytes": 3442,
+      "sha256": "66fbb9cf6463da8028c157357292b579bcad3dbdb49513401fd81a2fcb890d84"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_8.json.gz": {
+      "bytes": 4406,
+      "sha256": "ea89a171ce69f7c1c358f7f33c1a04bd093724dc539e1ec778ee0269f5cc86c7"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_9.json.gz": {
+      "bytes": 5383,
+      "sha256": "a62c5c0ab3a471dc1cdbad1e6878ad814c41436fb0811748bf8303cf7249ccea"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_10.json.gz": {
+      "bytes": 6922,
+      "sha256": "264f1b7ffe7e525335fcec3b322159dc4d189398d2501ff521a98d77208026aa"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_11.json.gz": {
+      "bytes": 8041,
+      "sha256": "533bd42a9ad0d00e673c795de9375759158448393aeb05c3c56955184fa0e868"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_12.json.gz": {
+      "bytes": 10641,
+      "sha256": "691e6e1fe3104185e6b8f110e8dd7221cee1dc37bfd1bd206749a47c8017be19"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_13.json.gz": {
+      "bytes": 12798,
+      "sha256": "7fd107696961482dfbcec8fa5a2663d4a444ad84f882b213fed6a0ed64fc7459"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_14.json.gz": {
+      "bytes": 16209,
+      "sha256": "c8ccba2fd72ff86dc256b10c7e3803420e5e937c28415779d5f472fe0bf55f9a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_15.json.gz": {
+      "bytes": 19492,
+      "sha256": "1afd6e1aefaecb2d9bcffbb1872f5bd9d7d3f675feb7fd95a45ceb104f45891f"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_16.json.gz": {
+      "bytes": 24790,
+      "sha256": "c1a00c99703f2293f28776d5394614b20fb1013df88b1f93eca0916c7f08ce0e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_17.json.gz": {
+      "bytes": 29328,
+      "sha256": "86724d104dc24543508e0ff6407c518b796589fdfb3f66e4e70e5da2e975f7b3"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_18.json.gz": {
+      "bytes": 37254,
+      "sha256": "769bae0d53930c678b363fc007e28fd89f8c676fcedf671a9cd285bff0cd5a30"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_19.json.gz": {
+      "bytes": 44196,
+      "sha256": "2177ee309a395e82faa007a707a27ffeab2c24bb86d0c638a815f372f4d2c785"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b16_12\\received.json": {
+      "bytes": 455,
+      "sha256": "2066e7530a94deea432efbda2933e9b040470db66ab2d56dd07299670556f9cf"
+    }
+  },
+  "source_sha256": "330a230fb236ddd1dbfef8e9f5bf7bdbf515b5ab3b159ae9a5a8d70fcaef6cbd"
+}

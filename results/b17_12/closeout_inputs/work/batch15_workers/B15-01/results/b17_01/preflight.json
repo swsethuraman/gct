@@ -1,0 +1,33 @@
+{
+  "status": "PRICED_BEFORE_SINGLE_PILOT",
+  "purpose": "Replay the reported five-variable per3 density certificate and certify smoothness of the same actual cubic",
+  "interpreter": ".venv/python.exe",
+  "python_flag": "-B",
+  "wrapper": "analysis/b15_bound.py",
+  "wrapper_inspected": true,
+  "wall_cap_seconds": 60,
+  "job_memory_cap_mib": 512,
+  "processes": 1,
+  "blas_threads": 1,
+  "subprocesses": 0,
+  "research_executions_authorized_here": 1,
+  "heavy_lease": "NONE",
+  "support": {
+    "density_jacobian": [45, 35],
+    "density_minor": [35, 35],
+    "permanent_expansion_terms_per_evaluation": 750,
+    "permanent_evaluations": 46,
+    "smoothness_macaulay": [350, 210],
+    "smoothness_nonzero_entries_upper": 5250,
+    "smoothness_minor": [210, 210],
+    "source_frame": [9, 5]
+  },
+  "price": {
+    "estimated_wall_seconds": 20,
+    "estimated_peak_mib": 96,
+    "dominant_work": "Two modular eliminations at dimensions at most350x210; one 35x35 exact Bareiss determinant",
+    "estimates_are_not_bounds": true,
+    "enforcement": "Existing Windows Job Object wrapper; cap hit means uncomputed"
+  },
+  "not_requested": ["ideal elimination", "character census", "orbit evaluation rank hunt", "larger lease"]
+}

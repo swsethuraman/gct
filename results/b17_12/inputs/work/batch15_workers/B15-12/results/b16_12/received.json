@@ -1,0 +1,12 @@
+{
+  "status": "ALL_03_THROUGH_08_PASS_SCOPED_PROOF_REVIEW_AND_REPLAY",
+  "entries": [
+    {"slot": "03", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/03", "hash_ledger": "results/b16_12/intake_03.json", "proof_review": "docs/b16_12_receive03_07.md", "receipt": "results/b16_12/replay/03/results/b16_03/receiver_verify.json"},
+    {"slot": "04", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/04", "hash_ledger": "results/b16_12/intake_04.json", "proof_review": "docs/b16_12_receive04_05_06_08.md", "receipt": "results/b16_12/replay/04_verify/results/b16_04/receiver.json"},
+    {"slot": "05", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/05", "hash_ledger": "results/b16_12/intake_05.json", "proof_review": "docs/b16_12_receive04_05_06_08.md", "receipt": "results/b16_12/replay/05_replay/results/b16_05/replay.json", "proof_receipt": "results/b16_12/replay/05_proof/results/b16_05/proof_arithmetic.json"},
+    {"slot": "06", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/06", "hash_ledger": "results/b16_12/intake_06.json", "proof_review": "docs/b16_12_receive04_05_06_08.md", "receipt": "results/b16_12/replay/06_verify/results/b16_06/image_certificate.json"},
+    {"slot": "07", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/07", "hash_ledger": "results/b16_12/intake_07.json", "proof_review": "docs/b16_12_receive03_07.md", "receipt": "results/b16_12/receiver07.json"},
+    {"slot": "08", "status": "PASS_PROOF_REVIEW_AND_BOUNDED_REPLAY", "intake": "results/b16_12/intake/08", "hash_ledger": "results/b16_12/intake_08.json", "proof_review": "docs/b16_12_receive04_05_06_08.md", "receipt": "results/b16_12/replay/08_receive/results/b16_08/receiver.json"}
+  ],
+  "scope": "Independent 288 proof review plus accepted slot02 finite census. All assigned03..08 results pass scoped mathematical review and worker receiver replay. Final bounds -30,-72,-72,-130 use04 full finite ideal dimensions. Inherited hypotheses and unresolved research limits are retained. No positive gap."
+}

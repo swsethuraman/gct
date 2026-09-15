@@ -1,0 +1,59 @@
+{
+  "status": "EXACT_EXCLUSIONS_UNDER_ACCEPTED_INHERITED_PREMISES",
+  "slot": "07",
+  "frozen_and_observed_head": "3eb29ed3b91e0e65ba5407e5031a71c4865fe4f3",
+  "frozen_and_observed_tree": "ae7f6d677cd5801ed218ed44d273d230a9a7d146",
+  "cells": [
+    {
+      "degree": 14,
+      "weight": [21,21,2,2,2,2,2,2,2],
+      "determinant_ideal_exact": 0,
+      "padded_ideal_floor": 0,
+      "gap_upper": 0,
+      "excluded_positive_gap": true
+    },
+    {
+      "degree": 15,
+      "weight": [25,21,2,2,2,2,2,2,2],
+      "determinant_ideal_exact": 0,
+      "padded_ideal_floor": 3,
+      "padded_floor_status": "CI73 inherited; q44 multiplication algebra freshly checked",
+      "gap_upper": -3,
+      "excluded_positive_gap": true
+    }
+  ],
+  "identity": "D=m_pad-m_det=i_det-i_pad; m_det=a in each assigned finite cell",
+  "finite_ambient_count": "not asserted and not needed",
+  "method": "Necessary polynomial-degree constraints on the complete stable four-space, using one authentic ambient quartic family and exact coefficients in u",
+  "decisive_u_powers": [28,26,25,24],
+  "primitive_minor": "-5639493386240000",
+  "fresh": [
+    "Complete sparse integer Hessian determinant, quotient, remainder and depressed functions",
+    "Independent SymPy differentiation of the nine-variable quartic and exact monic division, without producer imports",
+    "Rank-four integer coefficient minor and four altered-coefficient rejections",
+    "Finite weights, q44 raising, nonzero q44 and multiplication weight",
+    "23 raw-byte input hashes and frozen launch hash agreement",
+    "Read-only HEAD and tree agreement; executable delivery-script replay"
+  ],
+  "inherited": [
+    "Complete stable determinant ideal at tail(21,2^7) is span(s4 R3,s2^2 R3,s3 R2,s2 R1), from the accepted Slot05 Hessian review",
+    "The review's completeness uses accepted stable ambient533 and determinant image rank529; these expensive premises are not recomputed",
+    "CI73 three independent global reducible equations at degree13 weight(21,17,2^7)",
+    "Characteristic zero and the standard nine-row Schur restriction convention for the original16-variable ambient"
+  ],
+  "limitations": [
+    "No exact padded ideal multiplicity, exact gap, or finite ambient multiplicity is computed",
+    "No higher-degree cell is recomputed or claimed; large u powers are coefficient-degree tests for d14 and d15",
+    "No claim that source size equals image rank, or that padding and reducible ranks coincide",
+    "Filesystem delivery, not a new Git commit"
+  ],
+  "next_sufficient_witness": "The two exclusions need no further witness under the accepted premises. Exact gaps would follow from exact padded ideal multiplicities at these finite cells, because D=-i_pad.",
+  "heavy_lease_used": false,
+  "receiver": "delivery/b16_07/receive.ps1",
+  "report": "docs/b16_07_report.md",
+  "proof": "docs/b16_07_proof.md",
+  "certificate": "results/b16_07/pilot.json",
+  "verification": "results/b16_07/receiver.json",
+  "inputs": "results/b16_07/input_hashes.json",
+  "resources": "results/b16_07/resource_release.json"
+}

@@ -1,0 +1,22 @@
+{
+  "heavy_job_limit": 2,
+  "holders": [],
+  "status": "NO_HEAVY_LEASES_HELD",
+  "rules": "At most one heavy job per holder; initial pilot900s1536MiB one BLAS thread; measured gate before extension; explicit release and fresh process exit before transfer.",
+  "history": [
+    {
+      "slot": "01",
+      "action": "RELEASED_UNUSED",
+      "checked_utc": "2026-09-13T17:52:25.3270137Z",
+      "evidence": "Explicit task release; no01 computation launched; fresh process list shows only prior diagnostics; runtime preflight already exited0",
+      "new_grant": null
+    },
+    {
+      "slot": "02",
+      "action": "RELEASED",
+      "checked_utc": "2026-09-13T17:54:17.7003483Z",
+      "evidence": "Explicit release. Count pilot PID38012 absent; resource receipt exit0,1.5645s,512MiB Job Object. No heavy job used.",
+      "new_grant": null
+    }
+  ]
+}

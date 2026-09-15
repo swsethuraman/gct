@@ -1,0 +1,111 @@
+{
+  "schema": "b16_02_filesystem_delivery_v1",
+  "slot": "02",
+  "status": "COMPLETE_RECEIVER_PASS",
+  "frozen_head": "77a16d78dcc9adf8067c562efc4c7fe9a858bfa0",
+  "git_commit_created": false,
+  "artifacts": [
+    {
+      "path": "analysis/b16_02_census.py",
+      "bytes": 9605,
+      "sha256": "a0355b84e45c0e27001c50ebca9268d1de2afb12252537c60c64a916f27e4c6b"
+    },
+    {
+      "path": "analysis/b16_02_receive.py",
+      "bytes": 8302,
+      "sha256": "4df0cede28913ad4bac9f7aeece712124ad832a4222291b811a36010fabc84d0"
+    },
+    {
+      "path": "docs/b16_02_report.md",
+      "bytes": 5620,
+      "sha256": "90222c52e5630071d1d0fda12e6dd784889b4d548c7689408bc5a0f1cac04b28"
+    },
+    {
+      "path": "docs/b16_02_proof.md",
+      "bytes": 8653,
+      "sha256": "6308231bea4b116e24a8f9bf33f44521040af8feae183894146f2fce947e959d"
+    },
+    {
+      "path": "results/b16_02/census.json",
+      "bytes": 2071,
+      "sha256": "5704931d76a6e35139e8a3128d3fff993dc8b19001fc769e8405194511a84e37"
+    },
+    {
+      "path": "results/b16_02/controls.json",
+      "bytes": 8286,
+      "sha256": "9a331b65f64d9baff8b74ee6f8b24da99fbc53882b3c248798da0879da83bf59"
+    },
+    {
+      "path": "results/b16_02/count_t15.json.gz",
+      "bytes": 30448,
+      "sha256": "d5c2f072e48c8845dec139907c3ea736d28d4aa45cce33390afcf43c1fa27c4a"
+    },
+    {
+      "path": "results/b16_02/count_t17.json.gz",
+      "bytes": 45929,
+      "sha256": "ed06951e6d46b40dc22e16f53154175fedd302697cf2759e7f0f48792bd21497"
+    },
+    {
+      "path": "results/b16_02/count_t19.json.gz",
+      "bytes": 67776,
+      "sha256": "6d84f9a0c2b12007da0d2ddd476b6fd3b8ace301d31fa3e131f5e273554b56b2"
+    },
+    {
+      "path": "results/b16_02/input_hashes.json",
+      "bytes": 5215,
+      "sha256": "4b51903073d9801e9ae58c7a4f55266cc07c0a9e3edca551ba62d4f2e6e01db1"
+    },
+    {
+      "path": "results/b16_02/receiver.json",
+      "bytes": 825,
+      "sha256": "7ed5eef3390ad10f139fa9c11b5ed3ea87da4477f74ea9ad613bf733c73b512a"
+    },
+    {
+      "path": "results/b16_02/resource_summary.json",
+      "bytes": 1902,
+      "sha256": "ac90d2af51a6f1416ab68663ab863aa774b37a766165656557f0c07ad575a2dd"
+    },
+    {
+      "path": "results/b16_02/sizing.json",
+      "bytes": 7735,
+      "sha256": "46f32756b80d10e42f585525d2fc6ee09b6cd15124f5d09dff7e89efea21c785"
+    },
+    {
+      "path": "results/logs/b16_02_sizing_resources.json",
+      "bytes": 809,
+      "sha256": "1569771614d913c251b0867a4515d7d5b125220c488ca05091f82b3e4ec47290"
+    },
+    {
+      "path": "results/logs/b16_02_controls_resources.json",
+      "bytes": 808,
+      "sha256": "3d6cb87c81b68df8af18f922ac1196762860c46a666ed036862736d76575fa9b"
+    },
+    {
+      "path": "results/logs/b16_02_count_pilot_resources.json",
+      "bytes": 806,
+      "sha256": "662860bfc29cb9849a7844109e4be805201d16374e756d4fa1e7418c7d089ba0"
+    },
+    {
+      "path": "results/logs/b16_02_receiver_resources.json",
+      "bytes": 807,
+      "sha256": "6e1db6e38dc00422d038c414bc823bbb9020c8d57edc5f1f3608ce8686398b7c"
+    }
+  ],
+  "exact_ambient": [
+    189,
+    294,
+    294,
+    429
+  ],
+  "D_upper": [
+    -20,
+    -65,
+    -65,
+    -130
+  ],
+  "lease_status": "RELEASED",
+  "receiver": "analysis/b16_02_receive.py",
+  "report": "docs/b16_02_report.md",
+  "proof": "docs/b16_02_proof.md",
+  "hypotheses": "Characteristic zero; frozen accepted S57 filtration, B15-06 determinant geometry/multiplication, Hessian11 global spaces, independent-padding split-cubic bound"
+}
