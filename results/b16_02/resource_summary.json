@@ -1,0 +1,63 @@
+{
+  "batch": 16,
+  "slot": "02",
+  "lease_status": "RELEASED",
+  "lease_release_basis": "Count pilot PID38012 exited0; integrator notified explicitly after completion",
+  "heavy_jobs_started": 0,
+  "extension_requested": false,
+  "all_owned_processes_absent": true,
+  "runs": [
+    {
+      "name": "b16_02_sizing",
+      "pid": 10096,
+      "process_absent": true,
+      "exit_code": 0,
+      "wall_seconds": 0.046610499994130805,
+      "peak_working_set_bytes": 43433984,
+      "peak_job_memory_bytes": 34263040,
+      "cap_seconds": 60,
+      "cap_mib": 512,
+      "job_object_enforced": true,
+      "receipt": "results/logs/b16_02_sizing_resources.json"
+    },
+    {
+      "name": "b16_02_controls",
+      "pid": 43724,
+      "process_absent": true,
+      "exit_code": 0,
+      "wall_seconds": 0.09117379999952391,
+      "peak_working_set_bytes": 23932928,
+      "peak_job_memory_bytes": 14761984,
+      "cap_seconds": 60,
+      "cap_mib": 512,
+      "job_object_enforced": true,
+      "receipt": "results/logs/b16_02_controls_resources.json"
+    },
+    {
+      "name": "b16_02_count_pilot",
+      "pid": 38012,
+      "process_absent": true,
+      "exit_code": 0,
+      "wall_seconds": 1.564491699973587,
+      "peak_working_set_bytes": 54534144,
+      "peak_job_memory_bytes": 45740032,
+      "cap_seconds": 60,
+      "cap_mib": 512,
+      "job_object_enforced": true,
+      "receipt": "results/logs/b16_02_count_pilot_resources.json"
+    },
+    {
+      "name": "b16_02_receiver",
+      "pid": 43304,
+      "process_absent": true,
+      "exit_code": 0,
+      "wall_seconds": 0.6334396000020206,
+      "peak_working_set_bytes": 66375680,
+      "peak_job_memory_bytes": 54247424,
+      "cap_seconds": 60,
+      "cap_mib": 512,
+      "job_object_enforced": true,
+      "receipt": "results/logs/b16_02_receiver_resources.json"
+    }
+  ]
+}
