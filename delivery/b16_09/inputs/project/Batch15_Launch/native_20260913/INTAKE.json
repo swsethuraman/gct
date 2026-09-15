@@ -1,0 +1,2311 @@
+{
+  "integrator_task": "01a0997b-79c2-7a91-a9e3-cdfcc8f636e3",
+  "status": "ALL12_SCOPED_REVIEWS_AND_GIT_DELIVERIES_ACCEPTED",
+  "entries": [
+    {
+      "slot": "02",
+      "observed_utc": "2026-09-13T06:09:48.296578-04:00",
+      "head": "77a16d78dcc9adf8067c562efc4c7fe9a858bfa0",
+      "tree": "7b8e62260d74df09ada142c05112dd17de2871ca",
+      "input_hashes": [
+        {
+          "path": "results/b15_prep/candidate_preflight.json",
+          "sha256": "1bbb7009392b2bba9192b0e62f5a5ac31f5ac27ad062f0a00f550cdee642060e",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_11/shortlist.json",
+          "sha256": "2d4ec31171f2387c8368c3a93da94824f77721dd597ec8bf288cb292a460412a",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_11_sizes.py",
+          "sha256": "adc9e3bc5a5fac3e618eaf7f9f50c5f142176b207307d8b068225bbbbf4ba887",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "tools/integrate/exclusion_predicates.py",
+          "sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "exact_claim": "Nine specified degree-seven cells have integer HWVs with determinant nonzeros; with a=1, m_det=1 and D<=0.",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "evidence_status": "INDEPENDENT_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Integrator ran preserved standalone polynomials through complete integer weight/raising checks, coefficient mutation rejection, fresh determinant polynomial evaluation and full 16-variable orbit frame. All nine passed.",
+      "inherited_premises": "a=1 from frozen accepted candidate counts; not recounted in this integrator replay. h_pad is unnecessary.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-02",
+        "pid": 39896,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 11986284544,
+          "load": 64
+        },
+        "memory_cap_mb": 256,
+        "wall_cap_seconds": 30,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T10:07:50Z",
+        "exit_code": 0,
+        "wall_seconds": 1.080129300011322,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 11964637184,
+          "load": 64
+        },
+        "process_memory": {
+          "peak_working_set": 45383680,
+          "working_set": 41545728,
+          "peak_pagefile": 32473088
+        },
+        "job_memory": {
+          "peak_job_memory": 32473088,
+          "peak_process_memory": 32473088
+        }
+      },
+      "next_sufficient_witness": "Git object/contract and snapshot-to-commit binding checks; mathematical exclusion replay passed under inherited frozen a=1 counts. Exact gap requires padded witness or vanishing proof.",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\delivery\\b15_02_final",
+      "evidence_snapshots": [
+        {
+          "source": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b15_02\\verification.json",
+          "snapshot": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\checkpoint_0653\\02_verification.json",
+          "sha256": "245d7ed5ee6755273d4bc37f6e8ee41da5d574f759137ef3ab86ef204fdc7fdb"
+        },
+        {
+          "source": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b15_02\\resource_decisions.md",
+          "snapshot": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\checkpoint_0653\\02_resource_decisions.md",
+          "sha256": "8e45ad6777a141f829334bea089d84e87681612c34664c757a98013dd79e58bf"
+        }
+      ],
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-02_77a16d78dcc9\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review."
+    },
+    {
+      "slot": "06",
+      "head": "4067e2ebedc4429c760a037a5d78cf9c0ae601f6",
+      "tree": "20aa4644cc04e8ff6b432f91fb9d0dad6a80aa6b",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\delivery\\b15_06_prelease",
+      "exact_claim": "Worker reports exact 40-family census and 80 count certificates; dimension controls r=7..10. Three geometric pilots remain unmeasured and await lease.",
+      "input_hashes": [
+        {
+          "path": "docs/s57_report.md",
+          "sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_04/recount.py",
+          "sha256": "884586a57411c53ff2e3f8992642be85976bf7907f33acd05ea5cf405394e0b3",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_06_bracket.py",
+          "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_06_points.py",
+          "sha256": "78fbacf60394ecd8696d7e38a8cfbdcef92c662524e487ef23b46be084bb9398",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b15_prep/transport_overlay.json",
+          "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "evidence_status": "CENSUS_AND_SMALL_CONTROLS_PASS_PRODUCTION_PENDING_GIT_BINDING_BLOCKED",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "next_sufficient_witness": "Await heavy lease for selected production pilots; require fresh geometric minor replays. Git binding remains pending approval.",
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-06_4067e2ebedc4\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review.",
+      "observed_utc": "2026-09-13T06:09:48.300579-04:00",
+      "fresh_verification": "Fresh rational power-sum and symmetric-group-character recomputation matches all 80 counts across 40 families. Reviewed symmetric-algebra recurrence and depressed reducible factorization. Both-prime dimension controls pass for r=7,8,9,10; brute epsilon normalization, covariance, determinant normalization, point mutations, and exact ten-variable padding derivative rank checked.",
+      "inherited_premises": "As stated in worker proof/report; not yet independently audited.",
+      "resource_outcome": [
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-06",
+          "pid": 38796,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 10977492992,
+            "load": 67
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T13:51:59Z",
+          "exit_code": 0,
+          "wall_seconds": 12.540539099980379,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 10825113600,
+            "load": 67
+          },
+          "process_memory": {
+            "peak_working_set": 128208896,
+            "working_set": 115150848,
+            "peak_pagefile": 115318784
+          },
+          "job_memory": {
+            "peak_job_memory": 115318784,
+            "peak_process_memory": 115318784
+          }
+        },
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-06",
+          "pid": 39856,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 10355367936,
+            "load": 69
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T13:52:19Z",
+          "exit_code": 0,
+          "wall_seconds": 1.3268235999858007,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 10675675136,
+            "load": 68
+          },
+          "process_memory": {
+            "peak_working_set": 42893312,
+            "working_set": 42893312,
+            "peak_pagefile": 26685440
+          },
+          "job_memory": {
+            "peak_job_memory": 26685440,
+            "peak_process_memory": 26685440
+          }
+        }
+      ],
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-06_4067e2ebedc4\\integrator_review.json",
+      "production_followup": {
+        "status": "ALL18_PRODUCTION_MINORS_AND20_FAMILY_SCOPE_PASS_PENDING_GIT_BINDING",
+        "head": "41e03e172e32a8efc1803c7207a244ca95966b04",
+        "snapshot": "reviews_filesystem/B15-06_41e03e172e32",
+        "checks": [
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "DET",
+            "prime": 2147483629,
+            "rank": 418,
+            "minor": 660733416,
+            "seconds": 10.662306100013666,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "DET",
+            "prime": 2147483647,
+            "rank": 418,
+            "minor": 929317854,
+            "seconds": 10.780532399978256,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "GEN",
+            "prime": 2147483629,
+            "rank": 429,
+            "minor": 1542212357,
+            "seconds": 10.249579900002573,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "GEN",
+            "prime": 2147483647,
+            "rank": 429,
+            "minor": 774388920,
+            "seconds": 10.111775499972282,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "PAD",
+            "prime": 2147483629,
+            "rank": 243,
+            "minor": 2129442241,
+            "seconds": 5.844163000001572,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 10,
+            "t": 19,
+            "family": "PAD",
+            "prime": 2147483647,
+            "rank": 243,
+            "minor": 2061185452,
+            "seconds": 5.867393699998502,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "DET",
+            "prime": 2147483629,
+            "rank": 378,
+            "minor": 452594522,
+            "seconds": 2.418235100019956,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "DET",
+            "prime": 2147483647,
+            "rank": 378,
+            "minor": 552255670,
+            "seconds": 2.334664599999087,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "GEN",
+            "prime": 2147483629,
+            "rank": 378,
+            "minor": 1680345056,
+            "seconds": 2.3480191999988165,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "GEN",
+            "prime": 2147483647,
+            "rank": 378,
+            "minor": 731787944,
+            "seconds": 2.4135734000010416,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "PAD",
+            "prime": 2147483629,
+            "rank": 372,
+            "minor": 698645510,
+            "seconds": 2.352842899999814,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 7,
+            "t": 21,
+            "family": "PAD",
+            "prime": 2147483647,
+            "rank": 372,
+            "minor": 1291831,
+            "seconds": 2.301682300021639,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "DET",
+            "prime": 2147483629,
+            "rank": 460,
+            "minor": 1910574416,
+            "seconds": 4.802727300004335,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "DET",
+            "prime": 2147483647,
+            "rank": 460,
+            "minor": 1842680467,
+            "seconds": 4.545922699995572,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "GEN",
+            "prime": 2147483629,
+            "rank": 460,
+            "minor": 171712219,
+            "seconds": 4.5590819000208285,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "GEN",
+            "prime": 2147483647,
+            "rank": 460,
+            "minor": 905394358,
+            "seconds": 4.830024599999888,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "PAD",
+            "prime": 2147483629,
+            "rank": 443,
+            "minor": 117542141,
+            "seconds": 4.431683999981033,
+            "changed_interpolation_seed": true
+          },
+          {
+            "status": "FRESH_MINOR_PASS",
+            "r": 8,
+            "t": 21,
+            "family": "PAD",
+            "prime": 2147483647,
+            "rank": 443,
+            "minor": 432046871,
+            "seconds": 4.673981700005243,
+            "changed_interpolation_seed": true
+          }
+        ],
+        "fresh_verification": "All18 minors rebuilt from native sources at both primes with changed interpolation seeds. Reviewed source convention and stable ideal injection. Scope20 q62 raising/weights/predicates passed with fresh receiver joins.",
+        "limitations": "Stable counts and S57 filtration as recorded. No positive gap; Git binding blocked. Only selected minors require fresh replay.",
+        "scope": {
+          "checks": [
+            {
+              "delta_min": 14,
+              "multiplier_power": 0,
+              "r": 8,
+              "status": "EXACT",
+              "t": 21
+            },
+            {
+              "delta_min": 13,
+              "multiplier_power": 1,
+              "r": 8,
+              "status": "EXACT",
+              "t": 19
+            },
+            {
+              "delta_min": 12,
+              "multiplier_power": 2,
+              "r": 8,
+              "status": "EXACT",
+              "t": 17
+            },
+            {
+              "delta_min": 11,
+              "multiplier_power": 3,
+              "r": 8,
+              "status": "EXACT",
+              "t": 15
+            },
+            {
+              "delta_min": 10,
+              "multiplier_power": 4,
+              "r": 8,
+              "status": "EXACT",
+              "t": 13
+            },
+            {
+              "delta_min": 9,
+              "multiplier_power": 5,
+              "r": 8,
+              "status": "EXACT",
+              "t": 11
+            },
+            {
+              "delta_min": 8,
+              "multiplier_power": 6,
+              "r": 8,
+              "status": "EXACT",
+              "t": 9
+            },
+            {
+              "delta_min": 8,
+              "multiplier_power": 7,
+              "r": 8,
+              "status": "EXACT",
+              "t": 7
+            },
+            {
+              "delta_min": 8,
+              "multiplier_power": 8,
+              "r": 8,
+              "status": "EXACT",
+              "t": 5
+            },
+            {
+              "delta_min": 8,
+              "multiplier_power": 9,
+              "r": 8,
+              "status": "EXACT",
+              "t": 3
+            },
+            {
+              "delta_min": 13,
+              "multiplier_power": 0,
+              "r": 7,
+              "status": "EXACT",
+              "t": 21
+            },
+            {
+              "delta_min": 12,
+              "multiplier_power": 1,
+              "r": 7,
+              "status": "EXACT",
+              "t": 19
+            },
+            {
+              "delta_min": 11,
+              "multiplier_power": 2,
+              "r": 7,
+              "status": "EXACT",
+              "t": 17
+            },
+            {
+              "delta_min": 10,
+              "multiplier_power": 3,
+              "r": 7,
+              "status": "EXACT",
+              "t": 15
+            },
+            {
+              "delta_min": 9,
+              "multiplier_power": 4,
+              "r": 7,
+              "status": "EXACT",
+              "t": 13
+            },
+            {
+              "delta_min": 8,
+              "multiplier_power": 5,
+              "r": 7,
+              "status": "EXACT",
+              "t": 11
+            },
+            {
+              "delta_min": 7,
+              "multiplier_power": 6,
+              "r": 7,
+              "status": "EXACT",
+              "t": 9
+            },
+            {
+              "delta_min": 7,
+              "multiplier_power": 7,
+              "r": 7,
+              "status": "EXACT",
+              "t": 7
+            },
+            {
+              "delta_min": 7,
+              "multiplier_power": 8,
+              "r": 7,
+              "status": "EXACT",
+              "t": 5
+            },
+            {
+              "delta_min": 7,
+              "multiplier_power": 9,
+              "r": 7,
+              "status": "EXACT",
+              "t": 3
+            }
+          ],
+          "no_new_geometric_evaluation": true,
+          "q62_degree": 2,
+          "q62_raising_zero": true,
+          "q62_weight": [
+            6,
+            2
+          ],
+          "status": "EXACT",
+          "wrong_sign_detected": true
+        }
+      },
+      "global_equation_followup": {
+        "status": "GLOBAL_ELEVEN_SPACE_PROOF_AND_EXACT_REPLAY_PASS_PENDING_GIT_BINDING",
+        "snapshot": "reviews_filesystem/Hessian11_1631",
+        "checked_utc": "2026-09-13T16:32:06.9447113Z",
+        "exact_claim": "Eleven independent stable determinant equations in tail(19,2^8): adjugate image8 plus squared remainder image5 minus intersection2. Together with reviewed stable ambient429 and fresh DET418 floor, stable i_det=11,m_det=418.",
+        "fresh_verification": "Reviewed rank8 singular Hessian bound, adjugate zero, double-root determinant vanishing, monic p-squared division and density; exact source expansion including signs/factorials,363Euler relations, all14 dependence certificates and180digit independence minor regenerated. Direct bivariate source interpolation and noncommuting determinant control pass.",
+        "finite_claim": "Reviewed denominator induction c^(30-j) S_j, shear and ambient extension: at least1 equation degree23 weight(61,15,2^8),2 at25 weight(67,17,2^8),5 at27 weight(73,19,2^8),11 by35 weight(105,19,2^8). S7 nonzero exactly; degree23 outside homogeneous ideal generated in24 by degree. No minimum-degree or broader literature novelty claim.",
+        "inherited_premises": "Stable ambient429 and finite filtration S57; earlier integrator exact census and two fresh rank418 minors support stable equality. Finite polynomiality proved algebraically, not by full coefficient expansion.",
+        "limitations": "Padding restriction floor only1 for this11space. No positive gap, padded ideal upper bound, or novelty beyond all LMR constructions. Slot01-based degree16 exclusion still conditional on its independent review. Full Slot06 otherproduction/transport review remains. Git binding blocked.",
+        "resource_outcome": {
+          "board_numbering": "batch15",
+          "session_id": "B15-05",
+          "pid": 9220,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 10100625408,
+            "load": 70
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T16:31:34Z",
+          "exit_code": 0,
+          "wall_seconds": 0.5492596999974921,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 10075447296,
+            "load": 70
+          },
+          "process_memory": {
+            "peak_working_set": 40493056,
+            "working_set": 35459072,
+            "peak_pagefile": 27152384
+          },
+          "job_memory": {
+            "peak_job_memory": 27152384,
+            "peak_process_memory": 27152384
+          }
+        }
+      }
+    },
+    {
+      "slot": "07",
+      "head": "3eb29ed3b91e0e65ba5407e5031a71c4865fe4f3",
+      "tree": "ae7f6d677cd5801ed218ed44d273d230a9a7d146",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-07\\delivery\\b15_07_final",
+      "exact_claim": "Worker reports equivariant non-Cartan polynomial map with image dimension 27, presentation independence and ideal preservation; no multiplicity-gap exclusion.",
+      "input_hashes": [
+        {
+          "path": "analysis/b14_05_controls.py",
+          "sha256": "30336fea93dc9e1b55fc87e085c7129c29d18764f137fd82762d112bcda60b66",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_05_n3.py",
+          "sha256": "5940bacfa612d93140c51c463160a35dcc4a8ca8eae229cac759b6b2dd7bab58",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_05/controls.json",
+          "sha256": "c5156d0bd95481116722a5620947c1d19918cac0c3da7c5ec3208e8d6c64be7e",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_08_verify.py",
+          "sha256": "3e1788ffc13c1802a1f8b2feb9fdcee85017a0778a79473a3761e5e4fc8e7603",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_08/witnesses.json",
+          "sha256": "b6cc144273c1112522b3e0121ce7f70ae4615641b85e6a24098db490b8621aa6",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "evidence_status": "INDEPENDENT_REPLAY_PASS_PENDING_GIT_BINDING",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "next_sufficient_witness": "Git contract/object and snapshot-to-commit binding blocked by prior auto-review. Complete rational LMR circuit with determinant-ideal provenance and exact nonzero operator output still needed for proposed application.",
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-07_3eb29ed3b91e\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review.",
+      "observed_utc": "2026-09-13T06:09:48.300579-04:00",
+      "fresh_verification": "Recounted every partition in degree-three and degree-four GL3 envelopes and target eigenvalue separation. Replayed independent power-monomial arithmetic: source dimension60, product/projector dimension27, repeated ambient multiplicity2, three independent HW tensors with product rank2 and kernel1. All1215 generator Lie brackets, finite shear and four corrupted-artifact rejections passed.",
+      "inherited_premises": "Characteristic-zero polynomial GL-module complete reducibility and homogeneous GL-stable ideal hypothesis. Next LMR application retains inherited source provenance and is not evaluated.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-07",
+        "pid": 39536,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 11848429568,
+          "load": 64
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T13:24:44Z",
+        "exit_code": 0,
+        "wall_seconds": 0.29540909998468123,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 11828469760,
+          "load": 64
+        },
+        "process_memory": {
+          "peak_working_set": 33091584,
+          "working_set": 33091584,
+          "peak_pagefile": 21405696
+        },
+        "job_memory": {
+          "peak_job_memory": 21405696,
+          "peak_process_memory": 21405696
+        }
+      },
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-07_3eb29ed3b91e\\integrator_review.json"
+    },
+    {
+      "slot": "09",
+      "head": "5e555cbe23725a247b572dde9b0ac9338f5dc797",
+      "tree": "25ca726a9ff15b3e11fb2ef8254b2524e15fb4c2",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-09\\delivery\\b15_09_final",
+      "exact_claim": "Worker reports exact five-variable quadratic determinant control with i_det=a=1 and m_det=0; dense quartic attempt stopped on estimated representation size.",
+      "input_hashes": [
+        {
+          "path": "docs/s57_report.md",
+          "sha256": "8a685ba2f5423863c5d9db6b2f7f1216b20468b87b1af6b6697ca052f4ac35c9",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_06_bracket.py",
+          "sha256": "bb5e8a2d5f5c9550c560695eb17b4da5875a3cb8fbe5e4eb0b0df8b937467eea",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/ci73_replay.py",
+          "sha256": "b96d5354faa5fc65aaaf0f574f1bfdf2452709e15f724cc465bbefc0348d1507",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "docs/ci73_proof.md",
+          "sha256": "36929ffbccacdeb07dc939c08762044a32b8c59afe20527ec77ae631e508d0da",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/ci73/certificate.json",
+          "sha256": "f6d7ae58fd6bb485c71932dd33513ae3f5bd2c0b2b87294b9bdfcecb1650bed6",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "evidence_status": "INDEPENDENT_REPLAY_PASS_PENDING_GIT_BINDING",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "next_sufficient_witness": "Native Git delivery/object checks and snapshot-to-commit binding remain blocked by prior auto-review; no retry or bypass. No quartic equation or gap result obtained. Quartic application still needs rational sources, a global relation and padded rank-two minor.",
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-09_5e555cbe2372\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review.",
+      "observed_utc": "2026-09-13T06:09:48.300579-04:00",
+      "fresh_verification": "Fresh full polynomial coefficient and 1296-point interpolation replay; both rank16 minors and matrix digests match worker certificate. Liveness and sign/normalization/kernel/node defects rejected. Exact dense quartic size and frozen exclusion screen passed.",
+      "inherited_premises": "No numerical premise inherited for the quadratic control. Quartic a=2 and h_pad=2 remain inherited; no quartic rank measurement.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-09",
+        "pid": 33572,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 12186353664,
+          "load": 63
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T10:16:47Z",
+        "exit_code": 0,
+        "wall_seconds": 0.6527109000016935,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 12156923904,
+          "load": 63
+        },
+        "process_memory": {
+          "peak_working_set": 42565632,
+          "working_set": 41398272,
+          "peak_pagefile": 28532736
+        },
+        "job_memory": {
+          "peak_job_memory": 28532736,
+          "peak_process_memory": 28532736
+        }
+      },
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-09_5e555cbe2372\\integrator_review.json"
+    },
+    {
+      "slot": "10",
+      "observed_utc": "2026-09-13T06:09:48.300579-04:00",
+      "head": "9fd63fd543076d4cd42b5764c03039f0eff89934",
+      "tree": "0d0761d53860607c77b070bfe980aca85a097144",
+      "input_hashes": [
+        {
+          "path": "analysis/b14_12_cell.py",
+          "sha256": "ce55b0e7c6233a2b27f53bee85c69f651e5725566376c354fefabc2d53854af4",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "analysis/b14_12_families.py",
+          "sha256": "45b0f859aa5dc64f05dffdfc47eaff7e4e22a64bcdfd1a77b3dc3ac7f55c8298",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_12/b14_12.json",
+          "sha256": "47c876deaf5b7f2851f49d07d1f61a64d4b25a69c40da1f823e0c7ceb3e7f06b",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b15_prep/Q1_combined_bound.json",
+          "sha256": "56b21175e8c263eaa1b6a1285c471cea752dde3d625c1c606c47b734e07f9c62",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_10/replacement_map.json",
+          "sha256": "87eac7b7d975ae85e1375952b69576f41713f8177133a48c60525d5e6efd4a5c",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "exact_claim": "Four integral sources give determinant rank at least four and true independent padded rank at least one; inherited a<=4 and h_pad<=1 imply D=-3 for (12,4^5), degree eight.",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "evidence_status": "INDEPENDENT_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Integrator reviewed epsilon and pinned-index highest-weight proof; replayed all determinant and padded polynomial values and minors from integer inputs. Independent small permutation/series, liveness, shear, weight and defective-certificate controls passed in preserved filesystem snapshot.",
+      "inherited_premises": "a<=4 and h_pad<=1 from accepted Q1 recount; integrator did not recount these upper bounds.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-10",
+        "pid": 9008,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 11993354240,
+          "load": 64
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T10:07:52Z",
+        "exit_code": 0,
+        "wall_seconds": 2.264391400007298,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 11981078528,
+          "load": 64
+        },
+        "process_memory": {
+          "peak_working_set": 25767936,
+          "working_set": 24887296,
+          "peak_pagefile": 17252352
+        },
+        "job_memory": {
+          "peak_job_memory": 17252352,
+          "peak_process_memory": 17252352
+        }
+      },
+      "next_sufficient_witness": "Git object/contract and snapshot-to-commit binding checks. Recount a<=4 and h_pad<=1 only if standalone removal of inherited premises is desired.",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\delivery\\b15_10_final",
+      "evidence_snapshots": [
+        {
+          "source": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\results\\b15_10\\full_producer.json",
+          "snapshot": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\checkpoint_0653\\10_full_producer.json",
+          "sha256": "08cde11fd2f017e9da055585d60c5c7d7a32fe0105b23de4e211db7dc2ca9fe0"
+        },
+        {
+          "source": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\results\\b15_10\\controls.json",
+          "snapshot": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\checkpoint_0653\\10_controls.json",
+          "sha256": "c076ac7a5b465b0ef213d34c0fa2591a67a37c74c47c20d1af912f8a6d2ba1fe"
+        }
+      ],
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-10_9fd63fd54307\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review."
+    },
+    {
+      "slot": "11",
+      "head": "c40546038506fc6c7c4585dc32244a63376a91dc",
+      "tree": "a3e269df085e1d06fa10d6b47116e0636f8d2d64",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\delivery\\b15_11_final",
+      "exact_claim": "Worker reports 37 controls, 1005 missing paths mapped, 29 discrepancies accounted for, 13 key files advanced and 210 unresolved; no new exclusion.",
+      "input_hashes": [
+        {
+          "path": "results/b14_10/recovery_queue.json",
+          "sha256": "5b0c7fa3e6fe8ee4dc8940d2308b906b82c35c0581f649d2708de1898d52f082",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_10/reconciliation.json",
+          "sha256": "e97ae8a3f5fd587e25eabc4129df32a6a070145c580f6a5dbd50eaa841689ecd",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_11/inventory_summary.json",
+          "sha256": "f441d09c4c6be875c090f6ad1d2c48500a6c828edda22b7f45dfbdf3af93e3b6",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b14_11/cost_queue.json",
+          "sha256": "35ac09cb0aa46574a2603fe93f0a623ddc368cc12d3cb2901ce3b73fac8d7bb6",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b15_prep/TOOL_INDEX.json",
+          "sha256": "bdc223d9ccf18565eb4468d4b99c059c091fc331fe3a80f92d5e2449f608a4e8",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "results/b15_prep/transport_overlay.json",
+          "sha256": "e8f2d129c60eaf36e0ec6644b5e9f706a6c540cc85a8329f17bcdc0c8ba6c007",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        },
+        {
+          "path": "tools/integrate/exclusion_predicates.py",
+          "sha256": "e5addf6e749ce129db4bb8308d72aadb0984852e64d12957a92f131b0b76776f",
+          "hash_convention": "UTF8_LF_OR_BINARY"
+        }
+      ],
+      "evidence_status": "CONSUMER_CONTROLS_PASS_AUDIT_COUNTS_PENDING_GIT_BINDING_BLOCKED",
+      "hypotheses": "Characteristic zero; exact scoped source, point and representation conventions from the per-slot proof. Git binding remains unverified.",
+      "next_sufficient_witness": "Review inventory/key mapping separately if accepting those audit claims. Git binding awaits authorization. Future adapters for02/10 require reviewed fixed certificate inputs.",
+      "review_receipt": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-11_c40546038506\\filesystem_receipt.json",
+      "bundle_validation": "SHA256, MD5, byte count and literal refs/prerequisites PASS; native Git object and delivery-contract check rejected by auto-review.",
+      "observed_utc": "2026-09-13T06:09:48.306578-04:00",
+      "fresh_verification": "Reviewed interval propagation and inequality directions, explicit inherited premises, independent padding/context validation, record-only external observations, native certificate admission and coordinate multiplier nonvanishing. Replayed all37 controls in preserved receiver snapshot; four existing cubic native witnesses freshly evaluated. Wrong scope, transposed matrix, normalization, point with updated checksum, self-authorized observation and invalid multiplier controls rejected.",
+      "inherited_premises": "Pinned historical theorem/dimension/transport inputs retain inherited status. Existing cubic a=1 premise inherited; native polynomial values replayed.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-11",
+        "pid": 33724,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 11988848640,
+          "load": 64
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T13:32:20Z",
+        "exit_code": 0,
+        "wall_seconds": 6.842489700007718,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 11968012288,
+          "load": 64
+        },
+        "process_memory": {
+          "peak_working_set": 86417408,
+          "working_set": 46014464,
+          "peak_pagefile": 77946880
+        },
+        "job_memory": {
+          "peak_job_memory": 77946880,
+          "peak_process_memory": 77946880
+        }
+      },
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-11_c40546038506\\integrator_review.json"
+    },
+    {
+      "slot": "08",
+      "head": "0256ed2561964fe4085ad847518e3fcf85837024",
+      "tree": "2b6f72c485c18f4b8e43c17b0223957c1c6e334a",
+      "input_hashes": [
+        {
+          "path": "docs/b15_08_report.md",
+          "sha256": "5fdd995b1088dd7413352978b9a934aa47b6f2038e5d0689a7711a98b2ff5705"
+        },
+        {
+          "path": "docs/b15_08_proved.md",
+          "sha256": "a58a9af84ee7d634d7bbcd98abe034ce515f99dd44ac2849db0a235db56b8470"
+        },
+        {
+          "path": "analysis/b15_bound.py",
+          "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+        },
+        {
+          "path": "analysis/b15_08_bracket.py",
+          "sha256": "57638c7d4e3d3c5374cf9d4fe5420a31720043eb97e18fef200285ac757bbe6f"
+        },
+        {
+          "path": "analysis/b15_08_witness.py",
+          "sha256": "45dd127c594db2bffa9bf2bc0905673de1b84a4c65a774a0fcb6e2e733e515b5"
+        },
+        {
+          "path": "analysis/b14_04/recount.py",
+          "sha256": "b6493216beebe4487691cdc0a1e12d01d779673bbaf3f0e0c952d64ce40efe83"
+        },
+        {
+          "path": "analysis/wk8_s30_pleth.py",
+          "sha256": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166"
+        },
+        {
+          "path": "results/PREREG_b15_08.md",
+          "sha256": "09b4d0566f6940ba6145040e73fcb250128dfd73568b402ee8e3e0fd87ca1a5c"
+        }
+      ],
+      "exact_claim": "Two explicit integral highest-weight sources span the ambient stable tail (4,3,2^6) space of dimension2.",
+      "hypotheses": "Characteristic zero; unrestricted generic Z points. Stable quartic interpretation uses inherited Proposition S.",
+      "evidence_status": "AMBIENT_TWO_SOURCE_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Reviewed wedge highest-weight proof, finite-difference bordered determinant identity, and explicit two-point evaluation derivation. Rebuilt full-height integer matrix diag(5040,720), determinant3628800; both prime ranks2 and exact rational character ambient count2 replayed. Generic points only.",
+      "inherited_premises": "Stable identification inherited; character algorithm banked, exact count freshly recomputed.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-08",
+        "pid": 31260,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 10572333056,
+          "load": 68
+        },
+        "memory_cap_mb": 128,
+        "wall_cap_seconds": 30,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T14:23:54Z",
+        "exit_code": 0,
+        "wall_seconds": 0.12232450000010431,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 10560081920,
+          "load": 68
+        },
+        "process_memory": {
+          "peak_working_set": 32358400,
+          "working_set": 31670272,
+          "peak_pagefile": 20905984
+        },
+        "job_memory": {
+          "peak_job_memory": 20905984,
+          "peak_process_memory": 20905984
+        }
+      },
+      "next_sufficient_witness": "A determinant-family rank2 minor for geometric exclusion; Git delivery binding remains blocked.",
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-08_0256ed256196\\integrator_review.json"
+    },
+    {
+      "slot": "03",
+      "head": "fde81352a5868a1d152a73716f47ecd4b285adbe",
+      "tree": "e73a9aaaee8b7f215791ddd9f8522c6ee3c13488",
+      "exact_claim": "Worker reports exact degree8 lambda(13,11,3,2,1^3):a2,m_det=m_pad2,i_det=i_pad0,D0",
+      "evidence_status": "EXACT_D_ZERO_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Reviewed integer highest-weight membership, injective monomial encoding and safe accumulation bound, ambient orbit/closure point scope. Fresh saved-source full six-root raising checks, scalar integer determinant/permanent coefficients, both nonzero2x2 minors and mutation rejection pass. Fresh integer Weyl and rational character counts agree on ambient2 and pullback2 across24Pieri channels.",
+      "hypotheses": "Characteristic zero, explicit integral HWVs and geometric integer points; ambient count needs review",
+      "input_hashes": [
+        {
+          "path": "docs/b15_03_report.md",
+          "sha256": "81459ad725cd6daada1047349f690fbd4d01a80906000a525fd88b962e9f8204"
+        },
+        {
+          "path": "docs/b15_03_proved.md",
+          "sha256": "56112a1b6020278497a5640d758c63a52a57e80fa6488790f1b38d4617898a59"
+        },
+        {
+          "path": "analysis/b15_bound.py",
+          "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+        },
+        {
+          "path": "analysis/b15_03_exact.py",
+          "sha256": "21b640dd8c2901c2371c44491fdfaae7d8f1dd38819a6e77d0705e1b971f172d"
+        },
+        {
+          "path": "analysis/b15_03_counts.py",
+          "sha256": "5628d253213a260868e3750b33f2e3eaf88620dccfd79463acee0938bb40c23d"
+        },
+        {
+          "path": "analysis/wk8_s30_pleth.py",
+          "sha256": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166"
+        },
+        {
+          "path": "analysis/b14_11_sizes.py",
+          "sha256": "072501b587e7514d7167289b34a0bd52312f815eb3a04d953404c0de4b7830a2"
+        },
+        {
+          "path": "results/b15_03/integral_source.json",
+          "sha256": "b54b3ecbb0f10061e61beea838b0934777a902b222e89fdda6270c971a6e9834"
+        },
+        {
+          "path": "results/b15_03/native_carrier.npz",
+          "sha256": "7f81aa647098e45650b2f53355b20349d913320fda397e7ce339d52618e89213"
+        },
+        {
+          "path": "results/b15_03/points.json",
+          "sha256": "a9b6065aa4d96507ab89fbfc7838bf9c1325fcf3f6c35e1c7af04a6dcfabac41"
+        },
+        {
+          "path": "results/b15_03/counts_primary.json",
+          "sha256": "5ea8e602da9d6fbdea2bb6c691b584b936132caa29bebb1c8e59d69b023aa91b"
+        }
+      ],
+      "inherited_premises": "Standard highest-weight/coordinate-ring interpretation; no inherited numerical rank or cubic transfer required.",
+      "resource_outcome": [
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-03",
+          "pid": 25872,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 8031608832,
+            "load": 76
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T15:07:51Z",
+          "exit_code": 0,
+          "wall_seconds": 0.8456235000048764,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 8066367488,
+            "load": 76
+          },
+          "process_memory": {
+            "peak_working_set": 133292032,
+            "working_set": 33280000,
+            "peak_pagefile": 122515456
+          },
+          "job_memory": {
+            "peak_job_memory": 122515456,
+            "peak_process_memory": 122515456
+          }
+        },
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-03",
+          "pid": 19976,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 9423880192,
+            "load": 72
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T15:08:36Z",
+          "exit_code": 0,
+          "wall_seconds": 0.7305284999893047,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 9379196928,
+            "load": 72
+          },
+          "process_memory": {
+            "peak_working_set": 46657536,
+            "working_set": 46657536,
+            "peak_pagefile": 35926016
+          },
+          "job_memory": {
+            "peak_job_memory": 35926016,
+            "peak_process_memory": 35926016
+          }
+        }
+      ],
+      "next_sufficient_witness": "Mathematical scoped review complete; Git delivery binding pending.",
+      "delivery": "C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-03/delivery/b15_03_final",
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-03_fde81352a586\\integrator_review.json"
+    },
+    {
+      "slot": "04",
+      "head": "3d3f9f8b427f257a0d5db678b1645212033652ff",
+      "tree": "2c15f37829260c63aff6c7e2ea7002266f9cd675",
+      "input_hashes": [
+        {
+          "path": "docs/b15_04_report.md",
+          "sha256": "fbc1204f1637632d309d4aad2cf830900f20bf17b2a78e33d2f2d54e5459fe95"
+        },
+        {
+          "path": "docs/b15_04_proved.md",
+          "sha256": "db556f8f748f918780f846ce8142957514897040b445cf024f3b524f017b5d63"
+        },
+        {
+          "path": "analysis/b15_bound.py",
+          "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+        },
+        {
+          "path": "analysis/b15_04_replay.py",
+          "sha256": "ba481f3bc8eb27c873040272b7cbb1a93fd5595fa3be0263cfc503220db4cd12"
+        },
+        {
+          "path": "analysis/b15_04_integral.py",
+          "sha256": "5916cf967dc33ccbdf7453f092269055238835a3e0f3f06441316bf15d140634"
+        },
+        {
+          "path": "results/b15_04/cell1_integral_certificate.json",
+          "sha256": "0682c703278eb7f171119baf73f85a8b160b98f1622eed6e30a92e2000a2b6da"
+        },
+        {
+          "path": "results/b15_04/cell1_integral_source.npz",
+          "sha256": "f5af555e04385f0563ae913b2e0e5cb04e7b87f2111e986445fb59b3c01858cf"
+        },
+        {
+          "path": "results/b15_04/cell2_integral_certificate.json",
+          "sha256": "38c95c1409688a5f68017f33ad2e2b235350ff029fb0900afcd062519d6153df"
+        },
+        {
+          "path": "results/b15_04/cell2_integral_source.npz",
+          "sha256": "a89b32524793435f8975c212c6d716aefbbacfd54d6d258e91dc63ecfeab1329"
+        }
+      ],
+      "exact_claim": "Both assigned degree8 cells have m_det>=3,U_pad<=3,D<=0; second m_det=a=3,i_det=0.",
+      "hypotheses": "Characteristic zero, ordinary quartic coefficients, independent padding; valid determinant closure restrictions.",
+      "evidence_status": "TWO_EXCLUSIONS_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Fresh compact integral-source replay passes all six exact raising identities per cell, unique monomial and weight checks, full determinant coefficient expansion checked against direct determinants, both rank3 minors and source mutation rejection. Independent receiver recount using reviewed03 integer Weyl/character engine gives ambient4/3 and both Pieri padded ceilings3.",
+      "inherited_premises": "Standard highest-weight interpretation and Pad subset reducible; numerical ambient and Pieri counts freshly recounted.",
+      "resource_outcome": [
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-04",
+          "pid": 38496,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 10278371328,
+            "load": 69
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T15:15:21Z",
+          "exit_code": 0,
+          "wall_seconds": 1.7844995000050403,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 10261233664,
+            "load": 69
+          },
+          "process_memory": {
+            "peak_working_set": 241397760,
+            "working_set": 41136128,
+            "peak_pagefile": 227311616
+          },
+          "job_memory": {
+            "peak_job_memory": 227311616,
+            "peak_process_memory": 227311616
+          }
+        },
+        {
+          "board_numbering": "batch15",
+          "session_id": "B15-04",
+          "pid": 37840,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 10272714752,
+            "load": 69
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T15:15:48Z",
+          "exit_code": 0,
+          "wall_seconds": 0.9258638999890536,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 10254856192,
+            "load": 69
+          },
+          "process_memory": {
+            "peak_working_set": 50040832,
+            "working_set": 50040832,
+            "peak_pagefile": 39677952
+          },
+          "job_memory": {
+            "peak_job_memory": 39677952,
+            "peak_process_memory": 39677952
+          }
+        }
+      ],
+      "next_sufficient_witness": "Git binding pending. Padded rank3 would settle second D=0; not required for exclusion.",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\delivery\\b15_04_final",
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-04_3d3f9f8b427f\\integrator_review.json"
+    },
+    {
+      "slot": "05",
+      "head": "5a019b2fb24fecf208118e628772b373235a6d61",
+      "tree": "3cebe2a4d3c29c00dc531f589af13276ed5f09ef",
+      "input_hashes": [
+        {
+          "path": "results/b15_05/controls.json",
+          "sha256": "1f398cfdc3a95c99a54cd04cef65bb060774c847c36c28a64b525f487e856ce0",
+          "bytes": 3313
+        },
+        {
+          "path": "results/b15_05/det_2147483629_certificate.json",
+          "sha256": "a1aae8c6c7c9d5d8262eb992ed1f9d4268e7b38bb3cbddfab8706ace21847f66",
+          "bytes": 11700
+        },
+        {
+          "path": "results/b15_05/det_2147483629_minor.npz",
+          "sha256": "b46b4047aed4669852d976e8aa7eea5a2af5438dd86bcfe90ad58470718f8c03",
+          "bytes": 1119961
+        },
+        {
+          "path": "results/b15_05/det_2147483629_progress.json",
+          "sha256": "9f7829eb79067f41914c1670ce1cc326a290a8992e5203b983c5ecf1f5afc64b",
+          "bytes": 1287
+        },
+        {
+          "path": "results/b15_05/det_2147483629_values.npz",
+          "sha256": "af19e61b96577db555aa5bd825085e815d07770a29b2870677e93f084a277dad",
+          "bytes": 3181604
+        },
+        {
+          "path": "results/b15_05/det_2147483647_certificate.json",
+          "sha256": "d2cd31061442b1e4d39e0ecb18a3376e8488db861ca983b98991547379aac3da",
+          "bytes": 11704
+        },
+        {
+          "path": "results/b15_05/det_2147483647_minor.npz",
+          "sha256": "52ccdcf3cc3a5d178d37e3a2c5d2f3bf33229705a8173c2bbaf6257242d1c221",
+          "bytes": 1119954
+        },
+        {
+          "path": "results/b15_05/det_2147483647_progress.json",
+          "sha256": "d4b06a87ad7328091ac12c03c759f0e7af60d659a5f94677a46d6db5c17bd552",
+          "bytes": 1289
+        },
+        {
+          "path": "results/b15_05/det_2147483647_values.npz",
+          "sha256": "3165cc13ca02d65d23dda376845ea0ba126f3b9647d1101ce8fc2fef7ebd73f7",
+          "bytes": 3181616
+        },
+        {
+          "path": "results/b15_05/det_points.npz",
+          "sha256": "a959d54c309c0778b5100021ee8fb8fc5eda5afeecdc736d2790c97409f2d51d",
+          "bytes": 110230
+        },
+        {
+          "path": "results/b15_05/file_receipt.json",
+          "sha256": "b41a19029e379fbc54eb09753c25c56fce9be9697a472bf14e86f4a0abee77c2",
+          "bytes": 7594
+        },
+        {
+          "path": "results/b15_05/gen_2147483629_certificate.json",
+          "sha256": "9a5b48721a2d3f4693ff3c5afd6cc0875b62a3b941e2347102e6e21c49679f81",
+          "bytes": 11726
+        },
+        {
+          "path": "results/b15_05/gen_2147483629_minor.npz",
+          "sha256": "de7597c1aea582dabdde1ae1e1dca95099719124a46b02360743cea88c34e6ec",
+          "bytes": 1119890
+        },
+        {
+          "path": "results/b15_05/gen_2147483629_progress.json",
+          "sha256": "5fe0e6a6a0c904a0ecb44ab1987ef9b0c4b8b3663822acdb5e3cd7ef468208cd",
+          "bytes": 1230
+        },
+        {
+          "path": "results/b15_05/gen_2147483629_values.npz",
+          "sha256": "0be1d31fe3b726f4ebd06e881b7114da0d3b121293b1e559b7bbbba3d266347e",
+          "bytes": 2923643
+        },
+        {
+          "path": "results/b15_05/gen_2147483647_certificate.json",
+          "sha256": "1f2dda1b24f5392a7d2ed6c9f5556f8f41f886e3aab348bfbcfc2b912b9a6a29",
+          "bytes": 11725
+        },
+        {
+          "path": "results/b15_05/gen_2147483647_minor.npz",
+          "sha256": "15720dc20124b8132bd03a689501f48a194df303c41cd408bf22d2cc8651f981",
+          "bytes": 1119793
+        },
+        {
+          "path": "results/b15_05/gen_2147483647_progress.json",
+          "sha256": "efa0e65920ab3f202ab289e7309695bbc84477c49f6e9523db8cd44b52af0149",
+          "bytes": 1231
+        },
+        {
+          "path": "results/b15_05/gen_2147483647_values.npz",
+          "sha256": "1c2281f62b2c497d211a177178777704dc73da766bc94fde7b48c5003e4cb166",
+          "bytes": 2923677
+        },
+        {
+          "path": "results/b15_05/gen_points.npz",
+          "sha256": "4cd0cc59421abbf8960c1f36915db63ea1a2d357d93a1a4faf4bddf7c9270c5d",
+          "bytes": 161164
+        },
+        {
+          "path": "results/b15_05/kernel_2147483629.json",
+          "sha256": "c79224bb21bad73b93bf471809a9f88dc90cd82328a3630b41b5eb439cc76650",
+          "bytes": 41822
+        },
+        {
+          "path": "results/b15_05/kernel_2147483647.json",
+          "sha256": "644d8f401e5c8fc0f90a8b12498bce4303cfdfab86437bbbff4e0d6792298445",
+          "bytes": 41839
+        },
+        {
+          "path": "results/b15_05/lease_at_pilot.json",
+          "sha256": "32e2afdf46e828e17c59e7d3dd28d626516d54e7dab14300a416e95bd5457f23",
+          "bytes": 3089
+        },
+        {
+          "path": "results/b15_05/lease_release.json",
+          "sha256": "b946140c99eb58d5bd527ef52063c575c578dbfa7ac2a22e27f79e78be7583e6",
+          "bytes": 944
+        },
+        {
+          "path": "results/b15_05/pilot.json",
+          "sha256": "5fe4991c0d858a1737d30ae8f8b9f8f8fff000c4a1612de4e2d13d0e18ee8be0",
+          "bytes": 65522
+        },
+        {
+          "path": "results/b15_05/proposed_exclusions.json",
+          "sha256": "7dcb221f40b98c68135169a236e6b98d2152c0215d1a9cc591091c2c03726f3d",
+          "bytes": 803
+        },
+        {
+          "path": "results/b15_05/README.md",
+          "sha256": "57156da9d5a1bdd07aa39ec3098833d8f4418f94d764dc8d5c51dfaf5663d1a6",
+          "bytes": 3241
+        },
+        {
+          "path": "results/b15_05/replay.json",
+          "sha256": "3086826a717534fdc8165db8f5a4f26c6e27e478db652f702628973ffe7e6bf1",
+          "bytes": 814
+        },
+        {
+          "path": "results/b15_05/resource_decisions.json",
+          "sha256": "ef22f8b24c0dd0ba41da85528370163a72eba424337e13b4e129a6018e94090b",
+          "bytes": 1969
+        },
+        {
+          "path": "results/b15_05/source.json",
+          "sha256": "cf7ddcba5d415253b07aa51e4aefad6cae436bd74ed1dc3b6f5ccc424a610379",
+          "bytes": 308838
+        },
+        {
+          "path": "results/b15_05/summary.json",
+          "sha256": "a8183299a649089a90d8a02ce4aacf9d269f0096dbbbafe540aae0f8274ffbef",
+          "bytes": 6838
+        },
+        {
+          "path": "results/b15_05/transport.json",
+          "sha256": "1a51b3941f97703e595046e5f085d408bd09862600264899d49c06f9d0f2a678",
+          "bytes": 3915
+        },
+        {
+          "path": "docs/b15_05_report.md",
+          "sha256": "1177f7976ed838107f8c5cfd5a194d25f9cc128785bce8ae58a3104a487e8df1",
+          "bytes": 9620
+        },
+        {
+          "path": "docs/b15_05_proved.md",
+          "sha256": "dc172261561307ec30512bab0c9cd1739ad7d78f2b2aeec1f2e3914c14cd56f4",
+          "bytes": 8410
+        },
+        {
+          "path": "docs/s57_report.md",
+          "sha256": "21e0a591844fde1375426306cb331d13f273cbe6d42ea7945158b11338551e46",
+          "bytes": 54729
+        },
+        {
+          "path": "docs/ci73_proof.md",
+          "sha256": "644acd3aaf603e1200e77c5be9b0ccb73b8b312d4f63cff7ed6205fc25475b81",
+          "bytes": 11709
+        },
+        {
+          "path": "analysis/b15_05_tail21.py",
+          "sha256": "69d9c788ca7b02e78ef6a1fdc55cb1e132bf54d5b7abc97bdbd5e56bba74932e",
+          "bytes": 16427
+        },
+        {
+          "path": "analysis/b14_06_bracket.py",
+          "sha256": "d67a78c39694b1d4229970fd1bec46213913935030afcfae5165d2697d68b493",
+          "bytes": 14432
+        },
+        {
+          "path": "analysis/b14_06_points.py",
+          "sha256": "17f7b435ffe6dc796ed709c6fa554a43e804957e0b4986cb6361d20a41901aaf",
+          "bytes": 11103
+        },
+        {
+          "path": "analysis/b15_bound.py",
+          "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+          "bytes": 6997
+        }
+      ],
+      "exact_claim": "Stable i_det=4,m_det=529 under ambient533; four global rational Hessian equations explicitly match sampled candidates. Four finite equations from degree28; explicit degree26 equation. No positive gap.",
+      "hypotheses": "Characteristic zero via rationally defined sources and good modular reduction; independent padding.",
+      "evidence_status": "RANK529_AND_GLOBAL_FOUR_SPACE_REVIEW_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Fresh native generic/determinant points and changed-seed source evaluations regenerate all four square minors:GEN533,DET529 at both primes. Verified each four-vector modular kernel is independent and annihilates all600 saved determinant samples in its own533-source basis. Reviewed nonzero q44 ideal multiplication and finite/stable ideal bound direction.",
+      "inherited_premises": "Shares banked bracket evaluator after proof review; all600 kernel residuals use saved full matrices, while actual minors are freshly regenerated. No rational kernel lift or global vanishing. Stable ambient533,finite531,S57 filtration and CI73 three equations remain inherited. Git binding blocked.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-05",
+        "pid": 42448,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 10476867584,
+          "load": 68
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T15:22:39Z",
+        "exit_code": 0,
+        "wall_seconds": 13.847567299992079,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 10376421376,
+          "load": 69
+        },
+        "process_memory": {
+          "peak_working_set": 72691712,
+          "working_set": 49606656,
+          "peak_pagefile": 57012224
+        },
+        "job_memory": {
+          "peak_job_memory": 57012224,
+          "peak_process_memory": 57012224
+        }
+      },
+      "next_sufficient_witness": "Determine finite-degree filtration and padding behavior; global stable membership now proved and reviewed. Git binding pending.",
+      "delivery": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-05\\delivery\\b15_05_final",
+      "integrator_review": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-05_5a019b2fb24f\\integrator_review.json",
+      "global_equation_followup": {
+        "status": "GLOBAL_FOUR_EQUATION_PROOF_AND_CERTIFICATE_REVIEW_PASS_PENDING_GIT_BINDING",
+        "mathematical_review": "Reviewed singular matrix normal form: determinant quadratic term a*tr(E)-r*c gives Hessian rank8; congruence and density cover all singular matrices. Linear pencil pullback preserves rank bound, so9x9 Hessian determinant vanishes at all four distinct characteristic roots; monic remainder polynomiality extends identity to every traceless pencil. Reviewed Hessian block constants, Schur/adjugate signs, factorial normalization and Euler source identities. Four weighted remainders lie in target source space and globally vanish.",
+        "fresh_verification": "Regenerated472 exact Euler relations, exact rational change of basis to all four supplied kernel lifts, and139-digit nonzero integer independence minor from direct9x9 Hessian determinants at four generic points. Standalone sparse witness checker passes both prime reductions, exact identities and four mutation controls.",
+        "conclusions": "Four independent stable global determinant equations. With inherited ambient533 and independently replayed rank529,stable i_det=4,m_det=529. Reviewed sufficient denominator bounds give four finite equations for d>=28 and explicit nonzero degree26 combination q44 times degree24 remainder.",
+        "limitations": "No novelty claim for LMR Hessian mechanism. Ambient533 and S57 finite filtration inherited. Finite lifting assessed by algebraic denominator argument, not expanded coefficient replay. Minimum lift degrees, conditional degree26 intersection dimension, padding values and positive multiplicity gap not independently established here. Git binding blocked; no canonical theorem record changed.",
+        "resources": [
+          {
+            "board_numbering": "batch15",
+            "session_id": "B15-05",
+            "pid": 39600,
+            "memory_before": {
+              "total_physical": 33752997888,
+              "available_physical": 9470599168,
+              "load": 71
+            },
+            "memory_cap_mb": 512,
+            "wall_cap_seconds": 60,
+            "workers": 1,
+            "blas_threads": 1,
+            "job_object_enforced": true,
+            "idle_sleep_inhibited_during_run": true,
+            "started_utc": "2026-09-13T15:31:57Z",
+            "exit_code": 0,
+            "wall_seconds": 0.22700859999167733,
+            "memory_after": {
+              "total_physical": 33752997888,
+              "available_physical": 9438543872,
+              "load": 72
+            },
+            "process_memory": {
+              "peak_working_set": 44146688,
+              "working_set": 42590208,
+              "peak_pagefile": 31465472
+            },
+            "job_memory": {
+              "peak_job_memory": 31465472,
+              "peak_process_memory": 31465472
+            }
+          },
+          {
+            "board_numbering": "batch15",
+            "session_id": "B15-05",
+            "pid": 34828,
+            "memory_before": {
+              "total_physical": 33752997888,
+              "available_physical": 9476243456,
+              "load": 71
+            },
+            "memory_cap_mb": 512,
+            "wall_cap_seconds": 60,
+            "workers": 1,
+            "blas_threads": 1,
+            "job_object_enforced": true,
+            "idle_sleep_inhibited_during_run": true,
+            "started_utc": "2026-09-13T15:31:58Z",
+            "exit_code": 0,
+            "wall_seconds": 0.25421080001979135,
+            "memory_after": {
+              "total_physical": 33752997888,
+              "available_physical": 9459523584,
+              "load": 71
+            },
+            "process_memory": {
+              "peak_working_set": 25112576,
+              "working_set": 24973312,
+              "peak_pagefile": 16285696
+            },
+            "job_memory": {
+              "peak_job_memory": 16285696,
+              "peak_process_memory": 16285696
+            }
+          }
+        ]
+      },
+      "padding_followup": {
+        "status": "EXACT_PADDING_NONVANISHING_REPLAY_PASS_PENDING_GIT_BINDING",
+        "snapshot": "reviews_filesystem/Slot05_Padding_1600",
+        "checked_utc": "2026-09-13T16:01:24.2875174Z",
+        "claim": "Explicit rank-nine restriction of independent ten-variable z*per3 violates all four degree28 Hessian equations, degree26 combination, and degree24 factor.",
+        "fresh_verification": "Reviewed product differentiation and independent ten-variable Hessian pullback, complete degree18 rational interpolation, shear normalization, finite scaling, determinantal zero control and ambient extension. Fresh snapshot replay matches all retained rational values.",
+        "inherited_premises": "Global determinant vanishing and finite polynomial lifts from reviewed Astra Hessian certificate; no ambient533 or determinant529 premise needed for nonvanishing.",
+        "limitations": "One evaluation does not prove four independent padded restrictions, any padded ideal upper bound, or positive multiplicity gap. Same known LMR mechanism. Filesystem hashes verified; Git object binding blocked.",
+        "resources": {
+          "board_numbering": "batch15",
+          "session_id": "B15-05",
+          "pid": 26416,
+          "memory_before": {
+            "total_physical": 33752997888,
+            "available_physical": 8388468736,
+            "load": 75
+          },
+          "memory_cap_mb": 512,
+          "wall_cap_seconds": 60,
+          "workers": 1,
+          "blas_threads": 1,
+          "job_object_enforced": true,
+          "idle_sleep_inhibited_during_run": true,
+          "started_utc": "2026-09-13T16:00:57Z",
+          "exit_code": 0,
+          "wall_seconds": 0.8905216999992263,
+          "memory_after": {
+            "total_physical": 33752997888,
+            "available_physical": 8427241472,
+            "load": 75
+          },
+          "process_memory": {
+            "peak_working_set": 21409792,
+            "working_set": 20627456,
+            "peak_pagefile": 13680640
+          },
+          "job_memory": {
+            "peak_job_memory": 13680640,
+            "peak_process_memory": 13680640
+          }
+        }
+      }
+    },
+    {
+      "slot": "12",
+      "head": "f6e75623b91ac50146baba6278b1abe90a635502",
+      "tree": "500507ea55236a6cb8153521b1e1b2617d18940d",
+      "observed_utc": "2026-09-13T16:09:32.6865993Z",
+      "input_hashes": [
+        {
+          "path": "analysis/b15_12_verify.py",
+          "sha256": "1CDAA8E9DAE6744761BC4CDA4D50B4EECA682C8B8D56FA9ED8053562A4ACEEDC"
+        },
+        {
+          "path": "analysis/b15_12_orbit_bounds.py",
+          "sha256": "4FFBDB2244CDB07EC0EAF1E7777408DD2C5009B998B89B6DC36E362936E54D5F"
+        },
+        {
+          "path": "analysis/wk8_s30_pleth.py",
+          "sha256": "2EDD98529B228E91842D70EF1516381D54C81315928EA4202729CFE4D01BD166"
+        },
+        {
+          "path": "analysis/wk8_s30_core.py",
+          "sha256": "9B40E885FD5D7C501FD3C4DB2CE36B6BD944A101E41D92D7BD31669066423D8D"
+        },
+        {
+          "path": "analysis/b15_bound.py",
+          "sha256": "CA001081F49E0048812B871A31E3BE85435B210B3A538170A9F006408A41F854"
+        },
+        {
+          "path": "tools/integrate/exclusion_predicates.py",
+          "sha256": "432FF7E06F90CFFBF056A52EA25233527B1E3648B48F6A43888A1555A2FD2D3F"
+        },
+        {
+          "path": "docs/b15_12_proved.md",
+          "sha256": "9AFABB3E25FF9078FA3C0195BE69D5BDDD68AFFE9DB34E76BACC756295B92135"
+        },
+        {
+          "path": "docs/b15_12_report.md",
+          "sha256": "04567ED32462DA638663F266D4604A27F825850ED93CC03CBB76FB91D5CA6DB4"
+        },
+        {
+          "path": "results/b15_12/controls.json",
+          "sha256": "34C8F47D8A5ACA1FF4FDFA311FE4E7D693893E8FD1754800C73C1B8CBC2D4700"
+        },
+        {
+          "path": "results/b15_12/pilot.json",
+          "sha256": "BD1F7A13A170E46239E4C3A7786FCA25F683EC082A854EE57AF3017630B22574"
+        },
+        {
+          "path": "results/b15_12/classes_d7_00.json",
+          "sha256": "FB9C0E0F8933C08B7736929ED59C8FB03035D54085EE56BBEF5CE62E2682BFD8"
+        },
+        {
+          "path": "results/b15_12/classes_d7_01.json",
+          "sha256": "9CFD963FF7EBCD09223CA353576AA8D4118E52BAE164BE0DABB1904AB70BB56F"
+        },
+        {
+          "path": "results/b15_12/classes_d7_02.json",
+          "sha256": "42A72304F645099FE1CCD64EFF6D6527140DC514F888C514688546554259133B"
+        },
+        {
+          "path": "results/b15_12/classes_d7_03.json",
+          "sha256": "E1AA5369BAD472ECFEE71E4B58B9A74DE7771A0886A0999C09E1DDC7467DC172"
+        },
+        {
+          "path": "results/b15_12/classes_d8_00.json",
+          "sha256": "A2B2DEB493D58CB06C113A137F438F3ED2339F8BC0FCBD1895A079D338BB8D46"
+        },
+        {
+          "path": "results/b15_12/classes_d8_01.json",
+          "sha256": "57801D44C47DC00538D4DA2D055AD1C28A85053D43AF1D8619D420C607AE7F85"
+        },
+        {
+          "path": "results/b15_12/classes_d8_02.json",
+          "sha256": "1806A222EA8FEFDA9204F027677089C6515C3AAFDD3E8D71EB0E70A2805A70D8"
+        },
+        {
+          "path": "results/b15_12/classes_d8_03.json",
+          "sha256": "C3F45879192F1281F32361A08D63E09FB55EFDC493F02321562E9177D34BD840"
+        },
+        {
+          "path": "results/b15_12/classes_d8_04.json",
+          "sha256": "C21634900452185EED8516A3587CB61E2BCD3F8478CA7AEF4762907BE07AF3A6"
+        },
+        {
+          "path": "results/b15_12/classes_d8_05.json",
+          "sha256": "D7C85257C14D5B867F1953A5718C30667C4751C1DC316133AD16B15C34E952C4"
+        },
+        {
+          "path": "results/b15_12/classes_d8_06.json",
+          "sha256": "D572B1D0AC5364D400FCE7B59C914DD591E75785ECED6B87CA833B96D52C6FDB"
+        },
+        {
+          "path": "results/b15_12/classes_d8_07.json",
+          "sha256": "78E308B04C03393BB02C709DD2C0E8977626D33B1614FE4ED56AC588EC35BC4D"
+        },
+        {
+          "path": "results/b15_12/classes_d8_08.json",
+          "sha256": "2BD1B43377E0C1EE7B2FC2AE80F04D8076FB880B8EC3BA0B6E44E081ADEC1497"
+        }
+      ],
+      "exact_claim": "Seven exact rectangular/symmetric character coefficients provide no improvement over retained ambient ceilings. Independent z*per3 has ten essential variables, inside-variable padding nine. Some length-ten type occurs at coordinate degree ten, existentially.",
+      "hypotheses": "Characteristic zero, fixed det4 and independent z*per3 in sixteen variables. Standard Schur-Weyl, stabilizer invariant bound and subspace inheritance conventions as reviewed.",
+      "evidence_status": "SCOPED_INDEPENDENT_REPLAY_PASS_PENDING_GIT_BINDING",
+      "fresh_verification": "Reconstructed all class rows for seven cells, class sizes, rectangle and squared-cycle characters, lambda characters, norms, integrality and symmetric contractions. Fresh padding derivative identity minor1, ranks10/9/16, mutation rejection and209 independent small Jacobi-Trudi controls pass. Reviewed derivative-rank closure argument, length-ten existential inference and symmetric-square formula.",
+      "inherited_premises": "Ambient counts and padding upper bounds retained from worker/earlier receipts, not freshly recounted in this replay. Exact full-stabilizer literature identification retained; source-version/page audit not independently repeated. No geometric rank replay.",
+      "resource_outcome": {
+        "board_numbering": "batch15",
+        "session_id": "B15-12",
+        "pid": 19880,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 8425345024,
+          "load": 75
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T16:08:53Z",
+        "exit_code": 0,
+        "wall_seconds": 2.58941880002385,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 8380297216,
+          "load": 75
+        },
+        "process_memory": {
+          "peak_working_set": 68923392,
+          "working_set": 66342912,
+          "peak_pagefile": 55930880
+        },
+        "job_memory": {
+          "peak_job_memory": 55930880,
+          "peak_process_memory": 55930880
+        }
+      },
+      "next_sufficient_witness": "A tighter determinant-closure bound for a candidate, or a named length-ten highest-weight component of the nonzero derivative minor. Neither follows from current character bounds.",
+      "delivery": {
+        "snapshot": "reviews_filesystem/B15-12_f6e75623b91a",
+        "binding": "Exact filesystem hashes verified; Git object binding remains blocked."
+      }
+    }
+  ],
+  "required_fields": [
+    "slot",
+    "head",
+    "tree",
+    "input_hashes",
+    "exact_claim",
+    "hypotheses",
+    "evidence_status",
+    "fresh_verification",
+    "inherited_premises",
+    "resource_outcome",
+    "next_sufficient_witness",
+    "delivery"
+  ],
+  "slot01_partial_review": {
+    "status": "SAVED_ARITHMETIC_AND_CANONICAL_INPUT_BINDING_PASS",
+    "dependencies": [
+      {
+        "key": "members",
+        "canonical_sha256": "4f241d88975f0283aeb19c494cbeb7c8d37ceb717d62456007249326c76c04b6",
+        "sha256": "5e4788ace15006c01b6d9373499036db259e6166294ac31cde326072c552486e"
+      },
+      {
+        "key": "points",
+        "canonical_sha256": "27796df925dce53c949786cf73fdd0d0079893b9666184e47f393423c14a0a28",
+        "sha256": "7818dc9bfd79b13181b24370f6fb75e5b99174588bdd1eb049197d2f7e2ec754"
+      },
+      {
+        "key": "source",
+        "canonical_sha256": "e8e3cd6d8550c8cc7ff25e50a6dc2296ac6c4c1f946e11b5d32d47346d007d02",
+        "sha256": "5e27e01aa46c6f53d808f47683b840124769c0ddc37dc2818e5efc1fa5086002"
+      },
+      {
+        "key": "source_values",
+        "canonical_sha256": "ce048ea3058ea86fb19f0e25918d7e71c819dedf0498a9bc2c409bd5f263d041",
+        "sha256": "4fc647032a54dc325c6e87c9a90d84209f954c6aa8785e161e4650cf60ce962c"
+      },
+      {
+        "key": "kernel",
+        "canonical_sha256": "9bd531e0a4ff2919d4213b8f3a336a3f7c51682a769d0337acd78dda9fa05855",
+        "sha256": "aa2ebbbe4eb4b4bed3a0f909816711c95c13c5e3d334df86da4ba3c1881b4abb"
+      },
+      {
+        "key": "degree13",
+        "canonical_sha256": "16fcaf8bf1387f6a957cd29eb63af9c7030f2361318b64603f329add6e70a5cb",
+        "sha256": "d2c2a1129a746a43a03f335a015a27149f268c39ae9ee37c0c234a391c0e01b6"
+      },
+      {
+        "key": "dimension",
+        "canonical_sha256": "d09e461b0bd0750b4ebedaf68adddd381d459f93c546e67d62338f29de50c199",
+        "sha256": "ae7dd6eb8f722456a79b5513f51fc1f7790e1e4c4b6ae1b6ce8a431ac5f21838"
+      },
+      {
+        "key": "power",
+        "canonical_sha256": "1f0e2740125788434ffe542a8693e2135fdd6d3dcba3b84a5de6c5ffdec186fe",
+        "sha256": "0ac57aabc1498d2c5fb253e651637ec8908da461305751cf00f7b3a0a7a391b4"
+      },
+      {
+        "key": "generic",
+        "canonical_sha256": "17951209d5205822a59801125874bab5d26c9158fa56ac001e8d4133cab5e6be",
+        "sha256": "5c531a3f4d6f75842deaa1152694668b40a50a17f18f25b0457765b511748155"
+      }
+    ],
+    "target_rank": 158,
+    "source_rank": 88,
+    "kernel_rank": 5,
+    "exact_zero_entries": 790,
+    "limitations": "No fresh geometric source/target evaluations or dimension recount in this audit. Numerical interpretation still inherits worker evaluation provenance. Git object binding remains unverified.",
+    "resources": {
+      "board_numbering": "batch15",
+      "session_id": "B15-01",
+      "pid": 37452,
+      "memory_before": {
+        "total_physical": 33752997888,
+        "available_physical": 9694552064,
+        "load": 71
+      },
+      "memory_cap_mb": 512,
+      "wall_cap_seconds": 60,
+      "workers": 1,
+      "blas_threads": 1,
+      "job_object_enforced": true,
+      "idle_sleep_inhibited_during_run": true,
+      "started_utc": "2026-09-13T16:42:47Z",
+      "exit_code": 0,
+      "wall_seconds": 2.1987028000003193,
+      "memory_after": {
+        "total_physical": 33752997888,
+        "available_physical": 9942118400,
+        "load": 70
+      },
+      "process_memory": {
+        "peak_working_set": 113180672,
+        "working_set": 66289664,
+        "peak_pagefile": 100286464
+      },
+      "job_memory": {
+        "peak_job_memory": 100286464,
+        "peak_process_memory": 100286464
+      }
+    }
+  },
+  "git_closeout": {
+    "status": "ALL12_DELIVERIES_PASS_EXAMINED_SNAPSHOT_BINDINGS_PASS",
+    "checked_utc": "2026-09-13T16:53:33.0804953Z",
+    "scope": "Committed branch/tree/base/bundle/contract checks PASS12. Examined snapshots bind to named commits except identified fresh timing fields. Working differences onlyCRLF logs/PIDs.",
+    "correction": "08/12 _final folders were superseded by _completed deliveries. COMPLETED_DELIVERIES.json validates correct bundles selected by current heads; first attempts preserved.",
+    "limitations": "Generated Hessian/padding/integrator outputs are filesystem-hashed followups, not asserted committed. No fresh Slot01 geometry acceptance yet.",
+    "configuration_changes": "None",
+    "sources": [
+      "git_closeout/SUMMARY.json",
+      "git_closeout/COMPLETED_DELIVERIES.json",
+      "git_closeout/DIFFERENCE_CLASSIFICATION.json"
+    ]
+  },
+  "slot01_full_review": {
+    "status": "PASS_FULL_INDEPENDENT_REPLAY",
+    "checked_utc": "2026-09-13T17:37:01.0659828Z",
+    "slot": "01",
+    "head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+    "report": "results/b15_01/integrator_report.md",
+    "input_hash_checks": [
+      {
+        "path": "analysis\\b15_01_verify.py",
+        "sha256": "A41846276B7A8CC98D32EB1D0BB9AC539F6411F02D17C3436E7F9B63E7C2C5C3",
+        "pass": true
+      },
+      {
+        "path": "analysis\\b15_bound.py",
+        "sha256": "CA001081F49E0048812B871A31E3BE85435B210B3A538170A9F006408A41F854",
+        "pass": true
+      },
+      {
+        "path": "results\\b14_04\\hpad14_power.json.gz",
+        "sha256": "8C58ECF6EC21C2F64E2A80CC7C464B9AF4EAFBA22A2A2E5EB611D640C94B1E22",
+        "pass": true
+      },
+      {
+        "path": "results\\b14_04\\hpad14.json",
+        "sha256": "0D2EB2F3BCA7CBB85A911A3C8F2FF70312D724462710AF76C1CE9E83D09C4B65",
+        "pass": true
+      },
+      {
+        "path": "results\\b14_07\\A14_exact.json.gz",
+        "sha256": "68A555CD11C566A8ED8DFE0FE87DFF1BB1427A96165D8F493684B3BCEA7A241D",
+        "pass": true
+      },
+      {
+        "path": "results\\b14_07\\K14.json",
+        "sha256": "EEF4E41C7BC5BCCC7A70B5B95EE59B7CCEE018D412474729D6ED6DAA518CEEE3",
+        "pass": true
+      },
+      {
+        "path": "results\\b14_prep\\points\\P14.json",
+        "sha256": "241EC80BA43CC58A0F7C6EEC609EBDBEA46600A8126795EF9DF2F64ABCCD50A8",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\certificate.json",
+        "sha256": "C5B2BB951025522A873B5C9B639D43DC958B7BECB0E79F9DBBEFEF42FA2B01A8",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\pilot.json",
+        "sha256": "6B7FA92D479DC0120B9EBE183B48BFC71B4E91222DE595A6C364DBD9D896FBD7",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\b15_01_altered_member_control.json.gz",
+        "sha256": "4CCCF38F28619B81FB029B617B19B100B614CC8AE1F35FF04D389A8A6602C68E",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\b15_01_altered_rank_control.json.gz",
+        "sha256": "59EE73B5084C5F9FDF4D61633B97472212899DBE5F5F673B399B04B56B305EF6",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\degree13.json.gz",
+        "sha256": "D2C2A1129A746A43A03F335A015A27149F268C39AE9EE37C0C234A391C0E01B6",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\dimension.json.gz",
+        "sha256": "AE7DD6EB8F722456A79B5513F51FC1F7790E1E4C4B6AE1B6CE8A431AC5F21838",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\generic_verification_v2.json.gz",
+        "sha256": "95065B4711E1157F81C0BE757E7C71CD1EBA63C00182E5409B94315C7C8D8634",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\generic.json.gz",
+        "sha256": "5C531A3F4D6F75842DEAA1152694668B40A50A17F18F25B0457765B511748155",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\kernel.json.gz",
+        "sha256": "AA2EBBBE4EB4B4BED3A0F909816711C95C13C5E3D334DF86DA4BA3C1881B4ABB",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\members.json.gz",
+        "sha256": "5E4788ACE15006C01B6D9373499036DB259E6166294AC31CDE326072C552486E",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\points.json.gz",
+        "sha256": "7818DC9BFD79B13181B24370F6FB75E5B99174588BDD1EB049197D2F7E2EC754",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\power.json.gz",
+        "sha256": "0AC57AABC1498D2C5FB253E651637EC8908DA461305751CF00F7B3A0A7A391B4",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\source_values.json.gz",
+        "sha256": "4FC647032A54DC325C6E87C9A90D84209F954C6AA8785E161E4650CF60CE962C",
+        "pass": true
+      },
+      {
+        "path": "results\\b15_01\\ci159_inputs\\source.json.gz",
+        "sha256": "5E27E01AA46C6F53D808F47683B840124769C0DDC37DC2818E5EFC1FA5086002",
+        "pass": true
+      },
+      {
+        "path": "results\\ci73\\certificate.json",
+        "sha256": "8F4D168ECFB922213B5BAEE66AC6250DD99DCF2ACE669EEBC2426C782E9B231D",
+        "pass": true
+      },
+      {
+        "path": "results\\s74\\columns_gen_2147483647.json.gz",
+        "sha256": "BA06A3DDEFBD2BBDD2FB2BD1B0428E51507FEB750D020FE8A69BE7D34FD09437",
+        "pass": true
+      },
+      {
+        "path": "results\\s74\\source.json",
+        "sha256": "0F925E0E113DAD94F8A35B19EB64A4E50B8BADB29959673554A49EF1F2F8CE45",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\b15_01_ci159.py",
+        "sha256": "FE4EB0D1A94CAE912A5692DEF82993CFE165A74C38EFB8B70D9C430AC658049D",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\b15_modular.py",
+        "sha256": "AF6DC1008C336DBB8205DDE1618DD9B2D795F50CA37E2FE6E31DFF8E859E3F99",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\chi_build.py",
+        "sha256": "669715CCBEE948C680685ABA34B0D9EAE7BC3E0C447EDD965F7FE94A7AA60882",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_backend.cs",
+        "sha256": "32660C445BBD03551261FDC2868A2CEB1858675C27BB5E0FE262D91848B429E2",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_dimension.py",
+        "sha256": "978130F696AEC2A119F647F2086D17C6084F430B733B7DBF88506F4C0EB1679F",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_eval.py",
+        "sha256": "222F6245D0534B3AAA3294EA38FF5E857CF790FEA8A3D7FAB53D74995430FB57",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_inherited.py",
+        "sha256": "895FAC179D78A82573BC3F8DB2CD9796CA3911C7B0B3F6FF3527586B539AA565",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_io.py",
+        "sha256": "789B6D306E04A82577A6DB77AC21CAF7DFB547AE610520FB5B2AA4CF94574DB8",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73_linear.py",
+        "sha256": "652DB277AE3BE58AA7C1E73F977967C3946700EE7A050684D8118ABEDF3AA246",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\ci73.py",
+        "sha256": "9E227532E5614F3962E9BE41CB90B5F7D25420B8FE3DC2337F127831B2477A41",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\complete_interpolation.py",
+        "sha256": "43F5AAFDBF5EE01D751B4A3B9EFF2CB8AAE6BF38E9F91EDD76FC9C0D92917376",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\FORMAT.md",
+        "sha256": "1E40FCCF7EAE04EB3A62BB9DD0EBA34407E241147151D763ED4436A0340A6944",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\forms.py",
+        "sha256": "530DF0CFAFB47B0DE056C69F6AAAD751D77F76BBC5A18AAB9A309928D361A4F1",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\hwv.py",
+        "sha256": "5899F892F5A747CCA3AFA487D5559C8A6CF0747D8E0F312D0AE06499D6721E1E",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\layer1.py",
+        "sha256": "ACA99D72607F61BCF32620C522DB732197D9683A5CDFC52BFC134DA248171867",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\layer2.py",
+        "sha256": "1B340D25DF181C677F492BE97282EC519E33E915899CE2B63CFA391E5B3FB30E",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\layer3.py",
+        "sha256": "FBF624A0D072FCDAF79B7BB0208F70EF57041FCF23340F4C5C2D4D74E9281B64",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\pleth.py",
+        "sha256": "60305CD101E31C0148FE4A7FD9E406C43AD5406216B540E85F6ED3256ADA2008",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\points.py",
+        "sha256": "899BF15D50039D680D10516608D79695B68BD9DFBB677947DB8516F21234F920",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\sample_corpus.py",
+        "sha256": "F981A8E15F053DC0022D54CEFB8B199643A6D70502B1E1864F57CB6CFCBFB15B",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\scratch_not_removed.py",
+        "sha256": "1E65C39A29C9751002780FCDE6C7B8838814CB554C93FE95F5550E64E4B1D736",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\selftest.py",
+        "sha256": "3C9CBBCF4336F9FA7DF6730E904DD472560C7C77443A84BE9C39D65D0FE4DF27",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\verify.py",
+        "sha256": "6E14BEE5640486124777F5C9A72EAB22BC81F6C2D70753D32794317F6F1FFDFA",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\wied_check.c",
+        "sha256": "A7BC2F234AEB469F9FFBAF0A8CD043ADF860A2879D4135B64C95EAC55298E26A",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\degeneracy_check.py",
+        "sha256": "B51B5B5A3895DC305D7E154394CE26115DB8ECA51BC9B0012D03E24D995277BF",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\det_pencil_r6.json",
+        "sha256": "CAF4584E106D40496A24DFBE917C28B94BDECC2FC525D736EFE1F193B9D1655A",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\det_pencil.json",
+        "sha256": "E906280342BFDF278A70DD56804CFD86AADB1A4F0D497A9AE4024DB48CFFB714",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\make_testset.py",
+        "sha256": "096B902B3E886DB814873847BADACC8DE0FE4DB7467D47870DF88094693F9610",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\padded_permanent_r6.json",
+        "sha256": "47DFBE0D13A63F18CE31A05D5A63651C2CF39F1ABD471C52E8EA30D9DD32C7FE",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\padded_permanent.json",
+        "sha256": "0D137699A04EECC5719ED8B956D7E7627BCB5F56A305BF3DA32708F8C179A106",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\reducible_r6.json",
+        "sha256": "9DD2F494F62F9A24ECFF44E290DCA19D4A93A4F65A427481BF46D18171DD874E",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\testset\\reducible.json",
+        "sha256": "511BF4A003383175503D4B50D96AB8E61D0CC5C86923D00AE5232260B817C723",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\b15_01_ci159.cpython-312.pyc",
+        "sha256": "8F703AB83C4AD28E56B9EFB2874602D53324B20FF6F77A89D6DB5878EE1EF651",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\ci73_dimension.cpython-312.pyc",
+        "sha256": "F5B14B9E3A0512DD556D1676CEC4FF102A181EE7157422DCF30DBB4C9398DEDE",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\ci73_eval.cpython-312.pyc",
+        "sha256": "71D604FDD7EF5851968C09FE8E2E8348941BF8D97F8046DEFAD21DAB28C4119D",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\ci73_io.cpython-312.pyc",
+        "sha256": "47130379D81E840895B6903BE4DB36FE99CE90ADC202D709530A9B1EFFD3BB11",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\ci73_linear.cpython-312.pyc",
+        "sha256": "9A31963419E55918C4FCC7ADF8080B1AF11E7539774CBD553E5B59DED692096C",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\ci73.cpython-312.pyc",
+        "sha256": "C2E6EA813BB0B402CAB1F06553E56F590DE56D98FF5F43B46229156055179F66",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\complete_interpolation.cpython-312.pyc",
+        "sha256": "D44B651FD747DCB94C549FFEC9F3F6528BCDA838ACA73CBEBF06925E8572F7F4",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\forms.cpython-312.pyc",
+        "sha256": "6E59762A9080AB1DF7094BED26E9C4509EEBCB620D38CB1D2E726335AEEABB87",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\points.cpython-312.pyc",
+        "sha256": "7E0EA81D3623E241BF10E859D5E3BA4C6081473052C106881D86EE98A2BFFC65",
+        "pass": true
+      },
+      {
+        "path": "tools\\verify\\__pycache__\\verify.cpython-312.pyc",
+        "sha256": "134B90C695A069B4D44C91F85BDC24C8EEF55BDFF0940B593DEE28953747929D",
+        "pass": true
+      }
+    ],
+    "fresh": [
+      "Target rank158 minor823506578 mod2147483647",
+      "Independent complete dimensions source93 target159",
+      "Generic source completeness rank93 minor702376822",
+      "14694 exact source entries; rational rank88; kernel rank5",
+      "Global reducible ideal multiplicity interval4..5 at degree14"
+    ],
+    "inherited": [
+      "Previously accepted degree24 ambient and determinant premises",
+      "S57 stable transport and nine-row determinant ideal upper bound4"
+    ],
+    "limitations": "Target rank159 is not proved; no explicit fourth kernel vector is extracted. Follow-up evidence is filesystem hashed, not asserted committed.",
+    "resources": {
+      "board_numbering": "batch15",
+      "session_id": "B15-01",
+      "pid": 45344,
+      "memory_before": {
+        "total_physical": 33752997888,
+        "available_physical": 10741223424,
+        "load": 68
+      },
+      "memory_cap_mb": 1536,
+      "wall_cap_seconds": 5400,
+      "workers": 1,
+      "blas_threads": 1,
+      "job_object_enforced": true,
+      "idle_sleep_inhibited_during_run": true,
+      "started_utc": "2026-09-13T16:48:17Z",
+      "exit_code": 0,
+      "wall_seconds": 2296.625954899995,
+      "memory_after": {
+        "total_physical": 33752997888,
+        "available_physical": 10556645376,
+        "load": 68
+      },
+      "process_memory": {
+        "peak_working_set": 298598400,
+        "working_set": 221061120,
+        "peak_pagefile": 290414592
+      },
+      "job_memory": {
+        "peak_job_memory": 997834752,
+        "peak_process_memory": 757702656
+      }
+    },
+    "process_exit": "Unified execution exited0; original parent PID45344 absent at final check",
+    "nine_row_transport": "Four degree14 reducible/padded equations multiplied by nonzero q44 of degree2 and weight(4,4) give four independent padded equations in tail(21,2^7) from degree16. Together with recorded determinant ideal upper bound4 this excludes a positive gap from degree16 under the inherited transport premises."
+  },
+  "dream_upper_bound_review": {
+    "status": "PASS_INTEGRATOR_PROOF_REVIEW_AND_FRESH_ARITHMETIC",
+    "checked_utc": "2026-09-13T17:47:40.388661+00:00",
+    "claim": {
+      "stable_cell": [
+        35,
+        [
+          105,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "padded_rank_interval": [
+        243,
+        288
+      ],
+      "determinant_rank": 418,
+      "gap_interval": [
+        -175,
+        -130
+      ],
+      "padded_ideal_interval": [
+        141,
+        186
+      ],
+      "finite_padding_upper": {
+        "23,15": 158,
+        "25,17": 218,
+        "27,19": 288
+      }
+    },
+    "proof_review": [
+      "The multiplication image ring injects in bidegree(d,d) into Sym^d V tensor the coordinate ring of cubic Sub_9. Restriction to padding is a quotient.",
+      "Subspace inheritance deletes Schur types longer than9; Pieri interlacing gives mu=(3d-14-b,b,2^7),2<=b<=t.",
+      "A highest-weight coefficient polynomial is invariant under first-row shears. Homogeneity and the dense nonzero-leading-coefficient chart make restriction to a monic depressed cubic injective. The GL8 tail weight is preserved. This yields an upper bound at finite degree, not stable equality.",
+      "The exact exponential power-sum recurrence for Sym(Sym^2+Sym^3) and Murnaghan-Nakayama characters give eighteen nonnegative integer channel bounds whose sums are158,218,288."
+    ],
+    "fresh": "Inspected source and proof. Regenerated all18 character sums in1.480s; alternative connected-border-strip characters and full Pieri channel enumeration replayed in0.415s. Both Job Object512MiB/60s exits0.",
+    "inherited": "Previously accepted ambient429, determinant418, and genuine-padding243 minor; standard subspace inheritance and characteristic-zero semisimplicity.",
+    "limits": "No exact padding rank243 or288; no explicit141-equation basis; degree23 witness checker here inherits saved raw Hessian coefficients and is not a fresh Hessian evaluation.",
+    "primary_source": "https://arxiv.org/pdf/1204.4693v1",
+    "evidence": "reviews_filesystem/Dream_Upper288"
+  }
+}

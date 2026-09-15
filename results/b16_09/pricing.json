@@ -1,0 +1,66 @@
+{
+  "status": "PRICED_SMALL_CONTROL",
+  "h": 8,
+  "tail": [
+    4,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "finite_degree": 19,
+  "finite_weight": [
+    57,
+    4,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "conservative_range": "delta>=19",
+  "source_letters": [
+    9,
+    8
+  ],
+  "per_source_work": [
+    {
+      "determinants": 32,
+      "determinant_order": 8,
+      "brute_terms": 3251404800,
+      "paired_letters": 8,
+      "mixed_coefficient_factorial": 5040
+    },
+    {
+      "determinants": 56,
+      "determinant_order": 8,
+      "brute_terms": 3251404800,
+      "paired_letters": 8,
+      "mixed_coefficient_factorial": 720
+    }
+  ],
+  "tensor_entries_per_point": 486,
+  "native_polynomial_support_upper": 495,
+  "native_coefficient_pair_visits_per_point_upper": 47520,
+  "one_prime_pilot_points": 1,
+  "final_points": 2,
+  "final_bracket_determinants_upper": 528,
+  "final_bracket_order_max": 8,
+  "matrix_size": [
+    2,
+    2
+  ],
+  "caps": {
+    "seconds": 60,
+    "memory_mib": 512,
+    "processes": 1,
+    "blas_threads": 1
+  },
+  "heavy_lease_used": false,
+  "estimate": "Small sparse products and <=528 order-eight determinants; no dense expansion."
+}
