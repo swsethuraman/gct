@@ -1,0 +1,30 @@
+{
+  "task": "B17-08",
+  "scientific_computations": 0,
+  "python_invocations": 0,
+  "auto_review_rejections": [],
+  "final_input_drift": {
+    "path": "C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-11/delivery/b17_11/MANIFEST.json",
+    "action": "Routine final integrity comparison against pinned input bytes",
+    "result": "Upstream envelope changed; pinned11 report and input ledger and the five accepted worker reports were unchanged at this check.",
+    "response": "Retained snapshot; no repin, no new claim consumption, no dependency polling."
+  },
+  "operations": [
+    {
+      "action": "git status --short",
+      "result": "Read succeeded with pre-existing untracked B16 files",
+      "warning": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+      "response": "No trust, ownership, ignore or sandbox changes."
+    },
+    {
+      "action": "& ./analysis/b17_08_metadata.ps1 -Mode Pin (initial version)",
+      "result": "Failed at missing B16-10 delivery/MANIFEST.json; no input ledger sealed",
+      "reason": "Cannot find path 'C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-10\\delivery\\b16_10\\MANIFEST.json' because it does not exist.",
+      "response": "Read-only rg discovery located SHA256_MANIFEST.json. Corrected own metadata script, then pinned37 inputs. Not an approval refusal."
+    },
+    {
+      "action": "PowerShell metadata pin and verification",
+      "result": "37 snapshots, five reviewed B17 report hashes and six original B16 proof hashes matched. No scientific calculations."
+    }
+  ]
+}
