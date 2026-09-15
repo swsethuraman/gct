@@ -1,0 +1,50 @@
+{
+  "status": "PASS_INTEGRATOR_PROOF_REVIEW_AND_FRESH_ARITHMETIC",
+  "checked_utc": "2026-09-13T17:47:40.388661+00:00",
+  "claim": {
+    "stable_cell": [
+      35,
+      [
+        105,
+        19,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    ],
+    "padded_rank_interval": [
+      243,
+      288
+    ],
+    "determinant_rank": 418,
+    "gap_interval": [
+      -175,
+      -130
+    ],
+    "padded_ideal_interval": [
+      141,
+      186
+    ],
+    "finite_padding_upper": {
+      "23,15": 158,
+      "25,17": 218,
+      "27,19": 288
+    }
+  },
+  "proof_review": [
+    "The multiplication image ring injects in bidegree(d,d) into Sym^d V tensor the coordinate ring of cubic Sub_9. Restriction to padding is a quotient.",
+    "Subspace inheritance deletes Schur types longer than9; Pieri interlacing gives mu=(3d-14-b,b,2^7),2<=b<=t.",
+    "A highest-weight coefficient polynomial is invariant under first-row shears. Homogeneity and the dense nonzero-leading-coefficient chart make restriction to a monic depressed cubic injective. The GL8 tail weight is preserved. This yields an upper bound at finite degree, not stable equality.",
+    "The exact exponential power-sum recurrence for Sym(Sym^2+Sym^3) and Murnaghan-Nakayama characters give eighteen nonnegative integer channel bounds whose sums are158,218,288."
+  ],
+  "fresh": "Inspected source and proof. Regenerated all18 character sums in1.480s; alternative connected-border-strip characters and full Pieri channel enumeration replayed in0.415s. Both Job Object512MiB/60s exits0.",
+  "inherited": "Previously accepted ambient429, determinant418, and genuine-padding243 minor; standard subspace inheritance and characteristic-zero semisimplicity.",
+  "limits": "No exact padding rank243 or288; no explicit141-equation basis; degree23 witness checker here inherits saved raw Hessian coefficients and is not a fresh Hessian evaluation.",
+  "primary_source": "https://arxiv.org/pdf/1204.4693v1",
+  "evidence": "reviews_filesystem/Dream_Upper288"
+}
