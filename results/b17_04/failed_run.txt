@@ -1,0 +1,36 @@
+Command (the only numerical Python invocation in B17-04):
+.\.venv\python.exe -B analysis/b15_bound.py --seconds 60 --memory-mb 512 --name b17_04_verify --slot 04 analysis/b17_04_verify.py
+
+Tool exit_code: 1
+Wrapper started_utc: 2026-09-14T01:46:36Z (13 September in America/New_York)
+Wrapper PID: 46664
+Wrapper wall_seconds: 0.3681186999892816
+Job Object memory cap: 512 MiB; wall cap: 60 seconds
+
+Traceback (most recent call last):
+  File "C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B15-04\analysis\b15_bound.py", line 155, in <module>
+    main()
+  File "C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B15-04\analysis\b15_bound.py", line 133, in main
+    runpy.run_path(args.script, run_name="__main__")
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "analysis/b17_04_verify.py", line 321, in <module>
+    main()
+  File "analysis/b17_04_verify.py", line 306, in main
+    matched=match(h)
+            ^^^^^^^^
+  File "analysis/b17_04_verify.py", line 161, in match
+    minor=fmpq_mat([[row[j] for j in Ec] for row in E])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "flint/types/fmpq_mat.pyx", line 75, in flint.types.fmpq_mat.fmpq_mat.__init__
+  File "flint/types/fmpq.pyx", line 90, in flint.types.fmpq.fmpq.__init__
+TypeError: cannot create fmpq from object of type <class 'fractions.Fraction'>
+
+Interpretation: implementation/type-conversion failure. Neither a mathematical
+counterexample nor a cap hit. No basis-match or restriction result was emitted.
+The initial input hash check passed before this point, but the post-run check
+inside the verifier was not reached. A separate filesystem integrity check is
+recorded in MANIFEST.json. The first invocation's source is preserved verbatim.
+No second invocation was attempted because the user permits at most one
+computation per task. The repaired source is unexecuted and needs a new
+integrator authorization. No automatic approval rejection occurred.
