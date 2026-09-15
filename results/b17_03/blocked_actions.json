@@ -1,0 +1,14 @@
+{
+  "mathematical_delivery_blocked": false,
+  "actions": [
+    {
+      "action": "Invoke-WebRequest -UseBasicParsing -Uri 'https://math.univ-cotedazur.fr/u/beauvill/pubs/det.pdf' -OutFile 'delivery/b17_03/sources/beauville_determinantal_hypersurfaces.pdf' -TimeoutSec 30",
+      "reason_exact": "An attempt was made to access a socket in a way forbidden by its access permissions.",
+      "exit_code": 1,
+      "follow_on": "Get-FileHash could not find the uncreated PDF file.",
+      "approval_escalation_requested": false,
+      "retry_or_bypass_attempted": false,
+      "independent_work": "The primary theorem had already been read successfully through the web reader. Continue the proof from that reading, preserve a citation/short-excerpt note, and state that the full PDF hash is unavailable."
+    }
+  ]
+}
