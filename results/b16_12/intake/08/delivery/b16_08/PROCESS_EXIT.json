@@ -1,0 +1,64 @@
+{
+  "slot": "B16-08",
+  "checked_utc": "2026-09-13T17:57:35.9802273Z",
+  "status": "ALL_RECORDED_PROCESSES_EXITED",
+  "heavy_lease_acquired": false,
+  "heavy_lease_held": false,
+  "release": "No heavy lease was held; no slot08 computation remains running.",
+  "runs": [
+    {
+      "name": "b16_08_preflight",
+      "pid": 16712,
+      "wrapper_exit_code": 0,
+      "process_present": false,
+      "wall_seconds": 0.055245499999728054,
+      "peak_working_set_bytes": 30158848,
+      "peak_job_bytes": 17231872
+    },
+    {
+      "name": "b16_08_elimination",
+      "pid": 37204,
+      "wrapper_exit_code": 1,
+      "process_present": false,
+      "wall_seconds": 0.06815740000456572,
+      "peak_working_set_bytes": 30838784,
+      "peak_job_bytes": 17870848
+    },
+    {
+      "name": "b16_08_elimination_pivoted",
+      "pid": 34280,
+      "wrapper_exit_code": 0,
+      "process_present": false,
+      "wall_seconds": 0.07613819997641258,
+      "peak_working_set_bytes": 31993856,
+      "peak_job_bytes": 19042304
+    },
+    {
+      "name": "b16_08_receiver",
+      "pid": 32136,
+      "wrapper_exit_code": 0,
+      "process_present": false,
+      "wall_seconds": 0.06821929998113774,
+      "peak_working_set_bytes": 30650368,
+      "peak_job_bytes": 17858560
+    },
+    {
+      "name": "b16_08_pack",
+      "pid": 43000,
+      "wrapper_exit_code": 0,
+      "process_present": false,
+      "wall_seconds": 0.05994080001255497,
+      "peak_working_set_bytes": 29716480,
+      "peak_job_bytes": 17428480
+    },
+    {
+      "name": "b16_08_delivery_receiver",
+      "pid": 3884,
+      "wrapper_exit_code": 0,
+      "process_present": false,
+      "wall_seconds": 0.0578893999918364,
+      "peak_working_set_bytes": 30797824,
+      "peak_job_bytes": 17649664
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "degrees": [
+    28,
+    26,
+    25,
+    24
+  ],
+  "matrix": [
+    [
+      -299243084615516160,
+      3590917015386193920,
+      -2393944676924129280,
+      -1795458507693096960
+    ],
+    [
+      -20194299333681610752,
+      239139665768280489984,
+      -160357422330990821376,
+      -120168319053371277312
+    ],
+    [
+      80070600138506108928,
+      -920372437017220349952,
+      623859377788503982080,
+      467011543590657589248
+    ],
+    [
+      -238937188941088948224,
+      2613357034568706686976,
+      -1799806132318938071040,
+      -1345991416103665926144
+    ]
+  ],
+  "row_gcds": [
+    299243084615516160,
+    22265110462464,
+    2783138807808,
+    695784701952
+  ],
+  "primitive_matrix": [
+    [
+      -1,
+      12,
+      -8,
+      -6
+    ],
+    [
+      -906993,
+      10740556,
+      -7202184,
+      -5397158
+    ],
+    [
+      28769891,
+      -330695844,
+      224156760,
+      167800306
+    ],
+    [
+      -343406787,
+      3755985188,
+      -2586728520,
+      -1934494122
+    ]
+  ],
+  "primitive_determinant": -5639493386240000,
+  "determinant": "-72761025516595267466940416959830900717923971797102514649360341401600000",
+  "mutations": [
+    {
+      "column": 0,
+      "changed_coefficient_rejected": true
+    },
+    {
+      "column": 1,
+      "changed_coefficient_rejected": true
+    },
+    {
+      "column": 2,
+      "changed_coefficient_rejected": true
+    },
+    {
+      "column": 3,
+      "changed_coefficient_rejected": true
+    }
+  ],
+  "q44_raising": "zero",
+  "claims": [
+    {
+      "degree": 14,
+      "determinant_ideal": 0,
+      "gap_upper": 0
+    },
+    {
+      "degree": 15,
+      "determinant_ideal": 0,
+      "padded_ideal_floor": 3,
+      "gap_upper": -3
+    }
+  ],
+  "scope": "Only d14 and d15; full stable-ideal completeness and CI73 remain inherited.",
+  "elapsed_seconds": 0.38834949998999946,
+  "verified_input_count": 23,
+  "certificate_sha256": "89a936d2abc7ecf1016e25d8df616c6c4dec4cb0008ee37059123fac9cb7dd18",
+  "receiver_sha256": "e4de5112f4564b6d501c01eb1763214a2217a7fc5a4df4bd6b4ae8e304ec8bb9",
+  "input_manifest_sha256": "9c6db8c4a36a51e374fbff06a7e817c49ab2abaa74aae7c8733e95240bc54161",
+  "sympy_version": "1.14.0"
+}

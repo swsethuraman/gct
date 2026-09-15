@@ -1,0 +1,2517 @@
+{
+  "status": "PASS_PROOF_CONTROLS_AND_INHERITED_ARITHMETIC",
+  "controls": {
+    "chart": {
+      "A_3cQ_minus_L2": [
+        [
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          -1,
+          1
+        ],
+        [
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          3,
+          1
+        ]
+      ],
+      "B_27c2R_minus_9cLQ_plus_2L3": [
+        [
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          2,
+          1
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          -9,
+          1
+        ],
+        [
+          [
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          27,
+          1
+        ]
+      ],
+      "shear_invariance": true,
+      "wrong_cubic_sign_rejected": true
+    },
+    "tiny_hessian": {
+      "variables": [
+        "z",
+        "x",
+        "y"
+      ],
+      "C": [
+        [
+          [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ],
+        [
+          [
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ],
+        [
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          1,
+          1
+        ]
+      ],
+      "two_det_H_zC": [
+        [
+          [
+            1,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          1
+        ],
+        [
+          [
+            1,
+            1,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          -96,
+          1
+        ],
+        [
+          [
+            1,
+            2,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          -144,
+          1
+        ],
+        [
+          [
+            1,
+            3,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          -24,
+          1
+        ],
+        [
+          [
+            1,
+            4,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          -108,
+          1
+        ],
+        [
+          [
+            1,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          -36,
+          1
+        ]
+      ],
+      "negative_sign_checked": true,
+      "scope": "Instrument control in three variables; general proof separate"
+    },
+    "shared_remainder": {
+      "five_expression_relation": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "expression_order": [
+        "S3",
+        "s2*S5",
+        "s3*S6",
+        "s4*S7",
+        "s2^2*S7"
+      ],
+      "identity": true,
+      "wrong_sign_rejected": true
+    }
+  },
+  "arithmetic": {
+    "rows": [
+      {
+        "b": 2,
+        "sum": 1,
+        "terms": 144
+      },
+      {
+        "b": 3,
+        "sum": 1,
+        "terms": 175
+      },
+      {
+        "b": 4,
+        "sum": 2,
+        "terms": 239
+      },
+      {
+        "b": 5,
+        "sum": 3,
+        "terms": 278
+      },
+      {
+        "b": 6,
+        "sum": 5,
+        "terms": 369
+      },
+      {
+        "b": 7,
+        "sum": 6,
+        "terms": 447
+      },
+      {
+        "b": 8,
+        "sum": 9,
+        "terms": 568
+      },
+      {
+        "b": 9,
+        "sum": 11,
+        "terms": 683
+      },
+      {
+        "b": 10,
+        "sum": 14,
+        "terms": 880
+      },
+      {
+        "b": 11,
+        "sum": 16,
+        "terms": 1035
+      },
+      {
+        "b": 12,
+        "sum": 19,
+        "terms": 1313
+      },
+      {
+        "b": 13,
+        "sum": 21,
+        "terms": 1572
+      },
+      {
+        "b": 14,
+        "sum": 24,
+        "terms": 1945
+      },
+      {
+        "b": 15,
+        "sum": 26,
+        "terms": 2316
+      },
+      {
+        "b": 16,
+        "sum": 29,
+        "terms": 2879
+      },
+      {
+        "b": 17,
+        "sum": 31,
+        "terms": 3388
+      },
+      {
+        "b": 18,
+        "sum": 34,
+        "terms": 4170
+      },
+      {
+        "b": 19,
+        "sum": 36,
+        "terms": 4945
+      }
+    ],
+    "cells": [
+      {
+        "degree": 23,
+        "lambda": [
+          61,
+          15,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            53,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            46,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            45,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            44,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            43,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            42,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            41,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            40,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 158
+      },
+      {
+        "degree": 25,
+        "lambda": [
+          67,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            59,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            46,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            45,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            44,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 218
+      },
+      {
+        "degree": 26,
+        "lambda": [
+          71,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            62,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            61,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            60,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            59,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            47,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 218
+      },
+      {
+        "degree": 27,
+        "lambda": [
+          73,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            65,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            64,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            63,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            62,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            61,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            60,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            59,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            58,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            57,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            56,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            55,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            54,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            53,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            52,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            51,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            50,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            49,
+            18,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            48,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 288
+      },
+      {
+        "degree": 35,
+        "lambda": [
+          105,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "cubic_channels": [
+          [
+            89,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            88,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            87,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            86,
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            85,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            84,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            83,
+            8,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            82,
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            81,
+            10,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            80,
+            11,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            79,
+            12,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            78,
+            13,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            77,
+            14,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            76,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            75,
+            16,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            74,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            73,
+            18,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            72,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "padding_upper": 288
+      }
+    ],
+    "saved_terms_checked": 27346,
+    "fresh": "Exact rational sums of saved complete terms; degree/strip checks",
+    "inherited": "Completeness and correctness of power sums and characters; no regenerated census",
+    "stable": {
+      "a": 429,
+      "m_det": 418,
+      "m_pad_lower": 243,
+      "m_pad_upper": 288,
+      "D_interval": [
+        -175,
+        -130
+      ],
+      "i_pad_interval": [
+        141,
+        186
+      ]
+    }
+  },
+  "acceptance_gate": {
+    "status": "PASS",
+    "examples_are_synthetic": true,
+    "mathematical_premises_are_not_machine_certified_by_this_gate": true
+  },
+  "received_02": {
+    "status": "PASS_PROOF_REVIEW_AND_FINITE_EXCLUSION_ARITHMETIC",
+    "binding_checks": [
+      {
+        "path": "analysis/b16_02_census.py",
+        "expected_sha256": "a0355b84e45c0e27001c50ebca9268d1de2afb12252537c60c64a916f27e4c6b",
+        "actual_sha256": "a0355b84e45c0e27001c50ebca9268d1de2afb12252537c60c64a916f27e4c6b",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "analysis/b16_02_receive.py",
+        "expected_sha256": "4df0cede28913ad4bac9f7aeece712124ad832a4222291b811a36010fabc84d0",
+        "actual_sha256": "4df0cede28913ad4bac9f7aeece712124ad832a4222291b811a36010fabc84d0",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "docs/b16_02_report.md",
+        "expected_sha256": "90222c52e5630071d1d0fda12e6dd784889b4d548c7689408bc5a0f1cac04b28",
+        "actual_sha256": "90222c52e5630071d1d0fda12e6dd784889b4d548c7689408bc5a0f1cac04b28",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "docs/b16_02_proof.md",
+        "expected_sha256": "6308231bea4b116e24a8f9bf33f44521040af8feae183894146f2fce947e959d",
+        "actual_sha256": "6308231bea4b116e24a8f9bf33f44521040af8feae183894146f2fce947e959d",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/census.json",
+        "expected_sha256": "5704931d76a6e35139e8a3128d3fff993dc8b19001fc769e8405194511a84e37",
+        "actual_sha256": "5704931d76a6e35139e8a3128d3fff993dc8b19001fc769e8405194511a84e37",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/controls.json",
+        "expected_sha256": "9a331b65f64d9baff8b74ee6f8b24da99fbc53882b3c248798da0879da83bf59",
+        "actual_sha256": "9a331b65f64d9baff8b74ee6f8b24da99fbc53882b3c248798da0879da83bf59",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/count_t15.json.gz",
+        "expected_sha256": "d5c2f072e48c8845dec139907c3ea736d28d4aa45cce33390afcf43c1fa27c4a",
+        "actual_sha256": "d5c2f072e48c8845dec139907c3ea736d28d4aa45cce33390afcf43c1fa27c4a",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/count_t17.json.gz",
+        "expected_sha256": "ed06951e6d46b40dc22e16f53154175fedd302697cf2759e7f0f48792bd21497",
+        "actual_sha256": "ed06951e6d46b40dc22e16f53154175fedd302697cf2759e7f0f48792bd21497",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/count_t19.json.gz",
+        "expected_sha256": "6d84f9a0c2b12007da0d2ddd476b6fd3b8ace301d31fa3e131f5e273554b56b2",
+        "actual_sha256": "6d84f9a0c2b12007da0d2ddd476b6fd3b8ace301d31fa3e131f5e273554b56b2",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/input_hashes.json",
+        "expected_sha256": "4b51903073d9801e9ae58c7a4f55266cc07c0a9e3edca551ba62d4f2e6e01db1",
+        "actual_sha256": "4b51903073d9801e9ae58c7a4f55266cc07c0a9e3edca551ba62d4f2e6e01db1",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/receiver.json",
+        "expected_sha256": "7ed5eef3390ad10f139fa9c11b5ed3ea87da4477f74ea9ad613bf733c73b512a",
+        "actual_sha256": "d2bf4aaf0376b89bcf5cab8851a8ee6f7d3d8a10b551f122a2c09403159a65d7",
+        "matches_original_delivery": false,
+        "classification": "Integrator replay output; original worker bytes separately matched"
+      },
+      {
+        "path": "results/b16_02/resource_summary.json",
+        "expected_sha256": "ac90d2af51a6f1416ab68663ab863aa774b37a766165656557f0c07ad575a2dd",
+        "actual_sha256": "ac90d2af51a6f1416ab68663ab863aa774b37a766165656557f0c07ad575a2dd",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/b16_02/sizing.json",
+        "expected_sha256": "46f32756b80d10e42f585525d2fc6ee09b6cd15124f5d09dff7e89efea21c785",
+        "actual_sha256": "46f32756b80d10e42f585525d2fc6ee09b6cd15124f5d09dff7e89efea21c785",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/logs/b16_02_sizing_resources.json",
+        "expected_sha256": "1569771614d913c251b0867a4515d7d5b125220c488ca05091f82b3e4ec47290",
+        "actual_sha256": "1569771614d913c251b0867a4515d7d5b125220c488ca05091f82b3e4ec47290",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/logs/b16_02_controls_resources.json",
+        "expected_sha256": "3d6cb87c81b68df8af18f922ac1196762860c46a666ed036862736d76575fa9b",
+        "actual_sha256": "3d6cb87c81b68df8af18f922ac1196762860c46a666ed036862736d76575fa9b",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/logs/b16_02_count_pilot_resources.json",
+        "expected_sha256": "662860bfc29cb9849a7844109e4be805201d16374e756d4fa1e7418c7d089ba0",
+        "actual_sha256": "662860bfc29cb9849a7844109e4be805201d16374e756d4fa1e7418c7d089ba0",
+        "matches_original_delivery": true
+      },
+      {
+        "path": "results/logs/b16_02_receiver_resources.json",
+        "expected_sha256": "6e1db6e38dc00422d038c414bc823bbb9020c8d57edc5f1f3608ce8686398b7c",
+        "actual_sha256": "b912e3d0646d0b87b4e1bd59609ca298cc09d2c8cc7e3e445b9f2e34d733322e",
+        "matches_original_delivery": false,
+        "classification": "Integrator replay output; original worker bytes separately matched"
+      }
+    ],
+    "finite_cells": [
+      {
+        "degree": 23,
+        "tail": 15,
+        "ambient": 189,
+        "padding_upper": 158,
+        "D_upper": -20,
+        "correction_carriers_b_m_L_D_hookfirst_hookheight": [
+          [
+            0,
+            0,
+            31,
+            23,
+            24,
+            8
+          ],
+          [
+            1,
+            2,
+            29,
+            22,
+            23,
+            7
+          ],
+          [
+            1,
+            3,
+            28,
+            22,
+            23,
+            6
+          ],
+          [
+            1,
+            4,
+            27,
+            22,
+            23,
+            5
+          ],
+          [
+            2,
+            4,
+            27,
+            21,
+            22,
+            6
+          ],
+          [
+            2,
+            5,
+            26,
+            21,
+            22,
+            5
+          ],
+          [
+            2,
+            6,
+            25,
+            21,
+            22,
+            4
+          ],
+          [
+            2,
+            7,
+            24,
+            21,
+            22,
+            3
+          ],
+          [
+            2,
+            8,
+            23,
+            21,
+            22,
+            2
+          ],
+          [
+            3,
+            6,
+            25,
+            20,
+            21,
+            5
+          ],
+          [
+            3,
+            7,
+            24,
+            20,
+            21,
+            4
+          ],
+          [
+            3,
+            8,
+            23,
+            20,
+            21,
+            3
+          ],
+          [
+            3,
+            9,
+            22,
+            20,
+            21,
+            2
+          ],
+          [
+            3,
+            10,
+            21,
+            20,
+            21,
+            1
+          ],
+          [
+            4,
+            8,
+            23,
+            19,
+            20,
+            4
+          ],
+          [
+            4,
+            9,
+            22,
+            19,
+            20,
+            3
+          ],
+          [
+            4,
+            10,
+            21,
+            19,
+            20,
+            2
+          ],
+          [
+            4,
+            11,
+            20,
+            19,
+            20,
+            1
+          ],
+          [
+            5,
+            10,
+            21,
+            18,
+            19,
+            3
+          ],
+          [
+            5,
+            11,
+            20,
+            18,
+            19,
+            2
+          ],
+          [
+            5,
+            12,
+            19,
+            18,
+            19,
+            1
+          ],
+          [
+            6,
+            12,
+            19,
+            17,
+            18,
+            2
+          ],
+          [
+            6,
+            13,
+            18,
+            17,
+            18,
+            1
+          ],
+          [
+            7,
+            14,
+            17,
+            16,
+            17,
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 25,
+        "tail": 17,
+        "ambient": 294,
+        "padding_upper": 218,
+        "D_upper": -65,
+        "correction_carriers_b_m_L_D_hookfirst_hookheight": [
+          [
+            0,
+            0,
+            33,
+            25,
+            26,
+            8
+          ],
+          [
+            1,
+            2,
+            31,
+            24,
+            25,
+            7
+          ],
+          [
+            1,
+            3,
+            30,
+            24,
+            25,
+            6
+          ],
+          [
+            1,
+            4,
+            29,
+            24,
+            25,
+            5
+          ],
+          [
+            2,
+            4,
+            29,
+            23,
+            24,
+            6
+          ],
+          [
+            2,
+            5,
+            28,
+            23,
+            24,
+            5
+          ],
+          [
+            2,
+            6,
+            27,
+            23,
+            24,
+            4
+          ],
+          [
+            2,
+            7,
+            26,
+            23,
+            24,
+            3
+          ],
+          [
+            2,
+            8,
+            25,
+            23,
+            24,
+            2
+          ],
+          [
+            3,
+            6,
+            27,
+            22,
+            23,
+            5
+          ],
+          [
+            3,
+            7,
+            26,
+            22,
+            23,
+            4
+          ],
+          [
+            3,
+            8,
+            25,
+            22,
+            23,
+            3
+          ],
+          [
+            3,
+            9,
+            24,
+            22,
+            23,
+            2
+          ],
+          [
+            3,
+            10,
+            23,
+            22,
+            23,
+            1
+          ],
+          [
+            4,
+            8,
+            25,
+            21,
+            22,
+            4
+          ],
+          [
+            4,
+            9,
+            24,
+            21,
+            22,
+            3
+          ],
+          [
+            4,
+            10,
+            23,
+            21,
+            22,
+            2
+          ],
+          [
+            4,
+            11,
+            22,
+            21,
+            22,
+            1
+          ],
+          [
+            5,
+            10,
+            23,
+            20,
+            21,
+            3
+          ],
+          [
+            5,
+            11,
+            22,
+            20,
+            21,
+            2
+          ],
+          [
+            5,
+            12,
+            21,
+            20,
+            21,
+            1
+          ],
+          [
+            6,
+            12,
+            21,
+            19,
+            20,
+            2
+          ],
+          [
+            6,
+            13,
+            20,
+            19,
+            20,
+            1
+          ],
+          [
+            7,
+            14,
+            19,
+            18,
+            19,
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 26,
+        "tail": 17,
+        "ambient": 294,
+        "padding_upper": 218,
+        "D_upper": -65,
+        "correction_carriers_b_m_L_D_hookfirst_hookheight": [
+          [
+            0,
+            0,
+            33,
+            26,
+            27,
+            7
+          ],
+          [
+            1,
+            2,
+            31,
+            25,
+            26,
+            6
+          ],
+          [
+            1,
+            3,
+            30,
+            25,
+            26,
+            5
+          ],
+          [
+            1,
+            4,
+            29,
+            25,
+            26,
+            4
+          ],
+          [
+            2,
+            4,
+            29,
+            24,
+            25,
+            5
+          ],
+          [
+            2,
+            5,
+            28,
+            24,
+            25,
+            4
+          ],
+          [
+            2,
+            6,
+            27,
+            24,
+            25,
+            3
+          ],
+          [
+            2,
+            7,
+            26,
+            24,
+            25,
+            2
+          ],
+          [
+            2,
+            8,
+            25,
+            24,
+            25,
+            1
+          ],
+          [
+            3,
+            6,
+            27,
+            23,
+            24,
+            4
+          ],
+          [
+            3,
+            7,
+            26,
+            23,
+            24,
+            3
+          ],
+          [
+            3,
+            8,
+            25,
+            23,
+            24,
+            2
+          ],
+          [
+            3,
+            9,
+            24,
+            23,
+            24,
+            1
+          ],
+          [
+            4,
+            8,
+            25,
+            22,
+            23,
+            3
+          ],
+          [
+            4,
+            9,
+            24,
+            22,
+            23,
+            2
+          ],
+          [
+            4,
+            10,
+            23,
+            22,
+            23,
+            1
+          ],
+          [
+            5,
+            10,
+            23,
+            21,
+            22,
+            2
+          ],
+          [
+            5,
+            11,
+            22,
+            21,
+            22,
+            1
+          ],
+          [
+            6,
+            12,
+            21,
+            20,
+            21,
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 27,
+        "tail": 19,
+        "ambient": 429,
+        "padding_upper": 288,
+        "D_upper": -130,
+        "correction_carriers_b_m_L_D_hookfirst_hookheight": [
+          [
+            0,
+            0,
+            35,
+            27,
+            28,
+            8
+          ],
+          [
+            1,
+            2,
+            33,
+            26,
+            27,
+            7
+          ],
+          [
+            1,
+            3,
+            32,
+            26,
+            27,
+            6
+          ],
+          [
+            1,
+            4,
+            31,
+            26,
+            27,
+            5
+          ],
+          [
+            2,
+            4,
+            31,
+            25,
+            26,
+            6
+          ],
+          [
+            2,
+            5,
+            30,
+            25,
+            26,
+            5
+          ],
+          [
+            2,
+            6,
+            29,
+            25,
+            26,
+            4
+          ],
+          [
+            2,
+            7,
+            28,
+            25,
+            26,
+            3
+          ],
+          [
+            2,
+            8,
+            27,
+            25,
+            26,
+            2
+          ],
+          [
+            3,
+            6,
+            29,
+            24,
+            25,
+            5
+          ],
+          [
+            3,
+            7,
+            28,
+            24,
+            25,
+            4
+          ],
+          [
+            3,
+            8,
+            27,
+            24,
+            25,
+            3
+          ],
+          [
+            3,
+            9,
+            26,
+            24,
+            25,
+            2
+          ],
+          [
+            3,
+            10,
+            25,
+            24,
+            25,
+            1
+          ],
+          [
+            4,
+            8,
+            27,
+            23,
+            24,
+            4
+          ],
+          [
+            4,
+            9,
+            26,
+            23,
+            24,
+            3
+          ],
+          [
+            4,
+            10,
+            25,
+            23,
+            24,
+            2
+          ],
+          [
+            4,
+            11,
+            24,
+            23,
+            24,
+            1
+          ],
+          [
+            5,
+            10,
+            25,
+            22,
+            23,
+            3
+          ],
+          [
+            5,
+            11,
+            24,
+            22,
+            23,
+            2
+          ],
+          [
+            5,
+            12,
+            23,
+            22,
+            23,
+            1
+          ],
+          [
+            6,
+            12,
+            23,
+            21,
+            22,
+            2
+          ],
+          [
+            6,
+            13,
+            22,
+            21,
+            22,
+            1
+          ],
+          [
+            7,
+            14,
+            21,
+            20,
+            21,
+            1
+          ]
+        ]
+      }
+    ],
+    "counts_and_geometric_premises": "Inherited from delivered, independently accepted slot02; no census regenerated",
+    "fresh": "Reviewed first-row hook argument; enumerated finite correction carriers; checked all four exclusions",
+    "degree27": "Full ambient/stable equality plus inherited chart/ideal compatibility transfers i_det11, m_det418, m_pad243..288"
+  },
+  "received_03_through_08": {
+    "status": "AWAITING_INTEGRATOR_DELIVERIES",
+    "entries": [
+      {
+        "slot": "03",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "04",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "05",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "06",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "07",
+        "status": "NOT_DELIVERED"
+      },
+      {
+        "slot": "08",
+        "status": "NOT_DELIVERED"
+      }
+    ],
+    "scope": "Initial independent proof review complete; no acceptance of undelivered B16 worker claims."
+  },
+  "heavy_lease": "Never acquired; no heavy job launched",
+  "wall_seconds": 0.07899999999790452,
+  "input_hashes": {
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b16_12\\input_paths.json": {
+      "bytes": 2102,
+      "sha256": "4f1c7ef1710346806b459437b47ad3be52c62ca563e31fccc758606548bb101f"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\BOARD.md": {
+      "bytes": 6994,
+      "sha256": "951a22332aeb2cf603dd62b682ab74a7655805e71f3ee4f8e35fc6ed9a0fabf0"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\launch\\INPUT_MANIFEST.json": {
+      "bytes": 5162,
+      "sha256": "5ebb174b31867b8f5ecfb773099a6867d2020faa2b4ee0be60a6fd5921839822"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\launch\\B16-12.md": {
+      "bytes": 3055,
+      "sha256": "ff43797af6e40547757eeeea8cdd640b21b7ccbdc73ba2900abee9d7ddc42957"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\INTAKE.json": {
+      "bytes": 100200,
+      "sha256": "18444677e2ba4ad3169456d0bc6dcd5d9ac32267d9e71d6fa9ad9b6347d488a2"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\integrator_review.json": {
+      "bytes": 2102,
+      "sha256": "1da55ae5c85d214a3f05442226aebde363ebbe0405760bb0d8aaed80c7005242"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\DREAM_REPORT.md": {
+      "bytes": 38026,
+      "sha256": "3ecc896a0bf30cc7566f2cb83d9a4401ceb0a111ba3d131a906455e1d026bd2a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_bound.py": {
+      "bytes": 4986,
+      "sha256": "b37383daf05a5c6eb6a3c22f339b55ec2f42851caca100bf4cc9c8c45b76527e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\verify_cubic_and_lift.py": {
+      "bytes": 6473,
+      "sha256": "2eac2a78713e89d6abf5d0b8306f99c9b97bd64bfb309f3e871e1fdf0e470254"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\REPORT.md": {
+      "bytes": 26318,
+      "sha256": "54b0b4ddd5e7e98879e7f74219d081b4ee58dce124fecfd03675ed08c81b6f68"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\input_receipt.json": {
+      "bytes": 13887,
+      "sha256": "13f1a07e2c58ed3eeb8fcc320e287356ba55437613e7c6a99881822f7e35a52b"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\integrator_review.json": {
+      "bytes": 3629,
+      "sha256": "f15ccb5e7455e962005aae38a28654cf9d3b0c6e07ad19374085235665035155"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\astra\\REVIEW.md": {
+      "bytes": 24922,
+      "sha256": "fda083fc7c763b09c684baaca88afab6d3191eb6a2ff1a261fe63f37d84c4532"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Slot05_Hessian_1530\\astra\\hessian_relations.py": {
+      "bytes": 4766,
+      "sha256": "c16e04b1d111bdfb0d608a90ecf56962ef194e267f313e111312825550726c38"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\docs\\b15_06_report.md": {
+      "bytes": 9459,
+      "sha256": "ae416411caad4302ddf6b6377f96405a41322afc7ebe17b79f712e04337a57ba"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-06\\analysis\\wk8_s30_pleth.py": {
+      "bytes": 2470,
+      "sha256": "2edd98529b228e91842d70ef1516381d54c81315928ea4202729cfe4d01bd166"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b15_12_report.md": {
+      "bytes": 13065,
+      "sha256": "04567ed32462da638663f266d4604a27f825850ed93cc03cbb76fb91d5ca6db4"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b15_12_proved.md": {
+      "bytes": 13003,
+      "sha256": "9afabb3e25ff9078fa3c0195be69d5bddd68affe9db34e76bacc756295b92135"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\analysis\\b15_bound.py": {
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\.venv\\python.exe": {
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b15_12\\source_manifest.json": {
+      "bytes": 1535,
+      "sha256": "75506bf1994343d39442b6b90cbf4a1f80094c4ebb40a03d484a374ead18ed87"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b15_12\\sources\\kl_1204.4693v1.pdf": {
+      "bytes": 150290,
+      "sha256": "599486883d141d224fd40155ff9533b09d500cc48c2f5281e10ab49636e1e7cd"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b16_12_proof.md": {
+      "bytes": 14341,
+      "sha256": "9c1c67c9362863e09c6f853a66d4d8ff39158c117b4b3174871d2795b88d962e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b16_12_receive02.md": {
+      "bytes": 5074,
+      "sha256": "58d1dd4da00684333b1cbfade093dd4606e34f260383f8768cf997e84c2ff11b"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\B15-01_full_replay\\integrator_review.json": {
+      "bytes": 13909,
+      "sha256": "de996a178d549a713538d18575a3eda15d1efcf4c84423375c99452c668db7b9"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\analysis\\b16_12_receive.py": {
+      "bytes": 13331,
+      "sha256": "8af6906b329814478a365255599a3c6e42731ff319b3dfe353727450d1b55270"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_bound.json": {
+      "bytes": 5258,
+      "sha256": "67d2f01dedc9b71862681a336a2f160e4cbe9d43c79d7931c31fa7bcff7c1574"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_2.json.gz": {
+      "bytes": 1183,
+      "sha256": "700f2f5ecfe3d1d230bd9e5bc8e09a9138e5678adb42462e592db5967b9fbe6d"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_3.json.gz": {
+      "bytes": 1417,
+      "sha256": "8d81e79cf1bc7bad93239525948459c215fc5ed024045bfd28418bfc7124eaae"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_4.json.gz": {
+      "bytes": 1938,
+      "sha256": "9b6f176b312879c559cad73f14d737ecf8855478623bab8bdb65881702ad3ced"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_5.json.gz": {
+      "bytes": 2156,
+      "sha256": "c599f8ca7bed5ccd9f94d6cee05eaae92f4f533cc9ee443a330cb1818e567f9f"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_6.json.gz": {
+      "bytes": 2899,
+      "sha256": "1b6105dc13327b36a68e2e7448fc238254109d950eda1e304cd6fb6dea6d70f6"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_7.json.gz": {
+      "bytes": 3442,
+      "sha256": "66fbb9cf6463da8028c157357292b579bcad3dbdb49513401fd81a2fcb890d84"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_8.json.gz": {
+      "bytes": 4406,
+      "sha256": "ea89a171ce69f7c1c358f7f33c1a04bd093724dc539e1ec778ee0269f5cc86c7"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_9.json.gz": {
+      "bytes": 5383,
+      "sha256": "a62c5c0ab3a471dc1cdbad1e6878ad814c41436fb0811748bf8303cf7249ccea"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_10.json.gz": {
+      "bytes": 6922,
+      "sha256": "264f1b7ffe7e525335fcec3b322159dc4d189398d2501ff521a98d77208026aa"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_11.json.gz": {
+      "bytes": 8041,
+      "sha256": "533bd42a9ad0d00e673c795de9375759158448393aeb05c3c56955184fa0e868"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_12.json.gz": {
+      "bytes": 10641,
+      "sha256": "691e6e1fe3104185e6b8f110e8dd7221cee1dc37bfd1bd206749a47c8017be19"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_13.json.gz": {
+      "bytes": 12798,
+      "sha256": "7fd107696961482dfbcec8fa5a2663d4a444ad84f882b213fed6a0ed64fc7459"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_14.json.gz": {
+      "bytes": 16209,
+      "sha256": "c8ccba2fd72ff86dc256b10c7e3803420e5e937c28415779d5f472fe0bf55f9a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_15.json.gz": {
+      "bytes": 19492,
+      "sha256": "1afd6e1aefaecb2d9bcffbb1872f5bd9d7d3f675feb7fd95a45ceb104f45891f"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_16.json.gz": {
+      "bytes": 24790,
+      "sha256": "c1a00c99703f2293f28776d5394614b20fb1013df88b1f93eca0916c7f08ce0e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_17.json.gz": {
+      "bytes": 29328,
+      "sha256": "86724d104dc24543508e0ff6407c518b796589fdfb3f66e4e70e5da2e975f7b3"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_18.json.gz": {
+      "bytes": 37254,
+      "sha256": "769bae0d53930c678b363fc007e28fd89f8c676fcedf671a9cd285bff0cd5a30"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Dream_Upper288\\cubic_tail_19.json.gz": {
+      "bytes": 44196,
+      "sha256": "2177ee309a395e82faa007a707a27ffeab2c24bb86d0c638a815f372f4d2c785"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\INPUT_DELIVERY_MANIFEST.json": {
+      "bytes": 3598,
+      "sha256": "d6edc8b90dd6f2edb52fcc4488662e21a6c203faaf922e5632c2c760989bc08e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\integrator_review.json": {
+      "bytes": 1035,
+      "sha256": "6473341f5f643326d6d56915ddf645fdc108d2caa25847c278b79b959a7de4a9"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\analysis\\b16_02_census.py": {
+      "bytes": 9605,
+      "sha256": "a0355b84e45c0e27001c50ebca9268d1de2afb12252537c60c64a916f27e4c6b"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\analysis\\b16_02_receive.py": {
+      "bytes": 8302,
+      "sha256": "4df0cede28913ad4bac9f7aeece712124ad832a4222291b811a36010fabc84d0"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\docs\\b16_02_report.md": {
+      "bytes": 5620,
+      "sha256": "90222c52e5630071d1d0fda12e6dd784889b4d548c7689408bc5a0f1cac04b28"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\docs\\b16_02_proof.md": {
+      "bytes": 8653,
+      "sha256": "6308231bea4b116e24a8f9bf33f44521040af8feae183894146f2fce947e959d"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\census.json": {
+      "bytes": 2071,
+      "sha256": "5704931d76a6e35139e8a3128d3fff993dc8b19001fc769e8405194511a84e37"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\controls.json": {
+      "bytes": 8286,
+      "sha256": "9a331b65f64d9baff8b74ee6f8b24da99fbc53882b3c248798da0879da83bf59"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\count_t15.json.gz": {
+      "bytes": 30448,
+      "sha256": "d5c2f072e48c8845dec139907c3ea736d28d4aa45cce33390afcf43c1fa27c4a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\count_t17.json.gz": {
+      "bytes": 45929,
+      "sha256": "ed06951e6d46b40dc22e16f53154175fedd302697cf2759e7f0f48792bd21497"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\count_t19.json.gz": {
+      "bytes": 67776,
+      "sha256": "6d84f9a0c2b12007da0d2ddd476b6fd3b8ace301d31fa3e131f5e273554b56b2"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\input_hashes.json": {
+      "bytes": 5215,
+      "sha256": "4b51903073d9801e9ae58c7a4f55266cc07c0a9e3edca551ba62d4f2e6e01db1"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\receiver.json": {
+      "bytes": 825,
+      "sha256": "d2bf4aaf0376b89bcf5cab8851a8ee6f7d3d8a10b551f122a2c09403159a65d7"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b16_02\\receiver.json": {
+      "bytes": 825,
+      "sha256": "7ed5eef3390ad10f139fa9c11b5ed3ea87da4477f74ea9ad613bf733c73b512a"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\resource_summary.json": {
+      "bytes": 1902,
+      "sha256": "ac90d2af51a6f1416ab68663ab863aa774b37a766165656557f0c07ad575a2dd"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\b16_02\\sizing.json": {
+      "bytes": 7735,
+      "sha256": "46f32756b80d10e42f585525d2fc6ee09b6cd15124f5d09dff7e89efea21c785"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\logs\\b16_02_sizing_resources.json": {
+      "bytes": 809,
+      "sha256": "1569771614d913c251b0867a4515d7d5b125220c488ca05091f82b3e4ec47290"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\logs\\b16_02_controls_resources.json": {
+      "bytes": 808,
+      "sha256": "3d6cb87c81b68df8af18f922ac1196762860c46a666ed036862736d76575fa9b"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\logs\\b16_02_count_pilot_resources.json": {
+      "bytes": 806,
+      "sha256": "662860bfc29cb9849a7844109e4be805201d16374e756d4fa1e7418c7d089ba0"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\02\\results\\logs\\b16_02_receiver_resources.json": {
+      "bytes": 815,
+      "sha256": "b912e3d0646d0b87b4e1bd59609ca298cc09d2c8cc7e3e445b9f2e34d733322e"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\logs\\b16_02_receiver_resources.json": {
+      "bytes": 807,
+      "sha256": "6e1db6e38dc00422d038c414bc823bbb9020c8d57edc5f1f3608ce8686398b7c"
+    },
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\results\\b16_12\\received.json": {
+      "bytes": 455,
+      "sha256": "2066e7530a94deea432efbda2933e9b040470db66ab2d56dd07299670556f9cf"
+    }
+  },
+  "source_sha256": "8af6906b329814478a365255599a3c6e42731ff319b3dfe353727450d1b55270"
+}
