@@ -66,6 +66,9 @@ s76_scale24.bundle.md5
 *.bundle_*.part*
 
 # Batch 15 owns its delivery outputs and archives worker PID provenance.
-/delivery/
+# Batch 16/17 slot 09: accepted deliveries and their PID records are tracked; later outputs stay ignored.
+/delivery/*
+!/delivery/b16_09/
+!results/logs/b16_09_*.pid
 results/b15_prep/checks/fixtures/
 !results/logs/b15_*.pid
