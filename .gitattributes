@@ -3,3 +3,6 @@ results/b14_10/** -text
 analysis/b14_10/** text eol=lf
 # JSON written on Windows retains CRLF bytes; CR is not trailing whitespace.
 results/b14_10/** whitespace=cr-at-eol
+# Central Batch16/Batch17 records: CLOSEOUT pins and SNAPSHOT_BINDING hashes bind the bytes as written on disk.
+docs/batch16/** -text whitespace=cr-at-eol
+docs/batch17/** -text whitespace=cr-at-eol
