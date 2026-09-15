@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-09-13T17:57:34.1348311Z",
+  "note": "Original producer exit0 was reported by execution tool. Its PID22724 was subsequently reused by svchost, not a live research process.",
+  "runs": [
+    {
+      "job_peak_bytes": 26935296,
+      "pid_present_at_check": false,
+      "exit_code": 0,
+      "current_process_name": null,
+      "original_python_process_exited": true,
+      "wall_seconds": 0.034734099986962974,
+      "name": "b16_01_preflight",
+      "pid": 27348
+    },
+    {
+      "job_peak_bytes": 59330560,
+      "pid_present_at_check": true,
+      "exit_code": 0,
+      "current_process_name": "svchost",
+      "original_python_process_exited": true,
+      "wall_seconds": 2.1915416000119876,
+      "name": "b16_01_produce",
+      "pid": 22724
+    },
+    {
+      "job_peak_bytes": 66121728,
+      "pid_present_at_check": false,
+      "exit_code": 0,
+      "current_process_name": null,
+      "original_python_process_exited": true,
+      "wall_seconds": 2.554019300005166,
+      "name": "b16_01_receiver",
+      "pid": 46128
+    },
+    {
+      "job_peak_bytes": 23486464,
+      "pid_present_at_check": false,
+      "exit_code": 0,
+      "current_process_name": null,
+      "original_python_process_exited": true,
+      "wall_seconds": 0.031007999990833923,
+      "name": "b16_01_transport",
+      "pid": 46256
+    }
+  ],
+  "heavy_lease": "RELEASED_UNUSED"
+}
