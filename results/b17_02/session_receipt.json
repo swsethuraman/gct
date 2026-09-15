@@ -1,0 +1,45 @@
+{
+  "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+  "head": "77a16d78dcc9adf8067c562efc4c7fe9a858bfa0",
+  "branch": "b15-02-a1-probes",
+  "approvals_rejected": [],
+  "missing_path_probes": [
+    "../B15-08/delivery/b16_08/MANIFEST.json does not exist; resolved to ARTIFACT_HASHES.json",
+    ".venv/Scripts/python.exe does not exist; resolved to .venv/python.exe"
+  ],
+  "applicable_agents_files_found": [],
+  "write_scope": "analysis/b17_02*, docs/b17_02*, results/b17_02/, delivery/b17_02/, results/logs/b17_02*",
+  "status_after_initial_owned_files_created": [
+    "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+    "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+    "?? analysis/b16_02_census.py",
+    "?? analysis/b16_02_receive.py",
+    "?? analysis/b17_02_verify.py",
+    "?? docs/b16_02_proof.md",
+    "?? docs/b16_02_report.md",
+    "?? docs/b17_02_preflight.md",
+    "?? results/b16_02/",
+    "?? results/b17_02/",
+    "?? results/logs/b15_02_runtime_native_20260913.pid",
+    "?? results/logs/b15_02_runtime_native_20260913_resources.json",
+    "?? results/logs/b15_02_runtime_preflight_run_20260913T062637Z.pid",
+    "?? results/logs/b15_02_runtime_preflight_run_20260913T062637Z_resources.json",
+    "?? results/logs/b16_02_controls_resources.json",
+    "?? results/logs/b16_02_count_pilot_resources.json",
+    "?? results/logs/b16_02_receiver_resources.json",
+    "?? results/logs/b16_02_runtime_resources.json",
+    "?? results/logs/b16_02_sizing_resources.json"
+  ],
+  "operational_events": [
+    {
+      "action": "git status --short",
+      "reason": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+      "outcome": "Read-only status succeeded with warning; no trust, permissions, or configuration changes attempted"
+    },
+    {
+      "action": "Probe .venv/Scripts/python.exe and B16-08 MANIFEST.json",
+      "reason": "Paths absent",
+      "outcome": "Resolved by existing .venv/python.exe and declared ARTIFACT_HASHES.json; no computation attempted on missing paths"
+    }
+  ]
+}
