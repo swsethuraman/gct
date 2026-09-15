@@ -1,0 +1,6 @@
+"""Resume only the usage-interrupted final reviewer; no scientific replay."""
+from pathlib import Path
+base=Path(__file__).with_name('resume_remaining.py');source=base.read_text()
+prompts={'11':'''User added credits and explicitly requested continuing. Resume SAME session and finalize the already-written b17_11_supplement04_08.md. Last turn hit usage limit after the successful independent control (0.389s). Inspect saved report, verification, hashes and resources; DO NOT rerun scientific calculations. Finish/seal the manifest, preserve all earlier review artifacts, and give final scoped disposition with report paths. If the successful receipt does not cover something, mark it unverified. Existing Astra/xhigh, worktree, sandbox/ownership/trust and normal operation-specific approvals stay unchanged; no agents/new worktrees/commits/push/publication. No additional scientific run or heavy lease. Slot12 has delivered docs/b17_12_closeout.md with04/08 pending as of its snapshot; final integration can supersede that snapshot with your finalized supplement.'''}
+start=source.index('prompts={');end=source.index('# All checks before any launch.')
+exec(compile(source[:start]+'prompts='+repr(prompts)+'\n'+source[end:],str(base),'exec'),{'__file__':str(base),'__name__':'__main__'})

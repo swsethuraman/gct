@@ -1,0 +1,16 @@
+lift prime 2147483647 ok
+lift prime 2147483629 ok
+lift prime 2147482951 ok
+lift prime 2147482949 ok
+RED dim 19 max entry 3084178083840
+DET dim 11 max entry 567172730880
+verify prime 2147482943 ranks {'GEN': 429, 'DET': 418, 'PAD': 243, 'RED': 410}
+CONTROLS at unused prime 2147482943
+  I_red applied to RED: max |value| = 0  -> VANISHES
+  I_red applied to DET: max |value| = 2147039533  -> nonzero (as required)
+  I_red applied to PAD: max |value| = 0  -> VANISHES
+  I_red applied to GEN: max |value| = 2147242166  -> nonzero (as required)
+  I_det applied to RED: max |value| = 2146945004  -> nonzero (as required)
+  I_det applied to DET: max |value| = 0  -> VANISHES
+  I_det applied to PAD: max |value| = 2147348374  -> nonzero (as required)
+  I_det applied to GEN: max |value| = 2147223337  -> nonzero (as required)

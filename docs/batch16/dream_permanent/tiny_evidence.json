@@ -1,0 +1,209 @@
+{
+  "status": "PASS_EXACT_TINY_CONTROLS",
+  "claim_scope": "Natural-coordinate examples and one exact polynomial line; no multiplicity count or new separation theorem.",
+  "source_control": {
+    "X": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        1,
+        -3
+      ]
+    ],
+    "permanent": 0,
+    "first_partial_matrix": [
+      [
+        -3,
+        0,
+        3
+      ],
+      [
+        -2,
+        -2,
+        2
+      ],
+      [
+        5,
+        4,
+        3
+      ]
+    ],
+    "first_partial_matrix_determinant": 48,
+    "permanent_Hessian_rank": 9,
+    "padded_Hessian_rank_at_z1": 9,
+    "padded_kernel_vector": [
+      -2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1,
+      1,
+      -3
+    ]
+  },
+  "essential_variable_rank": 10,
+  "det4_Hessian_rank_at_diag_0111": 8,
+  "row_addition_control": {
+    "det_before": -4,
+    "det_after": -4,
+    "per_before": 0,
+    "per_after": 6
+  },
+  "line_control": {
+    "base_X_row_major": [
+      1,
+      2,
+      1,
+      3,
+      1,
+      2,
+      2,
+      1,
+      4
+    ],
+    "X_direction": "identity3",
+    "z": [
+      2,
+      1
+    ],
+    "C_coefficients": [
+      43,
+      19,
+      6,
+      1
+    ],
+    "det_Hess_C_coefficients": [
+      -8390,
+      5166,
+      19530,
+      10044,
+      328,
+      -1558,
+      -874,
+      -250,
+      -36,
+      -2
+    ],
+    "det_Hess_P_coefficients": [
+      138535680,
+      530055168,
+      532559616,
+      -879240960,
+      -3342149088,
+      -4977971520,
+      -4579637232,
+      -2817494160,
+      -1096655709,
+      -144592044,
+      141784578,
+      130353120,
+      64654191,
+      22978716,
+      6250470,
+      1321860,
+      215394,
+      26220,
+      2244,
+      120,
+      3
+    ],
+    "D_mod_P": [
+      0
+    ],
+    "D_mod_P_squared": [
+      10582871040,
+      23997173760,
+      22931774208,
+      12368547072,
+      4278419712,
+      988743168,
+      139991040,
+      8918784
+    ],
+    "interpolation_nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "D_degree_bound": 20,
+    "D_degree_actual": 20,
+    "z_root_order_at_least": 8
+  },
+  "input_hashes_unchanged_during_run": true,
+  "inputs": {
+    "Batch16/BOARD.md": {
+      "sha256": "b793cc2f327240ce5367a0f6534fcf36d3090b9147eb6c1a9a86ca39560b9998",
+      "bytes": 11334
+    },
+    "Batch16/CLAUDE_FOCUSED_REVIEW.md": {
+      "sha256": "3f0bd1bcb608ac64c54debe7d88796ee9ac2a6b8ea2fcc07afb6550588edb638",
+      "bytes": 4701
+    },
+    "Batch16/GEMINI_REVIEW.md": {
+      "sha256": "ff2a7aeee28a2b9eb2a50809cfeea6459706ee37ec8b02c7a1d15a6ec63f5e43",
+      "bytes": 3528
+    },
+    "Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/REPORT.md": {
+      "sha256": "54b0b4ddd5e7e98879e7f74219d081b4ee58dce124fecfd03675ed08c81b6f68",
+      "bytes": 26318
+    },
+    "Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/integrator_review.json": {
+      "sha256": "8cbf6ddba8c71103c466b50587a3a5d4aca2b72066316c2687aa3378add6af7f",
+      "bytes": 2610
+    },
+    "Batch15_Launch/native_20260913/equation_review/padding_test/REPORT.md": {
+      "sha256": "510704402990af5e793307fc9e58d9590ceb97b47b9b75b5fa99f6fea093ada8",
+      "bytes": 13228
+    },
+    "work/batch15_workers/B15-06/analysis/b15_06_geometry.py": {
+      "sha256": "8e17040d004d39436c54b0c49b966993559f793c99604eb84d515c8809e5d090",
+      "bytes": 14033
+    },
+    "Batch15_Launch/native_20260913/equation_review/evidence/analysis/b15_bound.py": {
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "bytes": 6997
+    },
+    "work/batch15_workers/B15-06/analysis/b15_06_census.py": {
+      "sha256": "12d108e895186515d1e5188453adbdabe19bdf2ca34355c0b73d4c400f5ba3ca",
+      "bytes": 6991
+    },
+    "work/batch15_workers/B15-06/results/b15_06/census.json": {
+      "sha256": "016cc0c96402a8fb7c14e2631971da420d1f2f099b820017b3cf4eaa02ab95d5",
+      "bytes": 22266
+    },
+    "work/batch15_workers/B15-12/docs/b15_12_report.md": {
+      "sha256": "04567ed32462da638663f266d4604a27f825850ed93cc03cbb76fb91d5ca6db4",
+      "bytes": 13065
+    }
+  }
+}

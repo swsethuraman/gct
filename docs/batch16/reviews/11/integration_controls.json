@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "relocated_portable_payload",
+      "status": "PASS",
+      "payload_files": 108,
+      "live_input_access": false
+    },
+    {
+      "name": "same_length_payload_byte_corruption",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "hash mismatch: Batch16/launch/INPUT_MANIFEST.json"
+    },
+    {
+      "name": "manifest_hash_mutation",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "hash mismatch: Batch16/launch/INPUT_MANIFEST.json"
+    },
+    {
+      "name": "incomplete_timeout_receipt",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "resource receipt lacks successful exit"
+    },
+    {
+      "name": "resource_overrun",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "wall overrun"
+    },
+    {
+      "name": "unleased_heavy_caps",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "small control requires lease for larger caps"
+    },
+    {
+      "name": "synthetic_same_cell_positive",
+      "status": "PASS",
+      "research_evidence": false
+    },
+    {
+      "name": "source_ceiling_as_padding_rank",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "sampled_zero_as_global_equation",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "stable_count_as_finite_ambient",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "cross_degree_join",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "unreviewed_global_proof",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "unreviewed proof"
+    },
+    {
+      "name": "inequality_equality_is_inconclusive",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "insufficient inequality; NOT an exclusion"
+    },
+    {
+      "name": "inside_variable_padding",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "representation/padding/closure context"
+    },
+    {
+      "name": "equation_nonzero_alone",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "unreviewed premise: missing_full_cell_rank"
+    },
+    {
+      "name": "self_authorized_observation",
+      "status": "REJECTED_AS_REQUIRED"
+    }
+  ],
+  "control_count": 16,
+  "relocated_path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-11\\results\\b16_11\\relocated_control_35264",
+  "seconds": 0.375167699996382,
+  "semantic_scope": "Metadata/conditional-bound receiver only; no inherited mathematical implementation ran."
+}

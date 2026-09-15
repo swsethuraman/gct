@@ -1,0 +1,36 @@
+{
+  "status": "EXACT_CANDIDATE_LINEAR_ALGEBRA_ONLY",
+  "candidate_ranks": {
+    "RED": 19,
+    "DET": 11,
+    "joint": 30
+  },
+  "candidate_span_intersection": 0,
+  "max_entries": {
+    "RED": 3084178083840,
+    "DET": 567172730880
+  },
+  "inputs": [
+    {
+      "name": "claude_sept13.txt",
+      "sha256": "ee5df3a96166d0658e547b3bda0df963ecc0cf1d44afb2f992b95cdb3e52642b",
+      "bytes": 18417
+    },
+    {
+      "name": "session_b15_padding_verdict.md",
+      "sha256": "ae487c6762cc7d8124859fb0a0782df0962550fae75d723c8b5b498b71596408",
+      "bytes": 18078
+    },
+    {
+      "name": "exact_ideals.json",
+      "sha256": "294587503a56c773403acf5eeb992af10b431545ba579f6a19c1bf9769aaa449",
+      "bytes": 143443
+    },
+    {
+      "name": "b15_verdict_harness.tar.gz",
+      "sha256": "fd27ca7b446f7440c5f0b8dc5ead8d8a6c3b21947678222a230357ffea893b02",
+      "bytes": 7483
+    }
+  ],
+  "scope": "Exact integer row independence only. No global vanishing, geometry, modular-run reproduction, CRT uniqueness bound or full padded rank accepted. Original harness retained but not executed."
+}
