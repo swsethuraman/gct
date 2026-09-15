@@ -1,0 +1,664 @@
+{
+  "status": "ALL_RESEARCH_PROCESSES_EXITED",
+  "heavy_lease_requested": false,
+  "heavy_lease_held": false,
+  "final_receiver_seconds": 4.083194600010756,
+  "final_receiver_peak_job_bytes": 30347264,
+  "final_receiver_peak_working_set_bytes": 43810816,
+  "all_closed_control_wall_seconds": 20.276184299989836,
+  "largest_closed_job_peak_bytes": 30347264,
+  "closed_control_count": 18,
+  "nonzero_debug_exit_count": 4,
+  "debug_failures": "FLINT coefficient string coercion; fmpz JSON serialization; fresh-versus-JSON key types; absent optional pyvenv.cfg. Each corrected; no mathematical failure suppressed.",
+  "scope": "Includes all completed B16-04 research/preparatory controls, including debug failures. Excludes inherited launch smoke and this final filesystem-packaging run, whose separate wrapper receipt is results/logs/b16_04_finalize_resources.json.",
+  "receipts": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_api_fixed_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 36028,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9446567936,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:55:05Z",
+        "exit_code": 0,
+        "wall_seconds": 0.046622299996670336,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9440075776,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 28114944,
+          "working_set": 28114944,
+          "peak_pagefile": 16539648
+        },
+        "job_memory": {
+          "peak_job_memory": 16539648,
+          "peak_process_memory": 16539648
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_api_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 38664,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9451470848,
+          "load": 71
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:54:41Z",
+        "exit_code": 1,
+        "wall_seconds": 0.04606910000438802,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9437556736,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 28131328,
+          "working_set": 28131328,
+          "peak_pagefile": 16683008
+        },
+        "job_memory": {
+          "peak_job_memory": 16683008,
+          "peak_process_memory": 16683008
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_delivered_receiver_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 26684,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 10074308608,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T18:02:14Z",
+        "exit_code": 0,
+        "wall_seconds": 4.083194600010756,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 10073751552,
+          "load": 70
+        },
+        "process_memory": {
+          "peak_working_set": 43810816,
+          "working_set": 37654528,
+          "peak_pagefile": 30347264
+        },
+        "job_memory": {
+          "peak_job_memory": 30347264,
+          "peak_process_memory": 30347264
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_final_receiver_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 42816,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 10000044032,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T18:01:26Z",
+        "exit_code": 0,
+        "wall_seconds": 3.9631593999802135,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9989021696,
+          "load": 70
+        },
+        "process_memory": {
+          "peak_working_set": 41230336,
+          "working_set": 36622336,
+          "peak_pagefile": 27693056
+        },
+        "job_memory": {
+          "peak_job_memory": 27693056,
+          "peak_process_memory": 27693056
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_input_hashes_fixed_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 34800,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 10031529984,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T18:01:41Z",
+        "exit_code": 0,
+        "wall_seconds": 0.1673509000102058,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 10001088512,
+          "load": 70
+        },
+        "process_memory": {
+          "peak_working_set": 40308736,
+          "working_set": 37842944,
+          "peak_pagefile": 25726976
+        },
+        "job_memory": {
+          "peak_job_memory": 27561984,
+          "peak_process_memory": 25726976
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_input_hashes_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 296,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9994616832,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T18:01:25Z",
+        "exit_code": 1,
+        "wall_seconds": 0.06348739998065867,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9975304192,
+          "load": 70
+        },
+        "process_memory": {
+          "peak_working_set": 32989184,
+          "working_set": 31305728,
+          "peak_pagefile": 20897792
+        },
+        "job_memory": {
+          "peak_job_memory": 20897792,
+          "peak_process_memory": 20897792
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_joint1_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 42156,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9218772992,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:53:42Z",
+        "exit_code": 0,
+        "wall_seconds": 0.08241470000939444,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9199738880,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32366592,
+          "working_set": 31559680,
+          "peak_pagefile": 20144128
+        },
+        "job_memory": {
+          "peak_job_memory": 20144128,
+          "peak_process_memory": 20144128
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_joint2_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 46752,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9286389760,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:53:57Z",
+        "exit_code": 0,
+        "wall_seconds": 0.0822889999835752,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9273143296,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32444416,
+          "working_set": 31682560,
+          "peak_pagefile": 20209664
+        },
+        "job_memory": {
+          "peak_job_memory": 20209664,
+          "peak_process_memory": 20209664
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_pilot1_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 45252,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9220489216,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:52:09Z",
+        "exit_code": 0,
+        "wall_seconds": 0.7572130000044126,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9226649600,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32382976,
+          "working_set": 31842304,
+          "peak_pagefile": 20217856
+        },
+        "job_memory": {
+          "peak_job_memory": 20217856,
+          "peak_process_memory": 20217856
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_pilot2_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 31120,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9266221056,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:53:29Z",
+        "exit_code": 0,
+        "wall_seconds": 0.7519608000002336,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9186697216,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32292864,
+          "working_set": 31498240,
+          "peak_pagefile": 20049920
+        },
+        "job_memory": {
+          "peak_job_memory": 20049920,
+          "peak_process_memory": 20049920
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_pilot3_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 39456,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9222668288,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:53:53Z",
+        "exit_code": 0,
+        "wall_seconds": 0.7384044000064023,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9268150272,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32387072,
+          "working_set": 31891456,
+          "peak_pagefile": 20217856
+        },
+        "job_memory": {
+          "peak_job_memory": 20217856,
+          "peak_process_memory": 20217856
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_pilot4_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 46128,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9285156864,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:53:55Z",
+        "exit_code": 0,
+        "wall_seconds": 0.7415485999954399,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9267679232,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 32399360,
+          "working_set": 31723520,
+          "peak_pagefile": 19374080
+        },
+        "job_memory": {
+          "peak_job_memory": 19374080,
+          "peak_process_memory": 19374080
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_receiver_full_fixed_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 33360,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9871867904,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:58:29Z",
+        "exit_code": 0,
+        "wall_seconds": 4.118134699994698,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9916715008,
+          "load": 70
+        },
+        "process_memory": {
+          "peak_working_set": 41312256,
+          "working_set": 37531648,
+          "peak_pagefile": 27832320
+        },
+        "job_memory": {
+          "peak_job_memory": 27832320,
+          "peak_process_memory": 27832320
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_receiver_full_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 6988,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9831297024,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:58:21Z",
+        "exit_code": 1,
+        "wall_seconds": 1.749867800011998,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9782714368,
+          "load": 71
+        },
+        "process_memory": {
+          "peak_working_set": 41111552,
+          "working_set": 37109760,
+          "peak_pagefile": 27369472
+        },
+        "job_memory": {
+          "peak_job_memory": 27369472,
+          "peak_process_memory": 27369472
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_receiver_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 34992,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9809694720,
+          "load": 70
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:57:20Z",
+        "exit_code": 0,
+        "wall_seconds": 1.3525915000063833,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9777291264,
+          "load": 71
+        },
+        "process_memory": {
+          "peak_working_set": 41304064,
+          "working_set": 37015552,
+          "peak_pagefile": 27938816
+        },
+        "job_memory": {
+          "peak_job_memory": 27938816,
+          "peak_process_memory": 27938816
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_sizing_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 43648,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 8967221248,
+          "load": 73
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:51:59Z",
+        "exit_code": 0,
+        "wall_seconds": 0.22387690001050942,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 8959688704,
+          "load": 73
+        },
+        "process_memory": {
+          "peak_working_set": 33550336,
+          "working_set": 33550336,
+          "peak_pagefile": 21168128
+        },
+        "job_memory": {
+          "peak_job_memory": 21168128,
+          "peak_process_memory": 21168128
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_universal_fixed_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 30576,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9386131456,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:56:06Z",
+        "exit_code": 0,
+        "wall_seconds": 0.6455920999869704,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9373122560,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 35643392,
+          "working_set": 33955840,
+          "peak_pagefile": 22183936
+        },
+        "job_memory": {
+          "peak_job_memory": 22183936,
+          "peak_process_memory": 22183936
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-04\\results\\logs\\b16_04_universal_resources.json",
+      "resource_receipt": {
+        "board_numbering": "batch15",
+        "session_id": "B15-04",
+        "pid": 45228,
+        "memory_before": {
+          "total_physical": 33752997888,
+          "available_physical": 9409318912,
+          "load": 72
+        },
+        "memory_cap_mb": 512,
+        "wall_cap_seconds": 60,
+        "workers": 1,
+        "blas_threads": 1,
+        "job_object_enforced": true,
+        "idle_sleep_inhibited_during_run": true,
+        "started_utc": "2026-09-13T17:55:57Z",
+        "exit_code": 1,
+        "wall_seconds": 0.6624070999969263,
+        "memory_after": {
+          "total_physical": 33752997888,
+          "available_physical": 9415372800,
+          "load": 72
+        },
+        "process_memory": {
+          "peak_working_set": 34390016,
+          "working_set": 33992704,
+          "peak_pagefile": 21508096
+        },
+        "job_memory": {
+          "peak_job_memory": 21508096,
+          "peak_process_memory": 21508096
+        }
+      }
+    }
+  ]
+}
