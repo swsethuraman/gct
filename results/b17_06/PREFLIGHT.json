@@ -1,0 +1,23 @@
+{
+  "task": "B17-06",
+  "kind": "theory-priced single small control, not a heavy lease",
+  "authorized_research_runs": 1,
+  "degree_ceiling": 5,
+  "coefficient_polynomials": 2,
+  "control_cell": {"d": 5, "lambda": [16, 4], "known_multiplicities": [2, 2]},
+  "raw_degree_5_six_variable_slots": 252,
+  "merged_degree_5_slots": 231,
+  "all_compositions_degrees_0_through_5": 462,
+  "hard_term_pair_cap": 250000,
+  "hard_coefficient_bit_cap": 4096,
+  "expected_wall_seconds_below": 5,
+  "expected_memory_MiB_below": 64,
+  "enforced_wall_seconds": 60,
+  "enforced_job_memory_MiB": 512,
+  "processes": 1,
+  "BLAS_threads": 1,
+  "subprocesses": 0,
+  "imports": "Python standard library only; no inherited arithmetic implementation",
+  "on_cap_hit": "UNCOMPUTED; no second research computation this task",
+  "command": ".venv/python.exe -B analysis/b15_bound.py --slot 06 --name b17_06_control_01 --seconds 60 --memory-mb 512 analysis/b17_06_verify.py --output results/b17_06/control_01.json"
+}
