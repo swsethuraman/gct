@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "task": "B17-02",
+  "status": "COMPLETE_BOUNDED_THEORY_CONTRIBUTION",
+  "created_utc": "2026-09-14T03:37:32.3361648Z",
+  "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02",
+  "head": "77a16d78dcc9adf8067c562efc4c7fe9a858bfa0",
+  "branch": "b15-02-a1-probes",
+  "assigned_model": "gpt-6-astra",
+  "assigned_reasoning": "xhigh",
+  "fresh_results": [
+    "Explicit polynomial three-term determinant boundary arc from common a,r,c,E blocks",
+    "All four shared Taylor-order identities at fixed J",
+    "Boundary endpoint proved by reducible cubic tangent cone at a triple point",
+    "For every finite (d,lambda): m_det <= min(a,s-rank C), C projects H-fixed vectors to gamma weights outside [0,2d]",
+    "Original-matrix-entry diagonal arcs have zero forbidden-weight map by row/column torus invariance and matching decomposition"
+  ],
+  "representation_convention": {
+    "strict_improvement_threshold": "b >= s-min(a,s)+1",
+    "ambient": "V=Sym^4 W, dim W=16",
+    "gamma_blocks": {
+      "zero": 3,
+      "plus_one": 9,
+      "minus_one": 4
+    },
+    "coordinate_label": "S_lambda(W*), |lambda|=4d",
+    "multiplicity_source": "(S_lambda W)^H with full determinant stabilizer including transpose"
+  },
+  "not_claimed": [
+    "New numeric determinant bound",
+    "Positive forbidden-weight rank in a new cell",
+    "Global quartic-coefficient equation module",
+    "Positive multiplicity gap",
+    "Actual padding lower bound",
+    "Novelty to literature",
+    "Improved LMR size growth",
+    "Complete boundary classification"
+  ],
+  "inherited_evidence": {
+    "scope": "Only the accepted 34-coordinate coefficient-degree<=2 negative result; not rerun",
+    "artifact_hashes_checked": 11,
+    "original_shared_block_report_sha256": "54b0b4ddd5e7e98879e7f74219d081b4ee58dce124fecfd03675ed08c81b6f68",
+    "intake": "C:/Users/swami/Projects/gct-gpt/Batch16/INTAKE.json"
+  },
+  "primary_citations": [
+    {
+      "authors": "Burgisser, Landsberg, Manivel, Weyman",
+      "url": "https://arxiv.org/pdf/0907.2850",
+      "locations": "Sections 4.1, 5.2, 7.3"
+    },
+    {
+      "authors": "Huttenhain, Lairez",
+      "url": "https://arxiv.org/pdf/1512.02437",
+      "locations": "Lemma 5"
+    },
+    {
+      "authors": "Burgisser, Ikenmeyer",
+      "url": "https://arxiv.org/pdf/1511.02927",
+      "locations": "Section 3"
+    }
+  ],
+  "primary_hash_note": "The pinned primary_source_extracts.json is the web tool extraction, not a raw PDF digest",
+  "input_hash_convention": "SHA256_RAW_BYTES",
+  "inputs": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\BOARD.md",
+      "bytes": 8000,
+      "sha256": "b9b97fc17f867c645a599ca596404b2ea1eba3744e62d0aa131adcf2df5cd2d8"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\SCREEN_REPORT.md",
+      "bytes": 3808,
+      "sha256": "16e4980be0463e9202dd0991cca8558afcca746ec40b89ec8bf6c86316d71306"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\symmetry_dream\\COMMON_CONTEXT.md",
+      "bytes": 5935,
+      "sha256": "416b883b0d9301c2c5b3876efbd263c4e4f17329597e90cecb7e8fb187ee331c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\STOCKTAKE.md",
+      "bytes": 6382,
+      "sha256": "0a5ee25d2537429e45cae2ec25e35699da145939fb4a837c69379e6898f89fe2"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\INTAKE.json",
+      "bytes": 11451,
+      "sha256": "90e0e6dc7b41a666d465f4de02544e4e2c8edc01278a5b7319fe504fb9867695"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\b16_12_receive04_05_06_08.md",
+      "bytes": 16011,
+      "sha256": "62389899613d63b0f9b53fa52e83ebca0aedb51a2500ebba7450696c6f9381b6"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\intake_08.json",
+      "bytes": 11110,
+      "sha256": "c729b07d53500c6afa068d90a66ace4264586ea2b2a98edb8cb123b21f242899"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\INTAKE.json",
+      "bytes": 100200,
+      "sha256": "18444677e2ba4ad3169456d0bc6dcd5d9ac32267d9e71d6fa9ad9b6347d488a2"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\REPORT.md",
+      "bytes": 26318,
+      "sha256": "54b0b4ddd5e7e98879e7f74219d081b4ee58dce124fecfd03675ed08c81b6f68"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\MANIFEST.json",
+      "bytes": 761,
+      "sha256": "06c551900d52fe439812f4172223c240290b490cdee7cc798fffa9091195cf2c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\docs\\b16_08_proof.md",
+      "bytes": 9641,
+      "sha256": "dc23577b16035279332b7bc9a1be58e815a1179f74573ae5105613146c75eb4a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\docs\\b16_08_report.md",
+      "bytes": 2762,
+      "sha256": "23ea84b58757a11a1cb93595d3a2128917bee5b6fc4b09607fc063002eb692e4"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\analysis\\b16_08_jets.py",
+      "bytes": 12824,
+      "sha256": "a924d3a16b37b793a13889caf62b2ebe50a1492a7a4cb21405f0465ccce0310f"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\INPUT_HASHES.json",
+      "bytes": 7434,
+      "sha256": "42a24be79e2e4b6c3aee9053b5ebece64521ff05708cdc3ec7052f69f45f298c"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\ARTIFACT_HASHES.json",
+      "bytes": 3853,
+      "sha256": "5f24e469a2536e825344d90f0e4925d1a7bd166f99460025a43786d2ca764c8a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\README.md",
+      "bytes": 1234,
+      "sha256": "e2a61751bc3f01dd3a386751950bbfc4da773f039452374a69760897c4fc43c7"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\RESOURCE_SUMMARY.json",
+      "bytes": 4460,
+      "sha256": "77863dd47653d517d5d06c98ae35c7a976098ff7eb7d960d671045931987dfc5"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b15_bound.py",
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\.venv\\python.exe",
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b17_02_verify.py",
+      "bytes": 7202,
+      "sha256": "62f148b00ed80157321099b0f49db3753cbf8584e2f44d776016c350dc4d4ad0"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\docs\\b17_02_preflight.md",
+      "bytes": 2865,
+      "sha256": "ea7e3968b0abe91885864be94a928c829eedf9df1ae7bf8621b31a4b929c9d26"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\primary_source_extracts.json",
+      "bytes": 22055,
+      "sha256": "13aad145d9c1c213fc1e00bc602d8977a1bff312c7d0932a509f829307716631"
+    }
+  ],
+  "input_hash_manifest": "results/b17_02/input_hashes.json",
+  "post_run_input_drift": [],
+  "resources": {
+    "wrapper_label_mapping": "Legacy B15-02 receipt belongs to B17-02 pilot",
+    "mathematical_runs": 1,
+    "runtime": {
+      "board_numbering": "batch15",
+      "session_id": "B15-02",
+      "pid": 27020,
+      "memory_before": {
+        "total_physical": 33752997888,
+        "available_physical": 8439984128,
+        "load": 74
+      },
+      "memory_cap_mb": 512,
+      "wall_cap_seconds": 60,
+      "workers": 1,
+      "blas_threads": 1,
+      "job_object_enforced": true,
+      "idle_sleep_inhibited_during_run": true,
+      "started_utc": "2026-09-14T01:45:47Z",
+      "exit_code": 0,
+      "wall_seconds": 0.06988429999910295,
+      "memory_after": {
+        "total_physical": 33752997888,
+        "available_physical": 8424599552,
+        "load": 75
+      },
+      "process_memory": {
+        "peak_working_set": 21024768,
+        "working_set": 20750336,
+        "peak_pagefile": 13692928
+      },
+      "job_memory": {
+        "peak_job_memory": 13692928,
+        "peak_process_memory": 13692928
+      }
+    },
+    "wrapper": "analysis/b15_bound.py, fully inspected and unchanged",
+    "heavy_lease_issued": false,
+    "algebraic_guards": {
+      "max_pair_products": 1000000,
+      "max_dictionary_monomials": 10000
+    },
+    "command": ".\\.venv\\python.exe -B analysis/b15_bound.py --seconds 60 --memory-mb 512 --name b17_02_boundary_pilot --slot 02 analysis/b17_02_verify.py",
+    "process_exit": {
+      "checked_utc": "2026-09-14T01:46:35.5282372Z",
+      "pid": 27020,
+      "running": false,
+      "exit_code": 0,
+      "mathematical_runs": 1,
+      "heavy_lease_held": false
+    },
+    "support_price": "docs/b17_02_preflight.md"
+  },
+  "next_sufficient_test": "Integrator supplies one exact sparse full-H basis and (d,lambda,a,s,U); preprice forbidden-weight matrix; prove b-by-b minor with b>=s-min(a,s)+1 and min(a,s-b)<U. Actual padding B+1 independence is a later separate requirement.",
+  "followup_authorization": "One computation exhausted. No larger lease requested or self-issued; optional continuation requires integrator input and a reviewed resource price.",
+  "approvals": {
+    "rejections": [],
+    "nonblocking_read_warning": "git status could not read user global ignore; no bypass attempted"
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b17_02_verify.py",
+      "bytes": 7202,
+      "sha256": "62f148b00ed80157321099b0f49db3753cbf8584e2f44d776016c350dc4d4ad0"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\docs\\b17_02_preflight.md",
+      "bytes": 2865,
+      "sha256": "ea7e3968b0abe91885864be94a928c829eedf9df1ae7bf8621b31a4b929c9d26"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\docs\\b17_02_report.md",
+      "bytes": 17635,
+      "sha256": "fea908d00f7f7f86973547aed85a49fca05dd66e56b3cfc225503629a513bf46"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\logs\\b17_02_boundary_pilot_resources.json",
+      "bytes": 808,
+      "sha256": "feb4cfafe153503df56c6625e7f87058de5b274bdd01343d4064266d2fd769fe"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\logs\\b17_02_boundary_pilot.pid",
+      "bytes": 7,
+      "sha256": "90f7530df69b02788728ebb59b9ccd5662ee975cb1411d9c893e227bd545a113"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\final_integrity.json",
+      "bytes": 7433,
+      "sha256": "7147ebd47383dfab4e6061738aaea0861905ea3c73551045683cfab86e9814cb"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\input_hashes.json",
+      "bytes": 9071,
+      "sha256": "190f832c09e11c3a7d3e323870ed9dc885f8735f07c9c0a5dab7bf21a3a91212"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\primary_source_extracts.json",
+      "bytes": 22055,
+      "sha256": "13aad145d9c1c213fc1e00bc602d8977a1bff312c7d0932a509f829307716631"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\process_exit.json",
+      "bytes": 169,
+      "sha256": "cc24979929a2e245b1adedf72e079862a4db44f5222445fa8b9733ae9bc0780e"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\session_receipt.json",
+      "bytes": 2197,
+      "sha256": "bbf6f873ecad6c5a728f2e08217f7a3203ac48b0169bc5f5f5faa404cd7718d3"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\verification.json",
+      "bytes": 29634,
+      "sha256": "2ec13e2b0f33de8ce9695226501ce8445aca6d85b24147ea9a26f35f1163054b"
+    }
+  ],
+  "self_hash_excluded": true
+}

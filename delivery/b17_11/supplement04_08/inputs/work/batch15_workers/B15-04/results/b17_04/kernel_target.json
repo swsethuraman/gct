@@ -1,0 +1,17 @@
+{
+  "status": "GLOBAL_PROOF_TARGET_ONLY",
+  "basis_order": "E as in basis_match.json",
+  "known_global_vector": [12, -10, 4, 3, 0, 0, 0, 0, 0, 0, 0],
+  "second_sample_vector_times_two": [216, -212, 64, 0, 0, -1, 1, 1, 13, 4, 2],
+  "Psi": "204*R1(A)-202*s2*R3(A)+60*R2(J2)-3*R3(J3)+4*R1(T2)+2*s2*R3(T2)+(s2^2+12*s4)*S7",
+  "universal_ambient_identity": "Psi equals the second_sample_vector_times_two dotted with E, by the displayed kappa/remainder identity.",
+  "global_vanishing_of_Psi": "UNPROVED",
+  "sample_Psi_vanishing": "Follows from the exact saved sample kernel; no separate run.",
+  "finite_degree": 27,
+  "weight": [73, 19, 2, 2, 2, 2, 2, 2, 2, 2],
+  "sufficient_next_test": "Global polynomial identity c^27*Psi(pi(((z*per3) composed with L)/c))=0 for arbitrary ten-by-ten L, with c the leading quartic coefficient.",
+  "stronger_sufficient_route": "The same identity for independent z times an arbitrary cubic in nine variables.",
+  "new_symbolic_computation_performed": false,
+  "restriction_rank_interval": [9, 10],
+  "exact_rank_nine_claimed": false
+}

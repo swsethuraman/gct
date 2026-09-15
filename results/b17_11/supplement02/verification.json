@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "input_hashes_checked": 18,
+  "arc_supports": [
+    15,
+    18,
+    23
+  ],
+  "taylor_support": 90,
+  "coordinate_change_determinant": "-8",
+  "gamma_determinant_exponent": 5,
+  "all_saved_arc_and_taylor_coefficients_match": true,
+  "all_nine_adjugate_entries_match": true,
+  "clipping_arithmetic_checks": 196,
+  "entry_diagonal_control": {
+    "d": 3,
+    "permutation_weight_range": [
+      0,
+      8
+    ],
+    "matrix": [
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        1
+      ]
+    ],
+    "weight": 8,
+    "matching_decomposition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        3,
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  "adversarial_controls": [
+    "Q1 sign",
+    "missing symmetric cross-term factor2",
+    "both degree1 interval endpoints",
+    "nonzero rank need not improve clipped bound",
+    "non-torus-invariant word can have negative weight"
+  ],
+  "statistics": {
+    "pair_products": 656,
+    "peak_support": 90
+  },
+  "seconds": 0.007613300054799765,
+  "scope": "Fixed identities and tiny arithmetic only; all-degree and representation statements are proved in supplement",
+  "producer_imports": false,
+  "new_representation_rank": "UNCOMPUTED",
+  "numeric_improvement": false
+}

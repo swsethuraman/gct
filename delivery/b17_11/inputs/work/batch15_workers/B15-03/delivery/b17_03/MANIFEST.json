@@ -1,0 +1,225 @@
+{
+  "task": "B17-03",
+  "status": "COMPLETE_SOURCE_GROUNDED_DEDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "created_utc": "2026-09-14T01:45:26.7754401Z",
+  "workspace": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03",
+  "report": "docs/b17_03_report.md",
+  "result": "For every d >= 0 and partition lambda of 4d with length <= 4, m_pad(d,lambda) <= m_det(d,lambda), for independent z*per3 versus det4 in GL16.",
+  "convention": "Ordinary coefficient functionals c_alpha(F)=[x^alpha]F; positive weights; E_ij c_alpha=(alpha_i+1)c_(alpha+e_i-e_j) if alpha_j>0, else 0.",
+  "fresh": [
+    "Coefficient-action and quartic length-restriction proof",
+    "Polynomial extension from smooth cubic surfaces to arbitrary cubic cores",
+    "Restricted-variety inclusion and same-cell kernel inclusion at every degree",
+    "Elementary support-ten corollary"
+  ],
+  "inherited": [
+    "Beauville Corollary 6.4, directly read as a primary literature theorem",
+    "Characteristic-zero complete reducibility",
+    "Batch16 numerical exclusions are contextual only and not premises of the new theorem"
+  ],
+  "review": "New deduction for integrator/reviewer acceptance, not a previously replayed certificate or literature priority claim.",
+  "resources": {
+    "mode": "theory_and_literature_only",
+    "mathematical_computations": 0,
+    "python_invocations": 0,
+    "heavy_lease": "none",
+    "larger_lease_requested": false,
+    "optional_computation_cap_seconds": 60,
+    "optional_computation_cap_mib": 512,
+    "permitted_processes": 1,
+    "permitted_blas_threads": 1,
+    "measured_mathematical_runtime_seconds": 0,
+    "mathematical_peak_memory_bytes": null,
+    "cap_hit": false,
+    "inspected_wrapper": {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\analysis\\b15_bound.py",
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    "existing_unused_interpreter": {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\.venv\\python.exe",
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+      "role": "existing_interpreter_available_but_not_executed"
+    },
+    "metadata_operations": "PowerShell read/hash/JSON only; no symbolic expansion, rank evaluation, numerical job, or subprocess parallelism",
+    "executable_mathematical_verifier": "Not required: no computed premise. Full proof is in the report."
+  },
+  "constraints": {
+    "agents_spawned": 0,
+    "tasks_created": 0,
+    "worktrees_created": 0,
+    "commits": 0,
+    "pushes": 0,
+    "publications": 0,
+    "git_operations": 0,
+    "ownership_trust_changes": 0,
+    "sandbox_changes": 0,
+    "closed_batch_outputs_modified": false,
+    "common_coordination_files_modified": false
+  },
+  "blocked_actions": "results/b17_03/blocked_actions.json",
+  "full_remote_pdf_hash_available": false,
+  "inputs": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\BOARD.md",
+      "bytes": 8000,
+      "sha256": "b9b97fc17f867c645a599ca596404b2ea1eba3744e62d0aa131adcf2df5cd2d8",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\SCREEN_REPORT.md",
+      "bytes": 3808,
+      "sha256": "16e4980be0463e9202dd0991cca8558afcca746ec40b89ec8bf6c86316d71306",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\symmetry_dream\\COMMON_CONTEXT.md",
+      "bytes": 5935,
+      "sha256": "416b883b0d9301c2c5b3876efbd263c4e4f17329597e90cecb7e8fb187ee331c",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\STOCKTAKE.md",
+      "bytes": 6382,
+      "sha256": "0a5ee25d2537429e45cae2ec25e35699da145939fb4a837c69379e6898f89fe2",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\INTAKE.json",
+      "bytes": 11451,
+      "sha256": "90e0e6dc7b41a666d465f4de02544e4e2c8edc01278a5b7319fe504fb9867695",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\b16_12_receive04_05_06_08.md",
+      "bytes": 16011,
+      "sha256": "62389899613d63b0f9b53fa52e83ebca0aedb51a2500ebba7450696c6f9381b6",
+      "role": "required_context_or_intake_review"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\isotypic_rank.md",
+      "bytes": 19359,
+      "sha256": "a385d4110c8cbabdf60d634ec5e4e0be89155c045e8599a0fe8612b582c331e5",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\b14_05_transport.md",
+      "bytes": 23070,
+      "sha256": "76ebc43771082b8afac20840a12af1595ee2c6f3cde2666967635193031765db",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\b15_03_proved.md",
+      "bytes": 8303,
+      "sha256": "56112a1b6020278497a5640d758c63a52a57e80fa6488790f1b38d4617898a59",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\session_29.md",
+      "bytes": 7701,
+      "sha256": "cbf2ee59b20d36fef401b44db413797d5d4e2bd276eac35607fce305dff4af40",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\visible_ideals.md",
+      "bytes": 9455,
+      "sha256": "12dac8714293e40c8344e873cfca28be080be8e3c934a42ebe7ee7bcef0a9e10",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\l5_containment.md",
+      "bytes": 5727,
+      "sha256": "5d47c190a50359a8c41a22fcad2e4229087511ab031b148555815f96377019d5",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\analysis\\b15_bound.py",
+      "bytes": 6997,
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "role": "local_original_source_or_inspected_wrapper"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\docs\\b16_01_report.md",
+      "bytes": 6354,
+      "sha256": "357cf95d3cb7fa3d340fe157d349f37eb840f4d1af54d3578f4511a3919738e5",
+      "role": "original_evidence_read_only"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\docs\\b16_01_proof.md",
+      "bytes": 12042,
+      "sha256": "7ff0d994e0b9bd7c88f86ca079cfad391313ec248a3a8a192aec506e6ce5ca01",
+      "role": "original_evidence_read_only"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\delivery\\b16_01\\MANIFEST.json",
+      "bytes": 6194,
+      "sha256": "967ecadf8dba512878b8624c33353647d9d35bdb800aa351077eda1f779bf429",
+      "role": "original_evidence_read_only"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01\\results\\b16_01\\input_hashes.json",
+      "bytes": 5905,
+      "sha256": "19f4dc7549d2c00e0c630152c0134a1d576f1558912fd592cdba56d01b6b7e6d",
+      "role": "original_evidence_read_only"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-12\\docs\\b15_12_proved.md",
+      "bytes": 13003,
+      "sha256": "9afabb3e25ff9078fa3c0195be69d5bddd68affe9db34e76bacc756295b92135",
+      "role": "original_evidence_read_only"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\.venv\\python.exe",
+      "bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+      "role": "existing_interpreter_available_but_not_executed"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\delivery\\b17_03\\sources\\primary_source_note.json",
+      "bytes": 2076,
+      "sha256": "69c9751683b934fc4291116c7f0e501615689522a77b8873cb9abc92f9ae2f21",
+      "role": "primary_source_reading_note_not_remote_pdf"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\docs\\b17_03_report.md",
+      "bytes": 20187,
+      "sha256": "bcb38b5f2682f69c86c39fbf04250cb7729cd9a749ea185c228b6e75234da43e",
+      "role": "delivery_artifact"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\analysis\\b17_03_metadata.ps1",
+      "bytes": 7742,
+      "sha256": "1e3d1fa45eea3a8531122fa936e5f1c864e1f95e2850370d0a304835ab7cd9c7",
+      "role": "delivery_artifact"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\results\\b17_03\\input_hashes.json",
+      "bytes": 5830,
+      "sha256": "becb35ef0ab91b1e7ba125bdb7d732aed73736dc6b62da411c08222662012d23",
+      "role": "delivery_artifact"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\results\\b17_03\\verification.json",
+      "bytes": 713,
+      "sha256": "3ab12e84b6591cbe566e1d46779fdd8f8b0d6fc8230ab8a82be6bd234a45c5b6",
+      "role": "delivery_artifact"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\results\\b17_03\\blocked_actions.json",
+      "bytes": 813,
+      "sha256": "a335419f90549d3a988d0a3fc0b47bcefc5afedb9b1247588df6340a9dd78aab",
+      "role": "delivery_artifact"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-03\\delivery\\b17_03\\sources\\primary_source_note.json",
+      "bytes": 2076,
+      "sha256": "69c9751683b934fc4291116c7f0e501615689522a77b8873cb9abc92f9ae2f21",
+      "role": "delivery_artifact"
+    }
+  ],
+  "manifest_self_hash": "Intentionally omitted to avoid self-reference."
+}

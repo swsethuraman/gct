@@ -1,0 +1,54 @@
+{
+  "task": "B17-11",
+  "supplement": "04_08",
+  "status": "COMPLETE_ACCEPTED_SCOPED_REVIEW",
+  "report": "docs/b17_11_supplement04_08.md",
+  "reviewed_report_sha256": {
+    "04": "aee0a938b4099ce0b92b4d953787b80c3f4229cb180a1bcd6ae15f7d4e8945d5",
+    "08": "246c96c506ebb4e43a979ef68500813e995886e7b323e3618068e931895578d2"
+  },
+  "accepted": [
+    {"id": "04_basis_match", "claim": "C=M E globally for exactly eleven declared candidates", "basis": "Universal bordered-Euler proof plus all eleven zero rational residuals, nonzero det M and inverse check; inherited global E membership and lifts"},
+    {"id": "04_rank_floor", "claim": "Actual-padding restriction rank on E is at least9", "basis": "Fixed invertible independent z*per3 substitutions, exact coordinate reconstruction and nonzero minor residue617601 modulo1000003"},
+    {"id": "04_rank_upper", "claim": "Actual-padding restriction rank on E is at most10", "basis": "Nonzero global kappa from det Hess(zC)=-(3/2)z^8 C det Hess(C), polynomiality and density"},
+    {"id": "04_sample_kernel", "claim": "The saved twelve-point matrix has exact rational rank9 and sample kernel dimension2", "basis": "Exact saved-matrix elimination; modular re-evaluation of132 function values; sample statement only"},
+    {"id": "04_transport", "claim": "Multiplication by c^(d-27) preserves restriction rank for the transported E subspace for d>=27", "basis": "Padding coordinate ring is a domain and c is nonzero; no claim about a full new ideal"},
+    {"id": "08_product_rank", "claim": "For length(lambda)<=5, m_pad equals the actual highest-weight product-map rank", "basis": "Accepted01 density and03 kernel transfer, with direct proof of the pullback kernel"},
+    {"id": "08_source_ceiling", "claim": "T is the Pieri target multiplicity and U=min(a,T) is a padding ceiling", "basis": "Polynomial target decomposition; source dimension is not image rank"},
+    {"id": "08_clipping", "claim": "B(b)<U iff b>=max(0,s-U+1), with the stated nonnegative integer hypotheses", "basis": "Direct proof and3276 finite arithmetic controls; scoped02 bound accepted separately"},
+    {"id": "08_capacity", "claim": "For the specified one-base instrument, B<U and B+1<=K_d iff b>=max(0,s-min(U,K_d)+1)", "basis": "Direct integer proof; capacity is not a lower bound"},
+    {"id": "08_flag_rows", "claim": "The polynomial ideal Jflag=(S_(65,17,2^7)V) has no constituent of length<=8 in any degree", "basis": "Equivariant multiplication source, Littlewood-Richardson diagram containment and complete reducibility"},
+    {"id": "08_no_nomination", "claim": "The reviewed08 delivery nominates no finite family", "basis": "Pinned report and scoped09/10 artifact inspection"}
+  ],
+  "rejected": [
+    {"id": "sample_implies_global_rank", "claim": "Sample rank9 proves exact global restriction rank9", "reason": "Evaluations supply a floor; the second global identity is missing"},
+    {"id": "source_implies_image", "claim": "The product target dimension U is an actual padding rank", "reason": "Surjectivity of the multiplicity map has not been proved"},
+    {"id": "separator_implies_gap", "claim": "A surviving determinant equation establishes a positive multiplicity gap", "reason": "Kernel position does not determine the difference of kernel dimensions"},
+    {"id": "flag_implies_full_ideal_exclusion", "claim": "Jflag's row exclusion applies to the full determinant ideal or all five-row obstruction degrees", "reason": "It is proved only for the specified polynomial ideal"},
+    {"id": "carrier_implies_loss", "claim": "Nonempty forbidden support or separate projection ranks provide an additive loss b", "reason": "A rank floor is required on the same actual full-H invariant columns"},
+    {"id": "upper_implies_occurrence", "claim": "B>=1 proves actual determinant occurrence", "reason": "An upper bound is not a positive lower bound"}
+  ],
+  "rejected_claim_attribution": "Adversarial inferences; not attributed to the corrected04 or08 reports",
+  "unverified": [
+    "Global vanishing of the second04 kernel vector w or Psi",
+    "Exact global restriction rank9 rather than interval[9,10]",
+    "Full padding multiplicity from the eleven-space sample",
+    "A numerical forbidden-projection rank in a new five-row cell",
+    "Any strict numerical improvement supplied by02/08",
+    "Any new positive finite gap or beyond-occurrence witness",
+    "Unrestricted J24, saturation or an all-degree five-row exclusion",
+    "Any improved asymptotic LMR determinant-size growth",
+    "Other claims in12's closeout, inspected only for pending-review status and input hashes"
+  ],
+  "historical02": "08's original provisional status is retained as history. Supplement02 accepts the scoped formula but supplies no numerical loss.",
+  "rank_interval04": [9, 10],
+  "supported_finite_candidates09_10": 0,
+  "candidate_status": "NONE_SUPPLIED_NOT_TRIGGERED",
+  "next_sufficient_gate": "One explicit five-row cell with certified a,s,T and a priced full-H adapted invariant basis, followed by a certified projection minor b>=max(0,s-U+1), U=min(a,T)>=1. A final gap still needs an actual-padding minor of size B+1.",
+  "scientific_executions_this_supplement": 1,
+  "scientific_executions_during_finalization": 0,
+  "control_receipt": "results/logs/b17_11_supplement04_08_resources.json",
+  "control_wall_seconds": 0.38938070001313463,
+  "control_peak_job_bytes": 23334912,
+  "preserve_first_stage_and02": true
+}

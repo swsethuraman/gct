@@ -1,0 +1,43 @@
+{
+  "task": "B17-08",
+  "scope": "Fresh primary web reading; notes only, not hashes of publisher bytes",
+  "sources": [
+    {
+      "title": "Beauville, Determinantal Hypersurfaces",
+      "url": "https://math.univ-cotedazur.fr/u/beauvill/pubs/det.pdf",
+      "locations": [
+        "Corollary 6.4, printed pp.52-53"
+      ],
+      "use": "Smooth cubic surfaces over algebraically closed fields admit 3x3 linear determinant equations. Closure extension is inherited from accepted03."
+    },
+    {
+      "title": "Burgisser–Landsberg–Manivel–Weyman, An overview of mathematical issues arising in the GCT approach",
+      "url": "https://arxiv.org/pdf/0907.2850v2",
+      "locations": [
+        "Section4.1 equations4.1.1–4.1.2",
+        "Proposition5.2.1"
+      ],
+      "use": "Full-stabilizer invariants supply orbit multiplicities and upper-bound closure multiplicities, with symmetric rectangular coefficients including transposition."
+    },
+    {
+      "title": "Kadish–Landsberg, Padded polynomials, their cousins, and geometric complexity theory",
+      "url": "https://arxiv.org/pdf/1204.4693v1",
+      "locations": [
+        "Theorem1.7",
+        "Proposition1.8",
+        "Section3"
+      ],
+      "use": "Product pullback has ideal as kernel; source and image must be distinguished. Report reproves the needed elementary kernel description. No automatic high-first-row injectivity conclusion from Theorem1.3 is adopted."
+    },
+    {
+      "title": "Landsberg–Manivel–Ressayre, Hypersurfaces with degenerate duals and Geometric Complexity Theory",
+      "url": "https://arxiv.org/pdf/1004.4802v1",
+      "locations": [
+        "Theorem2.3.1 and following paragraph",
+        "Theorem1.0.1"
+      ],
+      "use": "Specified flag-module degree/weight versus unrestricted remainders, and distinction of equation degree from determinant-size growth."
+    }
+  ],
+  "inherited_geometry": "The01 ruledness-specialization and cubic-threefold premises are accepted via pinned11 and original01; not independently re-proved here."
+}

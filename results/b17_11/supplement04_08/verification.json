@@ -1,0 +1,76 @@
+{
+  "status": "PASS_SCOPED_INDEPENDENT_CONTROL",
+  "inputs_checked_before_after": 52,
+  "basis_match": {
+    "relation_count": 884,
+    "relation_rank": 590,
+    "rational_residual_supports": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "det_M": "-1610167840460004934900135107421875",
+    "inverse_checked": true,
+    "inherited_E_vectors": true,
+    "mutations_rejected": [
+      "wrong429indexmap",
+      "border_sign",
+      "mixed_factorials",
+      "matrix_coefficient"
+    ]
+  },
+  "padding": {
+    "points_checked": 12,
+    "exact_coordinate_and_jet_reconstruction": true,
+    "modular_E_values_matched": 132,
+    "prime": 1000003,
+    "nonzero_minor_residue": 617601,
+    "exact_integer_minor_matched": true,
+    "degree27_factor_matched": true,
+    "sample_rank": 9,
+    "global_rank_interval": [
+      9,
+      10
+    ],
+    "second_global_kernel": "UNVERIFIED",
+    "sample_kernel_independent": true,
+    "mutations_rejected": [
+      "duplicate_minor_row",
+      "changed_E_value"
+    ]
+  },
+  "clipping": {
+    "finite_threshold_checks": 3276,
+    "edge_cases": [
+      "zero_ambient",
+      "U_zero_infeasible",
+      "ambient_clipping",
+      "improvement_without_gate",
+      "s_below_U",
+      "source_dimension_not_rank"
+    ],
+    "new_representation_census": false
+  },
+  "statistics": {
+    "modular_determinants": 3530,
+    "peak_sparse_entries": 2596
+  },
+  "seconds": 0.37234430003445596,
+  "producer_imports": false,
+  "new_points": 0,
+  "new_representation_computation": false,
+  "limits": [
+    "inherited global polynomial/HW premises",
+    "no second global kernel proof",
+    "no numerical forbidden-weight rank",
+    "no finite candidate"
+  ]
+}

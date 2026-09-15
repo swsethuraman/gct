@@ -1,0 +1,1674 @@
+{
+  "status": "PASS",
+  "scope": "universal boundary and shared four-order Taylor identities only",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "variables": [
+    "a",
+    "r1",
+    "r2",
+    "r3",
+    "c1",
+    "c2",
+    "c3",
+    "v1",
+    "v2",
+    "v3",
+    "s11",
+    "s22",
+    "s33",
+    "s12",
+    "s13",
+    "s23"
+  ],
+  "gamma_weights": [
+    -1,
+    -1,
+    -1,
+    -1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "input_hashes_checked": [
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17\\BOARD.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\SCREEN_REPORT.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\symmetry_dream\\COMMON_CONTEXT.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\STOCKTAKE.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\INTAKE.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\b16_12_receive04_05_06_08.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch16\\reviews\\12_milestone\\intake_08.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\INTAKE.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\REPORT.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Batch15_Launch\\native_20260913\\reviews_filesystem\\Hessian11_1631\\MANIFEST.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\docs\\b16_08_proof.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\docs\\b16_08_report.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\analysis\\b16_08_jets.py",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\INPUT_HASHES.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\ARTIFACT_HASHES.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\README.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-08\\delivery\\b16_08\\RESOURCE_SUMMARY.json",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b15_bound.py",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\.venv\\python.exe",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b17_02_verify.py",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\docs\\b17_02_preflight.md",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\results\\b17_02\\primary_source_extracts.json"
+  ],
+  "arc_supports": [
+    15,
+    18,
+    23
+  ],
+  "arc_coefficient_records": [
+    [
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v1",
+          "s11"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v2",
+          "s12"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v3",
+          "s13"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v2",
+          "v2",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v2",
+          "v3",
+          "s23"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v3",
+          "v3",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "v1",
+          "v1"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v1",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v1",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v1",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "v2",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v2",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v1",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v2",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "v3",
+          "v3"
+        ],
+        "coefficient": -1
+      }
+    ],
+    [
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v1",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v2",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v3",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v1",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v2",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v3",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v1",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v2",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v3",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v1",
+          "s11"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v2",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v3",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v1",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v2",
+          "s22"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v3",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v1",
+          "s11"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v2",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v3",
+          "s13"
+        ],
+        "coefficient": 1
+      }
+    ],
+    [
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s22",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s23",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "s22",
+          "s13",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "s33",
+          "s12",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "s12",
+          "s13",
+          "s23"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s22",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s23",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "s33",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "s13",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "s22",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "s12",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "s33",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "s13",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s11",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s13",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "s11",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "s12",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "s22",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "s12",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "s11",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "s12",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s11",
+          "s22"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s12",
+          "s12"
+        ],
+        "coefficient": 1
+      }
+    ]
+  ],
+  "taylor_coefficient_records": [
+    [
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a"
+        ],
+        "coefficient": 1
+      }
+    ],
+    [
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3"
+        ],
+        "coefficient": -1
+      }
+    ],
+    [
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v1"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v2",
+          "v2"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v3",
+          "v3"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v2"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v3"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v1"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v1"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s22",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s12",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s13",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s23",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s22"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s11"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s11"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s22"
+        ],
+        "coefficient": -1
+      }
+    ],
+    [
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v1",
+          "s11"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v2",
+          "s12"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v1",
+          "v3",
+          "s13"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v2",
+          "v2",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v2",
+          "v3",
+          "s23"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "a",
+          "v3",
+          "v3",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "v1",
+          "v1"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v1",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v1",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v1",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "v2",
+          "v2"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v2",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v1",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v2",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 0,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "v3",
+          "v3"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v1",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v2",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "v3",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v1",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v2",
+          "s22"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "v3",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v1",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v2",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "v3",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v1",
+          "s11"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v2",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "v3",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v1",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v2",
+          "s22"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "v3",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v1",
+          "s11"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v2",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 1,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "v3",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s22",
+          "s33"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s11",
+          "s23",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s22",
+          "s13",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s33",
+          "s12",
+          "s12"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "a",
+          "s12",
+          "s13",
+          "s23"
+        ],
+        "coefficient": 2
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s22",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c1",
+          "s23",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "s33",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c2",
+          "s13",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "s22",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r1",
+          "c3",
+          "s12",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "s33",
+          "s12"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c1",
+          "s13",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s11",
+          "s33"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c2",
+          "s13",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "s11",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r2",
+          "c3",
+          "s12",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "s22",
+          "s13"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c1",
+          "s12",
+          "s23"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "s11",
+          "s23"
+        ],
+        "coefficient": 1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c2",
+          "s12",
+          "s13"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s11",
+          "s22"
+        ],
+        "coefficient": -1
+      },
+      {
+        "t": 2,
+        "u": 0,
+        "variables": [
+          "r3",
+          "c3",
+          "s12",
+          "s12"
+        ],
+        "coefficient": 1
+      }
+    ]
+  ],
+  "direct_taylor_support": 90,
+  "max_dictionary_support": 90,
+  "monomial_pair_products": 939,
+  "mutations_rejected": [
+    "wrong Q1 sign",
+    "missing S12 cross term"
+  ],
+  "mutation_residual_supports": [
+    18,
+    1
+  ],
+  "representations": {
+    "degree_one_control": "(d,lambda)=(1,(4)); f has gamma weights 0,1,2",
+    "tested_new_cell": null,
+    "strict_multiplicity_improvement": false
+  },
+  "not_computed": [
+    "H-invariant basis",
+    "forbidden-weight rank",
+    "padding minor",
+    "character census"
+  ]
+}
