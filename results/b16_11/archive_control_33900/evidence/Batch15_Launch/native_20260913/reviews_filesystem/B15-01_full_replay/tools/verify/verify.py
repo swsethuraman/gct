@@ -1,0 +1,602 @@
+#!/usr/bin/env python3
+"""The independent two-layer verifier (session 49).
+
+    python3 tools/verify/verify.py <cert.json | cert.json.gz | directory> ...
+                                   [--report out.md] [--quiet]
+
+Reads certificates in the declared format (tools/verify/FORMAT.md), refuses
+anything it cannot parse -- an unknown key, a missing key, a wrong type, a
+non-canonical term -- with the reason, and never guesses.  Layer 1 (layer1.py)
+recomputes ranks over Q and modulo primes, minors over Z and nullity-zero
+claims on serialised integer matrices.  Layer 2 (layer2.py) checks that the
+recorded object is the object claimed: weights, raising operators over Z (or
+modulo the recorded prime, reported as such), the ambient multiplicity by an
+independent plethysm, (star) support, and evaluation points rebuilt from their
+substitution data.  This directory imports nothing from analysis/ and
+duplicates none of its code.
+
+Exit status 0 iff every certificate parsed and passed.
+"""
+import sys, os, json, gzip, time, traceback
+
+# A large nonvanishing_minor determinant (any full-rank minor of order ~300 with
+# entries of this programme's size exceeds 4300 decimal digits) is computed
+# exactly by layer1 and then rendered into the report's detail line.  Python caps
+# int->str at 4300 digits by default (CVE-2020-10735 mitigation), so that render
+# raised ValueError -- reported as UNPARSEABLE -- AFTER the rank checks had
+# already passed (session 56).  Raise the cap so the exact value can be printed;
+# the mathematics (rank over Q and mod p, the minor over Z) never needed the
+# decimal string and is unaffected.
+sys.set_int_max_str_digits(2_000_000)
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+# Load legacy numerical backends only for kinds that use them. The CI profile
+# has an independent exact checker and does not require flint or scipy.
+from points import FAMILIES                          # noqa: E402
+
+FORMAT = "gct-cert/1"
+CONVENTIONS = {
+    "coefficient": "c_alpha(F) = coefficient of s^alpha in F",
+    "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}",
+}
+
+
+class Unparseable(Exception):
+    pass
+
+
+def _need(d, keys, allowed=None, where="certificate"):
+    if not isinstance(d, dict):
+        raise Unparseable(f"{where}: expected an object")
+    missing = [k for k in keys if k not in d]
+    if missing:
+        raise Unparseable(f"{where}: missing key(s) {missing}")
+    extra = [k for k in d if k not in (allowed if allowed is not None else keys)]
+    if extra:
+        raise Unparseable(f"{where}: unknown key(s) {extra}")
+
+
+def _int(x, where):
+    if not isinstance(x, int) or isinstance(x, bool):
+        raise Unparseable(f"{where}: expected an integer")
+    return x
+
+
+def _check_cell(cell):
+    # h_pad is optional and informational (the Pieri normalisation bound of the
+    # session-42 identity); session 70 records it alongside a.
+    _need(cell, ["n", "r", "lambda", "delta", "a"],
+          allowed=["n", "r", "lambda", "delta", "a", "h_pad"], where="cell")
+    for k in ("n", "r", "delta", "a"):
+        _int(cell[k], f"cell.{k}")
+    if "h_pad" in cell:
+        _int(cell["h_pad"], "cell.h_pad")
+    if not (isinstance(cell["lambda"], list) and cell["lambda"]
+            and all(isinstance(x, int) and not isinstance(x, bool) for x in cell["lambda"])):
+        raise Unparseable("cell.lambda: expected a nonempty list of integers")
+
+
+def _check_conventions(conv):
+    _need(conv, ["coefficient", "raising"], where="conventions")
+    for k, v in CONVENTIONS.items():
+        if conv[k] != v:
+            raise Unparseable(f"conventions.{k}: must read exactly {v!r}, got {conv[k]!r}")
+
+
+def _check_points(pts, where):
+    if not isinstance(pts, list) or not pts:
+        raise Unparseable(f"{where}: expected a nonempty list of points")
+    for pt in pts:
+        if not (isinstance(pt, dict) and "type" in pt):
+            raise Unparseable(f"{where}: point without a type")
+
+
+def _check_field(cert, where="field"):
+    """The declared field (Part A4, session 67).  'Q' or 'F_<p>'.  Additive: on
+    the pre-session-67 kinds it is optional and, when present, must be consistent
+    with modulus/prime; on the new kinds it is required and enforced by their
+    schema.  A finite field never certifies a characteristic-zero *kernel*."""
+    from layer3 import parse_field
+    f = cert["field"]
+    try:
+        knd, p = parse_field(f)
+    except ValueError as e:
+        raise Unparseable(f"{where}: {e}")
+    return knd, p
+
+
+def validate(cert):
+    """Strict schema check; raises Unparseable."""
+    if isinstance(cert, dict) and cert.get("kind") in ("complete_interpolation", "partial_interpolation"):
+        from complete_interpolation import schema, Rejected
+        try:
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from ci73 import schema as ci73_schema
+                ci73_schema(cert)
+            elif cert.get('profile') in ('quartic_lmr_degree14_ci159', 'quartic_lmr_degree14_ci158'):
+                from b15_01_ci159 import schema as ci159_schema
+                ci159_schema(cert)
+            else:
+                schema(cert)
+        except (Rejected, KeyError, TypeError, ValueError) as exc:
+            raise Unparseable(str(exc)) from exc
+        return cert["kind"]
+    _need(cert, ["format", "kind", "title", "produced_by"],
+          allowed=["format", "kind", "title", "produced_by", "notes", "cell", "conventions",
+                   "modulus", "vectors", "claims", "matrix", "matrix_source", "claimed_rank_Q",
+                   "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero", "prime",
+                   "variety", "points", "basis", "field", "matrix_role", "nullity",
+                   "recipe", "provenance", "prime", "reduction", "run", "claim",
+                   "kernel_certificates", "cross_checks", "detail", "sizes", "claims", "kernel_chi"])
+    if cert["format"] != FORMAT:
+        raise Unparseable(f"format: expected {FORMAT!r}")
+    kind = cert["kind"]
+    if "notes" in cert and not isinstance(cert["notes"], str):
+        raise Unparseable("notes: expected a string")
+    base = {"format", "kind", "title", "produced_by", "notes"}
+    if kind == "hwv":
+        _need(cert, ["cell", "conventions", "modulus", "vectors", "claims"],
+              allowed=list(base | {"cell", "conventions", "modulus", "vectors", "claims", "field"}))
+        _check_cell(cert["cell"])
+        _check_conventions(cert["conventions"])
+        if "field" in cert:
+            knd, p = _check_field(cert)
+            m = cert["modulus"]
+            want = "Q" if m is None else "Fp"
+            if knd != want:
+                raise Unparseable(f"field: {cert['field']!r} disagrees with modulus {m!r}")
+            if knd == "Fp" and p != m:
+                raise Unparseable(f"field: F_{p} disagrees with modulus {m}")
+        if cert["modulus"] is not None:
+            m = _int(cert["modulus"], "modulus")
+            if m < 3:
+                raise Unparseable("modulus: expected a prime >= 3")
+        if not (isinstance(cert["vectors"], list) and cert["vectors"]):
+            raise Unparseable("vectors: expected a nonempty list")
+        cl = cert["claims"]
+        _need(cl, [], allowed=["independent", "star_support", "vanishes_at", "nonvanishing_at",
+                               "fresh_points"], where="claims")
+        if "independent" in cl and not isinstance(cl["independent"], bool):
+            raise Unparseable("claims.independent: expected true/false")
+        if "star_support" in cl:
+            _need(cl["star_support"], ["k"], where="claims.star_support")
+            if _int(cl["star_support"]["k"], "claims.star_support.k") < 1:
+                raise Unparseable("claims.star_support.k: expected k >= 1")
+        for key in ("vanishes_at", "nonvanishing_at"):
+            if key in cl:
+                _check_points(cl[key], f"claims.{key}")
+        if "fresh_points" in cl:
+            fp = cl["fresh_points"]
+            _need(fp, ["seed", "count"], allowed=["seed", "count", "vanishes_on", "nonvanishing_on"],
+                  where="claims.fresh_points")
+            _int(fp["seed"], "claims.fresh_points.seed")
+            if _int(fp["count"], "claims.fresh_points.count") < 1:
+                raise Unparseable("claims.fresh_points.count: expected >= 1")
+            for key in ("vanishes_on", "nonvanishing_on"):
+                fams = fp.get(key, [])
+                if not isinstance(fams, list) or any(f not in FAMILIES for f in fams):
+                    raise Unparseable(f"claims.fresh_points.{key}: families must be among {FAMILIES}")
+    elif kind == "matrix":
+        _need(cert, [], allowed=list(base | {"matrix", "matrix_source", "claimed_rank_Q",
+                                             "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero",
+                                             "field", "matrix_role"}))
+        if "matrix" not in cert and "matrix_source" not in cert:
+            raise Unparseable("matrix certificate needs a matrix or a matrix_source")
+        role = cert.get("matrix_role")
+        if role is not None and role not in ("gram", "macaulay", "generic"):
+            raise Unparseable(f"matrix_role: expected gram, macaulay or generic, got {role!r}")
+        if "field" in cert:
+            knd, _p = _check_field(cert)
+            # Part A4/A5: rank(Gram) = rank(Theta) is the characteristic-zero Gram
+            # identity (a nonzero vector can be isotropic mod p).  A Gram-route
+            # rank claim is therefore accepted only over Q.
+            if role == "gram" and knd != "Q":
+                raise Unparseable("matrix_role 'gram': rank(Gram) = rank(Theta) holds only in "
+                                  "characteristic zero; a Gram rank certificate must declare field 'Q'")
+            # a claimed_rank_Q means the exact rank over Q was certified; it must not be labelled a finite field
+            if "claimed_rank_Q" in cert and knd != "Q" and role == "gram":
+                raise Unparseable("field: a claimed_rank_Q over a finite field is contradictory for a gram matrix")
+        elif role == "gram":
+            raise Unparseable("matrix_role 'gram' requires a declared field (must be 'Q')")
+        if "claimed_rank_Q" in cert:
+            _int(cert["claimed_rank_Q"], "claimed_rank_Q")
+        if "claimed_ranks_mod_p" in cert:
+            d = cert["claimed_ranks_mod_p"]
+            if not isinstance(d, dict) or not d:
+                raise Unparseable("claimed_ranks_mod_p: expected a nonempty object prime -> rank")
+            for k, v in d.items():
+                if not (isinstance(k, str) and k.isdigit() and int(k) >= 3):
+                    raise Unparseable("claimed_ranks_mod_p: keys must be decimal primes")
+                _int(v, "claimed_ranks_mod_p value")
+        if "nonvanishing_minor" in cert:
+            _need(cert["nonvanishing_minor"], ["rows", "cols"], where="nonvanishing_minor")
+        if "nullity_zero" in cert:
+            _need(cert["nullity_zero"], ["prime"], where="nullity_zero")
+            _int(cert["nullity_zero"]["prime"], "nullity_zero.prime")
+        if not any(k in cert for k in ("claimed_rank_Q", "claimed_ranks_mod_p", "nonvanishing_minor", "nullity_zero")):
+            raise Unparseable("matrix certificate makes no claim")
+    elif kind == "full_rank":
+        _need(cert, ["cell", "conventions", "prime", "variety", "points", "basis"],
+              allowed=list(base | {"cell", "conventions", "prime", "variety", "points", "basis", "field"}))
+        _check_cell(cert["cell"])
+        _check_conventions(cert["conventions"])
+        if _int(cert["prime"], "prime") < 3:
+            raise Unparseable("prime: expected a prime >= 3")
+        if cert["variety"] not in ("det_pencil", "permanent_pencil", "padded_permanent", "reducible"):
+            raise Unparseable("variety: expected det_pencil, permanent_pencil, padded_permanent or reducible")
+        if cert["variety"] in ("padded_permanent", "reducible") and cert["cell"]["n"] != 4:
+            raise Unparseable(f"variety {cert['variety']} is defined only at n = 4")
+        _check_points(cert["points"], "points")
+        if cert["basis"] is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
+            raise Unparseable("basis: expected null or a nonempty list of vectors")
+        if "field" in cert:
+            knd, p = _check_field(cert)
+            if knd != "Fp" or p != cert["prime"]:
+                raise Unparseable(f"field: full_rank certifies over F_p; must read F_{cert['prime']}")
+    elif kind == "sparse_nullity":
+        # TWO DIALECTS exist, written independently: session 67's
+        #   field / nullity / recipe / provenance / basis
+        # and session 73's
+        #   prime / claim.nullity / reduction / run / kernel_certificates
+        # -- s73 branched before s67's tree was merged and could not see it.  Both
+        # are accepted here.  NO check is weakened: the finite field, the
+        # nonnegative nullity, the substitution-data points and the
+        # exhibit-your-kernel rule all still apply, each read off whichever
+        # dialect the certificate uses, and every sub-key check either dialect
+        # imposes is imposed when that dialect's key is present.  Unifying to one
+        # dialect is session 78's job (docs/batch12_plan.md, C5).
+        _need(cert, ["cell", "conventions", "variety", "points"],
+              allowed=list(base | {"cell", "conventions", "field", "prime", "variety", "nullity",
+                                   "points", "recipe", "provenance", "basis",
+                                   "reduction", "run", "claim", "kernel_certificates"}))
+        _check_cell(cert["cell"])
+        _check_conventions(cert["conventions"])
+        if "field" in cert:
+            knd, fp = _check_field(cert)
+            if knd != "Fp":
+                raise Unparseable("sparse_nullity: field must be a finite field F_<p> "
+                                  "(a full-column-rank mod p certifies mult = a over Q; "
+                                  "a char-0 nullity is not this kind)")
+            if "prime" in cert and _int(cert["prime"], "prime") != fp:
+                raise Unparseable(f"prime {cert['prime']} disagrees with field {cert['field']}")
+        elif "prime" in cert:
+            if _int(cert["prime"], "prime") < 3:
+                raise Unparseable("prime: expected a prime >= 3")
+        else:
+            raise Unparseable("sparse_nullity: needs a finite field, as field 'F_<p>' or as prime <p>")
+        if cert["variety"] not in ("det_pencil", "permanent_pencil", "padded_permanent",
+                                   "reducible", "none"):
+            raise Unparseable("variety: expected det_pencil, permanent_pencil, padded_permanent, "
+                              "reducible or none")
+        if cert["variety"] in ("padded_permanent", "reducible") and cert["cell"]["n"] != 4:
+            raise Unparseable(f"variety {cert['variety']} is defined only at n = 4")
+        if "nullity" in cert:
+            nul = _int(cert["nullity"], "nullity")
+        elif isinstance(cert.get("claim"), dict) and "nullity" in cert["claim"]:
+            nul = _int(cert["claim"]["nullity"], "claim.nullity")
+        else:
+            raise Unparseable("sparse_nullity: needs the claimed nullity, as nullity or claim.nullity")
+        if nul < 0:
+            raise Unparseable("nullity: expected a nonnegative integer")
+        if cert["variety"] == "none":
+            if cert["points"] != []:
+                raise Unparseable("points: must be [] when variety is none")
+        else:
+            _check_points(cert["points"], "points")
+        # A positive nullity that claims IDEAL membership must exhibit its kernel.
+        # variety "none" is a different claim -- nullity_p(E) = a, i.e. the
+        # highest-weight space has its expected dimension -- and the verifier
+        # recomputes `a` independently from the plethysm, which is a stronger check
+        # than exhibiting the vectors would be.  (Session 73's four full-E records
+        # are of that shape; their bases are banked as artefacts.)
+        if (cert["variety"] != "none" and nul > 0
+                and cert.get("basis") in (None, []) and not cert.get("kernel_certificates")):
+            raise Unparseable("sparse_nullity with nullity > 0 must exhibit the checked kernel "
+                              "vectors, in basis or in kernel_certificates")
+        if "reduction" in cert:
+            _need(cert["reduction"], ["N_S", "n_chi", "stab", "nrows_E", "nnz_E"],
+                  allowed=["N_S", "n_chi", "stab", "nrows_E", "nnz_E", "note"], where="reduction")
+            for key in ("N_S", "n_chi", "stab", "nrows_E", "nnz_E"):
+                _int(cert["reduction"][key], f"reduction.{key}")
+        if "run" in cert:
+            _need(cert["run"], ["level", "seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz"],
+                  allowed=["level", "seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz",
+                           "secs", "log"], where="run")
+            for key in ("seed0", "wied_seed", "k_extra", "bm_degree", "bm_f0", "rows", "nnz"):
+                _int(cert["run"][key], f"run.{key}")
+        if "claim" in cert:
+            _need(cert["claim"], ["nullity", "mult"], where="claim")
+            _int(cert["claim"]["nullity"], "claim.nullity"); _int(cert["claim"]["mult"], "claim.mult")
+        if "kernel_certificates" in cert and not (isinstance(cert["kernel_certificates"], list)
+                                                  and all(isinstance(x, str) for x in cert["kernel_certificates"])):
+            raise Unparseable("kernel_certificates: expected a list of file names")
+        if cert.get("basis") is not None and not (isinstance(cert["basis"], list) and cert["basis"]):
+            raise Unparseable("basis: expected null or a nonempty list of vectors")
+        if "recipe" in cert and not isinstance(cert["recipe"], dict):
+            raise Unparseable("recipe: expected an object")
+        if "provenance" in cert and not isinstance(cert["provenance"], dict):
+            raise Unparseable("provenance: expected an object")
+    elif kind == "split_rank":
+        # Session 70's reducible-normalisation split: rank S = mult_red, S the
+        # comultiplication restricted to the lambda-highest-weight space.  A
+        # recipe-style record: the verifier checks the cell and the shape of the
+        # claim, and does NOT re-derive the rank (that needs the quartic source).
+        # Reported RECORDED, like an oversized sparse_nullity.  Session 78 decides
+        # whether to make it re-derivable (docs/batch12_plan.md, C5).
+        _need(cert, ["cell", "claim"],
+              allowed=list(base | {"cell", "conventions", "claim", "cross_checks", "detail",
+                                   "field", "provenance", "recipe"}))
+        _check_cell(cert["cell"])
+        _need(cert["claim"], ["rank_S"], allowed=["rank_S", "equals", "i_red", "mult_red"],
+              where="claim")
+        _int(cert["claim"]["rank_S"], "claim.rank_S")
+        if cert["claim"]["rank_S"] > _int(cert["cell"]["a"], "cell.a"):
+            raise Unparseable("claim.rank_S: a rank cannot exceed the ambient multiplicity a")
+    elif kind == "hybrid_kernel":
+        # Session 71's initial-term cover finished by an exact Schur complement on
+        # the uncovered columns: the full mod-p kernel of the raising operator, and
+        # the multiplicities read off it.  Recipe-style, like split_rank: the cell,
+        # the field and the shape of every claim are checked and the ranks are NOT
+        # re-derived (each needs the cell's build).  Reported RECORDED.  Session 78
+        # decides whether to make it re-derivable (docs/batch12_plan.md, C5).
+        _need(cert, ["cell", "field", "sizes", "claims"],
+              allowed=list(base | {"cell", "conventions", "field", "prime", "sizes", "recipe",
+                                   "claims", "points", "kernel_chi", "provenance"}))
+        _check_cell(cert["cell"])
+        knd, fp = _check_field(cert)
+        if knd != "Fp":
+            raise Unparseable("hybrid_kernel: the kernel is computed mod p; field must be F_<p>")
+        if "prime" in cert and _int(cert["prime"], "prime") != fp:
+            raise Unparseable(f"prime {cert['prime']} disagrees with field {cert['field']}")
+        _need(cert["sizes"], ["N_S", "n_chi"],
+              allowed=["N_S", "stab", "n_chi", "n_red", "rows_E", "nnz_E"], where="sizes")
+        for k in cert["sizes"]:
+            _int(cert["sizes"][k], f"sizes.{k}")
+        if not isinstance(cert["claims"], dict) or not cert["claims"]:
+            raise Unparseable("claims: expected a nonempty object")
+        a = cert["cell"]["a"]
+        for k, v in cert["claims"].items():
+            if k.endswith("_note") or isinstance(v, str):
+                continue
+            _int(v, f"claims.{k}")
+            if not 0 <= v <= a:
+                raise Unparseable(f"claims.{k} = {v}: a rank or nullity here must lie in [0, a = {a}]")
+    else:
+        raise Unparseable(f"kind: unknown kind {kind!r}")
+    return kind
+
+
+def load(path):
+    # Bound bytes and reject duplicate keys BEFORE any profile or legacy parse.
+    from ci73_io import load as bounded_load
+    return bounded_load(path)
+
+
+def _check_split_rank(cert, log):
+    """Session 70's split-rank record.  The cell and the shape of the claim are
+    checked; the rank itself is NOT re-derived (it needs the quartic source that
+    session 70 proved the construction requires), so the status is RECORDED."""
+    from pleth import ambient_multiplicity
+    cell = cert["cell"]
+    n, r, lam, delta, a = cell["n"], cell["r"], tuple(cell["lambda"]), cell["delta"], cell["a"]
+    ok = True
+    ok &= _rec_sr(log, "cell: n in {3, 4}", n in (3, 4), f"n = {n}")
+    ok &= _rec_sr(log, "cell: length(lambda) = r", len(lam) == r and lam[-1] > 0, f"{lam}, r {r}")
+    ok &= _rec_sr(log, f"cell: |lambda| = n*delta", sum(lam) == n * delta,
+                  f"{sum(lam)} vs {n}*{delta}")
+    a_ind = ambient_multiplicity(lam, delta, n=n)
+    if a_ind is None:
+        _rec_sr(log, "cell: a recomputed", True, "skipped, DP box too large")
+    else:
+        ok &= _rec_sr(log, "cell: a recomputed (Weyl alternation)", a_ind == a,
+                      f"recomputed {a_ind}, claimed {a}")
+    rk = cert["claim"]["rank_S"]
+    ok &= _rec_sr(log, "claim: 0 <= rank_S <= a", 0 <= rk <= a, f"rank_S {rk}, a {a}")
+    if "i_red" in cert["claim"]:
+        ok &= _rec_sr(log, "claim: i_red = a - rank_S", cert["claim"]["i_red"] == a - rk,
+                      f"{cert['claim']['i_red']} vs {a - rk}")
+    _rec_sr(log, "__RECORDED__ the split rank itself is not re-derived this run "
+                 "(it needs the quartic source); the cell and the claim's shape are checked",
+            True)
+    return ok
+
+
+def _check_hybrid_kernel(cert, log):
+    """Session 71's hybrid-route record.  Cell, field and the internal consistency
+    of the claims are checked; the ranks are NOT re-derived (each needs the cell's
+    build), so the status is RECORDED."""
+    from pleth import ambient_multiplicity
+    cell = cert["cell"]
+    n, r, lam, delta, a = cell["n"], cell["r"], tuple(cell["lambda"]), cell["delta"], cell["a"]
+    ok = True
+    ok &= _rec_sr(log, "cell: n in {3, 4}", n in (3, 4), f"n = {n}")
+    ok &= _rec_sr(log, "cell: length(lambda) = r", len(lam) == r and lam[-1] > 0, f"{lam}, r {r}")
+    ok &= _rec_sr(log, "cell: |lambda| = n*delta", sum(lam) == n * delta, f"{sum(lam)} vs {n}*{delta}")
+    a_ind = ambient_multiplicity(lam, delta, n=n)
+    if a_ind is None:
+        _rec_sr(log, "cell: a recomputed", True, "skipped, DP box too large")
+    else:
+        ok &= _rec_sr(log, "cell: a recomputed (Weyl alternation)", a_ind == a,
+                      f"recomputed {a_ind}, claimed {a}")
+    cl = cert["claims"]
+    if "nullity_p_E" in cl:
+        ok &= _rec_sr(log, "claims: nullity_p(E) = a", cl["nullity_p_E"] == a,
+                      f"{cl['nullity_p_E']} vs a = {a}")
+    for lo, hi in (("mult_red_star", "mult_det"), ("mult_red_pts", "mult_det")):
+        if lo in cl and hi in cl:
+            ok &= _rec_sr(log, f"claims: {lo} <= {hi} (reducible inside determinant)",
+                          cl[lo] <= cl[hi], f"{cl[lo]} vs {cl[hi]}")
+    if "mult_red_star" in cl and "mult_red_pts" in cl:
+        ok &= _rec_sr(log, "claims: the two reducible routes agree",
+                      cl["mult_red_star"] == cl["mult_red_pts"],
+                      f"{cl['mult_red_star']} vs {cl['mult_red_pts']}")
+    sz = cert["sizes"]
+    # n_chi <= N_S is the only safe relation: n_chi counts chi-twisted orbits of
+    # Stab(lambda) on the N_S weight-lambda monomials, and the build DROPS orbits
+    # whose twisted sum vanishes identically, so n_chi can and does fall below
+    # N_S/|Stab| (integrator: an earlier version of this check asserted the
+    # opposite and fired on a correct session-71 certificate).
+    if "n_chi" in sz and "N_S" in sz:
+        ok &= _rec_sr(log, "sizes: n_chi <= N_S", sz["n_chi"] <= sz["N_S"],
+                      f"n_chi {sz['n_chi']} vs N_S {sz['N_S']}")
+    _rec_sr(log, "__RECORDED__ the hybrid ranks are not re-derived this run (each needs the "
+                 "cell's build); the cell, the field and the claims' consistency are checked", True)
+    return ok
+
+
+def _rec_sr(log, name, ok, detail=""):
+    log.append((name, bool(ok), detail))
+    return bool(ok)
+
+
+def verify_file(path, ci73_session=None):
+    """Returns (status, log): status in PASS / FAIL / UNPARSEABLE / ERROR."""
+    log = []
+    try:
+        cert = load(path)
+    except Exception as e:                       # noqa: BLE001
+        return "UNPARSEABLE", [("read/parse JSON", False, str(e))]
+    if isinstance(cert, dict) and cert.get("kind") in ("complete_interpolation", "partial_interpolation"):
+        try:
+            from ci73_io import digest
+            input_identity = digest(cert)
+            if cert.get('profile') == 'quartic_lmr_degree13_ci73':
+                from pathlib import Path
+                from ci73 import verify as ci73_verify
+                result = ci73_verify(cert, Path(path).resolve().parent, session=ci73_session)
+            elif cert.get('profile') in ('quartic_lmr_degree14_ci159', 'quartic_lmr_degree14_ci158'):
+                from pathlib import Path
+                from b15_01_ci159 import verify as ci159_verify
+                result = ci159_verify(cert, Path(path).resolve().parent)
+            else:
+                from complete_interpolation import verify as ci_verify
+                result = ci_verify(cert)
+        except Exception as exc:
+            return "UNPARSEABLE", [("CI input", False, str(exc))]
+        log = [(item["check"], item["ok"], json.dumps(item.get("detail", {})))
+               for item in result["checks"]]
+        log.insert(0, ('consumed certificate identity', True, json.dumps({'canonical_sha256':input_identity})))
+        if result["status"] != "PASS":
+            log.append((result["code"], False, result["detail"]))
+        return result["status"], log
+    try:
+        kind = validate(cert)
+    except Unparseable as e:
+        return "UNPARSEABLE", [("schema", False, str(e))]
+    try:
+        if kind == "hwv":
+            from layer2 import check_hwv_certificate
+            ok = check_hwv_certificate(cert, log)
+        elif kind == "matrix":
+            from layer1 import check_matrix_certificate
+            ok = check_matrix_certificate(cert, log)
+        elif kind == "sparse_nullity":
+            from layer3 import check_sparse_nullity_certificate
+            ok = check_sparse_nullity_certificate(cert, log)
+        elif kind == "split_rank":
+            ok = _check_split_rank(cert, log)
+        elif kind == "hybrid_kernel":
+            ok = _check_hybrid_kernel(cert, log)
+        else:
+            from layer2 import check_full_rank_certificate
+            ok = check_full_rank_certificate(cert, log)
+    except ValueError as e:                      # malformed content found while checking
+        return "UNPARSEABLE", log + [("content", False, str(e))]
+    except Exception as e:                       # noqa: BLE001
+        return "ERROR", log + [("internal error", False, f"{e!r}\n{traceback.format_exc()}")]
+    if not ok:
+        return "FAIL", log
+    # RECORDED: the certificate is well-formed and reproducible but its claim was
+    # NOT re-derived this run (a budget skip).  It is distinct from a verified PASS
+    # -- the tool never reports "PASS" for a claim it did not check.
+    for name, o, _ in log:
+        if o and isinstance(name, str) and name.startswith("__RECORDED__"):
+            return "RECORDED", log
+    return "PASS", log
+
+
+def collect(paths):
+    out = []
+    for p in paths:
+        if os.path.isdir(p):
+            for fn in sorted(os.listdir(p)):
+                if fn.endswith(".json") or fn.endswith(".json.gz"):
+                    out.append(os.path.join(p, fn))
+        else:
+            out.append(p)
+    return out
+
+
+def main(argv, ci73_session=None):
+    report = None
+    json_report = None
+    quiet = False
+    paths = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--report":
+            report = argv[i + 1]
+            i += 2
+        elif argv[i] == "--json-report":
+            json_report = argv[i + 1]
+            i += 2
+        elif argv[i] == "--quiet":
+            quiet = True
+            i += 1
+        else:
+            paths.append(argv[i])
+            i += 1
+    files = collect(paths)
+    if not files:
+        print(__doc__)
+        return 2
+    lines = ["# Verifier report", "", f"{len(files)} certificate file(s); verifier tools/verify at "
+             f"{time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}", ""]
+    summary = {"PASS": 0, "RECORDED": 0, "FAIL": 0, "UNPARSEABLE": 0, "ERROR": 0}
+    results = []
+    if json_report:
+        with open(json_report,'w',encoding='utf-8') as stream:
+            json.dump({'status':'RUNNING','results':[]},stream)
+    for path in files:
+        t0 = time.time()
+        status, log = verify_file(path, ci73_session=ci73_session)
+        results.append({'path':path,'status':status,'checks':log,'seconds':time.time()-t0})
+        summary[status] += 1
+        title = ""
+        try:
+            title = load(path).get("title", "")
+        except Exception:                        # noqa: BLE001
+            pass
+        head = f"{status:11s} {os.path.relpath(path)}  ({time.time()-t0:.1f}s)  {title}"
+        print(head, flush=True)
+        lines.append(f"## {status} — `{os.path.relpath(path)}`")
+        lines.append("")
+        if title:
+            lines.append(f"*{title}*  ({time.time()-t0:.1f}s)")
+            lines.append("")
+        for name, ok, detail in log:
+            disp = name[len("__RECORDED__"):].strip() if isinstance(name, str) and name.startswith("__RECORDED__") else name
+            disp = disp or "re-derivation skipped (RECORDED)"
+            mark = "ok  " if ok else "FAIL"
+            if not quiet or not ok:
+                print(f"    [{mark}] {disp}" + (f" — {detail}" if detail else ""), flush=True)
+            lines.append(f"- [{'x' if ok else ' '}] {disp}" + (f" — {detail}" if detail else ""))
+        lines.append("")
+    tail = (f"PASS {summary['PASS']}, RECORDED {summary['RECORDED']}, FAIL {summary['FAIL']}, "
+            f"UNPARSEABLE {summary['UNPARSEABLE']}, ERROR {summary['ERROR']}")
+    print(tail)
+    lines.insert(3, tail)
+    if report:
+        with open(report, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+    if json_report:
+        with open(json_report,'w',encoding='utf-8') as stream:
+            json.dump({'status':'PASS' if summary['PASS']==len(files) else 'NOT_ALL_PASS',
+                       'summary':summary,'results':results},stream,indent=2)
+            stream.write('\n')
+    return 0 if (summary["FAIL"] == summary["UNPARSEABLE"] == summary["ERROR"] == 0) else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

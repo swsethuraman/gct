@@ -1,0 +1,256 @@
+{
+  "status": "PASS_METADATA_AND_CONDITIONAL_ARITHMETIC",
+  "mathematical_replays": 0,
+  "payload_files": 108,
+  "payload_bytes": 7332321,
+  "source_hashes_verified": true,
+  "fresh_scope": "SHA256 integrity, frozen Git receipt joins, bound arithmetic, rejection controls",
+  "inherited_scope": "All cited B15 mathematical certificates, character counts and proof acceptance",
+  "arithmetic": {
+    "channel_sums": {
+      "15": 158,
+      "17": 218,
+      "19": 288
+    },
+    "stable": {
+      "a": 429,
+      "m_det": 418,
+      "m_pad": [
+        243,
+        288
+      ],
+      "D": [
+        -175,
+        -130
+      ],
+      "i_det": 11,
+      "i_pad": [
+        141,
+        186
+      ]
+    },
+    "ci159": {
+      "target_dimension": 159,
+      "target_rank_floor": 158,
+      "target_nullity_upper": 1,
+      "source_dimension": 93,
+      "sampled_source_rank": 88,
+      "sampled_kernel_dimension": 5,
+      "global_reducible_ideal_interval": [
+        4,
+        5
+      ],
+      "exact_source_entries": 14694
+    },
+    "nine_row_transport": {
+      "source_degree": 14,
+      "source_weight": [
+        25,
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "multiplier_degree": 2,
+      "multiplier_weight": [
+        4,
+        4
+      ],
+      "target_degree": 16,
+      "target_weight": [
+        29,
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "i_pad_floor": 4,
+      "i_det_upper": 4,
+      "D_upper": 0,
+      "conditional_on": "reviewed nonzero q44 multiplication and stable ideal injection"
+    },
+    "ambient_two": {
+      "earliest_recorded_safe_degree": 19,
+      "weight": [
+        57,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "generic_minor": 3628800,
+      "a": 2,
+      "det_rank_floor": 0,
+      "pad_rank_floor": 0
+    },
+    "finite_cells": [
+      {
+        "degree": 23,
+        "lambda": [
+          61,
+          15,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "det_ideal_floor": 1,
+        "padding_upper": 158,
+        "ambient": null,
+        "required_padding_floor": "a-q+1",
+        "known_q_feasible_only_if_a_at_most": 158,
+        "complete_ideal_upper_11_excludes_if_a_at_least": 169,
+        "exclusion_condition": "Requires reviewed finite-to-stable ideal injection and i_det<=11.",
+        "status": "INCONCLUSIVE_WITHOUT_FINITE_AMBIENT_AND_ACTUAL_PADDING_FLOOR"
+      },
+      {
+        "degree": 25,
+        "lambda": [
+          67,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "det_ideal_floor": 2,
+        "padding_upper": 218,
+        "ambient": null,
+        "required_padding_floor": "a-q+1",
+        "known_q_feasible_only_if_a_at_most": 219,
+        "complete_ideal_upper_11_excludes_if_a_at_least": 229,
+        "exclusion_condition": "Requires reviewed finite-to-stable ideal injection and i_det<=11.",
+        "status": "INCONCLUSIVE_WITHOUT_FINITE_AMBIENT_AND_ACTUAL_PADDING_FLOOR"
+      },
+      {
+        "degree": 26,
+        "lambda": [
+          71,
+          17,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "det_ideal_floor": 2,
+        "padding_upper": 218,
+        "ambient": null,
+        "required_padding_floor": "a-q+1",
+        "known_q_feasible_only_if_a_at_most": 219,
+        "complete_ideal_upper_11_excludes_if_a_at_least": 229,
+        "exclusion_condition": "Requires reviewed finite-to-stable ideal injection and i_det<=11.",
+        "status": "INCONCLUSIVE_WITHOUT_FINITE_AMBIENT_AND_ACTUAL_PADDING_FLOOR"
+      },
+      {
+        "degree": 27,
+        "lambda": [
+          73,
+          19,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "det_ideal_floor": 5,
+        "padding_upper": 288,
+        "ambient": null,
+        "required_padding_floor": "a-q+1",
+        "known_q_feasible_only_if_a_at_most": 292,
+        "complete_ideal_upper_11_excludes_if_a_at_least": 299,
+        "exclusion_condition": "Requires reviewed finite-to-stable ideal injection and i_det<=11.",
+        "status": "INCONCLUSIVE_WITHOUT_FINITE_AMBIENT_AND_ACTUAL_PADDING_FLOOR"
+      }
+    ]
+  },
+  "controls": [
+    {
+      "name": "synthetic_same_cell_positive",
+      "status": "PASS",
+      "research_evidence": false
+    },
+    {
+      "name": "source_ceiling_as_padding_rank",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "sampled_zero_as_global_equation",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "stable_count_as_finite_ambient",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "cross_degree_join",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "bound kind/cell mismatch"
+    },
+    {
+      "name": "unreviewed_global_proof",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "unreviewed proof"
+    },
+    {
+      "name": "inequality_equality_is_inconclusive",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "insufficient inequality; NOT an exclusion"
+    },
+    {
+      "name": "inside_variable_padding",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "representation/padding/closure context"
+    },
+    {
+      "name": "equation_nonzero_alone",
+      "status": "REJECTED_AS_REQUIRED",
+      "reason": "unreviewed premise: missing_full_cell_rank"
+    },
+    {
+      "name": "self_authorized_observation",
+      "status": "REJECTED_AS_REQUIRED"
+    }
+  ],
+  "positive_claim_admitted": false,
+  "live_inputs_verified": true,
+  "git_scope": "Observed read-only receipt; portable mode does not query Git",
+  "limitations": [
+    "Hash/source-head checks do not replay mathematical proofs.",
+    "No unified merged base is claimed. Working-tree followups are separately hashed.",
+    "Legacy incidental bytecode is hash-checked in place and omitted from delivery.",
+    "All character counts, global proof acceptance, and geometric minors remain inherited.",
+    "The positive admission registry is empty; external observations cannot authorize their own bounds.",
+    "B16 mathematical outputs of other slots are outside this frozen-launch audit."
+  ],
+  "receiver_wall_seconds": 0.4474355000129435
+}

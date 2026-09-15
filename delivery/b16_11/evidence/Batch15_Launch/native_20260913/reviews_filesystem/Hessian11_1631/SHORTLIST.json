@@ -1,0 +1,320 @@
+{
+  "status": "BOUNDED_STRATEGY_WITH_FRESH_EXACT_CERTIFICATES",
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "targets": [
+    {
+      "rank": 1,
+      "id": "r10_t19",
+      "tail": [
+        19,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "finite_cells": [
+        {
+          "degree": 27,
+          "weight": [
+            73,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "fresh_i_det_lb": 5
+        },
+        {
+          "degree": 35,
+          "weight": [
+            105,
+            19,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": 429,
+          "fresh_i_det_lb": 11
+        }
+      ],
+      "stable_a": 429,
+      "inherited_stable_rank_floors": {
+        "GEN": 429,
+        "DET": 418,
+        "PAD": 243
+      },
+      "floor_status": "Slot06 final production awaits independent review",
+      "fresh_global_ideal_image_dimension": 11,
+      "product_images": {
+        "adjugate_rank": 8,
+        "squared_divisibility_rank": 5,
+        "intersection": 2,
+        "union": 11
+      },
+      "mechanism": "9-minor remainders and p^2 divisibility of the 10-by-10 ordinary Hessian determinant",
+      "hypotheses": [
+        "characteristic zero",
+        "genuine slice Euler identities",
+        "S57 for stable/finite identification",
+        "Slot06 floor only for exact dimension 11"
+      ],
+      "padding_relevance": "Positive stable gap needs rank at least419; floor243 does not suffice. Four new controls give only rank floor1 on the equation subspace.",
+      "smallest_decisive_certificate": "Provided: exact14-vector source/Euler certificate, 11-by-11 integer minor, universal vanishing proof. Next independent review and finite filtration of these11 vectors.",
+      "cost_estimate": "Replay measured below1 second; sparse finite image preflight1-60seconds; no complete new geometric comparison priced.",
+      "stop_rule": "Do not resample429-space. Stop on cap or carrier-size failure, or once reviewed dimension/filtration question is settled.",
+      "novelty_status": "No assertion all11 are outside J24; no novelty claim versus full LMR geometry."
+    },
+    {
+      "rank": 2,
+      "id": "r10_t15_degree23",
+      "tail": [
+        15,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "finite_cells": [
+        {
+          "degree": 23,
+          "weight": [
+            61,
+            15,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "fresh_i_det_lb": 1
+        }
+      ],
+      "stable_degree": 31,
+      "stable_a": 189,
+      "inherited_stable_rank_floors": {
+        "DET": null,
+        "PAD": null
+      },
+      "conditional_derived_stable_det_floor": 178,
+      "fresh_equation": "c^23 S7",
+      "mechanism": "p^2 divisibility with a sharper highest-remainder denominator bound",
+      "hypotheses": [
+        "characteristic zero",
+        "full10-variable Hessian",
+        "monic division then polynomial extension",
+        "Slot06/S57 only for transported stable upper bound"
+      ],
+      "padding_relevance": "Needs finite ambient count and full-cell padding comparison. Nonzero one-equation evaluation alone gives no multiplicity gap when ambient multiplicity exceeds1.",
+      "smallest_decisive_certificate": "Provided: S7 nonzero value -19211816052075264 and universal finite lift proof. Next exact a23.",
+      "cost_estimate": "One-value replay below1second; exact count preflight1-10seconds/128MiB; full comparison unpriced.",
+      "stop_rule": "Stop after exact finite count if required source/comparison exceeds60seconds512MiB.",
+      "novelty_status": "Nonzero degree23 class is outside ideal generated in degree24. Not a novelty statement versus all LMR constructions."
+    },
+    {
+      "rank": 3,
+      "id": "r10_t17_degree25",
+      "tail": [
+        17,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "finite_cells": [
+        {
+          "degree": 25,
+          "weight": [
+            67,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "fresh_i_det_lb": 2
+        },
+        {
+          "degree": 26,
+          "weight": [
+            71,
+            17,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "fresh_i_det_lb": 2
+        }
+      ],
+      "stable_degree": 33,
+      "stable_a": 294,
+      "inherited_stable_rank_floors": {
+        "DET": null,
+        "PAD": null
+      },
+      "conditional_derived_stable_det_floor": 283,
+      "fresh_stable_i_det_lb": 4,
+      "finite_expressions": [
+        "c^25 S5",
+        "c^25 s2 S7"
+      ],
+      "stable_expressions": [
+        "R3(A)",
+        "R3(T2)",
+        "S5",
+        "s2 S7"
+      ],
+      "inherited_tensor_channels": [
+        {
+          "degree": 25,
+          "multiplicity": 1,
+          "image_rank_floor": 0
+        },
+        {
+          "degree": 26,
+          "multiplicity": 2,
+          "image_rank_floor": 0
+        }
+      ],
+      "mechanism": "Same Hessian generators at an earlier finite rung; actual multiplication images and overlaps required",
+      "hypotheses": [
+        "characteristic zero",
+        "finite denominator proof",
+        "S57 and Slot06 for conditional transported bound"
+      ],
+      "padding_relevance": "Earlier degree may have smaller ambient multiplicity; finite dimensions and padding ranks are unknown here.",
+      "smallest_decisive_certificate": "Provided: two finite global equations and stable4-by-4 minor. Next compare image with existing tensor channels and compute finite ambient count.",
+      "cost_estimate": "1-10second sparse image/count preflight; no large carrier allocated.",
+      "stop_rule": "Stop if new products are contained in proved image or sparse representation cannot meet cap.",
+      "novelty_status": "Test products modulo J24 separately; do not add tensor multiplicities."
+    },
+    {
+      "rank": 4,
+      "id": "r9_t21_lower_rungs",
+      "tail": [
+        21,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "finite_cells": [
+        {
+          "degree": 14,
+          "weight": [
+            21,
+            21,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "i_pad_lb": 0
+        },
+        {
+          "degree": 15,
+          "weight": [
+            25,
+            21,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "a": null,
+          "i_pad_lb": 3
+        }
+      ],
+      "stable_a": 533,
+      "inherited_stable_rank_floors": {
+        "DET": 529,
+        "PAD": null
+      },
+      "reviewed_stable_i_det": 4,
+      "mechanism": "Exact finite filtration of the reviewed four-dimensional Hessian space",
+      "hypotheses": [
+        "reviewed Slot05 global four-space and rank529",
+        "inherited ambient533/S57",
+        "degree15 padded floor3"
+      ],
+      "padding_relevance": "At degree15 determinant ideal upper3 excludes positiveD; degree14 zero ideal also suffices. Degrees>=16 conditionally closed by stronger Slot01 transport.",
+      "smallest_decisive_certificate": "Exact Laurent/polynomial cancellation certificate for dimension(A15 intersect K_det)<=3; analogous degree14 intersection.",
+      "cost_estimate": "5-60second sparse4-vector filtration preflight.",
+      "stop_rule": "Stop if large ambient carrier required; no priority for conditional closed degrees>=16.",
+      "novelty_status": "Any nonzero equation at14/15 would be outside J24 by degree, but none is certified here."
+    }
+  ],
+  "conditional_closures": {
+    "r9_t21_requested": "Slot01 degree24 padded floor4 times q44 yields D<=0 for degrees>=26",
+    "r9_t21_stronger": "Slot01 actual degree14 floor4 times q44 yields D<=0 for degrees>=16, pending independent Slot01 review",
+    "r7_r8_odd_tails": "Slot06 full DET at t21 and same-row s2 injection, pending independent production review"
+  },
+  "excluded_from_geometry": {
+    "r10_t21": {
+      "stable_a": 594,
+      "reason": "above previous533cap; census/size only; further geometry needs authorization"
+    }
+  },
+  "higher_derivatives": {
+    "ordinary_Hessian_multiplicity": "p^(r-8) divisibility is not a third/fourth derivative construction",
+    "Yabe": "Primary arXiv1504.00151v1 ordinary determinantal-complexity theorem; quartic bi-rank of zper3<=3 makes isolated fourth-order test unhelpful here.",
+    "next_control": "Three-direction exact mixedTaylor compatibility using shared a,r,c,E;34coefficients. Instrument control only; no elimination run.",
+    "global_certificate_needed": "Nonzero coefficient polynomial with exact universal determinant-pencil substitution identity, finite lift and highest weight, followed by quotient modulo specified LMR image and independent padding comparison"
+  },
+  "primary_sources": [
+    "https://arxiv.org/pdf/1004.4802",
+    "https://ems.press/journals/cmh/articles/11963",
+    "https://arxiv.org/pdf/1610.07681",
+    "https://arxiv.org/pdf/1505.02205",
+    "https://arxiv.org/pdf/1504.00151"
+  ],
+  "no_positive_gap_claimed": true
+}

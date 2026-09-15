@@ -1,0 +1,737 @@
+{
+  "schema": "b16-11-audit/1",
+  "frozen_input_checks": 6,
+  "worktrees_checked": 12,
+  "source_bindings": [
+    {
+      "source": "work/batch15_workers/B15-01/analysis/b15_01_verify.py",
+      "frozen_head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+      "git_blob": "6524dc7e5c14e41523c200ed5f99cc75906f674d",
+      "raw_git_blob": "db9c35c528b7a9cc56693fb10bcef41bb0d6cd78",
+      "lf_git_blob": "6524dc7e5c14e41523c200ed5f99cc75906f674d",
+      "binding": "CRLF_to_LF_only"
+    },
+    {
+      "source": "work/batch15_workers/B15-01/tools/verify/b15_01_ci159.py",
+      "frozen_head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+      "git_blob": "3de1444f580751d86af116d794da3080494071e2",
+      "raw_git_blob": "99e9d14726b980efcc3c033931c56009e7874674",
+      "lf_git_blob": "3de1444f580751d86af116d794da3080494071e2",
+      "binding": "CRLF_to_LF_only"
+    },
+    {
+      "source": "work/batch15_workers/B15-01/docs/b15_01_report.md",
+      "frozen_head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+      "git_blob": "06978b72ef866192be6140b2391e81b962e48605",
+      "raw_git_blob": "800d93e7674ccd8318d6daab25eb9d0c2ced871e",
+      "lf_git_blob": "06978b72ef866192be6140b2391e81b962e48605",
+      "binding": "CRLF_to_LF_only"
+    },
+    {
+      "source": "work/batch15_workers/B15-05/docs/b15_05_report.md",
+      "frozen_head": "5a019b2fb24fecf208118e628772b373235a6d61",
+      "git_blob": "26a7b486bdc7ddaf7f10fcaf8613b655001f4f95",
+      "raw_git_blob": "26a7b486bdc7ddaf7f10fcaf8613b655001f4f95",
+      "lf_git_blob": "26a7b486bdc7ddaf7f10fcaf8613b655001f4f95",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-05/docs/b15_05_proved.md",
+      "frozen_head": "5a019b2fb24fecf208118e628772b373235a6d61",
+      "git_blob": "c7e260523ff54cd11cb5378d10faadb6e77d9617",
+      "raw_git_blob": "c7e260523ff54cd11cb5378d10faadb6e77d9617",
+      "lf_git_blob": "c7e260523ff54cd11cb5378d10faadb6e77d9617",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-06/docs/b15_06_report.md",
+      "frozen_head": "41e03e172e32a8efc1803c7207a244ca95966b04",
+      "git_blob": "1d4b82982ce8c981dabc2940ef86d1bb67e7085d",
+      "raw_git_blob": "85ba865ad1b2eea8f822b56409f0466f941d2287",
+      "lf_git_blob": "1d4b82982ce8c981dabc2940ef86d1bb67e7085d",
+      "binding": "CRLF_to_LF_only"
+    },
+    {
+      "source": "work/batch15_workers/B15-06/docs/b15_06_proved.md",
+      "frozen_head": "41e03e172e32a8efc1803c7207a244ca95966b04",
+      "git_blob": "8beae0832b411b2fa8e96831cb9ebdba4b25e2cc",
+      "raw_git_blob": "8beae0832b411b2fa8e96831cb9ebdba4b25e2cc",
+      "lf_git_blob": "8beae0832b411b2fa8e96831cb9ebdba4b25e2cc",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-08/docs/b15_08_report.md",
+      "frozen_head": "0256ed2561964fe4085ad847518e3fcf85837024",
+      "git_blob": "4f8eb6a13539742ca019e8717d6c39fe54eeee13",
+      "raw_git_blob": "4f8eb6a13539742ca019e8717d6c39fe54eeee13",
+      "lf_git_blob": "4f8eb6a13539742ca019e8717d6c39fe54eeee13",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-08/docs/b15_08_proved.md",
+      "frozen_head": "0256ed2561964fe4085ad847518e3fcf85837024",
+      "git_blob": "713c6ef61f4cc1417e1ba0b749a7bb7214625d53",
+      "raw_git_blob": "713c6ef61f4cc1417e1ba0b749a7bb7214625d53",
+      "lf_git_blob": "713c6ef61f4cc1417e1ba0b749a7bb7214625d53",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-08/analysis/b15_08_witness.py",
+      "frozen_head": "0256ed2561964fe4085ad847518e3fcf85837024",
+      "git_blob": "a2d0948488083057e32b2db5e2675ada0312efa9",
+      "raw_git_blob": "a2d0948488083057e32b2db5e2675ada0312efa9",
+      "lf_git_blob": "a2d0948488083057e32b2db5e2675ada0312efa9",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-11/docs/b15_11_report.md",
+      "frozen_head": "c40546038506fc6c7c4585dc32244a63376a91dc",
+      "git_blob": "5bf97798b5370514342a4a26d6a5b7c94e646b66",
+      "raw_git_blob": "5db3b4b6a53813e0d6f137141fe3947b3711f1e0",
+      "lf_git_blob": "5bf97798b5370514342a4a26d6a5b7c94e646b66",
+      "binding": "CRLF_to_LF_only"
+    },
+    {
+      "source": "work/batch15_workers/B15-11/analysis/b15_11_memory.py",
+      "frozen_head": "c40546038506fc6c7c4585dc32244a63376a91dc",
+      "git_blob": "84a0e2ceb8401693e3a71dc2c758c49198b744f0",
+      "raw_git_blob": "84a0e2ceb8401693e3a71dc2c758c49198b744f0",
+      "lf_git_blob": "84a0e2ceb8401693e3a71dc2c758c49198b744f0",
+      "binding": "raw"
+    },
+    {
+      "source": "work/batch15_workers/B15-11/analysis/b15_bound.py",
+      "frozen_head": "c40546038506fc6c7c4585dc32244a63376a91dc",
+      "git_blob": "a71022bb03dcc51e3aaf6171c92d155e9adf7df9",
+      "raw_git_blob": "0ff251a5182d5e69568ee3824735faaf990ca55c",
+      "lf_git_blob": "a71022bb03dcc51e3aaf6171c92d155e9adf7df9",
+      "binding": "CRLF_to_LF_only"
+    }
+  ],
+  "full_replay_input_hash_checks": [
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_01_verify.py",
+      "sha256": "a41846276b7a8cc98d32eb1d0bb9ac539f6411f02d17c3436e7f9b63e7c2c5c3",
+      "expected": "a41846276b7a8cc98d32eb1d0bb9ac539f6411f02d17c3436e7f9b63e7c2c5c3",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_bound.py",
+      "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "expected": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14_power.json.gz",
+      "sha256": "8c58ecf6ec21c2f64e2a80cc7c464b9af4eafba22a2a2e5eb611d640c94b1e22",
+      "expected": "8c58ecf6ec21c2f64e2a80cc7c464b9af4eafba22a2a2e5eb611d640c94b1e22",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14.json",
+      "sha256": "0d2eb2f3bca7cbb85a911a3c8f2ff70312d724462710af76c1ce9e83d09c4b65",
+      "expected": "0d2eb2f3bca7cbb85a911a3c8f2ff70312d724462710af76c1ce9e83d09c4b65",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/A14_exact.json.gz",
+      "sha256": "68a555cd11c566a8ed8dfe0fe87dff1bb1427a96165d8f493684b3bcea7a241d",
+      "expected": "68a555cd11c566a8ed8dfe0fe87dff1bb1427a96165d8f493684b3bcea7a241d",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/K14.json",
+      "sha256": "eef4e41c7bc5bccc7a70b5b95ee59b7ccee018d412474729d6ed6daa518ceee3",
+      "expected": "eef4e41c7bc5bccc7a70b5b95ee59b7ccee018d412474729d6ed6daa518ceee3",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_prep/points/P14.json",
+      "sha256": "241ec80ba43cc58a0f7c6eec609ebdbea46600a8126795ef9df2f64abccd50a8",
+      "expected": "241ec80ba43cc58a0f7c6eec609ebdbea46600a8126795ef9df2f64abccd50a8",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/certificate.json",
+      "sha256": "c5b2bb951025522a873b5c9b639d43dc958b7becb0e79f9dbbefef42fa2b01a8",
+      "expected": "c5b2bb951025522a873b5c9b639d43dc958b7becb0e79f9dbbefef42fa2b01a8",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/pilot.json",
+      "sha256": "6b7fa92d479dc0120b9ebe183b48bfc71b4e91222de595a6c364dbd9d896fbd7",
+      "expected": "6b7fa92d479dc0120b9ebe183b48bfc71b4e91222de595a6c364dbd9d896fbd7",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_member_control.json.gz",
+      "sha256": "4cccf38f28619b81fb029b617b19b100b614cc8ae1f35ff04d389a8a6602c68e",
+      "expected": "4cccf38f28619b81fb029b617b19b100b614cc8ae1f35ff04d389a8a6602c68e",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_rank_control.json.gz",
+      "sha256": "59ee73b5084c5f9fdf4d61633b97472212899dbe5f5f673b399b04b56b305ef6",
+      "expected": "59ee73b5084c5f9fdf4d61633b97472212899dbe5f5f673b399b04b56b305ef6",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/degree13.json.gz",
+      "sha256": "d2c2a1129a746a43a03f335a015a27149f268c39ae9ee37c0c234a391c0e01b6",
+      "expected": "d2c2a1129a746a43a03f335a015a27149f268c39ae9ee37c0c234a391c0e01b6",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/dimension.json.gz",
+      "sha256": "ae7dd6eb8f722456a79b5513f51fc1f7790e1e4c4b6ae1b6ce8a431ac5f21838",
+      "expected": "ae7dd6eb8f722456a79b5513f51fc1f7790e1e4c4b6ae1b6ce8a431ac5f21838",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic_verification_v2.json.gz",
+      "sha256": "95065b4711e1157f81c0be757e7c71cd1eba63c00182e5409b94315c7c8d8634",
+      "expected": "95065b4711e1157f81c0be757e7c71cd1eba63c00182e5409b94315c7c8d8634",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic.json.gz",
+      "sha256": "5c531a3f4d6f75842deaa1152694668b40a50a17f18f25b0457765b511748155",
+      "expected": "5c531a3f4d6f75842deaa1152694668b40a50a17f18f25b0457765b511748155",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/kernel.json.gz",
+      "sha256": "aa2ebbbe4eb4b4bed3a0f909816711c95c13c5e3d334df86da4ba3c1881b4abb",
+      "expected": "aa2ebbbe4eb4b4bed3a0f909816711c95c13c5e3d334df86da4ba3c1881b4abb",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/members.json.gz",
+      "sha256": "5e4788ace15006c01b6d9373499036db259e6166294ac31cde326072c552486e",
+      "expected": "5e4788ace15006c01b6d9373499036db259e6166294ac31cde326072c552486e",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/points.json.gz",
+      "sha256": "7818dc9bfd79b13181b24370f6fb75e5b99174588bdd1eb049197d2f7e2ec754",
+      "expected": "7818dc9bfd79b13181b24370f6fb75e5b99174588bdd1eb049197d2f7e2ec754",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/power.json.gz",
+      "sha256": "0ac57aabc1498d2c5fb253e651637ec8908da461305751cf00f7b3a0a7a391b4",
+      "expected": "0ac57aabc1498d2c5fb253e651637ec8908da461305751cf00f7b3a0a7a391b4",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source_values.json.gz",
+      "sha256": "4fc647032a54dc325c6e87c9a90d84209f954c6aa8785e161e4650cf60ce962c",
+      "expected": "4fc647032a54dc325c6e87c9a90d84209f954c6aa8785e161e4650cf60ce962c",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source.json.gz",
+      "sha256": "5e27e01aa46c6f53d808f47683b840124769c0ddc37dc2818e5efc1fa5086002",
+      "expected": "5e27e01aa46c6f53d808f47683b840124769c0ddc37dc2818e5efc1fa5086002",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/ci73/certificate.json",
+      "sha256": "8f4d168ecfb922213b5baee66ac6250dd99dcf2ace669eebc2426c782e9b231d",
+      "expected": "8f4d168ecfb922213b5baee66ac6250dd99dcf2ace669eebc2426c782e9b231d",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/columns_gen_2147483647.json.gz",
+      "sha256": "ba06a3ddefbd2bbdd2fb2bd1b0428e51507feb750d020fe8a69be7d34fd09437",
+      "expected": "ba06a3ddefbd2bbdd2fb2bd1b0428e51507feb750d020fe8a69be7d34fd09437",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/source.json",
+      "sha256": "0f925e0e113dad94f8a35b19eb64a4e50b8badb29959673554a49ef1f2f8ce45",
+      "expected": "0f925e0e113dad94f8a35b19eb64a4e50b8badb29959673554a49ef1f2f8ce45",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_01_ci159.py",
+      "sha256": "fe4eb0d1a94cae912a5692def82993cfe165a74c38efb8b70d9c430ac658049d",
+      "expected": "fe4eb0d1a94cae912a5692def82993cfe165a74c38efb8b70d9c430ac658049d",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_modular.py",
+      "sha256": "af6dc1008c336dbb8205dde1618dd9b2d795f50ca37e2fe6e31dff8e859e3f99",
+      "expected": "af6dc1008c336dbb8205dde1618dd9b2d795f50ca37e2fe6e31dff8e859e3f99",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/chi_build.py",
+      "sha256": "669715ccbee948c680685aba34b0d9eae7bc3e0c447edd965f7fe94a7aa60882",
+      "expected": "669715ccbee948c680685aba34b0d9eae7bc3e0c447edd965f7fe94a7aa60882",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_backend.cs",
+      "sha256": "32660c445bbd03551261fdc2868a2ceb1858675c27bb5e0fe262d91848b429e2",
+      "expected": "32660c445bbd03551261fdc2868a2ceb1858675c27bb5e0fe262d91848b429e2",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_dimension.py",
+      "sha256": "978130f696aec2a119f647f2086d17c6084f430b733b7dbf88506f4c0eb1679f",
+      "expected": "978130f696aec2a119f647f2086d17c6084f430b733b7dbf88506f4c0eb1679f",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_eval.py",
+      "sha256": "222f6245d0534b3aaa3294ea38ff5e857cf790fea8a3d7fab53d74995430fb57",
+      "expected": "222f6245d0534b3aaa3294ea38ff5e857cf790fea8a3d7fab53d74995430fb57",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_inherited.py",
+      "sha256": "895fac179d78a82573bc3f8db2cd9796ca3911c7b0b3f6ff3527586b539aa565",
+      "expected": "895fac179d78a82573bc3f8db2cd9796ca3911c7b0b3f6ff3527586b539aa565",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_io.py",
+      "sha256": "789b6d306e04a82577a6db77ac21caf7dfb547ae610520fb5b2aa4cf94574db8",
+      "expected": "789b6d306e04a82577a6db77ac21caf7dfb547ae610520fb5b2aa4cf94574db8",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_linear.py",
+      "sha256": "652db277ae3be58aa7c1e73f977967c3946700ee7a050684d8118abedf3aa246",
+      "expected": "652db277ae3be58aa7c1e73f977967c3946700ee7a050684d8118abedf3aa246",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73.py",
+      "sha256": "9e227532e5614f3962e9be41cb90b5f7d25420b8fe3dc2337f127831b2477a41",
+      "expected": "9e227532e5614f3962e9be41cb90b5f7d25420b8fe3dc2337f127831b2477a41",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/complete_interpolation.py",
+      "sha256": "43f5aafdbf5ee01d751b4a3b9eff2cb8aae6bf38e9f91edd76fc9c0d92917376",
+      "expected": "43f5aafdbf5ee01d751b4a3b9eff2cb8aae6bf38e9f91edd76fc9c0d92917376",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/FORMAT.md",
+      "sha256": "1e40fccf7eae04eb3a62bb9dd0eba34407e241147151d763ed4436a0340a6944",
+      "expected": "1e40fccf7eae04eb3a62bb9dd0eba34407e241147151d763ed4436a0340a6944",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/forms.py",
+      "sha256": "530df0cfafb47b0de056c69f6aaad751d77f76bbc5a18aab9a309928d361a4f1",
+      "expected": "530df0cfafb47b0de056c69f6aaad751d77f76bbc5a18aab9a309928d361a4f1",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/hwv.py",
+      "sha256": "5899f892f5a747cca3afa487d5559c8a6cf0747d8e0f312d0ae06499d6721e1e",
+      "expected": "5899f892f5a747cca3afa487d5559c8a6cf0747d8e0f312d0ae06499d6721e1e",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer1.py",
+      "sha256": "aca99d72607f61bcf32620c522db732197d9683a5cdfc52bfc134da248171867",
+      "expected": "aca99d72607f61bcf32620c522db732197d9683a5cdfc52bfc134da248171867",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer2.py",
+      "sha256": "1b340d25df181c677f492be97282ec519e33e915899ce2b63cfa391e5b3fb30e",
+      "expected": "1b340d25df181c677f492be97282ec519e33e915899ce2b63cfa391e5b3fb30e",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer3.py",
+      "sha256": "fbf624a0d072fcdaf79b7bb0208f70ef57041fcf23340f4c5c2d4d74e9281b64",
+      "expected": "fbf624a0d072fcdaf79b7bb0208f70ef57041fcf23340f4c5c2d4d74e9281b64",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/pleth.py",
+      "sha256": "60305cd101e31c0148fe4a7fd9e406c43ad5406216b540e85f6ed3256ada2008",
+      "expected": "60305cd101e31c0148fe4a7fd9e406c43ad5406216b540e85f6ed3256ada2008",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/points.py",
+      "sha256": "899bf15d50039d680d10516608d79695b68bd9dfbb677947db8516f21234f920",
+      "expected": "899bf15d50039d680d10516608d79695b68bd9dfbb677947db8516f21234f920",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/sample_corpus.py",
+      "sha256": "f981a8e15f053dc0022d54cefb8b199643a6d70502b1e1864f57cb6cfcbfb15b",
+      "expected": "f981a8e15f053dc0022d54cefb8b199643a6d70502b1e1864f57cb6cfcbfb15b",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/scratch_not_removed.py",
+      "sha256": "1e65c39a29c9751002780fcde6c7b8838814cb554c93fe95f5550e64e4b1d736",
+      "expected": "1e65c39a29c9751002780fcde6c7b8838814cb554c93fe95f5550e64e4b1d736",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/selftest.py",
+      "sha256": "3c9cbbcf4336f9fa7df6730e904dd472560c7c77443a84be9c39d65d0fe4df27",
+      "expected": "3c9cbbcf4336f9fa7df6730e904dd472560c7c77443a84be9c39d65d0fe4df27",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/verify.py",
+      "sha256": "6e14bee5640486124777f5c9a72eab22bc81f6c2d70753d32794317f6f1ffdfa",
+      "expected": "6e14bee5640486124777f5c9a72eab22bc81f6c2d70753d32794317f6f1ffdfa",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/wied_check.c",
+      "sha256": "a7bc2f234aeb469f9ffbaf0a8cd043adf860a2879d4135b64c95eac55298e26a",
+      "expected": "a7bc2f234aeb469f9ffbaf0a8cd043adf860a2879d4135b64c95eac55298e26a",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/degeneracy_check.py",
+      "sha256": "b51b5b5a3895dc305d7e154394ce26115db8eca51bc9b0012d03e24d995277bf",
+      "expected": "b51b5b5a3895dc305d7e154394ce26115db8eca51bc9b0012d03e24d995277bf",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil_r6.json",
+      "sha256": "caf4584e106d40496a24dfbe917c28b94bdecc2fc525d736efe1f193b9d1655a",
+      "expected": "caf4584e106d40496a24dfbe917c28b94bdecc2fc525d736efe1f193b9d1655a",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil.json",
+      "sha256": "e906280342bfdf278a70dd56804cfd86aadb1a4f0d497a9ae4024db48cffb714",
+      "expected": "e906280342bfdf278a70dd56804cfd86aadb1a4f0d497a9ae4024db48cffb714",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/make_testset.py",
+      "sha256": "096b902b3e886db814873847badacc8de0fe4db7467d47870df88094693f9610",
+      "expected": "096b902b3e886db814873847badacc8de0fe4db7467d47870df88094693f9610",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent_r6.json",
+      "sha256": "47dfbe0d13a63f18ce31a05d5a63651c2cf39f1abd471c52e8ea30d9dd32c7fe",
+      "expected": "47dfbe0d13a63f18ce31a05d5a63651c2cf39f1abd471c52e8ea30d9dd32c7fe",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent.json",
+      "sha256": "0d137699a04eecc5719ed8b956d7e7627bcb5f56a305bf3da32708f8c179a106",
+      "expected": "0d137699a04eecc5719ed8b956d7e7627bcb5f56a305bf3da32708f8c179a106",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible_r6.json",
+      "sha256": "9dd2f494f62f9a24ecff44e290dca19d4a93a4f65a427481bf46d18171dd874e",
+      "expected": "9dd2f494f62f9a24ecff44e290dca19d4a93a4f65a427481bf46d18171dd874e",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible.json",
+      "sha256": "511bf4a003383175503d4b50d96ab8e61d0cc5c86923d00ae5232260b817c723",
+      "expected": "511bf4a003383175503d4b50d96ab8e61d0cc5c86923d00ae5232260b817c723",
+      "pass_hash": true,
+      "packaged": true
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/b15_01_ci159.cpython-312.pyc",
+      "bytes": 36468,
+      "sha256": "8f703ab83c4ad28e56b9efb2874602d53324b20ff6f77a89d6db5878ee1ef651",
+      "expected": "8f703ab83c4ad28e56b9efb2874602d53324b20ff6f77a89d6db5878ee1ef651",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/ci73_dimension.cpython-312.pyc",
+      "bytes": 14783,
+      "sha256": "f5b14b9e3a0512dd556d1676cec4ff102a181ee7157422dcf30dbb4c9398dede",
+      "expected": "f5b14b9e3a0512dd556d1676cec4ff102a181ee7157422dcf30dbb4c9398dede",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/ci73_eval.cpython-312.pyc",
+      "bytes": 19841,
+      "sha256": "71d604fdd7ef5851968c09fe8e2e8348941bf8d97f8046defad21dab28c4119d",
+      "expected": "71d604fdd7ef5851968c09fe8e2e8348941bf8d97f8046defad21dab28c4119d",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/ci73_io.cpython-312.pyc",
+      "bytes": 3385,
+      "sha256": "47130379d81e840895b6903be4db36fe99ce90adc202d709530a9b1effd3bb11",
+      "expected": "47130379d81e840895b6903be4db36fe99ce90adc202d709530a9b1effd3bb11",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/ci73_linear.cpython-312.pyc",
+      "bytes": 6025,
+      "sha256": "9a31963419e55918c4fcc7adf8080b1af11e7539774cbd553e5b59ded692096c",
+      "expected": "9a31963419e55918c4fcc7adf8080b1af11e7539774cbd553e5b59ded692096c",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/ci73.cpython-312.pyc",
+      "bytes": 40927,
+      "sha256": "c2e6ea813bb0b402cab1f06553e56f590de56d98ff5f43b46229156055179f66",
+      "expected": "c2e6ea813bb0b402cab1f06553e56f590de56d98ff5f43b46229156055179f66",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/complete_interpolation.cpython-312.pyc",
+      "bytes": 47022,
+      "sha256": "d44b651fd747dcb94c549ffec9f3f6528bcda838aca73cbebf06925e8572f7f4",
+      "expected": "d44b651fd747dcb94c549ffec9f3f6528bcda838aca73cbebf06925e8572f7f4",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/forms.cpython-312.pyc",
+      "bytes": 10387,
+      "sha256": "6e59762a9080ab1df7094bed26e9c4509eebcb620d38cb1d2e726335aeeabb87",
+      "expected": "6e59762a9080ab1df7094bed26e9c4509eebcb620d38cb1d2e726335aeeabb87",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/points.cpython-312.pyc",
+      "bytes": 9151,
+      "sha256": "7e0ea81d3623e241bf10e859d5e3ba4c6081473052c106881d86ee98a2bffc65",
+      "expected": "7e0ea81d3623e241bf10e859d5e3ba4c6081473052c106881d86ee98a2bffc65",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    },
+    {
+      "source": "Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/__pycache__/verify.cpython-312.pyc",
+      "bytes": 32952,
+      "sha256": "134b90c695a069b4d44c91f85bdc24c8eef55bdff0940b593dee28953747929d",
+      "expected": "134b90c695a069b4d44c91f85bdc24c8eef55bdff0940b593dee28953747929d",
+      "pass_hash": true,
+      "packaged": false,
+      "role": "incidental_cache_hash_only"
+    }
+  ],
+  "closeout_joins": [
+    {
+      "slot": "01",
+      "head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+      "tree": "c2eec54361cd673644a196aa46bce2fd1a6ae028",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "02",
+      "head": "77a16d78dcc9adf8067c562efc4c7fe9a858bfa0",
+      "tree": "7b8e62260d74df09ada142c05112dd17de2871ca",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "03",
+      "head": "fde81352a5868a1d152a73716f47ecd4b285adbe",
+      "tree": "e73a9aaaee8b7f215791ddd9f8522c6ee3c13488",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "04",
+      "head": "3d3f9f8b427f257a0d5db678b1645212033652ff",
+      "tree": "2c15f37829260c63aff6c7e2ea7002266f9cd675",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "05",
+      "head": "5a019b2fb24fecf208118e628772b373235a6d61",
+      "tree": "3cebe2a4d3c29c00dc531f589af13276ed5f09ef",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "06",
+      "head": "41e03e172e32a8efc1803c7207a244ca95966b04",
+      "tree": "79658262f4e594d4ccacdfadb0357df1b7df80d6",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "07",
+      "head": "3eb29ed3b91e0e65ba5407e5031a71c4865fe4f3",
+      "tree": "ae7f6d677cd5801ed218ed44d273d230a9a7d146",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "08",
+      "head": "0256ed2561964fe4085ad847518e3fcf85837024",
+      "tree": "2b6f72c485c18f4b8e43c17b0223957c1c6e334a",
+      "status": "PASS",
+      "delivery_source": "COMPLETED_DELIVERIES"
+    },
+    {
+      "slot": "09",
+      "head": "5e555cbe23725a247b572dde9b0ac9338f5dc797",
+      "tree": "25ca726a9ff15b3e11fb2ef8254b2524e15fb4c2",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "10",
+      "head": "9fd63fd543076d4cd42b5764c03039f0eff89934",
+      "tree": "0d0761d53860607c77b070bfe980aca85a097144",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "11",
+      "head": "c40546038506fc6c7c4585dc32244a63376a91dc",
+      "tree": "a3e269df085e1d06fa10d6b47116e0636f8d2d64",
+      "status": "PASS",
+      "delivery_source": "SUMMARY"
+    },
+    {
+      "slot": "12",
+      "head": "f6e75623b91ac50146baba6278b1abe90a635502",
+      "tree": "500507ea55236a6cb8153521b1e1b2617d18940d",
+      "status": "PASS",
+      "delivery_source": "COMPLETED_DELIVERIES"
+    }
+  ],
+  "findings": [
+    {
+      "id": "historical_statuses",
+      "severity": "resolved_history",
+      "detail": "Per-entry PENDING_GIT_BINDING labels are historical. Later git_closeout validates committed deliveries, while filesystem followups retain separate uncommitted status."
+    },
+    {
+      "id": "slot06_head",
+      "severity": "resolved_history",
+      "detail": "Intake entry head4067e2eb is the prelease delivery; production_followup head41e03e17 equals the frozen launch head."
+    },
+    {
+      "id": "slot01_entry",
+      "severity": "resolved_structure",
+      "detail": "No slot01 row in entries; top-level slot01_full_review supplies acceptance, superseding slot01_partial_review."
+    },
+    {
+      "id": "slots08_12_delivery",
+      "severity": "resolved_history",
+      "detail": "Use _completed bundles selected by exact head, not stale _final folders."
+    },
+    {
+      "id": "hessian_pending_claims",
+      "severity": "resolved_history",
+      "detail": "Hessian report predates later slot06 production and slot01 full review. Preserve author-relative fresh labels; they are inherited in B16-11."
+    },
+    {
+      "id": "global_raw_hessian",
+      "severity": "open_proof_boundary",
+      "detail": "Dream degree23 padding checker inherits saved raw Hessian coefficients. It cannot be called a fresh Hessian evaluation; B16-03 must rebuild them."
+    },
+    {
+      "id": "finite_unknowns",
+      "severity": "open_input",
+      "detail": "Frozen launch lacks exact finite quartic ambient counts at23/25/26/27, a complete eleven-space finite filtration, and sufficient actual padding floors. No positive cell is accepted."
+    },
+    {
+      "id": "finite26_ceiling",
+      "severity": "derived_extension",
+      "detail": "218 at degree26 follows the same reviewed cubic chart injection and checked Pieri channels. The Dream summary explicitly listed only23/25/27; this is a B16 conditional deduction, not a saved exact count."
+    },
+    {
+      "id": "legacy_resource_scope",
+      "severity": "scope_note",
+      "detail": "B15-01 accepted replay used5400s/1536MiB and measured2296.626s. B16 small-control caps are not applied retroactively, nor does that receipt grant a B16 heavy lease."
+    },
+    {
+      "id": "wrapper_labels",
+      "severity": "scope_note",
+      "detail": "Inspected b15_bound.py writes legacy batch15/B15-11 metadata; command/name and ownership identify the new B16 run. workers=1 is declared, not an ActiveProcessLimit; this receiver launches no child."
+    }
+  ],
+  "missing_required_launch_files": [],
+  "irreconcilable_claims": [],
+  "fresh_mathematical_replays": 0,
+  "heavy_lease_used": false
+}

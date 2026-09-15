@@ -1,0 +1,386 @@
+{
+  "status": "PASS_FULL_INDEPENDENT_REPLAY",
+  "checked_utc": "2026-09-13T17:37:01.0659828Z",
+  "slot": "01",
+  "head": "fe044dea85b33ce3a3c3836c58c5a2e1fe983f4c",
+  "report": "results/b15_01/integrator_report.md",
+  "input_hash_checks": [
+    {
+      "path": "analysis\\b15_01_verify.py",
+      "sha256": "A41846276B7A8CC98D32EB1D0BB9AC539F6411F02D17C3436E7F9B63E7C2C5C3",
+      "pass": true
+    },
+    {
+      "path": "analysis\\b15_bound.py",
+      "sha256": "CA001081F49E0048812B871A31E3BE85435B210B3A538170A9F006408A41F854",
+      "pass": true
+    },
+    {
+      "path": "results\\b14_04\\hpad14_power.json.gz",
+      "sha256": "8C58ECF6EC21C2F64E2A80CC7C464B9AF4EAFBA22A2A2E5EB611D640C94B1E22",
+      "pass": true
+    },
+    {
+      "path": "results\\b14_04\\hpad14.json",
+      "sha256": "0D2EB2F3BCA7CBB85A911A3C8F2FF70312D724462710AF76C1CE9E83D09C4B65",
+      "pass": true
+    },
+    {
+      "path": "results\\b14_07\\A14_exact.json.gz",
+      "sha256": "68A555CD11C566A8ED8DFE0FE87DFF1BB1427A96165D8F493684B3BCEA7A241D",
+      "pass": true
+    },
+    {
+      "path": "results\\b14_07\\K14.json",
+      "sha256": "EEF4E41C7BC5BCCC7A70B5B95EE59B7CCEE018D412474729D6ED6DAA518CEEE3",
+      "pass": true
+    },
+    {
+      "path": "results\\b14_prep\\points\\P14.json",
+      "sha256": "241EC80BA43CC58A0F7C6EEC609EBDBEA46600A8126795EF9DF2F64ABCCD50A8",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\certificate.json",
+      "sha256": "C5B2BB951025522A873B5C9B639D43DC958B7BECB0E79F9DBBEFEF42FA2B01A8",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\pilot.json",
+      "sha256": "6B7FA92D479DC0120B9EBE183B48BFC71B4E91222DE595A6C364DBD9D896FBD7",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\b15_01_altered_member_control.json.gz",
+      "sha256": "4CCCF38F28619B81FB029B617B19B100B614CC8AE1F35FF04D389A8A6602C68E",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\b15_01_altered_rank_control.json.gz",
+      "sha256": "59EE73B5084C5F9FDF4D61633B97472212899DBE5F5F673B399B04B56B305EF6",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\degree13.json.gz",
+      "sha256": "D2C2A1129A746A43A03F335A015A27149F268C39AE9EE37C0C234A391C0E01B6",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\dimension.json.gz",
+      "sha256": "AE7DD6EB8F722456A79B5513F51FC1F7790E1E4C4B6AE1B6CE8A431AC5F21838",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\generic_verification_v2.json.gz",
+      "sha256": "95065B4711E1157F81C0BE757E7C71CD1EBA63C00182E5409B94315C7C8D8634",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\generic.json.gz",
+      "sha256": "5C531A3F4D6F75842DEAA1152694668B40A50A17F18F25B0457765B511748155",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\kernel.json.gz",
+      "sha256": "AA2EBBBE4EB4B4BED3A0F909816711C95C13C5E3D334DF86DA4BA3C1881B4ABB",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\members.json.gz",
+      "sha256": "5E4788ACE15006C01B6D9373499036DB259E6166294AC31CDE326072C552486E",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\points.json.gz",
+      "sha256": "7818DC9BFD79B13181B24370F6FB75E5B99174588BDD1EB049197D2F7E2EC754",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\power.json.gz",
+      "sha256": "0AC57AABC1498D2C5FB253E651637EC8908DA461305751CF00F7B3A0A7A391B4",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\source_values.json.gz",
+      "sha256": "4FC647032A54DC325C6E87C9A90D84209F954C6AA8785E161E4650CF60CE962C",
+      "pass": true
+    },
+    {
+      "path": "results\\b15_01\\ci159_inputs\\source.json.gz",
+      "sha256": "5E27E01AA46C6F53D808F47683B840124769C0DDC37DC2818E5EFC1FA5086002",
+      "pass": true
+    },
+    {
+      "path": "results\\ci73\\certificate.json",
+      "sha256": "8F4D168ECFB922213B5BAEE66AC6250DD99DCF2ACE669EEBC2426C782E9B231D",
+      "pass": true
+    },
+    {
+      "path": "results\\s74\\columns_gen_2147483647.json.gz",
+      "sha256": "BA06A3DDEFBD2BBDD2FB2BD1B0428E51507FEB750D020FE8A69BE7D34FD09437",
+      "pass": true
+    },
+    {
+      "path": "results\\s74\\source.json",
+      "sha256": "0F925E0E113DAD94F8A35B19EB64A4E50B8BADB29959673554A49EF1F2F8CE45",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\b15_01_ci159.py",
+      "sha256": "FE4EB0D1A94CAE912A5692DEF82993CFE165A74C38EFB8B70D9C430AC658049D",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\b15_modular.py",
+      "sha256": "AF6DC1008C336DBB8205DDE1618DD9B2D795F50CA37E2FE6E31DFF8E859E3F99",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\chi_build.py",
+      "sha256": "669715CCBEE948C680685ABA34B0D9EAE7BC3E0C447EDD965F7FE94A7AA60882",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_backend.cs",
+      "sha256": "32660C445BBD03551261FDC2868A2CEB1858675C27BB5E0FE262D91848B429E2",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_dimension.py",
+      "sha256": "978130F696AEC2A119F647F2086D17C6084F430B733B7DBF88506F4C0EB1679F",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_eval.py",
+      "sha256": "222F6245D0534B3AAA3294EA38FF5E857CF790FEA8A3D7FAB53D74995430FB57",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_inherited.py",
+      "sha256": "895FAC179D78A82573BC3F8DB2CD9796CA3911C7B0B3F6FF3527586B539AA565",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_io.py",
+      "sha256": "789B6D306E04A82577A6DB77AC21CAF7DFB547AE610520FB5B2AA4CF94574DB8",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73_linear.py",
+      "sha256": "652DB277AE3BE58AA7C1E73F977967C3946700EE7A050684D8118ABEDF3AA246",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\ci73.py",
+      "sha256": "9E227532E5614F3962E9BE41CB90B5F7D25420B8FE3DC2337F127831B2477A41",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\complete_interpolation.py",
+      "sha256": "43F5AAFDBF5EE01D751B4A3B9EFF2CB8AAE6BF38E9F91EDD76FC9C0D92917376",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\FORMAT.md",
+      "sha256": "1E40FCCF7EAE04EB3A62BB9DD0EBA34407E241147151D763ED4436A0340A6944",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\forms.py",
+      "sha256": "530DF0CFAFB47B0DE056C69F6AAAD751D77F76BBC5A18AAB9A309928D361A4F1",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\hwv.py",
+      "sha256": "5899F892F5A747CCA3AFA487D5559C8A6CF0747D8E0F312D0AE06499D6721E1E",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\layer1.py",
+      "sha256": "ACA99D72607F61BCF32620C522DB732197D9683A5CDFC52BFC134DA248171867",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\layer2.py",
+      "sha256": "1B340D25DF181C677F492BE97282EC519E33E915899CE2B63CFA391E5B3FB30E",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\layer3.py",
+      "sha256": "FBF624A0D072FCDAF79B7BB0208F70EF57041FCF23340F4C5C2D4D74E9281B64",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\pleth.py",
+      "sha256": "60305CD101E31C0148FE4A7FD9E406C43AD5406216B540E85F6ED3256ADA2008",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\points.py",
+      "sha256": "899BF15D50039D680D10516608D79695B68BD9DFBB677947DB8516F21234F920",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\sample_corpus.py",
+      "sha256": "F981A8E15F053DC0022D54CEFB8B199643A6D70502B1E1864F57CB6CFCBFB15B",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\scratch_not_removed.py",
+      "sha256": "1E65C39A29C9751002780FCDE6C7B8838814CB554C93FE95F5550E64E4B1D736",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\selftest.py",
+      "sha256": "3C9CBBCF4336F9FA7DF6730E904DD472560C7C77443A84BE9C39D65D0FE4DF27",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\verify.py",
+      "sha256": "6E14BEE5640486124777F5C9A72EAB22BC81F6C2D70753D32794317F6F1FFDFA",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\wied_check.c",
+      "sha256": "A7BC2F234AEB469F9FFBAF0A8CD043ADF860A2879D4135B64C95EAC55298E26A",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\degeneracy_check.py",
+      "sha256": "B51B5B5A3895DC305D7E154394CE26115DB8ECA51BC9B0012D03E24D995277BF",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\det_pencil_r6.json",
+      "sha256": "CAF4584E106D40496A24DFBE917C28B94BDECC2FC525D736EFE1F193B9D1655A",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\det_pencil.json",
+      "sha256": "E906280342BFDF278A70DD56804CFD86AADB1A4F0D497A9AE4024DB48CFFB714",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\make_testset.py",
+      "sha256": "096B902B3E886DB814873847BADACC8DE0FE4DB7467D47870DF88094693F9610",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\padded_permanent_r6.json",
+      "sha256": "47DFBE0D13A63F18CE31A05D5A63651C2CF39F1ABD471C52E8EA30D9DD32C7FE",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\padded_permanent.json",
+      "sha256": "0D137699A04EECC5719ED8B956D7E7627BCB5F56A305BF3DA32708F8C179A106",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\reducible_r6.json",
+      "sha256": "9DD2F494F62F9A24ECFF44E290DCA19D4A93A4F65A427481BF46D18171DD874E",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\testset\\reducible.json",
+      "sha256": "511BF4A003383175503D4B50D96AB8E61D0CC5C86923D00AE5232260B817C723",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\b15_01_ci159.cpython-312.pyc",
+      "sha256": "8F703AB83C4AD28E56B9EFB2874602D53324B20FF6F77A89D6DB5878EE1EF651",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\ci73_dimension.cpython-312.pyc",
+      "sha256": "F5B14B9E3A0512DD556D1676CEC4FF102A181EE7157422DCF30DBB4C9398DEDE",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\ci73_eval.cpython-312.pyc",
+      "sha256": "71D604FDD7EF5851968C09FE8E2E8348941BF8D97F8046DEFAD21DAB28C4119D",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\ci73_io.cpython-312.pyc",
+      "sha256": "47130379D81E840895B6903BE4DB36FE99CE90ADC202D709530A9B1EFFD3BB11",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\ci73_linear.cpython-312.pyc",
+      "sha256": "9A31963419E55918C4FCC7ADF8080B1AF11E7539774CBD553E5B59DED692096C",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\ci73.cpython-312.pyc",
+      "sha256": "C2E6EA813BB0B402CAB1F06553E56F590DE56D98FF5F43B46229156055179F66",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\complete_interpolation.cpython-312.pyc",
+      "sha256": "D44B651FD747DCB94C549FFEC9F3F6528BCDA838ACA73CBEBF06925E8572F7F4",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\forms.cpython-312.pyc",
+      "sha256": "6E59762A9080AB1DF7094BED26E9C4509EEBCB620D38CB1D2E726335AEEABB87",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\points.cpython-312.pyc",
+      "sha256": "7E0EA81D3623E241BF10E859D5E3BA4C6081473052C106881D86EE98A2BFFC65",
+      "pass": true
+    },
+    {
+      "path": "tools\\verify\\__pycache__\\verify.cpython-312.pyc",
+      "sha256": "134B90C695A069B4D44C91F85BDC24C8EEF55BDFF0940B593DEE28953747929D",
+      "pass": true
+    }
+  ],
+  "fresh": [
+    "Target rank158 minor823506578 mod2147483647",
+    "Independent complete dimensions source93 target159",
+    "Generic source completeness rank93 minor702376822",
+    "14694 exact source entries; rational rank88; kernel rank5",
+    "Global reducible ideal multiplicity interval4..5 at degree14"
+  ],
+  "inherited": [
+    "Previously accepted degree24 ambient and determinant premises",
+    "S57 stable transport and nine-row determinant ideal upper bound4"
+  ],
+  "limitations": "Target rank159 is not proved; no explicit fourth kernel vector is extracted. Follow-up evidence is filesystem hashed, not asserted committed.",
+  "resources": {
+    "board_numbering": "batch15",
+    "session_id": "B15-01",
+    "pid": 45344,
+    "memory_before": {
+      "total_physical": 33752997888,
+      "available_physical": 10741223424,
+      "load": 68
+    },
+    "memory_cap_mb": 1536,
+    "wall_cap_seconds": 5400,
+    "workers": 1,
+    "blas_threads": 1,
+    "job_object_enforced": true,
+    "idle_sleep_inhibited_during_run": true,
+    "started_utc": "2026-09-13T16:48:17Z",
+    "exit_code": 0,
+    "wall_seconds": 2296.625954899995,
+    "memory_after": {
+      "total_physical": 33752997888,
+      "available_physical": 10556645376,
+      "load": 68
+    },
+    "process_memory": {
+      "peak_working_set": 298598400,
+      "working_set": 221061120,
+      "peak_pagefile": 290414592
+    },
+    "job_memory": {
+      "peak_job_memory": 997834752,
+      "peak_process_memory": 757702656
+    }
+  },
+  "process_exit": "Unified execution exited0; original parent PID45344 absent at final check",
+  "nine_row_transport": "Four degree14 reducible/padded equations multiplied by nonzero q44 of degree2 and weight(4,4) give four independent padded equations in tail(21,2^7) from degree16. Together with recorded determinant ideal upper bound4 this excludes a positive gap from degree16 under the inherited transport premises."
+}
