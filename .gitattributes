@@ -9,3 +9,11 @@ delivery/b16_09/** -text whitespace=cr-at-eol
 results/logs/b16_09_* -text whitespace=cr-at-eol
 docs/b16_09_* text eol=lf
 analysis/b16_09_* text eol=lf
+# B19 slot 09: manifest SHA256 values bind the bytes as written on disk (CRLF included).
+docs/b19_09_* -text whitespace=cr-at-eol
+analysis/b19_09_* -text whitespace=cr-at-eol
+analysis/integrate/b19_09_* -text whitespace=cr-at-eol
+results/b19_09/** -text whitespace=cr-at-eol
+results/b19_09_*/** -text whitespace=cr-at-eol
+results/logs/b19_09_* -text whitespace=cr-at-eol
+delivery/b19_09/** -text whitespace=cr-at-eol
