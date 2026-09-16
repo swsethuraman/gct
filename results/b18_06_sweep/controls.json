@@ -1,0 +1,56 @@
+{
+ "control_suite": true,
+ "checks": [
+  {
+   "name": "hwv_is_hessian_covariant_(12,2^4)",
+   "expect": "pass",
+   "passed": true,
+   "value_pairs": [
+    [
+     391978384261065,
+     2351870305566390
+    ],
+    [
+     -52256406015741168,
+     -313538436094447008
+    ],
+    [
+     4556819350931697,
+     27340916105590182
+    ]
+   ]
+  },
+  {
+   "name": "wrong_raising_convention_rejected",
+   "expect": "rejected",
+   "passed": true,
+   "detail": "no vector reconstructed under the wrong convention"
+  },
+  {
+   "name": "corrupted_vector_rejected",
+   "expect": "rejected",
+   "passed": true
+  },
+  {
+   "name": "rank_deficient_point_rejected",
+   "expect": "rejected",
+   "passed": true,
+   "block_rank": 1
+  },
+  {
+   "name": "symmetric_kronecker_(12,2^4)_equals_8",
+   "expect": 8,
+   "passed": true,
+   "s": 8,
+   "g": 8,
+   "transpose_trace": 8
+  },
+  {
+   "name": "weyl_alternant_(14,4,2,2,2)_d6_equals_2",
+   "expect": 2,
+   "passed": true,
+   "a": 2
+  }
+ ],
+ "all_passed": true
+}
