@@ -23,3 +23,11 @@ analysis/b18_05_* -text whitespace=cr-at-eol
 # B18 slot 05: sibling results directories and integrator reproductions.
 results/b18_05_*/** -text whitespace=cr-at-eol
 analysis/integrate/b18_05_* -text whitespace=cr-at-eol
+# B19 slot 05: manifest SHA256 values bind the bytes as written on disk (CRLF included).
+docs/b19_05_* -text whitespace=cr-at-eol
+analysis/b19_05_* -text whitespace=cr-at-eol
+analysis/integrate/b19_05_* -text whitespace=cr-at-eol
+results/b19_05/** -text whitespace=cr-at-eol
+results/b19_05_*/** -text whitespace=cr-at-eol
+results/logs/b19_05_* -text whitespace=cr-at-eol
+delivery/b19_05/** -text whitespace=cr-at-eol
