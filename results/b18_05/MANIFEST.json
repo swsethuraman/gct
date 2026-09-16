@@ -1,0 +1,100 @@
+{
+ "slot": "B18-05",
+ "written_utc": "2026-09-15T21:42:32Z",
+ "start_commit": "39a9154b57956c51d1f3206a88f099d406ef8f47",
+ "start_tree": "d66688de7d675857fb95be2220bd88c857d82c34",
+ "result": "rank(E -> C[X_pad]) = 9 exactly; kernel = span(kappa, w); Psi = w.E vanishes on the product family Y = closure{(z*C(y)) o L}",
+ "labels": {
+  "rank_9": "PROVED conditional on inherited degree-27 polynomial lifts and the GL16->10x10 restriction argument",
+  "psi_identity_on_family": "PROVED via root-local reduction plus exact polynomial-ring identity (proof_certificate.json part_b)",
+  "lemma_validation": "CERTIFIED at three exact padding points (proof_certificate.json part_a)",
+  "psi_zero_at_fresh_points": "MEASURED ceiling only (psi_evaluation.json)"
+ },
+ "runs": [
+  {
+   "name": "b18_05_psi_20260915_01",
+   "exit": 0,
+   "note": "evaluation pilot"
+  },
+  {
+   "name": "b18_05_proof_20260915_02",
+   "exit": 124,
+   "note": "wall cap hit in sympy expression expansion; superseded by run 03"
+  },
+  {
+   "name": "b18_05_proof_20260915_03",
+   "exit": 0,
+   "note": "lemma checks and polynomial-ring identity"
+  }
+ ],
+ "files": {
+  "inputs": [
+   {
+    "path": "../B15-04/docs/b17_04_report.md",
+    "sha256": "aee0a938b4099ce0b92b4d953787b80c3f4229cb180a1bcd6ae15f7d4e8945d5",
+    "bytes": 21162
+   },
+   {
+    "path": "../B15-04/results/b17_04/padding_points.json",
+    "sha256": "82fb8c88208d7424d52f2b3c97f4312dd1d571fc1d57d763ded6d6c1c65ece63",
+    "bytes": 125458
+   },
+   {
+    "path": "../B15-04/results/b17_04/restriction.json",
+    "sha256": "92f9579c33fb4b7ca89162b6d8b2f4a9a1be319e46a62a5c787ca54330aee19e",
+    "bytes": 25503
+   },
+   {
+    "path": "../B15-11/docs/b17_11_supplement04_08.md",
+    "sha256": "b22c4d5b97a78b7baf06344a2921c8aded2152575df7a22e5990495d87ca828b",
+    "bytes": 23312
+   },
+   {
+    "path": "analysis/b15_bound.py",
+    "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+    "bytes": 6997
+   }
+  ],
+  "code": [
+   {
+    "path": "analysis/b18_05_psi.py",
+    "sha256": "7821a539c11baa39f0d9f1255aeb40c481d5825d2682c1ce7c957018591aa147",
+    "bytes": 13815
+   },
+   {
+    "path": "analysis/b18_05_proof.py",
+    "sha256": "1a437752ed237b7443b1b760c00397f439c55de854a4d98ccacd4bd848b8d2f2",
+    "bytes": 17278
+   }
+  ],
+  "outputs": [
+   {
+    "path": "results/b18_05/psi_evaluation.json",
+    "sha256": "1870e0a8b6551051e2f9f3d73eec7386d784a431f8503d4b8ac350a6d63b3668",
+    "bytes": 161745
+   },
+   {
+    "path": "results/b18_05/proof_certificate.json",
+    "sha256": "a946ba981a9d4d3be87e79cd255ae8083956a2b915c5feb59d9cac50881cf9cd",
+    "bytes": 8116
+   }
+  ],
+  "receipts": [
+   {
+    "path": "results/logs/b18_05_psi_20260915_01_resources.json",
+    "sha256": "87960a59db89b79c57d00af61b39b078ad8f93ee6227745bc124033a248691e4",
+    "bytes": 805
+   },
+   {
+    "path": "results/logs/b18_05_proof_20260915_02_resources.json",
+    "sha256": "1de3cd513d570ac7ca8ecf8814a74780be10fd1adc0000c5046c6af816c3de3d",
+    "bytes": 411
+   },
+   {
+    "path": "results/logs/b18_05_proof_20260915_03_resources.json",
+    "sha256": "1a9718343c55a3b762c038769fd95858e90a63dfea106cf80456d270ef5e05a8",
+    "bytes": 807
+   }
+  ]
+ }
+}
