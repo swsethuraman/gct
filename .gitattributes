@@ -14,3 +14,11 @@ docs/b16_11_* text eol=lf
 analysis/b16_11_* text eol=lf
 docs/b17_11_* text eol=lf
 analysis/b17_11_* text eol=lf
+# B19 slot 11: manifest SHA256 values bind the bytes as written on disk (CRLF included).
+docs/b19_11_* -text whitespace=cr-at-eol
+analysis/b19_11_* -text whitespace=cr-at-eol
+analysis/integrate/b19_11_* -text whitespace=cr-at-eol
+results/b19_11/** -text whitespace=cr-at-eol
+results/b19_11_*/** -text whitespace=cr-at-eol
+results/logs/b19_11_* -text whitespace=cr-at-eol
+delivery/b19_11/** -text whitespace=cr-at-eol
