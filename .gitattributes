@@ -18,5 +18,8 @@ analysis/b17_12_* text eol=lf
 results/b18_12/** -text whitespace=cr-at-eol
 delivery/b18_12/** -text whitespace=cr-at-eol
 results/logs/b18_12_* -text whitespace=cr-at-eol
-docs/b18_12_* text eol=lf
-analysis/b18_12_* text eol=lf
+docs/b18_12_* -text whitespace=cr-at-eol
+analysis/b18_12_* -text whitespace=cr-at-eol
+# B18 slot 12: sibling results directories and integrator reproductions.
+results/b18_12_*/** -text whitespace=cr-at-eol
+analysis/integrate/b18_12_* -text whitespace=cr-at-eol
