@@ -408,3 +408,66 @@ means the equation should be proved to be of product type by the same
 root-local reduction, which for an equation built from the ten-variable
 Hessian along the line costs a polynomial-ring identity check of the size of
 run 3.
+
+
+---
+
+## Addendum (B19-05, 16 September 2026) — the generic-quartic control, re-run with full monomial support
+
+Nothing above this line has been changed. This addendum repairs the one recorded
+defect of Step 1: the run-1 "generic quartic" control was degenerate, so the
+premise that `w` is not an ambient relation (equivalently, that the eleven `E`
+coordinates are an independent ambient basis, which is what keeps the rank-9
+result from being vacuous) had no in-batch check.
+
+**Provenance.** Worktree `B15-05`, `git rev-parse HEAD` =
+`ca3d6d807e70e74069816f558d7d0b9b11cb7272`, `HEAD^{tree}` =
+`2fcc712f1cae827a4185c6e9aea318eac725dd48`. Script `analysis/b19_05_control.py`
+(SHA256 `8429fbad96401ca0cea2f035b1e116939783967603ef06e78d24654e8faab7e6`), which
+imports the unchanged B18-05 evaluator `analysis/b18_05_psi.py` and copies nothing
+from it. One wrapped run through `analysis/b15_bound.py --seconds 60 --memory-mb 512`,
+name `b19_05_control_20260915_01`: exit 0, wall 3.9 s, peak Job Object memory 37.6 MB.
+Output `results/b19_05/control_full_support.json`
+(SHA256 `d6d1c017f930af85481dcfafe79cc94fc2f59984582525c0783cd3bcd92ea162`); receipt
+`results/logs/b19_05_control_20260915_01_resources.json`
+(SHA256 `529853da908cc7fddecfa32a226fdfd00707efb5919973128305919fbc310924`).
+
+**(A) The original control, reproduced exactly** (same `random.Random(1805)` stream,
+after the two det4 draws it consumed): the sparse quartic has **46** nonzero
+monomials out of 715, and of the five monomials `t^k x_1^(4-k)` only `t^4` is
+present. Hence `p(t) = t^4` (coefficients low-to-high `0,0,0,0,1`), every
+interpolated chart polynomial has degree 0, all eleven `E` are 0, `w·E = 0`,
+`kappa·E = 0`. **The original control measured nothing**, exactly as Step 1 recorded.
+
+**(B) Full-support quartics.** Three quartics in the ten chart variables with
+**all 715** degree-4 monomials carrying a nonzero integer coefficient in `[-9,9]`,
+`[t^4] = 1` (so `c = 1`, on chart), identity `M`, seeds 190501–190503. Size of what
+was checked, per seed: all five `t^k x_1^(4-k)` monomials present; `p(t)` has
+nonzero `t^0, t^1, t^2` coefficients (e.g. seed 190501:
+`p = t^4 - 2016 t^2 - 31104 t - 186624`); interpolated degrees
+`A:18, J2:17, J3:17, Q22:18, D_H:20, T2:18`; all eleven `E` values nonzero;
+the ambient identity residual is 0 and `psi_direct = w·E` at every seed.
+
+| seed | `w·E` | `kappa·E` |
+|---|---|---|
+| 190501 | `4839473560902601997041993972171460577182755285131437126272942080` (nonzero) | nonzero |
+| 190502 | `-38668576973576082000957450265474957703355767212021520915847519928320` (nonzero) | nonzero |
+| 190503 | `-6446625917823947507149396891377810711709707562163942977437696` (nonzero) | nonzero |
+
+**(C) The det4 control, unchanged**: at a random `16 x 10` restriction of `det4`
+all eleven `E` are 0 and `w·E = 0`, as in run 1.
+
+**What this establishes (CERTIFIED).** `w·E` is a nonzero function on the ambient
+chart: an exact nonzero rational value at an explicit point. So `w` is **not** an
+ambient linear relation among the eleven `E` coordinates, and likewise `kappa`
+is not. Combined with Step 2's global `Psi = w·E = 0` on the product family
+`Y ⊇ X_pad`, the vanishing of `w·E` on padding is a genuine restriction
+identity and not an artefact of a dependent basis: the rank-9 conclusion of
+§2.6 is non-vacuous. This is a control on the premise, not a new bound; it does
+not change `9 <= rank <= 10` into anything other than the exact 9 already proved
+in Step 2, and it does not touch any multiplicity.
+
+**What it does not establish.** Three nonzero values show `w·E` is not
+identically zero; they say nothing about which other linear combinations of the
+`E` vanish on the ambient space (none should, if the inherited independence of the
+eleven-space holds, but that inheritance is B17-04's and is not re-proved here).
