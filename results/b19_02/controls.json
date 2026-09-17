@@ -1,0 +1,80 @@
+{
+ "controls": [
+  {
+   "name": "r_4(1) equals dim Sym^4(C^4)",
+   "expected": 35,
+   "got": 35,
+   "passed": true
+  },
+  {
+   "name": "r_5(1) equals dim Sym^4(C^5)",
+   "expected": 70,
+   "got": 70,
+   "passed": true
+  },
+  {
+   "name": "S_m row orthogonality, m <= 8",
+   "expected": 1,
+   "got": 1,
+   "passed": true
+  },
+  {
+   "name": "rho-sum equals mu-sum for n=4,5 and d<=3",
+   "expected": "equal",
+   "got": "equal",
+   "passed": true,
+   "pairs": [
+    {
+     "n": 4,
+     "d": 1,
+     "rho_sum": 35,
+     "mu_sum": 35
+    },
+    {
+     "n": 4,
+     "d": 2,
+     "rho_sum": 770,
+     "mu_sum": 770
+    },
+    {
+     "n": 4,
+     "d": 3,
+     "rho_sum": 13510,
+     "mu_sum": 13510
+    },
+    {
+     "n": 5,
+     "d": 1,
+     "rho_sum": 70,
+     "mu_sum": 70
+    },
+    {
+     "n": 5,
+     "d": 2,
+     "rho_sum": 3585,
+     "mu_sum": 3585
+    },
+    {
+     "n": 5,
+     "d": 3,
+     "rho_sum": 156080,
+     "mu_sum": 156080
+    }
+   ]
+  },
+  {
+   "name": "wrong rectangle (d^3) is rejected at d=1",
+   "expected": "!= 70",
+   "got": 0,
+   "passed": true,
+   "note": "a control that must fail; if this equalled 70 the formula would not be testing the SL4 x SL4 rectangle condition"
+  },
+  {
+   "name": "corrupted character is rejected",
+   "expected": "rejected",
+   "got": "rejected",
+   "passed": true
+  }
+ ],
+ "all_passed": true
+}
