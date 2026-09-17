@@ -1,0 +1,253 @@
+{
+ "name": "n02",
+ "description": "Full-stabilizer source vector of M_(4^5): q = P_{pi,rho} + P_{rho,pi} (B18-02 Prop. 2.2 eq. (2.1)); membership by construction. Slots [column, position], columns 0..3 of height 5, position c = 4a+b (row a, column b of the 4x4 matrix); epsilon blocks are ORDERED lists; pi blocks contract row indices a, rho blocks column indices b, eps(0,1,2,3)=+1; column tensor D[c_0..c_4] = det[(Y_i)_{c_k}]_{i=1..5,k=0..4}. Values are integers; recorded mod P = 524287.",
+ "prime": 524287,
+ "pairing": [
+  [
+   0,
+   2
+  ],
+  [
+   1,
+   3
+  ]
+ ],
+ "generator_seed": 20260917,
+ "generator": "pilots/gen_candidates.py (numpy default_rng(20260917), paired_partition for pairing ((0,2),(1,3)), sample index seq=5 of that pairing pair)",
+ "pi_ordered_blocks": [
+  [
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    2
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    1
+   ]
+  ],
+  [
+   [
+    1,
+    3
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    3,
+    1
+   ]
+  ],
+  [
+   [
+    1,
+    4
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    2
+   ]
+  ],
+  [
+   [
+    0,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ]
+ ],
+ "rho_ordered_blocks": [
+  [
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    4
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    1,
+    3
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    3,
+    1
+   ]
+  ],
+  [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    3,
+    2
+   ]
+  ]
+ ],
+ "hand_plan_column_order": [
+  0,
+  2,
+  1,
+  3
+ ],
+ "hand_plan_column_order_transposed": [
+  0,
+  2,
+  1,
+  3
+ ],
+ "max_intermediate_entries": 1048576,
+ "automorphism_count": 8,
+ "values": {
+  "P6_points_0_to_4": [
+   386346,
+   24763,
+   340431,
+   295241,
+   237319
+  ],
+  "P7_S0_points_t0_t1_t2_t3": {
+   "0": [
+    53303,
+    478236,
+    468518,
+    24149
+   ],
+   "1": [
+    215309,
+    198315,
+    333468,
+    96481
+   ],
+   "2": [
+    399885,
+    13392,
+    104529,
+    149009
+   ]
+  },
+  "pencil": {
+   "K5": 523406,
+   "K5+S1": 199,
+   "K5+2S1": 302670,
+   "K5+S2": 4454,
+   "K5+2S2": 127446,
+   "K5+S4": 358561,
+   "K5+2S4": 388313
+  }
+ }
+}

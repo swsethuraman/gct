@@ -1,0 +1,295 @@
+{
+ "script": "p1_ambient_macaulay.py",
+ "prime": 2147483647,
+ "JMAX": 9,
+ "checks": [
+  {
+   "name": "u(0..2) = 1, 9, 36",
+   "pass": true
+  },
+  {
+   "name": "dim P_3 = 77 (four linear syzygies of the cofactors)",
+   "pass": true,
+   "value": 77
+  },
+  {
+   "name": "r_pad(k) <= r_det(k) for k = 0..10 (exact)",
+   "pass": true
+  },
+  {
+   "name": "hand values Q(11) = 7582, Q(12) = 392122",
+   "pass": true,
+   "value": [
+    7582,
+    392122
+   ]
+  },
+  {
+   "name": "all e_i = Delta^i Q(11) >= 0 for i = 0..15 (Newton certificate: Q(k) >= 0 for all k >= 11)",
+   "pass": true
+  },
+  {
+   "name": "Delta^14, Delta^15, Delta^16 Q(11) = 0 (Q has degree 13)",
+   "pass": true,
+   "value": [
+    3,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "M_3: det4 16, zper3 10 (mod p, lower bounds; formulas give 16, 10)",
+   "pass": true
+  },
+  {
+   "name": "M_4: det4 226, zper3 155 (mod p, lower bounds; formulas (A1),(A2) give 226, 155)",
+   "pass": true,
+   "formula": [
+    226,
+    155
+   ]
+  },
+  {
+   "name": "random quartic attains the generic maxima 16, 256 (control)",
+   "pass": true
+  },
+  {
+   "name": "D_6, D_7 full row rank at det4 (then no determinant equation from the second differential in degrees 6, 7)",
+   "pass": false,
+   "value": [
+    120,
+    1904
+   ]
+  }
+ ],
+ "u": [
+  1,
+  9,
+  36,
+  88,
+  162,
+  261,
+  384,
+  531,
+  702,
+  897
+ ],
+ "dimP": [
+  0,
+  0,
+  9,
+  77,
+  333,
+  1026,
+  2619,
+  5904,
+  12168,
+  23413
+ ],
+ "table_k_le_10": [
+  {
+   "k": 0,
+   "r_pad": 0,
+   "r_det": 0,
+   "Q": 0,
+   "U": 0,
+   "ok": true
+  },
+  {
+   "k": 1,
+   "r_pad": 0,
+   "r_det": 0,
+   "Q": -1,
+   "U": 1,
+   "ok": true
+  },
+  {
+   "k": 2,
+   "r_pad": 0,
+   "r_det": 0,
+   "Q": -16,
+   "U": 16,
+   "ok": true
+  },
+  {
+   "k": 3,
+   "r_pad": 10,
+   "r_det": 16,
+   "Q": -121,
+   "U": 127,
+   "ok": true
+  },
+  {
+   "k": 4,
+   "r_pad": 155,
+   "r_det": 226,
+   "Q": -605,
+   "U": 676,
+   "ok": true
+  },
+  {
+   "k": 5,
+   "r_pad": 1244,
+   "r_det": 1712,
+   "Q": -2284,
+   "U": 2752,
+   "ok": true
+  },
+  {
+   "k": 6,
+   "r_pad": 6949,
+   "r_det": 9232,
+   "Q": -6952,
+   "U": 9235,
+   "ok": true
+  },
+  {
+   "k": 7,
+   "r_pad": 30543,
+   "r_det": 39712,
+   "Q": -17612,
+   "U": 26781,
+   "ok": true
+  },
+  {
+   "k": 8,
+   "r_pad": 112893,
+   "r_det": 144839,
+   "Q": -37333,
+   "U": 69279,
+   "ok": true
+  },
+  {
+   "k": 9,
+   "r_pad": 365592,
+   "r_det": 465104,
+   "Q": -63970,
+   "U": 163482,
+   "ok": true
+  },
+  {
+   "k": 10,
+   "r_pad": 1066075,
+   "r_det": 1348712,
+   "Q": -75072,
+   "U": 357709,
+   "ok": true
+  }
+ ],
+ "forward_differences_Q_at_11": [
+  7582,
+  384540,
+  782782,
+  1012452,
+  977874,
+  739194,
+  443955,
+  211887,
+  79535,
+  22988,
+  4935,
+  740,
+  69,
+  3,
+  0,
+  0,
+  0
+ ],
+ "macaulay_ranks_mod_p": {
+  "det4_k3": {
+   "rank_mod_p": 16,
+   "shape": [
+    16,
+    816
+   ]
+  },
+  "zper3_k3": {
+   "rank_mod_p": 10,
+   "shape": [
+    16,
+    816
+   ]
+  },
+  "random_k3": {
+   "rank_mod_p": 16,
+   "shape": [
+    16,
+    816
+   ]
+  },
+  "det4_k4": {
+   "rank_mod_p": 226,
+   "shape": [
+    256,
+    3876
+   ]
+  },
+  "zper3_k4": {
+   "rank_mod_p": 155,
+   "shape": [
+    256,
+    3876
+   ]
+  },
+  "random_k4": {
+   "rank_mod_p": 256,
+   "shape": [
+    256,
+    3876
+   ]
+  }
+ },
+ "koszul2_ranks": {
+  "det4_k6": {
+   "rank": 120,
+   "shape": [
+    120,
+    13056
+   ],
+   "kind": "exact mod p"
+  },
+  "zper3_k6": {
+   "rank": 105,
+   "shape": [
+    120,
+    13056
+   ],
+   "kind": "exact mod p"
+  },
+  "random_k6": {
+   "rank": 120,
+   "shape": [
+    120,
+    13056
+   ],
+   "kind": "exact mod p"
+  },
+  "det4_k7": {
+   "rank": 1904,
+   "shape": [
+    1920,
+    62016
+   ],
+   "kind": "lower bound (Gram matrix mod p)"
+  },
+  "zper3_k7": {
+   "rank": 1650,
+   "shape": [
+    1920,
+    62016
+   ],
+   "kind": "lower bound (Gram matrix mod p)"
+  },
+  "random_sparse300_k7": {
+   "rank": 1920,
+   "shape": [
+    1920,
+    62016
+   ],
+   "kind": "lower bound (Gram matrix mod p)"
+  }
+ },
+ "wall_seconds": 5.386253000004217,
+ "all_checks_pass": false
+}

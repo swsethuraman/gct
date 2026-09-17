@@ -1,0 +1,172 @@
+{"board_numbering": "batch15", "session_id": "B15-AT", "pid": 3444, "memory_before": {"total_physical": 33752997888, "available_physical": 7614799872, "load": 77}, "memory_cap_mb": 512, "wall_cap_seconds": 60, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "idle_sleep_inhibited_during_run": true, "started_utc": "2026-09-17T13:07:50Z"}
+stage small_controls 0.14 s
+graded identity n = 11 10930920 10930920
+graded identity n = 12 496860 496860
+stage graded_identity 13.41 s
+I 11 (4, 1) (4, 4, 3) (4,) c= 1 inv= 6
+I 11 (4, 1) (4, 4, 3) (3, 1) c= 1 inv= 19
+I 11 (3, 2) (4, 4, 3) (3, 1) c= 1 inv= 13
+I 11 (3, 2) (4, 4, 3) (2, 2) c= 1 inv= 7
+I 11 (3, 2) (4, 4, 3) (2, 1, 1) c= 1 inv= 11
+I 11 (3, 1, 1) (4, 4, 3) (3, 1) c= 1 inv= 10
+I 11 (2, 2, 1) (4, 4, 3) (2, 2) c= 1 inv= 4
+I 12 (4, 1) (4, 4, 4) (3,) c= 1 inv= 2
+I 12 (3, 2) (4, 4, 4) (2, 1) c= 1 inv= 2
+Formulation I: b_L(11) = 70 b_L(12) = 4 b_L = 74
+stage formulation_I 14.34 s
+stage kostka_controls 14.34 s
+Formulation II: b_L(11) = 70 b_L(12) = 4 b_L = 74
+stage done 14.39 s
+{
+ "cell": {
+  "d": 5,
+  "lam": [
+   4,
+   4,
+   4,
+   4,
+   4
+  ]
+ },
+ "checks": {
+  "S21xS21_contains_S222_expect_1": 1,
+  "S2xS2xS2_contains_S222_expect_1": 1,
+  "dim_S21_C3_expect_8": 8,
+  "lr_alt_444_44_to_4^5_expect_1": 1,
+  "lr_alt_444_431_to_4^5_expect_0": 0,
+  "lr_comb_444_44_to_4^5_expect_1": 1,
+  "lr_comb_222_21_21_expect_1": 1,
+  "small_identity_S22_C6": {
+   "sum": 105,
+   "expect": 105,
+   "passed": true
+  },
+  "graded_identity": {
+   "11": {
+    "kappas": [
+     [
+      4,
+      4,
+      3
+     ]
+    ],
+    "lhs_sum": 10930920,
+    "rhs_coefficient_u_n": 10930920,
+    "triples": 40,
+    "passed": true
+   },
+   "12": {
+    "kappas": [
+     [
+      4,
+      4,
+      4
+     ]
+    ],
+    "lhs_sum": 496860,
+    "rhs_coefficient_u_n": 496860,
+    "triples": 15,
+    "passed": true
+   }
+  },
+  "kostka_21_111_expect_2": 2,
+  "kostka_lam_lam_expect_1": 1,
+  "SYT_count_hook_formula": 1662804,
+  "kostka_lam_1^20": 1662804,
+  "kostka_SYT_passed": true
+ },
+ "formulation_II": {
+  "b_L_by_skew_degree": {
+   "11": 70,
+   "12": 4
+  },
+  "b_L": 74,
+  "by_multidegree_pattern": [
+   {
+    "n": 11,
+    "a": 1,
+    "r": 4,
+    "v": 11,
+    "c": 4,
+    "Sigma": 0,
+    "L_invariants": 7,
+    "weight_10_10_10_space_dim": 396
+   },
+   {
+    "n": 11,
+    "a": 2,
+    "r": 3,
+    "v": 11,
+    "c": 3,
+    "Sigma": 1,
+    "L_invariants": 31,
+    "weight_10_10_10_space_dim": 1845
+   },
+   {
+    "n": 11,
+    "a": 3,
+    "r": 2,
+    "v": 11,
+    "c": 2,
+    "Sigma": 2,
+    "L_invariants": 28,
+    "weight_10_10_10_space_dim": 1812
+   },
+   {
+    "n": 11,
+    "a": 4,
+    "r": 1,
+    "v": 11,
+    "c": 1,
+    "Sigma": 3,
+    "L_invariants": 4,
+    "weight_10_10_10_space_dim": 318
+   },
+   {
+    "n": 12,
+    "a": 2,
+    "r": 3,
+    "v": 12,
+    "c": 3,
+    "Sigma": 0,
+    "L_invariants": 1,
+    "weight_10_10_10_space_dim": 33
+   },
+   {
+    "n": 12,
+    "a": 3,
+    "r": 2,
+    "v": 12,
+    "c": 2,
+    "Sigma": 1,
+    "L_invariants": 2,
+    "weight_10_10_10_space_dim": 66
+   },
+   {
+    "n": 12,
+    "a": 4,
+    "r": 1,
+    "v": 12,
+    "c": 1,
+    "Sigma": 2,
+    "L_invariants": 1,
+    "weight_10_10_10_space_dim": 18
+   }
+  ]
+ },
+ "stage_times": {
+  "small_controls": 0.13634860003367066,
+  "graded_identity": 13.409425800084136,
+  "formulation_I": 14.342110200086609,
+  "kostka_controls": 14.343616900034249,
+  "done": 14.38531760009937
+ },
+ "agreement": {
+  "formulations_agree": true,
+  "b_L_11": 70,
+  "b_L_12": 4,
+  "b_L": 74
+ },
+ "elapsed_s": 14.385316300089471
+}
+{"wall_seconds": 14.397914299974218}

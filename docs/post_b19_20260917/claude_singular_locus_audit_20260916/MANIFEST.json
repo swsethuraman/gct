@@ -1,0 +1,49 @@
+{
+ "session": "claude_singular_locus_audit_20260916",
+ "finalized_utc": "2026-09-17T08:39:33.163513Z",
+ "report_finalized_before_hashing": true,
+ "web_sources": {
+  "huang_landsberg": "https://arxiv.org/abs/2306.14428 (v1, 2023-06-26), HTML https://arxiv.org/html/2306.14428v1 (not hashed; read via fetch)",
+  "ballico_addendum_record": "https://eudml.org/doc/227256 (metadata only; text not read)"
+ },
+ "numerical_checks": {
+  "count": 2,
+  "wrapper": "work/batch15_workers/B15-02/analysis/b15_bound.py",
+  "cap": "60 s / 512 MiB each",
+  "wall_seconds": {
+   "check1": 1.16,
+   "check2": 5.97,
+   "check2_aborted_starts": [
+    0.75,
+    0.31
+   ]
+  }
+ },
+ "inputs_sha256": {
+  "literature/eisenbud_harris_1988_pdf (outside delivery tree; https://eisenbud.github.io/papers/pdfs/1988-004.pdf)": "6b10d8fea80396a7c833391847decd0da346f3b08a4e45e2e858f5a6f2f10657",
+  "Claude_Handover_B15_B18/CLAUDE_DESCENT_FOLLOWUP_20260916.md": "acbe8a73bed00eee03d0a45ffd74443fe6acfb94a73d653028ec2f2034c1f789",
+  "work/descent_followup_claude_20260916/REPORT.md": "80e90c1b31357c1972cb1c899c8e038b22197b511fd2d9a84b7191447d63a456",
+  "work/descent_followup_claude_20260916/pilots/p6_basis.json": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+  "work/descent_followup_claude_20260916/pilots/p7_arc_S0.json": "b84168a263e6efab99e698057fce2b8f8bc796f32a4108563d36f67226086189",
+  "work/descent_followup_claude_20260916/pilots/paired_runner.py": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+  "work/batch15_workers/B15-02/analysis/b18_02_carrier.py": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+  "work/batch15_workers/B15-02/analysis/b15_bound.py": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+  "work/batch15_workers/B15-12/docs/b18_12_coefficient_algebra.md": "b998182add3a07764a6562e90797e49724b772ff82144dbbfaa6c44791d6279a",
+  "work/extension_descent_20260916/REPORT.md": "0d8c52f96a6c9b49cc803cd961b7ce0e42580bc1f4d9d784e316fd10cf550bfd",
+  "work/fiber_compatibility_20260916/REPORT.md": "ecf2688aa46977377b74542916886fd3ba390334197d4ae04d0025d0a5a9ad97"
+ },
+ "outputs_sha256": {
+  "checks/check1_counterexample.json": "f4e781ead39cee83a19d18bb84d90304ad546dccb947c0465742d733249bb2f5",
+  "checks/check1_counterexample.py": "d1a42720c9ac7388af2ba70a224e6035df8f7ed5ca6bd4304b75262db8796a81",
+  "checks/check2_restriction_to_Z.json": "10f753e9fc03dca49e0d5a47751ffd1079d969e3482283ec84a71aac8e784249",
+  "checks/check2_restriction_to_Z.py": "7c2523ae7b3ad20352199aede35d09ac2523924cbe4da95f47c8ad8bdd36ee63",
+  "checks/render_eh_pages.py": "81fd16d9487cae8ad9dee0e1d875881c2e7ac83698f8149dab0da8973f333e32",
+  "checks/results/logs/check1_counterexample.pid": "57f98fdff6a4fa5cc80068f58d4739547c0ea94d7971d48c084356e5c56ec74c",
+  "checks/results/logs/check1_counterexample_resources.json": "c364a755ee949ea9efccf8f8faad0d8d3daaca9ac74eb09f61480b614087b75c",
+  "checks/results/logs/check2_restriction_to_Z.pid": "84a541aaa6348d27b1dbf7a86bc4d00b3d040752566608be4f2dfd09742cb531",
+  "checks/results/logs/check2_restriction_to_Z_resources.json": "78eded3fd578a74efc685d91785147b24b1f7fb185e672e896f15660947d23bf",
+  "REPORT.md": "b1554c9ed8f0b27fb09a4db3acdd32f5ead40c29da56d06ae7208c86d0622cc0",
+  "sections/sec2_4.md": "fe99ac48875a5fa15d86d6920d063d500939700bb9577f1d2017f43bab7280ca",
+  "sections/sec5_7.md": "cf94a859fd43f7a9e73cf9663f68b296688be8bd6c96108b481510f499131602"
+ }
+}

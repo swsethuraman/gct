@@ -1,0 +1,75 @@
+{
+ "session": "claude_transverse_structure_20260916_followup",
+ "created_utc": "2026-09-17T09:32:18Z",
+ "interpreter": "work/batch15_workers/B15-02/.venv/python.exe (Python 3.12.10)",
+ "wrapper": "work/batch15_workers/B15-02/analysis/b15_bound.py, 60 s / 512 MiB, one process, one BLAS thread; receipts in results/logs/",
+ "read_only_inputs_sha256": {
+  "work/descent_followup_claude_20260916/pilots/p6_basis.json": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+  "work/descent_followup_claude_20260916/pilots/p7_arc_S0.json": "b84168a263e6efab99e698057fce2b8f8bc796f32a4108563d36f67226086189",
+  "work/descent_followup_claude_20260916/pilots/paired_runner.py": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+  "work/descent_followup_claude_20260916/pilots/p7_arc_S0.py": "31564d75aefce5c8eedbddba24f8c5c12011f01f01ec80eb613d5cd82e526e6f",
+  "work/batch15_workers/B15-02/analysis/b18_02_carrier.py": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+  "work/batch15_workers/B15-02/analysis/b15_bound.py": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+  "work/descent_followup_claude_20260916_addendum/FEASIBILITY.md": "05602f27de97898dc80262b4b89ce12d3357802d65c0eed7702b47f2adfb4e4a",
+  "work/descent_followup_claude_20260916_addendum/MANIFEST.json": "f342bbbf93cb9a20ba23f5b29f14d6a3e9eb331a3d1cd090e464ec8650f4af7a"
+ },
+ "preserved_sealed_packet_sha256": {
+  "work/claude_transverse_structure_20260916/MANIFEST.json": "2c42caa885f2e08028d3b92ab2a5b0952aaaafd8d8cc002242a5cbefccb2da5f",
+  "work/claude_transverse_structure_20260916/REPORT.md": "5342a9296e5011fbd933443f826555494139c82f3db3d85495605cce9cf03c0a",
+  "work/claude_transverse_structure_20260916/checks/c1_normal_space_counts.json": "ea560ef1ac6e15739dd82c8d254360276cc7a8656671ace7267ab96fc7fae62d",
+  "work/claude_transverse_structure_20260916/checks/c1_normal_space_counts.py": "aa0a918bd0bfd044cce8193a843822ad036800c2095ddb3c84ec6d987c161de7",
+  "work/claude_transverse_structure_20260916/checks/c2_fivevar_order4.json": "aa97511c217db97d0b4bbd2a0e0c6e98d2b5530e9df8ae083764ddf896e2c320",
+  "work/claude_transverse_structure_20260916/checks/c2_fivevar_order4.py": "8f07184beec485443f3ef02539ec8eda26884fa6c51bcdd8a8e95ac17d11ee7b",
+  "work/claude_transverse_structure_20260916/drafts/REPORT_body_draft.md": "bcb28b220ea1c09e0120452473ce5545a7043b753d564613345c25d93e6bc446",
+  "work/claude_transverse_structure_20260916/results/logs/c1_normal_space_counts.pid": "adfbeb5d528143289ec0fe6fe9ef39e4a406708ca5b17611db62acc1912c996e",
+  "work/claude_transverse_structure_20260916/results/logs/c1_normal_space_counts_resources.json": "c7c96742738e96a032f3d93cfe24b7936a91f094e45d56faa4ea6f037c6ff7ee",
+  "work/claude_transverse_structure_20260916/results/logs/c2_fivevar_order4.pid": "7a844df306099c5eb48ce098c04db389bbe56e7fcc41d6bf7397d86c9ee2ccb4",
+  "work/claude_transverse_structure_20260916/results/logs/c2_fivevar_order4_resources.json": "5f5143f26faaefc093d78c8c227f9ded62353bce9fe3a86abd20d71ab6fad32a",
+  "work/claude_transverse_structure_20260916/seal_manifest.py": "8b07f258b0634b6e09ad5fec6d78c6dc4d7f9d083fa29cad4ffc45d3f2ea7dfb"
+ },
+ "outputs_sha256": {
+  "CORRIGENDUM.md": "e4254c6a5c433a1406170822d02c0185aa4804e2ebb14352a65354fbd61bc5a8",
+  "REPORT.md": "1c9bd9e5339b310f4f8150cc60b5a2c37f6c912d07615f793bc310d94a0e91d6",
+  "pilots/f1_c4_vs_c2.json": "9d16f3b9d7b5e27f842b9a9730cabb3131548a4b4839517bab8c552c710fe196",
+  "pilots/f1_c4_vs_c2.py": "6bb944171bc8e8709731508c9d9a86f517040210d6437e88ba3bccf9406ec9b2",
+  "pilots/f2_c4_vs_c2.json": "065ee1d1ee69540ab32182227c93ab5e61aeaf104a326d0f2cd0838bbab278bf",
+  "pilots/f2_c4_vs_c2.py": "428253d28245ecb5bceda573fd4cf97a31819ff70a4b6b1dbbe41393085f8576",
+  "pilots/f3_derived_rows.json": "ac072933ffca9ddd40826433160a27ef6d6219cf715de0cdcd329b2c0c5cbe9b",
+  "pilots/f3_derived_rows.py": "422e1ba82d488bb328cca31195738a5711b569201849e873d3059684b02e5458",
+  "results/logs/f1_c4_vs_c2.pid": "9c7823b2fbcabf11cb0c5bd934921db24c4ef89f15bd1107225317b333e409f6",
+  "results/logs/f1_c4_vs_c2_resources.json": "9497c7afac52708f28fa8fdc4b3078ce5a649b234c0b2fb9594035115ef17206",
+  "results/logs/f2_c4_vs_c2.pid": "a6c1ea7888e02cb3693ab125df51f198e3d9538148b57024a0772580a8aaa57c",
+  "results/logs/f2_c4_vs_c2_resources.json": "5dab6ab608e4a192c967cfae9e7e337a1afdcf89435ae0e336c206ae58eda096",
+  "seal_manifest.py": "1e34431a0a7b0bb11af429078974cbe5fd3ce2b62403fde3fdbd4836a7f879e8"
+ },
+ "numerical_pilots": [
+  {
+   "name": "f1_c4_vs_c2",
+   "script": "pilots/f1_c4_vs_c2.py",
+   "result": "pilots/f1_c4_vs_c2.json",
+   "receipt": "results/logs/f1_c4_vs_c2_resources.json",
+   "note": "stopped by its own corruption control (the corruption was a stabilizer conjugate); reproduction passed for each vector",
+   "exit_code": 1,
+   "wall_seconds": 3.8829921000869945,
+   "peak_job_memory": 118149120
+  },
+  {
+   "name": "f2_c4_vs_c2",
+   "script": "pilots/f2_c4_vs_c2.py",
+   "result": "pilots/f2_c4_vs_c2.json",
+   "receipt": "results/logs/f2_c4_vs_c2_resources.json",
+   "note": "complete; all controls passed; minors 247396, 197933, 281079 mod 524287",
+   "exit_code": 0,
+   "wall_seconds": 11.715495100012049,
+   "peak_job_memory": 141914112
+  }
+ ],
+ "arithmetic_only": {
+  "script": "pilots/f3_derived_rows.py",
+  "result": "pilots/f3_derived_rows.json",
+  "note": "no evaluations; E-using rows from stored values; ambient ratios adopted from Check 2"
+ },
+ "outcome": "2: fourth-order compatibility certified independent of C2 on span(q3,q7); arc independence open",
+ "historical_files_modified": [],
+ "note": "REPORT.md and CORRIGENDUM.md finalised before hashing."
+}

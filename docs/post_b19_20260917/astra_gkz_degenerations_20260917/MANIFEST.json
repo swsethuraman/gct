@@ -1,0 +1,81 @@
+{
+  "session": "astra_gkz_degenerations_20260917",
+  "sealed_utc": "2026-09-17T14:35:40.1629537Z",
+  "outcome": "C: all five-block interval and exact-exponent-support tests factor through the old arc C",
+  "theorem_status": "proved globally in REPORT.md sections 7-8, independently of finite pilot controls",
+  "family": "Fixed adapted (a,r,c,S,v) block-scalar torus; nine normal-fan initial-form classes",
+  "rank_comparison": "rank(C,T,N)=rank(C,T) on full M; rank(C,T) not computed",
+  "positive_multiplicity_obstruction": false,
+  "wrapped_pilots_used": 1,
+  "wrapped_pilots_cap": 3,
+  "computational_wall_cap_seconds": 180,
+  "wrapper_wall_seconds_total": 0.02027549990452826,
+  "shell_wall_seconds": 0.3436697,
+  "peak_job_memory_bytes": 13111296,
+  "receipt": "results/logs/p1_fiveblock_exact_resources.json",
+  "exit_code": 0,
+  "command": "& 'C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\.venv\\python.exe' -B 'C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-02\\analysis\\b15_bound.py' --seconds 60 --memory-mb 512 --name p1_fiveblock_exact --slot astra_gkz_20260917 'pilot_exact.py' 2>&1 | Tee-Object -FilePath 'pilot_console.log'",
+  "cwd": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\astra_gkz_degenerations_20260917",
+  "historical_files_modified": [],
+  "workers_spawned": 0,
+  "source_vectors_evaluated": 0,
+  "unwrapped_symbolic_pilots": 0,
+  "git_commands": 0,
+  "manifest_mismatches": [],
+  "nonpilot_operations": "Document reads/download/extraction, process inspection, file writing, SHA256 and inventory checks only",
+  "literature_cache": "C:\\Users\\swami\\AppData\\Local\\Temp\\astra_gkz_20260917_literature",
+  "outputs": [
+    {
+      "path": "INPUT_PINS.json",
+      "bytes": 12834,
+      "sha256": "1a3ae36fc604d0c3ce1401b80daaa0f7bf832ff376d1a8d2c66cd1dba356dad2"
+    },
+    {
+      "path": "pilot_console.log",
+      "bytes": 890,
+      "sha256": "a40ae4a2c88d8b74d20170ce3a8b6f142ef00214b2d7047aca3fb488e3f465ee"
+    },
+    {
+      "path": "pilot_exact.py",
+      "bytes": 6133,
+      "sha256": "3b891735630c3e68b3e413c085723c73eba23c1f9159507df548367286433118"
+    },
+    {
+      "path": "PREREG.md",
+      "bytes": 5985,
+      "sha256": "85e1bfaae8ceea0e65d373e9fa45d9f52f2b6b2ab5c6d2bcd83c33fc764f98b8"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 30684,
+      "sha256": "c79145e0077beeb05527a970529d9822e5c331043dd977827b7ef38459563c5c"
+    },
+    {
+      "path": "results/logs/p1_fiveblock_exact_resources.json",
+      "bytes": 824,
+      "sha256": "f18deb4d9aee4afd276aa17bb904ad1200a0cf18c082f2f8377cc0ea1c8fc7c7"
+    },
+    {
+      "path": "results/logs/p1_fiveblock_exact.pid",
+      "bytes": 7,
+      "sha256": "1db72ba56865fa535010c473e7dd63e5c2c7664895289ecc5378013697d4c37d"
+    },
+    {
+      "path": "results/pilot_exact.json",
+      "bytes": 34917,
+      "sha256": "0ae834817c066f96eadcf902ec96b352d1ae87e4beb6a3819ec8b3e4dd57b161"
+    },
+    {
+      "path": "seal.ps1",
+      "bytes": 8932,
+      "sha256": "07f6c85268bfdd56291a14f034f0b1a795b937956e2641bb64eb4c691b080b47"
+    },
+    {
+      "path": "SESSION_STATE.json",
+      "bytes": 153,
+      "sha256": "a70f1390cf0879ed2d9456ab7d636421f75b6f2b433512882ea69387d21dfc1f"
+    }
+  ],
+  "self_hash_policy": "MANIFEST.json does not hash itself; all other delivery files are included",
+  "next_action": "Close this five-block weight-search route; no more evaluations or fan enumeration needed"
+}

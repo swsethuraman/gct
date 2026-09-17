@@ -1,0 +1,73 @@
+{
+ "script": "p3_koszul2_exact.py",
+ "checks": [
+  {
+   "name": "rank_Q M_4: det4 226, zper3 155 (exact over Q, matches (A1),(A2))",
+   "pass": true
+  },
+  {
+   "name": "D_6 exact ranks: det4 120, zper3 105 (matches P1 mod p)",
+   "pass": true
+  },
+  {
+   "name": "D_7 exact rank at det4 is >= the P1 Gram lower bound 1904",
+   "pass": true,
+   "value": 1904
+  },
+  {
+   "name": "D_7 exact rank at zper3 is >= the P1 Gram lower bound 1650",
+   "pass": true,
+   "value": 1650
+  }
+ ],
+ "results": {
+  "det4_k6": {
+   "dim_ker_D_k": 0,
+   "rank_D_k_exact_Q": 120,
+   "rows_of_D_k": 120,
+   "dim_syzygy_space_L": 0,
+   "rank_M_3": 16,
+   "antisym_system_shape": [
+    0,
+    0
+   ]
+  },
+  "det4_k7": {
+   "dim_ker_D_k": 16,
+   "rank_D_k_exact_Q": 1904,
+   "rows_of_D_k": 1920,
+   "dim_syzygy_space_L": 30,
+   "rank_M_4": 226,
+   "antisym_system_shape": [
+    1456,
+    480
+   ]
+  },
+  "zper3_k6": {
+   "dim_ker_D_k": 15,
+   "rank_D_k_exact_Q": 105,
+   "rows_of_D_k": 120,
+   "dim_syzygy_space_L": 6,
+   "rank_M_3": 10,
+   "antisym_system_shape": [
+    81,
+    96
+   ]
+  },
+  "zper3_k7": {
+   "dim_ker_D_k": 270,
+   "rank_D_k_exact_Q": 1650,
+   "rows_of_D_k": 1920,
+   "dim_syzygy_space_L": 101,
+   "rank_M_4": 155,
+   "antisym_system_shape": [
+    1396,
+    1616
+   ]
+  }
+ },
+ "second_differential_blind_in_degree_7": true,
+ "second_differential_gives_det_equations_in_degree_7": true,
+ "wall_seconds": 0.4759846000233665,
+ "all_checks_pass": true
+}

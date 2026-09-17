@@ -1,0 +1,88 @@
+{
+ "session": "descent_followup_claude_20260916_addendum",
+ "sealed_utc": "2026-09-17T08:37:58Z",
+ "sealed_packet_unchanged": {
+  "REPORT_sha256": "80e90c1b31357c1972cb1c899c8e038b22197b511fd2d9a84b7191447d63a456",
+  "MANIFEST_sha256": "2c47ca2104cfb14c4a03601c3e8fb9531cf8c29444f4f034be2268dc1cec22ab"
+ },
+ "inputs": {
+  "work/descent_followup_claude_20260916/REPORT.md": {
+   "sha256": "80e90c1b31357c1972cb1c899c8e038b22197b511fd2d9a84b7191447d63a456",
+   "bytes": 39330
+  },
+  "work/descent_followup_claude_20260916/MANIFEST.json": {
+   "sha256": "2c47ca2104cfb14c4a03601c3e8fb9531cf8c29444f4f034be2268dc1cec22ab",
+   "bytes": 13653
+  },
+  "work/descent_followup_claude_20260916/pilots/p6_basis.json": {
+   "sha256": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+   "bytes": 12885
+  },
+  "work/descent_followup_claude_20260916/pilots/p7_arc_S0.json": {
+   "sha256": "b84168a263e6efab99e698057fce2b8f8bc796f32a4108563d36f67226086189",
+   "bytes": 6964
+  },
+  "work/descent_followup_claude_20260916/pilots/p2_carrier_arc.json": {
+   "sha256": "82c8037e00c2750877618ca889c28b2be668232ee159b0454fd06595d98892c6",
+   "bytes": 13872
+  },
+  "work/descent_followup_claude_20260916/pilots/p4_paired_basis.json": {
+   "sha256": "e12e304d13f89e9063afd8665e1899ba7dc44b36bdab14894286f0b5223472fc",
+   "bytes": 6211
+  },
+  "work/descent_followup_claude_20260916/pilots/p8_basis_v2.json": {
+   "sha256": "95a55b0bf19eae0722a08da5873a679858537f8874948e5bf19b68564d6baa2e",
+   "bytes": 9510
+  },
+  "work/descent_followup_claude_20260916/pilots/paired_runner.py": {
+   "sha256": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+   "bytes": 5035
+  },
+  "work/batch15_workers/B15-02/analysis/b18_02_carrier.py": {
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "work/batch15_workers/B15-02/analysis/b15_bound.py": {
+   "sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+   "bytes": 6997
+  }
+ },
+ "outputs": {
+  "CORRIGENDUM.md": {
+   "sha256": "d0463d99ff0ff103cd91054177c55ba1e2644010cc7458a961b23b290d84a2d9",
+   "bytes": 7624
+  },
+  "FEASIBILITY.md": {
+   "sha256": "05602f27de97898dc80262b4b89ce12d3357802d65c0eed7702b47f2adfb4e4a",
+   "bytes": 13242
+  },
+  "pilots/q1_price.json": {
+   "sha256": "5a760d834ac0ffc47d66f75246574cf8ef543611dce0240ac0c3b2b18f399a3c",
+   "bytes": 39088
+  },
+  "pilots/q1_price.py": {
+   "sha256": "bb3d3e3a930f0d90e77f14aad40aa587333f9bf6a381a84d6ac9980c6a9f2ad3",
+   "bytes": 8694
+  },
+  "results/logs/q1_price.pid": {
+   "sha256": "a054e986ef5b4fa8944f6cbdb2daf6b3841d2482a5c43a895ff39597344aa4d0",
+   "bytes": 7
+  },
+  "results/logs/q1_price_resources.json": {
+   "sha256": "b56def21defe964a4f4fbd2fe0d7962651e2412903b41ebfb98f82fe97b87343",
+   "bytes": 809
+  },
+  "seal_manifest.py": {
+   "sha256": "4a4d51c66324a5016d73d662b7767342ff0107ddd96dda7d52525f125c187e86",
+   "bytes": 1862
+  }
+ },
+ "pilots_run": {
+  "count": 1,
+  "wall_seconds_total": 1.6889614,
+  "cap_seconds": 60,
+  "cap_mib": 512,
+  "wrapper": "analysis/b15_bound.py (Job Object)"
+ },
+ "note": "reports finalised before sealing; manifest not self-hashing"
+}

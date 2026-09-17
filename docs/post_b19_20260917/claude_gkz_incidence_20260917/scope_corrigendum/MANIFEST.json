@@ -1,0 +1,49 @@
+{
+ "session": "claude_gkz_incidence_20260917/scope_corrigendum",
+ "created_utc": "2026-09-17T15:31:49Z",
+ "kind": "proof-and-wording audit; no numerical pilot; no computation; read-only hashing only",
+ "parent_packet_byte_identical_to_its_manifest": true,
+ "parent_packet_file_checks": {
+  "REPORT.md": true,
+  "pilots/p1_ambient_macaulay.json": true,
+  "pilots/p1_ambient_macaulay.py": true,
+  "pilots/p2_quinary_macaulay.json": true,
+  "pilots/p2_quinary_macaulay.py": true,
+  "pilots/p3_koszul2_exact.json": true,
+  "pilots/p3_koszul2_exact.py": true,
+  "results/logs/p1_ambient_macaulay.pid": true,
+  "results/logs/p1_ambient_macaulay_resources.json": true,
+  "results/logs/p2_quinary_macaulay.pid": true,
+  "results/logs/p2_quinary_macaulay_resources.json": true,
+  "results/logs/p3_koszul2_exact.pid": true,
+  "results/logs/p3_koszul2_exact_resources.json": true,
+  "seal_manifest.py": true
+ },
+ "parent_files_unlisted_in_parent_manifest": [],
+ "parent_manifest_sha256": "470b40bc51eabbb7d3774cacc3eeadb595c9071f67daea0d5d7d9044c01550a7",
+ "inputs_sha256_gct_gpt": {
+  "work/claude_gkz_incidence_20260917/REPORT.md": "3cacb625f9c99344c2722abab21515e6fa5e697fdb8f7fd7be7396e765860b43",
+  "work/claude_gkz_incidence_20260917/MANIFEST.json": "470b40bc51eabbb7d3774cacc3eeadb595c9071f67daea0d5d7d9044c01550a7",
+  "work/claude_gkz_incidence_20260917/pilots/p1_ambient_macaulay.json": "77c0f77f8a5d4b4c02be09a8aa0d24e2e9c2e46999de35e5b48f18f12424c8bf",
+  "work/claude_gkz_incidence_20260917/pilots/p2_quinary_macaulay.json": "05272bfc0b0be15c4c870637ab3f371d79be53bf044f9fbe4c15a704c40c193e",
+  "work/claude_gkz_incidence_20260917/pilots/p3_koszul2_exact.json": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+  "work/astra_gkz_degenerations_20260917/REPORT.md": "c79145e0077beeb05527a970529d9822e5c331043dd977827b7ef38459563c5c",
+  "work/astra_gkz_degenerations_20260917/MANIFEST.json": "8b7d2f11e9f900ed89bd470fabaedaf6578657223bb9d168e3d065990605daca",
+  "work/claude_image_ceiling_20260916/REPORT.md": "81b4ad9d4869b62d79bbd222bb81aea42cf7f8c944a9f7f571099e44b2b5eeb8",
+  "work/batch15_workers/B15-01/docs/equation_census.md": "cf52bd59cc523ff7882c956993639e5f8613c9f5eee18d22617ab5e6c5dc5b60",
+  "work/batch15_workers/B15-01/docs/excess_singularity.md": "dee70db55ffd2791fdb7855b60f1843befcea6eb81ce95d7434839e1e1d7eaf7"
+ },
+ "inputs_sha256_gct_original": {
+  "work/docs/onset_conjecture.md": "41df6f13fcd1e4863b25e38d298cc0867789baa83a01aab859d3de16d7ccbafb",
+  "work/docs/paper1_delta0_patch.md": "5ec9cf743f2be49183163cca3a0d0ba2b3d7b8bdddd608eb53c66f93dfb573ed"
+ },
+ "outputs_sha256": {
+  "CLAIM_SCOPE_TABLE.md": "9b580fbf2ece4d737f03cceadd38b52c5910ff357e6be5e0df66af7a33989c89",
+  "CORRIGENDUM.md": "883916018ec1ddea24c0ad2b2546537aeac37752c62c421a7e22d5d5fd14d37f",
+  "REVISED_VERDICT.md": "dfce2ec26c437335089509eda3bfce2c3595e2012f66f6186a4e6b81ae9710a4",
+  "seal_scope.py": "ad15d0ce77a703a91e09d81a4b86d877c9d1dd6278f8a95e379685ef60a0f899"
+ },
+ "numerical_certificates_changed": false,
+ "theorems_changed": false,
+ "note": "Theorems A and B and the P1-P3 certificates are unchanged; consequences narrowed to the rank-threshold ideals J_k; whole-complex, exhaustiveness, monotonicity and delta_0 claims withdrawn (CORRIGENDUM.md). No theorem was independently replayed here; hashes confirm file identity only."
+}

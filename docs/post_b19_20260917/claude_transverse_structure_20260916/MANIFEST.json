@@ -1,0 +1,62 @@
+{
+ "session": "claude_transverse_structure_20260916",
+ "created_utc": "2026-09-17T09:05:44Z",
+ "interpreter": "work/batch15_workers/B15-02/.venv/python.exe (Python 3.12.10, sympy 1.14.0)",
+ "wrapper": "work/batch15_workers/B15-02/analysis/b15_bound.py, 60 s / 512 MiB, one process, one BLAS thread; receipts in results/logs/",
+ "read_only_inputs_sha256": {
+  "Claude_Handover_B15_B18/CLAUDE_DESCENT_FOLLOWUP_20260916.md": "acbe8a73bed00eee03d0a45ffd74443fe6acfb94a73d653028ec2f2034c1f789",
+  "work/descent_followup_claude_20260916/REPORT.md": "80e90c1b31357c1972cb1c899c8e038b22197b511fd2d9a84b7191447d63a456",
+  "work/descent_followup_claude_20260916/MANIFEST.json": "2c47ca2104cfb14c4a03601c3e8fb9531cf8c29444f4f034be2268dc1cec22ab",
+  "work/descent_followup_claude_20260916/pilots/p3_c2_derivation.json": "604b3967edbedb043e1dd21aeb95c29b7fbb0950a27757e9f0ae4bef41c9acd9",
+  "work/descent_followup_claude_20260916/pilots/p3_c2_derivation.py": "6cc624170669db4fbe2e8ba81fc5b576244b985650e1b5f11e5cdde9dfad3adc",
+  "work/descent_followup_claude_20260916/pilots/p9_sixrow_replay.json": "4ea8c234963a52aae83dc9d75a9d9b90b2545f0824ca65e89aab69129e1ec7b1",
+  "work/descent_followup_claude_20260916/pilots/p9_sixrow_replay.py": "6b7a251230df40e1d216a90edeb2be8a77da8bcf8e96061bb6d72e20e96ec11c",
+  "work/descent_followup_claude_20260916_addendum/CORRIGENDUM.md": "d0463d99ff0ff103cd91054177c55ba1e2644010cc7458a961b23b290d84a2d9",
+  "work/descent_followup_claude_20260916_addendum/FEASIBILITY.md": "05602f27de97898dc80262b4b89ce12d3357802d65c0eed7702b47f2adfb4e4a",
+  "work/extension_descent_20260916/REPORT.md": "0d8c52f96a6c9b49cc803cd961b7ce0e42580bc1f4d9d784e316fd10cf550bfd",
+  "work/fiber_compatibility_20260916/REPORT.md": "ecf2688aa46977377b74542916886fd3ba390334197d4ae04d0025d0a5a9ad97",
+  "work/batch15_workers/B15-01/docs/b19_01_report.md": "aa136106c54eccacdbaac6262a65943c0353f6052497fa84e73eb4e07765d79b",
+  "work/batch15_workers/B15-02/analysis/b15_bound.py": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+  "work/batch15_workers/B15-12/docs/b18_12_coefficient_algebra.md": "b998182add3a07764a6562e90797e49724b772ff82144dbbfaa6c44791d6279a"
+ },
+ "attachments_sha256": {
+  "attachment_515d31fd_sixrow_order4": "cd1177211fe4c5f25309c21fc967d49eee30634b8e70c94210c7c89be45322f4",
+  "attachment_43761221_quadratic_square": "e9130c3865a34e15659520f774ae4a919fcb36d2eeb077fd82c7aa414ad94da7"
+ },
+ "outputs_sha256": {
+  "REPORT.md": "5342a9296e5011fbd933443f826555494139c82f3db3d85495605cce9cf03c0a",
+  "checks/c1_normal_space_counts.json": "ea560ef1ac6e15739dd82c8d254360276cc7a8656671ace7267ab96fc7fae62d",
+  "checks/c1_normal_space_counts.py": "aa0a918bd0bfd044cce8193a843822ad036800c2095ddb3c84ec6d987c161de7",
+  "checks/c2_fivevar_order4.json": "aa97511c217db97d0b4bbd2a0e0c6e98d2b5530e9df8ae083764ddf896e2c320",
+  "checks/c2_fivevar_order4.py": "8f07184beec485443f3ef02539ec8eda26884fa6c51bcdd8a8e95ac17d11ee7b",
+  "drafts/REPORT_body_draft.md": "bcb28b220ea1c09e0120452473ce5545a7043b753d564613345c25d93e6bc446",
+  "results/logs/c1_normal_space_counts.pid": "adfbeb5d528143289ec0fe6fe9ef39e4a406708ca5b17611db62acc1912c996e",
+  "results/logs/c1_normal_space_counts_resources.json": "c7c96742738e96a032f3d93cfe24b7936a91f094e45d56faa4ea6f037c6ff7ee",
+  "results/logs/c2_fivevar_order4.pid": "7a844df306099c5eb48ce098c04db389bbe56e7fcc41d6bf7397d86c9ee2ccb4",
+  "results/logs/c2_fivevar_order4_resources.json": "5f5143f26faaefc093d78c8c227f9ded62353bce9fe3a86abd20d71ab6fad32a",
+  "seal_manifest.py": "8b07f258b0634b6e09ad5fec6d78c6dc4d7f9d083fa29cad4ffc45d3f2ea7dfb"
+ },
+ "numerical_checks": [
+  {
+   "name": "c1_normal_space_counts",
+   "script": "checks/c1_normal_space_counts.py",
+   "result": "checks/c1_normal_space_counts.json",
+   "receipt": "results/logs/c1_normal_space_counts_resources.json",
+   "exit_code": 0,
+   "wall_seconds": 1.0080157000338659,
+   "peak_job_memory": 55611392
+  },
+  {
+   "name": "c2_fivevar_order4",
+   "script": "checks/c2_fivevar_order4.py",
+   "result": "checks/c2_fivevar_order4.json",
+   "receipt": "results/logs/c2_fivevar_order4_resources.json",
+   "exit_code": 0,
+   "wall_seconds": 3.441101099946536,
+   "peak_job_memory": 63254528
+  }
+ ],
+ "not_run": "the section 9.2 three-way test (source-carrier evaluations); overlaps the active sparse-evaluator session",
+ "historical_files_modified": [],
+ "note": "REPORT.md finalised before hashing; drafts/REPORT_body_draft.md is the superseded first draft of sections 4-12."
+}

@@ -1,0 +1,98 @@
+{
+ "session": "claude_gkz_incidence_20260917",
+ "created_utc": "2026-09-17T15:07:03Z",
+ "outcome": "C: rigorous negative. GKZ Cayley-complex route = Macaulay/Koszul Fitting ideals; Theorem A (16 vars, all k) and Theorem B (5 vars, all k) proved with exact certificates; second differential D_7 exact ranks 1904 (det4) vs 1650 (z per3). No gap claimed.",
+ "interpreter": "work/batch15_workers/B15-02/.venv/python.exe (Python 3.12.10, numpy 2.4.6, sympy 1.14.0, python-flint 0.9.0)",
+ "wrapper": "work/batch15_workers/B15-02/analysis/b15_bound.py, 60 s / 512 MiB, one process, one BLAS thread; receipts in results/logs/",
+ "read_only_inputs_sha256_gct_gpt": {
+  "work/batch15_workers/B15-02/analysis/b15_bound.py": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+  "work/batch15_workers/B15-01/docs/b18_01_report.md": "2ba3fc9c141827034d7f8f41a173a40f0f0ae51a0d98274fe5915b1d5b692256",
+  "work/batch15_workers/B15-05/docs/b18_05_report.md": "1af534798c580903970d709c1fe41858ce0ac3f80bf8d3568d1139ab228ff28a",
+  "work/batch15_workers/B15-10/docs/b18_10_review.md": "dc1cc655a95bcadb8e739f00ef89fa090722d3e0f9dc92b85f0c7b13118f8a91",
+  "work/batch15_workers/B15-01/docs/equation_census.md": "cf52bd59cc523ff7882c956993639e5f8613c9f5eee18d22617ab5e6c5dc5b60",
+  "work/batch15_workers/B15-01/docs/excess_singularity.md": "dee70db55ffd2791fdb7855b60f1843befcea6eb81ce95d7434839e1e1d7eaf7",
+  "work/batch15_workers/B15-01/docs/s49_s55_batch_review.md": "2da58e5837cea1486e91630a52ad132f8bd6ee051df2241ae1fb19dea59e5a07",
+  "work/batch15_workers/B15-04/docs/b17_04_report.md": "aee0a938b4099ce0b92b4d953787b80c3f4229cb180a1bcd6ae15f7d4e8945d5",
+  "work/claude_image_ceiling_20260916/REPORT.md": "81b4ad9d4869b62d79bbd222bb81aea42cf7f8c944a9f7f571099e44b2b5eeb8",
+  "work/claude_singular_locus_audit_20260916/REPORT.md": "b1554c9ed8f0b27fb09a4db3acdd32f5ead40c29da56d06ae7208c86d0622cc0",
+  "work/claude_transverse_structure_20260916_followup/clarification_20260917/SOURCE_HANDOFF.md": "0bd09c6f937b3ab995019763067dfee5295bdfb888f12bb1596d2e82240da9ea",
+  "work/claude_source_vectors_20260917/routeA_signfilter_20260917/REPORT.md": "4dcd3c81fb3a524f19522da81e8f870f153f41c57439290034c01f84444f6d1f",
+  "work/claude_source_vectors_20260917/arc_target_dimension_followup/REPORT.md": "041c2ae14cc91bb28dccfea3252b6bfdf7e1f7e10e0796cf74cbb50c5cf24755"
+ },
+ "read_only_inputs_sha256_gct_original": {
+  "work/docs/onset_conjecture.md": "41df6f13fcd1e4863b25e38d298cc0867789baa83a01aab859d3de16d7ccbafb",
+  "work/docs/paper1_delta0_patch.md": "5ec9cf743f2be49183163cca3a0d0ba2b3d7b8bdddd608eb53c66f93dfb573ed",
+  "work/docs/PROVED.md": "be597e05d562cec32892075951ac186800a0176f4c65c5e28e5e1c0ac6fb686f",
+  "work/paper/det4-onset.tex": "7c2bc7365c3aacc75e5d79906a4aaa3364ff015e5bbc91e2f585b1ca45678b7b",
+  "work/paper/det3-conductor.tex": "f01da42cc8c02518967242956c53be0ec7c360da74e6099b3b95e7a8b81ca734"
+ },
+ "literature": {
+  "segal_gkz_2412.14748.pdf": {
+   "source": "https://arxiv.org/pdf/2412.14748",
+   "version": "arXiv:2412.14748v1 (19 Dec 2024)",
+   "sha256": "8c8d9d058c878e77c953928c63d9d8fc9db184c46e6f94bf4d5a66f9eb31afc1",
+   "bytes": 579885,
+   "kept_in": "session scratchpad (not in the delivery tree)"
+  },
+  "dimca_1210.1795.pdf": {
+   "source": "https://arxiv.org/pdf/1210.1795",
+   "version": "arXiv:1210.1795v4 (24 Dec 2012)",
+   "sha256": "20b96f5830291574137000073237b9081e134e45d52c89d9981996e5a83c9c05",
+   "bytes": 198017,
+   "kept_in": "session scratchpad (not in the delivery tree)"
+  }
+ },
+ "outputs_sha256": {
+  "REPORT.md": "3cacb625f9c99344c2722abab21515e6fa5e697fdb8f7fd7be7396e765860b43",
+  "pilots/p1_ambient_macaulay.json": "77c0f77f8a5d4b4c02be09a8aa0d24e2e9c2e46999de35e5b48f18f12424c8bf",
+  "pilots/p1_ambient_macaulay.py": "5a8450202053997df1f5bd3a3e2afe7d8db584d2159f6801ce3ced0000061e19",
+  "pilots/p2_quinary_macaulay.json": "05272bfc0b0be15c4c870637ab3f371d79be53bf044f9fbe4c15a704c40c193e",
+  "pilots/p2_quinary_macaulay.py": "e1875c51a99257bcbdb86a7583b6010f0b933941ca5b6b5aa63366e369e112c7",
+  "pilots/p3_koszul2_exact.json": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+  "pilots/p3_koszul2_exact.py": "0ddb4a73f48e9efa0f61dd471a782fb41f0e8eae2fb0660e65e23f390064b1fc",
+  "results/logs/p1_ambient_macaulay.pid": "3cb2fa284716c3f080f772f3c1989c13d57fdb8241f6695ecf0be3b4a85bf2d6",
+  "results/logs/p1_ambient_macaulay_resources.json": "f2d80b42b687673d80998dfddd0a02a627351ac4dc21063a186554f272074117",
+  "results/logs/p2_quinary_macaulay.pid": "b802f463e3d87c88275c0a1bf76e82932112a83da0432300dff6744be2c2a373",
+  "results/logs/p2_quinary_macaulay_resources.json": "34ab77ddc559f126b3b8a6368327afbc673479e86334c605e1571f1dbc849aa5",
+  "results/logs/p3_koszul2_exact.pid": "3a692b7f3b52ca1970628ed30b65e6557c696f2d7981b1146d4d3c1dfff32bc1",
+  "results/logs/p3_koszul2_exact_resources.json": "14efacbe9c2a8ee6ac17385c587798367a5d3a458181994713aed5b7f6c4860d",
+  "seal_manifest.py": "90b87a6c8da1f62afe50b2a10ce29c0543abf65801c8afbe70cb78e49d47de47"
+ },
+ "pilots": [
+  {
+   "name": "p1_ambient_macaulay",
+   "script": "pilots/p1_ambient_macaulay.py",
+   "result": "pilots/p1_ambient_macaulay.json",
+   "receipt": "results/logs/p1_ambient_macaulay_resources.json",
+   "exit_code": 0,
+   "wall_seconds": 5.453925600042567,
+   "peak_job_memory": 235610112,
+   "job_object_enforced": true,
+   "all_checks_pass": false
+  },
+  {
+   "name": "p2_quinary_macaulay",
+   "script": "pilots/p2_quinary_macaulay.py",
+   "result": "pilots/p2_quinary_macaulay.json",
+   "receipt": "results/logs/p2_quinary_macaulay_resources.json",
+   "exit_code": 0,
+   "wall_seconds": 3.996893799980171,
+   "peak_job_memory": 93257728,
+   "job_object_enforced": true,
+   "all_checks_pass": true
+  },
+  {
+   "name": "p3_koszul2_exact",
+   "script": "pilots/p3_koszul2_exact.py",
+   "result": "pilots/p3_koszul2_exact.json",
+   "receipt": "results/logs/p3_koszul2_exact_resources.json",
+   "exit_code": 0,
+   "wall_seconds": 0.5086158999474719,
+   "peak_job_memory": 75894784,
+   "job_object_enforced": true,
+   "all_checks_pass": true
+  }
+ ],
+ "historical_files_modified": [],
+ "note": "REPORT.md finalised (status line replaced) before hashing. Unwrapped work: file reads, pdftotext, one 2x2 python-flint API syntax check, this hashing script. P1 all_checks_pass=false reflects only its exploratory hypothesis check (D_7 full row rank at det4), which was false and was settled exactly by P3; all P1 certificate checks passed."
+}

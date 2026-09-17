@@ -1,0 +1,331 @@
+{
+ "six_variables_control": {
+  "Lap2_u2": 384,
+  "directions": {
+   "S1=x1*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "1/6",
+    "c_w": "0",
+    "trM": "1",
+    "trM2": "51/50",
+    "A": "3/20",
+    "N_h4": "96/5",
+    "h4_nonzero": true
+   },
+   "S2=(x1+x6)*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "1/3",
+    "c_w": "1",
+    "trM": "2",
+    "trM2": "454/25",
+    "A": "11/5",
+    "N_h4": "10368/5",
+    "h4_nonzero": true
+   }
+  },
+  "N_ratio_S2_over_S1": "108",
+  "A2_minus_108_A1": "-14",
+  "kappa_from_S1": "3/896",
+  "kappa_from_S2": "3/896",
+  "single_kappa_fits_p9_values": true,
+  "t2_over_t0_on_E": {
+   "S1=x1*I": "1",
+   "S2=(x1+x6)*I": "2"
+  }
+ },
+ "five_variables": {
+  "detK5_is_u2": true,
+  "Lap2_u2": 280,
+  "det_Q0": "1/16",
+  "directions": {
+   "S1=x1*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "6/35",
+    "c_w": "3/35",
+    "trM": "6/7",
+    "trM2": "7012/3969",
+    "A": "89/441",
+    "N_h4": "5888/63",
+    "h4_nonzero": true
+   },
+   "S2=x2*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "8/35",
+    "c_w": "0",
+    "trM": "8/7",
+    "trM2": "1600/1323",
+    "A": "32/147",
+    "N_h4": "320/21",
+    "h4_nonzero": true
+   },
+   "S3=(x1+x2)*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "2/5",
+    "c_w": "3/35",
+    "trM": "2",
+    "trM2": "404/81",
+    "A": "43/63",
+    "N_h4": "832/9",
+    "h4_nonzero": true
+   },
+   "S4=x1*diag(1,1,0,0)": {
+    "support": [
+     0,
+     2
+    ],
+    "c_v": "3/35",
+    "c_w": "0",
+    "trM": "3/7",
+    "trM2": "173/441",
+    "A": "-2/49",
+    "N_h4": "64/7",
+    "h4_nonzero": true
+   },
+   "S5=(x1+x3)*I": {
+    "support": [
+     0,
+     2,
+     4
+    ],
+    "c_v": "2/5",
+    "c_w": "3/35",
+    "trM": "2",
+    "trM2": "404/81",
+    "A": "43/63",
+    "N_h4": "832/9",
+    "h4_nonzero": true
+   }
+  },
+  "ambient_line": {
+   "S1=x1*I": {
+    "H5_values_t0_to_4": [
+     322560,
+     798720,
+     4623360,
+     18984960,
+     55864320
+    ],
+    "poly_support": [
+     0,
+     2,
+     4
+    ],
+    "is_even_quartic": true,
+    "three_point_t4_matches": true,
+    "three_point_t2_matches": true,
+    "t2_over_t0": "6/7",
+    "predicted_t2_over_t0": "6/7",
+    "order2_automatic_on_E": true,
+    "t4_over_t0": "13/21",
+    "kappa_tilde": "1/224"
+   },
+   "S2=x2*I": {
+    "H5_values_t0_to_4": [
+     322560,
+     783360,
+     3271680,
+     11105280,
+     29813760
+    ],
+    "poly_support": [
+     0,
+     2,
+     4
+    ],
+    "is_even_quartic": true,
+    "three_point_t4_matches": true,
+    "three_point_t2_matches": true,
+    "t2_over_t0": "8/7",
+    "predicted_t2_over_t0": "8/7",
+    "order2_automatic_on_E": true,
+    "t4_over_t0": "2/7",
+    "kappa_tilde": "1/224"
+   },
+   "S3=(x1+x2)*I": {
+    "H5_values_t0_to_4": [
+     322560,
+     1320960,
+     8555520,
+     34744320,
+     101084160
+    ],
+    "poly_support": [
+     0,
+     2,
+     4
+    ],
+    "is_even_quartic": true,
+    "three_point_t4_matches": true,
+    "three_point_t2_matches": true,
+    "t2_over_t0": "2",
+    "predicted_t2_over_t0": "2",
+    "order2_automatic_on_E": true,
+    "t4_over_t0": "23/21",
+    "kappa_tilde": "1/224"
+   },
+   "S4=x1*diag(1,1,0,0)": {
+    "H5_values_t0_to_4": [
+     322560,
+     460800,
+     875520,
+     1566720,
+     2534400
+    ],
+    "poly_support": [
+     0,
+     2
+    ],
+    "is_even_quartic": true,
+    "three_point_t4_matches": true,
+    "three_point_t2_matches": true,
+    "t2_over_t0": "3/7",
+    "predicted_t2_over_t0": "3/7",
+    "order2_automatic_on_E": true,
+    "t4_over_t0": "0",
+    "kappa_tilde": "1/224"
+   },
+   "S5=(x1+x3)*I": {
+    "H5_values_t0_to_4": [
+     322560,
+     1320960,
+     8555520,
+     34744320,
+     101084160
+    ],
+    "poly_support": [
+     0,
+     2,
+     4
+    ],
+    "is_even_quartic": true,
+    "three_point_t4_matches": true,
+    "three_point_t2_matches": true,
+    "t2_over_t0": "2",
+    "predicted_t2_over_t0": "2",
+    "order2_automatic_on_E": true,
+    "t4_over_t0": "23/21",
+    "kappa_tilde": "1/224"
+   }
+  },
+  "H5_at_K5": 322560,
+  "single_kappa_fits_all_directions": true,
+  "kappa_tilde": "1/224",
+  "C4": [
+   {
+    "pair": [
+     "S1=x1*I",
+     "S2=x2*I"
+    ],
+    "integer_coefficients_on": [
+     "z(K5)",
+     "z(K5+S1=x1*I)",
+     "z(K5+2S1=x1*I)",
+     "z(K5+S2=x2*I)",
+     "z(K5+2S2=x2*I)"
+    ],
+    "coefficients": [
+     -27,
+     -60,
+     15,
+     368,
+     -92
+    ],
+    "value_on_H5_line": 0,
+    "N_ratio": "15/92",
+    "A_combination": "17/92"
+   },
+   {
+    "pair": [
+     "S1=x1*I",
+     "S3=(x1+x2)*I"
+    ],
+    "integer_coefficients_on": [
+     "z(K5)",
+     "z(K5+S1=x1*I)",
+     "z(K5+2S1=x1*I)",
+     "z(K5+S3=(x1+x2)*I)",
+     "z(K5+2S3=(x1+x2)*I)"
+    ],
+    "coefficients": [
+     3711,
+     -2548,
+     637,
+     2576,
+     -644
+    ],
+    "value_on_H5_line": 0,
+    "N_ratio": "91/92",
+    "A_combination": "311/644"
+   },
+   {
+    "pair": [
+     "S1=x1*I",
+     "S4=x1*diag(1,1,0,0)"
+    ],
+    "integer_coefficients_on": [
+     "z(K5)",
+     "z(K5+S1=x1*I)",
+     "z(K5+2S1=x1*I)",
+     "z(K5+S4=x1*diag(1,1,0,0))",
+     "z(K5+2S4=x1*diag(1,1,0,0))"
+    ],
+    "coefficients": [
+     -2211,
+     -252,
+     63,
+     2576,
+     -644
+    ],
+    "value_on_H5_line": 0,
+    "N_ratio": "9/92",
+    "A_combination": "-39/644"
+   },
+   {
+    "pair": [
+     "S1=x1*I",
+     "S5=(x1+x3)*I"
+    ],
+    "integer_coefficients_on": [
+     "z(K5)",
+     "z(K5+S1=x1*I)",
+     "z(K5+2S1=x1*I)",
+     "z(K5+S5=(x1+x3)*I)",
+     "z(K5+2S5=(x1+x3)*I)"
+    ],
+    "coefficients": [
+     3711,
+     -2548,
+     637,
+     2576,
+     -644
+    ],
+    "value_on_H5_line": 0,
+    "N_ratio": "91/92",
+    "A_combination": "311/644"
+   }
+  ],
+  "general_k_note": "[t^2] z / z(K5) on E = d*c_v = 5k*c_v; A_{5,k}(S) = 5k*c_w + (1/4)*(k*(2k*trM^2 - trM2) - 5k*c(a^2)); z(K5 + t S) is even of degree <= 4k in t for S = ell(x)*M (rank-one tuple update), so [t^2],[t^4] need 2k+1 even nodes.",
+  "t2_over_t0_general_k_S1": "6*k/7"
+ },
+ "elapsed_s": 3.1566574000171386
+}

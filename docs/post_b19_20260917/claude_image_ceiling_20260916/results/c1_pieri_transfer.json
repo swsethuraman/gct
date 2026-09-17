@@ -1,0 +1,458 @@
+{
+ "script": "c1_pieri_transfer.py",
+ "d": {
+  "5": {
+   "seconds_a3": 0.124,
+   "num_weights_with_a3_positive": 28,
+   "dimension_control": {
+    "sum_a3_dimS": 575757,
+    "expected": 575757,
+    "ok": true
+   },
+   "length5_weights_a3": {
+    "[7, 2, 2, 2, 2]": 1,
+    "[6, 4, 2, 2, 1]": 1,
+    "[5, 5, 3, 1, 1]": 1
+   },
+   "T_control": {
+    "five_row_cells": 23,
+    "mismatches": [],
+    "all_match": true
+   }
+  },
+  "6": {
+   "seconds_a3": 0.273,
+   "num_weights_with_a3_positive": 63,
+   "dimension_control": {
+    "sum_a3_dimS": 3838380,
+    "expected": 3838380,
+    "ok": true
+   },
+   "length5_weights_a3": {
+    "[10, 2, 2, 2, 2]": 1,
+    "[9, 4, 2, 2, 1]": 1,
+    "[9, 3, 2, 2, 2]": 1,
+    "[8, 5, 3, 1, 1]": 1,
+    "[8, 5, 2, 2, 1]": 1,
+    "[8, 4, 3, 2, 1]": 1,
+    "[8, 4, 2, 2, 2]": 1,
+    "[7, 6, 2, 2, 1]": 1,
+    "[7, 5, 4, 1, 1]": 1,
+    "[7, 5, 3, 2, 1]": 1,
+    "[7, 5, 2, 2, 2]": 1,
+    "[7, 4, 4, 2, 1]": 1,
+    "[6, 6, 2, 2, 2]": 1,
+    "[6, 5, 4, 2, 1]": 1,
+    "[6, 4, 4, 2, 2]": 1,
+    "[5, 5, 4, 3, 1]": 1
+   },
+   "T_control": {
+    "five_row_cells": 105,
+    "mismatches": [
+     {
+      "lambda": [
+       16,
+       2,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 2,
+      "census_T": 3
+     },
+     {
+      "lambda": [
+       15,
+       3,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 4,
+      "census_T": 5
+     },
+     {
+      "lambda": [
+       14,
+       4,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 8,
+      "census_T": 10
+     },
+     {
+      "lambda": [
+       13,
+       5,
+       3,
+       2,
+       1
+      ],
+      "T_recomputed": 16,
+      "census_T": 17
+     },
+     {
+      "lambda": [
+       13,
+       5,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 12,
+      "census_T": 14
+     },
+     {
+      "lambda": [
+       13,
+       4,
+       3,
+       2,
+       2
+      ],
+      "T_recomputed": 8,
+      "census_T": 9
+     },
+     {
+      "lambda": [
+       12,
+       6,
+       3,
+       2,
+       1
+      ],
+      "T_recomputed": 22,
+      "census_T": 23
+     },
+     {
+      "lambda": [
+       12,
+       6,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 16,
+      "census_T": 18
+     },
+     {
+      "lambda": [
+       12,
+       5,
+       5,
+       1,
+       1
+      ],
+      "T_recomputed": 5,
+      "census_T": 6
+     },
+     {
+      "lambda": [
+       12,
+       5,
+       4,
+       2,
+       1
+      ],
+      "T_recomputed": 24,
+      "census_T": 25
+     },
+     {
+      "lambda": [
+       12,
+       5,
+       3,
+       3,
+       1
+      ],
+      "T_recomputed": 7,
+      "census_T": 8
+     },
+     {
+      "lambda": [
+       12,
+       5,
+       3,
+       2,
+       2
+      ],
+      "T_recomputed": 14,
+      "census_T": 16
+     },
+     {
+      "lambda": [
+       12,
+       4,
+       4,
+       2,
+       2
+      ],
+      "T_recomputed": 10,
+      "census_T": 11
+     },
+     {
+      "lambda": [
+       11,
+       7,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 14,
+      "census_T": 16
+     },
+     {
+      "lambda": [
+       11,
+       6,
+       4,
+       2,
+       1
+      ],
+      "T_recomputed": 32,
+      "census_T": 33
+     },
+     {
+      "lambda": [
+       11,
+       6,
+       3,
+       3,
+       1
+      ],
+      "T_recomputed": 9,
+      "census_T": 10
+     },
+     {
+      "lambda": [
+       11,
+       6,
+       3,
+       2,
+       2
+      ],
+      "T_recomputed": 19,
+      "census_T": 21
+     },
+     {
+      "lambda": [
+       11,
+       5,
+       5,
+       2,
+       1
+      ],
+      "T_recomputed": 12,
+      "census_T": 14
+     },
+     {
+      "lambda": [
+       11,
+       5,
+       4,
+       3,
+       1
+      ],
+      "T_recomputed": 18,
+      "census_T": 19
+     },
+     {
+      "lambda": [
+       11,
+       5,
+       4,
+       2,
+       2
+      ],
+      "T_recomputed": 18,
+      "census_T": 20
+     },
+     {
+      "lambda": [
+       10,
+       8,
+       2,
+       2,
+       2
+      ],
+      "T_recomputed": 11,
+      "census_T": 12
+     },
+     {
+      "lambda": [
+       10,
+       7,
+       3,
+       2,
+       2
+      ],
+      "T_recomputed": 17,
+      "census_T": 18
+     },
+     {
+      "lambda": [
+       10,
+       6,
+       5,
+       2,
+       1
+      ],
+      "T_recomputed": 20,
+      "census_T": 21
+     },
+     {
+      "lambda": [
+       10,
+       6,
+       4,
+       3,
+       1
+      ],
+      "T_recomputed": 21,
+      "census_T": 22
+     },
+     {
+      "lambda": [
+       10,
+       6,
+       4,
+       2,
+       2
+      ],
+      "T_recomputed": 24,
+      "census_T": 26
+     },
+     {
+      "lambda": [
+       10,
+       5,
+       5,
+       3,
+       1
+      ],
+      "T_recomputed": 9,
+      "census_T": 11
+     },
+     {
+      "lambda": [
+       10,
+       5,
+       4,
+       3,
+       2
+      ],
+      "T_recomputed": 12,
+      "census_T": 13
+     },
+     {
+      "lambda": [
+       9,
+       7,
+       4,
+       2,
+       2
+      ],
+      "T_recomputed": 18,
+      "census_T": 19
+     },
+     {
+      "lambda": [
+       9,
+       6,
+       5,
+       3,
+       1
+      ],
+      "T_recomputed": 12,
+      "census_T": 13
+     },
+     {
+      "lambda": [
+       9,
+       6,
+       5,
+       2,
+       2
+      ],
+      "T_recomputed": 14,
+      "census_T": 15
+     },
+     {
+      "lambda": [
+       9,
+       6,
+       4,
+       3,
+       2
+      ],
+      "T_recomputed": 13,
+      "census_T": 14
+     },
+     {
+      "lambda": [
+       9,
+       5,
+       5,
+       4,
+       1
+      ],
+      "T_recomputed": 5,
+      "census_T": 6
+     },
+     {
+      "lambda": [
+       9,
+       5,
+       5,
+       3,
+       2
+      ],
+      "T_recomputed": 5,
+      "census_T": 6
+     },
+     {
+      "lambda": [
+       8,
+       6,
+       5,
+       3,
+       2
+      ],
+      "T_recomputed": 6,
+      "census_T": 7
+     }
+    ],
+    "all_match": false
+   },
+   "N_S_length5": {
+    "[10, 2, 2, 2, 2]": 416,
+    "[9, 4, 2, 2, 1]": 492,
+    "[9, 3, 2, 2, 2]": 768,
+    "[8, 5, 3, 1, 1]": 488,
+    "[8, 5, 2, 2, 1]": 648,
+    "[8, 4, 3, 2, 1]": 882,
+    "[8, 4, 2, 2, 2]": 1179,
+    "[7, 6, 2, 2, 1]": 745,
+    "[7, 5, 4, 1, 1]": 705,
+    "[7, 5, 3, 2, 1]": 1113,
+    "[7, 5, 2, 2, 2]": 1490,
+    "[7, 4, 4, 2, 1]": 1285,
+    "[6, 6, 2, 2, 2]": 1622,
+    "[6, 5, 4, 2, 1]": 1531,
+    "[6, 4, 4, 2, 2]": 2829,
+    "[5, 5, 4, 3, 1]": 2314
+   },
+   "residue_matches": {},
+   "cells_with_residue_weight_in_pieri_range": {},
+   "pieri_range_84444": {
+    "[4, 4, 4, 4, 2]": 0,
+    "[5, 4, 4, 4, 1]": 0,
+    "[6, 4, 4, 4, 0]": 1
+   }
+  }
+ },
+ "census_file": "C:\\Users\\swami\\Projects\\gct-gpt\\Batch17_Planning\\symmetry_dream\\astra\\toy_character_screen_d5_d6.json",
+ "wall_seconds": 0.399
+}

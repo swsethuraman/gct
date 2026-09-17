@@ -1,0 +1,62 @@
+{
+ "ambient_ratios_adopted": {
+  "t4_over_t0": {
+   "S1": "13/21",
+   "S2": "2/7",
+   "S4": "0"
+  },
+  "t2_over_t0": {
+   "S1": "6/7",
+   "S2": "8/7",
+   "S4": "3/7"
+  }
+ },
+ "rows_on_q3_q7": {
+  "Eusing_order4_S1": [
+   201275,
+   262169
+  ],
+  "order2_S1": [
+   423620,
+   262184
+  ],
+  "Eusing_order4_S2": [
+   84553,
+   385022
+  ],
+  "order2_S2": [
+   209191,
+   491514
+  ],
+  "Eusing_order4_S4": [
+   0,
+   0
+  ],
+  "order2_S4": [
+   211810,
+   131092
+  ]
+ },
+ "check_order2_S1_equals_C2_over_84": true,
+ "order2_rows_proportional_to_C2": {
+  "S2": 0,
+  "S4": 0
+ },
+ "minors_Eusing_vs_C2": {
+  "S1": 165485,
+  "S2": 418521,
+  "S4": 0
+ },
+ "minors_Eusing_pairs": {
+  "S1,S2": 120483,
+  "S1,S4": 0,
+  "S2,S4": 0
+ },
+ "degenerate_control_forced_zero": {
+  "argument": "A=diag(s,s,1/s,1/s) in SL4 with (A,A^T) in H0 maps K_deg to diag(s^2,1,1,1,1).K_deg; GL5 weight det^4 gives z = s^8 z, so z(K_deg)=0 for every z in M",
+  "observed": [
+   0,
+   0
+  ]
+ }
+}
