@@ -6,3 +6,5 @@ results/b14_10/** whitespace=cr-at-eol
 # Central Batch16/Batch17 records: CLOSEOUT pins and SNAPSHOT_BINDING hashes bind the bytes as written on disk.
 docs/batch16/** -text whitespace=cr-at-eol
 docs/batch17/** -text whitespace=cr-at-eol
+# Post-B19 packets (2026-09-16/17): sealed manifests hash the bytes as written on disk, CRLF included.
+docs/post_b19_20260917/** -text whitespace=cr-at-eol
