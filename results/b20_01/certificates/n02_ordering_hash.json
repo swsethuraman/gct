@@ -1,0 +1,49 @@
+{
+ "name": "n02",
+ "note": "Cross-check of the sealed n02_definition.json (not modified) and its ordering hash under the same scheme as q3/q7.",
+ "sealed_certificate": {
+  "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+  "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/n02_definition.json",
+  "sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+  "bytes": 2753
+ },
+ "candidates_selected": {
+  "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+  "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/candidates_selected.json",
+  "sha256": "a69c6313f2d736b2040a2aabd931c0c6288f1342a60b4fe43f837cc467cbcbf9",
+  "bytes": 29403
+ },
+ "checks": {
+  "pi_equal": true,
+  "rho_equal": true,
+  "order_equal": true,
+  "hand_plan_recomputed": [
+   [
+    0,
+    2,
+    1,
+    3
+   ],
+   [
+    0,
+    2,
+    1,
+    3
+   ]
+  ]
+ },
+ "ordering_hash": "61505bd5a571ace8cfb67b6ae79c66effc5d008ddd9e7794088ee5cf625408b4",
+ "ordering_hash_scheme": "sha256 of the canonical JSON (sort_keys, separators (\",\",\":\")) of {\"hand_plan_column_order\", \"hand_plan_column_order_transposed\", \"pi_ordered_blocks\", \"rho_ordered_blocks\"} with blocks as nested lists of [column, position] integers, in listed order",
+ "hand_plan_column_order": [
+  0,
+  2,
+  1,
+  3
+ ],
+ "hand_plan_column_order_transposed": [
+  0,
+  2,
+  1,
+  3
+ ]
+}

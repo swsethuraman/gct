@@ -1,0 +1,67 @@
+B20-01 SEAL LOG
+generated_utc  : 2026-09-17T22:01:44Z
+worktree       : C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B15-01
+session        : B20-01c (execution session for the three B20-01 pilots)
+excluded       : MANIFEST.json, SEAL_LOG.txt (a manifest cannot bind itself or a log written after it)
+re-hashed under a sealed packet: NONE (no sealed tree was read from disk; G11)
+generator      : C:\Users\swami\AppData\Local\Temp\claude\C--Users-swami-Projects-gct-gpt-work-batch15-workers-B15-01\7172866f-dfbb-42f1-a231-0b3c4f49a14c\scratchpad\b20_01_seal.py
+  sha256       : 589eedb135ca44bf3ad75bb157925ed9a9346e3a10caff41725e78664375be54
+  bytes        : 5743
+  note         : kept outside analysis/ so it is not inside the analysis/b20_01_*.py set it binds
+
+FILES BOUND
+  group results        : 8 file(s)
+      34900ea600da8b9a20535988f0a0a6cd901d866cd90ae74699e2ba60de845166  results/b20_01/certificates/n02_ordering_hash.json  1496 B
+      ac93ff59113a1aca83a3a8a2d5a2cd90b2de216be70c793ea5f242c887e8428e  results/b20_01/certificates/q3_definition.json  13673 B
+      07d066b8f6aada7472e892801cbfd6f1a2708a3d592e18592d9996341af3a252  results/b20_01/certificates/q7_definition.json  13664 B
+      e7e49a19f38d6729c58c560ffd0aea26dcf9141c19213009ab5dc1d3708fd4e6  results/b20_01/p1_definitions.json  5920 B
+      6aa3e283f5d0bf39515656dc16375104530a8d651d2b809973c8028083beb812  results/b20_01/p2_reduction.json  7014 B
+      73c3be3c0789d26001953f940792c9086ce19fc72d758566f5bea2c86ece66ee  results/b20_01/p3_flag_rows.json  9237 B
+      8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154  results/b20_01/pinned/b18_02_carrier.py  23388 B
+      e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc  results/b20_01/pinned/paired_runner.py  4987 B
+  group analysis       : 5 file(s)
+      3236c78700872975497c8ef37d5eefde17f617a0dfdac302d6558c85454ae27a  analysis/b20_01_flag.py  6367 B
+      52664d4dfd50b2d35e9fccaeb53cf0b84d0da7550d1e62624d208da15ee4b848  analysis/b20_01_p1_definitions.py  11489 B
+      5124cf7d928b2f81122438b39af5418c80d9d80fe5687db20a152d85fdbbac90  analysis/b20_01_p2_reduction.py  6136 B
+      924537f74a0a45d5a69ad1c078193a4eed0c0aba2161386468026fad6f980fed  analysis/b20_01_p3_flag_rows.py  6530 B
+      a7e164e369ec4f9b49f886595f95c4274f0b52a5326ea03df06947cbbc7f74a1  analysis/b20_01_pinned.py  3877 B
+  group report         : 1 file(s)
+      e5f426410f6e5dff4037dc0d837826fb09cca173f7da420dbeb41bb15eb35c89  docs/b20_01_report.md  54708 B
+  group receipts       : 6 file(s)
+      6ecac95a2d8aa9e62a5806244c78f877e96961e3b156c30850da19a5fe1b7df7  results/logs/b20_01_p1_definitions.pid  7 B
+      2347d94015497c93fc40379bb79f508cdc381cac5576dd4e8e704bbaf887c8a0  results/logs/b20_01_p1_definitions_resources.json  813 B
+      e2b1bb0038d02bad3ca27d5b51b64dac861ba29ffd193c14d8cfcd7d30b6169a  results/logs/b20_01_p2_reduction.pid  7 B
+      e09a33fdd29c120e38bd4b25d78830700a4e612b18164403728a1a005e59aca5  results/logs/b20_01_p2_reduction_resources.json  813 B
+      1d5da42fa7ae17cd43d826bac0a3fe8fa7191a75fb3e2f45a69d728b16aac7b8  results/logs/b20_01_p3_flag_rows.pid  7 B
+      40722fef633d4c0efa23749e135bd7a4c30122df0eaa452e7e7977637ff4f226  results/logs/b20_01_p3_flag_rows_resources.json  814 B
+
+  TOTAL FILES BOUND : 20
+
+PINNED INPUTS, as each pilot recorded them in its own output
+  p1_definitions   : 8 pinned input(s), 4 code pin group(s)
+      a69c6313f2d736b2040a2aabd931c0c6288f1342a60b4fe43f837cc467cbcbf9  candidates_selected.json  29403 B  @82633a608932
+      b531cfb1fdb95b14399c3b9217b56084a242ec3f437acc36745b51834d1ac618  f1_new_point_minor.py  9438 B  @82633a608932
+      ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b  n02_definition.json  2753 B  @82633a608932
+      aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7  p6_basis.json  12885 B  @82633a608932
+      b84168a263e6efab99e698057fce2b8f8bc796f32a4108563d36f67226086189  p7_arc_S0.json  6964 B  @82633a608932
+      81d3ee7a8a66aea24702bc8c0c99a52d64fd2439b6cab8133eec703979ce96c5  s1_screen_arc.py  7561 B  @82633a608932
+      ac6c3a233924abf8c478d6d315a62565d4072eea27b8f816d82eddf0e34c2eff  s2_certify_n02_and_new.py  12922 B  @82633a608932
+      b03dab8226e9a6e050a697a5ba78c239ad65fa89c896b1df9497fb795382dcc6  s3_full_forbidden_rows.py  7545 B  @82633a608932
+  p2_reduction     : 2 pinned input(s), 4 code pin group(s)
+      ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b  n02_definition.json  2753 B  @82633a608932
+      aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7  p6_basis.json  12885 B  @82633a608932
+  p3_flag_rows     : 2 pinned input(s), 4 code pin group(s)
+      ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b  n02_definition.json  2753 B  @82633a608932
+      aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7  p6_basis.json  12885 B  @82633a608932
+
+  DISTINCT PINNED INPUTS : 8
+  PATHS WITH DISAGREEING HASHES ACROSS PILOTS : 0
+
+WROTE results/b20_01/MANIFEST.json
+  manifest bytes            : 10294
+  manifest file entries     : 20
+  manifest pilot input maps : 3
+  manifest code-pin maps    : 3
+  manifest sha256           : 0e5fd02631470e6a63e0d1ebc05444dbac4ad2510395f54c7d5593195f0b79b5
+
+SEAL LOG line count (this file, counting this final line) : 67
