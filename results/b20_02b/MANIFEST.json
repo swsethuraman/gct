@@ -1,0 +1,64 @@
+{
+ "slot": "B20-02b",
+ "created_utc": "2026-09-17T21:39:23Z",
+ "worktree": "work/batch15_workers/B15-02",
+ "branch": "b15-02-a1-probes",
+ "head": "75ddb900a0b47b911c53f941885bac73b358eacb",
+ "prereg_hashes_before_launch": {
+  "docs/b20_02b_report.md": "c5c6511b78a081541c75f69c51b817eb13ec96c2bae2a8011b29a520b75e125a",
+  "analysis/b20_02b_d8_blockwise.py": "ae03c0d17115ef1f8555966489fc62c2bd0fe5cc2933b9765cbf126d1c44913c"
+ },
+ "outputs_sha256": {
+  "docs/b20_02b_report.md": "60ff4be461ad1f3b4733fdec36372bf0f0af3612a31f8a48af6260c49b5902ea",
+  "analysis/b20_02b_d8_blockwise.py": "ae03c0d17115ef1f8555966489fc62c2bd0fe5cc2933b9765cbf126d1c44913c",
+  "analysis/b20_02b_seal.py": "cd431f8ec6334e8ba56995255ecdfdd355d30f1182d6fab857a7a128209dfc02",
+  "results/b20_02b/p1_d8_blockwise.json": "5e7766c7add8b4b240b9248f82a96574bad32126b2324627f54e5c68bc9b4508",
+  "results/b20_02b/p1_console.log": "8b599733228d032474680e3879c3f73e4867d69d828ae94243bba57a93d3a852",
+  "results/logs/b20_02b_p1_d8_blockwise.pid": "804aef9dc35cc877ffed96aab6dcabedc7a500fdd53f09be8a3ec890c9132073",
+  "results/logs/b20_02b_p1_d8_blockwise_resources.json": "6cc0ba5da2be040f61f4eeea1330f266264b0560bcae5ceac592dc696abe1b93"
+ },
+ "inputs_copied_sha256": {
+  "results/b20_02b/inputs/p3_price16_blocks.json": {
+   "sha256": "54838ca647397a331f6d79586a2d0b4b49d39ed6ea3958d15ab30c14b6ee254a",
+   "expected": "54838ca647397a331f6d79586a2d0b4b49d39ed6ea3958d15ab30c14b6ee254a",
+   "match": true
+  },
+  "results/b20_02b/inputs/p3_koszul2_exact.json": {
+   "sha256": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+   "expected": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+   "match": true
+  }
+ },
+ "b20_02_reads_rehash": {
+  "results/b20_02/MANIFEST.json": {
+   "sha256_now": "a3798319a1ac18b494704b172e9f6a5709557523792657b1f783cecd6ffc499b",
+   "sha256_at_read": "a3798319a1ac18b494704b172e9f6a5709557523792657b1f783cecd6ffc499b",
+   "unchanged": true
+  },
+  "results/b20_02/p3_price16_blocks.json": {
+   "sha256_now": "54838ca647397a331f6d79586a2d0b4b49d39ed6ea3958d15ab30c14b6ee254a",
+   "sha256_at_read": "54838ca647397a331f6d79586a2d0b4b49d39ed6ea3958d15ab30c14b6ee254a",
+   "unchanged": true
+  },
+  "docs/b20_02_report.md": {
+   "sha256_now": "15ef389b5eb84074e77f2bd88c2dd5e98b14399a394d150b05f2b1b3f2baeda2",
+   "sha256_at_read": "15ef389b5eb84074e77f2bd88c2dd5e98b14399a394d150b05f2b1b3f2baeda2",
+   "unchanged": true
+  }
+ },
+ "counts": {
+  "outputs_hashed": [
+   7,
+   7
+  ],
+  "inputs_copied_match": [
+   2,
+   2
+  ],
+  "b20_02_reads_unchanged": [
+   3,
+   3
+  ],
+  "pilot_script_unchanged_since_prereg": true
+ }
+}

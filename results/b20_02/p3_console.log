@@ -1,0 +1,77 @@
+{"board_numbering": "batch15", "session_id": "B15-02", "pid": 1680, "memory_before": {"total_physical": 33752997888, "available_physical": 8306294784, "load": 75}, "memory_cap_mb": 512, "wall_cap_seconds": 60, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "idle_sleep_inhibited_during_run": true, "started_utc": "2026-09-17T21:01:54Z"}
+det4 M5 blocks 784 largest [25, 33] largest_MiB 0.01 sum_block_MiB 0.28 unblocked_MiB 257.4 flops_ub 444288
+det4 D8 blocks 2449 largest [192, 528] largest_MiB 0.77 sum_block_MiB 20.26 unblocked_MiB 30886.9 flops_ub 122997792
+zper3 M5 blocks 850 largest [20, 7] largest_MiB 0.0 sum_block_MiB 0.04 unblocked_MiB 257.4 flops_ub 19899
+zper3 D8 blocks 6757 largest [138, 105] largest_MiB 0.11 sum_block_MiB 2.24 unblocked_MiB 30886.9 flops_ub 6194592
+PRICING DONE 0.6s (no rank computed)
+[driver] pricing done at t=0.6s
+det_P2 3 rank {1: 5, 2: 0, 3: 0, 4: 0, 5: 0} rho [5, 0, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=0.0s
+det_P2 4 rank {1: 25, 2: 0, 3: 0, 4: 0, 5: 0} rho [25, 0, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=0.0s
+det_P2 5 rank {1: 75, 2: 0, 3: 0, 4: 0, 5: 0} rho [75, 0, 0, 0, 0] dimH [51, 0, 0, 0, 0, 0] t=0.0s
+det_P2 6 rank {1: 165, 2: 10, 3: 0, 4: 0, 5: 0} rho [165, 10, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=0.4s
+det_P2 7 rank {1: 299, 2: 50, 3: 0, 4: 0, 5: 0} rho [300, 50, 0, 0, 0] dimH [31, 1, 0, 0, 0, 0] t=0.9s
+det_P2 8 rank {1: 475, 2: 150, 3: 0, 4: 0, 5: 0} rho [480, 150, 0, 0, 0] dimH [20, 5, 0, 0, 0, 0] t=2.9s
+det_P2 9 rank {1: 695, 2: 340, 3: 10, 4: 0, 5: 0} rho [710, 340, 10, 0, 0] dimH [20, 15, 0, 0, 0, 0] t=3.1s
+det_P2 10 rank {1: 981, 2: 650, 3: 50, 4: 0, 5: 0} rho [1000, 650, 50, 0, 0] dimH [20, 19, 0, 0, 0, 0] t=3.6s
+det_P2 11 rank {1: 1345, 2: 1110, 3: 150, 4: 0, 5: 0} rho [1365, 1110, 150, 0, 0] dimH [20, 20, 0, 0, 0, 0] t=6.9s
+det_P2 12 rank {1: 1800, 2: 1755, 3: 345, 4: 5, 5: 0} rho [1820, 1755, 345, 5, 0] dimH [20, 20, 0, 0, 0, 0] t=10.9s
+det_own 3 rank {1: 5, 2: 0, 3: 0, 4: 0, 5: 0} rho [5, 0, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=10.9s
+det_own 4 rank {1: 25, 2: 0, 3: 0, 4: 0, 5: 0} rho [25, 0, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=10.9s
+det_own 5 rank {1: 75, 2: 0, 3: 0, 4: 0, 5: 0} rho [75, 0, 0, 0, 0] dimH [51, 0, 0, 0, 0, 0] t=11.0s
+det_own 6 rank {1: 165, 2: 10, 3: 0, 4: 0, 5: 0} rho [165, 10, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=11.4s
+det_own 7 rank {1: 299, 2: 50, 3: 0, 4: 0, 5: 0} rho [300, 50, 0, 0, 0] dimH [31, 1, 0, 0, 0, 0] t=12.2s
+det_own 8 rank {1: 475, 2: 150, 3: 0, 4: 0, 5: 0} rho [480, 150, 0, 0, 0] dimH [20, 5, 0, 0, 0, 0] t=14.8s
+det_own 9 rank {1: 695, 2: 340, 3: 10, 4: 0, 5: 0} rho [710, 340, 10, 0, 0] dimH [20, 15, 0, 0, 0, 0] t=15.0s
+det_own 10 rank {1: 981, 2: 650, 3: 50, 4: 0, 5: 0} rho [1000, 650, 50, 0, 0] dimH [20, 19, 0, 0, 0, 0] t=15.4s
+prod 3 rank {1: 5, 2: 0, 3: 0, 4: 0, 5: 0} rho [5, 0, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=15.4s
+prod 4 rank {1: 25, 2: 0, 3: 0, 4: 0, 5: 0} rho [25, 0, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=15.4s
+prod 5 rank {1: 69, 2: 0, 3: 0, 4: 0, 5: 0} rho [75, 0, 0, 0, 0] dimH [57, 6, 0, 0, 0, 0] t=15.4s
+prod 6 rank {1: 141, 2: 10, 3: 0, 4: 0, 5: 0} rho [165, 10, 0, 0, 0] dimH [69, 24, 0, 0, 0, 0] t=15.5s
+prod 7 rank {1: 244, 2: 50, 3: 0, 4: 0, 5: 0} rho [300, 50, 0, 0, 0] dimH [86, 56, 0, 0, 0, 0] t=15.6s
+prod 8 rank {1: 386, 2: 146, 3: 0, 4: 0, 5: 0} rho [480, 150, 0, 0, 0] dimH [109, 98, 4, 0, 0, 0] t=16.0s
+prod 9 rank {1: 579, 2: 324, 3: 10, 4: 0, 5: 0} rho [710, 340, 10, 0, 0] dimH [136, 147, 16, 0, 0, 0] t=16.2s
+prod 10 rank {1: 835, 2: 611, 3: 50, 4: 0, 5: 0} rho [1000, 650, 50, 0, 0] dimH [166, 204, 39, 0, 0, 0] t=16.6s
+padpt 3 rank {1: 5, 2: 0, 3: 0, 4: 0, 5: 0} rho [5, 0, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=16.6s
+padpt 4 rank {1: 25, 2: 0, 3: 0, 4: 0, 5: 0} rho [25, 0, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=16.6s
+padpt 5 rank {1: 69, 2: 0, 3: 0, 4: 0, 5: 0} rho [75, 0, 0, 0, 0] dimH [57, 6, 0, 0, 0, 0] t=16.6s
+padpt 6 rank {1: 141, 2: 10, 3: 0, 4: 0, 5: 0} rho [165, 10, 0, 0, 0] dimH [69, 24, 0, 0, 0, 0] t=16.8s
+padpt 7 rank {1: 244, 2: 50, 3: 0, 4: 0, 5: 0} rho [300, 50, 0, 0, 0] dimH [86, 56, 0, 0, 0, 0] t=17.2s
+padpt 8 rank {1: 386, 2: 146, 3: 0, 4: 0, 5: 0} rho [480, 150, 0, 0, 0] dimH [109, 98, 4, 0, 0, 0] t=18.4s
+padpt 9 rank {1: 579, 2: 324, 3: 10, 4: 0, 5: 0} rho [710, 340, 10, 0, 0] dimH [136, 147, 16, 0, 0, 0] t=18.5s
+padpt 10 rank {1: 835, 2: 611, 3: 50, 4: 0, 5: 0} rho [1000, 650, 50, 0, 0] dimH [166, 204, 39, 0, 0, 0] t=18.9s
+smooth 3 rank {1: 5, 2: 0, 3: 0, 4: 0, 5: 0} rho [5, 0, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=18.9s
+smooth 4 rank {1: 25, 2: 0, 3: 0, 4: 0, 5: 0} rho [25, 0, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=18.9s
+smooth 5 rank {1: 75, 2: 0, 3: 0, 4: 0, 5: 0} rho [75, 0, 0, 0, 0] dimH [51, 0, 0, 0, 0, 0] t=18.9s
+smooth 6 rank {1: 165, 2: 10, 3: 0, 4: 0, 5: 0} rho [165, 10, 0, 0, 0] dimH [45, 0, 0, 0, 0, 0] t=19.0s
+smooth 7 rank {1: 300, 2: 50, 3: 0, 4: 0, 5: 0} rho [300, 50, 0, 0, 0] dimH [30, 0, 0, 0, 0, 0] t=19.1s
+smooth 8 rank {1: 480, 2: 150, 3: 0, 4: 0, 5: 0} rho [480, 150, 0, 0, 0] dimH [15, 0, 0, 0, 0, 0] t=19.7s
+smooth 9 rank {1: 710, 2: 340, 3: 10, 4: 0, 5: 0} rho [710, 340, 10, 0, 0] dimH [5, 0, 0, 0, 0, 0] t=19.9s
+smooth 10 rank {1: 1000, 2: 650, 3: 50, 4: 0, 5: 0} rho [1000, 650, 50, 0, 0] dimH [1, 0, 0, 0, 0, 0] t=20.3s
+PASS det_P2 has all 70 monomials 
+PASS det_own has all 70 monomials 
+PASS det_P2: no rank exceeds rho_j(k) for any j, k (Lemma 6.1 sanity) 
+PASS det_own: no rank exceeds rho_j(k) for any j, k (Lemma 6.1 sanity) 
+PASS prod: no rank exceeds rho_j(k) for any j, k (Lemma 6.1 sanity) 
+PASS padpt: no rank exceeds rho_j(k) for any j, k (Lemma 6.1 sanity) 
+PASS smooth: no rank exceeds rho_j(k) for any j, k (Lemma 6.1 sanity) 
+PASS det_P2: rank d_j = rho_j(k) for all j >= 2 and all k computed (Theorem 6.4 certificate) 
+PASS det_P2: dim H_j = 0 for all j >= 2 and all k computed 
+INFO det_P2: gradings with exact-Q ranks for every j (unconditional certificate) [3, 4, 5, 6, 7, 8]
+INFO det_P2: gradings where only modular floors were used (floor = rho still certifies, Lemma 6.1) [9, 10, 11, 12]
+PASS det_own: rank d_j = rho_j(k) for all j >= 2 and all k computed (Theorem 6.4 certificate) 
+PASS det_own: dim H_j = 0 for all j >= 2 and all k computed 
+INFO det_own: gradings with exact-Q ranks for every j (unconditional certificate) [3, 4, 5, 6, 7, 8]
+INFO det_own: gradings where only modular floors were used (floor = rho still certifies, Lemma 6.1) [9, 10]
+PASS det_P2: rank d_1 matches the P2 certificate profile at the k in common (consistency with the pinned input) {3: 5, 4: 25, 5: 75, 6: 165, 7: 299, 8: 475, 9: 695, 10: 981, 11: 1345, 12: 1800}
+PASS smooth control attains rho_j(k) for every j >= 1 and every k (control that can fail) 
+INFO prod: gradings with rank d_2 < rho_2(k) (padding side strictly below the determinant maximum; modular values are floors) [8, 9, 10]
+INFO prod: gradings with dim H_2 > 0 (exact where method is exact_Q_fmpz) [8, 9, 10]
+INFO prod: gradings with dim H_3 > 0 []
+INFO padpt: gradings with rank d_2 < rho_2(k) (padding side strictly below the determinant maximum; modular values are floors) [8, 9, 10]
+INFO padpt: gradings with dim H_2 > 0 (exact where method is exact_Q_fmpz) [8, 9, 10]
+INFO padpt: gradings with dim H_3 > 0 []
+checks passed 13/13
+peak memory {'peak_working_set': 295206912, 'peak_pagefile': 285855744}
+ALL PASS 20.3s
+[driver] all done at t=21.0s
+{"wall_seconds": 20.970886899973266}

@@ -1,0 +1,76 @@
+{"board_numbering": "batch15", "session_id": "B15-02", "pid": 16276, "memory_before": {"total_physical": 33752997888, "available_physical": 8610656256, "load": 74}, "memory_cap_mb": 512, "wall_cap_seconds": 60, "workers": 1, "blas_threads": 1, "job_object_enforced": true, "idle_sleep_inhibited_during_run": true, "started_utc": "2026-09-17T21:37:57Z"}
+det4 M5 blocks 200 / 784 rank so far 720 t=0.1s
+det4 M5 blocks 400 / 784 rank so far 1102 t=0.1s
+det4 M5 blocks 600 / 784 rank so far 1417 t=0.1s
+det4 M5 rank_Q 1712 rows 2176 cols 15504 kernel 464 blocks 784 exact 784 floor 0 largest (25, 33) t=0.1s
+det4 D8 blocks 200 / 2449 rank so far 3234 t=0.4s
+det4 D8 blocks 400 / 2449 rank so far 5559 t=0.5s
+det4 D8 blocks 600 / 2449 rank so far 8357 t=0.5s
+det4 D8 blocks 800 / 2449 rank so far 10297 t=0.6s
+det4 D8 blocks 1000 / 2449 rank so far 11087 t=0.6s
+det4 D8 blocks 1200 / 2449 rank so far 11929 t=0.6s
+det4 D8 blocks 1400 / 2449 rank so far 12564 t=0.6s
+det4 D8 blocks 1600 / 2449 rank so far 13359 t=0.6s
+det4 D8 blocks 1800 / 2449 rank so far 14005 t=0.7s
+det4 D8 blocks 2000 / 2449 rank so far 14453 t=0.7s
+det4 D8 blocks 2200 / 2449 rank so far 15112 t=0.7s
+det4 D8 blocks 2400 / 2449 rank so far 15603 t=0.7s
+det4 D8 rank_Q 15660 rows 16320 cols 248064 kernel 660 blocks 2449 exact 2449 floor 0 largest (192, 528) t=0.7s
+zper3 M5 blocks 200 / 850 rank so far 386 t=0.9s
+zper3 M5 blocks 400 / 850 rank so far 690 t=0.9s
+zper3 M5 blocks 600 / 850 rank so far 942 t=1.0s
+zper3 M5 blocks 800 / 850 rank so far 1194 t=1.0s
+zper3 M5 rank_Q 1244 rows 2176 cols 15504 kernel 932 blocks 850 exact 850 floor 0 largest (20, 7) t=1.0s
+zper3 D8 blocks 200 / 6757 rank so far 1370 t=1.5s
+zper3 D8 blocks 400 / 6757 rank so far 2450 t=1.5s
+zper3 D8 blocks 600 / 6757 rank so far 3251 t=1.6s
+zper3 D8 blocks 800 / 6757 rank so far 3959 t=1.6s
+zper3 D8 blocks 1000 / 6757 rank so far 4331 t=1.7s
+zper3 D8 blocks 1200 / 6757 rank so far 4699 t=1.7s
+zper3 D8 blocks 1400 / 6757 rank so far 4995 t=1.8s
+zper3 D8 blocks 1600 / 6757 rank so far 5379 t=1.8s
+zper3 D8 blocks 1800 / 6757 rank so far 5881 t=1.9s
+zper3 D8 blocks 2000 / 6757 rank so far 6400 t=1.9s
+zper3 D8 blocks 2200 / 6757 rank so far 6801 t=2.0s
+zper3 D8 blocks 2400 / 6757 rank so far 7190 t=2.0s
+zper3 D8 blocks 2600 / 6757 rank so far 7542 t=2.0s
+zper3 D8 blocks 2800 / 6757 rank so far 7894 t=2.1s
+zper3 D8 blocks 3000 / 6757 rank so far 8255 t=2.1s
+zper3 D8 blocks 3200 / 6757 rank so far 8589 t=2.2s
+zper3 D8 blocks 3400 / 6757 rank so far 8901 t=2.2s
+zper3 D8 blocks 3600 / 6757 rank so far 9205 t=2.3s
+zper3 D8 blocks 3800 / 6757 rank so far 9539 t=2.3s
+zper3 D8 blocks 4000 / 6757 rank so far 9848 t=2.4s
+zper3 D8 blocks 4200 / 6757 rank so far 10251 t=2.4s
+zper3 D8 blocks 4400 / 6757 rank so far 10585 t=2.5s
+zper3 D8 blocks 4600 / 6757 rank so far 10907 t=2.5s
+zper3 D8 blocks 4800 / 6757 rank so far 11160 t=2.6s
+zper3 D8 blocks 5000 / 6757 rank so far 11364 t=2.6s
+zper3 D8 blocks 5200 / 6757 rank so far 11566 t=2.7s
+zper3 D8 blocks 5400 / 6757 rank so far 11770 t=2.7s
+zper3 D8 blocks 5600 / 6757 rank so far 12045 t=2.8s
+zper3 D8 blocks 5800 / 6757 rank so far 12367 t=2.8s
+zper3 D8 blocks 6000 / 6757 rank so far 12679 t=2.9s
+zper3 D8 blocks 6200 / 6757 rank so far 12923 t=2.9s
+zper3 D8 blocks 6400 / 6757 rank so far 13127 t=3.0s
+zper3 D8 blocks 6600 / 6757 rank so far 13330 t=3.0s
+zper3 D8 rank_Q 13490 rows 16320 cols 248064 kernel 2830 blocks 6757 exact 6757 floor 0 largest (138, 105) t=3.1s
+COMPARISON {"rank_det4": 15660, "rank_zper3": 13490, "rho_2_8": 16320, "deficiency_det4": 660, "deficiency_zper3": 2830, "reversal_rank_zper3_gt_rank_det4": false, "det4_deficient": true}
+PASS det4 M5: row and column totals over weight buckets equal the full dimensions 
+PASS det4 M5: every block exact over Q (no modular fallback) 
+PASS det4 M5: no grading violation 
+PASS det4 D8: row and column totals over weight buckets equal the full dimensions 
+PASS det4 D8: every block exact over Q (no modular fallback) 
+PASS det4 D8: no grading violation 
+PASS zper3 M5: row and column totals over weight buckets equal the full dimensions 
+PASS zper3 M5: every block exact over Q (no modular fallback) 
+PASS zper3 M5: no grading violation 
+PASS zper3 D8: row and column totals over weight buckets equal the full dimensions 
+PASS zper3 D8: every block exact over Q (no modular fallback) 
+PASS zper3 D8: no grading violation 
+PASS det4 M5: kernel (quadratic syzygies) = 464 as recorded 464
+PASS zper3 M5: kernel (quadratic syzygies) = 932 as recorded 932
+PASS D8: both ranks <= rho_2(8) 
+checks passed 15/15
+ALL PASS 3.2s
+{"wall_seconds": 3.3451996000949293}

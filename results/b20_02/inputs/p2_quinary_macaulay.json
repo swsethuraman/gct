@@ -1,0 +1,434 @@
+{
+ "script": "p2_quinary_macaulay.py",
+ "seed": 20260917,
+ "checks": [
+  {
+   "name": "F_det has all 70 monomials (pencil not degenerate)",
+   "pass": true
+  },
+  {
+   "name": "F_smooth attains rho_k for every k (ambient control)",
+   "pass": true
+  },
+  {
+   "name": "F_det attains rho_k for k = 3, 4, 5, 6 (Theorem B (ii) and the k = 6 certificate)",
+   "pass": true
+  },
+  {
+   "name": "F_det = 299 at k = 7 (cap: rank drop by exactly one at this point)",
+   "pass": true
+  },
+  {
+   "name": "F_det matches the Remark 3.3 profile at k = 8, 9 (475, 695; MEASURED consistency, not used in the proof)",
+   "pass": true,
+   "value": [
+    475,
+    695
+   ]
+  },
+  {
+   "name": "both P5 points obey padUB(k) for every k (else the (ell, C) argument is wrong)",
+   "pass": true
+  },
+  {
+   "name": "F_det rank strictly exceeds padUB(k) for every k >= 6 (the inequality of Theorem B at this point)",
+   "pass": true
+  }
+ ],
+ "pencil_A": [
+  [
+   [
+    4,
+    -3,
+    5,
+    -1
+   ],
+   [
+    -1,
+    3,
+    -2,
+    -5
+   ],
+   [
+    -3,
+    0,
+    3,
+    0
+   ],
+   [
+    3,
+    3,
+    -2,
+    5
+   ]
+  ],
+  [
+   [
+    -2,
+    2,
+    5,
+    1
+   ],
+   [
+    -5,
+    0,
+    -5,
+    -3
+   ],
+   [
+    4,
+    -4,
+    -1,
+    -5
+   ],
+   [
+    2,
+    -5,
+    2,
+    4
+   ]
+  ],
+  [
+   [
+    3,
+    -3,
+    4,
+    0
+   ],
+   [
+    -1,
+    -2,
+    -2,
+    1
+   ],
+   [
+    2,
+    -2,
+    -5,
+    1
+   ],
+   [
+    3,
+    -2,
+    -2,
+    0
+   ]
+  ],
+  [
+   [
+    3,
+    -1,
+    -4,
+    4
+   ],
+   [
+    2,
+    -5,
+    -4,
+    -5
+   ],
+   [
+    -1,
+    -5,
+    3,
+    -1
+   ],
+   [
+    -4,
+    3,
+    -2,
+    2
+   ]
+  ],
+  [
+   [
+    2,
+    -3,
+    -1,
+    -5
+   ],
+   [
+    -1,
+    2,
+    -4,
+    -4
+   ],
+   [
+    -3,
+    1,
+    -5,
+    -4
+   ],
+   [
+    3,
+    -4,
+    -3,
+    -2
+   ]
+  ]
+ ],
+ "ell": [
+  -3,
+  2,
+  4,
+  3,
+  4
+ ],
+ "L": [
+  [
+   4,
+   3,
+   0,
+   -2,
+   2
+  ],
+  [
+   3,
+   -1,
+   4,
+   -3,
+   -3
+  ],
+  [
+   -1,
+   2,
+   2,
+   -1,
+   -3
+  ],
+  [
+   -2,
+   0,
+   0,
+   -1,
+   -3
+  ],
+  [
+   3,
+   -1,
+   3,
+   4,
+   2
+  ],
+  [
+   0,
+   -2,
+   -4,
+   1,
+   -4
+  ],
+  [
+   -3,
+   2,
+   4,
+   3,
+   -4
+  ],
+  [
+   -2,
+   -4,
+   -2,
+   2,
+   1
+  ],
+  [
+   4,
+   -4,
+   -3,
+   4,
+   -3
+  ]
+ ],
+ "n_terms": {
+  "F_det": 70,
+  "F_prod": 64,
+  "F_padpt": 35,
+  "F_smooth": 70
+ },
+ "table": {
+  "3": {
+   "k": 3,
+   "dimS": 35,
+   "rho_generic_max": 5,
+   "padUB": 16,
+   "F_det": 5,
+   "F_det_shape": [
+    5,
+    35
+   ],
+   "F_prod": 5,
+   "F_prod_shape": [
+    5,
+    35
+   ],
+   "F_padpt": 5,
+   "F_padpt_shape": [
+    5,
+    35
+   ],
+   "F_smooth": 5,
+   "F_smooth_shape": [
+    5,
+    35
+   ]
+  },
+  "4": {
+   "k": 4,
+   "dimS": 70,
+   "rho_generic_max": 25,
+   "padUB": 39,
+   "F_det": 25,
+   "F_det_shape": [
+    25,
+    70
+   ],
+   "F_prod": 25,
+   "F_prod_shape": [
+    25,
+    70
+   ],
+   "F_padpt": 25,
+   "F_padpt_shape": [
+    25,
+    70
+   ],
+   "F_smooth": 25,
+   "F_smooth_shape": [
+    25,
+    70
+   ]
+  },
+  "5": {
+   "k": 5,
+   "dimS": 126,
+   "rho_generic_max": 75,
+   "padUB": 80,
+   "F_det": 75,
+   "F_det_shape": [
+    75,
+    126
+   ],
+   "F_prod": 69,
+   "F_prod_shape": [
+    75,
+    126
+   ],
+   "F_padpt": 69,
+   "F_padpt_shape": [
+    75,
+    126
+   ],
+   "F_smooth": 75,
+   "F_smooth_shape": [
+    75,
+    126
+   ]
+  },
+  "6": {
+   "k": 6,
+   "dimS": 210,
+   "rho_generic_max": 165,
+   "padUB": 146,
+   "F_det": 165,
+   "F_det_shape": [
+    175,
+    210
+   ],
+   "F_prod": 141,
+   "F_prod_shape": [
+    175,
+    210
+   ],
+   "F_padpt": 141,
+   "F_padpt_shape": [
+    175,
+    210
+   ],
+   "F_smooth": 165,
+   "F_smooth_shape": [
+    175,
+    210
+   ]
+  },
+  "7": {
+   "k": 7,
+   "dimS": 330,
+   "rho_generic_max": 300,
+   "padUB": 245,
+   "F_det": 299,
+   "F_det_shape": [
+    350,
+    330
+   ],
+   "F_prod": 244,
+   "F_prod_shape": [
+    350,
+    330
+   ],
+   "F_padpt": 244,
+   "F_padpt_shape": [
+    350,
+    330
+   ],
+   "F_smooth": 300,
+   "F_smooth_shape": [
+    350,
+    330
+   ]
+  },
+  "8": {
+   "k": 8,
+   "dimS": 495,
+   "rho_generic_max": 480,
+   "padUB": 386,
+   "F_det": 475,
+   "F_det_shape": [
+    630,
+    495
+   ],
+   "F_prod": 386,
+   "F_prod_shape": [
+    630,
+    495
+   ],
+   "F_padpt": 386,
+   "F_padpt_shape": [
+    630,
+    495
+   ],
+   "F_smooth": 480,
+   "F_smooth_shape": [
+    630,
+    495
+   ]
+  },
+  "9": {
+   "k": 9,
+   "dimS": 715,
+   "rho_generic_max": 710,
+   "padUB": 579,
+   "F_det": 695,
+   "F_det_shape": [
+    1050,
+    715
+   ],
+   "F_prod": 579,
+   "F_prod_shape": [
+    1050,
+    715
+   ],
+   "F_padpt": 579,
+   "F_padpt_shape": [
+    1050,
+    715
+   ],
+   "F_smooth": 710,
+   "F_smooth_shape": [
+    1050,
+    715
+   ]
+  }
+ },
+ "wall_seconds": 3.962359099998139,
+ "all_checks_pass": true
+}

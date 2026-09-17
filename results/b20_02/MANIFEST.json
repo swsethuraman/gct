@@ -1,0 +1,97 @@
+{
+ "slot": "B20-02",
+ "created_utc": "2026-09-17T21:06:18Z",
+ "worktree": "work/batch15_workers/B15-02",
+ "branch": "b15-02-a1-probes",
+ "head_at_start": "75ddb900a0b47b911c53f941885bac73b358eacb",
+ "tree_at_start": "c4d8aac88fbd19fd20a63d422d284fd57a99996a",
+ "head_now": "75ddb900a0b47b911c53f941885bac73b358eacb",
+ "interpreter": ".venv/python.exe (Python 3.12.10, numpy 2.4.6, sympy 1.14.0, python-flint 0.9.0)",
+ "wrapper": "analysis/b15_bound.py --seconds 60 --memory-mb 512 (Job Object), PYTHONDONTWRITEBYTECODE=1",
+ "outputs_sha256": {
+  "docs/b20_02_report.md": "15ef389b5eb84074e77f2bd88c2dd5e98b14399a394d150b05f2b1b3f2baeda2",
+  "analysis/b20_02_koszul5.py": "68ff842282515272feb20256da537911d3f2df30a154cd5513f6a75a04d5ba64",
+  "analysis/b20_02_price16.py": "ff2f86dc623e55fdc7572941ba9528ec3564b04061821660b1a44a87e946b9fa",
+  "analysis/b20_02_p3_driver.py": "f3cb5a10456b7f2e34f1afab4f052443806ac4ebff650775714d704dd40acf10",
+  "analysis/b20_02_seal.py": "8fee638247b18c9a2babec3466772a91f321ef38e51cace429ef6289136b1bab",
+  "results/b20_02/p3_koszul5_k3_12.json": "3922012a6355c3393a5292e757ef3ab82d47e1f09e025bfa126d0e06be1b0d62",
+  "results/b20_02/p3_price16_blocks.json": "54838ca647397a331f6d79586a2d0b4b49d39ed6ea3958d15ab30c14b6ee254a",
+  "results/b20_02/p1r_console.log": "7d868c9cdd4ab6ef3b6ab12c20839bfac0d9b66b96f001a4d214586361f22381",
+  "results/b20_02/p3_console.log": "8bca16c309fce3d8bf16e87009fea841d1815c6f1c1fb7128205df656e1a34e7",
+  "results/b20_02/unwrapped/smoke_k3_7.json": "4af328ac36d06fe2878189740d04bdd4f8155a9ed6d9f48be3b48686c0c45a72",
+  "results/b20_02/unwrapped/bisect_A_k9_detP2_limit400k.json": "cb905e0f0c26aa4497c16f8d2d654391defb8a74520f9de917f879c5a0c2bfc9",
+  "results/b20_02/unwrapped/bisect_B_k9_detP2_limit800k.json": "2f77969220ceaa9d4c72d67e11ca12701909716fd020f06efad2a87e56d92864",
+  "results/logs/b20_02_p1_koszul5_k3_10.pid": "be2d90a9aa22421b909ed8b71f0f4ffb676b2d1a653e7942d5f4eb46378100e6",
+  "results/logs/b20_02_p1_koszul5_k3_10_resources.json": "9af23c71fd1fabc0d239f32177ec8a9a132b434213afd62d4b9a7fc1e6674f06",
+  "results/logs/b20_02_p1r_koszul5_k3_12.pid": "b1ba491f747523a23c77b473723f4c3b7b42a87cd4a214189fdc30df96e2ba8d",
+  "results/logs/b20_02_p1r_koszul5_k3_12_resources.json": "d5071f0a54ca84b710f9c78484ccd30eedeb9702b6503d05a7f331aea1cdf91b",
+  "results/logs/b20_02_p3_price16_and_koszul5_k3_12.pid": "beed8c6e5b3ad81856450fea80c03553dd19dac7d79ff1e4bb231bb4fd68c231",
+  "results/logs/b20_02_p3_price16_and_koszul5_k3_12_resources.json": "9fb30e7cbf748019bfcbb63f6b7967093a691943035424e4134d705d4b31aef0"
+ },
+ "inputs_copied_sha256": {
+  "results/b20_02/inputs/p2_quinary_macaulay.json": {
+   "sha256": "05272bfc0b0be15c4c870637ab3f371d79be53bf044f9fbe4c15a704c40c193e",
+   "expected": "05272bfc0b0be15c4c870637ab3f371d79be53bf044f9fbe4c15a704c40c193e",
+   "match": true
+  },
+  "results/b20_02/inputs/p3_koszul2_exact.json": {
+   "sha256": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+   "expected": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+   "match": true
+  }
+ },
+ "sibling_reads_rehash": {
+  "../B15-10/docs/b20_10_review.md": {
+   "sha256_now": "021be68f748e8f05e0c8efcd7c50bd58bede1a34b420c2632f3006612fb3a5fa",
+   "sha256_at_read": "021be68f748e8f05e0c8efcd7c50bd58bede1a34b420c2632f3006612fb3a5fa",
+   "unchanged": true
+  },
+  "../B15-10/docs/b18_10_review.md": {
+   "sha256_now": "dc1cc655a95bcadb8e739f00ef89fa090722d3e0f9dc92b85f0c7b13118f8a91",
+   "sha256_at_read": "dc1cc655a95bcadb8e739f00ef89fa090722d3e0f9dc92b85f0c7b13118f8a91",
+   "unchanged": true
+  },
+  "../B15-12/docs/b20_12_ledger.md": {
+   "sha256_now": "585ee994a8667e2d5bdceb6116f6fa53a9d79d2c236ba0d767f3fa33da8a835c",
+   "sha256_at_read": "585ee994a8667e2d5bdceb6116f6fa53a9d79d2c236ba0d767f3fa33da8a835c",
+   "unchanged": true
+  },
+  "analysis/b15_bound.py": {
+   "sha256_now": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+   "sha256_at_read": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+   "unchanged": true
+  }
+ },
+ "git_pins_sha256_at_82633a60": {
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/scope_corrigendum/CORRIGENDUM.md": "883916018ec1ddea24c0ad2b2546537aeac37752c62c421a7e22d5d5fd14d37f",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/scope_corrigendum/REVISED_VERDICT.md": "dfce2ec26c437335089509eda3bfce2c3595e2012f66f6186a4e6b81ae9710a4",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/scope_corrigendum/CLAIM_SCOPE_TABLE.md": "9b580fbf2ece4d737f03cceadd38b52c5910ff357e6be5e0df66af7a33989c89",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/REPORT.md": "3cacb625f9c99344c2722abab21515e6fa5e697fdb8f7fd7be7396e765860b43",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/MANIFEST.json": "470b40bc51eabbb7d3774cacc3eeadb595c9071f67daea0d5d7d9044c01550a7",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/pilots/p2_quinary_macaulay.py": "e1875c51a99257bcbdb86a7583b6010f0b933941ca5b6b5aa63366e369e112c7",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/pilots/p2_quinary_macaulay.json": "05272bfc0b0be15c4c870637ab3f371d79be53bf044f9fbe4c15a704c40c193e",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/pilots/p3_koszul2_exact.py": "0ddb4a73f48e9efa0f61dd471a782fb41f0e8eae2fb0660e65e23f390064b1fc",
+  "docs/post_b19_20260917/claude_gkz_incidence_20260917/pilots/p3_koszul2_exact.json": "a83162c2941e1305440cce11ebccdb181408d7471c7dd113ec4be3aeb0f0f151",
+  "docs/post_b19_20260917/astra_gkz_degenerations_20260917/REPORT.md": "c79145e0077beeb05527a970529d9822e5c331043dd977827b7ef38459563c5c"
+ },
+ "literature": {
+  "dimca_1210.1795v4.pdf": {
+   "sha256": "20b96f5830291574137000073237b9081e134e45d52c89d9981996e5a83c9c05",
+   "kept_in": "session scratchpad (not in the delivery tree)",
+   "label": "PRIMARY at statement level (Remark 3.5, 3.6)"
+  }
+ },
+ "counts": {
+  "outputs_hashed": 18,
+  "outputs_listed": 18,
+  "inputs_copied_match": [
+   2,
+   2
+  ],
+  "sibling_reads_unchanged": [
+   4,
+   4
+  ],
+  "git_pins_hashed": 10
+ }
+}

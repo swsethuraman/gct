@@ -1,0 +1,89 @@
+{
+ "script": "analysis/b20_02_price16.py",
+ "NV": 16,
+ "pricing_only": true,
+ "ranks_computed": false,
+ "dimS2": 136,
+ "dimS5": 15504,
+ "K2_8_rows": 16320,
+ "K1_8_cols": 248064,
+ "det4": {
+  "label": "det_4, torus Z^4 x Z^4 (row and column sums)",
+  "M5": {
+   "matrix": "M_5 = d_1^{(5)}",
+   "rows_total": 2176,
+   "cols_total": 15504,
+   "dense_entries_unblocked": 33736704,
+   "dense_bytes_unblocked_8B": 269893632,
+   "n_blocks_nonempty": 784,
+   "largest_block_rows_cols": [
+    25,
+    33
+   ],
+   "largest_block_bytes_8B": 6600,
+   "sum_block_entries": 36768,
+   "sum_block_bytes_8B": 294144,
+   "elimination_flops_upper_bound": 444288,
+   "rows_in_blocks_without_columns": 0,
+   "cols_in_blocks_without_rows": 7104
+  },
+  "D8": {
+   "matrix": "D_8 = d_2^{(8)}",
+   "rows_total": 16320,
+   "cols_total": 248064,
+   "dense_entries_unblocked": 4048404480,
+   "dense_bytes_unblocked_8B": 32387235840,
+   "n_blocks_nonempty": 2449,
+   "largest_block_rows_cols": [
+    192,
+    528
+   ],
+   "largest_block_bytes_8B": 811008,
+   "sum_block_entries": 2656128,
+   "sum_block_bytes_8B": 21249024,
+   "elimination_flops_upper_bound": 122997792,
+   "rows_in_blocks_without_columns": 0,
+   "cols_in_blocks_without_rows": 80832
+  }
+ },
+ "zper3": {
+  "label": "z per_3, torus Z x Z^3 x Z^3 x Z^6",
+  "M5": {
+   "matrix": "M_5 = d_1^{(5)}",
+   "rows_total": 2176,
+   "cols_total": 15504,
+   "dense_entries_unblocked": 33736704,
+   "dense_bytes_unblocked_8B": 269893632,
+   "n_blocks_nonempty": 850,
+   "largest_block_rows_cols": [
+    20,
+    7
+   ],
+   "largest_block_bytes_8B": 1120,
+   "sum_block_entries": 5487,
+   "sum_block_bytes_8B": 43896,
+   "elimination_flops_upper_bound": 19899,
+   "rows_in_blocks_without_columns": 720,
+   "cols_in_blocks_without_rows": 12978
+  },
+  "D8": {
+   "matrix": "D_8 = d_2^{(8)}",
+   "rows_total": 16320,
+   "cols_total": 248064,
+   "dense_entries_unblocked": 4048404480,
+   "dense_bytes_unblocked_8B": 32387235840,
+   "n_blocks_nonempty": 6757,
+   "largest_block_rows_cols": [
+    138,
+    105
+   ],
+   "largest_block_bytes_8B": 115920,
+   "sum_block_entries": 293040,
+   "sum_block_bytes_8B": 2344320,
+   "elimination_flops_upper_bound": 6194592,
+   "rows_in_blocks_without_columns": 1575,
+   "cols_in_blocks_without_rows": 181353
+  }
+ },
+ "wall_seconds": 0.6134752000216395
+}
