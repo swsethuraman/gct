@@ -8,6 +8,14 @@ tree `f0428d81`.
 **ACCEPT.** Nineteen cells, nineteen closed, and with the four already settled the
 degree-five five-row family is complete. This closes the last live thread in batch 18.
 
+**One correction to my own wording, caught on review of this review.** I first wrote
+that all 23 cells close at `D = 0` exactly. That is true of 22. The rectangle `(4^5)`
+is excluded by *padding vanishing* — B18-01 Prop 8.4 gives `i_pad = 1 = a`, hence
+`m_pad = 0` and `D <= 0` — and says nothing about `m_det`, which remains undetermined.
+The uniform statement across the family is `D <= 0`; `D = 0` holds in 22 of 23. Every
+cell is excluded as a gap candidate either way, so the conclusion is unchanged and the
+index entry is not.
+
 The delivery is stronger than what was asked for in three ways, and its recorded failure
 is the most valuable single item in the batch.
 
@@ -87,7 +95,7 @@ the `(4d−8, 2^4)` covariant family. Worth reconciling in the ledger, not a def
 
 | id | statement | status |
 |---|---|---|
-| `degree_five_family_retired` | All 23 five-row cells at `d = 5` are closed with `D = 0` **exactly**: 19 by direct evaluation here, 4 previously. In every one `a = 1`, `m_det = 1` and `m_pad = 1`, so `i_det = i_pad = 0`. The set identity 19 + 4 = 23 is confirmed independently | PROVED; census and set identity recomputed here |
+| `degree_five_family_retired` | All 23 five-row cells at `d = 5` are excluded as gap candidates. **22 of them have `D = 0` exactly** — 19 by direct evaluation in the sweep, 3 previously — with `a = 1`, `m_det = 1` and `m_pad = 1`, so `i_det = i_pad = 0`. The 23rd, the rectangle `(4^5)`, has only `D <= 0`: it is excluded by padding vanishing (`i_pad = 1 = a`, so `m_pad = 0`), and **its determinant multiplicity `m_det` is undetermined**. The uniform statement across all 23 is `D <= 0`. The set identity 19 + 4 = 23 is confirmed independently | PROVED; census and set identity recomputed here |
 | `exact_hwv_by_projector_and_lift` | A Casimir projector over `F_p`, lifted by CRT and rational reconstruction and then verified over `Z` by exact annihilation under all four simple raising operators, reaches `K = 11640` in 14.0 s and 80 MiB where compressed elimination needs `O(K^2)`. The modular step searches; the integer step proves | PROVED / MEASURED |
 | `a_vacuous_pass_is_invisible` | A raising-operator check indexed in the source weight space instead of the shifted target space is **empty**, and passes vacuously in every cell. The remedy is not the fix but the instrument: record the shifted-weight target dimension in every certificate, so a vacuous pass is visible without rerunning | RECORDED defect and standing rule |
 | `thirty_four_of_thirty_four` | 34 of 34 five-row cells tried across `d = 5, 6` closed at the first determinant point. **A prior, not a theorem.** It says nothing about an untested cell and excludes no length | RECORDED |
