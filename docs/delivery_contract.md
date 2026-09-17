@@ -193,3 +193,53 @@ the seams are the integrator's:
 - two file references in an integrator review that were never written
 
 Sessions found all of those. Keep doing it.
+
+## 11. Two rules added in batch 19 (B19-11), from what batch 18 paid for
+
+### 11.1 Any check whose subject can be empty ships the size of what it checked
+
+A batch-18 prototype indexed its raising operators in the **source** weight space
+instead of the shifted **target** space. The operators were therefore empty, every
+"residual is zero" verification passed vacuously, and nothing in the output said so.
+The error was caught only because the producer rebuilt the operators against the
+correct target spaces and recorded their dimensions.
+
+**The rule.** A certificate for any linear check — an operator annihilating a
+vector, a kernel, a rank, a restriction — records, for each operator or map:
+
+- the **source weight** and the **target weight** (or, outside weight spaces, the
+  named source and target);
+- **both dimensions**, source and target;
+- the **operator's nonzero count** (entries, or terms, as stored);
+- an **independent nontrivial action test**: the same operator applied to a fixed
+  vector that is *not* expected to lie in the kernel, with the nonzero count of the
+  result recorded. A zero here means the operator is empty or misindexed and the
+  main check proved nothing.
+
+A nonempty target space alone does not prove the operator was populated. A
+"residual zero" without the four items above is a claim, not a certificate. The
+same rule applies to any check whose subject can be empty: a filter that matched no
+files, a census that enumerated no cells, a restriction to a subspace of dimension
+zero. Ship the size.
+
+Batch-19 reference implementation: `analysis/b19_11_vectors.py` in this worktree,
+whose per-operator block records exactly these fields for the batch-18 sweep vectors.
+
+### 11.2 Fetched literature stays out of the delivery tree
+
+Third-party papers, their PDFs and full-text extractions are **not** delivered. Keep
+them in a local reference cache outside every path an add list can take
+(`docs/`, `analysis/`, `results/`, `delivery/`). In the report, record for each
+source consulted:
+
+- the identifier (arXiv number, DOI, or journal reference) **with its version**;
+- the source URL and the **access date**;
+- the **theorem, proposition, table or page** actually relied on;
+- optionally, the SHA-256 of the copy you read, so a reader can confirm they have
+  the same bytes.
+
+Page images and text extractions are literature too. **Do not delete or untrack
+literature already committed anywhere in the tree**: inventory it — path, size,
+hash, tracked or untracked — and leave remediation to the integrator under separate
+authorisation. Batch 19's inventory is in
+`B15-11/results/b19_11/literature_inventory.json`.
