@@ -436,6 +436,7 @@ price: none. Until then every batch-18 line in this ledger is a hypothesis.
 | 16:09–17:04 | No further change to either file; no output from slots 02, 05, 06. Status of the two writing sessions unknown (paused, thinking, or ended). |
 | 17:04 | §2a transcribed from the review as it stands. Both reports remain partial. |
 | 17:05 | `B15-02/docs/b18_02_report.md` appeared (94 lines, §§0–1). Claims recorded as H12–H14; no candidate, no `b`, no gap; its `d = 2` control is explicitly a method validation. Slots 05 and 06 still silent. |
+| 2026-09-16 | Slot 01's revision now reads COMPLETE on disk (names the 23 degree-five five-row cells, all `a = 1`, as its carrier family; one excluded; no equation, no gap). Not yet transcribed claim by claim; unreviewed. On request, this slot wrote a theory note `docs/b18_12_coefficient_algebra.md` (fibre-constancy bound `m_det <= min(a, s - rho_L + u_L)`; contracted locus `Z` nonempty but blind to `>= 5` rows; block-triangular fibres vacuous; one priced diagnostic on `(4^6)`), with two bounded checks under `analysis/b18_12_*` and `results/b18_12/`. It nominates no cell and produces no gap. |
 
 Files produced by this slot: `docs/b18_12_ledger.md` only. No computation was run.
 No lease was requested. No git command beyond the two read-only `rev-parse` calls.
