@@ -1,0 +1,78 @@
+{
+ "inputs": {
+  "results/b20_10/inputs/transverse_triple_rank3_at_82633a60.json": "4ac3f89688e3515e4252e51192b70307ac600c4a9e20ae1f8d491c1ebf3d2804",
+  "results/b20_10/inputs/independence_q3_q7_e_n02_at_82633a60.json": "1f0da0af2c8b3129f9d08dd02b6e232cd4d1a6b37b54b0725f6c8e4fde423d7e",
+  "results/b20_10/inputs/f1_new_point_minor_at_82633a60.json": "fce1a1a3791781f53b66a960ffe5d65207d424a4f6c34770b4b5dae2b68c18b6"
+ },
+ "a_transverse_triple": {
+  "rebuilt_matrix": [
+   [
+    456851,
+    3402,
+    156683
+   ],
+   [
+    30271,
+    137059,
+    233094
+   ],
+   [
+    120670,
+    19278,
+    389529
+   ]
+  ],
+  "stored_matrix": [
+   [
+    456851,
+    3402,
+    156683
+   ],
+   [
+    30271,
+    137059,
+    233094
+   ],
+   [
+    120670,
+    19278,
+    389529
+   ]
+  ],
+  "matrix_matches": true,
+  "det_mod_P": 225843,
+  "stored_det": 225843,
+  "det_matches": true,
+  "rank_mod_P": 3
+ },
+ "b_independence": {
+  "minors": {
+   "[0,1,2,3]": 426380,
+   "[0,1,2,4]": 191230,
+   "[0,1,3,4]": 255288,
+   "[0,2,3,4]": 485311,
+   "[1,2,3,4]": 35010
+  },
+  "stored": {
+   "[0,1,2,3]": 426380,
+   "[0,1,2,4]": 191230,
+   "[0,1,3,4]": 255288,
+   "[0,2,3,4]": 485311,
+   "[1,2,3,4]": 35010
+  },
+  "all_match": true,
+  "rank_mod_P": 4,
+  "stored_rank": 4
+ },
+ "c_forbidden_matrix": {
+  "rows": 14,
+  "rank_mod_P": 2,
+  "stored_rank": 2,
+  "three_by_three_minors_checked": 364,
+  "nonzero_3x3_minors": 0,
+  "relation_residuals_all_zero": true,
+  "degree12_rows_rank": 1,
+  "degree11_rows_rank": 2
+ },
+ "seconds": 0.0019981861114501953
+}

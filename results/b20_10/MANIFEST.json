@@ -1,0 +1,194 @@
+{
+ "schema": "gct-b20-10-review-manifest/1",
+ "slot": "B20-10",
+ "phase": "1 (alone)",
+ "author": "Claude Code (Fable 5.1)",
+ "sealed_utc": "2026-09-17T18:56:28Z",
+ "worktree": "work/batch15_workers/B15-10",
+ "branch": "b15-10-portable-witness",
+ "provenance_before_any_write": {
+  "HEAD": "5764e7ffc03439b7f34b912ff9ff984554c0884e",
+  "tree": "6d80f069ba4858389a5388e4584cf514c9a6ba71",
+  "status_porcelain": [
+   "?? results/logs/b15_10_runtime_native_20260913.pid",
+   "?? results/logs/b15_10_runtime_native_20260913_resources.json"
+  ],
+  "recorded_utc": "2026-09-17T18:20:37Z"
+ },
+ "git_commands_used": [
+  "rev-parse",
+  "status --porcelain",
+  "log",
+  "show",
+  "ls-tree",
+  "grep",
+  "cat-file",
+  "for-each-ref",
+  "branch --show-current",
+  "diff --stat"
+ ],
+ "git_mutations": "none (no commit, push, fetch, checkout, stash, reset)",
+ "reviewed_commits": {
+  "archive": "82633a60893236fab4fbc317df416e1b8a349005",
+  "B15-01": "6b16151328d38dc0ce39bcfab51e83459a035d79",
+  "B15-02": "75ddb900a0b47b911c53f941885bac73b358eacb",
+  "B15-05": "e3aa25b42399595e0959101e098d20d6bf069f13",
+  "B15-06": "0a236381df697b07fa35e073fab34435d33e5f4a",
+  "B15-10": "5764e7ffc03439b7f34b912ff9ff984554c0884e",
+  "B15-11": "b9dcbbc18a13dc6affe0825fdbed0c5b93f52da9",
+  "B15-12": "f008ac39d5a58c9afe61504108e537ac5c898e7a"
+ },
+ "committed_inputs_replayed": {
+  "B15-02:results/b19_02/rect_4_4_4_4_4.json@75ddb900": "16aa1626c19c179964bac83b420c6c670988d933ad2d1abf159af44cd326e0ae",
+  "archive:claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/transverse_triple_rank3.json@82633a60": "4ac3f89688e3515e4252e51192b70307ac600c4a9e20ae1f8d491c1ebf3d2804",
+  "archive:claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/independence_q3_q7_e_n02.json@82633a60": "1f0da0af2c8b3129f9d08dd02b6e232cd4d1a6b37b54b0725f6c8e4fde423d7e",
+  "archive:claude_source_vectors_20260917/final_arc_diagnostic/results/f1_new_point_minor.json@82633a60": "fce1a1a3791781f53b66a960ffe5d65207d424a4f6c34770b4b5dae2b68c18b6"
+ },
+ "wrapper": {
+  "path": "work/batch15_workers/B15-02/analysis/b15_bound.py",
+  "sha256_on_disk_crlf": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854",
+  "interpreter": "work/batch15_workers/B15-02/.venv/python.exe",
+  "interpreter_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+  "python": "3.12.10",
+  "args": "--seconds 60 --memory-mb 512"
+ },
+ "pilots": [
+  {
+   "name": "b20_10_p1_independent_invariant",
+   "kind": "INDEPENDENT EVALUATOR",
+   "exit_code": 0,
+   "wall_seconds": 1.06663859996479,
+   "peak_job_memory_bytes": 12963840,
+   "job_object_enforced": true,
+   "receipt": "results/b20_10/b20_10_p1_independent_invariant_resources.json",
+   "output": "results/b20_10/p1_independent_invariant.json"
+  },
+  {
+   "name": "b20_10_p2_spot_replay_certificates",
+   "kind": "REPLAY",
+   "exit_code": 0,
+   "wall_seconds": 0.07942520000506192,
+   "peak_job_memory_bytes": 12693504,
+   "job_object_enforced": true,
+   "receipt": "results/b20_10/b20_10_p2_spot_replay_certificates_resources.json",
+   "output": "results/b20_10/p2_spot_replay_certificates.json"
+  }
+ ],
+ "pilot_budget": {
+  "allowed": "3 wrapped pilots, 60 s / 512 MiB each, 180 s total",
+  "used": "2 pilots, 1.15 s total",
+  "cap_hits": 0,
+  "failures": 0,
+  "retries": 0
+ },
+ "unwrapped_work": [
+  {
+   "name": "verify_layers.py",
+   "kind": "hash replay against git objects (read-only)",
+   "wall_seconds_approx": 16,
+   "output": "results/b20_10/verify_layers_out.json"
+  },
+  {
+   "name": "Ballico 1995 fetch attempts",
+   "kind": "network, read-only",
+   "count": 3,
+   "outcome": "all failed (EMIS redirects to zbMATH; zbMATH review text licence-blocked; EuDML metadata only); nothing kept"
+  }
+ ],
+ "subagent_extractions": {
+  "note": "model output preserved as data, not verdicts",
+  "files": [
+   "results/b20_10/extractions/scope_extraction.md",
+   "results/b20_10/extractions/d5_sweep.txt"
+  ],
+  "literature_trace": "delivered in-session; every load-bearing quote re-read by the reviewer in the committed text"
+ },
+ "pre_formed_verdicts": "results/b20_10/preverdicts_formed_before_reading.md (written before the corresponding deliverables were opened; see docs/b20_10_review.md section 0)",
+ "sealed_reports_or_manifests_edited": "none",
+ "files": {
+  "analysis/b20_10_p1_independent_invariant.py": {
+   "sha256": "977ea9b695cb1f611fd817e8aab36ae61ad222a605c0768f0e1e9710caa4370e",
+   "bytes": 7347
+  },
+  "analysis/b20_10_p2_spot_replay_certificates.py": {
+   "sha256": "ed443ae711798a951e170903cd5df3700a19b2dcf2bc1a3ab2200e8d62d34999",
+   "bytes": 5226
+  },
+  "docs/b20_10_review.md": {
+   "sha256": "021be68f748e8f05e0c8efcd7c50bd58bede1a34b420c2632f3006612fb3a5fa",
+   "bytes": 65714
+  },
+  "results/b20_10/b20_10_p1_independent_invariant.pid": {
+   "sha256": "f69d253cedff7bef297c49d24e7bf172b14127be4ca8a5e1239907b98511a311",
+   "bytes": 6
+  },
+  "results/b20_10/b20_10_p1_independent_invariant_resources.json": {
+   "sha256": "96f52348e47b0c23df8e54bb082eb414727ff73d485d6bf5d99ebfc27b030b2d",
+   "bytes": 804
+  },
+  "results/b20_10/b20_10_p2_spot_replay_certificates.pid": {
+   "sha256": "4017442fadb59030413f55bf47331be03cd59390145cbe1d5444661776cfbfb3",
+   "bytes": 7
+  },
+  "results/b20_10/b20_10_p2_spot_replay_certificates_resources.json": {
+   "sha256": "0c906589c2cbba3f14121b98679105f40483bf8c2abe08ecedb35c7b327de5a8",
+   "bytes": 808
+  },
+  "results/b20_10/extractions/d5_sweep.txt": {
+   "sha256": "3b2b829864559825bd647d7b214852cb4097b6a3da4ce563c8a6f30a506a197b",
+   "bytes": 132886
+  },
+  "results/b20_10/extractions/scope_extraction.md": {
+   "sha256": "4ae7fd2b9c49453525ec17574497becb57c4dff0b144365e92ba0c4d9fa67fb8",
+   "bytes": 123230
+  },
+  "results/b20_10/inputs/f1_new_point_minor_at_82633a60.json": {
+   "sha256": "fce1a1a3791781f53b66a960ffe5d65207d424a4f6c34770b4b5dae2b68c18b6",
+   "bytes": 6258
+  },
+  "results/b20_10/inputs/independence_q3_q7_e_n02_at_82633a60.json": {
+   "sha256": "1f0da0af2c8b3129f9d08dd02b6e232cd4d1a6b37b54b0725f6c8e4fde423d7e",
+   "bytes": 982
+  },
+  "results/b20_10/inputs/rect_4_4_4_4_4_at_75ddb900.json": {
+   "sha256": "16aa1626c19c179964bac83b420c6c670988d933ad2d1abf159af44cd326e0ae",
+   "bytes": 8428
+  },
+  "results/b20_10/inputs/transverse_triple_rank3_at_82633a60.json": {
+   "sha256": "4ac3f89688e3515e4252e51192b70307ac600c4a9e20ae1f8d491c1ebf3d2804",
+   "bytes": 1260
+  },
+  "results/b20_10/p1_independent_invariant.json": {
+   "sha256": "5ade4c199f1959f74383178aa3d52c02a4dfe5a5573ca80bee066c52a414f747",
+   "bytes": 1509
+  },
+  "results/b20_10/p2_spot_replay_certificates.json": {
+   "sha256": "0850bd68595f98bd37a6fbe380d3b0128cbb93b9f21a6e59a23a287434430176",
+   "bytes": 1596
+  },
+  "results/b20_10/preverdicts_formed_before_reading.md": {
+   "sha256": "60ac243f1049384ecf376e6abeb9d2807b12ec8d2dddd4ef6dc9781fa48b2277",
+   "bytes": 5255
+  },
+  "results/b20_10/unresolved_manifest_hashes_by_key.json": {
+   "sha256": "cfbbf5fbf410167471d368c8863ce6cd49d285ab0f54a65ef95159fba8f9cea7",
+   "bytes": 16494
+  },
+  "results/b20_10/verify_layers.py": {
+   "sha256": "18634bc4df6994f71f72396bb458e72f6c98a18adfd6245368ff42955d002300",
+   "bytes": 5508
+  },
+  "results/b20_10/verify_layers_out.json": {
+   "sha256": "cf942593207bd52f17460b82b447b745b6204c48cc11ef037367e844f9d5ffc5",
+   "bytes": 25604
+  },
+  "results/logs/b20_10_p1_independent_invariant_resources.json": {
+   "sha256": "96f52348e47b0c23df8e54bb082eb414727ff73d485d6bf5d99ebfc27b030b2d",
+   "bytes": 804
+  },
+  "results/logs/b20_10_p2_spot_replay_certificates_resources.json": {
+   "sha256": "0c906589c2cbba3f14121b98679105f40483bf8c2abe08ecedb35c7b327de5a8",
+   "bytes": 808
+  }
+ }
+}

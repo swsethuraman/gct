@@ -1,0 +1,65 @@
+{
+ "input_path": "results/b20_10/input_rect_4_4_4_4_4_at_75ddb900.json",
+ "input_sha256": "16aa1626c19c179964bac83b420c6c670988d933ad2d1abf159af44cd326e0ae",
+ "fermat_control": {
+  "value": 5733089280,
+  "expected": 5733089280,
+  "pass": true
+ },
+ "generic_control": {
+  "monomials": 61,
+  "value": -526212288,
+  "nonzero": true
+ },
+ "det_points": [
+  {
+   "recorded_value": -481390358496125537,
+   "independent_value": -92426948831256103104,
+   "nonzero": true,
+   "ratio_independent_over_recorded": "192",
+   "F_monomials": 69
+  },
+  {
+   "recorded_value": 6830962538921450404,
+   "independent_value": 1311544807472918477568,
+   "nonzero": true,
+   "ratio_independent_over_recorded": "192",
+   "F_monomials": 70
+  },
+  {
+   "recorded_value": 4457433896125063706,
+   "independent_value": 855827308056012231552,
+   "nonzero": true,
+   "ratio_independent_over_recorded": "192",
+   "F_monomials": 70
+  }
+ ],
+ "ratio_constant_across_three_det_points": true,
+ "ratio": "192",
+ "m_det_floor_independent": 1,
+ "pad_points": [
+  {
+   "recorded_value": 0,
+   "independent_value": 0,
+   "F_monomials": 70
+  },
+  {
+   "recorded_value": 0,
+   "independent_value": 0,
+   "F_monomials": 69
+  },
+  {
+   "recorded_value": 0,
+   "independent_value": 0,
+   "F_monomials": 65
+  }
+ ],
+ "all_pad_values_zero": true,
+ "counts": {
+  "d7_p4": 11,
+  "d7_inner_sum": 955,
+  "d7_crude_triples": 10505,
+  "d26_crude_triples": 424193140
+ },
+ "seconds": 0.9452624320983887
+}
