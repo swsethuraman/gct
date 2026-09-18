@@ -11,16 +11,30 @@ padding; reviewer last). Same six boxes, same rules.
 ## 1. What this batch cannot produce
 
 No positive multiplicity gap (B22-01's cell is `D = −1`, two lineages). No asymptotic
-improvement over LMR. B22-02 *may* produce an equation nonzero on padding — the third of four
-achievements, a separation, never the fourth. "No five-row determinant equation known to be
-nonzero on padding" stays the phrasing until a certificate exists.
+improvement over LMR. B22-02 *could have* produced an equation nonzero on padding — the third
+of four achievements, a separation, never the fourth — and did not (§8.2b). "No five-row
+determinant equation known to be nonzero on padding" stays the phrasing.
 
 ---
 
 ## 2. Independently reviewed
 
-Nothing in Batch 22 yet. B22-10 reviews both producers after they report. Everything below in
-§§3–4 is producer-only (G18).
+**B22-10 reported 2026-09-18 (`docs/b22_10_review.md`, sealed by `results/b22_10/MANIFEST.json`:
+14 files bound, 25 pinned inputs, 0 disagreements, 17/17 B22-01 files matching B22-01's own
+manifest; HEAD `f7727cb7` and tree unchanged; no commit, push or fetch). Three wrapped pilots,
+1.0 s of 180 s, no cap hit.** Transcribed in §8.4. What it moves out of producer-only:
+
+| item | now |
+|---|---|
+| **Theorem M, all parts** | **PROVED**, two lineages. Membership, spanning and the structured formula check out. Part (iv) ("these 70 patterns are a basis") was pre-verdicted CONDITIONAL on `arc_target`'s `b_L(11) = 70`, `b_L(12) = 4`; the reviewer **recomputed both by an exact character computation sharing nothing with `arc_target`'s method** and got 70 and 4. So the 70 is *derived*, not matched to a search target, and the `arc_target` upper halves are no longer a single-lineage dependency of this theorem |
+| the certification | REPLAYED independently: `70 × 70` determinant `132757`, top minor `136525` |
+| the decisive run | REPLAYED from the shipped rows by the reviewer's own code: rank 2 mod `P` on the 140 rows, relation residual 0 on every row, `det(g)^{-4}` normalisation confirmed (B21-10 R3), span control 60/60 **against the original recorded sources, not the producer's copies** |
+| the source condition | REPLAYED: `C2(n̄) = 0`, `C4(n̄) = 499917, 487898` |
+| the label | **CERTIFIED-modular confirmed**; the `Q` form OPEN |
+| B22-02's six lemmas | **all PROVED**; rank 6 and rank 36 replayed by hand; outcome (3) confirmed |
+
+Two corrections and two disputes are in §§3–4 and §8.4. Everything not listed above stays
+producer-only (G18).
 
 ---
 
@@ -30,9 +44,11 @@ Nothing in Batch 22 yet. B22-10 reviews both producers after they report. Everyt
 |---|---|---|
 | `rank(C|_U) = 2` over `Q` (B22-01.15) | **OPEN** — rank 3 not excluded; would need `P = 524287` to divide every `3x3` minor of the exact integer rows, invisible to a mod-`P` runner | the `Q` form of `arc_target` Prop. 7.1 (B22-01.17, CONDITIONAL) |
 | Theorem M's classical inputs: Cauchy, Plücker generation, complete reducibility of `L`, FFT for `SL_3` | UNREAD-CLASSICAL (labelled at the point of use, G14′) | B22-01.3–.4 |
-| `b_L(11) = 70`, `b_L(12) = 4` upper halves (inherited from `arc_target`) | the lower halves now have a second lineage (B22-01.8); upper halves still `arc_target` only | Theorem M(ii)'s "spanning = basis" step |
+| ~~`b_L(11) = 70`, `b_L(12) = 4` upper halves~~ | **STRUCK 2026-09-18: both recomputed exactly by B22-10, method-disjoint from `arc_target`. Two lineages; no longer a dependency** | — |
 | (T2), EH C1/C3, Ballico | unchanged | as Batch 21 |
-| `D45 ∩ P5 = {l·C : C ∈ D35}`? (B22-02 §4) | **OPEN** — the containment `⊇` is proved (block-diagonal identity); equality undetermined | the only constructive route B22-02 left standing (row 13, Nullstellensatz lift) |
+| ~~`D45 ∩ P5 = {l·C : C ∈ D35}`?~~ | **ANSWERED NO, 2026-09-18 (B22-10, pilot 2): `D45 ∩ P5` is *strictly larger*. A `4 × 4` compression-type matrix has determinant `l·C` for (generically) any cubic `C` through a plane; that family has dimension ≥ 35 against exactly 33 for the `D35` family.** The record's "32" was also off by one — it mixed affine and projective counts (hence the reviewer's new gate on dimensions) | row 13's Nullstellensatz lift, which now has a *larger* locus to vanish on |
+| What `D45 ∩ P5` actually is (its irreducible components) | **OPEN** — only two families are known to lie in it; the classification is not done | any lift argument; the reviewer ranks this slot (c) |
+| Rank thresholds of `d_j` at `N = 6, 7, 8` | **OPEN** — B22-10 disputes the scope of B22-02 rows 1–2: they are PROVED-kills at `N = 5` and at the stated `N = 16` gradings, **only ASSESSED at `N = 6, 7, 8`, which are inside the window** | the ledger's own §4 line, corrected below; the next board |
 | `onset I(D35) ∈ [8, 65]` | ADOPTED record-internal; source "paper 1" UNREAD | B22-02 L6's degree bound |
 | Cap theorem at `n = 3` (`cap(3) = 65`) | ADOPTED, modulo Kleiman / Dimca / Gulliksen–Negård | B22-02 L6's right-way clause |
 
@@ -102,7 +118,24 @@ not a polynomial condition); Hessian and polar-map degrees (l.s.c., drop or tie 
 
 **Label-collision note (G-label, PARTIAL on the Batch 20 board):** B22-02 row 1's "Theorems
 A/B" are the rank-threshold theorems of the B19-02/B20-02 lineage, not B20-01's Theorem A
-(the five-row reduction). B22-10 should read them so.
+(the five-row reduction). **B22-10 confirms this reading.**
+
+**Corrections after review (2026-09-18, B22-10):**
+
+1. **My §4 line "rank thresholds of *any* `d_j`" overreached and is withdrawn.** The correct
+   scope is: PROVED-kill at `N = 5` and at the `N = 16` gradings B20-02/02b state;
+   **ASSESSED only at `N = 6, 7, 8`** — three variable counts inside the 5–8 window where the
+   rank-threshold family is *not* closed. This is the reviewer's dispute, and it is right.
+2. **`D45 ∩ P5 ⊋ {l·C : C ∈ D35}`** (above). Integrator observation, flagged as such and not a
+   result: B22-02 L6's "right-way" clause said the `cap(3) = 65` minors vanish on `D35` and
+   survive at smooth cubics. The locus a lift must vanish on is now known to be bigger than
+   `D35`, so whether those minors vanish on *it* is an open question that L6 does not answer.
+   The degree bound `deg f ≥ onset I(D35)` is unaffected (`D35` is still contained in it).
+3. **The pre-registration ordering** (B22-10's one correction to B22-01): the snapshot hash
+   `014aa002…` proves the snapshot's *content*, not that it was written first — the hash
+   appears only in files written at the end of the session, so the ordering rests on the
+   producer's word. The mathematics is untouched; the *procedure* is not self-verifying.
+   Gate G25 below fixes it going forward.
 
 ---
 
@@ -141,7 +174,7 @@ inputs; the successor handover should say producer memories are not part of the 
 |---|---|---|
 | B22-01 | **COMPLETE** — CERTIFIED-modular; `Q` OPEN; producer-only | `B15-01\docs\b22_01_report.md` `e2adc0f9adfa98e3…`; `results\b22_01\MANIFEST.json` `1931ab8f45ffe7a9…` (57 files); both sibling packets re-hashed 0 mismatches; HEAD `d5e9d885` unchanged |
 | B22-02 | **COMPLETE — outcome (3), gate not passed, the honest negative; producer-only** | `B15-02\docs\b22_02_report.md` `b41e4265809a0187…`; `results\b22_02\MANIFEST.json` `b19d12cdb2ef59e0…` (report + 8 pinned inputs; `numerical_runs: 0`); HEAD `7de65d7c` unchanged; 4 pre-existing 2026-09-13 receipts, nothing new under `results/logs/` |
-| B22-10 | NOT LAUNCHED — waits on PART 10 (commits of both producer packets) | — |
+| B22-10 | **COMPLETE — both packets reviewed; Theorem M PROVED with a strengthened part (iv); two scope corrections; three new gates** | `B15-10\docs\b22_10_review.md`; `results\b22_10\MANIFEST.json` (14 files, 25 pinned inputs, 0 disagreements); HEAD `f7727cb7` unchanged, uncommitted until PART 11 |
 | B22-12 | OPEN | this file |
 
 ---
@@ -221,11 +254,17 @@ spending a pilot — which is what the board asked for if that was the truth.
 
 ### 8.3 Open for the user
 
-- **The `Q` form.** Two routes: (i) exact or multi-prime rows at the 70 certified points,
-  ≈ 10⁴ evaluations, unpriced — an exceedance; (ii) the runner-free route (exact coordinates of
-  `q_3, q_7, n02` via `ε_4 → ε_3` pattern expansion), untested, possibly cheap. Recommendation:
-  price (ii) first, as a bounded task inside B22-10 or a tiny B22-01b; fund (i) only if (ii)
-  fails. Either way the answer is an existence statement in a `D = −1` cell.
+- **The `Q` form. SUPERSEDED by §8.4 — my recommendation was wrong on the price.** Two routes
+  were: (i) exact or multi-prime rows at the 70 certified points, ≈ 10⁴ evaluations,
+  unpriced — an exceedance; (ii) the runner-free route (exact coordinates of `q_3, q_7, n02`
+  via `ε_4 → ε_3` pattern expansion), untested, possibly cheap. I recommended pricing (ii)
+  first. **B22-10 ruled (ii) sound in principle but not cheap**: there is no shortcut from the
+  expansion to basis coordinates, so it amounts to an exact re-implementation of the runner and
+  needs an exceedance of its own. The cheapest decisive move is instead **(a′) a one-pilot
+  second-prime test, 45 runner evaluations**: a nonzero `3 × 3` minor at a second prime proves
+  `rank = 3` over `Q` and refutes the `Q` form outright; a zero result is only evidence. The
+  reviewer did not run it (new producer computation, not replay). **This is now the
+  recommendation**, and it is cheap enough that it does not need the user's exceedance.
 - **`D45 ∩ P5`.** B22-02's producer asks whether to fund its determination. Recommendation: not
   as a slot of its own. It is worth one question to B22-10 (is the equality plausible, and is
   the containment `⊇` correctly proved?) and, if the reviewer says the equality is the natural
@@ -235,6 +274,56 @@ spending a pilot — which is what the board asked for if that was the truth.
   ledger; `!results/logs/b22_*.pid` negation; no `-f`) → B22-10 with pins from
   `B22_COMMIT_RECEIPTS.json` → transcribe → close → a second housekeeping pass for the review
   and the closed ledger.
+
+### 8.4 B22-10, transcribed from its closing ledger (2026-09-18, ~13:00 UTC)
+
+**Outcome: both packets survive review; one producer claim strengthened, two scopes narrowed,
+one procedural defect found, three gates added.** Method labels as the reviewer gave them.
+
+**Strengthened.** Theorem M part (iv) moved CONDITIONAL → **PROVED** by the reviewer's own
+exact character computation of `b_L(11) = 70` and `b_L(12) = 4`, method-disjoint from
+`arc_target`. Note the governance point the reviewer makes about itself: *its own pilot*
+changed *its own pre-verdict*, not the producer's defence, and the pre-verdict file was left
+unedited. That is the pre-formed-verdict discipline working as designed, and it is the first
+time on this record that a reviewer's pilot has upgraded a producer's label.
+
+**Confirmed.** Every replay: `132757`, `136525`, rank 2 mod `P` on 140 rows, residual 0,
+`det(g)^{-4}`, span control 60/60 **against the original recorded sources** (a stronger control
+than the producer's own, which used the producer's copies), `C2(n̄) = 0`,
+`C4(n̄) = 499917, 487898`. Label **CERTIFIED-modular** stands; `Q` OPEN. B22-02's six lemmas
+all PROVED, rank 6 and rank 36 replayed by hand, outcome (3) confirmed.
+
+**Narrowed.** (1) B22-02 rows 1–2 are PROVED-kills at `N = 5` and the stated `N = 16` gradings
+only — **ASSESSED at `N = 6, 7, 8`**. My §4 line generalising them to "any `d_j`" is withdrawn
+(§4 correction 1). (2) `D45 ∩ P5 ⊋ {l·C : C ∈ D35}` — the equality B22-02 posed as its smallest
+concrete question is **false**, by an explicit second family (compression-type `4 × 4` matrices,
+`det = l·C` for generically any cubic through a plane), dimension ≥ 35 against 33; and the
+record's "32" was an affine/projective mix-up.
+
+**Procedural defect.** The pre-registration snapshot hash proves content, not ordering (§4
+correction 3). No mathematics is affected.
+
+**New gates, adopted as the reviewer numbered them (its numbering governs, G15′):**
+
+| gate | text |
+|---|---|
+| **G24** | Every dimension stated in the record says whether it is affine or projective. |
+| **G25** | The pre-registration snapshot's hash is pinned in the **first pilot's output**, not only in files written at the end, so ordering is self-verifying. |
+| **G9′** | A session's own tool memory is not an admissible input to anything. |
+
+**Naming collision, resolved here:** my proposed Batch 23 writing-slot gate was also called
+G24. The reviewer's G24 governs; **the writing gate is renumbered G26** in
+`BATCH23_PROPOSED_BOARD.md`. No other collision.
+
+**Template sentence the reviewer proposes (third occurrence of the `-f` premise):** a producer
+never writes "`git add -f`"; it reports "negation missing for `<prefix>`" instead. Adopted for
+every producer prompt from Batch 23.
+
+**Housekeeping:** B22-10's three `b22_10_*.pid` receipts need a `!results/logs/b22_10_*.pid`
+negation in PART 11's rules commit. Not `-f`.
+
+**Slot order the reviewer recommends:** (a′) the second-prime test; then (c) classifying
+`D45 ∩ P5` and (b) the row-10 theory slot, in parallel; then (d) the paper. No cell nominated.
 
 ---
 
@@ -247,3 +336,11 @@ spending a pilot — which is what the board asked for if that was the truth.
   staged and hashed; the manifest's 8 input hashes match the values already on this record for
   `b20_02`, `b20_02b`, `b21_10`, `b20_10`; §8.2b transcribed as outcome (3). Both producers
   complete; the batch waits on PART 10.
+- ~11:25 PART 10 complete: six commits, 63 content paths, all pushed; thirteen branches level
+  with origin. 58/58 manifest-bound files matched before staging; 63/63 blobs after. Two
+  departures recorded by the housekeeper: `analysis/b22_01_*` added to B15-01's rules patterns
+  (the brief omitted it); B15-02/B15-12 rules subjects dropped "and delivery tracking" (no
+  `.pid`). The brief's phrase "failed pilot-1 *certify receipt*" was wrong — see §8.4.
+- ~12:45 B22-10 reported. §2 rewritten, §3 two rows struck and three added, §4 three
+  corrections, §8.3 superseded, §8.4 transcribed. Batch 22 is closed on the mathematics and
+  waits on PART 11 for the record.
