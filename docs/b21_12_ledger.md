@@ -210,3 +210,18 @@ the user's exceedance. Whatever the answer, it is an existence statement or a cl
 `D = −1` cell, not a gap.
 
 - 01:45 B21-01 reported; transcribed §8.4. Batch closed.
+
+- 2026-09-18 ~02:05 UTC — **PART 9 COMPLETE** (`B21_COMMIT_RECEIPTS.json` `c7994c4f…`,
+  `B21_COMMIT_REPORT.md` `e7f73f07…`). Six commits, three branches, 28 paths, pushed; thirteen
+  branches level with origin. Rules → packet: B15-10 `bba9bde6…` → `f7727cb731ee7e3f474e0985ed8e1227100a8f0a`;
+  B15-01 `16d9971a…` → `d5e9d8858ca917aa87985b684f3ba68d5b086286`; B15-12 `7f8b381c…` →
+  `8b6be856018a29581aac5fa23dba03b5aee766c1` (this ledger and the Batch 20 ledger's edits; this
+  entry onward is working-tree). `.pid` receipts via `!results/logs/b21_NN_*.pid` negations, no
+  `-f`; both failed-launch receipts committed beside their relaunches. 28/28 blobs equal
+  source bytes. The `BATCH22_PROPOSED_BOARD.md` the session saw at 21:53 was this integrator's,
+  correctly recorded as external.
+- **Batch 22 shaped by the user:** slot 1 = option B (the Missing Theorem, then the decisive
+  run — exceedance pre-approved on handover of the prompt), slot 2 = option C (one construction
+  of a length-5–8 equation nonzero on padding, gated on a written escape from the reversal),
+  reviewer last. Board and prompts filled with the PART 9 pins; both READY TO FIRE. Ledger
+  for Batch 22 opens when the first slot reports.
