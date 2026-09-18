@@ -538,6 +538,33 @@ not enter the board.
   the three no script opens (1,086,823 of 1,237,113 B) and keep KL; leave all four. Not a
   Batch 20 gate. §5 approvals row on the PDFs reverts to OPEN. Nothing started for Batch 20.
 - Batch 20 slot files unaffected: B15-01, B15-02, B15-10 touched by read-only git only.
+- 2026-09-18 00:02 UTC — **PART 8 COMPLETE** (`B20_COMMIT_RECEIPTS.json` `a474f908…`,
+  `B20_COMMIT_REPORT.md` `cfe808e4…`, `PART8_MANIFEST.json`). Nine commits, four branches, 84
+  content paths, all fast-forwarded; thirteen branches level with origin. Rules → packet:
+  B15-10 `e69ef5d2…` → `6915ae6fea04c446da5042fad4c43c1667230602` (24 paths); B15-02
+  `4412e10d…` → `7de65d7c4e08ec0142d863415daa4903a2f9c8ac` (33); B15-01 `d20d9278…` →
+  `878258f295dd5a6b306137fadaab816ce0deb3df` (22); B15-12 `a7530090…` → `da803892…` (this
+  ledger, as it stood) → **`d56bd2cdad437be2958a0866cdd58f5700e42606`** (PART 8c: `bip`,
+  `blmw`, `ip` removed, 1,086,823 B; `kl` kept; `SOURCES_REMOVED.md`; recovery line tested,
+  `f57316b6:…` byte-exact). 80/80 blobs equal source bytes; 70/70 manifest-bound equal manifest
+  values; sweep 0 hits over 91 entries. Five deviations, all recorded: trailer names Opus 5
+  (the executing model, user's choice, precedent `03c8fb86`); `.gitignore` negation
+  `!results/logs/b20_NN_*.pid` added in the rules commits (B16–B19 precedent); rules subject
+  wording; 5–6 attribute lines per slot rather than one; B15-10's two `.pid` files included
+  though not manifest-bound. **O6 CLOSED.** This ledger is now tracked at `da803892`; edits
+  after that point (this entry onward) are working-tree changes for the next housekeeping commit.
+- **Inconsistency flagged by PART 8, ruled here:** `b20_01_report.md` §0/§2.2/§8 (sealed
+  text) say G8 not discharged and no certificate emitted; §11 and the manifest say discharged
+  and bind three certificates. B20-01c was told not to edit §§0–8, correctly. **Ruling: §11
+  governs, as a later section governs an earlier one exactly as a corrigendum governs a sealed
+  report** (G15). B21-10 states this in its closing ledger; nobody edits §§0–8.
+- ~22:40 PART 8 housekeeping session (Claude Code, `work\batch15_workers`) raised two
+  questions; the user answered: (1) the seven `.pid` receipts the Batch 20 manifests bind
+  (4 on B15-02, 3 on B15-01) are excluded by `.gitignore:51` and no `!results/logs/b20_*.pid`
+  negation exists — **add the negation in the rules commit**, as b16–b19 each did; `-f` stays
+  forbidden. (2) PART 8c reached the session unmarked — **option (i)**: delete `bip`, `blmw`,
+  `ip` (each pinned by hash only in `results/b15_12/source_manifest.json`, no script opens
+  them), keep `kl` (read by path at `analysis/b16_12_receive.py:278`). O6 is thereby decided.
 - ~22:05 B20-01c reported: sealed (`e5f42641…`, `0e5fd026…`). G8 discharged; Theorem A control
   failed (O1, DISPUTED); Route 2 `rank(C|_U) = 2` measured at five points. Transcribed in §8.8.
   **All Batch 20 slots now final.**
