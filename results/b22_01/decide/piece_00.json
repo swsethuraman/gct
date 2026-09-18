@@ -1,0 +1,149 @@
+{
+ "run": "b22_01_p4_decide_00",
+ "prime": 524287,
+ "code_pins": {
+  "carrier": {
+   "commit": "75ddb900a0b47b911c53f941885bac73b358eacb",
+   "path": "analysis/b18_02_carrier.py",
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "runner_original": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/paired_runner.py",
+   "sha256": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+   "bytes": 5035
+  },
+  "runner_patched_sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+  "equals_b20_01_patched_runner": true,
+  "materialised_under": "results/b22_01/pinned/"
+ },
+ "inputs": {
+  "certificate": {
+   "path": "results/b22_01/p2_basis.json",
+   "sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79"
+  },
+  "p6_basis.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/p6_basis.json",
+   "sha256": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+   "bytes": 12885
+  },
+  "n02_definition.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/n02_definition.json",
+   "sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+   "bytes": 2753
+  },
+  "p3_flag_rows.json": "73c3be3c0789d26001953f940792c9086ce19fc72d758566f5bea2c86ece66ee"
+ },
+ "runner_evaluations": 60,
+ "runner_wall_s": 26.81328980042599,
+ "log": [],
+ "code": {
+  "analysis/b22_01_p4_decide.py": "764157315a96d32aa2bb2f2cdac408a12d522808a1a9abc6eabfb9c41de669bc",
+  "analysis/b20_01_flag.py": "3236c78700872975497c8ef37d5eefde17f617a0dfdac302d6558c85454ae27a",
+  "analysis/b20_01_pinned.py": "a7e164e369ec4f9b49f886595f95c4274f0b52a5326ea03df06947cbbc7f74a1"
+ },
+ "status": "done",
+ "elapsed_s": 29.394,
+ "G21_six_sealed": {
+  "det_g": 199728,
+  "det_g_inv4": 252079,
+  "per_vector": {
+   "q3": {
+    "slice_sum_F": 187994,
+    "slice_top": 462650,
+    "top_equal_across_k": true,
+    "identity_d11": true,
+    "identity_d12": true,
+    "full_d11": 86170,
+    "full_d12": 376209,
+    "sealed_d11": 86170,
+    "sealed_d12": 376209
+   },
+   "q7": {
+    "slice_sum_F": 78184,
+    "slice_top": 139666,
+    "top_equal_across_k": true,
+    "identity_d11": true,
+    "identity_d12": true,
+    "full_d11": 71919,
+    "full_d12": 469277,
+    "sealed_d11": 71919,
+    "sealed_d12": 469277
+   },
+   "n02": {
+    "slice_sum_F": 14876,
+    "slice_top": 319220,
+    "top_equal_across_k": true,
+    "identity_d11": true,
+    "identity_d12": true,
+    "full_d11": 226580,
+    "full_d12": 41046,
+    "sealed_d11": 226580,
+    "sealed_d12": 41046
+   }
+  },
+  "matched": 6
+ },
+ "G21_p3_point0": {
+  "d11": [
+   24031,
+   249985,
+   378539
+  ],
+  "d12": [
+   355435,
+   346433,
+   410128
+  ],
+  "recorded_d11": [
+   24031,
+   249985,
+   378539
+  ],
+  "recorded_d12": [
+   355435,
+   346433,
+   410128
+  ],
+  "matched": 6
+ },
+ "G21_recorded_rows": {
+  "rows": 30,
+  "residuals": {
+   "S0_P7pt0_d11": 0,
+   "S0_P7pt0_d12": 0,
+   "S0_P7pt1_d11": 0,
+   "S0_P7pt1_d12": 0,
+   "S0_P7pt2_d11": 0,
+   "S0_P7pt2_d12": 0,
+   "full_P6pt0_d11": 0,
+   "full_P6pt0_d12": 0,
+   "full_P6pt1_d11": 0,
+   "full_P6pt1_d12": 0,
+   "b20_01_p3_pt0_d11": 0,
+   "b20_01_p3_pt0_d12": 0,
+   "b20_01_p3_pt1_d11": 0,
+   "b20_01_p3_pt1_d12": 0,
+   "b20_01_p3_pt2_d11": 0,
+   "b20_01_p3_pt2_d12": 0,
+   "b20_01_p3_pt3_d11": 0,
+   "b20_01_p3_pt3_d12": 0,
+   "b20_01_p3_pt4_d11": 0,
+   "b20_01_p3_pt4_d12": 0,
+   "b21_01_P6_point_0_slice_d11": 0,
+   "b21_01_P6_point_0_slice_d12": 0,
+   "b21_01_seeded_1_d11": 0,
+   "b21_01_seeded_1_d12": 0,
+   "b21_01_seeded_2_d11": 0,
+   "b21_01_seeded_2_d12": 0,
+   "b21_01_seeded_3_d11": 0,
+   "b21_01_seeded_3_d12": 0,
+   "b21_01_seeded_4_d11": 0,
+   "b21_01_seeded_4_d12": 0
+  },
+  "all_zero": true
+ }
+}
