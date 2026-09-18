@@ -1,0 +1,135 @@
+{
+ "packet": "B21-01",
+ "title": "The isotropic-type test of the pairing B (Phase 2 slot (a))",
+ "generated_utc": "2026-09-18T01:42:33Z",
+ "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15_workers\\B15-01",
+ "branch": "b15-01-ci159",
+ "head": "878258f295dd5a6b306137fadaab816ce0deb3df",
+ "tree": "eb32dbebf0c4f45fb196809cbae0ef52fc658d7b",
+ "algorithm": "sha256",
+ "excluded_from_manifest": [
+  "MANIFEST.json",
+  "SEAL_LOG.txt"
+ ],
+ "excluded_reason": "a manifest cannot bind itself, nor a log written after it",
+ "sibling_packets_written": [],
+ "sibling_packets_note": "results/b20_01/ was read only; it is neither written nor re-sealed here",
+ "file_count": 10,
+ "files": {
+  "results/b21_01/p1_type_test.json": {
+   "sha256": "b6d047377cf4c3b082aea9d53a0a93d5ca4f4cf9677131813bc484ad69b0fa2e",
+   "bytes": 70503
+  },
+  "results/b21_01/pinned/b18_02_carrier.py": {
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "results/b21_01/pinned/paired_runner.py": {
+   "sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+   "bytes": 4987
+  },
+  "analysis/b21_01_p1_type_test.py": {
+   "sha256": "0a8b64d70e1712b19580b9281d1e4f30285ab2a3dd7af923a5b06be459ab1a23",
+   "bytes": 19673
+  },
+  "analysis/b21_01_types.py": {
+   "sha256": "656b4950b7ec33aa88fe5a75fc38c1cbd7fb6e6cb0db1101b0a51f6f179dc684",
+   "bytes": 8068
+  },
+  "docs/b21_01_report.md": {
+   "sha256": "fdc709e0f7fb7f1dd7af9a5c5f2ea0a07b59c0e923d68064e64a02477a0b23cf",
+   "bytes": 22487
+  },
+  "results/logs/b21_01_p1_type_test.pid": {
+   "sha256": "11d5ddeaebf2c186b0ecef140a4986ecbaefd88a69d8636ae2a2e7ea66204d56",
+   "bytes": 7
+  },
+  "results/logs/b21_01_p1_type_test_resources.json": {
+   "sha256": "1f3164a2cd4502b3224dc0888707d1121fb536c71973d9b8891a0bf6d22a2fe1",
+   "bytes": 811
+  },
+  "results/logs/b21_01_p1r_type_test.pid": {
+   "sha256": "1ec18f06a3b688db139c3736cdabd902cf2d7f5aff22295ccef90b9b57df80aa",
+   "bytes": 7
+  },
+  "results/logs/b21_01_p1r_type_test_resources.json": {
+   "sha256": "ba61cf8afd1a41103440545992a9d0e765afb5040b09559d7e776d8a3703da41",
+   "bytes": 811
+  }
+ },
+ "pinned_inputs": {
+  "p6_basis.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/p6_basis.json",
+   "sha256": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+   "bytes": 12885
+  },
+  "n02_definition.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/n02_definition.json",
+   "sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+   "bytes": 2753
+  },
+  "results/b20_01/certificates/q3_definition.json": {
+   "path": "results/b20_01/certificates/q3_definition.json",
+   "sha256": "ac93ff59113a1aca83a3a8a2d5a2cd90b2de216be70c793ea5f242c887e8428e",
+   "bytes": 13673,
+   "source": "B20-01 MANIFEST.json"
+  },
+  "results/b20_01/certificates/q7_definition.json": {
+   "path": "results/b20_01/certificates/q7_definition.json",
+   "sha256": "07d066b8f6aada7472e892801cbfd6f1a2708a3d592e18592d9996341af3a252",
+   "bytes": 13664,
+   "source": "B20-01 MANIFEST.json"
+  },
+  "results/b20_01/certificates/n02_ordering_hash.json": {
+   "path": "results/b20_01/certificates/n02_ordering_hash.json",
+   "sha256": "34900ea600da8b9a20535988f0a0a6cd901d866cd90ae74699e2ba60de845166",
+   "bytes": 1496,
+   "source": "B20-01 MANIFEST.json"
+  },
+  "results/b20_01/p2_reduction.json": {
+   "path": "results/b20_01/p2_reduction.json",
+   "sha256": "6aa3e283f5d0bf39515656dc16375104530a8d651d2b809973c8028083beb812",
+   "bytes": 7014,
+   "source": "B20-01 MANIFEST.json"
+  }
+ },
+ "code_pins": {
+  "carrier": {
+   "commit": "75ddb900a0b47b911c53f941885bac73b358eacb",
+   "path": "analysis/b18_02_carrier.py",
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "runner_original": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/paired_runner.py",
+   "sha256": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+   "bytes": 5035
+  },
+  "runner_patched_sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+  "patch": "carrier path line replaced by SRC = HERE / b18_02_carrier.py (one line)",
+  "equals_b20_01_patched_runner": true,
+  "materialised_under": "results/b21_01/pinned/ (results/b20_01/ is not written)"
+ },
+ "pinned_input_count": 6,
+ "runs": [
+  {
+   "name": "b21_01_p1_type_test",
+   "exit": 1,
+   "note": "own bug: dropped (4,4)*5 reshape; receipt kept"
+  },
+  {
+   "name": "b21_01_p1r_type_test",
+   "exit": 0,
+   "note": "relaunch under a new name; the run this packet reports"
+  }
+ ],
+ "generator": {
+  "path": "C:\\Users\\swami\\AppData\\Local\\Temp\\claude\\C--Users-swami-Projects-gct-gpt-work-batch15-workers-B15-01\\7172866f-dfbb-42f1-a231-0b3c4f49a14c\\scratchpad\\b21_01_seal.py",
+  "sha256": "36f585f88a50da909dd70f9ed3fda78b53da57197899fabbc7bfa124a822147e",
+  "bytes": 6438,
+  "note": "kept outside analysis/ so it is not inside the analysis/b21_01_*.py set it binds"
+ }
+}

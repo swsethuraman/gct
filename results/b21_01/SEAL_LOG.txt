@@ -1,0 +1,68 @@
+B21-01 SEAL LOG
+generated_utc  : 2026-09-18T01:42:33Z
+worktree       : C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B15-01
+session        : B21-01 (Phase 2 slot (a): the isotropic-type test of B)
+head           : 878258f295dd5a6b306137fadaab816ce0deb3df
+excluded       : MANIFEST.json, SEAL_LOG.txt (a manifest cannot bind itself or a log written after it)
+results/b20_01/: read only; not written, not re-sealed (its two files appear below as inputs)
+generator      : C:\Users\swami\AppData\Local\Temp\claude\C--Users-swami-Projects-gct-gpt-work-batch15-workers-B15-01\7172866f-dfbb-42f1-a231-0b3c4f49a14c\scratchpad\b21_01_seal.py
+  sha256       : 36f585f88a50da909dd70f9ed3fda78b53da57197899fabbc7bfa124a822147e
+  bytes        : 6438
+  note         : kept outside analysis/ so it is not inside the analysis/b21_01_*.py set it binds
+
+FILES BOUND
+  group results        : 3 file(s)
+      b6d047377cf4c3b082aea9d53a0a93d5ca4f4cf9677131813bc484ad69b0fa2e  results/b21_01/p1_type_test.json  70503 B
+      8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154  results/b21_01/pinned/b18_02_carrier.py  23388 B
+      e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc  results/b21_01/pinned/paired_runner.py  4987 B
+  group analysis       : 2 file(s)
+      0a8b64d70e1712b19580b9281d1e4f30285ab2a3dd7af923a5b06be459ab1a23  analysis/b21_01_p1_type_test.py  19673 B
+      656b4950b7ec33aa88fe5a75fc38c1cbd7fb6e6cb0db1101b0a51f6f179dc684  analysis/b21_01_types.py  8068 B
+  group report         : 1 file(s)
+      fdc709e0f7fb7f1dd7af9a5c5f2ea0a07b59c0e923d68064e64a02477a0b23cf  docs/b21_01_report.md  22487 B
+  group receipts       : 4 file(s)
+      11d5ddeaebf2c186b0ecef140a4986ecbaefd88a69d8636ae2a2e7ea66204d56  results/logs/b21_01_p1_type_test.pid  7 B
+      1f3164a2cd4502b3224dc0888707d1121fb536c71973d9b8891a0bf6d22a2fe1  results/logs/b21_01_p1_type_test_resources.json  811 B
+      1ec18f06a3b688db139c3736cdabd902cf2d7f5aff22295ccef90b9b57df80aa  results/logs/b21_01_p1r_type_test.pid  7 B
+      ba61cf8afd1a41103440545992a9d0e765afb5040b09559d7e776d8a3703da41  results/logs/b21_01_p1r_type_test_resources.json  811 B
+
+  TOTAL FILES BOUND : 10
+
+PINNED INPUTS, as the pilot recorded them in its own output
+      ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b  n02_definition.json                                   2753 B  @82633a608932
+      aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7  p6_basis.json                                        12885 B  @82633a608932
+      34900ea600da8b9a20535988f0a0a6cd901d866cd90ae74699e2ba60de845166  results/b20_01/certificates/n02_ordering_hash.json    1496 B  @local
+      ac93ff59113a1aca83a3a8a2d5a2cd90b2de216be70c793ea5f242c887e8428e  results/b20_01/certificates/q3_definition.json       13673 B  @local
+      07d066b8f6aada7472e892801cbfd6f1a2708a3d592e18592d9996341af3a252  results/b20_01/certificates/q7_definition.json       13664 B  @local
+      6aa3e283f5d0bf39515656dc16375104530a8d651d2b809973c8028083beb812  results/b20_01/p2_reduction.json                      7014 B  @local
+  PINNED INPUTS : 6
+  CODE PIN GROUPS : 2
+  patched runner equals the one B20-01's MANIFEST binds : True
+
+RUN COUNTERS AND HEADLINE CHECKS (from the pilot's own output, not typed)
+  count C7_pairings_checked                : 24
+  count factorization_values_checked       : 3
+  count flag_points                        : 5
+  count halves                             : 12
+  count runner_cross_check_values          : 6
+  count sealed_values_matched              : 6
+  count sealed_values_replayed             : 6
+  half_tensor_calls                    : 192
+  runner_evaluations                   : 15
+  column_tensors                       : 31
+  check G21_sealed_replay_all_match        : True
+  check factorization_control_all_match    : True
+  check runner_cross_check_all_match       : True
+  check forms_agree_at_every_point         : True
+  check any_type_block_identically_zero    : False
+  check C7_four_term_formula_replays       : {"count": 24, "all_equal_to_einsum": true}
+  check relation_holds_at_every_point      : {"direct_form": true, "phi_form": true, "degree12_direct": true, "degree12_phi": true}
+
+WROTE results/b21_01/MANIFEST.json
+  manifest bytes          : 5399
+  manifest file entries   : 10
+  manifest pinned inputs  : 6
+  manifest runs recorded  : 2
+  manifest sha256         : 1944b24d504c087fb049c865d27d21e6ff1828352574b3b3900668e83fb16e24
+
+SEAL LOG line count (this file, counting this final line) : 68
