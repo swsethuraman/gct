@@ -1,0 +1,23 @@
+B21-10 SEAL LOG
+generated_utc          2026-09-18T01:00:20Z
+worktree               C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B15-10
+generator              b21_10_seal.py  sha256 c8f062ae0bdbe617f82a61f416d2bead030d3aae3571f89536b21be8471b6b6e  10980 bytes
+git rev-parse HEAD     6915ae6fea04c446da5042fad4c43c1667230602
+git HEAD^{tree}        7052fbfdfd1e6619149420a0405be49a241bbf6c
+git status lines       9
+new files expected     12
+new files hashed       12
+new files missing      0
+receipts bound         6
+pinned committed files 14
+  of which pinned      12
+  hashes agreeing      12
+  hashes disagreeing   0
+external inputs        2
+  hashes matching      2
+pilot 1: six ratios equal          True
+pilot 1: ratio == det(g)^8         True
+pilot 1: det(g)^-4 reproduces 6/6  True
+pilot 2: boolean checks            38/39 true, 1 false ['checks.C_rank_profiles.N5_rho_1_matches_generic_maxima']
+MANIFEST.json written  12 files bound, 14 pinned inputs, 2 external
+total counts emitted   17

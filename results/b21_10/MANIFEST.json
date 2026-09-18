@@ -1,0 +1,233 @@
+{
+ "packet": "b21_10",
+ "title": "B21-10 independent review of the Batch 20 producer packets, and Phase 2 gates",
+ "generated_utc": "2026-09-18T01:00:20Z",
+ "git": {
+  "head": "6915ae6fea04c446da5042fad4c43c1667230602",
+  "tree": "7052fbfdfd1e6619149420a0405be49a241bbf6c",
+  "status_porcelain": [
+   "?? analysis/b21_10_p1_theoremA_factor.py",
+   "?? analysis/b21_10_p2_certificates_and_lemmas.py",
+   "?? docs/b21_10_review.md",
+   "?? results/b21_10/",
+   "?? results/logs/b15_10_runtime_native_20260913.pid",
+   "?? results/logs/b15_10_runtime_native_20260913_resources.json",
+   "?? results/logs/b21_10_p1_theoremA_factor_resources.json",
+   "?? results/logs/b21_10_p1r_theoremA_factor_resources.json",
+   "?? results/logs/b21_10_p2_certificates_and_lemmas_resources.json"
+  ]
+ },
+ "generator": {
+  "name": "b21_10_seal.py",
+  "sha256": "c8f062ae0bdbe617f82a61f416d2bead030d3aae3571f89536b21be8471b6b6e",
+  "bytes": 10980,
+  "location": "session scratchpad, outside the analysis/b21_10_*.py set it binds",
+  "reason": "a seal script inside the hashed set could not hash itself (B20-01c D8)"
+ },
+ "not_bound_by_this_manifest": [
+  "results/b21_10/MANIFEST.json (a manifest cannot bind itself)",
+  "results/b21_10/SEAL_LOG.txt (written after this manifest)",
+  "the generator script itself (its sha256 and byte count are in 'generator')"
+ ],
+ "files": {
+  "docs/b21_10_review.md": {
+   "sha256": "ce2814c74be173b8569e7c5aec5670a34e2bc2911c90d1fe6426e65a03de28e5",
+   "bytes": 62914
+  },
+  "analysis/b21_10_p1_theoremA_factor.py": {
+   "sha256": "379a8487fac7506ab6421819c256445a1025073d5fc020aabc8f40d0e9087345",
+   "bytes": 11033
+  },
+  "analysis/b21_10_p2_certificates_and_lemmas.py": {
+   "sha256": "7843a054709b24fddc7cd7695f732ccba5a1febdf6424c2c3b0fd21ac1c59bce",
+   "bytes": 12140
+  },
+  "results/b21_10/preverdicts_formed_before_reading.md": {
+   "sha256": "cb8268662d10e14f3ac7de41b16cb44f3094b2422ade75958359cc9d1eef8919",
+   "bytes": 16494
+  },
+  "results/b21_10/p1_theoremA_factor.json": {
+   "sha256": "d96e42d3fb5774e8bcb2741f5b9ae251a6615853e33fc832ae74da3f42379555",
+   "bytes": 9668
+  },
+  "results/b21_10/p2_certificates_and_lemmas.json": {
+   "sha256": "40cbde940512346645be5464d142f4ca888d168a4aef81b1847f15c732102086",
+   "bytes": 5894
+  },
+  "results/logs/b21_10_p1_theoremA_factor_resources.json": {
+   "sha256": "41e091291bbfb58db220074526e82bdbdc7736386ab11c1db6d20b0e47afa564",
+   "bytes": 809
+  },
+  "results/logs/b21_10_p1_theoremA_factor.pid": {
+   "sha256": "37b03faae3d71434d9407e21c1ed9e4a11c4500850b1952b1a24224388178197",
+   "bytes": 7
+  },
+  "results/logs/b21_10_p1r_theoremA_factor_resources.json": {
+   "sha256": "e62378c75c6261d485b4c14be6409d25610abb9539ff848c13070a66bab0a510",
+   "bytes": 809
+  },
+  "results/logs/b21_10_p1r_theoremA_factor.pid": {
+   "sha256": "aad1eb01495a68a5eb6c126466d4d37c2f6dbcd2f2b207a742a8174e9437d779",
+   "bytes": 7
+  },
+  "results/logs/b21_10_p2_certificates_and_lemmas_resources.json": {
+   "sha256": "9e3387850c6bd2b82821e531abb691aa815bed3978020052935bb85df0329baa",
+   "bytes": 809
+  },
+  "results/logs/b21_10_p2_certificates_and_lemmas.pid": {
+   "sha256": "71cf2f7bc0ed63cb22ffbc2d44facb5251f58f51d742b81172a740dadc4dc570",
+   "bytes": 7
+  }
+ },
+ "pinned_committed_inputs": [
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "docs/b20_01_report.md",
+   "sha256": "e5f426410f6e5dff4037dc0d837826fb09cca173f7da420dbeb41bb15eb35c89",
+   "bytes": 54708,
+   "expected_sha256": "e5f426410f6e5dff4037dc0d837826fb09cca173f7da420dbeb41bb15eb35c89",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "results/b20_01/p2_reduction.json",
+   "sha256": "6aa3e283f5d0bf39515656dc16375104530a8d651d2b809973c8028083beb812",
+   "bytes": 7014,
+   "expected_sha256": "6aa3e283f5d0bf39515656dc16375104530a8d651d2b809973c8028083beb812",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "analysis/b20_01_p2_reduction.py",
+   "sha256": "5124cf7d928b2f81122438b39af5418c80d9d80fe5687db20a152d85fdbbac90",
+   "bytes": 6136,
+   "expected_sha256": "5124cf7d928b2f81122438b39af5418c80d9d80fe5687db20a152d85fdbbac90",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "analysis/b20_01_flag.py",
+   "sha256": "3236c78700872975497c8ef37d5eefde17f617a0dfdac302d6558c85454ae27a",
+   "bytes": 6367,
+   "expected_sha256": "3236c78700872975497c8ef37d5eefde17f617a0dfdac302d6558c85454ae27a",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "results/b20_01/certificates/q3_definition.json",
+   "sha256": "ac93ff59113a1aca83a3a8a2d5a2cd90b2de216be70c793ea5f242c887e8428e",
+   "bytes": 13673,
+   "expected_sha256": "ac93ff59113a1aca83a3a8a2d5a2cd90b2de216be70c793ea5f242c887e8428e",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "results/b20_01/certificates/q7_definition.json",
+   "sha256": "07d066b8f6aada7472e892801cbfd6f1a2708a3d592e18592d9996341af3a252",
+   "bytes": 13664,
+   "expected_sha256": "07d066b8f6aada7472e892801cbfd6f1a2708a3d592e18592d9996341af3a252",
+   "pin_matches": true
+  },
+  {
+   "commit": "878258f295dd5a6b306137fadaab816ce0deb3df",
+   "path": "results/b20_01/certificates/n02_ordering_hash.json",
+   "sha256": "34900ea600da8b9a20535988f0a0a6cd901d866cd90ae74699e2ba60de845166",
+   "bytes": 1496,
+   "expected_sha256": "34900ea600da8b9a20535988f0a0a6cd901d866cd90ae74699e2ba60de845166",
+   "pin_matches": true
+  },
+  {
+   "commit": "7de65d7c4e08ec0142d863415daa4903a2f9c8ac",
+   "path": "docs/b20_02_report.md",
+   "sha256": "15ef389b5eb84074e77f2bd88c2dd5e98b14399a394d150b05f2b1b3f2baeda2",
+   "bytes": 52946,
+   "expected_sha256": "15ef389b5eb84074e77f2bd88c2dd5e98b14399a394d150b05f2b1b3f2baeda2",
+   "pin_matches": true
+  },
+  {
+   "commit": "7de65d7c4e08ec0142d863415daa4903a2f9c8ac",
+   "path": "docs/b20_02b_report.md",
+   "sha256": "60ff4be461ad1f3b4733fdec36372bf0f0af3612a31f8a48af6260c49b5902ea",
+   "bytes": 14444,
+   "expected_sha256": "60ff4be461ad1f3b4733fdec36372bf0f0af3612a31f8a48af6260c49b5902ea",
+   "pin_matches": true
+  },
+  {
+   "commit": "da803892c3ae0ff9cf9f58dc20e2eacb78648064",
+   "path": "docs/b20_12_ledger.md",
+   "sha256": "08c516263a644e13aef38d7714dbfad7c14abe1e68a657a2f6a072500b7c3b94",
+   "bytes": 48974,
+   "expected_sha256": "08c516263a644e13aef38d7714dbfad7c14abe1e68a657a2f6a072500b7c3b94",
+   "pin_matches": true
+  },
+  {
+   "commit": "6915ae6fea04c446da5042fad4c43c1667230602",
+   "path": "docs/b20_10_review.md",
+   "sha256": "021be68f748e8f05e0c8efcd7c50bd58bede1a34b420c2632f3006612fb3a5fa",
+   "bytes": 65714,
+   "expected_sha256": "021be68f748e8f05e0c8efcd7c50bd58bede1a34b420c2632f3006612fb3a5fa",
+   "pin_matches": true
+  },
+  {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/n02_definition.json",
+   "sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+   "bytes": 2753,
+   "expected_sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+   "pin_matches": true
+  },
+  {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_gkz_incidence_20260917/REPORT.md",
+   "sha256": "3cacb625f9c99344c2722abab21515e6fa5e697fdb8f7fd7be7396e765860b43",
+   "bytes": 53451,
+   "expected_sha256": null,
+   "pin_matches": null
+  },
+  {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_source_vectors_20260917/arc_target_dimension_followup/REPORT.md",
+   "sha256": "041c2ae14cc91bb28dccfea3252b6bfdf7e1f7e10e0796cf74cbb50c5cf24755",
+   "bytes": 19971,
+   "expected_sha256": null,
+   "pin_matches": null
+  }
+ ],
+ "external_inputs": [
+  {
+   "what": "BATCH20_CLOSE.md (uncommitted handover; cited by hash only)",
+   "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\BATCH20_CLOSE.md",
+   "expected_sha256": "2c9dcc59a2e0df88b3ab4d757c42d3dee2cb411817bb879e3d945c789005da46",
+   "sha256": "2c9dcc59a2e0df88b3ab4d757c42d3dee2cb411817bb879e3d945c789005da46",
+   "bytes": 8680,
+   "pin_matches": true
+  },
+  {
+   "what": "Dimca arXiv:1210.1795v4 PDF, re-fetched this session into the scratchpad",
+   "path": "C:\\Users\\swami\\AppData\\Local\\Temp\\claude\\C--Users-swami-Projects-gct-gpt-work-batch15-workers-B15-10\\68ca7e6b-1b59-4e93-95b1-c92d05f9957a\\scratchpad\\lit\\dimca_1210.1795v4.pdf",
+   "expected_sha256": "20b96f5830291574137000073237b9081e134e45d52c89d9981996e5a83c9c05",
+   "sha256": "20b96f5830291574137000073237b9081e134e45d52c89d9981996e5a83c9c05",
+   "bytes": 198017,
+   "pin_matches": true
+  }
+ ],
+ "counts": {
+  "git_status_porcelain_lines": 9,
+  "new_files_expected": 12,
+  "new_files_hashed": 12,
+  "new_files_missing": 0,
+  "receipts_bound": 6,
+  "pinned_committed_inputs": 14,
+  "pinned_with_expected_hash": 12,
+  "pinned_agreeing": 12,
+  "pinned_disagreeing": 0,
+  "external_inputs": 2,
+  "external_inputs_matching": 2,
+  "p1_six_ratios_share_one_value": true,
+  "p1_ratio_equals_det_g_to_the_8": true,
+  "p1_corrected_recipe_reproduces_all_six": true,
+  "p2_boolean_checks_total": 39,
+  "p2_boolean_checks_true": 38,
+  "p2_boolean_checks_false": 1
+ }
+}
