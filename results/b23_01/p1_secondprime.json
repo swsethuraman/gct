@@ -1,0 +1,632 @@
+{
+ "pilot": "b23_01_p1_secondprime",
+ "log": [],
+ "runner_evaluations": {
+  "P": 45,
+  "P2": 54
+ },
+ "runner_wall_s": {
+  "P": 19.305608100257814,
+  "P2": 22.55988309951499
+ },
+ "preregistration": {
+  "path": "results/b23_01/preregistration_snapshot.md",
+  "sha256": "e265f969f7a6b9f72a64443f90f72e804ea55650605d700dff7430becc7bc45a",
+  "expected": "e265f969f7a6b9f72a64443f90f72e804ea55650605d700dff7430becc7bc45a",
+  "match": true,
+  "recorded_at_elapsed_s": 0.0003
+ },
+ "status": "done",
+ "elapsed_s": 45.438,
+ "inputs": {
+  "carrier": {
+   "commit": "75ddb900a0b47b911c53f941885bac73b358eacb",
+   "path": "analysis/b18_02_carrier.py",
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "runner_original": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/paired_runner.py",
+   "sha256": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+   "bytes": 5035
+  },
+  "p6_basis.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/descent_followup_claude_20260916/pilots/p6_basis.json",
+   "sha256": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+   "bytes": 12885
+  },
+  "n02_definition.json": {
+   "commit": "82633a60893236fab4fbc317df416e1b8a349005",
+   "path": "docs/post_b19_20260917/claude_source_vectors_20260917/routeA_signfilter_20260917/certificates/n02_definition.json",
+   "sha256": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+   "bytes": 2753
+  },
+  "p2_basis.json": {
+   "sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79",
+   "bound_by": "results/b22_01/MANIFEST.json 1931ab8f @ 53bdb31e"
+  },
+  "p3_flag_rows.json": {
+   "sha256": "73c3be3c0789d26001953f940792c9086ce19fc72d758566f5bea2c86ece66ee",
+   "bound_by": "results/b20_01/MANIFEST.json 0e5fd026"
+  }
+ },
+ "artifacts": {
+  "pinned_P1": {
+   "carrier_sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "runner_sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+   "carrier_equals_pinned": true,
+   "runner_equals_b20_01_patched": true
+  },
+  "pinned_P2": {
+   "carrier_sha256": "16a9aa752646e919ff9916f13fb57d3fc65415a203fdf241e7e731525b903e78",
+   "runner_sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+   "runner_equals_b20_01_patched": true,
+   "carrier_lines_changed": [
+    [
+     "P = 524287  # 2**19 - 1, Mersenne prime",
+     "P = 524269  # B23-01 second prime 2**19 - 19"
+    ]
+   ]
+  }
+ },
+ "P2": {
+  "value": 524269,
+  "trial_division_prime": true,
+  "carrier_isprime_assert": "passed at import",
+  "vandermonde_det_nodes_1_5": 288,
+  "divides_288": false,
+  "below_P": true
+ },
+ "checks": {
+  "nu_integer_matches_b20_01_mod_P": true
+ },
+ "controls": {
+  "c1_six_sealed_at_P": {
+   "det_g": 199728,
+   "det_g_inv4": 252079,
+   "per_vector": {
+    "q3": {
+     "identity_d11": true,
+     "identity_d12": true,
+     "full_d11": 86170,
+     "full_d12": 376209,
+     "sealed": [
+      86170,
+      376209
+     ],
+     "top_equal_across_k": true
+    },
+    "q7": {
+     "identity_d11": true,
+     "identity_d12": true,
+     "full_d11": 71919,
+     "full_d12": 469277,
+     "sealed": [
+      71919,
+      469277
+     ],
+     "top_equal_across_k": true
+    },
+    "n02": {
+     "identity_d11": true,
+     "identity_d12": true,
+     "full_d11": 226580,
+     "full_d12": 41046,
+     "sealed": [
+      226580,
+      41046
+     ],
+     "top_equal_across_k": true
+    }
+   },
+   "matched": 6
+  },
+  "c1_pass": true,
+  "c2_normalisation_at_P2": {
+   "per_g": [
+    {
+     "det_g": 49930,
+     "top": {
+      "q3": 244845,
+      "q7": 378562,
+      "n02": 511675
+     }
+    },
+    {
+     "det_g": 99860,
+     "top": {
+      "q3": 247637,
+      "q7": 290033,
+      "n02": 322765
+     }
+    }
+   ],
+   "identity": {
+    "q3": true,
+    "q7": true,
+    "n02": true
+   },
+   "teeth_inverted_recipe_fails": {
+    "q3": true,
+    "q7": true,
+    "n02": true
+   },
+   "full_top_mod_P2": {
+    "q3": 150759,
+    "q7": 332281,
+    "n02": 503044
+   },
+   "det_ratio": 2
+  },
+  "c2_pass": true,
+  "c3_recorded_rows": {
+   "rows": 30,
+   "nonzero": []
+  },
+  "c3_pass": true,
+  "all_pass": true
+ },
+ "test": {
+  "points": [
+   {
+    "label": "cert_00",
+    "raw_values_u1_to_5": {
+     "q3": [
+      1542,
+      216745,
+      299985,
+      482620,
+      44821
+     ],
+     "q7": [
+      464328,
+      46273,
+      88732,
+      79805,
+      239874
+     ],
+     "n02": [
+      338345,
+      59663,
+      17220,
+      442759,
+      35115
+     ]
+    },
+    "coefficients": {
+     "q3": {
+      "8": 159054,
+      "9": 484576,
+      "10": 450414,
+      "11": 27584,
+      "12": 452721
+     },
+     "q7": {
+      "8": 358733,
+      "9": 447333,
+      "10": 101770,
+      "11": 18096,
+      "12": 62665
+     },
+     "n02": {
+      "8": 165557,
+      "9": 183375,
+      "10": 382535,
+      "11": 154260,
+      "12": 501156
+     }
+    },
+    "d11": [
+     27584,
+     18096,
+     154260
+    ],
+    "d12": [
+     452721,
+     62665,
+     501156
+    ]
+   },
+   {
+    "label": "cert_01",
+    "raw_values_u1_to_5": {
+     "q3": [
+      521202,
+      450021,
+      2897,
+      91763,
+      249891
+     ],
+     "q7": [
+      479043,
+      402083,
+      306826,
+      92341,
+      476373
+     ],
+     "n02": [
+      252496,
+      479785,
+      77441,
+      488417,
+      346790
+     ]
+    },
+    "coefficients": {
+     "q3": {
+      "8": 329888,
+      "9": 154084,
+      "10": 156237,
+      "11": 106259,
+      "12": 299003
+     },
+     "q7": {
+      "8": 394483,
+      "9": 187945,
+      "10": 284376,
+      "11": 105559,
+      "12": 30949
+     },
+     "n02": {
+      "8": 484938,
+      "9": 122083,
+      "10": 293340,
+      "11": 231269,
+      "12": 169404
+     }
+    },
+    "d11": [
+     106259,
+     105559,
+     231269
+    ],
+    "d12": [
+     299003,
+     30949,
+     169404
+    ]
+   },
+   {
+    "label": "cert_02",
+    "raw_values_u1_to_5": {
+     "q3": [
+      95899,
+      225239,
+      471522,
+      152616,
+      161083
+     ],
+     "q7": [
+      69443,
+      295377,
+      317374,
+      76389,
+      114116
+     ],
+     "n02": [
+      12307,
+      217098,
+      20953,
+      334049,
+      50337
+     ]
+    },
+    "coefficients": {
+     "q3": {
+      "8": 404269,
+      "9": 159688,
+      "10": 306269,
+      "11": 354414,
+      "12": 444066
+     },
+     "q7": {
+      "8": 162090,
+      "9": 101106,
+      "10": 36855,
+      "11": 320659,
+      "12": 497271
+     },
+     "n02": {
+      "8": 414639,
+      "9": 133318,
+      "10": 113727,
+      "11": 412386,
+      "12": 511044
+     }
+    },
+    "d11": [
+     354414,
+     320659,
+     412386
+    ],
+    "d12": [
+     444066,
+     497271,
+     511044
+    ]
+   }
+  ],
+  "rows": {
+   "labels": [
+    "cert_00_d11",
+    "cert_00_d12",
+    "cert_01_d11",
+    "cert_01_d12",
+    "cert_02_d11",
+    "cert_02_d12"
+   ],
+   "values": [
+    [
+     27584,
+     18096,
+     154260
+    ],
+    [
+     452721,
+     62665,
+     501156
+    ],
+    [
+     106259,
+     105559,
+     231269
+    ],
+    [
+     299003,
+     30949,
+     169404
+    ],
+    [
+     354414,
+     320659,
+     412386
+    ],
+    [
+     444066,
+     497271,
+     511044
+    ]
+   ]
+  },
+  "minors": [
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_00_d12",
+     "cert_01_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_00_d12",
+     "cert_01_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_00_d12",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_00_d12",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_01_d11",
+     "cert_01_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_01_d11",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_01_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_01_d12",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_01_d12",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d11",
+     "cert_02_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_01_d11",
+     "cert_01_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_01_d11",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_01_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_01_d12",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_01_d12",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_00_d12",
+     "cert_02_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_01_d11",
+     "cert_01_d12",
+     "cert_02_d11"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_01_d11",
+     "cert_01_d12",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_01_d11",
+     "cert_02_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   },
+   {
+    "rows": [
+     "cert_01_d12",
+     "cert_02_d11",
+     "cert_02_d12"
+    ],
+    "value": 0
+   }
+  ],
+  "nonzero_minors": [],
+  "rank_mod_P2": 2,
+  "rank_d11_mod_P2": 2,
+  "rank_d12_mod_P2": 1
+ },
+ "outcome": "(b) all 20 minors vanish mod P2",
+ "descriptive": {
+  "relation_mod_P2": {
+   "alpha2": 109562,
+   "beta2": 163393,
+   "residuals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "d12_ratios_mod_P2": [
+   [
+    14427,
+    266949
+   ],
+   [
+    14427,
+    266949
+   ],
+   [
+    14427,
+    266949
+   ]
+  ],
+  "crt_rational_reconstruction": {
+   "candidates": {
+    "alpha": {
+     "crt": 41272662318,
+     "modulus": 274867421203,
+     "reconstruction": [
+      737,
+      646
+     ],
+     "consistent": true
+    },
+    "beta": {
+     "crt": 134171610142,
+     "modulus": 274867421203,
+     "reconstruction": [
+      -1421,
+      969
+     ],
+     "consistent": true
+    }
+   },
+   "label": "MEASURED candidate only; not a lift, not a proof"
+  },
+  "sixth_node_point0": {
+   "per_vector": {
+    "q3": {
+     "c7": 0,
+     "c11_equal": true,
+     "c12_equal": true
+    },
+    "q7": {
+     "c7": 0,
+     "c11_equal": true,
+     "c12_equal": true
+    },
+    "n02": {
+     "c7": 0,
+     "c11_equal": true,
+     "c12_equal": true
+    }
+   },
+   "passes": true
+  }
+ }
+}

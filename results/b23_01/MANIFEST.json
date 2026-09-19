@@ -1,0 +1,85 @@
+{
+ "packet": "B23-01",
+ "generated_utc": "2026-09-18T18:54:07Z",
+ "branch": "b15-01-ci159",
+ "head": "53bdb31e3042acae9464f9025be355ae699a2485",
+ "excluded_from_manifest": [
+  "results/b23_01/MANIFEST.json",
+  "results/b23_01/SEAL_LOG.txt"
+ ],
+ "excluded_reason": "a manifest cannot bind itself, nor a log written after it",
+ "files": {
+  "docs/b23_01_report.md": {
+   "sha256": "46d82d0e546a03ab92a5f5c749c48311c4fe3aedf63307a472ce246ab3d6117b",
+   "bytes": 23651
+  },
+  "analysis/b23_01_p1_secondprime.py": {
+   "sha256": "51d2b738dfdc3d6b651cee94b9beb3f194ac64f85f8047026cbcb609a6458404",
+   "bytes": 20491
+  },
+  "results/b23_01/p1_secondprime.json": {
+   "sha256": "ca1294be962b7891382e40bf33ffda8f67e1fca50e659a062cc53dee5d637821",
+   "bytes": 11246
+  },
+  "results/b23_01/pinned_P1/b18_02_carrier.py": {
+   "sha256": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+   "bytes": 23388
+  },
+  "results/b23_01/pinned_P1/paired_runner.py": {
+   "sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+   "bytes": 4987
+  },
+  "results/b23_01/pinned_P2/b18_02_carrier.py": {
+   "sha256": "16a9aa752646e919ff9916f13fb57d3fc65415a203fdf241e7e731525b903e78",
+   "bytes": 23393
+  },
+  "results/b23_01/pinned_P2/paired_runner.py": {
+   "sha256": "e7ba4ff7ab676a0fb259dd662397d3a52bdbbcc12604f16e292fe005fce210fc",
+   "bytes": 4987
+  },
+  "results/b23_01/preregistration_snapshot.md": {
+   "sha256": "e265f969f7a6b9f72a64443f90f72e804ea55650605d700dff7430becc7bc45a",
+   "bytes": 11567
+  },
+  "results/logs/b23_01_p1_secondprime.pid": {
+   "sha256": "4faed315259b5765d7fbef7b812d6e17ac3b9f0a07e69278822d7a6d134d6d6d",
+   "bytes": 7
+  },
+  "results/logs/b23_01_p1_secondprime_resources.json": {
+   "sha256": "13168e85ef0f2c871cd9041c649f34e84e92a799e0957085c5f0f42a142dc3c3",
+   "bytes": 811
+  }
+ },
+ "pinned_inputs": {
+  "docs/b22_01_report.md @ 53bdb31e": "e2adc0f9adfa98e322baa0e5093b598a554b7bc3a9cb13ec18f2fd5cb7b2ac2e",
+  "results/b22_01/MANIFEST.json @ 53bdb31e": "1931ab8f45ffe7a9b8cf01328305445ca6b9965b0e7ab7c4a20e100b4d87e16f",
+  "results/b22_01/p2_basis.json": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79",
+  "B15-10 docs/b22_10_review.md @ 2efb7aaf": "86d8caf98a1c088a890bab5d3676ac40c5f9bfdd591c1af95d7a4981073ec092",
+  "results/b20_01/p3_flag_rows.json": "73c3be3c0789d26001953f940792c9086ce19fc72d758566f5bea2c86ece66ee",
+  "analysis/b20_01_flag.py": "3236c78700872975497c8ef37d5eefde17f617a0dfdac302d6558c85454ae27a",
+  "analysis/b20_01_pinned.py": "a7e164e369ec4f9b49f886595f95c4274f0b52a5326ea03df06947cbbc7f74a1",
+  "b18_02_carrier.py @ 75ddb900": "8670040e2a980026563d1a265f8d32e5749a47f61a0c100e82be9ffa0c75a154",
+  "paired_runner.py @ 82633a60": "33c81c967e71270ab31f05c360bfd7ba1a18a3f79aca8172769be3b5a6ff3260",
+  "p6_basis.json @ 82633a60": "aaee6ec05ecf9ea2cc22e722b114576f3661f30f7bb36c49e79984c1c87067e7",
+  "n02_definition.json @ 82633a60": "ffeead803ebad7510bd68766c364e3f87195b251c32d2032ee9938f4a68fc91b",
+  "routeA REPORT.md @ 82633a60 (read for the height note)": "4dcd3c81fb3a524f19522da81e8f870f153f41c57439290034c01f84444f6d1f"
+ },
+ "sibling_packets_rehashed": {
+  "results/b20_01/MANIFEST.json": {
+   "files": 20,
+   "mismatches": 0
+  },
+  "results/b21_01/MANIFEST.json": {
+   "files": 10,
+   "mismatches": 0
+  },
+  "results/b22_01/MANIFEST.json": {
+   "files": 57,
+   "mismatches": 0
+  }
+ },
+ "generator": {
+  "path": "session scratchpad",
+  "sha256": "b67bb99a28cc241c582c669f780d023b3f06d8a77417010a6fb197b912420aeb"
+ }
+}
