@@ -174,8 +174,8 @@ inputs; the successor handover should say producer memories are not part of the 
 |---|---|---|
 | B22-01 | **COMPLETE** — CERTIFIED-modular; `Q` OPEN; producer-only | `B15-01\docs\b22_01_report.md` `e2adc0f9adfa98e3…`; `results\b22_01\MANIFEST.json` `1931ab8f45ffe7a9…` (57 files); both sibling packets re-hashed 0 mismatches; HEAD `d5e9d885` unchanged |
 | B22-02 | **COMPLETE — outcome (3), gate not passed, the honest negative; producer-only** | `B15-02\docs\b22_02_report.md` `b41e4265809a0187…`; `results\b22_02\MANIFEST.json` `b19d12cdb2ef59e0…` (report + 8 pinned inputs; `numerical_runs: 0`); HEAD `7de65d7c` unchanged; 4 pre-existing 2026-09-13 receipts, nothing new under `results/logs/` |
-| B22-10 | **COMPLETE — both packets reviewed; Theorem M PROVED with a strengthened part (iv); two scope corrections; three new gates** | `B15-10\docs\b22_10_review.md`; `results\b22_10\MANIFEST.json` (14 files, 25 pinned inputs, 0 disagreements); HEAD `f7727cb7` unchanged, uncommitted until PART 11 |
-| B22-12 | OPEN | this file |
+| B22-10 | **COMPLETE and COMMITTED (PART 11)** — both packets reviewed; Theorem M PROVED with a strengthened part (iv); two scope corrections; three new gates | `B15-10` @ `2efb7aaf1927e8d2785dfbbcc78b847592c204f5` (rules `2e660a61`), 16 paths; `results\b22_10\MANIFEST.json` 14 files bound, 25 pinned inputs, 0 disagreements; pre-verdict file committed byte-for-byte with P1.3 intact |
+| B22-12 | **CLOSED** — `BATCH22_CLOSE.md` written; ledger committed | `B15-12` @ `16f2392e6b594c3916422b27a48b16e663b0b131`, 1 path (no rules commit needed — PART 10's `docs/b22_12_*` rule already covered it) |
 
 ---
 
@@ -320,7 +320,11 @@ never writes "`git add -f`"; it reports "negation missing for `<prefix>`" instea
 every producer prompt from Batch 23.
 
 **Housekeeping:** B22-10's three `b22_10_*.pid` receipts need a `!results/logs/b22_10_*.pid`
-negation in PART 11's rules commit. Not `-f`.
+negation in PART 11's rules commit. Not `-f`. **Note for the record, from PART 11:** my PART 11
+brief framed this as "if any packet document says receipts must be force-added" — it does not.
+B22-10 diagnosed the gap itself (its S29 and §8(d)) and drafted the template sentence. This is
+the fourth occurrence of the error and **the first where the packet pre-empted it**, which is
+the sign the gate is working rather than the sign it is needed.
 
 **Slot order the reviewer recommends:** (a′) the second-prime test; then (c) classifying
 `D45 ∩ P5` and (b) the row-10 theory slot, in parallel; then (d) the paper. No cell nominated.
@@ -341,6 +345,12 @@ negation in PART 11's rules commit. Not `-f`.
   departures recorded by the housekeeper: `analysis/b22_01_*` added to B15-01's rules patterns
   (the brief omitted it); B15-02/B15-12 rules subjects dropped "and delivery tracking" (no
   `.pid`). The brief's phrase "failed pilot-1 *certify receipt*" was wrong — see §8.4.
+- ~13:15 PART 11 complete: three commits, 17 content paths, both branches pushed; thirteen
+  branches level. 14/14 bound files matched before staging, 17/17 blobs after; 16/16 paths pass
+  the `-text` gate after the rules commit; sweep 0 hits. **PART 11c skipped** (my instruction
+  did not authorise it) and a blocker found: the paths `B15-03`, `B15-04`, `B15-05` the Batch 23
+  board asks for are already registered worktrees on `b15-03-two-dimensional`,
+  `b15-04-small-panel`, `b15-05-tail21`. The board is amended to use `B23-03/04/05` instead.
 - ~12:45 B22-10 reported. §2 rewritten, §3 two rows struck and three added, §4 three
   corrections, §8.3 superseded, §8.4 transcribed. Batch 22 is closed on the mathematics and
   waits on PART 11 for the record.
