@@ -365,13 +365,16 @@ Attainment of the shadow maximum fails on exactly two kinds of weight: the
 family $\lambda_1=\lambda_2$, $\mu_{\max}\equiv1\pmod6$ of Theorem \ref{thm:B},
 where the parity defect $\pi$ applies; and weights of empty support, where the
 $\lambda$-isotypic component is zero and there is nothing to attain.  The two
-overlap.  The weights with $m(\lambda)=0$ and shadow pole $\ge1$ are
-\emph{finitely many} --- exactly four, at every degree:
+overlap.  The weights with $m(\lambda)=0$ and shadow pole $\ge1$ are, on the
+exhaustive sweep of Remark \ref{rem:Bcaveat}(iii), exactly four, at every
+degree:
 \[
   (10,1,1)\ [\delta=4],\quad (13,1,1)\ [\delta=5],\quad
   (11,11,2)\ [\delta=8],\quad (17,17,5)\ [\delta=13].
 \]
-Finiteness holds because $162\,m(\lambda)=\sum_{h\in H}\chi_\lambda(h)$, the
+That there are no others is open.  The reason we expect finiteness, which we
+give as a sketch and not as a proof, is that $162\,m(\lambda)=\sum_{h\in
+H}\chi_\lambda(h)$, the
 three scalars of $H$ contribute $3\dim S_\lambda$ (as $3\mid|\lambda|$), the
 elements with distinct eigenvalues contribute $O(1)$ each by the bialternant,
 and those with a repeated eigenvalue contribute $O(\lambda_1)$, against a
@@ -398,21 +401,28 @@ $c(\lambda)=0$.
 \end{remark}
 
 \begin{remark}[What Theorem \ref{thm:B} rests on]\label{rem:Bcaveat}
-Three ingredients of the proof are not at the same level of rigour as the rest,
-and we separate them rather than leave the reader to find out.  \emph{(i)} The
+Three ingredients of the proof are not at the same level of rigour as the rest.
+We separate them rather than leave the reader to find out, and all three are
+open.  \emph{(i)} The
 dictionary between the indexing of isotypic types used above and the
 $\tau$-graded model of $S_\lambda$ was pinned by consistency with the
 independently proved block-order bound and by the $2361$-weight regression, not
 by tracking the dualisation $V\leftrightarrow V^{*}$ through the Peter--Weyl
-identification.  This is bookkeeping, but it is bookkeeping we have not done,
-and it is the one place a sign convention could hide.  \emph{(ii)} Normality of
+identification.  This is bookkeeping, but we have not done it, and it is the
+one place a sign convention could hide.  Item (i) is open.  \emph{(ii)} Normality of
 $\cO$ --- a hypersurface whose singular locus has codimension three --- is used
-to identify $\bC[\cO]$ with the pole-free subring; the codimension statement is
-standard for $\sigma_3(v_3(\mathbb P^{2}))$ and we quote it.  \emph{(iii)} For
-the finiteness of the orphan locus we give the character estimate but not the
-explicit constant that converts it into a bound; the evidence that the list is
-complete is a sweep to $\lambda_1-\lambda_2,\ \lambda_2-\lambda_3\le150$.  None
-of the three affects the counterexample $(17,17,2)$, which refutes the
+to identify $\bC[\cO]$ with the pole-free subring.  The codimension statement is
+standard for $\sigma_3(v_3(\mathbb P^{2}))$, but we quote it and have not
+verified it, and we give no reference.  Item (ii) is open in that sense.
+\emph{(iii)} For
+the finiteness of the orphan locus we give the character estimate of Remark
+\ref{rem:orphan} as a sketch, but not the explicit constant that would turn it
+into a bound.  The only evidence that the list of four is complete is an
+exhaustive sweep over $\lambda_1-\lambda_2,\ \lambda_2-\lambda_3\le150$.  Item
+(iii) is open.  The attainment half of Theorem \ref{thm:B} also rests on the
+finite verification described after its statement, which was checked
+exhaustively but is not written out as a chain of inequalities.  None
+of this affects the counterexample $(17,17,2)$, which refutes the
 uncorrected equality outright and was confirmed by two independent routes.
 \end{remark}
 
@@ -653,8 +663,11 @@ their ratio
 which is independent of every choice.  The canonical integral choice would be
 the primitive generator of the rank-one lattice of integral invariants in this
 degree, unique up to sign --- the same convention under which
-$\Psi=-I_6^{\mathrm{prim}}$ in Section \ref{sec:functional}.  We have not
-determined whether $\mathcal N$ is primitive, but the question is now bounded.
+$\Psi=-I_6^{\mathrm{prim}}$ in Section \ref{sec:functional}.  Whether
+$\mathcal N$ is primitive is open.  What we have is a bound, and no further
+evaluation can close it from this side: the content divides every value, so a
+gcd of values bounds it from above and can refute primitivity but never prove
+it.
 The content divides the gcd of any set of integer coefficients, and four
 coefficients are available: on the six-parameter family of Remark
 \ref{rem:norm24} the invariant restricts to a binary sextic
@@ -687,7 +700,11 @@ but it is a live possibility that the headline factorisation is mostly
 normalisation, and settling the content is a prerequisite for reading
 arithmetic significance into \eqref{eq:value}, or into the signature of
 Remark \ref{rem:arith}.  We flag this because the factorisation, rather than
-the non-vanishing, is the part a reader is likely to quote.
+the non-vanishing, is the part a reader is likely to quote.  Settling it needs
+the coefficients of $\Phi_{18}$ at monomials outside the six-parameter family,
+which the evaluator used here does not reach.  At the extreme of the bound, an
+explicit integral invariant $F$ with $\mathcal N=46\,448\,640\cdot F$ would also
+settle it.
 \end{remark}
 
 \subsection*{Boundary geometry}
@@ -717,6 +734,8 @@ As a divisor on $\cO$,
 \[
   \operatorname{div}\big(\Phi_{18}|_{\cO}\big)\;=\;6P_1+9P_2 .
 \]
+The coefficient $6$ is proved.  The coefficient $9$ is computed, not proved;
+its source is given below.
 \end{proposition}
 
 The two multiplicities arise differently, and the asymmetry is the point.  Along
@@ -727,8 +746,13 @@ $\Phi_{18}(g\cdot v)=\det(g)^{6}\Phi_{18}(v)$, giving ramification $6$.
 Along $P_2$ that argument is unavailable --- the orbit closure of $\det_n$ is
 not normal for $n>2$ \cite{KumarCMH}, and $P_2$ is where the non-normality
 sits --- and the multiplicity $9$ is obtained instead by a computation, from
-integrality of the torus weights on the component.  We record it as a computed
-value rather than a proved one; deriving it directly from the explicit
+integrality of the torus weights on the component.  That computation assumes
+that at a generic point of $P_2$ the invariant vanishes through a unit factor,
+as it provably does along $P_1$.  Under that assumption, torus integrality and
+the $\SL_9$-invariance of the normal weight force $18/m_2=2$, so $m_2=9$.  The
+computation is session~9 of the working log in the repository
+(\texttt{docs/boundary\_deficit.html}).  We record it as a computed value rather
+than a proved one; deriving it directly from the explicit
 degeneration to $P_2$ that H\"uttenhain and Lairez supply --- via Jacobi's
 formula, with $A$ skew-symmetric and $S$ symmetric --- is the obvious next step
 and we have not carried it out.  In particular the multiplicities are not both
@@ -943,7 +967,14 @@ Hence $m(\lambda)=1$.
 \end{proof}
 
 No orbit point, no evaluation functional, and no computation beyond a Kronecker
-coefficient enters that proof.  The same argument applies verbatim to any orbit
+coefficient enters that proof.  This deficit is ambient arithmetic:
+$\Sym^{2}(\Sym^{3})$ contains no $S_{(2,2,2)}$, so the closure multiplicity is
+$0$ there for every orbit closure in $\Sym^{3}\bC^{9}$ and the deficit equals
+$m(\lambda)$ by definition.  The \emph{base point} of the conductor ray of
+Theorem \ref{thm:detcond} therefore says nothing about the boundary of $\cO$.
+The conductor itself is a different statement: it is the stabilisation index
+along the $\Phi_{18}$-ray, whose later rungs this argument does not reach, and
+it stands.  The same argument applies verbatim to any orbit
 closure in this ambient space, since the plethysm obstruction does not depend on
 the closure; for the permanent it gives
 \[
@@ -1582,6 +1613,12 @@ not an outlier.
 degree-$2$ invariants of ternary cubics, and three triangles realise
 $\Psi=0,1,4$ --- and the pencil cubic is insufficient, since $\Psi$ requires
 the length-four word $u_2$.
+Refutations (a) and (b) also retract two claims from our working record that
+never appeared in this paper.  The first is a ``rigidity theorem'' for the
+per-$\sigma$ values, which rested on the hypotheses refuted in (a) and (b).  The
+second is a predicted total at a further evaluation point, which rested on the
+fits refuted in (b).  That point has never been evaluated, and its total is
+open.  The retraction notices remain in the repository.
 None of this touches the results of Section \ref{sec:det}: the conductor, the
 value at $R$, and the ray closure use no covariance assumption anywhere.  What
 the refutations do is confine the phenomenon to the totals level, which is

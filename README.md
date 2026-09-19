@@ -30,16 +30,17 @@ the boundary, measured in multiplications by a boundary semiinvariant.
 | | result | status |
 |---|---|---|
 | Binary quartics | `def = c = ⌊(a−3b)/8⌋⁺`; total deficit at degree δ is `⌊δ²/4⌋` | proved; verified δ ≤ 60 |
-| Ternary cubics | `c(λ) = ⌊(λ₁−2λ₃)/6⌋ = ⌊μ_max/|w_N|⌋` (transport formula) | proved ≤; equality on all 254 weights, δ ≤ 10 |
+| Ternary cubics | `c(λ) = ⌊(λ₁−2λ₃)/6⌋ − π(λ)` on every weight with `m(λ) > 0`, no degree bound; `π(λ) = 1` iff `λ₁ = λ₂` and `λ₁−2λ₃ ≡ 1 (mod 6)`, else 0 (transport formula with parity defect) | ≤ proved; equality rests on a finite verification and on the three open items of Remark 3.3; the bare floor first fails at `(17,17,2)` |
 | det₃ | `e(det₃) = 18 = 2n²`, invariant space 1-dimensional | proved |
-| det₃ | `Φ₁₈(det₃) = −877,879,296,000 = −2¹⁶·3⁷·5³·7²` | exact |
-| det₃ | `V(Φ₁₈) ∩ Ω̄ = ∂Ω̄`; `div(Φ₁₈) = 6P₁ + 9P₂` | proved |
+| det₃ | `Φ₁₈(det₃) = −877,879,296,000 = −2¹⁶·3⁷·5³·7²` | exact, in the normalisation `𝒩`; whether `𝒩` is primitive is open (Remark 4.7) |
+| det₃ | `V(Φ₁₈) ∩ Ω̄ = ∂Ω̄` | proved |
+| det₃ | `div(Φ₁₈) = 6P₁ + 9P₂` | 6 proved; 9 computed, not proved |
 | det₃ | invariant ring is a numerical semigroup ring | proved |
 | perm₃ | `Φ₁₈(perm₃) = +50,536,120,320 = 2²⁰·3⁴·5·7·17`, hence `perm₃ ∉ Ω̄` | exact |
 | det₃ | `def((2,2,2),2) = 1`, `c((2,2,2),2) = 1`, ray-complete | certified at two inequivalent points |
 | gauge | `Ψ = 2u₁ − 4u₂ − D` is the unique det²-equivariant invariant in its bidegree | proved |
 | gauge | `I₆(I,A,B) = −6·Ψ(A,B)` — Ψ *is* the Aronhold invariant | exact symbolic identity, 18 indeterminates |
-| totals | `TOTAL(N) = Ψ(N)·1,152,144,000` | tested at Ψ = 1, 4, 0 only — **not proved** |
+| totals | `TOTAL(N) = Ψ(N)·1,152,144,000` | theorem (Thm 5.5); its out-of-sample prediction at `X₋₃` (`Ψ = −3`) measured and exact |
 
 `e(det₃) = 18 = 2n²` is strictly above the Bürgisser–Ikenmeyer bound
 `e(det_n) ≥ n²`, which they show is attained at `n = 2, 4`. The 3×3
@@ -55,26 +56,24 @@ abelian at `R`. No symmetry of the setup carries one to the other, so the
 agreement is a check with content rather than the same computation in two
 coordinate systems.
 
+### The totals law
+
+`TOTAL(N) = Ψ(N)·1,152,144,000` is a theorem (Theorem 5.5 of the paper). The
+character `χ` on the highest-weight line is `det²` in the net's parameter slot
+(Lemmas 5.7 and 5.8), and the uniqueness of the `det²`-equivariant invariant
+then forces `TOTAL = c·Ψ`, with `c` fixed at `C`. Its one out-of-sample
+prediction, `TOTAL(X₋₃) = −3,456,432,000` at `Ψ = −3`, was measured and holds
+exactly. That was the first test at a negative gauge value.
+
 ### What is *not* proved
 
-The totals law `TOTAL(N) = Ψ(N)·1,152,144,000` is **empirical**. It has been
-tested at `Ψ = 1` (C, R), `Ψ = 4` (X4), and `Ψ = 0` (P and four compression
-points) — and at no other value. `X_{-3}`, where `Ψ = −3`, has not been
-measured.
-
-There is now a proof route with exactly one gap:
-
-1. `TOTAL` is bidegree (2,2) — **proved**
-2. `TOTAL` is constant on `Q·u·H` up to a character `χ`, and that coset is the
-   H-orbit of the net *as a subspace* — **proved**
-3. subspace-only dependence would make the third-slot basis change act
-   trivially, so `TOTAL` would be a conjugation invariant with slab
-   equivariance of character `χ` — **not verified**
-4. if `χ = det²`, uniqueness forces `TOTAL = c·Ψ` with `c = 1,152,144,000`
-   from C — **proved, conditional on 3**
-
-The single unproved link is `χ ↔ det²`. Evidence: `χ = Ψ` on 120/120
-same-coset pairs tested. Evidence, not proof.
+- the three items of Remark 3.3 behind the ternary-cubic transport formula (the
+  `V ↔ V*` orientation, the quoted normality of `Ω̄`, and the explicit constant
+  for finiteness of the orphan locus); all three are open
+- the multiplicity `9` along `P₂` in `div(Φ₁₈)`, which is computed
+- whether the normalisation of `Φ₁₈` is primitive; the content is known only to
+  divide `46,448,640`, so the factorisation of `Φ₁₈(det₃)` may be mostly
+  normalisation
 
 Three pre-registered hypotheses were **refuted**, each by a single number, and
 all three are kept in the record:
@@ -84,6 +83,11 @@ all three are kept in the record:
 - per-σ values are **not** simultaneous-conjugation invariants — a rank-9
   parameter-free fit predicted `f1Y4_00 = +69,854,400`; the engine returned `0`
 - both plane-cubic routes are dead, and the pencil cubic is insufficient
+
+The first two refutations also retract two claims from the working record: the
+**rigidity theorem** (retraction notice atop `docs/rigidity_theorem.md`), and
+the prediction `TOTAL_G = 1,152,144,000`, which is **withdrawn**. `G` has never
+been run, and its value is open.
 
 None of these touch the det₃ results: the conductor, the value at R, and the
 ray closure use no covariance assumption anywhere. The refutations confine the
