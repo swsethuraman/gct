@@ -1,0 +1,218 @@
+{
+ "pilot": "b24_10_p1_arith",
+ "method": "exact rational arithmetic; no floats in any check",
+ "A1_constants_reproduce": [
+  {
+   "t": 12,
+   "min_N_S": 1189,
+   "c_exact": "1189/20736",
+   "c_4dp": "0.0573",
+   "report_printed": "0.0573",
+   "agrees": true
+  },
+  {
+   "t": 16,
+   "min_N_S": 3829,
+   "c_exact": "3829/65536",
+   "c_4dp": "0.0584",
+   "report_printed": "0.0584",
+   "agrees": true
+  },
+  {
+   "t": 20,
+   "min_N_S": 9492,
+   "c_exact": "2373/40000",
+   "c_4dp": "0.0593",
+   "report_printed": "0.0593",
+   "agrees": true
+  },
+  {
+   "t": 24,
+   "min_N_S": 19921,
+   "c_exact": "19921/331776",
+   "c_4dp": "0.0600",
+   "report_printed": "0.0600",
+   "agrees": true
+  }
+ ],
+ "A1_all_agree": true,
+ "A2_monotone_increasing": true,
+ "A2_increments": [
+  "5765/5308416",
+  "36827/40960000",
+  "148993/207360000"
+ ],
+ "A2_richardson": [
+  {
+   "pair": [
+    12,
+    16
+   ],
+   "c_inf_exact": "27287/442368",
+   "c_inf_float": 0.06168393735532408,
+   "a": "5765/110592"
+  },
+  {
+   "pair": [
+    12,
+    20
+   ],
+   "c_inf_exact": "107659/1728000",
+   "c_inf_float": 0.062302662037037035,
+   "a": "25727/432000"
+  },
+  {
+   "pair": [
+    12,
+    24
+   ],
+   "c_inf_exact": "10409/165888",
+   "c_inf_float": 0.06274715470679013,
+   "a": "299/4608"
+  },
+  {
+   "pair": [
+    16,
+    20
+   ],
+   "c_inf_exact": "128863/2048000",
+   "c_inf_float": 0.06292138671875,
+   "a": "36827/512000"
+  },
+  {
+   "pair": [
+    16,
+    24
+   ],
+   "c_inf_exact": "55985/884736",
+   "c_inf_float": 0.06327876338252315,
+   "a": "8587/110592"
+  },
+  {
+   "pair": [
+    20,
+    24
+   ],
+   "c_inf_exact": "439853/6912000",
+   "c_inf_float": 0.0636361400462963,
+   "a": "148993/1728000"
+  }
+ ],
+ "A2_c_inf_best_pair_12_24": {
+  "exact": "10409/165888",
+  "float": 0.06274715470679013
+ },
+ "A2_c_inf_vs_one_sixteenth": {
+  "c_inf": 0.06274715470679013,
+  "1/16": 0.0625,
+  "ratio": 1.003954475308642
+ },
+ "A2_c_still_drifting_at_top_of_fitted_range": true,
+ "A3_structural_constant": {
+  "formula": "1/((n-1)! * n!) at n = 5",
+  "value_exact": "1/2880",
+  "value_float": 0.00034722222222222224,
+  "measured_c_at_t24": 0.060043523341049385,
+  "ratio_measured_over_structural": 172.92534722222223,
+  "note": "if the cited closed form were the law for min N_S, the constant would be this, not 0.060; the ratio is the size of the gap"
+ },
+ "A3_structural_prediction_at_900": 227812500.0,
+ "A4_extrapolation": {
+  "900^4": 656100000000,
+  "0.060 * 900^4": 39366000000.0,
+  "c_inf * 900^4": 41168408203.125,
+  "ratio_cinf_to_0060": 1.0457859117798354,
+  "fold_beyond_fitted_range": 37.5,
+  "report_states_fold": 37
+ },
+ "B_b24_02_closed_forms": {
+  "h5_closed_form_k_0_to_39": true,
+  "h5_at_3_to_9": [
+   19,
+   31,
+   46,
+   64,
+   85,
+   109,
+   136
+  ],
+  "h5_at_3_to_9_report": [
+   19,
+   31,
+   46,
+   64,
+   85,
+   109,
+   136
+  ],
+  "h5_agrees": true,
+  "D_closed_form_k_3_to_39": true,
+  "D_negative_controls": {
+   "7": "-17",
+   "8": "-11",
+   "9": "-2"
+  },
+  "D_negative_controls_report": {
+   "7": "-17",
+   "8": "-11",
+   "9": "-2"
+  },
+  "D_negative_controls_agree": true,
+  "D_closed_form_sign_k_0_to_12": {
+   "0": "25",
+   "1": "10",
+   "2": "-2",
+   "3": "-11",
+   "4": "-17",
+   "5": "-20",
+   "6": "-20",
+   "7": "-17",
+   "8": "-11",
+   "9": "-2",
+   "10": "10",
+   "11": "25",
+   "12": "43"
+  },
+  "D_positive_integers_below_10": [
+   0,
+   1
+  ],
+  "D_claim_exactly_k_ge_10_holds_unrestricted": false,
+  "D_claim_holds_when_restricted_to_k_ge_3": true,
+  "note": "H(k) = 18k-24 is stated by the report only for k >= 3, so D(k) is only defined there; the sentence 'D(k) > 0 exactly for integer k >= 10' is true on k >= 3 and false if read over all integers",
+  "controls_are_samples_of_one_quadratic": true,
+  "D_root_upper": 9.185557397915998
+ },
+ "C_c50_boundary": {
+  "m=4": {
+   "n = m^2/2": 8,
+   "visible_rows_from": 17,
+   "to": 17,
+   "count": 1
+  },
+  "m=6": {
+   "n = m^2/2": 18,
+   "visible_rows_from": 37,
+   "to": 37,
+   "count": 1
+  },
+  "m=8": {
+   "n = m^2/2": 32,
+   "visible_rows_from": 65,
+   "to": 65,
+   "count": 1
+  },
+  "claim": "at n = m^2/2 exactly one row remains visible, so LMR's inequality is not strict there",
+  "claim_holds": true
+ },
+ "D_c35_dimension_consistency": {
+  "dim_Sigma_Pi_affine": 31,
+  "plus_linear_form": 5,
+  "minus_scaling": 1,
+  "predicted_T2_affine": 35,
+  "recorded_T2_affine": 35,
+  "agrees": true,
+  "dim_D35_affine": null,
+  "note": "confirms T2 and Sigma_Pi are different objects in different spaces: 31/30 on the cubic side, 35/34 on the quartic side"
+ }
+}
