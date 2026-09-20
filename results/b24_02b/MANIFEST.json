@@ -1,0 +1,43 @@
+{
+ "slot": "B24-02b",
+ "sealed_utc": "2026-09-20T13:40:06Z",
+ "head": "cc14e88cca7860b4a666ecf2bc18701ac8a05584",
+ "tree": "2ceceb8c9a9f764b3a9f1c8a7f14cc62a494656f",
+ "numerical_runs": 0,
+ "interpreter_launches": 0,
+ "receipts": "none produced; negation missing for b24_02b_",
+ "files": [
+  {"path": "docs/b24_02b_report.md", "sha256": "3ecb611a3893323223e12e78a484f861e14fb6f1e8e2ab853c5ac5e481fa5438", "bytes": 29511},
+  {"path": "analysis/b24_02b_seal.sh", "sha256": "82ecf21873beec37dddec3179a9059bbdbe631651ef33aa4cb4f424ab632a30d", "bytes": 5044},
+  {"path": "results/b24_02b/lmr_quotes.md", "sha256": "7b7d91a465f0a45b3cbf65db829d87d5a95109935af6b764adb5080f1226a6c4", "bytes": 5080}
+ ],
+ "pinned_inputs": [
+  {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/equation_census.md", "sha256": "ba7b20f9fe5b4827bd1b38a0885727a23f2165ab3c4bcf6f34cb3efb48cd22f1", "bytes": 27215},
+  {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/lmr_cell.md", "sha256": "0ab35e4e619ea162824f989bdac2db9e92b7d2645186626a3be4ad13513015de", "bytes": 14002},
+  {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/s73_report.md", "sha256": "f40783ba4dd5489da922eaec9cd19b465b1c55a340bceb36b636c45c552dd94e", "bytes": 28206},
+  {"commit": "ce43cdb79d8170a6f96f569bfe5f5be6036b5d4a", "path": "papers/det4-blindness/CLAIMS.md", "sha256": "2b7ba6887585ed5e4ed905856a7a05195c4e3f60147f957753d6ca198c364c1e", "bytes": 22485},
+  {"commit": "ce43cdb79d8170a6f96f569bfe5f5be6036b5d4a", "path": "papers/det4-blindness/GAPS.md", "sha256": "6753c9e29c471fdbef5f917b6a6a627fba8160e307a1e3f9ea7d4dbd043aa2f4", "bytes": 15137},
+  {"commit": "feed104ea865ed5f76809f6d77455060af01433c", "path": "docs/b23_06_report.md", "sha256": "a56d239467551cf9f197fb44094be8af41333a02570f94b71f99406308f4283a", "bytes": 33278},
+  {"commit": "feed104ea865ed5f76809f6d77455060af01433c", "path": "results/b23_06/MANIFEST.json", "sha256": "177db0b46571980b07e3f43b125765cce5c146da860696448e488fc8e1371a55", "bytes": 2639},
+  {"commit": "239dd6e84417ab04914a8d84cca02ddf754bf1fb", "path": "docs/b23_10_review.md", "sha256": "8bbc8d9eaee6962096af3f1ed6836e87ff1ffc250bea27789b82142fe014b5d9", "bytes": 63401}
+ ],
+ "external_sources": [
+  {"file": "lmr_v1.pdf", "what": "arXiv:1004.4802v1 PDF (Landsberg-Manivel-Ressayre); v1 is the only version", "sha256": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79", "bytes": 180675, "location": "scratchpad literature cache, not the delivery tree"},
+  {"file": "lmr_ar5iv.html", "what": "ar5iv rendering of arXiv:1004.4802 (the text actually read)", "sha256": "fb5844ada6bec339638b584bcf385686935e96e03aa8f0ab9e2561bb0b316e05", "bytes": 382135, "location": "scratchpad literature cache, not the delivery tree"},
+  {"file": "lmr_text.txt", "what": "tag-stripped text of lmr_ar5iv.html (sed/tr)", "sha256": "b772b08cf3afb69d9122dcfc89956018ae8018d053742513b3bf7a0f5c5d8bcb", "bytes": 63344, "location": "scratchpad literature cache, not the delivery tree"},
+  {"file": "abs.html", "what": "arXiv abstract page, read for the version history", "sha256": "dc097e58fa7eeed4adc1f7869a5a737e1b8b0de6ccfb6f0f315fe0042ca473d6", "bytes": 39416, "location": "scratchpad literature cache, not the delivery tree"}
+ ],
+ "lmr_byte_verification": {
+  "recorded_by": "feed104ea865ed5f76809f6d77455060af01433c:results/b23_06/MANIFEST.json",
+  "recorded_sha256": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79",
+  "fetched_sha256": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79",
+  "match": true
+ },
+ "read_status": {
+  "source": "arXiv:1004.4802v1 (Landsberg-Manivel-Ressayre)",
+  "label": "PRIMARY",
+  "sections_read": ["1 (Thm 1.0.2)", "2.3 (Thm 2.3.1 and scope)", "3.1 (Thm 3.1.1)", "3.2 (ideal statement and the n=3 example)"],
+  "proofs_audited": false,
+  "point_of_use": "C45 base rung i_det((19,7,2^5),12) >= 1; see docs/b24_02b_report.md section 3.2"
+ }
+}
