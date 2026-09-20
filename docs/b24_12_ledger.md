@@ -763,6 +763,261 @@ as the ledger, and the **do-not-cite-Thm-1.0.2** ruling has to reach the bibliog
 replacement wording is written for the author in `b24_02b_report.md` §3.4; the integrator has
 **not** applied it, and will not — it is a slot's edit or the author's, not the record-keeper's.
 
+## 8.13 PART 14 housekeeping, transcribed (2026-09-20, ~10:55 local)
+
+**COMPLETE. All seven Batch 24 packets and both ledgers are committed and pushed.** 13 commits
+(5 rules, 8 content) across **seven branches** and six checkouts, 52 content paths.
+
+**Receipts verified by the integrator, not relayed.** `B24_COMMIT_RECEIPTS.json` =
+`d37b8924e9e63fd1772048c82b3f3fd3cdd6ba6a1d74a6209028ed010e447f0e` (35,532 bytes);
+`B24_COMMIT_REPORT.md` = `aa0e3c7640f091e4cc077c0d6147b36514b09260dbdeca07e4b34c6de48f7d0b`
+(7,403 bytes). Commits read from the receipts, not from the relay.
+
+| slot | branch | rules commit | content commit |
+|---|---|---|---|
+| B24-01 | `b23-05-paper1` | none (see below) | `bc7e62b714632c20d2405e54030224a2549c242d` |
+| B24-02 | `b15-01-ci159` | `adff2b564f9a467a2ad65d2bd202d4ef91c1d532` | `f8273c3b5542fe085c596e3814c45621d3608ca7` |
+| B24-02b | `b15-01-ci159` | (same) | `5a97317e7e28753261cf6e8dcece180a0e71b718` ← branch tip |
+| B24-03 | `b23-04-paper3` | none (confirmed, not assumed) | `f95742aed4dd22d3f04ac1313ce3d78e6e0bc87c` |
+| B24-04 | `b15-02-a1-probes` | `fc0b9fe94e70c9c93ae1e054277992cf165a559a` | `aafcbb692375f0a968881dbf18963a74d62ab557` |
+| B24-05 | `b24-05-dmodule` | `c14b0d75…` | `5c5ba86edd318d349b858c5c99df27b6be9355c2` |
+| B24-06 | `b24-06-paper2` | `43f901a0…` | `0019b2e2359eeabe065dad4271b89f06e2553896` |
+| B24-12 | `b15-12-padding-orbit-bounds` | `733cc436…` | `744eb77b70cbb237d26c945695b264d4a4b9b402` |
+
+**Verification, as recorded:** all seven HEADs matched the brief exactly, including B15-12's full
+forty; **28/28 manifest-bound files matched on disk before staging**; after committing **52/52
+blobs verify** (50 raw, 2 LF-normalised) and the 28 bound ones equal their manifests; sweep over
+59 entries returned **0 hits, 0 trailer deviations**; `results/b24_02/` peaks at 4,917 B and
+`results/b24_04/` at 52,323 B, **checked explicitly rather than assumed**, as the brief asked.
+Push: fetch first, all seven 0 behind, seven fast-forward pushes, `ls-remote` confirms every tip,
+**all 18 branches level with origin**, tags unchanged, stash empty, all seven worktrees end with
+zero tracked modifications.
+
+**Byte preservation, and the two branches that took no rules commit.** 0 of 40 `b24_*` paths were
+`-text` beforehand and filtered/raw disagreed on 17; after the five rules commits all agree.
+`b23-05-paper1` repeats PART 12's exception — LF blobs at HEAD against CRLF working copies, so a
+`-text` rule would have rewritten every line and buried the real edit (diff 508/80, not 2,352).
+`b23-04-paper3` is the mirror image resolved the other way **because note B required the compiled
+bytes**: `det4-blindness.tex` commits **raw** at `ab69ccbe…` / 96,414 B — **the exact bytes the
+integrator compiled** — with git reporting 1,998 changed lines against a real edit of +341/−73,
+recorded in the commit body. The note worked as intended.
+
+**`.pid` negations** added for `b24_02_` and `b24_04_`; **correctly declined** for `b24_02b_` and
+`b24_05_`, which report the gap in the standing form but sealed no receipt. No `-f` anywhere, and
+no producer wrote it — the B22-10 template sentence continues to hold.
+
+### The twelfth integrator error, and the lineage gap behind it
+
+**D1 and D2 are both mine.** My PART 14a row 1 asserted a B24-01 packet at
+`docs/b24_01_report.md` and `results/b24_01/**`, with Paper 1 under `papers/det3-conductor/`.
+**None of that exists.** There is no report and no results directory anywhere in the checkout, and
+Paper 1 lives at the branch root — `paper/det3-conductor.tex` with `CHANGES.md`, `GAPS.md`,
+`READINESS.md` and `README.md` beside it. My own §4 says so; I wrote the row from the shape of the
+other six slots rather than from the record. **Note A governed and the pass was not damaged** —
+the working tree was committed as found and the commit subject taken from the ledger and
+`READINESS.md` rather than from a packet §0. D2 is the same cluster: I wrote "six branches" in
+§14d where the table's own seven rows give seven. Six is the checkout count.
+
+**The consequence is larger than the error, and it is for B24-10.** All six of B24-01's committed
+paths are `manifest_bound: false`. **B24-01 is the only Batch 24 slot with no report, no manifest
+and no seal.** Everything the record carries from it — the readiness statement that Paper 1 awaits
+one signature, and the second prior-art finding that LMR Prop. 3.5.1 constructs `P_2` — rests on
+**the integrator's transcription of a relay**, with no committed report to check it against.
+That is precisely the lineage gap G18 and G26 exist to prevent, and it is the kind B23-10 ranked.
+**It is recorded here as OPEN and is carry-forward item 18.** No claim sourced from B24-01 should
+be upgraded until B24-10 rules.
+
+**D3 — note C worked.** B24-06 has no manifest, so its add list is path-derived from G-32's four
+paths, stated in the report as a visible deviation, and its rules pattern is `PAPER2_*.md` because
+none of the `b24_NN` patterns match root-level deliverables.
+
+**D4 — E9 is confirmed from the bytes and closed.** PART 13's reported departure was right: the
+committed `b23_12_ledger.md` blob was 57,215 B against 58,796 B locally, missing §8.11, the struck
+duplicate row (E6) and the B23-10 completion row. Those three land in this pass together with the
+new `T2 ≠ Σ_Π` correction. **The housekeeper again committed the file as found rather than fixing
+it**, which is correct and is the second pass in a row where that discipline held.
+
+**G26 is discharged.** The four held-back edits now have commits to cite:
+**G-30** `f8273c3b…`, **G-31** `5a97317e…`, **G-32** `0019b2e2…`, **G-36** `5c5ba86e…`.
+This pass edited no paper file, no packet and no ledger. **B24-10 not launched; `B15-10` untouched
+at `239dd6e84417ab04914a8d84cca02ddf754bf1fb`**, which is its starting HEAD.
+
+## 8.14 B24-10, transcribed from its closing ledger §11 only (2026-09-20, ~13:13 local)
+
+**Packet staged and hashed by the integrator, not relayed** — the relay was garbled in three
+places. `docs/b24_10_review.md` =
+`da1528ba7b19d314698c804fed696e4aa4058245efb3ec9737a9092ba11c2bf3` (130,445 bytes);
+`results/b24_10/MANIFEST.json` = `ba6aea5122c152fafb98491a0a0c49be25c196ed1d3c2c6df6336b32fc05eafe`
+(9 files, 29 pinned inputs, 2 `verified_absent` entries). Sealed `2026-09-20T17:12:49Z`, HEAD
+`239dd6e8` unchanged, tree `3008235a…`, git read-only throughout, **1 of 3 pilots** (0.003 s,
+exact rational arithmetic, no network), two unspent. **Reviewer model: `claude-opus-5[1m]`.**
+
+**Method note that matters for the record:** the review ran on **the same configuration that had
+halted repeatedly**. The variable that changed was the brief, not the model — the four amendment
+files, whose content was largely about classifiers and halting, were dropped and replaced by one
+clean brief. **The integrator's hypothesis is supported and the four amendment files are the
+probable cause of its own tooling failure.**
+
+**All rulings below are from §11 and nowhere else**, as the method requires.
+
+### The headline rulings
+
+- **The tail theorem is PROVED** (11.1.1), pre-formed CONDITIONAL on three named conditions, all
+  three met. The factorisation holds on **spans, not only monomials** (11.1.2) — the place the
+  reviewer pre-registered as the likeliest gap, and it is not one. `c_{n e₁} ∉ I` is **proved with
+  two explicit witnesses** rather than assumed (11.1.3). `D*` is **un-indexed**, a minimum over all
+  separating `f`, so the descent cannot leak across weights (11.1.4).
+- **Theorem 1 does NOT inherit the 70-pattern basis's bespokeness** (11.1.19) — `tail = |λ̄|` is a
+  function of the partition alone. The reviewer calls this the single most consequential thing it
+  pre-registered to check. **The batch's strongest result is basis-independent.**
+- **Corollary D2′ PROVED** (11.2.6) and follows from **D2 alone**. Lemma D2(a)'s "in the image"
+  **strengthens** rather than weakens the claim (11.2.5), overturning the reviewer's own
+  pre-verdict.
+- **C45 is PROVED modulo `(★)`** (11.3.7). The `(★)`-at-the-boundary use is **SOUND** (11.3.3) —
+  the range is stated **closed** at `ℓ(λ) ≤ 7` and an included endpoint is not an approximation,
+  which answers the integrator's specific question against its own worry.
+- **Theorem 9.1 of Paper 2 is REJECTED as stated** (11.5.1) — confirmed against the paper's own
+  Prop. 2.1. **The highest-severity item in Batch 24, and cheap to fix**; the repair is on the
+  record and the headline survives (11.5.2).
+- **The cap-theorem label is ruled** (11.5.10), a ruling reserved to this review: `PROVED modulo
+  Kleiman (SECONDARY), Dimca (PRIMARY, statement level) and Gulliksen–Negård (SECONDARY)` — the
+  source wording, **which neither paper currently carries**. Paper 2's flat "we prove" drops the
+  dependency and must be corrected before circulation; C11's "ADOPTED modulo" misdescribes
+  provenance but errs conservatively. **G-32 closes on this.**
+
+### The extrapolation — and carry-forward item 6 is amended, as promised
+
+The reviewer derived `0.060 · 900⁴ = 3.9366 × 10¹⁰` **by hand before opening the packet**, as `v2`
+had independently (11.1.11). Four findings the packet does not state:
+
+- **The constant has not converged** (11.1.8): `c(t)` rises monotonically across the whole fitted
+  range; Richardson limit `c_∞ = 10409/165888 ≈ 0.062747`, within 0.4 % of `1/16`.
+- **The drift runs upward** (11.1.9): `c_∞ · 900⁴ = 4.117 × 10¹⁰`, **4.6 % above** the report's
+  figure — so the figure is conservative on its own fit's terms.
+- **The cited closed form does not carry the constant** (11.1.10): `1/((n−1)!n!) = 1/2880` against
+  a measured `0.060` — **ratio 172.9**. Read as a law it gives `2.28 × 10⁸` at `t = 900`, wrong by
+  173× **and in the direction that makes the programme look reachable**. It supports the
+  **exponent only**.
+- **"Supersede" is the wrong verb and the record must stop using it** (11.1.15). `10^150.4` was an
+  **average** over all cells; `4 × 10¹⁰` is a conditional **minimum** over non-excluded cells —
+  different statistics of different sets. `621` was never reduced by Theorem 1 either; it was
+  already excluded by `D* ≥ 8`. **Neither of B23-06's numbers is refuted or superseded; both
+  answer questions that are no longer the question.**
+
+**And the number that actually matters is not `4 × 10¹⁰`.** The *unconditional* statement is
+**`min N_S ≥ 231`** (11.1.14) — **inside the programme's reach.** `4 × 10¹⁰` may be used only as
+an order of magnitude, only carrying Conjecture 2, and **never to two significant figures**.
+
+**Carry-forward item 6 is amended below on this ruling (11.1.16), as the integrator committed in
+advance to doing rather than defending.**
+
+One correction the other way: the packet **already** prints the fitted range and fold factor
+correctly (11.1.13). **The risk was in the record's transcription, not the packet** — that is, in
+this ledger.
+
+### Rulings that land on the integrator's record
+
+- **The brief's one-sentence summary of Theorem 1 must not be quoted in place of the theorem**
+  (11.1.6): it invokes primality without the non-membership and does not say `D*` is un-indexed.
+  **Fourteenth integrator error.** The same defect appears at 11.2.7 — the brief attributed
+  Lemma D1 to D2′ as a premise when it is a premise of one *application*; **the packet states the
+  dependency correctly and the over-attribution is the brief's.**
+- **The tenth integrator error is UN-BOOKED** (11.2.3). `(s+1)···(s+n)` and Caracciolo–Sokal–
+  Sportiello's `s(s+1)···(s+n−1)` are **the same identity in two conventions** (`s → s+1`). The
+  right label is *"convention not stated"*, not *"error"*, and D3's Cayley usage is the same
+  convention and arithmetically consistent. The reviewer's reason is adopted verbatim:
+  **"an integrator that over-counts its own errors degrades the error count as an instrument."**
+  Applied here as faithfully as the rulings that run the other way.
+- **The handling of the phantom B24-01 packet was INCOMPLETE** (11.7.1). Disclosing it was right
+  and to the integrator's credit; **the claims were then transcribed at full strength anyway.**
+  **"A disclosure not followed by a consequence leaves the record where it was."** Both claims take
+  the producer-relay-only label at 11.4.2–.3 and the carry-forward list is corrected accordingly.
+- **The `T2` → `Σ_Π` correction is right, and the cubic-side reading is CONFIRMED** (11.7.2–.3) —
+  verified from `det4-blindness.tex` rather than from this ledger: **Lemma 6.1 is titled
+  "restriction to the cubic factor" and defines `Σ_Π` inline in the displayed formula.** Writing
+  `T2` there would have been a genuine error. The reviewer's words on the handling:
+  **"Stopping at the boundary of the actual error, and asking rather than assuming, is the right
+  handling."**
+- **"Value has migrated into the negative" is DISPUTED in its premise** (11.9.6), accepted in its
+  conclusion. **Batch 24 produced two genuine positives** — B24-02 made row 1 unconditional across
+  `N = 5..8` on elementary premises, discharging K5; B24-02b closed C45. **"What is exhausted is
+  the candidate pipeline, not the record"**, and the write-up should say so. The integrator accepts
+  the correction.
+
+### B24-01, and the finding the integrator did not make
+
+- **No packet, confirmed from the committed tree** (11.4.1); the manifest carries two
+  `verified_absent` entries.
+- **"Paper 1 awaits one signature"** splits (11.4.2): the patch-pending state is **CERTIFIED from
+  bytes**; the word **"one"** is **PRODUCER-RELAY-ONLY**.
+- **"LMR Prop. 3.5.1 constructs `P_2`" is PRODUCER-RELAY-ONLY and should not be carried at any
+  strength** (11.4.3) — a prior-art finding against the programme's own paper, resting on a
+  relayed sentence with no quote, hash or read-status. **B24-02b set the standard inside this same
+  batch and B24-01 does not meet it.**
+- **A re-run producing a packet is required, and it is narrow** (11.4.4): bind the six paths with
+  before/after hashes, state what was checked to reach "awaits one signature", and read LMR
+  Prop. 3.5.1 to B24-02b's standard or withdraw the claim. **A half-slot.**
+- **`ATTRIBUTION_PATCH.md` is not applied, CONFIRMED three ways** (11.4.5), and its wording
+  **matches B23-10 §4.4 verbatim** on all three requirements (11.4.6).
+- **But its binding hash `b911a151…` resolves to NOTHING** (11.4.7). The reviewer hashed **every**
+  version of `paper/det3-conductor.tex` in the branch's history; the digest appears nowhere. The
+  patch is **usable** — the two target passages are intact at `bc7e62b7` — **but its binding is
+  not.** Label **UNBOUND**. The reviewer calls this the clearest single case for G29.
+
+### Gates
+
+- **G29 ACCEPTED** (11.9.1) with two additions and one limit. **(b)** every printed sha256 must
+  resolve to a committed object or be labelled as naming an uncommitted state — *G29 as I drafted
+  it would not have caught `b911a151…`*. **(c)** a brief or ledger may not assert a packet's
+  existence; it cites the commit and manifest hash or states that none exists — *the PART 14
+  failure was upstream of the producer*. **And it must NOT require a full manifest from an
+  edits-only slot** (11.9.4): bindings, not ceremony, with B24-03 as the model.
+- **G9′ AMENDED** (11.7.4): it needs a **reporting** clause as well as a use clause.
+  **"A use clause is enforced at the moment of use by the person least able to notice it; a
+  reporting clause is enforced at the moment of writing, when the act is visible."** Two batches,
+  two slots, two producers, both caught by an integrator reading a relay rather than by any gate.
+- **All other gates stand** (11.9.5).
+- **Gate defect found in this slot** (11.10.1): `.gitignore:51` ignores `results/logs/*.pid` and
+  the negations run `!…b16_10_*.pid` … `!…b23_10_*.pid` and **stop at `b23_10`**. This slot's
+  `b24_10_p1_arith.pid` is ignored; `_resources.json` is not. Verified with `git check-ignore -v`.
+  **The reviewer did not edit `.gitignore`** — one line is needed in PART 15's rules commit before
+  the receipts are staged.
+
+### The Batch 25 slate, as ruled — which reorders the integrator's proposed board
+
+| order | slot | note |
+|---|---|---|
+| **1** | **The Paper 3 edits** (9.7) | Fully unblocked, no prerequisite remaining. Carry the three corrections at 11.6.9/.10/.12. **Plus a fifth edit this review unblocks: C11 → `PROVED modulo …`, closing G-32** |
+| **2** | **Paper 2's repair, B2 first** (9.8) | then B3, B4, B1-at-source. **Cheaper than B24-06 priced it** — B24-02b partly discharges B5. Add the cap label to Thm 7.1 and the abstract. **Read Beauville first** |
+| **3** | **B24-04 Q2 — large tail, small treewidth** (9.9) | "the best live mathematics on the table"; a negative worth as much as a positive; no prerequisite, Theorem 1 supplies the constraint |
+| **4** | **The equivariance half-slot, and settle `(★)`'s label** (9.10) | the latter small, a reading task, **the most consequential unlabelled thing in the review** |
+| **5** | **G-A1** (9.11) | **do it, but it gates nothing.** Paper 3 is true whichever way it resolves (11.6.6), so the risk is to the programme's ambitions, not the paper's correctness. **"An open question named in a published paper is a commitment"** |
+| — | **row 2 NOT FUNDED** (9.12) | `CLAIMS.md` C23 describes it in its own words as *"a statement that nothing is known"* |
+| — | **`s_rep = 0` NOT FUNDED pending a one-line test** (9.13) | **apply D2′ to it first** — if it fails at a pure power it dies for the cost of a sentence, the best immediate demonstration of D2′'s value |
+| — | **"nothing more" REJECTED** (9.14) | — |
+
+**The integrator's proposed board put Paper 2 first and G-A1 in Phase 2. Both are overruled**, and
+the reviewer's reasoning is better than mine on both counts: the Paper 3 edits are fully unblocked
+and ship a paper, and G-A1 cannot damage a paper whose every claim is already scoped.
+
+### The two threads, and one honest negative
+
+- **The rational candidate: the reviewer declines to certify it real** (11.8.1) — two-prime
+  agreement is evidence, not a `Q`-proof, **"the same category error as taking a floor from a
+  ceiling"**. **Not funded as a Batch 25 item** (11.8.2), because *payoff, not cost, is the
+  obstacle*. **Recorded as an opportunistic rider** (11.8.3): seconds of exact arithmetic, for any
+  slot already running exact rational arithmetic nearby.
+- **The equivariance constraint earns a half-slot, for a better reason than the integrator gave**
+  (11.8.4): not "a second lineage" but **the first route to the C45 floor that passes through
+  neither `(★)` nor LMR**. **"A question whose negative answer costs a paragraph and whose positive
+  answer discharges a premise is the ideal half-slot."** The reviewer makes **no finding on the
+  mathematics** (11.8.5) and says so.
+- **`(★)`'s own label is OPEN** (11.3.8) — `s73` was outside the reviewer's pinned commits and it
+  declined to rule from a description. **"The single most consequential unlabelled thing I found."**
+  If `(★)` is ADOPTED, the programme's only positive result rests on an adopted internal reduction
+  **as well as** an external theorem, and the label must say so. **The pinning was the
+  integrator's and this gap is the integrator's to answer for.**
+
 ## 9. Decisions open for the user
 
 - **Paper 1's attribution wording**, once B24-01 prepares the patch. Your credit line.
@@ -787,9 +1042,26 @@ replacement wording is written for the author in `b24_02b_report.md` §3.4; the 
    committed when B24-03 runs).
 5. Deferred from the Batch 24 board: **G-A1** (the boundary), **row 2** at `2 ≤ j ≤ N−4`, and the
    **three-kinds theorem**.
-6. **Strike `10¹⁵⁰` from the record** wherever the cost at the forced tail is quoted; the figure
-   is `≈ 4 × 10¹⁰`, EXTRAPOLATION (B24-04 Q1). Six orders from reach, not one hundred and
-   forty-six.
+6. **AMENDED 2026-09-20 on B24-10's ruling (11.1.14–.16), exactly as the integrator committed in
+   advance to doing rather than defending.** The item as written said: *"Strike `10¹⁵⁰` from the
+   record wherever the cost at the forced tail is quoted; the figure is `≈ 4 × 10¹⁰`,
+   EXTRAPOLATION. Six orders from reach, not one hundred and forty-six."* **Every part of that is
+   wrong in a different way.**
+   - **"Supersede" and "strike" are both wrong verbs.** `10^150.4` was an **average** over all
+     cells; `4 × 10¹⁰` is a conditional **minimum** over non-excluded cells. Different statistics
+     of different sets, so neither refutes the other. Both are **reclassified, not struck**, and
+     both answer questions that are no longer the question. `621` was never reduced by Theorem 1
+     either — it was already excluded by `D* ≥ 8`.
+   - **"Six orders from reach" compares the two directly and is therefore meaningless.**
+   - **`4 × 10¹⁰` may be used only as an order of magnitude, only carrying Conjecture 2, and never
+     to two significant figures** — and wherever it appears, the fitted range `t = 12…24` and the
+     fold factor travel with it. B24-04's own packet already does this correctly; **the defect was
+     in this ledger's transcription of it.**
+   - **The number that actually matters is `min N_S ≥ 231`** — the *unconditional* statement, and
+     **inside the programme's reach**. It was in the packet and this ledger did not carry it.
+   - **The cited closed form `1/((n−1)!n!) = 1/2880` supports the exponent only**: it is 173×
+     below the measured constant and would give `2.28 × 10⁸` at `t = 900`, wrong in the direction
+     that makes the programme look reachable. Any use of it must say "exponent only".
 7. **Say in Paper 3 that Theorem M is bespoke** — the 70-pattern basis is a seeded greedy
    selection, not canonical, so each new cell needs its own theorem (B24-04 Q3).
 8. **New and unpriced: large tail with small treewidth** — a question about *fillings* the record
@@ -871,6 +1143,28 @@ replacement wording is written for the author in `b24_02b_report.md` §3.4; the 
     `det4-blindness.tex` at `ab69ccbe…`. Cosmetic, and named only so the typesetting pass has a
     list rather than a search.
 
+18. **RULED 2026-09-20 by B24-10 (11.4.1–.7). B24-01 has no packet, confirmed from the committed
+    tree.** The rulings, now in force: the patch-pending state is **CERTIFIED from bytes**; the
+    word **"one"** in "awaits one signature" is **PRODUCER-RELAY-ONLY**; **"LMR Prop. 3.5.1
+    constructs `P_2`" is PRODUCER-RELAY-ONLY and is not to be carried at any strength**, since a
+    prior-art finding against the programme's own paper cannot rest on a relayed sentence with no
+    quote, hash or read-status. **A narrow re-run producing a packet is required** — bind the six
+    paths with before/after hashes, state what was checked to reach "awaits one signature", and
+    read LMR Prop. 3.5.1 to B24-02b's standard or withdraw it. **A half-slot, and a Batch 25
+    item.** Separately: **`ATTRIBUTION_PATCH.md`'s binding hash `b911a151…` resolves to nothing**
+    in the branch's entire history — the patch is usable, its binding is **UNBOUND**, and the
+    re-run rebinds it. **The integrator's handling of this was ruled INCOMPLETE (11.7.1):
+    disclosure without consequence left the record where it was.**
+
+19. **The targeted exact check on the rational candidate, dropped since Batch 23.** B23 ledger
+    §8.3 said that if B23-10 judged the candidate real, an exact check of **two rational numbers**
+    would be a far smaller job than the ≈10⁴-evaluation re-run, and *that* was the version worth
+    pricing. B23-10 scoped the height-2000 claim (per coefficient false; under a common
+    denominator true; candidate height 2842) but **never ruled on whether the candidate is real
+    or whether the targeted check should be priced**. The integrator did not notice at
+    transcription time. It may be worth nothing — it would upgrade one label in a `D = −1` cell —
+    but it should be decided rather than forgotten. Put to B24-10.
+
 14. **The LMR citation trap, as a record-level hazard.** From B24-02b (§8.0f): Thm 1.0.2's
     printed `ω₁` coefficient and degree are both halved and mutually inconsistent, and the same
     `ω₁` typo recurs in §3.2's opening sentence, so the corruption is not confined to one theorem.
@@ -892,6 +1186,109 @@ not spend a slot rediscovering it.
 
 ## 10. Observation log (2026-09-19, local UTC−4)
 
+- 2026-09-20, ~13:13 local: **B24-10 DELIVERED. Batch 24 is complete.** 130 KB review, 9 files,
+  29 pinned inputs, 1 of 3 pilots, HEAD unchanged, git read-only. Packet staged and hashed by the
+  integrator (`da1528ba…`, `ba6aea51…`) because the relay was garbled in three places.
+  **The tail theorem is PROVED and does not inherit the basis's bespokeness. Corollary D2′ is
+  PROVED from D2 alone. C45 is PROVED modulo `(★)`, whose boundary use is SOUND. Paper 2's
+  Theorem 9.1 is REJECTED as stated — the highest-severity item in the batch. The cap-theorem
+  label is ruled, and neither paper currently carries the right one.**
+  **Five rulings land on this ledger.** Carry-forward item 6 **amended, not defended**, as
+  committed in advance: "supersede" and "strike" are both wrong verbs — an average and a
+  conditional minimum over different sets — and **`min N_S ≥ 231` is the unconditional number, and
+  it is inside the programme's reach**. The **tenth integrator error is UN-BOOKED** (the Cayley
+  forms are one identity in two conventions) on the reviewer's principle that *over-counting one's
+  own errors degrades the error count as an instrument*. A **fourteenth is booked**: the brief's
+  one-sentence summary of Theorem 1 must not be quoted in its place. The B24-01 **handling was
+  ruled incomplete** — disclosure without consequence — and item 18 now carries the
+  producer-relay-only labels. The **cubic-side reading is CONFIRMED** from the paper's source.
+  And **"value has migrated into the negative" is disputed in its premise**: Batch 24 produced two
+  genuine positives, and what is exhausted is the candidate pipeline, not the record.
+  **The Batch 25 slate is reordered against the integrator's proposed board** — Paper 3's edits
+  first, Paper 2 second, Q2 third, the equivariance half-slot and `(★)`'s label fourth, G-A1 fifth
+  and gating nothing. Row 2 not funded; `s_rep = 0` not funded pending a one-line D2′ test.
+  **G29 accepted with (b) and (c) added and its scope limited; G9′ amended to add a reporting
+  clause; one gate defect found — `.gitignore`'s `.pid` negations stop at `b23_10`.**
+  **Method note:** the review ran on `claude-opus-5[1m]`, the same configuration that had halted
+  repeatedly. **The variable that changed was the brief, not the model** — which supports the
+  integrator's hypothesis that its own four amendment files, whose content was largely about
+  classifiers and halting, were the probable cause of the tooling failure.
+- 2026-09-20, ~12:30 local: **B24-10 attempt two is running and halting intermittently — and the
+  incremental-write mitigation is working.** The 12:15 halt came **after** the Q1 append landed:
+  `results/b24_10/preverdicts_formed_before_reading_v2.md` is 124 lines / 7,438 B, sha256
+  `bd5ea24252c7a8ca231ff939c2076804f844e815443a520a7239942496666f93`, Q1.1–Q1.4 complete, staged
+  and hashed by the integrator. Attempt one lost a file to a halt; this cost one turn.
+  **`B24-10-HALT-PROTOCOL.md` written** (`923fbb50972a66e696faac91ab888a1aaa08fa7519da5eb23dd4a0307bf50797`):
+  Amendment 4 was written about *one passage halted repeatedly* and does not cover *intermittent
+  halts at different points*, so the gap is closed — a halt after a flush costs one turn and the
+  slot resumes; two consecutive pre-flush halts on one item skip that item with the fact recorded;
+  two consecutive failed items invoke Amendment 5; **a halt count with locations goes in §0**; and
+  no passage is ever reworded to get past a halt.
+
+- 2026-09-20, ~12:30 local: **Q1.3 has already found something, and it lands on this ledger.** The
+  reviewer establishes *before reading* that `4 × 10¹⁰` is **not independent** of the sizing law —
+  it is `0.060 × 900⁴ = 3.937 × 10¹⁰`, the fitted law evaluated at 900 and nothing else — so its
+  warrant is exactly the warrant of the fit carried out to `t = 900`, five to six orders beyond
+  any plausible measured point. The integrator has re-computed this and confirms it.
+  **Carry-forward item 6 uses `≈ 4 × 10¹⁰` as a price and is therefore overstated.** If the
+  predicted ruling holds — label right, range unstated, admissible as an order-of-magnitude
+  indication only — **item 6 is amended on the reviewer's ruling and not defended.** The
+  reviewer's sentence is adopted into the record whatever else it rules: *a number that invites
+  work must be better supported than a number that forbids it, not equally supported.* Striking
+  `10¹⁵⁰` may have been right; installing `4 × 10¹⁰` in its place without the fitted range was the
+  integrator repeating the error it had just corrected, in the more dangerous direction.
+- 2026-09-20, ~11:55 local: **B24-10 attempt one ABORTED — tooling, not mathematics.** The
+  session read the method rules, confirmed the worktree state, and died inside its own sealed
+  pre-verdict file. **CAUSE CORRECTED 2026-09-20 ~12:20 by the session itself, against this
+  entry as first written:** the integrator recorded repeated `[reasoning_extraction]` safeguard
+  errors as the cause, taking it from error lines further down a relayed transcript. The session
+  states that its response was **halted by a safety classifier mid-output** and that the `Write`
+  carrying the pre-verdict text was truncated by that halt — which is how a 561-byte file ending
+  mid-sentence came to exist. **The session is the primary source on its own failure and its
+  account governs.** The `[reasoning_extraction]` errors are real but are not the proximate
+  cause. **Second producer correction of the integrator's record this batch.** The distinction
+  matters against the integrator's interest: a content-triggered halt is *stable*, so it is
+  **more** likely to recur at the same step than a random infrastructure error would be.
+  **It formed no verdicts.** Recovered and usable: HEAD `239dd6e84417ab04914a8d84cca02ddf754bf1fb`
+  matching the brief, tree `3008235a92bf10a108ae673564d879a5716b4a1d`, and **two pre-existing
+  untracked 2026-dated items in `B15-10`** (residue, stay out). Left behind:
+  `results/b24_10/preverdicts_formed_before_reading.md`, **561 B**, sha256
+  `683d3880beca32330d79a482845792133f426f71099a28d3e07b3db27ae9dd3d`, truncated mid-line, whose
+  own first line claims it is written once and never edited — **an empty file asserting it is a
+  sealed record, which is the hazard.** `B24-10-RELAUNCH.md` written: the stub is neither edited
+  nor deleted nor renamed; the relaunch writes `..._v2.md` and **binds the stub in its manifest as
+  a dead artifact**. Relaunch must run on a different model, name it, and say in its closing
+  ledger where the choice could matter — **B25-10 then re-examines anything attempt two rules
+  PROVED**. A third attempt is forbidden: if it dies in the same place it writes
+  `docs/b24_10_partial_report.md` and stops. **Third duplicate/aborted-session event on this
+  record** (the competing integrator fill 2026-09-17; B23-10's predecessor that left no report;
+  this).
+- 2026-09-20, ~12:20 local: **Thirteenth integrator error — Amendment 2 was defective twice, and
+  is superseded.** (a) It told a slot to change its own model, which no slot can do: that is a
+  harness choice at launch and the instruction was addressed to the wrong party. (b) It conflated
+  **stability** with **capability**. Only stability was ever at issue; `claude-opus-5[1m]` is the
+  strongest configuration available and its capability was never in question, so the amendment's
+  own fallback prescribed the wrong remedy for the wrong reason. **In force:** the slot proceeds on
+  `claude-opus-5[1m]`, names it in §0 and the manifest, and **does not flag the tail theorem,
+  Corollary D2′ or the C45 chain for B25-10 on model grounds** — only its own reasoning can earn a
+  flag. `B24-10-AMENDMENT2.md` written (sha256
+  `2a09786fa9b07f6fcd72c5c55b30774d92d7fdd0abe753895595c0a764c1a97e`); **`B24-10-RELAUNCH.md` is
+  not edited** and stands as written, the same treatment the relaunch prescribes for the aborted
+  stub. The mitigation becomes central rather than incidental: **write incrementally and flush**,
+  since attempt one lost everything by composing one large file. And the limit on it is explicit —
+  **a repeatedly halted passage is never reworded until it passes**; the slot stops, writes a
+  partial report naming what it could not emit, and says so. Working around a safety system is out
+  of scope for this slot under any circumstances, and the record will say which kind of review it
+  received.
+- 2026-09-20, ~10:55 local: **PART 14 COMPLETE. All seven Batch 24 packets and both ledgers
+  committed and pushed** — 13 commits, seven branches, six checkouts, 52 paths, 52/52 blobs
+  verified, sweep clean, all 18 branches level with origin. **G26 discharged**: the four held-back
+  Paper 3 edits now have commits to cite. `det4-blindness.tex` committed raw at the exact bytes
+  the integrator compiled. **Twelfth integrator error:** my row 1 described a B24-01 packet that
+  does not exist, and the deeper finding is that **B24-01 has no report, manifest or seal at
+  all** — the batch's one unsealed slot, now carry-forward item 18 and a question for B24-10.
+  E9 confirmed from the bytes and closed. Receipts staged and hashed by the integrator
+  (`d37b8924…`, `aa0e3c76…`) rather than taken from the relay.
 - 2026-09-20, ~09:56 local: **B24-03 reported COMPLETE, outcome (1) with named residue. Batch 24's
   producer board is finished — all six slots plus the half-slot.** Paper 3 is current against the
   committed record with `DIFF_NOTES.md` added. **The finding is about the record, not the paper:
@@ -934,7 +1331,9 @@ not spend a slot rediscovering it.
   specifically — half-slot B24-02b recommended.
 - 2026-09-20, ~03:00 local: B24-05 reported COMPLETE, outcome (2). The integrator's `D`-module
   idea is refuted; **Corollary D2′ is the by-product and belongs in Paper 3**. Tenth integrator
-  error recorded (the Cayley convention). §4 and §8.0b written from the staged packet
+  error recorded (the Cayley convention) — **UN-BOOKED 2026-09-20 by B24-10 §11.2.3: the two
+  forms are the same identity in two conventions, so the right label is “convention not stated”,
+  not “error”. The error count runs to fourteen with this one removed and 11.1.6 added.** §4 and §8.0b written from the staged packet
   (`e13ad0f1…`).
 - ~23:45 B24-02 reported COMPLETE, outcome (2). §4 and §8.0 written from the staged packet
   (`cf09c536…`). **C45 is the headline: the positive control's sign rests on LMR Thm 2.3.1, whose
