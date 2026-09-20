@@ -1,0 +1,195 @@
+{
+ "pilot": "b24_04_p2_saturate",
+ "slot": "B24-04",
+ "prime": 524287,
+ "seed": 20260920,
+ "stall_limit": 120,
+ "max_accepted": 400,
+ "inputs": {
+  "analysis/b22_01_typed_v2.py": {
+   "sha256": "93d739eda3afd8c0dbddf452de1e73e76470864fd8ece27171f683574eb326fc",
+   "bytes": 13226,
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  },
+  "results/b22_01/p2_basis.json": {
+   "sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79",
+   "bytes": 293596,
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  }
+ },
+ "code": {
+  "analysis/b24_04_p1_patterns.py": {
+   "sha256": "abb3403ff25620c65ff57b5b720285162a9835d7a1f52b4fd11d084c39617645",
+   "bytes": 15655
+  },
+  "analysis/b24_04_p2_saturate.py": {
+   "sha256": "2b983f3079e1994a5a4d8ddaf00e192296c48dd5e4ea948728397705c045929f",
+   "bytes": 8039
+  }
+ },
+ "classes": [
+  {
+   "block": "11:2,3,3,1",
+   "statistic": "s_inv",
+   "threshold": 11,
+   "block_dim": 31,
+   "drawn": 498,
+   "accepted": 110,
+   "zero_function": 30,
+   "guard_skip": 0,
+   "rank": 31,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 3.948
+  },
+  {
+   "block": "11:2,3,3,1",
+   "statistic": "s_inv",
+   "threshold": 13,
+   "block_dim": 31,
+   "drawn": 176,
+   "accepted": 61,
+   "zero_function": 14,
+   "guard_skip": 0,
+   "rank": 31,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 2.51
+  },
+  {
+   "block": "11:2,3,3,1",
+   "statistic": "s_cr",
+   "threshold": 27,
+   "block_dim": 31,
+   "drawn": 161,
+   "accepted": 31,
+   "zero_function": 6,
+   "guard_skip": 0,
+   "rank": 31,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.204
+  },
+  {
+   "block": "11:2,3,3,1",
+   "statistic": "s_sp",
+   "threshold": 11,
+   "block_dim": 31,
+   "drawn": 505,
+   "accepted": 32,
+   "zero_function": 13,
+   "guard_skip": 0,
+   "rank": 31,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.21
+  },
+  {
+   "block": "11:3,2,2,2",
+   "statistic": "s_inv",
+   "threshold": 12,
+   "block_dim": 28,
+   "drawn": 101,
+   "accepted": 39,
+   "zero_function": 1,
+   "guard_skip": 0,
+   "rank": 28,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.666
+  },
+  {
+   "block": "11:3,2,2,2",
+   "statistic": "s_nk",
+   "threshold": 5,
+   "block_dim": 28,
+   "drawn": 296,
+   "accepted": 38,
+   "zero_function": 10,
+   "guard_skip": 0,
+   "rank": 28,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 1.287
+  },
+  {
+   "block": "11:3,2,2,2",
+   "statistic": "s_sp",
+   "threshold": 11,
+   "block_dim": 28,
+   "drawn": 441,
+   "accepted": 29,
+   "zero_function": 13,
+   "guard_skip": 0,
+   "rank": 28,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.196
+  },
+  {
+   "block": "11:1,4,4,0",
+   "statistic": "s_rep",
+   "threshold": 0,
+   "block_dim": 7,
+   "drawn": 2737,
+   "accepted": 126,
+   "zero_function": 27,
+   "guard_skip": 0,
+   "rank": 6,
+   "stopped_by": "stalled",
+   "verdict": "candidate, MEASURED only (rank stalled below the block dimension)",
+   "wall_s": 3.993
+  },
+  {
+   "block": "11:1,4,4,0",
+   "statistic": "s_sp",
+   "threshold": 11,
+   "block_dim": 7,
+   "drawn": 193,
+   "accepted": 10,
+   "zero_function": 10,
+   "guard_skip": 0,
+   "rank": 7,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.077
+  },
+  {
+   "block": "11:4,1,1,3",
+   "statistic": "s_cr",
+   "threshold": 20,
+   "block_dim": 4,
+   "drawn": 128,
+   "accepted": 4,
+   "zero_function": 1,
+   "guard_skip": 0,
+   "rank": 4,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.033
+  },
+  {
+   "block": "11:4,1,1,3",
+   "statistic": "s_sp",
+   "threshold": 10,
+   "block_dim": 4,
+   "drawn": 225,
+   "accepted": 4,
+   "zero_function": 4,
+   "guard_skip": 0,
+   "rank": 4,
+   "stopped_by": "rank reached the block dimension",
+   "verdict": "trivial at this j (PROVED: the class spans the whole block)",
+   "wall_s": 0.038
+  }
+ ],
+ "log": [],
+ "prereg_sha256": "c62d96141bcb0cd8e37786858c0932448e7d5006ab3f10d9ad9f1bd25e4a2d7f",
+ "p1_sha256": "e43e7412cf92970e1a290854f350368621bb7a652be4f31d33c4bc4a07a12421",
+ "points": {
+  "source": "results/b22_01/p2_basis.json cert_00..cert_69",
+  "rebuild_proved_by": "pilot 1 control C0"
+ },
+ "status": "done",
+ "elapsed_s": 13.229
+}

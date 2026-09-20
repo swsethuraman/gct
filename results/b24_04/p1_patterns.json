@@ -1,0 +1,3425 @@
+{
+ "pilot": "b24_04_p1_patterns",
+ "slot": "B24-04",
+ "prime": 524287,
+ "prereg_sha256": "e77a79e1a36a03d8075606f01c27d1d987a2eeb766999ad986b2eec31b071519",
+ "sample_seed": 20260919,
+ "samples_per_block": 150,
+ "inputs": {
+  "analysis/b22_01_typed_v2.py": {
+   "sha256": "93d739eda3afd8c0dbddf452de1e73e76470864fd8ece27171f683574eb326fc",
+   "bytes": 13226,
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  },
+  "results/b22_01/p2_basis.json": {
+   "sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79",
+   "bytes": 293596,
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  }
+ },
+ "code": {
+  "analysis/b24_04_p1_patterns.py": {
+   "sha256": "abb3403ff25620c65ff57b5b720285162a9835d7a1f52b4fd11d084c39617645",
+   "bytes": 15655
+  }
+ },
+ "log": [
+  "guard skip 11:2,3,3,1: AssertionError(('intermediate too large', 14348907))",
+  "guard skip 11:2,3,3,1: AssertionError(('intermediate too large', 43046721))"
+ ],
+ "checks": {
+  "C0_points_rebuilt_equal_recorded": true,
+  "C1_vec80_reproduced_all_70": true,
+  "C1_mismatched_indices": [],
+  "C1_det70_nonzero": true
+ },
+ "stages": {
+  "s0": {
+   "n_points": 80,
+   "n_cert": 70
+  },
+  "s1": {
+   "det70_mod_P": 132757,
+   "replay_wall_s": 0.348,
+   "n_replayed": 70
+  },
+  "s2": {
+   "block_sizes": {
+    "11:1,4,4,0": 7,
+    "11:2,3,3,1": 31,
+    "11:3,2,2,2": 28,
+    "11:4,1,1,3": 4
+   },
+   "block_ranks": {
+    "11:1,4,4,0": 7,
+    "11:2,3,3,1": 31,
+    "11:3,2,2,2": 28,
+    "11:4,1,1,3": 4
+   },
+   "targets": {
+    "11:1,4,4,0": 7,
+    "11:2,3,3,1": 31,
+    "11:3,2,2,2": 28,
+    "11:4,1,1,3": 4
+   },
+   "total_rank": 70,
+   "sum_of_block_ranks": 70,
+   "direct_sum": true,
+   "graded_dimensions_by_s_a": {
+    "1": 7,
+    "2": 31,
+    "3": 28,
+    "4": 4
+   }
+  },
+  "s3": {
+   "sampling": {
+    "11:1,4,4,0": {
+     "attempts": 150,
+     "none": 0,
+     "zero_xi": 17,
+     "guard_skip": 0,
+     "kept": 133,
+     "pool_rank": 7,
+     "pool_size": 140
+    },
+    "11:2,3,3,1": {
+     "attempts": 150,
+     "none": 11,
+     "zero_xi": 18,
+     "guard_skip": 2,
+     "kept": 119,
+     "pool_rank": 31,
+     "pool_size": 150
+    },
+    "11:3,2,2,2": {
+     "attempts": 150,
+     "none": 17,
+     "zero_xi": 22,
+     "guard_skip": 0,
+     "kept": 111,
+     "pool_rank": 28,
+     "pool_size": 139
+    },
+    "11:4,1,1,3": {
+     "attempts": 150,
+     "none": 32,
+     "zero_xi": 15,
+     "guard_skip": 0,
+     "kept": 103,
+     "pool_rank": 4,
+     "pool_size": 107
+    }
+   },
+   "violation": [],
+   "block_dimension_confirmed": {
+    "11:1,4,4,0": true,
+    "11:2,3,3,1": true,
+    "11:3,2,2,2": true,
+    "11:4,1,1,3": true
+   }
+  },
+  "s4_the_70": [
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 2,
+    "s_cr": 35,
+    "s_inv": 8
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 2,
+    "s_cr": 39,
+    "s_inv": 14
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 29,
+    "s_inv": 6
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 28,
+    "s_inv": 13
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 1,
+    "s_sp": 12,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 30,
+    "s_inv": 7
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 13,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 32,
+    "s_inv": 7
+   },
+   {
+    "block": "11:1,4,4,0",
+    "s_a": 1,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 27,
+    "s_inv": 14
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 29,
+    "s_inv": 17
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 13,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 31,
+    "s_inv": 19
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 3,
+    "s_sp": 11,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 28,
+    "s_inv": 23
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 17,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 37,
+    "s_inv": 9
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 30,
+    "s_inv": 12
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 26,
+    "s_inv": 14
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 11,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 23,
+    "s_inv": 20
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 36,
+    "s_inv": 13
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 37,
+    "s_inv": 11
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 0,
+    "s_cr": 26,
+    "s_inv": 22
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 13,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 31,
+    "s_inv": 15
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 40,
+    "s_inv": 11
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 17,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 1,
+    "s_cr": 36,
+    "s_inv": 17
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 2,
+    "s_cr": 34,
+    "s_inv": 14
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 1,
+    "s_cr": 27,
+    "s_inv": 23
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 17,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 38,
+    "s_inv": 15
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 32,
+    "s_inv": 13
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 41,
+    "s_inv": 19
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 30,
+    "s_inv": 18
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 33,
+    "s_inv": 7
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 2,
+    "s_sp": 13,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 31,
+    "s_inv": 19
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 16,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 35,
+    "s_inv": 16
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 2,
+    "s_sp": 11,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 1,
+    "s_cr": 22,
+    "s_inv": 19
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 11,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 26,
+    "s_inv": 16
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 11,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 28,
+    "s_inv": 17
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 2,
+    "s_nk": 8,
+    "s_rep": 1,
+    "s_cr": 27,
+    "s_inv": 12
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 12,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 1,
+    "s_cr": 29,
+    "s_inv": 15
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 1,
+    "s_sp": 11,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 27,
+    "s_inv": 11
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 2,
+    "s_cr": 31,
+    "s_inv": 6
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 2,
+    "s_nk": 8,
+    "s_rep": 1,
+    "s_cr": 35,
+    "s_inv": 17
+   },
+   {
+    "block": "11:2,3,3,1",
+    "s_a": 2,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 37,
+    "s_inv": 17
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 11,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 1,
+    "s_cr": 19,
+    "s_inv": 16
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 35,
+    "s_inv": 12
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 13,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 25,
+    "s_inv": 20
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 2,
+    "s_cr": 31,
+    "s_inv": 11
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 29,
+    "s_inv": 22
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 1,
+    "s_cr": 38,
+    "s_inv": 21
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 2,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 27,
+    "s_inv": 23
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 11,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 27,
+    "s_inv": 13
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 32,
+    "s_inv": 9
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 17,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 38,
+    "s_inv": 15
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 16,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 41,
+    "s_inv": 20
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 12,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 1,
+    "s_cr": 22,
+    "s_inv": 21
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 13,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 34,
+    "s_inv": 22
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 32,
+    "s_inv": 14
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 13,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 1,
+    "s_cr": 32,
+    "s_inv": 23
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 0,
+    "s_cr": 40,
+    "s_inv": 15
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 2,
+    "s_nk": 8,
+    "s_rep": 2,
+    "s_cr": 28,
+    "s_inv": 11
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 2,
+    "s_nk": 8,
+    "s_rep": 1,
+    "s_cr": 35,
+    "s_inv": 18
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 15,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 33,
+    "s_inv": 10
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 18,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 0,
+    "s_cr": 39,
+    "s_inv": 13
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 14,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 2,
+    "s_cr": 23,
+    "s_inv": 9
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 17,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 30,
+    "s_inv": 18
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 36,
+    "s_inv": 16
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 36,
+    "s_inv": 16
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 33,
+    "s_inv": 19
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 0,
+    "s_cr": 33,
+    "s_inv": 11
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 1,
+    "s_sp": 13,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 0,
+    "s_cr": 22,
+    "s_inv": 14
+   },
+   {
+    "block": "11:3,2,2,2",
+    "s_a": 3,
+    "s_in": 0,
+    "s_sp": 13,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 1,
+    "s_cr": 34,
+    "s_inv": 15
+   },
+   {
+    "block": "11:4,1,1,3",
+    "s_a": 4,
+    "s_in": 1,
+    "s_sp": 14,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 1,
+    "s_cr": 24,
+    "s_inv": 19
+   },
+   {
+    "block": "11:4,1,1,3",
+    "s_a": 4,
+    "s_in": 0,
+    "s_sp": 12,
+    "s_kk": 5,
+    "s_nk": 5,
+    "s_rep": 1,
+    "s_cr": 30,
+    "s_inv": 19
+   },
+   {
+    "block": "11:4,1,1,3",
+    "s_a": 4,
+    "s_in": 0,
+    "s_sp": 13,
+    "s_kk": 3,
+    "s_nk": 7,
+    "s_rep": 0,
+    "s_cr": 29,
+    "s_inv": 14
+   },
+   {
+    "block": "11:4,1,1,3",
+    "s_a": 4,
+    "s_in": 0,
+    "s_sp": 15,
+    "s_kk": 4,
+    "s_nk": 6,
+    "s_rep": 0,
+    "s_cr": 37,
+    "s_inv": 12
+   }
+  ],
+  "s4_profiles": {
+   "11:1,4,4,0": {
+    "s_a": {
+     "values": [
+      1
+     ],
+     "profile": [
+      {
+       "j": 1,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_in": {
+     "values": [
+      0,
+      1,
+      2
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 102,
+       "rank": 7
+      },
+      {
+       "j": 1,
+       "n": 138,
+       "rank": 7
+      },
+      {
+       "j": 2,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_sp": {
+     "values": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "profile": [
+      {
+       "j": 10,
+       "n": 2,
+       "rank": 2
+      },
+      {
+       "j": 11,
+       "n": 10,
+       "rank": 6
+      },
+      {
+       "j": 12,
+       "n": 27,
+       "rank": 7
+      },
+      {
+       "j": 13,
+       "n": 56,
+       "rank": 7
+      },
+      {
+       "j": 14,
+       "n": 90,
+       "rank": 7
+      },
+      {
+       "j": 15,
+       "n": 113,
+       "rank": 7
+      },
+      {
+       "j": 16,
+       "n": 130,
+       "rank": 7
+      },
+      {
+       "j": 17,
+       "n": 138,
+       "rank": 7
+      },
+      {
+       "j": 18,
+       "n": 139,
+       "rank": 7
+      },
+      {
+       "j": 19,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 3
+    },
+    "s_kk": {
+     "values": [
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 5,
+       "rank": 5
+      },
+      {
+       "j": 3,
+       "n": 52,
+       "rank": 7
+      },
+      {
+       "j": 4,
+       "n": 112,
+       "rank": 7
+      },
+      {
+       "j": 5,
+       "n": 137,
+       "rank": 7
+      },
+      {
+       "j": 6,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_nk": {
+     "values": [
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "profile": [
+      {
+       "j": 4,
+       "n": 3,
+       "rank": 3
+      },
+      {
+       "j": 5,
+       "n": 28,
+       "rank": 7
+      },
+      {
+       "j": 6,
+       "n": 88,
+       "rank": 7
+      },
+      {
+       "j": 7,
+       "n": 135,
+       "rank": 7
+      },
+      {
+       "j": 8,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_rep": {
+     "values": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 8,
+       "rank": 6
+      },
+      {
+       "j": 1,
+       "n": 59,
+       "rank": 7
+      },
+      {
+       "j": 2,
+       "n": 124,
+       "rank": 7
+      },
+      {
+       "j": 3,
+       "n": 138,
+       "rank": 7
+      },
+      {
+       "j": 4,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_cr": {
+     "values": [
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      44
+     ],
+     "profile": [
+      {
+       "j": 19,
+       "n": 2,
+       "rank": 2
+      },
+      {
+       "j": 20,
+       "n": 3,
+       "rank": 3
+      },
+      {
+       "j": 21,
+       "n": 4,
+       "rank": 4
+      },
+      {
+       "j": 23,
+       "n": 6,
+       "rank": 6
+      },
+      {
+       "j": 24,
+       "n": 7,
+       "rank": 6
+      },
+      {
+       "j": 25,
+       "n": 11,
+       "rank": 6
+      },
+      {
+       "j": 26,
+       "n": 13,
+       "rank": 6
+      },
+      {
+       "j": 27,
+       "n": 22,
+       "rank": 7
+      },
+      {
+       "j": 28,
+       "n": 34,
+       "rank": 7
+      },
+      {
+       "j": 29,
+       "n": 43,
+       "rank": 7
+      },
+      {
+       "j": 30,
+       "n": 50,
+       "rank": 7
+      },
+      {
+       "j": 31,
+       "n": 58,
+       "rank": 7
+      },
+      {
+       "j": 32,
+       "n": 67,
+       "rank": 7
+      },
+      {
+       "j": 33,
+       "n": 80,
+       "rank": 7
+      },
+      {
+       "j": 34,
+       "n": 89,
+       "rank": 7
+      },
+      {
+       "j": 35,
+       "n": 102,
+       "rank": 7
+      },
+      {
+       "j": 36,
+       "n": 112,
+       "rank": 7
+      },
+      {
+       "j": 37,
+       "n": 118,
+       "rank": 7
+      },
+      {
+       "j": 38,
+       "n": 125,
+       "rank": 7
+      },
+      {
+       "j": 39,
+       "n": 133,
+       "rank": 7
+      },
+      {
+       "j": 40,
+       "n": 135,
+       "rank": 7
+      },
+      {
+       "j": 41,
+       "n": 138,
+       "rank": 7
+      },
+      {
+       "j": 42,
+       "n": 139,
+       "rank": 7
+      },
+      {
+       "j": 44,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 5
+    },
+    "s_inv": {
+     "values": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 4,
+       "n": 6,
+       "rank": 3
+      },
+      {
+       "j": 5,
+       "n": 10,
+       "rank": 6
+      },
+      {
+       "j": 6,
+       "n": 16,
+       "rank": 6
+      },
+      {
+       "j": 7,
+       "n": 25,
+       "rank": 7
+      },
+      {
+       "j": 8,
+       "n": 35,
+       "rank": 7
+      },
+      {
+       "j": 9,
+       "n": 48,
+       "rank": 7
+      },
+      {
+       "j": 10,
+       "n": 62,
+       "rank": 7
+      },
+      {
+       "j": 11,
+       "n": 68,
+       "rank": 7
+      },
+      {
+       "j": 12,
+       "n": 75,
+       "rank": 7
+      },
+      {
+       "j": 13,
+       "n": 92,
+       "rank": 7
+      },
+      {
+       "j": 14,
+       "n": 104,
+       "rank": 7
+      },
+      {
+       "j": 15,
+       "n": 109,
+       "rank": 7
+      },
+      {
+       "j": 16,
+       "n": 114,
+       "rank": 7
+      },
+      {
+       "j": 17,
+       "n": 129,
+       "rank": 7
+      },
+      {
+       "j": 18,
+       "n": 134,
+       "rank": 7
+      },
+      {
+       "j": 19,
+       "n": 136,
+       "rank": 7
+      },
+      {
+       "j": 20,
+       "n": 138,
+       "rank": 7
+      },
+      {
+       "j": 21,
+       "n": 139,
+       "rank": 7
+      },
+      {
+       "j": 22,
+       "n": 140,
+       "rank": 7
+      }
+     ],
+     "block_dim": 7,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 4
+    }
+   },
+   "11:2,3,3,1": {
+    "s_a": {
+     "values": [
+      2
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_in": {
+     "values": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 107,
+       "rank": 31
+      },
+      {
+       "j": 1,
+       "n": 142,
+       "rank": 31
+      },
+      {
+       "j": 2,
+       "n": 148,
+       "rank": 31
+      },
+      {
+       "j": 3,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_sp": {
+     "values": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "profile": [
+      {
+       "j": 9,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 10,
+       "n": 5,
+       "rank": 5
+      },
+      {
+       "j": 11,
+       "n": 15,
+       "rank": 15
+      },
+      {
+       "j": 12,
+       "n": 33,
+       "rank": 31
+      },
+      {
+       "j": 13,
+       "n": 56,
+       "rank": 31
+      },
+      {
+       "j": 14,
+       "n": 90,
+       "rank": 31
+      },
+      {
+       "j": 15,
+       "n": 116,
+       "rank": 31
+      },
+      {
+       "j": 16,
+       "n": 139,
+       "rank": 31
+      },
+      {
+       "j": 17,
+       "n": 148,
+       "rank": 31
+      },
+      {
+       "j": 18,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 4
+    },
+    "s_kk": {
+     "values": [
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 5,
+       "rank": 5
+      },
+      {
+       "j": 3,
+       "n": 49,
+       "rank": 31
+      },
+      {
+       "j": 4,
+       "n": 113,
+       "rank": 31
+      },
+      {
+       "j": 5,
+       "n": 149,
+       "rank": 31
+      },
+      {
+       "j": 6,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_nk": {
+     "values": [
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "profile": [
+      {
+       "j": 4,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 5,
+       "n": 37,
+       "rank": 31
+      },
+      {
+       "j": 6,
+       "n": 101,
+       "rank": 31
+      },
+      {
+       "j": 7,
+       "n": 145,
+       "rank": 31
+      },
+      {
+       "j": 8,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_rep": {
+     "values": [
+      0,
+      1,
+      2
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 51,
+       "rank": 31
+      },
+      {
+       "j": 1,
+       "n": 112,
+       "rank": 31
+      },
+      {
+       "j": 2,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_cr": {
+     "values": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+     ],
+     "profile": [
+      {
+       "j": 19,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 20,
+       "n": 2,
+       "rank": 2
+      },
+      {
+       "j": 21,
+       "n": 3,
+       "rank": 3
+      },
+      {
+       "j": 22,
+       "n": 5,
+       "rank": 5
+      },
+      {
+       "j": 23,
+       "n": 8,
+       "rank": 8
+      },
+      {
+       "j": 24,
+       "n": 11,
+       "rank": 11
+      },
+      {
+       "j": 25,
+       "n": 16,
+       "rank": 16
+      },
+      {
+       "j": 26,
+       "n": 21,
+       "rank": 20
+      },
+      {
+       "j": 27,
+       "n": 29,
+       "rank": 28
+      },
+      {
+       "j": 28,
+       "n": 37,
+       "rank": 31
+      },
+      {
+       "j": 29,
+       "n": 44,
+       "rank": 31
+      },
+      {
+       "j": 30,
+       "n": 50,
+       "rank": 31
+      },
+      {
+       "j": 31,
+       "n": 66,
+       "rank": 31
+      },
+      {
+       "j": 32,
+       "n": 75,
+       "rank": 31
+      },
+      {
+       "j": 33,
+       "n": 80,
+       "rank": 31
+      },
+      {
+       "j": 34,
+       "n": 89,
+       "rank": 31
+      },
+      {
+       "j": 35,
+       "n": 98,
+       "rank": 31
+      },
+      {
+       "j": 36,
+       "n": 112,
+       "rank": 31
+      },
+      {
+       "j": 37,
+       "n": 122,
+       "rank": 31
+      },
+      {
+       "j": 38,
+       "n": 131,
+       "rank": 31
+      },
+      {
+       "j": 39,
+       "n": 133,
+       "rank": 31
+      },
+      {
+       "j": 40,
+       "n": 143,
+       "rank": 31
+      },
+      {
+       "j": 41,
+       "n": 147,
+       "rank": 31
+      },
+      {
+       "j": 42,
+       "n": 149,
+       "rank": 31
+      },
+      {
+       "j": 43,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 10
+    },
+    "s_inv": {
+     "values": [
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      26
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 5,
+       "n": 3,
+       "rank": 3
+      },
+      {
+       "j": 6,
+       "n": 6,
+       "rank": 6
+      },
+      {
+       "j": 7,
+       "n": 13,
+       "rank": 13
+      },
+      {
+       "j": 8,
+       "n": 15,
+       "rank": 15
+      },
+      {
+       "j": 9,
+       "n": 23,
+       "rank": 21
+      },
+      {
+       "j": 10,
+       "n": 34,
+       "rank": 26
+      },
+      {
+       "j": 11,
+       "n": 46,
+       "rank": 27
+      },
+      {
+       "j": 12,
+       "n": 50,
+       "rank": 28
+      },
+      {
+       "j": 13,
+       "n": 61,
+       "rank": 29
+      },
+      {
+       "j": 14,
+       "n": 76,
+       "rank": 31
+      },
+      {
+       "j": 15,
+       "n": 86,
+       "rank": 31
+      },
+      {
+       "j": 16,
+       "n": 99,
+       "rank": 31
+      },
+      {
+       "j": 17,
+       "n": 111,
+       "rank": 31
+      },
+      {
+       "j": 18,
+       "n": 121,
+       "rank": 31
+      },
+      {
+       "j": 19,
+       "n": 129,
+       "rank": 31
+      },
+      {
+       "j": 20,
+       "n": 133,
+       "rank": 31
+      },
+      {
+       "j": 21,
+       "n": 139,
+       "rank": 31
+      },
+      {
+       "j": 22,
+       "n": 146,
+       "rank": 31
+      },
+      {
+       "j": 23,
+       "n": 149,
+       "rank": 31
+      },
+      {
+       "j": 26,
+       "n": 150,
+       "rank": 31
+      }
+     ],
+     "block_dim": 31,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 11
+    }
+   },
+   "11:3,2,2,2": {
+    "s_a": {
+     "values": [
+      3
+     ],
+     "profile": [
+      {
+       "j": 3,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_in": {
+     "values": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 102,
+       "rank": 28
+      },
+      {
+       "j": 1,
+       "n": 132,
+       "rank": 28
+      },
+      {
+       "j": 2,
+       "n": 138,
+       "rank": 28
+      },
+      {
+       "j": 3,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_sp": {
+     "values": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "profile": [
+      {
+       "j": 11,
+       "n": 7,
+       "rank": 7
+      },
+      {
+       "j": 12,
+       "n": 29,
+       "rank": 28
+      },
+      {
+       "j": 13,
+       "n": 46,
+       "rank": 28
+      },
+      {
+       "j": 14,
+       "n": 79,
+       "rank": 28
+      },
+      {
+       "j": 15,
+       "n": 114,
+       "rank": 28
+      },
+      {
+       "j": 16,
+       "n": 126,
+       "rank": 28
+      },
+      {
+       "j": 17,
+       "n": 133,
+       "rank": 28
+      },
+      {
+       "j": 18,
+       "n": 137,
+       "rank": 28
+      },
+      {
+       "j": 19,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_kk": {
+     "values": [
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 9,
+       "rank": 9
+      },
+      {
+       "j": 3,
+       "n": 62,
+       "rank": 28
+      },
+      {
+       "j": 4,
+       "n": 121,
+       "rank": 28
+      },
+      {
+       "j": 5,
+       "n": 138,
+       "rank": 28
+      },
+      {
+       "j": 6,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_nk": {
+     "values": [
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "profile": [
+      {
+       "j": 4,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 5,
+       "n": 18,
+       "rank": 18
+      },
+      {
+       "j": 6,
+       "n": 77,
+       "rank": 28
+      },
+      {
+       "j": 7,
+       "n": 130,
+       "rank": 28
+      },
+      {
+       "j": 8,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 3
+    },
+    "s_rep": {
+     "values": [
+      0,
+      1,
+      2
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 87,
+       "rank": 28
+      },
+      {
+       "j": 1,
+       "n": 135,
+       "rank": 28
+      },
+      {
+       "j": 2,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_cr": {
+     "values": [
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+     ],
+     "profile": [
+      {
+       "j": 19,
+       "n": 2,
+       "rank": 2
+      },
+      {
+       "j": 21,
+       "n": 4,
+       "rank": 4
+      },
+      {
+       "j": 22,
+       "n": 8,
+       "rank": 8
+      },
+      {
+       "j": 23,
+       "n": 12,
+       "rank": 12
+      },
+      {
+       "j": 24,
+       "n": 18,
+       "rank": 18
+      },
+      {
+       "j": 25,
+       "n": 24,
+       "rank": 24
+      },
+      {
+       "j": 26,
+       "n": 28,
+       "rank": 28
+      },
+      {
+       "j": 27,
+       "n": 35,
+       "rank": 28
+      },
+      {
+       "j": 28,
+       "n": 43,
+       "rank": 28
+      },
+      {
+       "j": 29,
+       "n": 48,
+       "rank": 28
+      },
+      {
+       "j": 30,
+       "n": 51,
+       "rank": 28
+      },
+      {
+       "j": 31,
+       "n": 57,
+       "rank": 28
+      },
+      {
+       "j": 32,
+       "n": 69,
+       "rank": 28
+      },
+      {
+       "j": 33,
+       "n": 80,
+       "rank": 28
+      },
+      {
+       "j": 34,
+       "n": 86,
+       "rank": 28
+      },
+      {
+       "j": 35,
+       "n": 100,
+       "rank": 28
+      },
+      {
+       "j": 36,
+       "n": 109,
+       "rank": 28
+      },
+      {
+       "j": 37,
+       "n": 116,
+       "rank": 28
+      },
+      {
+       "j": 38,
+       "n": 124,
+       "rank": 28
+      },
+      {
+       "j": 39,
+       "n": 129,
+       "rank": 28
+      },
+      {
+       "j": 40,
+       "n": 131,
+       "rank": 28
+      },
+      {
+       "j": 41,
+       "n": 135,
+       "rank": 28
+      },
+      {
+       "j": 42,
+       "n": 138,
+       "rank": 28
+      },
+      {
+       "j": 43,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 7
+    },
+    "s_inv": {
+     "values": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "profile": [
+      {
+       "j": 7,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 8,
+       "n": 4,
+       "rank": 4
+      },
+      {
+       "j": 9,
+       "n": 10,
+       "rank": 9
+      },
+      {
+       "j": 10,
+       "n": 17,
+       "rank": 14
+      },
+      {
+       "j": 11,
+       "n": 29,
+       "rank": 22
+      },
+      {
+       "j": 12,
+       "n": 37,
+       "rank": 25
+      },
+      {
+       "j": 13,
+       "n": 51,
+       "rank": 28
+      },
+      {
+       "j": 14,
+       "n": 59,
+       "rank": 28
+      },
+      {
+       "j": 15,
+       "n": 80,
+       "rank": 28
+      },
+      {
+       "j": 16,
+       "n": 97,
+       "rank": 28
+      },
+      {
+       "j": 17,
+       "n": 106,
+       "rank": 28
+      },
+      {
+       "j": 18,
+       "n": 119,
+       "rank": 28
+      },
+      {
+       "j": 19,
+       "n": 126,
+       "rank": 28
+      },
+      {
+       "j": 20,
+       "n": 131,
+       "rank": 28
+      },
+      {
+       "j": 21,
+       "n": 134,
+       "rank": 28
+      },
+      {
+       "j": 22,
+       "n": 137,
+       "rank": 28
+      },
+      {
+       "j": 23,
+       "n": 139,
+       "rank": 28
+      }
+     ],
+     "block_dim": 28,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 7
+    }
+   },
+   "11:4,1,1,3": {
+    "s_a": {
+     "values": [
+      4
+     ],
+     "profile": [
+      {
+       "j": 4,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_in": {
+     "values": [
+      0,
+      1,
+      2
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 74,
+       "rank": 4
+      },
+      {
+       "j": 1,
+       "n": 104,
+       "rank": 4
+      },
+      {
+       "j": 2,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_sp": {
+     "values": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "profile": [
+      {
+       "j": 10,
+       "n": 3,
+       "rank": 3
+      },
+      {
+       "j": 11,
+       "n": 12,
+       "rank": 4
+      },
+      {
+       "j": 12,
+       "n": 26,
+       "rank": 4
+      },
+      {
+       "j": 13,
+       "n": 45,
+       "rank": 4
+      },
+      {
+       "j": 14,
+       "n": 72,
+       "rank": 4
+      },
+      {
+       "j": 15,
+       "n": 87,
+       "rank": 4
+      },
+      {
+       "j": 16,
+       "n": 102,
+       "rank": 4
+      },
+      {
+       "j": 17,
+       "n": 105,
+       "rank": 4
+      },
+      {
+       "j": 18,
+       "n": 106,
+       "rank": 4
+      },
+      {
+       "j": 19,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_kk": {
+     "values": [
+      2,
+      3,
+      4,
+      5
+     ],
+     "profile": [
+      {
+       "j": 2,
+       "n": 6,
+       "rank": 4
+      },
+      {
+       "j": 3,
+       "n": 50,
+       "rank": 4
+      },
+      {
+       "j": 4,
+       "n": 93,
+       "rank": 4
+      },
+      {
+       "j": 5,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_nk": {
+     "values": [
+      5,
+      6,
+      7,
+      8
+     ],
+     "profile": [
+      {
+       "j": 5,
+       "n": 14,
+       "rank": 4
+      },
+      {
+       "j": 6,
+       "n": 57,
+       "rank": 4
+      },
+      {
+       "j": 7,
+       "n": 101,
+       "rank": 4
+      },
+      {
+       "j": 8,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_rep": {
+     "values": [
+      0,
+      1
+     ],
+     "profile": [
+      {
+       "j": 0,
+       "n": 75,
+       "rank": 4
+      },
+      {
+       "j": 1,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": true,
+     "verdict": "trivial (PROVED: lowest class already spans the block)",
+     "distinct_ranks": 1
+    },
+    "s_cr": {
+     "values": [
+      16,
+      20,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      45
+     ],
+     "profile": [
+      {
+       "j": 16,
+       "n": 1,
+       "rank": 1
+      },
+      {
+       "j": 20,
+       "n": 4,
+       "rank": 4
+      },
+      {
+       "j": 23,
+       "n": 7,
+       "rank": 4
+      },
+      {
+       "j": 24,
+       "n": 9,
+       "rank": 4
+      },
+      {
+       "j": 25,
+       "n": 11,
+       "rank": 4
+      },
+      {
+       "j": 26,
+       "n": 14,
+       "rank": 4
+      },
+      {
+       "j": 27,
+       "n": 19,
+       "rank": 4
+      },
+      {
+       "j": 28,
+       "n": 23,
+       "rank": 4
+      },
+      {
+       "j": 29,
+       "n": 34,
+       "rank": 4
+      },
+      {
+       "j": 30,
+       "n": 39,
+       "rank": 4
+      },
+      {
+       "j": 31,
+       "n": 48,
+       "rank": 4
+      },
+      {
+       "j": 32,
+       "n": 53,
+       "rank": 4
+      },
+      {
+       "j": 33,
+       "n": 59,
+       "rank": 4
+      },
+      {
+       "j": 34,
+       "n": 68,
+       "rank": 4
+      },
+      {
+       "j": 35,
+       "n": 78,
+       "rank": 4
+      },
+      {
+       "j": 36,
+       "n": 83,
+       "rank": 4
+      },
+      {
+       "j": 37,
+       "n": 90,
+       "rank": 4
+      },
+      {
+       "j": 38,
+       "n": 97,
+       "rank": 4
+      },
+      {
+       "j": 40,
+       "n": 103,
+       "rank": 4
+      },
+      {
+       "j": 41,
+       "n": 105,
+       "rank": 4
+      },
+      {
+       "j": 42,
+       "n": 106,
+       "rank": 4
+      },
+      {
+       "j": 45,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    },
+    "s_inv": {
+     "values": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19
+     ],
+     "profile": [
+      {
+       "j": 9,
+       "n": 4,
+       "rank": 1
+      },
+      {
+       "j": 10,
+       "n": 13,
+       "rank": 4
+      },
+      {
+       "j": 11,
+       "n": 27,
+       "rank": 4
+      },
+      {
+       "j": 12,
+       "n": 56,
+       "rank": 4
+      },
+      {
+       "j": 13,
+       "n": 78,
+       "rank": 4
+      },
+      {
+       "j": 14,
+       "n": 93,
+       "rank": 4
+      },
+      {
+       "j": 15,
+       "n": 100,
+       "rank": 4
+      },
+      {
+       "j": 16,
+       "n": 105,
+       "rank": 4
+      },
+      {
+       "j": 19,
+       "n": 107,
+       "rank": 4
+      }
+     ],
+     "block_dim": 4,
+     "lowest_class_spans": false,
+     "verdict": "candidate (MEASURED: sampled rank below the block dimension)",
+     "distinct_ranks": 2
+    }
+   }
+  },
+  "s4_whole_space": {
+   "s_a": {
+    "profile": [
+     {
+      "j": 1,
+      "n": 140,
+      "rank": 7
+     },
+     {
+      "j": 2,
+      "n": 290,
+      "rank": 38
+     },
+     {
+      "j": 3,
+      "n": 429,
+      "rank": 66
+     },
+     {
+      "j": 4,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     7,
+     31,
+     28,
+     4
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_in": {
+    "profile": [
+     {
+      "j": 0,
+      "n": 385,
+      "rank": 70
+     },
+     {
+      "j": 1,
+      "n": 516,
+      "rank": 70
+     },
+     {
+      "j": 2,
+      "n": 533,
+      "rank": 70
+     },
+     {
+      "j": 3,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     70,
+     0,
+     0,
+     0
+    ],
+    "proper": false,
+    "reaches_70": true
+   },
+   "s_sp": {
+    "profile": [
+     {
+      "j": 9,
+      "n": 1,
+      "rank": 1
+     },
+     {
+      "j": 10,
+      "n": 10,
+      "rank": 10
+     },
+     {
+      "j": 11,
+      "n": 44,
+      "rank": 32
+     },
+     {
+      "j": 12,
+      "n": 115,
+      "rank": 70
+     },
+     {
+      "j": 13,
+      "n": 203,
+      "rank": 70
+     },
+     {
+      "j": 14,
+      "n": 331,
+      "rank": 70
+     },
+     {
+      "j": 15,
+      "n": 430,
+      "rank": 70
+     },
+     {
+      "j": 16,
+      "n": 497,
+      "rank": 70
+     },
+     {
+      "j": 17,
+      "n": 524,
+      "rank": 70
+     },
+     {
+      "j": 18,
+      "n": 532,
+      "rank": 70
+     },
+     {
+      "j": 19,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     1,
+     9,
+     22,
+     38,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_kk": {
+    "profile": [
+     {
+      "j": 2,
+      "n": 25,
+      "rank": 23
+     },
+     {
+      "j": 3,
+      "n": 213,
+      "rank": 70
+     },
+     {
+      "j": 4,
+      "n": 439,
+      "rank": 70
+     },
+     {
+      "j": 5,
+      "n": 531,
+      "rank": 70
+     },
+     {
+      "j": 6,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     23,
+     47,
+     0,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_nk": {
+    "profile": [
+     {
+      "j": 4,
+      "n": 5,
+      "rank": 5
+     },
+     {
+      "j": 5,
+      "n": 97,
+      "rank": 60
+     },
+     {
+      "j": 6,
+      "n": 323,
+      "rank": 70
+     },
+     {
+      "j": 7,
+      "n": 511,
+      "rank": 70
+     },
+     {
+      "j": 8,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     5,
+     55,
+     10,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_rep": {
+    "profile": [
+     {
+      "j": 0,
+      "n": 221,
+      "rank": 69
+     },
+     {
+      "j": 1,
+      "n": 413,
+      "rank": 70
+     },
+     {
+      "j": 2,
+      "n": 520,
+      "rank": 70
+     },
+     {
+      "j": 3,
+      "n": 534,
+      "rank": 70
+     },
+     {
+      "j": 4,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     69,
+     1,
+     0,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_cr": {
+    "profile": [
+     {
+      "j": 16,
+      "n": 1,
+      "rank": 1
+     },
+     {
+      "j": 19,
+      "n": 6,
+      "rank": 6
+     },
+     {
+      "j": 20,
+      "n": 11,
+      "rank": 11
+     },
+     {
+      "j": 21,
+      "n": 15,
+      "rank": 15
+     },
+     {
+      "j": 22,
+      "n": 21,
+      "rank": 21
+     },
+     {
+      "j": 23,
+      "n": 33,
+      "rank": 30
+     },
+     {
+      "j": 24,
+      "n": 45,
+      "rank": 39
+     },
+     {
+      "j": 25,
+      "n": 62,
+      "rank": 50
+     },
+     {
+      "j": 26,
+      "n": 76,
+      "rank": 58
+     },
+     {
+      "j": 27,
+      "n": 105,
+      "rank": 67
+     },
+     {
+      "j": 28,
+      "n": 137,
+      "rank": 70
+     },
+     {
+      "j": 29,
+      "n": 169,
+      "rank": 70
+     },
+     {
+      "j": 30,
+      "n": 190,
+      "rank": 70
+     },
+     {
+      "j": 31,
+      "n": 229,
+      "rank": 70
+     },
+     {
+      "j": 32,
+      "n": 264,
+      "rank": 70
+     },
+     {
+      "j": 33,
+      "n": 299,
+      "rank": 70
+     },
+     {
+      "j": 34,
+      "n": 332,
+      "rank": 70
+     },
+     {
+      "j": 35,
+      "n": 378,
+      "rank": 70
+     },
+     {
+      "j": 36,
+      "n": 416,
+      "rank": 70
+     },
+     {
+      "j": 37,
+      "n": 446,
+      "rank": 70
+     },
+     {
+      "j": 38,
+      "n": 477,
+      "rank": 70
+     },
+     {
+      "j": 39,
+      "n": 492,
+      "rank": 70
+     },
+     {
+      "j": 40,
+      "n": 512,
+      "rank": 70
+     },
+     {
+      "j": 41,
+      "n": 525,
+      "rank": 70
+     },
+     {
+      "j": 42,
+      "n": 532,
+      "rank": 70
+     },
+     {
+      "j": 43,
+      "n": 534,
+      "rank": 70
+     },
+     {
+      "j": 44,
+      "n": 535,
+      "rank": 70
+     },
+     {
+      "j": 45,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     1,
+     5,
+     5,
+     4,
+     6,
+     9,
+     9,
+     11,
+     8,
+     9,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   },
+   "s_inv": {
+    "profile": [
+     {
+      "j": 2,
+      "n": 2,
+      "rank": 2
+     },
+     {
+      "j": 4,
+      "n": 7,
+      "rank": 4
+     },
+     {
+      "j": 5,
+      "n": 13,
+      "rank": 9
+     },
+     {
+      "j": 6,
+      "n": 22,
+      "rank": 12
+     },
+     {
+      "j": 7,
+      "n": 39,
+      "rank": 21
+     },
+     {
+      "j": 8,
+      "n": 54,
+      "rank": 26
+     },
+     {
+      "j": 9,
+      "n": 85,
+      "rank": 38
+     },
+     {
+      "j": 10,
+      "n": 126,
+      "rank": 51
+     },
+     {
+      "j": 11,
+      "n": 170,
+      "rank": 60
+     },
+     {
+      "j": 12,
+      "n": 218,
+      "rank": 64
+     },
+     {
+      "j": 13,
+      "n": 282,
+      "rank": 68
+     },
+     {
+      "j": 14,
+      "n": 332,
+      "rank": 70
+     },
+     {
+      "j": 15,
+      "n": 375,
+      "rank": 70
+     },
+     {
+      "j": 16,
+      "n": 415,
+      "rank": 70
+     },
+     {
+      "j": 17,
+      "n": 451,
+      "rank": 70
+     },
+     {
+      "j": 18,
+      "n": 479,
+      "rank": 70
+     },
+     {
+      "j": 19,
+      "n": 498,
+      "rank": 70
+     },
+     {
+      "j": 20,
+      "n": 509,
+      "rank": 70
+     },
+     {
+      "j": 21,
+      "n": 519,
+      "rank": 70
+     },
+     {
+      "j": 22,
+      "n": 530,
+      "rank": 70
+     },
+     {
+      "j": 23,
+      "n": 535,
+      "rank": 70
+     },
+     {
+      "j": 26,
+      "n": 536,
+      "rank": 70
+     }
+    ],
+    "ambient_dim": 70,
+    "graded": [
+     2,
+     2,
+     5,
+     3,
+     9,
+     5,
+     12,
+     13,
+     9,
+     4,
+     4,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "proper": true,
+    "reaches_70": true
+   }
+  }
+ },
+ "status": "done",
+ "elapsed_s": 21.391
+}

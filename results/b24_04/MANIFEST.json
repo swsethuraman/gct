@@ -1,0 +1,54 @@
+{
+  "packet": "b24_04",
+  "generated_utc": "2026-09-20T13:21:43Z",
+  "worktree": "work/batch15_workers/B15-02",
+  "branch": "b15-02-a1-probes",
+  "head": "feed104ea865ed5f76809f6d77455060af01433c",
+  "algorithm": "sha256",
+  "excluded_from_manifest": ["results/b24_04/MANIFEST.json", "results/b24_04/SEAL_LOG.txt"],
+  "excluded_reason": "a manifest cannot bind itself or the log written beside it",
+  "gitignore_note": "negation missing for b24_04_ (results/logs/*.pid is ignored)",
+  "files": {
+    "docs/b24_04_report.md": {"sha256": "3d24884a82d47e73e48ddc1df221899d09bf9c4d749226fd1a86ca50326eee4b", "bytes": 46598}
+    ,
+    "analysis/b24_04_p1_patterns.py": {"sha256": "abb3403ff25620c65ff57b5b720285162a9835d7a1f52b4fd11d084c39617645", "bytes": 15655}
+    ,
+    "analysis/b24_04_p2_saturate.py": {"sha256": "2b983f3079e1994a5a4d8ddaf00e192296c48dd5e4ea948728397705c045929f", "bytes": 8039}
+    ,
+    "analysis/b24_04_p3_close.py": {"sha256": "ac3f81d74b675b6547c15335b287712d06fb3550be798e323e5223260fa48341", "bytes": 12677}
+    ,
+    "analysis/b24_04_seal.sh": {"sha256": "9663d231640bf5fe05c666c898d7cbd4f730f4980410d02667e5ec1ff7b7c08e", "bytes": 3443}
+    ,
+    "results/b24_04/PREREG_b24_04_p1.md": {"sha256": "e77a79e1a36a03d8075606f01c27d1d987a2eeb766999ad986b2eec31b071519", "bytes": 5345}
+    ,
+    "results/b24_04/PREREG_b24_04_p2.md": {"sha256": "c62d96141bcb0cd8e37786858c0932448e7d5006ab3f10d9ad9f1bd25e4a2d7f", "bytes": 3206}
+    ,
+    "results/b24_04/PREREG_b24_04_p3.md": {"sha256": "7b52ea97be3732eb3a4166206bfa5ff13c3169d950dc0e45c4d9ab0078de46d8", "bytes": 3637}
+    ,
+    "results/b24_04/p1_patterns.json": {"sha256": "e43e7412cf92970e1a290854f350368621bb7a652be4f31d33c4bc4a07a12421", "bytes": 52323}
+    ,
+    "results/b24_04/p2_saturate.json": {"sha256": "1819b8f3fbed9938092a7be83924c8dd2f361f6f9d0fc2e7d3f1b11f44246c5c", "bytes": 5143}
+    ,
+    "results/b24_04/p3_close.json": {"sha256": "52b98563055a37ad90934b88433b92706b17b79273292ab70901080b4548a1f3", "bytes": 5969}
+    ,
+    "results/logs/b24_04_p1_patterns_resources.json": {"sha256": "551f50913cc033c819018ef02c77f499ccf21a785ed385936c14bdc5736e2846", "bytes": 817}
+    ,
+    "results/logs/b24_04_p2_saturate_resources.json": {"sha256": "e79ad9bffc1f959a976ac106e7bddbf445b505a58c1ca4b369a623a75abf6555", "bytes": 815}
+    ,
+    "results/logs/b24_04_p3_close_resources.json": {"sha256": "a0feba2420522447315c1c029ad1dd307b6a6a02b6a4ab927f666255f6eb1069", "bytes": 815}
+    ,
+    "results/logs/b24_04_p1_patterns.pid": {"sha256": "44eb2f7b1cf4020296e2b9373b133caf722a3359ec82f137658da0ee868921e6", "bytes": 7}
+    ,
+    "results/logs/b24_04_p2_saturate.pid": {"sha256": "2013cf0eec8ad6a1b10708eccbe3bae6c165cf46d465271b80797c9b43ee1221", "bytes": 6}
+    ,
+    "results/logs/b24_04_p3_close.pid": {"sha256": "267a0e3535c91cec22a68b2f1b27f868616ba7e370d909660b555394644628c3", "bytes": 7}
+  },
+  "pinned_inputs": {
+    "analysis/b22_01_typed_v2.py": {"sha256": "93d739eda3afd8c0dbddf452de1e73e76470864fd8ece27171f683574eb326fc", "bytes": 13226, "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e3042acae9464f9025be355ae699a2485"},
+    "results/b22_01/p2_basis.json": {"sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79", "bytes": 293596, "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e3042acae9464f9025be355ae699a2485"},
+    "analysis/b15_bound.py": {"sha256": "ca001081f49e0048812b871a31e3be85435b210b3a538170a9f006408a41f854", "note": "the wrapper (G19)"},
+    "lit/bdi_2002.11594v2.pdf": {"sha256": "5371f3b62964f221b248334bec54d453a5bdcca4f2980c854cee41183f1317b6", "bytes": 513636, "note": "session scratchpad, not in the tree; https://arxiv.org/pdf/2002.11594v2"},
+    "lit/bdi_ar5iv.html": {"sha256": "31c8a74500d961b8e60e29daf8a780917700a1ad2fa1f2a5f383b1b454cde23b", "bytes": 1630516, "note": "session scratchpad, not in the tree; https://ar5iv.labs.arxiv.org/html/2002.11594"}
+  },
+  "generator": "analysis/b24_04_seal.sh"
+}

@@ -1,0 +1,235 @@
+{
+ "pilot": "b24_04_p3_close",
+ "slot": "B24-04",
+ "prime": 524287,
+ "seed": 20260921,
+ "inputs": {
+  "results/b24_04/PREREG_b24_04_p3.md": {
+   "sha256": "7b52ea97be3732eb3a4166206bfa5ff13c3169d950dc0e45c4d9ab0078de46d8"
+  },
+  "results/b24_04/p1_patterns.json": {
+   "sha256": "e43e7412cf92970e1a290854f350368621bb7a652be4f31d33c4bc4a07a12421"
+  },
+  "results/b24_04/p2_saturate.json": {
+   "sha256": "1819b8f3fbed9938092a7be83924c8dd2f361f6f9d0fc2e7d3f1b11f44246c5c"
+  },
+  "analysis/b22_01_typed_v2.py": {
+   "sha256": "93d739eda3afd8c0dbddf452de1e73e76470864fd8ece27171f683574eb326fc",
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  },
+  "results/b22_01/p2_basis.json": {
+   "sha256": "7162d852b4490d2f22702b9b974979e403dd0dfb8794cef92b6be894d9a66e79",
+   "bound_by": "results/b22_01/MANIFEST.json at 53bdb31e"
+  }
+ },
+ "code": {
+  "analysis/b24_04_p1_patterns.py": {
+   "sha256": "abb3403ff25620c65ff57b5b720285162a9835d7a1f52b4fd11d084c39617645",
+   "bytes": 15655
+  },
+  "analysis/b24_04_p3_close.py": {
+   "sha256": "ac3f81d74b675b6547c15335b287712d06fb3550be798e323e5223260fa48341",
+   "bytes": 12677
+  }
+ },
+ "log": {},
+ "status": "done",
+ "elapsed_s": 15.831,
+ "partA": {
+  "block": "11:1,4,4,0",
+  "statistic": "s_rep",
+  "threshold": 0,
+  "block_dim": 7,
+  "family": "cols[0] in perms(a,r,c); cols[1..3] in perms(r,c); triples free",
+  "drawn": 468,
+  "accepted": 400,
+  "zero_function": 68,
+  "guard_skip": 0,
+  "rank": 6,
+  "stopped_by": "stalled",
+  "verdict": "candidate, MEASURED only: codimension 1 in one 7-dimensional block",
+  "pilot2_saw": {
+   "accepted": 126,
+   "rank": 6
+  }
+ },
+ "partB": {
+  "C1_calibration": {
+   "n=4 r=5 lambdabar=(2,2,2,2) d=5": {
+    "got": 553,
+    "b23_06": 553,
+    "agree": true
+   },
+   "n=5 r=5 lambdabar=(2,2,2,2) d=5": {
+    "got": 621,
+    "b23_06": 621,
+    "agree": true
+   },
+   "n=6 r=5 lambdabar=(2,2,2,2) d=5": {
+    "got": 641,
+    "b23_06": 641,
+    "agree": true
+   }
+  },
+  "C2_factorisation_by_enumeration": {
+   "n=3 r=3 d=5 lambdabar=(1, 1)": {
+    "lam": [
+     13,
+     1,
+     1
+    ],
+    "t": 2,
+    "d": 5,
+    "monomials_at_d": 2,
+    "min_multiplicity_of_n_e1": 3,
+    "required_d_minus_t": 3,
+    "divisibility_holds": true,
+    "count_at_degree_t": 2,
+    "counts_agree": true
+   },
+   "n=3 r=4 d=6 lambdabar=(1, 1, 1)": {
+    "lam": [
+     15,
+     1,
+     1,
+     1
+    ],
+    "t": 3,
+    "d": 6,
+    "monomials_at_d": 5,
+    "min_multiplicity_of_n_e1": 3,
+    "required_d_minus_t": 3,
+    "divisibility_holds": true,
+    "count_at_degree_t": 5,
+    "counts_agree": true
+   }
+  },
+  "C3_price_stable_NS_vs_tail": {
+   "4": {
+    "shapes_evaluated": 1,
+    "all_shapes": 1,
+    "min_over_evaluated": 15,
+    "argmin": "(1, 1, 1, 1)",
+    "max_over_evaluated": 15
+   },
+   "5": {
+    "shapes_evaluated": 1,
+    "all_shapes": 1,
+    "min_over_evaluated": 36,
+    "argmin": "(2, 1, 1, 1)",
+    "max_over_evaluated": 36
+   },
+   "6": {
+    "shapes_evaluated": 2,
+    "all_shapes": 2,
+    "min_over_evaluated": 73,
+    "argmin": "(3, 1, 1, 1)",
+    "max_over_evaluated": 91
+   },
+   "7": {
+    "shapes_evaluated": 3,
+    "all_shapes": 3,
+    "min_over_evaluated": 136,
+    "argmin": "(4, 1, 1, 1)",
+    "max_over_evaluated": 244
+   },
+   "8": {
+    "shapes_evaluated": 5,
+    "all_shapes": 5,
+    "min_over_evaluated": 231,
+    "argmin": "(5, 1, 1, 1)",
+    "max_over_evaluated": 687
+   },
+   "9": {
+    "shapes_evaluated": 6,
+    "all_shapes": 6,
+    "min_over_evaluated": 372,
+    "argmin": "(6, 1, 1, 1)",
+    "max_over_evaluated": 1572
+   },
+   "10": {
+    "shapes_evaluated": 9,
+    "all_shapes": 9,
+    "min_over_evaluated": 568,
+    "argmin": "(7, 1, 1, 1)",
+    "max_over_evaluated": 3728
+   },
+   "11": {
+    "shapes_evaluated": 11,
+    "all_shapes": 11,
+    "min_over_evaluated": 836,
+    "argmin": "(8, 1, 1, 1)",
+    "max_over_evaluated": 9151
+   },
+   "12": {
+    "shapes_evaluated": 15,
+    "all_shapes": 15,
+    "min_over_evaluated": 1189,
+    "argmin": "(9, 1, 1, 1)",
+    "max_over_evaluated": 23222
+   },
+   "13": {
+    "shapes_evaluated": 18,
+    "all_shapes": 18,
+    "min_over_evaluated": 1647,
+    "argmin": "(10, 1, 1, 1)",
+    "max_over_evaluated": 51643
+   },
+   "14": {
+    "shapes_evaluated": 23,
+    "all_shapes": 23,
+    "min_over_evaluated": 2224,
+    "argmin": "(11, 1, 1, 1)",
+    "max_over_evaluated": 117473
+   },
+   "15": {
+    "shapes_evaluated": 27,
+    "all_shapes": 27,
+    "min_over_evaluated": 2946,
+    "argmin": "(12, 1, 1, 1)",
+    "max_over_evaluated": 273281
+   },
+   "16": {
+    "shapes_evaluated": 34,
+    "all_shapes": 34,
+    "min_over_evaluated": 3829,
+    "argmin": "(13, 1, 1, 1)",
+    "max_over_evaluated": 650106
+   },
+   "18": {
+    "shapes_evaluated": 2,
+    "all_shapes": 47,
+    "min_over_evaluated": 6183,
+    "argmin": "(15, 1, 1, 1)",
+    "max_over_evaluated": 3009534,
+    "note": "two shapes only, not a global minimum"
+   },
+   "20": {
+    "shapes_evaluated": 2,
+    "all_shapes": 64,
+    "min_over_evaluated": 9492,
+    "argmin": "(17, 1, 1, 1)",
+    "max_over_evaluated": 14979308,
+    "note": "two shapes only, not a global minimum"
+   },
+   "22": {
+    "shapes_evaluated": 2,
+    "all_shapes": 84,
+    "min_over_evaluated": 13986,
+    "argmin": "(19, 1, 1, 1)",
+    "max_over_evaluated": 64647502,
+    "note": "two shapes only, not a global minimum"
+   },
+   "24": {
+    "shapes_evaluated": 2,
+    "all_shapes": 108,
+    "min_over_evaluated": 19921,
+    "argmin": "(21, 1, 1, 1)",
+    "max_over_evaluated": 295797207,
+    "note": "two shapes only, not a global minimum"
+   }
+  },
+  "C3_deadline_hit": false,
+  "C3_note": "minimum over the shapes evaluated, never a proved global minimum; stable value means d >= t, where N_S no longer depends on d (B23-06 Lemma 2.3)"
+ }
+}
