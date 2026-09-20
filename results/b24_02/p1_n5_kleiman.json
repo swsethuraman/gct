@@ -1,0 +1,273 @@
+{
+ "preregistration": {
+  "path": "results/b24_02/p1_prereg.md",
+  "sha256": "b0b4b66054d41f583d53d1341648d67cf130732b60e6e66cd8819a6d85c70d2b",
+  "expected": "b0b4b66054d41f583d53d1341648d67cf130732b60e6e66cd8819a6d85c70d2b",
+  "match": true,
+  "recorded_at_elapsed_s": 0.0
+ },
+ "pilot": "b24_02_p1_n5_kleiman",
+ "elapsed_s": 0.194,
+ "N": 5,
+ "modulus": 2147483647,
+ "seed": 20260919,
+ "dimension_convention": "affine (G24)",
+ "A_padding_ceilings": {
+  "3": {
+   "dim_S_k": 35,
+   "h5_k": 19,
+   "lP_ceiling": 16,
+   "universal_ceiling": 5,
+   "padding_ceiling": 5
+  },
+  "4": {
+   "dim_S_k": 70,
+   "h5_k": 31,
+   "lP_ceiling": 39,
+   "universal_ceiling": 25,
+   "padding_ceiling": 25
+  },
+  "5": {
+   "dim_S_k": 126,
+   "h5_k": 46,
+   "lP_ceiling": 80,
+   "universal_ceiling": 75,
+   "padding_ceiling": 75
+  },
+  "6": {
+   "dim_S_k": 210,
+   "h5_k": 64,
+   "lP_ceiling": 146,
+   "universal_ceiling": 165,
+   "padding_ceiling": 146
+  },
+  "7": {
+   "dim_S_k": 330,
+   "h5_k": 85,
+   "lP_ceiling": 245,
+   "universal_ceiling": null,
+   "padding_ceiling": 245
+  },
+  "8": {
+   "dim_S_k": 495,
+   "h5_k": 109,
+   "lP_ceiling": 386,
+   "universal_ceiling": null,
+   "padding_ceiling": 386
+  },
+  "9": {
+   "dim_S_k": 715,
+   "h5_k": 136,
+   "lP_ceiling": 579,
+   "universal_ceiling": null,
+   "padding_ceiling": 579
+  }
+ },
+ "A_h5_closed_form_check": true,
+ "B_point": {
+  "what": "det of a random 4x4 matrix of integer linear forms in 5 variables",
+  "entries_range": [
+   -5,
+   5
+  ],
+  "n_monomials_of_F": 70,
+  "deg_check": true
+ },
+ "B_determinant_floors": {
+  "3": {
+   "det_floor": 5,
+   "rows": 35,
+   "cols": 5,
+   "padding_ceiling": 5,
+   "margin": 0
+  },
+  "4": {
+   "det_floor": 25,
+   "rows": 70,
+   "cols": 25,
+   "padding_ceiling": 25,
+   "margin": 0
+  },
+  "5": {
+   "det_floor": 75,
+   "rows": 126,
+   "cols": 75,
+   "padding_ceiling": 75,
+   "margin": 0
+  },
+  "6": {
+   "det_floor": 165,
+   "rows": 210,
+   "cols": 175,
+   "padding_ceiling": 146,
+   "margin": 19
+  },
+  "7": {
+   "det_floor": 299,
+   "rows": 330,
+   "cols": 350,
+   "padding_ceiling": 245,
+   "margin": 54
+  },
+  "8": {
+   "det_floor": 475,
+   "rows": 495,
+   "cols": 630,
+   "padding_ceiling": 386,
+   "margin": 89
+  },
+  "9": {
+   "det_floor": 695,
+   "rows": 715,
+   "cols": 1050,
+   "padding_ceiling": 579,
+   "margin": 116
+  }
+ },
+ "C_F0": {
+  "form": "x1x2x3x4 - x5^4",
+  "is_det_of_cyclic_matrix": true,
+  "det_expansion": {
+   "00004": -1,
+   "11110": 1
+  }
+ },
+ "C_A_ladder": {
+  "brute_force": {
+   "0": 1,
+   "1": 4,
+   "2": 10,
+   "3": 16,
+   "4": 22,
+   "5": 28,
+   "6": 34,
+   "7": 40,
+   "8": 46,
+   "9": 52,
+   "10": 58,
+   "11": 64,
+   "12": 70
+  },
+  "formula_6a_minus_2": {
+   "0": 1,
+   "1": 4,
+   "2": 10,
+   "3": 16,
+   "4": 22,
+   "5": 28,
+   "6": 34,
+   "7": 40,
+   "8": 46,
+   "9": 52,
+   "10": 58,
+   "11": 64,
+   "12": 70
+  },
+  "match": true
+ },
+ "C_H_hilbert": {
+  "brute_force": {
+   "0": 1,
+   "1": 5,
+   "2": 15,
+   "3": 30,
+   "4": 48,
+   "5": 66,
+   "6": 84,
+   "7": 102,
+   "8": 120,
+   "9": 138,
+   "10": 156,
+   "11": 174,
+   "12": 192
+  },
+  "formula_18k_minus_24_from_k3": {
+   "0": null,
+   "1": null,
+   "2": null,
+   "3": 30,
+   "4": 48,
+   "5": 66,
+   "6": 84,
+   "7": 102,
+   "8": 120,
+   "9": 138,
+   "10": 156,
+   "11": 174,
+   "12": 192
+  },
+  "match_from_k3": true
+ },
+ "C_F0_rank_crosscheck": {
+  "3": {
+   "rank_M_k_F0": 5,
+   "dim_S_k_minus_H_k": 5,
+   "match": true
+  },
+  "4": {
+   "rank_M_k_F0": 22,
+   "dim_S_k_minus_H_k": 22,
+   "match": true
+  },
+  "5": {
+   "rank_M_k_F0": 60,
+   "dim_S_k_minus_H_k": 60,
+   "match": true
+  },
+  "6": {
+   "rank_M_k_F0": 126,
+   "dim_S_k_minus_H_k": 126,
+   "match": true
+  },
+  "7": {
+   "rank_M_k_F0": 228,
+   "dim_S_k_minus_H_k": 228,
+   "match": true
+  }
+ },
+ "D_closed_form_check": true,
+ "D_newton": {
+  "k_1": 10,
+  "D_at_k1_plus": [
+   10,
+   25,
+   43,
+   64,
+   88,
+   115,
+   145,
+   178
+  ],
+  "newton_coefficients_e": [
+   10,
+   15,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "all_e_nonnegative": true,
+  "e_0": 10,
+  "certificate_holds": true
+ },
+ "D_signs_below_k1": {
+  "3": -11,
+  "4": -17,
+  "5": -20,
+  "6": -20,
+  "7": -17,
+  "8": -11,
+  "9": -2,
+  "10": 10
+ },
+ "decision": {
+  "rule": "PASS iff (a) margins >= 0 at k=3,4,5; (b) margins > 0 at k=6,7,8,9; (c) Newton certificate holds at k_1 = 10",
+  "cond_a_ties_k345": true,
+  "cond_b_strict_k6789": true,
+  "cond_c_newton_tail": true,
+  "verdict": "PASS",
+  "coverage": "k <= 2: M_k has no columns. k = 3,4,5: tie at the universal ceiling. k = 6..9: certified modular floor at a random integer point of D45. k >= 10: F_0 with an exact monomial Hilbert function and the Newton certificate."
+ }
+}
