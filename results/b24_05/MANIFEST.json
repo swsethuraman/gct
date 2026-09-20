@@ -1,0 +1,138 @@
+{
+  "slot": "B24-05",
+  "title": "Do D-module invariants escape the direction reversal? The gate, and the negative",
+  "batch": 24,
+  "worktree": "work/batch15_workers/B24-05",
+  "branch": "b24-05-dmodule",
+  "author": "Claude (Opus 5, 1M context), producer only (G18)",
+  "date_utc": "2026-09-20",
+  "provenance": {
+    "head": "82633a60893236fab4fbc317df416e1b8a349005",
+    "head_tree": "e82fd3291d1a2adc8a577647314c251366ff5142",
+    "status_porcelain_at_start": "empty (clean worktree)",
+    "recorded_utc": "2026-09-20T03:28:13Z",
+    "git_mode": "read-only (rev-parse, status, show, log, cat-file, check-ignore); no commit, push, fetch, stash or checkout"
+  },
+  "outcome": {
+    "gate_passed": false,
+    "verdict": "negative; both sub-candidates killed",
+    "cell_nominated": false,
+    "gap_claimed": false,
+    "equation_produced": false,
+    "sub_candidate_A": "Bernstein-Sato root integrality -- PROVED-kill (orbit-only; dies on the brief's third named death) plus four independent kills; one ASSESSED-kill on the closure repair",
+    "sub_candidate_B": "characteristic-cycle multiplicities -- PROVED-kill on B22-02 Lemma 1.1 itself (u.s.c. multiplicities larger on padding; l.s.c. polar degrees smaller); two ASSESSED-kills",
+    "new_exclusion_added": "Corollary D2': every GL-invariant property holding at det_n and failing at the pure power x^n is orbit-only and yields no closed condition containing Det_n"
+  },
+  "numerical_runs": {
+    "wrapped_launches_used": 0,
+    "wrapped_launches_allowed": 3,
+    "wall_seconds_used": 0,
+    "wall_seconds_allowed": 180,
+    "unwrapped_numerical_runs": 0,
+    "one_job_rule_check_utc": "2026-09-20T03:28Z",
+    "one_job_rule_result": "../B15-01/results/logs/b24_02_*.pid does not exist; ../B15-02/results/logs/b24_04_*.pid does not exist; no job launched by this slot"
+  },
+  "inputs_pinned": [
+    {
+      "path": "docs/b22_02_report.md",
+      "pin": "e22a41b1787ff5e8a284433d5d7e0d2a6a2d35b8",
+      "sha256": "b41e4265809a018750286d6eda416d62c4f4044b3fdb7cbac2cc51caf50593e4",
+      "used_for": "Lemmas 1.1-1.6, Fact 1.7, the thirteen rows"
+    },
+    {
+      "path": "docs/b23_02_report.md",
+      "pin": "68866e6ddc4deb38ac1fa29ffc1294395178357a",
+      "sha256": "664f3e52ee04b00cfe23d1019182804a4ce8825fb590715621efeaf6a478eff9",
+      "used_for": "row 10's collapse (Proposition 1.1)"
+    },
+    {
+      "path": "docs/b23_03_report.md",
+      "pin": "3bcad66601a586936ce5c76fdf72d9551700dab3",
+      "sha256": "0101f224327a61d1c14e480fbb0c6a4dca17c20b4e8191f44fe533b07b9e0a91",
+      "used_for": "context; not load-bearing in this packet"
+    },
+    {
+      "path": "docs/b23_06_report.md",
+      "pin": "feed104ea865ed5f76809f6d77455060af01433c",
+      "sha256": "a56d239467551cf9f197fb44094be8af41333a02570f94b71f99406308f4283a",
+      "used_for": "L18 (N <= 2n blindness, the m^2/2 frontier); the dcbar(per_3) open-problem quote"
+    },
+    {
+      "path": "docs/b23_10_review.md",
+      "pin": "239dd6e84417ab04914a8d84cca02ddf754bf1fb",
+      "sha256": "8bbc8d9eaee6962096af3f1ed6836e87ff1ffc250bea27789b82142fe014b5d9",
+      "used_for": "gates G27, G28; Batch 24 ranking"
+    }
+  ],
+  "gate_definitions_read_in_place": [
+    { "pin": "6915ae6f", "path": "docs/b20_10_review.md", "gates": ["G9", "G10", "G13", "G14", "G16", "G18"] },
+    { "pin": "f7727cb7", "path": "docs/b21_10_review.md", "gates": ["G19", "G20'", "G21", "G22", "G23", "G14'", "G15'"] },
+    { "pin": "2efb7aaf", "path": "docs/b22_10_review.md", "gates": ["G24", "G25", "G9'"] },
+    { "pin": "239dd6e8", "path": "docs/b23_10_review.md", "gates": ["G27", "G28"] }
+  ],
+  "literature": [
+    {
+      "item": "Ikenmeyer-Kandasamy, Implementing geometric complexity theory: on the separation of orbit closures via symmetries, arXiv 1911.03990v1",
+      "label": "PRIMARY (abstract page fetched this session)",
+      "load_bearing": false,
+      "used_for": "corroborates the orbit-versus-closure obstacle; the packet proves its instance independently (Lemmas D1-D2)"
+    },
+    {
+      "item": "Caracciolo-Sokal-Sportiello, Algebraic/combinatorial proofs of Cayley-type identities, arXiv 1105.6270 (ar5iv HTML)",
+      "label": "PRIMARY",
+      "load_bearing": true,
+      "used_for": "Cayley's identity, Thm 2.1: det(d)(det X)^s = s(s+1)...(s+n-1)(det X)^(s-1); after the s -> s+1 shift, b_det(s) = (s+1)...(s+n). Load-bearing for alphatilde(det_n) = 2"
+    },
+    {
+      "item": "X. Lin, The Bernstein-Sato polynomial of the Hankel determinant, arXiv 2609.19763 (HTML)",
+      "label": "PRIMARY (one sentence)",
+      "load_bearing": true,
+      "used_for": "global b-function is the lcm of the local b-functions (proof of Thm 2.2)"
+    },
+    {
+      "item": "Lorincz-Raicu-Walther(-Weyman), Bernstein-Sato polynomials for maximal minors and sub-maximal Pfaffians, arXiv 1601.06688",
+      "label": "UNREAD-SPECIALIST",
+      "load_bearing": false,
+      "used_for": "corroboration that b-functions of determinantal varieties are not understood"
+    },
+    {
+      "item": "Mulmuley-Sohoni, GCT IV: nonstandard quantum group for the Kronecker problem, arXiv cs/0703110",
+      "label": "UNREAD-SPECIALIST",
+      "load_bearing": false,
+      "used_for": "context in section 1.5: the field's q-analogue runs through a quantum group, not a statistic on conjugacy classes"
+    },
+    {
+      "item": "Semicontinuity of lct / of the minimal exponent in families (Varchenko; Mustata-Popa and successors)",
+      "label": "UNREAD-SPECIALIST",
+      "load_bearing": false,
+      "used_for": "names which closed condition one would extract; Lemma D3's kill is by values, not by semicontinuity"
+    },
+    {
+      "item": "Kashiwara (rationality of the roots), Malgrange, Lichtin; index theorem for characteristic cycles",
+      "label": "UNREAD-CLASSICAL",
+      "load_bearing": false,
+      "used_for": "index theorem used only in row B3, which survives any reasonable form of it; Lemmas D1 and D2 need no citation"
+    }
+  ],
+  "literature_pass_result": "MEASURED search negative: four searches found no work applying D-module or Bernstein-Sato invariants to permanent-versus-determinant or to orbit closures in GCT. Not an absence proof.",
+  "environment_note": "PDF text extraction unavailable in this environment; two attempted PDF reads returned unparsed streams and were discarded. Every quoted sentence comes from an HTML rendering fetched this session.",
+  "housekeeping": {
+    "gitignore_line_51": "results/logs/*.pid",
+    "only_negation_present": "!results/logs/b15_*.pid",
+    "report": "negation missing for `b24_05_`",
+    "moot": true,
+    "moot_reason": "no pilot was run and no .pid receipt exists to bind",
+    "check_ignore_docs_b24_05_report_md": "not ignored",
+    "check_ignore_results_b24_05_manifest_json": "not ignored"
+  },
+  "outputs": [
+    {
+      "path": "docs/b24_05_report.md",
+      "sha256": "e13ad0f1d8cab936e201bddbddb1bd3138b118d77655fa7e81b695e956a7fe1f"
+    },
+    {
+      "path": "results/b24_05/MANIFEST.json",
+      "sha256": "self"
+    }
+  ]
+}
