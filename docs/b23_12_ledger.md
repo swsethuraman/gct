@@ -263,9 +263,25 @@ inside the other:
 | family | description | dimension |
 |---|---|---|
 | **T1** | `{l·C : C ∈ D35}` | **33 affine / 32 projective** |
-| **T2** = `Σ_Π` | `{l·C : C contains a plane}` | **35 affine / 34 projective — exact**, not "≥ 35" |
+| **T2** = `{l·C : C ∈ Σ_Π}` | `{l·C : C contains a plane}` | **35 affine / 34 projective — exact**, not "≥ 35" |
+| `Σ_Π` (cubic side, in `Sym³C⁵`) | the cubics-through-a-plane locus itself | **31 affine / 30 projective** |
 | T3 | the primitive (genuinely non-compression) family B22-10 asked about | 29 affine / 28 projective, **and `T3 ⊆ T2` (PROVED)** |
 | skew-bordered | — | `⊆ T2` (PROVED) |
+
+**CORRECTED 2026-09-20 by B24-03 — eleventh integrator error.** This table read `**T2** = Σ_Π`.
+**`T2` and `Σ_Π` are different objects in different spaces.** `Σ_Π` is the cubics-through-a-plane
+locus in `Sym³C⁵`, 31 affine / 30 projective; `T2 = {l·C : C ∈ Σ_Π}` is its image on the quartic
+side in `P5`, 35 affine / 34 projective. The **description** in the row was right and the
+**dimensions** were right; the **identification** was mine and was wrong, and it carried the
+quartic-side dimensions onto the cubic-side object. The same conflation is in the B24-03 brief §1
+(mine), which B24-03 caught and worked around by using the packet's names. `T3` and the
+skew-bordered type lie in **`T2`**, as the rows say.
+
+**Not touched by this correction:** the Proposition 2.5 statement below,
+`deg f ≥ onset I(D35 ∪ Σ_Π)`. `D35` and `Σ_Π` are both **cubic-side** loci in `Sym³C⁵`, so
+`Σ_Π` is the right object there and the sentence stands as written. The integrator states that
+reading rather than assuming it and asks **B24-10 to confirm it**, since the error being corrected
+is exactly a failure to keep the two sides apart.
 
 `T1 ⊄ T2` is certified: pilot 2 exhibited a `D35` cubic with exactly six nodes in linearly
 general position, which therefore contains no plane.
@@ -277,7 +293,8 @@ that B23-03 found the reverse, and that this was the first producer correction o
 
 **What is true.** B22-10 never wrote "projective dimension ≥ 35". *I* wrote it, in the B23-03
 brief, and then recorded it here as B22-10's. B22-10's numbers stand and B23-03 **agrees** with
-them: 35 affine / 34 projective for `Σ_Π` against 33 affine / 32 projective for `T1`. What does
+them: 35 affine / 34 projective for `T2` against 33 affine / 32 projective for `T1` (`Σ_Π`
+itself is 31 / 30 — see the correction above). What does
 fall is B22-10's separate "the record is off by one" sentence — the record's 32 was right as a
 projective value. So B23-03 corrected **my mislabel**, not the reviewer, and there was no
 producer-corrects-reviewer event. G24 is vindicated rather than tested. I repeated the same
@@ -425,9 +442,9 @@ instruction.
 | B23-06 | **COMPLETE — outcome (3) of §8.6: the integrator's premise corrected** | `B15-02\docs\b23_06_report.md`; `results\b23_06\` (pilot output, manifest) |
 | B23-05 | **COMPLETE — Paper 1 NOT arXiv-ready; 5 blockers, one an attribution defect** | `B23-05\paper\det3-conductor.tex`, `README.md`, `CHANGES.md` `b9d6daff…`, `GAPS.md` `d8130465…`, `READINESS.md` `d313678c…`; HEAD `82633a60` unchanged, nothing committed |
 | B23-04 | **COMPLETE — Paper 3 drafted with 46 claim IDs; three scope corrections to my brief, two packet defects, four lineage gaps** | `B23-04\papers\det4-blindness\` — `det4-blindness.tex`, `CLAIMS.md` (C01–C46), `GAPS.md`, `BIB.md`; HEAD `82633a60` unchanged, nothing committed |
-| B23-04 (superseded row) | RUNNING — worktrees created, prompts written and pinned | `B23-04`, `B23-05` on their branches at `82633a60893236fab4fbc317df416e1b8a349005` |
+| B23-04 (stale duplicate row, struck 2026-09-19 per B23-10 §9 E6) | ~~RUNNING~~ — worktrees created, prompts written and pinned | `B23-04`, `B23-05` on their branches at `82633a60893236fab4fbc317df416e1b8a349005` |
 | B23-06 | READY — runs in `B15-02` alongside B23-02's uncommitted packet (PART 12 commits both with explicit path lists) | — |
-| B23-10 | NOT LAUNCHED | — |
+| B23-10 | **COMPLETE — 8 integrator errors found, 2 corrigenda against B22-10, attribution ruled RELATED, 2 lineage gaps closed, 2 new gates** | `B15-10\docs\b23_10_review.md` `8bbc8d9eaee69620…`; `results\b23_10\MANIFEST.json` (16 files, 37 pinned inputs, 6 external sources); HEAD `2efb7aaf` unchanged, uncommitted until PART 13 |
 | B23-12 | OPEN | this file |
 
 ---
@@ -681,6 +698,25 @@ it. The padding-exponent-one argument says `(4,5)` is the *most favourable* rung
 promising one — twenty-three batches at `(3,4)`, the most favourable rung of all, produced no
 obstruction. The map is for deciding what to *stop* doing as much as what to start.
 
+### 8.11 Batch 24, as B23-10 ordered it (2026-09-19)
+
+No cell nominated; Paper 2 not assessed (outside the remit, and still the gap I flagged).
+
+1. **Paper 1 blockers** — including the attribution, now ruled RELATED-not-equivalent with wording
+   supplied. Your decision.
+2. **The C45 and C24 lineage gaps, plus the `N = 5` Kleiman pilot** — the two remaining
+   foundations Paper 3 leans on, and one cheap pilot that would make row 1 unconditional at
+   `N = 5` as it already is at `N = 6, 7, 8`.
+3. **Paper 3 corrections** — 5 of 46 claim rows out of date against B23-02/03.
+4. **The small-tail question.**
+5. **G-A1**, the boundary.
+6. **Row 2**, theory step only.
+7. **The three-kinds theorem.**
+
+I had the small-tail question first; the reviewer puts three items ahead of it, and on reflection
+it is right — items 2 and 3 are what the papers need, and the papers are the deliverable. My
+ordering optimised for the most interesting question rather than the most useful one.
+
 ### 8.3 Open for the user
 
 - **The shape of the batch** was settled: three research slots, two writing slots, papers
@@ -708,6 +744,19 @@ obstruction. The map is for deciding what to *stop* doing as much as what to sta
 - ~18:15 B23-05 reported COMPLETE. Packet staged and hashed directly (relay truncated at the
   finding). §4 and §8.9 written. Three errors in my own brief recorded, all traceable to the
   2026-09-17 stocktake. Paper 1 reclassified: not arXiv-ready, five blockers.
+- 2026-09-19, ~21:30 local: **E9 — a write I believed had landed had not.** PART 13 committed the
+  ledger and reported that §8.11 did not exist in it and that two of the eight corrections were
+  tabled rather than applied. It was right: the committed blob is 57,215 B against 58,796 B here,
+  and is missing §8.11, the struck duplicate row (E6) and the B23-10 completion row. My final
+  edit reached the local file and not the device, and **I did not verify the write** — I read the
+  tool's success and stopped. The housekeeper flagged it and committed the file as found rather
+  than fixing it, which is correct. Re-committed here; it lands in the next housekeeping pass.
+  **Rule, mine: after every device write of this ledger, stage it back and compare hashes.** That
+  is G28 applied to myself — the gate says my record meets the producer gates, and a producer
+  verifies its blobs.
+- 2026-09-19, ~11:50 local: B23-10 reported COMPLETE. §§2.0, 2.0b, 8.11 written; eight errors in
+  this ledger corrected in place; G27 and G28 adopted. The audit of my own record is the most
+  useful thing any reviewer has produced for me.
 - ~17:45 B23-06 reported COMPLETE, outcome (3). §§3, 4 and 8.8 written; the two-week plan
   corrected the same day. The `dc`/`dc̄` conflation was mine and is recorded as such.
 - ~17:30 B23-03 reported COMPLETE. Packet staged and hashed directly (the relay was truncated).
