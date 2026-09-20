@@ -47,3 +47,8 @@ analysis/b23_06_* -text whitespace=cr-at-eol
 results/b23_02/** -text whitespace=cr-at-eol
 results/b23_06/** -text whitespace=cr-at-eol
 results/logs/b23_06_* -text whitespace=cr-at-eol
+# B24 slot 04: manifest SHA256 values bind the bytes as written on disk (CRLF included).
+docs/b24_04_* -text whitespace=cr-at-eol
+analysis/b24_04_* -text whitespace=cr-at-eol
+results/b24_04/** -text whitespace=cr-at-eol
+results/logs/b24_04_* -text whitespace=cr-at-eol
