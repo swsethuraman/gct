@@ -21,6 +21,68 @@ any kind**; a claim in a draft that is not in a committed packet is a defect (G2
 
 ## 2. Independently reviewed
 
+### 2.0b B23-10's substantive rulings (2026-09-19; report `8bbc8d9eaee69620…`, 16 files bound,
+37 pinned inputs, 6 external sources; 3 of 3 pilots, 9.25 s of 180 s, all wrapped, exit 0, no cap
+hit; nothing committed, pushed or fetched; no sealed file edited)
+
+**Session note.** An earlier B23-10 session had already written the pre-formed verdicts and run
+pilots 1–2 but left no report. This session kept those files unedited and built on them, and says
+it cannot vouch for anything that session did beyond what it wrote down. **Second duplicate-session
+event on this record** (the first was the competing integrator fill on 2026-09-17).
+
+| item | ruling |
+|---|---|
+| **G-17** | B22-10 did over-state it; B23-04 was right to call it OPEN; **B23-03's Prop. 2.5 now proves it**. One detail of B23-04 is wrong: B22-10's rank was exact **over `Q`**, not modular |
+| **G-18** | the "iff" is wrong — corrigendum K2. **The same error appears in B23-01's own transcription sentence (b)**, which I transcribed without noticing |
+| **Prop. 2.5, Thm 3.2** | **both PROVED**, reproduced by the reviewer's own code: all 8 determinant floors, all 8 padding ceilings, all 3 Newton certificates exact. A fresh random plane cubic has rank 64; B23-03's witness has rank 58 — a special member, and B23-03 never claimed 64 there |
+| **row 1** | PROVED-kill at `N = 6, 7, 8`. **At `N = 5` it still leans on Kleiman for `k ≥ 7`** — one cheap pilot would remove that |
+| **G-A1 (the boundary)** | **genuinely open** |
+| **attribution** | **RELATED, not equivalent.** Paper 1's Prop. 4.1 is the *simplest (pigeonhole) case* of BI Cor. 7.2, and exactly the counting step of BI Prop. 3.24(3). Cor. 7.2 is **stronger**; **Prop. 7.3 is not needed** (BI state it without proof). So B23-05's "equivalent to Cor. 7.2 with Prop. 7.3" was over-strong and I transcribed it as given. **It is still not new and must be credited** — one remark sentence, no novelty claim; wording in §4.4 |
+| **claims tables** | B23-04: **46/46 rows match their cited sources**, 5 out of date against B23-02/03. B23-05: **7/7 edits present**, every changed passage covered; P4 and P5 omit a later record entry that upgraded the result they cite; P7 names "(b)" where the record supports "(a)" or no letter |
+| **height 2000** | **scoped, not struck.** The original definition is unrecoverable. Per coefficient the claim is **false** (15 lifts for `α`, 16 for `β`); under a common denominator it is **true**, and the candidate's height is 2842 |
+| **lineage gaps** | **two closed by the reviewer**: the washout result by replay, the deficit lemma by a two-line re-derivation, each with named residues. **Remaining, ranked: 1. the positive control's dependence on LMR; 2. the Astra theorem** |
+| **G19** | B23-03's `print('x')` and empty program are **not violations**; one sentence added to the definition |
+
+**Disclosure carried forward:** the reviewer used three read-only helper agents to walk the two
+claims tables and this ledger, checked their key findings by hand at the cited lines, and states
+every ruling is its own.
+
+### 2.0 B23-10's audit of THIS ledger, and the corrections it ordered (2026-09-19)
+
+**B23-10 reviewed the integrator's record as priority 8b and found eight errors this ledger did
+not admit, plus one of its four admissions inaccurate and a wrong count in another.** Its verdict:
+*"a usable record of what each packet found; not a reliable record of who said what, of when, or
+of its own current state."* That is fair. All of it is accepted; the corrections are applied
+in place above and listed here.
+
+| # | error | correction |
+|---|---|---|
+| **E1** | "projective ≥ 35" attributed to B22-10; "B23-03 finds the reverse"; "first producer correction of a reviewer" | **The phrase was mine**, from the B23-03 brief. B22-10's numbers stand; **B23-03 agrees with B22-10**. Only B22-10's "the record is off by one" sentence falls. No producer-corrects-reviewer event occurred. Struck at §3 and §4 |
+| **E2** | the lineage gaps labelled "(G-15)" | They are G-14, G-15, G-23, G-29; G-29 names six rows and this ledger dropped **C11** |
+| **E3** | "two committed packets", "one in the reviewer's" | Both G-17 and G-18 are in B22-10 — one packet, and it is the reviewer's |
+| **E4** | every time stamped "UTC" | **They are local (UTC−4).** Every timeline entry is about four hours early. Now marked local; G28(b) fixes it going forward |
+| **E5** | §3 left stale against §4 | §3 still said the cap minors on the second family were OPEN and rows 1–2 PROVED only at `N = 5`, after §4 recorded Prop. 2.5 and Thm 3.2 |
+| **E6** | stale rows in §5 and §7 | B23-03/04/05 shown "READY, NOT LAUNCHED" beside COMPLETE rows; a "(superseded row) RUNNING" line left in |
+| **E7** | B23-04 credited with carrying B23-02's three-kinds caveat into prose | It did not; its caveat is about its own thesis |
+| **E8** | the "convergence" paragraph | B23-03's brief (mine) assigned the question, so it was not two slots independently reaching one defect. The story was better than the facts |
+
+**And my own admissions, audited.** The `dc`/`dc̄` admission is accurate. The "wrong axis"
+admission is accurate but §8.7 mislabels §8.4's failure, which was a defective control
+specification, not an axis. **The count of slots fired without criteria is three, not two**
+(B23-03, B23-04, B23-05), and my explanation for B23-03 contradicts this ledger's own §9 — its
+worktree was created *after* the ledger opened. And row 3 of the brief-errors table is itself
+wrong: `V^h_σ` *was* in the paper, and the retractions went into the paper and `README.md`, not
+into the files I named.
+
+**Two new gates follow, both mine to obey.** **G27** — a condition inferred from modular data
+states its direction ("requires", "only if", "implies"), never "iff", unless both directions are
+proved. **G28** — the integrator's record meets the producer gates it enforces: (a) any sentence
+attributing a statement to a packet quotes it with `file:line` at the pinned commit; (b) times
+are UTC with `Z`, copied from receipts, or marked local; (c) a brief's dimensions carry their
+convention. E1 is exactly what G28(a) would have caught.
+
+
+
 Nothing in Batch 23 yet. B23-10 reviews the three research slots and checks the drafts'
 claims tables. Everything below is producer-only (G18) until it reports.
 
@@ -43,6 +105,9 @@ the `F_P` form of Prop. 7.1; all six of B22-02's lemmas.
 | Theorem M's classical inputs (Cauchy, Plücker, complete reducibility of `L`, FFT for `SL_3`) | UNREAD-CLASSICAL at the point of use | B22-01 §2 |
 | (T2), EH C1/C3, **Ballico 1995 still unread** | unchanged — Eisenbud–Harris stays CONDITIONAL | the closure theorem `ρ_Z = 0` |
 | `dc̄(per_3) ∈ [5, 7]` | **OPEN in the published literature**; `dc(per_3) = 7` is the *exact* version and does not settle it | whether `(3,5)` and `(3,6)` contain anything to find |
+| ~~cap minors on the second family~~ | **CLOSED 2026-09-19: PROVED by B23-03 Prop. 2.5, reproduced by B23-10** (this row was left stale — E5) | — |
+| ~~rank thresholds at `N = 6, 7, 8`~~ | **CLOSED: PROVED-kill (B23-03 Thm 3.2, reproduced).** Row 1 at `N = 5` still leans on Kleiman for `k ≥ 7` — one cheap pilot | — |
+| `D45 ∩ P5` boundary (G-A1) | **OPEN** — limits of determinants that are not determinants; a smooth `l·C*` there kills the right-way corner | the cubic-side lift |
 | Can a separating equation live in a small-tail cell? | **OPEN, unpriced, never asked** — cost depends on tail not degree (B23-06), so this decides whether a higher-`n` hunt is cheap or impossible | every feasibility estimate in the two-week plan |
 | `onset I(D35) ∈ [8, 65]`; cap theorem at `n = 3` | ADOPTED record-internal / modulo Kleiman, Dimca, Gulliksen–Negård | B22-02 L6 |
 
@@ -58,7 +123,9 @@ one constant patched to `P₂` as a new hashed artifact; `q_3, q_7, n02` evaluat
 points 0–2. `MANIFEST.json` binds 10 files; the three sibling packets re-hash 0 mismatches
 (20, 10, 57 files); HEAD unchanged; git read-only.
 
-**B23-04 — Paper 3 drafted, and it pushed back on three of my claims and two committed packets**
+**B23-04 — Paper 3 drafted, and it pushed back on three of my claims and on two findings in one
+committed packet** *(corrected 2026-09-19, B23-10 §9 E3: both G-17 and G-18 are in B22-10, so
+"two packets" and "one in the reviewer's" were wrong — both are in the reviewer's)*
 (producer-only; HEAD `82633a60`, `status --porcelain` empty before the first write; read-only
 git; no commit, computation, pilot, runner or `.pid`; four new untracked files in
 `papers/det4-blindness/`; no LaTeX on the machine, so a static check instead — no broken
@@ -86,7 +153,9 @@ one certified cell and twenty-two integrator-accepted ones. **Corrected in
 - **G-18:** B22-10 S11 states an "iff" that should read "would require". B22-01's own wording is
   correct, and the draft uses B22-01's.
 
-**Four results my brief treated as citable that have no second review lineage (G-15):** the Astra
+**Results my brief treated as citable that have no second review lineage** — *corrected
+2026-09-19 (B23-10 §9 E2): the IDs are G-14, G-15, G-23 and G-29, not "G-15"; and G-29 names six
+rows (C04, C11, C24, C32, C33, C45), of which this entry dropped C11.* They are the Astra
 theorem; the deficit lemma in `obstruction_power.md`; the washout results; and the `n = 3`
 positive control — whose base rung also depends on LMR **with no read-status recorded for that
 use**. My brief said "after B22-10 the record is now citable"; that is true of the Batch 20–22
@@ -202,11 +271,17 @@ inside the other:
 general position, which therefore contains no plane.
 
 **Correction that runs the other way — the reviewer was wrong and the record was right.**
-B22-10 reported "projective dimension ≥ 35" for the new family and called the record's 32 an
-affine/projective mix-up. B23-03 finds the reverse: **≥ 35 was the affine figure**, the exact
-projective dimensions are 34 against 32, and **the record's §7 value of 32 was correct all
-along**. The strict containment B22-10 found stands; its dimension gloss and its "off by one"
-charge against the record do not. First time on this record a producer has corrected a reviewer.
+**STRUCK 2026-09-19 by B23-10 §3.0/§9 E1 — this paragraph was wrong in the way that matters
+most, and the error was mine.** What it said: that B22-10 reported "projective dimension ≥ 35",
+that B23-03 found the reverse, and that this was the first producer correction of a reviewer.
+
+**What is true.** B22-10 never wrote "projective dimension ≥ 35". *I* wrote it, in the B23-03
+brief, and then recorded it here as B22-10's. B22-10's numbers stand and B23-03 **agrees** with
+them: 35 affine / 34 projective for `Σ_Π` against 33 affine / 32 projective for `T1`. What does
+fall is B22-10's separate "the record is off by one" sentence — the record's 32 was right as a
+projective value. So B23-03 corrected **my mislabel**, not the reviewer, and there was no
+producer-corrects-reviewer event. G24 is vindicated rather than tested. I repeated the same
+misattribution to the user in conversation and have corrected it there.
 
 **A.3 — the right-way corner survives, and is now proved rather than sampled.**
 *Proposition 2.5 (PROVED, by hand):* the `cap(3) = 65` minors vanish at **every** cubic
@@ -480,7 +555,8 @@ a classification, that is a defect for B23-10 to catch.
 write.** Every hole is in `GAPS.md` rather than filled; scope is stated in the abstract and again
 in §1; the thesis is presented as an assembly of labelled results and the draft says plainly that
 it is **not a theorem of the record** — which is the caveat B23-02 attached to the three-kinds
-summary, carried correctly into prose. It includes the `n = 3` positive control and the `(4^5)`
+summary — *struck 2026-09-19 (B23-10 §9 E7): B23-04 opened no Batch 23 output, and its caveat is
+about its own thesis (its G-16), not B23-02's.* It includes the `n = 3` positive control and the `(4^5)`
 worked example.
 
 **G26 paid for itself three times.** It stopped an over-broad claim of mine from entering a
@@ -620,7 +696,7 @@ obstruction. The map is for deciding what to *stop* doing as much as what to sta
 
 ---
 
-## 9. Observation log (2026-09-18, UTC)
+## 9. Observation log (2026-09-18) — **times are LOCAL (UTC−4), not UTC** (B23-10 §9 E4)
 
 - ~13:20 PART 11 complete; B22-10 committed at `2efb7aaf`, ledger at `16f2392e`; Batch 22
   closed. Worktree path collision found and the board amended to `B23-03/04/05`.
