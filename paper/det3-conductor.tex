@@ -100,7 +100,15 @@ $\overline{\GL\cdot\det_n}$ by representation-theoretic data --- is what makes
 the closure multiplicities worth the trouble; the occurrence obstructions
 originally proposed for the task are now known not to suffice \cite{BIP}, which
 sharpens rather than removes the interest in computing the closure side
-exactly.
+exactly.  What is known on the closure side is mostly \emph{occurrence} rather
+than multiplicity, and it is conditional: for even $n$, and assuming the
+Alon--Tarsi conjecture in its column Latin square form, Kumar shows that the
+irreducible of highest weight $n\lambda$ occurs in
+$\bC[\overline{\GL_{n^{2}}\cdot\det_n}]$ for every partition $\lambda$ of
+length at most $n$ \cite[Cor.~6.2]{KumarComp}, the vanishing counterpart being
+Howe's.  What is computed below differs on all three counts: the
+multiplicities are exact rather than merely positive, nothing is conditional,
+and $n=3$ is odd, which is the case that argument excludes.
 
 Suppose the boundary $\cO\setminus G\cdot v$ is cut set-theoretically by a
 semiinvariant $\Delta$ of degree $e$ and weight $\det^{w}$.  Multiplication by
@@ -142,11 +150,13 @@ conductor of $\bC[\cO]$ in the module $\bC[G\cdot v]$ restricted to one
 isotypic piece.
 \end{remark}
 
-That such a $k$ exists, at an explicit uniform bound, is a theorem of
-Ikenmeyer and Kandasamy \cite[Lem.~5.2]{IK} for power sums in the regime
-(number of variables) $\ge$ (degree); their argument is algebraic and makes no
-optimality claim.  Everything in this paper concerns the exact minimal index
-and the boundary geometry that computes it.
+That such a $k$ exists, at an explicit bound depending only on the degree and
+not on the weight, is a theorem of Ikenmeyer and Kandasamy
+\cite[Lem.~5.2]{IK} for power sums $x_1^{D}+\dots+x_m^{D}$ in the regime
+(number of variables) $m\ge D$ (degree): unconditionally for $D$ even, and for
+$D$ odd under the side condition $\binom{2(D-1)}{D-1}\ge 2(m-1)$.  Their
+argument is algebraic and makes no optimality claim.  Everything in this paper
+concerns the exact minimal index and the boundary geometry that computes it.
 
 \subsection*{Results}
 
@@ -624,8 +634,9 @@ We are explicit about the dependencies, because the reader who has looked ahead
 to Section \ref{sec:functional} will want to know how much of it Theorem
 \ref{thm:census} rests on.  The answer is: none.  The lower bound is
 combinatorial; the ambient count is a plethysm; the upper bound is one integer.
-The gauge law of Section \ref{sec:functional}, which is verified and not proved,
-and the covariance hypotheses refuted there, enter nowhere in this section.
+The totals law of Section \ref{sec:functional} --- a theorem, but one whose
+proof consumes the two inputs of Lemma \ref{lem:inputs} as given --- and the
+covariance hypotheses refuted there, enter nowhere in this section.
 Section \ref{sec:functional} studies \emph{how} the evaluation behaves across
 orbit points; whether the invariant exists does not depend on it.
 
@@ -717,7 +728,22 @@ of codimension one with exactly two irreducible components, the orbit closures o
 traceless matrix and of the universal quadric
 $x_4x_1^{2}+x_5x_2^{2}+x_6x_3^{2}+x_7x_1x_2+x_8x_2x_3+x_9x_1x_3$.  We write
 $P_1$ and $P_2$ for these two components (in \cite{HL} the same symbols denote
-the two forms).  Independently, B\"urgisser and Ikenmeyer show for any
+the two forms).  Neither component is special to $n=3$, and neither is new
+with \cite{HL}.  For odd $n$, Landsberg, Manivel and Ressayre exhibit
+\[
+  P_\Lambda(M)\;=\;\det_n(A,\dots,A,S)
+  \;=\;\sum_{i,j}s_{ij}\,\mathrm{Pf}_i(A)\,\mathrm{Pf}_j(A),
+\]
+where $A$ and $S$ are the skew-symmetric and symmetric parts of $M$ and
+$\mathrm{Pf}_i$ is the Pfaffian of $A$ with row and column $i$ deleted, and
+prove that $\overline{\GL\cdot P_\Lambda}$ is an irreducible codimension-one
+component of the boundary not contained in $\mathrm{End}\cdot\det_n$
+\cite[Prop.~3.5.1]{LMR}; at $n=3$ this is exactly $P_2$.  The orbit closure of
+the traceless $d\times d$ determinant is a component of the boundary for every
+$d\ge3$ \cite[Cor.~8.3.2]{Hue}.  What \cite{HL} establish at $n=3$, and what
+we use, is that there are no others.
+
+Independently, B\"urgisser and Ikenmeyer show for any
 polystable $w$ that the zero set of the fundamental invariant in the orbit
 closure is exactly the boundary, and that $\bC[G\cdot w]$ is the localisation
 of $\bC[\overline{G\cdot w}]$ at it \cite[Prop.~3.9]{BI}.  Applied to
@@ -752,10 +778,21 @@ as it provably does along $P_1$.  Under that assumption, torus integrality and
 the $\SL_9$-invariance of the normal weight force $18/m_2=2$, so $m_2=9$.  The
 computation is session~9 of the working log in the repository
 (\texttt{docs/boundary\_deficit.html}).  We record it as a computed value rather
-than a proved one; deriving it directly from the explicit
-degeneration to $P_2$ that H\"uttenhain and Lairez supply --- via Jacobi's
-formula, with $A$ skew-symmetric and $S$ symmetric --- is the obvious next step
-and we have not carried it out.  In particular the multiplicities are not both
+than a proved one, and we say why the obvious second route does not upgrade it.
+That route is the explicit degeneration to $P_2$ that H\"uttenhain and Lairez
+supply --- $\det(A+tS)$ with $A$ skew-symmetric and $S$ symmetric, whose
+order-$t$ term is $\tr(\operatorname{adj}(A)\,S)=2P_2$ by Jacobi's
+formula \cite[\S8.1]{Hue} --- and we have run it (session~10 of the same log).
+It is consistent with $m_2=9$: the $9\times9$ substitution matrix has
+$\det L(t)=-64\,t^{6}$, the Jacobi limit reproduces our representative of
+$P_2$, and the family is tangent to $P_2$ rather than crossing it.  But what
+the family determines is the \emph{product} $m_2 c=18$ of the multiplicity with
+the contact order $c$; the observed tangency $c=2$ is also exactly what that
+product forces from $m_2=9$, so the two determinations lock each other instead
+of being independent.  The check is therefore a consistency check and not a
+derivation, and the label stands.
+
+In particular the multiplicities are not both
 determined by the character, and a reader who expects $6$ on both components
 should note that this is exactly what fails.
 
@@ -915,9 +952,16 @@ Marcus and Minc \cite{MM} that no element of $\GL_9$ carries $\det_3$ to
 $\per_3$.  Hence $\per_3\notin\cO$.
 \end{proof}
 
-The conclusion of Corollary \ref{cor:perm} is of course classical and easy by
-other means; what is new is the route.  The obstruction is a single integer,
-computed once, and the argument uses no asymptotics, no representation-theoretic
+The conclusion of Corollary \ref{cor:perm} is known, and known in a much
+stronger form: Landsberg, Manivel and Ressayre prove that the border
+determinantal complexity of $\per_m$ is at least $m^{2}/2$
+\cite[Thm.~1.0.1]{LMR}, which at $m=3$ already gives $5$.  Their bound is the
+first quadratic one for the \emph{border} measure; the earlier quadratic bound
+of Mignon and Ressayre, which they cite, is for determinantal complexity proper
+and does not by itself exclude $\per_3\in\cO$, the best previous bound for the
+border measure having been linear \cite[\S1]{LMR}.  What is new here is the
+route.  The obstruction is a single integer, computed once, and the argument
+uses no asymptotics, no representation-theoretic
 multiplicity comparison, and no degeneration analysis --- exactly the shape of
 separation that geometric complexity theory asks for --- and the shape in which
 the strongest conditional lower bounds are stated \cite{LR} --- at the smallest
@@ -1596,9 +1640,11 @@ evaluations at $\det_3$.
 \end{remark}
 
 \begin{remark}[What fails]\label{rem:fails}
-Three hypotheses about the functional were pre-registered and then refuted by
-their own tests.  We record them because each was natural, each shaped the
-search, and each was killed by a single number.
+Two hypotheses about the functional were pre-registered and then refuted by
+their own tests, \emph{(a)} and \emph{(b)} below, each killed by a single
+number.  A third route, \emph{(c)}, was not pre-registered and was closed
+instead by a degree count and an explicit counterexample.  We record all three
+because each was natural and each shaped the search.
 \emph{(a)} The individual matrix elements $V^{h}_{\sigma}$ do \emph{not}
 inherit $\GL_2$-covariance: the engine returned $f1X4_{00}=-308\,145\,600$
 against a pre-registered $+434\,851\,200$, gate-confirmed by an independent
@@ -1617,7 +1663,7 @@ Refutations (a) and (b) also retract two claims from our working record that
 never appeared in this paper.  The first is a ``rigidity theorem'' for the
 per-$\sigma$ values, which rested on the hypotheses refuted in (a) and (b).  The
 second is a predicted total at a further evaluation point, which rested on the
-fits refuted in (b).  That point has never been evaluated, and its total is
+fits refuted in (a).  That point has never been evaluated, and its total is
 open.  The retraction notices remain in the repository.
 None of this touches the results of Section \ref{sec:det}: the conductor, the
 value at $R$, and the ray closure use no covariance assumption anywhere.  What
@@ -1814,8 +1860,13 @@ against them without reproducing the whole computation.
 \noindent\textbf{Pre-registration.}  Predictions were committed to version
 control before the corresponding values existed, and the commit history is
 part of the record: for each of the results above one can check what was
-predicted, when, and whether it held.  Two of the hypotheses so registered were
-refuted (Remark \ref{rem:fails}), and we consider their presence in the record
+predicted, when, and whether it held.  Five of the hypotheses so registered
+were refuted: the two covariance hypotheses of Remark \ref{rem:fails}(a), (b);
+the arithmetic claim corrected in Remark \ref{rem:arith}; and, for Theorem
+\ref{thm:B}, that attainment holds wherever $m(\lambda)>0$, refuted by
+$\lambda=(17,17,2)$, together with the prediction that non-attainment occurs
+exactly where the support is empty, refuted by the parity family, which is
+mostly of positive multiplicity.  We consider their presence in the record
 to be evidence about the method rather than an embarrassment to it.  A claim
 that was formed after seeing the value is marked as such wherever it appears.
 
@@ -2002,7 +2053,8 @@ Adv. Math. \textbf{310} (2017), 44--63.
 \bibitem{Hue}
 J.~H\"uttenhain,
 \emph{Geometric Complexity Theory and Orbit Closures of Homogeneous Forms},
-Ph.D. thesis, Technische Universit\"at Berlin, 2017.
+Ph.D. thesis, Technische Universit\"at Berlin, 2017;
+doi:10.14279/depositonce-6032.
 
 \bibitem{IK}
 C.~Ikenmeyer, U.~Kandasamy,
@@ -2014,6 +2066,12 @@ Proc. 52nd ACM Symposium on Theory of Computing (STOC 2020), 713--726.
 S.~Kumar,
 \emph{Geometry of orbits of permanents and determinants},
 Comment. Math. Helv. \textbf{88} (2013), 759--788.
+
+\bibitem{KumarComp}
+S.~Kumar,
+\emph{A study of the representations supported by the orbit closure of the
+determinant},
+Compositio Math. \textbf{151} (2015), 292--312; arXiv:1109.5996.
 
 \bibitem{KL}
 S.~Kumar, J.~M.~Landsberg,
@@ -2030,6 +2088,12 @@ Aspekte der Mathematik D1, Vieweg, Braunschweig, 1984.
 J.~M.~Landsberg,
 \emph{Geometry and Complexity Theory},
 Cambridge Studies in Advanced Mathematics 169, Cambridge Univ. Press, 2017.
+
+\bibitem{LMR}
+J.~M.~Landsberg, L.~Manivel, N.~Ressayre,
+\emph{Hypersurfaces with degenerate duals and the geometric complexity theory
+program},
+Comment. Math. Helv. \textbf{88} (2013), no.~2, 469--484; arXiv:1004.4802.
 
 \bibitem{LR}
 J.~M.~Landsberg, N.~Ressayre,

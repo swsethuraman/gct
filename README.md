@@ -75,14 +75,17 @@ exactly. That was the first test at a negative gauge value.
   divide `46,448,640`, so the factorisation of `Φ₁₈(det₃)` may be mostly
   normalisation
 
-Three pre-registered hypotheses were **refuted**, each by a single number, and
-all three are kept in the record:
+Two hypotheses about the functional were **pre-registered and then refuted**,
+each by a single number; a third route was closed without a pre-registered
+test. All three are kept in the record:
 
 - per-σ values do **not** inherit GL₂-covariance — `f1X4_00 = −308,145,600`
-  against a pre-registered `+434,851,200`
+  against a pre-registered `+434,851,200` *(pre-registered)*
 - per-σ values are **not** simultaneous-conjugation invariants — a rank-9
   parameter-free fit predicted `f1Y4_00 = +69,854,400`; the engine returned `0`
-- both plane-cubic routes are dead, and the pencil cubic is insufficient
+  *(pre-registered)*
+- both plane-cubic routes are dead, and the pencil cubic is insufficient *(not
+  pre-registered: killed by a degree count and an explicit counterexample)*
 
 The first two refutations also retract two claims from the working record: the
 **rigidity theorem** (retraction notice atop `docs/rigidity_theorem.md`), and
@@ -184,9 +187,13 @@ The history is not tidy, and that is deliberate: it is part of the evidence.
 
 Predictions were committed to version control **before** the corresponding
 values existed. For each result in the paper you can check what was predicted,
-when, and whether it held. Two of the pre-registered hypotheses were refuted;
-those commits are still here, in order, with the refutations that followed
-them.
+when, and whether it held. Five of the pre-registered hypotheses were refuted:
+the two covariance hypotheses above; the arithmetic signature `151,200`, which
+is `75,600` (see *Arithmetic signature*); and, for the ternary-cubic transport
+formula, that attainment holds wherever `m(λ) > 0` — refuted at `(17,17,2)` —
+and that non-attainment occurs exactly on empty support, refuted by the parity
+family. Those commits are still here, in order, with the refutations that
+followed them.
 
 A rewritten history would be a better-looking repository and a worse
 scientific record. If a claim in the paper is marked *pre-registered*, `git
