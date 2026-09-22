@@ -1,0 +1,50 @@
+{
+  "slot": "B25-05",
+  "state": "UNCOMMITTED",
+  "worktree": "work/batch15_workers/B15-01",
+  "branch": "b15-01-ci159",
+  "baseline_head": "5a97317e7e28753261cf6e8dcece180a0e71b718",
+  "head_at_close": "5a97317e7e28753261cf6e8dcece180a0e71b718",
+  "session_start_utc": "2026-09-21T03:39:50Z",
+  "manifest_written_utc": "2026-09-21T03:47:43Z",
+  "outcomes": {
+    "part_A": "(a) length-restriction lemma (s73 '(*) reduction') PROVED on record: isotypic_rank.md Lemmas 3-4/Prop 5; complete n=3 proof in report A.3; producer-level",
+    "part_B": "(c) measured nullity map not equivariant for any group acting non-trivially on HWV_lambda; valid repairs (restriction map, stabiliser bound sk=10) are vacuous",
+    "C45_proposed": "PROVED (external input LMR Thm 2.3.1 + 3.1-3.2, PRIMARY statement level); baseline 'PROVED modulo (*)' stands until B25-10 review"
+  },
+  "pilots": 0,
+  "mathematical_programs": 0,
+  "lease": "not requested",
+  "packet_files": {
+    "docs/b25_05_report.md": {"sha256": "38834c316c1b182e6acbe120b1608e3fb325c65e0f12790d0312e1c3a2373455", "bytes": 25204, "line_endings": "LF"}
+  },
+  "inputs_committed": [
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/s73_report.md", "blob": "de79c8dcd13293e4c935d16107cc142bed1f19ab", "sha256_blob": "f40783ba4dd5489da922eaec9cd19b465b1c55a340bceb36b636c45c552dd94e", "working_copy_sha256_CRLF": "add70beff0bec05083a567ace928057b40921d8eec56771ed8c3e344f955c05e"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/isotypic_rank.md", "blob": "4b2046836388d0869bd50ab62996555e092a0f9a", "sha256_blob": "5f33e38e72be947a23941dc223502b87fcd057708edc24ec3d98a0e8942d517f"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/s26_review.md", "blob": "3d420b6315ae063c7ce8a4eeac4f4c3ed7f068eb", "sha256_blob": "17ab7d88504277fdfd88b96bcb731ca842bee72e1114dc81d54e199edd10a171"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/reducible_ideal.md", "blob": "6a5f43d27c0dc7ee354e6b423f0c6c2ec58d1aa9", "sha256_blob": "99128f1019428e585cfeac0bfc6746744c4b33369feaf9889de52414972eabcf"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/stabiliser_reduction.md", "blob": "4fe0c552e2d16b0436ef00ec12fc1bfa19082f8c", "sha256_blob": "dd25c617b2790822851dc19b006b00fe95f6d3504d8a6ee3cf35cdf905b2b3d4"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/lmr_cell.md", "blob": "482cd4cf49d60d803677fd60a8084be1aa70d559", "sha256_blob": "0ab35e4e619ea162824f989bdac2db9e92b7d2645186626a3be4ad13513015de"},
+    {"commit": "82633a60893236fab4fbc317df416e1b8a349005", "path": "docs/session_58.md", "blob": "baf5e4e85344d5447d0f3d078446fa2756a920d9", "sha256_blob": "7905ed77068a6f99e11d3635fc4e90dee47d70013f2bbf4d1abb550eb8baee65"},
+    {"commit": "5a97317e7e28753261cf6e8dcece180a0e71b718", "path": "docs/b24_02b_report.md", "blob": "56f3c4ced63baf9525ab9b29330381c0ad647dce", "sha256_blob": "3ecb611a3893323223e12e78a484f861e14fb6f1e8e2ab853c5ac5e481fa5438"},
+    {"commit": "5a97317e7e28753261cf6e8dcece180a0e71b718", "path": "results/b24_02b/lmr_quotes.md", "blob": "f2e45a2a724dafbcd2e58c4ed6a66b5aa59a456c", "sha256_blob": "7b7d91a465f0a45b3cbf65db829d87d5a95109935af6b764adb5080f1226a6c4"},
+    {"commit": "ab2f8a407f5eac320c13d1eefca33c9b930ded86", "path": "docs/b24_10_review.md", "blob": "46edbcb023a9997b9288630f13198bdbe44a53ef", "sha256_blob": "da1528ba7b19d314698c804fed696e4aa4058245efb3ec9737a9092ba11c2bf3"},
+    {"commit": "ab2f8a407f5eac320c13d1eefca33c9b930ded86", "path": "results/b24_10/MANIFEST.json", "blob": "d9124cb78bb6109d4ec3006456e058016ba07e0b", "sha256_blob": "ba6aea5122c152fafb98491a0a0c49be25c196ed1d3c2c6df6336b32fc05eafe"},
+    {"commit": "f55ed57f636e5ae6ea791f3238a66f9414008c90", "path": "docs/b24_12_ledger.md", "blob": "b56dc29469c5e899e9635dbc252f732c4a8faa18", "sha256_blob": "daaf6634f4bce365c000325274cb55a0be12be0f129335eafaa97eddfd85a30a"},
+    {"commit": "0cce6172e8b4c15069aa55cb485d322b3e74694f", "path": "docs/b17_03_report.md", "blob": "856a9fe9d974d4b89c2eb107f1fe15f12c562cff", "sha256_blob": "bcb38b5f2682f69c86c39fbf04250cb7729cd9a749ea185c228b6e75234da43e"}
+  ],
+  "inputs_uncommitted_admin": {
+    "B25-05.md": "5e2361554ee6c8107f39bdc186c481e19549cc8adf39c39f748a1acc9aca990b",
+    "CLAUDE_COMMON.md": "ef258214d70abe1c6cace4becd4d2caec12bc198b6927031a76be4b2163986dd",
+    "COMPUTE_PROTOCOL.md": "9746d7ce2d783fd009e69f5193607835a095babdaa9453b407b8c76d3d8f932c",
+    "SOURCE_INDEX.md": "959733b9337855128b91aaa415b448a2ebe7ea81faf07530f11ec001f0c54e44",
+    "B15-12/docs/b25_12_ledger.md (live, as read)": "b49f2b5bc70b2c0f6c195e2c87ea30438b7f6760fa0b7e8a9878b417a5a36494"
+  },
+  "external_sources_scratchpad_not_delivered": {
+    "https://arxiv.org/pdf/1004.4802v1": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79",
+    "https://ar5iv.labs.arxiv.org/html/1004.4802": "fb5844ada6bec339638b584bcf385686935e96e03aa8f0ab9e2561bb0b316e05",
+    "tag-stripped text (derived)": "4f01978272f392498edf02f9932cf2a8d20e662064f182cf99d05f17063803e9",
+    "fetched_utc": "2026-09-21T03:42:19Z"
+  },
+  "note": "This manifest does not hash itself. No delivery commit exists; a separately authorised pass must commit explicit paths and verify blobs."
+}
