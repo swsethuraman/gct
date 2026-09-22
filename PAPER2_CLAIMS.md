@@ -190,3 +190,26 @@ classes of source are **not**:
   what the stocktake assumed for Prop. 2.1, Thm 6.2 and Rem. 6.3. **No LaTeX toolchain is
   installed here, so the source has not been compiled** — the same limitation B23-05 recorded
   for Paper 1.
+
+---
+
+## M. B25-02 changes to claim labels (2026-09-22, UNCOMMITTED, producer-only)
+
+Rows A–K above are the unchanged B24-06 table. Label changes in the repaired after-state:
+
+| row | after B25-02 |
+|---|---|
+| A4 / G1 | cap theorem printed as PROVED modulo Kleiman (SECONDARY), Dimca (PRIMARY, statement level), GN (SECONDARY), all ADOPTED — abstract and Thm 7.1 |
+| A6 | "second author" removed; δ0 bracket 6 ≤ δ0 ≤ 65 (unconditional), 8 ≤ δ0 ≤ 65 given measured totals |
+| B1 / C3 | Prop. 2.1 and Lemma 3.3 give an upper bound with equality at r = 3..6; count beyond n = 4 ADOPTED |
+| E3 | Cor. 5.3 = KL Thm 1.3 (PRIMARY), `mult = 0` |
+| F1 | Prop. 6.1 inequality direction corrected (≤), `D^det_r` |
+| F2 | Thm 6.2 = determinant part (PROVED); closure `R5 ⊄ D^det_5` ADOPTED (B17-01), G-A1 OPEN |
+| G9 / G10 | saturation condition restored; component half of Thm 7.3 now proved in sketch |
+| H2 / H3 | n_χ by signed Burnside count; quotient neither bound; `I_6` of senary quartics |
+| I1 | Thm 9.1 four items per Theorem A (see BLOCKERS §4) |
+| I5 / I6 | gate ℓ ≥ 5; degree ≥ 8 labelled measured |
+| J1 | Δ = +1 PROVED modulo (★) |
+| J4 | Δ ∈ [−4, −2] CERTIFIED conditional on ADOPTED dim N13 = 73 |
+| J5 | LMR uses cite Thm 1.0.1 / 2.3.1 / 3.1.1 / §3.2, PRIMARY; Thm 1.0.2 not used |
+| C4 / K5 | `degree8_global` stated for every r, δ ≤ 8 (single reconciliation lineage) |

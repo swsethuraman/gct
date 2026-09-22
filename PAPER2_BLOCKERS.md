@@ -406,3 +406,30 @@ Recorded so nothing looks overlooked.
   is about **occurrence**, so it constrains multiplicity obstructions at **no** `n`.
 - **Thm 9.2** is in a `theorem` environment and is a measurement (2585 cells, exhaustive,
   `docs/det_onset.md`). Environment choice, not a defect in the number — 2585 is confirmed.
+
+---
+
+## 4. B25-02 repair status (2026-09-22, UNCOMMITTED, producer-only)
+
+Appended by B25-02; sections 0–3 above are the unchanged B24-06 assessment. Full dispositions,
+evidence and edited locations: `docs/b25_02_report.md` §5.
+
+| blocker | B25-02 disposition |
+|---|---|
+| B1 | REPAIRED — checked at Kadish–Landsberg Thm 1.3 (PRIMARY, arXiv:1204.4693v1); `mult = 0`, whole isotypic component in the ideal |
+| B2 | REPAIRED — Thm 9.1 is Theorem A's clauses: Δ ≤ 0 (ℓ ≤ 4, every δ, containment); `i_det = 0` (ℓ ≤ 3, every δ); ℓ = 4 only for δ ≤ e − 1, e ≥ 10 CERTIFIED, e = 320112 ADOPTED (LLV Thm 2, now PRIMARY-read) |
+| B3 | REPAIRED — gate ℓ ≥ 5; open five-row region preserved; washout = interpretation, not impossibility |
+| B4 | REPAIRED — Δ ∈ [−4, −2], CERTIFIED conditional on ADOPTED dim N13 = 73; [−4, −3] not used |
+| B5 | REPAIRED, qualified — LMR read PRIMARY (Thm 1.0.1, 2.3.1, 3.1.1, §3.2); C45 carries (★) |
+| B6 | REPAIRED — Beauville read PRIMARY (v2): it contains none of Prop. 2.1 / Thm 7.1 Step 2 / Thm 7.3; used at Prop. 6.1 only; LLV cited; cap label in abstract and Thm 7.1 |
+| B7 | REPAIRED — MM removed; only in-lemma tori used |
+| B8, B9 | REPAIRED |
+| B10 | QUALIFIED — and Thm 6.2 downgraded to the determinant part; closure statement carried as ADOPTED (B17-01), G-A1 OPEN |
+| B11, B12, B13, B15 | REPAIRED |
+| B14 | PARTLY — locators fixed (Paper 1 Prop. 4.19 / 4.23 / Q 8.5); companion locatability [AUTHOR] |
+| B16 | untouched [AUTHOR] |
+
+New findings recorded by B25-02: N1 Prop. 6.1's inequality was reversed; N2 "maximal minors" in
+the abstract; N3 Thm 6.2 "unconditional" not supported for the closure; N4 Lemma 3.3 scope beyond
+n = 4; N5 "Prop. C" locator nonexistent; N6 Thm 7.3 already sketched in Paper 1 Q 8.5 remarks.
+**Not ready**: uncompiled (no toolchain), plus report §6.

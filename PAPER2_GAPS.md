@@ -226,3 +226,22 @@ consistent — but **none of it is reachable from the paper's own branch**, and 
 Recorded under G-P2-12. Not a defect now — B13-07 corroborated them and B13-11 set the label to
 MEASURED — but the review row itself was never amended, so the file still reads as an open
 verification failure.
+
+---
+
+## Part III — B25-02 updates (2026-09-22, UNCOMMITTED, producer-only)
+
+Parts I–II above are unchanged. Status of the gaps after the B25-02 repair pass:
+
+- G-P2-01 — unchanged: e = 320112 ADOPTED; LLV now read PRIMARY by B25-02 (Thm 2, Table 2, Cor. 4.1).
+- G-P2-02 — closed for the paper's four uses (LMR PRIMARY); (★) remains (B25-05).
+- G-P2-03, G-P2-14 — closed: Beauville v2 read PRIMARY; it states (1.9) and Cor. 6.4, both now cited; it does not contain Prop. 2.1, Thm 7.1 Step 2 or Thm 7.3.
+- G-P2-04 — open (G-A1); the paper now says so and no longer calls Thm 6.2 unconditional.
+- G-P2-06 — partly: a read-status paragraph added to §1 and labels at points of use; no `\prov` apparatus.
+- G-P2-07 — superseded: C45 is PROVED modulo (★) (B24-10 §3.2); the paper says so.
+- G-P2-08, G-P2-09, G-P2-10, G-P2-11, G-P2-12 — addressed in the TeX.
+- G-P2-13 — open. G-P2-15 — not addressed (Cor. C not added). G-P2-16 — unchanged.
+- G-P2-17 — still open: no toolchain on the B25-02 host either; mechanical checks pass.
+- **G-P2-18 (new)** — Thm 6.2's closure statement is carried as ADOPTED from B17-01 (`01c49022`, B15-01), whose scope B23-03 §4 reads more narrowly than B17-01 states; needs review before the paper relies on it.
+- **G-P2-19 (new)** — the n = 4 LMR transfer 16 → 9 is flagged in the paper as the analogue of (★); B25-05 should say whether (★) covers it.
+- **E-08 (new, record)** — Paper 2's "Prop. C" of the companion does not exist in Paper 1 @ `bc7e62b7` (length reduction is Prop. 4.19 by source order).

@@ -48,3 +48,15 @@ defects).
 `git status --porcelain` empty at start and at end. `paper/det4-onset.tex` sha256
 `7c2bc7365c3aacc75e5d79906a4aaa3364ff015e5bbc91e2f585b1ca45678b7b`, unchanged. Read-only git;
 no commit, no push, no computation, no pilot, no `.pid`. Nothing sealed was read or written.
+
+**B25-02 update (2026-09-22, UNCOMMITTED, producer-only; the paragraph above is B24-06's and
+unchanged).** Still **not ready**. Theorem 9.1 is repaired to the record's Theorem A (Δ ≤ 0 on
+the slab by containment in every degree; `mult = a` at length ≤ 3 always and at length 4 only
+below e, e ≥ 10 certified, e = 320112 adopted), and blockers 1, 3–9, 11–13 and 15 are repaired or
+qualified in the TeX, with Beauville, Kadish–Landsberg, LMR and LLV read in the primary. What
+still stands between the draft and submission: no compile has ever been run (no toolchain on
+this host); Theorem 6.2 now proves only the determinant part, and the closure non-containment
+it used to claim is carried as ADOPTED from an unreviewed programme result, with G-A1 open; C45
+remains PROVED modulo (★); several results are cited only through unlocatable companion
+material; and the author decisions B14/B16 and the Paper 3 overlap are unresolved. Details:
+`docs/b25_02_report.md`.
