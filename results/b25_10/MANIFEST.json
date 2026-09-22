@@ -1,0 +1,30 @@
+{
+  "slot": "B25-10",
+  "status": "UNCOMMITTED",
+  "note": "Hashes name the raw working-copy bytes of UNCOMMITTED files. This manifest does not hash itself; a later delivery receipt should hash it.",
+  "created_utc": "2026-09-22T14:48:29Z",
+  "worktree": "C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B15-10",
+  "branch": "b15-10-portable-witness",
+  "baseline_head": "ab2f8a407f5eac320c13d1eefca33c9b930ded86",
+  "files": [
+    {"path": "docs/b25_10_review.md", "sha256": "0488ce1e90a6cd08158eb277dd482b783aa4c58cfd6cec744bd35d25b589477e", "bytes": 40991, "cr_count": 0},
+    {"path": "results/b25_10/preverdicts_formed_before_reading.md", "sha256": "5b9ca5b913ac52abdd975b9f61506e650c35984f153e3e0c26f92c20d918e3b6", "bytes": 11343, "cr_count": 0}
+  ],
+  "reviewed_objects": {
+    "B25-01": {"commit": "ddc7649ec43d87a86165b5acea608005d2ddbf44", "docs/b25_01_report.md": "b791ceb32707cc91abd29111281ee2f9b08b216ce844fd3359c030d944b16483", "papers/det4-blindness/det4-blindness.tex": "19e616cfb445ec36d16b7526a0972b8f4be52c05a1cb10df8d33da653082ff49"},
+    "B25-02": {"commit": "a480a0646d6d0aa0c5537e5f5d00661ae26bc050", "docs/b25_02_report.md": "0b976c69d629adcfd2fb7638dd9a09fb5664b8c6a542b282599935a462f1a25c", "paper/det4-onset.tex (blob, raw CRLF)": "39d15aeaf2d5eaaf3696f3250c9a95441dd92c3cda38f3a87f9f24cb3e79ebc5", "paper/det4-onset.tex (CR stripped)": "ec5b1b4d0724761a5f2027b8711986489967e0e0b5e8c5997299c0d8112748ed", "results/b25_02/MANIFEST.json": "71c008fe10ed3496f1c10192e4ecce4ba8a1a746b2462cb998e99d564760b036", "results/b25_02/REPAIR_SUPPLEMENT_20260922.md": "ac3ee3a02b7ff3f0435f4258c93adf783be86d7a30dbb9840c7540adc394a0d3"},
+    "B25-03": {"commit": "241da4db9a274651da23f0df3cf2e8c0667732d4", "docs/b25_03_report.md": "fd1f0d93a23407f8f55f2d82ae342016a904c256573cba2be26262244087d01a", "results/b25_03/MANIFEST.json": "e476683e49221a24ff88f8702379ada3cb5ea8cf0c6e1cfc52ce56b3830e1607", "paper/det3-conductor.tex (blob, LF)": "f52f8d16a8d11d23a9f7ccd7ebc99dfb6d6fcf00b10ee3b128bb871034b4f866", "results/b25_03/attribution_patch_extracted.diff": "ea80adeb9b85cc3906bf03086cbc404e6e99cdf49086376290f13c14229734f5"},
+    "B25-04": {"commit": "92a7d054369a20854fd51685ee09ecb756344e8d", "docs/b25_04_report.md": "f6e14afdd7da6b2c7b3df340cce5d3571af864f14240abf82f6331edd6129a47", "results/b25_04/MANIFEST.json": "a33ab4dd19d5507e569870971ff1d835813ab2cd5cef96c48afb5de6b473edd9"},
+    "B25-05": {"commit": "2688efd1b5b14c78c11a9855e83357f4516cba54", "docs/b25_05_report.md": "38834c316c1b182e6acbe120b1608e3fb325c65e0f12790d0312e1c3a2373455", "results/b25_05/MANIFEST.json": "035ef6ead2033e64e847773efe7d0ddfb17108cf7d15d2b706cc424139c1a3fe"},
+    "B25-06": {"commit": "c740532b30acbcb25c84d15c5111ad4a06245e43", "docs/b25_06_report.md": "c2103a0aa3326cf622a026eff9ac8dc61bdb58b572fa7cb1279dee786b3091bb", "results/b25_06/MANIFEST.json": "88f5e8a7973d442f9d292d4c2268c1c515d349abcd1f432e8b94118c225bbedf"}
+  },
+  "primary_sources_read_by_reviewer": {
+    "LMR arXiv:1004.4802v1 PDF": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79",
+    "Kadish-Landsberg arXiv:1204.4693v1 PDF": "599486883d141d224fd40155ff9533b09d500cc48c2f5281e10ab49636e1e7cd",
+    "Beauville arXiv:math/9910030v2 PDF": "1ba560a5634f2ae15b94c6c2b3979308debaf2f96941edea7a0fd5adc98eb586"
+  },
+  "pilots": 0,
+  "mathematical_compute_seconds": 0,
+  "lease": "not requested",
+  "tool_memory_created": "one note outside the repository (b25-10-review-outcome.md); not evidence"
+}
