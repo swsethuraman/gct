@@ -1,0 +1,26 @@
+{
+  "slot": "B26-01",
+  "verdict": "ACCEPT (registered outcome 1), whole headline: for every smooth complex cubic threefold C and nonzero linear form l, lC not in D_{4,5}; supporting lemma accepted for square-free F. Achievement level: geometric noncontainment only.",
+  "inputs": [
+    {"path": "docs/b17_01_report.md", "commit": "01c49022c2a222254884c8c96611dd0e9f302892", "bytes_named": "LF committed blob", "sha256": "8812eeef2b454cfa256c6fb0f304a29a9a85b052e4b1fcd8238b437eb7f6f2c0", "label": "READ"},
+    {"path": "delivery/b17_01/MANIFEST.json", "commit": "01c49022c2a222254884c8c96611dd0e9f302892", "bytes_named": "LF committed blob", "sha256": "cb971e20e2ec1ef1d7f0fec15ca535b898097fa25550d2fd74234cafcfdbcc2f", "label": "READ (hash only)"},
+    {"path": "docs/b25_10_review.md", "commit": "42e7f4ba45e8bd1fda529de9ce116f64e7ac6be1", "bytes_named": "LF committed blob", "sha256": "0488ce1e90a6cd08158eb277dd482b783aa4c58cfd6cec744bd35d25b589477e", "label": "READ (sections 0, 4.3, 7.1, 10)"},
+    {"path": "docs/b25_06_report.md", "commit": "c740532b30acbcb25c84d15c5111ad4a06245e43", "label": "READ (lines 1-40)"},
+    {"path": "paper/det4-onset.tex", "commit": "79b68dcf7597e3b0efa63984327ad9f34e5bf74d", "label": "READ (lines 530-541 via grep)"},
+    {"path": "Claude_Handover_B15_B18/post_b19_housekeeping_20260917/B26_B17_01_INPUT_BINDING_20260922.json", "bytes_named": "raw working copy (uncommitted admin)", "sha256": "2a674ee158159bc21405ca0e414b4cef06cc5055cc46763a246520b8f8292587"}
+  ],
+  "remote_containment": {"command": "git -C work/batch15_workers/B15-01 branch -r --contains 01c49022", "result": ["origin/b15-01-ci159"], "note": "remote-tracking ref only; no fetch performed"},
+  "primary_sources": [
+    {"id": "kollar_smith_1997", "locator": "arXiv alg-geom/9707013v1; Def 4.2; Thm 5.3, Rem 5.3.1, Thm 5.4, footnotes 4-6; printed pp. 34-38", "label": "PRIMARY", "fetched_pdf_sha256": "583f5d3fb5455c3f0e2be579bf1298b5783e9df30aaad15e4d5de2041ccc054d", "fetched_pdf_bytes": 545094},
+    {"id": "clemens_griffiths_1972", "locator": "Ann. Math. 95 (1972); Thm 13.12 p.350; Appendix B pp.352-353", "label": "PRIMARY", "fetched_pdf_sha256": "6cfe96ecb81179ce2756cb114414d3db1eab46274665c96c582d7f42c7a60a60", "fetched_pdf_bytes": 4531144},
+    {"id": "ctkm_2006", "locator": "arXiv math/0611777v1; Thm 2.3 p.3", "label": "PRIMARY", "fetched_pdf_sha256": "d66b8049edfb5a8e30addd978f9e4aa7e6c4542f931e91ad0789c2a7bface232", "fetched_pdf_bytes": 215114},
+    {"id": "leal_lozano_vite_2025", "locator": "arXiv 2504.14461v1 HTML, Introduction", "label": "PROXY (fetch-tool extraction; not load-bearing)"}
+  ],
+  "unread": ["Matsusaka 1968 Appendix 1 (original)", "Abhyankar [Ab p.336] (original)"],
+  "unread_classical": ["Bertini for general linear sections, char 0", "closed image of projective morphisms", "curve selection in irreducible varieties", "existence of lines on smooth cubic threefolds"],
+  "precisions": [
+    "S3: B17-01 elides why the generic point of the test curve inherits generic properties; supplied by hand via open conditions P1-P4.",
+    "S8: horizontal normality dispensable by applying Thm 5.3 to the normalization.",
+    "Lectures prove Thm 5.3 only in weak form 5.3.1 (rational generic fibre), exactly the form used."
+  ]
+}
