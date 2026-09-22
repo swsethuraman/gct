@@ -173,10 +173,13 @@ matching the parity of Young symmetrisation against the residue of the
 boundary weight.
 
 Section \ref{sec:det} contains the main results.  The lower bound
-$e(\det_3)\ge18$ turns out to need no computation: an elementary parity count
-on bracket monomials (Proposition \ref{prop:census}), which recovers Howe's
-vanishing theorems and reproduces the classical first-invariant degrees for
-ternary cubics and cubic surfaces, already excludes every smaller degree.
+$e(\det_3)\ge18$ needs no computation, and it is B\"urgisser and Ikenmeyer's:
+an elementary parity count on bracket monomials (Proposition
+\ref{prop:census}), which is the case of their plethysm bound
+\cite[Cor.~7.2]{BI} in which no family of $\delta$ distinct $D$-subsets exists at all and which
+recovers Howe's vanishing theorems and reproduces the classical
+first-invariant degrees for ternary cubics and cubic surfaces, already
+excludes every smaller degree.
 B\"urgisser and Ikenmeyer prove $e(\det_n)\ge n^{2}$ for every $n$, strictly
 when $n$ is odd, and their degree-period theorem confines $e(\det_3)$ to the
 multiples of $6$ that are at least $12$; equality $e(\det_n)=n^{2}$ is known
@@ -499,6 +502,11 @@ A second, entirely elementary constraint removes the rest of the range.  It is
 a parity count on bracket monomials, and it extends the argument by which Howe
 disposes of $\delta=m$ when $D$ is odd; we state it in general because the
 statement costs nothing extra and because it is what does the work here.
+Proposition \ref{prop:census} is the case of B\"urgisser and Ikenmeyer's
+plethysm bound \cite[Cor.~7.2]{BI} in which no family of $\delta$ distinct
+$D$-subsets of $[k]$ exists at all, and for $\delta=2m$, $k=2D$ it is the
+counting step of \cite[Prop.~3.24(3)]{BI}.  We include the bracket-monomial
+proof because it is short and self-contained.
 
 \begin{proposition}[Bracket census]\label{prop:census}
 Let $D$ be odd and let $\delta,m$ satisfy $m\mid \delta D$.  Put $k=\delta D/m$.
@@ -557,7 +565,8 @@ $\delta\le\binom{\delta/3}{3}$ first holds at $\delta=18$:
 \]
 
 \begin{corollary}\label{cor:lower}
-$e(\det_3)\ge 18$, with no computation.
+$e(\det_3)\ge 18$, by \cite[Cor.~7.2]{BI} and the period theorem, with no
+computation.
 \end{corollary}
 
 At $\delta=18$ the census is silent, and one exact count settles what it leaves
@@ -1992,9 +2001,9 @@ scripts in that repository without any of the long runs.
 
 \section*{Acknowledgements}
 
-The work reported here was carried out jointly with Claude (Anthropic).
+The work reported here was carried out using AI tools, including Claude (Anthropic).
 Responsibility for the correctness of every statement in this paper rests with
-the named author.
+the author.
 
 \begin{thebibliography}{99}
 
