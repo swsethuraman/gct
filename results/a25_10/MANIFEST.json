@@ -1,0 +1,380 @@
+{
+  "schema": "a25-10-review-seal-v1",
+  "slot": "A25-10",
+  "sealed_utc": "2026-09-22T15:15:23.935941Z",
+  "status": "UNCOMMITTED / NOT RELEASED",
+  "delivery_commit": null,
+  "repository": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15",
+  "branch": "batch15-launch",
+  "research_head": "eb53b97cf0904e2d54fdb7d101d83b024822811b",
+  "outcome": "no construction ready",
+  "packet_verdicts": {
+    "A25-01": "REPAIR",
+    "A25-02": "PROCEED",
+    "A25-03": "PROCEED",
+    "A25-04": "PROCEED",
+    "A25-05": "STOP at construction gate",
+    "B25-04": "REPAIR"
+  },
+  "method": "READ plus explicitly labelled independent hand derivations; no computational REPLAY",
+  "intake_utc": "2026-09-22T14:34:06Z",
+  "substantive_assessment_start_utc": "2026-09-22T14:42:53Z",
+  "initial_assessment_completed_utc": "2026-09-22T14:49:45Z",
+  "mathematical_pilots": 0,
+  "mathematical_computational_seconds": 0,
+  "mathematical_environment": "Not used; administrative Python/Git environment in ADMIN_VERIFICATION.json",
+  "compute_lease_acquired": false,
+  "tool_memory_created": false,
+  "additional_agents_or_tasks": 0,
+  "source_bindings": [
+    {
+      "slot": "a25_01",
+      "commit": "aca16c7531483163d392200baced8757fb8746ca",
+      "manifest_sha256": "ceeaac27392742b3a79a44ec1d136dbdf6b9a6058e292f51bc0d052e7165e2ee",
+      "manifest_entries": 15,
+      "starting_head": "82633a60893236fab4fbc317df416e1b8a349005",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "slot",
+        "status",
+        "outcome",
+        "sealed_utc",
+        "starting_head",
+        "branch",
+        "delivery_commit",
+        "theorem",
+        "claim_status",
+        "method",
+        "source_bindings",
+        "pilots",
+        "mathematical_computational_seconds",
+        "computational_environment",
+        "files",
+        "excluded",
+        "gates_open"
+      ]
+    },
+    {
+      "slot": "a25_02",
+      "commit": "5007de860ba195100adc4f5a6cdebd3d344cadaa",
+      "manifest_sha256": "4c6d5fdc11ca4d30221d5d454cc29daf0af2de0db1bbafb3b14f4333cebbeedd",
+      "manifest_entries": 14,
+      "starting_head": "82633a60893236fab4fbc317df416e1b8a349005",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "schema",
+        "slot",
+        "outcome",
+        "status",
+        "delivery_commit",
+        "repository",
+        "branch",
+        "research_head",
+        "assessment_started_utc",
+        "framework_frozen_by_utc",
+        "sealed_utc",
+        "elapsed_assessment_wall_seconds",
+        "evidence_method",
+        "mathematical_pilots",
+        "mathematical_computational_seconds",
+        "numerical_environment",
+        "source_binding_file",
+        "sources",
+        "artifacts",
+        "exclusions",
+        "downstream_gate",
+        "proposed_add_list"
+      ]
+    },
+    {
+      "slot": "a25_03",
+      "commit": "90dd22151511867f5dbb3488c5f3085034c6d7b3",
+      "manifest_sha256": "52e23aeb5eeb78afb889d1986706b05209f945d4de53f3033a4a3c2996d79216",
+      "manifest_entries": 15,
+      "starting_head": "82633a60893236fab4fbc317df416e1b8a349005",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "schema",
+        "slot",
+        "outcome",
+        "status",
+        "claim_status",
+        "repository",
+        "branch",
+        "research_head",
+        "delivery_commit",
+        "assessment_started_utc",
+        "mechanism_frozen_utc",
+        "outcome_selected_by_utc",
+        "sealed_utc",
+        "elapsed_wall_seconds",
+        "result",
+        "certificate",
+        "frame_scope",
+        "padding_status",
+        "evidence_method",
+        "mathematical_pilots",
+        "mathematical_computational_seconds",
+        "compute_lease_acquired",
+        "provisional_inputs",
+        "source_bindings",
+        "source_reads",
+        "artifacts",
+        "manifest_self_hashed",
+        "proposed_delivery_paths",
+        "next_certificate",
+        "tool_memory_created",
+        "tool_memory_consumed",
+        "limitations"
+      ]
+    },
+    {
+      "slot": "a25_04",
+      "commit": "81967ddeb68340f31762bc41d424379cdd57527c",
+      "manifest_sha256": "01e98e1dab11139c403cad6b3993c94bf54c0ddcb8072cfb6a81b37e5a58775f",
+      "manifest_entries": 13,
+      "starting_head": "82633a60893236fab4fbc317df416e1b8a349005",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "schema",
+        "slot",
+        "outcome",
+        "status",
+        "theorem_status",
+        "theorem",
+        "candidate",
+        "repository",
+        "branch",
+        "baseline_head",
+        "delivery_commit",
+        "started_utc",
+        "mechanism_frozen_by_utc",
+        "outcome_fixed_by_utc",
+        "sealed_utc",
+        "evidence_method",
+        "source_bindings",
+        "source_read_status",
+        "mathematical_pilots",
+        "mathematical_computational_seconds",
+        "compute_lease_touched",
+        "tool_memory_created",
+        "tool_memory_used_as_evidence",
+        "additional_agents_or_tasks",
+        "next_certificate",
+        "artifacts",
+        "excludes",
+        "proposed_delivery_paths",
+        "open_gates"
+      ]
+    },
+    {
+      "slot": "a25_05",
+      "commit": "eb53b97cf0904e2d54fdb7d101d83b024822811b",
+      "manifest_sha256": "25989d1da8cd702737aa3a1e0442a318dd98ffe8b68dc63fa526c671269b198f",
+      "manifest_entries": 15,
+      "starting_head": "82633a60893236fab4fbc317df416e1b8a349005",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "schema",
+        "slot",
+        "outcome",
+        "status",
+        "claim_status",
+        "repository",
+        "branch",
+        "baseline_head",
+        "delivery_commit",
+        "first_recorded_intake_utc",
+        "mechanism_frozen_by_utc",
+        "research_stopped_utc",
+        "sealed_utc",
+        "theory_ceiling_minutes",
+        "theory_budget_compliance",
+        "observed_intake_to_stop",
+        "mathematical_pilots",
+        "mathematical_computational_seconds",
+        "mathematical_peak_memory",
+        "compute_lease_acquired",
+        "additional_agents_or_tasks",
+        "tool_memory_created",
+        "tool_memory_consumed",
+        "evidence",
+        "optional_dependencies",
+        "result",
+        "limitations",
+        "next_certificate",
+        "source_bindings",
+        "delivery_list",
+        "artifacts",
+        "excluded_from_hash_graph"
+      ]
+    },
+    {
+      "slot": "b25_04",
+      "commit": "92a7d054369a20854fd51685ee09ecb756344e8d",
+      "manifest_sha256": "a33ab4dd19d5507e569870971ff1d835813ab2cd5cef96c48afb5de6b473edd9",
+      "manifest_entries": 17,
+      "starting_head": "aafcbb692375f0a968881dbf18963a74d62ab557",
+      "starting_head_is_ancestor": true,
+      "manifest_keys": [
+        "slot",
+        "state",
+        "baseline_head",
+        "branch",
+        "outcome",
+        "note",
+        "files",
+        "inputs"
+      ]
+    }
+  ],
+  "source_binding_detail": "results/a25_10/INPUT_BINDINGS.json",
+  "source_read_levels": "results/a25_10/SOURCE_READS.md",
+  "primary_source_inputs": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15\\results\\a25_10\\literature\\BDI_2002.11594v2.pdf",
+      "bytes": 513636,
+      "sha256": "5371f3b62964f221b248334bec54d453a5bdcca4f2980c854cee41183f1317b6",
+      "state": "Downloaded primary input; not a Git packet"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch15\\results\\a25_10\\literature\\Dube_1990.pdf",
+      "bytes": 2339504,
+      "sha256": "5e06e03a0fec797236f1c065cbac1b9f17e1e9d0299fe967d6224ae3557a8f6a",
+      "state": "Downloaded primary input; not a Git packet"
+    }
+  ],
+  "administrative_inputs": [
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\RUNBOOK.md",
+      "bytes": 3916,
+      "sha256": "97f34370ce092c18ce50f842f1a9485951d99b93c64d76c5827a8ea7abdf4540",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch25_launch\\v1_20260921T003934Z\\astra\\A25-10.md",
+      "bytes": 39038,
+      "sha256": "b5f49fc5514a6856246b12e616b63f4fb371e7348661c2e2ed35b2bc23151a41",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\launch_prompts\\B25_REVIEW_LAUNCH_20260922.md",
+      "bytes": 8360,
+      "sha256": "fd83e80a185d790b0c231761cdc87c1b2bd83f203732002e772276440d5c8b7e",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\B24_COMMIT_REPORT.md",
+      "bytes": 7403,
+      "sha256": "aa0e3c7640f091e4cc077c0d6147b36514b09260dbdeca07e4b34c6de48f7d0b",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\B24_10_COMMIT_REPORT.md",
+      "bytes": 4407,
+      "sha256": "fbf51ce049851b829cbb60b26204caec7ebdd698186233704cfd3b2ea87ea8f8",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    },
+    {
+      "path": "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch25_launch\\v1_20260921T003934Z\\COMPUTE_PROTOCOL.md",
+      "bytes": 4149,
+      "sha256": "9746d7ce2d783fd009e69f5193607835a095babdaa9453b407b8c76d3d8f932c",
+      "state": "UNCOMMITTED administrative input; no scientific authority"
+    }
+  ],
+  "claim_status_detail": "results/a25_10/CLAIM_LEDGER.md",
+  "files": [
+    {
+      "path": "docs/a25_10_report.md",
+      "bytes": 7089,
+      "sha256": "10113d37cb32eb845765d73cf8eebfe3836113620331179090fd15d7dfb44e76"
+    },
+    {
+      "path": "results/a25_10/INTAKE.md",
+      "bytes": 4812,
+      "sha256": "fc3fb939a3891bd628cd85a040b6d28d4479a3953b15f14df87ff52f390f51e1"
+    },
+    {
+      "path": "results/a25_10/REVIEW_PLAN.md",
+      "bytes": 3062,
+      "sha256": "dd0106a929034461dbe92f06cb43ff4aa1e8b21de93c42846c913c0f2b7c5679"
+    },
+    {
+      "path": "results/a25_10/CLAIM_LEDGER.md",
+      "bytes": 13507,
+      "sha256": "ac7ae5c427772f5962fbc82da74b790fe8bc557d08af7182b75c2603d1ef63ed"
+    },
+    {
+      "path": "results/a25_10/REVIEW.md",
+      "bytes": 22983,
+      "sha256": "b5b99eec2fc77047e135414d1a4d1bcbd7c8a862889484154513f670d9f146d6"
+    },
+    {
+      "path": "results/a25_10/RELEASE_DECISIONS.md",
+      "bytes": 4503,
+      "sha256": "e7de25427c09249f8b4bc6b676d3d8740cee90f0ebfb6f4fcdceb394e69c2599"
+    },
+    {
+      "path": "results/a25_10/NEXT_ACTION.md",
+      "bytes": 2571,
+      "sha256": "af774505871c8c58ba83bd7538aec8d019ff93d6ffd14f48bbeb3e3fcda79d69"
+    },
+    {
+      "path": "results/a25_10/RESOURCE_RECEIPTS.md",
+      "bytes": 4365,
+      "sha256": "95cc14b8bf3992f8d28b7149d42266f7087f8cfa933828cefcba3e759de7c9cd"
+    },
+    {
+      "path": "results/a25_10/LIMITATIONS.md",
+      "bytes": 2549,
+      "sha256": "eaca78aaaf2cb8f2ad37a5060cff65ea2ea81b78c4a34b8a77f539560a0d0f60"
+    },
+    {
+      "path": "results/a25_10/SOURCE_READS.md",
+      "bytes": 6392,
+      "sha256": "a1030f90934f12861e98d4a62f9fd2b76dbc3274f56c04af259fbf1af869d45b"
+    },
+    {
+      "path": "results/a25_10/DELIVERY_NOTE.md",
+      "bytes": 2441,
+      "sha256": "fecb33414c7a4f1f37fc2ff138ccb31e7284d7aae8c6334c6dc5ab76637473e4"
+    },
+    {
+      "path": "results/a25_10/INPUT_BINDINGS.json",
+      "bytes": 133361,
+      "sha256": "ccd01bf4a1e7aa98b4dc9af36586c8cb96cdcd2f1900e7ca5f44e619ef6fa85e"
+    },
+    {
+      "path": "results/a25_10/audit_inputs.py",
+      "bytes": 5714,
+      "sha256": "a0301be0aa541d4c14a35ed3cf8853a67b382953592b59a43ce2901c46f3d296"
+    },
+    {
+      "path": "results/a25_10/seal_packet.py",
+      "bytes": 8120,
+      "sha256": "88d7144cd1c8c33ce534efdf18cc2806ffef1540fabaedd06b7169e20b2e686a"
+    },
+    {
+      "path": "results/a25_10/PROPOSED_ADD_LIST.txt",
+      "bytes": 562,
+      "sha256": "67955f12f6b244c5359776b2f7570ae7003ce9fa4a2b3a3db26c0ea138c88ffb"
+    },
+    {
+      "path": "results/a25_10/ADMIN_VERIFICATION.json",
+      "bytes": 6926,
+      "sha256": "60e46bae7832204208388f0e0dfb445eef7bfa7e7e39ca2c63d9344d2f381a52"
+    }
+  ],
+  "manifest_self_hashed": false,
+  "external_manifest_digest_receipt": "results/a25_10/SEAL_RECEIPT.json",
+  "exclusions": [
+    "MANIFEST.json itself (no self-hash)",
+    "SEAL_RECEIPT.json (post-seal external receipt; no circular hash graph)",
+    "literature/*.pdf (downloaded third-party input cache; not proposed for Git)",
+    "producer packets, papers, shared ledgers and pre-existing results/b15_integrator/"
+  ],
+  "proposed_add_list": "results/a25_10/PROPOSED_ADD_LIST.txt",
+  "gates_open": [
+    "G29 for this review: separate authorized delivery and committed-byte verification"
+  ]
+}
