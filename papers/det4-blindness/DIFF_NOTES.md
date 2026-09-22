@@ -201,3 +201,110 @@ key present as a `\bibitem` and every `\bibitem` cited, environments balanced, b
   convention and changes no rank and no claim.
 - **No uncommitted packet is cited**, and the four that reported are in Section E.
 - **Paper 2's label was not matched**, as instructed (G-32).
+
+---
+
+## 7. Slot B25-01, 2026-09-21: the five edits unblocked by B24-10
+
+A writing slot: no new mathematics, no computation, no pilot, no `.pid`, nothing installed.
+Worktree `work/batch15_workers/B23-04`, branch `b23-04-paper3`.
+
+```
+git rev-parse HEAD                f95742aed4dd22d3f04ac1313ce3d78e6e0bc87c   (= launch pin)
+git rev-parse --abbrev-ref HEAD   b23-04-paper3
+git status --porcelain            (empty)            recorded 2026-09-21T03:35:28Z
+```
+
+Git read-only (`rev-parse`, `status`, `show`, `cat-file`, `config --get`, `diff`). Nothing was
+committed, staged or stashed; no sealed packet was edited. **All after-state bytes are
+UNCOMMITTED** until a separately authorised delivery pass binds them. Bindings:
+`results/b25_01/bindings.md`; report: `docs/b25_01_report.md`.
+
+**Authority.** B24-10 @ `ab2f8a40` is the governing review (§11 decides). The four Batch-24 items
+that §§0–6 above held out as uncommitted are now committed at the pins the review verified:
+B24-02 @ `f8273c3b`, B24-02b @ `5a97317e`, B24-05 @ `5c5ba86e`; the G-32 ruling is the review's
+own. The review's closing ledger 11.9.7 orders the five edits first, with three corrections of
+wording (11.6.9, 11.6.10, 11.6.12) and the C11 ruling (11.5.10, 11.6.11). §0 above is kept as
+history: its two regretted omissions (the row-1 sentence, Corollary D2′) are now applied, and its
+statement that C11 keeps `ADOPTED modulo` is superseded by the reviewer's ruling.
+
+### 7.1 Changes to `det4-blindness.tex` (line numbers are in the after-state)
+
+| # | item | where | was | is | authority |
+|---|---|---|---|---|---|
+| U1 | — | header comment L1–L18, `\date` L74–L78 | B24-03 pass; "Not compiled" | records B25-01; C01..C51; compile status split: B24-03 bytes compiled at 22 pp (integrator), B25-01 bytes not compiled | B24 ledger @ `f55ed57f` |
+| U2 | G-30 | abstract (ii), L103–L105 | "the same holds at `N = 6,7,8` — there on elementary premises alone" | adds "across the whole window `N = 5..8` this is now proved on elementary premises alone" | `f8273c3b` §4.4 |
+| U3 | G-32 / C11 | abstract (iv), L118–L119 | "the cap theorem (ADOPTED)" | "PROVED modulo Kleiman, Dimca and Gulliksen–Negård, all three ADOPTED inputs" | `ab2f8a40` 11.5.10 |
+| U4 | G-31 | abstract L127–L129; §1.3 closing L214–L216; §8 closing L1036 | "`D = +1` at every rung", "a theorem at every rung" | each adds "PROVED modulo (★)" | `ab2f8a40` 11.3.7 |
+| U5 | — | §1.4 L220–L227 | IDs C01–C50, 49 headings; label list | C01–C51, 50 headings; "PROVED modulo named premises" defined | bookkeeping |
+| U6 | **C11** | provenance L353 | `ADOPTED modulo …`; "deliberately not resolved here" | **`PROVED modulo Kleiman (SECONDARY), Dimca (PRIMARY, statement level) and Gulliksen–Negård (SECONDARY), all three named ADOPTED inputs`**, with the source wording, the review's reason, and G-12 kept open | `82633a60` onset §0; `ab2f8a40` §5.3, 11.5.10, 11.6.11 |
+| U7 | **G-36 / C51** | new `\subsection` L422, Cor. C51 L429–L442, two paragraphs L444–L462 | — (held at G-36) | **Corollary 4.5 (C51, D2′)**, witness named in the statement (`x_1^4 ∈ D45` in the image; `x_{11}^n ∈ Det_n`), "closed" in the hypothesis, D2 the only premise; the six disposals with D1 as premise of the first only; the witness-vs-mechanism paragraph with the escape route | `5c5ba86e` §1.2, §4; `ab2f8a40` §§2.1–2.4, 11.2.1–.10, 11.6.12 |
+| U8 | G-30 | C18 provenance L484 | "a Batch-24 discharge … reported but not committed (G-30)" | row 1's use bypassed by B24-02's elementary proof; Theorem B not reproved, its label unchanged | `f8273c3b` §5 |
+| U9 | **G-30 / C48** | Ruling C48 L515–L530 | K5's two-premise ruling, Kleiman at `N = 5`, `k >= 7` | PROVED-kill on elementary premises across `N = 5..8`; the `N = 5` ceiling/floor/tail statement; **"one control checked at three points"**; `D(k) > 0` scoped to `k >= 3`, used for integer `k >= 10` | `f8273c3b` §4, B24-02.1–.2; `ab2f8a40` §3.4, 11.3.11–.15 |
+| U10 | G-30 | C23 first bullet L567–L569, provenance L583 | "with Ruling row1's distinction of premises" | "on elementary premises throughout"; Kleiman at `j >= N−3`, `N = 6,7` noted as a different, untouched use | `f8273c3b` |
+| U11 | **G-30 / C24** | C24 provenance L600 | "No reviewer re-derivation on record" | second lineage: B24-02 INDEPENDENT hand re-derivation, **not a code replay**, no evaluator; implicit vertex hypothesis carried | `f8273c3b` §3; `ab2f8a40` 11.6.9 |
+| U12 | G-30 | Table 1 row 1 L698, table provenance L719 | "at `N = 5`, `k >= 7` through Kleiman" | "on elementary premises (Ruling C48)" | `f8273c3b`; `ab2f8a40` 11.6.9 |
+| U13 | G-32 | C34 provenance L840; §6.1 L896–L898 | "ADOPTED modulo …"; "the cap theorem's own ADOPTED label" | "PROVED modulo …, all three ADOPTED inputs". **The cubic-side `Σ_Π` in `d >= onset I(D35 ∪ Σ_Π)` is untouched** (B24-10 11.7.3) | `ab2f8a40` |
+| U14 | **G-31 / C45** | C45 provenance L1025 | bare PROVED; "base value rests on LMR … read-status not on the record … CONDITIONAL" | **PROVED modulo (★)**; floor from LMR Thm. 2.3.1 + §3.1 + §3.2, PRIMARY; never Thm. 1.0.2; ceiling the record's own nullity, not LMR's "only one copy"; (★) = s73 §1, closed range `ℓ(λ) <= 7`, cell at endpoint; `N = 9 → 7` transport named as the load-bearing step; `a = 6` corroborates the ambient count only; lineages B24-02, B24-02b, B24-10 | `82633a60` s73 §1; `f8273c3b` §2; `5a97317e`; `ab2f8a40` §3, 11.3.1–.10, 11.6.10 |
+| U15 | G-31 | §8 scope paragraph L1051–L1066 | "PROVED modulo LMR at this cell … reported done but not yet committed" | the reading is done; what remains is (★), with the double pinch; label PROVED modulo (★); G-37 | as U14 |
+| U16 | G-31 | §9 item 4 L1095–L1099 | "the read-status of LMR … costs one reading" | "the status of (★) … a reading of the record, not a pilot (G-37)" | `ab2f8a40` 11.3.8, 11.9.10 |
+| U17 | G-31 | bibliography LMR L1184–L1197 | (iii) "no read-status on the committed record … not committed (G-31)" | (iii) PRIMARY via B24-02b, file and hash, sections, proofs not audited; never Thm. 1.0.2; (★) is the record's | `5a97317e` |
+
+Numbering: inserting C51 as Corollary 4.5 shifts the sixteen numbered results after it in §4 by
+one (C17 → Fact 4.6, …, C49 → Prop. 4.21); §§5–8 are unchanged and Question 6.5 is still 6.5.
+Derived mechanically from the shared `theorem` counter (`results/b25_01/static_check.txt`); the
+`\cid` IDs and `\label`s remain the stable keys.
+
+### 7.2 Changes to `CLAIMS.md`
+
+| # | change | authority |
+|---|---|---|
+| V1 | Header paragraph for B25-01; the "uncommitted packets" paragraph marked historical; `C01`–`C51` | — |
+| V2 | Packet table: B24-02 `f8273c3b`, B24-02b `5a97317e`, B24-05 `5c5ba86e`, B24-10 `ab2f8a40` | — |
+| V3 | "How to read a row" note: the one label moved away from ADOPTED is C11, on B24-10's ruling | `ab2f8a40` 11.5.10 |
+| V4 | Rows **C11** (label), **C18** (note), **C23** (clause), **C24** (lineage), **C30** (row-1 label), **C34** (cap label), **C45** (label + lineage), **C48** (statement + label + lineage), each marked `⟳ 2026-09-21` | per row |
+| V5 | New row **C51** (D2′) | `5c5ba86e`, `ab2f8a40` |
+| V6 | Draft column renumbered for C17–C29, C47, C48, C49 | — |
+| V7 | Cross-checks: 51 IDs; cap label check rewritten; C45 and C51 checks added; row-1 check updated; "no uncommitted path" updated | — |
+
+### 7.3 Changes to `GAPS.md`
+
+| # | change | authority |
+|---|---|---|
+| W1 | Header note for B25-01: Section E committed; "uncommitted" entries are history with dispositions | — |
+| W2 | **G-12**: label correction recorded; gap (primary reads) stays OPEN | `ab2f8a40` |
+| W3 | **G-15 CLOSED** as read-status; residue → G-37 | `5a97317e`, `ab2f8a40` |
+| W4 | **G-23 CLOSED to the extent of a hand re-derivation**; no evaluator | `f8273c3b`, `ab2f8a40` |
+| W5 | **G-29** lineage note updated | — |
+| W6 | **P-1**: the historical "not compiled" checked — B24-03 bytes compiled at 22 pp (integrator); B25-01 bytes not compiled, no toolchain | `f55ed57f` |
+| W7 | **P-6**: this pass's session state | — |
+| W8 | **G-37** new: (★)'s label open; B25-05 neither awaited nor assumed | `ab2f8a40` 11.3.3–.8 |
+| W9 | Section E: disposition table (G-30/31/36 APPLIED, G-32 CLOSED); "three negative controls" annotated *sic* with the correction; "same kind and scope" annotated WITHDRAWN. The original entries are otherwise kept byte-for-byte | `ab2f8a40` 11.3.13, 11.2.9, 11.6.9–.12 |
+
+### 7.4 Changes to `BIB.md`
+
+| # | change | authority |
+|---|---|---|
+| X1 | 2026-09-21 change note | — |
+| X2 | Dimca, Gulliksen–Negård, Kleiman: "cap theorem (ADOPTED)" → ADOPTED inputs of a theorem PROVED modulo them; Kleiman no longer in row 1 | `ab2f8a40`, `f8273c3b` |
+| X3 | LMR use (iii): PRIMARY via B24-02b, full hash, sections, proofs not audited, never Thm. 1.0.2, (★) carried; this slot did not re-read the PDF | `5a97317e` |
+
+### 7.5 What this pass did not do
+
+- **No new mathematics, nothing proved.** Every new sentence is a committed packet's or the
+  review's, cited at its commit. No source conflict needing a proof was found.
+- **No label beyond the review's rulings.** C45 is PROVED modulo (★), not PROVED; C11 is PROVED
+  modulo named ADOPTED inputs, not PROVED; C24's label is unchanged; C18's label is unchanged.
+- **(★) was not audited** and B25-05 was not awaited: G-37 records it open.
+- **LMR was not re-read by this slot**; its PRIMARY status is B24-02b's committed reading.
+- **The draft was not compiled.** No TeX toolchain is installed; a static source check is not a
+  compile.
+- **The scope of the determinant-part restriction and of G-A1 is unchanged**: at the five
+  right-way-corner occurrences (abstract, thesis (d), Table 1 row 13, §6.1, §9 item 1) the
+  determinant-part scoping clauses are untouched — two of those paragraphs (abstract (iv), §6.1)
+  had only their cap-theorem label changed — and Question 6.5 is not edited. "No five-row
+  determinant equation is known to be nonzero on padding" is unchanged. Author credits are
+  unchanged.
+- **Tool memory.** This slot wrote one post-hoc outcome note to auto-memory, which is not a premise. A later-written entry in the shared auto-memory index names a B25-05 outcome
+  for (★). It is another session's tool memory, not a committed packet: it was **not** used, and
+  G-37 stays open.

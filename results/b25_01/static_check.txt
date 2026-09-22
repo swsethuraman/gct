@@ -1,0 +1,82 @@
+# B25-01 static source check of papers/det4-blindness/det4-blindness.tex (UNCOMMITTED receipt)
+# This is a source scan, NOT a compile. No TeX toolchain is installed (pdflatex/latexmk/lualatex/xelatex/tectonic/MiKTeX absent).
+# Script: administrative text check (Python regex), not a mathematical computation. Run 2026-09-21T03:46:12Z.
+
+== after-state (working copy)
+claim IDs distinct: 51; expected C01..C51 present: True
+IDs on a result heading: 50 (distinct 50); on a caption: ['C30']
+duplicate heading IDs: []
+labels: 59; duplicated: []
+refs: 43 distinct; undefined: []
+cited keys without bibitem: ['#1']; bibitems never cited: []
+environment imbalance: {}
+brace balance (open - close): 0
+provenance lines (\prov uses, excluding its definition): 61
+note: '#1' above is the parameter inside the \lit macro definition, not a citation
+$ count parity (even expected): True
+
+== baseline (blob 50b1918c at f95742ae)
+claim IDs distinct: 50; expected C01..C51 present: False
+IDs on a result heading: 49 (distinct 49); on a caption: ['C30']
+duplicate heading IDs: []
+labels: 58; duplicated: []
+refs: 42 distinct; undefined: []
+cited keys without bibitem: ['#1']; bibitems never cited: []
+environment imbalance: {}
+brace balance (open - close): 0
+provenance lines (\prov uses, excluding its definition): 58
+note: '#1' above is the parameter inside the \lit macro definition, not a citation
+$ count parity (even expected): True
+
+== derived result numbering, after (ID, env number, label)
+C01	proposition 2.1	prop:dim
+C02	record 2.2	rec:padmodel
+C03	proposition 2.3	prop:d35dim
+C04	lemma 2.4	lem:deficit
+C05	ruling 2.5	rul:G5
+C06	theorem 3.1	thm:E
+C07	remark 3.2	-
+C08	corollary 3.3	cor:six
+C09	record 3.4	rec:22
+C10	theorem 3.5	thm:rect
+C11	theorem 3.6	thm:cap
+C12	record 3.7	rec:delta0
+C13	lemma 4.1	lem:sc
+C14	lemma 4.2	lem:generic
+C15	lemma 4.3	lem:kernel
+C16	lemma 4.4	lem:nullcone
+C51	corollary 4.5	cor:purepower
+C17	fact 4.6	fact:disc
+C18	theorem 4.7	thm:gkzB
+C19	theorem 4.8	thm:gkzA
+C47	theorem 4.9	thm:thresh678
+C48	ruling 4.10	rul:row1
+C20	theorem 4.11	thm:koszul
+C21	corollary 4.12	cor:noreversal
+C22	theorem 4.13	thm:d2
+C23	ruling 4.14	rul:scope
+C24	theorem 4.15	thm:astra
+C25	theorem 4.16	thm:count
+C26	theorem 4.17	thm:silence
+C27	theorem 4.18	thm:exactness
+C28	theorem 4.19	thm:rhoZ
+C29	record 4.20	rec:dual
+C49	proposition 4.21	prop:bordiga
+C31	lemma 5.1	lem:window
+C50	lemma 5.2	lem:blindn
+C32	record 5.3	rec:washout
+C33	record 5.4	rec:deg8
+C34	lemma 6.1	lem:cubic
+C35	proposition 6.2	prop:intersection
+C36	theorem 6.3	thm:classify
+C37	proposition 6.4	prop:capplane
+-	question 6.5	q:boundary
+C38	record 7.1	rec:source
+C39	theorem 7.2	thm:T
+C40	theorem 7.3	thm:A
+C41	theorem 7.4	thm:M
+C42	theorem 7.5	thm:identity
+C43	theorem 7.6	thm:prop71
+C44	remark 7.7	-
+C45	theorem 8.1	thm:ladder
+C46	record 8.2	rec:n3pad
