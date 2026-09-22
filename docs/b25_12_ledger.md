@@ -211,3 +211,98 @@ Compute lease observed now:
 compute.lock absent; no recovery action, no lease acquired.
 
 Coordinator files are bound by `results/b25_12/COORDINATOR_MANIFEST_20260922.json`. The delivery proposal is pending separate authorization; no staging, commit, push, launch, experiment, paper edit or publication occurred.
+
+
+## A25-10 dispatch — 2026-09-22T14:33:57Z
+
+User explicitly authorized launch. DISPATCHED on gpt-6-astra, xhigh; task 01a0c989-864d-7be3-90aa-69d1e377fc75, host local. Working directory instruction: C:/Users/swami/Projects/gct-gpt/work/batch15 (saved project parent; explicit workdir required). Scope: A25-01/02/03/04/05 and B25-04, in dependency order under the original brief plus B25_REVIEW_LAUNCH_20260922.md. Historical WAITING state superseded for this review only. All six pinned delivery commits resolve locally; full committed-blob/manifest verification remains the reviewer arrival gate. Main HEAD observed eb53b97cf0904e2d54fdb7d101d83b024822811b; no existing a25_10 report/results found at dispatch. No producer/paper edits or Git mutation authorized. Coordinator ran no experiment. This append postdates the sealed coordinator intake manifest; that historical seal is not rewritten.
+
+## B25-10 review intake — 2026-09-22
+
+Local report and pre-verdict file verified against MANIFEST.json: both raw SHA256 and byte counts match. Exact three-file delivery proposal: B15-10/docs/b25_10_review.md; B15-10/results/b25_10/preverdicts_formed_before_reading.md; B15-10/results/b25_10/MANIFEST.json (paths relative to work/batch15_workers). Review remains UNCOMMITTED / NOT RELEASED. Receipt: results/b25_12/B25_10_REVIEW_INTAKE_20260922.json. No commit or paper edit authorized by the relayed completion message; none made.
+
+Recorded reviewer ruling: length-restriction Lemma R PROVED; C45 PROVED at unpadded n=3, degree 12. Higher-degree ladder keeps its s73 lineage. Papers 3 and 2 still carry their old qualifier until a separate edit pass. Deliver this review before using the ruling as a committed downstream premise.
+
+Paper 3 PROCEED to bounded C45/provenance edit, G-37 closure and recompile. Paper 2 REPAIR: accepted Theorem 9.1 and Prop. 6.1 fixes; remaining B17-01 wording/locator, explicit cubic/quartic distinction, author locators/credit/citation and overlap decisions. Quartic 16-to-9 transfer remains unchecked; B25-10 section 2.4 specifies the short check. Paper 1 PROCEED to author decision with required section-6 alternative wording at the attribution intro, signed-state compile, G-P4 and outstanding primary-read statuses. No attribution or author-line change made.
+
+B25-06 PROCEED as order-one partial result; conditional higher-order reduction stays conditional; G-A1 OPEN. B17-01's every-smooth-cubic headline is unreviewed; the narrower witness reading is not a general theorem. B25-04 scoped component theorem accepted by both reviews: A25-10's packet scope/tail repairs still stand and are not waived by B25-10, which delegated the construction audit.
+
+B25-10's corrections to B24-10 and timestamp correction are recorded in its preserved review, not rewritten into old seals. Research priority board updated at Claude_Handover_B15_B18/post_b19_housekeeping_20260917/BATCH26_PROPOSED_BOARD_v1.md. Three planned Astra directions remain unlaunched; no new five-row separator or funded numerical search follows from these rulings.
+
+## Batch 25 — seal (2026-09-22)
+
+This section replaces the earlier, still-uncommitted PART 17g draft seal, preserving all preceding dispatch/intake history. Authority: B25-10 section 10 at `42e7f4ba45e8bd1fda529de9ce116f64e7ac6be1` and A25-10 RELEASE_DECISIONS.md and NEXT_ACTION.md at `ab4f527189bea14b5d146f9dc9d5b445844eaff3`, read from committed bytes in this pass. The reviews govern over the closing brief. Closure below is batch research accounting, not certification of paper readiness or completed pushes.
+
+### Accepted
+
+- **Length-restriction lemma PROVED; C45 PROVED** for unpadded n=3, degree 12: B25-05 Lemma R accepted by B25-10 at `42e7f4ba`. Floor: LMR Thm 2.3.1 plus section 3.1, PRIMARY at statement level; ceiling and i_per=0: s73 certificates. Higher-degree ladder retains its existing s73 lineage. Paper 3 applies the label and renames (star) in `0a8029bb`; Paper 2 applies the cubic label but retains the symbol in `79b68dcf`.
+- **Paper 3 PROCEED; Theorem 9.1 repair accepted:** B25-10 section 10 at `42e7f4ba`; subsequent bounded after-states at `0a8029bb` and `79b68dcf` respectively. Compilation of these new bytes is still outstanding.
+- **A25-02, A25-03, A25-04 PROCEED**, at their exact reviewed scope (`ab4f5271`). **A25-01 PROCEED after the count repair** supplied by `d00da15c`; its original review verdict was REPAIR and is not rewritten.
+- **B25-06 PROCEED as a partial result**, with G-A1 OPEN and the higher-order reduction conditional (`42e7f4ba`). **B25-04 PROCEED as scoped**, combining its accepted component theorem (`42e7f4ba`, `ab4f5271`) with scope erratum `9e12d789`. The latter repairs the packet wording, not the proved component theorem.
+- **Application 3: 245 < 299, globally padding-blind 299-minor ideal of M7**, accepted at `ab4f5271`. Qualification to the brief's 'premise-free': the uniform ceiling is proved, and the floor is the historical CERTIFIED-modular determinant certificate carried by the review. That evidence dependency remains; no computation was replayed by this coordinator.
+
+### Repaired
+
+- A25-01: binom(77,8)=21,042,072,975 (`d00da15c`), inherited from B19-02 through B23-02; record-level corrigendum `0bfad0e9`. Cost conclusions unchanged.
+- B25-04: title restricted to the sub-onset component family, unbounded rather than every tail, tail=degree corollary restricted to t<=d, simple-graph and t=0 qualifications (`9e12d789`), matching A25-10's prescribed statements (`ab4f5271`).
+- Paper 2: bounded repair and author B14/B16/citation decisions applied (`79b68dcf`); quartic transfer remains flagged. Paper 3: C45/provenance and G-37 edits applied (`0a8029bb`).
+- Paper 1: attribution signed, Form A and required section-6 intro wording applied, acknowledgement changed and byline preserved (`848e22b4`). Original sealed producer reports/manifests remain unchanged; supplements bind new states.
+
+### Stopped
+
+**A25-05 STOP at the construction gate** (`ab4f5271`): its structural reduction is valid at the stated levels, but whole-ring containment/separation and affordable total verification cost are missing. The old actual-padding T has an exact determinant completion in the five-center projection and cannot witness a separator there.
+
+### Open, deliberately
+
+G-A1; whole-ring five-center containment; the general B17-01 headline (unreviewed and not citable as an established theorem; acceptance would close G-A1); n=4 sixteen-to-nine transfer (flagged, not established); sums of small-component fillings. These dispositions are governed by `42e7f4ba` and `ab4f5271`, and the quartic flag is retained in `79b68dcf`. The narrower adopted B17-01 witness does not establish the general statement. Order-two work alone cannot settle every higher order.
+
+### Readiness blockers and carry-forward
+
+- **Compile all three edited after-states** and bind their source/log/PDF bytes (`0a8029bb`, `79b68dcf`, `848e22b4`). Their supplements report static checks only; clean builds of older sources do not certify these states. Paper 1's committed source is LF; its raw working copy is CRLF. No line-ending conversion is a mathematical edit.
+- **G-P2-SUB**, recorded by `79b68dcf`: fill Paper 1's arXiv identifier and the repository URL for Companion2/Companion3 at submission. These are submission-time placeholders, not missing research proofs.
+- **Terminology consistency:** Paper 2 retains (star), while Paper 3 now says length-restriction lemma (`79b68dcf`, `0a8029bb`). This is not a mathematical discrepancy.
+- **Stale indexes:** PAPER2_CLAIMS.md and PAPER2_READINESS.md still say PROVED modulo (star) for the cubic control, as disclosed in the `79b68dcf` supplement. They were outside PART 17b scope and remain a Batch 26 metadata task, not the governing current label.
+- **Paper 1 follow-up:** G-P4 and the IK/Kumar/Huettenhain primary-read statuses remain outstanding (`42e7f4ba`; signature supplement at `848e22b4`). Signing alone does not establish readiness. No additional stopped editing item was reported in the supplements inspected.
+
+### Programme decision
+
+**No construction ready** (`ab4f5271`). A25-10 NEXT_ACTION.md reopening condition, quoted verbatim from that commit:
+
+> The exact reopening target is **one** of the two outcomes of the same comparison: prove the whole-ring inclusion ker Q_D subset ker Q_P for the delivered global maps, or give one h with Q_D h=0 and an explicit rational/algebraic actual-padding substitution T' with h(P_T')!=0.
+
+The same source requires an exact finite object/basis/circuit, a global identity or complete inclusion certificate, a separately verified actual-padding value for a positive, and justified total storage/bit/operation cost. Chart arguments must handle descent, denominators, closure and their C_PER premise. A sampled nullspace, dimension or literal-solvability calculation is insufficient.
+
+**No five-row determinant equation is known to be nonzero on padding.**
+
+### Integrator errors booked this batch
+
+Carry-forward numbering comes from the Batch 24 ledger: the highest historical identifier is 14; number 10 remains UN-BOOKED (a convention difference, not a mathematical error). Suggestion numbers are a different series and are not silently reused as error numbers.
+
+- **15 — ill-typed intersection proposal:** the proposed intersection of six exclusions did not define subsets of one common universe. A25-02 replaced that premise with a typed framework; A25-10 accepts the framework and preserves its unassessed-integrator provenance (`ab4f5271`). The original intersection premise is rejected, not the resulting valid elementary theorem; no research allocation follows from it.
+- **16 — inapplicable Schur/nullity suggestion:** the equivariance shortcut does not apply to the fixed-point evaluation nullity. B25-05 Part B outcome (c) is accepted by B25-10 (`42e7f4ba`). This closes the separately numbered eleventh suggestion from Batch 24; it does not renumber historical error 11.
+- **12, carried forward — B24-01 disclosure:** the missing-packet handling was ruled INCOMPLETE in B24-10 section 11.7.1: disclosure was followed by transcription at full strength. Later delivered B25-03 and review `42e7f4ba` repair the record; the historical handling is not erased or counted as a new error.
+- **11, carried forward — T2 versus Sigma_Pi:** the quartic/cubic conflation was corrected in the Batch 23 ledger and confirmed in Batch 24. They are not interchangeable. This is a historical correction, not a newly discovered Batch 25 error.
+- **Reviewer correction, not another integrator error:** B24-10's b911a151 'UNBOUND' conclusion is withdrawn by B25-10 (`42e7f4ba`, sections 5 and 8). That digest names the CRLF rendering of the committed LF Paper 1 source. The brief's grouping must not transfer authorship of the incorrect ruling or inflate the error count. Raw-versus-committed byte labels remain mandatory.
+
+### PART 17a–17f verification and delivery
+
+**BLOCKER: none found.** Read-only Git confirmed all ten commits locally, ancestry on each named branch and the actual changed-path lists against PART 17's authorized slot paths. New review manifests were added in their delivery commits; no existing sealed manifest was modified. The prior coordinator pass also verified all 37 changed-path bindings against current Git-filtered file bytes. These are administrative checks, not a rerun of the housekeeping secrets/trailer sweep. The handoff's final table has ten commits; its earlier thirteen-count line is not adopted.
+
+| Branch | Commit | Disposition |
+|---|---|---|
+| b15-10-portable-witness | b31705b64c918111bb14b6d5200efde9877e1043 | B25-10 PID negation |
+| b15-10-portable-witness | 42e7f4ba45e8bd1fda529de9ce116f64e7ac6be1 | B25-10 review, three paths |
+| batch15-launch | f23c506b2f6b602a09ca7dc01b98ff227d37dd27 | A25-10 PID negation |
+| batch15-launch | ab4f527189bea14b5d146f9dc9d5b445844eaff3 | A25-10 review, eighteen paths |
+| batch15-launch | d00da15c830cd2bc9bec8c3e8b4260506c9e1f2f | A25-01 arithmetic erratum |
+| b23-04-paper3 | 0a8029bbb13fae7995f0406c6b5a5a3f2daf8a6e | Paper 3 label/provenance edits and supplement |
+| b24-06-paper2 | 79b68dcf7597e3b0efa63984327ad9f34e5bf74d | Paper 2 bounded repair, author decisions and supplement |
+| b23-05-paper1 | 848e22b4d7bf73c392bd6bac3ac6591315190b0e | Paper 1 signed attribution wording and supplement |
+| b15-02-a1-probes | 9e12d7892734f6ec199da3b947e64f09704959d7 | B25-04 scope erratum |
+| b15-12-padding-orbit-bounds | 0bfad0e9413e550e7045a849b3dc4410af488310 | Record-level binomial corrigendum; excludes this ledger |
+
+**Commit `results/b25_12/B25_10_REVIEW_INTAKE_20260922.json` with `docs/b25_12_ledger.md` in the same final coordinator commit.** Preserve the receipt as historical intake; do not rewrite its then-uncommitted status. Exact delivery scope is those two paths only. Intake receipt SHA256: `276a9ed2016b9adfaa60dae5d97537e42dbd54c83c7f3ea47f536e77c9a53605` (919 bytes).
+
+No unrelated source images, old runtime receipts or directory-wide additions. Existing byte-preservation attributes must be honored. The old coordinator manifest binds an earlier ledger snapshot; preserve it and use the future close receipts/PART17 manifest to bind this final state. No future ledger commit ID is invented. Housekeeping commits the ledger last, sweeps and pushes; no staging, commits or pushes were performed here. No other file was edited in this pass, no experiment or session launched. Local/remote delivery completion remains distinct from this research-accounting seal.
+
+**Batch 25 CLOSED.**
