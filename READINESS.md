@@ -1,5 +1,41 @@
 # Paper 1: submission readiness
 
+> **B25-03 update, 2026-09-21 UTC (UNCOMMITTED; supersedes the "one
+> signature" headline below, which is kept as B24-01 wrote it).**
+> The "one signature" headline is **withdrawn**. What is established is
+> narrower: `ATTRIBUTION_PATCH.md` is committed and not applied, so an author
+> signature is pending. That part is CERTIFIED from bytes (B24-10 §4.2). But
+> this file's own last section says "a real `pdflatex` run is still owed
+> before posting", so the file contradicted its own headline. A check of
+> `bc7e62b7` (report: `docs/b25_03_report.md` §4) leaves **four items before
+> posting**:
+>
+> 1. **The attribution signature.** The patch was re-bound to the committed
+>    blob and still applies cleanly. It remains unapplied. The author should
+>    also note the §2.3 wording flag in `ATTRIBUTION_PATCH.md` §6.
+> 2. **A LaTeX compile.** None is on record, and none is possible on this
+>    host because no toolchain is installed. Script checks pass (0 undefined
+>    refs/cites, braces balanced, counter 52 environments), but they do not
+>    replace a compile.
+> 3. **G-P4**, the Kumar citation in Remark 4.14. It is still unresolved.
+> 4. **Read-status of three B24-01 readings now cited in the paper:** IK
+>    Lem. 5.2; Kumar, Compositio 2015; and Hüttenhain thesis §8.1 and
+>    Cor. 8.3.2. They are not packeted (B24-10 §4.1), and B25-03 did not
+>    re-read them. Each needs a quoted, hashed reading or explicit author
+>    acceptance.
+>
+> Not blockers, and the author decides: G-P5 (Marcus–Minc label), G-P2 and
+> G-P3 framing, the optional §4 remark sentence, MSC and arXiv categories, and
+> the LMR journal metadata. The journal metadata was taken from a secondary
+> bibliography, and arXiv carries no journal-ref for it.
+>
+> **LMR Prop. 3.5.1 is now PRIMARY, read by B25-03.** arXiv:1004.4802v1, PDF
+> SHA-256 `cfc28275…` (the recorded bytes). The paper's use of it is
+> confirmed, and the identification with `P₂` at `n = 3` is checked by hand
+> (report §3). LMR Thm. 1.0.1 and §1, the paper's other two uses, are also
+> confirmed. Stale metadata below: the B24-01 edits described as
+> "uncommitted" on HEAD `bbd1d12e` are committed at `bc7e62b7`.
+
 `paper/det3-conductor.tex` is **not ready for arXiv**, and what stands between
 it and arXiv is now **one signature**.
 

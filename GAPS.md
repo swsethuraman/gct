@@ -12,6 +12,22 @@ the author's signature. The open-mathematics entries G-A1 to G-A6 are untouched
 — B24-01 proved nothing and closed nothing by argument, per G26. Three new
 entries, G-P3 to G-P5, came out of the prior-art reads; none is a blocker.
 
+> **B25-03 update, 2026-09-21 UTC (UNCOMMITTED; the B24-01 text is kept).**
+> (i) "G-P1 … is the only blocker left" is **withdrawn**. The enumerated
+> pre-posting list is in `READINESS.md` and `docs/b25_03_report.md` §4.
+> (ii) The LMR Prop. 3.5.1 row of the blocker-5 table below is now
+> **PRIMARY, read by B25-03**. It uses arXiv:1004.4802v1, PDF SHA-256
+> `cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79`, with the
+> text read from the ar5iv rendering `fb5844ad…`. The quotes are in
+> `results/b25_03/lmr_prop351_quotes.md`. The finding is **confirmed and
+> narrowed**: LMR construct `P_Λ` and prove the component statement for odd
+> `n`. The equality of its orbit closure with `P₂` at `n = 3` is B25-03's
+> hand check, not a statement printed in LMR. The thesis sentence quoted
+> below was not re-read. (iii) The IK, Kumar-Compositio and Hüttenhain rows
+> are still B24-01 readings with no packet (B24-10 §4.1). B25-03 did not
+> re-read them. (iv) G-P1: `ATTRIBUTION_PATCH.md` is re-bound to
+> `bc7e62b7`, with one wording flag in its §6.
+
 ## A. Open mathematics (the paper now says "open")
 
 **G-A1 — Remark 3.3 (i): the `V ↔ V*` orientation in World B.** The τ-grading

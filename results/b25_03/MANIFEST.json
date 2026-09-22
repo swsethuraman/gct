@@ -1,0 +1,88 @@
+{
+  "slot": "B25-03",
+  "status": "UNCOMMITTED - prepared local packet; no delivery commit exists; this manifest does not hash itself",
+  "prepared_utc": "2026-09-21T03:47Z",
+  "worktree": "C:/Users/swami/Projects/gct-gpt/work/batch15_workers/B23-05",
+  "branch": "b23-05-paper1",
+  "baseline_head": "bc7e62b714632c20d2405e54030224a2549c242d",
+  "outcome": "(2) 'awaits one signature' WITHDRAWN (patch-pending CERTIFIED; four pre-posting items); 'LMR Prop. 3.5.1 constructs P2' CONFIRMED-NARROWED, PRIMARY + hand notation map; (3) additional items recorded; attribution patch re-bound, NOT APPLIED",
+  "packet_files": {
+    "docs/b25_03_report.md": {"sha256": "fd1f0d93a23407f8f55f2d82ae342016a904c256573cba2be26262244087d01a", "bytes": 21964},
+    "results/b25_03/lmr_prop351_quotes.md": {"sha256": "bb339cd4c3e9b064184f620e4b3318f54f11b56dbda058dd25208aca1e9913f5", "bytes": 5109},
+    "results/b25_03/attribution_patch_extracted.diff": {"sha256": "ea80adeb9b85cc3906bf03086cbc404e6e99cdf49086376290f13c14229734f5", "bytes": 2193}
+  },
+  "six_path_bindings": {
+    "paper/det3-conductor.tex": {
+      "baseline_blob": "975b59e931ff5ac4a1a1b49d08dbe0ce246c5c6e",
+      "baseline_blob_content_sha256": "f52f8d16a8d11d23a9f7ccd7ebc99dfb6d6fcf00b10ee3b128bb871034b4f866",
+      "before_working_copy_sha256": "b911a15184ebf819301deddfc178d76a5d9a6d01b881d5fc64b32a8982457445",
+      "after_working_copy_sha256_UNCOMMITTED": "b911a15184ebf819301deddfc178d76a5d9a6d01b881d5fc64b32a8982457445",
+      "changed": false,
+      "note": "working copy = CRLF rendering of the LF blob (2127 CR bytes); not normalized"
+    },
+    "CHANGES.md": {
+      "baseline_blob": "440e8592f02ce17232098e33ff9c01001453fe29",
+      "baseline_blob_content_sha256": "374160edf31347345235dcd8c08ed38d5ad96248842a88823b783e1bbe5a354d",
+      "before_working_copy_sha256": "374160edf31347345235dcd8c08ed38d5ad96248842a88823b783e1bbe5a354d",
+      "after_working_copy_sha256_UNCOMMITTED": "13572d1564c40612f32c78b1091f87c494faa05ae81a36936102ddb8a0f1bb58",
+      "changed": true,
+      "note": "+31 lines, 0 deletions (Part 0); LF"
+    },
+    "GAPS.md": {
+      "baseline_blob": "a783a19e3487c991b8a120e0db1b6da8050ccdc3",
+      "baseline_blob_content_sha256": "054706573b9dc042a358d39f129e817568c6096a514042fd4292bcbfe31f4ec0",
+      "before_working_copy_sha256": "054706573b9dc042a358d39f129e817568c6096a514042fd4292bcbfe31f4ec0",
+      "after_working_copy_sha256_UNCOMMITTED": "b1b8d4c773a614d85610b63999959164291e05d42ca5fa3f96f6f7ce809a298d",
+      "changed": true,
+      "note": "+16 lines, 0 deletions (B25-03 status note); LF"
+    },
+    "READINESS.md": {
+      "baseline_blob": "ff426dc7ef0d516516c3ee1d04403f121799d1f7",
+      "baseline_blob_content_sha256": "6f440fe78b1c1556938b160d83401af241dadd82f46071d635843f174b2f6e37",
+      "before_working_copy_sha256": "6f440fe78b1c1556938b160d83401af241dadd82f46071d635843f174b2f6e37",
+      "after_working_copy_sha256_UNCOMMITTED": "9d82b251ead30b3e6b5634237b97b879365383a796c1db514447db87b5ee8470",
+      "changed": true,
+      "note": "+36 lines, 0 deletions (superseding note); LF"
+    },
+    "README.md": {
+      "baseline_blob": "c52011622d461d39823528ac853313055f509629",
+      "baseline_blob_content_sha256": "de13076a194c9e4f23142bdb6102b35f63cf1518f0c83502aa0b24fd94687cd8",
+      "before_working_copy_sha256": "5ba2586a7f312be99fb6f6e231e95461a17acdc2c1c3e0fccdfc4c8427eeb617",
+      "after_working_copy_sha256_UNCOMMITTED": "5ba2586a7f312be99fb6f6e231e95461a17acdc2c1c3e0fccdfc4c8427eeb617",
+      "changed": false,
+      "note": "working copy = CRLF rendering of the LF blob (225 CR bytes)"
+    },
+    "ATTRIBUTION_PATCH.md": {
+      "baseline_blob": "f4f12c83eaad5495294a9e2933444a284c0dddfb",
+      "baseline_blob_content_sha256": "a8c261823985d9f907d6c8210bf1169d9c27c802a2cc5b38d5fd0ca7179b2357",
+      "before_working_copy_sha256": "a8c261823985d9f907d6c8210bf1169d9c27c802a2cc5b38d5fd0ca7179b2357",
+      "after_working_copy_sha256_UNCOMMITTED": "4882be4b31000877a35636e61df195789002ef2cf91d59dfebab40650a678497",
+      "changed": true,
+      "note": "+72 lines, 0 deletions (binding note + section 6); sections 1-5 and diff block unchanged; patch NOT APPLIED; LF"
+    }
+  },
+  "attribution_patch_validation": {
+    "target": "bc7e62b7:paper/det3-conductor.tex (blob 975b59e9..., content f52f8d16...)",
+    "git_apply_check_lf_copy": "pass",
+    "git_apply_check_crlf_worktree": "pass (read-only)",
+    "gnu_patch_offsets": "all 3 hunks at stated lines, no offset/fuzz",
+    "patched_disposable_copy_sha256_UNCOMMITTED_NOT_THE_PAPER": "a289c9de57455dcf4e3666801f7f1af12f5306e5212b8eeb3b48806ff85a598c",
+    "patched_copy_checks": "0 undefined refs/cites, 0 uncited, braces 1423/1423, $ even, counter identical (52), Cor.~7.2]{BI} x3, Prop.~7.3 x0",
+    "disposable_copy_retained": false,
+    "compiled": false,
+    "wording_flag": "patch 2.3 'no admissible family exists at all' conflicts with B23-10 4.3 / K9; preserved, flagged in patch section 6"
+  },
+  "sources": {
+    "LMR arXiv:1004.4802v1 PDF": {"url": "https://arxiv.org/pdf/1004.4802v1", "sha256": "cfc28275a8c6b27f0ad6946d495ed4f889f7617df479be943d8d35718dbf2d79", "bytes": 180675, "status": "hashed; equals record"},
+    "LMR ar5iv HTML": {"url": "https://ar5iv.labs.arxiv.org/html/1004.4802", "sha256": "fb5844ada6bec339638b584bcf385686935e96e03aa8f0ab9e2561bb0b316e05", "bytes": 382135, "status": "PRIMARY text read: section 1, section 3.5 incl. Prop. 3.5.1, Thm. 1.0.1, ref [3]"},
+    "LMR abstract page": {"url": "https://arxiv.org/abs/1004.4802", "sha256": "dc097e58fa7eeed4adc1f7869a5a737e1b8b0de6ccfb6f0f315fe0042ca473d6", "status": "v1 only; no journal-ref"},
+    "B24-10 review": "ab2f8a407f5eac320c13d1eefca33c9b930ded86:docs/b24_10_review.md (READ sections 4, 11.4)",
+    "B23-10 review": "239dd6e84417ab04914a8d84cca02ddf754bf1fb:docs/b23_10_review.md (READ sections 4.1-4.5, 12.1)",
+    "B24-02b": "5a97317e7e28753261cf6e8dcece180a0e71b718:docs/b24_02b_report.md and results/b24_02b/lmr_quotes.md (READ)",
+    "not_read_by_B25-03": ["BI arXiv:1511.02927", "Huettenhain thesis", "IK arXiv:1911.03990", "Kumar arXiv:1109.5996", "Marcus-Minc"]
+  },
+  "pilots": 0,
+  "compute_lease": "not requested",
+  "tool_memory_created": false,
+  "git_mutation": "none"
+}

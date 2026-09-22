@@ -3,6 +3,16 @@
 **Status: PREPARED, NOT APPLIED.** `paper/det3-conductor.tex` is unchanged by
 this file. It is the author's credit line, and the author signs it off.
 
+> **Binding corrected by B25-03 (2026-09-21 UTC; UNCOMMITTED).** The header
+> bullets below are kept as B24-01 wrote them. The target they name is now
+> resolved. It is `bc7e62b714632c20d2405e54030224a2549c242d:paper/det3-conductor.tex`,
+> blob `975b59e931ff5ac4a1a1b49d08dbe0ce246c5c6e`, content SHA-256
+> `f52f8d16a8d11d23a9f7ccd7ebc99dfb6d6fcf00b10ee3b128bb871034b4f866` (LF,
+> 114 279 bytes). The digest `b911a151…` below is the CRLF working-copy
+> rendering of exactly that blob (`core.autocrlf=true`), so it is not a lost
+> state. Applicability to the committed blob, and one wording flag for the
+> author, are in §6. Nothing in §§1–5 has been reworded.
+
 - **Worktree:** `C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B23-05`,
   branch `b23-05-paper1`, HEAD `bbd1d12e80ae162feb368f75c9c270ccf79747f8`.
 - **Applies to:** `paper/det3-conductor.tex` as it stands *after* the B24-01
@@ -221,3 +231,65 @@ of priority; the gain is that a referee who knows BI Appendix 7 will find the
 citation already there rather than discovering it themselves. B23-10 rates this
 a **submission blocker** (ruling B23-10.13), so arXiv should wait on this
 signature.
+
+---
+
+## 6. Binding addendum (B25-03, 2026-09-21 UTC; UNCOMMITTED, patch still NOT APPLIED)
+
+**Target.** Commit `bc7e62b714632c20d2405e54030224a2549c242d`, path
+`paper/det3-conductor.tex`, blob `975b59e931ff5ac4a1a1b49d08dbe0ce246c5c6e`,
+content SHA-256 `f52f8d16a8d11d23a9f7ccd7ebc99dfb6d6fcf00b10ee3b128bb871034b4f866`,
+114 279 bytes, 2 127 LF lines.
+
+**The historical digest.** The working copy is 116 406 bytes with CRLF on all
+2 127 lines, SHA-256
+`b911a15184ebf819301deddfc178d76a5d9a6d01b881d5fc64b32a8982457445`. Two
+checks show it is the committed blob:
+
+- inserting `\r` before every `\n` of the blob hashes to `b911a151…`;
+- stripping `\r` from the working copy hashes to `f52f8d16…`.
+
+So the header's `b911a151…` is the CRLF checkout of the file B24-01 then
+committed, with its content unchanged. B24-10 §4.3 hashed blob contents
+(LF), which is why it did not find the digest. The header's HEAD
+`bbd1d12e…` was HEAD while the edits were in progress; the edited file is
+committed at `bc7e62b7`. By the same test, `CHANGES.md` Part I's pre-edit
+digests `11e34759…` (paper) and `60b07db6…` (README) are the CRLF
+renderings of the `bbd1d12e` blobs `2cc15d3f…` and `c47e7396…`.
+
+**Applicability, checked without touching the paper:**
+
+- The §3 diff is extracted as `results/b25_03/attribution_patch_extracted.diff`
+  (SHA-256 `ea80adeb9b85cc3906bf03086cbc404e6e99cdf49086376290f13c14229734f5`,
+  UNCOMMITTED). `git apply --check` passes against a disposable LF copy of
+  the blob, and also against the CRLF working copy. `git apply --check`
+  writes nothing.
+- GNU `patch -p1` on the disposable copy applies all three hunks at their
+  stated lines, with no offset or fuzz.
+- §2's line locators are exact at `bc7e62b7`: 175–179, 498–501 and
+  559–561.
+- After the patch, the disposable copy's SHA-256 is
+  `a289c9de57455dcf4e3666801f7f1af12f5306e5212b8eeb3b48806ff85a598c` (LF).
+  This is an UNCOMMITTED validation state, not the paper, and the copy has
+  been deleted. On that copy:
+  - 0 undefined `\ref`/`\eqref`, 0 undefined `\cite` and 0 uncited
+    `\bibitem`;
+  - braces balance at 1 423/1 423, and the `$` count is even;
+  - the theorem counter matches the unpatched file exactly (52
+    environments; `prop:census` = 4.1, `cor:lower` = 4.2);
+  - `\cite[Cor.~7.2]{BI}` occurs 3 times and `Prop.~7.3` 0 times.
+- Not compiled, because no LaTeX toolchain is installed.
+
+**One wording flag for the author (not applied, wording above unchanged).**
+§2.1's sentence correctly says "no family of $\delta$ distinct $D$-subsets
+of $[k]$ exists at all". §2.3's introduction text says "the case of their
+plethysm bound \cite[Cor.~7.2]{BI} in which no admissible family exists at
+all". B23-10 §4.3 (at `239dd6e8`) rejected that phrase: "the case of
+Cor. 7.2 … in which no admissible set exists" is not Prop. 4.1, because
+that case includes the regularity failures. Corrigendum K9 replaced it. The
+§2.3 text therefore conflicts with the ruling it implements. B24-10 §4.3
+checked only that the introduction credits BI, so it did not test this
+point. If the author wants the §2.3 text to match §2.1 and K9, the minimal
+change is "in which no family of $\delta$ distinct $D$-subsets exists at
+all". Either way, this is part of the same signature decision. **The
+author/credit line and the paper are untouched.**

@@ -7,6 +7,37 @@ those corrections are recorded in Part I §4 and not applied in place.
 
 ---
 
+# PART 0 — B25-03: packet repair for B24-01 (2026-09-21 UTC; UNCOMMITTED)
+
+B25-03 made **no edit to `paper/det3-conductor.tex` and none to `README.md`**.
+Both are byte-identical to their state at baseline `bc7e62b7`. The author and
+credit line is untouched, and the attribution patch is **not applied**.
+
+The documentation-only edits:
+
+- `ATTRIBUTION_PATCH.md`: a binding note under Status, and §6, the binding
+  addendum. The patch's target is re-bound to blob
+  `bc7e62b7:paper/det3-conductor.tex`. `b911a151…` is shown to be that
+  blob's CRLF checkout. Applicability was verified, and one wording flag is
+  raised in §2.3. §§1–5 are unchanged.
+- `READINESS.md`: a superseding note. The "one signature" headline is
+  withdrawn, and four pre-posting items are enumerated.
+- `GAPS.md`: a status note. "Only blocker left" is withdrawn. The LMR
+  Prop. 3.5.1 finding is re-read PRIMARY and narrowed. The IK, Kumar and
+  Hüttenhain rows are marked as unpacketed B24-01 readings.
+- `CHANGES.md`: this Part 0.
+
+**Historical digests in Part I, resolved.** Its pre-edit `11e34759…`
+(paper) and `60b07db6…` (README) are the CRLF checkouts of the `bbd1d12e`
+blobs. Its post-edit `b911a151…` (paper) and `5ba2586a…` (README) are the
+CRLF checkouts of the `bc7e62b7` blobs `975b59e9…` and `c5201162…`. So
+B24-01's post-edit working state is exactly what `bc7e62b7` committed. Part
+I's "nothing committed" was true at the time of writing and is now stale.
+The full bindings, the reading and the checks are in
+`docs/b25_03_report.md` and `results/b25_03/MANIFEST.json`.
+
+---
+
 # PART I — B24-01: clearing the five blockers
 
 Worktree `C:\Users\swami\Projects\gct-gpt\work\batch15_workers\B23-05`, branch
