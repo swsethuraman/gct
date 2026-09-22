@@ -1,0 +1,16 @@
+# A25-02 limitations
+
+UNCOMMITTED / NOT RELEASED. Producer-only, awaiting independent review and authorized delivery.
+
+1. The new results are elementary hand-proved implications and a certificate interface. No new determinant equation, actual-padding separator, multiplicity gap, asymptotic bound, or broad coverage theorem is produced.
+2. The six negative results have distinct domains. Out-of-scope classes are explicit nonclaims, not counterexamples or viable constructions. Eligibility does not imply existence, and expensive verification does not imply impossibility.
+3. Numerical input statuses are inherited through committed reports/reviews. Hashes were rechecked; mathematical certificates were not replayed. In particular, the M_7 control uses a historical modular determinant floor plus a global proved padding ceiling, not an exact rank inference from modular nullity or sampled zeros.
+4. Literature labels are SECONDARY in this assessment. Historical PRIMARY labels identify a source-reading event in the cited packet, not a fresh reading here. The T2/Kleiman/depth-sensitivity and cap dependencies are preserved where applicable.
+5. Exact q and padding evaluation matrices are specified as a finite interface, not instantiated. Full source-space dimension and transpose-fixed conventions must be proved for any future candidate. Smaller-minor row3 has no specified triple or identity and is stopped as underspecified.
+6. No local Git branch beyond the observed committed tips is assumed. No network fetch occurred. A25-01 and unfinished B25 producers are not inputs. B25-05 cannot be used to improve (star)'s status until an actual later committed packet is read.
+7. The record's adopted noncontainment/existence premises were not re-certified. Existence OPEN here means an affordable specified instance in the proposed interface, not a claim that the record has no existential separation statements. The generic product/padding equality is restricted to its adopted five-variable regime.
+8. The cap-theorem pointer was corrected to B24-10 section11.5 row5.10. The launch prompt's row5.8 pointer instead discusses Beauville. No historical document was changed.
+9. SOURCE_BINDINGS.json proves byte provenance of selected reports and manifests, not a recursive replay or fresh audit of every numerical/literature artifact named by those reports. This suffices for the explicitly labelled READ synthesis; it is not an independent evaluator certificate.
+10. Git global-ignore access was restricted in the sandbox. Repository-specific delivery checks are included, but an authorized delivery pass must recheck its environment and exact footprint before staging. Raw/filtered blob mismatch was detected for the report, and ADMIN_VERIFICATION.json enumerates all mismatches. Byte preservation requires an authorized rule or a newly reviewed normalization before delivery. No delivery commit or release claim exists.
+
+No tool memory was created or used as evidence (G9'). Every printed output hash in this packet names an UNCOMMITTED state; source hashes resolve to committed objects. MANIFEST.json intentionally excludes itself. Its digest belongs in the final response or a separate future delivery binding, not recursively inside itself.
