@@ -1,0 +1,11 @@
+# Proposed delivery — no authorization to execute
+
+UNCOMMITTED / NOT RELEASED. Repository C:/Users/swami/Projects/gct-gpt/work/batch15, branch batch15-launch, observed starting HEAD 82633a60893236fab4fbc317df416e1b8a349005. No delivery commit exists. Packet status is producer-only outcome (3), a scoped no-go proved by hand.
+
+PROPOSED_ADD_LIST.txt contains the exact repository-relative paths: the report plus the A25-01 packet only. It is generated from this disjoint directory before the manifest is sealed. The administrative scripts are included for provenance and reproduce only hashing/listing/source inspection, never mathematical computation. Exclude all other slots, ledgers, coordination locks, runtime caches, papers and pre-existing results/b15_integrator/.
+
+Follow RUNBOOK.md's separate proposal/authorization/execution boundary and the byte-binding discipline of B24_COMMIT_REPORT.md and B24_10_COMMIT_REPORT.md. This session performed Phase-A-style preparation only. A later authorized pass must inspect actual branch/HEAD/status again, validate the manifest and exact add list, check ignore rules and text conversion for every path, review only the proposed staged diff, commit only the approved list, then compare every committed blob with the bound bytes and record the actual commit and manifest SHA-256 separately. Do not inject a prospective delivery commit into this seal.
+
+Current sample check: text/eol are unspecified for the report and PROOFS.md; no local ignore match was printed for those paths. The sandbox could not read the account's global ignore file. Therefore the delivery pass must finish the all-path ignore/attribute and raw-versus-filtered check under its approved account. No Git configuration, .gitattributes or .gitignore was changed here; any needed byte-preservation rule belongs to that separately authorized pass. No PID receipt exists, so no slot PID negation is requested. Never force-add a hidden receipt.
+
+Acceptance gate: G29 delivery binding and an independent review remain open. A manifest verifies bytes, not the theorem. The next independent certificate is precisely NEXT_CERTIFICATE.md, with hand review preferred and at most one properly wrapped symbolic check if subsequently authorized. No push, publication or follow-on launch is requested by this note.

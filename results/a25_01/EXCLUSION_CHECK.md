@@ -1,0 +1,14 @@
+# Six-scope check of the frozen family
+
+UNCOMMITTED / NOT RELEASED. Method: READ of the pinned record, plus the independent hand proof in PROOFS.md. Eligibility is not existence. The new no-go is proved directly; none of the six older exclusions is enlarged.
+
+| exclusion and governing status | application to this construction |
+|---|---|
+| Lemma 1.3, PROVED with B22-10 caveat: zero-constant polynomials in r-minors vanish wherever rank<r | **Outside stated scope.** No polynomial matrix M(F), generic determinant rank r or r-minor extraction is used. This is not an (r+1)-minor rank-threshold ideal either. |
+| Lemma 1.4, PROVED in its regime: positive-degree SL5 invariants vanish on P5; an SL5-equivariant degree-e map to Sym^s has l^ceil((s+e)/5) divisibility on lC | **Outside stated scope.** The chosen frame-dependent projection is neither an invariant nor the stated equivariant covariant. In the cubic-target regime the additional GL5 determinant-twist convention 4e=3+5k and row bound imply e>=7 and output l^2 m in D35; no such map is used here. |
+| D2', PROVED witness obstruction using pure powers in the closure | **Applies but does not decide** as a necessary witness check: B1=I, others zero gives x1^4, and a putative relation must vanish at (1,0,...,0). Strictly, the GL-invariant-property formulation does not apply to our fixed-frame condition. Passing this one witness cannot prove a universal relation. The section proof supplies the stronger result. |
+| Tail theorem, PROVED for weight vectors with t<d, factor c_(4e1)^(d-t) and primality/non-membership premises | **Applies but does not decide.** U_d is torus-graded; some of its weights have t<d, others have d<=t<=2d. This theorem alone supplies neither existence nor nonexistence of relations throughout U_d. The direct section proves zero for every weight. No highest-weight multiplicity equality, GL-equivariance of the factorization, or n=5 tail-900 claim is imported. |
+| Direction reversal, theorem-specific | **Outside stated scope.** No rank statistic, semicontinuous comparison or Koszul differential occurs. Existing Macaulay rank-threshold exclusions at N=5..8 remain as recorded; no N=16 or higher-differential extension is asserted or needed. |
+| Astra five-block redundancy, PROVED with transposition essential for exact support | **Outside stated scope.** This is a relation-among-allowed-jets problem at the normalized scalar pencil, not a block-scalar forbidden-weight/support test in the fixed (a,r,c,S,v) decomposition. That theorem explicitly leaves allowed-jet relations open. Our proof closes only the 15-coordinate subring selected here. |
+
+The candidate escapes the old forbidden-support theorem as a matter of scope and is then killed by the new explicit-section theorem. No unresolved hypothesis remains in that theorem. There is no blanket no-go for row 12, fibre compatibility, higher jets, special-locus cancellations or multi-frame combinations.
