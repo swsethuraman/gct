@@ -245,3 +245,15 @@ Parts I–II above are unchanged. Status of the gaps after the B25-02 repair pas
 - **G-P2-18 (new)** — Thm 6.2's closure statement is carried as ADOPTED from B17-01 (`01c49022`, B15-01), whose scope B23-03 §4 reads more narrowly than B17-01 states; needs review before the paper relies on it.
 - **G-P2-19 (new)** — the n = 4 LMR transfer 16 → 9 is flagged in the paper as the analogue of (★); B25-05 should say whether (★) covers it.
 - **E-08 (new, record)** — Paper 2's "Prop. C" of the companion does not exist in Paper 1 @ `bc7e62b7` (length reduction is Prop. 4.19 by source order).
+
+---
+
+## Part IV — PART 17b bounded repair (2026-09-22, on B25-10 §4 @ `42e7f4ba` and the author's decisions)
+
+- **G-P2-SUB (new; fill at submission, not a blocker)** — three placeholders in the bibliography: `Companion`'s arXiv identifier (`arXiv:XXXX.XXXXX`), and the repository URL in `Companion2` and `Companion3` ("PDF at [repository URL to be inserted at submission]").
+- **B14 REPAIRED** — `Companion` is Paper 1 as an arXiv preprint; `Companion2` is a technical report with a PDF locator; `Companion3` (the report on `D45 ∩ P5` up to its boundary) is added and cited at Rem. 6.3, at the G-A1 boundary sentence and at the Σ_Π statement after Thm 7.1. No programme-internal slot label appears in the TeX.
+- **B16 REPAIRED** — acknowledgement sentence replaced as decided; byline unchanged.
+- **G-P2-18** — wording repaired per B25-10 §4.3: the closure statement is "a separate, unpublished result of this programme, carried as ADOPTED on the programme's record", cited to `Companion2`. Still ADOPTED; the general form of that result is unreviewed and is not cited.
+- **G-P2-02 / G-P2-07** — the `n = 3` control is now PROVED: (★) is proved (B25-10 §2.4). The paper keeps the symbol `(★)` for that premise.
+- **G-P2-19** — **stays flagged.** The `n = 4` sentence now says the `n = 3` case is proved and the `n = 4` case is not yet checked, so the transfer is flagged, not established. B25-10 §2.4's one-paragraph check was **not** attempted.
+- G-P2-17 — still open: no compile on this host either; mechanical checks pass (`results/b25_02/EDITS_SUPPLEMENT_20260922.md`). The integrator compiles the after-state.

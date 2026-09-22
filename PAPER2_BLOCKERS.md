@@ -426,8 +426,8 @@ evidence and edited locations: `docs/b25_02_report.md` §5.
 | B8, B9 | REPAIRED |
 | B10 | QUALIFIED — and Thm 6.2 downgraded to the determinant part; closure statement carried as ADOPTED (B17-01), G-A1 OPEN |
 | B11, B12, B13, B15 | REPAIRED |
-| B14 | PARTLY — locators fixed (Paper 1 Prop. 4.19 / 4.23 / Q 8.5); companion locatability [AUTHOR] |
-| B16 | untouched [AUTHOR] |
+| B14 | **REPAIRED 2026-09-22** (housekeeping PART 17b, on the author's decision): `Companion` → Paper 1 as an arXiv preprint (title as in `paper/det3-conductor.tex`); `Companion2` → technical report with a PDF locator; `Companion3` added for the boundary classification. Placeholders **G-P2-SUB: fill at submission** (arXiv identifier, repository URL), not blockers. *Was:* PARTLY — locators fixed (Paper 1 Prop. 4.19 / 4.23 / Q 8.5); companion locatability [AUTHOR] |
+| B16 | **REPAIRED 2026-09-22** (housekeeping PART 17b, on the author's decision): the acknowledgement now reads "carried out using AI tools, including Claude (Anthropic) … rests with the author"; single-author byline unchanged; no AI system named as an author. *Was:* untouched [AUTHOR] |
 
 New findings recorded by B25-02: N1 Prop. 6.1's inequality was reversed; N2 "maximal minors" in
 the abstract; N3 Thm 6.2 "unconditional" not supported for the closure; N4 Lemma 3.3 scope beyond
