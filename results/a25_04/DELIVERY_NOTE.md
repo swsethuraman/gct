@@ -1,0 +1,11 @@
+# A25-04 local delivery proposal
+
+**LOCAL COMPLETE / UNCOMMITTED / NOT RELEASED.** No delivery commit exists. Baseline: branch batch15-launch, HEAD 82633a60893236fab4fbc317df416e1b8a349005. Outcome (3), scoped no-go for the trace-pairing mechanism on ten specified bordered 2-minors of d_1^(3).
+
+ADD_LIST.txt lists every created file, including the report, proof, scope/source/resource records, administrative scripts, verification record and manifest. All paths are within docs/a25_04_report.md, results/a25_04/, or analysis/a25_04_*. There are no existing-file edits outside that set, no old seal changes and no ledger update.
+
+MANIFEST.json hashes the actual packet payload bytes, excluding itself. Its metadata states that the hashes name UNCOMMITTED bytes. A separately reported manifest hash binds that manifest as an uncommitted local object only. SOURCE_BINDINGS.json distinguishes committed input-object hashes, provisional prior-packet hashes, and uncommitted administrative input hashes. None is presented as committed A25-04 evidence.
+
+ADMIN_VERIFICATION.json records raw Git hashes versus hashes after the repository's current path filters, along with tracked-diff and packet-list checks. No hash-object invocation writes an object, and no file is staged. An initial own-output check found CRLF/LF normalization in the new SOURCE_BINDINGS.json. The administrative writers were adjusted to save this slot's JSON outputs as UTF-8 without BOM and with LF line endings, then the packet was rechecked and resealed. No prior packet, source bytes, Git attributes, or existing file was normalized. The final local raw/filter checks match; a later authorized delivery pass must still verify the actually committed bytes, including the manifest and verification receipt, against the reviewed raw hashes. A hash match alone does not supply a commit or independent review.
+
+The next scientific action is limited to the single independent hand-review certificate priced in RESOURCE_RECEIPTS.md. The class is closed in the producer proof; it earns no automatic new search, cell, pilot or follow-on task. G29 delivery and independent acceptance remain open. Publication and paper changes are outside this assignment.

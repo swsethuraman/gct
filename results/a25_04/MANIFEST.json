@@ -1,0 +1,118 @@
+{
+  "schema": "a25_04.local_packet.v1",
+  "slot": "A25-04",
+  "outcome": 3,
+  "status": "LOCAL COMPLETE / UNCOMMITTED / NOT RELEASED",
+  "theorem_status": "PROVED, self-contained hand derivation, producer-only; independent review pending",
+  "theorem": "The ten specified bordered 2-minors of d_1^(3) at N=5 admit a polynomial section from determinant pencils; their polynomial algebra has zero intersection with I(D45).",
+  "candidate": "h0=det(m_ij), coefficient degree 8; h0(det control)=256; h0(actual padding control)=-4096; h0 is not a determinant equation",
+  "repository": "C:/Users/swami/Projects/gct-gpt/work/batch15",
+  "branch": "batch15-launch",
+  "baseline_head": "82633a60893236fab4fbc317df416e1b8a349005",
+  "delivery_commit": null,
+  "started_utc": "2026-09-21T03:27:11Z",
+  "mechanism_frozen_by_utc": "2026-09-21T03:29:36Z",
+  "outcome_fixed_by_utc": "2026-09-21T03:33:27Z",
+  "sealed_utc": "2026-09-21T03:38:01Z",
+  "evidence_method": "READ plus self-contained hand derivation; no REPLAY or computational INDEPENDENT EVALUATOR",
+  "source_bindings": "results/a25_04/SOURCE_BINDINGS.json",
+  "source_read_status": "results/a25_04/SOURCE_READS.md",
+  "mathematical_pilots": 0,
+  "mathematical_computational_seconds": 0,
+  "compute_lease_touched": false,
+  "tool_memory_created": false,
+  "tool_memory_used_as_evidence": false,
+  "additional_agents_or_tasks": 0,
+  "next_certificate": "Independent hand review of section/global identity and exact controls; 20–40 minutes; no pilot proposed",
+  "artifacts": [
+    {
+      "path": "docs/a25_04_report.md",
+      "bytes": 7716,
+      "sha256": "f2444c33f3d11295a2e53abed279c82e7891b42fc9f4a9be41f2a7d2cb905651",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "analysis/a25_04_admin.ps1",
+      "bytes": 4461,
+      "sha256": "d84443e9300f2dbcb0600a08d3484ebae1b5150affbf49346d6c63043f9e4211",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "analysis/a25_04_seal.ps1",
+      "bytes": 6646,
+      "sha256": "a3c24aa8cdbcd1612802f0f4aa3070eeb3122f94f6793f2b23010c5777ce9c83",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/ADD_LIST.txt",
+      "bytes": 429,
+      "sha256": "2543f220d8893d49ae614cb2f56e8218974ed79f813b15d24dc10b6b682d90a3",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/ADMIN_VERIFICATION.json",
+      "bytes": 8885,
+      "sha256": "05a746f2ecfc475b880913b8a37bd1f2dfe242866f1e58e90859a3335e8d6d0d",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/CONSTRUCTION_AND_PROOF.md",
+      "bytes": 11621,
+      "sha256": "a49f3ad79a86107cd4b28fd667581368f3500a2101f545649cf769f5ade6acfa",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/DELIVERY_NOTE.md",
+      "bytes": 2215,
+      "sha256": "5abfa282bb4dbd2a6be28b30d63357724d2cc7988cd1ac868100477c5618e524",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/EXCLUSION_AUDIT.md",
+      "bytes": 5090,
+      "sha256": "20dfdb1ea7924866cea7a9da003f37cb6cebe3b409bf9d77374f24eb0e0013f7",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/INTAKE.md",
+      "bytes": 2282,
+      "sha256": "2f42e159de42d5881dca7894d1fb96df1cccd4d2547f9675580821a0dc21de04",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/RESOURCE_RECEIPTS.md",
+      "bytes": 4206,
+      "sha256": "36331e431db669de62b946aa18fa7d08730bb49ebfa4435623a3e52e713e2845",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/SOURCE_BINDINGS.json",
+      "bytes": 23248,
+      "sha256": "1e6a172803f06681c1b9095ced1e9726f791e800b16f30ce18f318c30585fbc8",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/SOURCE_READS.md",
+      "bytes": 6274,
+      "sha256": "cf0137301ec5d29ba90c553ea198e11efc01a950d57aa5a3628fca559be405f7",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    },
+    {
+      "path": "results/a25_04/STATUS.md",
+      "bytes": 2247,
+      "sha256": "b678ebc58e41a1caadc2eb5bc51dde7aacb62a6781be742c1971232e51d81053",
+      "state": "UNCOMMITTED / NOT RELEASED"
+    }
+  ],
+  "excludes": [
+    "Manifest self-hash",
+    "All other producer paths",
+    "Shared ledger and lease",
+    "Git mutation and publication"
+  ],
+  "proposed_delivery_paths": "results/a25_04/ADD_LIST.txt",
+  "open_gates": [
+    "Independent review",
+    "G29 separately authorized committed-byte delivery"
+  ]
+}

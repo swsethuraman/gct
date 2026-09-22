@@ -1,0 +1,271 @@
+{
+  "utc": "2026-09-21T03:38:01Z",
+  "method": "Administrative file/hash/read-only Git verification, not a mathematical evaluator",
+  "branch": "batch15-launch",
+  "head": "82633a60893236fab4fbc317df416e1b8a349005",
+  "tracked_diff": {
+    "stdout": "",
+    "stderr": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+    "exit_code": 0
+  },
+  "observed_status": {
+    "stdout": "?? analysis/a25_02_admin.ps1\n?? analysis/a25_02_seal.ps1\n?? analysis/a25_03_admin.ps1\n?? analysis/a25_03_seal.ps1\n?? analysis/a25_04_admin.ps1\n?? analysis/a25_04_seal.ps1\n?? docs/a25_01_report.md\n?? docs/a25_02_report.md\n?? docs/a25_03_report.md\n?? docs/a25_04_report.md\n?? results/a25_01/\n?? results/a25_02/\n?? results/a25_03/\n?? results/a25_04/\n?? results/b15_integrator/",
+    "stderr": "warning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\swami/.config/git/ignore': Permission denied",
+    "exit_code": 0
+  },
+  "payload_filter_checks": [
+    {
+      "path": "docs/a25_04_report.md",
+      "bytes": 7716,
+      "sha256": "f2444c33f3d11295a2e53abed279c82e7891b42fc9f4a9be41f2a7d2cb905651",
+      "raw_git_hash": "433f4308fffc07b12dd83c031c127ca88259acda",
+      "filtered_git_hash": "433f4308fffc07b12dd83c031c127ca88259acda",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "analysis/a25_04_admin.ps1",
+      "bytes": 4461,
+      "sha256": "d84443e9300f2dbcb0600a08d3484ebae1b5150affbf49346d6c63043f9e4211",
+      "raw_git_hash": "11a25c05d9c01414fe6abed04b5a4aece0fe5d64",
+      "filtered_git_hash": "11a25c05d9c01414fe6abed04b5a4aece0fe5d64",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "analysis/a25_04_seal.ps1",
+      "bytes": 6646,
+      "sha256": "a3c24aa8cdbcd1612802f0f4aa3070eeb3122f94f6793f2b23010c5777ce9c83",
+      "raw_git_hash": "5a4d23336490e232bfbf4771d16fedff11d0b973",
+      "filtered_git_hash": "5a4d23336490e232bfbf4771d16fedff11d0b973",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/ADD_LIST.txt",
+      "bytes": 429,
+      "sha256": "2543f220d8893d49ae614cb2f56e8218974ed79f813b15d24dc10b6b682d90a3",
+      "raw_git_hash": "28d5436eb4326b3b0232952de8c0428f93c6ecc0",
+      "filtered_git_hash": "28d5436eb4326b3b0232952de8c0428f93c6ecc0",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/CONSTRUCTION_AND_PROOF.md",
+      "bytes": 11621,
+      "sha256": "a49f3ad79a86107cd4b28fd667581368f3500a2101f545649cf769f5ade6acfa",
+      "raw_git_hash": "d7004c71efecde019b6434af62501831e541b602",
+      "filtered_git_hash": "d7004c71efecde019b6434af62501831e541b602",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/DELIVERY_NOTE.md",
+      "bytes": 2215,
+      "sha256": "5abfa282bb4dbd2a6be28b30d63357724d2cc7988cd1ac868100477c5618e524",
+      "raw_git_hash": "5d47aeb89d4d96a0da13ffacf51bbf1df09f0fc6",
+      "filtered_git_hash": "5d47aeb89d4d96a0da13ffacf51bbf1df09f0fc6",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/EXCLUSION_AUDIT.md",
+      "bytes": 5090,
+      "sha256": "20dfdb1ea7924866cea7a9da003f37cb6cebe3b409bf9d77374f24eb0e0013f7",
+      "raw_git_hash": "086eaaf3787c0d62a08483828bffac8318f2063b",
+      "filtered_git_hash": "086eaaf3787c0d62a08483828bffac8318f2063b",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/INTAKE.md",
+      "bytes": 2282,
+      "sha256": "2f42e159de42d5881dca7894d1fb96df1cccd4d2547f9675580821a0dc21de04",
+      "raw_git_hash": "a3011d1a5444554b47135645da272c6d1df87bab",
+      "filtered_git_hash": "a3011d1a5444554b47135645da272c6d1df87bab",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/RESOURCE_RECEIPTS.md",
+      "bytes": 4206,
+      "sha256": "36331e431db669de62b946aa18fa7d08730bb49ebfa4435623a3e52e713e2845",
+      "raw_git_hash": "7b9e6977b051154ac1a52cff169f6f2e6870a99f",
+      "filtered_git_hash": "7b9e6977b051154ac1a52cff169f6f2e6870a99f",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/SOURCE_BINDINGS.json",
+      "bytes": 23248,
+      "sha256": "1e6a172803f06681c1b9095ced1e9726f791e800b16f30ce18f318c30585fbc8",
+      "raw_git_hash": "3b215703bf955124cafc79c859564c025df712d6",
+      "filtered_git_hash": "3b215703bf955124cafc79c859564c025df712d6",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/SOURCE_READS.md",
+      "bytes": 6274,
+      "sha256": "cf0137301ec5d29ba90c553ea198e11efc01a950d57aa5a3628fca559be405f7",
+      "raw_git_hash": "50ecc85d0cca282804788b5d97e6b9b4f69d1c00",
+      "filtered_git_hash": "50ecc85d0cca282804788b5d97e6b9b4f69d1c00",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    },
+    {
+      "path": "results/a25_04/STATUS.md",
+      "bytes": 2247,
+      "sha256": "b678ebc58e41a1caadc2eb5bc51dde7aacb62a6781be742c1971232e51d81053",
+      "raw_git_hash": "3bf8dfaeb6ee7a9b7ae46077e5ad8a691799b5d5",
+      "filtered_git_hash": "3bf8dfaeb6ee7a9b7ae46077e5ad8a691799b5d5",
+      "raw_equals_filtered": true,
+      "filtering_stderr": "",
+      "state": "UNCOMMITTED raw bytes"
+    }
+  ],
+  "excluded_from_filter_check": [
+    "results/a25_04/ADMIN_VERIFICATION.json",
+    "results/a25_04/MANIFEST.json"
+  ],
+  "exclusion_reason": "Avoid circular receipt/self-hash; both are hashed externally or in the payload manifest as applicable",
+  "prior_packet_entries_unchanged": [
+    {
+      "path": "docs/a25_01_report.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/audit_sources.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/CONSTRUCTION.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/DELIVERY_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/EXCLUSION_CHECK.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/INTAKE.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/LIMITATIONS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/NEXT_CERTIFICATE.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/PADDING_STATUS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/PROOFS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/PROPOSED_ADD_LIST.txt",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/RESOURCE_RECEIPTS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/seal_packet.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/SOURCE_BINDINGS.json",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/STATUS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_01/MANIFEST.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/a25_02_report.md",
+      "unchanged": true
+    },
+    {
+      "path": "analysis/a25_02_admin.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "analysis/a25_02_seal.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/INTAKE.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/SOURCE_BINDINGS.json",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/SCOPE_MATRIX.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/IMPLICATIONS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/APPLICATIONS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/SURVIVOR_SPEC.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/RESOURCE_RECEIPTS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/LIMITATIONS.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/DELIVERY_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/ADD_LIST.txt",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/ADMIN_VERIFICATION.json",
+      "unchanged": true
+    },
+    {
+      "path": "results/a25_02/MANIFEST.json",
+      "unchanged": true
+    }
+  ],
+  "mathematical_pilots": 0,
+  "git_mutation": false
+}
