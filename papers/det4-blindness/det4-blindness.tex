@@ -125,7 +125,7 @@ that part. Whether it survives on the boundary --- a point of $\Dff\cap\Pf$ that
 determinants without being one, with smooth cubic factor --- is this paper's named open
 question. We include the evidence
 that the instruments work where there is something to see: the unpadded $n=3$ control, with
-$D=+1$ at every rung $\delta\ge12$, PROVED modulo the record's own reduction $(\star)$ from nine
+$D=+1$ at every rung $\delta\ge12$, PROVED, with the record's length-restriction lemma carrying it from nine
 variables to seven. We also include one worked example of the method: the
 $(4^5)$ cell in degree $5$, where $D=-1$. Every claim carries its record label, source packet,
 commit and review lineage at the point of use.
@@ -212,7 +212,7 @@ the boundary (\S\ref{sec:cubic}, the open question~\ref{q:boundary}).
 \end{quote}
 
 The instruments are not broken: the positive control of \S\ref{sec:control} shows them producing
-$D=+1$ at every rung, PROVED modulo the record's reduction $(\star)$, where the comparison has
+$D=+1$ at every rung, PROVED via the record's length-restriction lemma, where the comparison has
 content. The blindness is a property
 of padding at five rows.
 
@@ -1022,7 +1022,7 @@ Every rung with $\delta\ge12$ is a multiplicity obstruction (both multiplicities
 one-sided orientation $U_D\not\subseteq U_P$, $U_P=0$. At the base rung
 $((19,7,2^5),12)$: $m_{\per}=6>5=m_{\det}$.
 \end{theorem}
-\prov{\textbf{PROVED modulo $(\star)$} (the record's own label is ``a theorem, not a measurement'', on Proposition~S and Lemma~L; the qualifier is the Batch~24 review's). Rungs $12$--$16$ were MEASURED at both house primes and agree. $i_{\per}=0$ is proved over $\bQ$ by nullity-$0$ certificates. \textbf{The floor and the ceiling of $i_{\det}(12)$ have different evidence.} The \emph{floor} $i_{\det}(12)\ge1$ is LMR \lit{LMR}{PRIMARY for this use: Thm.~2.3.1, specialised by \S3.1 (Thm.~3.1.1) and instanced at $n=3$ in \S3.2; statements read, proofs not audited} --- LMR prints this cell, the weight $12\omega_1+5\omega_2+2\omega_7=(19,7,2^5)$ in $S^{12}(S^3\bC^9)$ with a copy in the ideal of $\overline{\GL_9\cdot[\det_3]}$. \emph{Do not cite LMR's Thm.~1.0.2 for this cell}: its printed $\omega_1$ coefficient and degree are both halved and mutually inconsistent, and read literally it gives $(13,7,2^5)$ at degree $6$. The \emph{ceiling} $i_{\det}(12)\le1$ is the record's own measured nullity $1$ at both primes, and is not taken from LMR's ``only one copy'', which LMR asserts without printed proof; were that assertion wrong, $i_{\det}$ could only be larger and $D\ge1$ would still hold. \textbf{The qualifier $(\star)$}: LMR's statement is at $N=9$, the record's cell is $\Sym^{12}(\Sym^3\bC^7)$ and $D_7$ at $N=7$, and the bridge is the programme's own reduction $(\star)$ (\texttt{s73} \S1: the $\lambda$-isotypic part of $\bC[\GL_9\cdot f]$ is that of $\bC[X_7]$ for $\ell(\lambda)\le7$). The range is stated closed and the cell sits at its included endpoint $\ell(\lambda)=7$, which the review rules sound; the load-bearing step is the $N=9\to7$ transport of the ideal-copy count. LMR's printed multiplicity six at $N=9$ agrees with the record's $a=6$ at $N=7$, which corroborates the ambient multiplicity only, not the ideal count. $(\star)$'s own label is not settled on the committed record (GAPS~G-37), so this label keeps its qualifier until an accepted update says otherwise}{\texttt{docs/s73\_report.md} \S0, \S1, \S2(c), \S4, \S8 @ \cm{82633a60}; \texttt{docs/stocktake\_batch11.md} \S4 @ \cm{82633a60}; \texttt{docs/batch11\_plan.md} \S1.1 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02 \S\S2.2--2.4, ledger B24-02.5--.8 @ \cm{f8273c3b}; B24-02b \S\S1--4, ledger B24-02b.1--.13, \texttt{results/b24\_02b/lmr\_quotes.md} Q1, Q5--Q7 @ \cm{5a97317e}; B24-10 \S\S3.1--3.3, rulings 11.3.1--11.3.10 and 11.6.10 @ \cm{ab2f8a40}}{producer (session 73; P0-A, s62, s63 for the base rung); integrator stocktake (46 certificates, 46 PASS; $a$-values reproduced at $\delta=12..18,20$); B24-02 (INDEPENDENT hand replay of the structural half: $\Omega(4,3)$ expands to $(19,7,2^5)$, $\delta=12$, $\ell=7$); B24-02b (PRIMARY reading of LMR, PDF v1 sha256 \texttt{cfc28275\dots} identical to the hash already on the record); reviewer B24-10 (READ + INDEPENDENT re-derivation of the ceiling/floor asymmetry; did not open \texttt{s73}). The computational half (the $a$-ladder, the nullity certificates, Proposition~S) still has no independent reviewer slot. GAPS~G-15 is closed as a read-status question}
+\prov{\textbf{PROVED} (the record's own label is ``a theorem, not a measurement'', on Proposition~S and Lemma~L; the Batch~24 review's qualifier, the length-restriction lemma, is now discharged, see below). Rungs $12$--$16$ were MEASURED at both house primes and agree. $i_{\per}=0$ is proved over $\bQ$ by nullity-$0$ certificates. \textbf{The floor and the ceiling of $i_{\det}(12)$ have different evidence.} The \emph{floor} $i_{\det}(12)\ge1$ is LMR \lit{LMR}{PRIMARY for this use: Thm.~2.3.1, specialised by \S3.1 (Thm.~3.1.1) and instanced at $n=3$ in \S3.2; statements read, proofs not audited} --- LMR prints this cell, the weight $12\omega_1+5\omega_2+2\omega_7=(19,7,2^5)$ in $S^{12}(S^3\bC^9)$ with a copy in the ideal of $\overline{\GL_9\cdot[\det_3]}$. \emph{Do not cite LMR's Thm.~1.0.2 for this cell}: its printed $\omega_1$ coefficient and degree are both halved and mutually inconsistent, and read literally it gives $(13,7,2^5)$ at degree $6$. The \emph{ceiling} $i_{\det}(12)\le1$ is the record's own measured nullity $1$ at both primes, and is not taken from LMR's ``only one copy'', which LMR asserts without printed proof; were that assertion wrong, $i_{\det}$ could only be larger and $D\ge1$ would still hold. \textbf{The length-restriction lemma}: LMR's statement is at $N=9$, the record's cell is $\Sym^{12}(\Sym^3\bC^7)$ and $D_7$ at $N=7$, and the bridge is the programme's length-restriction lemma (\texttt{s73} \S1: the $\lambda$-isotypic part of $\bC[\GL_9\cdot f]$ is that of $\bC[X_7]$ for $\ell(\lambda)\le7$; it is \texttt{isotypic\_rank.md} Prop.~5, with its two implicit steps supplied by B25-05's Lemma~R). The range is stated closed and the cell sits at its included endpoint $\ell(\lambda)=7$, which the review rules sound; the load-bearing step is the $N=9\to7$ transport of the ideal-copy count. LMR's printed multiplicity six at $N=9$ agrees with the record's $a=6$ at $N=7$, which corroborates the ambient multiplicity only, not the ideal count. The lemma is PROVED (B25-10 \S2.4: READ plus INDEPENDENT hand re-derivation of Lemma~R's steps R1--R6; GAPS~G-37 closed), so the qualifier is dropped. The upgrade covers the base rung $\delta=12$; the rungs above it keep the \texttt{s73} lineage of Proposition~S and Lemma~L}{\texttt{docs/s73\_report.md} \S0, \S1, \S2(c), \S4, \S8 @ \cm{82633a60}; \texttt{docs/stocktake\_batch11.md} \S4 @ \cm{82633a60}; \texttt{docs/batch11\_plan.md} \S1.1 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02 \S\S2.2--2.4, ledger B24-02.5--.8 @ \cm{f8273c3b}; B24-02b \S\S1--4, ledger B24-02b.1--.13, \texttt{results/b24\_02b/lmr\_quotes.md} Q1, Q5--Q7 @ \cm{5a97317e}; B24-10 \S\S3.1--3.3, rulings 11.3.1--11.3.10 and 11.6.10 @ \cm{ab2f8a40}; \texttt{docs/isotypic\_rank.md} Prop.~5 @ \cm{82633a60}; B25-05 \S A.3 Lemma~R @ \cm{2688efd1}; B25-10 \S2 @ \cm{42e7f4ba}}{producer (session 73; P0-A, s62, s63 for the base rung); integrator stocktake (46 certificates, 46 PASS; $a$-values reproduced at $\delta=12..18,20$); B24-02 (INDEPENDENT hand replay of the structural half: $\Omega(4,3)$ expands to $(19,7,2^5)$, $\delta=12$, $\ell=7$); B24-02b (PRIMARY reading of LMR, PDF v1 sha256 \texttt{cfc28275\dots} identical to the hash already on the record); reviewer B24-10 (READ + INDEPENDENT re-derivation of the ceiling/floor asymmetry; did not open \texttt{s73}); reviewer B25-10 (READ + INDEPENDENT hand re-derivation of Lemma~R, R1--R6) for the length-restriction lemma and the PROVED label. The computational half (the $a$-ladder, the nullity certificates, Proposition~S) still has no independent reviewer slot. GAPS~G-15 is closed as a read-status question}
 
 \begin{record}[\cid{C46}; the padded $n=3$ control is degenerate]\label{rec:n3pad}
 $\ell\cdot\per_2$ has exactly five essential variables. So $m_{\mathrm{pad}}=0$ at every
@@ -1033,7 +1033,7 @@ supplies no padded test.
 
 Taken together, Theorem~\ref{thm:ladder} and Record~\ref{rec:n3pad} are the whole point of this
 section. The same evaluation, transport and certification machinery that is blind at five rows
-produces $D=+1$ at every rung, PROVED modulo $(\star)$, as soon as the comparison has content. It
+produces $D=+1$ at every rung, PROVED, as soon as the comparison has content. It
 is blind
 exactly when the permanent side is replaced by padding in a cell too short to see the
 permanent. That is the five-row situation of Record~\ref{rec:washout}.
@@ -1054,16 +1054,16 @@ further evaluation family and no sharpening of the numerics can supply it, becau
 runs the wrong way for the instrument. That theorem has now been read at the source for this
 use: Theorem~2.3.1 with \S\S3.1--3.2 of LMR, which prints the cell itself (never Theorem~1.0.2,
 whose printed weight and degree are halved). What the reading cannot supply is the passage from
-LMR's nine variables to the record's seven. That step is the programme's own reduction $(\star)$,
+LMR's nine variables to the record's seven. That step is the programme's own length-restriction lemma,
 used at the closed endpoint $\ell(\lambda)=7$ of its stated range, with the cell also at the
 non-vacuity threshold of LMR's module, $N\ge k+3=7$ for dual dimension $k=4$: two conditions
 saturated at once, so any widening of the cell
-leaves the validated region immediately. The honest label is therefore \emph{PROVED modulo
-$(\star)$}, and it stays so until $(\star)$'s own status is settled by an accepted update
-(GAPS~G-37). The record-internal alternative, a proof that the exhibited integer vector
+leaves the validated region immediately. That lemma is now PROVED (\texttt{isotypic\_rank.md} Prop.~5 with B25-05's Lemma~R, reviewed in
+B25-10 \S2), so the label is \emph{PROVED}
+(GAPS~G-37, closed). The record-internal alternative, a proof that the exhibited integer vector
 $U_D$ lies in $I(D_7)$, is not available: the packets are explicit that the vanishing of $U_D$ at
 $32$ determinant pencils is Schwartz--Zippel evidence of ideal membership and not a proof of it.
-\prov{scope sentence, not a result. The one-sidedness is the record's own: ``$i_{\det}(12)\le1$ is the measured nullity $1$ at both primes''; the floor is ``LMR's theorem at this cell (adopted)''; and ``finite-point vanishing is Schwartz--Zippel evidence \dots\ the rigorous $v\in I(D_7)$ at $\delta=12$ is LMR''. The read-status and the $(\star)$ qualifier are as in the provenance of Theorem~\ref{thm:ladder}}{\texttt{docs/s73\_report.md} \S1, \S2(c), \S3, \S8 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02b \S\S2.4, 3.1--3.3 @ \cm{5a97317e}; B24-10 \S3.2, rulings 11.3.3--11.3.8 @ \cm{ab2f8a40}}{producer (session 73) for the quoted sentences; reviewer B23-10 (READ) for the earlier CONDITIONAL ruling, now discharged as to read-status; reviewer B24-10 (READ) for PROVED modulo $(\star)$ and the double pinch}
+\prov{scope sentence, not a result. The one-sidedness is the record's own: ``$i_{\det}(12)\le1$ is the measured nullity $1$ at both primes''; the floor is ``LMR's theorem at this cell (adopted)''; and ``finite-point vanishing is Schwartz--Zippel evidence \dots\ the rigorous $v\in I(D_7)$ at $\delta=12$ is LMR''. The read-status and the length-restriction lemma are as in the provenance of Theorem~\ref{thm:ladder}}{\texttt{docs/s73\_report.md} \S1, \S2(c), \S3, \S8 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02b \S\S2.4, 3.1--3.3 @ \cm{5a97317e}; B24-10 \S3.2, rulings 11.3.3--11.3.8 @ \cm{ab2f8a40}; B25-10 \S2 @ \cm{42e7f4ba}}{producer (session 73) for the quoted sentences; reviewer B23-10 (READ) for the earlier CONDITIONAL ruling, now discharged as to read-status; reviewer B24-10 (READ) for the double pinch and the earlier qualifier; reviewer B25-10 (READ + INDEPENDENT) for the length-restriction lemma and PROVED}
 
 %==============================================================================================
 \section{What remains open}\label{sec:open}
@@ -1092,11 +1092,11 @@ $2\le j\le N-4$} (Ruling~\ref{rul:scope}). The first differential is settled
 $\rank d_j^{(k)}$; without it, the determinant floors a pilot could produce would give only
 MEASURED comparisons. One theory slot, paragraph-first, is the prerequisite of any computation
 here.
-\item \emph{The status of $(\star)$ at the positive control's base rung}
-(Theorem~\ref{thm:ladder}). LMR's read-status for this use is now settled (PRIMARY); what the
-label still waits on is whether the record's own reduction from $N=9$ to $N=7$, at
-$\ell(\lambda)=7$, is PROVED or ADOPTED. It carries the \emph{sign} of the programme's only
-positive result, and it is a reading of the record, not a pilot (GAPS~G-37).
+\item \emph{The status of the length-restriction lemma at the positive control's base rung}
+(Theorem~\ref{thm:ladder}). Settled: LMR's read-status for this use is PRIMARY, and the
+record's own reduction from $N=9$ to $N=7$, at $\ell(\lambda)=7$, is PROVED (B25-05's Lemma~R,
+reviewed in B25-10 \S2). It carries the \emph{sign} of the programme's only
+positive result (GAPS~G-37, closed).
 \item \emph{The $\bQ$ form of the five-row identity} (Theorem~\ref{thm:identity}).
 \item \emph{Ballico 1995} (Theorem~\ref{thm:rhoZ}). Reading it, or a literature-free proof of
 the singular-locus Lemma~3.3, would discharge C3.
@@ -1194,7 +1194,8 @@ identical to the recorded hash, v1 the only version; text read via ar5iv; Theore
 with Theorem~3.1.1, and \S3.2 with its printed $n=3$ instance; statements read, proofs not
 audited), and load-bearing for the sign. Cite Theorem~2.3.1 with \S\S3.1--3.2 for this cell,
 \emph{never} Theorem~1.0.2, whose printed $\omega_1$ coefficient and degree are halved. The
-transfer from LMR's $\bC^9$ to the record's $\bC^7$ is the record's own $(\star)$, not LMR's.]
+transfer from LMR's $\bC^9$ to the record's $\bC^7$ is the record's own length-restriction lemma
+(PROVED; B25-10 \S2), not LMR's.]
 
 \bibitem{CG} Clemens, Griffiths, intermediate Jacobian of the cubic threefold.
 [UNREAD-SPECIALIST, a non-candidate, not load-bearing (B22-02 \S5). Bibliographic data not on the
