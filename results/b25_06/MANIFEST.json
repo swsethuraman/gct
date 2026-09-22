@@ -1,0 +1,27 @@
+{
+  "slot": "B25-06",
+  "state": "UNCOMMITTED local packet; no delivery commit exists",
+  "sealed_utc": "2026-09-21T03:58:14Z",
+  "worktree": "work/batch15_workers/B23-03",
+  "branch": "b23-03-intersection",
+  "baseline_head": "3bcad66601a586936ce5c76fdf72d9551700dab3",
+  "outcome": "(3) partial result with named premises; G-A1 OPEN; no smooth-cubic boundary example",
+  "pilots": 0,
+  "lease_acquired": false,
+  "files": [
+    {"path": "docs/b25_06_report.md", "bytes": 21774, "sha256_raw": "c2103a0aa3326cf622a026eff9ac8dc61bdb58b572fa7cb1279dee786b3091bb"},
+    {"path": "results/b25_06/STATUS.md", "bytes": 583, "sha256_raw": "0fefee013318d45602aa3e1be2dcaad5c5ded2dad81dc03699517addf965367e"}
+  ],
+  "inputs": [
+    {"path": "launch/v1_20260921T003934Z/B25-06.md", "sha256_raw": "bb5c8f9d0f23c151027e8839de1ff278eac052220470c724606516289cbb445e", "status": "UNCOMMITTED admin"},
+    {"path": "launch/v1_20260921T003934Z/CLAUDE_COMMON.md", "sha256_raw": "ef258214d70abe1c6cace4becd4d2caec12bc198b6927031a76be4b2163986dd", "status": "UNCOMMITTED admin"},
+    {"path": "launch/v1_20260921T003934Z/COMPUTE_PROTOCOL.md", "sha256_raw": "9746d7ce2d783fd009e69f5193607835a095babdaa9453b407b8c76d3d8f932c", "status": "UNCOMMITTED admin"},
+    {"path": "launch/v1_20260921T003934Z/SOURCE_INDEX.md", "sha256_raw": "959733b9337855128b91aaa415b448a2ebe7ea81faf07530f11ec001f0c54e44", "status": "UNCOMMITTED admin"},
+    {"path": "BATCH25_PROPOSED_BOARD_v2.md", "sha256_raw": "857771058e183959562252575260a310a334a58304a92c0949d867668613e826", "status": "UNCOMMITTED admin"},
+    {"path": "B15-12/docs/b25_12_ledger.md", "sha256_raw": "b49f2b5bc70b2c0f6c195e2c87ea30438b7f6760fa0b7e8a9878b417a5a36494", "status": "UNCOMMITTED live ledger, as read 2026-09-21T03:40Z"},
+    {"path": "docs/b23_03_report.md", "commit": "3bcad66601a586936ce5c76fdf72d9551700dab3", "blob": "4e60a2930412ab0193baa64ed1a915b834ae89a2", "sha256_blob_content": "0101f224327a61d1c14e480fbb0c6a4dca17c20b4e8191f44fe533b07b9e0a91", "raw_equals_blob": true},
+    {"path": "B15-10/docs/b24_10_review.md", "commit": "ab2f8a407f5eac320c13d1eefca33c9b930ded86", "blob": "46edbcb023a9997b9288630f13198bdbe44a53ef", "sha256_blob_content": "da1528ba7b19d314698c804fed696e4aa4058245efb3ec9737a9092ba11c2bf3", "raw_equals_blob": true},
+    {"path": "B23-04/papers/det4-blindness/det4-blindness.tex", "commit": "f95742aed4dd22d3f04ac1313ce3d78e6e0bc87c", "blob": "50b1918cdf1d100c6a6c3423b45d6d6327cce894", "sha256_blob_content": "ab69ccbe6cc79decccb3a2a3798e08e3d3a97412d79a6d095b12f3a68678455b", "raw_equals_blob": false, "note": "working copy modified by another session (sha256 19e616cf...ff49); Question 6.5 text verified identical in the blob"}
+  ],
+  "tool_memory": "created one pointer note (b25-06-boundary-outcome.md); quarantined from premises"
+}
