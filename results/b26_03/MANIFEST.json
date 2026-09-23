@@ -1,0 +1,65 @@
+{
+  "slot": "B26-03",
+  "status": "UNCOMMITTED / PRODUCER ONLY",
+  "worktree": "work/batch15_workers/B23-05",
+  "branch": "b23-05-paper1",
+  "head": "848e22b4d7bf73c392bd6bac3ac6591315190b0e",
+  "paper_lf_blob_sha256": "4e1ccf7006879c748beeb57676567ae2443a3a587df7251efc0523fec4686338",
+  "brief_sha256": {
+    "B26_COMMON.md": "a22c91034244d48aae2be5c9f5ecb4337cff609cda1aaf08e593e497656a51fd",
+    "B26-03.md": "8cf14c4af457303c1846e2f8ae9e49e3c869af96d289c224ac49e49ea07c8132",
+    "BATCH26_LIVE_LEDGER.md": "9d24c37c5953c66583f199af3e8fc226e4feb9f7c70d412f2d4424594b47d2c8"
+  },
+  "start_utc": "2026-09-22T23:42:43Z",
+  "checkpoint_45min": "not reached",
+  "stop_utc": "2026-09-22T23:55:12Z",
+  "pilots": 0,
+  "programs": 0,
+  "verdicts": {
+    "IK Lem 5.2": "NARROW",
+    "Kumar Compositio Cor 6.2": "VERIFIED",
+    "Huettenhain s8.1": "VERIFIED",
+    "Huettenhain Cor 8.3.2": "VERIFIED",
+    "G-P4": "WITHDRAW KumarCMH -> KumarComp,KL"
+  },
+  "hash_convention": "raw bytes of each file as written (LF line endings; no CR)",
+  "excludes": "MANIFEST.json itself; results/b26_03/literature/",
+  "files": [
+    {
+      "path": "docs/b26_03_report.md",
+      "sha256": "91a66482209998216b7da23a69897fa36cf4757d0c6296904758e83f2eecc426",
+      "bytes": 26545,
+      "crlf": 0
+    },
+    {
+      "path": "results/b26_03/SOURCE_QUOTES.md",
+      "sha256": "487007e477d51a4ddb1ffc1f65533bc75d1279bb8a9915ca4bfbb119f1097af5",
+      "bytes": 9487,
+      "crlf": 0
+    },
+    {
+      "path": "results/b26_03/b26_03_gp4_kumar_citation.diff",
+      "sha256": "955ab12607525fa6c64c6ffbd1398f5de6439481744d8cf53f743638fdc34d1a",
+      "bytes": 724,
+      "crlf": 0
+    },
+    {
+      "path": "results/b26_03/b26_03_ik_lem52_narrow.diff",
+      "sha256": "b574d1b5efb851cfed6f44b196b92386f94dddb3a27a36b78d60023992e845f7",
+      "bytes": 691,
+      "crlf": 0
+    },
+    {
+      "path": "results/b26_03/b26_03_ik_arxiv_locator_OPTIONAL.diff",
+      "sha256": "0a6e6da3de9578051230c890c04bfee22a4fb00ec587c8a81f6381082676840e",
+      "bytes": 412,
+      "crlf": 0
+    },
+    {
+      "path": "results/b26_03/PROPOSED_DELIVERY_PATHS.txt",
+      "sha256": "d74f0574322594e8f56ddada517c59ede87897e97f079dc98780945826907a47",
+      "bytes": 653,
+      "crlf": 0
+    }
+  ]
+}
