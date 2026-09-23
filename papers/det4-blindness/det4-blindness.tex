@@ -125,8 +125,8 @@ that part. Whether it survives on the boundary --- a point of $\Dff\cap\Pf$ that
 determinants without being one, with smooth cubic factor --- is this paper's named open
 question. We include the evidence
 that the instruments work where there is something to see: the unpadded $n=3$ control, with
-$D=+1$ at every rung $\delta\ge12$, PROVED, with the record's length-restriction lemma carrying it from nine
-variables to seven. We also include one worked example of the method: the
+$D=+1$ at every rung $\delta\ge12$: PROVED at $\delta=12$, with the record's length-restriction lemma carrying it from nine
+variables to seven; higher rungs rest on the \texttt{s73} certificates. We also include one worked example of the method: the
 $(4^5)$ cell in degree $5$, where $D=-1$. Every claim carries its record label, source packet,
 commit and review lineage at the point of use.
 \end{abstract}
@@ -212,8 +212,8 @@ the boundary (\S\ref{sec:cubic}, the open question~\ref{q:boundary}).
 \end{quote}
 
 The instruments are not broken: the positive control of \S\ref{sec:control} shows them producing
-$D=+1$ at every rung, PROVED via the record's length-restriction lemma, where the comparison has
-content. The blindness is a property
+$D=+1$ at every rung where the comparison has content: PROVED at $\delta=12$ via the record's
+length-restriction lemma; higher rungs rest on the \texttt{s73} certificates. The blindness is a property
 of padding at five rows.
 
 \subsection{How to read the labels}
@@ -247,13 +247,13 @@ dimension $39$ (affine).
 \prov{PROVED (certificate CERTIFIED); $\dim\Pf=39$ as recorded}{B18-01 Prop.~3.2 @ \cm{ea045cef}; B19-12 ledger F1 @ \cm{f008ac39}; B22-10 pilot~2 sanity row @ \cm{2efb7aaf}}{two lineages: B18 slot~10 (replay at two points) and integrator (own reimplementation)}
 
 \begin{record}[\cid{C02}]\label{rec:padmodel}
-At five rows the padded permanent restricts to $\Pf=R_{135}$ (ADOPTED). Above five variables
+At five rows the padded permanent restricts to $\Pf=R_{135}$ (proved: \cite[Thm.~3.1]{Paper2}; Record~\ref{rec:washout}). Above five variables
 this is false. The honest $L$-variable restriction $P_L=\overline{\{(z\per_3)\circ T\}}$ has
 $\dim P_L=10L-5$ for $L\ge6$, strictly inside the variety of all linear-times-cubic forms, and
 equality holds only at $L=5$. So an evaluation at an arbitrary product above five variables is
 \emph{not} a padding certificate.
 \end{record}
-\prov{$\Pf=R_{135}$: ADOPTED; $L\ge6$ statement: MEASURED and PROVED}{B22-02 \S0 notation (citing B18-10 \S9) @ \cm{e22a41b1}; B19-12 ledger F7 @ \cm{f008ac39}}{two lineages (B18 slot~10 and integrator); the dimension convention of $10L-5$ is not stated at the source (GAPS G-24)}
+\prov{$\Pf=R_{135}$: PROVED, \cite[Thm.~3.1]{Paper2} and the $r=5$ case of \cid{C32}; $L\ge6$ statement: MEASURED and PROVED}{B22-02 \S0 notation (citing B18-10 \S9) @ \cm{e22a41b1}; B19-12 ledger F7 @ \cm{f008ac39}}{two lineages (B18 slot~10 and integrator); the dimension convention of $10L-5$ is not stated at the source (GAPS G-24)}
 
 \begin{proposition}[\cid{C03}]\label{prop:d35dim}
 $\dim D_{35}=29$ (affine; $28$ projective), and $\dim\{\ell\cdot C: C\in D_{35}\}=33$ (affine;
@@ -807,7 +807,7 @@ where $R_r=\{\ell\cdot c\}$ is the reducible locus. The reason is that $D_k^{\pe
 $k\le5$. So every $D\ne0$ cell at length $\le5$, in either sign, is a statement about
 \emph{reducibility against the determinant}, and $\per_3$ does not appear.
 \end{record}
-\prov{PROVED}{\texttt{docs/washout\_lemma.md} \S0, Thm.~2 @ \cm{82633a60}; \texttt{docs/PROVED.md} entries \texttt{washout\_thm2}, \texttt{restriction\_lemma} @ \cm{82633a60}; B23-10 \S7 rank~3, ruling B23-10.18 @ \cm{239dd6e8}}{producer (session 37); re-derived from its generator by B13-07 (per \texttt{PROVED.md}); reviewer B23-10 (INDEPENDENT EVALUATOR, pilot~2, its own code on a fresh seed and two primes: Jacobian ranks $4,10,20,35$ at $r=2..5$ and floor $50$ at $r=6$, matching the recorded table; the restriction lemma, Lemma~1 and Theorems~2--3 re-derived by READ). \textbf{Second lineage closed 2026-09-19.} Residues still OPEN: Theorem~6's exactness ($\dim D_6^{\per_3}=50$; the replay gives a floor only) and \cid{C33}}
+\prov{PROVED; also proved in \cite[Thm.~3.1]{Paper2}}{\texttt{docs/washout\_lemma.md} \S0, Thm.~2 @ \cm{82633a60}; \texttt{docs/PROVED.md} entries \texttt{washout\_thm2}, \texttt{restriction\_lemma} @ \cm{82633a60}; B23-10 \S7 rank~3, ruling B23-10.18 @ \cm{239dd6e8}}{producer (session 37); re-derived from its generator by B13-07 (per \texttt{PROVED.md}); reviewer B23-10 (INDEPENDENT EVALUATOR, pilot~2, its own code on a fresh seed and two primes: Jacobian ranks $4,10,20,35$ at $r=2..5$ and floor $50$ at $r=6$, matching the recorded table; the restriction lemma, Lemma~1 and Theorems~2--3 re-derived by READ). \textbf{Second lineage closed 2026-09-19.} Theorem~6's exactness, $\dim D_6^{\per_3}=50$, is PROVED: the replay's floor $50$ meets the ceiling $9r-4=50$ at $r=6$ of \cite[Lem.~3.3]{Paper2}. Residue still OPEN: \cid{C33}}
 
 \begin{record}[\cid{C33}; degree-eight silence on the cubic side]\label{rec:deg8}
 $I(D_r^{\per_3})_\delta=0$ for every $r$ and every $\delta\le8$. Hence $m_{\mathrm{pad}}=m_{\mathrm{red}}$
@@ -837,7 +837,7 @@ nonzero there. Since the cap minors also vanish on every cubic through a plane
 \qquad \Sigma_\Pi:=\{\text{quinary cubics containing a plane}\}.
 \]
 \end{lemma}
-\prov{containment and restriction PROVED. The right-way clause is CONDITIONAL on the cap theorem at $n=3$ (Theorem~\ref{thm:cap}, PROVED modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all three ADOPTED inputs). The bound $\delta_0\ge8$ is ADOPTED record-internal and holds given the batch-13 measured identity; unconditionally the record has $\delta_0\ge6$ (Record~\ref{rec:delta0}). The resulting degree bound on a separating $f$ is recorded ``because it is proved, not because it is informative''. It is far below the onset conjecture's $>300$, which is an expectation}{B22-02 Lemma~1.6 (L6) @ \cm{e22a41b1}; B22-10 S18 @ \cm{2efb7aaf}}{producer B22-02; reviewer B22-10 (READ + INDEPENDENT hand: the rank-$64$ instance on a generic $D_{35}$ point re-derived from Dimca Thm.~3.1 \lit{Dimca13}{PRIMARY, statement level} and general position; MEASURED rank $64$ on $D_{35}$ and $65$ generic, at single random points. The companion figure ``$64$ on a cubic through a plane'' was one exact rank at one point --- a floor --- and is SUPERSEDED by Proposition~\ref{prop:capplane}, which proves the ceiling for every member; corrigendum K3). The strengthening to $D_{35}\cup\Sigma_\Pi$ is B23-03 \S2.5 @ \cm{3bcad666}, anticipated by B22-10 S18}
+\prov{containment and restriction PROVED. The right-way clause is CONDITIONAL on the cap theorem at $n=3$ (Theorem~\ref{thm:cap}), which is PROVED modulo Kleiman and Dimca, both ADOPTED inputs: the Gulliksen--Neg\aa rd assumption is not needed at $n=3$ \cite[Prop.~4.23]{Paper1}. The bound $\delta_0\ge8$ is ADOPTED record-internal and holds given the batch-13 measured identity; unconditionally the record has $\delta_0\ge6$ (Record~\ref{rec:delta0}). The resulting degree bound on a separating $f$ is recorded ``because it is proved, not because it is informative''. It is far below the onset conjecture's $>300$, which is an expectation}{B22-02 Lemma~1.6 (L6) @ \cm{e22a41b1}; B22-10 S18 @ \cm{2efb7aaf}}{producer B22-02; reviewer B22-10 (READ + INDEPENDENT hand: the rank-$64$ instance on a generic $D_{35}$ point re-derived from Dimca Thm.~3.1 \lit{Dimca13}{PRIMARY, statement level} and general position; MEASURED rank $64$ on $D_{35}$ and $65$ generic, at single random points. The companion figure ``$64$ on a cubic through a plane'' was one exact rank at one point --- a floor --- and is SUPERSEDED by Proposition~\ref{prop:capplane}, which proves the ceiling for every member; corrigendum K3). The strengthening to $D_{35}\cup\Sigma_\Pi$ is B23-03 \S2.5 @ \cm{3bcad666}, anticipated by B22-10 S18}
 
 \begin{proposition}[\cid{C35}; the intersection is larger than expected]\label{prop:intersection}
 $\Dff\cap\Pf\supseteq\{\ell\cdot C: C\in D_{35}\}$, and the containment is strict. Let
@@ -1033,7 +1033,8 @@ supplies no padded test.
 
 Taken together, Theorem~\ref{thm:ladder} and Record~\ref{rec:n3pad} are the whole point of this
 section. The same evaluation, transport and certification machinery that is blind at five rows
-produces $D=+1$ at every rung, PROVED, as soon as the comparison has content. It
+produces $D=+1$ at every rung as soon as the comparison has content: PROVED at $\delta=12$;
+higher rungs rest on the \texttt{s73} certificates. It
 is blind
 exactly when the permanent side is replaced by padding in a cell too short to see the
 permanent. That is the five-row situation of Record~\ref{rec:washout}.
@@ -1204,6 +1205,9 @@ record.]
 \bibitem{Paper1} S.~Sethuraman, \emph{Conductors of orbit closures, and the fundamental invariant
 of the $3\times3$ determinant} (paper~1 of this programme). [The ledger records the
 $\delta_0$ bracket's source as ``paper~1'', UNREAD (B22-12 \S3).]
+
+\bibitem{Paper2} S.~Sethuraman, \emph{The onset of the determinant's five-row ideal, and the
+padded permanent at $n=4$} (paper~2 of this programme).
 
 \end{thebibliography}
 
