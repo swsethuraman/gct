@@ -1,0 +1,33 @@
+--- a/paper/det4-onset.tex
++++ b/paper/det4-onset.tex
+@@ -1000,7 +1000,7 @@
+   \mult\nolimits_{\det}=5,\qquad \mult\nolimits_{\per}=6=a ,\qquad
+   \Delta = \mult\nolimits_{\per}-\mult\nolimits_{\det} = +1 ,
+ \]
+-proved; its one premise beyond the measurements, $(\star)$ below, is itself proved.  The halves are rigorous for
++proved; its one premise beyond the measurements, the length-restriction lemma below, is itself proved.  The halves are rigorous for
+ different reasons, and it is worth separating them.  $\mult_{\per}=a$ was
+ measured as a rank modulo $p$ at both house primes, and
+ $\rank_p\le\rank_\bQ\le a$ forces equality over $\bQ$; there is no
+@@ -1016,8 +1016,8 @@
+ $i_{\det}\ge1$ in nine variables, and $\mult_{\det}\le5$ once that copy is
+ transferred to the seven-variable model $\Ddet_7$.  The transfer is the
+ programme's isotypic restriction from nine variables to seven, valid for
+-$\ell(\lambda)\le7$ and used here at its boundary $\ell(\lambda)=7$; call it
+-$(\star)$.  It is not a statement of \cite{LMR}; it is proved in this programme, so the conclusion
++$\ell(\lambda)\le7$ and used here at its boundary $\ell(\lambda)=7$; this is the
++programme's length-restriction lemma.  It is not a statement of \cite{LMR}; it is proved in this programme, so the conclusion
+ $\mult_{\det}=5$, hence $\Delta=+1$, is proved.  (We use only
+ the half of the sentence of \cite[\S3.2]{LMR} that is proved there,
+ $i_{\det}\ge1$; the bound $i_{\det}\le1$ comes from the measured rank.)  Both
+@@ -1058,8 +1058,8 @@
+ $\mathrm{Dual}_{2n-2,n,n^{2}}$; at $n=d=4$, $k=6$, $N=16$ this is the weight
+ $48\omega_1+15\omega_2+2\omega_9=(65,17,2^{7})$ in degree $24$, and the
+ length reduction \eqref{eq:lengthred} carries the copy from sixteen variables to
+-$\Ddet_9$.  That transfer is the $n=4$ analogue of the premise $(\star)$ of the
+-$n=3$ control above: the $n=3$ case is proved; the $n=4$ case is not yet checked, so
++$\Ddet_9$.  That transfer is the $n=4$ analogue of the length-restriction lemma
++used in the $n=3$ control above: the $n=3$ case is proved; the $n=4$ case is not yet checked, so
+ this transfer is flagged, not established.  (We do not
+ use \cite[Thm.~1.0.2]{LMR}, whose printed coefficient of $\omega_1$ and degree
+ are both half of these values.)  Equivalently, in the

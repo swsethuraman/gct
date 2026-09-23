@@ -1,0 +1,17 @@
+docs/b26_05_report.md
+results/b26_05/MANIFEST.json
+results/b26_05/PROPOSED_DELIVERY_PATHS.txt
+results/b26_05/resource_receipt.json
+results/b26_05/source_ledger.json
+results/b26_05/proposed/PAPER1_READINESS.append.diff
+results/b26_05/proposed/PAPER1_READINESS.append.md
+results/b26_05/proposed/PAPER2_CLAIMS.append.diff
+results/b26_05/proposed/PAPER2_CLAIMS.append.md
+results/b26_05/proposed/PAPER2_READINESS.append.diff
+results/b26_05/proposed/PAPER2_READINESS.append.md
+results/b26_05/proposed/paper2_length_restriction_rename.CRLF.diff
+results/b26_05/proposed/paper2_length_restriction_rename.LF.diff
+# Branch b24-06-paper2. The .CRLF.diff contains CR bytes by design (target blob is CRLF with -text);
+# deliver it byte-preserving (-text or equivalent). The proposed diffs are NOT to be applied by the
+# delivery pass unless separately authorized; the Paper 1 READINESS append targets branch
+# b23-05-paper1 (848e22b4), not this branch.

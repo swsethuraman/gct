@@ -1,0 +1,42 @@
+--- a/PAPER2_READINESS.md
++++ b/PAPER2_READINESS.md
+@@ -60,3 +60,39 @@
+ remains PROVED modulo (★); several results are cited only through unlocatable companion
+ material; and the author decisions B14/B16 and the Paper 3 overlap are unresolved. Details:
+ `docs/b25_02_report.md`.
++
++**B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only; the B24-06
++paragraph and the B25-02 update above are kept as written).** The subject is the after-state
++`paper/det4-onset.tex` at `79b68dcf` (raw CRLF sha256 `065f8799…`). **It is still not ready.** No
++readiness is declared here. Five statements in the B25-02 update are now stale:
++(a) "C45 remains PROVED modulo (★)". The `n = 3` control, `λ = (19,7,2^5)`, `δ = 12`,
++`Δ = +1`, is now **PROVED**, because the length-restriction lemma is PROVED (B25-10 §2.4 @
++`42e7f4ba`), and the TeX says so. That ruling covers the base rung only; any higher rung keeps its
++s73 lineage, and Paper 2 claims none.
++(b) "no compile has ever been run". The integrator built these bytes: 0 errors, 0 undefined
++references or citations, 15 pages (`build_evidence_20260922_close`, `SHA256SUMS.txt`
++`c4c56d0d…`; the artefacts are uncommitted).
++(c) The closure non-containment is still ADOPTED, but it is now worded as B25-10 §4.3 requires
++(PART 17b). Only the narrow, one-witness reading is used.
++(d) "cited only through unlocatable companion material". B14 is repaired. Three placeholders
++remain, to be filled at submission (G-P2-SUB): Paper 1's arXiv identifier, and the repository URL
++in `Companion2` and `Companion3`.
++(e) "the author decisions B14/B16 … are unresolved". B14 and B16 were decided and applied on
++2026-09-22 (PART 17b).
++**What still stands:**
++(1) The `n = 4` sixteen-to-nine transfer **stays flagged** (G-P2-19). B26-04 is checking it, and
++nothing from it has been independently accepted. Note also that §2 asserts the length reduction
++(2.1) for `det_4` and `x_0 per_3` without a flag, and the paper uses it at several points. So the
++flag at the length-nine cell is narrower than the paper's own unflagged uses of the same
++transport. See `docs/b26_05_report.md` §5.
++(2) Terminology. Three `$(\star)$` occurrences (L1003, L1020, L1061) should read "the
++length-restriction lemma", as Paper 3 writes it. A proposed diff is in
++`results/b26_05/proposed/`. The label `thm:star` (Theorem 5.1, the reducible criterion) is a
++different object and is not renamed.
++(3) [AUTHOR]/locator: `Companion2` must actually contain the `s_5·C*` witness (B25-10 §4.3).
++(4) [AUTHOR]: the Paper 2 / Paper 3 overlap. Advice only is in `docs/b26_05_report.md` §4. It
++found no contradiction between the two papers, but it did find label and scope discrepancies and
++no cross-reference in either direction.
++(5) The G-P2-SUB placeholders, at submission.
++(6) B25-02's remaining outcome-(2) items (`docs/b25_02_report.md` §6), which were not re-assessed
++here.
