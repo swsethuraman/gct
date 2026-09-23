@@ -1,0 +1,1210 @@
+% Paper 3 of the programme: "Why multiplicity obstructions are blind at five rows".
+% DRAFT assembled by slot B23-04 (writing slot, no computation) from committed packets only.
+% Brought current by slot B24-03 (writing slot, no computation) on 2026-09-20, against the
+% B23-10 review and the packets B23-02, B23-03, B23-06 and B23-12.  Every change is listed,
+% with its authorising commit, in DIFF_NOTES.md.  Packets that had reported but were NOT
+% COMMITTED on any ref when that pass ran (B24-02, B24-05, B24-06) were recorded in GAPS.md
+% with their commit pending, and that pass cited none of them.
+% Brought current again by slot B25-01 (writing slot, no computation) on 2026-09-21: the five
+% edits unblocked by the B24-10 review (ab2f8a40, closing ledger 11.6 and 11.9.7), now citing
+% B24-02 (f8273c3b), B24-02b (5a97317e) and B24-05 (5c5ba86e) at their commits.  Listed in
+% DIFF_NOTES.md section 7.
+% Gate G26: every mathematical claim carries (a) the record's own label at the point of use,
+% (b) the packet and commit it comes from, (c) its lineage.  The claims table is CLAIMS.md
+% (keyed by the bracketed IDs C01..C51 printed in each result heading); what the paper wants and
+% the record lacks is GAPS.md; the bibliography by read-status is BIB.md.
+% Compile status (GAPS.md, P-1): the B24-03 bytes compiled clean at 22 pages (integrator, B24
+% ledger @ f55ed57f); the B25-01 bytes have NOT been compiled, since no TeX toolchain is installed
+% on the machine that made them.
+
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{fact}[theorem]{Fact}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{ruling}[theorem]{Ruling}
+\newtheorem{record}[theorem]{Record}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\per}{per}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\Disc}{Disc}
+\DeclareMathOperator{\Cat}{Cat}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\Dff}{D_{45}}
+\newcommand{\Dtf}{D_{35}}
+\newcommand{\Pf}{P_{5}}
+\newcommand{\Ydet}{Y_{\det}}
+\newcommand{\Ypad}{Y_{\mathrm{pad}}}
+
+% ---- provenance apparatus (G26) -------------------------------------------------------------
+% \prov{record label}{packet, section @ commit}{lineage}
+\newcommand{\prov}[3]{\par\smallskip\noindent{\footnotesize\textsf{[\,label: #1\ \textbar\ source: #2\ \textbar\ lineage: #3\,]}}\par\smallskip}
+% \lit{bibkey}{read-status}: a literature citation with its read-status printed at the point of use
+\newcommand{\lit}[2]{\cite{#1}\,{\footnotesize\textsf{[#2]}}}
+% a claim ID, matching CLAIMS.md
+\newcommand{\cid}[1]{\textsf{#1}}
+\newcommand{\cm}[1]{\texttt{#1}}
+
+\title[Why multiplicity obstructions are blind at five rows]
+{Why multiplicity obstructions are blind at five rows}
+
+\author{Swami Sethuraman}
+\address{Beneficus AI}
+\email{swsethuraman@beneficus.ai}
+\date{Draft of 18 September 2026 (slot B23-04); brought current 20 September 2026 (slot B24-03)
+against the Batch~23 review; five further edits 21 September 2026 (slot B25-01) against the
+Batch~24 review. Not for circulation: the claims table has been checked once
+(B23-10: $46/46$ rows matched their cited sources), and the rows changed in each pass are
+marked and dated in \texttt{CLAIMS.md}.}
+\subjclass[2020]{Primary 14L24; Secondary 68Q17, 13A50, 14M12, 13D02}
+\keywords{geometric complexity theory, permanent versus determinant, padding, orbit closure,
+multiplicity obstruction, determinantal hypersurface, Koszul complex, semicontinuity}
+
+\begin{document}
+
+\begin{abstract}
+\textbf{Scope.} This is a negative-results paper with an exact scope. It concerns one comparison:
+the variety $\Dff\subset\Sym^4\bC^5$ of quinary quartics with a $4\times4$ linear determinantal
+representation (dimension $50$, affine) against the padding locus
+$\Pf=\overline{\{\ell\cdot C\}}$ (dimension $39$, affine), which is what the padded
+$3\times3$ permanent becomes in five-row cells. It produces \emph{no} equation, \emph{no}
+separation, \emph{no} multiplicity gap, and \emph{no} theorem that a separating equation of length
+five does not exist: one exists in some five-row cell of degree at most $4^{49}$,
+\emph{conditional on refined B\'ezout}, and none has been written down. There is no five-row
+determinant equation \emph{known} to be nonzero on padding.
+
+What the paper does is explain why the natural instruments are blind, and it keeps the
+explanation's scope exact. (i) A closed condition extracted from a semicontinuous integer
+statistic of a quartic can separate $\Dff$ from a padding point only in one direction for each
+type of semicontinuity (proved from the definitions). (ii) In five variables, instrument by
+instrument, the direction is the wrong one. Every rank-threshold ideal of the first Koszul
+differential of the Jacobian lies in $I(\Dff)\cap I(\Pf)$, and the same holds at
+$N=6,7,8$; across the whole window $N=5,\dots,8$ this is now proved on elementary premises
+alone. The rank-threshold ideals of the
+higher differentials on $\Dff$ are zero, conditional on $\operatorname{grade}=\operatorname{height}$
+in a polynomial ring. Every $\SL_5$-invariant of positive degree vanishes on $\Pf$. Every
+polynomial in the minors through which kernel data are extracted vanishes on padding. Every
+polynomial in the hyperplane-section discriminant vanishes on padding. (iii) Two local
+statistics bite on linear sections of $\det_4$: the rank-$6$ bound on the second fundamental
+form, which is the right-way statistic of Landsberg--Manivel--Ressayre, and the rank-$36$ bound on the middle
+catalecticant, which is itself reversed. Both are vacuous exactly when the number of variables
+is $N\le 8$. Going \emph{up} in $n$ makes the blindness worse, going up the minimal-padding
+ladder $(m,m+1)$ does not, and the blind zone of the second fundamental form reproduces exactly
+the frontier of Landsberg--Manivel--Ressayre. At $N=6,7,8$ the kill is now proved for the first
+Koszul differential; for the higher ones it stays open in the range $2\le j\le N-4$. (iv)
+Restricted to padding, the separation problem runs the right way on the cubic factor,
+conditional on the cap theorem (PROVED modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all
+three ADOPTED inputs). What is missing is a lift to quartics. The
+\emph{determinant part} of $\Dff\cap\Pf$ is now classified: it is the union of two irreducible
+families, $\{\ell\cdot C: C\in D_{35}\}$ of affine dimension $33$ and
+$\{\ell\cdot C: C\ \text{contains a plane}\}$ of affine dimension $35$, neither inside the
+other. The cap minors vanish on every cubic through a plane, so the right-way corner survives on
+that part. Whether it survives on the boundary --- a point of $\Dff\cap\Pf$ that is a limit of
+determinants without being one, with smooth cubic factor --- is this paper's named open
+question. We include the evidence
+that the instruments work where there is something to see: the unpadded $n=3$ control, with
+$D=+1$ at every rung $\delta\ge12$, PROVED, with the record's length-restriction lemma carrying it from nine
+variables to seven. We also include one worked example of the method: the
+$(4^5)$ cell in degree $5$, where $D=-1$. Every claim carries its record label, source packet,
+commit and review lineage at the point of use.
+\end{abstract}
+
+\maketitle
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+%==============================================================================================
+\section{Introduction and scope}\label{sec:intro}
+
+\subsection{The comparison}
+The padded permanent in this programme is $z\per_3$, compared with $\det_4$ in sixteen
+variables. A \emph{five-row cell} is a pair $(d,\lambda)$ with
+$\lambda\vdash 4d$ of length $5$. For such cells the comparison reduces to five variables
+(\S\ref{sec:setting}): on one side the closure $\Dff$ of the quinary determinantal quartics, on
+the other the closure $\Pf$ of the products $\ell\cdot C$ of a linear form and a cubic. The
+programme wants a \emph{multiplicity obstruction}: a cell where padding has strictly larger
+multiplicity than the determinant.
+
+\subsection{What this paper does not claim}
+Four achievements are kept apart throughout. They are never conflated, and this paper achieves
+none of them.
+\begin{enumerate}
+\item a \emph{necessary source condition} (a condition on the source space of a boundary
+      instrument; \S\ref{sec:example});
+\item a \emph{coefficient equation} (a polynomial in the $70$ coefficients of a quinary quartic,
+      proved to vanish on $\Dff$);
+\item a \emph{separation on padding} (a coefficient equation with an exhibited actual padding
+      point where it is nonzero);
+\item a \emph{positive multiplicity gap} ($D>0$ in some cell).
+\end{enumerate}
+\prov{standing rule}{B20-12 ledger \S1 @ \cm{da803892}; B22-02 \S0 @ \cm{e22a41b1}; B22-01 \S0 @ \cm{53bdb31e}}{integrator; restated by every Batch 20--22 packet}
+
+Separation exists and is not the issue. The issue is that nobody has one. The accurate
+phrase is: \emph{no five-row determinant equation known to be nonzero on padding}. It is
+never ``none known''. Five-row $\det_4$ equations of degree $300$ are on the record
+(Theorem~\ref{thm:cap}), and they vanish on padding (Theorem~\ref{thm:gkzB}). A separating
+equation exists, conditionally, in degree at most $4^{49}$ (Theorem~\ref{thm:E}), and this paper
+does not contradict that.
+
+Nor does this paper prove that no construction of an equation of length $5$ to $8$ nonzero on
+padding exists. Its kills are only as strong as their labels. Some are PROVED statements that a
+named polynomial or ideal vanishes on padding. Others are ASSESSED statements that no recipe
+exists on the record. An ASSESSED-kill is not an impossibility.
+
+\subsection{The thesis, and its exact scope}
+The following statement is \emph{not} a theorem of the record. It has no single record label.
+It is an assembly of the labelled results cited in each clause, and it is no stronger than the
+weakest of them. The gaps list records the composite's status (GAPS~G-16).
+
+\begin{quote}
+\textbf{Thesis.} \emph{The blindness is structural at five variables, and it can be
+characterised.}
+\begin{enumerate}
+\item[(a)] A closed condition from a semicontinuous integer statistic separates $\Dff$ from a
+padding point only if the statistic is lower semicontinuous and larger on padding, or upper
+semicontinuous and smaller on padding (Lemma~\ref{lem:sc}, \cid{C13}).
+\item[(b)] In five variables, each named instrument built from the singularities of $F$ fails
+that test on padding. This covers the rank-threshold ideals of every Koszul differential
+(Theorems~\ref{thm:gkzB} and~\ref{thm:koszul}; the latter CONDITIONAL on (T2)), kernel data
+extracted by minors (Lemma~\ref{lem:kernel}), all $\SL_5$-invariants and every
+$\GL_5$-covariant into cubics (Lemma~\ref{lem:nullcone}), and the section discriminant
+(Fact~\ref{fact:disc}). The step ``padding is more singular, hence fails the test'' is proved
+instrument by instrument at $N=5$ and at the stated $N=16$ gradings. At $N=6,7,8$ it is proved
+for the first Koszul differential (Theorem~\ref{thm:thresh678}) and remains a heuristic for the
+higher ones in the range $2\le j\le N-4$ (Ruling~\ref{rul:scope}).
+\item[(c)] $N=5,\dots,8$ is exactly the range in which the two classical local statistics that
+bite on linear sections of $\det_4$ are both vacuous (Lemma~\ref{lem:window}). Only one of
+them, the second-fundamental-form rank, runs the right way. The other, the catalecticant rank,
+is itself reversed. Neither escape route out of the window helps: raising $n$ at fixed $m$
+enlarges the blind zone faster than it enlarges the padded support, and climbing the
+minimal-padding ladder $(m,m+1)$ does not enlarge it at all (Lemma~\ref{lem:blindn}).
+\item[(d)] The reversal belongs to the quartic-side \emph{mechanisms}, not to the separation
+problem restricted to padding. On the cubic factor the problem runs the right way
+(Lemma~\ref{lem:cubic}), conditional on the cap theorem. What is missing is a lift, and the
+covariant lifts are dead. The right-way corner is now proved to survive the enlargement of
+$\Dff\cap\Pf$ \emph{on the determinant part of that intersection}
+(Theorem~\ref{thm:classify}, Proposition~\ref{prop:capplane}), and it is not known to survive on
+the boundary (\S\ref{sec:cubic}, the open question~\ref{q:boundary}).
+\end{enumerate}
+\end{quote}
+
+The instruments are not broken: the positive control of \S\ref{sec:control} shows them producing
+$D=+1$ at every rung, PROVED via the record's length-restriction lemma, where the comparison has
+content. The blindness is a property
+of padding at five rows.
+
+\subsection{How to read the labels}
+Every numbered result carries a bracketed ID (\cid{C01}--\cid{C51}) that indexes
+\texttt{CLAIMS.md} --- fifty of them on a result heading, and \cid{C30} on the caption of
+Table~\ref{tab:kills} --- and a provenance line
+\textsf{[label | source | lineage]}. \emph{Labels} are the record's own: PROVED, PROVED modulo
+named premises (a complete proof given the named inputs, each of which carries its own
+read-status), CERTIFIED
+(exact, with a replayable artefact), CERTIFIED-modular (an identity certified modulo one prime,
+not over $\bQ$), MEASURED, ADOPTED (taken from the record or the literature), CONDITIONAL (with
+its condition), OPEN, EXCLUDED, ASSESSED. \emph{Lineage} is ``producer only'', or the reviewer
+slot and method (READ, REPLAY, INDEPENDENT EVALUATOR, INDEPENDENT hand), or ``integrator'' where
+only the integrator reviewed. Literature carries its read-status at the point of citation:
+PRIMARY, SECONDARY, UNREAD-CLASSICAL, UNREAD-SPECIALIST.
+
+%==============================================================================================
+\section{Setting, conventions, and the frame}\label{sec:setting}
+
+\subsection{The varieties}
+$\Dff=\overline{\{\det(\sum_{i=1}^5 x_iA_i): A_i\in\bC^{4\times4}\}}\subset\Sym^4\bC^5\cong\bC^{70}$;
+$D_{35}$ the same for $3\times3$ matrices in $\Sym^3\bC^5$ (the record's $D_5^{\det_3}$);
+$\Pf=R_{135}=\overline{\{\ell\cdot C\}}\subset\Sym^4\bC^5$. We write $N$ for the number of
+variables and never use $L$ for it (gate G13). In sixteen variables,
+$\Ydet=\overline{\GL_{16}\cdot\det_4}$ and $\Ypad=\overline{\GL_{16}\cdot z\per_3}$.
+
+\begin{proposition}[\cid{C01}]\label{prop:dim}
+$\dim\Dff=50$ as an affine cone in $\bC^{70}$, so $\dim\bP(\Dff)=49$. The padding locus $\Pf$ has
+dimension $39$ (affine).
+\end{proposition}
+\prov{PROVED (certificate CERTIFIED); $\dim\Pf=39$ as recorded}{B18-01 Prop.~3.2 @ \cm{ea045cef}; B19-12 ledger F1 @ \cm{f008ac39}; B22-10 pilot~2 sanity row @ \cm{2efb7aaf}}{two lineages: B18 slot~10 (replay at two points) and integrator (own reimplementation)}
+
+\begin{record}[\cid{C02}]\label{rec:padmodel}
+At five rows the padded permanent restricts to $\Pf=R_{135}$ (ADOPTED). Above five variables
+this is false. The honest $L$-variable restriction $P_L=\overline{\{(z\per_3)\circ T\}}$ has
+$\dim P_L=10L-5$ for $L\ge6$, strictly inside the variety of all linear-times-cubic forms, and
+equality holds only at $L=5$. So an evaluation at an arbitrary product above five variables is
+\emph{not} a padding certificate.
+\end{record}
+\prov{$\Pf=R_{135}$: ADOPTED; $L\ge6$ statement: MEASURED and PROVED}{B22-02 \S0 notation (citing B18-10 \S9) @ \cm{e22a41b1}; B19-12 ledger F7 @ \cm{f008ac39}}{two lineages (B18 slot~10 and integrator); the dimension convention of $10L-5$ is not stated at the source (GAPS G-24)}
+
+\begin{proposition}[\cid{C03}]\label{prop:d35dim}
+$\dim D_{35}=29$ (affine; $28$ projective), and $\dim\{\ell\cdot C: C\in D_{35}\}=33$ (affine;
+$32$ projective). The value ``$32$'' that appears unqualified in B22-02 and in the Batch~22 ledger
+is the projective count quoted beside the affine $\dim\Dff=50$.
+\end{proposition}
+\prov{dimensions CERTIFIED in the safe direction (Jacobian-rank floor $33$; orbit-rank bound $\le33$); slip corrected}{B22-10 \S7, S23--S24 @ \cm{2efb7aaf}}{reviewer B22-10 (INDEPENDENT EVALUATOR, pilot~2), correcting producer B22-02}
+
+\subsection{Multiplicities and the obstruction}
+For a cell $(d,\lambda)$ let $a$ be the multiplicity of $S_\lambda\bC^5$ in
+$\Sym^d(\Sym^4\bC^5)$, and let $m_{\det},m_{\mathrm{pad}}$ be its multiplicities in the degree-$d$
+coordinate rings of $\Dff$ and $\Pf$. Write $i_X=a-m_X$ for the multiplicity in the ideal, and
+$D=m_{\mathrm{pad}}-m_{\det}=i_{\det}-i_{\mathrm{pad}}$.
+
+\begin{lemma}[\cid{C04}; deficit decomposition]\label{lem:deficit}
+Let $v_A,v_B$ be vectors in a rational $G$-module with orbit closures $A,B$. Let $m_A,m_B$ be the
+Peter--Weyl counts $\dim(S_\lambda^*)^{H}$ for their stabilisers, and let $\mathrm{def}_A,\mathrm{def}_B$ be the
+boundary deficits $m_X(\lambda)-\mult_\lambda\bC[X]\ge0$. Then
+\[
+\mult_\lambda\bC[B]-\mult_\lambda\bC[A]=\bigl[m_B(\lambda)-m_A(\lambda)\bigr]-\bigl[\mathrm{def}_B(\lambda)-\mathrm{def}_A(\lambda)\bigr].
+\]
+Moreover, if $B\subseteq A$ are $G$-stable closed cones, then $\bC[A]\twoheadrightarrow\bC[B]$, so
+$\mult_\lambda\bC[A]\ge\mult_\lambda\bC[B]$ for every $\lambda$.
+\end{lemma}
+\prov{PROVED (elementary; Peter--Weyl, injectivity of restriction and surjectivity under containment, each standard)}{\texttt{docs/obstruction\_power.md} \S1, Lemma~1 and (SUR) @ \cm{82633a60}; B23-10 \S7 rank~4, ruling B23-10.19 @ \cm{239dd6e8}}{producer (session 24); reviewer B23-10 (READ + INDEPENDENT hand: a two-line re-derivation, disclosed as such). \textbf{Second lineage closed 2026-09-19}, for Lemma~1 and (SUR) only --- Proposition~3 and Theorems~2 and~5 of that file remain unreviewed}
+
+This is the frame the paper works in. A positive $D$ refutes $\Pf\subseteq\Dff$ by the containment
+clause. The Peter--Weyl part depends only on the two stabilisers. The deficit part depends only
+on the two boundaries. Every instrument in \S\ref{sec:reversal} is an attempt to see a boundary
+difference.
+
+\begin{ruling}[\cid{C05}; when one equation is a gap]\label{rul:G5}
+Suppose one has a certified upper bound $B\ge m_{\det}$ and a certified padding floor $r\le m_{\mathrm{pad}}$
+from evaluations at exhibited actual padding points. If $r>B$, then $D>0$. When $a=1$, a
+highest-weight vector \emph{proved} to vanish on $\Dff$ and nonzero at one actual padding point
+gives $D=1$: in that case separation \emph{is} a gap. When $a\ge2$, one equation nonzero on
+padding gives only $i_{\det}\ge1$ and $m_{\mathrm{pad}}\ge1$, never $D>0$. One nonzero
+determinant evaluation closes a cell ($D\le0$) only when $a=1$.
+\end{ruling}
+\prov{ruling (gate G5$'$, ACCEPTED)}{B20-10 \S8, R22 @ \cm{6915ae6f}}{reviewer B20-10}
+
+%==============================================================================================
+\section{What is known to exist, and the degree-five layer}\label{sec:exist}
+
+\begin{theorem}[\cid{C06}; existence of a five-row separator]\label{thm:E}
+Conditional on refined B\'ezout, there is a five-variable separator $h$ with
+$\deg h\le\delta_{45}\le4^{49}$. So some exactly-five-row cell carries a determinant equation
+that fails on padding, in degree at most $4^{49}$.
+\end{theorem}
+\prov{PROVED, CONDITIONAL on refined B\'ezout (Fulton, \lit{Fulton}{SECONDARY})}{B18-01 Thm.~3.5 @ \cm{ea045cef}; B19-12 ledger F2 @ \cm{f008ac39}; B20-10 R14 @ \cm{6915ae6f}}{two lineages (B18 slot~10 ACCEPTED; integrator ACCEPT conditional); B20-10: SECONDARY, CONDITIONAL stands}
+
+\begin{remark}[\cid{C07}]
+$4^{49}$ is an existence statement and never a search budget. In the four-variable control,
+where the true degree is known ($320112$, the linear component $F_1$ of the determinantal quartic
+surfaces), refined B\'ezout overshoots by about fifteen orders of magnitude.
+\end{remark}
+\prov{MEASURED}{B19-12 ledger F3 @ \cm{f008ac39}}{two lineages (B18 slot~10 calibration; integrator)}
+
+\begin{corollary}[\cid{C08}; the lower end]\label{cor:six}
+$I(\Dff)_d=0$ for every $d\le5$. So the first five-variable determinant equation has degree at
+least $6$, and the bracket is $6\le d_5\le4^{49}$. The lower end is certified. The upper end is
+conditional as in Theorem~\ref{thm:E}.
+\end{corollary}
+\prov{PROVED, on premise 03-A (B17-03 Lemma~2) and on LLV \lit{LLV}{PRIMARY}}{B19-02 Cor.~8.1, \S8.1 @ \cm{75ddb900}; B20-10 \S10 regime row and R13 @ \cm{6915ae6f}}{producer B19-02; integrator review; B20-10 (READ; LLV confirmed from the primary text)}
+
+\begin{record}[\cid{C09}; the $22$ non-rectangular cells]\label{rec:22}
+Of the $23$ five-row cells of degree $5$ (all with $a=1$), the $22$ non-rectangular ones are
+EXCLUDED at $D=0$. In each, the unique highest-weight vector has a certified nonzero exact
+integer value at an actual determinant point ($m_{\det}=a$), and it is nonzero at an actual
+padding point ($m_{\mathrm{pad}}\ge1$).
+\end{record}
+\prov{EXCLUDED, integrator-accepted}{B19-12 ledger F10--F11, \S4b @ \cm{f008ac39}; B20-10 R8 (family statement) @ \cm{6915ae6f}}{single review lineage (B18-06 producer; integrator review); B20-10 R8's method covers the $(4^5)$ cell only (GAPS G-19)}
+
+\begin{theorem}[\cid{C10}; the rectangle]\label{thm:rect}
+In the cell $(d,\lambda)=(5,(4^5))$: $m_{\det}=1$, $m_{\mathrm{pad}}=0$, hence $D=-1$.
+\end{theorem}
+\prov{$m_{\det}=1$ CERTIFIED (two lineages); $m_{\mathrm{pad}}=0$ PROVED; $D=-1$ PROVED/CERTIFIED}{B20-10 R6--R8, \S3.3, \S10 @ \cm{6915ae6f}; B19-02 \S8.1 @ \cm{75ddb900}; B18-01 Prop.~8.4 @ \cm{ea045cef}}{producer B19-02 (exact values at three determinant points); reviewer B20-10 (INDEPENDENT EVALUATOR: four-epsilon contraction with no project code, constant ratio $192$ at all three points; padding leg re-derived from the null cone)}
+
+So the degree-five five-row family is fully determined: $22$ cells at $D=0$ and one at $D=-1$.
+Wherever a separating equation lives, it is not in degree~$5$. The lineages of the two records
+are \emph{not} the same, and the difference is stated rather than averaged. Of the $23$ closed
+cells, only the rectangle $(4^5)$ carries two review lineages; the other $22$ rest on the
+producer together with the integrator's acceptance, and their census values were not re-extracted
+by the reviewer. A reader who wants a doubly-reviewed degree-five statement has exactly one:
+Theorem~\ref{thm:rect}.
+\prov{scope sentence, not a result. B20-10 R8's method column reads ``R6 + R7'', and R6--R7 concern $(4^5)$ only}{B19-12 ledger F10--F11 @ \cm{f008ac39}; B20-10 R6--R8 @ \cm{6915ae6f}}{as in \cid{C09} and \cid{C10}; recorded at GAPS~G-19}
+
+\begin{theorem}[\cid{C11}; the cap theorem]\label{thm:cap}
+For every $n\ge2$, the minors of size
+\[
+\mathrm{cap}(n)=\tfrac{5n(n-1)^2(7n-8)}{12}=5,\,65,\,300,\,900,\dots\quad(n=2,3,4,5,\dots)
+\]
+of the degree-$(3n-5)$ Macaulay matrix of the five partials lie in $I(D_5^{\det_n})$ and are not
+all zero. So $\operatorname{onset}I(D_5^{\det_n})\le\mathrm{cap}(n)$. At $n=4$ this gives five-row
+$\det_4$ equations of degree $300$: the size-$300$ minors of $M_7$.
+\end{theorem}
+\prov{PROVED modulo Kleiman \lit{Kleiman}{SECONDARY}, Dimca \lit{Dimca13}{PRIMARY, statement level} and Gulliksen--Neg\aa rd \lit{GN}{SECONDARY}, all three named ADOPTED inputs. This is the source's own wording, ``proved modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all adopted and named'', and it is the label the Batch~24 review rules correct: the theorem is the programme's own (session~40), and what is adopted is its three inputs, each at its own read-status. It replaces this paper's earlier ``ADOPTED modulo'', which misdescribed the theorem's provenance while erring conservatively. The three inputs are still not read in the primary for Kleiman and Gulliksen--Neg\aa rd (GAPS~G-12); nothing here upgrades them}{\texttt{docs/onset\_conjecture.md} \S0, Thm.~1 @ \cm{82633a60}; B22-12 ledger \S3 @ \cm{16f2392e}; B24-10 \S5.3, rulings 11.5.10 and 11.6.11 @ \cm{ab2f8a40}}{producer (session 40); at $n=3$ the one instance used in Lemma~\ref{lem:cubic} was re-derived by B22-10 S18 (Dimca Thm.~3.1 plus general position). The label is reviewer B24-10's ruling (READ of all three labelled occurrences), not a producer's or this writing slot's; it closes GAPS~G-32. The theorem's proof has no further review lineage}
+
+\begin{record}[\cid{C12}; $\delta_0$ is a cubic onset]\label{rec:delta0}
+$\delta_0$ denotes $\operatorname{onset}I(D_{35})$, the onset of the ideal of $\det_3$ quinary
+\emph{cubics}. It never denotes an onset of $I(\Dff)$. The record's bracket is
+$6\le\delta_0\le65$ unconditionally, and $8\le\delta_0\le65$ given the batch-13 measured
+total-deficit identity.
+\end{record}
+\prov{ADOPTED record-internal; the source (``paper~1'' \lit{Paper1}{UNREAD per the ledger}) is unread}{GKZ scope corrigendum C10 @ \cm{82633a60} (\texttt{docs/post\_b19\_20260917/claude\_gkz\_incidence\_20260917/scope\_corrigendum/CORRIGENDUM.md}); B22-12 ledger \S3 @ \cm{16f2392e}}{producer (corrigendum session); integrator ledger}
+
+%==============================================================================================
+\section{The direction reversal, instrument by instrument}\label{sec:reversal}
+
+\subsection{The semicontinuity form}
+\begin{lemma}[\cid{C13}; semicontinuity form of the reversal]\label{lem:sc}
+Let $q$ be an integer-valued function of the quartic $F$. If $q$ is upper semicontinuous, the
+closed conditions it defines are $\{q\ge c\}$. They separate $\Dff$ from a padding point $P$
+iff $q(P)<c\le q(\text{generic }\Dff)$. If $q$ is lower semicontinuous, they are $\{q\le c\}$,
+and they separate iff $q(\text{generic }\Dff)\le c<q(P)$. So separation by a semicontinuous
+statistic needs an l.s.c.\ quantity that is \emph{larger} on padding, or a u.s.c.\ quantity that
+is \emph{smaller} on padding.
+\end{lemma}
+\prov{PROVED (from the definitions)}{B22-02 \S1.1, ledger L1 @ \cm{e22a41b1}}{producer only; B22-10 did not rule on \S1.1 separately, and it rules the application ``padding is more singular, hence a larger Milnor algebra'' at $N=6,7,8$ to be plausible and unproved (S19)}
+
+Padding is more singular than the determinant: its singular locus has codimension $2$ against
+$4$ {\footnotesize\textsf{[B20-02 \S2 @ \cm{7de65d7c}; producer only]}}. A singularity-driven
+statistic therefore tends to fail the applicable test. That sentence is a heuristic, not a
+theorem (B22-10 \S6 row~1). The rest of this section shows, for each named instrument, where this is proved
+and where it is not.
+
+\begin{lemma}[\cid{C14}; a separating polynomial is generically nonzero]\label{lem:generic}
+If $f(P)\ne0$ at one point $P$, then $f$ is nonzero on a dense open subset of $\Sym^4\bC^5$, in
+particular at quartics with finite singular locus. No polynomial can be ``supported on'' the
+positive-dimensional part of padding's singular locus.
+\end{lemma}
+\prov{PROVED}{B22-02 Lemma~1.2 (L2) @ \cm{e22a41b1}}{producer B22-02; reviewer B22-10 S17 (READ)}
+
+\subsection{Kernel data}
+\begin{lemma}[\cid{C15}; kernel covariants inherit the reversal]\label{lem:kernel}
+Let $M(F)$ be a matrix with polynomial entries in $F$, let $r=\max_{F\in\Dff}\rank M(F)$, and
+suppose $\rank M(P)<r$. Then every polynomial without constant term in the $r\times r$ minors of
+$M(F)$ vanishes at $P$. This covers the Pl\"ucker coordinates of $\ker M(F)$ and $\operatorname{im}M(F)$
+at generic points of $\Dff$, and every covariant built polynomially from them.
+Instance: for $M=M_7=d_1^{(7)}$, padding has rank $244$ at the two $\Pf$ points of B20-02 and the
+P2 pencil has rank $299$. The determinant's one extra syzygy class at $k=7$ is extracted by
+$299$-minors, so every construction that uses it vanishes on padding. The same holds for the ideal
+of the twenty nodes for $k\ge8$.
+\end{lemma}
+\prov{PROVED, with a scope caveat: it kills constructions that extract the kernel through $r\times r$ minors, not a kernel covariant obtained otherwise (e.g.\ from the pencil, on the source side). The instance's ranks are CERTIFIED exact over $\bQ$}{B22-02 Lemma~1.3 (L3) @ \cm{e22a41b1}; ranks B20-02 \S7.3 @ \cm{7de65d7c}}{producer B22-02; reviewer B22-10 S17 (READ; caveat pre-formed)}
+
+\subsection{Invariant theory: the null cone}
+\begin{lemma}[\cid{C16}; padding is in the $\SL_5$ null cone]\label{lem:nullcone}
+Let $\lambda(s)=\operatorname{diag}(s^{-4},s,s,s,s)\in\SL_5$.
+\begin{enumerate}
+\item[(a)] $\lambda(s)\cdot x_1C\to0$ as $s\to\infty$, so $\ell\cdot C$ is $\SL_5$-unstable and every
+$\SL_5$-invariant of positive degree vanishes on $\Pf$. In particular this holds for every
+equation of $\Dff$ in a rectangular cell $((4d/5)^5)$.
+\item[(b)] If $\Psi:\Sym^4\bC^5\to\Sym^t\bC^5$ is $\SL_5$-equivariant and homogeneous of degree
+$e$, then $\Psi(\ell\cdot C)$ is divisible by $\ell^{\lceil (t+e)/5\rceil}$.
+\item[(c)] A $\GL_5$-covariant $\Psi:\Sym^4\to\Sym^3$ of degree $e$ has $e\ge7$, and
+$\Psi(\ell\cdot C)=\ell^2 m$ with $m$ linear or $0$. That is $\det\operatorname{diag}(\ell,\ell,m)$, so it
+lies in $D_{35}$.
+\end{enumerate}
+\end{lemma}
+\prov{PROVED (Hilbert--Mumford weight count; the plethysm row bound is UNREAD-CLASSICAL). Part (c) is scoped to $\GL_5$-covariants: a non-equivariant $\Psi$ escapes it but has no known $\Psi(\Dff)\subseteq D_{35}$}{B22-02 Lemma~1.4 (L4) @ \cm{e22a41b1}}{producer B22-02; reviewer B22-10 S17 (READ, re-derived) and \S6 row~13}
+
+Part (a) is the uniform form of the observation ``padding ceiling $U=0$ in $(4^5)$''. It is
+also the reason $m_{\mathrm{pad}}=0$ in Theorem~\ref{thm:rect}.
+
+\subsection{Pure powers: a witness exclusion}
+Lemmas~\ref{lem:kernel} and~\ref{lem:nullcone} exclude constructions by their \emph{route}:
+through $r\times r$ minors of a derivative matrix, or through an $\SL_5$-covariant into a
+determinantal locus. The next result excludes a class that goes through neither, and it does so
+by a different means: it exhibits one point of the orbit closure at which a whole family of
+properties fails.
+
+\begin{corollary}[\cid{C51}; D2$'$, the pure-power witness]\label{cor:purepower}
+Pure powers lie in the determinantal orbit closures. At five variables $x_1^4\in\Dff$, and in the
+image of the pencil parametrisation itself, not merely its closure: take $A_1=I_4$ and
+$A_2=\dots=A_5=0$, so that $\det_4(\sum_ix_iA_i)=\det_4(x_1I_4)=x_1^4$. For every $n\ge2$,
+$x_{11}^{\,n}\in\operatorname{End}(\bC^{n^2})\cdot\det_n\subseteq\mathrm{Det}_n$, where
+$\mathrm{Det}_n=\overline{\GL_{n^2}\cdot\det_n}$: the linear map $X\mapsto x_{11}I_n$ gives
+$\det_n(x_{11}I_n)=x_{11}^{\,n}$, and $\GL$ is dense in $\operatorname{End}$.
+Consequently, let $Q$ be a $\GL_N$-invariant property of forms which holds at $\det_n$ and
+\emph{fails at the pure power $x^n$}, a point of $\mathrm{Det}_n$. Then $Q$ fails somewhere on
+$\mathrm{Det}_n$, so $Q$ is a property of the orbit and not of the orbit closure, and no
+\emph{closed} $\GL_N$-stable condition on which $Q$ holds contains $\mathrm{Det}_n$. In
+particular, if the locus of $Q$ is closed, that locus does not contain $\mathrm{Det}_n$.
+\end{corollary}
+\prov{PROVED; elementary and self-contained. It follows from the pure-power membership (B24-05 Lemma~D2) \emph{alone}. The $b$-function computation of Lemma~D1 is \emph{not} a premise of this corollary: it is a premise of one application below. The argument needs the locus to be closed, so ``closed'' is in the hypothesis and not only in the conclusion (B24-10 ruling 11.2.8)}{B24-05 \S1.2 (Lemma~D2, Corollary~D2$'$ and its Remark), \S4, ledger M5--M6 @ \cm{5c5ba86e}; B24-10 \S\S2.2--2.4, rulings 11.2.4--11.2.10 and 11.6.12 @ \cm{ab2f8a40}}{producer B24-05; reviewer B24-10 (READ + INDEPENDENT hand re-derivation of Lemma~D2 and Corollary~D2$'$, reconstructed before the packet was opened)}
+
+\noindent\emph{What it disposes of.} Since $x^n\in\mathrm{Det}_n$ always, each of the
+following fails for this reason in one line: integrality of the roots of the Bernstein--Sato
+polynomial $b_F$; prehomogeneity of the generic stabiliser; $X_F$ having rational, klt or
+canonical singularities; $X_F$ being reduced; $X_F$ being irreducible; and $X_F^\vee$ being a
+hypersurface (for $F=x^n$ the dual is a single point). The first item is the only one that uses
+Lemma~D1, $b_{x_1^k}(s)=\prod_{i=1}^{k}(s+i/k)$ in the normalisation $b(s)f^s\in D[s]\,f^{s+1}$,
+which for $k\ge2$ has exactly $k-1$ non-integral roots.
+\prov{PROVED, for each of the six items given the corollary. Lemma~D1 PROVED from the Weyl algebra, self-contained, in the standard convention stated explicitly; classical in content and not claimed as novel}{B24-05 \S1.2 (Lemma~D1 and the list in Corollary~D2$'$), ledger M4, M6 @ \cm{5c5ba86e}; B24-10 \S\S2.1, 2.3, rulings 11.2.1--11.2.2 @ \cm{ab2f8a40}}{producer B24-05; reviewer B24-10 (READ + INDEPENDENT hand re-derivation of Lemma~D1; the dual of $x^n$ checked by hand)}
+
+\noindent\emph{What kind of exclusion this is.} Corollary~\ref{cor:purepower} is comparable in
+coverage to Lemmas~\ref{lem:kernel} and~\ref{lem:nullcone}, and different in kind. Those two are
+\emph{mechanism} exclusions: they close a route, whatever the constructions along it compute.
+Corollary~\ref{cor:purepower} is a \emph{witness} exclusion: its entire force is one point,
+$x^n$, and it is silent on every $\GL_N$-invariant property that holds at $x^n$. That silence is
+an escape route the mechanism lemmas do not leave open, and it is stated here so that it stays
+visible: \emph{a $\GL$-invariant property that does not degenerate at pure powers is untouched by
+this corollary.} What is closed is the class of approaches that share one failure at one point,
+not a class of approaches.
+\prov{placement ruling: its own claim ID beside \cid{C15} and \cid{C16}, justified as to scope and not as to kind, with the witness named in the statement. The earlier gaps-file gloss ``of the same kind and scope'' was an upgrade of the packet's coverage claim and is withdrawn (GAPS~G-36)}{B24-05 \S1.2, Remark after Corollary~D2$'$ @ \cm{5c5ba86e}; B24-10 \S2.4, rulings 11.2.9--11.2.10 and 11.6.12 @ \cm{ab2f8a40}}{reviewer B24-10 (READ)}
+
+\subsection{The discriminants}
+\begin{fact}[\cid{C17}; the section discriminant vanishes on padding]\label{fact:disc}
+Let $\Delta_F(\xi)=\Disc(F|_{\xi=0})$, the covariant of degree $108$ in $F$ and in $\xi$. Then
+$\Delta_{\ell\cdot C}\equiv0$, while $\Delta_F\ne0$ for generic $F\in\Dff$. The ordinary
+discriminant $\Disc(F)$ vanishes on $\Pf$ and on $\Dff$ alike, since every determinantal quartic
+is singular.
+\end{fact}
+\prov{PROVED (Bertini, UNREAD-CLASSICAL, for the second clause); $\Disc(F)$: a trivial PROVED-kill, Excluded (theorem)}{B22-02 Fact~1.7 (L7) @ \cm{e22a41b1}; B22-10 S20 @ \cm{2efb7aaf}; GKZ claim-scope table row~1 @ \cm{82633a60}}{producer B22-02; reviewer B22-10 S17 (READ, re-derived) and S20}
+
+\subsection{Rank thresholds of the Koszul complex}
+Let $M_k(F)$ be the degree-$k$ Macaulay matrix of the partials. It is the first differential
+$d_1^{(k)}$ of the Koszul complex of the partials in internal grading $k$. Let $r_{\det}(k)$ be its
+maximal rank on the determinant side, and let $J_k$ be the ideal of its $(r_{\det}(k)+1)$-minors,
+a polynomial ideal generated in degree $r_{\det}(k)+1$ in the coefficients.
+
+\begin{theorem}[\cid{C18}; GKZ Theorem B, five variables]\label{thm:gkzB}
+For every internal grading $k$, $r_{\Pf}(k)\le r_{\Dff}(k)$. Hence $J_k\subseteq I(\Dff)\cap I(\Pf)$.
+In particular the size-$300$ minors of $M_7$ (Theorem~\ref{thm:cap}) vanish on every actual
+five-variable padding restriction.
+\end{theorem}
+\prov{PROVED; Kleiman \lit{Kleiman}{SECONDARY} for $k\ge7$ --- the corrigendum's words are ``Kleiman remains the only adopted input for $k\ge7$''. For the one consequence used in row~1 of Table~\ref{tab:kills}, the rank inequality itself, Kleiman is now bypassed by B24-02's elementary proof at $N=5$ (Ruling~\ref{rul:row1}); Theorem~B as stated is not reproved, and its own label is unchanged; exact ranks $5,25,75,165$ at an integer pencil for $k\le6$; Bruns--Herzog Prop.~1.5.12 \lit{BH}{UNREAD-CLASSICAL} in part (iii), whose fact B21-10 proved independently. Scope (corrigendum C1--C2): the ideal $J_k$, all larger minors, polynomial combinations, isotypic components and sums over $k$; \emph{not} individual minors of size $\le r_{\det}(k)$ that vanish on $\Dff$ for other reasons}{GKZ incidence \texttt{REPORT.md} and \texttt{scope\_corrigendum/} (C1--C4) @ \cm{82633a60}}{producer (GKZ incidence session) + its corrigendum; B20-10 R15, R21 (READ, tabulated); B21-10 R16 (fact proved), R19 (rank profile replayed)}
+
+\begin{theorem}[\cid{C19}; GKZ Theorem A, sixteen variables]\label{thm:gkzA}
+For every $k$, $\rank M_k(z\per_3)\le\rank M_k(\det_4)$. Hence $J_k\subseteq I(\Ydet)\cap I(\Ypad)$ in
+every cell of every length.
+\end{theorem}
+\prov{PROVED; Gulliksen--Neg\aa rd \lit{GN}{SECONDARY}; exact P1 certificates. Same scope restriction as Theorem~\ref{thm:gkzB}}{GKZ incidence \texttt{REPORT.md} \S3.B and corrigendum C1 @ \cm{82633a60}}{producer + corrigendum; B20-10 R15, R21 (READ)}
+
+\begin{theorem}[\cid{C47}; the same kill at six, seven and eight variables]\label{thm:thresh678}
+Let $D_N\subset\Sym^4\bC^N$ be the closure of the $4\times4$ linear determinants in $N$ variables
+and $P_N$ the padding locus. For $N=6,7,8$ and every $k\ge0$,
+\[
+r_{P_N}(k)\ \le\ r_{D_N}(k),
+\]
+so every $(r_{\det}(k)+1)$-minor of $M_k$ vanishes on padding at $N=6,7,8$ as well as at $N=5$.
+\end{theorem}
+\noindent The proof compares a proved ceiling against a certified floor, and both are one-sided,
+so the inequality survives any sharpening of either. Every padding point is a product $\ell P$,
+whence $J_{\ell P}\subseteq(\ell,P)$ and
+$\rank M_k(\ell P)\le\dim S_k-h_N(k)$ with
+$h_N(k)=\binom{k+N-2}{N-2}-\binom{k+N-5}{N-2}$; the case $\ell\mid P$ only improves the bound.
+On the determinant side the floor at $k=6,7,8$ is a modular rank at an explicit integer point of
+$D_N$, and for every larger $k$ it is the monomial point
+$F_0=x_1x_2x_3x_4-o_1o_2o_3o_4$, which is the determinant of an explicit cyclic matrix and whose
+Jacobian ideal is monomial, so its Hilbert function is exact in every degree. The margins are
+$0$ at $k\le5$ (ties: padding cannot exceed the determinant and no equation separates there),
+then $+34,+128,+228$ at $N=6$ and $k=6,7,8$; $+49,+229,+467$ at $N=7$; $+56,+322$ at $N=8$ and
+$k=6,7$; and at least $11$, $119$ and $69$ respectively for all $k$ beyond, by a Newton expansion
+with nonnegative coefficients and positive constant term.
+\prov{PROVED. The premises are the elementary padding ceiling, certified modular floors at explicit integer points, the combinatorial Hilbert function of $F_0$ with a brute-force cross-check, and the Newton certificate: \emph{no} Kleiman, Dimca, Gulliksen--Neg\aa rd or depth sensitivity. The measured padding ranks lie strictly below the ceilings, so the true margins are larger than those quoted}{B23-03 Thm.~3.2, \S3.1--\S3.2, L14 @ \cm{3bcad666}}{producer B23-03; reviewer B23-10 \S3.2 (INDEPENDENT EVALUATOR, its own code: $8/8$ determinant floors, $8/8$ padding ceilings and $3/3$ Newton certificates replay exactly)}
+
+\begin{ruling}[\cid{C48}; row~1 across the window, on elementary premises]\label{rul:row1}
+Row~1 of Table~\ref{tab:kills} --- rank thresholds of the first Koszul differential --- is a
+PROVED-kill for every internal grading $k$ across the whole window $N=5,\dots,8$, on elementary
+premises at every $N$ in it. At $N=6,7,8$ the statement is Theorem~\ref{thm:thresh678}. At
+$N=5$ it is the same comparison of a proved padding ceiling with a certified determinant floor:
+$r_{P_5}(k)\le r_{\Dff}(k)$ for every $k\ge0$. There $M_k$ has no columns for $k\le2$; at
+$k=3,4,5$ the determinant floor equals the universal ceiling ($5,25,75$), a tie; at $k=6,7,8,9$
+a modular floor at an explicit integer point of $\Dff$ lies strictly above the padding ceiling
+$\dim S_k-h_5(k)$, $h_5(k)=(3k^2+3k+2)/2$, with margins $+19,+54,+89,+116$; and for $k\ge10$ the
+tail point $F_0=x_1x_2x_3x_4-x_5^4$, the determinant of an explicit cyclic matrix, has monomial
+Jacobian ideal and exact Hilbert function $H(k)=18k-24$ ($k\ge3$), so that the margin is
+$D(k)=h_5(k)-H(k)=(3k^2-33k+50)/2$, positive for every integer $k\ge10$, with a Newton
+certificate. So Kleiman is no longer an input to row~1 anywhere, and the qualifier the previous
+version of this ruling carried at $N=5$, $k\ge7$ is discharged.
+\end{ruling}
+\prov{PROVED (B24-02 Theorem B24-02.1, and B24-02.2 for the window). The premises are the elementary padding ceiling, certified modular floors at one explicit integer point and one prime (sufficient, since a floor can only rise), the combinatorial Hilbert function of $F_0$ with a brute-force cross-check, and the Newton certificate: no Kleiman, Dimca, Gulliksen--Neg\aa rd or depth sensitivity. Two precisions from the review are carried. (i) The sign statement about $D(k)$ holds on $k\ge3$, the range where $H(k)=18k-24$ is asserted, and is used here only for integer $k\ge10$; read without that range it is false, since $D(0)=25$ and $D(1)=10$. (ii) The values $D(7),D(8),D(9)=-17,-11,-2$, which show why the random-point floors are needed at $k=7,8,9$, are \emph{one control checked at three points} of one pre-registered quadratic, not three controls; the check on the instrument itself is $\rank M_k(F_0)=\dim S_k-H(k)$ at $k=3,\dots,7$, five of five. This discharges corrigendum K5's qualifier; GKZ Theorem~B keeps its own label and is not reproved}{B24-02 \S4.2--\S4.4, ledger B24-02.1--.2, .9--.10 @ \cm{f8273c3b}; B24-10 \S3.4, rulings 11.3.11--11.3.15, 11.6.9 @ \cm{ab2f8a40}; for $N=6,7,8$ and the former qualifier: B23-10 \S3.2, corrigendum K5, ruling B23-10.9 @ \cm{239dd6e8}; B23-12 ledger \S2.0b @ \cm{7d9839e7}}{producer B24-02 (one wrapped pilot, pre-registration hash written before \texttt{import flint}); reviewer B24-10 (READ of the script bytes for the hash order; REPLAY of the closed forms by hand; INDEPENDENT EVALUATOR, pilot~1 block~B, in exact rational arithmetic). At $N=6,7,8$ as in Theorem~\ref{thm:thresh678}. The determinant floors at $k=6,\dots,9$ were not re-computed by the reviewer}
+
+\begin{theorem}[\cid{C20}; the higher differentials are empty in five variables]\label{thm:koszul}
+In five variables, for every $j\ge2$ and every $k\ge0$, the maximal rank of $d_j^{(k)}$ on
+$\Dff$ equals its maximal rank $\rho_j(k)$ on all quartics. Hence the rank-threshold ideal of
+$d_j^{(k)}$ on $\Dff$ is the zero ideal: the higher Koszul differentials supply no equation of
+$\Dff$ at all.
+\end{theorem}
+\prov{PROVED CONDITIONAL on (T2), $\operatorname{grade}=\operatorname{height}$ in a Cohen--Macaulay ring (Bruns--Herzog Cor.~2.1.4, \lit{BH}{UNREAD-CLASSICAL}). The second condition (T1, depth sensitivity) was LIFTED by B21-10 with a self-contained proof of the instance used. Unconditional certificate: $j=2,3,4$, $k=3..12$ (exact over $\bQ$ for $k\le8$; single-prime floors equal to the maximum for $k=9..12$)}{B20-02 Thm.~6.4, L6--L7 @ \cm{7de65d7c}; B21-10 R12--R15, R19 @ \cm{f7727cb7}}{producer B20-02; reviewer B21-10 (Lemma~6.3 PROVED, INDEPENDENT hand + REPLAY; (T1) lifted; profiles replayed). The unconditional certificate (L7) is producer only}
+
+The mechanism is short. A generic quinary determinantal quartic has a finite singular locus
+(its corank-two points). So its Jacobian ideal has grade~$4$, and the Koszul homology
+vanishes in positions~$\ge2$. Padding has grade~$2$ and so has more homology. At $k=8$, padding
+has $\rank d_2^{(8)}=146<150$, and the padding floors are $324<340$ and $611<650$ at $k=9,10$
+{\footnotesize\textsf{[B20-02 L9 @ \cm{7de65d7c}: CERTIFIED exact at $k=8$; MEASURED
+single-prime floors at $k=9,10$; producer only]}}. The determinant is maximally nondegenerate for every $d_j$, $j\ge2$. Nothing is left
+for a minor to detect.
+
+\begin{corollary}[\cid{C21}; no reversal in five variables]\label{cor:noreversal}
+For every quartic $F'$, every $j\ge2$ and every $k$: $\rank d_j^{(k)}(F')\le\rho_j(k)=r^{(j)}_{\Dff}(k)$.
+The reversal $\rank d_2(\mathrm{pad})>\rank d_2(\det)$ cannot occur between the maxima over $\Pf$
+and $\Dff$.
+\end{corollary}
+\prov{PROVED given Theorem~\ref{thm:koszul} (L8). The further sentence ``padding has strictly more homology, $H_3\ne0$ in some grading'' is CONDITIONAL on the nonvanishing half of depth sensitivity \lit{BH16}{UNREAD-SPECIALIST}, which was not lifted}{B20-02 Cor.~6.5 @ \cm{7de65d7c}; B21-10 R14 @ \cm{f7727cb7}}{producer only; B21-10 ruled on the condition}
+
+\begin{theorem}[\cid{C22}; sixteen variables, second differential]\label{thm:d2}
+At $N=16$: $\rank d_2^{(6)}=120$ at $\det_4$ (full rank, so nothing to exclude) and $105$ at
+$z\per_3$. $\rank d_2^{(7)}=1904$ (of $1920$) at $\det_4$ and $1650$ at $z\per_3$. At $k=8$:
+$\rank d_2^{(8)}(\det_4)=15660$, $\rank d_2^{(8)}(z\per_3)=13490$, and $\rho_2(8)=16320$. So there is
+no reversal at $(N,j,k)=(16,2,7)$ or $(16,2,8)$, and the ideals of size-$1905$ and size-$15661$
+minors lie in $I(\Ydet)\cap I(\Ypad)$. The latter ideal is nonzero.
+\end{theorem}
+\prov{ranks CERTIFIED exact over $\bQ$; containments PROVED given the ranks. Scope: $j=2$, $k=6,7,8$ only; nothing at $k\ge9$ or $j\ge3$; no monotonicity in $k$}{GKZ corrigendum C5, C7 (P3) @ \cm{82633a60}; B20-02b L3--L5, \S4 @ \cm{7de65d7c}}{producers (GKZ session; B20-02b); B21-10 R19--R20 (consistency of sizes and homology dimensions REPLAYED; scope READ; the ranks themselves not recomputed)}
+
+\begin{ruling}[\cid{C23}; the scope of the rank-threshold kills]\label{rul:scope}
+The rank-threshold kills are PROVED
+\begin{itemize}
+\item for $d_1$ at $N=5,6,7,8$, on elementary premises throughout (Theorem~\ref{thm:thresh678}
+and Ruling~\ref{rul:row1}; at $N=5$ also Theorem~\ref{thm:gkzB}, modulo Kleiman at $k\ge7$) and
+at $N=16$;
+\item for $d_j$, $j\ge2$, at $N=5$ (Theorem~\ref{thm:koszul}, CONDITIONAL on (T2));
+\item for $j=2$ and $k=7,8$ at $N=16$.
+\end{itemize}
+They are \emph{not} proved for $j\ge3$ or $k\ge9$ at $N=16$, where they are ASSESSED only. At
+$N=6,7,8$ the higher differentials split in two. For $j\ge N-3$ the rank-threshold ideal on
+$D_N$ is the zero ideal, so there is nothing there to kill; that is CONDITIONAL on depth
+sensitivity exactly as at $N=5$, and additionally on Kleiman at $N=6,7$, while at $N=8$ the
+grade-$4$ premise is proved outright from the monomial point $F_0$. For $2\le j\le N-4$ --- that
+is $j=2$ at $N=6$, $j=2,3$ at $N=7$ and $j=2,3,4$ at $N=8$ --- the question is \emph{OPEN}: no
+padding-side ceiling on $\rank d_j^{(k)}$ is on the record, and a determinant floor alone decides
+nothing. The mechanism of Theorem~\ref{thm:koszul} does not extend to $N=6$: the generic singular
+locus has dimension $N-5=1$, so $\operatorname{grade}J_F=4<N-1$ and $H_2$ can be nonzero.
+\end{ruling}
+\prov{ruling. Updated 2026-09-20: B22-10's ASSESSED label for $d_1$ at $N=6,7,8$ is DISCHARGED by Theorem~\ref{thm:thresh678}; the $j\ge2$ split at $N=6,7,8$ is new here and carries its conditions. Updated 2026-09-21: the $d_1$ kill at $N=5$ no longer needs Kleiman (Ruling~\ref{rul:row1}); the Kleiman premise of the $j\ge N-3$ clause at $N=6,7$ is a different use and is untouched. The $N=16$ scope is unchanged}{B22-10 \S6, S19, S21 @ \cm{2efb7aaf}; B22-12 ledger \S4 correction~1 @ \cm{16f2392e}; B23-03 \S3.3, L14--L16 @ \cm{3bcad666}; B23-10 \S3.2 and ruling B23-10.9 @ \cm{239dd6e8}; B24-02 \S4.4, \S5 @ \cm{f8273c3b}}{reviewer B22-10 (READ) for the $N=16$ scope; producer B23-03 for the $N=6,7,8$ split; reviewer B23-10 (READ + INDEPENDENT EVALUATOR) for the $d_1$ discharge. The $2\le j\le N-4$ row is producer B23-03 only, and is a statement that nothing is known}
+
+\subsection{Source-side toric tests}
+\begin{theorem}[\cid{C24}; Astra, the five-block weight family]\label{thm:astra}
+For every block-scalar weight $w$ in the fixed decomposition $X=\left[\begin{smallmatrix}a&r\\c&S+K(v)\end{smallmatrix}\right]$
+of $\mathrm{Mat}_4$, the universal forbidden-weight test $N_w$ and the exact-exponent-support test
+$N_w^{\mathrm{support}}$ factor through the existing arc condition $C$: $N_w=L_wC$ on the full
+certified source $M$. Hence $\rank(C,T,N)=\rank(C,T)$ and $\ker(C,T,N)=\ker(C,T)$ for any stack $N$
+of such tests. The hypotheses are characteristic zero, semi-invariance $z(PYQ)=(\det P\det Q)^dz(Y)$,
+transposition invariance for the exact-support version, and descent assumed only on
+$E=H\circ\varphi$.
+\end{theorem}
+\noindent\emph{Scope limit, verbatim from the source:} ``The conclusion concerns universal
+coefficient-support tests along the specified family. It does not cover equations among allowed
+jets, descent between different parameter points of a limit fiber, special-locus cancellations
+followed by stronger normalization, anisotropic weights inside a block, or different
+matrix-coordinate bases. None of those are ruled out.''
+\prov{PROVED (Astra Thms.~8.1, 8.2, Cor.~8.3), no correction; the organising text is Segal \lit{Segal}{PRIMARY, not load-bearing}. One hypothesis the proof uses implicitly, and which a transport to another block decomposition could break, is that the exponent set $A$ contains the vertices of $P=[0,1]\times[0,2]$ and lies in $P$; it holds here}{\texttt{docs/post\_b19\_20260917/astra\_gkz\_degenerations\_20260917/REPORT.md} \S1, \S8 @ \cm{82633a60}; GKZ corrigendum C12 @ \cm{82633a60}; B24-02 \S3, ledger B24-02.3--.4 @ \cm{f8273c3b}; B24-10 ruling 11.6.9 @ \cm{ab2f8a40}}{producer (Astra session); recorded, not replayed, by the GKZ corrigendum; tabulated by B20-10 \S10 (R21, READ). \textbf{Second lineage: B24-02, an INDEPENDENT hand re-derivation} of Lemma~7.1, the weight identity~(7.2), Thms.~8.1--8.2 with the sumset~(8.1), and Cor.~8.3, reproducing $\beta=2$, $u=0$, $h=-1$, $m=0$, $L=2$ for the old arc and the identification of $C$ from scratch. It is \emph{not} a code replay: no code was written and the packet's \texttt{pilot\_exact.py} was not run, so the theorem still has no independent evaluator. Reviewer B24-10 READ that the re-derivation is in the bytes. \S\S4--6 of the Astra report were read for context by B24-02, not replayed}
+
+\subsection{Invariant theory through the pullback: the counting criterion}
+\begin{theorem}[\cid{C25}; the counting criterion cannot fire]\label{thm:count}
+$I(\Dff)$ is the kernel of the pullback along $\varphi(B)=\det(\sum_kx_kB_k)$. Comparing the
+semi-invariant ring of the $5$-Kronecker quiver at dimension vector $(4,4)$ with the ambient space
+degree by degree gives a rigorous existence criterion. In the four-variable control this
+criterion provably cannot fire below degree $320112$. The measured ratio $r(d)/A(d)$ increases at
+every computed degree in both $n=4$ and $n=5$, reaching $75.8$ at $d=12$ in four variables.
+\end{theorem}
+\prov{the bound PROVED (on LLV \lit{LLV}{PRIMARY}); the ratios MEASURED; the extrapolation to five variables HEURISTIC (Claim~6.2), not proved}{B19-02 \S\S4--6 @ \cm{75ddb900}; B20-10 \S10 route row, R13 @ \cm{6915ae6f}}{producer B19-02; integrator review; B20-10 (READ; LLV confirmed)}
+
+Promoting a sampled rank drop to a proved equation through this route (the certification of
+B19-02 \S7) needs either a cell with $a>s$ or the missing lemma of B19-02 \S7.3. Neither is
+known. B22-02 labels this an ASSESSED-kill (row~11 of Table~\ref{tab:kills}).
+
+\subsection{The boundary arc}
+The boundary arc instrument takes the full-stabiliser source $M_\lambda=(S_\lambda W)^H$, of
+dimension $s$, projects it onto the part of skew degree greater than $2d$, and gives
+$B=\min(a,s-b)$ with $b$ the rank of that projection.
+
+\begin{theorem}[\cid{C26}; the silence theorem]\label{thm:silence}
+If $\lambda_1+\lambda_2+\lambda_3\le2d$, then the forbidden part of $S_\lambda W$ is zero, so
+$b=0$ and $B=\min(a,s)$. The band where this holds is empty for every cell of length at most
+five. At length six it is the single rectangle $((2d/3)^6)$, with $3\mid d$. For
+$7\le\ell(\lambda)\le16$ it is $\lambda_4+\dots+\lambda_\ell\ge2d$.
+\end{theorem}
+\prov{PROVED}{B19-01 Thm.~4.1, Prop.~4.4 @ \cm{6b161513}}{producer B19-01; integrator review; B20-10 finding S3 (READ: ``the silence theorem's reach'' confirmed; about one arc, not the boundary)}
+
+This is a statement about one arc. It must never be read as ``the boundary is silent in the
+band''.
+
+\begin{theorem}[\cid{C27}; arc exactness refuted]\label{thm:exactness}
+At $d=6$, $\lambda=(4^6)$: $a=1$, $g=13$, $s=10$, $b=0$. So $\ker C=M_\lambda$ has dimension $10$
+and $m_{\det}\le1$, and the exactness conjecture $s-b=m_{\det}$ fails by at least $9$. No gap
+certificate through this arc is possible in any band cell. The length-$\le5$ form of the
+conjecture remains open.
+\end{theorem}
+\prov{PROVED, given the MEASURED values $a$, $g$, $s$}{B19-01 Thm.~5.1 @ \cm{6b161513}; B20-10 \S10 route row @ \cm{6915ae6f}}{producer B19-01; integrator (recomputed $a,s$); B20-10 (READ; did not recompute $s,g$)}
+
+\begin{theorem}[\cid{C28}; the singular-pencil locus is invisible]\label{thm:rhoZ}
+Let $\lambda\vdash4d$ with $\ell(\lambda)=5$. Every element of the $S_\lambda$-isotypic component of
+$\bC[(\mathrm{Mat}_4)^5]^G$ vanishes identically on the locus $Z$ of identically singular pencils.
+Hence $\rho_Z=0$ in every five-row cell, and the singular-pencil locus contributes nothing to
+the restriction bound.
+\end{theorem}
+\prov{PROVED CONDITIONAL on C1 (Eisenbud--Harris \lit{EH}{PRIMARY at statement level; proofs unread}) and C3 (Ballico 1995 \lit{Ballico}{UNREAD-SPECIALIST}). A route-closing theorem: if it failed, a closed route would reopen; no positive claim rests on it}{\texttt{docs/post\_b19\_20260917/claude\_singular\_locus\_audit\_20260916/REPORT.md} Thm.~4.1 @ \cm{82633a60}; B20-10 R11--R12 @ \cm{6915ae6f}}{producer (singular-locus audit); reviewer B20-10 (READ; the one-parameter-subgroup mechanism checked; pre-formed)}
+
+\subsection{Projective duality}
+\begin{record}[\cid{C29}; class and dual dimension]\label{rec:dual}
+For a nodal quartic threefold with twenty nodes the class is $68$. For $\ell\cdot C$ the dual is
+that of the cubic, of class $24$. The class is l.s.c.\ and \emph{drops} on padding, so the closed
+condition ``class $\le68$'' holds on padding. The dual dimension does not separate at $N=5$:
+both duals are hypersurfaces. It first bites at $N=9$ (Lemma~\ref{lem:window}(i)). At $N=16$ it
+is the Landsberg--Manivel--Ressayre statistic \lit{LMR}{UNREAD-SPECIALIST, not load-bearing}.
+\end{record}
+\prov{class: PROVED-kill given the two class values (Teissier's formula \lit{Teissier}{SECONDARY; UNREAD; illustrative only}); dual dimension: PROVED-kill}{B22-02 \S1.3 rows~4--5, L9 @ \cm{e22a41b1}; B20-02 \S4 @ \cm{7de65d7c}}{producer B22-02; reviewer B22-10 \S6 rows~4--5 (READ; $108-2\cdot20=68$, $3\cdot2^3=24$ checked)}
+
+\subsection{The determinantal sheaf: a condition that restates the definition}
+\begin{proposition}[\cid{C49}; row~10 is $\ker\varphi^*$ restated]\label{prop:bordiga}
+Let $B$ be a $3\times4$ matrix of linear forms on $\bC^N$, $N\ge4$, with
+$\operatorname{ht}I_3(B)=2$, and let $S_B=V(I_3(B))$ be the \emph{genuine member} it cuts out.
+Then $I_3(B)$ is perfect of grade $2$ and has no linear or quadratic element; the quartics
+containing $S_B$ are exactly the $4\times4$ determinants
+\[
+(I_{S_B})_4=\{\det[B;m]: m\in S_1^{1\times4}\},\qquad \dim=4N-3\ \text{affine},
+\]
+obtained by appending a fourth row of linear forms; and consequently, if $S_B\subseteq X_F$
+scheme-theoretically then $F\in D_N$, so at $N=5$, $F\in\Dff$. The closure of
+$\{F: S_B\subseteq X_F\ \text{for some genuine}\ S_B\}$ is exactly $\Dff$, and its ideal is
+$\ker\varphi^*$.
+\end{proposition}
+\prov{PROVED, on Hilbert--Burch in the Eagon--Northcott form and $\operatorname{grade}=\operatorname{height}$ (both \lit{BH}{UNREAD-CLASSICAL}). Part~(c) requires \emph{scheme-theoretic} containment: B23-02 exhibits a genuine member that is non-reduced (the triple structure on a plane), and under a \emph{set-theoretic} reading the condition holds on all of $\Pf$, which closes row~10 directly instead (corrigendum K6)}{B23-02 Prop.~1.1, L1--L5, L8 @ \cm{68866e6d}}{producer B23-02; reviewer B23-10 \S5.4 (READ + INDEPENDENT hand; supplied the set-theoretic reading and required the word ``scheme-theoretically'' in L5)}
+
+\noindent Proposition~\ref{prop:bordiga} settles row~10 of Table~\ref{tab:kills}, which B22-10
+had ranked first to reopen, and it settles it in the direction that closes it. The containment
+statistic $q(F)=\dim\{S\in\overline{\Sigma}: S\subseteq X_F\}$ is upper semicontinuous and
+smaller on padding, so it is the only named non-rank candidate on the record whose direction is
+right-way on its dense part. It escapes the reversal of Lemma~\ref{lem:sc} for exactly one
+reason, and the reason empties the escape: on genuine members the condition \emph{is} membership
+in $\Dff$. Its polynomial form is the elimination of $\varphi$, which is row~11. A linear-algebra
+search for a separating element at the proved degree floor of~$8$ would range over
+$\dim\Sym^8(\bC^{70})=21{,}042{,}084{,}900$ coefficients, about $1.7\times10^{11}$ bytes for a
+single vector: some $300$ times the per-vector memory cap, before any matrix exists. At the
+conjectured onset the space is astronomically larger.
+\prov{PROVED-merge into row~11 for sub-candidates 10a (Bordiga-type containment), 10b (rank-one ACM/Ulrich sheaf) and 10d (rational parametrisation by $4\times4$ minors); PROVED-kill at $N=5$ for 10c (non-Cartier Weil divisor), ASSESSED at $N=6,7,8$; the $\overline{\Sigma}$-elimination route ASSESSED and PRICED infeasible}{B23-02 \S1.3--\S1.6, L8--L10 @ \cm{68866e6d}}{producer B23-02; reviewer B23-10 \S5.4 and ruling B23-10.24 (READ + INDEPENDENT hand)}
+
+\subsection{The table of kills}
+Table~\ref{tab:kills} is B22-02's table of thirteen candidates, with B22-10's corrections applied
+and nothing else changed. It is the record's complete list of named constructions of a length
+$5$--$8$ equation nonzero on padding.
+
+\begin{table}[ht]
+\centering\footnotesize
+\begin{tabular}{@{}p{0.4cm}p{4.3cm}p{6.4cm}p{3.2cm}@{}}
+\toprule
+\# & candidate & killing sentence (abridged from B22-02 \S1.3) & label (after B22-10) \\
+\midrule
+1 & rank thresholds of $d_1$ & Thms.~\ref{thm:gkzB}, \ref{thm:thresh678}, \ref{thm:gkzA} & PROVED-kill at $N=5,6,7,8$, on elementary premises (Ruling~\ref{rul:row1}), and at $N=16$ \\
+2 & rank thresholds of $d_j$, $j\ge2$ & Thm.~\ref{thm:koszul} (CONDITIONAL on (T2)); Thm.~\ref{thm:d2} & PROVED-kill at $N=5$ and at $N=16$, $j=2$, $k=7,8$; at $N=6,7,8$ zero ideal for $j\ge N-3$ (CONDITIONAL), OPEN for $2\le j\le N-4$ (Ruling~\ref{rul:scope}) \\
+3 & minors of size $\le\rho_j(k)$ vanishing on $\Dff$ for non-rank reasons & no mechanism named; any padding-nonzero member conjecturally has size $>300$ & ASSESSED-kill \\
+4 & class of $X_F^\vee$ & Record~\ref{rec:dual} & PROVED-kill given the class values \\
+5 & $\dim X_F^\vee$ & Lemma~\ref{lem:window}(i) & PROVED-kill \\
+6 & section discriminant $\Delta_F$ & Fact~\ref{fact:disc} & PROVED-kill \\
+7 & higher tangency loci & Milnor-number loci hold on padding; type-specific loci: no adjacency, no recipe & PROVED-kill / ASSESSED-kill \\
+8 & Chow form of $\Sing X_F$ & Lemmas~\ref{lem:kernel}, \ref{lem:generic} & PROVED-kill (with Lemma~\ref{lem:kernel}'s caveat) \\
+9 & $\GL_5$-structure of $H_1(F)$ & Fitting conditions u.s.c., larger on padding ($6,24,56,98$ vs.\ $0,0,1,5$ at $k=5..8$); syzygy covariants by Lemma~\ref{lem:kernel} & PROVED-kill \\
+10 & the determinantal sheaf (Ulrich sheaf; non-Cartier Weil divisor; $3\times4$-minor surfaces) & Prop.~\ref{prop:bordiga}: the containment condition restates membership in $\Dff$; its elimination is row~11's, priced at $300\times$ the per-vector cap at the degree floor & PROVED-merge into row~11 (10a, 10b, 10d); PROVED-kill at $N=5$ (10c) \\
+11 & invariant theory through $\ker\varphi^*$ & Lemma~\ref{lem:nullcone}(a); Thm.~\ref{thm:count} & PROVED-kill (invariants) / ASSESSED-kill (rest) \\
+12 & Astra's verbatim exclusions & not recipes; route through $\ker\varphi^*$ & ASSESSED-kill \\
+13 & lift of a right-way cubic equation & covariant lifts die by Lemma~\ref{lem:nullcone}(c); the Nullstellensatz lift is non-constructive. Its target is now known on the determinant part of $\Dff\cap\Pf$ (Thm.~\ref{thm:classify}, Prop.~\ref{prop:capplane}) and unknown on the boundary (Question~\ref{q:boundary}) & PROVED-kill (covariant lifts) / ASSESSED-kill (rest) \\
+\bottomrule
+\end{tabular}
+\caption{The thirteen candidates (\cid{C30}). Also recorded: the ordinary discriminant (trivial
+PROVED-kill), the closure of the $20$-nodal Severi variety (ASSESSED), and two non-candidates.
+Rationality and the intermediate Jacobian separate in fact but are not polynomial conditions
+(Clemens--Griffiths \lit{CG}{UNREAD-SPECIALIST, not load-bearing}). The Hessian and polar-map
+degrees drop or tie on padding.}\label{tab:kills}
+\end{table}
+\prov{row labels as shown; the table meets the gate (every row has one killing sentence, none ``unassessed''); outcome~(3), an honest negative, confirmed. Row~1's label amended 2026-09-21: elementary premises across $N=5..8$ (Ruling~\ref{rul:row1})}{B22-02 \S1.3, \S5 @ \cm{e22a41b1}; B22-10 \S6, S19--S21 @ \cm{2efb7aaf}; B22-12 ledger \S8.2b, \S8.4 @ \cm{16f2392e}; row~1: B24-02 \S4.4 @ \cm{f8273c3b}, B24-10 ruling 11.6.9 @ \cm{ab2f8a40}}{producer B22-02; reviewer B22-10 (READ; rows 1--2 corrected; rows 3--13 affirmed; row~13's premise corrected by \S\ref{sec:cubic})}
+
+B22-10 ranked row~10 as the first to reopen, as the one closed condition on the list that is not
+a rank statistic. It has since been closed, and not by the route that was expected. The question
+that was asked --- does the closure of the Bordiga-type family contain a member supported in a
+hyperplane? --- turned out not to need an answer: by Proposition~\ref{prop:bordiga} a padding
+point contains a genuine member only if it is already in $\Dff$, so genuine members contribute no
+padding point outside $\Dff$ whatever the boundary of that family does. Whether some
+\emph{boundary} member of the family lies in $H\cup Y$ for a generic padding remains undecided,
+and by the producer's own analysis it cannot change the outcome: either answer leaves row~10
+inside row~11.
+\prov{row~10: closed, as tabled. The undecided boundary question is recorded at GAPS~G-2b and is explicitly \emph{not} funded by its own producer}{B23-02 \S1.2(b), \S1.5, \S4, L6 @ \cm{68866e6d}}{producer B23-02; reviewer B23-10 ruling B23-10.24}
+
+%==============================================================================================
+\section{Why the window is five to eight variables}\label{sec:window}
+
+\begin{lemma}[\cid{C31}; the window is exactly $N\le8$]\label{lem:window}
+Let $F=\det_4\circ\Lambda$ with $\Lambda:\bC^N\to\mathrm{Mat}_4$ linear.
+\begin{enumerate}
+\item[(i)] At a point $x$ of $X_F$ with $\rank\Lambda(x)=3$, the second fundamental form of $X_F$ is
+the pull-back of that of $X_{\det}$, which has rank $6$ (at $A=\operatorname{diag}(1,1,1,0)$ it is
+$-\sum_{i\le3}b_{i4}b_{4i}$ on $b_{44}=0$). So $\rank II_F\le6$ on a space of dimension $N-2$.
+\item[(ii)] The middle catalecticant satisfies $\rank\Cat_{2,2}(F)\le36$, the number of $2\times2$
+minors of a $4\times4$ matrix, on a source of dimension $N(N+1)/2$.
+\end{enumerate}
+Both bounds are vacuous exactly for $N\le8$ ($N-2\le6$ and $N(N+1)/2\le36$), and both bite
+from $N=9$. Bound (i) is the right-way statistic: padding's second fundamental form is
+nondegenerate. Bound (ii) is reversed: for $z\per_3$ the span of second partials is smaller
+than $36$.
+\end{lemma}
+\prov{PROVED (self-contained; LMR \lit{LMR}{UNREAD-SPECIALIST} is not load-bearing)}{B22-02 Lemma~1.5 (L5) @ \cm{e22a41b1}}{producer B22-02; reviewer B22-10 S17 (INDEPENDENT hand: rank $6$ and rank $36$ replayed)}
+
+So inside the window, neither the classical right-way local statistic nor the classical
+flattening sees anything, and the window is not an accident of the record. \emph{Caution:}
+Lemma~\ref{lem:window} is a statement about two statistics. It is not a theorem that every
+instrument is blind at $N=6,7,8$. There the first Koszul differential is now settled
+(Theorem~\ref{thm:thresh678}), the higher ones are not for $2\le j\le N-4$
+(Ruling~\ref{rul:scope}), and Record~\ref{rec:padmodel} says padding is not the product variety.
+
+The obvious way out of the window is to raise $n$, or to climb the ladder of minimal padding.
+Neither works, and the reason is the same statistic that gives the window its right-hand edge.
+
+\begin{lemma}[\cid{C50}; the blindness gets worse with $n$, and not along the ladder]\label{lem:blindn}
+Let $n\ge2$.
+\begin{enumerate}
+\item[(i)] The second fundamental form of $X_{\det_n}$ has rank $2(n-1)$. Explicitly, at
+$A=\operatorname{diag}(1,\dots,1,0)$ the tangent hyperplane is $b_{nn}=0$ and the quadratic part
+of $\det(A+B)$ on it is $-\sum_{i<n}b_{in}b_{ni}$. This is consistent with
+$\dim X_{\det_n}^\vee=\dim(\bP^{n-1}\times\bP^{n-1})=2n-2$.
+\item[(ii)] For $F=\det_n\circ\Lambda$ in $N$ variables the space $T_xX_F/\langle x\rangle$ has
+dimension $N-2$, so the bound is vacuous --- the statistic is \emph{blind} --- exactly when
+$N\le 2n$.
+\item[(iii)] The padded permanent $x_0^{\,n-m}\per_m$ has a support of $m^2+1$ essential
+variables. The second fundamental form therefore sees padding only in the rows
+$2n+1,\dots,m^2+1$, and that range is nonempty if and only if $m^2+1>2n$, i.e.\ if and only if
+$n\le m^2/2$.
+\item[(iv)] Along the minimal-padding ladder $n=m+1$ the visible range is
+$2m+3,\dots,m^2+1$, which grows like $m^2$: seven rows at $(m,n)=(4,5)$ and fourteen at $(5,6)$.
+\end{enumerate}
+\end{lemma}
+\prov{PROVED, by the argument of Lemma~\ref{lem:window}(i) with $n$ general}{B23-06 \S5, L18 @ \cm{feed104e}}{producer B23-06; reviewer B23-10 \S5.3 and ruling B23-10.23 (READ + source check at Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2 + INDEPENDENT hand)}
+
+Clause~(iii) is exactly the frontier of Landsberg--Manivel--Ressayre, whose theorem is
+$\overline{dc}(\per_m)\ge m^2/2$, with one precision the reviewer added and this paper carries:
+LMR's inequality is not strict at $n=m^2/2$ (which needs $m$ even), where one row is nevertheless
+visible, so ``exactly the LMR range'' is off at that single point. At $m=3$, where $m^2/2=4.5$,
+nothing turns on it.
+\prov{the frontier: PROVED (B23-06 L18). The boundary precision: reviewer's correction to the companion phrase ``exactly the LMR range''. LMR's Thm.~1.0.1 \lit{LMR}{PRIMARY, via ar5iv; PDF hashed} is the statement $\overline{dc}(\per_m)\ge m^2/2$}{B23-06 \S5, L5, L18 @ \cm{feed104e}; B23-10 \S5.3 @ \cm{239dd6e8}}{producer B23-06; reviewer B23-10 (READ + source check)}
+
+So the two escape routes run the wrong way. Raising $n$ at fixed $m$ widens the blind zone
+$N\le2n$ faster than it widens the padded support $m^2+1$: at $m=3$ the rows $9,10$ are visible
+at $n=4$ and the whole support lies inside the blind zone for $n=5,6,7$. Climbing the ladder
+$(m,m+1)$ does widen the visible part, but it does not narrow the blindness, and it moves the
+problem to lengths the programme's short-length instruments do not reach. Neither route gives
+those instruments anything to see.
+
+One further caution about clause~(ii) of Lemma~\ref{lem:window}, since it is the clause a reader
+is most likely to over-read. The catalecticants are \emph{reversed} statistics, not right-way
+ones: padding has the smaller rank. The $k$-th partials of $\det_n$ are the $\binom{n}{k}^2$
+complementary $(n-k)$-minors, with disjoint supports, so $\rank\Cat_{k,n-k}(\det_n)=\binom{n}{k}^2$;
+the value $\left(n(n-1)/2\right)^2$ that appears in the record is the case $k=2$, which is the
+\emph{middle} catalecticant only for $n\le5$. Their vacuity range is therefore not what blinds
+the programme. The second fundamental form's is.
+\prov{PROVED; the ranks are certified by B23-06's pilot and the thresholds are exact integer arithmetic by hand. The integrator's formula is CONFIRMED in arithmetic and CORRECTED in label (it is $k=2$, not ``the middle'' for $n\ge6$)}{B23-06 \S5, L19 @ \cm{feed104e}; B22-02 Lemma~1.5(ii) (L5) @ \cm{e22a41b1}}{producer B23-06 (correcting the integrator); reviewer B23-10 (READ)}
+
+\begin{record}[\cid{C32}; the permanent is invisible below length six]\label{rec:washout}
+For every weight $\lambda$ with $\ell(\lambda)\le5$ and every degree, $m_{\mathrm{pad}}(\lambda,\delta)=m_{R_{\ell}}(\lambda,\delta)$,
+where $R_r=\{\ell\cdot c\}$ is the reducible locus. The reason is that $D_k^{\per_3}=\Sym^3\bC^k$ for
+$k\le5$. So every $D\ne0$ cell at length $\le5$, in either sign, is a statement about
+\emph{reducibility against the determinant}, and $\per_3$ does not appear.
+\end{record}
+\prov{PROVED}{\texttt{docs/washout\_lemma.md} \S0, Thm.~2 @ \cm{82633a60}; \texttt{docs/PROVED.md} entries \texttt{washout\_thm2}, \texttt{restriction\_lemma} @ \cm{82633a60}; B23-10 \S7 rank~3, ruling B23-10.18 @ \cm{239dd6e8}}{producer (session 37); re-derived from its generator by B13-07 (per \texttt{PROVED.md}); reviewer B23-10 (INDEPENDENT EVALUATOR, pilot~2, its own code on a fresh seed and two primes: Jacobian ranks $4,10,20,35$ at $r=2..5$ and floor $50$ at $r=6$, matching the recorded table; the restriction lemma, Lemma~1 and Theorems~2--3 re-derived by READ). \textbf{Second lineage closed 2026-09-19.} Residues still OPEN: Theorem~6's exactness ($\dim D_6^{\per_3}=50$; the replay gives a floor only) and \cid{C33}}
+
+\begin{record}[\cid{C33}; degree-eight silence on the cubic side]\label{rec:deg8}
+$I(D_r^{\per_3})_\delta=0$ for every $r$ and every $\delta\le8$. Hence $m_{\mathrm{pad}}=m_{\mathrm{red}}$
+at every weight of every length in every degree $\le8$.
+\end{record}
+\prov{PROVED (a reconciliation result stated by no single session)}{\texttt{docs/PROVED.md} entry \texttt{degree8\_global} @ \cm{82633a60}}{integrator reconciliation of \texttt{washout\_thm2}, \texttt{length6\_record}, B13-09 and B13-05; the component counts reproduced by several batch-13 sessions}
+
+Records~\ref{rec:washout} and~\ref{rec:deg8} explain why the five-row comparison is really
+$\Dff$ against $\Pf$. At five rows the cubic factor of $\ell\cdot C$ ranges over all cubics,
+because $D_k^{\per_3}=\Sym^3\bC^k$ for $k\le5$. So padding at five rows is the product
+variety, and in the words of the source, $\per_3$ ``does not appear''.
+
+%==============================================================================================
+\section{The one right-way problem: the cubic factor}\label{sec:cubic}
+
+\begin{lemma}[\cid{C34}; restriction to the cubic factor]\label{lem:cubic}
+Let $f\in I(\Dff)_d$ with $f(\ell\cdot C^*)\ne0$ for one $\ell$ and one smooth cubic $C^*$. Then
+$C\mapsto f(\ell\cdot C)$ is a nonzero element of $I(D_{35})_d$, because
+$\ell\cdot\det_3M=\det_4\operatorname{diag}(\ell,M)$. Hence $d\ge\operatorname{onset}I(D_{35})=\delta_0$.
+On the cubic side the separation runs the \emph{right} way. The size-$65$ minors of the
+$70\times75$ degree-$4$ Macaulay matrix $M_4(C)$ vanish on $D_{35}$. At every smooth cubic the
+five partials form a regular sequence, so $\rank M_4(C)=70-5=65$ and some of those minors are
+nonzero there. Since the cap minors also vanish on every cubic through a plane
+(Proposition~\ref{prop:capplane}), the bound strengthens to
+\[
+\deg f\ \ge\ \operatorname{onset}I\!\left(D_{35}\cup\Sigma_\Pi\right),
+\qquad \Sigma_\Pi:=\{\text{quinary cubics containing a plane}\}.
+\]
+\end{lemma}
+\prov{containment and restriction PROVED. The right-way clause is CONDITIONAL on the cap theorem at $n=3$ (Theorem~\ref{thm:cap}, PROVED modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all three ADOPTED inputs). The bound $\delta_0\ge8$ is ADOPTED record-internal and holds given the batch-13 measured identity; unconditionally the record has $\delta_0\ge6$ (Record~\ref{rec:delta0}). The resulting degree bound on a separating $f$ is recorded ``because it is proved, not because it is informative''. It is far below the onset conjecture's $>300$, which is an expectation}{B22-02 Lemma~1.6 (L6) @ \cm{e22a41b1}; B22-10 S18 @ \cm{2efb7aaf}}{producer B22-02; reviewer B22-10 (READ + INDEPENDENT hand: the rank-$64$ instance on a generic $D_{35}$ point re-derived from Dimca Thm.~3.1 \lit{Dimca13}{PRIMARY, statement level} and general position; MEASURED rank $64$ on $D_{35}$ and $65$ generic, at single random points. The companion figure ``$64$ on a cubic through a plane'' was one exact rank at one point --- a floor --- and is SUPERSEDED by Proposition~\ref{prop:capplane}, which proves the ceiling for every member; corrigendum K3). The strengthening to $D_{35}\cup\Sigma_\Pi$ is B23-03 \S2.5 @ \cm{3bcad666}, anticipated by B22-10 S18}
+
+\begin{proposition}[\cid{C35}; the intersection is larger than expected]\label{prop:intersection}
+$\Dff\cap\Pf\supseteq\{\ell\cdot C: C\in D_{35}\}$, and the containment is strict. Let
+\[
+A=\begin{bmatrix}a_{11}&a_{12}&a_{13}&a_{14}\\ \ell&0&D_{11}&D_{12}\\ 0&\ell&D_{21}&D_{22}\\ 0&0&D_{31}&D_{32}\end{bmatrix},
+\]
+the restriction of a $(2,1)$-compression space. Then $\det A=\ell\cdot C$, and $C$ can be
+(generically) any cubic through a plane. Write
+\[
+T_1:=\{\ell\cdot C: C\in D_{35}\},\qquad T_2:=\{\ell\cdot C: C\in\Sigma_\Pi\}.
+\]
+Then $T_2\subseteq\Dff\cap\Pf$ and $T_1\subsetneq T_2\cup T_1$, and the dimensions are
+\emph{exact}:
+\[
+\dim T_1=33\ \text{affine}\ (32\ \text{projective}),\qquad
+\dim T_2=35\ \text{affine}\ (34\ \text{projective}),
+\]
+with $\dim\Sigma_\Pi=31$ affine ($30$ projective) inside $\Sym^3\bC^5$. Neither of $T_1,T_2$
+contains the other.
+\end{proposition}
+\prov{$\supseteq$ PROVED; strictness PROVED. The dimensions are now \emph{exact}, not floors: each floor is an exact Jacobian rank at an integer point and each ceiling is proved by hand. Updated 2026-09-20 from B22-10's ``$\ge35$'' and ``$33$''. Both of B22-10's figures were affine and both stand as floors; the phrase ``projective dimension $\ge35$'' never appeared in a packet, and B22-10's separate sentence that ``the record is off by one'' is superseded (corrigendum K4): B22-02's bare $32$ is the correct \emph{projective} value, and the defect was quoting it beside the affine $50$ (G24)}{B22-10 \S7, S22--S24 @ \cm{2efb7aaf}; B23-03 \S2.4, L8 @ \cm{3bcad666}; B23-10 \S3.0 and ruling B23-10.3 @ \cm{239dd6e8}}{reviewer B22-10 (INDEPENDENT hand + INDEPENDENT EVALUATOR, pilot~2) for the containment and strictness; producer B23-03 for the exact values; reviewer B23-10 (READ) affirming them and adjudicating the convention dispute}
+
+\begin{theorem}[\cid{C36}; the determinant part of the intersection, classified]\label{thm:classify}
+Let $\Dff^\circ$ denote the set of \emph{actual} determinants, with no closure taken. Then
+\[
+\overline{\Dff^\circ\cap\Pf}\ =\ T_1\cup T_2 .
+\]
+Both are irreducible, neither contains the other, and their dimensions are those of
+Proposition~\ref{prop:intersection}. The proof is a complete case analysis on the generic rank of
+$A_0$ in $A=A_0(y)+tB$, using Jacobi's formula
+$C|_{t=0}=\operatorname{tr}(\operatorname{adj}(A_0)B)$ and the factorisation
+$\operatorname{adj}(A_0)=s\,k\,\kappa^{\mathsf T}$ over the unique factorisation domain
+$\bC[y]$. Two further types arise in that analysis and both fall inside $T_2$: the
+\emph{skew-bordered} type, and the primitive family $T_3$ of dimension $29$ affine
+($28$ projective), which comes from a genuinely non-compression space of $4\times4$ matrices, the
+space of lines meeting two skew lines. $T_3$ answers B22-10's question whether a primitive
+rank-$3$ space contributes: it does, and it contributes nothing new.
+\end{theorem}
+\prov{PROVED, by hand and self-contained; it uses neither Eisenbud--Harris nor Atkinson. The classical inputs are UNREAD-CLASSICAL throughout: Jacobi's formula, Gauss's lemma, the Koszul relations of a regular pair, intersection numbers on $\bP^1\times\bP^1$, and the Hilbert functions of zero-dimensional schemes and of curves (the last two only in the proof that $T_1\not\subseteq T_2$). The dimension floors are exact Jacobian ranks at integer points and the ceilings are proved. Supersedes B22-10 S25's ``classification OPEN''}{B23-03 Thm.~2.1, \S2.1--\S2.4, L1--L4, L7--L9 @ \cm{3bcad666}}{producer B23-03; reviewer B23-10 \S3.4, ruling B23-10.12 (READ, affirmed on reading). The reviewer records as an honest negative that it did \emph{not} replay this theorem, $T_3\subseteq T_2$ or $T_1\not\subseteq T_2$}
+
+\begin{proposition}[\cid{C37}; the cap minors vanish on every cubic through a plane]\label{prop:capplane}
+$\rank M_4(C)\le64$ for every $C\in\Sigma_\Pi$, with generic value exactly $64$. Hence the
+size-$65$ minors of $M_4$ vanish identically on $\Sigma_\Pi$.
+\end{proposition}
+\prov{PROVED. Write $C=x_1q_1+x_2q_2$ and let $g=(M_{45},-M_{35},M_{34})$ be the $2\times2$ minors of $(\partial_jq_1,\partial_jq_2)_{j=3,4,5}$; then $\sum_{j\ge3}g_j\,\partial_jC=0$ is a syzygy with quadric coefficients, and it is \emph{not} Koszul whenever $M_{45}$ has a monomial free of $x_1,x_2$, so $\dim\ker M_4\ge11$. Both conditions are open and hold at an exhibited witness, and $\{\rank\le64\}$ is closed and $\GL_5$-stable. Before this, the statement rested on one exact rank at one random point, which is a floor and cannot bound a generic rank from above; the correct label then was MEASURED (corrigendum K3), and the draft's earlier OPEN was right on the evidence available}{B23-03 Prop.~2.5, \S2.5, L10 @ \cm{3bcad666}; B22-10 \S7, S18 @ \cm{2efb7aaf}}{producer B23-03 (hand proof; identity checked in its pilot~1); reviewer B23-10 \S3.1, ruling B23-10.6 (READ + INDEPENDENT hand re-deriving the non-Koszul step, + INDEPENDENT EVALUATOR: a third exact rank $64$ at a fresh random plane cubic on a disjoint seed). The generic value $64$ now has three method-disjoint lineages}
+
+\noindent One caution the reviewer supplies and this paper carries: B23-03's \emph{witness} has
+$\rank M_4=58$, not $64$. It is a special member of $\Sigma_\Pi$, used only to verify the two open
+conditions, and the packet never claims otherwise.
+\prov{MEASURED (exact)}{B23-10 \S1.4, \S3.1, ruling B23-10.7 @ \cm{239dd6e8}}{reviewer B23-10 (INDEPENDENT EVALUATOR, pilot~1), departing from its own pre-formed expectation}
+
+\subsection{The right-way corner, and exactly how far it reaches}
+Put the three results together. For a fixed $\ell$, the cubics $C$ with
+$\ell\cdot C\in T_1\cup T_2$ are exactly $D_{35}\cup\Sigma_\Pi$: another factorisation
+$\ell C=\ell'C'$ with $\ell'\ne\ell$ would force $\ell'\mid C$, and then $C$ contains a
+hyperplane. The cap minors lie in $I(D_{35}\cup\Sigma_\Pi)$ --- the $\Sigma_\Pi$ half PROVED
+(Proposition~\ref{prop:capplane}), the $D_{35}$ half carrying the cap theorem's own label,
+PROVED modulo three named ADOPTED inputs (Theorem~\ref{thm:cap}) --- and they are nonzero at
+every smooth cubic. So a Nullstellensatz lift
+has a rank-threshold target, and the right-way corner survives the enlargement of the
+intersection. \emph{On the determinant part of it.}
+
+\begin{question}[G-A1; the boundary]\label{q:boundary}
+Theorem~\ref{thm:classify} classifies $\overline{\Dff^\circ\cap\Pf}$. Is there a point of
+$\Dff\cap\Pf$ outside $T_1\cup T_2$ --- necessarily a limit of determinants that is not itself a
+determinant --- of the form $\ell\cdot C^*$ with $C^*$ smooth?
+\end{question}
+\noindent If there is, the right-way corner is gone: a smooth cubic would lie in the lift's
+projection, and no Macaulay-rank threshold could separate. Nothing on the record excludes such a
+point. Two natural invariants fail to exclude it. Rank thresholds of $F$ run the wrong way on
+padding (Theorem~\ref{thm:gkzB}); and the $20$ nodes of a generic $\det A$ may converge onto the
+surface $\{\ell=0\}\cap C^*$, so semicontinuity of the singular locus says nothing either. Any
+component such points form has affine dimension at least $50+39-70=19$. Nor is ``$\Dff^\circ$ is
+closed'' to be expected by default: Landsberg exhibits polynomials $P_{\Lambda,m}$ with
+$\overline{dc}(P_{\Lambda,m})=m<dc(P_{\Lambda,m})$, limits of determinantal expressions that are
+not themselves determinantal. That shows the phenomenon is real; it does not place an instance in
+$\Dff\cap\Pf$. This is the paper's named open question.
+\prov{OPEN. Three routes would close it, in increasing strength: (a) a normal-form analysis of every one-parameter degeneration $\det A(t)\to\ell\cdot C^*$ with $A(t)$ divergent --- one theory slot, paragraph-first, and \emph{no pilot can close it}, since sampled degenerations are only MEASURED; (b) a direct proof that $\{C:\ell\cdot C\in\Dff\}=D_{35}\cup\Sigma_\Pi$ for fixed $\ell$; (c) a proof that $\Dff^\circ$ is closed, which is not expected. Route (a) inherits the conditional status of the Eisenbud--Harris and Ballico inputs (Theorem~\ref{thm:rhoZ}). B17-01-C excludes one specific $F^*$, not a family}{B23-03 \S2.6 (G-A1), L13 @ \cm{3bcad666}; B23-10 \S3.3, ruling B23-10.11 @ \cm{239dd6e8}; Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2, as read by B23-10}{producer B23-03 named it; reviewer B23-10 (READ + INDEPENDENT hand) affirmed it as genuinely open, supplied the two failed invariants and the three routes, and required that the ``right-way corner survives'' sentence be scoped to the determinant part}
+
+The lift that exists is the Nullstellensatz one, and it is not constructive. The covariant lifts
+are dead by Lemma~\ref{lem:nullcone}(c). This is the precise sense of clause (d) of the thesis.
+The reversal is a property of the quartic-side mechanisms, and the separation problem restricted
+to $\Pf$ is not reversed.
+
+%==============================================================================================
+\section{A worked example of the method: the rectangle in degree five}\label{sec:example}
+
+This section is \emph{not} a separation result. It shows how the instruments are used when there
+is something to certify, in the one five-row cell where the boundary diagnostic was carried to a
+decision. The cell is $(5,(4^5))$, where $D=-1$ (Theorem~\ref{thm:rect}). Nothing here can
+produce a gap in either branch of any outcome. Everything here concerns the first achievement
+only, a necessary source condition.
+
+\begin{record}[\cid{C38}; the source]\label{rec:source}
+In this cell $a=1$ and the source $M$ has dimension $s=5$. The four source directions
+$q_3,q_7,e,n02$ are independent (rank $4$ over $\bQ$). A fifth direction has not been found.
+\end{record}
+\prov{$s=5$ as recorded in the corrected intake row; rank~$4$ CERTIFIED (arithmetic replayed); the fifth direction OPEN}{B20-10 \S10 corrected row, R10 @ \cm{6915ae6f}; B20-12 ledger \S4 @ \cm{da803892}}{producer (routeA packet); reviewer B20-10 (REPLAY; no independent evaluator for any source vector, honest negative~5)}
+
+\begin{theorem}[\cid{C39}; the transverse triple]\label{thm:T}
+The three transverse functionals $C2$, $C4_{S1,S2}$, $C4_{S1,S4}$ are jointly linearly independent
+on $M_{(4^5)}$: $\rank T=3$ (a nonzero $3\times3$ modular minor, determinant $225843$, on three
+certified source vectors). The audit line ``not established, only pairwise'' is struck.
+\end{theorem}
+\prov{CERTIFIED, two lineages}{B20-10 R9, \S3.4 @ \cm{6915ae6f}; B20-12 ledger \S1, \S8.4 @ \cm{da803892}}{producer (routeA packet); reviewer B20-10 (REPLAY, pilot~2)}
+
+\begin{theorem}[\cid{C40}; Theorem A, the reduction to the flag locus]\label{thm:A}
+The degree-$11$ identity reduces to the vanishing of one function $F_1$ on triples with zero skew
+block. A full degree-$11$ functional costs $15$ runner evaluations instead of $39$. Its numerical
+control passes once the normalisation is $\det(g)^{-4}$ (the specified $\det(g)^{4}$ was the
+defect).
+\end{theorem}
+\prov{PROVED; control PASSES, corrected}{B20-01 \S4.2 @ \cm{878258f2}; B21-10 R2--R7 @ \cm{f7727cb7}}{producer B20-01; reviewer B21-10 (READ, re-derived, pre-formed; INDEPENDENT EVALUATOR for the control)}
+
+\begin{theorem}[\cid{C41}; Proposition C and Theorem M]\label{thm:M}
+The degree-$11$ target on the flag locus is exactly the $70$-dimensional Levi-invariant space
+$F^L_{-1}$. Explicit typed $\varepsilon_3$-contraction patterns lie in $F^L_{-1}$ (resp.\
+$F^L_{-2}$) and span it. Seventy of them, and four tops, are bases. Seventy listed flag-locus
+points form an injective evaluation set on $V_{70}$ and on the tops, over $\bQ$ and over $\bF_P$,
+$P=524287$. The certificate is a $70\times70$ determinant $132757\ne0\bmod P$, with top minor
+$136525$. The counts $b_L(11)=70$ and $b_L(12)=4$ have two method-disjoint lineages.
+\end{theorem}
+\prov{Proposition~C PROVED; Theorem~M (i)--(iv) PROVED; certificate CERTIFIED (replayed). Classical inputs (Cauchy, Pl\"ucker generation, complete reducibility, FFT for $\SL_3$) are UNREAD-CLASSICAL}{B20-01 \S4.4 @ \cm{878258f2}; B21-10 R8 @ \cm{f7727cb7}; B22-01 \S2, ledger B22-01.3--.8 @ \cm{53bdb31e}; B22-10 S2--S7 @ \cm{2efb7aaf}}{producer B22-01; reviewer B22-10 (READ + INDEPENDENT EVALUATOR: exact character computation of $b_L$, method-disjoint from \texttt{arc\_target}; certificate REPLAY)}
+
+\begin{theorem}[\cid{C42}; the five-row identity, modulo one prime]\label{thm:identity}
+With $f=n02-265391\,q_3-275398\,q_7$: $F_1^f\equiv0$ and $\mathrm{top}^f\equiv0$ as polynomials
+over $\bF_P$. So $\rank(C|_U\otimes\bF_P)=2$, and the five-row mixed-pairing identity holds
+modulo $P$ as a polynomial identity. Over $\bQ$, $\rank(C|_U)=2$ is OPEN. A modular rank is a
+floor for the rational rank, never a ceiling, so this gives only $\rank(C|_U)\ge2$, which was
+already known. Rank $3$ over $\bQ$ is not excluded. It \emph{would require} $P$ to divide every
+$3\times3$ minor of the exact rows at the $70$ certified points; it holds if and only if some
+such minor is nonzero over $\bQ$, in which case that divisibility is automatic. A second prime
+$P_2=524269$ has since been tested: all twenty $3\times3$ minors vanish there too, at the three
+points at which they were evaluated. That does not move the label. A modular rank is a floor for
+the rational rank, so agreement at a second prime is evidence and never a proof, and rank $3$
+over $\bQ$ would now require both $P$ and $P_2$ to divide the relevant minors.
+\end{theorem}
+\prov{CERTIFIED-modular (the identity: at $P$ as a polynomial identity through the certified injective set, and at $P_2$ as the vanishing of twenty minors at three points); OPEN (the $\bQ$ form). \textbf{Direction of the condition, gate G27:} a rational conclusion drawn from modular data is stated with ``requires'', ``only if'' or ``implies'', never ``iff'' unless both directions are proved. B22-10 S11's ``rank 3 \emph{iff} $P$ divides every minor'' is wrong in that direction and is corrected by corrigendum K1; the same error in B23-01's own transcription sentence~(b) is corrected by K2. This paper uses B22-01's ``would require'' wording, which was correct throughout}{B22-01 \S4.3, B22-01.14--.15 @ \cm{53bdb31e}; B22-10 S8, S10--S11 @ \cm{2efb7aaf}; B23-01 \S3, \S5, B23-01.8--.10 @ \cm{cc14e88c}; B23-10 \S2.2, \S5.1, corrigenda K1--K2, rulings B23-10.2 and B23-10.21 @ \cm{239dd6e8}}{producer B22-01; reviewer B22-10 (REPLAY of the decisive rows by its own code; span control against the original sources); producer B23-01 for the second prime; reviewer B23-10 (READ + REPLAY of B23-01's arithmetic with its own code: all twenty minors vanish mod $P_2$, relation residual $0$ on all six rows)}
+
+\begin{theorem}[\cid{C43}; the source condition]\label{thm:prop71}
+\emph{$\bF_P$ form.} $\bar n=n02-265391\,q_3-275398\,q_7\in\ker(C\otimes\bF_P)$, and the transverse rows
+are nonzero on it: $C2(\bar n)=0$, $C4_{S1,S2}(\bar n)=499917$, $C4_{S1,S4}(\bar n)=487898$ in $\bF_P$.
+\emph{$\bQ$ form.} There is an exact $n^*\in\ker C$ with $C4(n^*)\ne0$ that lifts $\bar n$.
+\end{theorem}
+\prov{$\bF_P$ form PROVED (transverse values REPLAYED); $\bQ$ form CONDITIONAL on $\rank(C|_U)=2$ over $\bQ$ (Theorem~\ref{thm:identity}, OPEN). The second-prime test could have refuted the $\bQ$ form and did not, which leaves the condition exactly where it was: a zero outcome is not a proof, and settling it needs exact or multi-prime rows (GAPS~G-5)}{B22-01 B22-01.16--.17 @ \cm{53bdb31e}; B22-10 S12--S13 @ \cm{2efb7aaf}; B23-01 \S0, B23-01.10 @ \cm{cc14e88c}}{producer B22-01; reviewer B22-10 (REPLAY, pilot~3; the routeA pencil values themselves not recomputed); producer B23-01, affirmed by reviewer B23-10 ruling B23-10.21}
+
+\begin{remark}[\cid{C44}; what the example is]
+Theorem~\ref{thm:prop71} is an existence statement about a \emph{necessary source condition}.
+There is an element of $\ker C$ on which the transverse conditions do not vanish, in a cell with
+$D=-1$. It is not a coefficient equation, not a separation and not a gap. The cheap mechanisms
+that could have forced the identity for free are all closed. These are the relabelling sign
+(B20-01 C6, conditional on its height-$2000$ search), the transversal-slice density (whose floor
+was corrected upward to $55{,}440$, i.e.\ $792$ times the target), and the isotropic type
+(B21-01, outcome~(2)). The height-$2000$ claim must be quoted in its scoped form, because the
+definition of ``height'' used by the original search cannot be recovered from committed bytes:
+\emph{no common-denominator lift $(a,b;d)$ of $(\alpha,\beta)$ with $\max(|a|,|b|,d)\le2000$
+exists modulo $P$; per-coefficient lifts of height $\le2000$ are not unique at a single prime of
+this size and do exist; a two-prime reconstruction gives the MEASURED candidate
+$(2211,-2842;1938)$, of height $2842$.}
+\end{remark}
+\prov{standing (B22-01.18); density floor PROVED-with-correction; isotropic type: mechanism closed, producer only, five points, one prime. The height sentence is SCOPED, not struck: the original is SUPERSEDED because its intended definition cannot be recovered, not because it was refuted (corrigendum K7). Under a per-coefficient reading it is false ($15$ lifts for $\alpha$, $16$ for $\beta$, including the candidate's own $737/646$); under a common-denominator reading, which is the natural one for a \emph{vector} lift, it is true}{B22-01 \S0 @ \cm{53bdb31e}; B21-10 R10 @ \cm{f7727cb7}; B21-01 @ \cm{d5e9d885}; B21-12 ledger \S8.4, \S10 @ \cm{8b6be856}; B23-10 \S5.2, corrigendum K7, ruling B23-10.22 @ \cm{239dd6e8}}{mixed, as stated per item; the scoping is reviewer B23-10 (READ + INDEPENDENT EVALUATOR, exhaustive search in pilot~1)}
+
+The example shows the method working as designed. Pre-registered sentences, certificates
+before runs, controls stated as identities, and a modular result labelled as modular. It also
+shows the labels doing their job. The $\bF_P$ statement is PROVED, and the $\bQ$ statement stays
+where the evidence leaves it (GAPS G-1, G-5).
+
+%==============================================================================================
+\section{The positive control: the instruments work where there is something to see}\label{sec:control}
+
+Without a control, this paper would read as a catalogue of broken tools. The control is at
+$n=3$, and it is \emph{unpadded}: $\det_3$ against $\per_3$ on $7$-pencil slices
+$D_7,P_7\subset\Sym^3\bC^7$.
+
+\begin{theorem}[\cid{C45}; the $n=3$ ladder]\label{thm:ladder}
+On the ladder $\lambda_\delta=(3\delta-17,7,2^5)$ the ambient multiplicity is $a(\delta)=0,2,4,5$
+at $\delta=8,9,10,11$ and $a(\delta)=6$ for every $\delta\ge12$. Moreover
+\[
+D(\delta)=i_{\det}(\delta)-i_{\per}(\delta)=+1\quad\text{for all }\delta\ge12,\qquad D=0\text{ at }\delta=9,10,11.
+\]
+Every rung with $\delta\ge12$ is a multiplicity obstruction (both multiplicities nonzero), with
+one-sided orientation $U_D\not\subseteq U_P$, $U_P=0$. At the base rung
+$((19,7,2^5),12)$: $m_{\per}=6>5=m_{\det}$.
+\end{theorem}
+\prov{\textbf{PROVED} (the record's own label is ``a theorem, not a measurement'', on Proposition~S and Lemma~L; the Batch~24 review's qualifier, the length-restriction lemma, is now discharged, see below). Rungs $12$--$16$ were MEASURED at both house primes and agree. $i_{\per}=0$ is proved over $\bQ$ by nullity-$0$ certificates. \textbf{The floor and the ceiling of $i_{\det}(12)$ have different evidence.} The \emph{floor} $i_{\det}(12)\ge1$ is LMR \lit{LMR}{PRIMARY for this use: Thm.~2.3.1, specialised by \S3.1 (Thm.~3.1.1) and instanced at $n=3$ in \S3.2; statements read, proofs not audited} --- LMR prints this cell, the weight $12\omega_1+5\omega_2+2\omega_7=(19,7,2^5)$ in $S^{12}(S^3\bC^9)$ with a copy in the ideal of $\overline{\GL_9\cdot[\det_3]}$. \emph{Do not cite LMR's Thm.~1.0.2 for this cell}: its printed $\omega_1$ coefficient and degree are both halved and mutually inconsistent, and read literally it gives $(13,7,2^5)$ at degree $6$. The \emph{ceiling} $i_{\det}(12)\le1$ is the record's own measured nullity $1$ at both primes, and is not taken from LMR's ``only one copy'', which LMR asserts without printed proof; were that assertion wrong, $i_{\det}$ could only be larger and $D\ge1$ would still hold. \textbf{The length-restriction lemma}: LMR's statement is at $N=9$, the record's cell is $\Sym^{12}(\Sym^3\bC^7)$ and $D_7$ at $N=7$, and the bridge is the programme's length-restriction lemma (\texttt{s73} \S1: the $\lambda$-isotypic part of $\bC[\GL_9\cdot f]$ is that of $\bC[X_7]$ for $\ell(\lambda)\le7$; it is \texttt{isotypic\_rank.md} Prop.~5, with its two implicit steps supplied by B25-05's Lemma~R). The range is stated closed and the cell sits at its included endpoint $\ell(\lambda)=7$, which the review rules sound; the load-bearing step is the $N=9\to7$ transport of the ideal-copy count. LMR's printed multiplicity six at $N=9$ agrees with the record's $a=6$ at $N=7$, which corroborates the ambient multiplicity only, not the ideal count. The lemma is PROVED (B25-10 \S2.4: READ plus INDEPENDENT hand re-derivation of Lemma~R's steps R1--R6; GAPS~G-37 closed), so the qualifier is dropped. The upgrade covers the base rung $\delta=12$; the rungs above it keep the \texttt{s73} lineage of Proposition~S and Lemma~L}{\texttt{docs/s73\_report.md} \S0, \S1, \S2(c), \S4, \S8 @ \cm{82633a60}; \texttt{docs/stocktake\_batch11.md} \S4 @ \cm{82633a60}; \texttt{docs/batch11\_plan.md} \S1.1 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02 \S\S2.2--2.4, ledger B24-02.5--.8 @ \cm{f8273c3b}; B24-02b \S\S1--4, ledger B24-02b.1--.13, \texttt{results/b24\_02b/lmr\_quotes.md} Q1, Q5--Q7 @ \cm{5a97317e}; B24-10 \S\S3.1--3.3, rulings 11.3.1--11.3.10 and 11.6.10 @ \cm{ab2f8a40}; \texttt{docs/isotypic\_rank.md} Prop.~5 @ \cm{82633a60}; B25-05 \S A.3 Lemma~R @ \cm{2688efd1}; B25-10 \S2 @ \cm{42e7f4ba}}{producer (session 73; P0-A, s62, s63 for the base rung); integrator stocktake (46 certificates, 46 PASS; $a$-values reproduced at $\delta=12..18,20$); B24-02 (INDEPENDENT hand replay of the structural half: $\Omega(4,3)$ expands to $(19,7,2^5)$, $\delta=12$, $\ell=7$); B24-02b (PRIMARY reading of LMR, PDF v1 sha256 \texttt{cfc28275\dots} identical to the hash already on the record); reviewer B24-10 (READ + INDEPENDENT re-derivation of the ceiling/floor asymmetry; did not open \texttt{s73}); reviewer B25-10 (READ + INDEPENDENT hand re-derivation of Lemma~R, R1--R6) for the length-restriction lemma and the PROVED label. The computational half (the $a$-ladder, the nullity certificates, Proposition~S) still has no independent reviewer slot. GAPS~G-15 is closed as a read-status question}
+
+\begin{record}[\cid{C46}; the padded $n=3$ control is degenerate]\label{rec:n3pad}
+$\ell\cdot\per_2$ has exactly five essential variables. So $m_{\mathrm{pad}}=0$ at every
+seven-row weight, $i_{\mathrm{pad}}=a$, and the padded gap is $-5$. The unpadded positive control
+supplies no padded test.
+\end{record}
+\prov{PROVED}{\texttt{docs/PROVED.md} entry \texttt{n3\_padded\_seven\_row} @ \cm{82633a60}; \texttt{docs/batch13\_corrections.md} \S5 @ \cm{82633a60}}{producer B13-11; integrator correction accepted}
+
+Taken together, Theorem~\ref{thm:ladder} and Record~\ref{rec:n3pad} are the whole point of this
+section. The same evaluation, transport and certification machinery that is blind at five rows
+produces $D=+1$ at every rung, PROVED, as soon as the comparison has content. It
+is blind
+exactly when the permanent side is replaced by padding in a cell too short to see the
+permanent. That is the five-row situation of Record~\ref{rec:washout}.
+
+\emph{And exactly here the paper must say what its own evidence rests on.} This control is the
+paper's demonstration that the instruments work, so the condition attached to it is not a
+footnote. The sign of $D$ at the base rung is not supplied by any measurement on the record. The
+quantity $i_{\det}$ is a nullity, and a modular nullity is a \emph{ceiling}
+($\mathrm{nullity}_p\ge\mathrm{nullity}_\bQ$); $i_{\per}=0$ is genuinely proved over $\bQ$, by a
+nullity-zero certificate, which is the direction that does work. So the certificates by
+themselves establish only
+\[
+0\ \le\ D(12)\ \le\ 1 .
+\]
+The floor $i_{\det}(12)\ge1$, and with it the whole positive result, comes from
+Landsberg--Manivel--Ressayre's theorem at this cell and from nowhere else: no extra prime, no
+further evaluation family and no sharpening of the numerics can supply it, because the inequality
+runs the wrong way for the instrument. That theorem has now been read at the source for this
+use: Theorem~2.3.1 with \S\S3.1--3.2 of LMR, which prints the cell itself (never Theorem~1.0.2,
+whose printed weight and degree are halved). What the reading cannot supply is the passage from
+LMR's nine variables to the record's seven. That step is the programme's own length-restriction lemma,
+used at the closed endpoint $\ell(\lambda)=7$ of its stated range, with the cell also at the
+non-vacuity threshold of LMR's module, $N\ge k+3=7$ for dual dimension $k=4$: two conditions
+saturated at once, so any widening of the cell
+leaves the validated region immediately. That lemma is now PROVED (\texttt{isotypic\_rank.md} Prop.~5 with B25-05's Lemma~R, reviewed in
+B25-10 \S2), so the label is \emph{PROVED}
+(GAPS~G-37, closed). The record-internal alternative, a proof that the exhibited integer vector
+$U_D$ lies in $I(D_7)$, is not available: the packets are explicit that the vanishing of $U_D$ at
+$32$ determinant pencils is Schwartz--Zippel evidence of ideal membership and not a proof of it.
+\prov{scope sentence, not a result. The one-sidedness is the record's own: ``$i_{\det}(12)\le1$ is the measured nullity $1$ at both primes''; the floor is ``LMR's theorem at this cell (adopted)''; and ``finite-point vanishing is Schwartz--Zippel evidence \dots\ the rigorous $v\in I(D_7)$ at $\delta=12$ is LMR''. The read-status and the length-restriction lemma are as in the provenance of Theorem~\ref{thm:ladder}}{\texttt{docs/s73\_report.md} \S1, \S2(c), \S3, \S8 @ \cm{82633a60}; B23-10 \S7 rank~1, ruling B23-10.20 @ \cm{239dd6e8}; B24-02b \S\S2.4, 3.1--3.3 @ \cm{5a97317e}; B24-10 \S3.2, rulings 11.3.3--11.3.8 @ \cm{ab2f8a40}; B25-10 \S2 @ \cm{42e7f4ba}}{producer (session 73) for the quoted sentences; reviewer B23-10 (READ) for the earlier CONDITIONAL ruling, now discharged as to read-status; reviewer B24-10 (READ) for the double pinch and the earlier qualifier; reviewer B25-10 (READ + INDEPENDENT) for the length-restriction lemma and PROVED}
+
+%==============================================================================================
+\section{What remains open}\label{sec:open}
+
+This section lists the reopening conditions on the record, in the record's words where possible.
+The full list, with owners, is \texttt{GAPS.md}.
+\begin{enumerate}
+\item \emph{The boundary of $\Dff\cap\Pf$} (Question~\ref{q:boundary}, the record's G-A1).
+\textbf{This is the paper's principal open question.} It decides whether the right-way corner of
+\S\ref{sec:cubic} holds on all of $\Dff\cap\Pf$ or only on its determinant part, and hence
+whether a rank-threshold target for the Nullstellensatz lift exists at all. Any component of the
+excluded set has affine dimension at least $19$. The three routes that would close it are in the
+provenance line there; none of them is a pilot.
+\item \emph{A named construction for rows 3, 7 (type-specific), 12 or 13 of
+Table~\ref{tab:kills}.} It needs two things. (i) A membership proof for $I(\Dff)$ that does not
+pass through $r_{\det}$-minors of a derivative matrix, through an $\SL_5$-covariant into a
+determinantal locus, or through $\Delta_F$. (ii) A stated reason why the value at $\ell\cdot C^*$
+is nonzero. (B22-02 \S4 @ \cm{e22a41b1}.) Row~10 has since left this list
+(Proposition~\ref{prop:bordiga}); every remaining named candidate is either a rank statistic of a
+derivative matrix, a covariant or dual-geometric construction, or $\ker\varphi^*$ in some
+presentation --- and the last of those is the original problem, not a mechanism for it. That
+three-way summary is itself ASSESSED, not a theorem that no other mechanism exists.
+\item \emph{Rank thresholds of the higher differentials at $N=6,7,8$, in the range
+$2\le j\le N-4$} (Ruling~\ref{rul:scope}). The first differential is settled
+(Theorem~\ref{thm:thresh678}). What is missing for the rest is a \emph{padding-side ceiling} on
+$\rank d_j^{(k)}$; without it, the determinant floors a pilot could produce would give only
+MEASURED comparisons. One theory slot, paragraph-first, is the prerequisite of any computation
+here.
+\item \emph{The status of the length-restriction lemma at the positive control's base rung}
+(Theorem~\ref{thm:ladder}). Settled: LMR's read-status for this use is PRIMARY, and the
+record's own reduction from $N=9$ to $N=7$, at $\ell(\lambda)=7$, is PROVED (B25-05's Lemma~R,
+reviewed in B25-10 \S2). It carries the \emph{sign} of the programme's only
+positive result (GAPS~G-37, closed).
+\item \emph{The $\bQ$ form of the five-row identity} (Theorem~\ref{thm:identity}).
+\item \emph{Ballico 1995} (Theorem~\ref{thm:rhoZ}). Reading it, or a literature-free proof of
+the singular-locus Lemma~3.3, would discharge C3.
+\item \emph{The length-$\le5$ form of arc exactness} (Theorem~\ref{thm:exactness}).
+\item \emph{$N=16$ beyond the stated gradings}: $d_2$ at $k\ge9$ and $d_j$ for $j\ge3$. These are
+sized, not priced in blocks.
+\end{enumerate}
+
+\subsection*{Acknowledgement of method}
+Every number in this paper was computed, certified or reviewed in the programme's committed
+packets. This paper computed nothing. Where a result has one lineage, the provenance line says
+so. Where a label is CONDITIONAL, the condition is in the same line.
+
+%==============================================================================================
+\begin{thebibliography}{99}
+
+\item[] \textbf{PRIMARY} (the primary text was read, and the record names the file and hash)
+
+\bibitem{Dimca13} A.~Dimca, \emph{Syzygies of Jacobian ideals and defects of linear systems},
+Bull. Math. Soc. Sci. Math. Roumanie \textbf{56(104)} (2013), 191--203; arXiv:1210.1795v4.
+[PRIMARY at statement level: PDF sha256 \texttt{20b96f58\dots}; Remarks~3.5--3.6 read (B21-10
+R17, via the arXiv HTML rendering); Theorem~3.1 used by B22-10 S18.]
+
+\bibitem{EH} Eisenbud, Harris, \emph{Vector spaces of matrices of low rank}, Adv. Math.
+\textbf{70} (1988), 135--155. [PRIMARY at statement level: scan sha256 \texttt{6b10d8fe\dots},
+pp.~135--141 transcribed; the proofs in \S3 are unread by anyone (B20-10 R11, honest negative~2).]
+
+\bibitem{LLV} ``LLV'', arXiv:2303.09028v3. [PRIMARY: PDF sha256 \texttt{67b1701f\dots}; Theorem~2,
+Corollary~3.1, Proposition~1.1 and the table row $F_1$ read in the text extraction (B20-10 R13).
+Full bibliographic data are not on the record (GAPS G-25).]
+
+\bibitem{Segal} E.~Segal, \emph{A short guide to GKZ}, arXiv:2412.14748v1 (2024). [PRIMARY:
+sha256 \texttt{8c8d9d05\dots}, read in full by two packets; not load-bearing (B20-10 \S4).]
+
+\bibitem{Landsberg13} J.~M.~Landsberg, \emph{Geometric complexity theory: an introduction for
+geometers}, arXiv:1305.7387v3. [PRIMARY, via the ar5iv rendering, read by B23-06 (PDF v3 sha256
+\texttt{cdcaaab9\dots}) and independently re-fetched by B23-10 (\S5.3). \S2 is quoted for
+``$5\le\overline{dc}(\per_3)\le dc(\per_3)\le7$'' and ``Problem 2.4'', and for the polynomials
+$P_{\Lambda,m}$ with $\overline{dc}<dc$. Honest negative carried from B23-10: the rendering, not
+the PDF bytes, was read; the PDF hash pins the version only.]
+
+\item[] \textbf{SECONDARY} (quoted through a programme note or another text; not read in the primary)
+
+\bibitem{Fulton} W.~Fulton, refined B\'ezout inequality: \emph{Introduction to Intersection
+Theory in Algebraic Geometry}, CBMS Regional Conf. Ser. Math. \textbf{54}, AMS, 1984, Prop.~2.3;
+also cited as \emph{Intersection Theory}, 2nd ed., Springer, 1998, Example~8.4.6. [SECONDARY only,
+via a hashed quotation; Example~8.4.6 numbering not confirmed (B18-01 R2; B20-10 R14).]
+
+\bibitem{GN} T.~H.~Gulliksen, O.~G.~Neg\aa rd, \emph{Un complexe r\'esolvant pour certains
+id\'eaux d\'eterminantiels}, C. R. Acad. Sci. Paris \textbf{274} (1972), 16--18. [SECONDARY, via the
+onset note (B20-10 R15).]
+
+\bibitem{Kleiman} S.~L.~Kleiman, \emph{The transversality of a general translate}, Compositio
+Math. \textbf{28} (1974), 287--297. [SECONDARY, via the onset note (B20-10 R15).]
+
+\bibitem{Teissier} Teissier, class formula for hypersurfaces with isolated singularities.
+[SECONDARY/UNREAD; illustrative only, not load-bearing (B22-02 L9). Bibliographic data not on the
+record.]
+
+\item[] \textbf{UNREAD-CLASSICAL} (stated in standard sources; the citation is a convenience)
+
+\bibitem{BH} Bruns, Herzog, \emph{Cohen--Macaulay Rings}, Cambridge Stud. Adv. Math.
+\textbf{39}, Cambridge Univ. Press, 1993. [Cor.~2.1.4 (T2): UNREAD-CLASSICAL, condition KEPT
+(B21-10 R15). Prop.~1.5.12: UNREAD-CLASSICAL, fact proved independently (B21-10 R16). Thm.~1.6.17
+(T1): UNREAD, condition LIFTED for the vanishing half (B21-10 R14); its nonvanishing half, and the
+number 1.6.16 cited by Dimca, are listed under UNREAD-SPECIALIST below.]
+
+\item[] Also UNREAD-CLASSICAL, with no specific text cited: Hilbert--Mumford criterion;
+Bertini; Cramer's rule and Pl\"ucker coordinates; the plethysm/Kostka row bound; the Cauchy
+decomposition; Pl\"ucker generation (FFT for $\SL_5$); FFT for $\SL_3$; complete reducibility in
+characteristic~$0$; Jacobi--Trudi; the Weyl character formula (B22-02 \S5; B22-10 \S2.4).
+
+\item[] \textbf{UNREAD-SPECIALIST} (unread; a claim resting on it is CONDITIONAL)
+
+\bibitem{Ballico} Ballico, \emph{Vector spaces of matrices of low rank and vector bundles on
+projective spaces: an addendum to a paper by Eisenbud and Harris}, Beitr. Algebra Geom. \textbf{36}
+(1995), 119--122. [UNREAD by anyone after three fetch routes (B20-10 R12); UNREAD-SPECIALIST
+(B21-10 G14$'$). Initials omitted where the record does not carry them (GAPS G-25).]
+
+\bibitem{BH16} Bruns, Herzog, \emph{op.\ cit.}, Thm.~1.6.16 (cited in Dimca's Remark~3.6)
+and the nonvanishing half of Thm.~1.6.17. [Neither number verified by anyone; unreconciled
+(B21-10 R17). Only Corollary~\ref{cor:noreversal}'s last sentence depends on the nonvanishing
+half.]
+
+\bibitem{LMR} J.~M.~Landsberg, L.~Manivel, N.~Ressayre, \emph{Hypersurfaces with degenerate duals
+and the geometric complexity theory program}, Comment. Math. Helv. \textbf{88} (2013), 469--484;
+arXiv:1004.4802v1. [Three distinct uses, each with its own read-status printed at its
+own point of use. (i) \emph{Theorem~1.0.1}, $\overline{dc}(\per_m)\ge m^2/2$: \textbf{PRIMARY}
+(B23-06, via the ar5iv rendering; PDF v1 sha256 \texttt{cfc28275\dots}), used for the frontier of
+Lemma~\ref{lem:blindn}. (ii) The dual-defect statistic of Lemma~\ref{lem:window}:
+UNREAD-SPECIALIST and \emph{not} load-bearing, since that lemma is self-contained (B22-02 \S5).
+(iii) The base-rung lower bound $i_{\det}(12)\ge1$ in Theorem~\ref{thm:ladder}:
+\textbf{PRIMARY} (B24-02b @ \cm{5a97317e}: PDF v1 re-fetched, sha256 \texttt{cfc28275\dots},
+identical to the recorded hash, v1 the only version; text read via ar5iv; Theorem~2.3.1, \S3.1
+with Theorem~3.1.1, and \S3.2 with its printed $n=3$ instance; statements read, proofs not
+audited), and load-bearing for the sign. Cite Theorem~2.3.1 with \S\S3.1--3.2 for this cell,
+\emph{never} Theorem~1.0.2, whose printed $\omega_1$ coefficient and degree are halved. The
+transfer from LMR's $\bC^9$ to the record's $\bC^7$ is the record's own length-restriction lemma
+(PROVED; B25-10 \S2), not LMR's.]
+
+\bibitem{CG} Clemens, Griffiths, intermediate Jacobian of the cubic threefold.
+[UNREAD-SPECIALIST, a non-candidate, not load-bearing (B22-02 \S5). Bibliographic data not on the
+record.]
+
+\bibitem{Paper1} S.~Sethuraman, \emph{Conductors of orbit closures, and the fundamental invariant
+of the $3\times3$ determinant} (paper~1 of this programme). [The ledger records the
+$\delta_0$ bracket's source as ``paper~1'', UNREAD (B22-12 \S3).]
+
+\end{thebibliography}
+
+\end{document}
