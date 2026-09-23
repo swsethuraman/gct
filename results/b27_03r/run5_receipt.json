@@ -1,0 +1,37 @@
+{
+  "run": 5,
+  "command": [
+    "C:\\Users\\swami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\analysis\\b27_03r_manage.py",
+    "child",
+    "C:\\Users\\swami\\AppData\\Local\\Temp\\r27_03_replay_kxrp07hc",
+    "rays",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\rays_run5.json"
+  ],
+  "equivalent_producer_command": "python analysis/b27_03_rays.py C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\rays_run5.json",
+  "inputs": [
+    {
+      "path": "analysis/b27_03_rays.py",
+      "sha256": "88fda4ab517fc03d2621b983533a23f7d0108a4d21d3b23632981340fb7d153c",
+      "bytes": 1520
+    },
+    {
+      "path": "analysis/b27_03_kernel_lib.py",
+      "sha256": "b868eaf593d3b6a9cf2c8978a94df2159b69a2d759e1b0d2828007f95e6a4002",
+      "bytes": 4053
+    }
+  ],
+  "wall_seconds": 30.509023,
+  "limit_seconds": 60,
+  "memory_limit_bytes": 536870912,
+  "peak_job_memory_bytes": 88084480,
+  "exit_code": 0,
+  "timed_out": false,
+  "output": "results\\b27_03r\\replays\\rays_run5.json",
+  "output_sha256": "bcb0230fc1be48f046add9b307d8f77f9aeec49529e4769c24ae2aa18116ff87",
+  "producer_output_sha256": "784606b0fb8b06d93b4c478fa8d594ce8f668b1f1201a92480aaabafca7fc9e9",
+  "raw_output_matches": false,
+  "matches_ignoring_wall_s": true,
+  "log_sha256": "499687cee5216ca85a16735494fda988f3e2755a2c98a7e532d17da2dcdd2b8f"
+}

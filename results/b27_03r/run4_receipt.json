@@ -1,0 +1,37 @@
+{
+  "run": 4,
+  "command": [
+    "C:\\Users\\swami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\analysis\\b27_03r_manage.py",
+    "child",
+    "C:\\Users\\swami\\AppData\\Local\\Temp\\r27_03_replay_jzqiti1h",
+    "dims",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\dims_run4.json"
+  ],
+  "equivalent_producer_command": "python analysis/b27_03_dims.py C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\dims_run4.json",
+  "inputs": [
+    {
+      "path": "analysis/b27_03_dims.py",
+      "sha256": "29f9e319ab02840ec948b73cb52e8378a48dbdaa6b420aa5a806849b30c20f56",
+      "bytes": 1607
+    },
+    {
+      "path": "analysis/b27_03_kernel_lib.py",
+      "sha256": "b868eaf593d3b6a9cf2c8978a94df2159b69a2d759e1b0d2828007f95e6a4002",
+      "bytes": 4053
+    }
+  ],
+  "wall_seconds": 1.117925,
+  "limit_seconds": 60,
+  "memory_limit_bytes": 536870912,
+  "peak_job_memory_bytes": 40992768,
+  "exit_code": 0,
+  "timed_out": false,
+  "output": "results\\b27_03r\\replays\\dims_run4.json",
+  "output_sha256": "5fc4f886539d59f7de2572acc924a711b3de7e084599cae11b47bfc8bd73b9e9",
+  "producer_output_sha256": "f73e4616269b7fb810ec15eb8d7ab26af61780adc6e2b9c5d626850ee2572c09",
+  "raw_output_matches": false,
+  "matches_ignoring_wall_s": true,
+  "log_sha256": "44095dba72ae7e8dbceaf000c375bbaf31de87ac51fd740797f17b380fc16c04"
+}
