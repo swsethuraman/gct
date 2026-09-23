@@ -1,0 +1,20 @@
+{
+  "slot": "A26-02R",
+  "bytes_policy": "Git hashes below name LF committed blobs; administrative brief hashes name raw working-copy bytes. External primary pages were read through web/PDF text extraction and are not byte-archived in this packet.",
+  "committed_inputs": [
+    {"path":"docs/b17_01_report.md","commit":"01c49022c2a222254884c8c96611dd0e9f302892","bytes":15609,"sha256":"8812eeef2b454cfa256c6fb0f304a29a9a85b052e4b1fcd8238b437eb7f6f2c0","label":"READ"},
+    {"path":"docs/b26_01_review.md","commit":"901b0fe656b941e41ba8e7a045611ba971e03329","bytes":18755,"sha256":"d9f3959bf7c2ccde2387b735a9879e6f3295792f8079434d886b7c418257efe4","label":"READ after independent first pass"},
+    {"path":"results/b26_01/source_ledger.json","commit":"901b0fe656b941e41ba8e7a045611ba971e03329","bytes":3270,"sha256":"e4b1c11355e081ff6af57353d646cd0ab96bda4484ba4086525d6d56ffcdb236","label":"READ after independent first pass"},
+    {"path":"docs/b25_10_review.md","commit":"42e7f4ba45e8bd1fda529de9ce116f64e7ac6be1","bytes":40991,"sha256":"0488ce1e90a6cd08158eb277dd482b783aa4c58cfd6cec744bd35d25b589477e","label":"READ sections 4.3 and 7.1 for record context only"}
+  ],
+  "primary_sources": [
+    {"title":"Rational and non-rational algebraic varieties: Lectures of Janos Kollar, by Karen E. Smith","version":"arXiv alg-geom/9707013v1","url":"https://arxiv.org/pdf/alg-geom/9707013v1","locator":"Definition 4.2; Theorem 5.3, Remark 5.3.1, proof and Theorem 5.4, printed pp. 34-37","label":"PRIMARY, original PDF text via web; weak rational-generic-fiber form used"},
+    {"title":"The Intermediate Jacobian of the Cubic Threefold, Clemens and Griffiths","url":"https://publications.ias.edu/sites/default/files/intermediatejacobian.pdf","locator":"Theorem 13.12, printed p. 350; Appendix B, pp. 352-353; Sections 7-9 for lines","label":"PRIMARY, original PDF text via web"},
+    {"title":"Rational surfaces and canonical dimension of PGL6, Colliot-Thelene, Karpenko and Merkurjev","version":"arXiv math/0611777v1","url":"https://arxiv.org/pdf/math/0611777v1","locator":"Theorem 2.3, printed p. 3","label":"PRIMARY, original PDF text via web"},
+    {"title":"Stacks Project, Bertini theorems","url":"https://stacks.math.columbia.edu/tag/0FD6","locator":"Lemma 33.47.3","label":"PRIMARY, theorem and proof read via project page"},
+    {"title":"Stacks Project, Proper morphisms","url":"https://stacks.math.columbia.edu/tag/01W6","locator":"Lemma 29.42.7","label":"PRIMARY, theorem and proof read via project page"}
+  ],
+  "hand_checks": ["generic incidence rationality over the fraction field and S3 open conditions", "curve through a boundary point meeting the good open", "vertical regularity from square-free special fiber", "line existence on a smooth complex cubic threefold", "non-ruledness and square-free product deduction"],
+  "unread_originals": ["Matsusaka 1968 Appendix 1; the needed weak form was read in Kollar-Smith", "Abhyankar original paper; Theorem 5.4 was read in Kollar-Smith"],
+  "independence_disclosure": "Earlier coordinator turns in this conversation exposed the reviewer to B26-01's intake and an excerpt. In this slot the full B17-01 committed report and primary statements were read before the full B26-01 committed review. Cross-model but not blind."
+}
