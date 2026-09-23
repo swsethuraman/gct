@@ -1,0 +1,58 @@
+{
+  "slot": "B26-10A",
+  "status": "UNCOMMITTED / REVIEWER ONLY",
+  "utc_start_first_tool_record_after_brief_reading": "2026-09-23T02:43:59Z",
+  "utc_preflight_completed": "2026-09-23T02:44:34Z",
+  "utc_incremental_checkpoint": "2026-09-23T02:46:01Z",
+  "utc_substantive_stop_and_early_final_checkpoint": "2026-09-23T02:54:01Z",
+  "elapsed_seconds_including_interleaved_administration": 602,
+  "checkpoint_30_minutes": "not reached; every item decided and substantive work stopped early",
+  "ceiling_minutes": 60,
+  "interruptions": [],
+  "deducted_seconds": 0,
+  "pilots": 0,
+  "mathematical_programs": 0,
+  "subagents": 0,
+  "other_sessions_contacted": 0,
+  "compute_lease": "none",
+  "administrative_operations": [
+    "read-only Git with command-scoped safe.directory; no persistent configuration changes",
+    "file inventory and SHA-256 hashing",
+    "public-source PDF retrieval; sandbox socket failure then approved normal-account retry",
+    "pypdf text extraction; UTF-8 retry after output-encoding failure",
+    "Poppler renders of source pages 4-6, inspected and then removed",
+    "Markdown report authoring and escape-format repair",
+    "JSON receipt/manifest generation and raw-byte verification"
+  ],
+  "prohibited_mutations_performed": [],
+  "limitations": "No computation or certificate replay; no LMR full-proof audit; no paper or ledger edit.",
+  "utc_packet_administrative_close": "2026-09-23T02:55:39Z",
+  "final_status": {
+    "branch": "b15-01-ci159",
+    "head": "65736d9f9b27ae508697c87f306f494760e87007",
+    "tracked_or_staged_changes": 0,
+    "counts": {
+      "default": {
+        "total_entries": 10385,
+        "slot_entries": 2,
+        "preexisting_entries": 10383
+      },
+      "all_files": {
+        "total_entries": 20768,
+        "slot_entries": 7,
+        "preexisting_entries": 20761
+      }
+    },
+    "slot_untracked_paths": [
+      "docs/b26_10a_review.md",
+      "results/b26_10a/INPUT_BINDINGS.json",
+      "results/b26_10a/LMR_1004.4802v1.pdf",
+      "results/b26_10a/MANIFEST.json",
+      "results/b26_10a/PROPOSED_DELIVERY_PATHS.txt",
+      "results/b26_10a/admin_receipts.py",
+      "results/b26_10a/resource_receipt.json"
+    ]
+  },
+  "verified_payloads": 6,
+  "delivery_paths": 7
+}
