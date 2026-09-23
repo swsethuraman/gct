@@ -213,3 +213,26 @@ Rows A–K above are the unchanged B24-06 table. Label changes in the repaired a
 | J4 | Δ ∈ [−4, −2] CERTIFIED conditional on ADOPTED dim N13 = 73 |
 | J5 | LMR uses cite Thm 1.0.1 / 2.3.1 / 3.1.1 / §3.2, PRIMARY; Thm 1.0.2 not used |
 | C4 / K5 | `degree8_global` stated for every r, δ ≤ 8 (single reconciliation lineage) |
+
+---
+
+## N. B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only)
+
+Rows A–M above are kept as written. Sections A–L are B24-06's table at `82633a60`; §M is
+B25-02's. This section records the state of the after-state `paper/det4-onset.tex` at
+`79b68dcf7597e3b0efa63984327ad9f34e5bf74d` (raw CRLF sha256 `065f8799…`, blob `60bc18a4…`). It
+upgrades no label. Where it disagrees with §M, §M is historical.
+
+| row | current state at `79b68dcf` | basis |
+|---|---|---|
+| J1 (`n = 3` control) | **PROVED** for the unpadded `n = 3` cell `λ = (19,7,2^5)`, `δ = 12`, `r = 7`, with `mult_det = 5`, `mult_per = 6`, `Δ = +1`. §M's "PROVED modulo (★)" is superseded. The premise the paper calls `(⋆)` is the **length-restriction lemma** (`N = 9 → 7`, `isotypic_rank.md` Prop. 5 with B25-05 Lemma R), which is PROVED. The TeX already says "proved; its one premise … is itself proved" (source L1003, L1020–1021). | B25-10 §2.4 and §10, `42e7f4ba:docs/b25_10_review.md` (raw sha256 `0488ce1e…`): "C45 becomes PROVED"; applied to the TeX by PART 17b (`results/b25_02/EDITS_SUPPLEMENT_20260922.md` @ `79b68dcf`, item (ii)) |
+| J1, scope | The PROVED label covers the **base rung `δ = 12` only**. Paper 2 claims nothing above it. Paper 3's ladder statement (`D = +1` for every `δ ≥ 12`) additionally rests on s73's Proposition S and Lemma L, which **keep their s73 lineage** (producer; no independent reviewer slot). Keep the two apart in any row that cites Paper 3 C45. | B25-10 §2.4, bullet "Scope of the upgrade" |
+| J1, name | "(★)" in this file names **two different objects**. In row E1 it is Theorem 5.1, the **reducible criterion** (TeX label `thm:star`; the (★) of `stabiliser_reduction.md` §4.2). In §M row J1 it is the **length-restriction lemma**. B25-10 §2.4 endorses renaming only the latter, at every point of use. A proposed TeX diff for the three `$(\star)$` occurrences is `results/b26_05/proposed/paper2_length_restriction_rename.*.diff`. Row E1's name is unaffected. | B25-10 §2.4, bullet "Renaming"; source L429, L449, L1003, L1020, L1061 |
+| J3–J5 (`n = 4`, length nine) | **Unchanged: the `n = 4` sixteen-to-nine transfer stays FLAGGED** (G-P2-19). The TeX (L1058–1063) says "the `n = 3` case is proved; the `n = 4` case is not yet checked, so this transfer is flagged, not established". B26-04 is examining that check; nothing from it has been independently accepted, and this row does not anticipate it. | B25-10 §2.4, last bullet; §4.4, row "`n = 4` transfer" |
+| J4 | `Δ ∈ [−4, −2]`, CERTIFIED conditional on the ADOPTED `dim N₁₃ = 73`, as §M. The uncommitted `[−4, −3]` is not used. | source L1100–1106 |
+| F2 (Thm 6.2) | As §M: the theorem is the **determinant part** (PROVED). The closure statement `R_5 ⊄ D^det_5` is carried as ADOPTED, now worded "a separate, unpublished result of this programme, carried as ADOPTED on the programme's record" (source L538–542), cited to `Companion2`. It uses one smooth witness `s_5·C*` only (B23-03's narrow reading of B17-01). B17-01's general form is unreviewed and is not cited. The requirement that `Companion2` actually contain the witness is an open [AUTHOR]/locator item. | B25-10 §4.3; PART 17b item (i) |
+| A4 / G1 (cap) | As §M: PROVED modulo Kleiman (SECONDARY), Dimca Thm 3.1 (PRIMARY, statement level) and Gulliksen–Negård (SECONDARY), all ADOPTED. This agrees with Paper 3 C11 at `0a8029bb`. | source L68–71, L180–181, L653–655 |
+| §L, compile | **Superseded.** The after-state bytes have been compiled: integrator build of `065f8799…` (LF rendering `c265937d…`) with pdfTeX 3.141592653-2.6-1.40.25, 0 errors, 0 undefined references or citations, 15 pages. The PDF and log are uncommitted artefacts. | `build_evidence_20260922_close/BUILD_NOTE.md`, `SHA256SUMS.txt` (`c4c56d0d…`, 12/12 entries verified by B26-05) |
+| provenance blocks at the top of this file | Historical (HEAD `82633a60`, sha256 `7c2bc736…`). The current HEAD of branch `b24-06-paper2` is `79b68dcf`. | `git rev-parse` |
+
+Not re-assessed here: rows A–L beyond those named, and B25-02's own dispositions.

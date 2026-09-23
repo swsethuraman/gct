@@ -533,13 +533,18 @@ count $31<35$; no highest-weight vector enters.
 The theorem is a statement about actual determinants.  It does not by itself
 give $\Rr_5\not\subseteq\Ddet_5$, because $\Ddet_5$ is a closure: a point of
 $\Ddet_5\cap W$ may be a limit of determinants that is not itself a
-determinant, and no classification of such boundary points is available here
-(Remark~\ref{rem:noncontain-status}).  The closure statement
-$\Rr_5\not\subseteq\Ddet_5$ is carried in this paper as \emph{adopted}: it is a
-separate, unpublished result of this programme, carried as ADOPTED on the programme's
-record, that exhibits a padded smooth cubic threefold
-$s_5\cdot C^{\ast}$ outside $\Ddet_5$ \cite{Companion2}; it is not a
-consequence of Theorem~\ref{thm:noncontain}.  Given it, together with the
+determinant, and no classification of such boundary points with a singular or
+reducible cubic factor is available here (Remark~\ref{rem:noncontain-status}).
+The closure statement rests instead on a separate result of this programme
+\cite{Companion2}: for every smooth cubic $C\in\Sym^{3}\bC^{5}$ and every
+nonzero linear form $\ell$,
+\[
+  \ell\cdot C\notin\Ddet_5 ;
+\]
+in particular $\Rr_5\not\subseteq\Ddet_5$.  It is not a consequence of
+Theorem~\ref{thm:noncontain}.  Its scope is geometric non-containment only: no
+equation of $\Ddet_5$ is known to be nonzero on $\Rr_5$, and nothing is claimed
+for $\ell\cdot C$ with $C$ singular or reducible.  Given it, together with the
 dimension gap $39<50$ of the codimension table, the two varieties differ in
 both directions at $r=5$ --- yet, as \S\ref{sec:negative} records, neither
 difference has yet been made to produce a weight with $\Delta>0$.
@@ -629,9 +634,11 @@ boundary
 $(\Ddet_5\setminus D^{\det,\circ}_5)\cap\Rr_5$, where $D^{\det,\circ}_5$ is the set
 of actual determinants.  Any component of that boundary intersection has
 dimension at least $50+39-70=19$; nothing here excludes one \cite{Companion3}.  So the bound on
-$\dim(\Ddet_5\cap W)$ is established for the determinant part only, and the
-closure statement $\Rr_5\not\subseteq\Ddet_5$ is used in this paper only as
-the adopted statement recorded after Theorem~\ref{thm:noncontain}.
+$\dim(\Ddet_5\cap W)$ is established for the determinant part only.  The
+closure statement $\Rr_5\not\subseteq\Ddet_5$ rests on the smooth-cubic result
+recorded after Theorem~\ref{thm:noncontain} \cite{Companion2}, which excludes
+every point $\ell\cdot C$ with $C$ smooth from $\Ddet_5$; the boundary points
+$\ell\cdot C$ with $C$ singular or reducible remain unclassified.
 \end{remark}
 
 \section{The cap theorem}\label{sec:cap}
@@ -1000,7 +1007,7 @@ ambient space.  We find
   \mult\nolimits_{\det}=5,\qquad \mult\nolimits_{\per}=6=a ,\qquad
   \Delta = \mult\nolimits_{\per}-\mult\nolimits_{\det} = +1 ,
 \]
-proved; its one premise beyond the measurements, $(\star)$ below, is itself proved.  The halves are rigorous for
+proved; its one premise beyond the measurements, the length-restriction lemma below, is itself proved.  The halves are rigorous for
 different reasons, and it is worth separating them.  $\mult_{\per}=a$ was
 measured as a rank modulo $p$ at both house primes, and
 $\rank_p\le\rank_\bQ\le a$ forces equality over $\bQ$; there is no
@@ -1016,8 +1023,8 @@ $\overline{\GL_9\cdot\det_3}$ in degree $12$ (the example printed in
 $i_{\det}\ge1$ in nine variables, and $\mult_{\det}\le5$ once that copy is
 transferred to the seven-variable model $\Ddet_7$.  The transfer is the
 programme's isotypic restriction from nine variables to seven, valid for
-$\ell(\lambda)\le7$ and used here at its boundary $\ell(\lambda)=7$; call it
-$(\star)$.  It is not a statement of \cite{LMR}; it is proved in this programme, so the conclusion
+$\ell(\lambda)\le7$ and used here at its boundary $\ell(\lambda)=7$; this is the
+programme's length-restriction lemma.  It is not a statement of \cite{LMR}; it is proved in this programme, so the conclusion
 $\mult_{\det}=5$, hence $\Delta=+1$, is proved.  (We use only
 the half of the sentence of \cite[\S3.2]{LMR} that is proved there,
 $i_{\det}\ge1$; the bound $i_{\det}\le1$ comes from the measured rank.)  Both
@@ -1058,9 +1065,12 @@ degree $(k+2)(d-1)$, and by \cite[Thm.~3.1.1]{LMR} $[\det_n]$ lies on
 $\mathrm{Dual}_{2n-2,n,n^{2}}$; at $n=d=4$, $k=6$, $N=16$ this is the weight
 $48\omega_1+15\omega_2+2\omega_9=(65,17,2^{7})$ in degree $24$, and the
 length reduction \eqref{eq:lengthred} carries the copy from sixteen variables to
-$\Ddet_9$.  That transfer is the $n=4$ analogue of the premise $(\star)$ of the
-$n=3$ control above: the $n=3$ case is proved; the $n=4$ case is not yet checked, so
-this transfer is flagged, not established.  (We do not
+$\Ddet_9$.  Here $\Ddet_9$ is exactly the closure of the restrictions of
+$\overline{\GL_{16}\cdot\det_4}$ to a $9$-plane, and the length-restriction lemma holds at
+$(d,N,r)=(4,16,9)$ with the same proof as at $n=3$: weights of coefficient functionals are
+non-negative, the raising operators $E_{i,i+1}$ with $i\ge9$ kill every restricted coefficient,
+independent $9$-tuples are dense in $M_4^{9}$, and complete reducibility holds in characteristic zero.
+So the transfer is proved, and $i_{\det}\ge1$ on $\Ddet_9$ rests only on \cite{LMR}.  (We do not
 use \cite[Thm.~1.0.2]{LMR}, whose printed coefficient of $\omega_1$ and degree
 are both half of these values.)  Equivalently, in the
 room-one form, the equation is born exactly when the Schur complement

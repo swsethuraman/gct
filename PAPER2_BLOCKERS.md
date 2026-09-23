@@ -433,3 +433,21 @@ New findings recorded by B25-02: N1 Prop. 6.1's inequality was reversed; N2 "max
 the abstract; N3 Thm 6.2 "unconditional" not supported for the closure; N4 Lemma 3.3 scope beyond
 n = 4; N5 "Prop. C" locator nonexistent; N6 Thm 7.3 already sketched in Paper 1 Q 8.5 remarks.
 **Not ready**: uncompiled (no toolchain), plus report §6.
+
+## 5. B27-04 editorial pass (2026-09-23 UTC; edits accepted by the author on 2026-09-23)
+
+Sections 0–4 are kept as written. This section records the TeX changes made on branch
+`b27-04-p2` (setup commit `e3823bd5`, base `721d54a2`). Line numbers are after-state. Full
+before/after text: `docs/b27_04_report.md`.
+
+| blocker / gap | disposition after B27-04 |
+|---|---|
+| B5, C45 premise | The three `$(\star)$` uses for the length-restriction lemma (L1003, L1020, L1061 before) now read "the length-restriction lemma" (B26-05 diff). `thm:star` (Thm 5.1, the reducible criterion) is unchanged. |
+| G-P2-19, the `n = 4` sixteen-to-nine transfer | **Flag removed** at the length-nine paragraph (L1061–1063 before), replaced by B26-04 §7's proposed sentence (`65736d9f`), accepted by B26-10A (`21816b3c`). Every other use of `eq:lengthred` is unchanged, pending R27-K4. |
+| B10 / G-P2-18, closure statement `R_5 ⊄ D^det_5` | **No longer carried as ADOPTED on one witness.** The TeX now states the general smooth-cubic result, `ℓ·C ∉ D^det_5` for every smooth cubic `C` and every `ℓ ≠ 0` (B17-01; C1 closed by the user's ruling), cited as a result of this programme through `Companion2`. Its scope is stated as geometric non-containment only; no equation of `D^det_5` is known to be nonzero on `R_5`. |
+| G-A1, the boundary `(D45 \ D45°) ∩ P5` | **Closed for smooth cubic factors only.** Remains **OPEN** for `ℓ·C` with `C` singular or reducible. Remark 6.3's last sentence now says so. |
+| B14 / G-P2-SUB | Unchanged. `Companion2` must actually contain the general smooth-cubic statement; [AUTHOR]/locator item carried forward. |
+
+Not changed by this pass: `PAPER2_GAPS.md` (G-P2-18 and G-P2-19 entries there describe the
+before-state), all other blockers, and every other use of `eq:lengthred`. **Not ready**; not
+compiled here (no TeX installed), the integrator compiles.
