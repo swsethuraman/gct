@@ -1,0 +1,101 @@
+{
+ "slot": "B27-03",
+ "branch": "b27-03",
+ "expected_head": "fcff7eeaa491aab4a3b1d1ba1161c24a89dae818",
+ "brief_raw_sha256": {
+  "B27_COMMON.md": "891e3ca872bc795b6f943ac89f55112573803f006e0208940dd6cad1f750d6ee",
+  "B27-03.md": "b48370b0c99f96e57d2ebe633cb8852877cbd78c8d90455fc4948ebb663e1579",
+  "BATCH27_BOARD.md": "b0bc2501aba62d49b91862d821232ac1b9904480057a8dcdb4cbc03fbd86efec"
+ },
+ "brief_hashes_match_board": true,
+ "b27_01_remote_tip_at_check": "6dea55ec926c1618cc60ad71209795528705bf61 (setup commit; no T*)",
+ "committed_inputs": [
+  {
+   "commit": "ab4f5271",
+   "path": "results/a25_10/NEXT_ACTION.md",
+   "blob": "cef162aa425bc4136adf5beab2eebbc2c30c3fa5",
+   "raw_sha256": "af774505871c8c58ba83bd7538aec8d019ff93d6ffd14f48bbeb3e3fcda79d69",
+   "use": "reopening condition (READ)"
+  },
+  {
+   "commit": "eb53b97c",
+   "path": "docs/a25_05_report.md",
+   "blob": "b212846dbac79885fea291a31d7516aaf0cbec8b",
+   "raw_sha256": "c254bbf71e6f255558edc400a55b5973077f95b8172a66fd848952cfb3458671",
+   "use": "structural map, K5, closure(D+K5) (READ)"
+  },
+  {
+   "commit": "eb53b97c",
+   "path": "results/a25_05/FIVE_CENTER_REDUCTION.md",
+   "blob": "4c4c7a23e01acf00948f76898af35c596374194d",
+   "raw_sha256": "02b3e7ab24c099a92c3ce08929f35fc201d120d5247dad2554f7c8305fc52542",
+   "use": "closed saturation, K5 determinants (READ)"
+  },
+  {
+   "commit": "eb53b97c",
+   "path": "results/a25_05/STRUCTURAL_MAP.md",
+   "blob": "e162212da316a512e264bf936587f83e39ece893",
+   "raw_sha256": "eb810d497c9798ab388fffa698d9ce56bc304a2cbed6bc31397d1fd55ebc8124",
+   "use": "E, pi, GL5 transport (READ)"
+  },
+  {
+   "commit": "eb53b97c",
+   "path": "results/a25_05/PADDING_FIBERS.md",
+   "blob": "99d8a74b764a1c24f5b827a5866733b70959d032",
+   "raw_sha256": "4705c54233427fa0a16984d0c25754221e854d7c52f8a07f0d192c0c10d11a80",
+   "use": "fixed-factor kernel (READ; re-derived HAND)"
+  },
+  {
+   "commit": "eb53b97c",
+   "path": "results/a25_05/NEXT_CERTIFICATE.md",
+   "blob": "68cf59d3e9e6a2ea9c04b8d810d1210d39aea7c9",
+   "raw_sha256": "c81b303da3b064aef00c6d613a6da472d538f4581059568f63f8211664c6d0db",
+   "use": "Q_D/Q_P kernel formulation (READ)"
+  },
+  {
+   "commit": "7464a2bd",
+   "path": "docs/a26_01_report.md",
+   "blob": "a6082fc5561d373479380dd555b8fd5a4ab815ee",
+   "raw_sha256": "747934648cdaee66749516b9cc0584ee4a07a8b0a5d1966d4eece4ba82e41635",
+   "use": "family S_lit, named H (READ)"
+  },
+  {
+   "commit": "7464a2bd",
+   "path": "results/a26_01/PROOF.md",
+   "blob": "50266c937c4e10d370035d45e06b74dd491149c1",
+   "raw_sha256": "479d644595df05fd00750d359aaef8cebc4e62ff8b75bcdb067eba033a4f48ed",
+   "use": "identity (C) (READ; six terms re-expanded HAND)"
+  },
+  {
+   "commit": "7464a2bd",
+   "path": "results/a26_01/EXCLUSIONS.md",
+   "blob": "f82fbd2ea33ddf09e019a948b94e8d70efdee305",
+   "raw_sha256": "834c058a245be1e022ea852753572bc26e2c8bbcb261330de854bf2e1de0da28",
+   "use": "onset floor status ADOPTED (READ)"
+  },
+  {
+   "commit": "fcff7eea",
+   "path": "docs/det_onset.md",
+   "blob": "404d425aa673eac0007fc63756d2dbdab96c0200",
+   "raw_sha256": "da9f8f73f80128d8c9811b821abc6defd024ee7d2329db933692106eff4097a3",
+   "use": "onset window [8,405], delta=8 record (READ)"
+  },
+  {
+   "commit": "fcff7eea",
+   "path": "docs/post_b19_20260917/claude_gkz_incidence_20260917/scope_corrigendum/CORRIGENDUM.md",
+   "blob": "25d8bf6b51997af81a13903f8ec69f97b70186ff",
+   "raw_sha256": "883916018ec1ddea24c0ad2b2546537aeac37752c62c421a7e22d5d5fd14d37f",
+   "use": "D45 floor not audited (READ)"
+  },
+  {
+   "commit": "fcff7eea",
+   "path": "docs/balanced_corner.md",
+   "blob": "89ed8efde4aa51c541883d2068cb290f9ad5055f",
+   "raw_sha256": "655ee516c0efb18dfb0049b256545513f184bf321c1b9931f7613966a68979b7",
+   "use": "HWV pipeline cost record (READ)"
+  }
+ ],
+ "not_read": [
+  "B17-01 packet itself (smooth-cubic exclusion cited from B27_COMMON standing conventions only)"
+ ]
+}
