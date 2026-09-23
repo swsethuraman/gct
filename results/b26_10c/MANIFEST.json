@@ -1,0 +1,21 @@
+{
+  "schema": "b26-10c-review-packet/1",
+  "slot": "B26-10C",
+  "status": "UNCOMMITTED / REVIEWER ONLY",
+  "reviewer_lineage": "Claude (Opus 5.5), cross-lineage review of Astra packets",
+  "worktree": "work/batch15_workers/B15-10",
+  "branch": "b15-10-portable-witness",
+  "head": "901b0fe656b941e41ba8e7a045611ba971e03329",
+  "reviewed": {"A26-01": "7464a2bd02c9740db55d15ac43571cca74acea5f", "A26-03": "f7967d17935d6256e7744f6457b45a3787b6940f"},
+  "verdicts": {"A26-01": "ACCEPT (Theorem A scope)", "A26-03": "ACCEPT (outcome 3 rejection, one redesign)", "integrator_general_reading": "REPAIR"},
+  "mathematical_programs": 0,
+  "pilots": 0,
+  "start_utc": "2026-09-23T02:50:37Z",
+  "math_stop_utc": "2026-09-23T02:55:53Z",
+  "files": [
+    {"path": "docs/b26_10c_review.md", "bytes": 24765, "cr_bytes": 0, "sha256": "3b64b41f2c24d8372a713c010e441e1c235e9203938fd573d6d0de8ba85a9b73"},
+    {"path": "results/b26_10c/INPUT_BINDINGS.md", "bytes": 4337, "cr_bytes": 0, "sha256": "b12ba1ebb9564d53ccd9332192fe79d2a8bd77f59db07cdd575e18b0e30bf2de"},
+    {"path": "results/b26_10c/PROPOSED_DELIVERY_PATHS.txt", "bytes": 131, "cr_bytes": 0, "sha256": "b369287237e17fddcfa00d77e5f847be8de0c8f59643b2d845b1179805d77f8f"}
+  ],
+  "excludes": ["results/b26_10c/MANIFEST.json"]
+}
