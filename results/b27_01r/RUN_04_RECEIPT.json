@@ -1,0 +1,39 @@
+{
+  "run": 4,
+  "started_utc": "2026-09-23T04:20:39Z",
+  "command": [
+    "python",
+    "-B",
+    "analysis/b27_01r_ranks.py"
+  ],
+  "interpreter_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+  "inputs": [
+    {
+      "path": "analysis/b27_01r_ranks.py",
+      "sha256": "bd7e1161431f8925e5e933e51c112fe0c30609eafda133e101adfccb86954740"
+    },
+    {
+      "path": "analysis/b27_01r_cap.py",
+      "sha256": "9a722297f35f17d5d2f3bfd3bed07b5acadb927e74a55e6c869a9671fdd3e9b6"
+    },
+    {
+      "path": "TIP:results/b27_01/T_STAR.json",
+      "sha256": "671e786894d2a37f13a494968ad6de40e92c2c2b4d1d030204aad5f72ee49bd2"
+    },
+    {
+      "path": "TIP:results/b27_01/TANGENT_CERTIFICATE.json",
+      "sha256": "6e39942cceaba93e63cb4ba52374016c3381edde15547fcde9577444587da1b8"
+    }
+  ],
+  "seconds_limit": 60,
+  "memory_limit_bytes": 512000000,
+  "outcome": "PASS",
+  "wall_seconds": 5.461,
+  "peak_job_memory_bytes": 110243840,
+  "outputs": [
+    {
+      "path": "results/b27_01r/RANKS.json",
+      "sha256": "c8b75729483808344ddb62e944e7d8744f4501804bbbfb0ca485238f284612ab"
+    }
+  ]
+}
