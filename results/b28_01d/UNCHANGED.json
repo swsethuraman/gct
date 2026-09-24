@@ -1,0 +1,25 @@
+{
+ "schema": "b28-01d-unchanged/1",
+ "rule": "byte-identical in ~/b28_01/frozen_c (results/b28_01c/frozen_c_hashes.txt), ~/b28_01/frozen_d (cmp) and, for sources, the committed analysis/ copies",
+ "unchanged": {
+  "b28_01c_driver.py": "f6fe04e239d28fa4ff89e8a103b4dd2b9b9f93ae146cbd3f64e0ec86ce49e23e",
+  "b28_01c_model.py": "73dbb5ac318cda4328659f95f6e26f6081241ee4ee029033498961f35dca4400",
+  "b28_01c_verify.py": "fcac55b4eca11330048ed3f6a1401d6dfdbbe8a1a185ae36991e618f6a5e2532",
+  "b28_01c_vfy.c": "5166db3b1ff07d23d3a4c51d9430de1a9808dff9d1e5d4d92b802a98904995f7",
+  "b28_01c_vfy.so": "a5e8399d1e78e285a5864098dbe43d68f618c331a03705bbcb9df4e4dfd60fe6",
+  "gate_rates_c.json": "665e9da1dd997b4318976c0a617d52f09f924f53e0fe2c451a7b0afce4787d1b"
+ },
+ "changed": {
+  "supervisor": {
+   "old": "b28_01c_supervise.py 772979a1e2c72c9f854c12d4ca3e0a708047ddfbdff10ca93fbd4603312a9b4e",
+   "new": "b28_01d_supervise.py af3b5aa285713e20633189288589953b715d3027cb75432b959f0a485a2f7258"
+  },
+  "launcher": {
+   "old": "b28_01c_cellA.sh 3e823c4d6366a9f9bb4f5f7b7e7e6cd6e35b13008b38d079ba5283b0cd104453",
+   "new": "b28_01d_cellA.sh 461a92de9be6189f2ee1f64af4eddceb292d2dcbf3ba38df337dcc2e985970e6"
+  }
+ },
+ "added": {
+  "controls": "b28_01d_controls.py 22ab35a6bbdcb75cf9746e7bc5688f78e8d2afbbf9fa4d4573fb4dcc59f8a856"
+ }
+}

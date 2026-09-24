@@ -1,0 +1,26 @@
+{
+ "schema": "b28-01d-resource-receipt/1",
+ "allowance": "control fixtures only, one aggregate scope, <=30 min, MemoryMax=8000000000, MemorySwapMax=0; no matrix work beyond B28-01c's registered small-cell supervisor control; no Cell A; no installs",
+ "registered_harness": {
+  "command": "systemd-run --user --scope -p MemoryMax=8000000000 -p MemorySwapMax=0 -p RuntimeMaxSec=1900 timeout 1800 python ~/b28_01/frozen_d/b28_01d_controls.py ~/b28_01/frozen_d ~/b28_01/out_d",
+  "utc": [
+   "2026-09-24T19:10:48Z",
+   "2026-09-24T19:11:35Z"
+  ],
+  "total_secs_monotonic": 47.122,
+  "result": "ALL EXPECTATIONS MET (8 steps)",
+  "scope": "scope_limits_receipt.txt",
+  "per_step": "out_d/controls_receipt.json"
+ },
+ "development_run": {
+  "what": "the same harness from ~/b28_01/d_dev (identical code; launcher path edited to d_dev) in a scope(8000000000, swap 0) timeout 600",
+  "utc": [
+   "2026-09-24T19:09:46Z",
+   "2026-09-24T19:10:33Z"
+  ],
+  "result": "ALL EXPECTATIONS MET; no stray process afterwards"
+ },
+ "stray_process_checks": "pgrep for the fixture children after both runs: none",
+ "total_compute_secs": "about 94 s across both scopes",
+ "cell_A": "not built, not started"
+}

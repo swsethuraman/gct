@@ -1,0 +1,9 @@
+sup_wall: rc=124 (expected 124) 3.1s ok=True {"resource_stop": {"reason": "wall", "detail": "aggregate monotonic limit 3.0 s reached during step sleeper"}, "elapsed": 3.004, "remaining": 0, "ok": true}
+sup_artifact: rc=125 (expected 125) 10.1s ok=True {"resource_stop": {"reason": "artifact", "detail": "output exceeded 10000000 bytes during step writer"}, "elapsed": 10.006, "remaining": 0, "ok": true}
+sup_ctl: rc=0 (expected 0) 1.4s ok=True {"steps": [["ctl_driver", 0], ["ctl_verify", 0]], "verdict": "FULL_RANK", "ok": true}
+fx_term_resistant: rc=124 (expected 124) 32.1s ok=True {"resource_stop": {"reason": "wall", "detail": "aggregate monotonic limit 2.0 s reached during step term_resistant"}, "elapsed": 32.062, "remaining": 0, "ok": true, "child_pid": 483, "child_alive_after_supervisor": false, "survivors_sigkilled": [483]}
+fx_fast_writer: rc=125 (expected 125) 0.1s ok=True {"resource_stop": {"reason": "artifact", "detail": "output 2048 bytes exceeds 1024 at the exit of step writer"}, "elapsed": 0.034, "remaining": 0, "ok": true, "artifact_bytes": 2048, "limit": 1024}
+fx_fast_writer_two_step: rc=125 (expected 125) 0.1s ok=True {"resource_stop": {"reason": "artifact", "detail": "output 2048 bytes exceeds 1024 at the exit of step writer"}, "elapsed": 0.035, "remaining": 0, "ok": true, "artifact_bytes": 2048, "limit": 1024, "marker_ran": false, "steps": 1}
+fx_stray_child: rc=0 (expected 0) 0.1s ok=True {"stray_pid": 493, "stray_alive_after_supervisor": false, "survivors_sigkilled": [493], "remaining": 0, "ok": true}
+launcher_preflight: rc=0 (expected 0) 0.2s ok=True 
+ALL EXPECTATIONS MET

@@ -1,0 +1,266 @@
+{
+ "schema": "b28-01d-controls-receipt/1",
+ "clock": "time.monotonic",
+ "total_secs": 47.122,
+ "all_expectations_met": true,
+ "frozen_d": {
+  "b28_01c_driver.py": "f6fe04e239d28fa4ff89e8a103b4dd2b9b9f93ae146cbd3f64e0ec86ce49e23e",
+  "b28_01c_model.py": "73dbb5ac318cda4328659f95f6e26f6081241ee4ee029033498961f35dca4400",
+  "b28_01c_verify.py": "fcac55b4eca11330048ed3f6a1401d6dfdbbe8a1a185ae36991e618f6a5e2532",
+  "b28_01c_vfy.c": "5166db3b1ff07d23d3a4c51d9430de1a9808dff9d1e5d4d92b802a98904995f7",
+  "b28_01c_vfy.so": "a5e8399d1e78e285a5864098dbe43d68f618c331a03705bbcb9df4e4dfd60fe6",
+  "b28_01d_cellA.sh": "461a92de9be6189f2ee1f64af4eddceb292d2dcbf3ba38df337dcc2e985970e6",
+  "b28_01d_controls.py": "22ab35a6bbdcb75cf9746e7bc5688f78e8d2afbbf9fa4d4573fb4dcc59f8a856",
+  "b28_01d_supervise.py": "af3b5aa285713e20633189288589953b715d3027cb75432b959f0a485a2f7258",
+  "gate_rates_c.json": "665e9da1dd997b4318976c0a617d52f09f924f53e0fe2c451a7b0afce4787d1b"
+ },
+ "steps": [
+  {
+   "label": "sup_wall",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "3",
+    "--out",
+    "/home/swami/b28_01/out_d/sup_wall/out",
+    "--artifact-stop",
+    "1000000000",
+    "--receipt",
+    "/home/swami/b28_01/out_d/sup_wall/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"sleeper\", \"argv\": [\"/bin/sleep\", \"60\"]}]"
+   ],
+   "rc": 124,
+   "expected_rc": 124,
+   "secs_monotonic": 3.078,
+   "log_sha256": "ab06b4393da1ebbafc07b07bccee0b1cba4b5099e4c89ffa6f960cc06326abde",
+   "check": {
+    "resource_stop": {
+     "reason": "wall",
+     "detail": "aggregate monotonic limit 3.0 s reached during step sleeper"
+    },
+    "elapsed": 3.004,
+    "remaining": 0,
+    "ok": true
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "sup_artifact",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "600",
+    "--out",
+    "/home/swami/b28_01/out_d/sup_artifact/out",
+    "--artifact-stop",
+    "10000000",
+    "--receipt",
+    "/home/swami/b28_01/out_d/sup_artifact/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"writer\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"-c\", \"import time,sys\\nf=open(sys.argv[1]+'/blob','wb')\\nfor i in range(40):\\n f.write(b'0'*1000000); f.flush(); time.sleep(0.5)\", \"/home/swami/b28_01/out_d/sup_artifact/out\"]}]"
+   ],
+   "rc": 125,
+   "expected_rc": 125,
+   "secs_monotonic": 10.063,
+   "log_sha256": "66b88464a5fc8c4af9a1f67c785dfab9637794a1cc3d03c8dadbc313aa487a18",
+   "check": {
+    "resource_stop": {
+     "reason": "artifact",
+     "detail": "output exceeded 10000000 bytes during step writer"
+    },
+    "elapsed": 10.006,
+    "remaining": 0,
+    "ok": true
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "sup_ctl",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "600",
+    "--out",
+    "/home/swami/b28_01/out_d/sup_ctl/out",
+    "--artifact-stop",
+    "1000000000",
+    "--receipt",
+    "/home/swami/b28_01/out_d/sup_ctl/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"ctl_driver\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"/home/swami/b28_01/frozen_d/b28_01c_driver.py\", \"--lam\", \"22\", \"6\", \"5\", \"2\", \"1\", \"--delta\", \"9\", \"--a\", \"24\", \"--nchi\", \"21093\", \"--primes\", \"2147483647\", \"2147483629\", \"--out\", \"/home/swami/b28_01/out_d/sup_ctl/out\", \"--wall-budget\", \"{REMAINING}\", \"--mem-cap\", \"8000000000\", \"--rates\", \"/home/swami/b28_01/frozen_d/gate_rates_c.json\"]}, {\"label\": \"ctl_verify\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"/home/swami/b28_01/frozen_d/b28_01c_verify.py\", \"--lam\", \"22\", \"6\", \"5\", \"2\", \"1\", \"--delta\", \"9\", \"--a\", \"24\", \"--prime\", \"2147483647\", \"--dir\", \"/home/swami/b28_01/out_d/sup_ctl/out\", \"--out\", \"/home/swami/b28_01/out_d/sup_ctl/out/22_6_5_2_1_d9_p2147483647_verify.json\"]}]"
+   ],
+   "rc": 0,
+   "expected_rc": 0,
+   "secs_monotonic": 1.37,
+   "log_sha256": "1f1e1ac34f3cfed26f9408a91c9940466c12e8c1951640ef80345991de58b5a3",
+   "check": {
+    "steps": [
+     [
+      "ctl_driver",
+      0
+     ],
+     [
+      "ctl_verify",
+      0
+     ]
+    ],
+    "verdict": "FULL_RANK",
+    "ok": true
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "fx_term_resistant",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "2",
+    "--out",
+    "/home/swami/b28_01/out_d/fx_term_resistant/out",
+    "--artifact-stop",
+    "1000000",
+    "--receipt",
+    "/home/swami/b28_01/out_d/fx_term_resistant/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"term_resistant\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"/home/swami/b28_01/frozen_d/b28_01d_controls.py\", \"--term-resistant-child\", \"/home/swami/b28_01/out_d/fx_term_resistant/child_pid.txt\"]}]"
+   ],
+   "rc": 124,
+   "expected_rc": 124,
+   "secs_monotonic": 32.095,
+   "log_sha256": "31b4ff3e78e62153d8fe0ac4cb513bdcdcba77a52a48085bdeabe8577f7641c8",
+   "check": {
+    "resource_stop": {
+     "reason": "wall",
+     "detail": "aggregate monotonic limit 2.0 s reached during step term_resistant"
+    },
+    "elapsed": 32.062,
+    "remaining": 0,
+    "ok": true,
+    "child_pid": 483,
+    "child_alive_after_supervisor": false,
+    "survivors_sigkilled": [
+     483
+    ]
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "fx_fast_writer",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "10",
+    "--out",
+    "/home/swami/b28_01/out_d/fx_fast_writer/out",
+    "--artifact-stop",
+    "1024",
+    "--receipt",
+    "/home/swami/b28_01/out_d/fx_fast_writer/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"writer\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))\", \"/home/swami/b28_01/out_d/fx_fast_writer/out/blob\"]}]"
+   ],
+   "rc": 125,
+   "expected_rc": 125,
+   "secs_monotonic": 0.115,
+   "log_sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914",
+   "check": {
+    "resource_stop": {
+     "reason": "artifact",
+     "detail": "output 2048 bytes exceeds 1024 at the exit of step writer"
+    },
+    "elapsed": 0.034,
+    "remaining": 0,
+    "ok": true,
+    "artifact_bytes": 2048,
+    "limit": 1024
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "fx_fast_writer_two_step",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "10",
+    "--out",
+    "/home/swami/b28_01/out_d/fx_fast_writer_two_step/out",
+    "--artifact-stop",
+    "1024",
+    "--receipt",
+    "/home/swami/b28_01/out_d/fx_fast_writer_two_step/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"writer\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))\", \"/home/swami/b28_01/out_d/fx_fast_writer_two_step/out/blob\"]}, {\"label\": \"marker\", \"argv\": [\"/usr/bin/touch\", \"/home/swami/b28_01/out_d/fx_fast_writer_two_step/marker_ran\"]}]"
+   ],
+   "rc": 125,
+   "expected_rc": 125,
+   "secs_monotonic": 0.114,
+   "log_sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914",
+   "check": {
+    "resource_stop": {
+     "reason": "artifact",
+     "detail": "output 2048 bytes exceeds 1024 at the exit of step writer"
+    },
+    "elapsed": 0.035,
+    "remaining": 0,
+    "ok": true,
+    "artifact_bytes": 2048,
+    "limit": 1024,
+    "marker_ran": false,
+    "steps": 1
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "fx_stray_child",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+    "--cap-secs",
+    "60",
+    "--out",
+    "/home/swami/b28_01/out_d/fx_stray_child/out",
+    "--artifact-stop",
+    "1000000",
+    "--receipt",
+    "/home/swami/b28_01/out_d/fx_stray_child/job_receipt.json",
+    "--steps",
+    "[{\"label\": \"stray\", \"argv\": [\"/bin/bash\", \"-c\", \"sleep 120 & echo $! > \\\"$1\\\"; exit 0\", \"stray\", \"/home/swami/b28_01/out_d/fx_stray_child/stray_pid.txt\"]}]"
+   ],
+   "rc": 0,
+   "expected_rc": 0,
+   "secs_monotonic": 0.115,
+   "log_sha256": "1f1e1ac34f3cfed26f9408a91c9940466c12e8c1951640ef80345991de58b5a3",
+   "check": {
+    "stray_pid": 493,
+    "stray_alive_after_supervisor": false,
+    "survivors_sigkilled": [
+     493
+    ],
+    "remaining": 0,
+    "ok": true
+   },
+   "expectation_met": true
+  },
+  {
+   "label": "launcher_preflight",
+   "argv": [
+    "/bin/bash",
+    "/home/swami/b28_01/frozen_d/b28_01d_cellA.sh",
+    "--preflight-only"
+   ],
+   "rc": 0,
+   "expected_rc": 0,
+   "secs_monotonic": 0.165,
+   "log_sha256": "785c18fa0d658c77d7b1fb0d4ab0961c1381ab87f4154154744456614b6e50c6",
+   "check": null,
+   "expectation_met": true
+  }
+ ]
+}

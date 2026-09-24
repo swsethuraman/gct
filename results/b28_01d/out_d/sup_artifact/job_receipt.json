@@ -1,0 +1,44 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 600.0,
+ "artifact_stop_bytes": 10000000,
+ "out": "/home/swami/b28_01/out_d/sup_artifact/out",
+ "start_utc": "2026-09-24T19:10:51Z",
+ "steps": [
+  {
+   "label": "writer",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "-c",
+    "import time,sys\nf=open(sys.argv[1]+'/blob','wb')\nfor i in range(40):\n f.write(b'0'*1000000); f.flush(); time.sleep(0.5)",
+    "/home/swami/b28_01/out_d/sup_artifact/out"
+   ],
+   "rc": -15,
+   "pgid": 474,
+   "secs_monotonic": 10.005,
+   "maxrss_bytes": null,
+   "killed_by_supervisor": true,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "8000000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 10.006,
+ "end_utc": "2026-09-24T19:11:01Z",
+ "resource_stop": {
+  "reason": "artifact",
+  "detail": "output exceeded 10000000 bytes during step writer"
+ },
+ "exit": 125,
+ "scope_end": {
+  "memory_peak": "39677952",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 20000000
+}
