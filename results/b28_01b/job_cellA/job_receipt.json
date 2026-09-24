@@ -1,0 +1,92 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 86400.0,
+ "artifact_stop_bytes": 50000000000,
+ "out": "/home/swami/b28_01/out/cellA",
+ "start_utc": "2026-09-24T19:54:41Z",
+ "steps": [
+  {
+   "label": "cellA_driver",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01c_driver.py",
+    "--lam",
+    "12",
+    "8",
+    "6",
+    "4",
+    "2",
+    "--delta",
+    "8",
+    "--a",
+    "109",
+    "--nchi",
+    "813314",
+    "--primes",
+    "2147483647",
+    "2147483629",
+    "--out",
+    "/home/swami/b28_01/out/cellA",
+    "--wall-budget",
+    "86399",
+    "--mem-cap",
+    "24000000000",
+    "--rates",
+    "/home/swami/b28_01/frozen_d/gate_rates_c.json"
+   ],
+   "rc": 0,
+   "pgid": 430,
+   "secs_monotonic": 334.984,
+   "maxrss_bytes": 3345821696,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  },
+  {
+   "label": "cellA_verify",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01c_verify.py",
+    "--lam",
+    "12",
+    "8",
+    "6",
+    "4",
+    "2",
+    "--delta",
+    "8",
+    "--a",
+    "109",
+    "--prime",
+    "2147483647",
+    "--dir",
+    "/home/swami/b28_01/out/cellA",
+    "--out",
+    "/home/swami/b28_01/out/cellA/12_8_6_4_2_d8_p2147483647_verify.json"
+   ],
+   "rc": 0,
+   "pgid": 504,
+   "secs_monotonic": 641.794,
+   "maxrss_bytes": 1137893376,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "24000000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 976.779,
+ "end_utc": "2026-09-24T20:28:25Z",
+ "resource_stop": null,
+ "exit": 0,
+ "scope_end": {
+  "memory_peak": "4087738368",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 722344199
+}

@@ -1,0 +1,25 @@
+      level 1: 49 prefixes
+      level 2: 984 prefixes
+      level 3: 11601 prefixes
+      level 4: 87737 prefixes
+      level 5: 337228 prefixes
+      level 6: 680093 prefixes
+      level 7: 813314 prefixes
+      level 8: 813314 prefixes
+  lam=(12, 8, 6, 4, 2): N_S=813314 |Stab|=1 n_chi=813314 (orbits dropped: 0) [lean, 0s, HWM 0.19 GB]
+    E_01: |H|=1 targets 645147 canonical rows 645147 nnz 3459722 (obstructed fixed targets cancelled: 0) [1s, HWM 0.33 GB]
+    E_12: |H|=1 targets 651483 canonical rows 651483 nnz 2935438 (obstructed fixed targets cancelled: 0) [2s, HWM 0.36 GB]
+    E_23: |H|=1 targets 579629 canonical rows 579629 nnz 2275257 (obstructed fixed targets cancelled: 0) [3s, HWM 0.36 GB]
+    E_34: |H|=1 targets 434348 canonical rows 434348 nnz 1392025 (obstructed fixed targets cancelled: 0) [3s, HWM 0.36 GB]
+  built (12, 8, 6, 4, 2) d8: N_S=813314 |Stab|=1 n_chi=813314 rows=2310607 nnz=10062442 (4s: mono 0s orbits 0s rows 3s; HWM 0.43 GB)
+  [phase] {'phase': 'build', 'secs': 3.841, 'peak_rss_bytes': 457834496}
+  [phase] {'phase': 'cover', 'secs': 1.101, 'peak_rss_bytes': 520396800, 'cover_size': 809656, 'nU': 3658}
+  [phase] {'phase': 'schur', 'secs': 125.743, 'peak_rss_bytes': 1596563456, 'trisolve_secs': 43.364, 'schur_project_secs': 75.806, 'nullspace_secs': 6.257, 'nS': 809656, 'nU': 3658, 'ublock': 77, 'nblocks': 48}
+  [phase] {'phase': 'lift_check', 'secs': 7.847, 'peak_rss_bytes': 2921607168, 'nullity': 109}
+  [phase] {'phase': 'evaluation', 'secs': 31.929, 'peak_rss_bytes': 3345494016, 'npts': 117}
+  RESULT 12_8_6_4_2_d8 p=2147483647: FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK
+  [phase] {'phase': 'schur', 'secs': 124.442, 'peak_rss_bytes': 1609547776, 'trisolve_secs': 41.971, 'schur_project_secs': 75.572, 'nullspace_secs': 6.561, 'nS': 809656, 'nU': 3658, 'ublock': 77, 'nblocks': 48}
+  [phase] {'phase': 'lift_check', 'secs': 6.678, 'peak_rss_bytes': 2954989568, 'nullity': 109}
+  [phase] {'phase': 'evaluation', 'secs': 32.217, 'peak_rss_bytes': 3345821696, 'npts': 117}
+  RESULT 12_8_6_4_2_d8 p=2147483629: FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK
+  PRIMES 12_8_6_4_2_d8: AGREE
