@@ -1,0 +1,16 @@
+{
+  "label": "HAND: fixed construction for the dimension of the unresolved boundary",
+  "variables": ["x0", "x1", "x2", "x3", "x4"],
+  "matrix_rows_of_linear_forms": [
+    [[1, 0, 13, 0, 17], [0, 0, 3, 5, 0], [0, 1, 0, 0, 0]],
+    [[0, 1, 0, 0, 2], [1, 7, 0, 11, 0], [0, 0, 0, 1, 0]],
+    [[0, 0, 1, 0, 0], [0, 0, 0, 0, 1], [0, 0, 0, 0, 0]]
+  ],
+  "padding_linear_form": [1, 0, 0, 0, 0],
+  "claimed_checks": [
+    "The only projective singular point is [1:0:0:0:0]",
+    "Its affine quadratic term is x1*x2+x3*x4, so it is an ordinary node",
+    "The differential of the full 45-parameter permanent coefficient map has rank 35"
+  ],
+  "method": "One predetermined exact certificate check; no random generation, search or replacement on failure"
+}

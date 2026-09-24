@@ -1,0 +1,33 @@
+# A26-02R — cross-lineage review of the smooth-cubic exclusion
+
+**Reviewer-only; uncommitted. Registered outcome 1: CONFIRM**, with the precision in §3. This is a review of B17-01's general geometric claim and B26-01's same-lineage ACCEPT. It does not review B17-01's explicit permanent witness, density calculation, or numerical certificates.
+
+For every smooth complex cubic threefold `C ⊂ P^4` and every nonzero linear form `l`, the argument establishes
+
+`lC ∉ D_{4,5} = closure{det(x_0B_0 + ... + x_4B_4) : B_i ∈ Mat_4(C)}`.
+
+The supporting component lemma is confirmed: if nonzero `F ∈ D_{4,5}` is square-free, every irreducible component of `V(F)` is ruled. This is **geometric noncontainment only**. It produces no source condition, explicit coefficient equation, equation nonzero on actual padding, positive multiplicity gap, or asymptotic lower bound. The binding constraint remains: **“No five-row determinant equation is known to be nonzero on padding.”** The detailed independent argument and claim-by-claim first certificate are in `results/a26_02/CERTIFICATE.md`.
+
+## Preflight and independence
+
+The user authorized this re-scoped slot through the launch instruction. I read `B26_COMMON.md` and `A26-02R.md` before work. At preflight, `work/batch15` was on `batch15-launch`, HEAD `7464a2bd02c9740db55d15ac43571cca74acea5f`, exactly the brief's expected commit; `git merge-base --is-ancestor` succeeded. `git status --porcelain` showed only the two pre-existing untracked directories `results/a25_10/literature/` and `results/b15_integrator/`. Neither allowed output path existed. No applicable `AGENTS.md` or `CLAUDE.md` was found. No existing file or Git configuration was changed.
+
+Raw working-copy SHA-256 at preflight: `B26_COMMON.md` `a22c91034244d48aae2be5c9f5ecb4337cff609cda1aaf08e593e497656a51fd`; `A26-02R.md` `22dcbb6b437ffb2f7a42d6db256e5b4ae6a355486c2f8579a467c824463844dc`; `BATCH26_LIVE_LEDGER.md` `1ec1ff50dc397e8df4505e03902393fd95cd7974b1196468b66c4e5115c38a10`. These are **administrative raw bytes**, not mathematical inputs. The common brief's Claude-specific session line and stale B17-01/A26-01 status lines are superseded here by A26-02R and the committed pins.
+
+Committed LF blobs checked with read-only `git show` from this worktree: B17-01 report at `01c49022` (15,609 bytes, SHA-256 `8812eeef2b454cfa256c6fb0f304a29a9a85b052e4b1fcd8238b437eb7f6f2c0`); B26-01 report at `901b0fe6` (18,755 bytes, `d9f3959bf7c2ccde2387b735a9879e6f3295792f8079434d886b7c418257efe4`); its source ledger (3,270 bytes, `e4b1c11355e081ff6af57353d646cd0ab96bda4484ba4086525d6d56ffcdb236`); B25-10 review at `42e7f4ba` (40,991 bytes, `0488ce1e90a6cd08158eb277dd482b783aa4c58cfd6cec744bd35d25b589477e`). No source condition was inferred from a manifest hash alone.
+
+This review is **cross-model but not blind**. In earlier coordinator turns in this same conversation, I had seen the B26-01 intake note and an excerpt of its report. For this slot I read the pinned B17-01 report first, reconstructed the proof and read the load-bearing primary statements, then opened the complete B26-01 report and source ledger. Prior exposure is disclosed; the certificate distinguishes my hand arguments from what B26-01 supplied. Neither B17-01's “COMPLETE” label nor B26-01's ACCEPT was used as a premise.
+
+## Verdict and consequences
+
+The decisive theorem is the **rational-generic-fiber form** of Kollár–Smith Theorem 5.3, explicitly described in Remark 5.3.1 and proved there. The DVR arising from a normalized test curve is a localization of a finite-type complex algebra. A primitive quartic family is integral and flat; normalization is finite and projective. At the generic point of every component of the reduced special fiber, square-freeness makes the total space regular, so normalization preserves that component birationally. The generic determinant hypersurface is rational **over the DVR fraction field**, by its incidence map. The theorem therefore makes every special component ruled. A smooth cubic threefold is unirational but irrational; Castelnuovo makes it non-ruled. Since `lC` is square-free and has `C` as a component, it cannot be in the full coefficient closure. The argument reaches determinant limits with no finite matrix specialization.
+
+**B26-01 precision.** Its S2 sentence excluding a finite incidence image by saying finite image points have kernels of dimension at most one skips the rank-at-most-two possibility. For a generic five-tuple with linearly independent `B_i`, a constant image point `x` would satisfy `M(x)u=0` for a dense set of `u`, hence `M(x)=0`, contradicting independence. The rank-at-most-two locus is finite on a general `P^4` section, so a positive-dimensional image meets the rank-three locus; there the kernel is unique. This proves birationality and supplies S3's P3/P4 conditions without relying on the skipped sentence. The omission is repairable inside the same scope and does not change the registered CONFIRM outcome.
+
+The four facts B26-01 left UNREAD-CLASSICAL are now accounted for: Bertini and proper closed-image have direct Stacks Project locators; curve selection has a hand hyperplane-section proof in the certificate; and existence of a line on any smooth complex cubic threefold has a short tangent-direction proof, also consistent with Clemens–Griffiths' Fano-surface discussion. External primary source statements were read through PDF/web text extraction, not archived or byte-pinned in this packet. That is the source-access limit, not an unresolved mathematical premise.
+
+The delivered B25-10 §4.3 record carried B17-01 narrowly, as one witness, and left G-A1 open. This review confirms the **general smooth-cubic factor statement** only. Its eventual record effect requires separate byte-preserving delivery of this packet and coordinator claim-level adjudication. It does not itself edit C1, G-A1, Paper 2, or any historical seal, and it does not validate B17-01's actual-padding witness. Any Paper 2 change also requires its separate editorial and source-readiness process.
+
+## Resources and limits
+
+The mathematical review ended when checks 1–6 and the incidence precision had verdicts, before the 30-minute checkpoint. Zero pilots, mathematical programs, symbolic tests, certificate replays, subagents, or compute leases. Administrative Git-byte reads, hashes, web source reading, and packet writing only. See `results/a26_02/resource_receipt.json` for actual UTC times. No staging, commit, push, fetch, paper edit, ledger edit, publication, or automatic follow-up was performed. This packet remains **REVIEWER ONLY / UNCOMMITTED** pending independent intake and delivery.

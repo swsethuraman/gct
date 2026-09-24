@@ -1,0 +1,38 @@
+{
+  "run_number": 2,
+  "started_utc": "2026-09-23T03:55:57Z",
+  "command": [
+    "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "analysis/b27_01_boundary.py"
+  ],
+  "inputs": [
+    {
+      "path": "analysis/b27_01_boundary.py",
+      "sha256": "2d999431ede68da95c9dca282f9cbb18617f2f7e550c1f26f5fd365a65b74845"
+    },
+    {
+      "path": "analysis/b27_01_verify.py",
+      "sha256": "d3aa0f47ad6973ce830a81d67ec771f34b952a47253ea807fe8b60c29d7c48f2"
+    },
+    {
+      "path": "results/b27_01/NODAL_INPUT.json",
+      "sha256": "8ffb9a3041db4fcacc8c15bd45c9eda64f10df4fa20dcff8aba9c7b165ebc920"
+    }
+  ],
+  "seconds_limit": 60,
+  "memory_limit_bytes": 512000000,
+  "job_object_enforced": true,
+  "workers": 1,
+  "random_generation": false,
+  "outcome": "COMPLETED",
+  "wall_seconds": 0.04282530001364648,
+  "peak_job_memory_bytes": 13225984,
+  "peak_process_memory_bytes": 13225984,
+  "output": {
+    "path": "results/b27_01/BOUNDARY_CERTIFICATE.json",
+    "sha256": "9afaa64aafb113b8afa50c9d7a1026b703d4032b3302baac39ac2cf9321273b1",
+    "bytes": 4549
+  },
+  "mathematical_outcome": "NEGATIVE: fixed candidate did not certify a unique singular point"
+}

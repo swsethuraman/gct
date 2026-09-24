@@ -1,0 +1,35 @@
+{
+  "run_number": 1,
+  "started_utc": "2026-09-23T03:52:47Z",
+  "command": [
+    "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "analysis/b27_01_verify.py"
+  ],
+  "script_sha256": "d3aa0f47ad6973ce830a81d67ec771f34b952a47253ea807fe8b60c29d7c48f2",
+  "interpreter_sha256": "b7a12c3af0b4db44191eec14ea095eba731b7328917f570806183093d19ddca2",
+  "input_sha256": "03585015180e0724bb7d8f1a6264a64e9a6fc877d191dc13cab0187c49f58e9c",
+  "seconds_limit": 60,
+  "memory_limit_bytes": 512000000,
+  "job_object_enforced": true,
+  "workers": 1,
+  "installs": 0,
+  "arithmetic": "Python standard-library exact int and finite-field arithmetic",
+  "historical_random_generator_executed": false,
+  "outcome": "PASS",
+  "wall_seconds": 3.0810560999670997,
+  "peak_job_memory_bytes": 16683008,
+  "peak_process_memory_bytes": 16683008,
+  "outputs": [
+    {
+      "path": "results/b27_01/T_STAR.json",
+      "sha256": "671e786894d2a37f13a494968ad6de40e92c2c2b4d1d030204aad5f72ee49bd2",
+      "bytes": 4276
+    },
+    {
+      "path": "results/b27_01/SMOOTHNESS_CERTIFICATE.json",
+      "sha256": "67392878c0051bc77538d2266f8368164f3175f226a92ddf0c541c27cf776c42",
+      "bytes": 3207
+    }
+  ]
+}

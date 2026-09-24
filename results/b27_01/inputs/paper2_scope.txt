@@ -1,0 +1,1247 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\dfc}{def}
+\DeclareMathOperator{\per}{per}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Stab}{Stab}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\cO}{\overline{\mathcal{O}}}
+\newcommand{\Rr}{R}
+\newcommand{\Pp}{P}
+\newcommand{\Dpad}{D^{\mathrm{pad}}}
+\newcommand{\Ddet}{D^{\det}}
+
+\title[The determinant's five-row ideal and the padded permanent at $n=4$]
+{The onset of the determinant's five-row ideal,\\ and the padded permanent at $n=4$}
+
+\author{Swami Sethuraman}
+\address{Beneficus AI}
+\email{swsethuraman@beneficus.ai}
+\date{\today}
+\subjclass[2020]{Primary 14L24; Secondary 68Q17, 13A50, 20G05, 14M12}
+\keywords{geometric complexity theory, permanent versus determinant, orbit
+closure, determinantal hypersurface, multiplicity obstruction, plethysm}
+
+\begin{document}
+
+\begin{abstract}
+Let $\Ddet_r\subset\Sym^{n}\bC^{r}$ be the variety of $r$-variable degree-$n$
+forms with an $n\times n$ linear determinantal representation, and let
+$\Rr_r=\{\ell\cdot c\}\subset\Sym^{4}\bC^{r}$ be the reducible quartics, the
+locus into which the padded permanent $x_0\per_3$ restricts.  Working in the
+length-reduced model of geometric complexity theory, we study the ideals of
+these varieties as $\GL_r$-modules and the multiplicity gap that a separation
+of the padded permanent from the $4\times4$ determinant would require.  We
+prove: (i) a \emph{washout theorem} --- the padded permanent restricts to a
+generic reducible form at every length $r\le5$, so no covariant of length at
+most five can distinguish it from $\ell\cdot(\text{any cubic})$, and the
+permanent's own structure first appears at length six and degree seven; (ii) a
+\emph{transfer lemma} --- the reducible locus over-estimates the padded
+permanent's coordinate ring, so a computation against $\{\ell\cdot c\}$ is a
+complete screen for multiplicity obstructions; and (iii) a combinatorial
+criterion for membership in the ideal of $\{\ell\cdot c\}$, recovering the
+Kadish--Landsberg padding bound as its degenerate case.  We also prove,
+modulo three adopted inputs from the literature (Kleiman's transversality
+theorem, Dimca's syzygy--defect theorem and the Gulliksen--Neg\aa rd
+resolution), (iv) a
+\emph{cap theorem} --- for every $n\ge2$ the ideal of $\Ddet_5$ contains the
+minors of size $\mathrm{cap}(n)=5n(n-1)^{2}(7n-8)/12$ of the degree-$(3n-5)$
+Jacobian (Macaulay) matrix, the rank of that matrix at a smooth form, produced by the $\nu(n)=n^{2}(n^{2}-1)/12$
+nodes of the generic determinantal member.  The cap is exact at $n=2$; we
+conjecture it is the onset of the ideal for all $n$, and record the
+$n=5$ anomaly at which the node count first exceeds the codimension.  A
+stabiliser-isotypic reduction makes the underlying multiplicities computable
+far beyond a naive sweep.  Across the entire computed range of the padded
+$n=4$ comparison we find no multiplicity obstruction, in agreement with, and extending to small parameters,
+the no-occurrence-obstruction phenomenon of B\"urgisser--Ikenmeyer--Panova.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Valiant's conjecture, the algebraic analogue of $\mathrm{P}\neq\mathrm{NP}$,
+asserts that the permanent $\per_m$ cannot be written as the determinant of a
+matrix of affine linear forms of size polynomial in $m$
+\cite{Valiant,MS,BI,Landsberg}.  In the border, padded formulation one asks
+whether the padded permanent $x_0^{\,n-m}\per_m$ lies in the orbit closure
+$\overline{\GL_{n^2}\cdot\det_n}$; geometric complexity theory
+(Mulmuley--Sohoni \cite{MS}) proposes to obstruct such a containment by a
+representation-theoretic inequality.  Containment of orbit closures forces, for
+every partition $\lambda$, a comparison of the multiplicities of the
+irreducible $\SL$-module $S_\lambda$ in the two coordinate rings; a
+\emph{multiplicity obstruction} is a $\lambda$ at which the padded permanent's
+multiplicity strictly exceeds the determinant's.  Occurrence obstructions --- the
+special case where the determinant's multiplicity is zero --- were shown by
+B\"urgisser, Ikenmeyer and Panova \cite{BIP} to be insufficient in the padded,
+polynomial-$n$ regime; multiplicity obstructions remain the live hope, and are
+strictly stronger \cite{DIP}.
+
+This paper is a study of the smallest genuinely $4\times4$ instance of the
+mechanism.  Rather than the full orbit closure we work in the
+\emph{length-reduced model}: a highest-weight vector of weight $\lambda$ with
+$\ell(\lambda)=r$ rows sees a form only through its restriction to an
+$r$-dimensional subspace of the variables, and the multiplicity of $S_\lambda$
+in the coordinate ring of an orbit closure equals the multiplicity of
+$S_\lambda(\bC^r)$ in the coordinate ring of the restricted variety
+\cite[\S4]{Companion}.  The two players become, inside $\Sym^{4}\bC^{r}$,
+\[
+  \Ddet_r=\overline{\{\det_4(s_1A_1+\dots+s_rA_r):A_i\in M_4\}},
+  \qquad
+  \Rr_r=\overline{\{\ell\cdot c:\ell\in\bC^r{}^{*},\ c\in\Sym^{3}\bC^{r}\}},
+\]
+the quinary (etc.) quartics with a $4\times4$ linear determinantal
+representation, and the reducible quartics with a linear factor.  The padded
+permanent's restrictions land in $\Rr_r$; we write $\Pp_r$ for the closure of
+its own restrictions, so $\Pp_r\subseteq\Rr_r$ always.  A multiplicity
+obstruction is a weight at which $\mult_\lambda\bC[\Pp_r]>\mult_\lambda\bC[\Ddet_r]$.
+
+\subsection*{Results.}
+Our first group of results locates where such an obstruction can live.
+
+\emph{The washout theorem} (\S\ref{sec:washout}).  The restrictions of $\per_3$
+to $r$-planes are dense in $\Sym^{3}\bC^{r}$ for every $r\le5$, so
+$\Pp_r=\Rr_r$ there and \emph{no covariant of length at most five sees the
+permanent}: every separation at $\ell(\lambda)\le5$ is a statement about
+reducibility, not about the permanent --- although a positive gap at length five
+would still be a multiplicity obstruction for the padded permanent, since
+$\Pp_5=\Rr_5$.  The permanent first enters at $r=6$,
+where $\dim\Pp_6=55<61=\dim\Rr_6$, and by a Pieri bound only from degree seven
+(Proposition~\ref{prop:pieri}).  With the finite-generic-stabiliser count of
+\S\ref{sec:washout} the dimension tables of the whole programme become
+unconditional.
+
+\emph{The washout persists past the dimension gap.}  At $r\le5$ the equality
+$\Pp_r=\Rr_r$ makes the blindness a theorem.  At $r\ge6$ the two varieties
+differ, and yet in every weight we have measured the two multiplicities still
+agree (measured): $\mult_\lambda\bC[\Pp_r]=\mult_\lambda\bC[\Rr_r]$ at $r=6$ in $682$
+six-row cells through degree twelve, and at $r=9$ at the goal cell
+$\lambda=(65,17,2^{7})$ and at rung thirteen of its ladder, where the padded and
+reducible kernels are the same space over both house primes.  At the goal cell
+the \emph{unpadded} $\per_4$ has no equation at all in that weight.  The
+mechanism is Proposition~\ref{prop:pieri}'s second half: a strict inequality
+$\mult_\lambda\bC[\Pp_r]<\mult_\lambda\bC[\Rr_r]$ in degree $\delta$
+requires $I(D^{\per_3}_r)_\delta\neq0$ on the cubic side, where
+$D^{\per_3}_r\subseteq\Sym^{3}\bC^{r}$ is the closure of the restrictions of
+$\per_3$ to $r$-planes.  That ideal is zero for \emph{every} $r$ in every degree
+$\delta\le8$, and at $r=6$ also in degree nine (proved; a reconciliation of
+several computations: lengths at most five by Theorem~\ref{thm:washout}, length
+six through degree nine, lengths seven and eight at degree eight by exhaustive
+exact computation, and the fact that every constituent of $I(D^{\per_3}_r)_\delta$
+has length between $6$ and $\min(r,\delta)$).  Hence
+$\mult_\lambda\bC[\Pp_r]=\mult_\lambda\bC[\Rr_r]$ at every weight of every
+length in every degree at most eight.  So the reducibility reading of the
+$r\le5$ washout survives into the range where the varieties are known to be
+distinct.
+
+\emph{The transfer lemma} (\S\ref{sec:transfer}).  Because $\Pp_r\subseteq\Rr_r$,
+one has $\mult_\lambda\bC[\Pp_r]\le\mult_\lambda\bC[\Rr_r]$ weight by weight; a
+multiplicity gap computed against $\Rr_r$ therefore transfers to the padded
+permanent when it is negative and must be re-examined when it is positive, and
+a computation against the reducible locus is a \emph{complete screen}: no
+obstruction hides from it.  The permanent can only \emph{erase} an
+$\Rr_r$-obstruction, never create one.
+
+\emph{The reducible ideal} (\S\ref{sec:reducible}).  A highest-weight vector
+lies in $I(\Rr_r)$ if and only if each of its coefficient monomials omits some
+variable (Theorem~\ref{thm:star}); this makes membership decidable by
+inspection, gives a point-free formula for $\mult_\lambda\bC[\Rr_r]$, and
+recovers the Kadish--Landsberg padding bound \cite{KL2}: no obstruction can
+live at a weight with $\lambda_1<\delta$.  For quartics the ideal
+$I(\Rr_r)$ begins in degree five for every $r\ge5$.
+
+Our second group concerns the determinant's own ideal.
+
+\emph{The cap theorem} (\S\ref{sec:cap}; proved modulo Kleiman, Dimca and
+Gulliksen--Neg\aa rd, all adopted).  For every $n\ge2$ the ideal of
+$\Ddet_5\subset\Sym^{n}\bC^{5}$ contains the size-$\mathrm{cap}(n)$ minors of the
+degree-$(3n-5)$ Jacobian (Macaulay) matrix of the five partial derivatives,
+where
+\[
+  \mathrm{cap}(n)=\dim\Sym^{3n-5}\bC^{5}-\mu_{3n-5}(n)=\tfrac{5}{12}n(n-1)^{2}(7n-8)
+  =5,\ 65,\ 300,\ 900,\ 2125,\dots
+\]
+The mechanism is uniform: the generic determinantal member has
+$\nu(n)=n^{2}(n^{2}-1)/12$ ordinary double points which fail to impose
+independent conditions on forms of degree $2n-5$ by exactly one, and Dimca's
+theorem \cite{Dimca13} turns that failure into one extra dimension of the
+Milnor algebra in degree $3n-5$.  The cap is exact at $n=2$ (it is the
+discriminant of quinary quadrics), is at $n=3$ the degree-$65$ Jacobian cap of
+\cite[Prop.~4.23]{Companion}, which improved the discriminant bound $80$ there,
+and equals the geometrically motivated $300$ at $n=4$.  For the onset
+$\delta_0$ of the length-five part of the ideal of $\overline{\GL_9\cdot\det_3}$
+--- the quinary-cubic case --- the current bracket is $6\le\delta_0\le65$
+unconditionally and $8\le\delta_0\le65$ given the measured totals of
+\cite{Companion}.  We conjecture that the cap is the onset of $I(\Ddet_5)$ at
+every $n$ (Conjecture~\ref{conj:onset}); it survives every cell we have
+measured.  At $n=5$ the coincidence ``nodes $=$ codimension'' of $n=3,4$ first
+fails, and $\Ddet_5$ becomes a superabundant component of the $50$-nodal locus,
+by an argument that assumes the minor ideal saturated in degree $n$, which is
+measured at $n=3,\dots,7$ (\S\ref{sec:anomaly}).
+
+\emph{The computational engine} (\S\ref{sec:reduction}).  A
+stabiliser-isotypic reduction (Theorem~\ref{thm:reduction}) confines the
+highest-weight vectors of a weight $\lambda$ to a single character-isotypic
+component of the action of the weight-stabiliser, cutting the working
+dimension from the weight-space dimension $N_S$ to the dimension $n_\chi$ of
+that component (computed exactly, not estimated by $N_S/|\Stab_W(\lambda)|$)
+and putting weights of a million-plus monomials within reach of a single
+workstation.
+
+\emph{Negative results} (\S\ref{sec:negative}).  On the slab of weights of
+length at most four the obstruction gap is non-positive in every degree, by
+containment (Theorem~\ref{thm:slab}(1)); the determinant's multiplicity equals
+the ambient plethysm bound at length at most three in every degree, and at
+length four below the onset $e$ of the principal ideal $I(\Ddet_4)$, with
+$e\ge10$ certified and $e=320112$ adopted from \cite{LLV}
+(Theorem~\ref{thm:slab}(2)--(3)); the arithmetic route to an obstruction --- occurrence
+cells, where the determinant's coordinate ring omits a weight, and forced
+cells, where the ambient bound already exceeds the stabiliser bound --- is silent
+across the entire computed range at $n=4$, extending to small parameters the
+no-occurrence phenomenon of \cite{BIP}; and no multiplicity obstruction was
+found in any measured cell.  The set-theoretic non-containment
+$x_0\per_3\notin\overline{\GL_{16}\cdot\det_4}$ holds independently, by
+\cite[Thm.~1.0.1]{LMR} ($\overline{dc}(\per_3)\ge9/2$), so, as in \cite{DIP}, the programme exhibits the
+multiplicity method on a separation that is known by other means; the value is
+in charting where the method can and cannot certify it.
+
+Throughout, we distinguish sharply between statements that are \emph{proved},
+those \emph{adopted} from the literature (Kleiman's transversality theorem,
+Dimca's syzygy theorem, the Gulliksen--Neg\aa rd resolution, and the degree
+$e=320112$ of the determinantal quartic surfaces \cite{LLV}), and those
+\emph{measured} by exact computation over two word-size primes with
+$\rank(R)=\dim-\text{(kernel)}$ asserted as an internal check.  The
+conjectures are labelled as such.  For the external results used in proofs we
+record how each was checked: read in the primary source ---
+\cite[(1.9), Cor.~6.4]{Beau}, \cite[Thm.~1.3]{KL2}, \cite[Thms.~1.0.1, 2.3.1,
+3.1.1 and \S3.2]{LMR}, \cite[Thm.~2, Lemma~4.2, Table~2, Cor.~3.1]{LLV}, and
+\cite[Thm.~3.1]{Dimca13} at the level of its statement; adopted from secondary
+accounts without a primary reading --- \cite{Kleiman} and \cite{GN}; and not
+read --- \cite{BrunsVetter}, cited with \cite{GN} for the same resolution.  All
+code,
+inputs and exact outputs are available (\S\ref{sec:data}).
+
+\section{The two varieties and the length reduction}\label{sec:varieties}
+
+Fix $n=4$ unless stated otherwise and write $W_r=\Sym^{4}\bC^{r}$.  A weight
+$\lambda$ with $\ell(\lambda)=r$ contributes to the coordinate ring of an
+orbit closure $\cO\subset\Sym^{4}\bC^{16}$ exactly through the restriction to
+an $r$-plane, and the length reduction (\cite[Prop.~4.19]{Companion} for
+$\det_3$; the proof uses only that $\lambda$ has $r$ rows and applies verbatim
+to $\det_4$ and to $x_0\per_3$) identifies
+\begin{equation}\label{eq:lengthred}
+  \mult_\lambda\bC[\cO]_\delta=\mult_{S_\lambda(\bC^r)}\bC[\cO|_{\bC^r}]_\delta,
+\end{equation}
+where $\cO|_{\bC^r}$ is the restricted variety.  For $\cO=\overline{\GL_{16}\cdot\det_4}$
+this is $\Ddet_r$; for the padded permanent $\cO=\overline{\GL_{16}\cdot(x_0\per_3)}$
+it is $\Pp_r$.  The reducible locus $\Rr_r$ is the ambient container of $\Pp_r$.
+
+\begin{proposition}[Dimensions]\label{prop:dims}
+For $r\ge3$, $\dim\Ddet_r\le\min(\dim W_r,\,16r-30)$, with equality for
+$3\le r\le6$ (Lemma~\ref{lem:finstab} and the table in \S\ref{sec:washout});
+concretely $\dim\Ddet_4=34$ (a hypersurface in $W_4$, $\dim W_4=35$; compare
+\cite[Cor.~3.1]{LLV}: linear determinantal surfaces of degree $d$ form a family
+of projective dimension $2d^{2}+1$), $\dim\Ddet_5=50$ and $\codim\Ddet_5=20$ in
+$W_5$ $(\dim W_5=70)$; $\dim\Ddet_6=66$.  For the padded permanent, $\dim\Pp_r=r+\dim\Sym^{3}\bC^{r}-1$
+for $r\le5$ (Corollary~\ref{cor:washout}) and $\dim\Pp_6=55$, while
+$\dim\Rr_6=61$; $\dim\Rr_r=r+\binom{r+2}{3}-1$.
+\end{proposition}
+
+The proofs are Jacobian rank computations at explicit points together with the
+finite-stabiliser upper bounds of \S\ref{sec:washout}; the tables were verified
+at both primes and are unconditional given that section.  The generic member of
+$\Ddet_5$ is a quartic threefold with exactly $20$ ordinary double points and
+defect one (\S\ref{sec:cap}; the node count uses Kleiman's theorem, adopted);
+it is non-$\bQ$-factorial, the $n=4$ analogue of
+the six-nodal cubic threefold of \cite{Companion}.
+
+\section{The washout theorem}\label{sec:washout}
+
+The following is elementary but decisive: it explains why the length-five hunt,
+where computation is cheapest, cannot see the permanent at all.
+
+\begin{theorem}[Washout]\label{thm:washout}
+For $r\le5$ the restriction map $\GL_r\cdot\per_3\to\Sym^{3}\bC^{r}$ is
+dominant; equivalently $\Pp_r=\Rr_r=\{\ell\cdot c:c\in\Sym^{3}\bC^{r}\}$.
+Consequently, for every weight $\lambda$ with $\ell(\lambda)\le5$ and every
+$\delta$,
+\[
+  \mult_\lambda\bC[\Pp_r]=\mult_\lambda\bC[\Rr_r],
+\]
+and no $\GL_r$-covariant of length at most five distinguishes the padded
+permanent from $\ell\cdot(\text{an arbitrary cubic})$.
+\end{theorem}
+
+\begin{proof}
+A single point of $\Sym^{3}\bC^{5}$ at which the differential of
+$g\mapsto\per_3(g\cdot)|_{\bC^{5}}$ has full rank $35$ proves dominance, since
+the image is then dense; such a point is exhibited (rank $35$ at an explicit
+integer substitution, both primes).  For $r<5$ restrict further.  As
+$\per_3$ is a cubic, its restrictions are cubics, and dominance makes them fill
+$\Sym^{3}\bC^{r}$; multiplying by the padding linear form gives all of
+$\Rr_r$.
+\end{proof}
+
+\begin{corollary}\label{cor:washout}
+The onset of the determinant's separation from the permanent is a
+\emph{length-six} phenomenon.  At $r=6$ the restrictions of $\per_3$ are no
+longer dense: $\dim\Pp_6=6+\dim D^{\per_3}_6-1=6+50-1=55$, whereas
+$\dim\Rr_6=6+56-1=61$.
+\end{corollary}
+
+The upper bound $\dim D^{\per_3}_6\le50$ requires a four-dimensional group
+preserving $\per_3$ under which a generic $6$-tuple of restrictions has finite
+stabiliser; the lower bound is a Jacobian rank of $50$ at an explicit point.
+We record the stabiliser fact once, as it underlies every dimension table.
+
+\begin{lemma}[Finite generic stabiliser]\label{lem:finstab}
+Let $G=\{(P,Q)\in\GL_4\times\GL_4:\det P\det Q=1\}$ act on $r$-tuples of
+$4\times4$ matrices by $A_i\mapsto PA_iQ$, and let $T$ be the pairs of diagonal
+$3\times3$ matrices $(D_1,D_2)$ with $\det D_1\det D_2=1$ acting on $r$-tuples
+of $3\times3$ matrices by $A_i\mapsto D_1A_iD_2$.  Both preserve the relevant form
+($\det_4$, resp.\ $\per_3$, since $\per(D_1AD_2)=\det D_1\det D_2\per A$),
+their effective quotients by the scalars $(\mu I,\mu^{-1}I)$ have dimensions
+$30$ and $4$, and for $r\ge3$ (resp.\ every $r\ge1$) the generic $r$-tuple has
+trivial stabiliser in the effective group.  Hence
+\[
+  \dim\Ddet_r\le\min\!\big(\dim W_r,\ 16r-30\big)\quad(r\ge3),\qquad
+  \dim D^{\per_3}_r\le\min\!\big(\tbinom{r+2}{3},\ 9r-4\big)\quad(r\ge1),
+\]
+where $D^{\per_3}_r\subseteq\Sym^{3}\bC^{r}$ is the closure of the restrictions
+of $\per_3$ to $r$-planes.  The case $r=2$ is exceptional for $\det_4$.
+\end{lemma}
+
+\begin{proof}
+If a group $H$ acts on the parameter space of a map constant on $H$-orbits and
+the generic stabiliser is finite, the image closure has dimension at most the
+parameter dimension minus $\dim H$, since the generic fibre contains an orbit
+of dimension $\dim H$.  For $\det_4$ with $r\ge3$: normalise $A_1=I$; then
+$PA_1Q=A_1$ forces $Q=P^{-1}$, and $P$ commutes with $A_2,\dots,A_r$.  Two
+generic $4\times4$ matrices generate $M_4$ as an algebra (take $A_2$ with
+distinct eigenvalues, whose polynomials give the diagonal idempotents $E_{ii}$
+in its eigenbasis, and $A_3$ with all entries nonzero in that basis, so that
+$E_{ii}A_3E_{jj}$ is a nonzero multiple of $E_{ij}$), so $P$ is scalar.  For
+$\per_3$: if $D_1A_1D_2=A_1$ with every entry of $A_1$ nonzero, then
+$d_je_k=1$ for all $j,k$, so $(D_1,D_2)$ is scalar.  At $r=2$, after
+normalising $A_1=I$, the stabiliser is the commutant of the single generic
+matrix $A_2$, its $4$-dimensional algebra of polynomials, $3$-dimensional
+modulo scalars; the bound would read $\dim\Ddet_2\le2$ and is false
+($\Ddet_2=\Sym^{4}\bC^{2}$, of dimension $5$).  Only these tori and groups are
+used; the full stabilisers of $\det_4$ and $\per_3$ are not needed.  The
+$n=3$ determinant case is in \cite[\S4]{Companion}.
+\end{proof}
+
+The groups in Lemma~\ref{lem:finstab} have the dimensions of the full
+stabilisers of $\det_4$ and $\per_3$, but the lemma gives only upper bounds on
+dimension; each entry of the table below is an equality because a Jacobian rank
+at an explicit point meets the bound.  For other $n$ the analogous count
+$\dim\Ddet_5=3n^{2}+2$ is carried as adopted beyond $n=4$ and is used only in
+\S\ref{sec:anomaly}.
+
+With Lemma~\ref{lem:finstab} the codimension table
+\[
+\begin{array}{c|ccc}
+ r & \dim W_r & \dim\Ddet_r & \dim\Rr_r\\\hline
+ 3 & 15 & 15 & 12\\
+ 4 & 35 & 34 & 23\\
+ 5 & 70 & 50 & 39\\
+ 6 & 126& 66 & 61
+\end{array}
+\]
+is unconditional; the pad row is exact because $\per_3$ fills all of
+$\Sym^{3}\bC^{r}$ for $r\le5$, and the determinant row is pinned by a sandwich
+of a measured Jacobian rank (a lower bound) against the stabiliser count (an
+upper bound), which meet.
+
+\begin{proposition}[Pieri delay]\label{prop:pieri}
+$I(\Pp_6)_\delta=I(\Rr_6)_\delta$ for $\delta\le5$; the permanent's own
+structure is first visible in degree $\ge7$.  More precisely, an equation of
+$\Pp_r$ of degree $\delta$ that is not an equation of $\Rr_r$ pulls back to an
+equation of $D^{\per_3}_r\subset\Sym^{3}\bC^{r}$ of degree
+$\delta$; for $r=6$ this ideal is empty in degree $\le5$ (an equation of degree
+$\delta$ has at most $\delta$ rows, and $D^{\per_3}_5=\Sym^{3}\bC^{5}$
+by Theorem~\ref{thm:washout}), and is measured empty in degree $6$.
+\end{proposition}
+
+\section{The transfer lemma}\label{sec:transfer}
+
+\begin{theorem}[Transfer]\label{thm:transfer}
+Set $D_\lambda(X)=\mult_\lambda\bC[X]$.  For every $r$ and $\lambda$,
+$D_\lambda(\Pp_r)\le D_\lambda(\Rr_r)$.  Consequently, writing
+$\Delta(X)=D_\lambda(\Pp_r)-D_\lambda(\Ddet_r)$ against a fixed determinant
+side:
+\begin{enumerate}
+\item a cell with $D_\lambda(\Rr_r)-D_\lambda(\Ddet_r)<0$ (an
+``$\Rr$-blindness'' cell) has $\Delta<0$ as well;
+\item a cell with $D_\lambda(\Rr_r)-D_\lambda(\Ddet_r)>0$ need \emph{not}
+transfer to $\Pp_r$ and must be re-evaluated against $\Pp_r$;
+\item a computation against $\Rr_r$ is a complete screen for obstructions:
+if $\Delta>0$ then $D_\lambda(\Rr_r)-D_\lambda(\Ddet_r)>0$.
+\end{enumerate}
+The evaluation pipeline, which tests at true padded-permanent points, computes
+$\Pp_r$ directly; the caveat bites only on literature-style arguments about the
+reducible locus.
+\end{theorem}
+
+\begin{proof}
+$\Pp_r\subseteq\Rr_r$ gives $I(\Rr_r)\subseteq I(\Pp_r)$, hence the ideal
+multiplicities satisfy the reverse inequality and the coordinate-ring
+multiplicities $D_\lambda(\Pp_r)\le D_\lambda(\Rr_r)$ term by term.  Items
+(1)--(3) are immediate, (3) being the contrapositive of (1).
+\end{proof}
+
+The lemma is what makes the reducible-locus analysis of the next section a tool
+against the permanent rather than a digression: every obstruction is an
+$\Rr_r$-obstruction, and the permanent's role is confined to possibly erasing
+some of them.
+
+\section{The reducible ideal and the padding bound}\label{sec:reducible}
+
+Let $c_\alpha$ denote the coefficient functional extracting the $x^\alpha$
+coefficient, $|\alpha|=n$.  A monomial in the $c_\alpha$ is said to
+\emph{omit} the variable $x_i$ if some factor $c_\alpha$ has $\alpha_i=0$.
+
+\begin{theorem}[The reducible criterion]\label{thm:star}
+Let $v\in\bC[\Sym^{n}\bC^{r}]_\delta$ be a highest-weight vector of weight
+$\lambda$.  Then $v$ vanishes on $\Rr_r=\{\ell\cdot c\}$ if and only if every
+monomial of $v$ omits $x_i$ for every $i$.  More generally, for the locus
+$\{\ell^{k}\cdot c\}$ of forms with a linear factor of multiplicity $k$, the
+criterion reads: every monomial has, for each $i$, a factor $c_\alpha$ with
+$\alpha_i<k$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+By the Bruhat decomposition it suffices to test $v$ on the dense cell
+$G\cdot(x_1\cdot c)$, $c$ arbitrary; since $v$ is a $B$-eigenvector, this
+reduces to vanishing on $x_i\cdot(\text{all cubics})$ for each $i$, i.e.\ on
+the coordinate subspace of forms divisible by $x_i$.  A monomial in the
+$c_\alpha$ vanishes on that subspace precisely when each factor sees the
+divisibility, which is the stated omission condition.  The multiplicity-$k$
+version replaces $\alpha_i=0$ by $\alpha_i<k$.
+\end{proof}
+
+\begin{corollary}[Point-free multiplicity]\label{cor:pointfree}
+$\mult_\lambda\bC[\Rr_r]_\delta=a(\lambda,\delta)-\dim\{v:\text{(\ref{thm:star})}\}$,
+where $a(\lambda,\delta)$ is the ambient plethysm multiplicity of $S_\lambda$
+in $\bC[\Sym^{n}\bC^{r}]_\delta$.  In particular the reducible-locus side of
+every cell is computable by linear algebra on monomial supports, with no
+evaluation points.
+\end{corollary}
+
+\begin{corollary}[Padding bound]\label{cor:kl}
+If $\lambda_1<\delta$ then every monomial of every weight-$\lambda$
+highest-weight vector omits every variable $x_i$ automatically (its $\delta$
+factors contribute $\lambda_i\le\lambda_1<\delta$ to the $i$-th coordinate, so
+some factor has $\alpha_i=0$), so every such vector vanishes on $\Rr_r$:
+$\mult_\lambda\bC[\Rr_r]_\delta=0$ and $I(\Rr_r)_\delta$ contains the whole
+$\lambda$-isotypic component.  Hence $\mult_\lambda\bC[\Pp_r]_\delta=0$ and
+\emph{no multiplicity obstruction can live at a weight with $\lambda_1<\delta$}.
+\end{corollary}
+
+Corollary~\ref{cor:kl} is the first assertion of \cite[Thm.~1.3]{KL2} in the
+case $n-m=1$: the ideal of the padded polynomials $\ell^{\,n-m}h$ contains the
+whole isotypic component of $S_\lambda$ in degree $\delta$ whenever
+$\lambda_1<\delta(n-m)$.  It is recovered here from the combinatorial
+criterion; the technique --- evaluating highest-weight vectors at
+$x_1^{\,n-m}h$ and reading off their monomial support --- is theirs.  In the
+sources checked in one literature pass, among them \cite{KL2} and
+\cite{Landsberg}, we did not find the exact criterion of
+Theorem~\ref{thm:star} stated; we record it as not found there, not as new.  For quartics, the ideal
+$I(\Rr_r)$ begins in degree five for every $r\ge5$: the unique degree-five
+invariant of quinary quartics vanishes on $\{\ell\cdot c\}$ (it is an $a=1$
+cell, invisible to the $a\ge2$ gate discussed in \S\ref{sec:negative}), and no
+covariant of lower degree does.
+
+\section{Containment at $r\le4$, non-containment at $r=5$}\label{sec:contain}
+
+The obstruction-relevant comparison changes character at length five.
+
+\begin{proposition}[Containment, $r\le4$]\label{prop:contain}
+For $r\le4$, $\Rr_r\subseteq\Ddet_r$, hence
+$\mult_\lambda\bC[\Rr_r]_\delta\le\mult_\lambda\bC[\Ddet_r]_\delta$ and
+$\Delta\le0$ at every weight of length at most four and every degree.
+\end{proposition}
+
+\begin{proof}
+A general quaternary cubic is $3\times3$ linear determinantal: every smooth
+cubic surface is (\cite[Cor.~6.4]{Beau}, classically Grassmann's), and
+independently the restriction map $M\mapsto\det_3(s_1A_1+\dots+s_4A_4)$ has
+full Jacobian rank $20$ at an explicit integer point, so its image is dense in
+$\Sym^{3}\bC^{4}$.  For such a cubic $c=\det_3M(s)$,
+$\ell\cdot c=\det_4\operatorname{diag}(\ell,M)$ is a $4\times4$ linear
+determinantal representation.  $\Ddet_4$ is closed, so it contains the closure
+of these reducible quartics, which is $\Rr_4$; for $r\le3$ restrict further
+(or note $\Ddet_r=\Sym^{4}\bC^{r}$).  Containment gives a surjection
+$\bC[\Ddet_r]\twoheadrightarrow\bC[\Rr_r]$ of $\GL_r$-algebras, hence the
+inequality of multiplicities, and $\Pp_r\subseteq\Rr_r$ gives $\Delta\le0$.
+The argument does not extend to $r=5$: a generic cubic threefold has no
+non-trivial determinantal representation at all, since by the
+Noether--Lefschetz argument of \cite[(1.9)]{Beau} a generic hypersurface of
+degree $d$ in $\bP^{m}$ is a non-trivial determinant only if $m=2$, or $m=3$
+and $d\le3$; in the present setting the image of $3\times3$ linear
+determinants in $\Sym^{3}\bC^{5}$ has dimension $29<35$ (Jacobian rank, both
+primes).
+\end{proof}
+
+Write $W=s_5\cdot\Sym^{3}\bC^{5}\subset W_5$ for the $35$-dimensional space of
+quartics divisible by a fixed linear form; since every element of $\Rr_5$ is
+$\GL_5$-equivalent to an element of $W$, $\Rr_5\subseteq\Ddet_5$ if and only if
+$W\subseteq\Ddet_5$.
+
+\begin{theorem}[Non-containment at $r=5$, determinant part]\label{thm:noncontain}
+If $\det(s_1A_1+\dots+s_5A_5)\in W$ for a pencil of $4\times4$ matrices, then
+it equals $s_5\cdot C$ with $C$ either a $3\times3$ linear determinantal cubic
+or a cubic containing a plane.  These two families of cubics have dimensions
+$29$ and $31$, so the actual determinantal quartics in $W$ form a set of
+dimension at most $31<35=\dim W$.
+\end{theorem}
+
+Theorem~\ref{thm:noncontain} rests on a classification of the singular
+four-dimensional subspaces of $M_4$: if $s_5$ divides $\det M(s)$ then
+$\operatorname{span}(A_1,\dots,A_4)$ consists of singular matrices.  Those
+subspaces are not all compression spaces --- that is the obstacle the
+classification had to overcome, not the reason for the conclusion --- and the
+exceptional strata give cubic families of dimensions $27$ and $25$, below the
+compression maximum $31$ \cite{Companion2}.  The separation is the dimension
+count $31<35$; no highest-weight vector enters.
+
+The theorem is a statement about actual determinants.  It does not by itself
+give $\Rr_5\not\subseteq\Ddet_5$, because $\Ddet_5$ is a closure: a point of
+$\Ddet_5\cap W$ may be a limit of determinants that is not itself a
+determinant, and no classification of such boundary points is available here
+(Remark~\ref{rem:noncontain-status}).  The closure statement
+$\Rr_5\not\subseteq\Ddet_5$ is carried in this paper as \emph{adopted}: it is a
+separate, unpublished result of this programme, carried as ADOPTED on the programme's
+record, that exhibits a padded smooth cubic threefold
+$s_5\cdot C^{\ast}$ outside $\Ddet_5$ \cite{Companion2}; it is not a
+consequence of Theorem~\ref{thm:noncontain}.  Given it, together with the
+dimension gap $39<50$ of the codimension table, the two varieties differ in
+both directions at $r=5$ --- yet, as \S\ref{sec:negative} records, neither
+difference has yet been made to produce a weight with $\Delta>0$.
+
+\begin{remark}[What the non-containment currently rests on]\label{rem:noncontain-status}
+Two different objects are enumerated in this section, and they should not be
+confused.  Theorem~\ref{thm:noncontain} classifies the singular
+four-dimensional subspaces of $M_4$, which governs the \emph{actual}
+determinants in $W$.  This remark concerns an attempt to reach the closure
+through the blow-up of the base scheme of the parametrisation $\Phi$, whose
+exceptional divisor is governed by the components of
+$\operatorname{Proj}\operatorname{gr}_J R$; a classification of singular
+subspaces does not by itself classify those components.  The computational
+record has sharpened both what is established and what is not.  Every measured exceptional image has since been pushed below the
+threshold: through the reachable contact orders, and at every incidence of the
+primitive family, no reducible image exceeds $29<31\ll35$.  The following are
+now proved rather than measured.
+
+\emph{(i) The contact-order lemma.}  At a smooth point of $V(J)$ the
+exceptional fibre is $\bP(\operatorname{im} d\Phi)$ at every order.  This turns
+the observed invariance of contact order into a theorem and, more usefully,
+localises any hidden component of the exceptional divisor to $\mathrm{Sing}\,V(J)$.
+
+\emph{(ii) The stratum list of the base locus of $\Phi$ is longer than first
+enumerated.}  (This is a list of components of a base locus, not of singular
+subspaces, and it does not contradict Theorem~\ref{thm:noncontain}.)  The
+base locus decomposes into eight components once the singular-pencil stratum
+$SP$ is included, and a further $49$-dimensional semi-primitive component was
+found that is absent from every earlier stratum list; moreover $\Pp\cap\ker$ is
+a rank-$\le2$ locus rather than the rank-$3$ incidence it had been taken for.
+
+\emph{(iii) The base scheme is non-reduced.}  At a generic point of every
+pairwise incidence the initial ideal is strictly smaller than that of the
+intersection of the component ideals --- $\dim Q_2=12<16$, $41<69$, $25<49$ and
+$59<144$ at the four incidences --- so the base scheme of $\Phi$ at $r=5$ is
+\emph{generically reduced along every component and non-reduced along every
+pairwise incidence}.  This is the precise sense in which the normal cone of $J$
+differs from the normal cone of the reduced base locus, and it is why the
+exceptional fibre over an incidence is larger than $\bP(\operatorname{im}d\Phi)$.
+
+Consequence (iii) is why the bound must be quantified over the normal cone and
+not over the reduced singular locus: a component of the exceptional divisor can
+be supported over a proper sublocus of an irreducible singular component, or
+over embedded structure, and be invisible at the generic point of any of them.
+The remaining obligation is therefore
+
+\begin{quote}
+for every irreducible component $E$ of $\operatorname{Proj}\operatorname{gr}_J R$
+supported over $\mathrm{Sing}\,V(J)$ --- including components over proper
+subloci, over the incidence and rank-degeneration strata, and components arising
+from embedded structure --- the fixed-factor image of $E$ has dimension $<35$,
+\end{quote}
+
+which together with (i) exhausts the blow-up.
+
+\emph{(iv) The four residues are now numbers, and the interior is exact.}  The
+four loci this remark first named as unbounded have since been measured.  The
+order-$2$ image over $\Pp\cap c_{21}$ --- the one number the earlier survey left
+open --- is $19$.  The rank strata of $M(a)$ at $\ker\cap\operatorname{coker}$
+are $0$ and $9$ only, both of image $29$.  The deeper rank-$\le2$ incidences
+drop ($28\to19\to9$), and every incidence meeting an exact-type locus inherits
+its determinant, so is bounded by $31$.  Contact order $\ge4$ at the incidences
+is obstructed on the linear route and the image is saturated at order $3$; that
+last one is evidence rather than proof, and is the only one of the four not
+closed by an exact computation.
+
+More is true, and it is the half with no closure gap.  Write
+$W=s_5\Sym^{3}\bC^{5}$ for the fixed-factor space, $\dim W=35$.  The interior
+$W_{\mathrm{int}}=\Phi(X_5)\cap W$ reparametrises through the $r=4$ base locus
+$B_4$ --- $s_5\mid\det M(s)$ exactly when $(A_1,\dots,A_4)\in B_4$, with $A_5$
+free --- so it is a finite union of images of irreducible parametrised families,
+and its dimension is the generic Jacobian rank over each: an \emph{exact upper}
+bound, not an arc lower bound.  It is
+\[
+  \dim W_{\mathrm{int}} = 31 .
+\]
+This interior count is the content of Theorem~\ref{thm:noncontain}: for the
+fixed factor, the cubics $C$ with $s_5C$ an actual determinant are the
+$3\times3$ determinantal cubics ($29$) and the cubics containing a plane
+($31$) \cite{Companion3}.  With every enumerated exceptional component at most $31$ as well,
+$\dim(\Ddet_5\cap W)\le31<35=\dim W$ holds on the enumerated cone.
+
+\emph{What is not proved} is that the enumeration is complete --- that
+$\operatorname{Proj}\operatorname{gr}_J R$ has no component outside the list ---
+nor, what would settle the closure question directly, a description of the
+boundary
+$(\Ddet_5\setminus D^{\det,\circ}_5)\cap\Rr_5$, where $D^{\det,\circ}_5$ is the set
+of actual determinants.  Any component of that boundary intersection has
+dimension at least $50+39-70=19$; nothing here excludes one \cite{Companion3}.  So the bound on
+$\dim(\Ddet_5\cap W)$ is established for the determinant part only, and the
+closure statement $\Rr_5\not\subseteq\Ddet_5$ is used in this paper only as
+the adopted statement recorded after Theorem~\ref{thm:noncontain}.
+\end{remark}
+
+\section{The cap theorem}\label{sec:cap}
+
+We now turn to the determinant's own ideal, the object whose onset bounds the
+obstruction hunt from below.  Fix $\Ddet_5\subset\Sym^{n}\bC^{5}$ and let
+$M_k(F)$ be the degree-$k$ Macaulay matrix of the five partials
+$\partial_1F,\dots,\partial_5F$: rows indexed by $(i,m)$ with $m$ a monomial of
+degree $k-n+1$, columns by monomials of degree $k$, the entry the coefficient
+of the column monomial in $m\,\partial_iF$.  Its entries are linear in $F$, its
+row space is $(J_F)_k$, and $\codim(J_F)_k=\dim(\bC[s]/J_F)_k$ is the corank.
+For smooth $F$ the partials are a regular sequence and
+$\mu_k(n):=\dim(\bC[s]/J_F)_k=[t^k]\big((1-t^{n-1})/(1-t)\big)^{5}$.  Put
+\[
+  \mathrm{cap}(n)=\dim\Sym^{3n-5}\bC^{5}-\mu_{3n-5}(n)
+  =5\binom{2n}{4}-10\binom{n+1}{4}=\tfrac{5}{12}n(n-1)^{2}(7n-8).
+\]
+
+\begin{theorem}[The cap; proved modulo Kleiman \cite{Kleiman} (read-status
+SECONDARY), Dimca {\cite[Thm.~3.1]{Dimca13}} (PRIMARY, statement level) and
+Gulliksen--Neg\aa rd \cite{GN} (SECONDARY), all adopted]\label{thm:cap}
+For every $n\ge2$ the size-$\mathrm{cap}(n)$ minors of $M_{3n-5}(F)$ are
+nonzero polynomials of degree $\mathrm{cap}(n)$ that vanish identically on
+$\Ddet_5$; their span is a nonzero $\GL_5$-submodule of $I(\Ddet_5)_{\mathrm{cap}(n)}$.
+Hence the onset of $I(\Ddet_5)$ is at most $\mathrm{cap}(n)$, with values
+$5,65,300,900,2125,4305,\dots$ at $n=2,3,4,5,6,7,\dots$.
+\end{theorem}
+
+\begin{proof}[Proof]
+The case $n=2$ is exact: $M_1(F)$ is twice the symmetric $5\times5$ matrix of
+the quadric, $\mathrm{cap}(2)=5$, and the unique $5\times5$ minor is the
+discriminant, whose vanishing cuts out the rank-$\le4$ quadrics $=\Ddet_5$; the
+ideal is principal in the UFD $\bC[\Sym^{2}\bC^{5}]$, so the onset is exactly
+$5$.  Assume $n\ge3$; the argument is four steps.
+
+\emph{Step 1 (every member is singular along the rank locus).} Jacobi's formula
+gives $\partial_kF=\operatorname{tr}(\adj M(s)\cdot A_k)$; at a point of the
+pencil where $\rank M(s)\le n-2$ the adjugate vanishes, so all partials vanish.
+
+\emph{Step 2 (the generic member has $\nu(n)$ nodes).} By Kleiman's
+transversality theorem \cite{Kleiman} (characteristic zero) a generic
+$\bP^{4}$ misses the rank-$\le n-3$ locus, meets the rank-$\le n-2$ locus
+transversally in $\nu(n)=\deg\{\rank\le n-2\}=n^{2}(n^{2}-1)/12$ reduced
+points, and meets the smooth determinant locus transversally elsewhere; a
+Schur-complement expansion at such a point exhibits a rank-four quadratic
+leading term, i.e.\ an ordinary double point.  So $\operatorname{Sing}F$ is
+exactly these $\nu(n)$ nodes.
+
+\emph{Step 3 (the nodes fail forms of degree $2n-5$ by one).} The ideal $J$ of
+the submaximal minors of the generic $n\times n$ matrix has the
+Gulliksen--Neg\aa rd resolution \cite{GN,BrunsVetter}, which specialises to the
+pencil (grade four, generic perfection) and yields the Hilbert function
+\[
+  H_{S/J}(k)=[t^k]\frac{1-n^{2}t^{n-1}+(2n^{2}-2)t^{n}-n^{2}t^{n+1}+t^{2n}}{(1-t)^{5}}.
+\]
+A direct evaluation, a polynomial identity in $n$ verified symbolically and
+numerically for $3\le n\le10$, gives $H_{S/J}(2n-5)=\nu(n)-1$.  Since
+$J\subseteq I_N$ for the node scheme $N$, the failure
+$\dfc_{2n-5}(N)\ge\nu(n)-H_{S/J}(2n-5)=1$.  At $n=3$ this is elementary --- six
+points impose at most five conditions on the five-dimensional space of linear
+forms --- and at $n=4$ it is the sixteen independent cubics through twenty
+nodes.
+
+\emph{Step 4 (Dimca).} For a hypersurface of degree $d$ in $\bP^{4}$ with
+isolated singularities, Dimca's theorem \cite[Thm.~3.1]{Dimca13} identifies the
+degree-$(3d-5)$ piece of the Milnor algebra as $\mu_{3d-5}+\dfc_{2d-5}(\Sigma)$.
+With Step 3, $\dim(\bC[s]/J_F)_{3n-5}\ge\mu_{3n-5}(n)+1$, i.e.\
+$\rank M_{3n-5}(F)\le\mathrm{cap}(n)-1$ on the dense determinantal locus, hence
+on $\Ddet_5$; the minors vanish there.  For smooth $F$ the rank is exactly
+$\mathrm{cap}(n)$, so some minor is a nonzero polynomial; equivariance of the
+Fitting construction makes the span $\GL_5$-stable, and \eqref{eq:lengthred}
+carries it into $I(\cO)$.
+\end{proof}
+
+\emph{Measured, both primes, fresh pencils.} The corank of $M_{3n-5}$ on
+$\Ddet_5$ is $6,31,102,256,541$ at $n=3,4,5,6,7$ against the smooth
+$5,30,101,255,540$; so $\dfc_{2n-5}=1$ exactly and $\mathrm{cap}(n)$ is the
+\emph{exact} rank there.  We have not found the values at $n=5,6,7$ computed
+elsewhere; we record that, and claim no priority for them.
+
+The cap minors are equations of $\Ddet_5$, but they do not cut it out.  At
+$n=3$ the size-$65$ minors of $M_4(C)$ also vanish at every quinary cubic $C$
+containing a plane: writing $C=x_1q_1+x_2q_2$, the $2\times2$ minors of
+$(\partial_jq_1,\partial_jq_2)_{j=3,4,5}$ give a non-Koszul syzygy among the
+partials with quadric coefficients, so $\rank M_4(C)\le64$ on a dense subset of
+that family and hence on all of it \cite{Companion3}.  That family has dimension $31$, larger
+than $\dim\Ddet_5=29$, so the zero locus of the cap minors strictly contains
+$\Ddet_5$: the ideal the minors generate does not cut out $\Ddet_5$, even
+set-theoretically, so they do not by themselves identify $I(\Ddet_5)$.  This
+does not affect Theorem~\ref{thm:cap} or
+Conjecture~\ref{conj:onset}, which concern the onset, but the minors cannot be
+used as a separating equation against anything meeting that family.
+
+\begin{conjecture}[The onset is the cap]\label{conj:onset}
+For every $n\ge2$, the onset of $I(\Ddet_5)$ equals $\mathrm{cap}(n)$: the
+Jacobian minors are the first equations.  Proved at $n=2$; open at $n\ge3$;
+falsified by any length-five component in degree below $65$ ($n=3$) or $300$
+($n=4$).
+\end{conjecture}
+
+The conjecture survives every measurement made: at $n=3$ the ideal is empty
+through degree five unconditionally and through degree seven given the
+measured totals of \cite{Companion}, and empty on every one of $121$
+length-five cells measured at degrees eight and nine (the affordable cells, not
+all cells), and the unique
+degree-ten $\SL_5$-invariant of cubic threefolds does \emph{not} vanish on
+$\Ddet_5$, so no invariant of degree below fifteen is an equation; at $n=4$ the
+ideal is empty through degree seven and on every measured cell at degree eight.
+The support is structural rather than probabilistic: within the Jacobian family
+$3n-5$ is the cheapest degree, the discriminant route costs more at every $n$,
+and no equation is forced by any Hilbert-function comparison below the cap.
+
+\subsection{The $n=5$ anomaly}\label{sec:anomaly}
+
+At $n=3,4$ the codimension of $\Ddet_5$ equals the node count $\nu(n)$
+($6=6$, $20=20$).  This is the identity $\codim\Ddet_5=\nu(n)-\binom{n-1}{4}$
+with $\binom{n-1}{4}=0$ for $n\le4$.  From $n=5$ it fails:
+$\nu(5)=50$ but $\codim\Ddet_5=49$, and $\Ddet_5$ is a superabundant component
+of the $50$-nodal locus of quintic threefolds, of dimension $76$ against the
+expected $75$, the excess being the one condition the fifty nodes fail to
+impose on quintics ($2n-5=n$ at $n=5$).  The component statement is proved at
+every $n$ at which the ideal of submaximal minors is saturated in degree $n$
+(a tangent-space computation on the incidence variety); saturation is measured
+at $n=3,\dots,7$ and is an expectation beyond.  The codimension at $n=5$ also
+uses the finite-stabiliser count $\dim\Ddet_5=3n^{2}+2$, adopted beyond
+$n=4$.  The cap theorem is untouched: it uses
+only $\dfc_{2n-5}\ge1$, and a larger defect only lowers the cap.
+
+\subsection{The $n=3$ twin}\label{sec:twin}
+
+The $n=3$ instance of the mechanism is sharp, and answers, for nodes in general
+position, the first part of \cite[Question~8.5]{Companion}, where the same
+argument is also sketched.  (Beauville's treatment of determinantal
+hypersurfaces \cite{Beau} restricts to smooth hypersurfaces and does not
+contain it; a wider search of the classical literature on nodal cubic
+threefolds has not been made, and we claim no priority.)
+
+\begin{theorem}\label{thm:frame}
+$\Ddet_5\subset\Sym^{3}\bC^{5}$ is the closure of the cubic threefolds singular
+at six points in linearly general position.  Equivalently, the generic
+six-nodal cubic threefold with nodes in general position is determinantal, and
+$\Ddet_5$ is an irreducible component of the closure of the six-nodal locus.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Six points in linearly general position form a projective frame, unique up to
+$\PGL_5$; the cubics singular at a fixed frame form a $\bP^{4}$ (the $30$ node
+conditions are independent, checked exactly), so the six-nodal-in-general-position
+locus is the irreducible image of $\PGL_5\times\bP^{4}$, of dimension
+$24+4=28=\dim\bP(\Ddet_5)$.  It remains to show the six nodes of a generic
+determinantal cubic are a frame; the frame condition is open on the Grassmannian
+of pencils, and holds at one explicit pencil (whose sixth node is computed
+exactly by a Gr\"obner basis and verified to make every five of the six span
+$\bP^{4}$).  Both varieties being irreducible closed of dimension $28$, they
+coincide.  For the component statement: at a generic determinantal cubic the
+six nodes impose independent conditions on cubics ($\dfc_3(N)=0$), so the
+incidence variety of cubics with six marked singular points is smooth there
+with tangent space of dimension $28$, and $\Ddet_5$ is the unique component
+through that point (\S\ref{sec:anomaly}, the saturated case $n=3$).
+\end{proof}
+
+\section{The stabiliser-isotypic reduction}\label{sec:reduction}
+
+The multiplicities above are kernels of raising operators on the weight space
+of $\lambda$, whose dimension $N_S$ grows quickly.  The following reduction,
+which generalises the rectangular case of \cite{Companion}, is what makes the
+computations feasible.
+
+\begin{theorem}[Reduction]\label{thm:reduction}
+Let $\lambda$ have equal-part blocks $B$ of sizes $k_B$ and values $m_B$, so
+that the stabiliser $\Stab_W(\lambda)=\prod_B S_{k_B}$ permutes variable indices
+within blocks and acts on the weight space of $\lambda$.  Every highest-weight
+vector $v$ of weight $\lambda$ is an eigenvector,
+$P_w\,v=\chi_\lambda(w)\,v$ with $\chi_\lambda(w)=\prod_B\operatorname{sgn}(w_B)^{m_B}$.
+Hence the highest-weight vectors lie in the single $\chi_\lambda$-isotypic
+component of the weight space, whose dimension we denote $n_\chi$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+$P_w v$ has weight $w(\lambda)=\lambda$ and lies in the irreducible generated
+by $v$, whose $\lambda$-weight space is one-dimensional; the scalar is
+intrinsic to the module, and on the leading-minor model a transposition inside
+a block of value $m$ acts by $(-1)^{m}$.  The rectangular case is the special
+value $\chi=\operatorname{sgn}^{\delta}$.  Note that the one-operator shortcut
+available in the rectangular case relies on $2$-transitivity of the alternating
+group and does not generalise; only the isotypic restriction does.
+\end{proof}
+
+The reduction was validated by computing, at seven cells, the full kernel
+against every candidate character of the stabiliser and confirming it lands
+entirely in $\chi_\lambda$ and is empty elsewhere --- a test that fails for a
+wrong sign rule, and passes in every direction.
+
+The dimension $n_\chi$ is an upper bound for the number of highest-weight
+vectors, not a multiplicity or a rank, and it must be computed: it is given
+exactly by the signed orbit count
+$n_\chi=|\Stab_W(\lambda)|^{-1}\sum_{w}\chi_\lambda(w)\,\mathrm{Fix}(w)$, with
+$\mathrm{Fix}(w)$ the number of weight-$\lambda$ monomials fixed by $w$.  The
+quotient $N_S/|\Stab_W(\lambda)|$ is neither an upper nor a lower bound for
+$n_\chi$: measured cells lie on both sides of it.  As an example of the
+reduction, the unique degree-six invariant $I_6$ of senary quartics, of weight
+$(4^{6})$, is reduced from $N_S=1\,532\,489$ to $n_\chi=2804$.  (The feasible
+range is a property of the implementation rather than of the theorem; one
+six-row cell since closed in this programme, $((12,4,4,4,4,4),8)$, has
+$N_S=27\,009\,659$.)
+
+\section{Negative results}\label{sec:negative}
+
+We collect what the computations rule out.  All are det-side or reducible-side
+statements.  By the washout theorem a length-five certificate would not see the
+permanent's own structure: at $r=5$, $\Pp_5=\Rr_5$, so a positive gap there
+would separate reducibility, not the permanent, from the determinant.  It would
+nevertheless be a genuine multiplicity obstruction for the padded permanent,
+precisely because $\Pp_5=\Rr_5$; the washout changes the interpretation of
+such a certificate, not its existence, and is not an impossibility theorem.
+The length-six data is the first that can see the permanent itself.
+
+For a weight $\lambda$ with $\ell(\lambda)=k$ and a degree $\delta$ write
+\[
+  i_{\det}(\lambda,\delta)=a(\lambda,\delta)-\mult_\lambda\bC[\Ddet_k]_\delta ,
+\]
+the number of copies of $S_\lambda(\bC^k)$ in $I(\Ddet_k)_\delta$ (the
+\emph{ideal-copy count}), as distinct from the coordinate-ring multiplicity
+$\mult_\lambda\bC[\Ddet_k]_\delta$; and let
+$\Delta(\lambda,\delta)=\mult_\lambda\bC[\Pp_k]_\delta-\mult_\lambda\bC[\Ddet_k]_\delta$
+be the gap of Theorem~\ref{thm:transfer}.  By \eqref{eq:lengthred} both
+multiplicities are those of the orbit closures in $\Sym^{4}\bC^{16}$.
+
+\begin{theorem}[Blindness on the short slab]\label{thm:slab}
+\begin{enumerate}
+\item For every weight with $\ell(\lambda)\le4$ and every degree $\delta$,
+$\Delta(\lambda,\delta)\le0$.
+\item For every weight with $\ell(\lambda)\le3$ and every degree $\delta$,
+$i_{\det}(\lambda,\delta)=0$, i.e.\
+$\mult_\lambda\bC[\Ddet_{\ell(\lambda)}]_\delta=a(\lambda,\delta)$.
+\item Let $e$ be the degree of a generator of the principal ideal
+$I(\Ddet_4)\subset\bC[\Sym^{4}\bC^{4}]$.  For every weight with
+$\ell(\lambda)=4$, $i_{\det}(\lambda,\delta)=0$ for $\delta\le e-1$.  Here
+$e\ge10$ is certified (below), and $e=320112$ is adopted from
+\cite[Thm.~2]{LLV}.  Hence $i_{\det}=0$ on the whole slab
+$\{\ell(\lambda)\le4,\ \delta\le9\}$ unconditionally, and on
+$\{\ell(\lambda)\le4,\ \delta\le e-1\}$ given the adopted value of $e$.  At
+$\delta=e$ the generator itself is a copy of $S_{(e^{4})}$ in the ideal, so
+$i_{\det}((e^{4}),e)\ge1$ and the equality $\mult=a$ of item~(2) does not
+extend to length four in every degree.
+\item On the range of items (2)--(3),
+$\Delta(\lambda,\delta)=-\big(a(\lambda,\delta)-\mult_\lambda\bC[\Rr_k]_\delta\big)$,
+$k=\ell(\lambda)$: a quantity about the reducible locus only.  It is strictly
+negative at $((8,8,8),6)$ and at $((12,8,8),7)$, where $\Delta=-1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) By \eqref{eq:lengthred} a weight of length $k\le4$ sees the two varieties
+$\Pp_k$ and $\Ddet_k$.  For $k\le4$, $\Pp_k=\Rr_k$ (Theorem~\ref{thm:washout})
+and $\Rr_k\subseteq\Ddet_k$ (Proposition~\ref{prop:contain}).  Containment of
+varieties gives a surjection $\bC[\Ddet_k]\twoheadrightarrow\bC[\Pp_k]$ of
+$\GL_k$-algebras, hence $\mult_\lambda\bC[\Pp_k]_\delta\le
+\mult_\lambda\bC[\Ddet_k]_\delta$.  No degree enters: this item holds at every
+$\delta$, including $\delta\ge e$.
+
+(2) $\Ddet_3=\Sym^{4}\bC^{3}$ (the codimension table), and for $k\le2$
+$\Ddet_k=\Sym^{4}\bC^{k}$ as well (every binary quartic is a product of linear
+forms, the determinant of a diagonal matrix).  So $I(\Ddet_k)=0$ for $k\le3$
+and $\mult=a$ at every weight of length at most three and every degree.
+
+(3) $\Ddet_4$ is irreducible, as the closure of the image of an irreducible
+variety, and has dimension $34$ in the $35$-dimensional $\Sym^{4}\bC^{4}$ (the
+codimension table), so it is a hypersurface.  Its ideal in the factorial ring
+$\bC[\Sym^{4}\bC^{4}]$ is principal, generated by an irreducible $g$ spanning a
+$\GL_4$-stable line: a semi-invariant of weight $(e^{4})$, $e=\deg g$.  Hence
+$I(\Ddet_4)_\delta=0$ for $\delta<e$, in every weight, and $g$ itself is the
+copy asserted at $\delta=e$.  For $e\ge10$: at the rectangular weights
+$((\delta^{4}),\delta)$ the multiplicity equals $a$ for $\delta=4,6,7,8$
+(certified at both primes: a modular rank attaining $a$ is a certificate over
+$\bQ$), while $a=0$ at the remaining $\delta\le9$; a generator of degree
+$\le9$ would be a rectangular semi-invariant of that degree vanishing on
+$\Ddet_4$, contradicting one of these.  The value $e=320112$ is the degree of
+the component $F_1$ of \cite[Thm.~2]{LLV}, the closure of the quartic surfaces
+with a $4\times4$ linear determinantal representation (admissible pair
+$(5,5,5,5),(6,6,6,6)$ in \cite[Table~2]{LLV}); it is adopted, not certified
+here, and nothing in this paper reaches degree $320112$.
+
+(4) On that range $\mult_\lambda\bC[\Ddet_k]=a$, and $\Pp_k=\Rr_k$ for
+$k\le4$.  At the two named cells, both of length three, the reducible locus
+$\Rr_3$ carries exactly one ideal copy (proved and measured at both primes; at
+$((8,8,8),6)$, where $a=2$, it is the combination of the square of the
+degree-three invariant of ternary quartics and the degree-six invariant that
+vanishes on every quartic with a linear factor), while
+$i_{\det}=0$ by item~(2).
+\end{proof}
+
+In every degree, then, what holds on the length-$\le4$ slab is the inequality
+of item~(1), a containment statement; the equality $\mult_\lambda\bC[\Ddet]=a$
+holds at length at most three in every degree and at length four only below
+the onset $e$.
+
+\begin{theorem}[No arithmetic obstruction]\label{thm:arith}
+Call a cell $(\lambda,\delta)$ \emph{occurrence-forced} if the ambient
+multiplicity exceeds the Peter--Weyl bound of the determinant orbit,
+$a(\lambda,\delta)>m_{\det}(\lambda)$.  No length-five cell at $n=4$ is
+occurrence-forced through degree ten (an exhaustive check of $2585$ cells), and
+none of length six through ten in the computed range.  Consequently the onset
+of $I(\Ddet_5)$ is a genuine multiplicity phenomenon
+$\mult<a\le m_{\det}$, invisible to the arithmetic that pinned the $n=3$ ideal,
+and no occurrence obstruction is arithmetically available at $n=4$.
+\end{theorem}
+
+The contrast with $n=3$ is regime, not accident: at $n=3$ the ideal was first
+pinned at lengths eight and nine by the degenerate mechanism $m_{\det}=0$, a
+different length regime; at length five the $n=3$ route was silent too.  We
+emphasise that Theorem~\ref{thm:arith} does not close the obstruction question:
+a multiplicity obstruction with $a\le m_{\det}$ on both sides, detectable only
+by an actual rank drop, is invisible to the arithmetic screen and lives in the
+length-six-and-up regime that the reduction of \S\ref{sec:reduction} has only
+begun to open.  In every length-six cell measured through degree seven the
+determinant's ideal is empty and the padded multiplicity equals the
+reducible-locus multiplicity, so no permanent-specific equation has been found.
+
+\begin{remark}[The gate]\label{rem:gate}
+Earlier sweeps in this programme used the gate $a\ge2$, on the ground that
+occurrence obstructions ($a=1$, $m_{\det}=0$) are closed by \cite{BIP}.  That
+theorem requires $n\ge m^{25}$ and is silent at $(m,n)=(3,4)$; the correct gate
+at small parameters is $a\ge1$, and the $a=1$ cells --- one of which is the
+degree-five reducible invariant of \S\ref{sec:reducible} --- must be screened.
+After Proposition~\ref{prop:contain} the length gate is $\ell(\lambda)\ge5$,
+and after Corollary~\ref{cor:kl} the first-row gate is $\lambda_1\ge\delta$.
+This is a cautionary instance of transporting an asymptotic theorem into the
+small regime.
+\end{remark}
+
+The honest frame, following \cite{DIP}: the set-theoretic non-containment
+$x_0\per_3\notin\overline{\GL_{16}\cdot\det_4}$ is known (from
+\cite[Thm.~1.0.1]{LMR}: $\overline{dc}(\per_m)\ge m^{2}/2$, so
+$\overline{dc}(\per_3)\ge5>4$), so we are exhibiting the multiplicity method on
+a separation established by other means.  What the present study contributes
+is a map of where the certificate can live, with each coordinate labelled.
+\emph{Length $\ge5$}: proved, since every weight of length at most four has
+$\Delta\le0$ in every degree (Theorem~\ref{thm:slab}(1)); length five is
+\emph{not} excluded (see the opening of this section).  \emph{First row
+$\ge$ degree}: proved (Corollary~\ref{cor:kl}).  \emph{Degree $\ge8$}:
+measured, not proved --- a positive gap needs $i_{\det}\ge1$, and the
+determinant's five-row ideal $I(\Ddet_5)$ is measured empty through degree
+seven, as is the determinant's ideal on every length-six cell measured through
+degree seven; the coordinate holds only as far as those measurements reach.
+Inside this map the open region is large: the $n=4$ region $\delta\le8$,
+$5\le\ell(\lambda)\le\delta$, $\lambda_1\ge\delta$ contains exactly $4{,}198$
+weight--degree labels (a certified count), $2{,}734$ of them with $a>0$, and
+$2{,}571$ of those were still open at the time of writing.
+
+\subsection*{The method exhibited on a separation of its own size.}
+
+That frame invites an obvious test, and it can now be reported.  Take the
+$n=3$ member of the family that supplies the length-nine equation, namely
+$\lambda=(19,7,2^{5})$, $\delta=12$, $r=7$, with ambient multiplicity $a=6$; and
+compare $\det_3$ against the \emph{unpadded} $\per_3$, both cubics in nine
+variables restricted to seven.  The comparison is favourably oriented, unlike
+the padded one at small length: writing $\Ddet_7$ and $\Pp_7$ for the two
+varieties of cubics in $\Sym^{3}\bC^{7}$ (of dimension $84$),
+\[
+  \dim\Ddet_7 = 9r-16 = 47 ,\qquad \dim\Pp_7 = 9r-4 = 59 ,
+\]
+so the determinant variety is the smaller of the two and neither fills the
+ambient space.  We find
+\[
+  \mult\nolimits_{\det}=5,\qquad \mult\nolimits_{\per}=6=a ,\qquad
+  \Delta = \mult\nolimits_{\per}-\mult\nolimits_{\det} = +1 ,
+\]
+proved; its one premise beyond the measurements, $(\star)$ below, is itself proved.  The halves are rigorous for
+different reasons, and it is worth separating them.  $\mult_{\per}=a$ was
+measured as a rank modulo $p$ at both house primes, and
+$\rank_p\le\rank_\bQ\le a$ forces equality over $\bQ$; there is no
+finite-point caveat in this direction, since the caveat is that vanishing at
+finitely many points does not prove ideal membership and here nothing vanishes.
+The same argument applied to the determinant's measured rank $5$ gives
+$\mult_{\det}\ge5$.  The reverse inequality is an ideal-membership statement,
+and it comes from \cite{LMR}: \cite[Thm.~2.3.1]{LMR} with \cite[Thm.~3.1.1 and
+\S3.2]{LMR} put a copy of the module of highest weight
+$12\omega_1+5\omega_2+2\omega_7=(19,7,2^{5})$ in the ideal of
+$\overline{\GL_9\cdot\det_3}$ in degree $12$ (the example printed in
+\cite[\S3.2]{LMR}, which also records the ambient multiplicity six).  So
+$i_{\det}\ge1$ in nine variables, and $\mult_{\det}\le5$ once that copy is
+transferred to the seven-variable model $\Ddet_7$.  The transfer is the
+programme's isotypic restriction from nine variables to seven, valid for
+$\ell(\lambda)\le7$ and used here at its boundary $\ell(\lambda)=7$; call it
+$(\star)$.  It is not a statement of \cite{LMR}; it is proved in this programme, so the conclusion
+$\mult_{\det}=5$, hence $\Delta=+1$, is proved.  (We use only
+the half of the sentence of \cite[\S3.2]{LMR} that is proved there,
+$i_{\det}\ge1$; the bound $i_{\det}\le1$ comes from the measured rank.)  Both
+multiplicities are nonzero, so
+$S_\lambda$ occurs in both coordinate rings: this is a \emph{multiplicity}
+obstruction and not an occurrence obstruction --- which is the stronger reading,
+since \cite{BIP} closes the occurrence route in the padded regime and leaves the
+multiplicity route open.
+
+We claim nothing new for the separation itself: $\dim\Pp_7=59>47=\dim\Ddet_7$
+already gives $\Pp_7\not\subseteq\Ddet_7$ by a dimension count.  The point is
+the certificate.  It is the first $\Delta>0$ this programme has produced end to
+end by its own machinery, at a cell of $17\,047$ coordinates rather than the
+$3.1\times10^{7}$ of the length-nine cell, and it exercises exactly the pipeline
+the length-nine comparison requires: one source, one raising kernel, two
+evaluation families, two primes.  It is unpadded and at $n=3$, so it bears on the
+padded model only as calibration --- indeed the \emph{padded} $n=3$ cell can
+never carry an obstruction, since $\per_2$ and $\det_2$ are both rank-four
+quadratic forms in four variables and hence $\GL$-equivalent, so the padded
+$\per_2$ in degree three is $\ell\cdot\det_2$ up to $\GL$, which is the block
+split $\operatorname{diag}(\ell,A_2)$ inside $\det_3$ and forces
+$\Delta\le0$ there identically.
+
+\subsection*{What the length-nine cell reduces to.}
+
+At $n=4$ the smallest length carrying a non-vacuous determinant equation is
+$r=9$, and the deduction there needs neither the target dimension nor
+stability.  The ambient multiplicities along the ladder
+$(4\delta-31,17,2^{7})$ end $\dots,272,273,274$, so the last two increments are
+one apiece, and the ladder's monotonicity turns the whole question into a single
+rank lower bound: $\rank\Theta^{+}\ge273$ at the predecessor forces
+$\mult_{\det}\ge273$ at the goal cell, hence $i_{\det}\le1$, hence
+$i_{\det}=1$ given $i_{\det}\ge1$.  The last is \cite{LMR}: by
+\cite[Thm.~2.3.1]{LMR} the variety $\mathrm{Dual}_{k,d,N}$ has equations
+forming a copy of the module of highest weight
+$\Omega(k,d)=(d-1)(d-2)(k+2)\omega_1+(d(k+2)-2k-5)\omega_2+2\omega_{k+3}$, in
+degree $(k+2)(d-1)$, and by \cite[Thm.~3.1.1]{LMR} $[\det_n]$ lies on
+$\mathrm{Dual}_{2n-2,n,n^{2}}$; at $n=d=4$, $k=6$, $N=16$ this is the weight
+$48\omega_1+15\omega_2+2\omega_9=(65,17,2^{7})$ in degree $24$, and the
+length reduction \eqref{eq:lengthred} carries the copy from sixteen variables to
+$\Ddet_9$.  That transfer is the $n=4$ analogue of the premise $(\star)$ of the
+$n=3$ control above: the $n=3$ case is proved; the $n=4$ case is not yet checked, so
+this transfer is flagged, not established.  (We do not
+use \cite[Thm.~1.0.2]{LMR}, whose printed coefficient of $\omega_1$ and degree
+are both half of these values.)  Equivalently, in the
+room-one form, the equation is born exactly when the Schur complement
+$c-b^{\mathsf T}A^{-1}b$ vanishes, with $A$ the degree-$24$ Gram restricted to
+the transported predecessor.  The $n=3$ shadow above exhibits the same mechanism
+at a size where it can be run.
+
+That rank lower bound has since been established.  A basis of
+$M_{\lambda}=\mathrm{HWV}_{\lambda}(\Sym^{24}\Sym^{4}\bC^{9})$ of all $274$
+vectors was constructed by births along the ladder, each rung's birth quotient
+$M_d/uM_{d-1}$ certified by a nonzero minor at both primes, where
+$u=c_{(4,0,\dots,0)}$; multiplication by $u$ is injective and
+$\ker(M_d\to R/(u))=uM_{d-1}$, so the transported births are a basis, which the
+generic column confirms.  Evaluating at determinant pencils gives a nonzero
+$273\times273$ minor \emph{on the transported degree-$23$ rows alone}, so
+$\Theta^{+}$ is injective on $uM_{23}$ and $i_{\det}(23)=0$; with
+$b_{24}=1$ and \cite{LMR} this pins
+\[
+  \rank\Theta_{\lambda}^{\det}=273,\qquad i_{\det}=1
+\]
+exactly, and no degree-$24$ candidate enters the argument.  The one-dimensional
+kernel is therefore \cite{LMR}'s own equation, and its residues are nonzero at
+every one of $282$ integer padded points at both primes, so it does not vanish on
+the padded permanent.
+
+On the padded side a nonzero $269\times269$ minor gives the floor
+$\rank\Theta_{\lambda}^{\mathrm{pad}}\ge269$, hence $i_{\mathrm{pad}}\le5$ and
+$\Delta=1-i_{\mathrm{pad}}\ge-4$.  The observed nullity of five is a ceiling read
+off a finite point set and is not a theorem: a nonzero minor bounds $i$ from
+above, and only a membership proof bounds it from below.  Such a proof is
+available.  At the ladder rung $(21,17,2^{7})$ in degree $13$ the reducible
+locus carries exactly three ideal copies: evaluation at the chosen points is
+injective on the relevant $73$-dimensional source space, certified by a
+nonzero $73\times73$ minor at both primes, so the three sampled kernel
+directions are genuine equations of $\Rr_9$.  Multiplication by the
+eleventh power of $u$ carries them injectively to three ideal copies at the
+goal cell, and $\Pp_9\subseteq\Rr_9$ gives $i_{\mathrm{pad}}\ge3$.  Hence
+\[
+  \Delta\in[-4,-2],
+\]
+certified conditional on the adopted value $73$ of the dimension of that source
+space (adopted on two independent lineages, not proved here); in particular
+$\Delta=+1,0,-1$ are excluded at this cell.  Two further facts are measured on
+the sampled kernel, at both primes.  None of the five sampled
+kernel directions meets the degree-$24$ birth line, so
+$i_{\mathrm{pad}}(24)=i_{\mathrm{pad}}(23)$ and $\Delta=1-i_{\mathrm{pad}}(23)$;
+and the padded and reducible kernels coincide, so
+$\mult_{\mathrm{pad}}=\mult_{\mathrm{red}}$ and the whole question is one about
+$\Rr_9$ rather than about the permanent.  We record, with the caveat that any
+exhibited element of $I(\Ddet)^{\mathrm{HWV}}$ obtained by evaluation carries:
+vanishing at finitely many points is Schwartz--Zippel evidence of ideal
+membership, not a proof of it, and the rigorous lower bound $i_{\det}\ge1$ on
+the determinant side remains \cite{LMR}'s (Theorems~2.3.1 and~3.1.1 there).
+
+\section{Open problems}\label{sec:open}
+
+\begin{question}
+Is Conjecture~\ref{conj:onset} true at $n=3$?  The decisive computations are the
+balanced length-five cells at degree eight and nine, now within reach of the
+reduction of \S\ref{sec:reduction}; each empty cell is evidence, and a single
+bite below degree $65$ settles it in the negative.
+\end{question}
+
+\begin{question}
+Does a multiplicity obstruction between $\Pp_6$ and $\Ddet_6$ exist at length
+six?  By Proposition~\ref{prop:pieri} the first candidate degree is seven.  The
+$682$ six-row cells we have measured through degree twelve --- the skewed ones,
+which are the affordable ones --- carry no determinant equation, no
+permanent-specific equation and no $\per_4$ equation (measured, not proved),
+and $63$ tails are closed
+at every degree by the first-stable-cell argument.  The balanced six-row cells,
+with $n_\chi\ge10^{6}$, remain unmeasured and are the frontier.
+\end{question}
+
+\begin{question}
+Is there a closed form for the extra Jacobian syzygy of a determinantal
+threefold --- the one relation beyond Koszul that Step 3 of
+Theorem~\ref{thm:cap} produces?  An explicit adjugate identity would make the
+cap theorem elementary and remove the appeal to Dimca and Gulliksen--Neg\aa rd.
+\end{question}
+
+\begin{question}
+Does the reducible-locus screen (Theorem~\ref{thm:transfer}) ever certify
+blindness over an unbounded degree range?  Direction 1's Kempf-collapsing
+computation of $\bC[\Rr_r]$ weight by weight, if carried out, would decide
+whether $\Delta\le0$ holds for all $\delta$ on a fixed length.
+\end{question}
+
+\begin{question}
+Is $I(D^{\per_3}_r)_\delta$ ever nonzero?  By
+Proposition~\ref{prop:pieri} this single cubic-side ideal governs the whole
+question of whether the permanent is visible at all: it is empty in degree
+$\delta$ at length $r$ if and only if $\mult_\lambda\bC[\Pp_r]=
+\mult_\lambda\bC[\Rr_r]$ at \emph{every} weight of that length and degree.  It
+is zero for every $r$ in every degree $\delta\le8$, and at $r=6$ in degree
+nine (\S\ref{sec:intro}); its constituents have length between $6$ and
+$\min(r,\delta)$, with no further upper bound on that length known, and the
+first open cases lie in degree nine.  One scan settles a whole
+degree, so
+this is the cheapest open question the programme has, and a nonzero weight would
+be the first place the permanent becomes visible to a multiplicity.
+\end{question}
+
+\section*{Acknowledgements}
+
+The work reported here was carried out using AI tools, including Claude (Anthropic).
+Responsibility for the correctness of every statement in this paper rests with
+the author.
+
+\section*{Data availability}\label{sec:data}
+
+All code, inputs, exact outputs and the full commit history --- including the
+pre-registrations of the predictions tested --- are available at
+\url{https://github.com/swsethuraman/gct}.  The measured quantities of
+\S\ref{sec:cap} and \S\ref{sec:negative} are reproduced by the scripts there
+over two word-size primes; the symbolic identities of \S\ref{sec:cap} are
+checked in exact rational arithmetic.
+
+\begin{thebibliography}{99}
+
+\bibitem{Beau} A.~Beauville, \emph{Determinantal hypersurfaces}, Michigan Math.
+J. \textbf{48} (2000), 39--64.
+
+\bibitem{BrunsVetter} W.~Bruns, U.~Vetter, \emph{Determinantal Rings}, Lecture
+Notes in Math. \textbf{1327}, Springer, 1988.
+
+\bibitem{BI} P.~B\"urgisser, C.~Ikenmeyer, \emph{Fundamental invariants of
+orbit closures}, J. Algebra \textbf{477} (2017), 390--434.
+
+\bibitem{BIP} P.~B\"urgisser, C.~Ikenmeyer, G.~Panova, \emph{No occurrence
+obstructions in geometric complexity theory}, J. Amer. Math. Soc. \textbf{32}
+(2019), 163--193.
+
+\bibitem{Companion} S.~Sethuraman, \emph{Conductors of orbit closures, and the
+fundamental invariant of the $3\times 3$ determinant}, arXiv preprint, 2026,
+arXiv:XXXX.XXXXX [identifier to be inserted at submission].
+
+\bibitem{Companion2} S.~Sethuraman, \emph{Singular matrix spaces and the
+length-five non-containment}, technical report, this programme, 2026; PDF at
+[repository URL to be inserted at submission].
+
+\bibitem{Companion3} S.~Sethuraman, \emph{$D_{45}\cap P_5$ classified up to its
+boundary, and the rank thresholds at $N=6,7,8$}, technical report, this programme,
+2026; PDF at [repository URL to be inserted at submission].
+
+\bibitem{Dimca13} A.~Dimca, \emph{Syzygies of Jacobian ideals and defects of
+linear systems}, Bull. Math. Soc. Sci. Math. Roumanie \textbf{56(104)} (2013),
+191--203; arXiv:1210.1795.
+
+\bibitem{DIP} J.~D\"orfler, C.~Ikenmeyer, G.~Panova, \emph{On geometric
+complexity theory: multiplicity obstructions are stronger than occurrence
+obstructions}, ICALP 2019 / SIAM J. Appl. Algebra Geom.
+
+\bibitem{GN} T.~H.~Gulliksen, O.~G.~Neg\aa rd, \emph{Un complexe r\'esolvant
+pour certains id\'eaux d\'eterminantiels}, C. R. Acad. Sci. Paris \textbf{274}
+(1972), 16--18.
+
+\bibitem{KL2} E.~Kadish, J.~M.~Landsberg, \emph{Padded polynomials, their
+cousins, and geometric complexity theory}, Comm. Algebra \textbf{42} (2014),
+2171--2180; arXiv:1204.4693.
+
+\bibitem{Kleiman} S.~L.~Kleiman, \emph{The transversality of a general
+translate}, Compositio Math. \textbf{28} (1974), 287--297.
+
+\bibitem{Landsberg} J.~M.~Landsberg, \emph{Geometry and Complexity Theory},
+Cambridge Stud. Adv. Math. \textbf{169}, Cambridge Univ. Press, 2017.
+
+\bibitem{LLV} M.~Leal, C.~Lozano Huerta, M.~Vite, \emph{The Noether--Lefschetz
+locus of surfaces in $\mathbb{P}^3$ formed by determinantal surfaces}, Math.
+Nachr. \textbf{297} (2024), 4671--4688; arXiv:2303.09028.
+
+\bibitem{LMR} J.~M.~Landsberg, L.~Manivel, N.~Ressayre, \emph{Hypersurfaces
+with degenerate duals and the geometric complexity theory program}, Comment.
+Math. Helv. \textbf{88} (2013), 469--484.
+
+\bibitem{MS} K.~D.~Mulmuley, M.~Sohoni, \emph{Geometric complexity theory I},
+SIAM J. Comput. \textbf{31} (2001), 496--526.
+
+\bibitem{Valiant} L.~G.~Valiant, \emph{Completeness classes in algebra}, Proc.
+11th ACM STOC (1979), 249--261.
+
+\end{thebibliography}
+
+\end{document}

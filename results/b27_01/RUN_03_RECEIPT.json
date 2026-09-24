@@ -1,0 +1,38 @@
+{
+  "run_number": 3,
+  "started_utc": "2026-09-23T03:58:28Z",
+  "command": [
+    "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "analysis/b27_01_tangent.py"
+  ],
+  "inputs": [
+    {
+      "path": "analysis/b27_01_tangent.py",
+      "sha256": "fc5ae58fe0e1681973a023deca7503d547337432e813a5b2d3fba05f55ac80de"
+    },
+    {
+      "path": "analysis/b27_01_verify.py",
+      "sha256": "d3aa0f47ad6973ce830a81d67ec771f34b952a47253ea807fe8b60c29d7c48f2"
+    },
+    {
+      "path": "analysis/b27_01_boundary.py",
+      "sha256": "2d999431ede68da95c9dca282f9cbb18617f2f7e550c1f26f5fd365a65b74845"
+    }
+  ],
+  "seconds_limit": 60,
+  "memory_limit_bytes": 512000000,
+  "job_object_enforced": true,
+  "workers": 1,
+  "random_generation": false,
+  "outcome": "COMPLETED",
+  "wall_seconds": 7.752075599972159,
+  "peak_job_memory_bytes": 21884928,
+  "peak_process_memory_bytes": 21884928,
+  "output": {
+    "path": "results/b27_01/TANGENT_CERTIFICATE.json",
+    "sha256": "6e39942cceaba93e63cb4ba52374016c3381edde15547fcde9577444587da1b8",
+    "bytes": 8905
+  },
+  "mathematical_outcome": "PASS"
+}
