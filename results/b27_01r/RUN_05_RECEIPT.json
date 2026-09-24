@@ -1,0 +1,31 @@
+{
+  "run": 5,
+  "started_utc": "2026-09-23T04:21:04Z",
+  "command": [
+    "python",
+    "-B",
+    "analysis/b27_01r_identities.py"
+  ],
+  "interpreter_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+  "inputs": [
+    {
+      "path": "analysis/b27_01r_identities.py",
+      "sha256": "488ab8287b9d791d5a4cf37b72979727b6f807e0a6aa9b2a5f64f831200cef79"
+    },
+    {
+      "path": "analysis/b27_01r_cap.py",
+      "sha256": "9a722297f35f17d5d2f3bfd3bed07b5acadb927e74a55e6c869a9671fdd3e9b6"
+    }
+  ],
+  "seconds_limit": 60,
+  "memory_limit_bytes": 512000000,
+  "outcome": "PASS",
+  "wall_seconds": 0.123,
+  "peak_job_memory_bytes": 71921664,
+  "outputs": [
+    {
+      "path": "results/b27_01r/IDENTITIES.json",
+      "sha256": "8099d3ce4dec3be19e11276a93166d6befea1302801cc2d57a970b75ee8d87fb"
+    }
+  ]
+}
