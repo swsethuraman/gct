@@ -1,0 +1,81 @@
+{
+ "K": {
+  "dtype": "<u4 row-major",
+  "file": "22_6_5_2_1_d9_p2147483629_K.u32",
+  "sha256": "bbce9dbe09b6870e4e64e24f8a23fcf44e4481a6fcc2aa4a5c38d99ed2c02924",
+  "shape": [
+   21093,
+   24
+  ]
+ },
+ "a": 24,
+ "evaluation": {
+  "VK_sha256": "718cac7518f98e3c2d269832a11332cdcf440314d222d3a5e1673ad15142d028",
+  "VK_shape": [
+   32,
+   24
+  ],
+  "minor_det_mod_p": 188834369,
+  "minor_rows": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "mult_det": 24,
+  "npts": 32
+ },
+ "hybrid": {
+  "G_sha256": "b61f33df7cecd7ffed355f4f3099d6fa96f260a6953f3adbf192cba8fd3113e4",
+  "G_shape": [
+   134,
+   70
+  ],
+  "nS": 21023,
+  "nU": 70,
+  "nblocks": 1,
+  "nnzT": 55942,
+  "projected_nullity": 24,
+  "projection": {
+   "attempt": 0,
+   "base_seed": 20260908,
+   "extra": 64,
+   "generator": "wk11_s71_schur.c splitmix64, z = pseed ^ (0xD1B54A32D192ED03*(r+1)), row t = x % m, sign = (x>>40)&1",
+   "m": 134,
+   "nproj": 8,
+   "pseed": 20261537
+  },
+  "rank_K": 24,
+  "rank_K_method": "flint nmod_mat rank of K[U,:] (deterministic; replaces rank_tall)",
+  "rows_other": 30314,
+  "source_gate": true,
+  "ublock": 70,
+  "verified_on_all_rows": true
+ },
+ "n_chi": 21093,
+ "outcome": "FULL_RANK",
+ "prime": 2147483629,
+ "schema": "b28-01c-cert/1",
+ "status": "FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK",
+ "tag": "22_6_5_2_1_d9"
+}

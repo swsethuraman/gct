@@ -1,0 +1,37 @@
+{
+ "a": 24,
+ "fixture": {
+  "proj_m": 40
+ },
+ "hybrid": {
+  "G_sha256": "697314ce8ff1f5b7c63512c435b19321ee3a4c02e272dc3fa2a620e957a4fce1",
+  "G_shape": [
+   40,
+   70
+  ],
+  "failed_check": "projected nullity != a (no lift attempted)",
+  "nS": 21023,
+  "nU": 70,
+  "nblocks": 1,
+  "nnzT": 55942,
+  "projected_nullity": 30,
+  "projection": {
+   "attempt": 0,
+   "base_seed": 20260908,
+   "extra": 64,
+   "fixture_m": 40,
+   "generator": "wk11_s71_schur.c splitmix64, z = pseed ^ (0xD1B54A32D192ED03*(r+1)), row t = x % m, sign = (x>>40)&1",
+   "m": 40,
+   "nproj": 8,
+   "pseed": 20261555
+  },
+  "rows_other": 30314,
+  "source_gate": false,
+  "ublock": 70
+ },
+ "n_chi": 21093,
+ "prime": 2147483647,
+ "schema": "b28-01c-cert/1",
+ "status": "SOURCE GATE FAILED (inconclusive; no retry authorized)",
+ "tag": "22_6_5_2_1_d9"
+}

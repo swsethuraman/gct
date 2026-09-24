@@ -1,0 +1,40 @@
+{
+ "schema": "b28-01c-resource-receipt/1",
+ "slot": "B28-01c",
+ "host": "user's laptop, WSL2 Ubuntu 24.04.5 (unchanged from B28-01a ENVIRONMENT.json); python 3.12.3, numpy 2.5.3, scipy 1.18.1, python-flint 0.9.0; systemd 255; no installs",
+ "allowance": "B28-01a calibration class: at most 1 h wall and 8,000,000,000 bytes (decimal), MemorySwapMax=0, for all controls and replays; no Cell A",
+ "enforcement": "systemd-run --user --scope -p MemoryMax=8000000000 -p MemorySwapMax=0 -p RuntimeMaxSec=3700, inside it GNU timeout 3600, one process at a time, one BLAS thread",
+ "harness_runs": [
+  {
+   "attempt": 1,
+   "command": "bash harness.sh -> scope(8000000000, swap 0) timeout 3600 python ~/b28_01/frozen_c/b28_01c_controls.py ~/b28_01/frozen_c ~/b28_01/out_c",
+   "utc": ["2026-09-24T16:58:20Z", "2026-09-24T16:58:40Z"],
+   "total_secs_monotonic": 20.257,
+   "result": "STOPPED at step 16 (launcher_preflight rc 2): the launcher's prior-output glob cellA* matched B28-01a's pricing file ~/b28_01/out/cellA_price.json. The 15 earlier steps met their expectations. Launcher fixed (glob narrowed to directories plus a search for any 12_8_6_4_2_d8_* file), refrozen; outputs kept on the host as ~/b28_01/out_c_attempt1",
+   "records": "results/b28_01c/attempt1/ (controls_receipt.json sha256 4886805301d207b3359ba840a4a157627fce64a64ad8e994578704b8eb17d62a)",
+   "launcher_sha256_then": "9646ee37fb1371885d6cf73c95e9d1025cfa3af3b968b2278b55536bfc241ee8",
+   "max_step_rss_bytes": 102850560
+  },
+  {
+   "attempt": 2,
+   "command": "same, fresh ~/b28_01/out_c",
+   "utc": ["2026-09-24T16:59:39Z", "2026-09-24T17:08:46Z"],
+   "total_secs_monotonic": 536.707,
+   "result": "ALL EXPECTATIONS MET (19 steps)",
+   "records": "results/b28_01c/out_c/controls_receipt.json (per-step command, rc, monotonic seconds, max RSS, log and output hashes); scope_limits_receipt.txt",
+   "max_step_rss_bytes": 3075833856
+  }
+ ],
+ "harness_total_secs_monotonic": 556.964,
+ "note_on_scopes": "The two harness attempts ran sequentially in two scopes of the same 8,000,000,000-byte class (the brief asks for one aggregate scope); their combined time is 557 s of the 3,600 s allowance and neither overlapped the other.",
+ "development_runs": [
+  {"what": "b28_01c_reprice.py on the committed calibration receipts (Windows python, arithmetic only, no matrices)", "secs": "<1"},
+  {"what": "stage.sh: reprice on the host copies of the same receipts (byte-compared equal to the committed ones)", "secs": "<1"},
+  {"what": "dev1.sh, scope(8000000000, swap 0) timeout 600: control-cell driver both primes, verifier both primes, source-gate, disagreement and deficiency fixtures (8 processes)", "secs": "each <1 s, max RSS 101,472 kB"},
+  {"what": "dev2.sh: systemd-run --user --scope -p MemoryMax=100000000 -p RuntimeMaxSec=2 /bin/sleep 20 (checks that RuntimeMaxSec is enforced on user scopes)", "secs": 2.286, "rc": 143},
+  {"what": "freeze1.sh: reprice into ~/b28_01/frozen_c (the frozen gate_rates_c.json)", "secs": "<1"},
+  {"what": "refreeze.sh: launcher --preflight-only after the fix", "secs": "<1", "rc": 0},
+  {"what": "b28_01c_finalize.py (hashing and JSON comparison only)", "secs": 2.92, "max_rss_kB": 49280}
+ ],
+ "cell_A": "not built, not started"
+}

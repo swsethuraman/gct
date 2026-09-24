@@ -1,0 +1,60 @@
+{
+ "cases": [
+  {
+   "cell": "control (22,6,5,2,1)_9",
+   "max_producer_phase_peak_bytes": 110866432,
+   "max_verifier_phase_peak_bytes": 128798720,
+   "needed_bytes": 1785435512,
+   "needed_covers_both": true,
+   "producer_covered": true,
+   "producer_envelope_bytes": 1785435512,
+   "recorded_gate_estimate_bytes": 1031435588,
+   "verifier_covered": true,
+   "verifier_estimate_bytes": 1031435588,
+   "verifier_peaks_from": [
+    "out_c/control/22_6_5_2_1_d9_p2147483647_verify_receipt.json",
+    "results/b28_01/control/22_6_5_2_1_d9_p2147483647_verify_receipt.json"
+   ]
+  },
+  {
+   "cell": "cal1 (24,6,5,3,2)_10 [gate inputs from the sizing run; peaks from B28-01a]",
+   "max_producer_phase_peak_bytes": 1176100864,
+   "max_verifier_phase_peak_bytes": 919474176,
+   "needed_bytes": 2173950624,
+   "needed_covers_both": true,
+   "producer_covered": true,
+   "producer_envelope_bytes": 2173950624,
+   "recorded_gate_estimate_bytes": 1302513072,
+   "verifier_covered": true,
+   "verifier_estimate_bytes": 1302513072,
+   "verifier_peaks_from": [
+    "results/b28_01/cal1/24_6_5_3_2_d10_p2147483647_verify_receipt.json"
+   ]
+  },
+  {
+   "cell": "cal2 (13,9,9,3,1,1)_9",
+   "max_producer_phase_peak_bytes": 4026748928,
+   "max_verifier_phase_peak_bytes": 5651423232,
+   "needed_bytes": 9127518584,
+   "needed_covers_both": true,
+   "producer_covered": true,
+   "producer_envelope_bytes": 4831800620,
+   "recorded_gate_estimate_bytes": 9127518584,
+   "verifier_covered": true,
+   "verifier_estimate_bytes": 9127518584,
+   "verifier_peaks_from": [
+    "out_c/cal2/13_9_9_3_1_1_d9_p2147483647_verify_receipt.json",
+    "results/b28_01/cal2/13_9_9_3_1_1_d9_p2147483647_verify_receipt.json"
+   ]
+  }
+ ],
+ "rule": "verifier estimate (b28_01c_model.verifier_mem) >= max measured verifier phase VmHWM; producer envelope >= max measured producer phase VmHWM",
+ "schema": "b28-01c-memory-model-check/1",
+ "timing_check": {
+  "cal2_gate_predicted_producer_remaining_secs": 195.0,
+  "cal2_gate_predicted_verifier_secs": 627.1,
+  "cal2_measured_producer_after_gate_secs": 106.688,
+  "cal2_measured_verifier_secs": 376.235,
+  "note": "receipt times (monotonic); nondeterministic, reported only as a check that the gate did not under-price the cell it was fitted on"
+ }
+}
