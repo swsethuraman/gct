@@ -1,0 +1,51 @@
+{
+  "K": {
+    "dtype": "<u4 row-major",
+    "file": "22_6_5_2_1_d9_p2147483647_K.u32",
+    "sha256": "8474f371a3b78840deffc5b899d06eeab5634223a6c6222595448914a3eed75c",
+    "shape": [
+      21093,
+      24
+    ]
+  },
+  "a": 24,
+  "evaluation": {
+    "VK_sha256": "d77b29322f7e6ede282ddfa9308aca4e1fa011535ed9c0c10715176c33c973dc",
+    "VK_shape": [
+      32,
+      24
+    ],
+    "mult_det": 24
+  },
+  "hybrid": {
+    "G_sha256": "7e4500dadd6cb12bc1cfddb7e74970a3328e31468ecacdb5fd150aa427385cea",
+    "G_shape": [
+      134,
+      70
+    ],
+    "nS": 21023,
+    "nU": 70,
+    "nblocks": 1,
+    "nnzT": 55942,
+    "projected_nullity": 24,
+    "projection": {
+      "attempt": 0,
+      "base_seed": 20260908,
+      "extra": 64,
+      "generator": "wk11_s71_schur.c splitmix64, z = pseed ^ (0xD1B54A32D192ED03*(r+1)), row t = x % m, sign = (x>>40)&1",
+      "m": 134,
+      "nproj": 8,
+      "pseed": 20261555
+    },
+    "rank_K": 24,
+    "rows_other": 30314,
+    "source_gate": true,
+    "ublock": 70,
+    "verified_on_all_rows": true
+  },
+  "n_chi": 21093,
+  "prime": 2147483647,
+  "schema": "b28-01-cert/1",
+  "status": "FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK",
+  "tag": "22_6_5_2_1_d9"
+}

@@ -1,0 +1,32 @@
+{
+  "bounds": {
+    "calibration2_baseL_key_bound": 8004512848309157376,
+    "float64_integer_limit": 9007199254740992,
+    "float64_limb_sum": 9006920084094975,
+    "int64_limit": 9223372036854775808,
+    "max_residue_product_plus_residue": 4611686011984936962,
+    "projection_product_abs_sum": 13644936445440,
+    "sparse_kernel_limb_abs_sum": 3493050429499650,
+    "target_baseL_key_bound": 576480100000000,
+    "verifier_claimed_limit": 4611686018427387904,
+    "verifier_int64_limb_sum": 4611615645388308480
+  },
+  "evidence": "COMPUTED integer bounds; HAND inequalities explained in review",
+  "producer_imports_absent": true,
+  "verifier_imports": [
+    "argparse",
+    "ctypes",
+    "flint",
+    "functools",
+    "hashlib",
+    "itertools",
+    "json",
+    "numpy",
+    "os",
+    "random",
+    "scipy",
+    "subprocess",
+    "sys",
+    "time"
+  ]
+}

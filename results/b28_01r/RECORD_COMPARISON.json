@@ -1,0 +1,152 @@
+{
+  "cells": [
+    {
+      "cell": "22_6_5_2_1_d9",
+      "cover": {
+        "S_sha256": "80eda4a8625558a4e2d1595bd5372e4b1f9f755d9d54e6fae98fed8e41885d08",
+        "U_sha256": "708855958ed38bc719e936d7c93dd93f73a6c2b2f4521d5680407fa9bea7410e",
+        "excess": 46,
+        "nU": 70,
+        "order": "reversed",
+        "rows_sha256": "158d5c5c08f44189892bdbb8037ceb7c94c7816eef856830d1e7e2bf3ab512cc",
+        "rule": "five preregistered orders (natural, reversed, fill_asc, fill_desc, random seed 20260908); per leading column the sparsest row, ties by row index; largest cover, ties by order list",
+        "size": 21023,
+        "stats": {
+          "fill_asc": 17779,
+          "fill_desc": 17434,
+          "natural": 20412,
+          "random": 14571,
+          "reversed": 21023
+        }
+      },
+      "fields": {
+        "N_S": 21093,
+        "a": 24,
+        "n_chi": 21093,
+        "nnz_E": 185066,
+        "rows_E": 51337,
+        "stab": 1
+      },
+      "line": 5,
+      "match": true,
+      "prime_checks": [
+        {
+          "actual_ublock": 70,
+          "historical_ublock": null,
+          "m": 134,
+          "mult_det": 24,
+          "nU": 70,
+          "nblocks": 1,
+          "prime": 2147483647
+        },
+        {
+          "actual_ublock": 70,
+          "historical_ublock": null,
+          "m": 134,
+          "mult_det": 24,
+          "nU": 70,
+          "nblocks": 1,
+          "prime": 2147483629
+        }
+      ],
+      "raw_line": {
+        "bytes": 4021,
+        "sha256": "8cf8bbedb19923d314fd119b0770c5e12c846a8e241fcd96bb5f378a141963b1"
+      },
+      "source": "96a8074d:results/s71_sweep.jsonl"
+    },
+    {
+      "cell": "24_6_5_3_2_d10",
+      "cover": {
+        "S_sha256": "adcb8305ed9d78f73d373b7385c96e2f73d80287f89b5b5bcc013ecc01908132",
+        "U_sha256": "aab84d85df7a7bd0d820b4d02f1a604177ac7179b9355014dbcbb4192dc8d10c",
+        "excess": 327,
+        "nU": 374,
+        "order": "reversed",
+        "rows_sha256": "c59319c0481782d56f97ce8f063d1f2e78e1f994dfdd2fb8927c367d1a016ba9",
+        "rule": "five preregistered orders (natural, reversed, fill_asc, fill_desc, random seed 20260908); per leading column the sparsest row, ties by row index; largest cover, ties by order list",
+        "size": 188498,
+        "stats": {
+          "fill_asc": 166113,
+          "fill_desc": 156220,
+          "natural": 184940,
+          "random": 128490,
+          "reversed": 188498
+        }
+      },
+      "fields": {
+        "N_S": 188872,
+        "a": 47,
+        "n_chi": 188872,
+        "nnz_E": 1951800,
+        "rows_E": 510662,
+        "stab": 1
+      },
+      "line": 145,
+      "match": true,
+      "prime_checks": [
+        {
+          "actual_ublock": 331,
+          "historical_ublock": 374,
+          "m": 438,
+          "mult_det": 47,
+          "nU": 374,
+          "nblocks": 2,
+          "prime": 2147483647
+        }
+      ],
+      "raw_line": {
+        "bytes": 4165,
+        "sha256": "cb8c6d087defbf55ade06b3ce87aa00a6798f56808d43dd0abd95a898f92d493"
+      },
+      "source": "96a8074d:results/s71_sweep.jsonl"
+    },
+    {
+      "cell": "13_9_9_3_1_1_d9",
+      "cover": {
+        "S_sha256": "96dfe8a8bc21eb8e14b64bce228238e02775be827dfdbfa34341df71dffb8504",
+        "U_sha256": "9c81748a51aa70d74748d0f6baea81e35d9a3f7bfebfb58adcb885b1c751502a",
+        "excess": 1207,
+        "nU": 1277,
+        "order": "reversed",
+        "rows_sha256": "04516be2f82e75f4607299d26e141ebfd3f823d42c73c15e1c2f86bcf1b1f21c",
+        "rule": "five preregistered orders (natural, reversed, fill_asc, fill_desc, random seed 20260908); per leading column the sparsest row, ties by row index; largest cover, ties by order list",
+        "size": 731538,
+        "stats": {
+          "fill_asc": 676443,
+          "fill_desc": 672773,
+          "natural": 704518,
+          "random": 513756,
+          "reversed": 731538
+        }
+      },
+      "fields": {
+        "N_S": 3503556,
+        "a": 70,
+        "n_chi": 732815,
+        "nnz_E": 18374635,
+        "rows_E": 3899488,
+        "stab": 4
+      },
+      "line": 121,
+      "match": true,
+      "prime_checks": [
+        {
+          "actual_ublock": 85,
+          "historical_ublock": 85,
+          "m": 1341,
+          "mult_det": 70,
+          "nU": 1277,
+          "nblocks": 16,
+          "prime": 2147483647
+        }
+      ],
+      "raw_line": {
+        "bytes": 4696,
+        "sha256": "3b24b9090245ca5056791210ffacb0c5926821d59ef42d456e5b5f01c43844fa"
+      },
+      "source": "96a8074d:results/s79_cells.jsonl"
+    }
+  ],
+  "evidence": "READ committed records; COMPUTED equality checks"
+}

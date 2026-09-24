@@ -1,0 +1,34 @@
+{
+  "evidence": "COMPUTED adversarial controls; no new calibration or target",
+  "interpretation": "The frozen verifier accepts a full-rank certificate without its required minor, and accepts nonfrozen projection annotations. These do not negate the independently recomputed full rank of this control.",
+  "results": [
+    {
+      "case": "missing_minor",
+      "exit_code": 0,
+      "modified_certificate": {
+        "bytes": 1266,
+        "sha256": "be3986da02262996be66c65aecf88f18af824ae0df05737c7feffee50960e4cb"
+      },
+      "original_code_unchanged": true,
+      "verdict": "ACCEPT",
+      "verifier_output": {
+        "bytes": 1443,
+        "sha256": "212207a2ac77ed68912119e103c991adb9ff03a16cb152a84820dfe96523fc2e"
+      }
+    },
+    {
+      "case": "wrong_recipe_annotations",
+      "exit_code": 0,
+      "modified_certificate": {
+        "bytes": 1557,
+        "sha256": "b3cb159498f427f1745c4524d74a6c200fbd1a80202fef5bd97923c89b0d6230"
+      },
+      "original_code_unchanged": true,
+      "verdict": "ACCEPT",
+      "verifier_output": {
+        "bytes": 1512,
+        "sha256": "86c47c427851356b147d4eecb693e3949766a4d713f2467b969a0a08718a0b7a"
+      }
+    }
+  ]
+}

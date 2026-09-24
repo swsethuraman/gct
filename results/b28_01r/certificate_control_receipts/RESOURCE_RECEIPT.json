@@ -1,0 +1,100 @@
+{
+  "input_bindings": {
+    "bytes": 58217,
+    "sha256": "e867f035246cc7a0417b64c22b18d8df49985d8cf650ea6f8db034105dcbdc36"
+  },
+  "output": {
+    "bytes": 1183,
+    "sha256": "aa35e68ad0677ee71bc48cc7a80f69668fee3e41005a27fde37c37e8abe0cbe2"
+  },
+  "runs": [
+    {
+      "case": "missing_minor",
+      "code": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_cert_controls_j5joh5go/missing_minor",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01r/certificate_controls/missing_minor/verify.json"
+      ],
+      "stderr": {
+        "bytes": 764,
+        "sha256": "6737f7abccf3bedf10e11e2c29b7b6e60a6546157411ce1e951e2c6504514b16"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1032,
+        "sha256": "e1915b06da611703f464613485c5791dd4528433d5a620e78d8b73a8f2db58bd"
+      },
+      "wall_seconds": 0.6229049010000836
+    },
+    {
+      "case": "wrong_recipe_annotations",
+      "code": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_cert_controls_j5joh5go/wrong_recipe_annotations",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01r/certificate_controls/wrong_recipe_annotations/verify.json"
+      ],
+      "stderr": {
+        "bytes": 798,
+        "sha256": "2fe103471721040702c9f5148c4497c8b47f031708cd01c02e0e0da2d1179945"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1048,
+        "sha256": "4b5f5e8385c37ad7e070ca5032769da64f56a2685684c0e3ed60d9a1c28f5a72"
+      },
+      "wall_seconds": 0.47901825099995676
+    }
+  ],
+  "scope_memory_bytes": 512000000,
+  "scope_swap_bytes": 0,
+  "scope_wall_seconds": 60,
+  "script": {
+    "bytes": 3849,
+    "sha256": "c9a1d38b5ceb82aa8792f832af714cb087be12547a3c39a8909594c210398ebb"
+  },
+  "wall_seconds": 1.2924184769999556
+}
