@@ -1,0 +1,25 @@
+{
+  "label": "HAND: fixed candidate and claimed values registered before verification",
+  "form_degree": 4,
+  "coefficient_degree": 10,
+  "shape": [24, 4, 4, 4, 4],
+  "labels": 10,
+  "tensor_normalization": "q=sum q_ijkl*x_i*x_j*x_k*x_l; no extra factorials",
+  "T1": {"full_columns": [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]], "singleton_multiplicity": [0,0,0,0,0,4,4,4,4,4]},
+  "T2": {"full_columns": [[1,2,3,4,5],[1,2,3,4,5],[6,7,8,9,10],[6,7,8,9,10]], "singleton_multiplicity": [2,2,2,2,2,2,2,2,2,2]},
+  "coefficients": [1, -567],
+  "expected": {
+    "F_Q_squared": "11200/9",
+    "H_Q_squared": "40/27",
+    "F_D4": "175/9",
+    "H_D4": "5/27",
+    "F_p4": "0",
+    "H_p4": "5/27",
+    "F_E": "0",
+    "H_E": "5/144",
+    "f_Q_squared": "0",
+    "f_D4": "0",
+    "f_p4": "-175/9",
+    "f_E": "-175/256"
+  }
+}

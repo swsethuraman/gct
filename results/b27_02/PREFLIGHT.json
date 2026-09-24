@@ -1,0 +1,26 @@
+{
+  "label": "READ: administrative observations",
+  "first_clock_utc": "2026-09-23T03:48:28Z",
+  "budget_accounting_origin_utc": "2026-09-23T03:43:28Z",
+  "clock_note": "Accounting origin adds a conservative five minutes for brief reading and preflight before the first explicit clock; it is not a measured session-start timestamp.",
+  "fresh_session": "This task has no B27-01 work and no subagents or other task messages.",
+  "branch": "b27-02",
+  "worktree": "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-02",
+  "head": "6dea55ec926c1618cc60ad71209795528705bf61",
+  "expected_head_source": "PART 25 receipt row b27-02",
+  "initial_status": "## b27-02...origin/b27-02; no tracked changes or untracked entries",
+  "initial_output_paths_absent": [
+    "docs/b27_02_report.md",
+    "results/b27_02/",
+    "analysis/b27_02_*"
+  ],
+  "brief_hashes_match_board": true,
+  "applicable_AGENTS_files": [],
+  "environment_notes": [
+    "Initial read-only git calls needed a command-local safe.directory setting for the sandbox account.",
+    "Global ignore file was unreadable. No global or repository configuration was changed.",
+    "python was absent on PATH; the bundled Python is installed but has no sympy.",
+    "Exact verification uses installed Python standard-library integers and Fraction. No installs."
+  ],
+  "mismatches": []
+}
