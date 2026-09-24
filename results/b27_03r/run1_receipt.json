@@ -1,0 +1,37 @@
+{
+  "run": 1,
+  "command": [
+    "C:\\Users\\swami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\analysis\\b27_03r_manage.py",
+    "child",
+    "C:\\Users\\swami\\AppData\\Local\\Temp\\r27_03_replay_zsvwg5_c",
+    "witness",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\witness.json"
+  ],
+  "equivalent_producer_command": "python analysis/b27_03_witness.py C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch27\\b27-03r\\results\\b27_03r\\replays\\witness.json",
+  "inputs": [
+    {
+      "path": "analysis/b27_03_witness.py",
+      "sha256": "e8469bfa207dc57eda317f134c02a2294c1254d3df1466cff59f8148066f6c8b",
+      "bytes": 3656
+    },
+    {
+      "path": "analysis/b27_03_kernel_lib.py",
+      "sha256": "b868eaf593d3b6a9cf2c8978a94df2159b69a2d759e1b0d2828007f95e6a4002",
+      "bytes": 4053
+    }
+  ],
+  "wall_seconds": 1.296181,
+  "limit_seconds": 60,
+  "memory_limit_bytes": 536870912,
+  "peak_job_memory_bytes": 70569984,
+  "exit_code": 0,
+  "timed_out": false,
+  "output": "results\\b27_03r\\replays\\witness.json",
+  "output_sha256": "d822d23e4bbb29a6c18a78114bef3c4d6b1412b1b38bb511d9f06671d0d1af0d",
+  "producer_output_sha256": "132616f48f90150f24de0cda27fab118db22408c9e62d828fdd1fbcc884142a9",
+  "raw_output_matches": false,
+  "matches_ignoring_wall_s": true,
+  "log_sha256": "1af3e624207a66ae1c72689524c2539b5737bf736eded675da925dd95c536b58"
+}
