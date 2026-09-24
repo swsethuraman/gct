@@ -1,0 +1,19 @@
+reg_ctl_driver: rc=0 (expected 0) 0.9s maxrss=101810176 ok=True {"primes": "AGREE"}
+reg_ctl_verify_p2147483647: rc=0 (expected 0) 0.5s maxrss=84750336 ok=True {"verdict": "FULL_RANK", "ok": true}
+reg_ctl_verify_p2147483629: rc=0 (expected 0) 0.4s maxrss=84865024 ok=True {"verdict": "FULL_RANK", "ok": true}
+ctl_corrupt_kernel: rc=5 (expected 5) 0.4s maxrss=84688896 ok=True {"verdict": "REJECT", "ok": true}
+ctl_corrupt_point: rc=5 (expected 5) 0.4s maxrss=84434944 ok=True {"verdict": "REJECT", "ok": true}
+ctl_malformed_missing_minor: rc=5 (expected 5) 0.4s maxrss=84942848 ok=True {"verdict": "REJECT", "ok": true, "failed_check": "M1_claimed_minor_nonzero"}
+ctl_malformed_wrong_recipe: rc=5 (expected 5) 0.4s maxrss=84639744 ok=True {"verdict": "REJECT", "ok": true, "failed_check": "projection_recipe_registered"}
+fx_deficiency_driver: rc=0 (expected 0) 0.5s maxrss=101724160 ok=True {"outcome": "MODULAR_DEFICIENCY", "lower_bound": 22, "driver_checks": {"E_equations_all_rows": true, "independent_on_U": true, "nonzero": true, "zero_at_every_saved_point": true}, "ok": true}
+fx_deficiency_verify_valid: rc=8 (expected 8) 0.4s maxrss=87928832 ok=True {"verdict": "MODULAR_DEFICIENCY", "ok": true, "lower_bound": 22, "candidates_valid": [true, true]}
+fx_deficiency_verify_corrupted: rc=5 (expected 5) 0.4s maxrss=88313856 ok=True {"verdict": "REJECT", "ok": true, "candidates": [{"E_equations_all_rows": true, "equals_K_times_combination": true, "index": 0, "nonzero": true, "valid": true, "zero_at_every_saved_point": true}, {"E_equations_all_rows": true, "equals_K_times_combination": true, "index": 1, "nonzero": true, "valid":
+fx_source_gate: rc=4 (expected 4) 0.3s maxrss=98279424 ok=True {"status": "SOURCE GATE FAILED (inconclusive; no retry authorized)", "projected_nullity": 30, "phases": ["build", "cover", "schur"], "p2_cert_exists": false, "K_files": [], "ok": true}
+fx_disagreement: rc=6 (expected 6) 0.7s maxrss=87728128 ok=True {"verdict": "INCONCLUSIVE CONTROL FAILURE: the primes disagree on rank or outcome (not averaged, not resolved by another prime)", "per_prime": {"2147483629": {"mult_det": 22, "outcome": "MODULAR_DEFICIENCY"}, "2147483647": {"mult_det": 24, "outcome": "FULL_RANK"}}, "ok": true}
+sup_wall: rc=124 (expected 124) 3.0s maxrss=13139968 ok=True {"resource_stop": {"reason": "wall", "detail": "aggregate monotonic limit 3.0 s reached during step sleeper"}, "elapsed": 3.001, "ok": true}
+sup_artifact: rc=125 (expected 125) 10.0s maxrss=13144064 ok=True {"resource_stop": {"reason": "artifact", "detail": "output exceeded 10000000 bytes during step writer"}, "elapsed": 10.002, "ok": true}
+sup_ctl: rc=0 (expected 0) 1.2s maxrss=101367808 ok=True {"steps": [["ctl_driver", 0], ["ctl_verify", 0]], "verdict": "FULL_RANK", "ok": true}
+launcher_preflight: rc=0 (expected 0) 0.1s maxrss=40394752 ok=True 
+reg_cal2_driver: rc=0 (expected 0) 147.3s maxrss=3048382464 ok=True 
+reg_cal2_verify: rc=0 (expected 0) 428.7s maxrss=1215877120 ok=True {"verdict": "FULL_RANK", "ok": true}
+ALL EXPECTATIONS MET

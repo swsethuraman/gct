@@ -1,0 +1,284 @@
+--- a1c3c3a69b789c91909ed5476354ad762f3e71c2:analysis/b28_01_verify.py
++++ 5a3174cd3a1ec96b05b92a8bcb73fbee58c0544b:analysis/b28_01c_verify.py
+@@ -1,12 +1,28 @@
+ #!/usr/bin/env python3
+ """
+-B28-01 -- independent verifier for the determinant-only hybrid driver.
+-
+-Shares NO code with the producer (analysis/b28_01_driver.py and the committed
+-engine it imports: wk9_s45_build, wk11_s71_hybrid, wk11_s71_schur.c,
+-wk12_s79_cell6, wk8_s30_core).  Declared shared low-level libraries: numpy,
+-scipy.sparse and python-flint (nmod_mat rank / det / rref over F_p).  Its only
+-compiled code is its own analysis/b28_01_vfy.c (an upper-triangular solve).
++B28-01c -- independent verifier for the determinant-only hybrid driver, with
++R28-01's repair P2.  The regenerating mathematics is B28-01a's frozen verifier
++(analysis/b28_01_verify.py, 7978a73a...) unchanged; what changed is what a
++certificate must contain before it is accepted:
++
++  * the projection recipe is RECONSTRUCTED from p and U (base seed 20260908,
++    attempt 0, pseed = base + 7919 attempt + p mod 1000, m = |U| + 64, 8
++    projections); every recorded field must equal it, and the residual is formed
++    from the reconstructed recipe, never from the certificate's;
++  * FULL_RANK needs a complete a x a minor (a distinct row indices of the point
++    set) whose determinant is nonzero mod p and equals the claim;
++  * MODULAR_DEFICIENCY (lower bound r = rank VK < a) needs the candidates file:
++    count a - r, shape and hash as certified, every vector nonzero, independent
++    (rank of the U coordinates), E v = 0 on every row, zero at every saved point
++    (regenerated evaluation rows), and equal to K c for the saved combinations;
++    each candidate is reported separately;
++  * the compiled solve is never rebuilt here (a missing .so is a refusal).
++
++Shares NO code with the producer (the driver and the committed engine it imports:
++wk9_s45_build, wk11_s71_hybrid, wk11_s71_schur.c, wk12_s79_cell6, wk8_s30_core).
++Declared shared low-level libraries: numpy, scipy.sparse and python-flint
++(nmod_mat rank / det over F_p).  Its only compiled code is its own
++b28_01c_vfy.c (byte-identical to b28_01_vfy.c; an upper-triangular solve).
+ 
+ From the mathematical inputs (lambda, delta, a, p) it regenerates:
+   * the weight-lambda degree-delta monomials in the exponent vectors of
+@@ -17,7 +33,7 @@
+     c_{alpha + e_i - e_{i+1}} as derivations, one row per H-canonical,
+     non-obstructed target (H = the stabiliser elements fixing i and i+1);
+   * the triangular cover under the five preregistered orders;
+-  * the projected residual G = P F_o [-T^{-1} R_1[:,U] ; I] with the recorded
++  * the projected residual G = P F_o [-T^{-1} R_1[:,U] ; I] with the registered
+     projection recipe, formed as the sparse product P F_o followed by
+     PF_U - PF_S X (not the producer's per-row accumulation);
+   * the determinant coefficients of det(s_1 A_1 + ... + s_R A_R) by Leibniz
+@@ -26,15 +42,18 @@
+   G1  every cover pivot is nonzero mod p and T is upper triangular   (rank E >= |S|)
+   G2  rank_p G = |U| - a                                              (rank E >= n - a)
+   K1  E K = 0 mod p on every row of E, K1' rank_p K[U,:] = a          (nullity E >= a)
+-  M1  rank_p (V K) and the claimed a x a minor is nonzero mod p       (mult_det = a over Q)
++  M1  rank_p (V K) = a and the complete claimed a x a minor is nonzero (FULL_RANK: mult_det = a over Q)
++  D1-D6 the deficiency candidates, as above                           (MODULAR_DEFICIENCY: mult_det >= r only)
+ plus cross-checks against the producer's hashes (E, cover, G, V K) and the
+ pencils against their recorded generator.  Output is deterministic; times go
+ to a separate receipt.
+ 
+-usage: b28_01_verify.py --lam .. --delta D --a A --prime P --dir DRIVER_OUT --out FILE
+-                        [--kernel FILE] [--pencils FILE]   (overrides, for corrupted controls)
++verdict: FULL_RANK (exit 0), MODULAR_DEFICIENCY with lower bound r (exit 8), REJECT (exit 5).
++usage: b28_01c_verify.py --lam .. --delta D --a A --prime P --dir DRIVER_OUT --out FILE
++                         [--kernel FILE] [--pencils FILE]   (overrides, for corrupted controls)
++                         [--fixture-npts N]                 (registered deficiency fixture only: N < a points)
+ """
+-import sys, os, json, time, hashlib, argparse, itertools, random, ctypes, subprocess
++import sys, os, json, time, hashlib, argparse, itertools, random, ctypes
+ from functools import lru_cache
+ for _v in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMEXPR_NUM_THREADS'):
+     os.environ[_v] = '1'
+@@ -46,6 +65,8 @@
+ NVAR = 4                     # Sym^4: det_4
+ BUDGET = 250_000_000         # bytes per dense solve block
+ SEED_ORDER = 20260908
++# the registered projection recipe (B27-06 PREREGISTRATION.md item 4; one attempt per prime)
++RECIPE_BASE_SEED, RECIPE_ATTEMPT, RECIPE_EXTRA, RECIPE_NPROJ = 20260908, 0, 64, 8
+ 
+ 
+ def say(*a):
+@@ -74,14 +95,19 @@
+ def so():
+     global _SO
+     if _SO is None:
+-        path = os.environ.get('B28_VFY_SO', os.path.join(HERE, 'b28_01_vfy.so'))
++        path = os.environ.get('B28_VFY_SO', os.path.join(HERE, 'b28_01c_vfy.so'))
+         if not os.path.exists(path):
+-            subprocess.check_call(['gcc', '-O2', '-shared', '-fPIC', '-o', path, os.path.join(HERE, 'b28_01_vfy.c')])
++            say(f'REFUSED: {path} missing; the verifier does not compile after the launch hash check'); sys.exit(2)
+         _SO = ctypes.CDLL(path)
+         vp, i64, u64 = ctypes.c_void_p, ctypes.c_int64, ctypes.c_uint64
+         _SO.vfy_upper_solve.argtypes = [i64, i64, vp, vp, vp, vp, vp, u64]
+         _SO.vfy_upper_solve.restype = ctypes.c_int
+     return _SO
++
++
++def registered_recipe(p, nU):
++    return dict(base_seed=RECIPE_BASE_SEED, attempt=RECIPE_ATTEMPT, extra=RECIPE_EXTRA, nproj=RECIPE_NPROJ,
++                pseed=(RECIPE_BASE_SEED + 7919 * RECIPE_ATTEMPT + p % 1000) % (1 << 63), m=nU + RECIPE_EXTRA)
+ 
+ 
+ def P(a):
+@@ -411,6 +437,15 @@
+     return nmod_mat(X.shape[0], X.shape[1], X.ravel().tolist(), p).rank()
+ 
+ 
++def EX_zero(E, X, p):
++    """E X == 0 mod p on every row, X (n x c) with entries in [0, p): 16-column chunks, 16-bit limbs."""
++    for c0 in range(0, X.shape[1], 16):
++        Xc = np.asarray(X[:, c0:c0 + 16], dtype=np.int64)
++        r = ((E @ (Xc & 0xFFFF)) % p + ((E @ (Xc >> 16)) % p) * 65536) % p
++        if np.any(r): return False
++    return True
++
++
+ # ---------------------------------------------------------------- main
+ def main():
+     ap = argparse.ArgumentParser()
+@@ -422,15 +457,17 @@
+     ap.add_argument('--out', required=True)
+     ap.add_argument('--kernel', default='')
+     ap.add_argument('--pencils', default='')
++    ap.add_argument('--fixture-npts', type=int, default=None)
+     args = ap.parse_args()
+     lam = tuple(args.lam); d = args.delta; a = args.a; p = args.prime
++    if args.fixture_npts is not None: assert 0 < args.fixture_npts < a, 'a fixture point count must be below a'
+     tag = '_'.join(map(str, lam)) + f'_d{d}'
+     cell = json.load(open(os.path.join(args.dir, f'{tag}_cell.json')))
+     cert = json.load(open(os.path.join(args.dir, f'{tag}_p{p}_cert.json')))
+     ph = []; t0 = time.perf_counter()
+     def start(): peak_reset(); return time.perf_counter()
+     def stop(name, t): ph.append(dict(phase=name, secs=round(time.perf_counter() - t, 3), peak_rss_bytes=peak())); say('  [verify]', ph[-1])
+-    chk = {}; val = {}
++    chk = {}; val = {}; cand_report = None
+ 
+     t = start()
+     C = carrier(lam, d)
+@@ -456,13 +493,16 @@
+                                      and sha(np.asarray(U, dtype='<i8').tobytes()) == cell['cover']['U_sha256'])
+ 
+     t = start()
+-    proj = cert['hybrid']['projection']
+-    assert proj['m'] == len(U) + proj['extra']
++    proj = registered_recipe(p, len(U))                      # P2: reconstructed, never read from the certificate
++    hyb = cert.get('hybrid', {})
++    recorded = {k: v for k, v in hyb.get('projection', {}).items() if k != 'generator'}
++    chk['projection_recipe_registered'] = bool(recorded == proj and hyb.get('G_shape') == [proj['m'], len(U)])
++    val['projection_recipe'] = proj
+     G, rres = residual(E, n, rows, S, U, p, proj)
+     chk['G1_cover_pivots'] = bool(rres['T_upper_triangular'] and rres['cover_pivots_nonzero'] and rres['S_U_partition'])
+     if G is not None:
+         val['G_sha256'] = sha(G.astype('<u4').tobytes())
+-        chk['G_matches_producer'] = val['G_sha256'] == cert['hybrid']['G_sha256']
++        chk['G_matches_producer'] = val['G_sha256'] == hyb.get('G_sha256')
+         rG = fl_rank(G, p); val['rank_G'] = int(rG)
+         chk['G2_residual_rank'] = rG == len(U) - a
+         del G
+@@ -476,17 +516,28 @@
+     K = np.fromfile(kf, dtype='<u4').reshape(n, a) if os.path.getsize(kf) == 4 * n * a else None
+     chk['K_file_matches_cert'] = K is not None and sha(K.tobytes()) == cert['K']['sha256']
+     if K is not None:
+-        zero = True
+-        for c0 in range(0, a, 16):
+-            Kc = K[:, c0:c0 + 16].astype(np.int64)
+-            r = ((E @ (Kc & 0xFFFF)) % p + ((E @ (Kc >> 16)) % p) * 65536) % p
+-            if np.any(r): zero = False; break
+-        chk['K1_EK_zero_all_rows'] = zero
++        chk['K1_EK_zero_all_rows'] = EX_zero(E, K, p)
+         rKU = fl_rank(K[U], p); val['rank_K_U'] = int(rKU)
+         chk['K1b_rank_K'] = rKU == a
+     else:
+         chk['K1_EK_zero_all_rows'] = False; chk['K1b_rank_K'] = False
+     stop('lift_check', t)
++
++    # the deficiency candidates, when the certificate claims a deficiency (P2)
++    ev = cert.get('evaluation', {})
++    claim = ev.get('mult_det')
++    cd = cert.get('candidates') or {}
++    Cv = None; Cb = None
++    if isinstance(claim, int) and 0 <= claim < a:
++        cnt = a - claim
++        try:
++            cpath = os.path.join(args.dir, cd['file']); bpath = os.path.join(args.dir, cd['combinations']['file'])
++            if os.path.getsize(cpath) == 4 * cnt * n and cd.get('shape') == [cnt, n]:
++                Cv = np.fromfile(cpath, dtype='<u4').reshape(cnt, n)
++            if os.path.getsize(bpath) == 4 * cnt * a and cd['combinations'].get('shape') == [cnt, a]:
++                Cb = np.fromfile(bpath, dtype='<u4').reshape(cnt, a)
++        except (KeyError, TypeError, OSError):
++            pass
+ 
+     t = start()
+     pf = args.pencils or os.path.join(args.dir, f'{tag}_pencils.json')
+@@ -495,32 +546,78 @@
+     rnd = random.Random(pj['seed'])
+     regen = [[[[rnd.randint(-pj['bound'], pj['bound']) for _ in range(4)] for _ in range(4)] for _ in range(R)] for _ in range(a + 8)]
+     chk['pencils_match_generator'] = (pts == regen and pj['bound'] == 40 and pj['seed'] == 11 and len(pts) == a + 8)
++    if args.fixture_npts is not None:
++        pts = pts[:args.fixture_npts]
++    npts = len(pts)
++    chk['point_count_registered'] = ev.get('npts') == npts
++    kind = None
+     if K is not None:
++        X = K if Cv is None else np.hstack([K, np.ascontiguousarray(Cv.T)])     # V K and V C^T from the same rows
+         parts = []
+-        for c0 in range(0, len(pts), 8):
++        for c0 in range(0, npts, 8):
+             V = eval_rows(C, [det_coefficients(pc, C['A']) for pc in pts[c0:c0 + 8]], p)
+-            parts.append(times_mod(V, K, p)); del V
+-        VK = np.vstack(parts) % p
++            parts.append(times_mod(V, X, p)); del V
++        VX = np.vstack(parts) % p
++        VK = np.ascontiguousarray(VX[:, :a]); VC = VX[:, a:]
+         val['VK_sha256'] = sha(VK.astype('<u4').tobytes())
+-        chk['VK_matches_producer'] = val['VK_sha256'] == cert['evaluation']['VK_sha256']
++        chk['VK_matches_producer'] = val['VK_sha256'] == ev.get('VK_sha256')
+         mult = fl_rank(VK, p); val['mult_det_mod_p'] = int(mult)
+-        chk['mult_det_matches_claim'] = mult == cert['evaluation']['mult_det']
+-        if 'minor_rows' in cert['evaluation']:
+-            mr = cert['evaluation']['minor_rows']
+-            dm = int(nmod_mat(a, a, VK[mr].astype(np.int64).ravel().tolist(), p).det()) if len(mr) == a else 0
++        chk['mult_det_matches_claim'] = mult == claim
++        if mult == a:
++            kind = 'FULL_RANK'
++            mr = ev.get('minor_rows')
++            complete = (isinstance(mr, list) and len(mr) == a and len(set(mr)) == a
++                        and all(isinstance(x, int) and 0 <= x < npts for x in mr) and isinstance(ev.get('minor_det_mod_p'), int))
++            dm = int(nmod_mat(a, a, VK[mr].astype(np.int64).ravel().tolist(), p).det()) if complete else 0
+             val['minor_det_mod_p'] = dm
+-            chk['M1_claimed_minor_nonzero'] = dm != 0 and dm == cert['evaluation']['minor_det_mod_p']
++            chk['M1_claimed_minor_nonzero'] = bool(complete and dm != 0 and dm == ev['minor_det_mod_p'])
++            chk['outcome_label_matches'] = cert.get('outcome') == 'FULL_RANK'
++        else:
++            kind = 'MODULAR_DEFICIENCY'
++            cnt = a - mult
++            chk['outcome_label_matches'] = cert.get('outcome') == 'MODULAR_DEFICIENCY' and cert.get('mult_det_lower_bound') == mult
++            chk['D1_candidates_file'] = bool(Cv is not None and Cb is not None and Cv.shape[0] == cnt
++                                             and sha(Cv.astype('<u4').tobytes()) == cd.get('sha256')
++                                             and sha(Cb.astype('<u4').tobytes()) == (cd.get('combinations') or {}).get('sha256'))
++            if Cv is not None and Cv.shape[0] == cnt:
++                KCb = None
++                if Cb is not None:                            # K c for every saved combination, exact 16-bit limbs
++                    Cbt = np.asarray(Cb.T, dtype=np.int64); K64 = K.astype(np.int64)
++                    KCb = (((K64 & 0xFFFF) @ Cbt) % p + (((K64 >> 16) @ Cbt) % p) * 65536) % p
++                    del K64
++                per = []
++                for i in range(cnt):
++                    v = np.ascontiguousarray(Cv[i:i + 1].T)
++                    c = dict(index=i, nonzero=bool(np.any(v)), E_equations_all_rows=bool(EX_zero(E, v, p)),
++                             zero_at_every_saved_point=bool(not np.any(VC[:, i])),
++                             equals_K_times_combination=bool(KCb is not None and np.array_equal(KCb[:, i], Cv[i].astype(np.int64))))
++                    c['valid'] = all(c[k] for k in ('nonzero', 'E_equations_all_rows', 'zero_at_every_saved_point', 'equals_K_times_combination'))
++                    per.append(c)
++                rC = fl_rank(Cv[:, U], p); val['rank_candidates_U'] = int(rC)
++                chk['D2_nonzero'] = all(c['nonzero'] for c in per)
++                chk['D3_independent'] = rC == cnt
++                chk['D4_E_equations'] = all(c['E_equations_all_rows'] for c in per)
++                chk['D5_zero_at_saved_points'] = all(c['zero_at_every_saved_point'] for c in per)
++                chk['D6_combinations'] = all(c['equals_K_times_combination'] for c in per)
++                cand_report = per
++            else:
++                for k in ('D2_nonzero', 'D3_independent', 'D4_E_equations', 'D5_zero_at_saved_points', 'D6_combinations'): chk[k] = False
+     stop('evaluation', t)
+ 
+-    verdict = 'ACCEPT' if all(chk.values()) else 'REJECT'
+-    out = dict(schema='b28-01-verify/1', tag=tag, prime=p, a=a, verdict=verdict, checks=chk, values=val,
++    verdict = kind if (kind is not None and all(chk.values())) else 'REJECT'
++    out = dict(schema='b28-01c-verify/1', tag=tag, prime=p, a=a, verdict=verdict, checks=chk, values=val,
+                inputs=dict(kernel_file_sha256=(sha(open(kf, 'rb').read()) if os.path.exists(kf) else None),
+-                           pencils_file_sha256=sha(open(pf, 'rb').read())))
++                           pencils_file_sha256=sha(open(pf, 'rb').read()), npts=npts))
++    if args.fixture_npts is not None: out['fixture_npts'] = args.fixture_npts
++    if verdict == 'MODULAR_DEFICIENCY':
++        out['mult_det_lower_bound'] = int(val['mult_det_mod_p'])
++        out['meaning'] = 'modular, finite-sample lower bound mult_det >= r; the candidates are unproved; no characteristic-zero statement'
++    if cand_report is not None: out['candidates'] = cand_report
+     with open(args.out, 'w') as f: json.dump(out, f, indent=1, sort_keys=True)
+     with open(args.out.replace('.json', '') + '_receipt.json', 'w') as f:
+-        json.dump(dict(schema='b28-01-verify-receipt/1', tag=tag, prime=p, phases=ph, total_secs=round(time.perf_counter() - t0, 3)), f, indent=1)
++        json.dump(dict(schema='b28-01c-verify-receipt/1', tag=tag, prime=p, phases=ph, total_secs=round(time.perf_counter() - t0, 3)), f, indent=1)
+     say(f"  VERIFY {tag} p={p}: {verdict} {chk}")
+-    sys.exit(0 if verdict == 'ACCEPT' else 5)
++    sys.exit({'FULL_RANK': 0, 'MODULAR_DEFICIENCY': 8}.get(verdict, 5))
+ 
+ 
+ if __name__ == '__main__':
