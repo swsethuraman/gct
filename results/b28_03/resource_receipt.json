@@ -1,0 +1,73 @@
+{
+  "slot": "B28-03",
+  "first_clock_observed_utc": "2026-09-24T11:51:54Z",
+  "session_ceiling_minutes": 60,
+  "compute_runs_limit": 10,
+  "per_run_limit_seconds": 60,
+  "per_run_limit_bytes": 536870912,
+  "installs": 0,
+  "subagents": 0,
+  "paper_edits": 0,
+  "runs": [
+    {
+      "run": 1,
+      "kind": "replay",
+      "command": "C:\\Users\\swami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch28\\b28-03\\analysis\\b28_03_run.py --worker replay",
+      "inputs": [
+        {
+          "path": "analysis/b28_03_replay_source.py",
+          "sha256": "6597670d3a68af2dbca8bedb970aca95115703ee167318ddf2664da1a75de928"
+        },
+        {
+          "path": "analysis/b28_03_run.py",
+          "sha256": "62b594d1c2942d157dc363a8cd1e2089a3a87d7dff63ee38cdda0e3becd6e513"
+        }
+      ],
+      "input_hash_semantics": "SHA-256 of canonical JSON list of the script and runner path/hash bindings",
+      "input_sha256": "394decc241d509a7371c4c7efa8580a16f2c6c97a06b65425c7d1b1ab4bc8d33",
+      "output_path": "results/b28_03/replay_output.txt",
+      "output_sha256": "cae16ecf22d1f63cf0f7b526559ebd726609df8629afe18a1a9f89a8948e03ab",
+      "output_bytes": 9166,
+      "wall_time_seconds": 2.719865499999287,
+      "finished_utc": "2026-09-24T11:55:30.102223+00:00",
+      "exit_code": 0,
+      "peak_working_set_bytes": 94334976,
+      "peak_job_memory_bytes": 70684672,
+      "hard_memory_limit_bytes": 536870912,
+      "matches_both_archived_outputs_byte_for_byte": true
+    },
+    {
+      "run": 2,
+      "kind": "cases",
+      "command": "C:\\Users\\swami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B C:\\Users\\swami\\Projects\\gct-gpt\\work\\batch28\\b28-03\\analysis\\b28_03_run.py --worker cases",
+      "inputs": [
+        {
+          "path": "analysis/b28_03_cases.py",
+          "sha256": "1fd4106d6729e55ee651ef154a3ff107e04ecdcaa75d11756e06b46052de5918"
+        },
+        {
+          "path": "analysis/b28_03_run.py",
+          "sha256": "62b594d1c2942d157dc363a8cd1e2089a3a87d7dff63ee38cdda0e3becd6e513"
+        }
+      ],
+      "input_hash_semantics": "SHA-256 of canonical JSON list of the script and runner path/hash bindings",
+      "input_sha256": "90fc73228c1dde4bd34448db6294c37514a2106e89aad4baddaf458ff6e47d02",
+      "output_path": "results/b28_03/cases_output.json",
+      "output_sha256": "c3fa11d246f6c779aec6cf9a3eee5efe3cdc0ad22c4dbfbb8beeeb16b54306bc",
+      "output_bytes": 1724,
+      "wall_time_seconds": 1.278848599999037,
+      "finished_utc": "2026-09-24T11:55:41.736301+00:00",
+      "exit_code": 0,
+      "peak_working_set_bytes": 92549120,
+      "peak_job_memory_bytes": 69292032,
+      "hard_memory_limit_bytes": 536870912
+    }
+  ],
+  "administrative_notes": [
+    "Raw Git blob hashes and sealing are administrative, not mathematical runs.",
+    "Bundled Python lacked SymPy. Existing Windows Python312 has Python 3.12.10 / SymPy 1.14.0. WSL inspection and package metadata checks performed no mathematics and no installs."
+  ],
+  "compute_runs_used": 2,
+  "substantive_review_complete_utc": "2026-09-24T11:58:36.226744+00:00",
+  "outcome": "ACCEPT; rungs 3a and 3b complete, rung 3c accepted; transfer lemma only"
+}
