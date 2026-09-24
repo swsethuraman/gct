@@ -1,0 +1,293 @@
+{
+  "slot": "B28-02",
+  "label": "READ (administrative receipt)",
+  "resource_policy": {
+    "session_ceiling_minutes": 90,
+    "scheduled_checkpoint_minutes": 45,
+    "maximum_mathematical_runs": 10,
+    "per_mathematical_run_seconds": 60,
+    "per_mathematical_run_megabytes": 512
+  },
+  "mathematical_runs": [],
+  "mathematical_run_count": 0,
+  "computation_scope": "No ranks, symbolic algebra, numerical experiments, random searches, or new mathematical certificates. Historical computations were read only.",
+  "installs": 0,
+  "subagents": 0,
+  "other_sessions": 0,
+  "clock_observations": {
+    "preflight_utc": "2026-09-24 11:51:02 UTC",
+    "completion_checkpoint_utc": "2026-09-24 12:05:05 UTC",
+    "seconds_between_samples": 843,
+    "note": "The control-file read preceded the first clock sample; its duration was not separately measured. The literature audit reached an early completion checkpoint, so the 45-minute checkpoint was not reached."
+  },
+  "python": "C:/Users/swami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "script": "analysis/b28_02_provenance.py",
+  "temporary_source_directory": "C:/Users/swami/AppData/Local/Temp/b28_02_primary",
+  "timing_semantics": "Observed exec tool wall_time_seconds for each enclosing shell invocation; these are upper bounds on individual subcommands when a shell included additional downloads or reads. PDF processing is administrative IO, not a mathematical run. Peak memory was not measured and no mathematical resource certificate is claimed for IO.",
+  "binding_semantics": "The following inventory binds the final temporary PDF-extraction artifacts used for reading. Input IDs resolve to their raw PDF SHA-256 and bytes here and in SOURCES.json. Earlier extraction passes were superseded by the final pass; their transient output bytes were not separately archived. No third-party artifact is delivered.",
+  "administrative_runs": [
+    {
+      "command": "python analysis/b28_02_provenance.py extract <temporary_source_directory>",
+      "input_ids": [
+        "DM2017",
+        "DM2020",
+        "HL2016",
+        "IQS2015",
+        "LMR",
+        "SVB1999"
+      ],
+      "output": "Same-ID output_text entries",
+      "shell_wall_seconds": 2.210089
+    },
+    {
+      "command": "python analysis/b28_02_provenance.py extract <temporary_source_directory>",
+      "input_ids": [
+        "DM2017",
+        "DM2020",
+        "HL2016",
+        "IQS2015",
+        "LMR",
+        "SVB1999",
+        "ASS2022",
+        "BI2015",
+        "CIM2015",
+        "HK2025"
+      ],
+      "output": "Same-ID output_text entries",
+      "shell_wall_seconds": 4.6733866,
+      "other_shell_work": "Source reads and text searches"
+    },
+    {
+      "command": "python analysis/b28_02_provenance.py extract <temporary_source_directory>",
+      "input_ids": [
+        "DM2017",
+        "DM2020",
+        "HL2016",
+        "IQS2015",
+        "LMR",
+        "SVB1999",
+        "ASS2022",
+        "BI2015",
+        "CIM2015",
+        "HK2025",
+        "DW2000",
+        "H2017"
+      ],
+      "output": "Same-ID output_text entries",
+      "shell_wall_seconds": 7.4410823,
+      "other_shell_work": "Dissertation download"
+    },
+    {
+      "command": "python analysis/b28_02_provenance.py render <temporary_source_directory>; python analysis/b28_02_provenance.py inputs",
+      "input_ids": [
+        "DW2000",
+        "LMR",
+        "H2017"
+      ],
+      "other_inputs": "Five committed blobs in INPUT_BINDINGS.json",
+      "output": "Rendered-page entries below; initial INPUT_BINDINGS.json later superseded by a corrected read-extent description",
+      "shell_wall_seconds": 1.3911798
+    },
+    {
+      "command": "python analysis/b28_02_provenance.py extract <temporary_source_directory>",
+      "input_ids": [
+        "DM2017",
+        "DM2020",
+        "HL2016",
+        "IQS2015",
+        "LMR",
+        "SVB1999",
+        "ASS2022",
+        "BI2015",
+        "CIM2015",
+        "HK2025",
+        "DW2000",
+        "H2017",
+        "M2015"
+      ],
+      "output": "All output_text entries",
+      "shell_wall_seconds": 7.1620566,
+      "other_shell_work": "Makam PDF download"
+    },
+    {
+      "command": "python analysis/b28_02_provenance.py inputs",
+      "input": "Raw committed blobs bound in INPUT_BINDINGS.json",
+      "output": {
+        "path": "results/b28_02/INPUT_BINDINGS.json",
+        "sha256": "07d1d4546e9ef77b949027a6cdec82ff7d83d5310a48610e0709156208b9c922",
+        "bytes": 2236
+      },
+      "shell_wall_seconds": 0.6260803
+    }
+  ],
+  "temporary_extraction_artifacts": [
+    {
+      "id": "DW2000",
+      "input_pdf": {
+        "sha256": "b3fd31bdbd1aa8d03bd972f27ac11fba243f298732ef99845ea57c514ae63b79",
+        "bytes": 217664
+      },
+      "output_text": {
+        "sha256": "1357dc58afe8fa983caf8236b0c14df3d5a8b98fdc4c678fa0658369ff892456",
+        "bytes": 30145
+      }
+    },
+    {
+      "id": "SVB1999",
+      "input_pdf": {
+        "sha256": "47683438005b286e4496abd2264c15f07cc9a53082d9eb94134a58a71a8eb4e5",
+        "bytes": 173166
+      },
+      "output_text": {
+        "sha256": "2942b9fc50012094801c4ddfa277a4cb1268a2aa0c401e07c554a609d775e79d",
+        "bytes": 30951
+      }
+    },
+    {
+      "id": "IQS2015",
+      "input_pdf": {
+        "sha256": "f4af5ab0eb5466a7b83207bfc077957dab7adb5697dd8beeeb2b9a8b0974ab22",
+        "bytes": 238992
+      },
+      "output_text": {
+        "sha256": "2173f3a655e2eed72b4281f1efeb6c62ca9a1cc69a02f2e7cf1156317685664b",
+        "bytes": 49095
+      }
+    },
+    {
+      "id": "DM2017",
+      "input_pdf": {
+        "sha256": "f4f591580cf932a76667a201dd6ae8d9268d9f9dbcf565f220a1c6dac1c7082a",
+        "bytes": 423460
+      },
+      "output_text": {
+        "sha256": "13b4d3ec03dbac8650db97d9ee318093f2bec8f0125bb65a173c96633fa47b40",
+        "bytes": 44074
+      }
+    },
+    {
+      "id": "M2015",
+      "input_pdf": {
+        "sha256": "ee88ccdd61a674276890871b869c3c2ffb548c604ec3df94c3218f617e807498",
+        "bytes": 193969
+      },
+      "output_text": {
+        "sha256": "a1bcca04ff5db315df7cbf6fd301ea247e88a9505e7e1c8a227f8bd6e111c6b0",
+        "bytes": 29631
+      }
+    },
+    {
+      "id": "HK2025",
+      "input_pdf": {
+        "sha256": "0b43dd8b3277fb03d39b7ccbb1f287bc0a0efc6ef3d16a29dba525a7354772ce",
+        "bytes": 491753
+      },
+      "output_text": {
+        "sha256": "a86d9c282ce738ead6f4933208476b24f4c02c6ffe10fb8f4bdf6ac0e30b89c5",
+        "bytes": 91215
+      }
+    },
+    {
+      "id": "CIM2015",
+      "input_pdf": {
+        "sha256": "a32360dbe5dcb135d7c58e9b0647454c9097ed1c95bf855ea5f542223bb58153",
+        "bytes": 209070
+      },
+      "output_text": {
+        "sha256": "5458897fbcb80ed4975fc41f018608d11141c631bcefd1364d855b3e2f0b6fdd",
+        "bytes": 32137
+      }
+    },
+    {
+      "id": "BI2015",
+      "input_pdf": {
+        "sha256": "a4138fc3ef45f144f367f227514b8345ddd74690c19ca07e1ef4be707fd6ea7b",
+        "bytes": 451754
+      },
+      "output_text": {
+        "sha256": "7ff9caef83f8778c5c63b68fe8585dd40c9e87db063b8052afcf97e05ddc22ba",
+        "bytes": 109943
+      }
+    },
+    {
+      "id": "DM2020",
+      "input_pdf": {
+        "sha256": "96fefc0585c4b90412f2c451ec95572f860f25cd12153a31d1759f944767016e",
+        "bytes": 1377485
+      },
+      "output_text": {
+        "sha256": "880c16ad9d27183f4f4a773a12c520d299ec1ba33b8fa0e0fd31c237d8ec1fb0",
+        "bytes": 69622
+      }
+    },
+    {
+      "id": "HL2016",
+      "input_pdf": {
+        "sha256": "3429c3ea5504d1613839ad04ece20bd43fc9b1fc12fef42d85ac1be56042987b",
+        "bytes": 415831
+      },
+      "output_text": {
+        "sha256": "0eb4707833ebff9ec8b04fc90da22eed421b05f8df88fa0777d1736cce68e058",
+        "bytes": 18502
+      }
+    },
+    {
+      "id": "LMR",
+      "input_pdf": {
+        "sha256": "8436e436763f96ab396744a0b2b7d7c5bf01b3b72af3d8a77cf7613a1ff2705c",
+        "bytes": 230691
+      },
+      "output_text": {
+        "sha256": "fe237137c099677500a05051466b31f5a09e0eacc0b06ec017242bee9d9d5aa9",
+        "bytes": 33143
+      }
+    },
+    {
+      "id": "H2017",
+      "input_pdf": {
+        "sha256": "ccf1a13e6b8c0d9ee25f0a85616eb47232bf90bdad0b03bb9169ee91e7609edd",
+        "bytes": 1314561
+      },
+      "output_text": {
+        "sha256": "82ab49d4ea0d081333faedca2f45b40625d211b17528e4866799b202a182675a",
+        "bytes": 309478
+      }
+    },
+    {
+      "id": "ASS2022",
+      "input_pdf": {
+        "sha256": "ba426c94a8f26ca13602ca0aa4b0678f61abb0baa21bc7128bdd935f89672fb0",
+        "bytes": 671950
+      },
+      "output_text": {
+        "sha256": "cf6d7b4b321860886cfa0f9599fe18f32bfd1dcb7e7f46b8d8f11f0b4441f0ac",
+        "bytes": 173389
+      }
+    }
+  ],
+  "temporary_rendered_artifacts": [
+    {
+      "file": "DW2000_page_4.png",
+      "sha256": "4014d9edecce46aba199f33c3d0f7fa2cd5e8da7599a3cd20ba6c9073ce59958",
+      "bytes": 26788
+    },
+    {
+      "file": "HThesis2017_page_113.png",
+      "sha256": "55dc8018b10f7ac062cc3be02c485c72aee2d1aeaa1de926ef9c6598b9c4d53f",
+      "bytes": 28683
+    },
+    {
+      "file": "LMR_page_9.png",
+      "sha256": "a674fb3aee45235163e03780f9bf6975b4c9c7f5bba0fc732d1c2618270ebec1",
+      "bytes": 38081
+    }
+  ],
+  "packaging": "receipt validates downloaded source hashes; manifest binds delivered payloads; verify checks raw bytes and Git filter parity. These administrative packaging operations are not mathematical runs. No timing fields are inserted into the manifest or report.",
+  "checkpoint": "CHECKPOINT.md",
+  "outcomes": {
+    "2a": "B",
+    "2b": "B",
+    "2c": "complete"
+  },
+  "achievement": "PRIMARY/READ literature audit with HAND applicability assessments; no new mathematical achievement or record change"
+}

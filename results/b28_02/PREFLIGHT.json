@@ -1,0 +1,26 @@
+{
+  "slot": "B28-02",
+  "label": "READ (administrative filesystem and Git inspection)",
+  "result": "PASS",
+  "authorization": "The user's launch message explicitly authorizes this slot now.",
+  "session": "Fresh Astra task; no subagents or other sessions used",
+  "worktree": "C:/Users/swami/Projects/gct-gpt/work/batch28/b28-02",
+  "branch_expected": "b28-02",
+  "branch_observed": "b28-02",
+  "setup_commit_expected": "9daf22c5f311c9153a736a5a27416d5beff37ef6",
+  "head_observed": "9daf22c5f311c9153a736a5a27416d5beff37ef6",
+  "expected_parent": "96a8074d240033161302233672aed5980d84eccb",
+  "setup_receipt": "Claude_Handover_B15_B18/post_b19_housekeeping_20260917/B28_PART27_SETUP_RECEIPTS.json",
+  "initial_status_porcelain": "",
+  "untracked_files_changed": false,
+  "output_paths_initially_absent": ["docs/b28_02_report.md", "results/b28_02/"],
+  "applicable_AGENTS_files_found": [],
+  "origin": "https://github.com/swsethuraman/gct.git",
+  "git_environment_note": "The project root is not a Git repository, as the brief states. All subsequent Git operations target this worktree. The sandbox account requires a per-command safe.directory for this exact worktree; no persistent Git configuration was changed. Git reported an unreadable account-global ignore file, but status completed with no entries.",
+  "control_hash_semantics": "SHA-256 of raw filesystem bytes, without newline or encoding normalization",
+  "controls": [
+    {"file": "B28_COMMON.md", "bytes": 4940, "sha256": "06799a9e404fc45a0944f7fcae88d8dd5511f7721f704ebe69872dd3061c87b9", "matches_board": true},
+    {"file": "B28-02.md", "bytes": 3460, "sha256": "ac957649f624f59e69e98f4ea6635f6849ea6c3ac2758dfffc81e4e65a201158", "matches_board": true},
+    {"file": "BATCH28_BOARD.md", "bytes": 5023, "sha256": "c635ac1a73e5e0c855c9bc1b75809c447e3b7184d707af75d49bad6c14ba96af", "matches_setup_receipt": true}
+  ]
+}
