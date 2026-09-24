@@ -1,0 +1,34 @@
+{
+  "slot": "R27-K4",
+  "branch": "b27-k4r",
+  "setup_head": "f35dbb6c7846ff6abcfc929744c85be7d5a3a64e",
+  "first_clock_read_utc": "2026-09-23T03:51:06Z",
+  "note_clock": "Preflight and reading preceded the first clock read; the substantive session was well within the 45-minute ceiling.",
+  "tools": {"python": "3.12.10", "sympy": "1.14.0", "installs": "none"},
+  "compute_runs_used": 2,
+  "compute_runs_limit": 10,
+  "runs": [
+    {
+      "n": 1,
+      "command": "timeout 60 python analysis/b27_k4_hwv_check.py > results/b27_k4/run1_output.txt",
+      "input_sha256": "6597670d3a68af2dbca8bedb970aca95115703ee167318ddf2664da1a75de928",
+      "output_sha256": "cae16ecf22d1f63cf0f7b526559ebd726609df8629afe18a1a9f89a8948e03ab",
+      "wall_time_s": "not captured (bc unavailable); run 2 is a byte-identical replay timed at 1.289 s",
+      "exit_code": 0,
+      "result": "Check A 0 mismatches (3 cases); Check B 123 cells, 0 failures"
+    },
+    {
+      "n": 2,
+      "command": "time timeout 60 python analysis/b27_k4_hwv_check.py > results/b27_k4/run2_output.txt",
+      "input_sha256": "6597670d3a68af2dbca8bedb970aca95115703ee167318ddf2664da1a75de928",
+      "output_sha256": "cae16ecf22d1f63cf0f7b526559ebd726609df8629afe18a1a9f89a8948e03ab",
+      "wall_time_s": 1.289,
+      "exit_code": 0,
+      "result": "byte-identical to run 1"
+    }
+  ],
+  "memory": "well under 512 MB (small exact matrices)",
+  "labels": "results are COMPUTED finite certificates for R1-R2 only; verdicts rest on hand proof",
+  "subagents": 0,
+  "paper_edits": 0
+}

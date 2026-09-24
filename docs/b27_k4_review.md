@@ -1,0 +1,218 @@
+# R27-K4 — Claude review of B26-10A §2.3 (general degree-4 extension)
+
+**Slot:** R27-K4, cross-lineage (Claude reviewing Astra work). **Branch:** `b27-k4r`. **Setup HEAD:** `f35dbb6c7846ff6abcfc929744c85be7d5a3a64e`.
+
+## Registered outcomes
+
+| Item under review | Outcome |
+|---|---|
+| §2.3 general degree-four statement | **ACCEPT** |
+| §2.3 `P_r` identification | **ACCEPT** |
+| §3.3 flag inventory table | **REPAIR**. The L705–706 use is at every `n≥3`, not only `n=4`. The smallest true repair is below (§4.1). |
+
+**Flags in Paper 2:**
+- **No flag needs to be restored.** I concur with removing the length-restriction flag at L1062–1063. That removal also clears the downstream uses at L1071–1087 (§4.2).
+- **No new flag is needed, on one condition:** the degree-`d` form of the lemma in §2.2 is accepted for the cap-theorem proof at L705–706 when `n≠4`. If it is not accepted, L705–706 needs a scope note restricting it to `n=4` (§4.1).
+
+**Achievement level:** a transfer lemma only. It gives no source condition, coefficient equation, padding separation or multiplicity gap. **The binding constraint stands: "No five-row determinant equation is known to be nonzero on padding."**
+
+## 0. Preflight and inputs
+
+**Brief hashes.** Raw SHA-256 of the brief files, as read; all match `BATCH27_BOARD.md`:
+
+| file | SHA-256 |
+|---|---|
+| `B27_COMMON.md` | `891e3ca872bc795b6f943ac89f55112573803f006e0208940dd6cad1f750d6ee` |
+| `R27-K4.md` | `59043481ae85a595db9b5187b927a5f21667f4464805795e69c9f98d5e967a27` |
+| `BATCH27_BOARD.md` | `b0bc2501aba62d49b91862d821232ac1b9904480057a8dcdb4cbc03fbd86efec` |
+
+**Worktree checks:**
+- The branch is `b27-k4r`.
+- HEAD is `f35dbb6c…`, which is the PART 25 setup commit. It matches `B27_PART25_SETUP_RECEIPTS.json` and `ls-remote`.
+- The worktree had no tracked or untracked changes.
+- The output paths were absent.
+
+**Mathematical premises.** They come only from these committed blobs:
+
+| Name | Commit:path | Blob | Bytes | SHA-256 (raw blob bytes) | EOL |
+|---|---|---|---|---|---|
+| B26-10A review | `21816b3c:docs/b26_10a_review.md` | `06d87814…` | 27810 | `9fa55d57c501c8e65275732563f42d4eb9e1eae76ad0d09956844b0576b7eb1d` | LF |
+| Paper 2 | `79b68dcf:paper/det4-onset.tex` | `60bc18a4…` | 71849 | `065f8799dbec4b24b0ddd93b2cd1fdf8528d435c4464bcc529700010f08f55d8` | CRLF (1247 CR) |
+
+**Scope of reading:**
+- **READ:** B26-10A §§2–3 in full, and §§4–6.
+- **READ:** Paper 2, L1–300, L630–730, L835–910, L984–1000 and L1040–1110, plus every `grep` hit for `eq:lengthred`, `\Pp_`, "orbit closure" and "length reduc".
+- Line numbers count the committed CRLF blob.
+- **UNREAD:** B26-04's report, B25-05 §A.3, Companion Prop. 4.19 and LMR. None of them is needed here, because each step below is re-derived.
+
+## 1. Setting and convention check (HAND)
+
+**Convention.**
+- Forms `F ∈ W_N = Sym^d((C^N)*)`, with `(g·F)(v)=F(g⁻¹v)`.
+- The coefficient functional is `c_α(F)=[y^α]F`, with `|α|=d`.
+- Functions carry the dual action.
+- The coordinate ring `C[W_N]_δ` is then a polynomial `GL_N`-module, and `c_α` has weight `+α`.
+
+**Derivation of the raising operators.**
+- For `g=I+tE_ij`, `(g·c_α)(F)=[y^α]F(gy)` and `gy=y+t y_j e_i`.
+- Differentiating at `t=0` gives `E_ij c_α=(α_i+1)c_{α+e_i−e_j}` when `α_j>0`, and `0` otherwise. This is B26-10A's formula.
+- **COMPUTED** (check A, §5): a symbolic identity for `(N,d)=(3,4),(3,3),(2,5)`, over all `i≠j` and all `α`, with 0 mismatches.
+
+**Paper's usage.** Paper 2 labels irreducibles by partitions `λ ⊢ dδ` with `ℓ(λ)≤N`, so a highest-weight vector of weight `λ` counts copies of `S_λ`.
+- **READ:** L96–97 speak of "the irreducible `SL`-module `S_λ`". So `λ` in eq:lengthred must be read as the unique `GL_16` representative of size `4δ`, and `ℓ(λ)` is that representative's length.
+- **READ:** L1054–1059 does exactly this: `(65,17,2⁷)`, size `96=4·24`.
+- This is a precision note, not a defect, and needs no flag.
+
+## 2. The §2.3 general degree-four statement — ACCEPT
+
+### 2.1 Claim under review (READ, B26-10A §2.3)
+
+The claim covers any `f ∈ Sym⁴((C¹⁶)*)`, any `1≤r≤16`, `δ≥0` and `λ⊢4δ` with `ℓ(λ)≤r`. Write `X=closure(GL₁₆·f)`, `X_r=closure{f∘T : T∈Hom(C^r,C¹⁶)}` and `ρ` for restriction.
+
+The claim is that pullback `ρ*` does three things:
+- it identifies the highest-weight spaces of weight `(λ,0)` and `λ`;
+- it identifies their ideal subspaces;
+- so `mult_λ C[X]_δ = mult_λ C[X_r]_δ`.
+
+### 2.2 Independent re-derivation (HAND)
+
+I prove the degree-`d` form, which contains the degree-four statement. Let `f ∈ Sym^d((C^N)*)`, `d≥1`, `1≤r≤N` and `λ⊢dδ` with `ℓ(λ)≤r`.
+
+1. **R1: weight spaces.**
+   - A coefficient monomial `c_{α¹}⋯c_{α^δ}` has weight `Σα^k`, with every `α^k≥0`.
+   - If the weight has zeros in coordinates `r+1…N`, so does every `α^k`.
+   - So the weight-`(λ,0^{N−r})` space is exactly `ρ*` of the weight-`λ` space in `r` variables. `ρ*` is injective, since it includes a polynomial subring.
+2. **R2: highest-weight spaces.**
+   - For `i<r`, `E_{i,i+1}` preserves the subring generated by the `c_{(α,0)}` and agrees there with the `r`-variable operator. It acts on generators by the formula in §1 and extends as a derivation.
+   - For `i≥r`, every generator has `α_{i+1}=0`, so `E_{i,i+1}` kills them, and hence kills every product.
+   - So `HWV^N_{(λ,0)} = ρ* HWV^r_λ`, with no boundary loss at `ℓ(λ)=r`.
+   - **COMPUTED** (check B, §5): for 123 cells, the weight bases coincide under pullback and the HWV dimensions agree. The cells cover `(N,d,r)=(4,4,1–3), (5,4,4), (4,3,2–3), (5,5,3)` and small `δ`. As a sanity check, the output reproduces `Sym²Sym⁴C³ ⊇ S₈,S₆₂,S₄₄` and `Sym³Sym⁴C² = S₁₂+S₁₀,₂+S₉,₃+S₈,₄+S₆,₆`.
+3. **R3: evaluation.** `c_α(ρF)=c_{(α,0)}(F)`, so `(ρ*h̄)(F)=h̄(ρF)` for every `F`.
+4. **R4: closure of the image.**
+   - `ρ(g·f)=f∘(g⁻¹ι)`, and `g⁻¹ι` ranges over exactly the injective `T`. Every injective `T` is the first `r` columns of an invertible matrix, because `r≤N`.
+   - The injective `T` form a nonempty Zariski-open, hence dense, subset of `Hom(C^r,C^N)`.
+   - `T ↦ f∘T` is polynomial, so a coefficient polynomial vanishes on `{f∘T : T injective}` iff it vanishes on `{f∘T : all T}`.
+   - Hence `closure ρ(GL_N·f) = X_r`. Also `closure ρ(X)=X_r`, since `ρ(closure A)⊂closure ρ(A)`.
+5. **R5: ideal kernels.** For `h=ρ*h̄`: `h∈I(X)` ⇔ `h` vanishes on `GL_N·f` ⇔ (by R3) `h̄` vanishes on `ρ(GL_N·f)` ⇔ (by R4) `h̄∈I(X_r)`. By R2, every highest-weight vector of weight `(λ,0)` has this form, so `ρ*` restricts to `HWV(I(X_r)_δ)_λ ≅ HWV(I(X)_δ)_{(λ,0)}`.
+6. **R6: multiplicities.**
+   - `(tI)·f=t^{−d}f`, and every nonzero scalar is a `d`-th power in C. So `X` is a cone, and `I(X)` is homogeneous and `GL_N`-stable.
+   - `f∘(tT)=t^d(f∘T)` and `f∘(Th⁻¹)` stays in the family, so `X_r` is a `GL_r`-stable cone.
+   - Complete reducibility in characteristic 0 gives `mult_λ C[·]_δ = dim HWV(ambient) − dim HWV(ideal)` on each side.
+   - Both terms agree by R2 and R5.
+
+For `δ=0` the claim is trivial. `f=0` is allowed; both sides are then `{0}`.
+
+**Conclusion.** B26-10A's degree-four statement is correct as stated. Every step also holds verbatim for any degree `d`, which §4.1 needs. B26-10A's R6 uses fourth roots, and the degree-`d` form uses `d`-th roots. **ACCEPT.**
+
+One more check: the proof never assumes that `X_r` has a dense orbit, or that a closed set has closed image. The step `closure ρ(X)=X_r` is proved correctly without either.
+
+## 3. The `P_r` identification — ACCEPT
+
+**READ:** Paper 2 L120–121 defines `P_r` as "the closure of [the padded permanent's] own restrictions", and L261–262 asserts that `O|_{C^r}=P_r` for `O=closure(GL₁₆·x₀per₃)`.
+
+**HAND.**
+- `x₀per₃` uses 10 of the 16 coordinates: `x₀` and the nine entries. Take `f=x₀per₃` in R4 above.
+- `f∘T = ℓ·per₃(B)`, where `ℓ` and the `B_ij` are the rows of `T` at those ten coordinates.
+- Over all `T`, these ten rows range independently over all of `(C^r)*`. The six remaining rows do not affect the value.
+- The restrictions to `r`-planes are the injective `T`. By R4 their closure equals the closure over all `T`:
+
+  `O|_{C^r} = closure{ℓ·per₃(B) : ℓ, B_ij ∈ (C^r)* arbitrary} = P_r`.
+
+  This holds for every `1≤r≤16`, including `r≥10`, where `ℓ, B_ij` are necessarily dependent.
+- The permanent factor is never replaced by an arbitrary cubic, so B26-10A's final caveat holds.
+
+**Supplementary remark (HAND; not needed for the verdict).**
+- Let `Y_r=closure{per₃(B)}`, a closed cone in `Sym³`.
+- Multiplication `P^{r−1}×P(Y_r)→P(Sym⁴)` is a morphism of projective varieties, so its image is closed.
+- Hence `P_r={ℓ·c : c∈Y_r}` exactly, with no further closure. This agrees with the paper's usage at L290 and L313.
+
+**ACCEPT.**
+
+## 4. The §3.3 flag inventory — REPAIR
+
+I checked every row of B26-10A §3.3 against the paper text.
+
+| Paper locator | Row's ruling | This review |
+|---|---|---|
+| 251–259 (§2, general equation) | ACCEPT, `1≤r≤16`, all δ | Agree (§2) |
+| 260–261 (`D_r`) | ACCEPT | Agree: `f=det₄`, and R4 gives `closure{det₄(ΣsᵢAᵢ)}` over all tuples = `D_r` (L114) |
+| 261–262 (`P_r`) | ACCEPT | Agree (§3) |
+| **705–706 (cap proof)** | "ACCEPT for the `n=4` transfer" | **REPAIR**, §4.1 |
+| 860–861 (both multiplicities) | ACCEPT | Agree; `k=ℓ(λ)≤16` |
+| 888–894 (short slab) | ACCEPT for the transport | Agree. The sentence is interpretive, because `Δ` is already defined on `P_k, D_k` (L859) |
+| 1060–1063 (LMR copy, flagged) | ACCEPT, remove the flag | Agree. Downstream uses are added in §4.2 |
+| 105–122 (intro summary) | covered | Agree. It cites `[Companion §4]`, and the content is §2 above |
+
+### 4.1 L705–706 is a general-`n` use
+
+**READ:**
+- The cap theorem (L653–661) is stated "for every `n≥2`" for `D₅⊂Sym^n C⁵`.
+- Its proof handles `n=2` separately (L664–668), then says "Assume `n≥3`" (L668).
+- It ends: "…the span `GL₅`-stable, and eq:lengthred carries it into `I(O)`" (L705–706).
+- So this use is made at **every `n≥3`**.
+- eq:lengthred is stated in §2 under "Fix `n=4`" for `O⊂Sym⁴C¹⁶`. Its citation, Companion Prop. 4.19, is for `det₃` (UNREAD here).
+
+**The defect in B26-10A.** The row rules only on `n=4`, and B26-10A §3.3 says it "does not certify … any `n≠4` instance". Its consequence paragraph nevertheless says the degree-four proof "covers all of these uses". That is overstated for L705–706 at `n=3` and at `n≥5`.
+
+**Smallest true repair.**
+- The degree-`d` lemma of §2.2 holds for every `d≥1` and `1≤r≤N`.
+- For `f=det_n`, `N=n²≥9>5=r` when `n≥3`, so the transfer to `I(closure(GL_{n²}·det_n))` holds at every `n≥3`.
+- A nonzero `GL₅`-submodule of `I(D₅)_{cap(n)}` contains highest-weight vectors of partitions of length `≤5`. R2 and R5 carry each of them to a nonzero ideal HWV of the orbit closure.
+- **COMPUTED** support for R1–R2 at `d=3,5` is in check B.
+- At `n=2`, `N=4<5`, so the lemma does not apply. The paper's sentence sits in the `n≥3` branch, so there is no issue.
+
+**Two notes:**
+- **Load-bearing status (READ).** The `I(O)` conclusion is *not* part of the statement of Theorem cap, which concerns `I(D₅)` only. So the gap never touched the theorem. It touches only the last clause of the proof.
+- **Wording (READ).** At `n≠4`, the macro `\cO` at L706 has no definition in the text. §2 defines it only for `Sym⁴C¹⁶`.
+
+**Recommendation to the editorial slot. This is a proposal only; no paper was edited.** Replace "and eq:lengthred carries it into `I(O)`" with:
+
+> "and the length reduction, whose proof in §2 uses only that the form is homogeneous and that $\lambda$ has at most five rows, carries it into $I(\overline{\GL_{n^2}\cdot\det_n})$ for every $n\ge3$."
+
+If the integrator does not accept the degree-`d` form, the alternative is a scope note: "for $n=4$". Either keeps Paper 2 free of a new flag.
+
+### 4.2 Downstream uses missing from the inventory
+
+These are not errors. They are listed so that the scope of the flag removal is explicit.
+
+- **L1071–1087 (READ).**
+  - "`i_det=1` exactly" (L1082) uses `i_det≥1`, which is the transferred LMR copy.
+  - "the one-dimensional kernel is therefore LMR's own equation" (L1084–1085) also uses the transferred copy.
+  - Removing the L1063 flag clears the transfer input for both. It does **not** clear the rank-273 certificate, the `b₂₄=1` count or the 282-point residues, which are outside this review.
+- **L288–297, L313, L1100 (READ).** These are uses of `P_r` as `{ℓ·per₃(B)}`-closure, or as `ℓ·Y_r`. They are covered by §3. The washout, dimension and `i_pad` claims themselves are not reviewed.
+
+### 4.3 Flag decision
+
+- **Restore:** none.
+- **Remove:** the L1062–1063 transfer flag. I concur with B26-10A, at the scope above.
+- **Add:** none, if §4.1's repair is adopted. Otherwise, a scope note at L705–706.
+
+## 5. Compute record (COMPUTED)
+
+**Script and environment:**
+- Script: `analysis/b27_k4_hwv_check.py`, SHA-256 `6597670d3a68af2dbca8bedb970aca95115703ee167318ddf2664da1a75de928`.
+- Python 3.12.10 and sympy 1.14.0, both already installed. Nothing was installed.
+- Exact rational arithmetic; no sampling or randomness.
+
+**Checks:**
+- **Check A:** a symbolic identity for the raising-operator formula of §1.
+- **Check B:** exhaustive over all `λ⊢dδ`, `ℓ(λ)≤r`, in the listed `(N,d,r,δ)`. It checks R1 (the weight bases correspond under pullback) and R2 (the HWV dimensions agree).
+
+**Result:** 0 mismatches and 123/123 cells OK. Runs are logged in `results/b27_k4/resource_receipt.json`.
+
+**Limitations:**
+- This is a finite certificate for R1–R2 at small parameters only.
+- R3–R6 are proved by hand. No ideal kernel `I(X_r)` was computed, because that would need point sampling, which is not allowed.
+- The verdicts rest on the hand proof. The computation is corroboration.
+
+## 6. Out of scope
+
+- Companion Prop. 4.19.
+- LMR's statements. The B26-10A §3.2 PRIMARY reading is not re-audited.
+- The dimension proposition.
+- The washout theorem's density claim.
+- The cap theorem's other steps: Kleiman, Gulliksen–Negård, Dimca.
+- The rank-273 and padded-side certificates.
+- Any padding separation.
+
+No subagents, no other sessions and no paper edits. **The binding constraint stands.**
