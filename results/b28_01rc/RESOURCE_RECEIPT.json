@@ -1,0 +1,53 @@
+{
+  "aggregate_measured_seconds_before_finalize": 42.55639742800001,
+  "binding_and_finalize_limits": {
+    "address_limit_kib": 500000,
+    "timeout_seconds": 60
+  },
+  "cellA_built": false,
+  "failed_parser_invocations": 1,
+  "finalize": {
+    "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rc_finalize.py\"",
+    "maxrss_kib": 16000,
+    "script": {
+      "bytes": 2289,
+      "sha256": "2293d8cd18ae49675504098ed4556c08382dc8e8cd4b7dd86e42eb2939152606"
+    },
+    "wall_seconds_before_manifest": 0.010153362000000055
+  },
+  "fixture_runs_executed": 1,
+  "fixture_scope": {
+    "memory_max": 512000000,
+    "memory_swap_max": 0,
+    "timeout_seconds": 60
+  },
+  "installs": 0,
+  "invocations_including_finalize": 4,
+  "launcher_preflight_invocations": 1,
+  "matrix_work": false,
+  "runs": [
+    {
+      "bytes": 1569,
+      "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rc_bind.py\"",
+      "path": "results/b28_01rc/binding_receipt.json",
+      "sha256": "40820ae6527b92934aadc9b57b4564395002da60ed469ce890f3054cca38262e",
+      "wall_seconds": 4.460850023000001
+    },
+    {
+      "bytes": 914,
+      "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rc_controls.py",
+      "path": "results/b28_01rc/controls_attempt1_receipt.json",
+      "sha256": "96cf92f6964c01523003d6cd6bec14b7fea85d387761773e1ba703e9ec219ef1",
+      "wall_seconds": 2.5132269000000003
+    },
+    {
+      "bytes": 11207,
+      "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rc_controls.py",
+      "path": "results/b28_01rc/controls_receipt.json",
+      "sha256": "e1862f54009835fb4f13235bd9a6a26aa7b3c5901e3cb60a186c1c8171ea4a56",
+      "wall_seconds": 35.58232050500001
+    }
+  ],
+  "schema": "r28-01c-resource-receipt/1",
+  "slot_compute_limit_seconds": 900
+}

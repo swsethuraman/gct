@@ -1,0 +1,22 @@
+{
+  "timeout_seconds": 60,
+  "matrix_work": false,
+  "exit": 1,
+  "fixtures_started": 0,
+  "wall_seconds": 2.5132269000000003,
+  "input_supervisor_sha256": "af3b5aa285713e20633189288589953b715d3027cb75432b959f0a485a2f7258",
+  "wall_source": "exec_command elapsed wall time",
+  "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rc_controls.py",
+  "memory_cap_bytes": 512000000,
+  "output": {
+    "bytes": 0,
+    "meaning": "No fixture or certificate was produced",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "script": {
+    "preserved_as": "analysis/b28_01rc_controls_attempt1.py",
+    "bytes": 6749,
+    "sha256": "286a0d2bdae669b5c185c6ee0c30ddac29714d977d53c1f59be597fa6f27e9f4"
+  },
+  "failure": "SyntaxError at line 63: pass was used as a dict keyword argument"
+}

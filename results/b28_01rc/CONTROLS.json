@@ -1,0 +1,73 @@
+{
+  "all_pass": true,
+  "cellA_built": false,
+  "evidence": "COMPUTED deterministic supervisor fixtures; independent process/group checks",
+  "fixtures": [
+    {
+      "child_absent_by_independent_check": true,
+      "child_listed_as_sigkilled": true,
+      "exit": 124,
+      "expected_exit": 124,
+      "fixture": "term_resistant",
+      "groups_absent_by_independent_check": true,
+      "job_processes_remaining": 0,
+      "pass": true,
+      "resource_stop_reason": "wall",
+      "steps_recorded": 1,
+      "subreaper": true
+    },
+    {
+      "artifact_bytes": 2048,
+      "artifact_limit_bytes": 1024,
+      "boundary_detected": true,
+      "exit": 125,
+      "expected_exit": 125,
+      "fixture": "fast_writer",
+      "groups_absent_by_independent_check": true,
+      "job_processes_remaining": 0,
+      "pass": true,
+      "resource_stop_reason": "artifact",
+      "steps_recorded": 1,
+      "subreaper": true
+    },
+    {
+      "exit": 125,
+      "expected_exit": 125,
+      "fixture": "fast_writer_two_steps",
+      "groups_absent_by_independent_check": true,
+      "job_processes_remaining": 0,
+      "marker_absent": true,
+      "pass": true,
+      "resource_stop_reason": "artifact",
+      "steps_recorded": 1,
+      "subreaper": true
+    },
+    {
+      "exit": 124,
+      "expected_exit": 124,
+      "fixture": "ordinary_wall",
+      "groups_absent_by_independent_check": true,
+      "job_processes_remaining": 0,
+      "pass": true,
+      "resource_stop_reason": "wall",
+      "steps_recorded": 1,
+      "subreaper": true
+    },
+    {
+      "child_absent_by_independent_check": true,
+      "child_listed_as_sigkilled": true,
+      "exit": 0,
+      "expected_exit": 0,
+      "fixture": "normal_exit_background_child",
+      "groups_absent_by_independent_check": true,
+      "job_processes_remaining": 0,
+      "pass": true,
+      "resource_stop_reason": null,
+      "steps_recorded": 1,
+      "subreaper": true
+    }
+  ],
+  "input_supervisor_sha256": "af3b5aa285713e20633189288589953b715d3027cb75432b959f0a485a2f7258",
+  "matrix_work": false,
+  "schema": "r28-01c-controls/1"
+}

@@ -1,0 +1,43 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 10.0,
+ "artifact_stop_bytes": 1000000,
+ "out": "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/normal_exit_background_child/out",
+ "start_utc": "2026-09-24T19:37:55Z",
+ "steps": [
+  {
+   "label": "parent",
+   "argv": [
+    "/usr/bin/python3",
+    "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rc_controls.py",
+    "--background-parent",
+    "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/normal_exit_background_child/child_pid_receipt.txt"
+   ],
+   "rc": 0,
+   "pgid": 399,
+   "secs_monotonic": 0.125,
+   "maxrss_bytes": 17272832,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [
+    401
+   ],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "512000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 0.13,
+ "end_utc": "2026-09-24T19:37:55Z",
+ "resource_stop": null,
+ "exit": 0,
+ "scope_end": {
+  "memory_peak": "25124864",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 0
+}
