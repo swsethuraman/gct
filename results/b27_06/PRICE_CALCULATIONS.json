@@ -1,0 +1,725 @@
+{
+  "label": "COMPUTED: exact rational verification of conditional pricing formulae; not measured rank or target runtime",
+  "statistics": {
+    "dense_c_seconds_per_n_cubed": {
+      "count": 6,
+      "min": {
+        "exact": "37/136218648645",
+        "decimal": "2.71622134E-10"
+      },
+      "p10": {
+        "exact": "37/136218648645",
+        "decimal": "2.71622134E-10"
+      },
+      "median": {
+        "exact": "1/2690162280",
+        "decimal": "3.71724787E-10"
+      },
+      "p90": {
+        "exact": "451/1095735811945",
+        "decimal": "4.11595564E-10"
+      },
+      "max": {
+        "exact": "451/1095735811945",
+        "decimal": "4.11595564E-10"
+      }
+    },
+    "s36_c_seconds_per_n_cubed_per_prime": {
+      "count": 32,
+      "min": {
+        "exact": "293/1687709265416",
+        "decimal": "1.73608101E-10"
+      },
+      "p10": {
+        "exact": "461/2589979103837",
+        "decimal": "1.77993714E-10"
+      },
+      "median": {
+        "exact": "23/123654854168",
+        "decimal": "1.86001594E-10"
+      },
+      "p90": {
+        "exact": "55/251362966608",
+        "decimal": "2.18807093E-10"
+      },
+      "max": {
+        "exact": "83/307813778424",
+        "decimal": "2.69643550E-10"
+      }
+    },
+    "hybrid_c_seconds_per_nnz_u": {
+      "count": 1208,
+      "min": {
+        "exact": "0",
+        "decimal": "0"
+      },
+      "p10": {
+        "exact": "1/113074000",
+        "decimal": "8.84376603E-9"
+      },
+      "median": {
+        "exact": "1/53296925",
+        "decimal": "1.87628085E-8"
+      },
+      "p90": {
+        "exact": "23/491738080",
+        "decimal": "4.67728674E-8"
+      },
+      "max": {
+        "exact": "11/114417225",
+        "decimal": "9.61393706E-8"
+      }
+    },
+    "hybrid_excess_fraction": {
+      "count": 1208,
+      "min": {
+        "exact": "0",
+        "decimal": "0"
+      },
+      "p10": {
+        "exact": "7/63814",
+        "decimal": "0.000109693798"
+      },
+      "median": {
+        "exact": "2/4371",
+        "decimal": "0.000457561199"
+      },
+      "p90": {
+        "exact": "309/176278",
+        "decimal": "0.00175291301"
+      },
+      "max": {
+        "exact": "179/31391",
+        "decimal": "0.00570227135"
+      }
+    },
+    "hybrid_nnz_per_n": {
+      "count": 1208,
+      "min": {
+        "exact": "185066/21093",
+        "decimal": "8.77381122"
+      },
+      "p10": {
+        "exact": "968341/98708",
+        "decimal": "9.81015723"
+      },
+      "median": {
+        "exact": "451942/32623",
+        "decimal": "13.8534776"
+      },
+      "p90": {
+        "exact": "942256/37137",
+        "decimal": "25.3724318"
+      },
+      "max": {
+        "exact": "7281089/136024",
+        "decimal": "53.5279730"
+      }
+    }
+  },
+  "targets": [
+    {
+      "k": 8,
+      "lam": [
+        12,
+        8,
+        6,
+        4,
+        2
+      ],
+      "a": 109,
+      "n": 813314,
+      "m_det": 27257,
+      "K": 117,
+      "NS_delta": 6506512,
+      "H": 59287247761257140625,
+      "dense_three_arrays_TB": {
+        "exact": "496109746947/31250000000",
+        "decimal": "15.8755119"
+      },
+      "dense_historical_range_TB": [
+        {
+          "exact": "496109746947/31250000000",
+          "decimal": "15.8755119"
+        },
+        {
+          "exact": "496109746947/10000000000",
+          "decimal": "49.6109747"
+        }
+      ],
+      "dense_s60_days_per_prime": [
+        {
+          "exact": "67248833788075393/36000000000000",
+          "decimal": "1868.02316"
+        },
+        {
+          "exact": "67248833788075393/9000000000000",
+          "decimal": "7472.09264"
+        }
+      ],
+      "dense_s36_days_two_primes": [
+        {
+          "exact": "67248833788075393/54000000000000",
+          "decimal": "1245.34877"
+        },
+        {
+          "exact": "67248833788075393/10800000000000",
+          "decimal": "6226.74387"
+        }
+      ],
+      "sparse_days_one_sequence": {
+        "exact": "40846369165303/4320000000000",
+        "decimal": "9.45517805"
+      },
+      "sparse_days_op_range": [
+        {
+          "exact": "694388275810151/108000000000000",
+          "decimal": "6.42952107"
+        },
+        {
+          "exact": "2164857565761059/108000000000000",
+          "decimal": "20.0449775"
+        }
+      ],
+      "sparse_C_arrays_GB": {
+        "exact": "100444279/62500000",
+        "decimal": "1.60710846"
+      },
+      "sparse_pipeline_memory_estimate_GB": [
+        {
+          "exact": "301332837/50000000",
+          "decimal": "6.02665674"
+        },
+        {
+          "exact": "100444279/10000000",
+          "decimal": "10.0444279"
+        }
+      ],
+      "sparse_dense_EV_GB": {
+        "exact": "47578869/62500000",
+        "decimal": "0.761261904"
+      },
+      "kernel_u32_GB": {
+        "exact": "44325613/125000000",
+        "decimal": "0.354604904"
+      },
+      "kernel_u32_and_i64_GB": {
+        "exact": "132976839/125000000",
+        "decimal": "1.06381471"
+      },
+      "gram_s62_one_pass_days": {
+        "exact": "244105361449016067/2048000000",
+        "decimal": "119192071"
+      },
+      "gram_s62_cell_days": {
+        "exact": "99267153970772526758019/1024000000",
+        "decimal": "9.69405800E+13"
+      },
+      "gram_s56_one_weight_days": {
+        "exact": "1771607238396055457397/51200000",
+        "decimal": "3.46017039E+13"
+      },
+      "gram_labels_min_bytes": 1897191928360228500000,
+      "gram_dense_B_words_bytes": 5291837300768,
+      "gram_count_min_bytes": 2645918650384,
+      "gram_reduced_ops_if_full_support": 72110946206598,
+      "matmul_exact_inner_bound_pass": true,
+      "hybrid": [
+        {
+          "excess_fraction": {
+            "exact": "1/1000",
+            "decimal": "0.001"
+          },
+          "u": 923,
+          "nnz_assumed": 8133140,
+          "build_s": {
+            "exact": "8539797/625000",
+            "decimal": "13.6636752"
+          },
+          "sieve_s": {
+            "exact": "406657/100000",
+            "decimal": "4.06657"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "375344411/625000",
+            "decimal": "600.551058"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "786330467/2000000000",
+            "decimal": "0.393165234"
+          },
+          "ev_s_per_prime": {
+            "exact": "1284629463/62500000",
+            "decimal": "20.5540714"
+          },
+          "contraction_s_per_prime": {
+            "exact": "5186096721/500000000",
+            "decimal": "10.3721934"
+          },
+          "one_prime_minutes": {
+            "exact": "1299201465767/120000000000",
+            "decimal": "10.8266789"
+          },
+          "two_primes_hours": {
+            "exact": "1281471220567/3600000000000",
+            "decimal": "0.355964228"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "3826683416501/7200000000000",
+            "decimal": "0.531483808"
+          },
+          "memory_envelope_GB": {
+            "exact": "502576079/125000000",
+            "decimal": "4.02060863"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "1/400",
+            "decimal": "0.0025"
+          },
+          "u": 2143,
+          "nnz_assumed": 8133140,
+          "build_s": {
+            "exact": "8539797/625000",
+            "decimal": "13.6636752"
+          },
+          "sieve_s": {
+            "exact": "406657/100000",
+            "decimal": "4.06657"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "871465951/625000",
+            "decimal": "1394.34552"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "9841618207/2000000000",
+            "decimal": "4.92080910"
+          },
+          "ev_s_per_prime": {
+            "exact": "1284629463/62500000",
+            "decimal": "20.5540714"
+          },
+          "contraction_s_per_prime": {
+            "exact": "5186096721/500000000",
+            "decimal": "10.3721934"
+          },
+          "one_prime_minutes": {
+            "exact": "2895845681507/120000000000",
+            "decimal": "24.1320473"
+          },
+          "two_primes_hours": {
+            "exact": "2878115436307/3600000000000",
+            "decimal": "0.799476510"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "8616616063721/7200000000000",
+            "decimal": "1.19675223"
+          },
+          "memory_envelope_GB": {
+            "exact": "539981279/125000000",
+            "decimal": "4.31985023"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "3/625",
+            "decimal": "0.0048"
+          },
+          "u": 4013,
+          "nnz_assumed": 8133140,
+          "build_s": {
+            "exact": "8539797/625000",
+            "decimal": "13.6636752"
+          },
+          "sieve_s": {
+            "exact": "406657/100000",
+            "decimal": "4.06657"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "1631914541/625000",
+            "decimal": "2611.06327"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "64626030197/2000000000",
+            "decimal": "32.3130151"
+          },
+          "ev_s_per_prime": {
+            "exact": "1284629463/62500000",
+            "decimal": "20.5540714"
+          },
+          "contraction_s_per_prime": {
+            "exact": "5186096721/500000000",
+            "decimal": "10.3721934"
+          },
+          "one_prime_minutes": {
+            "exact": "5384065581497/120000000000",
+            "decimal": "44.8672132"
+          },
+          "two_primes_hours": {
+            "exact": "5366335336297/3600000000000",
+            "decimal": "1.49064870"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "16081275763691/7200000000000",
+            "decimal": "2.23351052"
+          },
+          "memory_envelope_GB": {
+            "exact": "655098479/125000000",
+            "decimal": "5.24078783"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "13/1000",
+            "decimal": "0.013"
+          },
+          "u": 10683,
+          "nnz_assumed": 8133140,
+          "build_s": {
+            "exact": "8539797/625000",
+            "decimal": "13.6636752"
+          },
+          "sieve_s": {
+            "exact": "406657/100000",
+            "decimal": "4.06657"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "4344316731/625000",
+            "decimal": "6950.90677"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "1219213281987/2000000000",
+            "decimal": "609.606641"
+          },
+          "ev_s_per_prime": {
+            "exact": "1284629463/62500000",
+            "decimal": "20.5540714"
+          },
+          "contraction_s_per_prime": {
+            "exact": "5186096721/500000000",
+            "decimal": "10.3721934"
+          },
+          "one_prime_minutes": {
+            "exact": "15218339841287/120000000000",
+            "decimal": "126.819499"
+          },
+          "two_primes_hours": {
+            "exact": "15200609596087/3600000000000",
+            "decimal": "4.22239155"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "45584098543061/7200000000000",
+            "decimal": "6.33112480"
+          },
+          "memory_envelope_GB": {
+            "exact": "1635321679/125000000",
+            "decimal": "13.0825734"
+          }
+        }
+      ]
+    },
+    {
+      "k": 9,
+      "lam": [
+        14,
+        10,
+        6,
+        4,
+        2
+      ],
+      "a": 437,
+      "n": 2085864,
+      "m_det": 104544,
+      "K": 445,
+      "NS_delta": 18772776,
+      "H": 388035036597427985390625,
+      "dense_three_arrays_TB": {
+        "exact": "203945091867/1953125000",
+        "decimal": "104.419887"
+      },
+      "dense_historical_range_TB": [
+        {
+          "exact": "203945091867/1953125000",
+          "decimal": "104.419887"
+        },
+        {
+          "exact": "203945091867/625000000",
+          "decimal": "326.312147"
+        }
+      ],
+      "dense_s60_days_per_prime": [
+        {
+          "exact": "1969452431028093/62500000000",
+          "decimal": "31511.2389"
+        },
+        {
+          "exact": "1969452431028093/15625000000",
+          "decimal": "126044.956"
+        }
+      ],
+      "dense_s36_days_two_primes": [
+        {
+          "exact": "656484143676031/31250000000",
+          "decimal": "21007.4926"
+        },
+        {
+          "exact": "656484143676031/6250000000",
+          "decimal": "105037.463"
+        }
+      ],
+      "sparse_days_one_sequence": {
+        "exact": "2273610098221/10000000000",
+        "decimal": "227.361010"
+      },
+      "sparse_days_op_range": [
+        {
+          "exact": "38651371669757/250000000000",
+          "decimal": "154.605487"
+        },
+        {
+          "exact": "120501335205713/250000000000",
+          "decimal": "482.005341"
+        }
+      ],
+      "sparse_C_arrays_GB": {
+        "exact": "235441899/15625000",
+        "decimal": "15.0682815"
+      },
+      "sparse_pipeline_memory_estimate_GB": [
+        {
+          "exact": "706325697/12500000",
+          "decimal": "56.5060558"
+        },
+        {
+          "exact": "235441899/2500000",
+          "decimal": "94.1767596"
+        }
+      ],
+      "sparse_dense_EV_GB": {
+        "exact": "23205237/3125000",
+        "decimal": "7.42567584"
+      },
+      "kernel_u32_GB": {
+        "exact": "113940321/31250000",
+        "decimal": "3.64609027"
+      },
+      "kernel_u32_and_i64_GB": {
+        "exact": "341820963/31250000",
+        "decimal": "10.9382708"
+      },
+      "gram_s62_one_pass_days": {
+        "exact": "319533918136762031703/409600000",
+        "decimal": "7.80112105E+11"
+      },
+      "gram_s62_cell_days": {
+        "exact": "83313037077552374812018299/51200000",
+        "decimal": "1.62720776E+18"
+      },
+      "gram_s56_one_weight_days": {
+        "exact": "1486876309386369383519037/2560000",
+        "decimal": "5.80811058E+17"
+      },
+      "gram_labels_min_bytes": 13969261317507407474062500,
+      "gram_dense_B_words_bytes": 34806629011968,
+      "gram_count_min_bytes": 17403314505984,
+      "gram_reduced_ops_if_full_support": 1901710445140968,
+      "matmul_exact_inner_bound_pass": true,
+      "hybrid": [
+        {
+          "excess_fraction": {
+            "exact": "1/1000",
+            "decimal": "0.001"
+          },
+          "u": 2523,
+          "nnz_assumed": 20858640,
+          "build_s": {
+            "exact": "49278537/1250000",
+            "decimal": "39.4228296"
+          },
+          "sieve_s": {
+            "exact": "260733/25000",
+            "decimal": "10.42932"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "657829359/156250",
+            "decimal": "4210.10790"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "16060229667/2000000000",
+            "decimal": "8.03011483"
+          },
+          "ev_s_per_prime": {
+            "exact": "5638872591/25000000",
+            "decimal": "225.554904"
+          },
+          "contraction_s_per_prime": {
+            "exact": "10140688569/25000000",
+            "decimal": "405.627543"
+          },
+          "one_prime_minutes": {
+            "exact": "3266115072289/40000000000",
+            "decimal": "81.6528768"
+          },
+          "two_primes_hours": {
+            "exact": "1083165896363/400000000000",
+            "decimal": "2.70791474"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "9731875684067/2400000000000",
+            "decimal": "4.05494820"
+          },
+          "memory_envelope_GB": {
+            "exact": "1012667231/62500000",
+            "decimal": "16.2026757"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "1/400",
+            "decimal": "0.0025"
+          },
+          "u": 5652,
+          "nnz_assumed": 20858640,
+          "build_s": {
+            "exact": "49278537/1250000",
+            "decimal": "39.4228296"
+          },
+          "sieve_s": {
+            "exact": "260733/25000",
+            "decimal": "10.42932"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "736831458/78125",
+            "decimal": "9431.44266"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "2821151997/31250000",
+            "decimal": "90.2768639"
+          },
+          "ev_s_per_prime": {
+            "exact": "5638872591/25000000",
+            "decimal": "225.554904"
+          },
+          "contraction_s_per_prime": {
+            "exact": "10140688569/25000000",
+            "decimal": "405.627543"
+          },
+          "one_prime_minutes": {
+            "exact": "53139344387/312500000",
+            "decimal": "170.045902"
+          },
+          "two_primes_hours": {
+            "exact": "70679361441/12500000000",
+            "decimal": "5.65434892"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "4965585623/585937500",
+            "decimal": "8.47459946"
+          },
+          "memory_envelope_GB": {
+            "exact": "570282553/31250000",
+            "decimal": "18.2490417"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "3/625",
+            "decimal": "0.0048"
+          },
+          "u": 10450,
+          "nnz_assumed": 20858640,
+          "build_s": {
+            "exact": "49278537/1250000",
+            "decimal": "39.4228296"
+          },
+          "sieve_s": {
+            "exact": "260733/25000",
+            "decimal": "10.42932"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "54493197/3125",
+            "decimal": "17437.8230"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "9129329/16000",
+            "decimal": "570.583062"
+          },
+          "ev_s_per_prime": {
+            "exact": "5638872591/25000000",
+            "decimal": "225.554904"
+          },
+          "contraction_s_per_prime": {
+            "exact": "10140688569/25000000",
+            "decimal": "405.627543"
+          },
+          "one_prime_minutes": {
+            "exact": "37378881397/120000000",
+            "decimal": "311.490678"
+          },
+          "two_primes_hours": {
+            "exact": "186645146237/18000000000",
+            "decimal": "10.3691748"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "62187353107/4000000000",
+            "decimal": "15.5468383"
+          },
+          "memory_envelope_GB": {
+            "exact": "763426043/31250000",
+            "decimal": "24.4296334"
+          }
+        },
+        {
+          "excess_fraction": {
+            "exact": "13/1000",
+            "decimal": "0.013"
+          },
+          "u": 27554,
+          "nnz_assumed": 20858640,
+          "build_s": {
+            "exact": "49278537/1250000",
+            "decimal": "39.4228296"
+          },
+          "sieve_s": {
+            "exact": "260733/25000",
+            "decimal": "10.42932"
+          },
+          "hybrid_s_per_prime": {
+            "exact": "3592118541/78125",
+            "decimal": "45979.1173"
+          },
+          "residual_cubic_allowance_s": {
+            "exact": "2614953528433/250000000",
+            "decimal": "10459.8141"
+          },
+          "ev_s_per_prime": {
+            "exact": "5638872591/25000000",
+            "decimal": "225.554904"
+          },
+          "contraction_s_per_prime": {
+            "exact": "10140688569/25000000",
+            "decimal": "405.627543"
+          },
+          "one_prime_minutes": {
+            "exact": "14279991508633/15000000000",
+            "decimal": "951.999434"
+          },
+          "two_primes_hours": {
+            "exact": "14273759989933/450000000000",
+            "decimal": "31.7194666"
+          },
+          "two_primes_plus_replay_hours": {
+            "exact": "14271682817033/300000000000",
+            "decimal": "47.5722761"
+          },
+          "memory_envelope_GB": {
+            "exact": "2388477083/31250000",
+            "decimal": "76.4312667"
+          }
+        }
+      ]
+    }
+  ],
+  "model": "Published s71 refit; one determinant family; sequential primes; separate cubic residual allowance and memory envelope"
+}

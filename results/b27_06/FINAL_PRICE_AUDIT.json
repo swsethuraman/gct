@@ -1,0 +1,313 @@
+{
+  "label": "COMPUTED: exact arithmetic checks and two disclosed pricing corrections; no rank experiment",
+  "passed_checks": 32,
+  "checks": [
+    "k8 dense memory",
+    "k8 sparse time",
+    "k8 Gram enumeration",
+    "k8 source array",
+    "k8 f1/1000 two-prime hours",
+    "k8 f1/1000 old replay formula",
+    "k8 f1/1000 old memory formula",
+    "k8 f1/400 two-prime hours",
+    "k8 f1/400 old replay formula",
+    "k8 f1/400 old memory formula",
+    "k8 f3/625 two-prime hours",
+    "k8 f3/625 old replay formula",
+    "k8 f3/625 old memory formula",
+    "k8 f13/1000 two-prime hours",
+    "k8 f13/1000 old replay formula",
+    "k8 f13/1000 old memory formula",
+    "k9 dense memory",
+    "k9 sparse time",
+    "k9 Gram enumeration",
+    "k9 source array",
+    "k9 f1/1000 two-prime hours",
+    "k9 f1/1000 old replay formula",
+    "k9 f1/1000 old memory formula",
+    "k9 f1/400 two-prime hours",
+    "k9 f1/400 old replay formula",
+    "k9 f1/400 old memory formula",
+    "k9 f3/625 two-prime hours",
+    "k9 f3/625 old replay formula",
+    "k9 f3/625 old memory formula",
+    "k9 f13/1000 two-prime hours",
+    "k9 f13/1000 old replay formula",
+    "k9 f13/1000 old memory formula"
+  ],
+  "gram_rate_raw_seconds": {
+    "exact": "868383317362909/5000000000000000000000",
+    "decimal": "1.736766635E-7"
+  },
+  "gram_rate_used_rounded_seconds": {
+    "exact": "1737/10000000000",
+    "decimal": "1.737E-7"
+  },
+  "corrections": [
+    "Count an additional uint32 kernel temporary: 16*n*a in the memory envelope instead of 12*n*a.",
+    "Include a second build and cover for the independent replay."
+  ],
+  "targets": [
+    {
+      "k": 8,
+      "lam": [
+        12,
+        8,
+        6,
+        4,
+        2
+      ],
+      "a": 109,
+      "n": 813314,
+      "scenarios": [
+        {
+          "f": {
+            "exact": "1/1000",
+            "decimal": "0.001"
+          },
+          "U": 923,
+          "nnz_model": 8133140,
+          "two_primes_hours": {
+            "exact": "1281471220567/3600000000000",
+            "decimal": "0.3559642279"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "3862143906901/7200000000000",
+            "decimal": "0.5364088760"
+          },
+          "memory_envelope_GB": {
+            "exact": "136725423/31250000",
+            "decimal": "4.375213536"
+          },
+          "structural_nnz_bound": 26026048,
+          "structural_nnz_audit_hours": {
+            "exact": "11825203683221/7200000000000",
+            "decimal": "1.642389400"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "385281521/62500000",
+            "decimal": "6.164504336"
+          }
+        },
+        {
+          "f": {
+            "exact": "1/400",
+            "decimal": "0.0025"
+          },
+          "U": 2143,
+          "nnz_model": 8133140,
+          "two_primes_hours": {
+            "exact": "2878115436307/3600000000000",
+            "decimal": "0.7994765101"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "8652076554121/7200000000000",
+            "decimal": "1.201677299"
+          },
+          "memory_envelope_GB": {
+            "exact": "146076723/31250000",
+            "decimal": "4.674455136"
+          },
+          "structural_nnz_bound": 26026048,
+          "structural_nnz_audit_hours": {
+            "exact": "27093223255241/7200000000000",
+            "decimal": "3.762947674"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "403984121/62500000",
+            "decimal": "6.463745936"
+          }
+        },
+        {
+          "f": {
+            "exact": "3/625",
+            "decimal": "0.0048"
+          },
+          "U": 4013,
+          "nnz_model": 8133140,
+          "two_primes_hours": {
+            "exact": "5366335336297/3600000000000",
+            "decimal": "1.490648705"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "16116736254091/7200000000000",
+            "decimal": "2.238435591"
+          },
+          "memory_envelope_GB": {
+            "exact": "174856023/31250000",
+            "decimal": "5.595392736"
+          },
+          "structural_nnz_bound": 26026048,
+          "structural_nnz_audit_hours": {
+            "exact": "50618557176011/7200000000000",
+            "decimal": "7.030355163"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "461542721/62500000",
+            "decimal": "7.384683536"
+          }
+        },
+        {
+          "f": {
+            "exact": "13/1000",
+            "decimal": "0.013"
+          },
+          "U": 10683,
+          "nnz_model": 8133140,
+          "two_primes_hours": {
+            "exact": "15200609596087/3600000000000",
+            "decimal": "4.222391554"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "45619559033461/7200000000000",
+            "decimal": "6.336049866"
+          },
+          "memory_envelope_GB": {
+            "exact": "419911823/31250000",
+            "decimal": "13.43717834"
+          },
+          "structural_nnz_bound": 26026048,
+          "structural_nnz_audit_hours": {
+            "exact": "137407314208181/7200000000000",
+            "decimal": "19.08434920"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "951654321/62500000",
+            "decimal": "15.22646914"
+          }
+        }
+      ]
+    },
+    {
+      "k": 9,
+      "lam": [
+        14,
+        10,
+        6,
+        4,
+        2
+      ],
+      "a": 437,
+      "n": 2085864,
+      "scenarios": [
+        {
+          "f": {
+            "exact": "1/1000",
+            "decimal": "0.001"
+          },
+          "U": 2523,
+          "nnz_model": 20858640,
+          "two_primes_hours": {
+            "exact": "1083165896363/400000000000",
+            "decimal": "2.707914741"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "9765110450467/2400000000000",
+            "decimal": "4.068796021"
+          },
+          "memory_envelope_GB": {
+            "exact": "1240547873/62500000",
+            "decimal": "19.84876597"
+          },
+          "structural_nnz_bound": 75091104,
+          "structural_nnz_audit_hours": {
+            "exact": "10564608831329/800000000000",
+            "decimal": "13.20576104"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "1579500773/62500000",
+            "decimal": "25.27201237"
+          }
+        },
+        {
+          "f": {
+            "exact": "1/400",
+            "decimal": "0.0025"
+          },
+          "U": 5652,
+          "nnz_model": 20858640,
+          "two_primes_hours": {
+            "exact": "70679361441/12500000000",
+            "decimal": "5.654348915"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "318316773097/37500000000",
+            "decimal": "8.488447283"
+          },
+          "memory_envelope_GB": {
+            "exact": "342111437/15625000",
+            "decimal": "21.89513197"
+          },
+          "structural_nnz_bound": 75091104,
+          "structural_nnz_audit_hours": {
+            "exact": "361728803639/12500000000",
+            "decimal": "28.93830429"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "213424831/7812500",
+            "decimal": "27.31837837"
+          }
+        },
+        {
+          "f": {
+            "exact": "3/625",
+            "decimal": "0.0048"
+          },
+          "U": 10450,
+          "nnz_model": 20858640,
+          "two_primes_hours": {
+            "exact": "186645146237/18000000000",
+            "decimal": "10.36917479"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "186728233153/12000000000",
+            "decimal": "15.56068610"
+          },
+          "memory_envelope_GB": {
+            "exact": "219341591/7812500",
+            "decimal": "28.07572365"
+          },
+          "structural_nnz_bound": 75091104,
+          "structural_nnz_audit_hours": {
+            "exact": "640292407073/12000000000",
+            "decimal": "53.35770059"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "523421407/15625000",
+            "decimal": "33.49897005"
+          }
+        },
+        {
+          "f": {
+            "exact": "13/1000",
+            "decimal": "0.013"
+          },
+          "U": 27554,
+          "nnz_model": 20858640,
+          "two_primes_hours": {
+            "exact": "14273759989933/450000000000",
+            "decimal": "31.71946664"
+          },
+          "two_primes_plus_independent_rebuild_hours": {
+            "exact": "4758612387611/100000000000",
+            "decimal": "47.58612388"
+          },
+          "memory_envelope_GB": {
+            "exact": "625604351/7812500",
+            "decimal": "80.07735693"
+          },
+          "structural_nnz_bound": 75091104,
+          "structural_nnz_audit_hours": {
+            "exact": "44166782795953/300000000000",
+            "decimal": "147.2226093"
+          },
+          "structural_nnz_memory_GB": {
+            "exact": "1335946927/15625000",
+            "decimal": "85.50060333"
+          }
+        }
+      ]
+    }
+  ],
+  "uncertainties": "Rates and support fractions are extrapolations, not measured target properties. Scenario bounds are not confidence intervals."
+}

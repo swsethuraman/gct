@@ -1,0 +1,2559 @@
+[
+  {
+    "oid": "5665bc965ac59aef214a26311514b30067a8ba93",
+    "path": "analysis/wk11_s69_dp.so",
+    "bytes": 19864,
+    "kind": "binary",
+    "sha256": "5546f4f24eca2b4e9371cefe6296a385ff44e65e6734dff6479da75af6bb20c5",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "8d040e438d526c8cd7f5003d345ba01f8a8a2717",
+    "path": "analysis/wk11_s69_eval.so",
+    "bytes": 19768,
+    "kind": "binary",
+    "sha256": "608c68d0ba37ab038bf95c56d1d590922ae8217954ac4688bd95709353c429a0",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "7c54ec48bffe5c505d3e2fbdf8f461b93df4b21a",
+    "path": "analysis/wk11_s69_expand.so",
+    "bytes": 23976,
+    "kind": "binary",
+    "sha256": "40a3940eefa27fa2ddfae90fb3670b75822ccbd17b231dba9b1cf814888bc83d",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "69ca0b826f759ce5399b01bb6c28ba5c7955d8a1",
+    "path": "analysis/wk12_s74_dpc.so",
+    "bytes": 19880,
+    "kind": "binary",
+    "sha256": "f285fa77bfca492a5c88b24333b7aa230b80bb99809418ca25b77d9185714c60",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "05fed944c684bc1909adb06743e96283b119f4e8",
+    "path": "docs/batch16/CLAUDE_FOCUSED_PACKET.zip",
+    "bytes": 27867,
+    "kind": "zip",
+    "members": [
+      "b14_06_bracket.py",
+      "b14_06_points.py",
+      "b15_06_geometry.py",
+      "HESSIAN_REPORT.md",
+      "RANK_RECEIPTS.json",
+      "START_HERE.md"
+    ],
+    "sha256": "dd3641f8d3d1895106221d97b55b59ee0296a69a800827e432dbe2faa86b904b",
+    "scope": "text members searched in main scan; archive entries inventoried"
+  },
+  {
+    "oid": "075d9022973d72e0e7cce68b54252e4e7870f383",
+    "path": "results/artefacts/s63_n3_ideal_vectors.npz",
+    "bytes": 6064,
+    "kind": "zip",
+    "members": [
+      "kernel.npy",
+      "prime.npy",
+      "a.npy",
+      "i_det.npy",
+      "mult_det.npy",
+      "lam.npy",
+      "delta.npy",
+      "n_chi.npy"
+    ],
+    "sha256": "ceee1b908f06049e1d4af879eb5c016b39aa3d17cab65bfc33e45898b55f7b1a",
+    "arrays": [
+      {
+        "name": "kernel",
+        "shape": [
+          1,
+          17047
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483629
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "i_det",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "mult_det",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          19,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 12
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 17047
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "64e80149f83e10f8074289f9df19cca1b9e3b705",
+    "path": "results/artefacts/s68_L1_d5.npz",
+    "bytes": 5269,
+    "kind": "zip",
+    "members": [
+      "lam.npy",
+      "delta.npy",
+      "p.npy",
+      "n_chi.npy",
+      "a.npy",
+      "N_S.npy",
+      "stab.npy",
+      "kernel.npy"
+    ],
+    "sha256": "6faec0dc0d27a0e71875247008543d30bd7271bb1a0e9c3a5b5b51285232daa3",
+    "arrays": [
+      {
+        "name": "lam",
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "value": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 5
+      },
+      {
+        "name": "p",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 939
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "N_S",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "stab",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "kernel",
+        "shape": [
+          939,
+          3
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "7ba497505f530c92b9a5ca680ca857fac1ada6e7",
+    "path": "results/artefacts/s68_L1_d6.npz",
+    "bytes": 70489,
+    "kind": "zip",
+    "members": [
+      "lam.npy",
+      "delta.npy",
+      "p.npy",
+      "n_chi.npy",
+      "a.npy",
+      "N_S.npy",
+      "stab.npy",
+      "kernel.npy",
+      "transported.npy",
+      "births.npy"
+    ],
+    "sha256": "fb6dc44e0692dc53cafaae6ddc2a17df0fb21fd232ae180a6bc99f3c68e20239",
+    "arrays": [
+      {
+        "name": "lam",
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "value": [
+          12,
+          6,
+          4,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 6
+      },
+      {
+        "name": "p",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 1626
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "N_S",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "stab",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "kernel",
+        "shape": [
+          1626,
+          11
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "transported",
+        "shape": [
+          1626,
+          3
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "births",
+        "shape": [
+          1626,
+          8
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "45151bbc171a4f48c89b5be0a815cf791201ae01",
+    "path": "results/artefacts/s68_L1_d7.npz",
+    "bytes": 135158,
+    "kind": "zip",
+    "members": [
+      "lam.npy",
+      "delta.npy",
+      "p.npy",
+      "n_chi.npy",
+      "a.npy",
+      "N_S.npy",
+      "stab.npy",
+      "kernel.npy",
+      "transported.npy",
+      "births.npy"
+    ],
+    "sha256": "25074078d654e5c40a8318b5a9d3ec087ae50f654ed8bfa79e61ea797bdf4cfd",
+    "arrays": [
+      {
+        "name": "lam",
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "value": [
+          16,
+          6,
+          4,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 7
+      },
+      {
+        "name": "p",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2087
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "N_S",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "stab",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "kernel",
+        "shape": [
+          2087,
+          18
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "transported",
+        "shape": [
+          2087,
+          11
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "births",
+        "shape": [
+          2087,
+          7
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "5a766022e3829fbc49474156dbe00280c0d989d3",
+    "path": "results/artefacts/s68_L1_d8.npz",
+    "bytes": 158770,
+    "kind": "zip",
+    "members": [
+      "lam.npy",
+      "delta.npy",
+      "p.npy",
+      "n_chi.npy",
+      "a.npy",
+      "N_S.npy",
+      "stab.npy",
+      "kernel.npy",
+      "transported.npy",
+      "births.npy"
+    ],
+    "sha256": "9050121333864a0fb946613d5696112175cb96f1bb4a8aab0d6c799c6818b8e5",
+    "arrays": [
+      {
+        "name": "lam",
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "value": [
+          20,
+          6,
+          4,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 8
+      },
+      {
+        "name": "p",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2318
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "N_S",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "stab",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "kernel",
+        "shape": [
+          2318,
+          22
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "transported",
+        "shape": [
+          2318,
+          18
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "births",
+        "shape": [
+          2318,
+          4
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "7d4a470e2f6b6ba53d5c66c982485ad9bcaa4353",
+    "path": "results/artefacts/s68_L1_seed_exact.npz",
+    "bytes": 5370,
+    "kind": "zip",
+    "members": [
+      "lam.npy",
+      "delta.npy",
+      "n_chi.npy",
+      "a.npy",
+      "N_S.npy",
+      "stab.npy",
+      "kernel_Z.npy",
+      "note.npy"
+    ],
+    "sha256": "a023e1dd3ed5a4f69f98a2f9dc26695877a5b3fb5832647b1671c801d9f41ec2",
+    "arrays": [
+      {
+        "name": "lam",
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "value": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 5
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 939
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "N_S",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "stab",
+        "shape": [],
+        "dtype": "int64"
+      },
+      {
+        "name": "kernel_Z",
+        "shape": [
+          3,
+          939
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "note",
+        "shape": [],
+        "dtype": "<U98"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "9e6fd1fb2da36846284b09484b2996fee6337935",
+    "path": "results/artefacts/s73_M_basis_d10_p1.npz",
+    "bytes": 28010,
+    "kind": "zip",
+    "members": [
+      "M.npy",
+      "prime.npy",
+      "lam.npy",
+      "delta.npy",
+      "a.npy"
+    ],
+    "sha256": "7d221ecdfe163ab04a80e24074347af6baf6a5ee636a0c51805e302c4cd0345a",
+    "arrays": [
+      {
+        "name": "M",
+        "shape": [
+          4,
+          14598
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          13,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 10
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "298db3cc7648928583e72786837966dc360d2a09",
+    "path": "results/artefacts/s73_M_basis_d11_p1.npz",
+    "bytes": 37475,
+    "kind": "zip",
+    "members": [
+      "M.npy",
+      "prime.npy",
+      "lam.npy",
+      "delta.npy",
+      "a.npy"
+    ],
+    "sha256": "32efe78d82bef49c76340cc8bba97ea69ee23bed2c45aaba0f4baa83f377c774",
+    "arrays": [
+      {
+        "name": "M",
+        "shape": [
+          5,
+          16318
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          16,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 11
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "b54860011e6151ef602151c3939d102452148675",
+    "path": "results/artefacts/s73_M_basis_d12_p1.npz",
+    "bytes": 45410,
+    "kind": "zip",
+    "members": [
+      "M.npy",
+      "prime.npy",
+      "lam.npy",
+      "delta.npy",
+      "a.npy"
+    ],
+    "sha256": "33009a5c576b7a4a05ae06d0ce5579aff8ea0a65f426fa13e05a60c6d890946e",
+    "arrays": [
+      {
+        "name": "M",
+        "shape": [
+          6,
+          17047
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          19,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 12
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "dc4a5738cdcba09f0a0aa9d386d7f553760ee964",
+    "path": "results/artefacts/s73_M_basis_d9_p1.npz",
+    "bytes": 12219,
+    "kind": "zip",
+    "members": [
+      "M.npy",
+      "prime.npy",
+      "lam.npy",
+      "delta.npy",
+      "a.npy"
+    ],
+    "sha256": "84a6e50ab0169f5efcead01e35ce1ec960846c153e996e2aa8ac3b72f61abf14",
+    "arrays": [
+      {
+        "name": "M",
+        "shape": [
+          2,
+          11425
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          10,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 9
+      },
+      {
+        "name": "a",
+        "shape": [],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "6b1a1a6c87d116f0baf2b9619c23549b594ecf1c",
+    "path": "results/artefacts/s73_chi_basis_d10.npz",
+    "bytes": 64661,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "783bb5d68a66ffe678c4a7c01730d027e3d10c0a4e157abd42d8e44cf6bdea86",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          14598,
+          10
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          14598
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          3173
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          13,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 10
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "a1b524b6f81ae667aad6c2f749420a9687eb126c",
+    "path": "results/artefacts/s73_chi_basis_d11.npz",
+    "bytes": 71239,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "c9741c0e485a2c4e5117bac7504eaa2659f4fbdeb2ee398fe4baf16c6d22d941",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          16318,
+          11
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          16318
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          1720
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          16,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 11
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "e431768f218ade1fa5281407ab4a12082b549807",
+    "path": "results/artefacts/s73_chi_basis_d12.npz",
+    "bytes": 73246,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "87b03e6996f6faa36c6b7b16705ec6c630ed46b2afb24c428783734e5e3842d9",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          17047,
+          12
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          17047
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          729
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          19,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 12
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "6fcbd8bc772d3637d8f3221826a016b0bc883e6f",
+    "path": "results/artefacts/s73_chi_basis_d13.npz",
+    "bytes": 75550,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "c3bd3b7061941fbc8af5b9b5c21c4ee2e41400f87b576df20f71442c8eeb7a7c",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          17306,
+          13
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          17306
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          259
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          22,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 13
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "a711f81daa981566c660c688d03ec4de1a0a38dc",
+    "path": "results/artefacts/s73_chi_basis_d14.npz",
+    "bytes": 75147,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "149133a77090b7dbd81284088b5d6256029ed814cf04d12d366ce5cc701ef65e",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          17379,
+          14
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          17379
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          73
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          25,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 14
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "a5a22bcb25ef34781a99b8b4ad0b29090515de14",
+    "path": "results/artefacts/s73_chi_basis_d15.npz",
+    "bytes": 76192,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "97ff3c889f711c2afac3e761d9de03bb6794d8a5f986fab797e792b043f2fe9a",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          17399,
+          15
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          17399
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          28,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 15
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "abe19cd8b8965cb54fbc769da2fe393e977a4a90",
+    "path": "results/artefacts/s73_chi_basis_d16.npz",
+    "bytes": 76111,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "aedf32d43a026dc6a1e6ed4c9d83792d0a1c32d7211f71004bccf80752a78dc4",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          17403,
+          16
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          17403
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          4
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          31,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 16
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "852baf30ebe41e0da55688190e95739d844db940",
+    "path": "results/artefacts/s73_chi_basis_d9.npz",
+    "bytes": 52420,
+    "kind": "zip",
+    "members": [
+      "reps.npy",
+      "sgn_rep.npy",
+      "ufree_columns.npy",
+      "lam.npy",
+      "delta.npy"
+    ],
+    "sha256": "100270822fdcd1daefc24b704a00e827e610da61bfc11c7ab30c632857068ba7",
+    "arrays": [
+      {
+        "name": "reps",
+        "shape": [
+          11425,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn_rep",
+        "shape": [
+          11425
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "ufree_columns",
+        "shape": [
+          4576
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "lam",
+        "shape": [
+          7
+        ],
+        "dtype": "int64",
+        "value": [
+          10,
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "delta",
+        "shape": [],
+        "dtype": "int64",
+        "value": 9
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "7feb1876f61eec11141178a130b5c35242606e74",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 689941,
+    "kind": "binary",
+    "sha256": "7cd82752efd0195d29ce30ab9da9ae95525cc76dcf8e11c75eec606c386ad74e",
+    "container_type": "dict",
+    "records": 122,
+    "target_matches": []
+  },
+  {
+    "oid": "abf0bf8e90b6e7903d1b020e17e83de0f5317013",
+    "path": "results/logs/s40_n3census.pkl",
+    "bytes": 134057,
+    "kind": "binary",
+    "sha256": "d7ca8e55af4e08677d238e265ca9543284f77682beccd812f3278b697a354f0d",
+    "container_type": "dict",
+    "records": 1748,
+    "target_matches": []
+  },
+  {
+    "oid": "ab6adf0bbdc69f8a66c803d5ead3e724c8e1d29e",
+    "path": "results/logs/s56_Kfull_d2.npy",
+    "bytes": 9928,
+    "kind": "binary",
+    "sha256": "c9b1b129523d6c9bf5287bc6536d1ca1391ab3289f34d7fc9c69aef9ba35e8d0",
+    "arrays": [
+      {
+        "name": "array",
+        "shape": [
+          35,
+          35
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "b0df7515088fe97c62a538fd8dafe2673501056c",
+    "path": "results/logs/s62_counts_n4_d2.npz",
+    "bytes": 640,
+    "kind": "zip",
+    "members": [
+      "(8,).npy",
+      "(6, 2).npy",
+      "(4, 4).npy"
+    ],
+    "sha256": "ca5bb8479e29cc6dabb769fd1b18047300972f384f38888e47686da1c5cbc462",
+    "arrays": [
+      {
+        "name": "(8,)",
+        "shape": [
+          1,
+          1,
+          3
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(6, 2)",
+        "shape": [
+          2,
+          2,
+          3
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(4, 4)",
+        "shape": [
+          3,
+          3,
+          3
+        ],
+        "dtype": "int32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "5851a5b3ee819ff8a71d5e743c99b83447598f35",
+    "path": "results/logs/s62_counts_n4_d3.npz",
+    "bytes": 7626,
+    "kind": "zip",
+    "members": [
+      "(12,).npy",
+      "(10, 2).npy",
+      "(9, 3).npy",
+      "(8, 4).npy",
+      "(8, 2, 2).npy",
+      "(7, 4, 1).npy",
+      "(6, 6).npy",
+      "(6, 4, 2).npy",
+      "(4, 4, 4).npy"
+    ],
+    "sha256": "e1d2c9b1723c5220ee8c656d9e534d63b44cd006b32c324637d1ad6aa9cf30f2",
+    "arrays": [
+      {
+        "name": "(12,)",
+        "shape": [
+          1,
+          1,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(10, 2)",
+        "shape": [
+          2,
+          2,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(9, 3)",
+        "shape": [
+          3,
+          3,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(8, 4)",
+        "shape": [
+          4,
+          4,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(8, 2, 2)",
+        "shape": [
+          8,
+          8,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(7, 4, 1)",
+        "shape": [
+          8,
+          8,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(6, 6)",
+        "shape": [
+          5,
+          5,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(6, 4, 2)",
+        "shape": [
+          15,
+          15,
+          9
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "(4, 4, 4)",
+        "shape": [
+          23,
+          23,
+          9
+        ],
+        "dtype": "int32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "e1f643d9bf53aad79bda8e1f675f1fae1bd23821",
+    "path": "results/s71_cost_curve.png",
+    "bytes": 52805,
+    "kind": "binary",
+    "sha256": "088285cd47f491a1168cc992e56d147047462d15d508d402a26eca4999a055a6",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "ff6c2c5890464c252a9adf44f783fb18e07e8d9d",
+    "path": "results/s76_gram24_p2147483629.npz",
+    "bytes": 362713,
+    "kind": "zip",
+    "members": [
+      "G24.npy"
+    ],
+    "sha256": "d6e66e09e3bdf671249315d6bde272008c15da0f89c256f70def02b92013ea58",
+    "arrays": [
+      {
+        "name": "G24",
+        "shape": [
+          274,
+          274
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "86034fc3ab5d31e9af478d73c4ac03adb9621548",
+    "path": "results/s76_gram24_p2147483647.npz",
+    "bytes": 362690,
+    "kind": "zip",
+    "members": [
+      "G24.npy"
+    ],
+    "sha256": "399a45f4365adf54f212a3afe1b4bff2e9b1c747dd2ebaf0e1e7f8240099e0e8",
+    "arrays": [
+      {
+        "name": "G24",
+        "shape": [
+          274,
+          274
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "ba5ef34b0bf7960477ef44692cf762117e755592",
+    "path": "results/s76_source24_p2147483629.npz",
+    "bytes": 912060,
+    "kind": "zip",
+    "members": [
+      "E24.npy",
+      "predecessors.npy",
+      "block_widths.npy"
+    ],
+    "sha256": "0f487ec111d9de9b70c544e4b244aa1a94ee9ab8e2a252b43a507015ce3892cc",
+    "arrays": [
+      {
+        "name": "E24",
+        "shape": [
+          274,
+          2168
+        ],
+        "dtype": "uint32"
+      },
+      {
+        "name": "predecessors",
+        "shape": [
+          12
+        ],
+        "dtype": "<U29"
+      },
+      {
+        "name": "block_widths",
+        "shape": [
+          12
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "da6c2b8cd243b620c1f22534041e05480da1cb38",
+    "path": "results/s76_source24_p2147483647.npz",
+    "bytes": 912316,
+    "kind": "zip",
+    "members": [
+      "E24.npy",
+      "predecessors.npy",
+      "block_widths.npy"
+    ],
+    "sha256": "28ce7622bad848ac9f67769094d296c93020886538b4e3e6df39f89fa3a68b98",
+    "arrays": [
+      {
+        "name": "E24",
+        "shape": [
+          274,
+          2168
+        ],
+        "dtype": "uint32"
+      },
+      {
+        "name": "predecessors",
+        "shape": [
+          12
+        ],
+        "dtype": "<U29"
+      },
+      {
+        "name": "block_widths",
+        "shape": [
+          12
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "6169bde0d93c817c177532e72fbd7e19ad25976a",
+    "path": "results/b15_12/sources/kl_1204.4693v1.pdf",
+    "bytes": 150290,
+    "kind": "binary",
+    "sha256": "599486883d141d224fd40155ff9533b09d500cc48c2f5281e10ab49636e1e7cd",
+    "pages": 8,
+    "text_sha256": "01895d723fa7cec753a748a16b6c7286c9fafcdcd9341109cc7d515ae7286610",
+    "target_hits": [],
+    "first_text": "arXiv:1204.4693v1  [math.AG]  20 Apr 2012\nP ADDED POL YNOMIALS, THEIR COUSINS, AND GEOMETRIC\nCOMPLEXITY THEOR Y\nHARLAN KADISH AND J.M. LANDSBERG\nAbstract. We establish basic facts about the varieties of homogeneous polynomials divisible\nby powers of linear forms, and explain consequences for geom et",
+    "scope": "text search only; no external mathematical premise adopted"
+  },
+  {
+    "oid": "d128d7f6af52794f4dcb2f2940f91f77c4cf6e49",
+    "path": "results/b15_12/sources/bip_1604.06431v3.pdf",
+    "bytes": 406395,
+    "kind": "binary",
+    "sha256": "b6d54e77f91579b01490e4ac9b8b1c46b29226c9dd33291ef1f093eb1950016d",
+    "pages": 27,
+    "text_sha256": "6504e7cf041e744d61e8049a9b38cab9fd9eebd23739303db5390f6e9f4e40a2",
+    "target_hits": [],
+    "first_text": "arXiv:1604.06431v3  [cs.CC]  17 Sep 2018\nNO OCCURRENCE OBSTRUCTIONS IN GEOMETRIC\nCOMPLEXITY THEOR Y∗\nPETER B ¨URGISSER1, CHRISTIAN IKENMEYER 2, GRETA PANOV A3\nAbstract. The permanent versus determinant conjecture is a major prob lem in complexity the-\nory that is equivalent to the separation of the ",
+    "scope": "text search only; no external mathematical premise adopted"
+  },
+  {
+    "oid": "40c204ee01b6ce06b2e32a3b2895df0c321c1edd",
+    "path": "results/b15_12/sources/blmw_0907.2850v2.pdf",
+    "bytes": 346907,
+    "kind": "binary",
+    "sha256": "70bb2af9d4cc56d41ab003f1ba56346a513f378e1edd49ed6e1190751252d226",
+    "pages": 29,
+    "text_sha256": "33ed76ffbefd40f3f4d9c0e5fc44fb8c4b4c690b230811141253c843098c0f0d",
+    "target_hits": [],
+    "first_text": "arXiv:0907.2850v2  [cs.CC]  7 Jan 2011\nAN OVER VIEW OF MA THEMA TICAL ISSUES ARISING IN THE\nGEOMETRIC COMPLEXITY THEOR Y APPROACH TO VP ̸= VNP\nPETER B ¨URGISSER, J.M. LANDSBERG, LAURENT MANIVEL AND JERZY WEYMAN\nAbstract. We discuss the geometry of orbit closures and the asymptotic behavior of Kronec",
+    "scope": "text search only; no external mathematical premise adopted"
+  },
+  {
+    "oid": "9a3a375d70e05133fd80029dc34d2c1f65926c01",
+    "path": "results/b15_12/sources/ip_1512.03798v2.pdf",
+    "bytes": 333521,
+    "kind": "binary",
+    "sha256": "683d3aa4d89dfeb6f6f42ac05ef6545ccd91c3c84e95f813cc99799e45a39e2a",
+    "pages": 20,
+    "text_sha256": "8edbe9d506c0a61d23760ed2b65c0ece4513e83adbeb56dcb4f08bce33766683",
+    "target_hits": [],
+    "first_text": "arXiv:1512.03798v2  [cs.CC]  11 Aug 2017\nRectangular Kronecker coeﬃcients and plethysms in geometr ic\ncomplexity theory\nChristian Ikenmeyer∗\n, Greta Panova †\nOctober 2, 2018\nAbstract\nWe prove that in the geometric complexity theory program the vanishing of rectangular Kronecker\ncoeﬃcients cannot be ",
+    "scope": "text search only; no external mathematical premise adopted"
+  },
+  {
+    "oid": "58ef8239b32bef01aabbaeb5f54703c8c0cdaaec",
+    "path": "delivery/b16_11/b16_11_receiver.zip",
+    "bytes": 4490691,
+    "kind": "zip",
+    "members": [
+      "b15_bound.py",
+      "b16_11_finalize.py",
+      "b16_11_receiver.py",
+      "b16_11_test_receiver.py",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/COMPLETED_DELIVERIES.json",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/DIFFERENCE_CLASSIFICATION.json",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/SUMMARY.json",
+      "evidence/Batch15_Launch/native_20260913/INTAKE.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_01_verify.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_bound.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/INPUT_MANIFEST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14_power.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/A14_exact.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/K14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_prep/points/P14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/certificate.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_member_control.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_rank_control.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/degree13.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/dimension.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic_verification_v2.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/kernel.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/members.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/points.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/power.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source_values.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/fresh_source_values.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/fresh_target_minor.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/generic_source_minor.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/integrator_report.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/kernel_comparison.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/pilot.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/verification.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/ci73/certificate.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/columns_gen_2147483647.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/source.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_01_ci159.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_modular.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/chi_build.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_backend.cs",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_dimension.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_eval.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_inherited.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_io.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_linear.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/complete_interpolation.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/FORMAT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/forms.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/hwv.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer1.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer2.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer3.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/pleth.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/points.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/sample_corpus.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/scratch_not_removed.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/selftest.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/degeneracy_check.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/make_testset.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/verify.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/wied_check.c",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-08_0256ed256196/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-11_c40546038506/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/cubic_bound.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/cubic_bound.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/DELIVERY_MANIFEST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/DREAM_REPORT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/verify_cubic_and_lift.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/input_receipt.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/MANIFEST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/REPORT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/resource_summary.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/SHORTLIST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/verify_small.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Slot05_Hessian_1530/integrator_review.json",
+      "evidence/Batch16/BOARD.md",
+      "evidence/Batch16/launch/B16-11.md",
+      "evidence/Batch16/launch/INPUT_MANIFEST.json",
+      "evidence/work/batch15_workers/B15-01/analysis/b15_01_verify.py",
+      "evidence/work/batch15_workers/B15-01/docs/b15_01_report.md",
+      "evidence/work/batch15_workers/B15-01/tools/verify/b15_01_ci159.py",
+      "evidence/work/batch15_workers/B15-05/docs/b15_05_proved.md",
+      "evidence/work/batch15_workers/B15-05/docs/b15_05_report.md",
+      "evidence/work/batch15_workers/B15-06/docs/b15_06_proved.md",
+      "evidence/work/batch15_workers/B15-06/docs/b15_06_report.md",
+      "evidence/work/batch15_workers/B15-08/analysis/b15_08_witness.py",
+      "evidence/work/batch15_workers/B15-08/docs/b15_08_proved.md",
+      "evidence/work/batch15_workers/B15-08/docs/b15_08_report.md",
+      "evidence/work/batch15_workers/B15-11/analysis/b15_11_memory.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b15_bound.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_build.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_git_audit.ps1",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_receiver.py",
+      "evidence/work/batch15_workers/B15-11/docs/b15_11_report.md",
+      "evidence/work/batch15_workers/B15-11/docs/b16_11_receiver_spec.md",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/audit.json",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/git_audit.json",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/runtime.json",
+      "evidence/work/batch15_workers/B15-11/results/logs/b16_11_runtime_resources.json",
+      "FINAL_RECEIVER_RESULT.json",
+      "first_receiver_receipt.json",
+      "INPUT_HASHES.json",
+      "integration_controls.json",
+      "process_exit_before_packaging.json",
+      "README.md",
+      "RECEIVER_SPEC.md",
+      "REPORT.md",
+      "resources/b16_11_build_01_resources.json",
+      "resources/b16_11_build_02_resources.json",
+      "resources/b16_11_controls_01_resources.json",
+      "resources/b16_11_receiver_01_resources.json",
+      "DELIVERY_MANIFEST.json"
+    ],
+    "sha256": "8b06c21e3bd4630a31460d304c961a05dc2cc190d59835ce8cd163d30b91c967",
+    "scope": "text members searched in main scan; archive entries inventoried"
+  },
+  {
+    "oid": "10b782e88371ba016545e5e2c9cb88b528709717",
+    "path": "results/b16_11/initial_archive_incomplete.zip",
+    "bytes": 4487285,
+    "kind": "zip",
+    "members": [
+      "b15_bound.py",
+      "b16_11_finalize.py",
+      "b16_11_receiver.py",
+      "b16_11_test_receiver.py",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/COMPLETED_DELIVERIES.json",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/DIFFERENCE_CLASSIFICATION.json",
+      "evidence/Batch15_Launch/native_20260913/git_closeout/SUMMARY.json",
+      "evidence/Batch15_Launch/native_20260913/INTAKE.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_01_verify.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/analysis/b15_bound.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/INPUT_MANIFEST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_04/hpad14_power.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/A14_exact.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_07/K14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b14_prep/points/P14.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/certificate.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_member_control.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/b15_01_altered_rank_control.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/degree13.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/dimension.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/generic_verification_v2.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/kernel.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/members.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/points.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/power.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/ci159_inputs/source_values.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/fresh_source_values.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/fresh_target_minor.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/generic_source_minor.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/integrator_report.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/kernel_comparison.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/pilot.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/b15_01/verification.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/ci73/certificate.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/columns_gen_2147483647.json.gz",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/results/s74/source.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_01_ci159.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/b15_modular.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/chi_build.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_backend.cs",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_dimension.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_eval.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_inherited.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_io.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/ci73_linear.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/complete_interpolation.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/FORMAT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/forms.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/hwv.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer1.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer2.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/layer3.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/pleth.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/points.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/sample_corpus.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/scratch_not_removed.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/selftest.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/degeneracy_check.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/det_pencil_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/make_testset.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/padded_permanent_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/testset/reducible_r6.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/verify.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-01_full_replay/tools/verify/wied_check.c",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-08_0256ed256196/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/B15-11_c40546038506/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/cubic_bound.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/cubic_bound.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/DREAM_REPORT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Dream_Upper288/verify_cubic_and_lift.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/input_receipt.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/integrator_review.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/MANIFEST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/REPORT.md",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/resource_summary.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/SHORTLIST.json",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Hessian11_1631/verify_small.py",
+      "evidence/Batch15_Launch/native_20260913/reviews_filesystem/Slot05_Hessian_1530/integrator_review.json",
+      "evidence/Batch16/BOARD.md",
+      "evidence/Batch16/launch/B16-11.md",
+      "evidence/Batch16/launch/INPUT_MANIFEST.json",
+      "evidence/work/batch15_workers/B15-01/analysis/b15_01_verify.py",
+      "evidence/work/batch15_workers/B15-01/docs/b15_01_report.md",
+      "evidence/work/batch15_workers/B15-01/tools/verify/b15_01_ci159.py",
+      "evidence/work/batch15_workers/B15-05/docs/b15_05_proved.md",
+      "evidence/work/batch15_workers/B15-05/docs/b15_05_report.md",
+      "evidence/work/batch15_workers/B15-06/docs/b15_06_proved.md",
+      "evidence/work/batch15_workers/B15-06/docs/b15_06_report.md",
+      "evidence/work/batch15_workers/B15-08/analysis/b15_08_witness.py",
+      "evidence/work/batch15_workers/B15-08/docs/b15_08_proved.md",
+      "evidence/work/batch15_workers/B15-08/docs/b15_08_report.md",
+      "evidence/work/batch15_workers/B15-11/analysis/b15_11_memory.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b15_bound.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_build.py",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_git_audit.ps1",
+      "evidence/work/batch15_workers/B15-11/analysis/b16_11_receiver.py",
+      "evidence/work/batch15_workers/B15-11/docs/b15_11_report.md",
+      "evidence/work/batch15_workers/B15-11/docs/b16_11_receiver_spec.md",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/audit.json",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/git_audit.json",
+      "evidence/work/batch15_workers/B15-11/results/b16_11/runtime.json",
+      "evidence/work/batch15_workers/B15-11/results/logs/b16_11_runtime_resources.json",
+      "FINAL_RECEIVER_RESULT.json",
+      "first_receiver_receipt.json",
+      "INPUT_HASHES.json",
+      "integration_controls.json",
+      "process_exit_before_packaging.json",
+      "README.md",
+      "RECEIVER_SPEC.md",
+      "REPORT.md",
+      "resources/b16_11_build_01_resources.json",
+      "resources/b16_11_build_02_resources.json",
+      "resources/b16_11_controls_01_resources.json",
+      "resources/b16_11_receiver_01_resources.json",
+      "DELIVERY_MANIFEST.json"
+    ],
+    "sha256": "44a268aa63889ad9234ff11d89eec5ccc74af92a1c6849e054b8f8e1ad2c18b6",
+    "scope": "text members searched in main scan; archive entries inventoried"
+  },
+  {
+    "oid": "56be4fab9aa09fe7dbef4ecf0387b7e68734371a",
+    "path": "results/b15_05/det_2147483629_minor.npz",
+    "bytes": 1119961,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "b46b4047aed4669852d976e8aa7eea5a2af5438dd86bcfe90ad58470718f8c03",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          529,
+          529
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "125558497cfe07bc5e643fdb8cdbf645dc6a343a",
+    "path": "results/b15_05/det_2147483629_values.npz",
+    "bytes": 3181604,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "af19e61b96577db555aa5bd825085e815d07770a29b2870677e93f084a277dad",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          600,
+          1337
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "e2de353869406b34be6a2b3353a054211cc2420b",
+    "path": "results/b15_05/det_2147483647_minor.npz",
+    "bytes": 1119954,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "52ccdcf3cc3a5d178d37e3a2c5d2f3bf33229705a8173c2bbaf6257242d1c221",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          529,
+          529
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "b5ccc821a0d31aa962903a5e4897f3a793449f48",
+    "path": "results/b15_05/det_2147483647_values.npz",
+    "bytes": 3181616,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "3165cc13ca02d65d23dda376845ea0ba126f3b9647d1101ce8fc2fef7ebd73f7",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          600,
+          1337
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "49f20cbccba11d93050253e17980d9c5fa2e56e9",
+    "path": "results/b15_05/det_points.npz",
+    "bytes": 110230,
+    "kind": "zip",
+    "members": [
+      "data.npy"
+    ],
+    "sha256": "a959d54c309c0778b5100021ee8fb8fc5eda5afeecdc736d2790c97409f2d51d",
+    "arrays": [
+      {
+        "name": "data",
+        "shape": [
+          8,
+          4,
+          4,
+          600
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "369f923ea60c89366c71420970f247c7184d1f2e",
+    "path": "results/b15_05/gen_2147483629_minor.npz",
+    "bytes": 1119890,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "de7597c1aea582dabdde1ae1e1dca95099719124a46b02360743cea88c34e6ec",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          533,
+          533
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "7aef2dbea00d532ee095e8809acbcdfe1a369f3d",
+    "path": "results/b15_05/gen_2147483629_values.npz",
+    "bytes": 2923643,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "0be1d31fe3b726f4ebd06e881b7114da0d3b121293b1e559b7bbbba3d266347e",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          560,
+          1337
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "4e92ae8a0f984d5f609ea17e56a9eff0f67ed9c7",
+    "path": "results/b15_05/gen_2147483647_minor.npz",
+    "bytes": 1119793,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "15720dc20124b8132bd03a689501f48a194df303c41cd408bf22d2cc8651f981",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          533,
+          533
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "5601bafb5ef2a18b5f4338fb6c6283958e653cb3",
+    "path": "results/b15_05/gen_2147483647_values.npz",
+    "bytes": 2923677,
+    "kind": "zip",
+    "members": [
+      "values.npy"
+    ],
+    "sha256": "1c2281f62b2c497d211a177178777704dc73da766bc94fde7b48c5003e4cb166",
+    "arrays": [
+      {
+        "name": "values",
+        "shape": [
+          560,
+          1337
+        ],
+        "dtype": "uint32"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "b37f87d8ec13fc7fcb51153e6a2805909d72d8a5",
+    "path": "results/b15_05/gen_points.npz",
+    "bytes": 161164,
+    "kind": "zip",
+    "members": [
+      "data.npy"
+    ],
+    "sha256": "4cd0cc59421abbf8960c1f36915db63ea1a2d357d93a1a4faf4bddf7c9270c5d",
+    "arrays": [
+      {
+        "name": "data",
+        "shape": [
+          560,
+          3,
+          8,
+          8
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "864ab354406f4e234f7cf0229fb04fcdd588546b",
+    "path": "results/b15_03/kernel_2147483629.npz",
+    "bytes": 13461,
+    "kind": "zip",
+    "members": [
+      "K.npy",
+      "prime.npy"
+    ],
+    "sha256": "0c290cd686e8498f153db6ffbd395f111c9d8185cdbd5434504b9e6a73453f9f",
+    "arrays": [
+      {
+        "name": "K",
+        "shape": [
+          43364,
+          2
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483629
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "178d707bfffe321dde30f2b23f0b350dbaf757d9",
+    "path": "results/b15_03/kernel_2147483647.npz",
+    "bytes": 14653,
+    "kind": "zip",
+    "members": [
+      "K.npy",
+      "prime.npy"
+    ],
+    "sha256": "ec757ccb2f11266fe87c3717651ad7e417895c701655ab377ac9e17620743738",
+    "arrays": [
+      {
+        "name": "K",
+        "shape": [
+          43364,
+          2
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "52306c346785aec580629fa766c5123e60ba4e21",
+    "path": "results/b15_03/native_carrier.npz",
+    "bytes": 2014798,
+    "kind": "zip",
+    "members": [
+      "M.npy",
+      "col_of.npy",
+      "sgn.npy",
+      "n_chi.npy"
+    ],
+    "sha256": "7f81aa647098e45650b2f53355b20349d913320fda397e7ce339d52618e89213",
+    "arrays": [
+      {
+        "name": "M",
+        "shape": [
+          519879,
+          8
+        ],
+        "dtype": "int16"
+      },
+      {
+        "name": "col_of",
+        "shape": [
+          519879
+        ],
+        "dtype": "int32"
+      },
+      {
+        "name": "sgn",
+        "shape": [
+          519879
+        ],
+        "dtype": "int8"
+      },
+      {
+        "name": "n_chi",
+        "shape": [],
+        "dtype": "int64",
+        "value": 43364
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "c1f873525d1e3cf4a47c3962f8d9ecfd6030860f",
+    "path": "results/b15_04/cell1_cover.npz",
+    "bytes": 341729,
+    "kind": "zip",
+    "members": [
+      "rows.npy",
+      "S.npy",
+      "U.npy",
+      "pos.npy"
+    ],
+    "sha256": "961fc461c9b9550b032b91d6a98a04e7202c3b87b75488028a157e9f67dfe04c",
+    "arrays": [
+      {
+        "name": "rows",
+        "shape": [
+          70418
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "S",
+        "shape": [
+          70418
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "U",
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "pos",
+        "shape": [
+          70438
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "bcbcf5658c1eb3f4e0319a6a07b79c19a58a41bb",
+    "path": "results/b15_04/cell1_integral_source.npz",
+    "bytes": 1533693,
+    "kind": "zip",
+    "members": [
+      "monomials.npy",
+      "coefficients.npy",
+      "letters.npy"
+    ],
+    "sha256": "f5af555e04385f0563ae913b2e0e5cb04e7b87f2111e986445fb59b3c01858cf",
+    "arrays": [
+      {
+        "name": "monomials",
+        "shape": [
+          296730,
+          8
+        ],
+        "dtype": "int16"
+      },
+      {
+        "name": "coefficients",
+        "shape": [
+          296730,
+          3
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "letters",
+        "shape": [
+          210,
+          7
+        ],
+        "dtype": "int16"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "d6f0b6ee84a9322437c89cbe707e2218fca5f29e",
+    "path": "results/b15_04/cell1_kernel.npz",
+    "bytes": 84211,
+    "kind": "zip",
+    "members": [
+      "K.npy",
+      "prime.npy"
+    ],
+    "sha256": "ef7766ac3a2736d94e1dc8d0fa2e699395d74d3155a068c93dc5bb8787155556",
+    "arrays": [
+      {
+        "name": "K",
+        "shape": [
+          70438,
+          4
+        ],
+        "dtype": "uint32"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "1c1674e5b8c0f5445dab92a08a186af6f63bf8a6",
+    "path": "results/b15_04/cell2_cover.npz",
+    "bytes": 407325,
+    "kind": "zip",
+    "members": [
+      "rows.npy",
+      "S.npy",
+      "U.npy",
+      "pos.npy"
+    ],
+    "sha256": "72318b8723c8facdfdd2d9a22e54b873def38d7ea155d4193be26fe35e513a19",
+    "arrays": [
+      {
+        "name": "rows",
+        "shape": [
+          85304
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "S",
+        "shape": [
+          85304
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "U",
+        "shape": [
+          21
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "pos",
+        "shape": [
+          85325
+        ],
+        "dtype": "int64"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "190bff14f8ce7323bb0ab5a32b854d8274e20fe0",
+    "path": "results/b15_04/cell2_integral_source.npz",
+    "bytes": 693686,
+    "kind": "zip",
+    "members": [
+      "monomials.npy",
+      "coefficients.npy",
+      "letters.npy"
+    ],
+    "sha256": "a89b32524793435f8975c212c6d716aefbbacfd54d6d258e91dc63ecfeab1329",
+    "arrays": [
+      {
+        "name": "monomials",
+        "shape": [
+          145230,
+          8
+        ],
+        "dtype": "int16"
+      },
+      {
+        "name": "coefficients",
+        "shape": [
+          145230,
+          3
+        ],
+        "dtype": "int64"
+      },
+      {
+        "name": "letters",
+        "shape": [
+          210,
+          7
+        ],
+        "dtype": "int16"
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "7ac1bd0d56ceba74b54a94d73fb69397739fcf9c",
+    "path": "results/b15_04/cell2_kernel.npz",
+    "bytes": 61121,
+    "kind": "zip",
+    "members": [
+      "K.npy",
+      "prime.npy"
+    ],
+    "sha256": "a248292b2188139d210862607af6d97cb8f4f274f391747b32113828df1df222",
+    "arrays": [
+      {
+        "name": "K",
+        "shape": [
+          85325,
+          3
+        ],
+        "dtype": "uint32"
+      },
+      {
+        "name": "prime",
+        "shape": [],
+        "dtype": "int64",
+        "value": 2147483647
+      }
+    ],
+    "scope": "numeric sidecar; metadata/associated source required to identify its cell"
+  },
+  {
+    "oid": "1e79be3c63a7dca3ca6d24803f7869a1828951bf",
+    "path": "results/s71_cost_curve.png",
+    "bytes": 48627,
+    "kind": "binary",
+    "sha256": "6b7ea3798a68b0a406abb13018294e812aaa216dbce3d21433cab8400d6608bb",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "0724cb8ae8a988a82adec3967396a74271536c59",
+    "path": "results/s71_cost_curve.png",
+    "bytes": 48463,
+    "kind": "binary",
+    "sha256": "860c966293ef45117cd727692950edf1db0da09632cd0acd851559b5f8940678",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "4bf406be0b5c7990db081e2824cb9f5858865237",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 688843,
+    "kind": "binary",
+    "sha256": "74da8d9c6dbe5988a745d61e3ee977abe6c6c3ca9a512c9ac697e007a1b70a5c",
+    "container_type": "dict",
+    "records": 114,
+    "target_matches": []
+  },
+  {
+    "oid": "dbe192a5797a6ffca3df1ca03fa0e7f6bd25beee",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 688154,
+    "kind": "binary",
+    "sha256": "0449d19384020e6f5d659c99021d004f3d2dcdcaf82b173cc1730d078723d6f4",
+    "container_type": "dict",
+    "records": 109,
+    "target_matches": []
+  },
+  {
+    "oid": "6a234bd598e4643964fc85ef2017a6dcfa955406",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 657619,
+    "kind": "binary",
+    "sha256": "4bf739e80b3619ff73e628f00da4afb7c11e7316b2f640b41001eff5088c2243",
+    "container_type": "dict",
+    "records": 107,
+    "target_matches": []
+  },
+  {
+    "oid": "73a99cbf76757e94a3d9d7cff9d63e875dd9d65a",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 351887,
+    "kind": "binary",
+    "sha256": "929da3ed320d0c14deda520f56c5f4d6d6415f7769d5afc497a04d30104ffa11",
+    "container_type": "dict",
+    "records": 60,
+    "target_matches": []
+  },
+  {
+    "oid": "35180d5841ed7303a76b2f502c8955be2e640f5e",
+    "path": "results/logs/s40_n3cells.pkl",
+    "bytes": 108074,
+    "kind": "binary",
+    "sha256": "3cc668966d32c349dad8be8278795de6e318e11bceea9a7023285b575397baa8",
+    "container_type": "dict",
+    "records": 31,
+    "target_matches": []
+  },
+  {
+    "oid": "549f28cf7b8d7187837f9035b8a6ba446091c377",
+    "path": "paper/det3-conductor.pdf",
+    "bytes": 442062,
+    "kind": "binary",
+    "sha256": "77ebfcb87f6b8497e2524317604f30183b8a80696de9da602e1a6bf196fdce9f",
+    "pages": 20,
+    "text_sha256": "53034f7bb20cc9ff05d320166c8f10327f01f50f3b3dc43da0e3c425a2a013d4",
+    "target_hits": [],
+    "first_text": "CONDUCTORS OF ORBIT CLOSURES, AND THE FUNDAMENTAL\nINVARIANT OF THE 3 × 3 DETERMINANT\nSWAMI SETHURAMAN\nAbstract. Let v be a form characterised by its symmetries, with finite stabiliser H and\naffine orbit closure Ω. The boundary deficit def(λ, δ) = dim SH\nλ − multλ C[Ω]δ ≥ 0 measures\nthe gap between t",
+    "scope": "text search only; no external mathematical premise adopted"
+  },
+  {
+    "oid": "74fc6af681702001efd0d4441c7ebff3626fc370",
+    "path": "br",
+    "bytes": 21344,
+    "kind": "binary",
+    "sha256": "b404425c25574031bbbd2b1c1a522f15e473fd2b18f3e24084415581a428b342",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "02ea83cc033be3406dc8d891b30efe8893e42b09",
+    "path": "br2",
+    "bytes": 21952,
+    "kind": "binary",
+    "sha256": "392d4ca19cdb4721be5c9d7a66e33ede11c0dd12a4c8b631bb950f29fee3d881",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "914a47a1b09551059cc79ce62ddc2abe2afa86ac",
+    "path": "dp",
+    "bytes": 39664,
+    "kind": "binary",
+    "sha256": "f7a4db050cbd6964f5bb7a811ec8df36f1e8c4ecc8a8b8745ca69a000cd177c9",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "8835708590a9afa236e1bbad18df9d23de82ccd3",
+    "path": "lev0.dat",
+    "bytes": 2,
+    "kind": "binary",
+    "sha256": "fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "a9f4ca0e8c98693c1182c2229cdab8a91eccd26a",
+    "path": "analysis/__pycache__/wk3_s12_genD.cpython-311.pyc",
+    "bytes": 11191,
+    "kind": "binary",
+    "sha256": "e800a1fefbad4dc0a0219481d7e4996d1fcaf75c068acddff48d6a3bd968d130",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "9d5b5821364126874a777640390dd72772102ccb",
+    "path": "analysis/__pycache__/wk3_s12_satfeas.cpython-311.pyc",
+    "bytes": 10166,
+    "kind": "binary",
+    "sha256": "4bcaa6d02c6d6697bfda617c16fe268d79787ea65cdbf23f0eb6c1ba36e4970d",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  },
+  {
+    "oid": "9ac941b57fba8bdb3bd48c53238aca67de6d645b",
+    "path": "analysis/__pycache__/wk3_s12_sweep.cpython-311.pyc",
+    "bytes": 11227,
+    "kind": "binary",
+    "sha256": "313fe2ab21c1eeb3c4714852220a1479c108bfde266868aeca3c1fa3da1add49",
+    "scope": "compiled code, image, or scratch data; associated textual source searched"
+  }
+]

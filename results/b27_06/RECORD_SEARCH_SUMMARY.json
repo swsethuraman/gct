@@ -1,0 +1,14 @@
+{
+  "search": "all unique blobs reachable from all local refs at inventory time; text plus gzip plus text zip members",
+  "blob_count": 14130,
+  "raw_bytes": 709592918,
+  "decoded_search_bytes": 3777345506,
+  "patterns": [
+    "(?<![0-9])12[\\s,;_|:\\[\\]()\"\\']+8[\\s,;_|:\\[\\]()\"\\']+6[\\s,;_|:\\[\\]()\"\\']+4[\\s,;_|:\\[\\]()\"\\']+2(?![0-9])",
+    "(?<![0-9])14[\\s,;_|:\\[\\]()\"\\']+10[\\s,;_|:\\[\\]()\"\\']+6[\\s,;_|:\\[\\]()\"\\']+4[\\s,;_|:\\[\\]()\"\\']+2(?![0-9])"
+  ],
+  "matched_blobs_or_members": 106,
+  "hits": 355,
+  "binary_objects": 73,
+  "wall_seconds": 59.03100000001723
+}

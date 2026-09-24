@@ -1,0 +1,34 @@
+{
+  "label": "COMPUTED pricing verification only",
+  "command": [
+    "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out\\b27_06_audit.py"
+  ],
+  "finished_utc": "2026-09-23T10:54:33.328848+00:00",
+  "script": {
+    "path": "b27_06_audit.py",
+    "bytes": 7327,
+    "sha256": "550c04035c9d48dc7ff4b0854018011b5ab038a11e5a1f6a64600b9e4f08a650"
+  },
+  "inputs": {
+    "path": "RUN_03_INPUTS.json",
+    "bytes": 962,
+    "sha256": "be8b78df88e90f726580263c0d8fc043bd3a3eb6eb47c045a8fd27cd4344111a"
+  },
+  "outputs": [
+    {
+      "path": "FINAL_PRICE_AUDIT.json",
+      "bytes": 9679,
+      "sha256": "dbd964a916a5155040bd44fd8bcb1e54122f90cf621d2446690fd95c48babc95"
+    }
+  ],
+  "wall_seconds": 0.011677900038193911,
+  "peak_working_set_bytes": 20508672,
+  "peak_pagefile_bytes": 11341824,
+  "memory_cap_bytes": 500000000,
+  "wall_cap_seconds": 50,
+  "enforcement": "Windows process-memory Job Object and daemon wall watchdog",
+  "target_builds": 0,
+  "rank_measurements": 0,
+  "arithmetic": "Python int/Fraction; Decimal for reading recorded decimal rates and displaying results"
+}

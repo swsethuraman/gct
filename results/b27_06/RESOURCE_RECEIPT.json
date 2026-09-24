@@ -1,0 +1,171 @@
+{
+  "label": "READ: all allowance attempts and administrative completion receipt",
+  "status": "COMPLETE_PRICED_PREREGISTRATION",
+  "registered_outcome": 2,
+  "initial_segment": {
+    "start_utc": "2026-09-23T05:15:45Z",
+    "stop_detection_utc": "2026-09-23T08:39:04Z",
+    "checkpoint_45_minutes": "missed",
+    "ceiling_90_minutes": "exceeded",
+    "archived_receipt": {
+      "path": "interrupted_delivery/RESOURCE_RECEIPT.json",
+      "bytes": 4747,
+      "sha256": "5be61aa68ad0a78ac51881e3539d21a4dbe7e6705c6c2a12cdf64b6bce2b8f1a"
+    },
+    "archived_manifest": {
+      "path": "interrupted_delivery/MANIFEST.json",
+      "bytes": 19454,
+      "sha256": "64b132bd0b0f3a715382f3dc1556868bd6d6b845c03bd049ab163865d9757d2b"
+    }
+  },
+  "resumed_segment": {
+    "start_utc": "2026-09-23T10:51:42Z",
+    "finished_utc": "2026-09-23T11:01:46.654086+00:00",
+    "wall_seconds": 604.654086,
+    "authorization": "The internet connection probably dropped. COntinue?",
+    "checkpoint_45_minutes": "not due; completed",
+    "ceiling_90_minutes": "within ceiling"
+  },
+  "allowance_attempts_total": 3,
+  "allowance_limit": 10,
+  "allowance_was_not_reset": true,
+  "runs": [
+    {
+      "number": 1,
+      "receipt": {
+        "path": "RUN_01_FAILURE.json",
+        "bytes": 775,
+        "sha256": "95422dc73a6f6d28303661187586a97d2d478e624472348c65e2eb2c95b2ca26"
+      },
+      "command": "C:/Users/swami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out/b27_06_price.py",
+      "script_sha256": "78812517b5bb285da908c5755184bbf7d647dfcde053a665d924182cdb79b39f",
+      "input_index": {
+        "path": "RUN_01_INPUTS.json",
+        "bytes": 1650,
+        "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+      },
+      "outputs": [
+        {
+          "path": "RUN_01_INPUTS.json",
+          "bytes": 1650,
+          "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+        }
+      ],
+      "wall_seconds": 0.1690545,
+      "status": "parser failure; no mathematical result",
+      "limitation": "Exact failed source version was overwritten; only its hash survives."
+    },
+    {
+      "number": 2,
+      "receipt": {
+        "path": "RUN_02_RECEIPT.json",
+        "bytes": 1447,
+        "sha256": "effec13697e4fc30142e1a7f0321be391257c96fc19f7f58cd5074aed1f5855a"
+      },
+      "details": {
+        "label": "COMPUTED pricing arithmetic only",
+        "finished_utc": "2026-09-23T05:25:29.452597+00:00",
+        "command": [
+          "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out\\b27_06_price.py"
+        ],
+        "script_sha256": "d09fc7c61233f91a29e954b38ff4ffb98b0fa156a7b11cbc6fd071c7d0fe35ac",
+        "inputs_sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2",
+        "outputs": [
+          {
+            "path": "RUN_02_INPUTS.json",
+            "bytes": 1650,
+            "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+          },
+          {
+            "path": "TIMING_DATA.json",
+            "bytes": 778889,
+            "sha256": "750ec8f7622015a30d4f8797007dd1f7e436d94bb5470e060df4abec8bff2169"
+          },
+          {
+            "path": "PRICE_CALCULATIONS.json",
+            "bytes": 20958,
+            "sha256": "d583852c0072ebd0bb08053be778b2e5f0fb7fcd56f4c5a5b323f1025c0f984d"
+          }
+        ],
+        "wall_seconds": 0.08883240004070103,
+        "limits": {
+          "wall_seconds": 60,
+          "memory_bytes": 536870912,
+          "memory_enforcement": "Windows process memory Job Object",
+          "wall_enforcement": "daemon wall timer exits 124"
+        },
+        "mathematical_rank_runs": 0,
+        "target_builds": 0,
+        "arithmetic": "Python int/Fraction; Decimal only for display; no binary floating-point fits"
+      },
+      "preserved_script": {
+        "path": "b27_06_price_run02.py",
+        "bytes": 9461,
+        "sha256": "d09fc7c61233f91a29e954b38ff4ffb98b0fa156a7b11cbc6fd071c7d0fe35ac"
+      },
+      "status": "successful exact pricing arithmetic"
+    },
+    {
+      "number": 3,
+      "receipt": {
+        "path": "RUN_03_RECEIPT.json",
+        "bytes": 1292,
+        "sha256": "28584de146a2be18be6c215656a716d5c029ccd90390f0e87b6ede7fdec12543"
+      },
+      "details": {
+        "label": "COMPUTED pricing verification only",
+        "command": [
+          "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out\\b27_06_audit.py"
+        ],
+        "finished_utc": "2026-09-23T10:54:33.328848+00:00",
+        "script": {
+          "path": "b27_06_audit.py",
+          "bytes": 7327,
+          "sha256": "550c04035c9d48dc7ff4b0854018011b5ab038a11e5a1f6a64600b9e4f08a650"
+        },
+        "inputs": {
+          "path": "RUN_03_INPUTS.json",
+          "bytes": 962,
+          "sha256": "be8b78df88e90f726580263c0d8fc043bd3a3eb6eb47c045a8fd27cd4344111a"
+        },
+        "outputs": [
+          {
+            "path": "FINAL_PRICE_AUDIT.json",
+            "bytes": 9679,
+            "sha256": "dbd964a916a5155040bd44fd8bcb1e54122f90cf621d2446690fd95c48babc95"
+          }
+        ],
+        "wall_seconds": 0.011677900038193911,
+        "peak_working_set_bytes": 20508672,
+        "peak_pagefile_bytes": 11341824,
+        "memory_cap_bytes": 500000000,
+        "wall_cap_seconds": 50,
+        "enforcement": "Windows process-memory Job Object and daemon wall watchdog",
+        "target_builds": 0,
+        "rank_measurements": 0,
+        "arithmetic": "Python int/Fraction; Decimal for reading recorded decimal rates and displaying results"
+      },
+      "status": "successful exact formula audit and disclosed corrections"
+    }
+  ],
+  "rank_replays": 0,
+  "target_builds": 0,
+  "target_measurements": 0,
+  "original_memory_receipt_limit": "Runs 1 and 2 used a 512 MiB process-memory cap; no measured peak was logged. Run 3 used 500,000,000 bytes and logged its peak.",
+  "administrative_work": "Read-only Git retrieval, archive/text searches, snapshots, exact-byte hashing, record selection, document authoring and sealing; no rank experiment.",
+  "installations": 0,
+  "git_writes": 0,
+  "subagents": 0,
+  "other_task_messages": 0,
+  "publication": false,
+  "automatic_continuation": false,
+  "final_preregistration_complete": true,
+  "mathematical_review_complete": true,
+  "validation": {
+    "path": "FINAL_VALIDATION.json",
+    "bytes": 4811,
+    "sha256": "d87dc4b1b8353d775cb1a13690e7f52d8baf8c7661cedcf30192627b84a1f852"
+  }
+}

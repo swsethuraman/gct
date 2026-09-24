@@ -1,0 +1,109 @@
+{
+  "label": "READ: administrative run and ceiling receipt; COMPUTED result limited to pricing arithmetic",
+  "status": "STOPPED_INCOMPLETE_TIME_CEILING_EXCEEDED",
+  "session_start_utc": "2026-09-23T05:15:45Z",
+  "mismatch_detected_utc": "2026-09-23T08:39:04Z",
+  "local_clock_confirmation_utc": "2026-09-23T08:39:25.4947581Z",
+  "checkpoint_45_minutes": "missed",
+  "ceiling_90_minutes": "exceeded",
+  "sealing_utc": "2026-09-23T08:40:46.998310+00:00",
+  "allowance_attempts": 2,
+  "allowance_limit": 10,
+  "rank_replays": 0,
+  "target_builds": 0,
+  "target_measurements": 0,
+  "run_01": {
+    "receipt": {
+      "run": 1,
+      "purpose": "pricing arithmetic verification",
+      "status": "failed before arithmetic: short non-data line in historical markdown ledger",
+      "command": "C:/Users/swami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out/b27_06_price.py",
+      "script_sha256": "78812517b5bb285da908c5755184bbf7d647dfcde053a665d924182cdb79b39f",
+      "input_index_sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2",
+      "wall_seconds": 0.1690545,
+      "exit_code": 1,
+      "outputs": [
+        "RUN_01_INPUTS.json"
+      ],
+      "limits": "60 s watchdog; 512 MiB Windows process-memory Job Object",
+      "target_builds": 0
+    },
+    "receipt_binding": {
+      "path": "RUN_01_FAILURE.json",
+      "bytes": 775,
+      "sha256": "95422dc73a6f6d28303661187586a97d2d478e624472348c65e2eb2c95b2ca26"
+    },
+    "input_binding": {
+      "path": "RUN_01_INPUTS.json",
+      "bytes": 1650,
+      "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+    },
+    "output_bindings": [
+      {
+        "path": "RUN_01_INPUTS.json",
+        "bytes": 1650,
+        "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+      }
+    ],
+    "note": "Failed parser version was overwritten; its source hash survives, exact old source unavailable. No mathematical result from this attempt."
+  },
+  "run_02": {
+    "receipt": {
+      "label": "COMPUTED pricing arithmetic only",
+      "finished_utc": "2026-09-23T05:25:29.452597+00:00",
+      "command": [
+        "C:\\Users\\swami\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\swami\\Projects\\gct-gpt\\Claude_Handover_B15_B18\\post_b19_housekeeping_20260917\\batch27_launch\\b27_06_out\\b27_06_price.py"
+      ],
+      "script_sha256": "d09fc7c61233f91a29e954b38ff4ffb98b0fa156a7b11cbc6fd071c7d0fe35ac",
+      "inputs_sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2",
+      "outputs": [
+        {
+          "path": "RUN_02_INPUTS.json",
+          "bytes": 1650,
+          "sha256": "f3fd6b3177c0acd5defc7c8e79ffa74c8360a849ff794b9974d6810eaef235e2"
+        },
+        {
+          "path": "TIMING_DATA.json",
+          "bytes": 778889,
+          "sha256": "750ec8f7622015a30d4f8797007dd1f7e436d94bb5470e060df4abec8bff2169"
+        },
+        {
+          "path": "PRICE_CALCULATIONS.json",
+          "bytes": 20958,
+          "sha256": "d583852c0072ebd0bb08053be778b2e5f0fb7fcd56f4c5a5b323f1025c0f984d"
+        }
+      ],
+      "wall_seconds": 0.08883240004070103,
+      "limits": {
+        "wall_seconds": 60,
+        "memory_bytes": 536870912,
+        "memory_enforcement": "Windows process memory Job Object",
+        "wall_enforcement": "daemon wall timer exits 124"
+      },
+      "mathematical_rank_runs": 0,
+      "target_builds": 0,
+      "arithmetic": "Python int/Fraction; Decimal only for display; no binary floating-point fits"
+    },
+    "receipt_binding": {
+      "path": "RUN_02_RECEIPT.json",
+      "bytes": 1447,
+      "sha256": "effec13697e4fc30142e1a7f0321be391257c96fc19f7f58cd5074aed1f5855a"
+    },
+    "preserved_successful_script": {
+      "path": "b27_06_price_run02.py",
+      "bytes": 9461,
+      "sha256": "d09fc7c61233f91a29e954b38ff4ffb98b0fa156a7b11cbc6fd071c7d0fe35ac"
+    }
+  },
+  "resource_limits": "Each pricing attempt used a 60-second wall watchdog and 512 MiB Windows process-memory Job Object. No separate measured peak was logged.",
+  "administrative_work": "Read-only Git retrieval, archive/text searches, snapshots, JSON selection, raw hashing, drafting and sealing. These were not mathematical rank runs.",
+  "installations": 0,
+  "git_writes": 0,
+  "subagents": 0,
+  "other_task_messages": 0,
+  "research_stopped": true,
+  "automatic_continuation": false,
+  "final_preregistration_complete": false,
+  "mathematical_review_complete": false
+}
