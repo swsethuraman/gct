@@ -1,0 +1,57 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 3540.0,
+ "artifact_stop_bytes": 50000000000,
+ "out": "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd",
+ "start_utc": "2026-09-28T20:40:24Z",
+ "steps": [
+  {
+   "label": "cellA_verify",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01c_verify.py",
+    "--lam",
+    "12",
+    "8",
+    "6",
+    "4",
+    "2",
+    "--delta",
+    "8",
+    "--a",
+    "109",
+    "--prime",
+    "2147483647",
+    "--dir",
+    "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/inputs",
+    "--kernel",
+    "/home/swami/b28_01/out/cellA/12_8_6_4_2_d8_p2147483647_K.u32",
+    "--out",
+    "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/12_8_6_4_2_d8_p2147483647_verify.json"
+   ],
+   "rc": 0,
+   "pgid": 378,
+   "secs_monotonic": 725.886,
+   "maxrss_bytes": 1167245312,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "24000000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 725.932,
+ "end_utc": "2026-09-28T20:52:30Z",
+ "resource_stop": null,
+ "exit": 0,
+ "scope_end": {
+  "memory_peak": "2807062528",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 58382
+}
