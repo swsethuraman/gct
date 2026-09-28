@@ -257,3 +257,9 @@ Parts I–II above are unchanged. Status of the gaps after the B25-02 repair pas
 - **G-P2-02 / G-P2-07** — the `n = 3` control is now PROVED: (★) is proved (B25-10 §2.4). The paper keeps the symbol `(★)` for that premise.
 - **G-P2-19** — **stays flagged.** The `n = 4` sentence now says the `n = 3` case is proved and the `n = 4` case is not yet checked, so the transfer is flagged, not established. B25-10 §2.4's one-paragraph check was **not** attempted.
 - G-P2-17 — still open: no compile on this host either; mechanical checks pass (`results/b25_02/EDITS_SUPPLEMENT_20260922.md`). The integrator compiles the after-state.
+
+## Part V — B27-04 and B28-04 (2026-09-23/24)
+
+- **G-P2-18 — CLOSED.** The smooth-cubic result is stated in general in the TeX (B27-04 @ `f8326974`): `ℓ·C ∉ D₄,₅` for every smooth cubic `C` and every `ℓ ≠ 0`, cited through `Companion2`, scope geometric non-containment only. C1 was closed by the author's ruling of 2026-09-23 on B17-01 @ `01c49022`, B26-01 @ `901b0fe6` and A26-02R @ `b0d2d2e8`. Singular and reducible cubic factors stay open (G-A1).
+- **G-P2-19 — CLOSED.** The `r = 9` flag was removed by B27-04. The quartic `16 → 9` transfer was accepted cross-lineage (B26-04 @ `65736d9f`, B26-10A @ `21816b3c`); the general degree-4 statement by R27-K4 @ `53206b43`; and the any-degree form by B28-03 @ `e0a8041b`. The cap-proof clause now uses the any-degree form (B28-04 item 2). This clears the transfer step only: the LMR copy and the other cap-theorem inputs rest on their own evidence.
+- **Remark 6.3(iv)** gains the fixed/varying-factor gloss on "35" (B26-05 §4.2; B28-04 item 1).

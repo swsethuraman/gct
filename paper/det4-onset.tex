@@ -624,7 +624,10 @@ bound, not an arc lower bound.  It is
 This interior count is the content of Theorem~\ref{thm:noncontain}: for the
 fixed factor, the cubics $C$ with $s_5C$ an actual determinant are the
 $3\times3$ determinantal cubics ($29$) and the cubics containing a plane
-($31$) \cite{Companion3}.  With every enumerated exceptional component at most $31$ as well,
+($31$) \cite{Companion3}.  (These are fixed-factor dimensions; letting the linear factor vary
+adds $5-1=4$, giving families $\{\ell\cdot C\}$ of affine dimensions $33$ and $35$, and the
+latter $35$ is not the $35=\dim W$ used here.)  With every enumerated exceptional component at
+most $31$ as well,
 $\dim(\Ddet_5\cap W)\le31<35=\dim W$ holds on the enumerated cone.
 
 \emph{What is not proved} is that the enumeration is complete --- that
@@ -709,8 +712,13 @@ With Step 3, $\dim(\bC[s]/J_F)_{3n-5}\ge\mu_{3n-5}(n)+1$, i.e.\
 $\rank M_{3n-5}(F)\le\mathrm{cap}(n)-1$ on the dense determinantal locus, hence
 on $\Ddet_5$; the minors vanish there.  For smooth $F$ the rank is exactly
 $\mathrm{cap}(n)$, so some minor is a nonzero polynomial; equivariance of the
-Fitting construction makes the span $\GL_5$-stable, and \eqref{eq:lengthred}
-carries it into $I(\cO)$.
+Fitting construction makes the span $\GL_5$-stable, and the length-restriction
+lemma carries it into the ideal of $\overline{\GL_{n^{2}}\cdot\det_n}$: its proof
+(coefficient weights are non-negative, the raising operators beyond the first
+five coordinates kill every restricted coefficient, injective substitutions are
+dense, and complete reducibility holds in characteristic zero) uses nothing about
+the form degree, so it applies verbatim with $(d,N,r)=(n,n^{2},5)$ for every
+$n\ge3$, each highest-weight vector pulling back to a nonzero one.
 \end{proof}
 
 \emph{Measured, both primes, fresh pencils.} The corank of $M_{3n-5}$ on

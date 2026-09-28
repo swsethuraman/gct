@@ -216,7 +216,7 @@ Rows A–K above are the unchanged B24-06 table. Label changes in the repaired a
 
 ---
 
-## N. B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only)
+## N. B26-05 current-state amendment (2026-09-22; proposed by B26-05, applied verbatim by B27-04 @ `f8326974`)
 
 Rows A–M above are kept as written. Sections A–L are B24-06's table at `82633a60`; §M is
 B25-02's. This section records the state of the after-state `paper/det4-onset.tex` at

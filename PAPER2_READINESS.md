@@ -61,7 +61,7 @@ remains PROVED modulo (★); several results are cited only through unlocatable 
 material; and the author decisions B14/B16 and the Paper 3 overlap are unresolved. Details:
 `docs/b25_02_report.md`.
 
-**B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only; the B24-06
+**B26-05 current-state amendment (2026-09-22; proposed by B26-05, applied verbatim by B27-04 @ `f8326974`; the B24-06
 paragraph and the B25-02 update above are kept as written).** The subject is the after-state
 `paper/det4-onset.tex` at `79b68dcf` (raw CRLF sha256 `065f8799…`). **It is still not ready.** No
 readiness is declared here. Five statements in the B25-02 update are now stale:
@@ -80,7 +80,8 @@ in `Companion2` and `Companion3`.
 (e) "the author decisions B14/B16 … are unresolved". B14 and B16 were decided and applied on
 2026-09-22 (PART 17b).
 **What still stands:**
-(1) The `n = 4` sixteen-to-nine transfer **stays flagged** (G-P2-19). B26-04 is checking it, and
+(1) [⟳ 2026-09-24: superseded. The flag was removed by B27-04 and the transfer is accepted; see
+PAPER2_GAPS Part V.] The `n = 4` sixteen-to-nine transfer **stays flagged** (G-P2-19). B26-04 is checking it, and
 nothing from it has been independently accepted. Note also that §2 asserts the length reduction
 (2.1) for `det_4` and `x_0 per_3` without a flag, and the paper uses it at several points. So the
 flag at the length-nine cell is narrower than the paper's own unflagged uses of the same

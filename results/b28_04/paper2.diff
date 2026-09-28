@@ -1,0 +1,82 @@
+diff --git a/PAPER2_CLAIMS.md b/PAPER2_CLAIMS.md
+index 4966bcd0..79951413 100644
+--- a/PAPER2_CLAIMS.md
++++ b/PAPER2_CLAIMS.md
+@@ -216,7 +216,7 @@ Rows A–K above are the unchanged B24-06 table. Label changes in the repaired a
+ 
+ ---
+ 
+-## N. B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only)
++## N. B26-05 current-state amendment (2026-09-22; proposed by B26-05, applied verbatim by B27-04 @ `f8326974`)
+ 
+ Rows A–M above are kept as written. Sections A–L are B24-06's table at `82633a60`; §M is
+ B25-02's. This section records the state of the after-state `paper/det4-onset.tex` at
+diff --git a/PAPER2_GAPS.md b/PAPER2_GAPS.md
+index 8d59ced0..b1cc9ecb 100644
+--- a/PAPER2_GAPS.md
++++ b/PAPER2_GAPS.md
+@@ -257,3 +257,9 @@ Parts I–II above are unchanged. Status of the gaps after the B25-02 repair pas
+ - **G-P2-02 / G-P2-07** — the `n = 3` control is now PROVED: (★) is proved (B25-10 §2.4). The paper keeps the symbol `(★)` for that premise.
+ - **G-P2-19** — **stays flagged.** The `n = 4` sentence now says the `n = 3` case is proved and the `n = 4` case is not yet checked, so the transfer is flagged, not established. B25-10 §2.4's one-paragraph check was **not** attempted.
+ - G-P2-17 — still open: no compile on this host either; mechanical checks pass (`results/b25_02/EDITS_SUPPLEMENT_20260922.md`). The integrator compiles the after-state.
++
++## Part V — B27-04 and B28-04 (2026-09-23/24)
++
++- **G-P2-18 — CLOSED.** The smooth-cubic result is stated in general in the TeX (B27-04 @ `f8326974`): `ℓ·C ∉ D₄,₅` for every smooth cubic `C` and every `ℓ ≠ 0`, cited through `Companion2`, scope geometric non-containment only. C1 was closed by the author's ruling of 2026-09-23 on B17-01 @ `01c49022`, B26-01 @ `901b0fe6` and A26-02R @ `b0d2d2e8`. Singular and reducible cubic factors stay open (G-A1).
++- **G-P2-19 — CLOSED.** The `r = 9` flag was removed by B27-04. The quartic `16 → 9` transfer was accepted cross-lineage (B26-04 @ `65736d9f`, B26-10A @ `21816b3c`); the general degree-4 statement by R27-K4 @ `53206b43`; and the any-degree form by B28-03 @ `e0a8041b`. The cap-proof clause now uses the any-degree form (B28-04 item 2). This clears the transfer step only: the LMR copy and the other cap-theorem inputs rest on their own evidence.
++- **Remark 6.3(iv)** gains the fixed/varying-factor gloss on "35" (B26-05 §4.2; B28-04 item 1).
+diff --git a/PAPER2_READINESS.md b/PAPER2_READINESS.md
+index 06413651..0bed2971 100644
+--- a/PAPER2_READINESS.md
++++ b/PAPER2_READINESS.md
+@@ -61,7 +61,7 @@ remains PROVED modulo (★); several results are cited only through unlocatable
+ material; and the author decisions B14/B16 and the Paper 3 overlap are unresolved. Details:
+ `docs/b25_02_report.md`.
+ 
+-**B26-05 current-state amendment (2026-09-22, PROPOSED, UNCOMMITTED, producer-only; the B24-06
++**B26-05 current-state amendment (2026-09-22; proposed by B26-05, applied verbatim by B27-04 @ `f8326974`; the B24-06
+ paragraph and the B25-02 update above are kept as written).** The subject is the after-state
+ `paper/det4-onset.tex` at `79b68dcf` (raw CRLF sha256 `065f8799…`). **It is still not ready.** No
+ readiness is declared here. Five statements in the B25-02 update are now stale:
+@@ -80,7 +80,8 @@ in `Companion2` and `Companion3`.
+ (e) "the author decisions B14/B16 … are unresolved". B14 and B16 were decided and applied on
+ 2026-09-22 (PART 17b).
+ **What still stands:**
+-(1) The `n = 4` sixteen-to-nine transfer **stays flagged** (G-P2-19). B26-04 is checking it, and
++(1) [⟳ 2026-09-24: superseded. The flag was removed by B27-04 and the transfer is accepted; see
++PAPER2_GAPS Part V.] The `n = 4` sixteen-to-nine transfer **stays flagged** (G-P2-19). B26-04 is checking it, and
+ nothing from it has been independently accepted. Note also that §2 asserts the length reduction
+ (2.1) for `det_4` and `x_0 per_3` without a flag, and the paper uses it at several points. So the
+ flag at the length-nine cell is narrower than the paper's own unflagged uses of the same
+diff --git a/paper/det4-onset.tex b/paper/det4-onset.tex
+index a5ff9ef6..5ab2be7e 100644
+--- a/paper/det4-onset.tex
++++ b/paper/det4-onset.tex
+@@ -624,7 +624,10 @@ bound, not an arc lower bound.  It is
+ This interior count is the content of Theorem~\ref{thm:noncontain}: for the
+ fixed factor, the cubics $C$ with $s_5C$ an actual determinant are the
+ $3\times3$ determinantal cubics ($29$) and the cubics containing a plane
+-($31$) \cite{Companion3}.  With every enumerated exceptional component at most $31$ as well,
++($31$) \cite{Companion3}.  (These are fixed-factor dimensions; letting the linear factor vary
++adds $5-1=4$, giving families $\{\ell\cdot C\}$ of affine dimensions $33$ and $35$, and the
++latter $35$ is not the $35=\dim W$ used here.)  With every enumerated exceptional component at
++most $31$ as well,
+ $\dim(\Ddet_5\cap W)\le31<35=\dim W$ holds on the enumerated cone.
+ 
+ \emph{What is not proved} is that the enumeration is complete --- that
+@@ -709,8 +712,13 @@ With Step 3, $\dim(\bC[s]/J_F)_{3n-5}\ge\mu_{3n-5}(n)+1$, i.e.\
+ $\rank M_{3n-5}(F)\le\mathrm{cap}(n)-1$ on the dense determinantal locus, hence
+ on $\Ddet_5$; the minors vanish there.  For smooth $F$ the rank is exactly
+ $\mathrm{cap}(n)$, so some minor is a nonzero polynomial; equivariance of the
+-Fitting construction makes the span $\GL_5$-stable, and \eqref{eq:lengthred}
+-carries it into $I(\cO)$.
++Fitting construction makes the span $\GL_5$-stable, and the length-restriction
++lemma carries it into the ideal of $\overline{\GL_{n^{2}}\cdot\det_n}$: its proof
++(coefficient weights are non-negative, the raising operators beyond the first
++five coordinates kill every restricted coefficient, injective substitutions are
++dense, and complete reducibility holds in characteristic zero) uses nothing about
++the form degree, so it applies verbatim with $(d,N,r)=(n,n^{2},5)$ for every
++$n\ge3$, each highest-weight vector pulling back to a nonzero one.
+ \end{proof}
+ 
+ \emph{Measured, both primes, fresh pencils.} The corank of $M_{3n-5}$ on
