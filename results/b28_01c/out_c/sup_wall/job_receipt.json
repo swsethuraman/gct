@@ -1,0 +1,37 @@
+{
+ "schema": "b28-01c-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 3.0,
+ "artifact_stop_bytes": 1000000000,
+ "out": "/home/swami/b28_01/out_c/sup_wall/out",
+ "start_utc": "2026-09-24T16:59:45Z",
+ "steps": [
+  {
+   "label": "sleeper",
+   "argv": [
+    "/bin/sleep",
+    "60"
+   ],
+   "rc": -15,
+   "secs_monotonic": 3.001,
+   "maxrss_bytes": null,
+   "killed_by_supervisor": true
+  }
+ ],
+ "scope": {
+  "memory_max": "8000000000",
+  "memory_swap_max": "0"
+ },
+ "elapsed_monotonic_secs": 3.001,
+ "end_utc": "2026-09-24T16:59:48Z",
+ "resource_stop": {
+  "reason": "wall",
+  "detail": "aggregate monotonic limit 3.0 s reached during step sleeper"
+ },
+ "exit": 124,
+ "scope_end": {
+  "memory_peak": "144494592",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 0
+}

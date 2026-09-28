@@ -1,0 +1,22 @@
+      level 1: 57 prefixes
+      level 2: 1270 prefixes
+      level 3: 13586 prefixes
+      level 4: 69078 prefixes
+      level 5: 150611 prefixes
+      level 6: 184822 prefixes
+      level 7: 188797 prefixes
+      level 8: 188872 prefixes
+      level 9: 188872 prefixes
+      level 10: 188872 prefixes
+  lam=(24, 6, 5, 3, 2): N_S=188872 |Stab|=1 n_chi=188872 (orbits dropped: 0) [lean, 0s, HWM 0.11 GB]
+    E_01: |H|=1 targets 108841 canonical rows 108841 nnz 639827 (obstructed fixed targets cancelled: 0) [0s, HWM 0.12 GB]
+    E_12: |H|=1 targets 157336 canonical rows 157336 nnz 577153 (obstructed fixed targets cancelled: 0) [1s, HWM 0.13 GB]
+    E_23: |H|=1 targets 125275 canonical rows 125275 nnz 419582 (obstructed fixed targets cancelled: 0) [1s, HWM 0.13 GB]
+    E_34: |H|=1 targets 119210 canonical rows 119210 nnz 315238 (obstructed fixed targets cancelled: 0) [1s, HWM 0.13 GB]
+  built (24, 6, 5, 3, 2) d10: N_S=188872 |Stab|=1 n_chi=188872 rows=510662 nnz=1951800 (1s: mono 0s orbits 0s rows 1s; HWM 0.13 GB)
+  [phase] {'phase': 'build', 'secs': 1.339, 'peak_rss_bytes': 139853824}
+  [phase] {'phase': 'cover', 'secs': 0.215, 'peak_rss_bytes': 159141888, 'cover_size': 188498, 'nU': 374}
+  [phase] {'phase': 'schur', 'secs': 2.984, 'peak_rss_bytes': 1176100864, 'trisolve_secs': 1.34, 'schur_project_secs': 1.533, 'nullspace_secs': 0.052, 'nS': 188498, 'nU': 374, 'ublock': 331, 'nblocks': 2}
+  [phase] {'phase': 'lift_check', 'secs': 1.009, 'peak_rss_bytes': 653713408, 'nullity': 47}
+  [phase] {'phase': 'evaluation', 'secs': 1.869, 'peak_rss_bytes': 583880704, 'npts': 55}
+  RESULT 24_6_5_3_2_d10 p=2147483647: FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK

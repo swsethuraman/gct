@@ -1,0 +1,92 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 600.0,
+ "artifact_stop_bytes": 1000000000,
+ "out": "/home/swami/b28_01/out_d/sup_ctl/out",
+ "start_utc": "2026-09-24T19:11:01Z",
+ "steps": [
+  {
+   "label": "ctl_driver",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01c_driver.py",
+    "--lam",
+    "22",
+    "6",
+    "5",
+    "2",
+    "1",
+    "--delta",
+    "9",
+    "--a",
+    "24",
+    "--nchi",
+    "21093",
+    "--primes",
+    "2147483647",
+    "2147483629",
+    "--out",
+    "/home/swami/b28_01/out_d/sup_ctl/out",
+    "--wall-budget",
+    "599",
+    "--mem-cap",
+    "8000000000",
+    "--rates",
+    "/home/swami/b28_01/frozen_d/gate_rates_c.json"
+   ],
+   "rc": 0,
+   "pgid": 477,
+   "secs_monotonic": 0.768,
+   "maxrss_bytes": 102993920,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  },
+  {
+   "label": "ctl_verify",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "/home/swami/b28_01/frozen_d/b28_01c_verify.py",
+    "--lam",
+    "22",
+    "6",
+    "5",
+    "2",
+    "1",
+    "--delta",
+    "9",
+    "--a",
+    "24",
+    "--prime",
+    "2147483647",
+    "--dir",
+    "/home/swami/b28_01/out_d/sup_ctl/out",
+    "--out",
+    "/home/swami/b28_01/out_d/sup_ctl/out/22_6_5_2_1_d9_p2147483647_verify.json"
+   ],
+   "rc": 0,
+   "pgid": 479,
+   "secs_monotonic": 0.568,
+   "maxrss_bytes": 84938752,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "8000000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 1.338,
+ "end_utc": "2026-09-24T19:11:02Z",
+ "resource_stop": null,
+ "exit": 0,
+ "scope_end": {
+  "memory_peak": "139976704",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 4413569
+}

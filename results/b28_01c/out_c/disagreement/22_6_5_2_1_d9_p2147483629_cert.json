@@ -1,0 +1,85 @@
+{
+ "K": {
+  "dtype": "<u4 row-major",
+  "file": "22_6_5_2_1_d9_p2147483629_K.u32",
+  "sha256": "bbce9dbe09b6870e4e64e24f8a23fcf44e4481a6fcc2aa4a5c38d99ed2c02924",
+  "shape": [
+   21093,
+   24
+  ]
+ },
+ "a": 24,
+ "candidates": {
+  "checks": {
+   "E_equations_all_rows": true,
+   "independent_on_U": true,
+   "nonzero": true,
+   "zero_at_every_saved_point": true
+  },
+  "combinations": {
+   "file": "22_6_5_2_1_d9_p2147483629_combinations.u32",
+   "rule": "candidates = combinations K^T",
+   "sha256": "9a283c49bed21aec8d67d5b034b622c82274618592ce97a86161e7c10b08ca35",
+   "shape": [
+    2,
+    24
+   ]
+  },
+  "dtype": "<u4 row-major",
+  "file": "22_6_5_2_1_d9_p2147483629_candidates.u32",
+  "sha256": "2650c9bb1238fed99522489c4241f6c3435d11a435d484845ee75df8bc237efb",
+  "shape": [
+   2,
+   21093
+  ],
+  "status": "unproved candidates (modular, finite sample)"
+ },
+ "evaluation": {
+  "VK_sha256": "4a862981b1d110ad7bb8329e33b0963bd98288004dadd82071803eb594059815",
+  "VK_shape": [
+   22,
+   24
+  ],
+  "mult_det": 22,
+  "npts": 22
+ },
+ "fixture": {
+  "npts": {
+   "2147483629": 22
+  }
+ },
+ "hybrid": {
+  "G_sha256": "b61f33df7cecd7ffed355f4f3099d6fa96f260a6953f3adbf192cba8fd3113e4",
+  "G_shape": [
+   134,
+   70
+  ],
+  "nS": 21023,
+  "nU": 70,
+  "nblocks": 1,
+  "nnzT": 55942,
+  "projected_nullity": 24,
+  "projection": {
+   "attempt": 0,
+   "base_seed": 20260908,
+   "extra": 64,
+   "generator": "wk11_s71_schur.c splitmix64, z = pseed ^ (0xD1B54A32D192ED03*(r+1)), row t = x % m, sign = (x>>40)&1",
+   "m": 134,
+   "nproj": 8,
+   "pseed": 20261537
+  },
+  "rank_K": 24,
+  "rank_K_method": "flint nmod_mat rank of K[U,:] (deterministic; replaces rank_tall)",
+  "rows_other": 30314,
+  "source_gate": true,
+  "ublock": 70,
+  "verified_on_all_rows": true
+ },
+ "mult_det_lower_bound": 22,
+ "n_chi": 21093,
+ "outcome": "MODULAR_DEFICIENCY",
+ "prime": 2147483629,
+ "schema": "b28-01c-cert/1",
+ "status": "MODULAR_DEFICIENCY (finite sample, mod p): mult_det >= 22; 2 unproved candidates; no characteristic-zero statement",
+ "tag": "22_6_5_2_1_d9"
+}

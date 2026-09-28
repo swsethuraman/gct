@@ -1,0 +1,146 @@
+{
+ "schema": "b28-01c-receipt/1",
+ "tag": "12_8_6_4_2_d8",
+ "gate": {
+  "z": 10062442,
+  "U": 3658,
+  "f_measured": 0.004363628315755047,
+  "rows_E": 2310607,
+  "rows_other": 1500951,
+  "nS": 809656,
+  "z_cover_rows": 2884162,
+  "z_other_rows": 7178280,
+  "N_S": 813314,
+  "phase_seconds": {
+   "B": 31.252,
+   "S": 1.231,
+   "H": 198.722,
+   "V": 49.051,
+   "R": 85.927,
+   "D": 48.654
+  },
+  "verifier_phase_seconds": {
+   "B": 12.657,
+   "S": 1.138,
+   "H": 544.279,
+   "V": 37.466,
+   "R": 65.632,
+   "D": 24.474
+  },
+  "verifier_direct_secs": 685.6,
+  "verifier_ratio_secs": 1136.2,
+  "predicted_producer_remaining_secs": 764.7,
+  "predicted_verifier_secs": 1136.2,
+  "predicted_remaining_secs": 1900.9,
+  "unused_budget_secs": 86393.9,
+  "mem_envelope_bytes": 5570466536,
+  "verifier_mem_estimate_bytes": 4515061848,
+  "verifier_mem_terms": {
+   "base": 684779744,
+   "build": 537166072,
+   "schur_A": 3830282104,
+   "schur_B": 1751988408,
+   "schur_C": 980285472,
+   "lift": 2145705960,
+   "eval": 1877128712,
+   "m": 3722,
+   "w": 38,
+   "nnzPF_bound": 57426240
+  },
+  "mem_needed_bytes": 5570466536,
+  "mem_cap_bytes": 24000000000,
+  "rates": {
+   "producer": {
+    "cB": 4.803243504689299e-06,
+    "cD": 9.94004926900113e-10,
+    "cH": 5.398828340547297e-09,
+    "cR": 8.284327041448551e-09,
+    "cS": 1.2228814341073986e-07,
+    "cV": 6.443365476682207e-08
+   },
+   "ratios": {
+    "cB": 0.405000157833265,
+    "cD": 0.5030156153846154,
+    "cH": 2.7388943418932947,
+    "cR": 0.763809696201768,
+    "cS": 0.9247886070315976,
+    "cV": 0.763809696201768
+   },
+   "rule": "coefficients: max over the two B28-01a calibration cells (cD floored at 5e-10; evaluation charged to both cV and cR); verifier gate time = max(direct verifier model, verifier_ratio_up x producer model); verifier_ratio_up = max ratio rounded up to 4 decimals",
+   "schema": "b28-01c-gate-rates/1",
+   "verifier": {
+    "cB": 1.945314377510771e-06,
+    "cD": 5e-10,
+    "cH": 1.4786820394778157e-08,
+    "cR": 6.32764932076491e-09,
+    "cS": 1.1309068180129835e-07,
+    "cV": 4.921505027261596e-08
+   },
+   "verifier_ratio_up": 2.7389
+  },
+  "pass": true
+ },
+ "phases": [
+  {
+   "phase": "build",
+   "secs": 3.841,
+   "peak_rss_bytes": 457834496
+  },
+  {
+   "phase": "cover",
+   "secs": 1.101,
+   "peak_rss_bytes": 520396800,
+   "cover_size": 809656,
+   "nU": 3658
+  },
+  {
+   "phase": "schur",
+   "secs": 125.743,
+   "peak_rss_bytes": 1596563456,
+   "trisolve_secs": 43.364,
+   "schur_project_secs": 75.806,
+   "nullspace_secs": 6.257,
+   "nS": 809656,
+   "nU": 3658,
+   "ublock": 77,
+   "nblocks": 48
+  },
+  {
+   "phase": "lift_check",
+   "secs": 7.847,
+   "peak_rss_bytes": 2921607168,
+   "nullity": 109
+  },
+  {
+   "phase": "evaluation",
+   "secs": 31.929,
+   "peak_rss_bytes": 3345494016,
+   "npts": 117
+  },
+  {
+   "phase": "schur",
+   "secs": 124.442,
+   "peak_rss_bytes": 1609547776,
+   "trisolve_secs": 41.971,
+   "schur_project_secs": 75.572,
+   "nullspace_secs": 6.561,
+   "nS": 809656,
+   "nU": 3658,
+   "ublock": 77,
+   "nblocks": 48
+  },
+  {
+   "phase": "lift_check",
+   "secs": 6.678,
+   "peak_rss_bytes": 2954989568,
+   "nullity": 109
+  },
+  {
+   "phase": "evaluation",
+   "secs": 32.217,
+   "peak_rss_bytes": 3345821696,
+   "npts": 117
+  }
+ ],
+ "total_secs": 334.776
+}

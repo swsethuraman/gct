@@ -1,0 +1,44 @@
+{
+ "schema": "b28-01d-job-receipt/1",
+ "clock": "time.monotonic",
+ "cap_secs": 10.0,
+ "artifact_stop_bytes": 1024,
+ "out": "/home/swami/b28_01/out_d/fx_fast_writer_two_step/out",
+ "start_utc": "2026-09-24T19:11:35Z",
+ "steps": [
+  {
+   "label": "writer",
+   "argv": [
+    "/home/swami/b28venv/bin/python",
+    "-c",
+    "from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))",
+    "/home/swami/b28_01/out_d/fx_fast_writer_two_step/out/blob"
+   ],
+   "rc": 0,
+   "pgid": 488,
+   "secs_monotonic": 0.034,
+   "maxrss_bytes": 11579392,
+   "killed_by_supervisor": false,
+   "survivors_sigkilled": [],
+   "group_alive_after_step": false
+  }
+ ],
+ "subreaper": true,
+ "scope": {
+  "memory_max": "8000000000",
+  "memory_swap_max": "0"
+ },
+ "job_processes_remaining_at_end": 0,
+ "elapsed_monotonic_secs": 0.035,
+ "end_utc": "2026-09-24T19:11:35Z",
+ "resource_stop": {
+  "reason": "artifact",
+  "detail": "output 2048 bytes exceeds 1024 at the exit of step writer"
+ },
+ "exit": 125,
+ "scope_end": {
+  "memory_peak": "139976704",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+ },
+ "artifact_bytes_at_end": 2048
+}

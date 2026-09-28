@@ -1,0 +1,99 @@
+{
+ "schema": "b28-01c-receipt/1",
+ "tag": "24_6_5_3_2_d10",
+ "gate": {
+  "z": 1951800,
+  "U": 374,
+  "f_measured": 0.0017313312719725528,
+  "rows_E": 510662,
+  "rows_other": 322164,
+  "nS": 188498,
+  "z_cover_rows": 546695,
+  "z_other_rows": 1405105,
+  "N_S": 188872,
+  "phase_seconds": {
+   "B": 9.072,
+   "S": 0.239,
+   "H": 3.941,
+   "V": 6.693,
+   "R": 4.045,
+   "D": 0.052
+  },
+  "verifier_phase_seconds": {
+   "B": 3.674,
+   "S": 0.221,
+   "H": 10.794,
+   "V": 5.112,
+   "R": 3.089,
+   "D": 0.026
+  },
+  "verifier_direct_secs": 22.9,
+  "verifier_ratio_secs": 65.8,
+  "predicted_producer_remaining_secs": 14.7,
+  "predicted_verifier_secs": 65.8,
+  "predicted_remaining_secs": 80.6,
+  "unused_budget_secs": 2998.4,
+  "mem_envelope_bytes": 2173950624,
+  "verifier_mem_estimate_bytes": 1302513072,
+  "verifier_mem_terms": {
+   "base": 539594704,
+   "build": 144299680,
+   "schur_A": 762918368,
+   "schur_B": 727851040,
+   "schur_C": 11794464,
+   "lift": 434858464,
+   "eval": 203226272,
+   "m": 438,
+   "w": 165,
+   "nnzPF_bound": 11240840
+  },
+  "mem_needed_bytes": 2173950624,
+  "mem_cap_bytes": 24000000000,
+  "rates": {
+   "producer": {
+    "cB": 4.803243504689299e-06,
+    "cD": 9.94004926900113e-10,
+    "cH": 5.398828340547297e-09,
+    "cR": 8.284327041448551e-09,
+    "cS": 1.2228814341073986e-07,
+    "cV": 6.443365476682207e-08
+   },
+   "ratios": {
+    "cB": 0.405000157833265,
+    "cD": 0.5030156153846154,
+    "cH": 2.7388943418932947,
+    "cR": 0.763809696201768,
+    "cS": 0.9247886070315976,
+    "cV": 0.763809696201768
+   },
+   "rule": "coefficients: max over the two B28-01a calibration cells (cD floored at 5e-10; evaluation charged to both cV and cR); verifier gate time = max(direct verifier model, verifier_ratio_up x producer model); verifier_ratio_up = max ratio rounded up to 4 decimals",
+   "schema": "b28-01c-gate-rates/1",
+   "verifier": {
+    "cB": 1.945314377510771e-06,
+    "cD": 5e-10,
+    "cH": 1.4786820394778157e-08,
+    "cR": 6.32764932076491e-09,
+    "cS": 1.1309068180129835e-07,
+    "cV": 4.921505027261596e-08
+   },
+   "verifier_ratio_up": 2.7389
+  },
+  "pass": true
+ },
+ "phases": [
+  {
+   "phase": "build",
+   "secs": 1.341,
+   "peak_rss_bytes": 137441280
+  },
+  {
+   "phase": "cover",
+   "secs": 0.23,
+   "peak_rss_bytes": 161529856,
+   "cover_size": 188498,
+   "nU": 374
+  }
+ ],
+ "stopped": "gate-only",
+ "total_secs": 1.605
+}

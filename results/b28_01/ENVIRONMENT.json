@@ -1,0 +1,22 @@
+{
+ "schema": "b28-01-environment/1",
+ "host": "user's laptop, WSL2 distribution Ubuntu-24.04 (invoked as wsl -d Ubuntu-24.04)",
+ "os": "Ubuntu 24.04.5 LTS",
+ "kernel": "6.18.33.2-microsoft-standard-WSL2 x86_64",
+ "cpu": "Intel(R) Core(TM) Ultra 7 255HX; 20 cores, 1 thread per core; gcc -march=native resolves to sierraforest",
+ "memory": {"free_g_total_GiB": 27, "MemTotal_kB": 28736152, "free_b_total": 29425819648, "swap_GiB": 8, "SwapTotal_kB": 8388608},
+ "disk_home_free_bytes": 1023493992448,
+ "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+ "apt_installed_this_slot": {"build-essential": "12.10ubuntu1", "python3-venv": "3.12.3-0ubuntu2.1", "python3-pip": "installed with the same apt call", "method": "wsl -d Ubuntu-24.04 -u root -- apt-get install -y build-essential python3-venv python3-pip (sudo needs a password; the WSL root entry was used)"},
+ "libc": "2.39-0ubuntu8.9",
+ "python": "3.12.3 (venv ~/b28venv)",
+ "pip_installed_this_slot": {"numpy": "2.5.3", "scipy": "1.18.1", "python-flint": "0.9.0"},
+ "blas": {"numpy": "scipy-openblas 0.3.34.106.0 (OpenBLAS 0.3.34.106.0 USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64)", "scipy": "scipy-openblas 0.3.31.dev"},
+ "threads": "OPENBLAS_NUM_THREADS=OMP_NUM_THREADS=MKL_NUM_THREADS=NUMEXPR_NUM_THREADS=1, forced in the driver, the verifier and b28_01_run.sh",
+ "resource_enforcement": "systemd 255 transient user scope (systemd-run --user --scope -p MemoryMax=8G -p MemorySwapMax=0, i.e. 8 GiB) + GNU coreutils timeout 9.4 + GNU time -v; runs strictly sequential",
+ "schur_helper": {"source": "analysis/wk11_s71_schur.c (committed, 96a8074d)", "source_sha256": "17cfdf423511b863cbd5f242c91776cc0b85bbfb4aeb9f2625450a0f5a2c695c", "flags": "gcc -O3 -march=native -shared -fPIC", "so_sha256": "d6024a63dca11dc5b820864bc87ac842dcfba3a39e1f35792d6febacc8ee936d"},
+ "verifier_helper": {"source": "analysis/b28_01_vfy.c", "source_sha256": "5166db3b1ff07d23d3a4c51d9430de1a9808dff9d1e5d4d92b802a98904995f7", "flags": "gcc -O2 -shared -fPIC", "so_sha256": "a5e8399d1e78e285a5864098dbe43d68f618c331a03705bbcb9df4e4dfd60fe6"},
+ "engine": "19 committed sources copied by git show 96a8074d:analysis/<file> into ~/b28_01/engine; every raw SHA-256 equals the committed blob's (engine_hashes.txt)",
+ "working_directories": {"engine": "~/b28_01/engine", "frozen": "~/b28_01/frozen", "outputs": "~/b28_01/out", "runs": "~/b28_01/runs", "nothing computed under /mnt/c": true},
+ "windows_side_installs": "none"
+}

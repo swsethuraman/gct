@@ -1,0 +1,101 @@
+{
+ "K": {
+  "dtype": "<u4 row-major",
+  "file": "24_6_5_3_2_d10_p2147483647_K.u32",
+  "sha256": "f9ca456d88b3a6d833494f830327dd8ebd43e97f367229e7d0eba60c6f37c6d9",
+  "shape": [
+   188872,
+   47
+  ]
+ },
+ "a": 47,
+ "evaluation": {
+  "VK_sha256": "7cf10fd679510f973998b09e270425230e89db73949622b66fccb9ddaa6ad9e4",
+  "VK_shape": [
+   55,
+   47
+  ],
+  "minor_det_mod_p": 2021243469,
+  "minor_rows": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46
+  ],
+  "mult_det": 47
+ },
+ "hybrid": {
+  "G_sha256": "df032fb990cbb36cef04227f375dd1f4619c36dc12bc6f52a65d04fc214c53ec",
+  "G_shape": [
+   438,
+   374
+  ],
+  "nS": 188498,
+  "nU": 374,
+  "nblocks": 2,
+  "nnzT": 543797,
+  "projected_nullity": 47,
+  "projection": {
+   "attempt": 0,
+   "base_seed": 20260908,
+   "extra": 64,
+   "generator": "wk11_s71_schur.c splitmix64, z = pseed ^ (0xD1B54A32D192ED03*(r+1)), row t = x % m, sign = (x>>40)&1",
+   "m": 438,
+   "nproj": 8,
+   "pseed": 20261555
+  },
+  "rank_K": 47,
+  "rows_other": 322164,
+  "source_gate": true,
+  "ublock": 331,
+  "verified_on_all_rows": true
+ },
+ "n_chi": 188872,
+ "prime": 2147483647,
+ "schema": "b28-01-cert/1",
+ "status": "FULL RANK mod p: rank E = n_chi - a (cover + projected residual), a verified kernel vectors, nonzero a-minor of VK",
+ "tag": "24_6_5_3_2_d10"
+}

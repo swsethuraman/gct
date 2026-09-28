@@ -1,0 +1,111 @@
+{
+ "schema": "b28-01c-receipt/1",
+ "tag": "22_6_5_2_1_d9",
+ "gate": {
+  "z": 185066,
+  "U": 70,
+  "f_measured": 0.0021808182809462855,
+  "rows_E": 51337,
+  "rows_other": 30314,
+  "nS": 21023,
+  "z_cover_rows": 56430,
+  "z_other_rows": 128636,
+  "N_S": 21093,
+  "phase_seconds": {
+   "B": 0.912,
+   "S": 0.023,
+   "H": 0.07,
+   "V": 0.391,
+   "R": 0.134,
+   "D": 0.0
+  },
+  "verifier_phase_seconds": {
+   "B": 0.369,
+   "S": 0.021,
+   "H": 0.192,
+   "V": 0.299,
+   "R": 0.103,
+   "D": 0.0
+  },
+  "verifier_direct_secs": 1.0,
+  "verifier_ratio_secs": 4.2,
+  "predicted_producer_remaining_secs": 1.2,
+  "predicted_verifier_secs": 4.2,
+  "predicted_remaining_secs": 5.4,
+  "unused_budget_secs": 2999.9,
+  "mem_envelope_bytes": 1785435512,
+  "verifier_mem_estimate_bytes": 1031435588,
+  "verifier_mem_terms": {
+   "base": 503897068,
+   "build": 14370360,
+   "schur_A": 70749304,
+   "schur_B": 527538520,
+   "schur_C": 675360,
+   "lift": 42980320,
+   "eval": 12908916,
+   "m": 134,
+   "w": 1486,
+   "nnzPF_bound": 1029088
+  },
+  "mem_needed_bytes": 1785435512,
+  "mem_cap_bytes": 8000000000,
+  "rates": {
+   "producer": {
+    "cB": 4.803243504689299e-06,
+    "cD": 9.94004926900113e-10,
+    "cH": 5.398828340547297e-09,
+    "cR": 8.284327041448551e-09,
+    "cS": 1.2228814341073986e-07,
+    "cV": 6.443365476682207e-08
+   },
+   "ratios": {
+    "cB": 0.405000157833265,
+    "cD": 0.5030156153846154,
+    "cH": 2.7388943418932947,
+    "cR": 0.763809696201768,
+    "cS": 0.9247886070315976,
+    "cV": 0.763809696201768
+   },
+   "rule": "coefficients: max over the two B28-01a calibration cells (cD floored at 5e-10; evaluation charged to both cV and cR); verifier gate time = max(direct verifier model, verifier_ratio_up x producer model); verifier_ratio_up = max ratio rounded up to 4 decimals",
+   "schema": "b28-01c-gate-rates/1",
+   "verifier": {
+    "cB": 1.945314377510771e-06,
+    "cD": 5e-10,
+    "cH": 1.4786820394778157e-08,
+    "cR": 6.32764932076491e-09,
+    "cS": 1.1309068180129835e-07,
+    "cV": 4.921505027261596e-08
+   },
+   "verifier_ratio_up": 2.7389
+  },
+  "pass": true
+ },
+ "phases": [
+  {
+   "phase": "build",
+   "secs": 0.128,
+   "peak_rss_bytes": 71114752
+  },
+  {
+   "phase": "cover",
+   "secs": 0.016,
+   "peak_rss_bytes": 72986624,
+   "cover_size": 21023,
+   "nU": 70
+  },
+  {
+   "phase": "schur",
+   "secs": 0.047,
+   "peak_rss_bytes": 97714176,
+   "trisolve_secs": 0.017,
+   "schur_project_secs": 0.023,
+   "nullspace_secs": 0.001,
+   "nS": 21023,
+   "nU": 70,
+   "ublock": 70,
+   "nblocks": 1
+  }
+ ],
+ "stopped": "source gate or check failed at p=2147483647",
+ "total_secs": 0.196
+}

@@ -1,0 +1,70 @@
+{
+ "schema": "b28-01-receipt/1",
+ "tag": "9_5_5_3_1_1_d6",
+ "gate": {
+  "z": 237451,
+  "U": 11,
+  "f_measured": 0.0007766990291262136,
+  "phase_seconds": {
+   "B": 0.162,
+   "S": 0.119,
+   "H": 0.209,
+   "V": 0.019,
+   "R": 0.0,
+   "D": 0.0
+  },
+  "predicted_remaining_secs": 0.7,
+  "unused_budget_secs": null,
+  "mem_envelope_bytes": 1779110780,
+  "mem_cap_bytes": null,
+  "rates": {
+   "cB": 2.1e-06,
+   "cS": 5e-07,
+   "cH": 8e-08,
+   "cV": 2.7e-08,
+   "cR": 1e-09,
+   "cD": 5e-10,
+   "verifier_factor": 1.0
+  },
+  "pass": true
+ },
+ "phases": [
+  {
+   "phase": "build",
+   "secs": 0.377,
+   "peak_rss_bytes": 89288704
+  },
+  {
+   "phase": "cover",
+   "secs": 0.023,
+   "peak_rss_bytes": 77447168,
+   "cover_size": 12864,
+   "nU": 11
+  },
+  {
+   "phase": "schur",
+   "secs": 0.016,
+   "peak_rss_bytes": 80048128,
+   "trisolve_secs": 0.002,
+   "schur_project_secs": 0.008,
+   "nullspace_secs": 0.0,
+   "nS": 12864,
+   "nU": 11,
+   "ublock": 11,
+   "nblocks": 1
+  },
+  {
+   "phase": "lift_check",
+   "secs": 0.003,
+   "peak_rss_bytes": 82022400,
+   "nullity": 1
+  },
+  {
+   "phase": "evaluation",
+   "secs": 0.041,
+   "peak_rss_bytes": 82354176,
+   "npts": 9
+  }
+ ],
+ "total_secs": 0.465
+}

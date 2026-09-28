@@ -1,0 +1,151 @@
+{
+ "baseline": {
+  "cB": 2.1e-06,
+  "cD": 5e-10,
+  "cH": 8e-08,
+  "cR": 1e-09,
+  "cS": 5e-07,
+  "cV": 2.7e-08
+ },
+ "gate_rates": {
+  "cB": 4.803243504689299e-06,
+  "cD": 9.94004926900113e-10,
+  "cH": 5.398828340547297e-09,
+  "cR": 8.284327041448551e-09,
+  "cS": 1.2228814341073986e-07,
+  "cV": 6.443365476682207e-08,
+  "verifier_factor": 1.8061
+ },
+ "per_cell": {
+  "cal1": {
+   "U": 374,
+   "a": 47,
+   "f": 0.001731,
+   "k": 10,
+   "n": 188872,
+   "producer_peak_bytes": {
+    "build": 139853824,
+    "cover": 159141888,
+    "evaluation": 583880704,
+    "lift_check": 653713408,
+    "schur": 1176100864
+   },
+   "producer_phases": {
+    "build": 1.339,
+    "cover": 0.215,
+    "evaluation": 1.869,
+    "lift_check": 1.009,
+    "schur": 2.984
+   },
+   "producer_total_secs": 7.496,
+   "rates_producer": {
+    "cB": 7.089457410309628e-07,
+    "cD": 9.94004926900113e-10,
+    "cH": 5.398828340547297e-09,
+    "cR": 3.8280814950008e-09,
+    "cS": 1.1015472896813198e-07,
+    "cV": 1.799198302650376e-08
+   },
+   "rates_verifier": {
+    "cB": 2.8061332542674405e-07,
+    "cD": 5e-10,
+    "cH": 1.1174382840356331e-08,
+    "cR": 4.178323301124468e-09,
+    "cS": 1.1066707654472794e-07,
+    "cV": 1.9638119515285004e-08
+   },
+   "tag": "24_6_5_3_2_d10",
+   "verifier_peak_bytes": {
+    "build": 154488832,
+    "cover": 164265984,
+    "evaluation": 307752960,
+    "lift_check": 496762880,
+    "schur": 919474176
+   },
+   "verifier_phases": {
+    "build": 0.53,
+    "cover": 0.216,
+    "evaluation": 2.04,
+    "lift_check": 0.555,
+    "schur": 7.602
+   },
+   "verifier_total_secs": 10.994,
+   "z": 1951800,
+   "z_over_n": 10.334
+  },
+  "cal2": {
+   "U": 1277,
+   "a": 70,
+   "f": 0.001647,
+   "k": 9,
+   "n": 732815,
+   "producer_peak_bytes": {
+    "build": 974680064,
+    "cover": 924860416,
+    "evaluation": 3038121984,
+    "lift_check": 3989716992,
+    "schur": 2031529984
+   },
+   "producer_phases": {
+    "build": 31.679,
+    "cover": 2.247,
+    "evaluation": 33.147,
+    "lift_check": 9.357,
+    "schur": 78.376
+   },
+   "producer_total_secs": 155.414,
+   "rates_producer": {
+    "cB": 4.803243504689299e-06,
+    "cD": 5e-10,
+    "cH": 3.7169485236248482e-09,
+    "cR": 8.284327041448551e-09,
+    "cS": 1.2228814341073986e-07,
+    "cV": 6.443365476682207e-08
+   },
+   "rates_verifier": {
+    "cB": 1.945314377510771e-06,
+    "cD": 5e-10,
+    "cH": 1.4786820394778157e-08,
+    "cR": 6.32764932076491e-09,
+    "cS": 1.1309068180129835e-07,
+    "cV": 4.921505027261596e-08
+   },
+   "tag": "13_9_9_3_1_1_d9",
+   "verifier_peak_bytes": {
+    "build": 1731551232,
+    "cover": 984551424,
+    "evaluation": 1380102144,
+    "lift_check": 3161747456,
+    "schur": 5645422592
+   },
+   "verifier_phases": {
+    "build": 12.83,
+    "cover": 2.078,
+    "evaluation": 25.318,
+    "lift_check": 6.186,
+    "schur": 340.778
+   },
+   "verifier_total_secs": 387.571,
+   "z": 18374635,
+   "z_over_n": 25.074
+  }
+ },
+ "producer": {
+  "cB": 4.803243504689299e-06,
+  "cD": 9.94004926900113e-10,
+  "cH": 5.398828340547297e-09,
+  "cR": 8.284327041448551e-09,
+  "cS": 1.2228814341073986e-07,
+  "cV": 6.443365476682207e-08
+ },
+ "rule": "max over the two calibration cells; cD floored at the preregistered 5e-10; evaluation charged to both cV and cR",
+ "schema": "b28-01-host-rates/1",
+ "verifier": {
+  "cB": 1.945314377510771e-06,
+  "cD": 5e-10,
+  "cH": 1.4786820394778157e-08,
+  "cR": 6.32764932076491e-09,
+  "cS": 1.1309068180129835e-07,
+  "cV": 4.921505027261596e-08
+ }
+}

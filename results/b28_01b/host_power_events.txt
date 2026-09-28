@@ -1,0 +1,16 @@
+B28-01b host power record (read after the run from the Windows System event log, and powercfg; read-only queries)
+
+Kernel-Power 42   2026-09-24T20:09:50Z  "The system is entering sleep. Sleep Reason: System Idle"
+Power-Troubleshooter 1  "The system has returned from a low power state."
+  Sleep Time: 2026-09-24T20:09:49.599414000Z
+  Wake Time:  2026-09-24T20:27:21.378869700Z
+  Wake Source: Device -Intel(R) USB 3.20 eXtensible Host Controller - 1.20 (Microsoft)
+Kernel-General 1  system time changed to 2026-09-24T20:27:20.5Z from 2026-09-24T20:09:52.916Z (Time Delta: 1047583 ms)
+
+powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE (Sleep after), queried 2026-09-24 after the run:
+  Current AC Power Setting Index: 0x00000384  (900 s)
+  Current DC Power Setting Index: 0x00000258  (600 s)
+Win32_Battery after the run: BatteryStatus 2 (on AC), EstimatedChargeRemaining 100
+
+Overlap with the job: cellA_driver ran 19:54:41Z-~20:00:16Z (unaffected); cellA_verify ran ~20:00:16Z-20:28:25Z and
+contains the whole ~1052 s suspension.  GNU time elapsed for cellA_verify 28:08.92 vs supervisor monotonic 641.794 s.

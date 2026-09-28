@@ -1,0 +1,29 @@
+{
+ "producer": {
+  "cB": 4.803243504689299e-06,
+  "cD": 9.94004926900113e-10,
+  "cH": 5.398828340547297e-09,
+  "cR": 8.284327041448551e-09,
+  "cS": 1.2228814341073986e-07,
+  "cV": 6.443365476682207e-08
+ },
+ "ratios": {
+  "cB": 0.405000157833265,
+  "cD": 0.5030156153846154,
+  "cH": 2.7388943418932947,
+  "cR": 0.763809696201768,
+  "cS": 0.9247886070315976,
+  "cV": 0.763809696201768
+ },
+ "rule": "coefficients: max over the two B28-01a calibration cells (cD floored at 5e-10; evaluation charged to both cV and cR); verifier gate time = max(direct verifier model, verifier_ratio_up x producer model); verifier_ratio_up = max ratio rounded up to 4 decimals",
+ "schema": "b28-01c-gate-rates/1",
+ "verifier": {
+  "cB": 1.945314377510771e-06,
+  "cD": 5e-10,
+  "cH": 1.4786820394778157e-08,
+  "cR": 6.32764932076491e-09,
+  "cS": 1.1309068180129835e-07,
+  "cV": 4.921505027261596e-08
+ },
+ "verifier_ratio_up": 2.7389
+}

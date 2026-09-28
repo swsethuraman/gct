@@ -1,0 +1,41 @@
+{
+ "schema": "b28-01b-resource-receipt/1",
+ "allowance": "B28-01b brief: Cell A only; one 24,000,000,000-byte scope, no swap; one 86,400 s monotonic budget; 64 GB free-disk preflight; 50 GB artifact stop; all enforced by the frozen launcher",
+ "runs": [
+  {
+   "what": "launch preflight (brief step 3)",
+   "command": "bash ~/b28_01/frozen_d/b28_01d_cellA.sh --preflight-only",
+   "utc": "2026-09-24T19:50:04Z",
+   "exit": 0,
+   "stdout": "preflight_stdout.txt"
+  },
+  {
+   "what": "systemd user-scope availability probe (no computation)",
+   "command": "systemd-run --user --scope --quiet -p MemoryMax=1000000 -p MemorySwapMax=0 true",
+   "exit": 0
+  },
+  {
+   "what": "THE Cell A measurement, run exactly once",
+   "command": "bash ~/b28_01/frozen_d/b28_01d_cellA.sh   (via launch_wrapper.sh, which only tees stdout and records the exit)",
+   "launcher_sha256": "461a92de9be6189f2ee1f64af4eddceb292d2dcbf3ba38df337dcc2e985970e6",
+   "utc": ["2026-09-24T19:54:41Z", "2026-09-24T20:28:25Z"],
+   "launcher_exit": 0,
+   "launcher_label": "FULL_RANK at 2147483647 (both primes agree; independent replay FULL_RANK)",
+   "job_receipt": "job_cellA/job_receipt.json",
+   "elapsed_monotonic_secs": 976.779,
+   "elapsed_utc_secs": 2024,
+   "host_suspension": "Windows idle sleep 2026-09-24T20:09:49.6Z to 20:27:21.4Z (~1052 s) during cellA_verify; see host_power_events.txt",
+   "steps": {
+    "cellA_driver": {"secs_monotonic": 334.984, "gnu_time_elapsed": "5:34.98", "maxrss_bytes": 3345821696, "rc": 0},
+    "cellA_verify": {"secs_monotonic": 641.794, "gnu_time_elapsed": "28:08.92", "maxrss_bytes": 1137893376, "rc": 0}
+   },
+   "scope_memory_peak_bytes": 4087738368,
+   "scope_memory_events": "oom 0, oom_kill 0, max 0",
+   "artifact_bytes_at_end": 722344199,
+   "job_processes_remaining_at_end": 0,
+   "post_run": "frozen_d re-hashed unchanged; schur.so and vfy.so unchanged (job_cellA/post_run_binaries.sha256); no stray driver/verify/supervisor process"
+  }
+ ],
+ "reruns_retries_edits": "none",
+ "cell_B": "not run"
+}

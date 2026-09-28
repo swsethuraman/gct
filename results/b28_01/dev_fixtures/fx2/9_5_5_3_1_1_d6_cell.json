@@ -1,0 +1,52 @@
+{
+ "E_csr_bytes": 3129196,
+ "E_dtypes": {
+  "data": "int64",
+  "indices": "int32",
+  "indptr": "int32"
+ },
+ "E_hash_convention": "sha256(indptr,indices,data as <i8, then json shape), sorted indices",
+ "E_sha256": "50211022a9f7ac99fad5a67fb79b4984fa3162962269ffb488dbf1485705ad08",
+ "N_S": 64277,
+ "R": 6,
+ "a": 1,
+ "conventions": {
+  "coefficient": "c_alpha(F) = coefficient of s^alpha in F",
+  "raising": "E_ij c_alpha = (alpha_i + 1) c_{alpha + e_i - e_j}"
+ },
+ "cover": {
+  "S_sha256": "965369b08928748b3ee8551a80f75b14d3b23ec5bdeb0b19d5731f9a6c73ccf8",
+  "U_sha256": "ce3a1438bb7904b8fa3917b2d764cbc29054610fadee4e6d60b42f65cc861163",
+  "excess": 10,
+  "nU": 11,
+  "order": "reversed",
+  "rows_sha256": "fb4d84bc93fd1b02c08f52e23a6c626a11b0d592edf46c0f4a29f0256cf2bcee",
+  "rule": "five preregistered orders (natural, reversed, fill_asc, fill_desc, random seed 20260908); per leading column the sparsest row, ties by row index; largest cover, ties by order list",
+  "size": 12864,
+  "stats": {
+   "fill_asc": 12088,
+   "fill_desc": 11938,
+   "natural": 12561,
+   "random": 10273,
+   "reversed": 12864
+  }
+ },
+ "delta": 6,
+ "gate_inputs": {
+  "U": 11,
+  "z": 237451
+ },
+ "lam": [
+  9,
+  5,
+  5,
+  3,
+  1,
+  1
+ ],
+ "n_chi": 12875,
+ "nnz_E": 237451,
+ "rows_E": 69945,
+ "schema": "b28-01-cell/1",
+ "stab": 4
+}
