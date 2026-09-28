@@ -115,15 +115,16 @@ ladder $(m,m+1)$ does not, and the blind zone of the second fundamental form rep
 the frontier of Landsberg--Manivel--Ressayre. At $N=6,7,8$ the kill is now proved for the first
 Koszul differential; for the higher ones it stays open in the range $2\le j\le N-4$. (iv)
 Restricted to padding, the separation problem runs the right way on the cubic factor,
-conditional on the cap theorem (PROVED modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all
-three ADOPTED inputs). What is missing is a lift to quartics. The
+conditional on the cap theorem, which at $n=3$ is PROVED modulo Kleiman and Dimca, both ADOPTED
+inputs (Gulliksen--Neg\aa rd is not needed at $n=3$ \cite[Prop.~4.23]{Paper1}). What is missing is a lift to quartics. The
 \emph{determinant part} of $\Dff\cap\Pf$ is now classified: it is the union of two irreducible
 families, $\{\ell\cdot C: C\in D_{35}\}$ of affine dimension $33$ and
 $\{\ell\cdot C: C\ \text{contains a plane}\}$ of affine dimension $35$, neither inside the
 other. The cap minors vanish on every cubic through a plane, so the right-way corner survives on
-that part. Whether it survives on the boundary --- a point of $\Dff\cap\Pf$ that is a limit of
-determinants without being one, with smooth cubic factor --- is this paper's named open
-question. We include the evidence
+that part. A boundary point with smooth cubic factor would have destroyed it, and there is none:
+$\ell\cdot C\notin\Dff$ for every smooth cubic $C$ and every $\ell\ne0$ \cite{Paper2}. Whether
+it survives on the remaining boundary --- limits of determinants $\ell\cdot C$ with $C$ singular,
+not determinantal and containing no plane --- is this paper's named open question. We include the evidence
 that the instruments work where there is something to see: the unpadded $n=3$ control, with
 $D=+1$ at every rung $\delta\ge12$: PROVED at $\delta=12$, with the record's length-restriction lemma carrying it from nine
 variables to seven; higher rungs rest on the \texttt{s73} certificates. We also include one worked example of the method: the
@@ -894,8 +895,9 @@ Put the three results together. For a fixed $\ell$, the cubics $C$ with
 $\ell\cdot C\in T_1\cup T_2$ are exactly $D_{35}\cup\Sigma_\Pi$: another factorisation
 $\ell C=\ell'C'$ with $\ell'\ne\ell$ would force $\ell'\mid C$, and then $C$ contains a
 hyperplane. The cap minors lie in $I(D_{35}\cup\Sigma_\Pi)$ --- the $\Sigma_\Pi$ half PROVED
-(Proposition~\ref{prop:capplane}), the $D_{35}$ half carrying the cap theorem's own label,
-PROVED modulo three named ADOPTED inputs (Theorem~\ref{thm:cap}) --- and they are nonzero at
+(Proposition~\ref{prop:capplane}), the $D_{35}$ half carrying the cap theorem's label at $n=3$,
+PROVED modulo Kleiman and Dimca, both ADOPTED (Theorem~\ref{thm:cap}; Gulliksen--Neg\aa rd is
+not needed at $n=3$ \cite[Prop.~4.23]{Paper1}) --- and they are nonzero at
 every smooth cubic. So a Nullstellensatz lift
 has a rank-threshold target, and the right-way corner survives the enlargement of the
 intersection. \emph{On the determinant part of it.}
@@ -903,11 +905,15 @@ intersection. \emph{On the determinant part of it.}
 \begin{question}[G-A1; the boundary]\label{q:boundary}
 Theorem~\ref{thm:classify} classifies $\overline{\Dff^\circ\cap\Pf}$. Is there a point of
 $\Dff\cap\Pf$ outside $T_1\cup T_2$ --- necessarily a limit of determinants that is not itself a
-determinant --- of the form $\ell\cdot C^*$ with $C^*$ smooth?
+determinant --- of the form $\ell\cdot C$ with $C$ singular, $C\notin D_{35}$ and $C$ containing
+no plane?
 \end{question}
-\noindent If there is, the right-way corner is gone: a smooth cubic would lie in the lift's
-projection, and no Macaulay-rank threshold could separate. Nothing on the record excludes such a
-point. Two natural invariants fail to exclude it. Rank thresholds of $F$ run the wrong way on
+\noindent As first posed, with $C$ smooth, the question is answered: there is no such point,
+since $\ell\cdot C\notin\Dff$ for every smooth cubic $C$ and every $\ell\ne0$ \cite{Paper2}. So
+the right-way corner cannot be lost at a smooth cubic factor. A reducible $C$ contains a
+hyperplane and lies in $\Sigma_\Pi$, so the singular irreducible case above is what remains.
+Nothing on the record excludes such a point, and whether the cap minors vanish at one is not
+known. Two natural invariants fail to exclude it. Rank thresholds of $F$ run the wrong way on
 padding (Theorem~\ref{thm:gkzB}); and the $20$ nodes of a generic $\det A$ may converge onto the
 surface $\{\ell=0\}\cap C^*$, so semicontinuity of the singular locus says nothing either. Any
 component such points form has affine dimension at least $50+39-70=19$. Nor is ``$\Dff^\circ$ is
@@ -915,7 +921,7 @@ closed'' to be expected by default: Landsberg exhibits polynomials $P_{\Lambda,m
 $\overline{dc}(P_{\Lambda,m})=m<dc(P_{\Lambda,m})$, limits of determinantal expressions that are
 not themselves determinantal. That shows the phenomenon is real; it does not place an instance in
 $\Dff\cap\Pf$. This is the paper's named open question.
-\prov{OPEN. Three routes would close it, in increasing strength: (a) a normal-form analysis of every one-parameter degeneration $\det A(t)\to\ell\cdot C^*$ with $A(t)$ divergent --- one theory slot, paragraph-first, and \emph{no pilot can close it}, since sampled degenerations are only MEASURED; (b) a direct proof that $\{C:\ell\cdot C\in\Dff\}=D_{35}\cup\Sigma_\Pi$ for fixed $\ell$; (c) a proof that $\Dff^\circ$ is closed, which is not expected. Route (a) inherits the conditional status of the Eisenbud--Harris and Ballico inputs (Theorem~\ref{thm:rhoZ}). B17-01-C excludes one specific $F^*$, not a family}{B23-03 \S2.6 (G-A1), L13 @ \cm{3bcad666}; B23-10 \S3.3, ruling B23-10.11 @ \cm{239dd6e8}; Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2, as read by B23-10}{producer B23-03 named it; reviewer B23-10 (READ + INDEPENDENT hand) affirmed it as genuinely open, supplied the two failed invariants and the three routes, and required that the ``right-way corner survives'' sentence be scoped to the determinant part}
+\prov{OPEN. Three routes would close it, in increasing strength: (a) a normal-form analysis of every one-parameter degeneration $\det A(t)\to\ell\cdot C^*$ with $A(t)$ divergent --- one theory slot, paragraph-first, and \emph{no pilot can close it}, since sampled degenerations are only MEASURED; (b) a direct proof that $\{C:\ell\cdot C\in\Dff\}=D_{35}\cup\Sigma_\Pi$ for fixed $\ell$; (c) a proof that $\Dff^\circ$ is closed, which is not expected. Route (a) inherits the conditional status of the Eisenbud--Harris and Ballico inputs (Theorem~\ref{thm:rhoZ}). The smooth form of the question is CLOSED: B17-01's general smooth-cubic exclusion @ \cm{01c49022}, reviewed by B26-01 @ \cm{901b0fe6} and cross-lineage by A26-02R @ \cm{b0d2d2e8}, closed by the author's ruling of 2026-09-23. The singular form stated above stays OPEN; B27-01 @ \cm{01f78eb2}, reviewed by R27-01 @ \cm{51f9d17e}, shows that in the padding parameters it is a $49$-dimensional class excluded from literal determinants, with closure membership undecided}{B23-03 \S2.6 (G-A1), L13 @ \cm{3bcad666}; B23-10 \S3.3, ruling B23-10.11 @ \cm{239dd6e8}; Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2, as read by B23-10}{producer B23-03 named it; reviewer B23-10 (READ + INDEPENDENT hand) affirmed it as genuinely open, supplied the two failed invariants and the three routes, and required that the ``right-way corner survives'' sentence be scoped to the determinant part}
 
 The lift that exists is the Nullstellensatz one, and it is not constructive. The covariant lifts
 are dead by Lemma~\ref{lem:nullcone}(c). This is the precise sense of clause (d) of the thesis.

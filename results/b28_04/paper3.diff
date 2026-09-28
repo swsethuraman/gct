@@ -1,0 +1,80 @@
+diff --git a/papers/det4-blindness/GAPS.md b/papers/det4-blindness/GAPS.md
+index 728775a4..4534af0a 100644
+--- a/papers/det4-blindness/GAPS.md
++++ b/papers/det4-blindness/GAPS.md
+@@ -123,7 +123,7 @@ discrepancy here for a reviewer or producer slot.
+ 
+ | id | gap | draft touches | effect today | who could close it |
+ |---|---|---|---|---|
+-| **G-33** | **G-A1, the boundary of `D45 ∩ P5`. This is the paper's principal open question.** Theorem 2.1 classifies `closure(D45° ∩ P5)`, the closure of the **actual** determinants in `P5`. A point of `(D45 \ D45°) ∩ P5` is a limit of determinants that is not itself one. **Nothing on the record excludes such a point of the form `l·C*` with `C*` smooth**, and if one exists the right-way corner is gone: a smooth cubic would lie in the lift's projection and no Macaulay-rank threshold could separate. Any component such points form has affine dimension `>= 50 + 39 − 70 = 19`. Two natural invariants fail to exclude it: rank thresholds of `F` run the wrong way on padding (C18, C47), and the 20 nodes of a generic `det A` may converge onto `{l = 0} ∩ C*`, so semicontinuity of the singular locus says nothing. `D45°` is not to be expected closed by default — Landsberg exhibits `P_{Λ,m}` with `dc̄ = m < dc`, limits of determinantal expressions that are not determinantal, which shows the phenomenon is real without placing an instance here. | C36, C37, C34, §6 (Question 6.5), thesis clause (d), §9 item 1 | **The draft states the right-way corner as PROVED on the determinant part only**, and names this as its open question. This is a scope requirement the reviewer imposed, not an option. B17-01-C excludes one specific `F*`, not a family. | Three routes, in increasing strength. **(a)** A boundary description: put every one-parameter degeneration `det A(t) → l·C*` with `A(t)` divergent into normal form (curve selection plus a normal form for linear `4×4` pencils in five variables through the singular-pencil locus `Z`) and show it lands in `T1 ∪ T2`. One theory slot, paragraph-first; it inherits the Eisenbud–Harris C1/C3 conditional status (G-4). **No pilot can close it** — sampled degenerations are only MEASURED. **(b)** A direct proof that `{C : l·C ∈ D45} = D35 ∪ Σ_Π` for fixed `l`. **(c)** A proof that `D45°` is closed; not expected. Source: B23-03 §2.6, L13 @ `3bcad666`; B23-10 §3.3, B23-10.11 @ `239dd6e8`. |
++| **G-33** | **G-A1, the boundary of `D45 ∩ P5`. This is the paper's principal open question.** Theorem 2.1 classifies `closure(D45° ∩ P5)`, the closure of the **actual** determinants in `P5`. A point of `(D45 \ D45°) ∩ P5` is a limit of determinants that is not itself one. **⟳ 2026-09-24: the smooth case is CLOSED.** `l·C ∉ D45` for every smooth cubic `C` and every `l ≠ 0` (B17-01 @ `01c49022`; B26-01 @ `901b0fe6`; A26-02R @ `b0d2d2e8`; author's ruling 2026-09-23), so no boundary point has a smooth cubic factor and the right-way corner cannot be lost there. **What stays open is a boundary point `l·C` with `C` singular, `C ∉ D35`, `C` containing no plane** (reducible `C` lies in `Σ_Π`). B27-01 @ `01f78eb2` (R27-01 @ `51f9d17e`) shows this class is 49-dimensional in the padding parameters and excluded from literal determinants; its closure membership is undecided. (Historical wording: nothing on the record excluded such a point with `C*` smooth.) Any component such points form has affine dimension `>= 50 + 39 − 70 = 19`. Two natural invariants fail to exclude it: rank thresholds of `F` run the wrong way on padding (C18, C47), and the 20 nodes of a generic `det A` may converge onto `{l = 0} ∩ C*`, so semicontinuity of the singular locus says nothing. `D45°` is not to be expected closed by default — Landsberg exhibits `P_{Λ,m}` with `dc̄ = m < dc`, limits of determinantal expressions that are not determinantal, which shows the phenomenon is real without placing an instance here. | C36, C37, C34, §6 (Question 6.5), thesis clause (d), §9 item 1 | **The draft states the right-way corner as PROVED on the determinant part only**, and names this as its open question. This is a scope requirement the reviewer imposed, not an option. B17-01-C excluded one specific `F*`; the general smooth-cubic exclusion is now accepted (above). | Three routes, in increasing strength. **(a)** A boundary description: put every one-parameter degeneration `det A(t) → l·C*` with `A(t)` divergent into normal form (curve selection plus a normal form for linear `4×4` pencils in five variables through the singular-pencil locus `Z`) and show it lands in `T1 ∪ T2`. One theory slot, paragraph-first; it inherits the Eisenbud–Harris C1/C3 conditional status (G-4). **No pilot can close it** — sampled degenerations are only MEASURED. **(b)** A direct proof that `{C : l·C ∈ D45} = D35 ∪ Σ_Π` for fixed `l`. **(c)** A proof that `D45°` is closed; not expected. Source: B23-03 §2.6, L13 @ `3bcad666`; B23-10 §3.3, B23-10.11 @ `239dd6e8`. |
+ | **G-34** | **Washout residues.** B23-10 closed C32's second lineage by replay but named two residues it did not close: **Theorem 6's exactness** (`dim D_6^{per_3} = 50`; the replay gives a **floor** only, and a floor is not an exactness statement) and **C33** (`degree8_global`), which is a separate integrator reconciliation of several batch-13 producers and was not reviewed. | C32, C33 | C32 has two lineages; **C33 still has one**, and it is the integrator's reconciliation. The draft labels it as such. | A reviewer slot, or an exact rank at `r = 6`. |
+ | **G-37** | **CLOSED 2026-09-22** (B25-05 Lemma R @ `2688efd1`, reviewed B25-10 §2.4 @ `42e7f4ba`): (★), renamed **the length-restriction lemma**, is **PROVED**. It is `isotypic_rank.md` Prop. 5, with its two implicit steps supplied by Lemma R; method READ plus INDEPENDENT hand re-derivation of R1–R6. `D_7` is the pencil closure `X_7` by definition, and only vanishing is used. **C45 is PROVED**; the ladder above `δ = 12` keeps its s73 lineage. *The entry as written on 2026-09-21 follows.* **New 2026-09-21. The label of (★), the record's `N = 9 → 7` isotypic reduction, at `ℓ(λ) = 7`.** s73 §1: "by the programme's (★) reduction the `λ`-isotypic part of `C[GL_9·f]` is that of `C[X_7]` for `ℓ(λ) <= 7`". C45's floor comes from LMR at `N = 9` and reaches the record's `D_7` only through (★). Reviewer B24-10 rules the use at the included endpoint of a **closed** range sound (11.3.3), names the load-bearing step as the transport of the **ideal-copy count** (11.3.5), notes the double pinch (`ℓ = 7`, and `N >= k+3 = 7`; 11.3.4), and **could not settle whether (★) is PROVED or ADOPTED** because s73 was outside its pins (11.3.8). The `a = 6` agreement at `N = 9` and `N = 7` corroborates the ambient multiplicity, not the ideal count (11.3.6). Not the unrelated (★) Bruhat criterion of `stabiliser_reduction.md`. | C45, §8 scope paragraph, §9 item 4 | C45 is **PROVED modulo (★)** in its row, its provenance line, the abstract, the introduction and §8. **This writing slot proves nothing about (★)** and does not wait for or assume B25-05's result. If (★) is PROVED, the qualifier becomes bookkeeping; if ADOPTED, the programme's only positive result rests on an adopted internal reduction as well as an external theorem, and the label must say so. | B25-05 (reading part), then a label update by a writing slot citing its committed packet and review. |
+ | **G-35** | **`T3 ⊆ T1`?** B23-03 measures a length-10 singular profile (the Segre-cubic profile, exact `rank M_4 = 60`) at four `T3` points and observes that the Segre cubic is itself determinantal, so `T3` is probably also inside `T1`. **It does not claim this and nothing depends on it.** | C36 (the `T3` clause) | Not stated in the draft beyond `T3 ⊆ T2`, which is PROVED and is all the classification needs. | Nobody need close it. Recorded so that a reader does not mistake the MEASURED profile for a claim. Source: B23-03 §2.3, L5 @ `3bcad666`. |
+diff --git a/papers/det4-blindness/det4-blindness.tex b/papers/det4-blindness/det4-blindness.tex
+index 9d965016..365f2a74 100644
+--- a/papers/det4-blindness/det4-blindness.tex
++++ b/papers/det4-blindness/det4-blindness.tex
+@@ -115,15 +115,16 @@ ladder $(m,m+1)$ does not, and the blind zone of the second fundamental form rep
+ the frontier of Landsberg--Manivel--Ressayre. At $N=6,7,8$ the kill is now proved for the first
+ Koszul differential; for the higher ones it stays open in the range $2\le j\le N-4$. (iv)
+ Restricted to padding, the separation problem runs the right way on the cubic factor,
+-conditional on the cap theorem (PROVED modulo Kleiman, Dimca and Gulliksen--Neg\aa rd, all
+-three ADOPTED inputs). What is missing is a lift to quartics. The
++conditional on the cap theorem, which at $n=3$ is PROVED modulo Kleiman and Dimca, both ADOPTED
++inputs (Gulliksen--Neg\aa rd is not needed at $n=3$ \cite[Prop.~4.23]{Paper1}). What is missing is a lift to quartics. The
+ \emph{determinant part} of $\Dff\cap\Pf$ is now classified: it is the union of two irreducible
+ families, $\{\ell\cdot C: C\in D_{35}\}$ of affine dimension $33$ and
+ $\{\ell\cdot C: C\ \text{contains a plane}\}$ of affine dimension $35$, neither inside the
+ other. The cap minors vanish on every cubic through a plane, so the right-way corner survives on
+-that part. Whether it survives on the boundary --- a point of $\Dff\cap\Pf$ that is a limit of
+-determinants without being one, with smooth cubic factor --- is this paper's named open
+-question. We include the evidence
++that part. A boundary point with smooth cubic factor would have destroyed it, and there is none:
++$\ell\cdot C\notin\Dff$ for every smooth cubic $C$ and every $\ell\ne0$ \cite{Paper2}. Whether
++it survives on the remaining boundary --- limits of determinants $\ell\cdot C$ with $C$ singular,
++not determinantal and containing no plane --- is this paper's named open question. We include the evidence
+ that the instruments work where there is something to see: the unpadded $n=3$ control, with
+ $D=+1$ at every rung $\delta\ge12$: PROVED at $\delta=12$, with the record's length-restriction lemma carrying it from nine
+ variables to seven; higher rungs rest on the \texttt{s73} certificates. We also include one worked example of the method: the
+@@ -894,8 +895,9 @@ Put the three results together. For a fixed $\ell$, the cubics $C$ with
+ $\ell\cdot C\in T_1\cup T_2$ are exactly $D_{35}\cup\Sigma_\Pi$: another factorisation
+ $\ell C=\ell'C'$ with $\ell'\ne\ell$ would force $\ell'\mid C$, and then $C$ contains a
+ hyperplane. The cap minors lie in $I(D_{35}\cup\Sigma_\Pi)$ --- the $\Sigma_\Pi$ half PROVED
+-(Proposition~\ref{prop:capplane}), the $D_{35}$ half carrying the cap theorem's own label,
+-PROVED modulo three named ADOPTED inputs (Theorem~\ref{thm:cap}) --- and they are nonzero at
++(Proposition~\ref{prop:capplane}), the $D_{35}$ half carrying the cap theorem's label at $n=3$,
++PROVED modulo Kleiman and Dimca, both ADOPTED (Theorem~\ref{thm:cap}; Gulliksen--Neg\aa rd is
++not needed at $n=3$ \cite[Prop.~4.23]{Paper1}) --- and they are nonzero at
+ every smooth cubic. So a Nullstellensatz lift
+ has a rank-threshold target, and the right-way corner survives the enlargement of the
+ intersection. \emph{On the determinant part of it.}
+@@ -903,11 +905,15 @@ intersection. \emph{On the determinant part of it.}
+ \begin{question}[G-A1; the boundary]\label{q:boundary}
+ Theorem~\ref{thm:classify} classifies $\overline{\Dff^\circ\cap\Pf}$. Is there a point of
+ $\Dff\cap\Pf$ outside $T_1\cup T_2$ --- necessarily a limit of determinants that is not itself a
+-determinant --- of the form $\ell\cdot C^*$ with $C^*$ smooth?
++determinant --- of the form $\ell\cdot C$ with $C$ singular, $C\notin D_{35}$ and $C$ containing
++no plane?
+ \end{question}
+-\noindent If there is, the right-way corner is gone: a smooth cubic would lie in the lift's
+-projection, and no Macaulay-rank threshold could separate. Nothing on the record excludes such a
+-point. Two natural invariants fail to exclude it. Rank thresholds of $F$ run the wrong way on
++\noindent As first posed, with $C$ smooth, the question is answered: there is no such point,
++since $\ell\cdot C\notin\Dff$ for every smooth cubic $C$ and every $\ell\ne0$ \cite{Paper2}. So
++the right-way corner cannot be lost at a smooth cubic factor. A reducible $C$ contains a
++hyperplane and lies in $\Sigma_\Pi$, so the singular irreducible case above is what remains.
++Nothing on the record excludes such a point, and whether the cap minors vanish at one is not
++known. Two natural invariants fail to exclude it. Rank thresholds of $F$ run the wrong way on
+ padding (Theorem~\ref{thm:gkzB}); and the $20$ nodes of a generic $\det A$ may converge onto the
+ surface $\{\ell=0\}\cap C^*$, so semicontinuity of the singular locus says nothing either. Any
+ component such points form has affine dimension at least $50+39-70=19$. Nor is ``$\Dff^\circ$ is
+@@ -915,7 +921,7 @@ closed'' to be expected by default: Landsberg exhibits polynomials $P_{\Lambda,m
+ $\overline{dc}(P_{\Lambda,m})=m<dc(P_{\Lambda,m})$, limits of determinantal expressions that are
+ not themselves determinantal. That shows the phenomenon is real; it does not place an instance in
+ $\Dff\cap\Pf$. This is the paper's named open question.
+-\prov{OPEN. Three routes would close it, in increasing strength: (a) a normal-form analysis of every one-parameter degeneration $\det A(t)\to\ell\cdot C^*$ with $A(t)$ divergent --- one theory slot, paragraph-first, and \emph{no pilot can close it}, since sampled degenerations are only MEASURED; (b) a direct proof that $\{C:\ell\cdot C\in\Dff\}=D_{35}\cup\Sigma_\Pi$ for fixed $\ell$; (c) a proof that $\Dff^\circ$ is closed, which is not expected. Route (a) inherits the conditional status of the Eisenbud--Harris and Ballico inputs (Theorem~\ref{thm:rhoZ}). B17-01-C excludes one specific $F^*$, not a family}{B23-03 \S2.6 (G-A1), L13 @ \cm{3bcad666}; B23-10 \S3.3, ruling B23-10.11 @ \cm{239dd6e8}; Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2, as read by B23-10}{producer B23-03 named it; reviewer B23-10 (READ + INDEPENDENT hand) affirmed it as genuinely open, supplied the two failed invariants and the three routes, and required that the ``right-way corner survives'' sentence be scoped to the determinant part}
++\prov{OPEN. Three routes would close it, in increasing strength: (a) a normal-form analysis of every one-parameter degeneration $\det A(t)\to\ell\cdot C^*$ with $A(t)$ divergent --- one theory slot, paragraph-first, and \emph{no pilot can close it}, since sampled degenerations are only MEASURED; (b) a direct proof that $\{C:\ell\cdot C\in\Dff\}=D_{35}\cup\Sigma_\Pi$ for fixed $\ell$; (c) a proof that $\Dff^\circ$ is closed, which is not expected. Route (a) inherits the conditional status of the Eisenbud--Harris and Ballico inputs (Theorem~\ref{thm:rhoZ}). The smooth form of the question is CLOSED: B17-01's general smooth-cubic exclusion @ \cm{01c49022}, reviewed by B26-01 @ \cm{901b0fe6} and cross-lineage by A26-02R @ \cm{b0d2d2e8}, closed by the author's ruling of 2026-09-23. The singular form stated above stays OPEN; B27-01 @ \cm{01f78eb2}, reviewed by R27-01 @ \cm{51f9d17e}, shows that in the padding parameters it is a $49$-dimensional class excluded from literal determinants, with closure membership undecided}{B23-03 \S2.6 (G-A1), L13 @ \cm{3bcad666}; B23-10 \S3.3, ruling B23-10.11 @ \cm{239dd6e8}; Landsberg \lit{Landsberg13}{PRIMARY, via ar5iv} \S2, as read by B23-10}{producer B23-03 named it; reviewer B23-10 (READ + INDEPENDENT hand) affirmed it as genuinely open, supplied the two failed invariants and the three routes, and required that the ``right-way corner survives'' sentence be scoped to the determinant part}
+ 
+ The lift that exists is the Nullstellensatz one, and it is not constructive. The covariant lifts
+ are dead by Lemma~\ref{lem:nullcone}(c). This is the precise sense of clause (d) of the thesis.

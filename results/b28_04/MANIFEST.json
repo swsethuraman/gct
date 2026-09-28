@@ -1,0 +1,42 @@
+{
+  "slot": "B28-04",
+  "branch": "b28-04-p3",
+  "parent": "ff1d4772de09f6c497b2d5c485a5052cef8db820",
+  "authority": {
+    "wording_draft": "B27_04B_WORDING_DRAFT.md",
+    "wording_draft_sha256": "5d8f40124402c298321450c7ab31c192276655e5767665ec50a29f6f09d38663",
+    "approval": "author approved all six items unchanged, 2026-09-28 (READ from B28-04.md and BATCH28_BOARD.md)"
+  },
+  "outcome": {
+    "1": "APPLIED",
+    "2": "APPLIED",
+    "3a": "APPLIED",
+    "3b": "APPLIED",
+    "3c": "APPLIED",
+    "3d": "APPLIED",
+    "4": "APPLIED",
+    "5": "APPLIED",
+    "6": "APPLIED"
+  },
+  "achievement_level": "unchanged (editorial only)",
+  "binding_constraint": "No five-row determinant equation is known to be nonzero on padding.",
+  "manifest_excludes_itself": true,
+  "files": [
+    {
+      "path": "papers/det4-blindness/GAPS.md",
+      "sha256": "9a9b1340486f47b8868baebd8ac024baf8614635a8cf98850a8a8ed16e317e0f",
+      "bytes": 47243
+    },
+    {
+      "path": "papers/det4-blindness/det4-blindness.tex",
+      "sha256": "7ef486128c5436e70ca631706075528c93352d106016da54ceffb55be8c220b1",
+      "bytes": 110662
+    },
+    {
+      "path": "results/b28_04/paper3.diff",
+      "sha256": "384f6673a43b4e499e933378ef272d0fe144108c6b64e0ce7426618d828602d4",
+      "bytes": 16009
+    }
+  ],
+  "companion": "report, apply record, static check and receipt are on b28-04-p2 (docs/b28_04_report.md, results/b28_04/)"
+}
