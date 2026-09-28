@@ -1,0 +1,94 @@
+{
+ "schema": "b28-01-receipt/1",
+ "tag": "22_6_5_2_1_d9",
+ "gate": {
+  "z": 185066,
+  "U": 70,
+  "f_measured": 0.0021808182809462855,
+  "phase_seconds": {
+   "B": 0.912,
+   "S": 0.023,
+   "H": 0.07,
+   "V": 0.391,
+   "R": 0.134,
+   "D": 0.0
+  },
+  "predicted_remaining_secs": 4.0,
+  "unused_budget_secs": 3589.8,
+  "mem_envelope_bytes": 1785435512,
+  "mem_cap_bytes": 8000000000,
+  "rates": {
+   "cB": 4.803243504689299e-06,
+   "cS": 1.2228814341073986e-07,
+   "cH": 5.398828340547297e-09,
+   "cV": 6.443365476682207e-08,
+   "cR": 8.284327041448551e-09,
+   "cD": 9.94004926900113e-10,
+   "verifier_factor": 1.8061
+  },
+  "pass": true
+ },
+ "phases": [
+  {
+   "phase": "build",
+   "secs": 0.143,
+   "peak_rss_bytes": 71262208
+  },
+  {
+   "phase": "cover",
+   "secs": 0.017,
+   "peak_rss_bytes": 72482816,
+   "cover_size": 21023,
+   "nU": 70
+  },
+  {
+   "phase": "schur",
+   "secs": 0.054,
+   "peak_rss_bytes": 97181696,
+   "trisolve_secs": 0.022,
+   "schur_project_secs": 0.025,
+   "nullspace_secs": 0.002,
+   "nS": 21023,
+   "nU": 70,
+   "ublock": 70,
+   "nblocks": 1
+  },
+  {
+   "phase": "lift_check",
+   "secs": 0.035,
+   "peak_rss_bytes": 107327488,
+   "nullity": 24
+  },
+  {
+   "phase": "evaluation",
+   "secs": 0.111,
+   "peak_rss_bytes": 101146624,
+   "npts": 32
+  },
+  {
+   "phase": "schur",
+   "secs": 0.051,
+   "peak_rss_bytes": 105537536,
+   "trisolve_secs": 0.018,
+   "schur_project_secs": 0.025,
+   "nullspace_secs": 0.002,
+   "nS": 21023,
+   "nU": 70,
+   "ublock": 70,
+   "nblocks": 1
+  },
+  {
+   "phase": "lift_check",
+   "secs": 0.032,
+   "peak_rss_bytes": 109883392,
+   "nullity": 24
+  },
+  {
+   "phase": "evaluation",
+   "secs": 0.104,
+   "peak_rss_bytes": 101789696,
+   "npts": 32
+  }
+ ],
+ "total_secs": 0.566
+}

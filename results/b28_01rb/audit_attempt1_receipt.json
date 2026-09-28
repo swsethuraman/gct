@@ -1,0 +1,24 @@
+{
+  "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_audit.py\"",
+  "script": {
+    "bytes": 9081,
+    "sha256": "6d599a32c2ccd910965a0319033e6134ea49e12f14f2415624448e532d8aca1d"
+  },
+  "wall_seconds": 2.5365181999999997,
+  "wall_source": "exec_command elapsed wall time for the failed WSL invocation",
+  "timeout_seconds": 60,
+  "address_limit_kib": 500000,
+  "exit": 1,
+  "failure": "FileNotFoundError: /tmp/b28_01rb_replay_5a3174cd/control/22_6_5_2_1_d9_pencils.json",
+  "output_files": [],
+  "recovery": "No cell rerun. Compare replay_receipt.json raw output hashes, saved by the completed runner, against committed manifest hashes. Recover small committed JSON only after matching its replay hash. Preserve the failed script unchanged.",
+  "input_bindings": {
+    "sha256": "3f16b46ce350cbcec66331dfe9edb165df6ed436bf719e978fdc6620298f7cbf",
+    "bytes": 66049
+  },
+  "output": {
+    "meaning": "No result payload was written before the exception",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

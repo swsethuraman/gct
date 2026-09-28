@@ -1,0 +1,34 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--scope",
+    "--quiet",
+    "--unit=b28-01rd-review",
+    "-p",
+    "MemoryMax=24000000000",
+    "-p",
+    "MemorySwapMax=0",
+    "-p",
+    "RuntimeMaxSec=3600",
+    "/home/swami/b28venv/bin/python",
+    "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rd_run.py",
+    "--inside"
+  ],
+  "elapsed_monotonic_secs": 726.205403877,
+  "end_unix": 1790628750.6206396,
+  "exit": 0,
+  "input_bindings": {
+    "bytes": 9734,
+    "sha256": "5d5a2d15aacbdbd2642e7976faec373734c61e2d4f6e6e34a172c952a0867ba1"
+  },
+  "output": {
+    "bytes": 1793,
+    "sha256": "b4608a92a54708efca22e8cfffe9d1e7377550c1064b36ea9bef0075f0566276"
+  },
+  "script": {
+    "bytes": 3416,
+    "sha256": "d7c1d3cf74457322f1c79f3bb12a54d7678c75c0d22799fb968c2d27662d1955"
+  },
+  "start_unix": 1790628024.415237
+}

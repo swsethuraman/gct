@@ -1,0 +1,169 @@
+{
+  "assembly_command": "PYTHONDONTWRITEBYTECODE=1 python3 analysis/b28_01rd_finish.py",
+  "assembly_wall_secs": 0.6124789440000313,
+  "binding_run": {
+    "command": "python3 analysis/b28_01rd_audit.py bind",
+    "operation": "hashing and metadata only; no numerical verifier",
+    "output": {
+      "bytes": 9734,
+      "sha256": "5d5a2d15aacbdbd2642e7976faec373734c61e2d4f6e6e34a172c952a0867ba1"
+    },
+    "script": {
+      "bytes": 4871,
+      "sha256": "8a7764d67b4d977096b91992f231aed0f34df327d700a9996fd0b99e3005383c"
+    },
+    "wall_secs": 4.274153872999989
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 /home/swami/b28venv/bin/python analysis/b28_01rd_run.py",
+  "input_binding": {
+    "bytes": 9734,
+    "sha256": "5d5a2d15aacbdbd2642e7976faec373734c61e2d4f6e6e34a172c952a0867ba1"
+  },
+  "job": {
+    "artifact_bytes_at_end": 58382,
+    "artifact_stop_bytes": 50000000000,
+    "cap_secs": 3540.0,
+    "clock": "time.monotonic",
+    "elapsed_monotonic_secs": 725.932,
+    "end_utc": "2026-09-28T20:52:30Z",
+    "exit": 0,
+    "job_processes_remaining_at_end": 0,
+    "out": "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd",
+    "resource_stop": null,
+    "schema": "b28-01d-job-receipt/1",
+    "scope": {
+      "memory_max": "24000000000",
+      "memory_swap_max": "0"
+    },
+    "scope_end": {
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory_peak": "2807062528"
+    },
+    "start_utc": "2026-09-28T20:40:24Z",
+    "steps": [
+      {
+        "argv": [
+          "/home/swami/b28venv/bin/python",
+          "/home/swami/b28_01/frozen_d/b28_01c_verify.py",
+          "--lam",
+          "12",
+          "8",
+          "6",
+          "4",
+          "2",
+          "--delta",
+          "8",
+          "--a",
+          "109",
+          "--prime",
+          "2147483647",
+          "--dir",
+          "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/inputs",
+          "--kernel",
+          "/home/swami/b28_01/out/cellA/12_8_6_4_2_d8_p2147483647_K.u32",
+          "--out",
+          "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/12_8_6_4_2_d8_p2147483647_verify.json"
+        ],
+        "group_alive_after_step": false,
+        "killed_by_supervisor": false,
+        "label": "cellA_verify",
+        "maxrss_bytes": 1167245312,
+        "pgid": 378,
+        "rc": 0,
+        "secs_monotonic": 725.886,
+        "survivors_sigkilled": []
+      }
+    ],
+    "subreaper": true
+  },
+  "numerical_runs": 1,
+  "output": {
+    "bytes": 1793,
+    "sha256": "b4608a92a54708efca22e8cfffe9d1e7377550c1064b36ea9bef0075f0566276"
+  },
+  "preliminary_failed_metadata_audit": {
+    "command": "timeout 60s bash -c \"ulimit -v 524288; python3 analysis/b28_01rd_audit.py bind\"",
+    "exit": 1,
+    "input_worktree_pointer": {
+      "bytes": 76,
+      "sha256": "9fce54d8618c76fb33563c7369e16e3050db85e080420258ab397f174b2e1c1e"
+    },
+    "output_sha256": null,
+    "reason": "Linux Git could not interpret Windows absolute .git path; no numerical run and no output; audit helper corrected to supply translated --git-dir and --work-tree; repository configuration unchanged",
+    "script_sha256": "f36242352785f7d747262dd3c34445aa39e9334c4ea78f0cd98bb1d8e57eab4a",
+    "wall_secs": 2.2567975000000002
+  },
+  "receipt_note": "All *.log and *.time under receipts are resource receipt components, not mathematical outputs.",
+  "run": {
+    "command": [
+      "systemd-run",
+      "--user",
+      "--scope",
+      "--quiet",
+      "--unit=b28-01rd-review",
+      "-p",
+      "MemoryMax=24000000000",
+      "-p",
+      "MemorySwapMax=0",
+      "-p",
+      "RuntimeMaxSec=3600",
+      "/home/swami/b28venv/bin/python",
+      "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rd_run.py",
+      "--inside"
+    ],
+    "elapsed_monotonic_secs": 726.205403877,
+    "end_unix": 1790628750.6206396,
+    "exit": 0,
+    "input_bindings": {
+      "bytes": 9734,
+      "sha256": "5d5a2d15aacbdbd2642e7976faec373734c61e2d4f6e6e34a172c952a0867ba1"
+    },
+    "output": {
+      "bytes": 1793,
+      "sha256": "b4608a92a54708efca22e8cfffe9d1e7377550c1064b36ea9bef0075f0566276"
+    },
+    "script": {
+      "bytes": 3416,
+      "sha256": "d7c1d3cf74457322f1c79f3bb12a54d7678c75c0d22799fb968c2d27662d1955"
+    },
+    "start_unix": 1790628024.415237
+  },
+  "schema": "b28-01rd-resource/1",
+  "scope": {
+    "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/b28-01rd-review.scope",
+    "command": [
+      "/home/swami/b28venv/bin/python",
+      "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+      "--cap-secs",
+      "3540",
+      "--out",
+      "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd",
+      "--artifact-stop",
+      "50000000000",
+      "--receipt",
+      "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/receipts/job_receipt.json",
+      "--steps",
+      "[{\"label\": \"cellA_verify\", \"argv\": [\"/home/swami/b28venv/bin/python\", \"/home/swami/b28_01/frozen_d/b28_01c_verify.py\", \"--lam\", \"12\", \"8\", \"6\", \"4\", \"2\", \"--delta\", \"8\", \"--a\", \"109\", \"--prime\", \"2147483647\", \"--dir\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/inputs\", \"--kernel\", \"/home/swami/b28_01/out/cellA/12_8_6_4_2_d8_p2147483647_K.u32\", \"--out\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rd/12_8_6_4_2_d8_p2147483647_verify.json\"]}]"
+    ],
+    "memory_max": "24000000000",
+    "memory_swap_max": "0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "runtime_max_sec": 3600,
+    "supervisor_cap_sec": 3540,
+    "versions": "3.12.3 2.5.3 1.18.1 0.9.0"
+  },
+  "scripts": {
+    "b28_01rd_audit.py": {
+      "bytes": 4871,
+      "sha256": "8a7764d67b4d977096b91992f231aed0f34df327d700a9996fd0b99e3005383c"
+    },
+    "b28_01rd_finish.py": {
+      "bytes": 11828,
+      "sha256": "347233c4b47f9badd6ab72d601f7a2c14a387fc5836efca2d8d1ac485e3cdce7"
+    },
+    "b28_01rd_run.py": {
+      "bytes": 3416,
+      "sha256": "d7c1d3cf74457322f1c79f3bb12a54d7678c75c0d22799fb968c2d27662d1955"
+    }
+  }
+}

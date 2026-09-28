@@ -1,0 +1,48 @@
+{
+  "address_limit_kib": 500000,
+  "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_bind.py\"",
+  "input_commit": "5a3174cd3a1ec96b05b92a8bcb73fbee58c0544b",
+  "input_manifest": {
+    "bytes": 37926,
+    "sha256": "93bb78e2f4bee90ec668c6c957689571052761860b5556d41bd67641f278254a"
+  },
+  "maxrss_kib": 20876,
+  "outputs": [
+    {
+      "bytes": 66049,
+      "path": "BINDINGS.json",
+      "sha256": "3f16b46ce350cbcec66331dfe9edb165df6ed436bf719e978fdc6620298f7cbf"
+    },
+    {
+      "bytes": 8846,
+      "path": "cellA.diff",
+      "sha256": "b11ac92b80f4538fd8a50af574177af89029070006c1c32daa5ea51fafa45504"
+    },
+    {
+      "bytes": 23775,
+      "path": "driver.diff",
+      "sha256": "e941daf7a6556ff02993970093619fb83e58768cd3da55cd6232c216a43af397"
+    },
+    {
+      "bytes": 11121,
+      "path": "reprice.diff",
+      "sha256": "3c94d3ddb05478153b6e03053b4e962279cc378a07226f389d7428a720040ff8"
+    },
+    {
+      "bytes": 16813,
+      "path": "verify.diff",
+      "sha256": "bd0872f8d80d25379ad09e3c1d6b7f0eeddb1c6ba3d7b62844041a56b447c43d"
+    },
+    {
+      "bytes": 0,
+      "path": "vfy.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "script": {
+    "bytes": 5587,
+    "sha256": "d6c3865da727249668be08f491325728825fc3b02a3ecfb729f6f20646c7dd01"
+  },
+  "timeout_seconds": 60,
+  "wall_seconds": 10.572464523999997
+}

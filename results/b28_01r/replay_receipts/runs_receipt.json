@@ -1,0 +1,385 @@
+{
+  "aggregate_wall_seconds": 548.197062417,
+  "input_bindings": {
+    "bytes": 58217,
+    "sha256": "e867f035246cc7a0417b64c22b18d8df49985d8cf650ea6f8db034105dcbdc36"
+  },
+  "runs": [
+    {
+      "code_input": {
+        "bytes": 16801,
+        "sha256": "de202bb09855301e911123e1e39dd4e85b493d1fc8b6d1bcae7d9986bd71094c"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_driver.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--nchi",
+        "21093",
+        "--primes",
+        "2147483647",
+        "2147483629",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/control",
+        "--wall-budget",
+        "3590",
+        "--mem-cap",
+        "8000000000",
+        "--rates",
+        "/home/swami/b28_01/frozen/gate_rates.json"
+      ],
+      "expected_rc": 0,
+      "label": "ctl_driver",
+      "rc": 0,
+      "stderr": {
+        "bytes": 2212,
+        "sha256": "ace23a9e7a4a4823bef0e72a894281fd08c6b149fc711e36b697ce980d3323a7"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1011,
+        "sha256": "3484673d054e1470a64ee5ba71568f2f5fe132ee541e9a0d339a8ae8e23c0350"
+      },
+      "wall_seconds": 0.8679271129999999
+    },
+    {
+      "code_input": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_replay_vi4e6f6l/control",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/22_6_5_2_1_d9_p2147483647_verify.json"
+      ],
+      "expected_rc": 0,
+      "label": "ctl_verify_2147483647",
+      "rc": 0,
+      "stderr": {
+        "bytes": 798,
+        "sha256": "dfcd80fa5ca1c0154fb8fec1b91d68801491ad6cc47ed09ba93c329ee16ca45e"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 969,
+        "sha256": "dd58bb0b18d499de4dc43e4e67ccdce5cb3b19bbcc8a70fcd01d500d53c7a5fd"
+      },
+      "wall_seconds": 0.4677886410000003
+    },
+    {
+      "code_input": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483629",
+        "--dir",
+        "/tmp/b28_01r_replay_vi4e6f6l/control",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/22_6_5_2_1_d9_p2147483629_verify.json"
+      ],
+      "expected_rc": 0,
+      "label": "ctl_verify_2147483629",
+      "rc": 0,
+      "stderr": {
+        "bytes": 798,
+        "sha256": "5876aae409241675aad640bca6f4c17327488e82a05698927c51962d451e522e"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 971,
+        "sha256": "0d9525f6d3a0bb37b9345fac7d28df2cc9fbcd29592edaa9537ab40d2ec12928"
+      },
+      "wall_seconds": 0.4685165310000001
+    },
+    {
+      "code_input": {
+        "bytes": 645,
+        "sha256": "c041ecf9c231cb755bd7017af7694bd718deafe5645b401fbb9a3638ea737e0e"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_corrupt.py",
+        "kernel",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/22_6_5_2_1_d9_p2147483647_K.u32",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/K_corrupt.u32",
+        "2147483647"
+      ],
+      "expected_rc": 0,
+      "label": "corrupt_kernel_input",
+      "rc": 0,
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 938,
+        "sha256": "0ce6136deae8f7355a8edae1e6cac966a7a7b1972006c2d3aff0b73a14501bc6"
+      },
+      "wall_seconds": 0.0662094600000005
+    },
+    {
+      "code_input": {
+        "bytes": 645,
+        "sha256": "c041ecf9c231cb755bd7017af7694bd718deafe5645b401fbb9a3638ea737e0e"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_corrupt.py",
+        "pencil",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/22_6_5_2_1_d9_pencils.json",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/pencils_corrupt.json"
+      ],
+      "expected_rc": 0,
+      "label": "corrupt_point_input",
+      "rc": 0,
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 927,
+        "sha256": "adfd60ab75ca707fec19d3e5bfdcd2570f804f5a9cf2410f9fa04a17788d4b38"
+      },
+      "wall_seconds": 0.06719500400000022
+    },
+    {
+      "code_input": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_replay_vi4e6f6l/control",
+        "--kernel",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/K_corrupt.u32",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/22_6_5_2_1_d9_p2147483647_verify_corrupt_kernel.json"
+      ],
+      "expected_rc": 5,
+      "label": "ctl_corrupt_kernel",
+      "rc": 5,
+      "stderr": {
+        "bytes": 802,
+        "sha256": "7f68bce7580b81af0a31fa64be0e0bf4d4e228462b52c49c0b31af9efb276d30"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1098,
+        "sha256": "445dc66875e4d9e654aca19bf86979ae740353dc46bab228b4763ed9834e8c4a"
+      },
+      "wall_seconds": 0.46712867400000047
+    },
+    {
+      "code_input": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "22",
+        "6",
+        "5",
+        "2",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "24",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_replay_vi4e6f6l/control",
+        "--pencils",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/pencils_corrupt.json",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/control/corrupt/22_6_5_2_1_d9_p2147483647_verify_corrupt_point.json"
+      ],
+      "expected_rc": 5,
+      "label": "ctl_corrupt_point",
+      "rc": 5,
+      "stderr": {
+        "bytes": 801,
+        "sha256": "2037aa42f12beac5cebcd2b6809fc494b5bed968edd7be99bbded25e1f90aaf1"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1107,
+        "sha256": "01fac4454869c0ff8c06bb9fd2b618e7cb1703bf78fd568158460dd4fae8642f"
+      },
+      "wall_seconds": 0.46773500499999976
+    },
+    {
+      "code_input": {
+        "bytes": 16801,
+        "sha256": "de202bb09855301e911123e1e39dd4e85b493d1fc8b6d1bcae7d9986bd71094c"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_driver.py",
+        "--lam",
+        "13",
+        "9",
+        "9",
+        "3",
+        "1",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "70",
+        "--nchi",
+        "732815",
+        "--primes",
+        "2147483647",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/cal2",
+        "--wall-budget",
+        "3587",
+        "--mem-cap",
+        "8000000000",
+        "--rates",
+        "/home/swami/b28_01/frozen/gate_rates.json"
+      ],
+      "expected_rc": 0,
+      "label": "cal2_driver",
+      "rc": 0,
+      "stderr": {
+        "bytes": 1888,
+        "sha256": "358016ba436e44d4f61485adcc0cb62dfc5db7e1cb7bade4d2f777656f72596f"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 1003,
+        "sha256": "8dcd3b79980ecc7051c859109dd9576fab229b094576bcf91ad41d3077bf98a2"
+      },
+      "wall_seconds": 149.109423177
+    },
+    {
+      "code_input": {
+        "bytes": 23232,
+        "sha256": "7978a73aaf30ee0dee4fa37a6bdf088a52daf85b00390af62d532b2027e7def5"
+      },
+      "command": [
+        "/home/swami/b28venv/bin/python",
+        "/home/swami/b28_01/frozen/b28_01_verify.py",
+        "--lam",
+        "13",
+        "9",
+        "9",
+        "3",
+        "1",
+        "1",
+        "--delta",
+        "9",
+        "--a",
+        "70",
+        "--prime",
+        "2147483647",
+        "--dir",
+        "/tmp/b28_01r_replay_vi4e6f6l/cal2",
+        "--out",
+        "/tmp/b28_01r_replay_vi4e6f6l/cal2/13_9_9_3_1_1_d9_p2147483647_verify.json"
+      ],
+      "expected_rc": 0,
+      "label": "cal2_verify",
+      "rc": 0,
+      "stderr": {
+        "bytes": 809,
+        "sha256": "dc803872f7bfe21b8cd67f64901d989c6b2cd8f055bdf8728a21f13359e61dba"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "timer": {
+        "bytes": 974,
+        "sha256": "0c7a37ded6ca3657ff5c52f65f531293770c686279bbec678f30bf13ddbaeceb"
+      },
+      "wall_seconds": 396.113226886
+    }
+  ],
+  "scope_memory_bytes": 8000000000,
+  "scope_swap_bytes": 0,
+  "scope_wall_limit_seconds": 3600,
+  "scratch": "/tmp/b28_01r_replay_vi4e6f6l"
+}

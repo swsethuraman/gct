@@ -1,0 +1,37 @@
+{
+  "address_limit_kib": 500000,
+  "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01r_audit.py\"",
+  "input_bindings": {
+    "bytes": 3868,
+    "sha256": "065aae223628a9816fa22cd8235bb5940033c0eed955f328a97f1a5bee128bb4"
+  },
+  "maxrss_kib": 25732,
+  "outputs": {
+    "ARITHMETIC_AUDIT.json": {
+      "bytes": 858,
+      "sha256": "8adff4574cd90b1243bde167cb53cf1b58893715dd6dd7c7d1f5cff03c73e1d6"
+    },
+    "AUDIT_INPUTS.json": {
+      "bytes": 3868,
+      "sha256": "065aae223628a9816fa22cd8235bb5940033c0eed955f328a97f1a5bee128bb4"
+    },
+    "PRICE_AUDIT.json": {
+      "bytes": 10481,
+      "sha256": "f249accc53cce4714db2e38d153add24f3e92829c997d167b5075c618bae8a8e"
+    },
+    "RECORD_COMPARISON.json": {
+      "bytes": 4606,
+      "sha256": "f404473dbd55c201b9afcf6e5caa7f4f5083fa7f59e16e7c57414113d80b0525"
+    },
+    "TIMER_AUDIT.json": {
+      "bytes": 7868,
+      "sha256": "07d52916429e0e72577c405a7764a46c1f2e69af3fdf0d1663aafd77c94a8b8d"
+    }
+  },
+  "script": {
+    "bytes": 10878,
+    "sha256": "764315e11976e6e99f1f6e5fdcbcb31040033475a339e6b0b2b13313f50fa46c"
+  },
+  "timeout_seconds": 60,
+  "wall_seconds": 0.9698759280000786
+}

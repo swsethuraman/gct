@@ -1,0 +1,20 @@
+{
+  "address_limit_kib": 500000,
+  "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01r_bind.py\"",
+  "input_commit": "a1c3c3a69b789c91909ed5476354ad762f3e71c2",
+  "input_manifest": {
+    "bytes": 32991,
+    "sha256": "420eb69ab49165338cfe9afab87f02ecb4ffc9d270b2fcc50ce2acb8172b934e"
+  },
+  "maxrss_kib": 20516,
+  "output": {
+    "bytes": 58217,
+    "sha256": "e867f035246cc7a0417b64c22b18d8df49985d8cf650ea6f8db034105dcbdc36"
+  },
+  "script": {
+    "bytes": 6019,
+    "sha256": "79b94f2d7921472c72627603c4433e0d420c83dca0c94b06eef3d8ed38e79c00"
+  },
+  "timeout_seconds": 60,
+  "wall_seconds": 9.402643733000005
+}

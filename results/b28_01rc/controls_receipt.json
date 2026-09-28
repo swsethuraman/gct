@@ -1,0 +1,273 @@
+{
+  "binding_input": {
+    "bytes": 21410,
+    "sha256": "a95d3e976741aef5f09eb450c031ffd12904379dd63f873dc1edaa9f2c8bfe1d"
+  },
+  "certificate": {
+    "bytes": 2093,
+    "sha256": "9a018e94142cbde3a8fa355913cba9f5e66e1665f31c5b8b46f851c9c2a13f23"
+  },
+  "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rc_controls.py",
+  "fallback_cleanup_pids": [],
+  "input_supervisor": {
+    "bytes": 9795,
+    "sha256": "af3b5aa285713e20633189288589953b715d3027cb75432b959f0a485a2f7258"
+  },
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "outputs": [
+    {
+      "bytes": 1252,
+      "path": "fixture_receipts/fast_writer/job_receipt.json",
+      "sha256": "b343e9d733499796648874c4857525c80988b6d7db0866102cbe1c8c453a01aa"
+    },
+    {
+      "bytes": 2048,
+      "path": "fixture_receipts/fast_writer/out/blob",
+      "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+    },
+    {
+      "bytes": 121,
+      "path": "fixture_receipts/fast_writer/stdout_receipt.txt",
+      "sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/fast_writer/writer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 928,
+      "path": "fixture_receipts/fast_writer/writer.time",
+      "sha256": "2ac2c41ff62a24f52ea1388a09854b351f596bf1e386ad0a02cb3846c0158361"
+    },
+    {
+      "bytes": 1271,
+      "path": "fixture_receipts/fast_writer_two_steps/job_receipt.json",
+      "sha256": "3920a8feaeda8c314bff2dcb3f1f8513db1167835c9fe61ae4b378d87a223c2f"
+    },
+    {
+      "bytes": 2048,
+      "path": "fixture_receipts/fast_writer_two_steps/out/blob",
+      "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+    },
+    {
+      "bytes": 121,
+      "path": "fixture_receipts/fast_writer_two_steps/stdout_receipt.txt",
+      "sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/fast_writer_two_steps/writer.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 938,
+      "path": "fixture_receipts/fast_writer_two_steps/writer.time",
+      "sha256": "3c0484d0ffdf8a28d763d253e4c60a8fef5b22854729fa07ef23a13b4891daea"
+    },
+    {
+      "bytes": 3,
+      "path": "fixture_receipts/normal_exit_background_child/child_pid_receipt.txt",
+      "sha256": "dcaadad1cfce437735b81ab025f776e5857e48558c47f6960e6a5f2595664a85"
+    },
+    {
+      "bytes": 1235,
+      "path": "fixture_receipts/normal_exit_background_child/job_receipt.json",
+      "sha256": "5f9d4b5d1787355f5083a6220a7d2cc1e6526788a947e53d6d2bc102deca987c"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/normal_exit_background_child/parent.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 983,
+      "path": "fixture_receipts/normal_exit_background_child/parent.time",
+      "sha256": "6e8bfd12cd45fd61d934e33a698f549b0e7d8da3b56e01ce01a2d71c7f296549"
+    },
+    {
+      "bytes": 30,
+      "path": "fixture_receipts/normal_exit_background_child/stdout_receipt.txt",
+      "sha256": "1f1e1ac34f3cfed26f9408a91c9940466c12e8c1951640ef80345991de58b5a3"
+    },
+    {
+      "bytes": 1035,
+      "path": "fixture_receipts/ordinary_wall/job_receipt.json",
+      "sha256": "ac43313575b572227516a0b782f0808df27e6059fb3affacd43e755003e14874"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/ordinary_wall/sleeper.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/ordinary_wall/sleeper.time",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 119,
+      "path": "fixture_receipts/ordinary_wall/stdout_receipt.txt",
+      "sha256": "ab06b4393da1ebbafc07b07bccee0b1cba4b5099e4c89ffa6f960cc06326abde"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/term_resistant/child.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "fixture_receipts/term_resistant/child.time",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3,
+      "path": "fixture_receipts/term_resistant/child_pid_receipt.txt",
+      "sha256": "21ef779311a43f0e067d0f4f600bb5451a8a7e093662086a1fe6a75d27d7892a"
+    },
+    {
+      "bytes": 1302,
+      "path": "fixture_receipts/term_resistant/job_receipt.json",
+      "sha256": "67093cccd266b4fbd60805713dedc085df0569443ca17f47adfd82d69af43ab4"
+    },
+    {
+      "bytes": 117,
+      "path": "fixture_receipts/term_resistant/stdout_receipt.txt",
+      "sha256": "b430a703f028ebfd18249f4e6f520efffa1a742acfbe93ffb9c67d600465c7c4"
+    }
+  ],
+  "rc": 0,
+  "runs": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+        "--cap-secs",
+        "2",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/term_resistant/out",
+        "--artifact-stop",
+        "1000000",
+        "--receipt",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/term_resistant/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"child\", \"argv\": [\"/usr/bin/python3\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rc_controls.py\", \"--term-resistant-child\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/term_resistant/child_pid_receipt.txt\"]}]"
+      ],
+      "fixture": "term_resistant",
+      "job_receipt": {
+        "bytes": 1302,
+        "sha256": "67093cccd266b4fbd60805713dedc085df0569443ca17f47adfd82d69af43ab4"
+      },
+      "rc": 124,
+      "stdout_sha256": "b430a703f028ebfd18249f4e6f520efffa1a742acfbe93ffb9c67d600465c7c4",
+      "wall_seconds": 32.104879469
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+        "--cap-secs",
+        "10",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer/out",
+        "--artifact-stop",
+        "1024",
+        "--receipt",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"writer\", \"argv\": [\"/usr/bin/python3\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer/out/blob\"]}]"
+      ],
+      "fixture": "fast_writer",
+      "job_receipt": {
+        "bytes": 1252,
+        "sha256": "b343e9d733499796648874c4857525c80988b6d7db0866102cbe1c8c453a01aa"
+      },
+      "rc": 125,
+      "stdout_sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914",
+      "wall_seconds": 0.08574818699997877
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+        "--cap-secs",
+        "10",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer_two_steps/out",
+        "--artifact-stop",
+        "1024",
+        "--receipt",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer_two_steps/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"writer\", \"argv\": [\"/usr/bin/python3\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer_two_steps/out/blob\"]}, {\"label\": \"marker\", \"argv\": [\"/usr/bin/python3\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_text(\\\"ran\\\")\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/fast_writer_two_steps/out/marker\"]}]"
+      ],
+      "fixture": "fast_writer_two_steps",
+      "job_receipt": {
+        "bytes": 1271,
+        "sha256": "3920a8feaeda8c314bff2dcb3f1f8513db1167835c9fe61ae4b378d87a223c2f"
+      },
+      "rc": 125,
+      "stdout_sha256": "8a940aae8127a3a0e26da4d1b3b5f50b46f66d8313370455c2b80ad45a2ab914",
+      "wall_seconds": 0.08248363899997457
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+        "--cap-secs",
+        "3",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/ordinary_wall/out",
+        "--artifact-stop",
+        "1000000",
+        "--receipt",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/ordinary_wall/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"sleeper\", \"argv\": [\"/bin/sleep\", \"60\"]}]"
+      ],
+      "fixture": "ordinary_wall",
+      "job_receipt": {
+        "bytes": 1035,
+        "sha256": "ac43313575b572227516a0b782f0808df27e6059fb3affacd43e755003e14874"
+      },
+      "rc": 124,
+      "stdout_sha256": "ab06b4393da1ebbafc07b07bccee0b1cba4b5099e4c89ffa6f960cc06326abde",
+      "wall_seconds": 3.0940331310000033
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_d/b28_01d_supervise.py",
+        "--cap-secs",
+        "10",
+        "--out",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/normal_exit_background_child/out",
+        "--artifact-stop",
+        "1000000",
+        "--receipt",
+        "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/normal_exit_background_child/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"parent\", \"argv\": [\"/usr/bin/python3\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rc_controls.py\", \"--background-parent\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/results/b28_01rc/fixture_receipts/normal_exit_background_child/child_pid_receipt.txt\"]}]"
+      ],
+      "fixture": "normal_exit_background_child",
+      "job_receipt": {
+        "bytes": 1235,
+        "sha256": "5f9d4b5d1787355f5083a6220a7d2cc1e6526788a947e53d6d2bc102deca987c"
+      },
+      "rc": 0,
+      "stdout_sha256": "1f1e1ac34f3cfed26f9408a91c9940466c12e8c1951640ef80345991de58b5a3",
+      "wall_seconds": 0.16334356499999103
+    }
+  ],
+  "scope": {
+    "memory_max": 512000000,
+    "memory_swap_max": 0
+  },
+  "scope_peak_bytes": 25124864,
+  "script": {
+    "bytes": 6951,
+    "sha256": "285cdc70acd4ae1c03f85b2e3a47e9aae955a5a74bd738ed9ef7932ebea56fc6"
+  },
+  "timeout_seconds": 60,
+  "wall_seconds": 35.58232050500001
+}

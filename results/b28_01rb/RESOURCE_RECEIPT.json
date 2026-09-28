@@ -1,0 +1,69 @@
+{
+  "aggregate_measured_wall_seconds_before_finalize": 616.2388822309999,
+  "cellA_builds": 0,
+  "cellB_builds": 0,
+  "execution": "sequential WSL runs only; no Windows mathematical runs",
+  "finalize": {
+    "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_finalize.py\"",
+    "maxrss_kib": 16864,
+    "script": {
+      "bytes": 2408,
+      "sha256": "7a55d940906558db97615c70ba049ee0f73a017e8198f82087f8f0d697b4c205"
+    },
+    "wall_seconds_before_manifest": 0.021915126000000562
+  },
+  "installs": 0,
+  "other_runs": "60 s / 512 MB or smaller, including the supplemental supervisor controls",
+  "replay_enforcement": "One MemoryMax=8000000000 / MemorySwapMax=0 scope, outer timeout 3500 s; controls and exactly one cal2 replay",
+  "review_compute_cap_seconds": 3600,
+  "run_count_including_finalize": 7,
+  "runs": [
+    {
+      "bytes": 1420,
+      "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_bind.py\"",
+      "path": "results/b28_01rb/binding_receipt.json",
+      "sha256": "ddac3c5b844580437e85b44ef9db9bf782f7cf03aedc8c92ba4c8dfb8b474ba7",
+      "wall_seconds": 10.572464523999997
+    },
+    {
+      "bytes": 690,
+      "command": [
+        "/bin/bash",
+        "/home/swami/b28_01/frozen_c/b28_01c_cellA.sh",
+        "--preflight-only"
+      ],
+      "path": "results/b28_01rb/preflight_receipt.json",
+      "sha256": "01bc1b2a060017338c6b7c6c597d20c2ca1b611a68df1b07f2081a377d8a18bc",
+      "wall_seconds": 0.29647010099999704
+    },
+    {
+      "bytes": 33352,
+      "command": "systemd-run --user --scope -p MemoryMax=8000000000 -p MemorySwapMax=0 timeout --kill-after=10 3500 python3 analysis/b28_01rb_replay.py",
+      "path": "results/b28_01rb/replay_receipt.json",
+      "sha256": "89cf4a54a515b861ac7c7212baee9b0ec6f607afcdbadc46770a86066f4f4a7c",
+      "wall_seconds": 596.8318067539999
+    },
+    {
+      "bytes": 1114,
+      "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_audit.py\"",
+      "path": "results/b28_01rb/audit_attempt1_receipt.json",
+      "sha256": "fc075d0658f15505f377e2ad11e74d87209617a57ca5a55d696b441bf027c022",
+      "wall_seconds": 2.5365181999999997
+    },
+    {
+      "bytes": 8941,
+      "command": "timeout 60 bash -c \"ulimit -v 500000; exec python3 analysis/b28_01rb_audit_v2.py\"",
+      "path": "results/b28_01rb/audit_receipt.json",
+      "sha256": "f15b7022820348315a03ec66fbaa484e6ebaeec5958537591c68ccf30fba35fb",
+      "wall_seconds": 3.879327559999979
+    },
+    {
+      "bytes": 6246,
+      "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rb_supervisor_controls.py",
+      "path": "results/b28_01rb/supervisor_controls_receipt.json",
+      "sha256": "ecedfb0b3eaeb7a7ecb97750c21fb3cb3b5a2a0917a6a653ec188a14f73f885b",
+      "wall_seconds": 2.1222950920000585
+    }
+  ],
+  "schema": "r28-01b-resource-receipt/1"
+}

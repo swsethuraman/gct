@@ -1,0 +1,177 @@
+{
+  "command": "systemd-run --user --scope -p MemoryMax=512000000 -p MemorySwapMax=0 timeout --kill-after=2 60 python3 analysis/b28_01rb_supervisor_controls.py",
+  "input": {
+    "bytes": 5653,
+    "sha256": "772979a1e2c72c9f854c12d4ca3e0a708047ddfbdff10ca93fbd4603312a9b4e"
+  },
+  "memory_max": "512000000",
+  "memory_swap_max": "0",
+  "output": {
+    "bytes": 474,
+    "sha256": "9cd568b34c73d371e37b96e1f0069ad2f3773ff936efc25a518aaf606d3bdba5"
+  },
+  "runs": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_c/b28_01c_supervise.py",
+        "--cap-secs",
+        "10",
+        "--out",
+        "/tmp/b28_01rb_supervisor_controls/fast_artifact/out",
+        "--artifact-stop",
+        "1024",
+        "--receipt",
+        "/tmp/b28_01rb_supervisor_controls/fast_artifact/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"step\", \"argv\": [\"/usr/bin/python3\", \"-c\", \"from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))\", \"/tmp/b28_01rb_supervisor_controls/fast_artifact/out/blob\"]}]"
+      ],
+      "name": "fast_artifact",
+      "outputs": [
+        {
+          "bytes": 902,
+          "path": "fast_artifact/job_receipt.json",
+          "sha256": "c9d374275df8aeb934569e14f6b6b332aed682e01b5218524f4bea4de12d6708"
+        },
+        {
+          "bytes": 2048,
+          "path": "fast_artifact/out/blob",
+          "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+        },
+        {
+          "bytes": 0,
+          "path": "fast_artifact/step.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 873,
+          "path": "fast_artifact/step.time",
+          "sha256": "68a2c8ebd1c51c2d3049a4545a81c4b7e7340f13a01e11d46eb811b8dfcd999c"
+        }
+      ],
+      "rc": 0,
+      "stdout": "JOB exit=0 resource_stop=None\n",
+      "supervisor_receipt": {
+        "artifact_bytes_at_end": 2048,
+        "artifact_stop_bytes": 1024,
+        "cap_secs": 10.0,
+        "clock": "time.monotonic",
+        "elapsed_monotonic_secs": 0.032,
+        "end_utc": "2026-09-24T17:33:57Z",
+        "exit": 0,
+        "out": "/tmp/b28_01rb_supervisor_controls/fast_artifact/out",
+        "resource_stop": null,
+        "schema": "b28-01c-job-receipt/1",
+        "scope": {
+          "memory_max": "512000000",
+          "memory_swap_max": "0"
+        },
+        "scope_end": {
+          "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "19574784"
+        },
+        "start_utc": "2026-09-24T17:33:57Z",
+        "steps": [
+          {
+            "argv": [
+              "/usr/bin/python3",
+              "-c",
+              "from pathlib import Path; import sys; Path(sys.argv[1]).write_bytes(bytes(2048))",
+              "/tmp/b28_01rb_supervisor_controls/fast_artifact/out/blob"
+            ],
+            "killed_by_supervisor": false,
+            "label": "step",
+            "maxrss_bytes": 11923456,
+            "rc": 0,
+            "secs_monotonic": 0.032
+          }
+        ]
+      },
+      "wall_seconds": 0.052448712999989766
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/swami/b28_01/frozen_c/b28_01c_supervise.py",
+        "--cap-secs",
+        "2",
+        "--out",
+        "/tmp/b28_01rb_supervisor_controls/term_resistant/out",
+        "--artifact-stop",
+        "1000000",
+        "--receipt",
+        "/tmp/b28_01rb_supervisor_controls/term_resistant/job_receipt.json",
+        "--steps",
+        "[{\"label\": \"step\", \"argv\": [\"/usr/bin/python3\", \"/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rb_supervisor_controls.py\", \"--term-resistant-child\", \"/tmp/b28_01rb_supervisor_controls/child_pid_receipt.txt\"]}]"
+      ],
+      "child_pid": 465,
+      "child_state_after_supervisor": "S",
+      "name": "term_resistant",
+      "outputs": [
+        {
+          "bytes": 1028,
+          "path": "term_resistant/job_receipt.json",
+          "sha256": "2e19c75b6c3c594a829d8e03b0a6caf7716e63284dd0bb6577a87c7b185f6f49"
+        },
+        {
+          "bytes": 0,
+          "path": "term_resistant/step.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "path": "term_resistant/step.time",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "rc": 124,
+      "stdout": "JOB exit=124 resource_stop={'reason': 'wall', 'detail': 'aggregate monotonic limit 2.0 s reached during step step'}\n",
+      "supervisor_receipt": {
+        "artifact_bytes_at_end": 0,
+        "artifact_stop_bytes": 1000000,
+        "cap_secs": 2.0,
+        "clock": "time.monotonic",
+        "elapsed_monotonic_secs": 2.002,
+        "end_utc": "2026-09-24T17:33:59Z",
+        "exit": 124,
+        "out": "/tmp/b28_01rb_supervisor_controls/term_resistant/out",
+        "resource_stop": {
+          "detail": "aggregate monotonic limit 2.0 s reached during step step",
+          "reason": "wall"
+        },
+        "schema": "b28-01c-job-receipt/1",
+        "scope": {
+          "memory_max": "512000000",
+          "memory_swap_max": "0"
+        },
+        "scope_end": {
+          "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "21700608"
+        },
+        "start_utc": "2026-09-24T17:33:57Z",
+        "steps": [
+          {
+            "argv": [
+              "/usr/bin/python3",
+              "/mnt/c/Users/swami/Projects/gct-gpt/work/batch28/b28-01r/analysis/b28_01rb_supervisor_controls.py",
+              "--term-resistant-child",
+              "/tmp/b28_01rb_supervisor_controls/child_pid_receipt.txt"
+            ],
+            "killed_by_supervisor": true,
+            "label": "step",
+            "maxrss_bytes": null,
+            "rc": -15,
+            "secs_monotonic": 2.001
+          }
+        ]
+      },
+      "wall_seconds": 2.024512960000038
+    }
+  ],
+  "scope_peak": "21700608",
+  "script": {
+    "bytes": 3884,
+    "sha256": "84a6a73145f0ac35a3e59f8939efacb6b307a83c66a6ce5d863388c55b44b666"
+  },
+  "wall_seconds": 2.1222950920000585
+}
